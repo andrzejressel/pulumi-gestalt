@@ -14,13 +14,28 @@
       "Export": {
         "name": "entriesOutput",
         "value": {
-          "StdlibCall": {
-            "func": "Entries",
-            "args": [
-              {
-                "Variable": "aMap"
+          "expr_type": {
+            "List": {
+              "Object": {
+                "key": "String",
+                "value": "String"
               }
-            ]
+            }
+          },
+          "value": {
+            "StdlibCall": {
+              "func": "Entries",
+              "args": [
+                {
+                  "expr_type": {
+                    "Map": "String"
+                  },
+                  "value": {
+                    "Variable": "aMap"
+                  }
+                }
+              ]
+            }
           }
         }
       }
@@ -29,19 +44,33 @@
       "Export": {
         "name": "lookupOutput",
         "value": {
-          "StdlibCall": {
-            "func": "Lookup",
-            "args": [
-              {
-                "Variable": "aMap"
-              },
-              {
-                "String": "keyPresent"
-              },
-              {
-                "String": "default"
-              }
-            ]
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Lookup",
+              "args": [
+                {
+                  "expr_type": {
+                    "Map": "String"
+                  },
+                  "value": {
+                    "Variable": "aMap"
+                  }
+                },
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "keyPresent"
+                  }
+                },
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "default"
+                  }
+                }
+              ]
+            }
           }
         }
       }
@@ -50,19 +79,33 @@
       "Export": {
         "name": "lookupOutputDefault",
         "value": {
-          "StdlibCall": {
-            "func": "Lookup",
-            "args": [
-              {
-                "Variable": "aMap"
-              },
-              {
-                "String": "keyMissing"
-              },
-              {
-                "String": "default"
-              }
-            ]
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Lookup",
+              "args": [
+                {
+                  "expr_type": {
+                    "Map": "String"
+                  },
+                  "value": {
+                    "Variable": "aMap"
+                  }
+                },
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "keyMissing"
+                  }
+                },
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "default"
+                  }
+                }
+              ]
+            }
           }
         }
       }

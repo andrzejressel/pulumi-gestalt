@@ -10,7 +10,10 @@
     },
     {
       "RequirePulumiVersion": {
-        "Variable": "version"
+        "expr_type": "String",
+        "value": {
+          "Variable": "version"
+        }
       }
     }
   ]

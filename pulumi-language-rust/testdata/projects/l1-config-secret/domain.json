@@ -12,7 +12,12 @@
       "Export": {
         "name": "roundtrip",
         "value": {
-          "Variable": "aNumber"
+          "expr_type": {
+            "Output": "Number"
+          },
+          "value": {
+            "Variable": "aNumber"
+          }
         }
       }
     },
@@ -20,21 +25,40 @@
       "Export": {
         "name": "theSecretNumber",
         "value": {
-          "OutputMap": {
-            "output": {
-              "Variable": "aNumber"
-            },
-            "params": [
-              "aNumber"
-            ],
-            "body": {
-              "BinaryOp": {
-                "left": {
-                  "Variable": "aNumber"
+          "expr_type": {
+            "Output": "Number"
+          },
+          "value": {
+            "OutputMap": {
+              "output": {
+                "expr_type": {
+                  "Output": "Number"
                 },
-                "op": "Add",
-                "right": {
-                  "Number": 1.25
+                "value": {
+                  "Variable": "aNumber"
+                }
+              },
+              "params": [
+                "aNumber"
+              ],
+              "body": {
+                "expr_type": "Number",
+                "value": {
+                  "BinaryOp": {
+                    "left": {
+                      "expr_type": "Number",
+                      "value": {
+                        "Variable": "aNumber"
+                      }
+                    },
+                    "op": "Add",
+                    "right": {
+                      "expr_type": "Number",
+                      "value": {
+                        "Number": 1.25
+                      }
+                    }
+                  }
                 }
               }
             }

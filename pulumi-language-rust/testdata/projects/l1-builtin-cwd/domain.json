@@ -4,9 +4,12 @@
       "Export": {
         "name": "cwdOutput",
         "value": {
-          "StdlibCall": {
-            "func": "Cwd",
-            "args": []
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Cwd",
+              "args": []
+            }
           }
         }
       }

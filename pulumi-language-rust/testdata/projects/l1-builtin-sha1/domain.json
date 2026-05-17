@@ -12,13 +12,19 @@
       "LocalBinding": {
         "name": "hash",
         "value": {
-          "StdlibCall": {
-            "func": "Sha1",
-            "args": [
-              {
-                "Variable": "input"
-              }
-            ]
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Sha1",
+              "args": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "Variable": "input"
+                  }
+                }
+              ]
+            }
           }
         }
       }
@@ -27,7 +33,10 @@
       "Export": {
         "name": "hash",
         "value": {
-          "Variable": "hash"
+          "expr_type": "String",
+          "value": {
+            "Variable": "hash"
+          }
         }
       }
     }

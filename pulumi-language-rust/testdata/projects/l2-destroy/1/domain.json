@@ -18,7 +18,10 @@
           {
             "name": "value",
             "expression": {
-              "Bool": true
+              "expr_type": "Bool",
+              "value": {
+                "Bool": true
+              }
             }
           }
         ]
