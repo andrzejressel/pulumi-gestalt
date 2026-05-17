@@ -36,51 +36,32 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "avro_file_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "avro_file_format",
                     &self.r#avro_file_format,
-                )
-                .await,
-            );
-            map.insert(
-                "file_rotation_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "file_rotation_interval",
                     &self.r#file_rotation_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "file_rotation_mb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "file_rotation_mb",
                     &self.r#file_rotation_mb,
-                )
-                .await,
-            );
-            map.insert(
-                "json_file_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "json_file_format",
                     &self.r#json_file_format,
-                )
-                .await,
-            );
-            map.insert(
-                "path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "path",
                     &self.r#path,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

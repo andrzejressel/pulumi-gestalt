@@ -36,74 +36,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "authentication_request_extra_params".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "authentication_request_extra_params",
                     &self.r#authentication_request_extra_params,
-                )
-                .await,
-            );
-            map.insert(
-                "on_unauthenticated_request".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "on_unauthenticated_request",
                     &self.r#on_unauthenticated_request,
-                )
-                .await,
-            );
-            map.insert(
-                "scope".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scope",
                     &self.r#scope,
-                )
-                .await,
-            );
-            map.insert(
-                "session_cookie_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "session_cookie_name",
                     &self.r#session_cookie_name,
-                )
-                .await,
-            );
-            map.insert(
-                "session_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "session_timeout",
                     &self.r#session_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "user_pool_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_pool_arn",
                     &self.r#user_pool_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "user_pool_client_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_pool_client_id",
                     &self.r#user_pool_client_id,
-                )
-                .await,
-            );
-            map.insert(
-                "user_pool_domain".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_pool_domain",
                     &self.r#user_pool_domain,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

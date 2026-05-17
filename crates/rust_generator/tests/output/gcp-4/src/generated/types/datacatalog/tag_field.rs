@@ -52,72 +52,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tag
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "bool_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "bool_value",
                     &self.r#bool_value,
-                )
-                .await,
-            );
-            map.insert(
-                "display_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "display_name",
                     &self.r#display_name,
-                )
-                .await,
-            );
-            map.insert(
-                "double_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "double_value",
                     &self.r#double_value,
-                )
-                .await,
-            );
-            map.insert(
-                "enum_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enum_value",
                     &self.r#enum_value,
-                )
-                .await,
-            );
-            map.insert(
-                "field_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "field_name",
                     &self.r#field_name,
-                )
-                .await,
-            );
-            map.insert(
-                "order".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "order",
                     &self.r#order,
-                )
-                .await,
-            );
-            map.insert(
-                "string_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "string_value",
                     &self.r#string_value,
-                )
-                .await,
-            );
-            map.insert(
-                "timestamp_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timestamp_value",
                     &self.r#timestamp_value,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

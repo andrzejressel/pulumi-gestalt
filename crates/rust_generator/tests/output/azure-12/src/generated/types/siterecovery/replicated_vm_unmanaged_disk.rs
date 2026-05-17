@@ -26,37 +26,24 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "disk_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "disk_uri",
                     &self.r#disk_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "staging_storage_account_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "staging_storage_account_id",
                     &self.r#staging_storage_account_id,
-                )
-                .await,
-            );
-            map.insert(
-                "target_storage_account_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_storage_account_id",
                     &self.r#target_storage_account_id,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -34,51 +34,32 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "category_patterns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "category_patterns",
                     &self.r#category_patterns,
-                )
-                .await,
-            );
-            map.insert(
-                "event_patterns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "event_patterns",
                     &self.r#event_patterns,
-                )
-                .await,
-            );
-            map.insert(
-                "hub_patterns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "hub_patterns",
                     &self.r#hub_patterns,
-                )
-                .await,
-            );
-            map.insert(
-                "url_template".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url_template",
                     &self.r#url_template,
-                )
-                .await,
-            );
-            map.insert(
-                "user_assigned_identity_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_assigned_identity_id",
                     &self.r#user_assigned_identity_id,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

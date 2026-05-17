@@ -62,128 +62,76 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "after_connect_script".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "after_connect_script",
                     &self.r#after_connect_script,
-                )
-                .await,
-            );
-            map.insert(
-                "babelfish_database_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "babelfish_database_name",
                     &self.r#babelfish_database_name,
-                )
-                .await,
-            );
-            map.insert(
-                "capture_ddls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "capture_ddls",
                     &self.r#capture_ddls,
-                )
-                .await,
-            );
-            map.insert(
-                "database_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "database_mode",
                     &self.r#database_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "ddl_artifacts_schema".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ddl_artifacts_schema",
                     &self.r#ddl_artifacts_schema,
-                )
-                .await,
-            );
-            map.insert(
-                "execute_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "execute_timeout",
                     &self.r#execute_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "fail_tasks_on_lob_truncation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fail_tasks_on_lob_truncation",
                     &self.r#fail_tasks_on_lob_truncation,
-                )
-                .await,
-            );
-            map.insert(
-                "heartbeat_enable".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "heartbeat_enable",
                     &self.r#heartbeat_enable,
-                )
-                .await,
-            );
-            map.insert(
-                "heartbeat_frequency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "heartbeat_frequency",
                     &self.r#heartbeat_frequency,
-                )
-                .await,
-            );
-            map.insert(
-                "heartbeat_schema".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "heartbeat_schema",
                     &self.r#heartbeat_schema,
-                )
-                .await,
-            );
-            map.insert(
-                "map_boolean_as_boolean".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "map_boolean_as_boolean",
                     &self.r#map_boolean_as_boolean,
-                )
-                .await,
-            );
-            map.insert(
-                "map_jsonb_as_clob".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "map_jsonb_as_clob",
                     &self.r#map_jsonb_as_clob,
-                )
-                .await,
-            );
-            map.insert(
-                "map_long_varchar_as".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "map_long_varchar_as",
                     &self.r#map_long_varchar_as,
-                )
-                .await,
-            );
-            map.insert(
-                "max_file_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_file_size",
                     &self.r#max_file_size,
-                )
-                .await,
-            );
-            map.insert(
-                "plugin_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "plugin_name",
                     &self.r#plugin_name,
-                )
-                .await,
-            );
-            map.insert(
-                "slot_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "slot_name",
                     &self.r#slot_name,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

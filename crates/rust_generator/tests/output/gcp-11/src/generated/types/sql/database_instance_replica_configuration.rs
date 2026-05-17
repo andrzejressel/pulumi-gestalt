@@ -76,100 +76,60 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "ca_certificate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "ca_certificate",
                     &self.r#ca_certificate,
-                )
-                .await,
-            );
-            map.insert(
-                "cascadable_replica".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cascadable_replica",
                     &self.r#cascadable_replica,
-                )
-                .await,
-            );
-            map.insert(
-                "client_certificate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_certificate",
                     &self.r#client_certificate,
-                )
-                .await,
-            );
-            map.insert(
-                "client_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_key",
                     &self.r#client_key,
-                )
-                .await,
-            );
-            map.insert(
-                "connect_retry_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connect_retry_interval",
                     &self.r#connect_retry_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "dump_file_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dump_file_path",
                     &self.r#dump_file_path,
-                )
-                .await,
-            );
-            map.insert(
-                "failover_target".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "failover_target",
                     &self.r#failover_target,
-                )
-                .await,
-            );
-            map.insert(
-                "master_heartbeat_period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "master_heartbeat_period",
                     &self.r#master_heartbeat_period,
-                )
-                .await,
-            );
-            map.insert(
-                "password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "password",
                     &self.r#password,
-                )
-                .await,
-            );
-            map.insert(
-                "ssl_cipher".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssl_cipher",
                     &self.r#ssl_cipher,
-                )
-                .await,
-            );
-            map.insert(
-                "username".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "username",
                     &self.r#username,
-                )
-                .await,
-            );
-            map.insert(
-                "verify_server_certificate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "verify_server_certificate",
                     &self.r#verify_server_certificate,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

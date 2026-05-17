@@ -58,93 +58,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "accelerators".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "accelerators",
                     &self.r#accelerators,
-                )
-                .await,
-            );
-            map.insert(
-                "bundled_local_ssds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bundled_local_ssds",
                     &self.r#bundled_local_ssds,
-                )
-                .await,
-            );
-            map.insert(
-                "deprecateds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "deprecateds",
                     &self.r#deprecateds,
-                )
-                .await,
-            );
-            map.insert(
-                "description".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "description",
                     &self.r#description,
-                )
-                .await,
-            );
-            map.insert(
-                "guest_cpus".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "guest_cpus",
                     &self.r#guest_cpus,
-                )
-                .await,
-            );
-            map.insert(
-                "is_shared_cpus".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_shared_cpus",
                     &self.r#is_shared_cpus,
-                )
-                .await,
-            );
-            map.insert(
-                "maximum_persistent_disks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maximum_persistent_disks",
                     &self.r#maximum_persistent_disks,
-                )
-                .await,
-            );
-            map.insert(
-                "maximum_persistent_disks_size_gb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maximum_persistent_disks_size_gb",
                     &self.r#maximum_persistent_disks_size_gb,
-                )
-                .await,
-            );
-            map.insert(
-                "memory_mb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "memory_mb",
                     &self.r#memory_mb,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "self_link".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "self_link",
                     &self.r#self_link,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -42,65 +42,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Azu
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "image_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "image_type",
                     &self.r#image_type,
-                )
-                .await,
-            );
-            map.insert(
-                "labels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "labels",
                     &self.r#labels,
-                )
-                .await,
-            );
-            map.insert(
-                "proxy_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "proxy_config",
                     &self.r#proxy_config,
-                )
-                .await,
-            );
-            map.insert(
-                "root_volume".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "root_volume",
                     &self.r#root_volume,
-                )
-                .await,
-            );
-            map.insert(
-                "ssh_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssh_config",
                     &self.r#ssh_config,
-                )
-                .await,
-            );
-            map.insert(
-                "tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tags",
                     &self.r#tags,
-                )
-                .await,
-            );
-            map.insert(
-                "vm_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vm_size",
                     &self.r#vm_size,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

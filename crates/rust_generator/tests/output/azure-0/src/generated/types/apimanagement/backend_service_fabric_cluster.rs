@@ -41,58 +41,36 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "client_certificate_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "client_certificate_id",
                     &self.r#client_certificate_id,
-                )
-                .await,
-            );
-            map.insert(
-                "client_certificate_thumbprint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_certificate_thumbprint",
                     &self.r#client_certificate_thumbprint,
-                )
-                .await,
-            );
-            map.insert(
-                "management_endpoints".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "management_endpoints",
                     &self.r#management_endpoints,
-                )
-                .await,
-            );
-            map.insert(
-                "max_partition_resolution_retries".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_partition_resolution_retries",
                     &self.r#max_partition_resolution_retries,
-                )
-                .await,
-            );
-            map.insert(
-                "server_certificate_thumbprints".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "server_certificate_thumbprints",
                     &self.r#server_certificate_thumbprints,
-                )
-                .await,
-            );
-            map.insert(
-                "server_x_509_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "server_x_509_names",
                     &self.r#server_x_509_names,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

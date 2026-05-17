@@ -51,79 +51,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "max_surge_fixed".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "max_surge_fixed",
                     &self.r#max_surge_fixed,
-                )
-                .await,
-            );
-            map.insert(
-                "max_surge_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_surge_percent",
                     &self.r#max_surge_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "max_unavailable_fixed".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_unavailable_fixed",
                     &self.r#max_unavailable_fixed,
-                )
-                .await,
-            );
-            map.insert(
-                "max_unavailable_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_unavailable_percent",
                     &self.r#max_unavailable_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "min_ready_sec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_ready_sec",
                     &self.r#min_ready_sec,
-                )
-                .await,
-            );
-            map.insert(
-                "minimal_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimal_action",
                     &self.r#minimal_action,
-                )
-                .await,
-            );
-            map.insert(
-                "most_disruptive_allowed_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "most_disruptive_allowed_action",
                     &self.r#most_disruptive_allowed_action,
-                )
-                .await,
-            );
-            map.insert(
-                "replacement_method".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "replacement_method",
                     &self.r#replacement_method,
-                )
-                .await,
-            );
-            map.insert(
-                "type_".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "type_",
                     &self.r#type_,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

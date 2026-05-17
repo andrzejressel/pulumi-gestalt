@@ -89,100 +89,60 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "action",
                     &self.r#action,
-                )
-                .await,
-            );
-            map.insert(
-                "description".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "description",
                     &self.r#description,
-                )
-                .await,
-            );
-            map.insert(
-                "direction".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "direction",
                     &self.r#direction,
-                )
-                .await,
-            );
-            map.insert(
-                "disabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disabled",
                     &self.r#disabled,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_logging".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_logging",
                     &self.r#enable_logging,
-                )
-                .await,
-            );
-            map.insert(
-                "match_".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "match_",
                     &self.r#match_,
-                )
-                .await,
-            );
-            map.insert(
-                "priority".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "priority",
                     &self.r#priority,
-                )
-                .await,
-            );
-            map.insert(
-                "rule_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rule_name",
                     &self.r#rule_name,
-                )
-                .await,
-            );
-            map.insert(
-                "security_profile_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_profile_group",
                     &self.r#security_profile_group,
-                )
-                .await,
-            );
-            map.insert(
-                "target_secure_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_secure_tags",
                     &self.r#target_secure_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "target_service_accounts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_service_accounts",
                     &self.r#target_service_accounts,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_inspect".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_inspect",
                     &self.r#tls_inspect,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

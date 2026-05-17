@@ -48,81 +48,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "confidence".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "confidence",
                     &self.r#confidence,
-                )
-                .await,
-            );
-            map.insert(
-                "criticality".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "criticality",
                     &self.r#criticality,
-                )
-                .await,
-            );
-            map.insert(
-                "note".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "note",
                     &self.r#note,
-                )
-                .await,
-            );
-            map.insert(
-                "related_findings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "related_findings",
                     &self.r#related_findings,
-                )
-                .await,
-            );
-            map.insert(
-                "severity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "severity",
                     &self.r#severity,
-                )
-                .await,
-            );
-            map.insert(
-                "types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "types",
                     &self.r#types,
-                )
-                .await,
-            );
-            map.insert(
-                "user_defined_fields".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_defined_fields",
                     &self.r#user_defined_fields,
-                )
-                .await,
-            );
-            map.insert(
-                "verification_state".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "verification_state",
                     &self.r#verification_state,
-                )
-                .await,
-            );
-            map.insert(
-                "workflow".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "workflow",
                     &self.r#workflow,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

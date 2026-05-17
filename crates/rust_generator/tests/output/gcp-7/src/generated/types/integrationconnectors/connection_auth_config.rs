@@ -53,72 +53,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "additional_variables".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "additional_variables",
                     &self.r#additional_variables,
-                )
-                .await,
-            );
-            map.insert(
-                "auth_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auth_key",
                     &self.r#auth_key,
-                )
-                .await,
-            );
-            map.insert(
-                "auth_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auth_type",
                     &self.r#auth_type,
-                )
-                .await,
-            );
-            map.insert(
-                "oauth_2_auth_code_flow".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "oauth_2_auth_code_flow",
                     &self.r#oauth_2_auth_code_flow,
-                )
-                .await,
-            );
-            map.insert(
-                "oauth_2_client_credentials".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "oauth_2_client_credentials",
                     &self.r#oauth_2_client_credentials,
-                )
-                .await,
-            );
-            map.insert(
-                "oauth_2_jwt_bearer".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "oauth_2_jwt_bearer",
                     &self.r#oauth_2_jwt_bearer,
-                )
-                .await,
-            );
-            map.insert(
-                "ssh_public_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssh_public_key",
                     &self.r#ssh_public_key,
-                )
-                .await,
-            );
-            map.insert(
-                "user_password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_password",
                     &self.r#user_password,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

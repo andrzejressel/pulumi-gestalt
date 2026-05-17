@@ -81,107 +81,64 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "accelerator_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "accelerator_configs",
                     &self.r#accelerator_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "boot_disk".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "boot_disk",
                     &self.r#boot_disk,
-                )
-                .await,
-            );
-            map.insert(
-                "container_image".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "container_image",
                     &self.r#container_image,
-                )
-                .await,
-            );
-            map.insert(
-                "data_disks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_disks",
                     &self.r#data_disks,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_public_ip".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_public_ip",
                     &self.r#disable_public_ip,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_ip_forwarding".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_ip_forwarding",
                     &self.r#enable_ip_forwarding,
-                )
-                .await,
-            );
-            map.insert(
-                "machine_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "machine_type",
                     &self.r#machine_type,
-                )
-                .await,
-            );
-            map.insert(
-                "metadata".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metadata",
                     &self.r#metadata,
-                )
-                .await,
-            );
-            map.insert(
-                "network_interfaces".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_interfaces",
                     &self.r#network_interfaces,
-                )
-                .await,
-            );
-            map.insert(
-                "service_accounts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_accounts",
                     &self.r#service_accounts,
-                )
-                .await,
-            );
-            map.insert(
-                "shielded_instance_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shielded_instance_config",
                     &self.r#shielded_instance_config,
-                )
-                .await,
-            );
-            map.insert(
-                "tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tags",
                     &self.r#tags,
-                )
-                .await,
-            );
-            map.insert(
-                "vm_image".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vm_image",
                     &self.r#vm_image,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

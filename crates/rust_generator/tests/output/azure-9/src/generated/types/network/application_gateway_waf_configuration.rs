@@ -50,79 +50,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "disabled_rule_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "disabled_rule_groups",
                     &self.r#disabled_rule_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enabled",
                     &self.r#enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "exclusions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "exclusions",
                     &self.r#exclusions,
-                )
-                .await,
-            );
-            map.insert(
-                "file_upload_limit_mb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "file_upload_limit_mb",
                     &self.r#file_upload_limit_mb,
-                )
-                .await,
-            );
-            map.insert(
-                "firewall_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "firewall_mode",
                     &self.r#firewall_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "max_request_body_size_kb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_request_body_size_kb",
                     &self.r#max_request_body_size_kb,
-                )
-                .await,
-            );
-            map.insert(
-                "request_body_check".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_body_check",
                     &self.r#request_body_check,
-                )
-                .await,
-            );
-            map.insert(
-                "rule_set_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rule_set_type",
                     &self.r#rule_set_type,
-                )
-                .await,
-            );
-            map.insert(
-                "rule_set_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rule_set_version",
                     &self.r#rule_set_version,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

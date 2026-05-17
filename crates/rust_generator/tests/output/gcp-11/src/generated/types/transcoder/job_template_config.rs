@@ -64,86 +64,52 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "ad_breaks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "ad_breaks",
                     &self.r#ad_breaks,
-                )
-                .await,
-            );
-            map.insert(
-                "edit_lists".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "edit_lists",
                     &self.r#edit_lists,
-                )
-                .await,
-            );
-            map.insert(
-                "elementary_streams".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "elementary_streams",
                     &self.r#elementary_streams,
-                )
-                .await,
-            );
-            map.insert(
-                "encryptions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encryptions",
                     &self.r#encryptions,
-                )
-                .await,
-            );
-            map.insert(
-                "inputs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "inputs",
                     &self.r#inputs,
-                )
-                .await,
-            );
-            map.insert(
-                "manifests".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "manifests",
                     &self.r#manifests,
-                )
-                .await,
-            );
-            map.insert(
-                "mux_streams".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mux_streams",
                     &self.r#mux_streams,
-                )
-                .await,
-            );
-            map.insert(
-                "output".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "output",
                     &self.r#output,
-                )
-                .await,
-            );
-            map.insert(
-                "overlays".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "overlays",
                     &self.r#overlays,
-                )
-                .await,
-            );
-            map.insert(
-                "pubsub_destination".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pubsub_destination",
                     &self.r#pubsub_destination,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

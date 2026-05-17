@@ -28,46 +28,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "error_clear_time_msec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "error_clear_time_msec",
                     &self.r#error_clear_time_msec,
-                )
-                .await,
-            );
-            map.insert(
-                "failover_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "failover_conditions",
                     &self.r#failover_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "input_preference".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_preference",
                     &self.r#input_preference,
-                )
-                .await,
-            );
-            map.insert(
-                "secondary_input_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secondary_input_id",
                     &self.r#secondary_input_id,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

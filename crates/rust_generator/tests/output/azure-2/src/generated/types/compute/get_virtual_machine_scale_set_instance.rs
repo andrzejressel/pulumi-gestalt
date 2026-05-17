@@ -58,93 +58,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "computer_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "computer_name",
                     &self.r#computer_name,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_id",
                     &self.r#instance_id,
-                )
-                .await,
-            );
-            map.insert(
-                "latest_model_applied".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "latest_model_applied",
                     &self.r#latest_model_applied,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "power_state".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "power_state",
                     &self.r#power_state,
-                )
-                .await,
-            );
-            map.insert(
-                "private_ip_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_ip_address",
                     &self.r#private_ip_address,
-                )
-                .await,
-            );
-            map.insert(
-                "private_ip_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_ip_addresses",
                     &self.r#private_ip_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "public_ip_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_ip_address",
                     &self.r#public_ip_address,
-                )
-                .await,
-            );
-            map.insert(
-                "public_ip_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_ip_addresses",
                     &self.r#public_ip_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "virtual_machine_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "virtual_machine_id",
                     &self.r#virtual_machine_id,
-                )
-                .await,
-            );
-            map.insert(
-                "zone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "zone",
                     &self.r#zone,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

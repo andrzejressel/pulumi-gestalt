@@ -56,65 +56,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "excluded_fields".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "excluded_fields",
                     &self.r#excluded_fields,
-                )
-                .await,
-            );
-            map.insert(
-                "identifying_fields".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "identifying_fields",
                     &self.r#identifying_fields,
-                )
-                .await,
-            );
-            map.insert(
-                "included_fields".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "included_fields",
                     &self.r#included_fields,
-                )
-                .await,
-            );
-            map.insert(
-                "rows_limit".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rows_limit",
                     &self.r#rows_limit,
-                )
-                .await,
-            );
-            map.insert(
-                "rows_limit_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rows_limit_percent",
                     &self.r#rows_limit_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "sample_method".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sample_method",
                     &self.r#sample_method,
-                )
-                .await,
-            );
-            map.insert(
-                "table_reference".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "table_reference",
                     &self.r#table_reference,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

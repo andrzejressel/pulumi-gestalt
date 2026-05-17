@@ -85,79 +85,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "create_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "create_time",
                     &self.r#create_time,
-                )
-                .await,
-            );
-            map.insert(
-                "description".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "description",
                     &self.r#description,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "perimeter_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "perimeter_type",
                     &self.r#perimeter_type,
-                )
-                .await,
-            );
-            map.insert(
-                "spec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "spec",
                     &self.r#spec,
-                )
-                .await,
-            );
-            map.insert(
-                "status".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "status",
                     &self.r#status,
-                )
-                .await,
-            );
-            map.insert(
-                "title".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "title",
                     &self.r#title,
-                )
-                .await,
-            );
-            map.insert(
-                "update_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "update_time",
                     &self.r#update_time,
-                )
-                .await,
-            );
-            map.insert(
-                "use_explicit_dry_run_spec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_explicit_dry_run_spec",
                     &self.r#use_explicit_dry_run_spec,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

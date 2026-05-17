@@ -48,81 +48,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "audio_descriptions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "audio_descriptions",
                     &self.r#audio_descriptions,
-                )
-                .await,
-            );
-            map.insert(
-                "avail_blanking".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "avail_blanking",
                     &self.r#avail_blanking,
-                )
-                .await,
-            );
-            map.insert(
-                "caption_descriptions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "caption_descriptions",
                     &self.r#caption_descriptions,
-                )
-                .await,
-            );
-            map.insert(
-                "global_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "global_configuration",
                     &self.r#global_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "motion_graphics_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "motion_graphics_configuration",
                     &self.r#motion_graphics_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "nielsen_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "nielsen_configuration",
                     &self.r#nielsen_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "output_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "output_groups",
                     &self.r#output_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "timecode_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timecode_config",
                     &self.r#timecode_config,
-                )
-                .await,
-            );
-            map.insert(
-                "video_descriptions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "video_descriptions",
                     &self.r#video_descriptions,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

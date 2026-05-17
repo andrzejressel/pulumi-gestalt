@@ -40,67 +40,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "bytes_scanned_cutoff_per_query".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "bytes_scanned_cutoff_per_query",
                     &self.r#bytes_scanned_cutoff_per_query,
-                )
-                .await,
-            );
-            map.insert(
-                "enforce_workgroup_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enforce_workgroup_configuration",
                     &self.r#enforce_workgroup_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "engine_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "engine_version",
                     &self.r#engine_version,
-                )
-                .await,
-            );
-            map.insert(
-                "execution_role".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "execution_role",
                     &self.r#execution_role,
-                )
-                .await,
-            );
-            map.insert(
-                "publish_cloudwatch_metrics_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "publish_cloudwatch_metrics_enabled",
                     &self.r#publish_cloudwatch_metrics_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "requester_pays_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "requester_pays_enabled",
                     &self.r#requester_pays_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "result_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "result_configuration",
                     &self.r#result_configuration,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

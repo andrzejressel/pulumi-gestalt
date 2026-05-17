@@ -38,58 +38,36 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "id",
                     &self.r#id,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "ssl_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssl_policy",
                     &self.r#ssl_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "trusted_client_certificate_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "trusted_client_certificate_names",
                     &self.r#trusted_client_certificate_names,
-                )
-                .await,
-            );
-            map.insert(
-                "verify_client_cert_issuer_dn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "verify_client_cert_issuer_dn",
                     &self.r#verify_client_cert_issuer_dn,
-                )
-                .await,
-            );
-            map.insert(
-                "verify_client_certificate_revocation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "verify_client_certificate_revocation",
                     &self.r#verify_client_certificate_revocation,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

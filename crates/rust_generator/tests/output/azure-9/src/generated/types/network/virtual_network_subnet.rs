@@ -66,93 +66,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "address_prefixes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "address_prefixes",
                     &self.r#address_prefixes,
-                )
-                .await,
-            );
-            map.insert(
-                "default_outbound_access_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_outbound_access_enabled",
                     &self.r#default_outbound_access_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "delegation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "delegation",
                     &self.r#delegation,
-                )
-                .await,
-            );
-            map.insert(
-                "id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "id",
                     &self.r#id,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "private_endpoint_network_policies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_endpoint_network_policies",
                     &self.r#private_endpoint_network_policies,
-                )
-                .await,
-            );
-            map.insert(
-                "private_link_service_network_policies_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_link_service_network_policies_enabled",
                     &self.r#private_link_service_network_policies_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "route_table_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "route_table_id",
                     &self.r#route_table_id,
-                )
-                .await,
-            );
-            map.insert(
-                "security_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_group",
                     &self.r#security_group,
-                )
-                .await,
-            );
-            map.insert(
-                "service_endpoint_policy_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_endpoint_policy_ids",
                     &self.r#service_endpoint_policy_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "service_endpoints".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_endpoints",
                     &self.r#service_endpoints,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

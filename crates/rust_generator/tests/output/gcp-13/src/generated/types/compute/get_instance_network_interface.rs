@@ -79,128 +79,76 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "access_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "access_configs",
                     &self.r#access_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "alias_ip_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "alias_ip_ranges",
                     &self.r#alias_ip_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "internal_ipv_6_prefix_length".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "internal_ipv_6_prefix_length",
                     &self.r#internal_ipv_6_prefix_length,
-                )
-                .await,
-            );
-            map.insert(
-                "ipv_6_access_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ipv_6_access_configs",
                     &self.r#ipv_6_access_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "ipv_6_access_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ipv_6_access_type",
                     &self.r#ipv_6_access_type,
-                )
-                .await,
-            );
-            map.insert(
-                "ipv_6_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ipv_6_address",
                     &self.r#ipv_6_address,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "network".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network",
                     &self.r#network,
-                )
-                .await,
-            );
-            map.insert(
-                "network_attachment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_attachment",
                     &self.r#network_attachment,
-                )
-                .await,
-            );
-            map.insert(
-                "network_ip".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_ip",
                     &self.r#network_ip,
-                )
-                .await,
-            );
-            map.insert(
-                "nic_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "nic_type",
                     &self.r#nic_type,
-                )
-                .await,
-            );
-            map.insert(
-                "queue_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "queue_count",
                     &self.r#queue_count,
-                )
-                .await,
-            );
-            map.insert(
-                "security_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_policy",
                     &self.r#security_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "stack_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stack_type",
                     &self.r#stack_type,
-                )
-                .await,
-            );
-            map.insert(
-                "subnetwork".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnetwork",
                     &self.r#subnetwork,
-                )
-                .await,
-            );
-            map.insert(
-                "subnetwork_project".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnetwork_project",
                     &self.r#subnetwork_project,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

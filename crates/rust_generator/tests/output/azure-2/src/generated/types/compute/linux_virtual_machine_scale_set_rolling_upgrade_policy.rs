@@ -44,65 +44,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cross_zone_upgrades_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cross_zone_upgrades_enabled",
                     &self.r#cross_zone_upgrades_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "max_batch_instance_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_batch_instance_percent",
                     &self.r#max_batch_instance_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "max_unhealthy_instance_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_unhealthy_instance_percent",
                     &self.r#max_unhealthy_instance_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "max_unhealthy_upgraded_instance_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_unhealthy_upgraded_instance_percent",
                     &self.r#max_unhealthy_upgraded_instance_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "maximum_surge_instances_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maximum_surge_instances_enabled",
                     &self.r#maximum_surge_instances_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "pause_time_between_batches".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pause_time_between_batches",
                     &self.r#pause_time_between_batches,
-                )
-                .await,
-            );
-            map.insert(
-                "prioritize_unhealthy_instances_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "prioritize_unhealthy_instances_enabled",
                     &self.r#prioritize_unhealthy_instances_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

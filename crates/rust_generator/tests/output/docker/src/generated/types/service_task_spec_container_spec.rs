@@ -98,163 +98,96 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "args".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "args",
                     &self.r#args,
-                )
-                .await,
-            );
-            map.insert(
-                "commands".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "commands",
                     &self.r#commands,
-                )
-                .await,
-            );
-            map.insert(
-                "configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "configs",
                     &self.r#configs,
-                )
-                .await,
-            );
-            map.insert(
-                "dir".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dir",
                     &self.r#dir,
-                )
-                .await,
-            );
-            map.insert(
-                "dns_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dns_config",
                     &self.r#dns_config,
-                )
-                .await,
-            );
-            map.insert(
-                "env".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "env",
                     &self.r#env,
-                )
-                .await,
-            );
-            map.insert(
-                "groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "groups",
                     &self.r#groups,
-                )
-                .await,
-            );
-            map.insert(
-                "healthcheck".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "healthcheck",
                     &self.r#healthcheck,
-                )
-                .await,
-            );
-            map.insert(
-                "hostname".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "hostname",
                     &self.r#hostname,
-                )
-                .await,
-            );
-            map.insert(
-                "hosts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "hosts",
                     &self.r#hosts,
-                )
-                .await,
-            );
-            map.insert(
-                "image".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "image",
                     &self.r#image,
-                )
-                .await,
-            );
-            map.insert(
-                "isolation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "isolation",
                     &self.r#isolation,
-                )
-                .await,
-            );
-            map.insert(
-                "labels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "labels",
                     &self.r#labels,
-                )
-                .await,
-            );
-            map.insert(
-                "mounts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mounts",
                     &self.r#mounts,
-                )
-                .await,
-            );
-            map.insert(
-                "privileges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "privileges",
                     &self.r#privileges,
-                )
-                .await,
-            );
-            map.insert(
-                "read_only".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "read_only",
                     &self.r#read_only,
-                )
-                .await,
-            );
-            map.insert(
-                "secrets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secrets",
                     &self.r#secrets,
-                )
-                .await,
-            );
-            map.insert(
-                "stop_grace_period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stop_grace_period",
                     &self.r#stop_grace_period,
-                )
-                .await,
-            );
-            map.insert(
-                "stop_signal".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stop_signal",
                     &self.r#stop_signal,
-                )
-                .await,
-            );
-            map.insert(
-                "sysctl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sysctl",
                     &self.r#sysctl,
-                )
-                .await,
-            );
-            map.insert(
-                "user".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user",
                     &self.r#user,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

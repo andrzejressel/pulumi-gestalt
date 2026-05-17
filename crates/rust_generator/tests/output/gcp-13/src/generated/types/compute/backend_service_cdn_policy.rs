@@ -70,86 +70,52 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "bypass_cache_on_request_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "bypass_cache_on_request_headers",
                     &self.r#bypass_cache_on_request_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_key_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_key_policy",
                     &self.r#cache_key_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_mode",
                     &self.r#cache_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "client_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_ttl",
                     &self.r#client_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "default_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_ttl",
                     &self.r#default_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "max_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_ttl",
                     &self.r#max_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "negative_caching".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "negative_caching",
                     &self.r#negative_caching,
-                )
-                .await,
-            );
-            map.insert(
-                "negative_caching_policies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "negative_caching_policies",
                     &self.r#negative_caching_policies,
-                )
-                .await,
-            );
-            map.insert(
-                "serve_while_stale".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "serve_while_stale",
                     &self.r#serve_while_stale,
-                )
-                .await,
-            );
-            map.insert(
-                "signed_url_cache_max_age_sec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "signed_url_cache_max_age_sec",
                     &self.r#signed_url_cache_max_age_sec,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

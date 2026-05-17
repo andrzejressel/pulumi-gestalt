@@ -63,86 +63,52 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Htt
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cors_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cors_policy",
                     &self.r#cors_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "destinations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destinations",
                     &self.r#destinations,
-                )
-                .await,
-            );
-            map.insert(
-                "fault_injection_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fault_injection_policy",
                     &self.r#fault_injection_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "redirect".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "redirect",
                     &self.r#redirect,
-                )
-                .await,
-            );
-            map.insert(
-                "request_header_modifier".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_header_modifier",
                     &self.r#request_header_modifier,
-                )
-                .await,
-            );
-            map.insert(
-                "request_mirror_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_mirror_policy",
                     &self.r#request_mirror_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "response_header_modifier".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "response_header_modifier",
                     &self.r#response_header_modifier,
-                )
-                .await,
-            );
-            map.insert(
-                "retry_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "retry_policy",
                     &self.r#retry_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timeout",
                     &self.r#timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "url_rewrite".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url_rewrite",
                     &self.r#url_rewrite,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -50,79 +50,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "adapter_property_override".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "adapter_property_override",
                     &self.r#adapter_property_override,
-                )
-                .await,
-            );
-            map.insert(
-                "adapter_property_override_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "adapter_property_override_enabled",
                     &self.r#adapter_property_override_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "adapters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "adapters",
                     &self.r#adapters,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "qos_policy_override".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "qos_policy_override",
                     &self.r#qos_policy_override,
-                )
-                .await,
-            );
-            map.insert(
-                "qos_policy_override_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "qos_policy_override_enabled",
                     &self.r#qos_policy_override_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "traffic_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "traffic_types",
                     &self.r#traffic_types,
-                )
-                .await,
-            );
-            map.insert(
-                "virtual_switch_configuration_override".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "virtual_switch_configuration_override",
                     &self.r#virtual_switch_configuration_override,
-                )
-                .await,
-            );
-            map.insert(
-                "virtual_switch_configuration_override_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "virtual_switch_configuration_override_enabled",
                     &self.r#virtual_switch_configuration_override_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -53,72 +53,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "backup_window".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "backup_window",
                     &self.r#backup_window,
-                )
-                .await,
-            );
-            map.insert(
-                "days_of_months".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "days_of_months",
                     &self.r#days_of_months,
-                )
-                .await,
-            );
-            map.insert(
-                "days_of_weeks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "days_of_weeks",
                     &self.r#days_of_weeks,
-                )
-                .await,
-            );
-            map.insert(
-                "hourly_frequency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "hourly_frequency",
                     &self.r#hourly_frequency,
-                )
-                .await,
-            );
-            map.insert(
-                "months".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "months",
                     &self.r#months,
-                )
-                .await,
-            );
-            map.insert(
-                "recurrence_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recurrence_type",
                     &self.r#recurrence_type,
-                )
-                .await,
-            );
-            map.insert(
-                "time_zone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "time_zone",
                     &self.r#time_zone,
-                )
-                .await,
-            );
-            map.insert(
-                "week_day_of_month".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "week_day_of_month",
                     &self.r#week_day_of_month,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

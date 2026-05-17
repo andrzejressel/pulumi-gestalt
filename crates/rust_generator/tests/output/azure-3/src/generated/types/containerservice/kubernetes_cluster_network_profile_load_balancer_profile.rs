@@ -52,72 +52,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "backend_pool_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "backend_pool_type",
                     &self.r#backend_pool_type,
-                )
-                .await,
-            );
-            map.insert(
-                "effective_outbound_ips".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "effective_outbound_ips",
                     &self.r#effective_outbound_ips,
-                )
-                .await,
-            );
-            map.insert(
-                "idle_timeout_in_minutes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "idle_timeout_in_minutes",
                     &self.r#idle_timeout_in_minutes,
-                )
-                .await,
-            );
-            map.insert(
-                "managed_outbound_ip_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "managed_outbound_ip_count",
                     &self.r#managed_outbound_ip_count,
-                )
-                .await,
-            );
-            map.insert(
-                "managed_outbound_ipv_6_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "managed_outbound_ipv_6_count",
                     &self.r#managed_outbound_ipv_6_count,
-                )
-                .await,
-            );
-            map.insert(
-                "outbound_ip_address_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "outbound_ip_address_ids",
                     &self.r#outbound_ip_address_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "outbound_ip_prefix_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "outbound_ip_prefix_ids",
                     &self.r#outbound_ip_prefix_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "outbound_ports_allocated".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "outbound_ports_allocated",
                     &self.r#outbound_ports_allocated,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

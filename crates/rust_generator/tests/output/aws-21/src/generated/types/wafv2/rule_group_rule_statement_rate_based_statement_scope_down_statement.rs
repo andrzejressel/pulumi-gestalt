@@ -60,102 +60,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "and_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "and_statement",
                     &self.r#and_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "byte_match_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "byte_match_statement",
                     &self.r#byte_match_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "geo_match_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "geo_match_statement",
                     &self.r#geo_match_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_set_reference_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_set_reference_statement",
                     &self.r#ip_set_reference_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "label_match_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "label_match_statement",
                     &self.r#label_match_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "not_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "not_statement",
                     &self.r#not_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "or_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "or_statement",
                     &self.r#or_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "regex_match_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "regex_match_statement",
                     &self.r#regex_match_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "regex_pattern_set_reference_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "regex_pattern_set_reference_statement",
                     &self.r#regex_pattern_set_reference_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "size_constraint_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "size_constraint_statement",
                     &self.r#size_constraint_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "sqli_match_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sqli_match_statement",
                     &self.r#sqli_match_statement,
-                )
-                .await,
-            );
-            map.insert(
-                "xss_match_statement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "xss_match_statement",
                     &self.r#xss_match_statement,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

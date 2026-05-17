@@ -48,72 +48,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "apex_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "apex_uri",
                     &self.r#apex_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "database_transforms_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "database_transforms_uri",
                     &self.r#database_transforms_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "graph_studio_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "graph_studio_uri",
                     &self.r#graph_studio_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "machine_learning_notebook_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "machine_learning_notebook_uri",
                     &self.r#machine_learning_notebook_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "machine_learning_user_management_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "machine_learning_user_management_uri",
                     &self.r#machine_learning_user_management_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "mongo_db_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mongo_db_uri",
                     &self.r#mongo_db_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "ords_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ords_uri",
                     &self.r#ords_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "sql_dev_web_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sql_dev_web_uri",
                     &self.r#sql_dev_web_uri,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

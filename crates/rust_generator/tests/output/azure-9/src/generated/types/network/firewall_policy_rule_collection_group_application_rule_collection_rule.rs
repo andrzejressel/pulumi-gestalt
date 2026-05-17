@@ -56,100 +56,60 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "description".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "description",
                     &self.r#description,
-                )
-                .await,
-            );
-            map.insert(
-                "destination_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination_addresses",
                     &self.r#destination_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "destination_fqdn_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination_fqdn_tags",
                     &self.r#destination_fqdn_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "destination_fqdns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination_fqdns",
                     &self.r#destination_fqdns,
-                )
-                .await,
-            );
-            map.insert(
-                "destination_urls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination_urls",
                     &self.r#destination_urls,
-                )
-                .await,
-            );
-            map.insert(
-                "http_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_headers",
                     &self.r#http_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "protocols".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "protocols",
                     &self.r#protocols,
-                )
-                .await,
-            );
-            map.insert(
-                "source_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "source_addresses",
                     &self.r#source_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "source_ip_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "source_ip_groups",
                     &self.r#source_ip_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "terminate_tls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "terminate_tls",
                     &self.r#terminate_tls,
-                )
-                .await,
-            );
-            map.insert(
-                "web_categories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "web_categories",
                     &self.r#web_categories,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

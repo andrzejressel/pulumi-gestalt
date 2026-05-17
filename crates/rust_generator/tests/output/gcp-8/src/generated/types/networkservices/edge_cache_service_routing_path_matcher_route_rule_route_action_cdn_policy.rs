@@ -107,100 +107,60 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "add_signatures".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "add_signatures",
                     &self.r#add_signatures,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_key_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_key_policy",
                     &self.r#cache_key_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_mode",
                     &self.r#cache_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "client_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_ttl",
                     &self.r#client_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "default_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_ttl",
                     &self.r#default_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "max_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_ttl",
                     &self.r#max_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "negative_caching".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "negative_caching",
                     &self.r#negative_caching,
-                )
-                .await,
-            );
-            map.insert(
-                "negative_caching_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "negative_caching_policy",
                     &self.r#negative_caching_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "signed_request_keyset".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "signed_request_keyset",
                     &self.r#signed_request_keyset,
-                )
-                .await,
-            );
-            map.insert(
-                "signed_request_maximum_expiration_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "signed_request_maximum_expiration_ttl",
                     &self.r#signed_request_maximum_expiration_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "signed_request_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "signed_request_mode",
                     &self.r#signed_request_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "signed_token_options".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "signed_token_options",
                     &self.r#signed_token_options,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

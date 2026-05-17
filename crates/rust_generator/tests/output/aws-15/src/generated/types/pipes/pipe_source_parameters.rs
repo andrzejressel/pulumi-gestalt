@@ -44,74 +44,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "activemq_broker_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "activemq_broker_parameters",
                     &self.r#activemq_broker_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "dynamodb_stream_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dynamodb_stream_parameters",
                     &self.r#dynamodb_stream_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "filter_criteria".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "filter_criteria",
                     &self.r#filter_criteria,
-                )
-                .await,
-            );
-            map.insert(
-                "kinesis_stream_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kinesis_stream_parameters",
                     &self.r#kinesis_stream_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "managed_streaming_kafka_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "managed_streaming_kafka_parameters",
                     &self.r#managed_streaming_kafka_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "rabbitmq_broker_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rabbitmq_broker_parameters",
                     &self.r#rabbitmq_broker_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "self_managed_kafka_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "self_managed_kafka_parameters",
                     &self.r#self_managed_kafka_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "sqs_queue_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sqs_queue_parameters",
                     &self.r#sqs_queue_parameters,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -55,51 +55,32 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "graceful_decommission_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "graceful_decommission_timeout",
                     &self.r#graceful_decommission_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_down_factor".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_down_factor",
                     &self.r#scale_down_factor,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_down_min_worker_fraction".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_down_min_worker_fraction",
                     &self.r#scale_down_min_worker_fraction,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_up_factor".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_up_factor",
                     &self.r#scale_up_factor,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_up_min_worker_fraction".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_up_min_worker_fraction",
                     &self.r#scale_up_min_worker_fraction,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

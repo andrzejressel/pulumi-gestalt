@@ -47,72 +47,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "app_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "app_id",
                     &self.r#app_id,
-                )
-                .await,
-            );
-            map.insert(
-                "app_installation_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "app_installation_id",
                     &self.r#app_installation_id,
-                )
-                .await,
-            );
-            map.insert(
-                "app_slug".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "app_slug",
                     &self.r#app_slug,
-                )
-                .await,
-            );
-            map.insert(
-                "host_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "host_uri",
                     &self.r#host_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "private_key_secret_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_key_secret_version",
                     &self.r#private_key_secret_version,
-                )
-                .await,
-            );
-            map.insert(
-                "service_directory_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_directory_config",
                     &self.r#service_directory_config,
-                )
-                .await,
-            );
-            map.insert(
-                "ssl_ca".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssl_ca",
                     &self.r#ssl_ca,
-                )
-                .await,
-            );
-            map.insert(
-                "webhook_secret_secret_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "webhook_secret_secret_version",
                     &self.r#webhook_secret_secret_version,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

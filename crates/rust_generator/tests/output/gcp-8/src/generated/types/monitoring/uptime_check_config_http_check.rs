@@ -77,114 +77,68 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "accepted_response_status_codes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "accepted_response_status_codes",
                     &self.r#accepted_response_status_codes,
-                )
-                .await,
-            );
-            map.insert(
-                "auth_info".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auth_info",
                     &self.r#auth_info,
-                )
-                .await,
-            );
-            map.insert(
-                "body".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "body",
                     &self.r#body,
-                )
-                .await,
-            );
-            map.insert(
-                "content_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "content_type",
                     &self.r#content_type,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_content_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_content_type",
                     &self.r#custom_content_type,
-                )
-                .await,
-            );
-            map.insert(
-                "headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "headers",
                     &self.r#headers,
-                )
-                .await,
-            );
-            map.insert(
-                "mask_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mask_headers",
                     &self.r#mask_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "path",
                     &self.r#path,
-                )
-                .await,
-            );
-            map.insert(
-                "ping_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ping_config",
                     &self.r#ping_config,
-                )
-                .await,
-            );
-            map.insert(
-                "port".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "port",
                     &self.r#port,
-                )
-                .await,
-            );
-            map.insert(
-                "request_method".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_method",
                     &self.r#request_method,
-                )
-                .await,
-            );
-            map.insert(
-                "service_agent_authentication".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_agent_authentication",
                     &self.r#service_agent_authentication,
-                )
-                .await,
-            );
-            map.insert(
-                "use_ssl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_ssl",
                     &self.r#use_ssl,
-                )
-                .await,
-            );
-            map.insert(
-                "validate_ssl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "validate_ssl",
                     &self.r#validate_ssl,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

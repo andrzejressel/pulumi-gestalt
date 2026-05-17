@@ -42,58 +42,36 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "max_concurrent_requests".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "max_concurrent_requests",
                     &self.r#max_concurrent_requests,
-                )
-                .await,
-            );
-            map.insert(
-                "max_idle_instances".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_idle_instances",
                     &self.r#max_idle_instances,
-                )
-                .await,
-            );
-            map.insert(
-                "max_pending_latency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_pending_latency",
                     &self.r#max_pending_latency,
-                )
-                .await,
-            );
-            map.insert(
-                "min_idle_instances".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_idle_instances",
                     &self.r#min_idle_instances,
-                )
-                .await,
-            );
-            map.insert(
-                "min_pending_latency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_pending_latency",
                     &self.r#min_pending_latency,
-                )
-                .await,
-            );
-            map.insert(
-                "standard_scheduler_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "standard_scheduler_settings",
                     &self.r#standard_scheduler_settings,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

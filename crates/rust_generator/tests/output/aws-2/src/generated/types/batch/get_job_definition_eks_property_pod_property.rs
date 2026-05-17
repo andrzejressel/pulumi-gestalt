@@ -47,81 +47,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "containers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "containers",
                     &self.r#containers,
-                )
-                .await,
-            );
-            map.insert(
-                "dns_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dns_policy",
                     &self.r#dns_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "host_network".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "host_network",
                     &self.r#host_network,
-                )
-                .await,
-            );
-            map.insert(
-                "image_pull_secrets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "image_pull_secrets",
                     &self.r#image_pull_secrets,
-                )
-                .await,
-            );
-            map.insert(
-                "init_containers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "init_containers",
                     &self.r#init_containers,
-                )
-                .await,
-            );
-            map.insert(
-                "metadatas".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metadatas",
                     &self.r#metadatas,
-                )
-                .await,
-            );
-            map.insert(
-                "service_account_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_account_name",
                     &self.r#service_account_name,
-                )
-                .await,
-            );
-            map.insert(
-                "share_process_namespace".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "share_process_namespace",
                     &self.r#share_process_namespace,
-                )
-                .await,
-            );
-            map.insert(
-                "volumes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "volumes",
                     &self.r#volumes,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

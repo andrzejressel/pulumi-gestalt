@@ -46,72 +46,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allow_all_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allow_all_headers",
                     &self.r#allow_all_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "allow_all_methods".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allow_all_methods",
                     &self.r#allow_all_methods,
-                )
-                .await,
-            );
-            map.insert(
-                "allow_all_origins".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allow_all_origins",
                     &self.r#allow_all_origins,
-                )
-                .await,
-            );
-            map.insert(
-                "allow_credentials".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allow_credentials",
                     &self.r#allow_credentials,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_headers",
                     &self.r#allowed_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_methods".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_methods",
                     &self.r#allowed_methods,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_origins".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_origins",
                     &self.r#allowed_origins,
-                )
-                .await,
-            );
-            map.insert(
-                "max_age".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_age",
                     &self.r#max_age,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

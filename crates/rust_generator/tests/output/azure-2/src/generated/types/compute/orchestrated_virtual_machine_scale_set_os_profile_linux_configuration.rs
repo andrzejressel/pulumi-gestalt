@@ -56,79 +56,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "admin_password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "admin_password",
                     &self.r#admin_password,
-                )
-                .await,
-            );
-            map.insert(
-                "admin_ssh_keys".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "admin_ssh_keys",
                     &self.r#admin_ssh_keys,
-                )
-                .await,
-            );
-            map.insert(
-                "admin_username".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "admin_username",
                     &self.r#admin_username,
-                )
-                .await,
-            );
-            map.insert(
-                "computer_name_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "computer_name_prefix",
                     &self.r#computer_name_prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_password_authentication".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_password_authentication",
                     &self.r#disable_password_authentication,
-                )
-                .await,
-            );
-            map.insert(
-                "patch_assessment_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "patch_assessment_mode",
                     &self.r#patch_assessment_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "patch_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "patch_mode",
                     &self.r#patch_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "provision_vm_agent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "provision_vm_agent",
                     &self.r#provision_vm_agent,
-                )
-                .await,
-            );
-            map.insert(
-                "secrets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secrets",
                     &self.r#secrets,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

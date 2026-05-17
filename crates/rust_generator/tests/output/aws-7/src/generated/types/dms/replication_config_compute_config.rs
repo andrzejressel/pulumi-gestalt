@@ -55,79 +55,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "availability_zone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "availability_zone",
                     &self.r#availability_zone,
-                )
-                .await,
-            );
-            map.insert(
-                "dns_name_servers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dns_name_servers",
                     &self.r#dns_name_servers,
-                )
-                .await,
-            );
-            map.insert(
-                "kms_key_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kms_key_id",
                     &self.r#kms_key_id,
-                )
-                .await,
-            );
-            map.insert(
-                "max_capacity_units".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_capacity_units",
                     &self.r#max_capacity_units,
-                )
-                .await,
-            );
-            map.insert(
-                "min_capacity_units".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_capacity_units",
                     &self.r#min_capacity_units,
-                )
-                .await,
-            );
-            map.insert(
-                "multi_az".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "multi_az",
                     &self.r#multi_az,
-                )
-                .await,
-            );
-            map.insert(
-                "preferred_maintenance_window".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preferred_maintenance_window",
                     &self.r#preferred_maintenance_window,
-                )
-                .await,
-            );
-            map.insert(
-                "replication_subnet_group_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "replication_subnet_group_id",
                     &self.r#replication_subnet_group_id,
-                )
-                .await,
-            );
-            map.insert(
-                "vpc_security_group_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vpc_security_group_ids",
                     &self.r#vpc_security_group_ids,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

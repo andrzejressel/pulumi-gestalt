@@ -123,121 +123,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cloudrun_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cloudrun_config",
                     &self.r#cloudrun_config,
-                )
-                .await,
-            );
-            map.insert(
-                "config_connector_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "config_connector_config",
                     &self.r#config_connector_config,
-                )
-                .await,
-            );
-            map.insert(
-                "dns_cache_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dns_cache_config",
                     &self.r#dns_cache_config,
-                )
-                .await,
-            );
-            map.insert(
-                "gce_persistent_disk_csi_driver_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gce_persistent_disk_csi_driver_config",
                     &self.r#gce_persistent_disk_csi_driver_config,
-                )
-                .await,
-            );
-            map.insert(
-                "gcp_filestore_csi_driver_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gcp_filestore_csi_driver_config",
                     &self.r#gcp_filestore_csi_driver_config,
-                )
-                .await,
-            );
-            map.insert(
-                "gcs_fuse_csi_driver_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gcs_fuse_csi_driver_config",
                     &self.r#gcs_fuse_csi_driver_config,
-                )
-                .await,
-            );
-            map.insert(
-                "gke_backup_agent_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gke_backup_agent_config",
                     &self.r#gke_backup_agent_config,
-                )
-                .await,
-            );
-            map.insert(
-                "horizontal_pod_autoscaling".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "horizontal_pod_autoscaling",
                     &self.r#horizontal_pod_autoscaling,
-                )
-                .await,
-            );
-            map.insert(
-                "http_load_balancing".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_load_balancing",
                     &self.r#http_load_balancing,
-                )
-                .await,
-            );
-            map.insert(
-                "istio_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "istio_config",
                     &self.r#istio_config,
-                )
-                .await,
-            );
-            map.insert(
-                "kalm_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kalm_config",
                     &self.r#kalm_config,
-                )
-                .await,
-            );
-            map.insert(
-                "network_policy_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_policy_config",
                     &self.r#network_policy_config,
-                )
-                .await,
-            );
-            map.insert(
-                "parallelstore_csi_driver_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "parallelstore_csi_driver_config",
                     &self.r#parallelstore_csi_driver_config,
-                )
-                .await,
-            );
-            map.insert(
-                "ray_operator_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ray_operator_configs",
                     &self.r#ray_operator_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "stateful_ha_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stateful_ha_config",
                     &self.r#stateful_ha_config,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

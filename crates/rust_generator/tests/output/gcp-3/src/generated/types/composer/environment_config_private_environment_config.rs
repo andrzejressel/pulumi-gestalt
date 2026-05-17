@@ -46,72 +46,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cloud_composer_connection_subnetwork".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cloud_composer_connection_subnetwork",
                     &self.r#cloud_composer_connection_subnetwork,
-                )
-                .await,
-            );
-            map.insert(
-                "cloud_composer_network_ipv_4_cidr_block".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cloud_composer_network_ipv_4_cidr_block",
                     &self.r#cloud_composer_network_ipv_4_cidr_block,
-                )
-                .await,
-            );
-            map.insert(
-                "cloud_sql_ipv_4_cidr_block".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cloud_sql_ipv_4_cidr_block",
                     &self.r#cloud_sql_ipv_4_cidr_block,
-                )
-                .await,
-            );
-            map.insert(
-                "connection_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connection_type",
                     &self.r#connection_type,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_private_endpoint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_private_endpoint",
                     &self.r#enable_private_endpoint,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_privately_used_public_ips".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_privately_used_public_ips",
                     &self.r#enable_privately_used_public_ips,
-                )
-                .await,
-            );
-            map.insert(
-                "master_ipv_4_cidr_block".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "master_ipv_4_cidr_block",
                     &self.r#master_ipv_4_cidr_block,
-                )
-                .await,
-            );
-            map.insert(
-                "web_server_ipv_4_cidr_block".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "web_server_ipv_4_cidr_block",
                     &self.r#web_server_ipv_4_cidr_block,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

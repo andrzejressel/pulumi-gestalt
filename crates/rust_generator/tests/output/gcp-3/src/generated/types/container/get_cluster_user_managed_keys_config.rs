@@ -46,72 +46,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "aggregation_ca".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "aggregation_ca",
                     &self.r#aggregation_ca,
-                )
-                .await,
-            );
-            map.insert(
-                "cluster_ca".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cluster_ca",
                     &self.r#cluster_ca,
-                )
-                .await,
-            );
-            map.insert(
-                "control_plane_disk_encryption_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "control_plane_disk_encryption_key",
                     &self.r#control_plane_disk_encryption_key,
-                )
-                .await,
-            );
-            map.insert(
-                "etcd_api_ca".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "etcd_api_ca",
                     &self.r#etcd_api_ca,
-                )
-                .await,
-            );
-            map.insert(
-                "etcd_peer_ca".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "etcd_peer_ca",
                     &self.r#etcd_peer_ca,
-                )
-                .await,
-            );
-            map.insert(
-                "gkeops_etcd_backup_encryption_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gkeops_etcd_backup_encryption_key",
                     &self.r#gkeops_etcd_backup_encryption_key,
-                )
-                .await,
-            );
-            map.insert(
-                "service_account_signing_keys".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_account_signing_keys",
                     &self.r#service_account_signing_keys,
-                )
-                .await,
-            );
-            map.insert(
-                "service_account_verification_keys".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_account_verification_keys",
                     &self.r#service_account_verification_keys,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

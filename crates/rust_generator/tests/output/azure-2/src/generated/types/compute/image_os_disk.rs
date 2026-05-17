@@ -46,72 +46,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "blob_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "blob_uri",
                     &self.r#blob_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "caching".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "caching",
                     &self.r#caching,
-                )
-                .await,
-            );
-            map.insert(
-                "disk_encryption_set_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disk_encryption_set_id",
                     &self.r#disk_encryption_set_id,
-                )
-                .await,
-            );
-            map.insert(
-                "managed_disk_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "managed_disk_id",
                     &self.r#managed_disk_id,
-                )
-                .await,
-            );
-            map.insert(
-                "os_state".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "os_state",
                     &self.r#os_state,
-                )
-                .await,
-            );
-            map.insert(
-                "os_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "os_type",
                     &self.r#os_type,
-                )
-                .await,
-            );
-            map.insert(
-                "size_gb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "size_gb",
                     &self.r#size_gb,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_type",
                     &self.r#storage_type,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -76,107 +76,64 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "docker_image_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "docker_image_name",
                     &self.r#docker_image_name,
-                )
-                .await,
-            );
-            map.insert(
-                "docker_registry_password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "docker_registry_password",
                     &self.r#docker_registry_password,
-                )
-                .await,
-            );
-            map.insert(
-                "docker_registry_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "docker_registry_url",
                     &self.r#docker_registry_url,
-                )
-                .await,
-            );
-            map.insert(
-                "docker_registry_username".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "docker_registry_username",
                     &self.r#docker_registry_username,
-                )
-                .await,
-            );
-            map.insert(
-                "dotnet_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dotnet_version",
                     &self.r#dotnet_version,
-                )
-                .await,
-            );
-            map.insert(
-                "go_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "go_version",
                     &self.r#go_version,
-                )
-                .await,
-            );
-            map.insert(
-                "java_server".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "java_server",
                     &self.r#java_server,
-                )
-                .await,
-            );
-            map.insert(
-                "java_server_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "java_server_version",
                     &self.r#java_server_version,
-                )
-                .await,
-            );
-            map.insert(
-                "java_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "java_version",
                     &self.r#java_version,
-                )
-                .await,
-            );
-            map.insert(
-                "node_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "node_version",
                     &self.r#node_version,
-                )
-                .await,
-            );
-            map.insert(
-                "php_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "php_version",
                     &self.r#php_version,
-                )
-                .await,
-            );
-            map.insert(
-                "python_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "python_version",
                     &self.r#python_version,
-                )
-                .await,
-            );
-            map.insert(
-                "ruby_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ruby_version",
                     &self.r#ruby_version,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

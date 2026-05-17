@@ -56,95 +56,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mai
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cloudwatch_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cloudwatch_config",
                     &self.r#cloudwatch_config,
-                )
-                .await,
-            );
-            map.insert(
-                "comment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "comment",
                     &self.r#comment,
-                )
-                .await,
-            );
-            map.insert(
-                "document_hash".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "document_hash",
                     &self.r#document_hash,
-                )
-                .await,
-            );
-            map.insert(
-                "document_hash_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "document_hash_type",
                     &self.r#document_hash_type,
-                )
-                .await,
-            );
-            map.insert(
-                "document_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "document_version",
                     &self.r#document_version,
-                )
-                .await,
-            );
-            map.insert(
-                "notification_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "notification_config",
                     &self.r#notification_config,
-                )
-                .await,
-            );
-            map.insert(
-                "output_s_3_bucket".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "output_s_3_bucket",
                     &self.r#output_s_3_bucket,
-                )
-                .await,
-            );
-            map.insert(
-                "output_s_3_key_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "output_s_3_key_prefix",
                     &self.r#output_s_3_key_prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "parameters",
                     &self.r#parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "service_role_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_role_arn",
                     &self.r#service_role_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "timeout_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timeout_seconds",
                     &self.r#timeout_seconds,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

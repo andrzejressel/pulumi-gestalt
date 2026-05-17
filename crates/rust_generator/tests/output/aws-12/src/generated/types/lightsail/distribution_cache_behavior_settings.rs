@@ -44,74 +44,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allowed_http_methods".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allowed_http_methods",
                     &self.r#allowed_http_methods,
-                )
-                .await,
-            );
-            map.insert(
-                "cached_http_methods".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cached_http_methods",
                     &self.r#cached_http_methods,
-                )
-                .await,
-            );
-            map.insert(
-                "default_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_ttl",
                     &self.r#default_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "forwarded_cookies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forwarded_cookies",
                     &self.r#forwarded_cookies,
-                )
-                .await,
-            );
-            map.insert(
-                "forwarded_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forwarded_headers",
                     &self.r#forwarded_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "forwarded_query_strings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forwarded_query_strings",
                     &self.r#forwarded_query_strings,
-                )
-                .await,
-            );
-            map.insert(
-                "maximum_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maximum_ttl",
                     &self.r#maximum_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "minimum_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimum_ttl",
                     &self.r#minimum_ttl,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -77,128 +77,76 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "container_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "container_type",
                     &self.r#container_type,
-                )
-                .await,
-            );
-            map.insert(
-                "dimensions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dimensions",
                     &self.r#dimensions,
-                )
-                .await,
-            );
-            map.insert(
-                "dimensions_infos".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dimensions_infos",
                     &self.r#dimensions_infos,
-                )
-                .await,
-            );
-            map.insert(
-                "is_concurrent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_concurrent",
                     &self.r#is_concurrent,
-                )
-                .await,
-            );
-            map.insert(
-                "is_fixed".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_fixed",
                     &self.r#is_fixed,
-                )
-                .await,
-            );
-            map.insert(
-                "is_precise".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_precise",
                     &self.r#is_precise,
-                )
-                .await,
-            );
-            map.insert(
-                "metric".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metric",
                     &self.r#metric,
-                )
-                .await,
-            );
-            map.insert(
-                "metric_display_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metric_display_name",
                     &self.r#metric_display_name,
-                )
-                .await,
-            );
-            map.insert(
-                "metric_unit".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metric_unit",
                     &self.r#metric_unit,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "quota_display_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "quota_display_name",
                     &self.r#quota_display_name,
-                )
-                .await,
-            );
-            map.insert(
-                "quota_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "quota_id",
                     &self.r#quota_id,
-                )
-                .await,
-            );
-            map.insert(
-                "quota_increase_eligibilities".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "quota_increase_eligibilities",
                     &self.r#quota_increase_eligibilities,
-                )
-                .await,
-            );
-            map.insert(
-                "refresh_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "refresh_interval",
                     &self.r#refresh_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "service".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service",
                     &self.r#service,
-                )
-                .await,
-            );
-            map.insert(
-                "service_request_quota_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_request_quota_uri",
                     &self.r#service_request_quota_uri,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -42,65 +42,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "encryption_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "encryption_enabled",
                     &self.r#encryption_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "encryption_password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encryption_password",
                     &self.r#encryption_password,
-                )
-                .await,
-            );
-            map.insert(
-                "manual_schedule".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "manual_schedule",
                     &self.r#manual_schedule,
-                )
-                .await,
-            );
-            map.insert(
-                "retention_period_in_days".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "retention_period_in_days",
                     &self.r#retention_period_in_days,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_account_access_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_account_access_key",
                     &self.r#storage_account_access_key,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_blob_endpoint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_blob_endpoint",
                     &self.r#storage_blob_endpoint,
-                )
-                .await,
-            );
-            map.insert(
-                "system_databases_backup_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "system_databases_backup_enabled",
                     &self.r#system_databases_backup_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

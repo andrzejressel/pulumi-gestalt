@@ -39,67 +39,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "copy_access_control_lists_for_topics".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "copy_access_control_lists_for_topics",
                     &self.r#copy_access_control_lists_for_topics,
-                )
-                .await,
-            );
-            map.insert(
-                "copy_topic_configurations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "copy_topic_configurations",
                     &self.r#copy_topic_configurations,
-                )
-                .await,
-            );
-            map.insert(
-                "detect_and_copy_new_topics".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "detect_and_copy_new_topics",
                     &self.r#detect_and_copy_new_topics,
-                )
-                .await,
-            );
-            map.insert(
-                "starting_position".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "starting_position",
                     &self.r#starting_position,
-                )
-                .await,
-            );
-            map.insert(
-                "topic_name_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "topic_name_configuration",
                     &self.r#topic_name_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "topics_to_excludes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "topics_to_excludes",
                     &self.r#topics_to_excludes,
-                )
-                .await,
-            );
-            map.insert(
-                "topics_to_replicates".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "topics_to_replicates",
                     &self.r#topics_to_replicates,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

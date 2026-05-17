@@ -74,121 +74,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "bandwidth_mbps".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "bandwidth_mbps",
                     &self.r#bandwidth_mbps,
-                )
-                .await,
-            );
-            map.insert(
-                "bgp_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bgp_enabled",
                     &self.r#bgp_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "connection_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connection_mode",
                     &self.r#connection_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_bgp_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_bgp_addresses",
                     &self.r#custom_bgp_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "egress_nat_rule_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "egress_nat_rule_ids",
                     &self.r#egress_nat_rule_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "ingress_nat_rule_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ingress_nat_rule_ids",
                     &self.r#ingress_nat_rule_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "ipsec_policies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ipsec_policies",
                     &self.r#ipsec_policies,
-                )
-                .await,
-            );
-            map.insert(
-                "local_azure_ip_address_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "local_azure_ip_address_enabled",
                     &self.r#local_azure_ip_address_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "policy_based_traffic_selector_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "policy_based_traffic_selector_enabled",
                     &self.r#policy_based_traffic_selector_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "protocol".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "protocol",
                     &self.r#protocol,
-                )
-                .await,
-            );
-            map.insert(
-                "ratelimit_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ratelimit_enabled",
                     &self.r#ratelimit_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "route_weight".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "route_weight",
                     &self.r#route_weight,
-                )
-                .await,
-            );
-            map.insert(
-                "shared_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shared_key",
                     &self.r#shared_key,
-                )
-                .await,
-            );
-            map.insert(
-                "vpn_site_link_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vpn_site_link_id",
                     &self.r#vpn_site_link_id,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

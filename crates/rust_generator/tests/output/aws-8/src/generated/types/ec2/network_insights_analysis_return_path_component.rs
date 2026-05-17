@@ -59,121 +59,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "acl_rules".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "acl_rules",
                     &self.r#acl_rules,
-                )
-                .await,
-            );
-            map.insert(
-                "additional_details".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "additional_details",
                     &self.r#additional_details,
-                )
-                .await,
-            );
-            map.insert(
-                "attached_tos".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "attached_tos",
                     &self.r#attached_tos,
-                )
-                .await,
-            );
-            map.insert(
-                "components".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "components",
                     &self.r#components,
-                )
-                .await,
-            );
-            map.insert(
-                "destination_vpcs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination_vpcs",
                     &self.r#destination_vpcs,
-                )
-                .await,
-            );
-            map.insert(
-                "inbound_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "inbound_headers",
                     &self.r#inbound_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "outbound_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "outbound_headers",
                     &self.r#outbound_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "route_table_routes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "route_table_routes",
                     &self.r#route_table_routes,
-                )
-                .await,
-            );
-            map.insert(
-                "security_group_rules".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_group_rules",
                     &self.r#security_group_rules,
-                )
-                .await,
-            );
-            map.insert(
-                "sequence_number".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sequence_number",
                     &self.r#sequence_number,
-                )
-                .await,
-            );
-            map.insert(
-                "source_vpcs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "source_vpcs",
                     &self.r#source_vpcs,
-                )
-                .await,
-            );
-            map.insert(
-                "subnets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnets",
                     &self.r#subnets,
-                )
-                .await,
-            );
-            map.insert(
-                "transit_gateway_route_table_routes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "transit_gateway_route_table_routes",
                     &self.r#transit_gateway_route_table_routes,
-                )
-                .await,
-            );
-            map.insert(
-                "transit_gateways".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "transit_gateways",
                     &self.r#transit_gateways,
-                )
-                .await,
-            );
-            map.insert(
-                "vpcs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vpcs",
                     &self.r#vpcs,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

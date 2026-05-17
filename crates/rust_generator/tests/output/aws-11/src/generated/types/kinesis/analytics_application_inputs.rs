@@ -52,81 +52,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "id",
                     &self.r#id,
-                )
-                .await,
-            );
-            map.insert(
-                "kinesis_firehose".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kinesis_firehose",
                     &self.r#kinesis_firehose,
-                )
-                .await,
-            );
-            map.insert(
-                "kinesis_stream".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kinesis_stream",
                     &self.r#kinesis_stream,
-                )
-                .await,
-            );
-            map.insert(
-                "name_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name_prefix",
                     &self.r#name_prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "parallelism".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "parallelism",
                     &self.r#parallelism,
-                )
-                .await,
-            );
-            map.insert(
-                "processing_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "processing_configuration",
                     &self.r#processing_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "schema".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "schema",
                     &self.r#schema,
-                )
-                .await,
-            );
-            map.insert(
-                "starting_position_configurations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "starting_position_configurations",
                     &self.r#starting_position_configurations,
-                )
-                .await,
-            );
-            map.insert(
-                "stream_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stream_names",
                     &self.r#stream_names,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

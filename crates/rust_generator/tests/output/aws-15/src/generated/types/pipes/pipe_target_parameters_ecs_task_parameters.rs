@@ -72,123 +72,74 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "capacity_provider_strategies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "capacity_provider_strategies",
                     &self.r#capacity_provider_strategies,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_ecs_managed_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_ecs_managed_tags",
                     &self.r#enable_ecs_managed_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_execute_command".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_execute_command",
                     &self.r#enable_execute_command,
-                )
-                .await,
-            );
-            map.insert(
-                "group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "group",
                     &self.r#group,
-                )
-                .await,
-            );
-            map.insert(
-                "launch_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "launch_type",
                     &self.r#launch_type,
-                )
-                .await,
-            );
-            map.insert(
-                "network_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_configuration",
                     &self.r#network_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "overrides".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "overrides",
                     &self.r#overrides,
-                )
-                .await,
-            );
-            map.insert(
-                "placement_constraints".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "placement_constraints",
                     &self.r#placement_constraints,
-                )
-                .await,
-            );
-            map.insert(
-                "placement_strategies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "placement_strategies",
                     &self.r#placement_strategies,
-                )
-                .await,
-            );
-            map.insert(
-                "platform_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "platform_version",
                     &self.r#platform_version,
-                )
-                .await,
-            );
-            map.insert(
-                "propagate_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "propagate_tags",
                     &self.r#propagate_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "reference_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "reference_id",
                     &self.r#reference_id,
-                )
-                .await,
-            );
-            map.insert(
-                "tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tags",
                     &self.r#tags,
-                )
-                .await,
-            );
-            map.insert(
-                "task_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "task_count",
                     &self.r#task_count,
-                )
-                .await,
-            );
-            map.insert(
-                "task_definition_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "task_definition_arn",
                     &self.r#task_definition_arn,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -47,72 +47,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "dest_ip_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "dest_ip_ranges",
                     &self.r#dest_ip_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "dest_ports".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dest_ports",
                     &self.r#dest_ports,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_protocols".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_protocols",
                     &self.r#ip_protocols,
-                )
-                .await,
-            );
-            map.insert(
-                "src_asns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_asns",
                     &self.r#src_asns,
-                )
-                .await,
-            );
-            map.insert(
-                "src_ip_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_ip_ranges",
                     &self.r#src_ip_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "src_ports".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_ports",
                     &self.r#src_ports,
-                )
-                .await,
-            );
-            map.insert(
-                "src_region_codes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_region_codes",
                     &self.r#src_region_codes,
-                )
-                .await,
-            );
-            map.insert(
-                "user_defined_fields".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_defined_fields",
                     &self.r#user_defined_fields,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

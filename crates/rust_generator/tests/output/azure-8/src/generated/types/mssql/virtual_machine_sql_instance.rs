@@ -44,65 +44,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "adhoc_workloads_optimization_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "adhoc_workloads_optimization_enabled",
                     &self.r#adhoc_workloads_optimization_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "collation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "collation",
                     &self.r#collation,
-                )
-                .await,
-            );
-            map.insert(
-                "instant_file_initialization_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instant_file_initialization_enabled",
                     &self.r#instant_file_initialization_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "lock_pages_in_memory_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lock_pages_in_memory_enabled",
                     &self.r#lock_pages_in_memory_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "max_dop".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_dop",
                     &self.r#max_dop,
-                )
-                .await,
-            );
-            map.insert(
-                "max_server_memory_mb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_server_memory_mb",
                     &self.r#max_server_memory_mb,
-                )
-                .await,
-            );
-            map.insert(
-                "min_server_memory_mb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_server_memory_mb",
                     &self.r#min_server_memory_mb,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

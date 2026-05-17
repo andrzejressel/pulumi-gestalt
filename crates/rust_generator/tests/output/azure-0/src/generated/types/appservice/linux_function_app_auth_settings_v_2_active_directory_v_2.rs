@@ -68,100 +68,60 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allowed_applications".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allowed_applications",
                     &self.r#allowed_applications,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_audiences".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_audiences",
                     &self.r#allowed_audiences,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_groups",
                     &self.r#allowed_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_identities".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_identities",
                     &self.r#allowed_identities,
-                )
-                .await,
-            );
-            map.insert(
-                "client_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_id",
                     &self.r#client_id,
-                )
-                .await,
-            );
-            map.insert(
-                "client_secret_certificate_thumbprint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_secret_certificate_thumbprint",
                     &self.r#client_secret_certificate_thumbprint,
-                )
-                .await,
-            );
-            map.insert(
-                "client_secret_setting_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_secret_setting_name",
                     &self.r#client_secret_setting_name,
-                )
-                .await,
-            );
-            map.insert(
-                "jwt_allowed_client_applications".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "jwt_allowed_client_applications",
                     &self.r#jwt_allowed_client_applications,
-                )
-                .await,
-            );
-            map.insert(
-                "jwt_allowed_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "jwt_allowed_groups",
                     &self.r#jwt_allowed_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "login_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "login_parameters",
                     &self.r#login_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "tenant_auth_endpoint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tenant_auth_endpoint",
                     &self.r#tenant_auth_endpoint,
-                )
-                .await,
-            );
-            map.insert(
-                "www_authentication_disabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "www_authentication_disabled",
                     &self.r#www_authentication_disabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

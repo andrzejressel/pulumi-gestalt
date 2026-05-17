@@ -48,72 +48,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "access".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "access",
                     &self.r#access,
-                )
-                .await,
-            );
-            map.insert(
-                "anonymous_gid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "anonymous_gid",
                     &self.r#anonymous_gid,
-                )
-                .await,
-            );
-            map.insert(
-                "anonymous_uid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "anonymous_uid",
                     &self.r#anonymous_uid,
-                )
-                .await,
-            );
-            map.insert(
-                "filter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "filter",
                     &self.r#filter,
-                )
-                .await,
-            );
-            map.insert(
-                "root_squash_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "root_squash_enabled",
                     &self.r#root_squash_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "scope".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scope",
                     &self.r#scope,
-                )
-                .await,
-            );
-            map.insert(
-                "submount_access_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "submount_access_enabled",
                     &self.r#submount_access_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "suid_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "suid_enabled",
                     &self.r#suid_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -66,107 +66,64 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "application_ports".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "application_ports",
                     &self.r#application_ports,
-                )
-                .await,
-            );
-            map.insert(
-                "capacities".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "capacities",
                     &self.r#capacities,
-                )
-                .await,
-            );
-            map.insert(
-                "client_endpoint_port".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_endpoint_port",
                     &self.r#client_endpoint_port,
-                )
-                .await,
-            );
-            map.insert(
-                "durability_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "durability_level",
                     &self.r#durability_level,
-                )
-                .await,
-            );
-            map.insert(
-                "ephemeral_ports".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ephemeral_ports",
                     &self.r#ephemeral_ports,
-                )
-                .await,
-            );
-            map.insert(
-                "http_endpoint_port".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_endpoint_port",
                     &self.r#http_endpoint_port,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_count",
                     &self.r#instance_count,
-                )
-                .await,
-            );
-            map.insert(
-                "is_primary".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_primary",
                     &self.r#is_primary,
-                )
-                .await,
-            );
-            map.insert(
-                "is_stateless".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_stateless",
                     &self.r#is_stateless,
-                )
-                .await,
-            );
-            map.insert(
-                "multiple_availability_zones".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "multiple_availability_zones",
                     &self.r#multiple_availability_zones,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "placement_properties".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "placement_properties",
                     &self.r#placement_properties,
-                )
-                .await,
-            );
-            map.insert(
-                "reverse_proxy_endpoint_port".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "reverse_proxy_endpoint_port",
                     &self.r#reverse_proxy_endpoint_port,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

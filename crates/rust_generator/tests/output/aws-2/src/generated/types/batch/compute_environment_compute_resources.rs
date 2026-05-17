@@ -80,137 +80,82 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allocation_strategy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allocation_strategy",
                     &self.r#allocation_strategy,
-                )
-                .await,
-            );
-            map.insert(
-                "bid_percentage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bid_percentage",
                     &self.r#bid_percentage,
-                )
-                .await,
-            );
-            map.insert(
-                "desired_vcpus".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "desired_vcpus",
                     &self.r#desired_vcpus,
-                )
-                .await,
-            );
-            map.insert(
-                "ec_2_configurations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ec_2_configurations",
                     &self.r#ec_2_configurations,
-                )
-                .await,
-            );
-            map.insert(
-                "ec_2_key_pair".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ec_2_key_pair",
                     &self.r#ec_2_key_pair,
-                )
-                .await,
-            );
-            map.insert(
-                "image_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "image_id",
                     &self.r#image_id,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_role".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_role",
                     &self.r#instance_role,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_types",
                     &self.r#instance_types,
-                )
-                .await,
-            );
-            map.insert(
-                "launch_template".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "launch_template",
                     &self.r#launch_template,
-                )
-                .await,
-            );
-            map.insert(
-                "max_vcpus".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_vcpus",
                     &self.r#max_vcpus,
-                )
-                .await,
-            );
-            map.insert(
-                "min_vcpus".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_vcpus",
                     &self.r#min_vcpus,
-                )
-                .await,
-            );
-            map.insert(
-                "placement_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "placement_group",
                     &self.r#placement_group,
-                )
-                .await,
-            );
-            map.insert(
-                "security_group_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_group_ids",
                     &self.r#security_group_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "spot_iam_fleet_role".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "spot_iam_fleet_role",
                     &self.r#spot_iam_fleet_role,
-                )
-                .await,
-            );
-            map.insert(
-                "subnets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnets",
                     &self.r#subnets,
-                )
-                .await,
-            );
-            map.insert(
-                "tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tags",
                     &self.r#tags,
-                )
-                .await,
-            );
-            map.insert(
-                "type_".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "type_",
                     &self.r#type_,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -95,156 +95,92 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "airflow_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "airflow_uri",
                     &self.r#airflow_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "dag_gcs_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dag_gcs_prefix",
                     &self.r#dag_gcs_prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "data_retention_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_retention_configs",
                     &self.r#data_retention_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "database_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "database_configs",
                     &self.r#database_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_private_builds_only".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_private_builds_only",
                     &self.r#enable_private_builds_only,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_private_environment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_private_environment",
                     &self.r#enable_private_environment,
-                )
-                .await,
-            );
-            map.insert(
-                "encryption_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encryption_configs",
                     &self.r#encryption_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "environment_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "environment_size",
                     &self.r#environment_size,
-                )
-                .await,
-            );
-            map.insert(
-                "gke_cluster".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gke_cluster",
                     &self.r#gke_cluster,
-                )
-                .await,
-            );
-            map.insert(
-                "maintenance_windows".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maintenance_windows",
                     &self.r#maintenance_windows,
-                )
-                .await,
-            );
-            map.insert(
-                "master_authorized_networks_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "master_authorized_networks_configs",
                     &self.r#master_authorized_networks_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "node_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "node_configs",
                     &self.r#node_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "node_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "node_count",
                     &self.r#node_count,
-                )
-                .await,
-            );
-            map.insert(
-                "private_environment_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_environment_configs",
                     &self.r#private_environment_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "recovery_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recovery_configs",
                     &self.r#recovery_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "resilience_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resilience_mode",
                     &self.r#resilience_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "software_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "software_configs",
                     &self.r#software_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "web_server_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "web_server_configs",
                     &self.r#web_server_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "web_server_network_access_controls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "web_server_network_access_controls",
                     &self.r#web_server_network_access_controls,
-                )
-                .await,
-            );
-            map.insert(
-                "workloads_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "workloads_configs",
                     &self.r#workloads_configs,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

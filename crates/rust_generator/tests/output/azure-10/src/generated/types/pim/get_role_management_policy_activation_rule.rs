@@ -42,65 +42,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "approval_stages".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "approval_stages",
                     &self.r#approval_stages,
-                )
-                .await,
-            );
-            map.insert(
-                "maximum_duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maximum_duration",
                     &self.r#maximum_duration,
-                )
-                .await,
-            );
-            map.insert(
-                "require_approval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_approval",
                     &self.r#require_approval,
-                )
-                .await,
-            );
-            map.insert(
-                "require_justification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_justification",
                     &self.r#require_justification,
-                )
-                .await,
-            );
-            map.insert(
-                "require_multifactor_authentication".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_multifactor_authentication",
                     &self.r#require_multifactor_authentication,
-                )
-                .await,
-            );
-            map.insert(
-                "require_ticket_info".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_ticket_info",
                     &self.r#require_ticket_info,
-                )
-                .await,
-            );
-            map.insert(
-                "required_conditional_access_authentication_context".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "required_conditional_access_authentication_context",
                     &self.r#required_conditional_access_authentication_context,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

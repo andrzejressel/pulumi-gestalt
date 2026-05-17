@@ -72,128 +72,76 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "advanced_month_days".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "advanced_month_days",
                     &self.r#advanced_month_days,
-                )
-                .await,
-            );
-            map.insert(
-                "advanced_week_days".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "advanced_week_days",
                     &self.r#advanced_week_days,
-                )
-                .await,
-            );
-            map.insert(
-                "creation_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "creation_time",
                     &self.r#creation_time,
-                )
-                .await,
-            );
-            map.insert(
-                "description".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "description",
                     &self.r#description,
-                )
-                .await,
-            );
-            map.insert(
-                "expiry_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "expiry_time",
                     &self.r#expiry_time,
-                )
-                .await,
-            );
-            map.insert(
-                "expiry_time_offset_minutes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "expiry_time_offset_minutes",
                     &self.r#expiry_time_offset_minutes,
-                )
-                .await,
-            );
-            map.insert(
-                "frequency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "frequency",
                     &self.r#frequency,
-                )
-                .await,
-            );
-            map.insert(
-                "interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "interval",
                     &self.r#interval,
-                )
-                .await,
-            );
-            map.insert(
-                "is_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_enabled",
                     &self.r#is_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "last_modified_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "last_modified_time",
                     &self.r#last_modified_time,
-                )
-                .await,
-            );
-            map.insert(
-                "monthly_occurrence".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "monthly_occurrence",
                     &self.r#monthly_occurrence,
-                )
-                .await,
-            );
-            map.insert(
-                "next_run".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_run",
                     &self.r#next_run,
-                )
-                .await,
-            );
-            map.insert(
-                "next_run_offset_minutes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_run_offset_minutes",
                     &self.r#next_run_offset_minutes,
-                )
-                .await,
-            );
-            map.insert(
-                "start_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "start_time",
                     &self.r#start_time,
-                )
-                .await,
-            );
-            map.insert(
-                "start_time_offset_minutes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "start_time_offset_minutes",
                     &self.r#start_time_offset_minutes,
-                )
-                .await,
-            );
-            map.insert(
-                "time_zone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "time_zone",
                     &self.r#time_zone,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

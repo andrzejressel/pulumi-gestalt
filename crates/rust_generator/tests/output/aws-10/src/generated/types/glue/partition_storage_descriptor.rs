@@ -60,102 +60,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Par
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "bucket_columns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "bucket_columns",
                     &self.r#bucket_columns,
-                )
-                .await,
-            );
-            map.insert(
-                "columns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "columns",
                     &self.r#columns,
-                )
-                .await,
-            );
-            map.insert(
-                "compressed".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "compressed",
                     &self.r#compressed,
-                )
-                .await,
-            );
-            map.insert(
-                "input_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_format",
                     &self.r#input_format,
-                )
-                .await,
-            );
-            map.insert(
-                "location".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "location",
                     &self.r#location,
-                )
-                .await,
-            );
-            map.insert(
-                "number_of_buckets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "number_of_buckets",
                     &self.r#number_of_buckets,
-                )
-                .await,
-            );
-            map.insert(
-                "output_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "output_format",
                     &self.r#output_format,
-                )
-                .await,
-            );
-            map.insert(
-                "parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "parameters",
                     &self.r#parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "ser_de_info".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ser_de_info",
                     &self.r#ser_de_info,
-                )
-                .await,
-            );
-            map.insert(
-                "skewed_info".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "skewed_info",
                     &self.r#skewed_info,
-                )
-                .await,
-            );
-            map.insert(
-                "sort_columns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sort_columns",
                     &self.r#sort_columns,
-                )
-                .await,
-            );
-            map.insert(
-                "stored_as_sub_directories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stored_as_sub_directories",
                     &self.r#stored_as_sub_directories,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

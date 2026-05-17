@@ -48,72 +48,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "archive_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "archive_uris",
                     &self.r#archive_uris,
-                )
-                .await,
-            );
-            map.insert(
-                "args".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "args",
                     &self.r#args,
-                )
-                .await,
-            );
-            map.insert(
-                "file_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "file_uris",
                     &self.r#file_uris,
-                )
-                .await,
-            );
-            map.insert(
-                "jar_file_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "jar_file_uris",
                     &self.r#jar_file_uris,
-                )
-                .await,
-            );
-            map.insert(
-                "logging_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "logging_config",
                     &self.r#logging_config,
-                )
-                .await,
-            );
-            map.insert(
-                "main_python_file_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "main_python_file_uri",
                     &self.r#main_python_file_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "properties".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "properties",
                     &self.r#properties,
-                )
-                .await,
-            );
-            map.insert(
-                "python_file_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "python_file_uris",
                     &self.r#python_file_uris,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

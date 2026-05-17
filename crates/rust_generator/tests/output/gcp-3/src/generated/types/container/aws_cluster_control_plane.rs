@@ -70,114 +70,68 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aws
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "aws_services_authentication".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "aws_services_authentication",
                     &self.r#aws_services_authentication,
-                )
-                .await,
-            );
-            map.insert(
-                "config_encryption".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "config_encryption",
                     &self.r#config_encryption,
-                )
-                .await,
-            );
-            map.insert(
-                "database_encryption".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "database_encryption",
                     &self.r#database_encryption,
-                )
-                .await,
-            );
-            map.insert(
-                "iam_instance_profile".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "iam_instance_profile",
                     &self.r#iam_instance_profile,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_placement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_placement",
                     &self.r#instance_placement,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_type",
                     &self.r#instance_type,
-                )
-                .await,
-            );
-            map.insert(
-                "main_volume".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "main_volume",
                     &self.r#main_volume,
-                )
-                .await,
-            );
-            map.insert(
-                "proxy_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "proxy_config",
                     &self.r#proxy_config,
-                )
-                .await,
-            );
-            map.insert(
-                "root_volume".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "root_volume",
                     &self.r#root_volume,
-                )
-                .await,
-            );
-            map.insert(
-                "security_group_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_group_ids",
                     &self.r#security_group_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "ssh_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssh_config",
                     &self.r#ssh_config,
-                )
-                .await,
-            );
-            map.insert(
-                "subnet_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnet_ids",
                     &self.r#subnet_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tags",
                     &self.r#tags,
-                )
-                .await,
-            );
-            map.insert(
-                "version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "version",
                     &self.r#version,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

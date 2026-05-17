@@ -50,79 +50,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "auto_deploy_confidence_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "auto_deploy_confidence_threshold",
                     &self.r#auto_deploy_confidence_threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "auto_deploy_expiration_sec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auto_deploy_expiration_sec",
                     &self.r#auto_deploy_expiration_sec,
-                )
-                .await,
-            );
-            map.insert(
-                "auto_deploy_impacted_baseline_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auto_deploy_impacted_baseline_threshold",
                     &self.r#auto_deploy_impacted_baseline_threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "auto_deploy_load_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auto_deploy_load_threshold",
                     &self.r#auto_deploy_load_threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "detection_absolute_qps".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "detection_absolute_qps",
                     &self.r#detection_absolute_qps,
-                )
-                .await,
-            );
-            map.insert(
-                "detection_load_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "detection_load_threshold",
                     &self.r#detection_load_threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "detection_relative_to_baseline_qps".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "detection_relative_to_baseline_qps",
                     &self.r#detection_relative_to_baseline_qps,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "traffic_granularity_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "traffic_granularity_configs",
                     &self.r#traffic_granularity_configs,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

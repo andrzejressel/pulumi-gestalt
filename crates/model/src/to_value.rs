@@ -2,6 +2,28 @@ use crate::output::NodeValue;
 use crate::{Output, PulumiValue, PulumiValueContent};
 use std::collections::{BTreeMap, HashMap, HashSet};
 
+pub type ToPulumiObjectFieldFuture<'a> = futures::future::LocalBoxFuture<'a, (String, PulumiValue)>;
+
+pub fn to_pulumi_object_field<'a, T>(
+    name: &'static str,
+    value: &'a T,
+) -> ToPulumiObjectFieldFuture<'a>
+where
+    T: ToPulumiValue + ?Sized + 'a,
+{
+    use futures::FutureExt;
+
+    async move { (name.to_string(), value.to_pulumi_value().await) }.boxed_local()
+}
+
+pub async fn to_pulumi_object_concurrent<'a>(
+    fields: Vec<ToPulumiObjectFieldFuture<'a>>,
+) -> PulumiValue {
+    let results = futures::future::join_all(fields).await;
+    let map: BTreeMap<String, PulumiValue> = results.into_iter().collect();
+    ToPulumiValue::to_pulumi_value(&map).await
+}
+
 pub trait ToPulumiValue {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue>;
 }

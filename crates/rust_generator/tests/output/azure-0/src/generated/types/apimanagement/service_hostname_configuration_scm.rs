@@ -64,93 +64,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "certificate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "certificate",
                     &self.r#certificate,
-                )
-                .await,
-            );
-            map.insert(
-                "certificate_password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "certificate_password",
                     &self.r#certificate_password,
-                )
-                .await,
-            );
-            map.insert(
-                "certificate_source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "certificate_source",
                     &self.r#certificate_source,
-                )
-                .await,
-            );
-            map.insert(
-                "certificate_status".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "certificate_status",
                     &self.r#certificate_status,
-                )
-                .await,
-            );
-            map.insert(
-                "expiry".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "expiry",
                     &self.r#expiry,
-                )
-                .await,
-            );
-            map.insert(
-                "host_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "host_name",
                     &self.r#host_name,
-                )
-                .await,
-            );
-            map.insert(
-                "key_vault_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "key_vault_id",
                     &self.r#key_vault_id,
-                )
-                .await,
-            );
-            map.insert(
-                "negotiate_client_certificate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "negotiate_client_certificate",
                     &self.r#negotiate_client_certificate,
-                )
-                .await,
-            );
-            map.insert(
-                "ssl_keyvault_identity_client_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssl_keyvault_identity_client_id",
                     &self.r#ssl_keyvault_identity_client_id,
-                )
-                .await,
-            );
-            map.insert(
-                "subject".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subject",
                     &self.r#subject,
-                )
-                .await,
-            );
-            map.insert(
-                "thumbprint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "thumbprint",
                     &self.r#thumbprint,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

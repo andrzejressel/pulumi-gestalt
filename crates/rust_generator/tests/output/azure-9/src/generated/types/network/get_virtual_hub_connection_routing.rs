@@ -38,58 +38,36 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "associated_route_table_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "associated_route_table_id",
                     &self.r#associated_route_table_id,
-                )
-                .await,
-            );
-            map.insert(
-                "inbound_route_map_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "inbound_route_map_id",
                     &self.r#inbound_route_map_id,
-                )
-                .await,
-            );
-            map.insert(
-                "outbound_route_map_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "outbound_route_map_id",
                     &self.r#outbound_route_map_id,
-                )
-                .await,
-            );
-            map.insert(
-                "propagated_route_tables".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "propagated_route_tables",
                     &self.r#propagated_route_tables,
-                )
-                .await,
-            );
-            map.insert(
-                "static_vnet_local_route_override_criteria".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "static_vnet_local_route_override_criteria",
                     &self.r#static_vnet_local_route_override_criteria,
-                )
-                .await,
-            );
-            map.insert(
-                "static_vnet_routes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "static_vnet_routes",
                     &self.r#static_vnet_routes,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

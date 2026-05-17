@@ -62,79 +62,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ekm
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "issuer".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "issuer",
                     &self.r#issuer,
-                )
-                .await,
-            );
-            map.insert(
-                "not_after_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "not_after_time",
                     &self.r#not_after_time,
-                )
-                .await,
-            );
-            map.insert(
-                "not_before_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "not_before_time",
                     &self.r#not_before_time,
-                )
-                .await,
-            );
-            map.insert(
-                "parsed".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "parsed",
                     &self.r#parsed,
-                )
-                .await,
-            );
-            map.insert(
-                "raw_der".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "raw_der",
                     &self.r#raw_der,
-                )
-                .await,
-            );
-            map.insert(
-                "serial_number".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "serial_number",
                     &self.r#serial_number,
-                )
-                .await,
-            );
-            map.insert(
-                "sha_256_fingerprint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sha_256_fingerprint",
                     &self.r#sha_256_fingerprint,
-                )
-                .await,
-            );
-            map.insert(
-                "subject".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subject",
                     &self.r#subject,
-                )
-                .await,
-            );
-            map.insert(
-                "subject_alternative_dns_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subject_alternative_dns_names",
                     &self.r#subject_alternative_dns_names,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

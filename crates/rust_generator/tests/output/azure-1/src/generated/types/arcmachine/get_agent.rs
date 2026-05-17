@@ -42,65 +42,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "extensions_allow_lists".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "extensions_allow_lists",
                     &self.r#extensions_allow_lists,
-                )
-                .await,
-            );
-            map.insert(
-                "extensions_block_lists".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "extensions_block_lists",
                     &self.r#extensions_block_lists,
-                )
-                .await,
-            );
-            map.insert(
-                "extensions_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "extensions_enabled",
                     &self.r#extensions_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "guest_configuration_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "guest_configuration_enabled",
                     &self.r#guest_configuration_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "incoming_connections_ports".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "incoming_connections_ports",
                     &self.r#incoming_connections_ports,
-                )
-                .await,
-            );
-            map.insert(
-                "proxy_bypasses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "proxy_bypasses",
                     &self.r#proxy_bypasses,
-                )
-                .await,
-            );
-            map.insert(
-                "proxy_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "proxy_url",
                     &self.r#proxy_url,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

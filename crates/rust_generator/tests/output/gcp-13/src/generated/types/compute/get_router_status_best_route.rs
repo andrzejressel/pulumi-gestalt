@@ -121,142 +121,84 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "description".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "description",
                     &self.r#description,
-                )
-                .await,
-            );
-            map.insert(
-                "dest_range".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dest_range",
                     &self.r#dest_range,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "network".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network",
                     &self.r#network,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_gateway".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_gateway",
                     &self.r#next_hop_gateway,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_ilb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_ilb",
                     &self.r#next_hop_ilb,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_instance".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_instance",
                     &self.r#next_hop_instance,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_instance_zone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_instance_zone",
                     &self.r#next_hop_instance_zone,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_inter_region_cost".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_inter_region_cost",
                     &self.r#next_hop_inter_region_cost,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_ip".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_ip",
                     &self.r#next_hop_ip,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_med".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_med",
                     &self.r#next_hop_med,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_network".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_network",
                     &self.r#next_hop_network,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_origin".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_origin",
                     &self.r#next_hop_origin,
-                )
-                .await,
-            );
-            map.insert(
-                "next_hop_vpn_tunnel".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "next_hop_vpn_tunnel",
                     &self.r#next_hop_vpn_tunnel,
-                )
-                .await,
-            );
-            map.insert(
-                "priority".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "priority",
                     &self.r#priority,
-                )
-                .await,
-            );
-            map.insert(
-                "project".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "project",
                     &self.r#project,
-                )
-                .await,
-            );
-            map.insert(
-                "self_link".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "self_link",
                     &self.r#self_link,
-                )
-                .await,
-            );
-            map.insert(
-                "tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tags",
                     &self.r#tags,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

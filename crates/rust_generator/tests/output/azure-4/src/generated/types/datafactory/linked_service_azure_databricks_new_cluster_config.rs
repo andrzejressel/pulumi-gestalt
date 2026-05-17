@@ -54,86 +54,52 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cluster_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cluster_version",
                     &self.r#cluster_version,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_tags",
                     &self.r#custom_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "driver_node_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "driver_node_type",
                     &self.r#driver_node_type,
-                )
-                .await,
-            );
-            map.insert(
-                "init_scripts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "init_scripts",
                     &self.r#init_scripts,
-                )
-                .await,
-            );
-            map.insert(
-                "log_destination".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "log_destination",
                     &self.r#log_destination,
-                )
-                .await,
-            );
-            map.insert(
-                "max_number_of_workers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_number_of_workers",
                     &self.r#max_number_of_workers,
-                )
-                .await,
-            );
-            map.insert(
-                "min_number_of_workers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_number_of_workers",
                     &self.r#min_number_of_workers,
-                )
-                .await,
-            );
-            map.insert(
-                "node_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "node_type",
                     &self.r#node_type,
-                )
-                .await,
-            );
-            map.insert(
-                "spark_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "spark_config",
                     &self.r#spark_config,
-                )
-                .await,
-            );
-            map.insert(
-                "spark_environment_variables".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "spark_environment_variables",
                     &self.r#spark_environment_variables,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

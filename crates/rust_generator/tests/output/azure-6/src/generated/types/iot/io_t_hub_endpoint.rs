@@ -70,107 +70,64 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "authentication_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "authentication_type",
                     &self.r#authentication_type,
-                )
-                .await,
-            );
-            map.insert(
-                "batch_frequency_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "batch_frequency_in_seconds",
                     &self.r#batch_frequency_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "connection_string".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connection_string",
                     &self.r#connection_string,
-                )
-                .await,
-            );
-            map.insert(
-                "container_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "container_name",
                     &self.r#container_name,
-                )
-                .await,
-            );
-            map.insert(
-                "encoding".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encoding",
                     &self.r#encoding,
-                )
-                .await,
-            );
-            map.insert(
-                "endpoint_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "endpoint_uri",
                     &self.r#endpoint_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "entity_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "entity_path",
                     &self.r#entity_path,
-                )
-                .await,
-            );
-            map.insert(
-                "file_name_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "file_name_format",
                     &self.r#file_name_format,
-                )
-                .await,
-            );
-            map.insert(
-                "identity_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "identity_id",
                     &self.r#identity_id,
-                )
-                .await,
-            );
-            map.insert(
-                "max_chunk_size_in_bytes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_chunk_size_in_bytes",
                     &self.r#max_chunk_size_in_bytes,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_group_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_group_name",
                     &self.r#resource_group_name,
-                )
-                .await,
-            );
-            map.insert(
-                "type_".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "type_",
                     &self.r#type_,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -54,79 +54,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "auto_delete".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "auto_delete",
                     &self.r#auto_delete,
-                )
-                .await,
-            );
-            map.insert(
-                "device_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "device_name",
                     &self.r#device_name,
-                )
-                .await,
-            );
-            map.insert(
-                "disk_encryption_key_raw".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disk_encryption_key_raw",
                     &self.r#disk_encryption_key_raw,
-                )
-                .await,
-            );
-            map.insert(
-                "disk_encryption_key_sha_256".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disk_encryption_key_sha_256",
                     &self.r#disk_encryption_key_sha_256,
-                )
-                .await,
-            );
-            map.insert(
-                "initialize_params".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "initialize_params",
                     &self.r#initialize_params,
-                )
-                .await,
-            );
-            map.insert(
-                "interface".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "interface",
                     &self.r#interface,
-                )
-                .await,
-            );
-            map.insert(
-                "kms_key_self_link".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kms_key_self_link",
                     &self.r#kms_key_self_link,
-                )
-                .await,
-            );
-            map.insert(
-                "mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mode",
                     &self.r#mode,
-                )
-                .await,
-            );
-            map.insert(
-                "source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "source",
                     &self.r#source,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

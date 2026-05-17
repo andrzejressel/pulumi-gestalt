@@ -48,65 +48,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cache_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cache_behavior",
                     &self.r#cache_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_duration",
                     &self.r#cache_duration,
-                )
-                .await,
-            );
-            map.insert(
-                "cdn_frontdoor_origin_group_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cdn_frontdoor_origin_group_id",
                     &self.r#cdn_frontdoor_origin_group_id,
-                )
-                .await,
-            );
-            map.insert(
-                "compression_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "compression_enabled",
                     &self.r#compression_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "forwarding_protocol".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forwarding_protocol",
                     &self.r#forwarding_protocol,
-                )
-                .await,
-            );
-            map.insert(
-                "query_string_caching_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "query_string_caching_behavior",
                     &self.r#query_string_caching_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "query_string_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "query_string_parameters",
                     &self.r#query_string_parameters,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

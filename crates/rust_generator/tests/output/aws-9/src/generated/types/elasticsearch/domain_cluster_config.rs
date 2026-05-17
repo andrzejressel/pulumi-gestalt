@@ -58,93 +58,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cold_storage_options".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cold_storage_options",
                     &self.r#cold_storage_options,
-                )
-                .await,
-            );
-            map.insert(
-                "dedicated_master_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dedicated_master_count",
                     &self.r#dedicated_master_count,
-                )
-                .await,
-            );
-            map.insert(
-                "dedicated_master_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dedicated_master_enabled",
                     &self.r#dedicated_master_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "dedicated_master_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dedicated_master_type",
                     &self.r#dedicated_master_type,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_count",
                     &self.r#instance_count,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_type",
                     &self.r#instance_type,
-                )
-                .await,
-            );
-            map.insert(
-                "warm_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "warm_count",
                     &self.r#warm_count,
-                )
-                .await,
-            );
-            map.insert(
-                "warm_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "warm_enabled",
                     &self.r#warm_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "warm_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "warm_type",
                     &self.r#warm_type,
-                )
-                .await,
-            );
-            map.insert(
-                "zone_awareness_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "zone_awareness_config",
                     &self.r#zone_awareness_config,
-                )
-                .await,
-            );
-            map.insert(
-                "zone_awareness_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "zone_awareness_enabled",
                     &self.r#zone_awareness_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

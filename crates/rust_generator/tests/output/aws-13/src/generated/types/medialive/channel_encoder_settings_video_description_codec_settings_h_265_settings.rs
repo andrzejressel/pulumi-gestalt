@@ -159,277 +159,162 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "adaptive_quantization".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "adaptive_quantization",
                     &self.r#adaptive_quantization,
-                )
-                .await,
-            );
-            map.insert(
-                "afd_signaling".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "afd_signaling",
                     &self.r#afd_signaling,
-                )
-                .await,
-            );
-            map.insert(
-                "alternative_transfer_function".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "alternative_transfer_function",
                     &self.r#alternative_transfer_function,
-                )
-                .await,
-            );
-            map.insert(
-                "bitrate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bitrate",
                     &self.r#bitrate,
-                )
-                .await,
-            );
-            map.insert(
-                "buf_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "buf_size",
                     &self.r#buf_size,
-                )
-                .await,
-            );
-            map.insert(
-                "color_metadata".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "color_metadata",
                     &self.r#color_metadata,
-                )
-                .await,
-            );
-            map.insert(
-                "color_space_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "color_space_settings",
                     &self.r#color_space_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "filter_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "filter_settings",
                     &self.r#filter_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "fixed_afd".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fixed_afd",
                     &self.r#fixed_afd,
-                )
-                .await,
-            );
-            map.insert(
-                "flicker_aq".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "flicker_aq",
                     &self.r#flicker_aq,
-                )
-                .await,
-            );
-            map.insert(
-                "framerate_denominator".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "framerate_denominator",
                     &self.r#framerate_denominator,
-                )
-                .await,
-            );
-            map.insert(
-                "framerate_numerator".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "framerate_numerator",
                     &self.r#framerate_numerator,
-                )
-                .await,
-            );
-            map.insert(
-                "gop_closed_cadence".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gop_closed_cadence",
                     &self.r#gop_closed_cadence,
-                )
-                .await,
-            );
-            map.insert(
-                "gop_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gop_size",
                     &self.r#gop_size,
-                )
-                .await,
-            );
-            map.insert(
-                "gop_size_units".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gop_size_units",
                     &self.r#gop_size_units,
-                )
-                .await,
-            );
-            map.insert(
-                "level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "level",
                     &self.r#level,
-                )
-                .await,
-            );
-            map.insert(
-                "look_ahead_rate_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "look_ahead_rate_control",
                     &self.r#look_ahead_rate_control,
-                )
-                .await,
-            );
-            map.insert(
-                "max_bitrate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_bitrate",
                     &self.r#max_bitrate,
-                )
-                .await,
-            );
-            map.insert(
-                "min_i_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_i_interval",
                     &self.r#min_i_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "min_qp".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_qp",
                     &self.r#min_qp,
-                )
-                .await,
-            );
-            map.insert(
-                "mv_over_picture_boundaries".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mv_over_picture_boundaries",
                     &self.r#mv_over_picture_boundaries,
-                )
-                .await,
-            );
-            map.insert(
-                "mv_temporal_predictor".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mv_temporal_predictor",
                     &self.r#mv_temporal_predictor,
-                )
-                .await,
-            );
-            map.insert(
-                "par_denominator".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "par_denominator",
                     &self.r#par_denominator,
-                )
-                .await,
-            );
-            map.insert(
-                "par_numerator".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "par_numerator",
                     &self.r#par_numerator,
-                )
-                .await,
-            );
-            map.insert(
-                "profile".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "profile",
                     &self.r#profile,
-                )
-                .await,
-            );
-            map.insert(
-                "qvbr_quality_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "qvbr_quality_level",
                     &self.r#qvbr_quality_level,
-                )
-                .await,
-            );
-            map.insert(
-                "rate_control_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rate_control_mode",
                     &self.r#rate_control_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "scan_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scan_type",
                     &self.r#scan_type,
-                )
-                .await,
-            );
-            map.insert(
-                "scene_change_detect".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scene_change_detect",
                     &self.r#scene_change_detect,
-                )
-                .await,
-            );
-            map.insert(
-                "slices".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "slices",
                     &self.r#slices,
-                )
-                .await,
-            );
-            map.insert(
-                "tier".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tier",
                     &self.r#tier,
-                )
-                .await,
-            );
-            map.insert(
-                "tile_height".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tile_height",
                     &self.r#tile_height,
-                )
-                .await,
-            );
-            map.insert(
-                "tile_padding".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tile_padding",
                     &self.r#tile_padding,
-                )
-                .await,
-            );
-            map.insert(
-                "tile_width".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tile_width",
                     &self.r#tile_width,
-                )
-                .await,
-            );
-            map.insert(
-                "timecode_burnin_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timecode_burnin_settings",
                     &self.r#timecode_burnin_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "timecode_insertion".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timecode_insertion",
                     &self.r#timecode_insertion,
-                )
-                .await,
-            );
-            map.insert(
-                "treeblock_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "treeblock_size",
                     &self.r#treeblock_size,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

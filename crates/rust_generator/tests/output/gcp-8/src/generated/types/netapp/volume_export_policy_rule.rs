@@ -59,93 +59,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "access_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "access_type",
                     &self.r#access_type,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_clients".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_clients",
                     &self.r#allowed_clients,
-                )
-                .await,
-            );
-            map.insert(
-                "has_root_access".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "has_root_access",
                     &self.r#has_root_access,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_read_only".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_read_only",
                     &self.r#kerberos_5_read_only,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_read_write".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_read_write",
                     &self.r#kerberos_5_read_write,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_i_read_only".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_i_read_only",
                     &self.r#kerberos_5_i_read_only,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_i_read_write".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_i_read_write",
                     &self.r#kerberos_5_i_read_write,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_p_read_only".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_p_read_only",
                     &self.r#kerberos_5_p_read_only,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_p_read_write".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_p_read_write",
                     &self.r#kerberos_5_p_read_write,
-                )
-                .await,
-            );
-            map.insert(
-                "nfsv_3".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "nfsv_3",
                     &self.r#nfsv_3,
-                )
-                .await,
-            );
-            map.insert(
-                "nfsv_4".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "nfsv_4",
                     &self.r#nfsv_4,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

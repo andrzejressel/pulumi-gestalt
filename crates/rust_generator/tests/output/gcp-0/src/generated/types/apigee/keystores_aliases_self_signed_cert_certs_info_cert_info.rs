@@ -70,93 +70,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "basic_constraints".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "basic_constraints",
                     &self.r#basic_constraints,
-                )
-                .await,
-            );
-            map.insert(
-                "expiry_date".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "expiry_date",
                     &self.r#expiry_date,
-                )
-                .await,
-            );
-            map.insert(
-                "is_valid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_valid",
                     &self.r#is_valid,
-                )
-                .await,
-            );
-            map.insert(
-                "issuer".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "issuer",
                     &self.r#issuer,
-                )
-                .await,
-            );
-            map.insert(
-                "public_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_key",
                     &self.r#public_key,
-                )
-                .await,
-            );
-            map.insert(
-                "serial_number".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "serial_number",
                     &self.r#serial_number,
-                )
-                .await,
-            );
-            map.insert(
-                "sig_alg_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sig_alg_name",
                     &self.r#sig_alg_name,
-                )
-                .await,
-            );
-            map.insert(
-                "subject".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subject",
                     &self.r#subject,
-                )
-                .await,
-            );
-            map.insert(
-                "subject_alternative_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subject_alternative_names",
                     &self.r#subject_alternative_names,
-                )
-                .await,
-            );
-            map.insert(
-                "valid_from".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "valid_from",
                     &self.r#valid_from,
-                )
-                .await,
-            );
-            map.insert(
-                "version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "version",
                     &self.r#version,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

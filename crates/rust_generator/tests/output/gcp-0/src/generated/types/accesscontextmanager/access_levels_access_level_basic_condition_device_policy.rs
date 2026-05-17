@@ -45,58 +45,36 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allowed_device_management_levels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allowed_device_management_levels",
                     &self.r#allowed_device_management_levels,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_encryption_statuses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_encryption_statuses",
                     &self.r#allowed_encryption_statuses,
-                )
-                .await,
-            );
-            map.insert(
-                "os_constraints".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "os_constraints",
                     &self.r#os_constraints,
-                )
-                .await,
-            );
-            map.insert(
-                "require_admin_approval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_admin_approval",
                     &self.r#require_admin_approval,
-                )
-                .await,
-            );
-            map.insert(
-                "require_corp_owned".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_corp_owned",
                     &self.r#require_corp_owned,
-                )
-                .await,
-            );
-            map.insert(
-                "require_screen_lock".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_screen_lock",
                     &self.r#require_screen_lock,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -55,86 +55,52 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "apt_repositories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "apt_repositories",
                     &self.r#apt_repositories,
-                )
-                .await,
-            );
-            map.insert(
-                "common_repositories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "common_repositories",
                     &self.r#common_repositories,
-                )
-                .await,
-            );
-            map.insert(
-                "description".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "description",
                     &self.r#description,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_upstream_validation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_upstream_validation",
                     &self.r#disable_upstream_validation,
-                )
-                .await,
-            );
-            map.insert(
-                "docker_repositories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "docker_repositories",
                     &self.r#docker_repositories,
-                )
-                .await,
-            );
-            map.insert(
-                "maven_repositories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maven_repositories",
                     &self.r#maven_repositories,
-                )
-                .await,
-            );
-            map.insert(
-                "npm_repositories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "npm_repositories",
                     &self.r#npm_repositories,
-                )
-                .await,
-            );
-            map.insert(
-                "python_repositories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "python_repositories",
                     &self.r#python_repositories,
-                )
-                .await,
-            );
-            map.insert(
-                "upstream_credentials".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "upstream_credentials",
                     &self.r#upstream_credentials,
-                )
-                .await,
-            );
-            map.insert(
-                "yum_repositories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "yum_repositories",
                     &self.r#yum_repositories,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

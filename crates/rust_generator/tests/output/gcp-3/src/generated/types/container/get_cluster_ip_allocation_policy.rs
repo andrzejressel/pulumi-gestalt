@@ -42,65 +42,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "additional_pod_ranges_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "additional_pod_ranges_configs",
                     &self.r#additional_pod_ranges_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "cluster_ipv_4_cidr_block".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cluster_ipv_4_cidr_block",
                     &self.r#cluster_ipv_4_cidr_block,
-                )
-                .await,
-            );
-            map.insert(
-                "cluster_secondary_range_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cluster_secondary_range_name",
                     &self.r#cluster_secondary_range_name,
-                )
-                .await,
-            );
-            map.insert(
-                "pod_cidr_overprovision_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pod_cidr_overprovision_configs",
                     &self.r#pod_cidr_overprovision_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "services_ipv_4_cidr_block".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "services_ipv_4_cidr_block",
                     &self.r#services_ipv_4_cidr_block,
-                )
-                .await,
-            );
-            map.insert(
-                "services_secondary_range_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "services_secondary_range_name",
                     &self.r#services_secondary_range_name,
-                )
-                .await,
-            );
-            map.insert(
-                "stack_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stack_type",
                     &self.r#stack_type,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

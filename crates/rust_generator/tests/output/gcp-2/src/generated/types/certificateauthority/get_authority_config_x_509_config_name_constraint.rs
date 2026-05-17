@@ -74,79 +74,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "critical".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "critical",
                     &self.r#critical,
-                )
-                .await,
-            );
-            map.insert(
-                "excluded_dns_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "excluded_dns_names",
                     &self.r#excluded_dns_names,
-                )
-                .await,
-            );
-            map.insert(
-                "excluded_email_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "excluded_email_addresses",
                     &self.r#excluded_email_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "excluded_ip_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "excluded_ip_ranges",
                     &self.r#excluded_ip_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "excluded_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "excluded_uris",
                     &self.r#excluded_uris,
-                )
-                .await,
-            );
-            map.insert(
-                "permitted_dns_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "permitted_dns_names",
                     &self.r#permitted_dns_names,
-                )
-                .await,
-            );
-            map.insert(
-                "permitted_email_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "permitted_email_addresses",
                     &self.r#permitted_email_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "permitted_ip_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "permitted_ip_ranges",
                     &self.r#permitted_ip_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "permitted_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "permitted_uris",
                     &self.r#permitted_uris,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

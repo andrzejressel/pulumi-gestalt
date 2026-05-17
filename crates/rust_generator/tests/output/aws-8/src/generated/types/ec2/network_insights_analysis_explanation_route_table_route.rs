@@ -44,86 +44,52 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "destination_cidr".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "destination_cidr",
                     &self.r#destination_cidr,
-                )
-                .await,
-            );
-            map.insert(
-                "destination_prefix_list_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination_prefix_list_id",
                     &self.r#destination_prefix_list_id,
-                )
-                .await,
-            );
-            map.insert(
-                "egress_only_internet_gateway_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "egress_only_internet_gateway_id",
                     &self.r#egress_only_internet_gateway_id,
-                )
-                .await,
-            );
-            map.insert(
-                "gateway_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gateway_id",
                     &self.r#gateway_id,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_id",
                     &self.r#instance_id,
-                )
-                .await,
-            );
-            map.insert(
-                "nat_gateway_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "nat_gateway_id",
                     &self.r#nat_gateway_id,
-                )
-                .await,
-            );
-            map.insert(
-                "network_interface_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_interface_id",
                     &self.r#network_interface_id,
-                )
-                .await,
-            );
-            map.insert(
-                "origin".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "origin",
                     &self.r#origin,
-                )
-                .await,
-            );
-            map.insert(
-                "transit_gateway_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "transit_gateway_id",
                     &self.r#transit_gateway_id,
-                )
-                .await,
-            );
-            map.insert(
-                "vpc_peering_connection_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vpc_peering_connection_id",
                     &self.r#vpc_peering_connection_id,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -44,86 +44,52 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "egress_nat_ip_address_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "egress_nat_ip_address_ids",
                     &self.r#egress_nat_ip_address_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "egress_nat_ip_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "egress_nat_ip_addresses",
                     &self.r#egress_nat_ip_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_of_trust_for_user_defined_routes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_of_trust_for_user_defined_routes",
                     &self.r#ip_of_trust_for_user_defined_routes,
-                )
-                .await,
-            );
-            map.insert(
-                "network_virtual_appliance_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_virtual_appliance_id",
                     &self.r#network_virtual_appliance_id,
-                )
-                .await,
-            );
-            map.insert(
-                "public_ip_address_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_ip_address_ids",
                     &self.r#public_ip_address_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "public_ip_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_ip_addresses",
                     &self.r#public_ip_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "trusted_address_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "trusted_address_ranges",
                     &self.r#trusted_address_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "trusted_subnet_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "trusted_subnet_id",
                     &self.r#trusted_subnet_id,
-                )
-                .await,
-            );
-            map.insert(
-                "untrusted_subnet_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "untrusted_subnet_id",
                     &self.r#untrusted_subnet_id,
-                )
-                .await,
-            );
-            map.insert(
-                "virtual_hub_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "virtual_hub_id",
                     &self.r#virtual_hub_id,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

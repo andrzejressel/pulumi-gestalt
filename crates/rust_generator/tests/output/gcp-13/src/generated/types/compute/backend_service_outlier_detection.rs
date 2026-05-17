@@ -86,93 +86,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "base_ejection_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "base_ejection_time",
                     &self.r#base_ejection_time,
-                )
-                .await,
-            );
-            map.insert(
-                "consecutive_errors".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "consecutive_errors",
                     &self.r#consecutive_errors,
-                )
-                .await,
-            );
-            map.insert(
-                "consecutive_gateway_failure".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "consecutive_gateway_failure",
                     &self.r#consecutive_gateway_failure,
-                )
-                .await,
-            );
-            map.insert(
-                "enforcing_consecutive_errors".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enforcing_consecutive_errors",
                     &self.r#enforcing_consecutive_errors,
-                )
-                .await,
-            );
-            map.insert(
-                "enforcing_consecutive_gateway_failure".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enforcing_consecutive_gateway_failure",
                     &self.r#enforcing_consecutive_gateway_failure,
-                )
-                .await,
-            );
-            map.insert(
-                "enforcing_success_rate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enforcing_success_rate",
                     &self.r#enforcing_success_rate,
-                )
-                .await,
-            );
-            map.insert(
-                "interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "interval",
                     &self.r#interval,
-                )
-                .await,
-            );
-            map.insert(
-                "max_ejection_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_ejection_percent",
                     &self.r#max_ejection_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "success_rate_minimum_hosts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "success_rate_minimum_hosts",
                     &self.r#success_rate_minimum_hosts,
-                )
-                .await,
-            );
-            map.insert(
-                "success_rate_request_volume".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "success_rate_request_volume",
                     &self.r#success_rate_request_volume,
-                )
-                .await,
-            );
-            map.insert(
-                "success_rate_stdev_factor".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "success_rate_stdev_factor",
                     &self.r#success_rate_stdev_factor,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

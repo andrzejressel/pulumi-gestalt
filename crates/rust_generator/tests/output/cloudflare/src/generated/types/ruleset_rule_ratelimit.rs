@@ -46,72 +46,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "characteristics".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "characteristics",
                     &self.r#characteristics,
-                )
-                .await,
-            );
-            map.insert(
-                "counting_expression".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "counting_expression",
                     &self.r#counting_expression,
-                )
-                .await,
-            );
-            map.insert(
-                "mitigation_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mitigation_timeout",
                     &self.r#mitigation_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "period",
                     &self.r#period,
-                )
-                .await,
-            );
-            map.insert(
-                "requests_per_period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "requests_per_period",
                     &self.r#requests_per_period,
-                )
-                .await,
-            );
-            map.insert(
-                "requests_to_origin".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "requests_to_origin",
                     &self.r#requests_to_origin,
-                )
-                .await,
-            );
-            map.insert(
-                "score_per_period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "score_per_period",
                     &self.r#score_per_period,
-                )
-                .await,
-            );
-            map.insert(
-                "score_response_header_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "score_response_header_name",
                     &self.r#score_response_header_name,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

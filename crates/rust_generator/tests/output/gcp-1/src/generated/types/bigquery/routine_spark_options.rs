@@ -60,86 +60,52 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "archive_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "archive_uris",
                     &self.r#archive_uris,
-                )
-                .await,
-            );
-            map.insert(
-                "connection".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connection",
                     &self.r#connection,
-                )
-                .await,
-            );
-            map.insert(
-                "container_image".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "container_image",
                     &self.r#container_image,
-                )
-                .await,
-            );
-            map.insert(
-                "file_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "file_uris",
                     &self.r#file_uris,
-                )
-                .await,
-            );
-            map.insert(
-                "jar_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "jar_uris",
                     &self.r#jar_uris,
-                )
-                .await,
-            );
-            map.insert(
-                "main_class".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "main_class",
                     &self.r#main_class,
-                )
-                .await,
-            );
-            map.insert(
-                "main_file_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "main_file_uri",
                     &self.r#main_file_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "properties".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "properties",
                     &self.r#properties,
-                )
-                .await,
-            );
-            map.insert(
-                "py_file_uris".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "py_file_uris",
                     &self.r#py_file_uris,
-                )
-                .await,
-            );
-            map.insert(
-                "runtime_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "runtime_version",
                     &self.r#runtime_version,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

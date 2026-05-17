@@ -66,107 +66,64 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "composer_internal_ipv_4_cidr_block".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "composer_internal_ipv_4_cidr_block",
                     &self.r#composer_internal_ipv_4_cidr_block,
-                )
-                .await,
-            );
-            map.insert(
-                "composer_network_attachment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "composer_network_attachment",
                     &self.r#composer_network_attachment,
-                )
-                .await,
-            );
-            map.insert(
-                "disk_size_gb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disk_size_gb",
                     &self.r#disk_size_gb,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_ip_masq_agent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_ip_masq_agent",
                     &self.r#enable_ip_masq_agent,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_allocation_policies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_allocation_policies",
                     &self.r#ip_allocation_policies,
-                )
-                .await,
-            );
-            map.insert(
-                "machine_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "machine_type",
                     &self.r#machine_type,
-                )
-                .await,
-            );
-            map.insert(
-                "max_pods_per_node".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_pods_per_node",
                     &self.r#max_pods_per_node,
-                )
-                .await,
-            );
-            map.insert(
-                "network".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network",
                     &self.r#network,
-                )
-                .await,
-            );
-            map.insert(
-                "oauth_scopes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "oauth_scopes",
                     &self.r#oauth_scopes,
-                )
-                .await,
-            );
-            map.insert(
-                "service_account".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_account",
                     &self.r#service_account,
-                )
-                .await,
-            );
-            map.insert(
-                "subnetwork".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnetwork",
                     &self.r#subnetwork,
-                )
-                .await,
-            );
-            map.insert(
-                "tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tags",
                     &self.r#tags,
-                )
-                .await,
-            );
-            map.insert(
-                "zone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "zone",
                     &self.r#zone,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

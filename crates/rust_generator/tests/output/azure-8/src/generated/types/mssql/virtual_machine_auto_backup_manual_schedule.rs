@@ -36,51 +36,32 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "days_of_weeks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "days_of_weeks",
                     &self.r#days_of_weeks,
-                )
-                .await,
-            );
-            map.insert(
-                "full_backup_frequency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "full_backup_frequency",
                     &self.r#full_backup_frequency,
-                )
-                .await,
-            );
-            map.insert(
-                "full_backup_start_hour".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "full_backup_start_hour",
                     &self.r#full_backup_start_hour,
-                )
-                .await,
-            );
-            map.insert(
-                "full_backup_window_in_hours".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "full_backup_window_in_hours",
                     &self.r#full_backup_window_in_hours,
-                )
-                .await,
-            );
-            map.insert(
-                "log_backup_frequency_in_minutes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "log_backup_frequency_in_minutes",
                     &self.r#log_backup_frequency_in_minutes,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

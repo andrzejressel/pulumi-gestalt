@@ -50,79 +50,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "delta_health_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "delta_health_policy",
                     &self.r#delta_health_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "force_restart_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "force_restart_enabled",
                     &self.r#force_restart_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "health_check_retry_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "health_check_retry_timeout",
                     &self.r#health_check_retry_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "health_check_stable_duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "health_check_stable_duration",
                     &self.r#health_check_stable_duration,
-                )
-                .await,
-            );
-            map.insert(
-                "health_check_wait_duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "health_check_wait_duration",
                     &self.r#health_check_wait_duration,
-                )
-                .await,
-            );
-            map.insert(
-                "health_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "health_policy",
                     &self.r#health_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "upgrade_domain_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "upgrade_domain_timeout",
                     &self.r#upgrade_domain_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "upgrade_replica_set_check_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "upgrade_replica_set_check_timeout",
                     &self.r#upgrade_replica_set_check_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "upgrade_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "upgrade_timeout",
                     &self.r#upgrade_timeout,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

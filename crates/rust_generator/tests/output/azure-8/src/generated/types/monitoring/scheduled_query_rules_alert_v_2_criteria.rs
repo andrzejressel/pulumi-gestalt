@@ -48,72 +48,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "dimensions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "dimensions",
                     &self.r#dimensions,
-                )
-                .await,
-            );
-            map.insert(
-                "failing_periods".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "failing_periods",
                     &self.r#failing_periods,
-                )
-                .await,
-            );
-            map.insert(
-                "metric_measure_column".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metric_measure_column",
                     &self.r#metric_measure_column,
-                )
-                .await,
-            );
-            map.insert(
-                "operator".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "operator",
                     &self.r#operator,
-                )
-                .await,
-            );
-            map.insert(
-                "query".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "query",
                     &self.r#query,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_id_column".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_id_column",
                     &self.r#resource_id_column,
-                )
-                .await,
-            );
-            map.insert(
-                "threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "threshold",
                     &self.r#threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "time_aggregation_method".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "time_aggregation_method",
                     &self.r#time_aggregation_method,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

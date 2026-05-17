@@ -86,142 +86,84 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "autonomous_virtual_machine_ds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "autonomous_virtual_machine_ds",
                     &self.r#autonomous_virtual_machine_ds,
-                )
-                .await,
-            );
-            map.insert(
-                "autonomous_vm_cluster_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "autonomous_vm_cluster_ids",
                     &self.r#autonomous_vm_cluster_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "compartment_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "compartment_id",
                     &self.r#compartment_id,
-                )
-                .await,
-            );
-            map.insert(
-                "cpu_core_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cpu_core_count",
                     &self.r#cpu_core_count,
-                )
-                .await,
-            );
-            map.insert(
-                "db_node_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "db_node_ids",
                     &self.r#db_node_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "db_node_storage_size_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "db_node_storage_size_in_gbs",
                     &self.r#db_node_storage_size_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "display_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "display_name",
                     &self.r#display_name,
-                )
-                .await,
-            );
-            map.insert(
-                "exadata_infrastructure_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "exadata_infrastructure_id",
                     &self.r#exadata_infrastructure_id,
-                )
-                .await,
-            );
-            map.insert(
-                "lifecycle_details".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lifecycle_details",
                     &self.r#lifecycle_details,
-                )
-                .await,
-            );
-            map.insert(
-                "lifecycle_state".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lifecycle_state",
                     &self.r#lifecycle_state,
-                )
-                .await,
-            );
-            map.insert(
-                "max_cpu_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_cpu_count",
                     &self.r#max_cpu_count,
-                )
-                .await,
-            );
-            map.insert(
-                "max_db_node_storage_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_db_node_storage_in_gbs",
                     &self.r#max_db_node_storage_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "max_memory_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_memory_in_gbs",
                     &self.r#max_memory_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "memory_size_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "memory_size_in_gbs",
                     &self.r#memory_size_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "ocid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ocid",
                     &self.r#ocid,
-                )
-                .await,
-            );
-            map.insert(
-                "shape".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shape",
                     &self.r#shape,
-                )
-                .await,
-            );
-            map.insert(
-                "time_created".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "time_created",
                     &self.r#time_created,
-                )
-                .await,
-            );
-            map.insert(
-                "vm_cluster_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vm_cluster_ids",
                     &self.r#vm_cluster_ids,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

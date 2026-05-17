@@ -92,158 +92,94 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "commands".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "commands",
                     &self.r#commands,
-                )
-                .await,
-            );
-            map.insert(
-                "environments".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "environments",
                     &self.r#environments,
-                )
-                .await,
-            );
-            map.insert(
-                "ephemeral_storages".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ephemeral_storages",
                     &self.r#ephemeral_storages,
-                )
-                .await,
-            );
-            map.insert(
-                "execution_role_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "execution_role_arn",
                     &self.r#execution_role_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "fargate_platform_configurations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fargate_platform_configurations",
                     &self.r#fargate_platform_configurations,
-                )
-                .await,
-            );
-            map.insert(
-                "image".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "image",
                     &self.r#image,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_type",
                     &self.r#instance_type,
-                )
-                .await,
-            );
-            map.insert(
-                "job_role_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "job_role_arn",
                     &self.r#job_role_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "linux_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "linux_parameters",
                     &self.r#linux_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "log_configurations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "log_configurations",
                     &self.r#log_configurations,
-                )
-                .await,
-            );
-            map.insert(
-                "mount_points".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mount_points",
                     &self.r#mount_points,
-                )
-                .await,
-            );
-            map.insert(
-                "network_configurations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_configurations",
                     &self.r#network_configurations,
-                )
-                .await,
-            );
-            map.insert(
-                "privileged".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "privileged",
                     &self.r#privileged,
-                )
-                .await,
-            );
-            map.insert(
-                "readonly_root_filesystem".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "readonly_root_filesystem",
                     &self.r#readonly_root_filesystem,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_requirements".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_requirements",
                     &self.r#resource_requirements,
-                )
-                .await,
-            );
-            map.insert(
-                "runtime_platforms".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "runtime_platforms",
                     &self.r#runtime_platforms,
-                )
-                .await,
-            );
-            map.insert(
-                "secrets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secrets",
                     &self.r#secrets,
-                )
-                .await,
-            );
-            map.insert(
-                "ulimits".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ulimits",
                     &self.r#ulimits,
-                )
-                .await,
-            );
-            map.insert(
-                "user".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user",
                     &self.r#user,
-                )
-                .await,
-            );
-            map.insert(
-                "volumes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "volumes",
                     &self.r#volumes,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

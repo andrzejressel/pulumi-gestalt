@@ -70,114 +70,68 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "create_auth_challenge".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "create_auth_challenge",
                     &self.r#create_auth_challenge,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_email_sender".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_email_sender",
                     &self.r#custom_email_sender,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_message".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_message",
                     &self.r#custom_message,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_sms_sender".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_sms_sender",
                     &self.r#custom_sms_sender,
-                )
-                .await,
-            );
-            map.insert(
-                "define_auth_challenge".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "define_auth_challenge",
                     &self.r#define_auth_challenge,
-                )
-                .await,
-            );
-            map.insert(
-                "kms_key_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kms_key_id",
                     &self.r#kms_key_id,
-                )
-                .await,
-            );
-            map.insert(
-                "post_authentication".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "post_authentication",
                     &self.r#post_authentication,
-                )
-                .await,
-            );
-            map.insert(
-                "post_confirmation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "post_confirmation",
                     &self.r#post_confirmation,
-                )
-                .await,
-            );
-            map.insert(
-                "pre_authentication".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pre_authentication",
                     &self.r#pre_authentication,
-                )
-                .await,
-            );
-            map.insert(
-                "pre_sign_up".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pre_sign_up",
                     &self.r#pre_sign_up,
-                )
-                .await,
-            );
-            map.insert(
-                "pre_token_generation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pre_token_generation",
                     &self.r#pre_token_generation,
-                )
-                .await,
-            );
-            map.insert(
-                "pre_token_generation_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pre_token_generation_config",
                     &self.r#pre_token_generation_config,
-                )
-                .await,
-            );
-            map.insert(
-                "user_migration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_migration",
                     &self.r#user_migration,
-                )
-                .await,
-            );
-            map.insert(
-                "verify_auth_challenge_response".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "verify_auth_challenge_response",
                     &self.r#verify_auth_challenge_response,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

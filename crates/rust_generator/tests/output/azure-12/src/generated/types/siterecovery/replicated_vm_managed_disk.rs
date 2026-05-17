@@ -44,65 +44,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "disk_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "disk_id",
                     &self.r#disk_id,
-                )
-                .await,
-            );
-            map.insert(
-                "staging_storage_account_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "staging_storage_account_id",
                     &self.r#staging_storage_account_id,
-                )
-                .await,
-            );
-            map.insert(
-                "target_disk_encryption".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_disk_encryption",
                     &self.r#target_disk_encryption,
-                )
-                .await,
-            );
-            map.insert(
-                "target_disk_encryption_set_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_disk_encryption_set_id",
                     &self.r#target_disk_encryption_set_id,
-                )
-                .await,
-            );
-            map.insert(
-                "target_disk_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_disk_type",
                     &self.r#target_disk_type,
-                )
-                .await,
-            );
-            map.insert(
-                "target_replica_disk_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_replica_disk_type",
                     &self.r#target_replica_disk_type,
-                )
-                .await,
-            );
-            map.insert(
-                "target_resource_group_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_resource_group_id",
                     &self.r#target_resource_group_id,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

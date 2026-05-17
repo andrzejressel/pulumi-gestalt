@@ -41,65 +41,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "dns_service_ip".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "dns_service_ip",
                     &self.r#dns_service_ip,
-                )
-                .await,
-            );
-            map.insert(
-                "docker_bridge_cidr".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "docker_bridge_cidr",
                     &self.r#docker_bridge_cidr,
-                )
-                .await,
-            );
-            map.insert(
-                "load_balancer_sku".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "load_balancer_sku",
                     &self.r#load_balancer_sku,
-                )
-                .await,
-            );
-            map.insert(
-                "network_plugin".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_plugin",
                     &self.r#network_plugin,
-                )
-                .await,
-            );
-            map.insert(
-                "network_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_policy",
                     &self.r#network_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "pod_cidr".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pod_cidr",
                     &self.r#pod_cidr,
-                )
-                .await,
-            );
-            map.insert(
-                "service_cidr".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_cidr",
                     &self.r#service_cidr,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

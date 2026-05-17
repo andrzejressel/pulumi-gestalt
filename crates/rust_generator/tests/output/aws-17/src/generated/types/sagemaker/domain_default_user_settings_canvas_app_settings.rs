@@ -43,74 +43,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "direct_deploy_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "direct_deploy_settings",
                     &self.r#direct_deploy_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "emr_serverless_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "emr_serverless_settings",
                     &self.r#emr_serverless_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "generative_ai_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "generative_ai_settings",
                     &self.r#generative_ai_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "identity_provider_oauth_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "identity_provider_oauth_settings",
                     &self.r#identity_provider_oauth_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "kendra_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kendra_settings",
                     &self.r#kendra_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "model_register_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "model_register_settings",
                     &self.r#model_register_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "time_series_forecasting_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "time_series_forecasting_settings",
                     &self.r#time_series_forecasting_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "workspace_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "workspace_settings",
                     &self.r#workspace_settings,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

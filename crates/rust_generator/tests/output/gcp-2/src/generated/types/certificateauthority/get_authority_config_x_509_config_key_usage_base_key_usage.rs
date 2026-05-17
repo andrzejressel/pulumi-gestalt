@@ -50,79 +50,48 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cert_sign".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cert_sign",
                     &self.r#cert_sign,
-                )
-                .await,
-            );
-            map.insert(
-                "content_commitment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "content_commitment",
                     &self.r#content_commitment,
-                )
-                .await,
-            );
-            map.insert(
-                "crl_sign".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "crl_sign",
                     &self.r#crl_sign,
-                )
-                .await,
-            );
-            map.insert(
-                "data_encipherment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_encipherment",
                     &self.r#data_encipherment,
-                )
-                .await,
-            );
-            map.insert(
-                "decipher_only".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "decipher_only",
                     &self.r#decipher_only,
-                )
-                .await,
-            );
-            map.insert(
-                "digital_signature".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "digital_signature",
                     &self.r#digital_signature,
-                )
-                .await,
-            );
-            map.insert(
-                "encipher_only".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encipher_only",
                     &self.r#encipher_only,
-                )
-                .await,
-            );
-            map.insert(
-                "key_agreement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "key_agreement",
                     &self.r#key_agreement,
-                )
-                .await,
-            );
-            map.insert(
-                "key_encipherment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "key_encipherment",
                     &self.r#key_encipherment,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

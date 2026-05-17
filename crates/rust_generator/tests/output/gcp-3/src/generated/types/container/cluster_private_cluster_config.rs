@@ -64,72 +64,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "enable_private_endpoint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "enable_private_endpoint",
                     &self.r#enable_private_endpoint,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_private_nodes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_private_nodes",
                     &self.r#enable_private_nodes,
-                )
-                .await,
-            );
-            map.insert(
-                "master_global_access_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "master_global_access_config",
                     &self.r#master_global_access_config,
-                )
-                .await,
-            );
-            map.insert(
-                "master_ipv_4_cidr_block".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "master_ipv_4_cidr_block",
                     &self.r#master_ipv_4_cidr_block,
-                )
-                .await,
-            );
-            map.insert(
-                "peering_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "peering_name",
                     &self.r#peering_name,
-                )
-                .await,
-            );
-            map.insert(
-                "private_endpoint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_endpoint",
                     &self.r#private_endpoint,
-                )
-                .await,
-            );
-            map.insert(
-                "private_endpoint_subnetwork".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_endpoint_subnetwork",
                     &self.r#private_endpoint_subnetwork,
-                )
-                .await,
-            );
-            map.insert(
-                "public_endpoint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_endpoint",
                     &self.r#public_endpoint,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

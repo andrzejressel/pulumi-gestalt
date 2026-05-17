@@ -86,100 +86,60 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "disk_size_gb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "disk_size_gb",
                     &self.r#disk_size_gb,
-                )
-                .await,
-            );
-            map.insert(
-                "dynamic_substitutions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dynamic_substitutions",
                     &self.r#dynamic_substitutions,
-                )
-                .await,
-            );
-            map.insert(
-                "envs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "envs",
                     &self.r#envs,
-                )
-                .await,
-            );
-            map.insert(
-                "log_streaming_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "log_streaming_option",
                     &self.r#log_streaming_option,
-                )
-                .await,
-            );
-            map.insert(
-                "logging".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "logging",
                     &self.r#logging,
-                )
-                .await,
-            );
-            map.insert(
-                "machine_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "machine_type",
                     &self.r#machine_type,
-                )
-                .await,
-            );
-            map.insert(
-                "requested_verify_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "requested_verify_option",
                     &self.r#requested_verify_option,
-                )
-                .await,
-            );
-            map.insert(
-                "secret_envs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secret_envs",
                     &self.r#secret_envs,
-                )
-                .await,
-            );
-            map.insert(
-                "source_provenance_hashes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "source_provenance_hashes",
                     &self.r#source_provenance_hashes,
-                )
-                .await,
-            );
-            map.insert(
-                "substitution_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "substitution_option",
                     &self.r#substitution_option,
-                )
-                .await,
-            );
-            map.insert(
-                "volumes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "volumes",
                     &self.r#volumes,
-                )
-                .await,
-            );
-            map.insert(
-                "worker_pool".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "worker_pool",
                     &self.r#worker_pool,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

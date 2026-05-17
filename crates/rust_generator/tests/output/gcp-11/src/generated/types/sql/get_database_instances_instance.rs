@@ -109,198 +109,116 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "available_maintenance_versions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "available_maintenance_versions",
                     &self.r#available_maintenance_versions,
-                )
-                .await,
-            );
-            map.insert(
-                "clones".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "clones",
                     &self.r#clones,
-                )
-                .await,
-            );
-            map.insert(
-                "connection_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connection_name",
                     &self.r#connection_name,
-                )
-                .await,
-            );
-            map.insert(
-                "database_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "database_version",
                     &self.r#database_version,
-                )
-                .await,
-            );
-            map.insert(
-                "deletion_protection".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "deletion_protection",
                     &self.r#deletion_protection,
-                )
-                .await,
-            );
-            map.insert(
-                "dns_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dns_name",
                     &self.r#dns_name,
-                )
-                .await,
-            );
-            map.insert(
-                "encryption_key_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encryption_key_name",
                     &self.r#encryption_key_name,
-                )
-                .await,
-            );
-            map.insert(
-                "first_ip_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "first_ip_address",
                     &self.r#first_ip_address,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_type",
                     &self.r#instance_type,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_addresses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_addresses",
                     &self.r#ip_addresses,
-                )
-                .await,
-            );
-            map.insert(
-                "maintenance_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maintenance_version",
                     &self.r#maintenance_version,
-                )
-                .await,
-            );
-            map.insert(
-                "master_instance_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "master_instance_name",
                     &self.r#master_instance_name,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "private_ip_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_ip_address",
                     &self.r#private_ip_address,
-                )
-                .await,
-            );
-            map.insert(
-                "project".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "project",
                     &self.r#project,
-                )
-                .await,
-            );
-            map.insert(
-                "psc_service_attachment_link".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "psc_service_attachment_link",
                     &self.r#psc_service_attachment_link,
-                )
-                .await,
-            );
-            map.insert(
-                "public_ip_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_ip_address",
                     &self.r#public_ip_address,
-                )
-                .await,
-            );
-            map.insert(
-                "region".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "region",
                     &self.r#region,
-                )
-                .await,
-            );
-            map.insert(
-                "replica_configurations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "replica_configurations",
                     &self.r#replica_configurations,
-                )
-                .await,
-            );
-            map.insert(
-                "replica_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "replica_names",
                     &self.r#replica_names,
-                )
-                .await,
-            );
-            map.insert(
-                "restore_backup_contexts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "restore_backup_contexts",
                     &self.r#restore_backup_contexts,
-                )
-                .await,
-            );
-            map.insert(
-                "root_password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "root_password",
                     &self.r#root_password,
-                )
-                .await,
-            );
-            map.insert(
-                "self_link".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "self_link",
                     &self.r#self_link,
-                )
-                .await,
-            );
-            map.insert(
-                "server_ca_certs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "server_ca_certs",
                     &self.r#server_ca_certs,
-                )
-                .await,
-            );
-            map.insert(
-                "service_account_email_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_account_email_address",
                     &self.r#service_account_email_address,
-                )
-                .await,
-            );
-            map.insert(
-                "settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "settings",
                     &self.r#settings,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

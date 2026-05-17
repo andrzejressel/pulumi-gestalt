@@ -94,156 +94,92 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "add_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "add_headers",
                     &self.r#add_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "allow_child_bypass".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allow_child_bypass",
                     &self.r#allow_child_bypass,
-                )
-                .await,
-            );
-            map.insert(
-                "audit_ssh".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "audit_ssh",
                     &self.r#audit_ssh,
-                )
-                .await,
-            );
-            map.insert(
-                "biso_admin_controls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "biso_admin_controls",
                     &self.r#biso_admin_controls,
-                )
-                .await,
-            );
-            map.insert(
-                "block_page_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "block_page_enabled",
                     &self.r#block_page_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "block_page_reason".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "block_page_reason",
                     &self.r#block_page_reason,
-                )
-                .await,
-            );
-            map.insert(
-                "bypass_parent_rule".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bypass_parent_rule",
                     &self.r#bypass_parent_rule,
-                )
-                .await,
-            );
-            map.insert(
-                "check_session".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "check_session",
                     &self.r#check_session,
-                )
-                .await,
-            );
-            map.insert(
-                "dns_resolvers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dns_resolvers",
                     &self.r#dns_resolvers,
-                )
-                .await,
-            );
-            map.insert(
-                "egress".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "egress",
                     &self.r#egress,
-                )
-                .await,
-            );
-            map.insert(
-                "ignore_cname_category_matches".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ignore_cname_category_matches",
                     &self.r#ignore_cname_category_matches,
-                )
-                .await,
-            );
-            map.insert(
-                "insecure_disable_dnssec_validation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "insecure_disable_dnssec_validation",
                     &self.r#insecure_disable_dnssec_validation,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_categories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_categories",
                     &self.r#ip_categories,
-                )
-                .await,
-            );
-            map.insert(
-                "l_4_override".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "l_4_override",
                     &self.r#l_4_override,
-                )
-                .await,
-            );
-            map.insert(
-                "notification_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "notification_settings",
                     &self.r#notification_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "override_host".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "override_host",
                     &self.r#override_host,
-                )
-                .await,
-            );
-            map.insert(
-                "override_ips".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "override_ips",
                     &self.r#override_ips,
-                )
-                .await,
-            );
-            map.insert(
-                "payload_log".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "payload_log",
                     &self.r#payload_log,
-                )
-                .await,
-            );
-            map.insert(
-                "resolve_dns_through_cloudflare".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resolve_dns_through_cloudflare",
                     &self.r#resolve_dns_through_cloudflare,
-                )
-                .await,
-            );
-            map.insert(
-                "untrusted_cert".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "untrusted_cert",
                     &self.r#untrusted_cert,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

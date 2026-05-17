@@ -31,44 +31,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "delete_objects_from_source_after_transfer".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "delete_objects_from_source_after_transfer",
                     &self.r#delete_objects_from_source_after_transfer,
-                )
-                .await,
-            );
-            map.insert(
-                "delete_objects_unique_in_sink".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "delete_objects_unique_in_sink",
                     &self.r#delete_objects_unique_in_sink,
-                )
-                .await,
-            );
-            map.insert(
-                "overwrite_objects_already_existing_in_sink".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "overwrite_objects_already_existing_in_sink",
                     &self.r#overwrite_objects_already_existing_in_sink,
-                )
-                .await,
-            );
-            map.insert(
-                "overwrite_when".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "overwrite_when",
                     &self.r#overwrite_when,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

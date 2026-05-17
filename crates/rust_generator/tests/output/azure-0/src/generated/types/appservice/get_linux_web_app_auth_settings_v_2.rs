@@ -102,170 +102,100 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "active_directory_v_2_s".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "active_directory_v_2_s",
                     &self.r#active_directory_v_2_s,
-                )
-                .await,
-            );
-            map.insert(
-                "apple_v_2_s".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "apple_v_2_s",
                     &self.r#apple_v_2_s,
-                )
-                .await,
-            );
-            map.insert(
-                "auth_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auth_enabled",
                     &self.r#auth_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "azure_static_web_app_v_2_s".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "azure_static_web_app_v_2_s",
                     &self.r#azure_static_web_app_v_2_s,
-                )
-                .await,
-            );
-            map.insert(
-                "config_file_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "config_file_path",
                     &self.r#config_file_path,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_oidc_v_2_s".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_oidc_v_2_s",
                     &self.r#custom_oidc_v_2_s,
-                )
-                .await,
-            );
-            map.insert(
-                "default_provider".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_provider",
                     &self.r#default_provider,
-                )
-                .await,
-            );
-            map.insert(
-                "excluded_paths".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "excluded_paths",
                     &self.r#excluded_paths,
-                )
-                .await,
-            );
-            map.insert(
-                "facebook_v_2_s".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "facebook_v_2_s",
                     &self.r#facebook_v_2_s,
-                )
-                .await,
-            );
-            map.insert(
-                "forward_proxy_convention".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forward_proxy_convention",
                     &self.r#forward_proxy_convention,
-                )
-                .await,
-            );
-            map.insert(
-                "forward_proxy_custom_host_header_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forward_proxy_custom_host_header_name",
                     &self.r#forward_proxy_custom_host_header_name,
-                )
-                .await,
-            );
-            map.insert(
-                "forward_proxy_custom_scheme_header_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forward_proxy_custom_scheme_header_name",
                     &self.r#forward_proxy_custom_scheme_header_name,
-                )
-                .await,
-            );
-            map.insert(
-                "github_v_2_s".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "github_v_2_s",
                     &self.r#github_v_2_s,
-                )
-                .await,
-            );
-            map.insert(
-                "google_v_2_s".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "google_v_2_s",
                     &self.r#google_v_2_s,
-                )
-                .await,
-            );
-            map.insert(
-                "http_route_api_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_route_api_prefix",
                     &self.r#http_route_api_prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "logins".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "logins",
                     &self.r#logins,
-                )
-                .await,
-            );
-            map.insert(
-                "microsoft_v_2_s".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "microsoft_v_2_s",
                     &self.r#microsoft_v_2_s,
-                )
-                .await,
-            );
-            map.insert(
-                "require_authentication".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_authentication",
                     &self.r#require_authentication,
-                )
-                .await,
-            );
-            map.insert(
-                "require_https".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_https",
                     &self.r#require_https,
-                )
-                .await,
-            );
-            map.insert(
-                "runtime_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "runtime_version",
                     &self.r#runtime_version,
-                )
-                .await,
-            );
-            map.insert(
-                "twitter_v_2_s".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "twitter_v_2_s",
                     &self.r#twitter_v_2_s,
-                )
-                .await,
-            );
-            map.insert(
-                "unauthenticated_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "unauthenticated_action",
                     &self.r#unauthenticated_action,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

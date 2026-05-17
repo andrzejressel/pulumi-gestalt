@@ -45,65 +45,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "brute_force_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "brute_force_config",
                     &self.r#brute_force_config,
-                )
-                .await,
-            );
-            map.insert(
-                "crowding_column".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "crowding_column",
                     &self.r#crowding_column,
-                )
-                .await,
-            );
-            map.insert(
-                "distance_measure_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "distance_measure_type",
                     &self.r#distance_measure_type,
-                )
-                .await,
-            );
-            map.insert(
-                "embedding_column".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "embedding_column",
                     &self.r#embedding_column,
-                )
-                .await,
-            );
-            map.insert(
-                "embedding_dimension".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "embedding_dimension",
                     &self.r#embedding_dimension,
-                )
-                .await,
-            );
-            map.insert(
-                "filter_columns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "filter_columns",
                     &self.r#filter_columns,
-                )
-                .await,
-            );
-            map.insert(
-                "tree_ah_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tree_ah_config",
                     &self.r#tree_ah_config,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

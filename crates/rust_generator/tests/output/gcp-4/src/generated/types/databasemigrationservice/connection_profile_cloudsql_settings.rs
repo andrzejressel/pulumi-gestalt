@@ -91,135 +91,80 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "activation_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "activation_policy",
                     &self.r#activation_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "auto_storage_increase".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auto_storage_increase",
                     &self.r#auto_storage_increase,
-                )
-                .await,
-            );
-            map.insert(
-                "cmek_key_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cmek_key_name",
                     &self.r#cmek_key_name,
-                )
-                .await,
-            );
-            map.insert(
-                "collation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "collation",
                     &self.r#collation,
-                )
-                .await,
-            );
-            map.insert(
-                "data_disk_size_gb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_disk_size_gb",
                     &self.r#data_disk_size_gb,
-                )
-                .await,
-            );
-            map.insert(
-                "data_disk_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_disk_type",
                     &self.r#data_disk_type,
-                )
-                .await,
-            );
-            map.insert(
-                "database_flags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "database_flags",
                     &self.r#database_flags,
-                )
-                .await,
-            );
-            map.insert(
-                "database_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "database_version",
                     &self.r#database_version,
-                )
-                .await,
-            );
-            map.insert(
-                "edition".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "edition",
                     &self.r#edition,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_config",
                     &self.r#ip_config,
-                )
-                .await,
-            );
-            map.insert(
-                "root_password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "root_password",
                     &self.r#root_password,
-                )
-                .await,
-            );
-            map.insert(
-                "root_password_set".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "root_password_set",
                     &self.r#root_password_set,
-                )
-                .await,
-            );
-            map.insert(
-                "source_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "source_id",
                     &self.r#source_id,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_auto_resize_limit".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_auto_resize_limit",
                     &self.r#storage_auto_resize_limit,
-                )
-                .await,
-            );
-            map.insert(
-                "tier".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tier",
                     &self.r#tier,
-                )
-                .await,
-            );
-            map.insert(
-                "user_labels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_labels",
                     &self.r#user_labels,
-                )
-                .await,
-            );
-            map.insert(
-                "zone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "zone",
                     &self.r#zone,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

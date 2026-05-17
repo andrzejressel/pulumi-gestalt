@@ -38,65 +38,40 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "icmp_pinhole_timeout_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "icmp_pinhole_timeout_in_seconds",
                     &self.r#icmp_pinhole_timeout_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "pinhole_maximum_number".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pinhole_maximum_number",
                     &self.r#pinhole_maximum_number,
-                )
-                .await,
-            );
-            map.insert(
-                "port_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "port_ranges",
                     &self.r#port_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "tcp_pinhole_timeout_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tcp_pinhole_timeout_in_seconds",
                     &self.r#tcp_pinhole_timeout_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "tcp_port_reuse_minimum_hold_time_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tcp_port_reuse_minimum_hold_time_in_seconds",
                     &self.r#tcp_port_reuse_minimum_hold_time_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "udp_pinhole_timeout_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "udp_pinhole_timeout_in_seconds",
                     &self.r#udp_pinhole_timeout_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "udp_port_reuse_minimum_hold_time_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "udp_port_reuse_minimum_hold_time_in_seconds",
                     &self.r#udp_port_reuse_minimum_hold_time_in_seconds,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

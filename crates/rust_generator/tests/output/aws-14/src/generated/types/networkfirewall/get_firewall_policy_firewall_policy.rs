@@ -36,74 +36,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "stateful_default_actions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "stateful_default_actions",
                     &self.r#stateful_default_actions,
-                )
-                .await,
-            );
-            map.insert(
-                "stateful_engine_options".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stateful_engine_options",
                     &self.r#stateful_engine_options,
-                )
-                .await,
-            );
-            map.insert(
-                "stateful_rule_group_references".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stateful_rule_group_references",
                     &self.r#stateful_rule_group_references,
-                )
-                .await,
-            );
-            map.insert(
-                "stateless_custom_actions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stateless_custom_actions",
                     &self.r#stateless_custom_actions,
-                )
-                .await,
-            );
-            map.insert(
-                "stateless_default_actions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stateless_default_actions",
                     &self.r#stateless_default_actions,
-                )
-                .await,
-            );
-            map.insert(
-                "stateless_fragment_default_actions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stateless_fragment_default_actions",
                     &self.r#stateless_fragment_default_actions,
-                )
-                .await,
-            );
-            map.insert(
-                "stateless_rule_group_references".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stateless_rule_group_references",
                     &self.r#stateless_rule_group_references,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_inspection_configuration_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_inspection_configuration_arn",
                     &self.r#tls_inspection_configuration_arn,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

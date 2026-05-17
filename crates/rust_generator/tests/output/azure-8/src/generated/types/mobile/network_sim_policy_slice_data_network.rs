@@ -54,86 +54,52 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "additional_allowed_session_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "additional_allowed_session_types",
                     &self.r#additional_allowed_session_types,
-                )
-                .await,
-            );
-            map.insert(
-                "allocation_and_retention_priority_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allocation_and_retention_priority_level",
                     &self.r#allocation_and_retention_priority_level,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_services_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_services_ids",
                     &self.r#allowed_services_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "data_network_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_network_id",
                     &self.r#data_network_id,
-                )
-                .await,
-            );
-            map.insert(
-                "default_session_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_session_type",
                     &self.r#default_session_type,
-                )
-                .await,
-            );
-            map.insert(
-                "max_buffered_packets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_buffered_packets",
                     &self.r#max_buffered_packets,
-                )
-                .await,
-            );
-            map.insert(
-                "preemption_capability".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preemption_capability",
                     &self.r#preemption_capability,
-                )
-                .await,
-            );
-            map.insert(
-                "preemption_vulnerability".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preemption_vulnerability",
                     &self.r#preemption_vulnerability,
-                )
-                .await,
-            );
-            map.insert(
-                "qos_indicator".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "qos_indicator",
                     &self.r#qos_indicator,
-                )
-                .await,
-            );
-            map.insert(
-                "session_aggregate_maximum_bit_rate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "session_aggregate_maximum_bit_rate",
                     &self.r#session_aggregate_maximum_bit_rate,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

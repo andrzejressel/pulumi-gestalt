@@ -64,109 +64,66 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "arib_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "arib_destination_settings",
                     &self.r#arib_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "burn_in_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "burn_in_destination_settings",
                     &self.r#burn_in_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "dvb_sub_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dvb_sub_destination_settings",
                     &self.r#dvb_sub_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "ebu_tt_d_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ebu_tt_d_destination_settings",
                     &self.r#ebu_tt_d_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "embedded_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "embedded_destination_settings",
                     &self.r#embedded_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "embedded_plus_scte_20_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "embedded_plus_scte_20_destination_settings",
                     &self.r#embedded_plus_scte_20_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "rtmp_caption_info_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rtmp_caption_info_destination_settings",
                     &self.r#rtmp_caption_info_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "scte_20_plus_embedded_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scte_20_plus_embedded_destination_settings",
                     &self.r#scte_20_plus_embedded_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "scte_27_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scte_27_destination_settings",
                     &self.r#scte_27_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "smpte_tt_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "smpte_tt_destination_settings",
                     &self.r#smpte_tt_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "teletext_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "teletext_destination_settings",
                     &self.r#teletext_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "ttml_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ttml_destination_settings",
                     &self.r#ttml_destination_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "webvtt_destination_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "webvtt_destination_settings",
                     &self.r#webvtt_destination_settings,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

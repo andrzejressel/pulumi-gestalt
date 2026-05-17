@@ -96,163 +96,96 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "always_on".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "always_on",
                     &self.r#always_on,
-                )
-                .await,
-            );
-            map.insert(
-                "app_scale_limit".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "app_scale_limit",
                     &self.r#app_scale_limit,
-                )
-                .await,
-            );
-            map.insert(
-                "auto_swap_slot_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auto_swap_slot_name",
                     &self.r#auto_swap_slot_name,
-                )
-                .await,
-            );
-            map.insert(
-                "cors".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cors",
                     &self.r#cors,
-                )
-                .await,
-            );
-            map.insert(
-                "dotnet_framework_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dotnet_framework_version",
                     &self.r#dotnet_framework_version,
-                )
-                .await,
-            );
-            map.insert(
-                "elastic_instance_minimum".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "elastic_instance_minimum",
                     &self.r#elastic_instance_minimum,
-                )
-                .await,
-            );
-            map.insert(
-                "ftps_state".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ftps_state",
                     &self.r#ftps_state,
-                )
-                .await,
-            );
-            map.insert(
-                "health_check_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "health_check_path",
                     &self.r#health_check_path,
-                )
-                .await,
-            );
-            map.insert(
-                "http_2_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_2_enabled",
                     &self.r#http_2_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_restrictions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_restrictions",
                     &self.r#ip_restrictions,
-                )
-                .await,
-            );
-            map.insert(
-                "java_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "java_version",
                     &self.r#java_version,
-                )
-                .await,
-            );
-            map.insert(
-                "linux_fx_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "linux_fx_version",
                     &self.r#linux_fx_version,
-                )
-                .await,
-            );
-            map.insert(
-                "min_tls_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_tls_version",
                     &self.r#min_tls_version,
-                )
-                .await,
-            );
-            map.insert(
-                "pre_warmed_instance_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pre_warmed_instance_count",
                     &self.r#pre_warmed_instance_count,
-                )
-                .await,
-            );
-            map.insert(
-                "runtime_scale_monitoring_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "runtime_scale_monitoring_enabled",
                     &self.r#runtime_scale_monitoring_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "scm_ip_restrictions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scm_ip_restrictions",
                     &self.r#scm_ip_restrictions,
-                )
-                .await,
-            );
-            map.insert(
-                "scm_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scm_type",
                     &self.r#scm_type,
-                )
-                .await,
-            );
-            map.insert(
-                "scm_use_main_ip_restriction".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scm_use_main_ip_restriction",
                     &self.r#scm_use_main_ip_restriction,
-                )
-                .await,
-            );
-            map.insert(
-                "use_32_bit_worker_process".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_32_bit_worker_process",
                     &self.r#use_32_bit_worker_process,
-                )
-                .await,
-            );
-            map.insert(
-                "vnet_route_all_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vnet_route_all_enabled",
                     &self.r#vnet_route_all_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "websockets_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "websockets_enabled",
                     &self.r#websockets_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

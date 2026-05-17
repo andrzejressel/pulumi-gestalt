@@ -60,102 +60,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "content_identification_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "content_identification_type",
                     &self.r#content_identification_type,
-                )
-                .await,
-            );
-            map.insert(
-                "content_redaction_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "content_redaction_type",
                     &self.r#content_redaction_type,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_partial_results_stabilization".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_partial_results_stabilization",
                     &self.r#enable_partial_results_stabilization,
-                )
-                .await,
-            );
-            map.insert(
-                "filter_partial_results".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "filter_partial_results",
                     &self.r#filter_partial_results,
-                )
-                .await,
-            );
-            map.insert(
-                "language_code".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "language_code",
                     &self.r#language_code,
-                )
-                .await,
-            );
-            map.insert(
-                "language_model_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "language_model_name",
                     &self.r#language_model_name,
-                )
-                .await,
-            );
-            map.insert(
-                "partial_results_stability".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "partial_results_stability",
                     &self.r#partial_results_stability,
-                )
-                .await,
-            );
-            map.insert(
-                "pii_entity_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pii_entity_types",
                     &self.r#pii_entity_types,
-                )
-                .await,
-            );
-            map.insert(
-                "show_speaker_label".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "show_speaker_label",
                     &self.r#show_speaker_label,
-                )
-                .await,
-            );
-            map.insert(
-                "vocabulary_filter_method".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vocabulary_filter_method",
                     &self.r#vocabulary_filter_method,
-                )
-                .await,
-            );
-            map.insert(
-                "vocabulary_filter_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vocabulary_filter_name",
                     &self.r#vocabulary_filter_name,
-                )
-                .await,
-            );
-            map.insert(
-                "vocabulary_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vocabulary_name",
                     &self.r#vocabulary_name,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

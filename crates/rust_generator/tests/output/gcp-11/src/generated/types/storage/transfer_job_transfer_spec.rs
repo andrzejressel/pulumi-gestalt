@@ -62,100 +62,60 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "aws_s_3_data_source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "aws_s_3_data_source",
                     &self.r#aws_s_3_data_source,
-                )
-                .await,
-            );
-            map.insert(
-                "azure_blob_storage_data_source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "azure_blob_storage_data_source",
                     &self.r#azure_blob_storage_data_source,
-                )
-                .await,
-            );
-            map.insert(
-                "gcs_data_sink".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gcs_data_sink",
                     &self.r#gcs_data_sink,
-                )
-                .await,
-            );
-            map.insert(
-                "gcs_data_source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gcs_data_source",
                     &self.r#gcs_data_source,
-                )
-                .await,
-            );
-            map.insert(
-                "hdfs_data_source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "hdfs_data_source",
                     &self.r#hdfs_data_source,
-                )
-                .await,
-            );
-            map.insert(
-                "http_data_source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_data_source",
                     &self.r#http_data_source,
-                )
-                .await,
-            );
-            map.insert(
-                "object_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "object_conditions",
                     &self.r#object_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "posix_data_sink".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "posix_data_sink",
                     &self.r#posix_data_sink,
-                )
-                .await,
-            );
-            map.insert(
-                "posix_data_source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "posix_data_source",
                     &self.r#posix_data_source,
-                )
-                .await,
-            );
-            map.insert(
-                "sink_agent_pool_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sink_agent_pool_name",
                     &self.r#sink_agent_pool_name,
-                )
-                .await,
-            );
-            map.insert(
-                "source_agent_pool_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "source_agent_pool_name",
                     &self.r#source_agent_pool_name,
-                )
-                .await,
-            );
-            map.insert(
-                "transfer_options".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "transfer_options",
                     &self.r#transfer_options,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

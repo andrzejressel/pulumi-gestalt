@@ -119,135 +119,80 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allow_large_results".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allow_large_results",
                     &self.r#allow_large_results,
-                )
-                .await,
-            );
-            map.insert(
-                "create_disposition".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "create_disposition",
                     &self.r#create_disposition,
-                )
-                .await,
-            );
-            map.insert(
-                "default_dataset".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_dataset",
                     &self.r#default_dataset,
-                )
-                .await,
-            );
-            map.insert(
-                "destination_encryption_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination_encryption_configuration",
                     &self.r#destination_encryption_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "destination_table".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination_table",
                     &self.r#destination_table,
-                )
-                .await,
-            );
-            map.insert(
-                "flatten_results".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "flatten_results",
                     &self.r#flatten_results,
-                )
-                .await,
-            );
-            map.insert(
-                "maximum_billing_tier".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maximum_billing_tier",
                     &self.r#maximum_billing_tier,
-                )
-                .await,
-            );
-            map.insert(
-                "maximum_bytes_billed".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maximum_bytes_billed",
                     &self.r#maximum_bytes_billed,
-                )
-                .await,
-            );
-            map.insert(
-                "parameter_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "parameter_mode",
                     &self.r#parameter_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "priority".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "priority",
                     &self.r#priority,
-                )
-                .await,
-            );
-            map.insert(
-                "query".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "query",
                     &self.r#query,
-                )
-                .await,
-            );
-            map.insert(
-                "schema_update_options".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "schema_update_options",
                     &self.r#schema_update_options,
-                )
-                .await,
-            );
-            map.insert(
-                "script_options".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "script_options",
                     &self.r#script_options,
-                )
-                .await,
-            );
-            map.insert(
-                "use_legacy_sql".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_legacy_sql",
                     &self.r#use_legacy_sql,
-                )
-                .await,
-            );
-            map.insert(
-                "use_query_cache".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_query_cache",
                     &self.r#use_query_cache,
-                )
-                .await,
-            );
-            map.insert(
-                "user_defined_function_resources".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_defined_function_resources",
                     &self.r#user_defined_function_resources,
-                )
-                .await,
-            );
-            map.insert(
-                "write_disposition".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "write_disposition",
                     &self.r#write_disposition,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

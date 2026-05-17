@@ -86,184 +86,108 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "accelerator_counts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "accelerator_counts",
                     &self.r#accelerator_counts,
-                )
-                .await,
-            );
-            map.insert(
-                "accelerator_manufacturers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "accelerator_manufacturers",
                     &self.r#accelerator_manufacturers,
-                )
-                .await,
-            );
-            map.insert(
-                "accelerator_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "accelerator_names",
                     &self.r#accelerator_names,
-                )
-                .await,
-            );
-            map.insert(
-                "accelerator_total_memory_mibs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "accelerator_total_memory_mibs",
                     &self.r#accelerator_total_memory_mibs,
-                )
-                .await,
-            );
-            map.insert(
-                "accelerator_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "accelerator_types",
                     &self.r#accelerator_types,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_instance_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_instance_types",
                     &self.r#allowed_instance_types,
-                )
-                .await,
-            );
-            map.insert(
-                "bare_metal".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bare_metal",
                     &self.r#bare_metal,
-                )
-                .await,
-            );
-            map.insert(
-                "baseline_ebs_bandwidth_mbps".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "baseline_ebs_bandwidth_mbps",
                     &self.r#baseline_ebs_bandwidth_mbps,
-                )
-                .await,
-            );
-            map.insert(
-                "burstable_performance".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "burstable_performance",
                     &self.r#burstable_performance,
-                )
-                .await,
-            );
-            map.insert(
-                "cpu_manufacturers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cpu_manufacturers",
                     &self.r#cpu_manufacturers,
-                )
-                .await,
-            );
-            map.insert(
-                "excluded_instance_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "excluded_instance_types",
                     &self.r#excluded_instance_types,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_generations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_generations",
                     &self.r#instance_generations,
-                )
-                .await,
-            );
-            map.insert(
-                "local_storage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "local_storage",
                     &self.r#local_storage,
-                )
-                .await,
-            );
-            map.insert(
-                "local_storage_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "local_storage_types",
                     &self.r#local_storage_types,
-                )
-                .await,
-            );
-            map.insert(
-                "max_spot_price_as_percentage_of_optimal_on_demand_price".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_spot_price_as_percentage_of_optimal_on_demand_price",
                     &self.r#max_spot_price_as_percentage_of_optimal_on_demand_price,
-                )
-                .await,
-            );
-            map.insert(
-                "memory_gib_per_vcpus".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "memory_gib_per_vcpus",
                     &self.r#memory_gib_per_vcpus,
-                )
-                .await,
-            );
-            map.insert(
-                "memory_mibs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "memory_mibs",
                     &self.r#memory_mibs,
-                )
-                .await,
-            );
-            map.insert(
-                "network_bandwidth_gbps".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_bandwidth_gbps",
                     &self.r#network_bandwidth_gbps,
-                )
-                .await,
-            );
-            map.insert(
-                "network_interface_counts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_interface_counts",
                     &self.r#network_interface_counts,
-                )
-                .await,
-            );
-            map.insert(
-                "on_demand_max_price_percentage_over_lowest_price".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "on_demand_max_price_percentage_over_lowest_price",
                     &self.r#on_demand_max_price_percentage_over_lowest_price,
-                )
-                .await,
-            );
-            map.insert(
-                "require_hibernate_support".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_hibernate_support",
                     &self.r#require_hibernate_support,
-                )
-                .await,
-            );
-            map.insert(
-                "spot_max_price_percentage_over_lowest_price".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "spot_max_price_percentage_over_lowest_price",
                     &self.r#spot_max_price_percentage_over_lowest_price,
-                )
-                .await,
-            );
-            map.insert(
-                "total_local_storage_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "total_local_storage_gbs",
                     &self.r#total_local_storage_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "vcpu_counts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vcpu_counts",
                     &self.r#vcpu_counts,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

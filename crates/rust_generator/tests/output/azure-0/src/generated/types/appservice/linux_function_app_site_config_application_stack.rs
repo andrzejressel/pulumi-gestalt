@@ -48,72 +48,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "dockers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "dockers",
                     &self.r#dockers,
-                )
-                .await,
-            );
-            map.insert(
-                "dotnet_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dotnet_version",
                     &self.r#dotnet_version,
-                )
-                .await,
-            );
-            map.insert(
-                "java_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "java_version",
                     &self.r#java_version,
-                )
-                .await,
-            );
-            map.insert(
-                "node_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "node_version",
                     &self.r#node_version,
-                )
-                .await,
-            );
-            map.insert(
-                "powershell_core_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "powershell_core_version",
                     &self.r#powershell_core_version,
-                )
-                .await,
-            );
-            map.insert(
-                "python_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "python_version",
                     &self.r#python_version,
-                )
-                .await,
-            );
-            map.insert(
-                "use_custom_runtime".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_custom_runtime",
                     &self.r#use_custom_runtime,
-                )
-                .await,
-            );
-            map.insert(
-                "use_dotnet_isolated_runtime".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_dotnet_isolated_runtime",
                     &self.r#use_dotnet_isolated_runtime,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

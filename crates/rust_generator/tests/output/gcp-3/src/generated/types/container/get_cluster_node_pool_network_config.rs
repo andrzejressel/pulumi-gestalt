@@ -46,72 +46,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "additional_node_network_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "additional_node_network_configs",
                     &self.r#additional_node_network_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "additional_pod_network_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "additional_pod_network_configs",
                     &self.r#additional_pod_network_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "create_pod_range".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "create_pod_range",
                     &self.r#create_pod_range,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_private_nodes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_private_nodes",
                     &self.r#enable_private_nodes,
-                )
-                .await,
-            );
-            map.insert(
-                "network_performance_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_performance_configs",
                     &self.r#network_performance_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "pod_cidr_overprovision_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pod_cidr_overprovision_configs",
                     &self.r#pod_cidr_overprovision_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "pod_ipv_4_cidr_block".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pod_ipv_4_cidr_block",
                     &self.r#pod_ipv_4_cidr_block,
-                )
-                .await,
-            );
-            map.insert(
-                "pod_range".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pod_range",
                     &self.r#pod_range,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

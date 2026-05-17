@@ -73,130 +73,78 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "bucket_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "bucket_arn",
                     &self.r#bucket_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "buffering_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "buffering_interval",
                     &self.r#buffering_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "buffering_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "buffering_size",
                     &self.r#buffering_size,
-                )
-                .await,
-            );
-            map.insert(
-                "cloudwatch_logging_options".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cloudwatch_logging_options",
                     &self.r#cloudwatch_logging_options,
-                )
-                .await,
-            );
-            map.insert(
-                "compression_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "compression_format",
                     &self.r#compression_format,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_time_zone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_time_zone",
                     &self.r#custom_time_zone,
-                )
-                .await,
-            );
-            map.insert(
-                "data_format_conversion_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_format_conversion_configuration",
                     &self.r#data_format_conversion_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "dynamic_partitioning_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dynamic_partitioning_configuration",
                     &self.r#dynamic_partitioning_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "error_output_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "error_output_prefix",
                     &self.r#error_output_prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "file_extension".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "file_extension",
                     &self.r#file_extension,
-                )
-                .await,
-            );
-            map.insert(
-                "kms_key_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kms_key_arn",
                     &self.r#kms_key_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "prefix",
                     &self.r#prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "processing_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "processing_configuration",
                     &self.r#processing_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "role_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "role_arn",
                     &self.r#role_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "s_3_backup_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "s_3_backup_configuration",
                     &self.r#s_3_backup_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "s_3_backup_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "s_3_backup_mode",
                     &self.r#s_3_backup_mode,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

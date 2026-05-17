@@ -59,102 +59,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "all_query_arguments".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "all_query_arguments",
                     &self.r#all_query_arguments,
-                )
-                .await,
-            );
-            map.insert(
-                "body".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "body",
                     &self.r#body,
-                )
-                .await,
-            );
-            map.insert(
-                "cookies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cookies",
                     &self.r#cookies,
-                )
-                .await,
-            );
-            map.insert(
-                "header_orders".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "header_orders",
                     &self.r#header_orders,
-                )
-                .await,
-            );
-            map.insert(
-                "headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "headers",
                     &self.r#headers,
-                )
-                .await,
-            );
-            map.insert(
-                "ja_3_fingerprint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ja_3_fingerprint",
                     &self.r#ja_3_fingerprint,
-                )
-                .await,
-            );
-            map.insert(
-                "json_body".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "json_body",
                     &self.r#json_body,
-                )
-                .await,
-            );
-            map.insert(
-                "method".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "method",
                     &self.r#method,
-                )
-                .await,
-            );
-            map.insert(
-                "query_string".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "query_string",
                     &self.r#query_string,
-                )
-                .await,
-            );
-            map.insert(
-                "single_header".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "single_header",
                     &self.r#single_header,
-                )
-                .await,
-            );
-            map.insert(
-                "single_query_argument".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "single_query_argument",
                     &self.r#single_query_argument,
-                )
-                .await,
-            );
-            map.insert(
-                "uri_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "uri_path",
                     &self.r#uri_path,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

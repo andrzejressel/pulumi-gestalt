@@ -75,121 +75,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "age".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "age",
                     &self.r#age,
-                )
-                .await,
-            );
-            map.insert(
-                "created_before".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "created_before",
                     &self.r#created_before,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_time_before".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_time_before",
                     &self.r#custom_time_before,
-                )
-                .await,
-            );
-            map.insert(
-                "days_since_custom_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "days_since_custom_time",
                     &self.r#days_since_custom_time,
-                )
-                .await,
-            );
-            map.insert(
-                "days_since_noncurrent_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "days_since_noncurrent_time",
                     &self.r#days_since_noncurrent_time,
-                )
-                .await,
-            );
-            map.insert(
-                "matches_prefixes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "matches_prefixes",
                     &self.r#matches_prefixes,
-                )
-                .await,
-            );
-            map.insert(
-                "matches_storage_classes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "matches_storage_classes",
                     &self.r#matches_storage_classes,
-                )
-                .await,
-            );
-            map.insert(
-                "matches_suffixes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "matches_suffixes",
                     &self.r#matches_suffixes,
-                )
-                .await,
-            );
-            map.insert(
-                "noncurrent_time_before".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "noncurrent_time_before",
                     &self.r#noncurrent_time_before,
-                )
-                .await,
-            );
-            map.insert(
-                "num_newer_versions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "num_newer_versions",
                     &self.r#num_newer_versions,
-                )
-                .await,
-            );
-            map.insert(
-                "send_age_if_zero".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "send_age_if_zero",
                     &self.r#send_age_if_zero,
-                )
-                .await,
-            );
-            map.insert(
-                "send_days_since_custom_time_if_zero".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "send_days_since_custom_time_if_zero",
                     &self.r#send_days_since_custom_time_if_zero,
-                )
-                .await,
-            );
-            map.insert(
-                "send_days_since_noncurrent_time_if_zero".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "send_days_since_noncurrent_time_if_zero",
                     &self.r#send_days_since_noncurrent_time_if_zero,
-                )
-                .await,
-            );
-            map.insert(
-                "send_num_newer_versions_if_zero".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "send_num_newer_versions_if_zero",
                     &self.r#send_num_newer_versions_if_zero,
-                )
-                .await,
-            );
-            map.insert(
-                "with_state".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "with_state",
                     &self.r#with_state,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

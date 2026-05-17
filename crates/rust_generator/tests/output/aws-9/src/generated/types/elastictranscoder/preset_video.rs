@@ -66,107 +66,64 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "aspect_ratio".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "aspect_ratio",
                     &self.r#aspect_ratio,
-                )
-                .await,
-            );
-            map.insert(
-                "bit_rate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bit_rate",
                     &self.r#bit_rate,
-                )
-                .await,
-            );
-            map.insert(
-                "codec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "codec",
                     &self.r#codec,
-                )
-                .await,
-            );
-            map.insert(
-                "display_aspect_ratio".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "display_aspect_ratio",
                     &self.r#display_aspect_ratio,
-                )
-                .await,
-            );
-            map.insert(
-                "fixed_gop".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fixed_gop",
                     &self.r#fixed_gop,
-                )
-                .await,
-            );
-            map.insert(
-                "frame_rate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "frame_rate",
                     &self.r#frame_rate,
-                )
-                .await,
-            );
-            map.insert(
-                "keyframes_max_dist".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "keyframes_max_dist",
                     &self.r#keyframes_max_dist,
-                )
-                .await,
-            );
-            map.insert(
-                "max_frame_rate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_frame_rate",
                     &self.r#max_frame_rate,
-                )
-                .await,
-            );
-            map.insert(
-                "max_height".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_height",
                     &self.r#max_height,
-                )
-                .await,
-            );
-            map.insert(
-                "max_width".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_width",
                     &self.r#max_width,
-                )
-                .await,
-            );
-            map.insert(
-                "padding_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "padding_policy",
                     &self.r#padding_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "resolution".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resolution",
                     &self.r#resolution,
-                )
-                .await,
-            );
-            map.insert(
-                "sizing_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sizing_policy",
                     &self.r#sizing_policy,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

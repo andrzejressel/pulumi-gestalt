@@ -26,44 +26,28 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "delete_os_disk_on_deletion".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "delete_os_disk_on_deletion",
                     &self.r#delete_os_disk_on_deletion,
-                )
-                .await,
-            );
-            map.insert(
-                "detach_implicit_data_disk_on_deletion".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "detach_implicit_data_disk_on_deletion",
                     &self.r#detach_implicit_data_disk_on_deletion,
-                )
-                .await,
-            );
-            map.insert(
-                "graceful_shutdown".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "graceful_shutdown",
                     &self.r#graceful_shutdown,
-                )
-                .await,
-            );
-            map.insert(
-                "skip_shutdown_and_force_delete".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "skip_shutdown_and_force_delete",
                     &self.r#skip_shutdown_and_force_delete,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

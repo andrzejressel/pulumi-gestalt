@@ -63,109 +63,66 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "custom_connector".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "custom_connector",
                     &self.r#custom_connector,
-                )
-                .await,
-            );
-            map.insert(
-                "customer_profiles".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "customer_profiles",
                     &self.r#customer_profiles,
-                )
-                .await,
-            );
-            map.insert(
-                "event_bridge".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "event_bridge",
                     &self.r#event_bridge,
-                )
-                .await,
-            );
-            map.insert(
-                "honeycode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "honeycode",
                     &self.r#honeycode,
-                )
-                .await,
-            );
-            map.insert(
-                "lookout_metrics".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lookout_metrics",
                     &self.r#lookout_metrics,
-                )
-                .await,
-            );
-            map.insert(
-                "marketo".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "marketo",
                     &self.r#marketo,
-                )
-                .await,
-            );
-            map.insert(
-                "redshift".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "redshift",
                     &self.r#redshift,
-                )
-                .await,
-            );
-            map.insert(
-                "s_3".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "s_3",
                     &self.r#s_3,
-                )
-                .await,
-            );
-            map.insert(
-                "salesforce".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "salesforce",
                     &self.r#salesforce,
-                )
-                .await,
-            );
-            map.insert(
-                "sapo_data".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sapo_data",
                     &self.r#sapo_data,
-                )
-                .await,
-            );
-            map.insert(
-                "snowflake".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "snowflake",
                     &self.r#snowflake,
-                )
-                .await,
-            );
-            map.insert(
-                "upsolver".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "upsolver",
                     &self.r#upsolver,
-                )
-                .await,
-            );
-            map.insert(
-                "zendesk".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "zendesk",
                     &self.r#zendesk,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

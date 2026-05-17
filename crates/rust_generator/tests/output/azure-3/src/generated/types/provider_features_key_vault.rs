@@ -58,93 +58,56 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
         use pulumi_gestalt_rust::__private::futures::FutureExt;
 
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "purge_soft_delete_on_destroy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "purge_soft_delete_on_destroy",
                     &self.r#purge_soft_delete_on_destroy,
-                )
-                .await,
-            );
-            map.insert(
-                "purge_soft_deleted_certificates_on_destroy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "purge_soft_deleted_certificates_on_destroy",
                     &self.r#purge_soft_deleted_certificates_on_destroy,
-                )
-                .await,
-            );
-            map.insert(
-                "purge_soft_deleted_hardware_security_module_keys_on_destroy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "purge_soft_deleted_hardware_security_module_keys_on_destroy",
                     &self.r#purge_soft_deleted_hardware_security_module_keys_on_destroy,
-                )
-                .await,
-            );
-            map.insert(
-                "purge_soft_deleted_hardware_security_modules_on_destroy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "purge_soft_deleted_hardware_security_modules_on_destroy",
                     &self.r#purge_soft_deleted_hardware_security_modules_on_destroy,
-                )
-                .await,
-            );
-            map.insert(
-                "purge_soft_deleted_keys_on_destroy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "purge_soft_deleted_keys_on_destroy",
                     &self.r#purge_soft_deleted_keys_on_destroy,
-                )
-                .await,
-            );
-            map.insert(
-                "purge_soft_deleted_secrets_on_destroy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "purge_soft_deleted_secrets_on_destroy",
                     &self.r#purge_soft_deleted_secrets_on_destroy,
-                )
-                .await,
-            );
-            map.insert(
-                "recover_soft_deleted_certificates".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recover_soft_deleted_certificates",
                     &self.r#recover_soft_deleted_certificates,
-                )
-                .await,
-            );
-            map.insert(
-                "recover_soft_deleted_hardware_security_module_keys".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recover_soft_deleted_hardware_security_module_keys",
                     &self.r#recover_soft_deleted_hardware_security_module_keys,
-                )
-                .await,
-            );
-            map.insert(
-                "recover_soft_deleted_key_vaults".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recover_soft_deleted_key_vaults",
                     &self.r#recover_soft_deleted_key_vaults,
-                )
-                .await,
-            );
-            map.insert(
-                "recover_soft_deleted_keys".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recover_soft_deleted_keys",
                     &self.r#recover_soft_deleted_keys,
-                )
-                .await,
-            );
-            map.insert(
-                "recover_soft_deleted_secrets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recover_soft_deleted_secrets",
                     &self.r#recover_soft_deleted_secrets,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }
