@@ -1,0 +1,170 @@
+{
+  "statements": [
+    {
+      "Let": {
+        "name": "aString",
+        "value": {
+          "Expect": {
+            "expr": {
+              "MethodCall": {
+                "receiver": {
+                  "Identifier": "ctx"
+                },
+                "method": "require_config",
+                "type_params": [],
+                "args": [
+                  {
+                    "Identifier": "None"
+                  },
+                  {
+                    "StringLiteral": "aString"
+                  }
+                ]
+              }
+            },
+            "message": "Expected config [aString] to exist"
+          }
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "lengthResult"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::length_string",
+                  "args": [
+                    {
+                      "Ref": {
+                        "Identifier": "aString"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "splitResult"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::split",
+                  "args": [
+                    {
+                      "StringLiteral": "-"
+                    },
+                    {
+                      "Ref": {
+                        "Identifier": "aString"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "joinResult"
+            },
+            {
+              "Ref": {
+                "FunctionCall": {
+                  "path": "pulumi_gestalt_rust::stdlib::join",
+                  "args": [
+                    {
+                      "StringLiteral": "|"
+                    },
+                    {
+                      "Ref": {
+                        "FunctionCall": {
+                          "path": "pulumi_gestalt_rust::stdlib::split",
+                          "args": [
+                            {
+                              "StringLiteral": "-"
+                            },
+                            {
+                              "Ref": {
+                                "Identifier": "aString"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Expr": {
+        "MethodCall": {
+          "receiver": {
+            "Identifier": "ctx"
+          },
+          "method": "add_export",
+          "type_params": [],
+          "args": [
+            {
+              "StringLiteral": "interpolateResult"
+            },
+            {
+              "Ref": {
+                "Format": {
+                  "fmt": "{}{}",
+                  "args": [
+                    {
+                      "StringLiteral": "prefix-"
+                    },
+                    {
+                      "Identifier": "aString"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

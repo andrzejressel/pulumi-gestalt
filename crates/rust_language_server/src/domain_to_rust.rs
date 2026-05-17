@@ -5,7 +5,7 @@ use crate::domain_ir::ResourceToken::Stash;
 /// mapping, stdlib calls, etc.) into concrete Rust syntax constructs
 /// (let bindings, method calls, function calls, etc.).
 use crate::domain_ir::{
-    BinOp, ConfigBinding, ConfigType, Expr, ExprValue, JsonValue, Program, ResourceInput,
+    BinOp, ConfigBinding, ConfigType, Expr, ExprType, ExprValue, JsonValue, Program, ResourceInput,
     ResourceToken, Statement, StdlibFn, UnaryOp,
 };
 use crate::rust_ir::{RustExpr, RustFile, RustStatement};
@@ -498,13 +498,22 @@ fn lower_stdlib_call(func: &StdlibFn, args: &[Expr]) -> RustExpr {
                 RustExpr::Ref(Box::new(lowered_args[1].clone())),
             ],
         },
-        StdlibFn::Length => RustExpr::FunctionCall {
-            path: "pulumi_gestalt_rust::stdlib::length".to_string(),
-            args: vec![RustExpr::Ref(Box::new(lowered_args[0].clone()))],
-        },
+        StdlibFn::Length => {
+            let path = match args.first().map(|arg| &arg.expr_type) {
+                Some(ExprType::String) => "pulumi_gestalt_rust::stdlib::length_string",
+                _ => "pulumi_gestalt_rust::stdlib::length",
+            };
+            RustExpr::FunctionCall {
+                path: path.to_string(),
+                args: vec![RustExpr::Ref(Box::new(lowered_args[0].clone()))],
+            }
+        }
         StdlibFn::Split => RustExpr::FunctionCall {
             path: "pulumi_gestalt_rust::stdlib::split".to_string(),
-            args: lowered_args,
+            args: vec![
+                lowered_args[0].clone(),
+                RustExpr::Ref(Box::new(lowered_args[1].clone())),
+            ],
         },
         StdlibFn::SingleOrNone => RustExpr::Expect {
             expr: Box::new(RustExpr::FunctionCall {

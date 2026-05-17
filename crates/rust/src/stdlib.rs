@@ -4,6 +4,7 @@ use base64::engine::general_purpose::STANDARD;
 use sha1::{Digest, Sha1};
 use std::borrow::Borrow;
 use std::collections::BTreeMap;
+use unicode_segmentation::UnicodeSegmentation;
 
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct Entry<T> {
@@ -90,6 +91,10 @@ pub fn length<T>(list: impl AsRef<[T]>) -> i64 {
     i64::try_from(list.as_ref().len()).expect("List length exceeds i64::MAX")
 }
 
+pub fn length_string(input: impl AsRef<str>) -> i64 {
+    i64::try_from(input.as_ref().graphemes(true).count()).expect("String length exceeds i64::MAX")
+}
+
 pub fn split(separator: impl AsRef<str>, text: impl AsRef<str>) -> Vec<String> {
     text.as_ref()
         .split(separator.as_ref())
@@ -137,7 +142,7 @@ where
 mod tests {
     use super::{
         Entry, cwd, element, entries, filebase64, filebase64sha256, from_base64, join, length,
-        lookup, read_file, sha1, single_or_none, split, to_base64,
+        length_string, lookup, read_file, sha1, single_or_none, split, to_base64,
     };
     use std::collections::BTreeMap;
 
@@ -280,6 +285,35 @@ mod tests {
     fn length_returns_i64_length() {
         let values = vec!["x", "y", "z"];
         assert_eq!(length(&values), 3_i64);
+    }
+
+    #[test]
+    fn length_string_counts_ascii_graphemes() {
+        assert_eq!(length_string("abcd"), 4_i64);
+    }
+
+    #[test]
+    fn length_string_counts_combining_marks_as_single_grapheme() {
+        let text = "a\u{0301}";
+        assert_eq!(length_string(text), 1_i64);
+    }
+
+    #[test]
+    fn length_string_counts_zwj_emoji_as_single_grapheme() {
+        let text = "👨‍👩‍👧‍👦";
+        assert_eq!(length_string(text), 1_i64);
+    }
+
+    #[test]
+    fn length_string_counts_mixed_text_by_graphemes() {
+        let text = "A👩‍💻B";
+        assert_eq!(length_string(text), 3_i64);
+    }
+
+    #[test]
+    fn length_list_behavior_is_unchanged() {
+        let values = vec![0_u8, 1_u8, 2_u8, 3_u8];
+        assert_eq!(length(&values), 4_i64);
     }
 
     #[test]

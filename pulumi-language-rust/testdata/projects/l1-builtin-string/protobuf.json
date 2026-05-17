@@ -1,0 +1,264 @@
+{
+  "nodes": [
+    {
+      "configVariable": {
+        "name": "aString",
+        "logicalName": "aString",
+        "configType": {
+          "stringType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "lengthResult",
+        "logicalName": "lengthResult",
+        "value": {
+          "functionCallExpression": {
+            "name": "length",
+            "args": [
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aString",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aString"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "intType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "splitResult",
+        "logicalName": "splitResult",
+        "value": {
+          "functionCallExpression": {
+            "name": "split",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "-"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "scopeTraversalExpression": {
+                    "rootName": "aString",
+                    "traversal": {
+                      "each": [
+                        {
+                          "traverseRoot": {
+                            "name": "aString"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "listType": {
+              "stringType": {}
+            }
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "joinResult",
+        "logicalName": "joinResult",
+        "value": {
+          "functionCallExpression": {
+            "name": "join",
+            "args": [
+              {
+                "value": {
+                  "templateExpression": {
+                    "parts": [
+                      {
+                        "literalValueExpression": {
+                          "stringValue": "|"
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "stringType": {}
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "value": {
+                  "functionCallExpression": {
+                    "name": "split",
+                    "args": [
+                      {
+                        "value": {
+                          "templateExpression": {
+                            "parts": [
+                              {
+                                "literalValueExpression": {
+                                  "stringValue": "-"
+                                },
+                                "type": {
+                                  "stringType": {}
+                                }
+                              }
+                            ]
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      },
+                      {
+                        "value": {
+                          "scopeTraversalExpression": {
+                            "rootName": "aString",
+                            "traversal": {
+                              "each": [
+                                {
+                                  "traverseRoot": {
+                                    "name": "aString"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "type": {
+                            "stringType": {}
+                          }
+                        },
+                        "type": {
+                          "stringType": {}
+                        }
+                      }
+                    ]
+                  },
+                  "type": {
+                    "listType": {
+                      "stringType": {}
+                    }
+                  }
+                },
+                "type": {
+                  "composite": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    },
+    {
+      "outputVariable": {
+        "name": "interpolateResult",
+        "logicalName": "interpolateResult",
+        "value": {
+          "templateExpression": {
+            "parts": [
+              {
+                "literalValueExpression": {
+                  "stringValue": "prefix-"
+                },
+                "type": {
+                  "stringType": {}
+                }
+              },
+              {
+                "scopeTraversalExpression": {
+                  "rootName": "aString",
+                  "traversal": {
+                    "each": [
+                      {
+                        "traverseRoot": {
+                          "name": "aString"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringType": {}
+                }
+              }
+            ]
+          },
+          "type": {
+            "stringType": {}
+          }
+        },
+        "expression_type": {
+          "dynamicType": {}
+        }
+      }
+    }
+  ]
+}
