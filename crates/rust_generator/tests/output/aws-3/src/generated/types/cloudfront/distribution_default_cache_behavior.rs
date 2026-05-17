@@ -88,151 +88,90 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allowed_methods".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allowed_methods",
                     &self.r#allowed_methods,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_policy_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_policy_id",
                     &self.r#cache_policy_id,
-                )
-                .await,
-            );
-            map.insert(
-                "cached_methods".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cached_methods",
                     &self.r#cached_methods,
-                )
-                .await,
-            );
-            map.insert(
-                "compress".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "compress",
                     &self.r#compress,
-                )
-                .await,
-            );
-            map.insert(
-                "default_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_ttl",
                     &self.r#default_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "field_level_encryption_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "field_level_encryption_id",
                     &self.r#field_level_encryption_id,
-                )
-                .await,
-            );
-            map.insert(
-                "forwarded_values".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forwarded_values",
                     &self.r#forwarded_values,
-                )
-                .await,
-            );
-            map.insert(
-                "function_associations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "function_associations",
                     &self.r#function_associations,
-                )
-                .await,
-            );
-            map.insert(
-                "lambda_function_associations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lambda_function_associations",
                     &self.r#lambda_function_associations,
-                )
-                .await,
-            );
-            map.insert(
-                "max_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_ttl",
                     &self.r#max_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "min_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_ttl",
                     &self.r#min_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "origin_request_policy_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "origin_request_policy_id",
                     &self.r#origin_request_policy_id,
-                )
-                .await,
-            );
-            map.insert(
-                "realtime_log_config_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "realtime_log_config_arn",
                     &self.r#realtime_log_config_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "response_headers_policy_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "response_headers_policy_id",
                     &self.r#response_headers_policy_id,
-                )
-                .await,
-            );
-            map.insert(
-                "smooth_streaming".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "smooth_streaming",
                     &self.r#smooth_streaming,
-                )
-                .await,
-            );
-            map.insert(
-                "target_origin_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_origin_id",
                     &self.r#target_origin_id,
-                )
-                .await,
-            );
-            map.insert(
-                "trusted_key_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "trusted_key_groups",
                     &self.r#trusted_key_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "trusted_signers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "trusted_signers",
                     &self.r#trusted_signers,
-                )
-                .await,
-            );
-            map.insert(
-                "viewer_protocol_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "viewer_protocol_policy",
                     &self.r#viewer_protocol_policy,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -58,95 +58,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "dimensions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "dimensions",
                     &self.r#dimensions,
-                )
-                .await,
-            );
-            map.insert(
-                "divide_by_instance_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "divide_by_instance_count",
                     &self.r#divide_by_instance_count,
-                )
-                .await,
-            );
-            map.insert(
-                "metric_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metric_name",
                     &self.r#metric_name,
-                )
-                .await,
-            );
-            map.insert(
-                "metric_namespace".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metric_namespace",
                     &self.r#metric_namespace,
-                )
-                .await,
-            );
-            map.insert(
-                "metric_resource_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metric_resource_id",
                     &self.r#metric_resource_id,
-                )
-                .await,
-            );
-            map.insert(
-                "operator".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "operator",
                     &self.r#operator,
-                )
-                .await,
-            );
-            map.insert(
-                "statistic".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "statistic",
                     &self.r#statistic,
-                )
-                .await,
-            );
-            map.insert(
-                "threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "threshold",
                     &self.r#threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "time_aggregation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "time_aggregation",
                     &self.r#time_aggregation,
-                )
-                .await,
-            );
-            map.insert(
-                "time_grain".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "time_grain",
                     &self.r#time_grain,
-                )
-                .await,
-            );
-            map.insert(
-                "time_window".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "time_window",
                     &self.r#time_window,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -69,151 +69,90 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cloudwatch_alarm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cloudwatch_alarm",
                     &self.r#cloudwatch_alarm,
-                )
-                .await,
-            );
-            map.insert(
-                "cloudwatch_logs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cloudwatch_logs",
                     &self.r#cloudwatch_logs,
-                )
-                .await,
-            );
-            map.insert(
-                "cloudwatch_metric".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cloudwatch_metric",
                     &self.r#cloudwatch_metric,
-                )
-                .await,
-            );
-            map.insert(
-                "dynamodb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dynamodb",
                     &self.r#dynamodb,
-                )
-                .await,
-            );
-            map.insert(
-                "dynamodbv_2".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dynamodbv_2",
                     &self.r#dynamodbv_2,
-                )
-                .await,
-            );
-            map.insert(
-                "elasticsearch".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "elasticsearch",
                     &self.r#elasticsearch,
-                )
-                .await,
-            );
-            map.insert(
-                "firehose".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "firehose",
                     &self.r#firehose,
-                )
-                .await,
-            );
-            map.insert(
-                "http".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http",
                     &self.r#http,
-                )
-                .await,
-            );
-            map.insert(
-                "iot_analytics".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "iot_analytics",
                     &self.r#iot_analytics,
-                )
-                .await,
-            );
-            map.insert(
-                "iot_events".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "iot_events",
                     &self.r#iot_events,
-                )
-                .await,
-            );
-            map.insert(
-                "kafka".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kafka",
                     &self.r#kafka,
-                )
-                .await,
-            );
-            map.insert(
-                "kinesis".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kinesis",
                     &self.r#kinesis,
-                )
-                .await,
-            );
-            map.insert(
-                "lambda".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lambda",
                     &self.r#lambda,
-                )
-                .await,
-            );
-            map.insert(
-                "republish".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "republish",
                     &self.r#republish,
-                )
-                .await,
-            );
-            map.insert(
-                "s_3".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "s_3",
                     &self.r#s_3,
-                )
-                .await,
-            );
-            map.insert(
-                "sns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sns",
                     &self.r#sns,
-                )
-                .await,
-            );
-            map.insert(
-                "sqs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sqs",
                     &self.r#sqs,
-                )
-                .await,
-            );
-            map.insert(
-                "step_functions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "step_functions",
                     &self.r#step_functions,
-                )
-                .await,
-            );
-            map.insert(
-                "timestream".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timestream",
                     &self.r#timestream,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

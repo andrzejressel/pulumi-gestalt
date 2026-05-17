@@ -140,312 +140,182 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "ad_markers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "ad_markers",
                     &self.r#ad_markers,
-                )
-                .await,
-            );
-            map.insert(
-                "base_url_content".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "base_url_content",
                     &self.r#base_url_content,
-                )
-                .await,
-            );
-            map.insert(
-                "base_url_content_1".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "base_url_content_1",
                     &self.r#base_url_content_1,
-                )
-                .await,
-            );
-            map.insert(
-                "base_url_manifest".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "base_url_manifest",
                     &self.r#base_url_manifest,
-                )
-                .await,
-            );
-            map.insert(
-                "base_url_manifest_1".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "base_url_manifest_1",
                     &self.r#base_url_manifest_1,
-                )
-                .await,
-            );
-            map.insert(
-                "caption_language_mappings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "caption_language_mappings",
                     &self.r#caption_language_mappings,
-                )
-                .await,
-            );
-            map.insert(
-                "caption_language_setting".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "caption_language_setting",
                     &self.r#caption_language_setting,
-                )
-                .await,
-            );
-            map.insert(
-                "client_cache".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_cache",
                     &self.r#client_cache,
-                )
-                .await,
-            );
-            map.insert(
-                "codec_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "codec_specification",
                     &self.r#codec_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "constant_iv".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "constant_iv",
                     &self.r#constant_iv,
-                )
-                .await,
-            );
-            map.insert(
-                "destination".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination",
                     &self.r#destination,
-                )
-                .await,
-            );
-            map.insert(
-                "directory_structure".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "directory_structure",
                     &self.r#directory_structure,
-                )
-                .await,
-            );
-            map.insert(
-                "discontinuity_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "discontinuity_tags",
                     &self.r#discontinuity_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "encryption_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encryption_type",
                     &self.r#encryption_type,
-                )
-                .await,
-            );
-            map.insert(
-                "hls_cdn_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "hls_cdn_settings",
                     &self.r#hls_cdn_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "hls_id_3_segment_tagging".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "hls_id_3_segment_tagging",
                     &self.r#hls_id_3_segment_tagging,
-                )
-                .await,
-            );
-            map.insert(
-                "iframe_only_playlists".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "iframe_only_playlists",
                     &self.r#iframe_only_playlists,
-                )
-                .await,
-            );
-            map.insert(
-                "incomplete_segment_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "incomplete_segment_behavior",
                     &self.r#incomplete_segment_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "index_n_segments".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "index_n_segments",
                     &self.r#index_n_segments,
-                )
-                .await,
-            );
-            map.insert(
-                "input_loss_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_loss_action",
                     &self.r#input_loss_action,
-                )
-                .await,
-            );
-            map.insert(
-                "iv_in_manifest".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "iv_in_manifest",
                     &self.r#iv_in_manifest,
-                )
-                .await,
-            );
-            map.insert(
-                "iv_source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "iv_source",
                     &self.r#iv_source,
-                )
-                .await,
-            );
-            map.insert(
-                "keep_segments".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "keep_segments",
                     &self.r#keep_segments,
-                )
-                .await,
-            );
-            map.insert(
-                "key_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "key_format",
                     &self.r#key_format,
-                )
-                .await,
-            );
-            map.insert(
-                "key_format_versions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "key_format_versions",
                     &self.r#key_format_versions,
-                )
-                .await,
-            );
-            map.insert(
-                "key_provider_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "key_provider_settings",
                     &self.r#key_provider_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "manifest_compression".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "manifest_compression",
                     &self.r#manifest_compression,
-                )
-                .await,
-            );
-            map.insert(
-                "manifest_duration_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "manifest_duration_format",
                     &self.r#manifest_duration_format,
-                )
-                .await,
-            );
-            map.insert(
-                "min_segment_length".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_segment_length",
                     &self.r#min_segment_length,
-                )
-                .await,
-            );
-            map.insert(
-                "mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mode",
                     &self.r#mode,
-                )
-                .await,
-            );
-            map.insert(
-                "output_selection".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "output_selection",
                     &self.r#output_selection,
-                )
-                .await,
-            );
-            map.insert(
-                "program_date_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "program_date_time",
                     &self.r#program_date_time,
-                )
-                .await,
-            );
-            map.insert(
-                "program_date_time_clock".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "program_date_time_clock",
                     &self.r#program_date_time_clock,
-                )
-                .await,
-            );
-            map.insert(
-                "program_date_time_period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "program_date_time_period",
                     &self.r#program_date_time_period,
-                )
-                .await,
-            );
-            map.insert(
-                "redundant_manifest".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "redundant_manifest",
                     &self.r#redundant_manifest,
-                )
-                .await,
-            );
-            map.insert(
-                "segment_length".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "segment_length",
                     &self.r#segment_length,
-                )
-                .await,
-            );
-            map.insert(
-                "segments_per_subdirectory".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "segments_per_subdirectory",
                     &self.r#segments_per_subdirectory,
-                )
-                .await,
-            );
-            map.insert(
-                "stream_inf_resolution".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stream_inf_resolution",
                     &self.r#stream_inf_resolution,
-                )
-                .await,
-            );
-            map.insert(
-                "timed_metadata_id_3_frame".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timed_metadata_id_3_frame",
                     &self.r#timed_metadata_id_3_frame,
-                )
-                .await,
-            );
-            map.insert(
-                "timed_metadata_id_3_period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timed_metadata_id_3_period",
                     &self.r#timed_metadata_id_3_period,
-                )
-                .await,
-            );
-            map.insert(
-                "timestamp_delta_milliseconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timestamp_delta_milliseconds",
                     &self.r#timestamp_delta_milliseconds,
-                )
-                .await,
-            );
-            map.insert(
-                "ts_file_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ts_file_mode",
                     &self.r#ts_file_mode,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

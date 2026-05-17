@@ -76,130 +76,78 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "backend_address_pool_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "backend_address_pool_id",
                     &self.r#backend_address_pool_id,
-                )
-                .await,
-            );
-            map.insert(
-                "backend_address_pool_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "backend_address_pool_name",
                     &self.r#backend_address_pool_name,
-                )
-                .await,
-            );
-            map.insert(
-                "backend_http_settings_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "backend_http_settings_id",
                     &self.r#backend_http_settings_id,
-                )
-                .await,
-            );
-            map.insert(
-                "backend_http_settings_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "backend_http_settings_name",
                     &self.r#backend_http_settings_name,
-                )
-                .await,
-            );
-            map.insert(
-                "http_listener_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_listener_id",
                     &self.r#http_listener_id,
-                )
-                .await,
-            );
-            map.insert(
-                "http_listener_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_listener_name",
                     &self.r#http_listener_name,
-                )
-                .await,
-            );
-            map.insert(
-                "id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "id",
                     &self.r#id,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "priority".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "priority",
                     &self.r#priority,
-                )
-                .await,
-            );
-            map.insert(
-                "redirect_configuration_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "redirect_configuration_id",
                     &self.r#redirect_configuration_id,
-                )
-                .await,
-            );
-            map.insert(
-                "redirect_configuration_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "redirect_configuration_name",
                     &self.r#redirect_configuration_name,
-                )
-                .await,
-            );
-            map.insert(
-                "rewrite_rule_set_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rewrite_rule_set_id",
                     &self.r#rewrite_rule_set_id,
-                )
-                .await,
-            );
-            map.insert(
-                "rewrite_rule_set_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rewrite_rule_set_name",
                     &self.r#rewrite_rule_set_name,
-                )
-                .await,
-            );
-            map.insert(
-                "rule_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rule_type",
                     &self.r#rule_type,
-                )
-                .await,
-            );
-            map.insert(
-                "url_path_map_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url_path_map_id",
                     &self.r#url_path_map_id,
-                )
-                .await,
-            );
-            map.insert(
-                "url_path_map_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url_path_map_name",
                     &self.r#url_path_map_name,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

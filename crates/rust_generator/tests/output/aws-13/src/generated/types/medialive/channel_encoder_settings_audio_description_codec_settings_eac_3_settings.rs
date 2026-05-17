@@ -80,158 +80,94 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "attenuation_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "attenuation_control",
                     &self.r#attenuation_control,
-                )
-                .await,
-            );
-            map.insert(
-                "bitrate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bitrate",
                     &self.r#bitrate,
-                )
-                .await,
-            );
-            map.insert(
-                "bitstream_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bitstream_mode",
                     &self.r#bitstream_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "coding_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "coding_mode",
                     &self.r#coding_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "dc_filter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dc_filter",
                     &self.r#dc_filter,
-                )
-                .await,
-            );
-            map.insert(
-                "dialnorm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dialnorm",
                     &self.r#dialnorm,
-                )
-                .await,
-            );
-            map.insert(
-                "drc_line".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "drc_line",
                     &self.r#drc_line,
-                )
-                .await,
-            );
-            map.insert(
-                "drc_rf".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "drc_rf",
                     &self.r#drc_rf,
-                )
-                .await,
-            );
-            map.insert(
-                "lfe_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lfe_control",
                     &self.r#lfe_control,
-                )
-                .await,
-            );
-            map.insert(
-                "lfe_filter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lfe_filter",
                     &self.r#lfe_filter,
-                )
-                .await,
-            );
-            map.insert(
-                "lo_ro_center_mix_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lo_ro_center_mix_level",
                     &self.r#lo_ro_center_mix_level,
-                )
-                .await,
-            );
-            map.insert(
-                "lo_ro_surround_mix_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lo_ro_surround_mix_level",
                     &self.r#lo_ro_surround_mix_level,
-                )
-                .await,
-            );
-            map.insert(
-                "lt_rt_center_mix_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lt_rt_center_mix_level",
                     &self.r#lt_rt_center_mix_level,
-                )
-                .await,
-            );
-            map.insert(
-                "lt_rt_surround_mix_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lt_rt_surround_mix_level",
                     &self.r#lt_rt_surround_mix_level,
-                )
-                .await,
-            );
-            map.insert(
-                "metadata_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metadata_control",
                     &self.r#metadata_control,
-                )
-                .await,
-            );
-            map.insert(
-                "passthrough_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "passthrough_control",
                     &self.r#passthrough_control,
-                )
-                .await,
-            );
-            map.insert(
-                "phase_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "phase_control",
                     &self.r#phase_control,
-                )
-                .await,
-            );
-            map.insert(
-                "stereo_downmix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stereo_downmix",
                     &self.r#stereo_downmix,
-                )
-                .await,
-            );
-            map.insert(
-                "surround_ex_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "surround_ex_mode",
                     &self.r#surround_ex_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "surround_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "surround_mode",
                     &self.r#surround_mode,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

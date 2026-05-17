@@ -64,137 +64,82 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "audio_frames_per_pes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "audio_frames_per_pes",
                     &self.r#audio_frames_per_pes,
-                )
-                .await,
-            );
-            map.insert(
-                "audio_pids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "audio_pids",
                     &self.r#audio_pids,
-                )
-                .await,
-            );
-            map.insert(
-                "ecm_pid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ecm_pid",
                     &self.r#ecm_pid,
-                )
-                .await,
-            );
-            map.insert(
-                "nielsen_id_3_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "nielsen_id_3_behavior",
                     &self.r#nielsen_id_3_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "pat_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pat_interval",
                     &self.r#pat_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "pcr_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pcr_control",
                     &self.r#pcr_control,
-                )
-                .await,
-            );
-            map.insert(
-                "pcr_period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pcr_period",
                     &self.r#pcr_period,
-                )
-                .await,
-            );
-            map.insert(
-                "pcr_pid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pcr_pid",
                     &self.r#pcr_pid,
-                )
-                .await,
-            );
-            map.insert(
-                "pmt_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pmt_interval",
                     &self.r#pmt_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "pmt_pid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pmt_pid",
                     &self.r#pmt_pid,
-                )
-                .await,
-            );
-            map.insert(
-                "program_num".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "program_num",
                     &self.r#program_num,
-                )
-                .await,
-            );
-            map.insert(
-                "scte_35_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scte_35_behavior",
                     &self.r#scte_35_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "scte_35_pid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scte_35_pid",
                     &self.r#scte_35_pid,
-                )
-                .await,
-            );
-            map.insert(
-                "timed_metadata_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timed_metadata_behavior",
                     &self.r#timed_metadata_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "timed_metadata_pid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timed_metadata_pid",
                     &self.r#timed_metadata_pid,
-                )
-                .await,
-            );
-            map.insert(
-                "transport_stream_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "transport_stream_id",
                     &self.r#transport_stream_id,
-                )
-                .await,
-            );
-            map.insert(
-                "video_pid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "video_pid",
                     &self.r#video_pid,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -42,67 +42,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "azure_key_vault_certificate_secret_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "azure_key_vault_certificate_secret_name",
                     &self.r#azure_key_vault_certificate_secret_name,
-                )
-                .await,
-            );
-            map.insert(
-                "azure_key_vault_certificate_secret_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "azure_key_vault_certificate_secret_version",
                     &self.r#azure_key_vault_certificate_secret_version,
-                )
-                .await,
-            );
-            map.insert(
-                "azure_key_vault_certificate_vault_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "azure_key_vault_certificate_vault_id",
                     &self.r#azure_key_vault_certificate_vault_id,
-                )
-                .await,
-            );
-            map.insert(
-                "certificate_source".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "certificate_source",
                     &self.r#certificate_source,
-                )
-                .await,
-            );
-            map.insert(
-                "minimum_tls_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimum_tls_version",
                     &self.r#minimum_tls_version,
-                )
-                .await,
-            );
-            map.insert(
-                "provisioning_state".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "provisioning_state",
                     &self.r#provisioning_state,
-                )
-                .await,
-            );
-            map.insert(
-                "provisioning_substate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "provisioning_substate",
                     &self.r#provisioning_substate,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

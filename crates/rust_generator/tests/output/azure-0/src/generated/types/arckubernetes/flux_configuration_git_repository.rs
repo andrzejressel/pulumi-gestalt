@@ -56,95 +56,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flu
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "https_ca_cert_base_64".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "https_ca_cert_base_64",
                     &self.r#https_ca_cert_base_64,
-                )
-                .await,
-            );
-            map.insert(
-                "https_key_base_64".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "https_key_base_64",
                     &self.r#https_key_base_64,
-                )
-                .await,
-            );
-            map.insert(
-                "https_user".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "https_user",
                     &self.r#https_user,
-                )
-                .await,
-            );
-            map.insert(
-                "local_auth_reference".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "local_auth_reference",
                     &self.r#local_auth_reference,
-                )
-                .await,
-            );
-            map.insert(
-                "reference_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "reference_type",
                     &self.r#reference_type,
-                )
-                .await,
-            );
-            map.insert(
-                "reference_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "reference_value",
                     &self.r#reference_value,
-                )
-                .await,
-            );
-            map.insert(
-                "ssh_known_hosts_base_64".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssh_known_hosts_base_64",
                     &self.r#ssh_known_hosts_base_64,
-                )
-                .await,
-            );
-            map.insert(
-                "ssh_private_key_base_64".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssh_private_key_base_64",
                     &self.r#ssh_private_key_base_64,
-                )
-                .await,
-            );
-            map.insert(
-                "sync_interval_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sync_interval_in_seconds",
                     &self.r#sync_interval_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "timeout_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timeout_in_seconds",
                     &self.r#timeout_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url",
                     &self.r#url,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

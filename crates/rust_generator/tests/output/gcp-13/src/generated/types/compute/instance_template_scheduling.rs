@@ -75,102 +75,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "automatic_restart".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "automatic_restart",
                     &self.r#automatic_restart,
-                )
-                .await,
-            );
-            map.insert(
-                "host_error_timeout_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "host_error_timeout_seconds",
                     &self.r#host_error_timeout_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_termination_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_termination_action",
                     &self.r#instance_termination_action,
-                )
-                .await,
-            );
-            map.insert(
-                "local_ssd_recovery_timeouts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "local_ssd_recovery_timeouts",
                     &self.r#local_ssd_recovery_timeouts,
-                )
-                .await,
-            );
-            map.insert(
-                "maintenance_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maintenance_interval",
                     &self.r#maintenance_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "max_run_duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_run_duration",
                     &self.r#max_run_duration,
-                )
-                .await,
-            );
-            map.insert(
-                "min_node_cpus".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_node_cpus",
                     &self.r#min_node_cpus,
-                )
-                .await,
-            );
-            map.insert(
-                "node_affinities".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "node_affinities",
                     &self.r#node_affinities,
-                )
-                .await,
-            );
-            map.insert(
-                "on_host_maintenance".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "on_host_maintenance",
                     &self.r#on_host_maintenance,
-                )
-                .await,
-            );
-            map.insert(
-                "on_instance_stop_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "on_instance_stop_action",
                     &self.r#on_instance_stop_action,
-                )
-                .await,
-            );
-            map.insert(
-                "preemptible".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preemptible",
                     &self.r#preemptible,
-                )
-                .await,
-            );
-            map.insert(
-                "provisioning_model".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "provisioning_model",
                     &self.r#provisioning_model,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -60,102 +60,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "batch_job_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "batch_job_parameters",
                     &self.r#batch_job_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "cloudwatch_logs_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cloudwatch_logs_parameters",
                     &self.r#cloudwatch_logs_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "ecs_task_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ecs_task_parameters",
                     &self.r#ecs_task_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "eventbridge_event_bus_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "eventbridge_event_bus_parameters",
                     &self.r#eventbridge_event_bus_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "http_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_parameters",
                     &self.r#http_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "input_template".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_template",
                     &self.r#input_template,
-                )
-                .await,
-            );
-            map.insert(
-                "kinesis_stream_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kinesis_stream_parameters",
                     &self.r#kinesis_stream_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "lambda_function_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lambda_function_parameters",
                     &self.r#lambda_function_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "redshift_data_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "redshift_data_parameters",
                     &self.r#redshift_data_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "sagemaker_pipeline_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sagemaker_pipeline_parameters",
                     &self.r#sagemaker_pipeline_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "sqs_queue_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sqs_queue_parameters",
                     &self.r#sqs_queue_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "step_function_state_machine_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "step_function_state_machine_parameters",
                     &self.r#step_function_state_machine_parameters,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

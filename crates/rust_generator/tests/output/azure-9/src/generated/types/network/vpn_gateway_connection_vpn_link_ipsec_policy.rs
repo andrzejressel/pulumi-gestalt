@@ -44,74 +44,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "dh_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "dh_group",
                     &self.r#dh_group,
-                )
-                .await,
-            );
-            map.insert(
-                "encryption_algorithm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encryption_algorithm",
                     &self.r#encryption_algorithm,
-                )
-                .await,
-            );
-            map.insert(
-                "ike_encryption_algorithm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ike_encryption_algorithm",
                     &self.r#ike_encryption_algorithm,
-                )
-                .await,
-            );
-            map.insert(
-                "ike_integrity_algorithm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ike_integrity_algorithm",
                     &self.r#ike_integrity_algorithm,
-                )
-                .await,
-            );
-            map.insert(
-                "integrity_algorithm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "integrity_algorithm",
                     &self.r#integrity_algorithm,
-                )
-                .await,
-            );
-            map.insert(
-                "pfs_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pfs_group",
                     &self.r#pfs_group,
-                )
-                .await,
-            );
-            map.insert(
-                "sa_data_size_kb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sa_data_size_kb",
                     &self.r#sa_data_size_kb,
-                )
-                .await,
-            );
-            map.insert(
-                "sa_lifetime_sec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sa_lifetime_sec",
                     &self.r#sa_lifetime_sec,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

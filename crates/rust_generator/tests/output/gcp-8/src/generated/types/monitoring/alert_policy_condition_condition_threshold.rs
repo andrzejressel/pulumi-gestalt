@@ -146,88 +146,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "aggregations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "aggregations",
                     &self.r#aggregations,
-                )
-                .await,
-            );
-            map.insert(
-                "comparison".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "comparison",
                     &self.r#comparison,
-                )
-                .await,
-            );
-            map.insert(
-                "denominator_aggregations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "denominator_aggregations",
                     &self.r#denominator_aggregations,
-                )
-                .await,
-            );
-            map.insert(
-                "denominator_filter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "denominator_filter",
                     &self.r#denominator_filter,
-                )
-                .await,
-            );
-            map.insert(
-                "duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "duration",
                     &self.r#duration,
-                )
-                .await,
-            );
-            map.insert(
-                "evaluation_missing_data".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "evaluation_missing_data",
                     &self.r#evaluation_missing_data,
-                )
-                .await,
-            );
-            map.insert(
-                "filter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "filter",
                     &self.r#filter,
-                )
-                .await,
-            );
-            map.insert(
-                "forecast_options".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forecast_options",
                     &self.r#forecast_options,
-                )
-                .await,
-            );
-            map.insert(
-                "threshold_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "threshold_value",
                     &self.r#threshold_value,
-                )
-                .await,
-            );
-            map.insert(
-                "trigger".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "trigger",
                     &self.r#trigger,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

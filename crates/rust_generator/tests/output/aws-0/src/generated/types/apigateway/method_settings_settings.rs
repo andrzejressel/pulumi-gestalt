@@ -52,88 +52,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cache_data_encrypted".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cache_data_encrypted",
                     &self.r#cache_data_encrypted,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_ttl_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_ttl_in_seconds",
                     &self.r#cache_ttl_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "caching_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "caching_enabled",
                     &self.r#caching_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "data_trace_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_trace_enabled",
                     &self.r#data_trace_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "logging_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "logging_level",
                     &self.r#logging_level,
-                )
-                .await,
-            );
-            map.insert(
-                "metrics_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metrics_enabled",
                     &self.r#metrics_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "require_authorization_for_cache_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "require_authorization_for_cache_control",
                     &self.r#require_authorization_for_cache_control,
-                )
-                .await,
-            );
-            map.insert(
-                "throttling_burst_limit".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "throttling_burst_limit",
                     &self.r#throttling_burst_limit,
-                )
-                .await,
-            );
-            map.insert(
-                "throttling_rate_limit".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "throttling_rate_limit",
                     &self.r#throttling_rate_limit,
-                )
-                .await,
-            );
-            map.insert(
-                "unauthorized_cache_control_header_strategy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "unauthorized_cache_control_header_strategy",
                     &self.r#unauthorized_cache_control_header_strategy,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

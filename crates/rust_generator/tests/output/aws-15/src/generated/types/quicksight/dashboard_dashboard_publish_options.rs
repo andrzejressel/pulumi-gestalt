@@ -52,88 +52,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Das
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "ad_hoc_filtering_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "ad_hoc_filtering_option",
                     &self.r#ad_hoc_filtering_option,
-                )
-                .await,
-            );
-            map.insert(
-                "data_point_drill_up_down_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_point_drill_up_down_option",
                     &self.r#data_point_drill_up_down_option,
-                )
-                .await,
-            );
-            map.insert(
-                "data_point_menu_label_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_point_menu_label_option",
                     &self.r#data_point_menu_label_option,
-                )
-                .await,
-            );
-            map.insert(
-                "data_point_tooltip_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_point_tooltip_option",
                     &self.r#data_point_tooltip_option,
-                )
-                .await,
-            );
-            map.insert(
-                "export_to_csv_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "export_to_csv_option",
                     &self.r#export_to_csv_option,
-                )
-                .await,
-            );
-            map.insert(
-                "export_with_hidden_fields_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "export_with_hidden_fields_option",
                     &self.r#export_with_hidden_fields_option,
-                )
-                .await,
-            );
-            map.insert(
-                "sheet_controls_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sheet_controls_option",
                     &self.r#sheet_controls_option,
-                )
-                .await,
-            );
-            map.insert(
-                "sheet_layout_element_maximization_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sheet_layout_element_maximization_option",
                     &self.r#sheet_layout_element_maximization_option,
-                )
-                .await,
-            );
-            map.insert(
-                "visual_axis_sort_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "visual_axis_sort_option",
                     &self.r#visual_axis_sort_option,
-                )
-                .await,
-            );
-            map.insert(
-                "visual_menu_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "visual_menu_option",
                     &self.r#visual_menu_option,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

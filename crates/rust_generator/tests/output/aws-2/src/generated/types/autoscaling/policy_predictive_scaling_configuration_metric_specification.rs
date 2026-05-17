@@ -40,67 +40,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "customized_capacity_metric_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "customized_capacity_metric_specification",
                     &self.r#customized_capacity_metric_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "customized_load_metric_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "customized_load_metric_specification",
                     &self.r#customized_load_metric_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "customized_scaling_metric_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "customized_scaling_metric_specification",
                     &self.r#customized_scaling_metric_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "predefined_load_metric_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "predefined_load_metric_specification",
                     &self.r#predefined_load_metric_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "predefined_metric_pair_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "predefined_metric_pair_specification",
                     &self.r#predefined_metric_pair_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "predefined_scaling_metric_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "predefined_scaling_metric_specification",
                     &self.r#predefined_scaling_metric_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "target_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_value",
                     &self.r#target_value,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -353,263 +353,154 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "all_ports".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "all_ports",
                     &self.r#all_ports,
-                )
-                .await,
-            );
-            map.insert(
-                "allow_global_access".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allow_global_access",
                     &self.r#allow_global_access,
-                )
-                .await,
-            );
-            map.insert(
-                "allow_psc_global_access".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allow_psc_global_access",
                     &self.r#allow_psc_global_access,
-                )
-                .await,
-            );
-            map.insert(
-                "backend_service".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "backend_service",
                     &self.r#backend_service,
-                )
-                .await,
-            );
-            map.insert(
-                "base_forwarding_rule".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "base_forwarding_rule",
                     &self.r#base_forwarding_rule,
-                )
-                .await,
-            );
-            map.insert(
-                "creation_timestamp".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "creation_timestamp",
                     &self.r#creation_timestamp,
-                )
-                .await,
-            );
-            map.insert(
-                "description".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "description",
                     &self.r#description,
-                )
-                .await,
-            );
-            map.insert(
-                "effective_labels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "effective_labels",
                     &self.r#effective_labels,
-                )
-                .await,
-            );
-            map.insert(
-                "forwarding_rule_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forwarding_rule_id",
                     &self.r#forwarding_rule_id,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_address",
                     &self.r#ip_address,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_protocol".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_protocol",
                     &self.r#ip_protocol,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_version",
                     &self.r#ip_version,
-                )
-                .await,
-            );
-            map.insert(
-                "is_mirroring_collector".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_mirroring_collector",
                     &self.r#is_mirroring_collector,
-                )
-                .await,
-            );
-            map.insert(
-                "label_fingerprint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "label_fingerprint",
                     &self.r#label_fingerprint,
-                )
-                .await,
-            );
-            map.insert(
-                "labels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "labels",
                     &self.r#labels,
-                )
-                .await,
-            );
-            map.insert(
-                "load_balancing_scheme".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "load_balancing_scheme",
                     &self.r#load_balancing_scheme,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "network".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network",
                     &self.r#network,
-                )
-                .await,
-            );
-            map.insert(
-                "network_tier".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_tier",
                     &self.r#network_tier,
-                )
-                .await,
-            );
-            map.insert(
-                "no_automate_dns_zone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "no_automate_dns_zone",
                     &self.r#no_automate_dns_zone,
-                )
-                .await,
-            );
-            map.insert(
-                "port_range".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "port_range",
                     &self.r#port_range,
-                )
-                .await,
-            );
-            map.insert(
-                "ports".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ports",
                     &self.r#ports,
-                )
-                .await,
-            );
-            map.insert(
-                "project".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "project",
                     &self.r#project,
-                )
-                .await,
-            );
-            map.insert(
-                "psc_connection_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "psc_connection_id",
                     &self.r#psc_connection_id,
-                )
-                .await,
-            );
-            map.insert(
-                "psc_connection_status".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "psc_connection_status",
                     &self.r#psc_connection_status,
-                )
-                .await,
-            );
-            map.insert(
-                "pulumi_labels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pulumi_labels",
                     &self.r#pulumi_labels,
-                )
-                .await,
-            );
-            map.insert(
-                "recreate_closed_psc".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recreate_closed_psc",
                     &self.r#recreate_closed_psc,
-                )
-                .await,
-            );
-            map.insert(
-                "region".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "region",
                     &self.r#region,
-                )
-                .await,
-            );
-            map.insert(
-                "self_link".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "self_link",
                     &self.r#self_link,
-                )
-                .await,
-            );
-            map.insert(
-                "service_directory_registrations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_directory_registrations",
                     &self.r#service_directory_registrations,
-                )
-                .await,
-            );
-            map.insert(
-                "service_label".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_label",
                     &self.r#service_label,
-                )
-                .await,
-            );
-            map.insert(
-                "service_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_name",
                     &self.r#service_name,
-                )
-                .await,
-            );
-            map.insert(
-                "source_ip_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "source_ip_ranges",
                     &self.r#source_ip_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "subnetwork".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnetwork",
                     &self.r#subnetwork,
-                )
-                .await,
-            );
-            map.insert(
-                "target".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target",
                     &self.r#target,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

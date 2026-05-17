@@ -77,95 +77,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "bucketing_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "bucketing_config",
                     &self.r#bucketing_config,
-                )
-                .await,
-            );
-            map.insert(
-                "character_mask_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "character_mask_config",
                     &self.r#character_mask_config,
-                )
-                .await,
-            );
-            map.insert(
-                "crypto_deterministic_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "crypto_deterministic_config",
                     &self.r#crypto_deterministic_config,
-                )
-                .await,
-            );
-            map.insert(
-                "crypto_hash_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "crypto_hash_config",
                     &self.r#crypto_hash_config,
-                )
-                .await,
-            );
-            map.insert(
-                "crypto_replace_ffx_fpe_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "crypto_replace_ffx_fpe_config",
                     &self.r#crypto_replace_ffx_fpe_config,
-                )
-                .await,
-            );
-            map.insert(
-                "date_shift_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "date_shift_config",
                     &self.r#date_shift_config,
-                )
-                .await,
-            );
-            map.insert(
-                "fixed_size_bucketing_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fixed_size_bucketing_config",
                     &self.r#fixed_size_bucketing_config,
-                )
-                .await,
-            );
-            map.insert(
-                "redact_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "redact_config",
                     &self.r#redact_config,
-                )
-                .await,
-            );
-            map.insert(
-                "replace_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "replace_config",
                     &self.r#replace_config,
-                )
-                .await,
-            );
-            map.insert(
-                "replace_dictionary_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "replace_dictionary_config",
                     &self.r#replace_dictionary_config,
-                )
-                .await,
-            );
-            map.insert(
-                "time_part_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "time_part_config",
                     &self.r#time_part_config,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

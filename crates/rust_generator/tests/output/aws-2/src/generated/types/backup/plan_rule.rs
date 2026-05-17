@@ -52,88 +52,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pla
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "completion_window".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "completion_window",
                     &self.r#completion_window,
-                )
-                .await,
-            );
-            map.insert(
-                "copy_actions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "copy_actions",
                     &self.r#copy_actions,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_continuous_backup".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_continuous_backup",
                     &self.r#enable_continuous_backup,
-                )
-                .await,
-            );
-            map.insert(
-                "lifecycle".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lifecycle",
                     &self.r#lifecycle,
-                )
-                .await,
-            );
-            map.insert(
-                "recovery_point_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recovery_point_tags",
                     &self.r#recovery_point_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "rule_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rule_name",
                     &self.r#rule_name,
-                )
-                .await,
-            );
-            map.insert(
-                "schedule".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "schedule",
                     &self.r#schedule,
-                )
-                .await,
-            );
-            map.insert(
-                "schedule_expression_timezone".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "schedule_expression_timezone",
                     &self.r#schedule_expression_timezone,
-                )
-                .await,
-            );
-            map.insert(
-                "start_window".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "start_window",
                     &self.r#start_window,
-                )
-                .await,
-            );
-            map.insert(
-                "target_vault_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_vault_name",
                     &self.r#target_vault_name,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

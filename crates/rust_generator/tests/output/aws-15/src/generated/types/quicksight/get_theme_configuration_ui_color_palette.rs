@@ -76,130 +76,78 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "accent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "accent",
                     &self.r#accent,
-                )
-                .await,
-            );
-            map.insert(
-                "accent_foreground".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "accent_foreground",
                     &self.r#accent_foreground,
-                )
-                .await,
-            );
-            map.insert(
-                "danger".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "danger",
                     &self.r#danger,
-                )
-                .await,
-            );
-            map.insert(
-                "danger_foreground".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "danger_foreground",
                     &self.r#danger_foreground,
-                )
-                .await,
-            );
-            map.insert(
-                "dimension".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dimension",
                     &self.r#dimension,
-                )
-                .await,
-            );
-            map.insert(
-                "dimension_foreground".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dimension_foreground",
                     &self.r#dimension_foreground,
-                )
-                .await,
-            );
-            map.insert(
-                "measure".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "measure",
                     &self.r#measure,
-                )
-                .await,
-            );
-            map.insert(
-                "measure_foreground".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "measure_foreground",
                     &self.r#measure_foreground,
-                )
-                .await,
-            );
-            map.insert(
-                "primary_background".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "primary_background",
                     &self.r#primary_background,
-                )
-                .await,
-            );
-            map.insert(
-                "primary_foreground".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "primary_foreground",
                     &self.r#primary_foreground,
-                )
-                .await,
-            );
-            map.insert(
-                "secondary_background".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secondary_background",
                     &self.r#secondary_background,
-                )
-                .await,
-            );
-            map.insert(
-                "secondary_foreground".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secondary_foreground",
                     &self.r#secondary_foreground,
-                )
-                .await,
-            );
-            map.insert(
-                "success".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "success",
                     &self.r#success,
-                )
-                .await,
-            );
-            map.insert(
-                "success_foreground".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "success_foreground",
                     &self.r#success_foreground,
-                )
-                .await,
-            );
-            map.insert(
-                "warning".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "warning",
                     &self.r#warning,
-                )
-                .await,
-            );
-            map.insert(
-                "warning_foreground".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "warning_foreground",
                     &self.r#warning_foreground,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

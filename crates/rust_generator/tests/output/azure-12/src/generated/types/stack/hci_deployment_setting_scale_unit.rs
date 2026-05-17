@@ -104,179 +104,106 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "active_directory_organizational_unit_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "active_directory_organizational_unit_path",
                     &self.r#active_directory_organizational_unit_path,
-                )
-                .await,
-            );
-            map.insert(
-                "bitlocker_boot_volume_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bitlocker_boot_volume_enabled",
                     &self.r#bitlocker_boot_volume_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "bitlocker_data_volume_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bitlocker_data_volume_enabled",
                     &self.r#bitlocker_data_volume_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "cluster".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cluster",
                     &self.r#cluster,
-                )
-                .await,
-            );
-            map.insert(
-                "credential_guard_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "credential_guard_enabled",
                     &self.r#credential_guard_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "domain_fqdn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "domain_fqdn",
                     &self.r#domain_fqdn,
-                )
-                .await,
-            );
-            map.insert(
-                "drift_control_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "drift_control_enabled",
                     &self.r#drift_control_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "drtm_protection_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "drtm_protection_enabled",
                     &self.r#drtm_protection_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "episodic_data_upload_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "episodic_data_upload_enabled",
                     &self.r#episodic_data_upload_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "eu_location_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "eu_location_enabled",
                     &self.r#eu_location_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "host_network".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "host_network",
                     &self.r#host_network,
-                )
-                .await,
-            );
-            map.insert(
-                "hvci_protection_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "hvci_protection_enabled",
                     &self.r#hvci_protection_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "infrastructure_networks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "infrastructure_networks",
                     &self.r#infrastructure_networks,
-                )
-                .await,
-            );
-            map.insert(
-                "name_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name_prefix",
                     &self.r#name_prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "optional_service".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "optional_service",
                     &self.r#optional_service,
-                )
-                .await,
-            );
-            map.insert(
-                "physical_nodes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "physical_nodes",
                     &self.r#physical_nodes,
-                )
-                .await,
-            );
-            map.insert(
-                "secrets_location".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secrets_location",
                     &self.r#secrets_location,
-                )
-                .await,
-            );
-            map.insert(
-                "side_channel_mitigation_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "side_channel_mitigation_enabled",
                     &self.r#side_channel_mitigation_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "smb_cluster_encryption_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "smb_cluster_encryption_enabled",
                     &self.r#smb_cluster_encryption_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "smb_signing_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "smb_signing_enabled",
                     &self.r#smb_signing_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "storage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage",
                     &self.r#storage,
-                )
-                .await,
-            );
-            map.insert(
-                "streaming_data_client_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "streaming_data_client_enabled",
                     &self.r#streaming_data_client_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "wdac_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "wdac_enabled",
                     &self.r#wdac_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

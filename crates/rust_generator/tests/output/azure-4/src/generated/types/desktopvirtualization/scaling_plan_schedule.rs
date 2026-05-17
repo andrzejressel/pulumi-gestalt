@@ -84,144 +84,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "days_of_weeks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "days_of_weeks",
                     &self.r#days_of_weeks,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "off_peak_load_balancing_algorithm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "off_peak_load_balancing_algorithm",
                     &self.r#off_peak_load_balancing_algorithm,
-                )
-                .await,
-            );
-            map.insert(
-                "off_peak_start_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "off_peak_start_time",
                     &self.r#off_peak_start_time,
-                )
-                .await,
-            );
-            map.insert(
-                "peak_load_balancing_algorithm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "peak_load_balancing_algorithm",
                     &self.r#peak_load_balancing_algorithm,
-                )
-                .await,
-            );
-            map.insert(
-                "peak_start_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "peak_start_time",
                     &self.r#peak_start_time,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_down_capacity_threshold_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_down_capacity_threshold_percent",
                     &self.r#ramp_down_capacity_threshold_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_down_force_logoff_users".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_down_force_logoff_users",
                     &self.r#ramp_down_force_logoff_users,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_down_load_balancing_algorithm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_down_load_balancing_algorithm",
                     &self.r#ramp_down_load_balancing_algorithm,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_down_minimum_hosts_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_down_minimum_hosts_percent",
                     &self.r#ramp_down_minimum_hosts_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_down_notification_message".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_down_notification_message",
                     &self.r#ramp_down_notification_message,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_down_start_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_down_start_time",
                     &self.r#ramp_down_start_time,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_down_stop_hosts_when".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_down_stop_hosts_when",
                     &self.r#ramp_down_stop_hosts_when,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_down_wait_time_minutes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_down_wait_time_minutes",
                     &self.r#ramp_down_wait_time_minutes,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_up_capacity_threshold_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_up_capacity_threshold_percent",
                     &self.r#ramp_up_capacity_threshold_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_up_load_balancing_algorithm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_up_load_balancing_algorithm",
                     &self.r#ramp_up_load_balancing_algorithm,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_up_minimum_hosts_percent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_up_minimum_hosts_percent",
                     &self.r#ramp_up_minimum_hosts_percent,
-                )
-                .await,
-            );
-            map.insert(
-                "ramp_up_start_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ramp_up_start_time",
                     &self.r#ramp_up_start_time,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

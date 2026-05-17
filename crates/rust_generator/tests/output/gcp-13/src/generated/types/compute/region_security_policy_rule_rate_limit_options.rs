@@ -66,74 +66,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "ban_duration_sec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "ban_duration_sec",
                     &self.r#ban_duration_sec,
-                )
-                .await,
-            );
-            map.insert(
-                "ban_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ban_threshold",
                     &self.r#ban_threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "conform_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "conform_action",
                     &self.r#conform_action,
-                )
-                .await,
-            );
-            map.insert(
-                "enforce_on_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enforce_on_key",
                     &self.r#enforce_on_key,
-                )
-                .await,
-            );
-            map.insert(
-                "enforce_on_key_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enforce_on_key_configs",
                     &self.r#enforce_on_key_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "enforce_on_key_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enforce_on_key_name",
                     &self.r#enforce_on_key_name,
-                )
-                .await,
-            );
-            map.insert(
-                "exceed_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "exceed_action",
                     &self.r#exceed_action,
-                )
-                .await,
-            );
-            map.insert(
-                "rate_limit_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rate_limit_threshold",
                     &self.r#rate_limit_threshold,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

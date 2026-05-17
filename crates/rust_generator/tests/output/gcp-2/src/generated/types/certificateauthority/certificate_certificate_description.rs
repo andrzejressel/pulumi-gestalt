@@ -58,74 +58,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "aia_issuing_certificate_urls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "aia_issuing_certificate_urls",
                     &self.r#aia_issuing_certificate_urls,
-                )
-                .await,
-            );
-            map.insert(
-                "authority_key_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "authority_key_ids",
                     &self.r#authority_key_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "cert_fingerprints".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cert_fingerprints",
                     &self.r#cert_fingerprints,
-                )
-                .await,
-            );
-            map.insert(
-                "crl_distribution_points".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "crl_distribution_points",
                     &self.r#crl_distribution_points,
-                )
-                .await,
-            );
-            map.insert(
-                "public_keys".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_keys",
                     &self.r#public_keys,
-                )
-                .await,
-            );
-            map.insert(
-                "subject_descriptions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subject_descriptions",
                     &self.r#subject_descriptions,
-                )
-                .await,
-            );
-            map.insert(
-                "subject_key_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subject_key_ids",
                     &self.r#subject_key_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "x_509_descriptions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "x_509_descriptions",
                     &self.r#x_509_descriptions,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

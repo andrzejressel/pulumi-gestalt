@@ -54,74 +54,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "lag_duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "lag_duration",
                     &self.r#lag_duration,
-                )
-                .await,
-            );
-            map.insert(
-                "last_transfer_bytes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "last_transfer_bytes",
                     &self.r#last_transfer_bytes,
-                )
-                .await,
-            );
-            map.insert(
-                "last_transfer_duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "last_transfer_duration",
                     &self.r#last_transfer_duration,
-                )
-                .await,
-            );
-            map.insert(
-                "last_transfer_end_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "last_transfer_end_time",
                     &self.r#last_transfer_end_time,
-                )
-                .await,
-            );
-            map.insert(
-                "last_transfer_error".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "last_transfer_error",
                     &self.r#last_transfer_error,
-                )
-                .await,
-            );
-            map.insert(
-                "total_transfer_duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "total_transfer_duration",
                     &self.r#total_transfer_duration,
-                )
-                .await,
-            );
-            map.insert(
-                "transfer_bytes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "transfer_bytes",
                     &self.r#transfer_bytes,
-                )
-                .await,
-            );
-            map.insert(
-                "update_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "update_time",
                     &self.r#update_time,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

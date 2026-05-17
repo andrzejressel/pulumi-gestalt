@@ -92,158 +92,94 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "balance_similar_node_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "balance_similar_node_groups",
                     &self.r#balance_similar_node_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "daemonset_eviction_for_empty_nodes_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "daemonset_eviction_for_empty_nodes_enabled",
                     &self.r#daemonset_eviction_for_empty_nodes_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "daemonset_eviction_for_occupied_nodes_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "daemonset_eviction_for_occupied_nodes_enabled",
                     &self.r#daemonset_eviction_for_occupied_nodes_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "empty_bulk_delete_max".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "empty_bulk_delete_max",
                     &self.r#empty_bulk_delete_max,
-                )
-                .await,
-            );
-            map.insert(
-                "expander".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "expander",
                     &self.r#expander,
-                )
-                .await,
-            );
-            map.insert(
-                "ignore_daemonsets_utilization_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ignore_daemonsets_utilization_enabled",
                     &self.r#ignore_daemonsets_utilization_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "max_graceful_termination_sec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_graceful_termination_sec",
                     &self.r#max_graceful_termination_sec,
-                )
-                .await,
-            );
-            map.insert(
-                "max_node_provisioning_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_node_provisioning_time",
                     &self.r#max_node_provisioning_time,
-                )
-                .await,
-            );
-            map.insert(
-                "max_unready_nodes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_unready_nodes",
                     &self.r#max_unready_nodes,
-                )
-                .await,
-            );
-            map.insert(
-                "max_unready_percentage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_unready_percentage",
                     &self.r#max_unready_percentage,
-                )
-                .await,
-            );
-            map.insert(
-                "new_pod_scale_up_delay".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "new_pod_scale_up_delay",
                     &self.r#new_pod_scale_up_delay,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_down_delay_after_add".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_down_delay_after_add",
                     &self.r#scale_down_delay_after_add,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_down_delay_after_delete".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_down_delay_after_delete",
                     &self.r#scale_down_delay_after_delete,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_down_delay_after_failure".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_down_delay_after_failure",
                     &self.r#scale_down_delay_after_failure,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_down_unneeded".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_down_unneeded",
                     &self.r#scale_down_unneeded,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_down_unready".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_down_unready",
                     &self.r#scale_down_unready,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_down_utilization_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_down_utilization_threshold",
                     &self.r#scale_down_utilization_threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "scan_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scan_interval",
                     &self.r#scan_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "skip_nodes_with_local_storage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "skip_nodes_with_local_storage",
                     &self.r#skip_nodes_with_local_storage,
-                )
-                .await,
-            );
-            map.insert(
-                "skip_nodes_with_system_pods".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "skip_nodes_with_system_pods",
                     &self.r#skip_nodes_with_system_pods,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

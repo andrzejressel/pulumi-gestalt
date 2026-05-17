@@ -54,74 +54,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "dh_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "dh_group",
                     &self.r#dh_group,
-                )
-                .await,
-            );
-            map.insert(
-                "ike_encryption".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ike_encryption",
                     &self.r#ike_encryption,
-                )
-                .await,
-            );
-            map.insert(
-                "ike_integrity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ike_integrity",
                     &self.r#ike_integrity,
-                )
-                .await,
-            );
-            map.insert(
-                "ipsec_encryption".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ipsec_encryption",
                     &self.r#ipsec_encryption,
-                )
-                .await,
-            );
-            map.insert(
-                "ipsec_integrity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ipsec_integrity",
                     &self.r#ipsec_integrity,
-                )
-                .await,
-            );
-            map.insert(
-                "pfs_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pfs_group",
                     &self.r#pfs_group,
-                )
-                .await,
-            );
-            map.insert(
-                "sa_datasize".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sa_datasize",
                     &self.r#sa_datasize,
-                )
-                .await,
-            );
-            map.insert(
-                "sa_lifetime".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sa_lifetime",
                     &self.r#sa_lifetime,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

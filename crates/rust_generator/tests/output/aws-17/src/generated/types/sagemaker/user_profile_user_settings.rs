@@ -84,144 +84,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "auto_mount_home_efs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "auto_mount_home_efs",
                     &self.r#auto_mount_home_efs,
-                )
-                .await,
-            );
-            map.insert(
-                "canvas_app_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "canvas_app_settings",
                     &self.r#canvas_app_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "code_editor_app_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "code_editor_app_settings",
                     &self.r#code_editor_app_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_file_system_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_file_system_configs",
                     &self.r#custom_file_system_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_posix_user_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_posix_user_config",
                     &self.r#custom_posix_user_config,
-                )
-                .await,
-            );
-            map.insert(
-                "default_landing_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_landing_uri",
                     &self.r#default_landing_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "execution_role".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "execution_role",
                     &self.r#execution_role,
-                )
-                .await,
-            );
-            map.insert(
-                "jupyter_lab_app_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "jupyter_lab_app_settings",
                     &self.r#jupyter_lab_app_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "jupyter_server_app_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "jupyter_server_app_settings",
                     &self.r#jupyter_server_app_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "kernel_gateway_app_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kernel_gateway_app_settings",
                     &self.r#kernel_gateway_app_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "r_session_app_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "r_session_app_settings",
                     &self.r#r_session_app_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "r_studio_server_pro_app_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "r_studio_server_pro_app_settings",
                     &self.r#r_studio_server_pro_app_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "security_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_groups",
                     &self.r#security_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "sharing_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sharing_settings",
                     &self.r#sharing_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "space_storage_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "space_storage_settings",
                     &self.r#space_storage_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "studio_web_portal".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "studio_web_portal",
                     &self.r#studio_web_portal,
-                )
-                .await,
-            );
-            map.insert(
-                "studio_web_portal_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "studio_web_portal_settings",
                     &self.r#studio_web_portal_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "tensor_board_app_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tensor_board_app_settings",
                     &self.r#tensor_board_app_settings,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

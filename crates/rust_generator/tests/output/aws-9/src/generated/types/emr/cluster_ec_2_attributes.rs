@@ -50,81 +50,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "additional_master_security_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "additional_master_security_groups",
                     &self.r#additional_master_security_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "additional_slave_security_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "additional_slave_security_groups",
                     &self.r#additional_slave_security_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "emr_managed_master_security_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "emr_managed_master_security_group",
                     &self.r#emr_managed_master_security_group,
-                )
-                .await,
-            );
-            map.insert(
-                "emr_managed_slave_security_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "emr_managed_slave_security_group",
                     &self.r#emr_managed_slave_security_group,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_profile".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_profile",
                     &self.r#instance_profile,
-                )
-                .await,
-            );
-            map.insert(
-                "key_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "key_name",
                     &self.r#key_name,
-                )
-                .await,
-            );
-            map.insert(
-                "service_access_security_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_access_security_group",
                     &self.r#service_access_security_group,
-                )
-                .await,
-            );
-            map.insert(
-                "subnet_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnet_id",
                     &self.r#subnet_id,
-                )
-                .await,
-            );
-            map.insert(
-                "subnet_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnet_ids",
                     &self.r#subnet_ids,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

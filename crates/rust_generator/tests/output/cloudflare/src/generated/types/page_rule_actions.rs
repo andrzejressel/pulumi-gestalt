@@ -160,277 +160,162 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "always_use_https".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "always_use_https",
                     &self.r#always_use_https,
-                )
-                .await,
-            );
-            map.insert(
-                "automatic_https_rewrites".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "automatic_https_rewrites",
                     &self.r#automatic_https_rewrites,
-                )
-                .await,
-            );
-            map.insert(
-                "browser_cache_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "browser_cache_ttl",
                     &self.r#browser_cache_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "browser_check".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "browser_check",
                     &self.r#browser_check,
-                )
-                .await,
-            );
-            map.insert(
-                "bypass_cache_on_cookie".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bypass_cache_on_cookie",
                     &self.r#bypass_cache_on_cookie,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_by_device_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_by_device_type",
                     &self.r#cache_by_device_type,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_deception_armor".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_deception_armor",
                     &self.r#cache_deception_armor,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_key_fields".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_key_fields",
                     &self.r#cache_key_fields,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_level",
                     &self.r#cache_level,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_on_cookie".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_on_cookie",
                     &self.r#cache_on_cookie,
-                )
-                .await,
-            );
-            map.insert(
-                "cache_ttl_by_statuses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cache_ttl_by_statuses",
                     &self.r#cache_ttl_by_statuses,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_apps".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_apps",
                     &self.r#disable_apps,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_performance".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_performance",
                     &self.r#disable_performance,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_railgun".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_railgun",
                     &self.r#disable_railgun,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_security".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_security",
                     &self.r#disable_security,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_zaraz".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_zaraz",
                     &self.r#disable_zaraz,
-                )
-                .await,
-            );
-            map.insert(
-                "edge_cache_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "edge_cache_ttl",
                     &self.r#edge_cache_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "email_obfuscation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "email_obfuscation",
                     &self.r#email_obfuscation,
-                )
-                .await,
-            );
-            map.insert(
-                "explicit_cache_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "explicit_cache_control",
                     &self.r#explicit_cache_control,
-                )
-                .await,
-            );
-            map.insert(
-                "forwarding_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "forwarding_url",
                     &self.r#forwarding_url,
-                )
-                .await,
-            );
-            map.insert(
-                "host_header_override".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "host_header_override",
                     &self.r#host_header_override,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_geolocation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_geolocation",
                     &self.r#ip_geolocation,
-                )
-                .await,
-            );
-            map.insert(
-                "minifies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minifies",
                     &self.r#minifies,
-                )
-                .await,
-            );
-            map.insert(
-                "mirage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mirage",
                     &self.r#mirage,
-                )
-                .await,
-            );
-            map.insert(
-                "opportunistic_encryption".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "opportunistic_encryption",
                     &self.r#opportunistic_encryption,
-                )
-                .await,
-            );
-            map.insert(
-                "origin_error_page_pass_thru".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "origin_error_page_pass_thru",
                     &self.r#origin_error_page_pass_thru,
-                )
-                .await,
-            );
-            map.insert(
-                "polish".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "polish",
                     &self.r#polish,
-                )
-                .await,
-            );
-            map.insert(
-                "resolve_override".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resolve_override",
                     &self.r#resolve_override,
-                )
-                .await,
-            );
-            map.insert(
-                "respect_strong_etag".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "respect_strong_etag",
                     &self.r#respect_strong_etag,
-                )
-                .await,
-            );
-            map.insert(
-                "response_buffering".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "response_buffering",
                     &self.r#response_buffering,
-                )
-                .await,
-            );
-            map.insert(
-                "rocket_loader".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rocket_loader",
                     &self.r#rocket_loader,
-                )
-                .await,
-            );
-            map.insert(
-                "security_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_level",
                     &self.r#security_level,
-                )
-                .await,
-            );
-            map.insert(
-                "server_side_exclude".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "server_side_exclude",
                     &self.r#server_side_exclude,
-                )
-                .await,
-            );
-            map.insert(
-                "sort_query_string_for_cache".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sort_query_string_for_cache",
                     &self.r#sort_query_string_for_cache,
-                )
-                .await,
-            );
-            map.insert(
-                "ssl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssl",
                     &self.r#ssl,
-                )
-                .await,
-            );
-            map.insert(
-                "true_client_ip_header".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "true_client_ip_header",
                     &self.r#true_client_ip_header,
-                )
-                .await,
-            );
-            map.insert(
-                "waf".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "waf",
                     &self.r#waf,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

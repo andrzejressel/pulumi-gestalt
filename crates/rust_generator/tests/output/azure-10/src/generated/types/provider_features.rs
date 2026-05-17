@@ -66,144 +66,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "api_management".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "api_management",
                     &self.r#api_management,
-                )
-                .await,
-            );
-            map.insert(
-                "app_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "app_configuration",
                     &self.r#app_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "application_insights".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "application_insights",
                     &self.r#application_insights,
-                )
-                .await,
-            );
-            map.insert(
-                "cognitive_account".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cognitive_account",
                     &self.r#cognitive_account,
-                )
-                .await,
-            );
-            map.insert(
-                "key_vault".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "key_vault",
                     &self.r#key_vault,
-                )
-                .await,
-            );
-            map.insert(
-                "log_analytics_workspace".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "log_analytics_workspace",
                     &self.r#log_analytics_workspace,
-                )
-                .await,
-            );
-            map.insert(
-                "machine_learning".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "machine_learning",
                     &self.r#machine_learning,
-                )
-                .await,
-            );
-            map.insert(
-                "managed_disk".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "managed_disk",
                     &self.r#managed_disk,
-                )
-                .await,
-            );
-            map.insert(
-                "netapp".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "netapp",
                     &self.r#netapp,
-                )
-                .await,
-            );
-            map.insert(
-                "postgresql_flexible_server".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "postgresql_flexible_server",
                     &self.r#postgresql_flexible_server,
-                )
-                .await,
-            );
-            map.insert(
-                "recovery_service".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recovery_service",
                     &self.r#recovery_service,
-                )
-                .await,
-            );
-            map.insert(
-                "recovery_services_vaults".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recovery_services_vaults",
                     &self.r#recovery_services_vaults,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_group",
                     &self.r#resource_group,
-                )
-                .await,
-            );
-            map.insert(
-                "storage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage",
                     &self.r#storage,
-                )
-                .await,
-            );
-            map.insert(
-                "subscription".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subscription",
                     &self.r#subscription,
-                )
-                .await,
-            );
-            map.insert(
-                "template_deployment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "template_deployment",
                     &self.r#template_deployment,
-                )
-                .await,
-            );
-            map.insert(
-                "virtual_machine".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "virtual_machine",
                     &self.r#virtual_machine,
-                )
-                .await,
-            );
-            map.insert(
-                "virtual_machine_scale_set".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "virtual_machine_scale_set",
                     &self.r#virtual_machine_scale_set,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

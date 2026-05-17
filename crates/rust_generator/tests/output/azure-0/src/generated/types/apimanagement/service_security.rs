@@ -114,137 +114,82 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "enable_backend_ssl_30".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "enable_backend_ssl_30",
                     &self.r#enable_backend_ssl_30,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_backend_tls_10".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_backend_tls_10",
                     &self.r#enable_backend_tls_10,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_backend_tls_11".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_backend_tls_11",
                     &self.r#enable_backend_tls_11,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_frontend_ssl_30".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_frontend_ssl_30",
                     &self.r#enable_frontend_ssl_30,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_frontend_tls_10".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_frontend_tls_10",
                     &self.r#enable_frontend_tls_10,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_frontend_tls_11".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_frontend_tls_11",
                     &self.r#enable_frontend_tls_11,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled",
                     &self.r#tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled",
                     &self.r#tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled",
                     &self.r#tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled",
                     &self.r#tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled",
                     &self.r#tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_rsa_with_aes_128_cbc_sha_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_rsa_with_aes_128_cbc_sha_ciphers_enabled",
                     &self.r#tls_rsa_with_aes_128_cbc_sha_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled",
                     &self.r#tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled",
                     &self.r#tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_rsa_with_aes_256_cbc_sha_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_rsa_with_aes_256_cbc_sha_ciphers_enabled",
                     &self.r#tls_rsa_with_aes_256_cbc_sha_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled",
                     &self.r#tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "triple_des_ciphers_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "triple_des_ciphers_enabled",
                     &self.r#triple_des_ciphers_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

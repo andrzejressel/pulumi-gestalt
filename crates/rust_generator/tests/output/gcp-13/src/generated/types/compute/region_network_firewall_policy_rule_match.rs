@@ -65,102 +65,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "dest_address_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "dest_address_groups",
                     &self.r#dest_address_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "dest_fqdns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dest_fqdns",
                     &self.r#dest_fqdns,
-                )
-                .await,
-            );
-            map.insert(
-                "dest_ip_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dest_ip_ranges",
                     &self.r#dest_ip_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "dest_region_codes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dest_region_codes",
                     &self.r#dest_region_codes,
-                )
-                .await,
-            );
-            map.insert(
-                "dest_threat_intelligences".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dest_threat_intelligences",
                     &self.r#dest_threat_intelligences,
-                )
-                .await,
-            );
-            map.insert(
-                "layer_4_configs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "layer_4_configs",
                     &self.r#layer_4_configs,
-                )
-                .await,
-            );
-            map.insert(
-                "src_address_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_address_groups",
                     &self.r#src_address_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "src_fqdns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_fqdns",
                     &self.r#src_fqdns,
-                )
-                .await,
-            );
-            map.insert(
-                "src_ip_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_ip_ranges",
                     &self.r#src_ip_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "src_region_codes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_region_codes",
                     &self.r#src_region_codes,
-                )
-                .await,
-            );
-            map.insert(
-                "src_secure_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_secure_tags",
                     &self.r#src_secure_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "src_threat_intelligences".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "src_threat_intelligences",
                     &self.r#src_threat_intelligences,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

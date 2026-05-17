@@ -60,81 +60,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "change_feed_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "change_feed_enabled",
                     &self.r#change_feed_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "change_feed_retention_in_days".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "change_feed_retention_in_days",
                     &self.r#change_feed_retention_in_days,
-                )
-                .await,
-            );
-            map.insert(
-                "container_delete_retention_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "container_delete_retention_policy",
                     &self.r#container_delete_retention_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "cors_rules".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cors_rules",
                     &self.r#cors_rules,
-                )
-                .await,
-            );
-            map.insert(
-                "default_service_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_service_version",
                     &self.r#default_service_version,
-                )
-                .await,
-            );
-            map.insert(
-                "delete_retention_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "delete_retention_policy",
                     &self.r#delete_retention_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "last_access_time_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "last_access_time_enabled",
                     &self.r#last_access_time_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "restore_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "restore_policy",
                     &self.r#restore_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "versioning_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "versioning_enabled",
                     &self.r#versioning_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

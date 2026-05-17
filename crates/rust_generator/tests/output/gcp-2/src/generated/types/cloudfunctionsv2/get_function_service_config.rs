@@ -86,137 +86,82 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "all_traffic_on_latest_revision".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "all_traffic_on_latest_revision",
                     &self.r#all_traffic_on_latest_revision,
-                )
-                .await,
-            );
-            map.insert(
-                "available_cpu".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "available_cpu",
                     &self.r#available_cpu,
-                )
-                .await,
-            );
-            map.insert(
-                "available_memory".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "available_memory",
                     &self.r#available_memory,
-                )
-                .await,
-            );
-            map.insert(
-                "environment_variables".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "environment_variables",
                     &self.r#environment_variables,
-                )
-                .await,
-            );
-            map.insert(
-                "gcf_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gcf_uri",
                     &self.r#gcf_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "ingress_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ingress_settings",
                     &self.r#ingress_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "max_instance_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_instance_count",
                     &self.r#max_instance_count,
-                )
-                .await,
-            );
-            map.insert(
-                "max_instance_request_concurrency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_instance_request_concurrency",
                     &self.r#max_instance_request_concurrency,
-                )
-                .await,
-            );
-            map.insert(
-                "min_instance_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_instance_count",
                     &self.r#min_instance_count,
-                )
-                .await,
-            );
-            map.insert(
-                "secret_environment_variables".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secret_environment_variables",
                     &self.r#secret_environment_variables,
-                )
-                .await,
-            );
-            map.insert(
-                "secret_volumes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secret_volumes",
                     &self.r#secret_volumes,
-                )
-                .await,
-            );
-            map.insert(
-                "service".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service",
                     &self.r#service,
-                )
-                .await,
-            );
-            map.insert(
-                "service_account_email".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_account_email",
                     &self.r#service_account_email,
-                )
-                .await,
-            );
-            map.insert(
-                "timeout_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timeout_seconds",
                     &self.r#timeout_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "uri",
                     &self.r#uri,
-                )
-                .await,
-            );
-            map.insert(
-                "vpc_connector".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vpc_connector",
                     &self.r#vpc_connector,
-                )
-                .await,
-            );
-            map.insert(
-                "vpc_connector_egress_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vpc_connector_egress_settings",
                     &self.r#vpc_connector_egress_settings,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

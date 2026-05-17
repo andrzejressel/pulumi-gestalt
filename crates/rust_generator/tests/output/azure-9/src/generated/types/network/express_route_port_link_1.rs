@@ -58,95 +58,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "admin_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "admin_enabled",
                     &self.r#admin_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "connector_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connector_type",
                     &self.r#connector_type,
-                )
-                .await,
-            );
-            map.insert(
-                "id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "id",
                     &self.r#id,
-                )
-                .await,
-            );
-            map.insert(
-                "interface_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "interface_name",
                     &self.r#interface_name,
-                )
-                .await,
-            );
-            map.insert(
-                "macsec_cak_keyvault_secret_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "macsec_cak_keyvault_secret_id",
                     &self.r#macsec_cak_keyvault_secret_id,
-                )
-                .await,
-            );
-            map.insert(
-                "macsec_cipher".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "macsec_cipher",
                     &self.r#macsec_cipher,
-                )
-                .await,
-            );
-            map.insert(
-                "macsec_ckn_keyvault_secret_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "macsec_ckn_keyvault_secret_id",
                     &self.r#macsec_ckn_keyvault_secret_id,
-                )
-                .await,
-            );
-            map.insert(
-                "macsec_sci_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "macsec_sci_enabled",
                     &self.r#macsec_sci_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "patch_panel_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "patch_panel_id",
                     &self.r#patch_panel_id,
-                )
-                .await,
-            );
-            map.insert(
-                "rack_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rack_id",
                     &self.r#rack_id,
-                )
-                .await,
-            );
-            map.insert(
-                "router_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "router_name",
                     &self.r#router_name,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

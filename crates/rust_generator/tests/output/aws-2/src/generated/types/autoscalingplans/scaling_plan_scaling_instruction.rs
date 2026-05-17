@@ -72,116 +72,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "customized_load_metric_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "customized_load_metric_specification",
                     &self.r#customized_load_metric_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_dynamic_scaling".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_dynamic_scaling",
                     &self.r#disable_dynamic_scaling,
-                )
-                .await,
-            );
-            map.insert(
-                "max_capacity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_capacity",
                     &self.r#max_capacity,
-                )
-                .await,
-            );
-            map.insert(
-                "min_capacity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_capacity",
                     &self.r#min_capacity,
-                )
-                .await,
-            );
-            map.insert(
-                "predefined_load_metric_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "predefined_load_metric_specification",
                     &self.r#predefined_load_metric_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "predictive_scaling_max_capacity_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "predictive_scaling_max_capacity_behavior",
                     &self.r#predictive_scaling_max_capacity_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "predictive_scaling_max_capacity_buffer".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "predictive_scaling_max_capacity_buffer",
                     &self.r#predictive_scaling_max_capacity_buffer,
-                )
-                .await,
-            );
-            map.insert(
-                "predictive_scaling_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "predictive_scaling_mode",
                     &self.r#predictive_scaling_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_id",
                     &self.r#resource_id,
-                )
-                .await,
-            );
-            map.insert(
-                "scalable_dimension".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scalable_dimension",
                     &self.r#scalable_dimension,
-                )
-                .await,
-            );
-            map.insert(
-                "scaling_policy_update_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scaling_policy_update_behavior",
                     &self.r#scaling_policy_update_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "scheduled_action_buffer_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scheduled_action_buffer_time",
                     &self.r#scheduled_action_buffer_time,
-                )
-                .await,
-            );
-            map.insert(
-                "service_namespace".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_namespace",
                     &self.r#service_namespace,
-                )
-                .await,
-            );
-            map.insert(
-                "target_tracking_configurations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_tracking_configurations",
                     &self.r#target_tracking_configurations,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

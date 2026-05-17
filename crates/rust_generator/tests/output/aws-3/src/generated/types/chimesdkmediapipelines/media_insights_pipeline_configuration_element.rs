@@ -48,81 +48,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "amazon_transcribe_call_analytics_processor_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "amazon_transcribe_call_analytics_processor_configuration",
                     &self.r#amazon_transcribe_call_analytics_processor_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "amazon_transcribe_processor_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "amazon_transcribe_processor_configuration",
                     &self.r#amazon_transcribe_processor_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "kinesis_data_stream_sink_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kinesis_data_stream_sink_configuration",
                     &self.r#kinesis_data_stream_sink_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "lambda_function_sink_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lambda_function_sink_configuration",
                     &self.r#lambda_function_sink_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "s_3_recording_sink_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "s_3_recording_sink_configuration",
                     &self.r#s_3_recording_sink_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "sns_topic_sink_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sns_topic_sink_configuration",
                     &self.r#sns_topic_sink_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "sqs_queue_sink_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sqs_queue_sink_configuration",
                     &self.r#sqs_queue_sink_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "type_".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "type_",
                     &self.r#type_,
-                )
-                .await,
-            );
-            map.insert(
-                "voice_analytics_processor_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "voice_analytics_processor_configuration",
                     &self.r#voice_analytics_processor_configuration,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

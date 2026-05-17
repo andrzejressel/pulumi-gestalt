@@ -93,207 +93,122 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "api_token".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "api_token",
                     &self.r#api_token,
-                )
-                .await,
-            );
-            map.insert(
-                "apps_domain".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "apps_domain",
                     &self.r#apps_domain,
-                )
-                .await,
-            );
-            map.insert(
-                "attributes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "attributes",
                     &self.r#attributes,
-                )
-                .await,
-            );
-            map.insert(
-                "auth_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auth_url",
                     &self.r#auth_url,
-                )
-                .await,
-            );
-            map.insert(
-                "authorization_server_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "authorization_server_id",
                     &self.r#authorization_server_id,
-                )
-                .await,
-            );
-            map.insert(
-                "centrify_account".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "centrify_account",
                     &self.r#centrify_account,
-                )
-                .await,
-            );
-            map.insert(
-                "centrify_app_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "centrify_app_id",
                     &self.r#centrify_app_id,
-                )
-                .await,
-            );
-            map.insert(
-                "certs_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "certs_url",
                     &self.r#certs_url,
-                )
-                .await,
-            );
-            map.insert(
-                "claims".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "claims",
                     &self.r#claims,
-                )
-                .await,
-            );
-            map.insert(
-                "client_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_id",
                     &self.r#client_id,
-                )
-                .await,
-            );
-            map.insert(
-                "client_secret".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "client_secret",
                     &self.r#client_secret,
-                )
-                .await,
-            );
-            map.insert(
-                "conditional_access_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "conditional_access_enabled",
                     &self.r#conditional_access_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "directory_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "directory_id",
                     &self.r#directory_id,
-                )
-                .await,
-            );
-            map.insert(
-                "email_attribute_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "email_attribute_name",
                     &self.r#email_attribute_name,
-                )
-                .await,
-            );
-            map.insert(
-                "email_claim_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "email_claim_name",
                     &self.r#email_claim_name,
-                )
-                .await,
-            );
-            map.insert(
-                "idp_public_cert".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "idp_public_cert",
                     &self.r#idp_public_cert,
-                )
-                .await,
-            );
-            map.insert(
-                "issuer_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "issuer_url",
                     &self.r#issuer_url,
-                )
-                .await,
-            );
-            map.insert(
-                "okta_account".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "okta_account",
                     &self.r#okta_account,
-                )
-                .await,
-            );
-            map.insert(
-                "onelogin_account".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "onelogin_account",
                     &self.r#onelogin_account,
-                )
-                .await,
-            );
-            map.insert(
-                "ping_env_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ping_env_id",
                     &self.r#ping_env_id,
-                )
-                .await,
-            );
-            map.insert(
-                "pkce_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pkce_enabled",
                     &self.r#pkce_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "redirect_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "redirect_url",
                     &self.r#redirect_url,
-                )
-                .await,
-            );
-            map.insert(
-                "scopes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scopes",
                     &self.r#scopes,
-                )
-                .await,
-            );
-            map.insert(
-                "sign_request".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sign_request",
                     &self.r#sign_request,
-                )
-                .await,
-            );
-            map.insert(
-                "sso_target_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sso_target_url",
                     &self.r#sso_target_url,
-                )
-                .await,
-            );
-            map.insert(
-                "support_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "support_groups",
                     &self.r#support_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "token_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "token_url",
                     &self.r#token_url,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

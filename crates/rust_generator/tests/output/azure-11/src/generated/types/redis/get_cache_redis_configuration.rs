@@ -73,137 +73,82 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "active_directory_authentication_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "active_directory_authentication_enabled",
                     &self.r#active_directory_authentication_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "aof_backup_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "aof_backup_enabled",
                     &self.r#aof_backup_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "aof_storage_connection_string_0".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "aof_storage_connection_string_0",
                     &self.r#aof_storage_connection_string_0,
-                )
-                .await,
-            );
-            map.insert(
-                "aof_storage_connection_string_1".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "aof_storage_connection_string_1",
                     &self.r#aof_storage_connection_string_1,
-                )
-                .await,
-            );
-            map.insert(
-                "authentication_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "authentication_enabled",
                     &self.r#authentication_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "data_persistence_authentication_method".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_persistence_authentication_method",
                     &self.r#data_persistence_authentication_method,
-                )
-                .await,
-            );
-            map.insert(
-                "maxclients".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maxclients",
                     &self.r#maxclients,
-                )
-                .await,
-            );
-            map.insert(
-                "maxfragmentationmemory_reserved".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maxfragmentationmemory_reserved",
                     &self.r#maxfragmentationmemory_reserved,
-                )
-                .await,
-            );
-            map.insert(
-                "maxmemory_delta".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maxmemory_delta",
                     &self.r#maxmemory_delta,
-                )
-                .await,
-            );
-            map.insert(
-                "maxmemory_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maxmemory_policy",
                     &self.r#maxmemory_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "maxmemory_reserved".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maxmemory_reserved",
                     &self.r#maxmemory_reserved,
-                )
-                .await,
-            );
-            map.insert(
-                "notify_keyspace_events".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "notify_keyspace_events",
                     &self.r#notify_keyspace_events,
-                )
-                .await,
-            );
-            map.insert(
-                "rdb_backup_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rdb_backup_enabled",
                     &self.r#rdb_backup_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "rdb_backup_frequency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rdb_backup_frequency",
                     &self.r#rdb_backup_frequency,
-                )
-                .await,
-            );
-            map.insert(
-                "rdb_backup_max_snapshot_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rdb_backup_max_snapshot_count",
                     &self.r#rdb_backup_max_snapshot_count,
-                )
-                .await,
-            );
-            map.insert(
-                "rdb_storage_connection_string".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rdb_storage_connection_string",
                     &self.r#rdb_storage_connection_string,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_account_subscription_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_account_subscription_id",
                     &self.r#storage_account_subscription_id,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

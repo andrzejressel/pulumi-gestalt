@@ -60,102 +60,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allowed_clients".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allowed_clients",
                     &self.r#allowed_clients,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_read_only_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_read_only_enabled",
                     &self.r#kerberos_5_read_only_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_read_write_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_read_write_enabled",
                     &self.r#kerberos_5_read_write_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_i_read_only_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_i_read_only_enabled",
                     &self.r#kerberos_5_i_read_only_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_i_read_write_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_i_read_write_enabled",
                     &self.r#kerberos_5_i_read_write_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_p_read_only_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_p_read_only_enabled",
                     &self.r#kerberos_5_p_read_only_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_5_p_read_write_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_5_p_read_write_enabled",
                     &self.r#kerberos_5_p_read_write_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "protocols_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "protocols_enabled",
                     &self.r#protocols_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "root_access_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "root_access_enabled",
                     &self.r#root_access_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "rule_index".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rule_index",
                     &self.r#rule_index,
-                )
-                .await,
-            );
-            map.insert(
-                "unix_read_only".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "unix_read_only",
                     &self.r#unix_read_only,
-                )
-                .await,
-            );
-            map.insert(
-                "unix_read_write".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "unix_read_write",
                     &self.r#unix_read_write,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -40,67 +40,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "kerberos_armoring_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "kerberos_armoring_enabled",
                     &self.r#kerberos_armoring_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_rc_4_encryption_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_rc_4_encryption_enabled",
                     &self.r#kerberos_rc_4_encryption_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "ntlm_v_1_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ntlm_v_1_enabled",
                     &self.r#ntlm_v_1_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "sync_kerberos_passwords".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sync_kerberos_passwords",
                     &self.r#sync_kerberos_passwords,
-                )
-                .await,
-            );
-            map.insert(
-                "sync_ntlm_passwords".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sync_ntlm_passwords",
                     &self.r#sync_ntlm_passwords,
-                )
-                .await,
-            );
-            map.insert(
-                "sync_on_prem_passwords".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sync_on_prem_passwords",
                     &self.r#sync_on_prem_passwords,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_v_1_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_v_1_enabled",
                     &self.r#tls_v_1_enabled,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

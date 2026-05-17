@@ -96,165 +96,98 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "amazon_elasticsearch".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "amazon_elasticsearch",
                     &self.r#amazon_elasticsearch,
-                )
-                .await,
-            );
-            map.insert(
-                "athena".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "athena",
                     &self.r#athena,
-                )
-                .await,
-            );
-            map.insert(
-                "aurora".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "aurora",
                     &self.r#aurora,
-                )
-                .await,
-            );
-            map.insert(
-                "aurora_postgresql".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "aurora_postgresql",
                     &self.r#aurora_postgresql,
-                )
-                .await,
-            );
-            map.insert(
-                "aws_iot_analytics".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "aws_iot_analytics",
                     &self.r#aws_iot_analytics,
-                )
-                .await,
-            );
-            map.insert(
-                "databricks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "databricks",
                     &self.r#databricks,
-                )
-                .await,
-            );
-            map.insert(
-                "jira".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "jira",
                     &self.r#jira,
-                )
-                .await,
-            );
-            map.insert(
-                "maria_db".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maria_db",
                     &self.r#maria_db,
-                )
-                .await,
-            );
-            map.insert(
-                "mysql".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mysql",
                     &self.r#mysql,
-                )
-                .await,
-            );
-            map.insert(
-                "oracle".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "oracle",
                     &self.r#oracle,
-                )
-                .await,
-            );
-            map.insert(
-                "postgresql".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "postgresql",
                     &self.r#postgresql,
-                )
-                .await,
-            );
-            map.insert(
-                "presto".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "presto",
                     &self.r#presto,
-                )
-                .await,
-            );
-            map.insert(
-                "rds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rds",
                     &self.r#rds,
-                )
-                .await,
-            );
-            map.insert(
-                "redshift".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "redshift",
                     &self.r#redshift,
-                )
-                .await,
-            );
-            map.insert(
-                "s_3".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "s_3",
                     &self.r#s_3,
-                )
-                .await,
-            );
-            map.insert(
-                "service_now".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_now",
                     &self.r#service_now,
-                )
-                .await,
-            );
-            map.insert(
-                "snowflake".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "snowflake",
                     &self.r#snowflake,
-                )
-                .await,
-            );
-            map.insert(
-                "spark".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "spark",
                     &self.r#spark,
-                )
-                .await,
-            );
-            map.insert(
-                "sql_server".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sql_server",
                     &self.r#sql_server,
-                )
-                .await,
-            );
-            map.insert(
-                "teradata".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "teradata",
                     &self.r#teradata,
-                )
-                .await,
-            );
-            map.insert(
-                "twitter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "twitter",
                     &self.r#twitter,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

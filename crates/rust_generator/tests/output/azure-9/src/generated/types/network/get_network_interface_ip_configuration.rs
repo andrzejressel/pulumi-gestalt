@@ -58,102 +58,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "application_gateway_backend_address_pools_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "application_gateway_backend_address_pools_ids",
                     &self.r#application_gateway_backend_address_pools_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "application_security_group_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "application_security_group_ids",
                     &self.r#application_security_group_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "gateway_load_balancer_frontend_ip_configuration_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gateway_load_balancer_frontend_ip_configuration_id",
                     &self.r#gateway_load_balancer_frontend_ip_configuration_id,
-                )
-                .await,
-            );
-            map.insert(
-                "load_balancer_backend_address_pools_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "load_balancer_backend_address_pools_ids",
                     &self.r#load_balancer_backend_address_pools_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "load_balancer_inbound_nat_rules_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "load_balancer_inbound_nat_rules_ids",
                     &self.r#load_balancer_inbound_nat_rules_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name",
                     &self.r#name,
-                )
-                .await,
-            );
-            map.insert(
-                "primary".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "primary",
                     &self.r#primary,
-                )
-                .await,
-            );
-            map.insert(
-                "private_ip_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_ip_address",
                     &self.r#private_ip_address,
-                )
-                .await,
-            );
-            map.insert(
-                "private_ip_address_allocation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_ip_address_allocation",
                     &self.r#private_ip_address_allocation,
-                )
-                .await,
-            );
-            map.insert(
-                "private_ip_address_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "private_ip_address_version",
                     &self.r#private_ip_address_version,
-                )
-                .await,
-            );
-            map.insert(
-                "public_ip_address_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_ip_address_id",
                     &self.r#public_ip_address_id,
-                )
-                .await,
-            );
-            map.insert(
-                "subnet_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "subnet_id",
                     &self.r#subnet_id,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

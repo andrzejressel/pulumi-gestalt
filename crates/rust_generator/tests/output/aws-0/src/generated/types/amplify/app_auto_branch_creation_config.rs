@@ -52,88 +52,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "basic_auth_credentials".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "basic_auth_credentials",
                     &self.r#basic_auth_credentials,
-                )
-                .await,
-            );
-            map.insert(
-                "build_spec".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "build_spec",
                     &self.r#build_spec,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_auto_build".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_auto_build",
                     &self.r#enable_auto_build,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_basic_auth".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_basic_auth",
                     &self.r#enable_basic_auth,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_performance_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_performance_mode",
                     &self.r#enable_performance_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_pull_request_preview".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_pull_request_preview",
                     &self.r#enable_pull_request_preview,
-                )
-                .await,
-            );
-            map.insert(
-                "environment_variables".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "environment_variables",
                     &self.r#environment_variables,
-                )
-                .await,
-            );
-            map.insert(
-                "framework".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "framework",
                     &self.r#framework,
-                )
-                .await,
-            );
-            map.insert(
-                "pull_request_environment_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pull_request_environment_name",
                     &self.r#pull_request_environment_name,
-                )
-                .await,
-            );
-            map.insert(
-                "stage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stage",
                     &self.r#stage,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

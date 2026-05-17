@@ -56,95 +56,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "include_credit".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "include_credit",
                     &self.r#include_credit,
-                )
-                .await,
-            );
-            map.insert(
-                "include_discount".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "include_discount",
                     &self.r#include_discount,
-                )
-                .await,
-            );
-            map.insert(
-                "include_other_subscription".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "include_other_subscription",
                     &self.r#include_other_subscription,
-                )
-                .await,
-            );
-            map.insert(
-                "include_recurring".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "include_recurring",
                     &self.r#include_recurring,
-                )
-                .await,
-            );
-            map.insert(
-                "include_refund".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "include_refund",
                     &self.r#include_refund,
-                )
-                .await,
-            );
-            map.insert(
-                "include_subscription".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "include_subscription",
                     &self.r#include_subscription,
-                )
-                .await,
-            );
-            map.insert(
-                "include_support".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "include_support",
                     &self.r#include_support,
-                )
-                .await,
-            );
-            map.insert(
-                "include_tax".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "include_tax",
                     &self.r#include_tax,
-                )
-                .await,
-            );
-            map.insert(
-                "include_upfront".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "include_upfront",
                     &self.r#include_upfront,
-                )
-                .await,
-            );
-            map.insert(
-                "use_amortized".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_amortized",
                     &self.r#use_amortized,
-                )
-                .await,
-            );
-            map.insert(
-                "use_blended".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_blended",
                     &self.r#use_blended,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

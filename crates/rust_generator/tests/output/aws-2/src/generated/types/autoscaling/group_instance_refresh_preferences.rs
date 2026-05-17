@@ -52,88 +52,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "alarm_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "alarm_specification",
                     &self.r#alarm_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "auto_rollback".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auto_rollback",
                     &self.r#auto_rollback,
-                )
-                .await,
-            );
-            map.insert(
-                "checkpoint_delay".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "checkpoint_delay",
                     &self.r#checkpoint_delay,
-                )
-                .await,
-            );
-            map.insert(
-                "checkpoint_percentages".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "checkpoint_percentages",
                     &self.r#checkpoint_percentages,
-                )
-                .await,
-            );
-            map.insert(
-                "instance_warmup".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "instance_warmup",
                     &self.r#instance_warmup,
-                )
-                .await,
-            );
-            map.insert(
-                "max_healthy_percentage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_healthy_percentage",
                     &self.r#max_healthy_percentage,
-                )
-                .await,
-            );
-            map.insert(
-                "min_healthy_percentage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_healthy_percentage",
                     &self.r#min_healthy_percentage,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_in_protected_instances".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_in_protected_instances",
                     &self.r#scale_in_protected_instances,
-                )
-                .await,
-            );
-            map.insert(
-                "skip_matching".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "skip_matching",
                     &self.r#skip_matching,
-                )
-                .await,
-            );
-            map.insert(
-                "standby_instances".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "standby_instances",
                     &self.r#standby_instances,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

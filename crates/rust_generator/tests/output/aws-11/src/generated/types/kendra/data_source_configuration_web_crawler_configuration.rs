@@ -48,81 +48,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "authentication_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "authentication_configuration",
                     &self.r#authentication_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "crawl_depth".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "crawl_depth",
                     &self.r#crawl_depth,
-                )
-                .await,
-            );
-            map.insert(
-                "max_content_size_per_page_in_mega_bytes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_content_size_per_page_in_mega_bytes",
                     &self.r#max_content_size_per_page_in_mega_bytes,
-                )
-                .await,
-            );
-            map.insert(
-                "max_links_per_page".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_links_per_page",
                     &self.r#max_links_per_page,
-                )
-                .await,
-            );
-            map.insert(
-                "max_urls_per_minute_crawl_rate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_urls_per_minute_crawl_rate",
                     &self.r#max_urls_per_minute_crawl_rate,
-                )
-                .await,
-            );
-            map.insert(
-                "proxy_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "proxy_configuration",
                     &self.r#proxy_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "url_exclusion_patterns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url_exclusion_patterns",
                     &self.r#url_exclusion_patterns,
-                )
-                .await,
-            );
-            map.insert(
-                "url_inclusion_patterns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url_inclusion_patterns",
                     &self.r#url_inclusion_patterns,
-                )
-                .await,
-            );
-            map.insert(
-                "urls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "urls",
                     &self.r#urls,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

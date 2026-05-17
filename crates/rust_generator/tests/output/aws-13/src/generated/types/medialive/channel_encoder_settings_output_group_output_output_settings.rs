@@ -41,74 +41,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "archive_output_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "archive_output_settings",
                     &self.r#archive_output_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "frame_capture_output_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "frame_capture_output_settings",
                     &self.r#frame_capture_output_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "hls_output_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "hls_output_settings",
                     &self.r#hls_output_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "media_package_output_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "media_package_output_settings",
                     &self.r#media_package_output_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "ms_smooth_output_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ms_smooth_output_settings",
                     &self.r#ms_smooth_output_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "multiplex_output_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "multiplex_output_settings",
                     &self.r#multiplex_output_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "rtmp_output_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rtmp_output_settings",
                     &self.r#rtmp_output_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "udp_output_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "udp_output_settings",
                     &self.r#udp_output_settings,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

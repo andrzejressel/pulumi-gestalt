@@ -72,123 +72,74 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "active_directories".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "active_directories",
                     &self.r#active_directories,
-                )
-                .await,
-            );
-            map.insert(
-                "additional_login_parameters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "additional_login_parameters",
                     &self.r#additional_login_parameters,
-                )
-                .await,
-            );
-            map.insert(
-                "allowed_external_redirect_urls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "allowed_external_redirect_urls",
                     &self.r#allowed_external_redirect_urls,
-                )
-                .await,
-            );
-            map.insert(
-                "default_provider".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_provider",
                     &self.r#default_provider,
-                )
-                .await,
-            );
-            map.insert(
-                "enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enabled",
                     &self.r#enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "facebooks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "facebooks",
                     &self.r#facebooks,
-                )
-                .await,
-            );
-            map.insert(
-                "githubs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "githubs",
                     &self.r#githubs,
-                )
-                .await,
-            );
-            map.insert(
-                "googles".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "googles",
                     &self.r#googles,
-                )
-                .await,
-            );
-            map.insert(
-                "issuer".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "issuer",
                     &self.r#issuer,
-                )
-                .await,
-            );
-            map.insert(
-                "microsofts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "microsofts",
                     &self.r#microsofts,
-                )
-                .await,
-            );
-            map.insert(
-                "runtime_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "runtime_version",
                     &self.r#runtime_version,
-                )
-                .await,
-            );
-            map.insert(
-                "token_refresh_extension_hours".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "token_refresh_extension_hours",
                     &self.r#token_refresh_extension_hours,
-                )
-                .await,
-            );
-            map.insert(
-                "token_store_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "token_store_enabled",
                     &self.r#token_store_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "twitters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "twitters",
                     &self.r#twitters,
-                )
-                .await,
-            );
-            map.insert(
-                "unauthenticated_client_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "unauthenticated_client_action",
                     &self.r#unauthenticated_client_action,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

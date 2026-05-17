@@ -109,137 +109,82 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "autoscaling_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "autoscaling_config",
                     &self.r#autoscaling_config,
-                )
-                .await,
-            );
-            map.insert(
-                "auxiliary_node_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "auxiliary_node_groups",
                     &self.r#auxiliary_node_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "bucket".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bucket",
                     &self.r#bucket,
-                )
-                .await,
-            );
-            map.insert(
-                "dataproc_metric_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dataproc_metric_config",
                     &self.r#dataproc_metric_config,
-                )
-                .await,
-            );
-            map.insert(
-                "encryption_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encryption_config",
                     &self.r#encryption_config,
-                )
-                .await,
-            );
-            map.insert(
-                "endpoint_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "endpoint_config",
                     &self.r#endpoint_config,
-                )
-                .await,
-            );
-            map.insert(
-                "gce_cluster_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gce_cluster_config",
                     &self.r#gce_cluster_config,
-                )
-                .await,
-            );
-            map.insert(
-                "initialization_actions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "initialization_actions",
                     &self.r#initialization_actions,
-                )
-                .await,
-            );
-            map.insert(
-                "lifecycle_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "lifecycle_config",
                     &self.r#lifecycle_config,
-                )
-                .await,
-            );
-            map.insert(
-                "master_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "master_config",
                     &self.r#master_config,
-                )
-                .await,
-            );
-            map.insert(
-                "metastore_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metastore_config",
                     &self.r#metastore_config,
-                )
-                .await,
-            );
-            map.insert(
-                "preemptible_worker_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preemptible_worker_config",
                     &self.r#preemptible_worker_config,
-                )
-                .await,
-            );
-            map.insert(
-                "security_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_config",
                     &self.r#security_config,
-                )
-                .await,
-            );
-            map.insert(
-                "software_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "software_config",
                     &self.r#software_config,
-                )
-                .await,
-            );
-            map.insert(
-                "staging_bucket".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "staging_bucket",
                     &self.r#staging_bucket,
-                )
-                .await,
-            );
-            map.insert(
-                "temp_bucket".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "temp_bucket",
                     &self.r#temp_bucket,
-                )
-                .await,
-            );
-            map.insert(
-                "worker_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "worker_config",
                     &self.r#worker_config,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

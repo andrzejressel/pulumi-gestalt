@@ -64,109 +64,66 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "always_use_latest_compatibility_date".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "always_use_latest_compatibility_date",
                     &self.r#always_use_latest_compatibility_date,
-                )
-                .await,
-            );
-            map.insert(
-                "compatibility_date".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "compatibility_date",
                     &self.r#compatibility_date,
-                )
-                .await,
-            );
-            map.insert(
-                "compatibility_flags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "compatibility_flags",
                     &self.r#compatibility_flags,
-                )
-                .await,
-            );
-            map.insert(
-                "d_1_databases".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "d_1_databases",
                     &self.r#d_1_databases,
-                )
-                .await,
-            );
-            map.insert(
-                "durable_object_namespaces".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "durable_object_namespaces",
                     &self.r#durable_object_namespaces,
-                )
-                .await,
-            );
-            map.insert(
-                "environment_variables".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "environment_variables",
                     &self.r#environment_variables,
-                )
-                .await,
-            );
-            map.insert(
-                "fail_open".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fail_open",
                     &self.r#fail_open,
-                )
-                .await,
-            );
-            map.insert(
-                "kv_namespaces".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kv_namespaces",
                     &self.r#kv_namespaces,
-                )
-                .await,
-            );
-            map.insert(
-                "placement".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "placement",
                     &self.r#placement,
-                )
-                .await,
-            );
-            map.insert(
-                "r_2_buckets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "r_2_buckets",
                     &self.r#r_2_buckets,
-                )
-                .await,
-            );
-            map.insert(
-                "secrets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secrets",
                     &self.r#secrets,
-                )
-                .await,
-            );
-            map.insert(
-                "service_bindings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_bindings",
                     &self.r#service_bindings,
-                )
-                .await,
-            );
-            map.insert(
-                "usage_model".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "usage_model",
                     &self.r#usage_model,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

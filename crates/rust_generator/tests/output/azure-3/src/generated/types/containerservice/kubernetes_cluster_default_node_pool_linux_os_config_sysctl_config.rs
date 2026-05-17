@@ -128,221 +128,130 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "fs_aio_max_nr".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "fs_aio_max_nr",
                     &self.r#fs_aio_max_nr,
-                )
-                .await,
-            );
-            map.insert(
-                "fs_file_max".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fs_file_max",
                     &self.r#fs_file_max,
-                )
-                .await,
-            );
-            map.insert(
-                "fs_inotify_max_user_watches".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fs_inotify_max_user_watches",
                     &self.r#fs_inotify_max_user_watches,
-                )
-                .await,
-            );
-            map.insert(
-                "fs_nr_open".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fs_nr_open",
                     &self.r#fs_nr_open,
-                )
-                .await,
-            );
-            map.insert(
-                "kernel_threads_max".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kernel_threads_max",
                     &self.r#kernel_threads_max,
-                )
-                .await,
-            );
-            map.insert(
-                "net_core_netdev_max_backlog".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_core_netdev_max_backlog",
                     &self.r#net_core_netdev_max_backlog,
-                )
-                .await,
-            );
-            map.insert(
-                "net_core_optmem_max".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_core_optmem_max",
                     &self.r#net_core_optmem_max,
-                )
-                .await,
-            );
-            map.insert(
-                "net_core_rmem_default".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_core_rmem_default",
                     &self.r#net_core_rmem_default,
-                )
-                .await,
-            );
-            map.insert(
-                "net_core_rmem_max".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_core_rmem_max",
                     &self.r#net_core_rmem_max,
-                )
-                .await,
-            );
-            map.insert(
-                "net_core_somaxconn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_core_somaxconn",
                     &self.r#net_core_somaxconn,
-                )
-                .await,
-            );
-            map.insert(
-                "net_core_wmem_default".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_core_wmem_default",
                     &self.r#net_core_wmem_default,
-                )
-                .await,
-            );
-            map.insert(
-                "net_core_wmem_max".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_core_wmem_max",
                     &self.r#net_core_wmem_max,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_ip_local_port_range_max".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_ip_local_port_range_max",
                     &self.r#net_ipv_4_ip_local_port_range_max,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_ip_local_port_range_min".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_ip_local_port_range_min",
                     &self.r#net_ipv_4_ip_local_port_range_min,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_neigh_default_gc_thresh_1".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_neigh_default_gc_thresh_1",
                     &self.r#net_ipv_4_neigh_default_gc_thresh_1,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_neigh_default_gc_thresh_2".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_neigh_default_gc_thresh_2",
                     &self.r#net_ipv_4_neigh_default_gc_thresh_2,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_neigh_default_gc_thresh_3".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_neigh_default_gc_thresh_3",
                     &self.r#net_ipv_4_neigh_default_gc_thresh_3,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_tcp_fin_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_tcp_fin_timeout",
                     &self.r#net_ipv_4_tcp_fin_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_tcp_keepalive_intvl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_tcp_keepalive_intvl",
                     &self.r#net_ipv_4_tcp_keepalive_intvl,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_tcp_keepalive_probes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_tcp_keepalive_probes",
                     &self.r#net_ipv_4_tcp_keepalive_probes,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_tcp_keepalive_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_tcp_keepalive_time",
                     &self.r#net_ipv_4_tcp_keepalive_time,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_tcp_max_syn_backlog".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_tcp_max_syn_backlog",
                     &self.r#net_ipv_4_tcp_max_syn_backlog,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_tcp_max_tw_buckets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_tcp_max_tw_buckets",
                     &self.r#net_ipv_4_tcp_max_tw_buckets,
-                )
-                .await,
-            );
-            map.insert(
-                "net_ipv_4_tcp_tw_reuse".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_ipv_4_tcp_tw_reuse",
                     &self.r#net_ipv_4_tcp_tw_reuse,
-                )
-                .await,
-            );
-            map.insert(
-                "net_netfilter_nf_conntrack_buckets".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_netfilter_nf_conntrack_buckets",
                     &self.r#net_netfilter_nf_conntrack_buckets,
-                )
-                .await,
-            );
-            map.insert(
-                "net_netfilter_nf_conntrack_max".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "net_netfilter_nf_conntrack_max",
                     &self.r#net_netfilter_nf_conntrack_max,
-                )
-                .await,
-            );
-            map.insert(
-                "vm_max_map_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vm_max_map_count",
                     &self.r#vm_max_map_count,
-                )
-                .await,
-            );
-            map.insert(
-                "vm_swappiness".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vm_swappiness",
                     &self.r#vm_swappiness,
-                )
-                .await,
-            );
-            map.insert(
-                "vm_vfs_cache_pressure".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vm_vfs_cache_pressure",
                     &self.r#vm_vfs_cache_pressure,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

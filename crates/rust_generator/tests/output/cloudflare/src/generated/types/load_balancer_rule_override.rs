@@ -64,109 +64,66 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "adaptive_routings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "adaptive_routings",
                     &self.r#adaptive_routings,
-                )
-                .await,
-            );
-            map.insert(
-                "country_pools".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "country_pools",
                     &self.r#country_pools,
-                )
-                .await,
-            );
-            map.insert(
-                "default_pools".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "default_pools",
                     &self.r#default_pools,
-                )
-                .await,
-            );
-            map.insert(
-                "fallback_pool".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fallback_pool",
                     &self.r#fallback_pool,
-                )
-                .await,
-            );
-            map.insert(
-                "location_strategies".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "location_strategies",
                     &self.r#location_strategies,
-                )
-                .await,
-            );
-            map.insert(
-                "pop_pools".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pop_pools",
                     &self.r#pop_pools,
-                )
-                .await,
-            );
-            map.insert(
-                "random_steerings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "random_steerings",
                     &self.r#random_steerings,
-                )
-                .await,
-            );
-            map.insert(
-                "region_pools".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "region_pools",
                     &self.r#region_pools,
-                )
-                .await,
-            );
-            map.insert(
-                "session_affinity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "session_affinity",
                     &self.r#session_affinity,
-                )
-                .await,
-            );
-            map.insert(
-                "session_affinity_attributes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "session_affinity_attributes",
                     &self.r#session_affinity_attributes,
-                )
-                .await,
-            );
-            map.insert(
-                "session_affinity_ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "session_affinity_ttl",
                     &self.r#session_affinity_ttl,
-                )
-                .await,
-            );
-            map.insert(
-                "steering_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "steering_policy",
                     &self.r#steering_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "ttl".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ttl",
                     &self.r#ttl,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -71,109 +71,66 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "aad_audience".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "aad_audience",
                     &self.r#aad_audience,
-                )
-                .await,
-            );
-            map.insert(
-                "aad_issuer".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "aad_issuer",
                     &self.r#aad_issuer,
-                )
-                .await,
-            );
-            map.insert(
-                "aad_tenant".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "aad_tenant",
                     &self.r#aad_tenant,
-                )
-                .await,
-            );
-            map.insert(
-                "address_spaces".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "address_spaces",
                     &self.r#address_spaces,
-                )
-                .await,
-            );
-            map.insert(
-                "ipsec_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ipsec_policy",
                     &self.r#ipsec_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "radius_server_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "radius_server_address",
                     &self.r#radius_server_address,
-                )
-                .await,
-            );
-            map.insert(
-                "radius_server_secret".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "radius_server_secret",
                     &self.r#radius_server_secret,
-                )
-                .await,
-            );
-            map.insert(
-                "radius_servers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "radius_servers",
                     &self.r#radius_servers,
-                )
-                .await,
-            );
-            map.insert(
-                "revoked_certificates".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "revoked_certificates",
                     &self.r#revoked_certificates,
-                )
-                .await,
-            );
-            map.insert(
-                "root_certificates".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "root_certificates",
                     &self.r#root_certificates,
-                )
-                .await,
-            );
-            map.insert(
-                "virtual_network_gateway_client_connections".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "virtual_network_gateway_client_connections",
                     &self.r#virtual_network_gateway_client_connections,
-                )
-                .await,
-            );
-            map.insert(
-                "vpn_auth_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vpn_auth_types",
                     &self.r#vpn_auth_types,
-                )
-                .await,
-            );
-            map.insert(
-                "vpn_client_protocols".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vpn_client_protocols",
                     &self.r#vpn_client_protocols,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

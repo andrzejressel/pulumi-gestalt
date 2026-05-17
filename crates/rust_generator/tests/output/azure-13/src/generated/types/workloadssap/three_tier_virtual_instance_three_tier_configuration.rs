@@ -47,74 +47,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "app_resource_group_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "app_resource_group_name",
                     &self.r#app_resource_group_name,
-                )
-                .await,
-            );
-            map.insert(
-                "application_server_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "application_server_configuration",
                     &self.r#application_server_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "central_server_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "central_server_configuration",
                     &self.r#central_server_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "database_server_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "database_server_configuration",
                     &self.r#database_server_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "high_availability_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "high_availability_type",
                     &self.r#high_availability_type,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_names",
                     &self.r#resource_names,
-                )
-                .await,
-            );
-            map.insert(
-                "secondary_ip_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secondary_ip_enabled",
                     &self.r#secondary_ip_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "transport_create_and_mount".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "transport_create_and_mount",
                     &self.r#transport_create_and_mount,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

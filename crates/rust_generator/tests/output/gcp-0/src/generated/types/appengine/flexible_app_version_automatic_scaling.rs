@@ -67,102 +67,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cool_down_period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cool_down_period",
                     &self.r#cool_down_period,
-                )
-                .await,
-            );
-            map.insert(
-                "cpu_utilization".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cpu_utilization",
                     &self.r#cpu_utilization,
-                )
-                .await,
-            );
-            map.insert(
-                "disk_utilization".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disk_utilization",
                     &self.r#disk_utilization,
-                )
-                .await,
-            );
-            map.insert(
-                "max_concurrent_requests".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_concurrent_requests",
                     &self.r#max_concurrent_requests,
-                )
-                .await,
-            );
-            map.insert(
-                "max_idle_instances".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_idle_instances",
                     &self.r#max_idle_instances,
-                )
-                .await,
-            );
-            map.insert(
-                "max_pending_latency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_pending_latency",
                     &self.r#max_pending_latency,
-                )
-                .await,
-            );
-            map.insert(
-                "max_total_instances".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_total_instances",
                     &self.r#max_total_instances,
-                )
-                .await,
-            );
-            map.insert(
-                "min_idle_instances".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_idle_instances",
                     &self.r#min_idle_instances,
-                )
-                .await,
-            );
-            map.insert(
-                "min_pending_latency".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_pending_latency",
                     &self.r#min_pending_latency,
-                )
-                .await,
-            );
-            map.insert(
-                "min_total_instances".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_total_instances",
                     &self.r#min_total_instances,
-                )
-                .await,
-            );
-            map.insert(
-                "network_utilization".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_utilization",
                     &self.r#network_utilization,
-                )
-                .await,
-            );
-            map.insert(
-                "request_utilization".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_utilization",
                     &self.r#request_utilization,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

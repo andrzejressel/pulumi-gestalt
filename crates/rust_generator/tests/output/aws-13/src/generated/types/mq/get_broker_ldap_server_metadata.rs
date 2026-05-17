@@ -45,95 +45,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "hosts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "hosts",
                     &self.r#hosts,
-                )
-                .await,
-            );
-            map.insert(
-                "role_base".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "role_base",
                     &self.r#role_base,
-                )
-                .await,
-            );
-            map.insert(
-                "role_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "role_name",
                     &self.r#role_name,
-                )
-                .await,
-            );
-            map.insert(
-                "role_search_matching".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "role_search_matching",
                     &self.r#role_search_matching,
-                )
-                .await,
-            );
-            map.insert(
-                "role_search_subtree".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "role_search_subtree",
                     &self.r#role_search_subtree,
-                )
-                .await,
-            );
-            map.insert(
-                "service_account_password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_account_password",
                     &self.r#service_account_password,
-                )
-                .await,
-            );
-            map.insert(
-                "service_account_username".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_account_username",
                     &self.r#service_account_username,
-                )
-                .await,
-            );
-            map.insert(
-                "user_base".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_base",
                     &self.r#user_base,
-                )
-                .await,
-            );
-            map.insert(
-                "user_role_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_role_name",
                     &self.r#user_role_name,
-                )
-                .await,
-            );
-            map.insert(
-                "user_search_matching".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_search_matching",
                     &self.r#user_search_matching,
-                )
-                .await,
-            );
-            map.insert(
-                "user_search_subtree".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "user_search_subtree",
                     &self.r#user_search_subtree,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

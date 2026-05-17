@@ -90,123 +90,74 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cross_realm_trust_admin_server".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cross_realm_trust_admin_server",
                     &self.r#cross_realm_trust_admin_server,
-                )
-                .await,
-            );
-            map.insert(
-                "cross_realm_trust_kdc".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cross_realm_trust_kdc",
                     &self.r#cross_realm_trust_kdc,
-                )
-                .await,
-            );
-            map.insert(
-                "cross_realm_trust_realm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cross_realm_trust_realm",
                     &self.r#cross_realm_trust_realm,
-                )
-                .await,
-            );
-            map.insert(
-                "cross_realm_trust_shared_password_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cross_realm_trust_shared_password_uri",
                     &self.r#cross_realm_trust_shared_password_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_kerberos".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_kerberos",
                     &self.r#enable_kerberos,
-                )
-                .await,
-            );
-            map.insert(
-                "kdc_db_key_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kdc_db_key_uri",
                     &self.r#kdc_db_key_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "key_password_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "key_password_uri",
                     &self.r#key_password_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "keystore_password_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "keystore_password_uri",
                     &self.r#keystore_password_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "keystore_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "keystore_uri",
                     &self.r#keystore_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "kms_key_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kms_key_uri",
                     &self.r#kms_key_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "realm".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "realm",
                     &self.r#realm,
-                )
-                .await,
-            );
-            map.insert(
-                "root_principal_password_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "root_principal_password_uri",
                     &self.r#root_principal_password_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "tgt_lifetime_hours".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tgt_lifetime_hours",
                     &self.r#tgt_lifetime_hours,
-                )
-                .await,
-            );
-            map.insert(
-                "truststore_password_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "truststore_password_uri",
                     &self.r#truststore_password_uri,
-                )
-                .await,
-            );
-            map.insert(
-                "truststore_uri".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "truststore_uri",
                     &self.r#truststore_uri,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

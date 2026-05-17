@@ -61,88 +61,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "custom_gpu_driver_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "custom_gpu_driver_path",
                     &self.r#custom_gpu_driver_path,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_health_monitoring".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_health_monitoring",
                     &self.r#enable_health_monitoring,
-                )
-                .await,
-            );
-            map.insert(
-                "idle_shutdown".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "idle_shutdown",
                     &self.r#idle_shutdown,
-                )
-                .await,
-            );
-            map.insert(
-                "idle_shutdown_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "idle_shutdown_timeout",
                     &self.r#idle_shutdown_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "install_gpu_driver".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "install_gpu_driver",
                     &self.r#install_gpu_driver,
-                )
-                .await,
-            );
-            map.insert(
-                "kernels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kernels",
                     &self.r#kernels,
-                )
-                .await,
-            );
-            map.insert(
-                "notebook_upgrade_schedule".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "notebook_upgrade_schedule",
                     &self.r#notebook_upgrade_schedule,
-                )
-                .await,
-            );
-            map.insert(
-                "post_startup_script".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "post_startup_script",
                     &self.r#post_startup_script,
-                )
-                .await,
-            );
-            map.insert(
-                "post_startup_script_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "post_startup_script_behavior",
                     &self.r#post_startup_script_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "upgradeable".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "upgradeable",
                     &self.r#upgradeable,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

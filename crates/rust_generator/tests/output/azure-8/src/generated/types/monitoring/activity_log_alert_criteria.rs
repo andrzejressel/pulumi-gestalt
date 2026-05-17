@@ -114,172 +114,102 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "caller".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "caller",
                     &self.r#caller,
-                )
-                .await,
-            );
-            map.insert(
-                "category".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "category",
                     &self.r#category,
-                )
-                .await,
-            );
-            map.insert(
-                "level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "level",
                     &self.r#level,
-                )
-                .await,
-            );
-            map.insert(
-                "levels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "levels",
                     &self.r#levels,
-                )
-                .await,
-            );
-            map.insert(
-                "operation_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "operation_name",
                     &self.r#operation_name,
-                )
-                .await,
-            );
-            map.insert(
-                "recommendation_category".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recommendation_category",
                     &self.r#recommendation_category,
-                )
-                .await,
-            );
-            map.insert(
-                "recommendation_impact".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recommendation_impact",
                     &self.r#recommendation_impact,
-                )
-                .await,
-            );
-            map.insert(
-                "recommendation_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "recommendation_type",
                     &self.r#recommendation_type,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_group",
                     &self.r#resource_group,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_groups".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_groups",
                     &self.r#resource_groups,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_health".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_health",
                     &self.r#resource_health,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_id",
                     &self.r#resource_id,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_ids".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_ids",
                     &self.r#resource_ids,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_provider".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_provider",
                     &self.r#resource_provider,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_providers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_providers",
                     &self.r#resource_providers,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_type",
                     &self.r#resource_type,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_types".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_types",
                     &self.r#resource_types,
-                )
-                .await,
-            );
-            map.insert(
-                "service_health".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_health",
                     &self.r#service_health,
-                )
-                .await,
-            );
-            map.insert(
-                "status".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "status",
                     &self.r#status,
-                )
-                .await,
-            );
-            map.insert(
-                "statuses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "statuses",
                     &self.r#statuses,
-                )
-                .await,
-            );
-            map.insert(
-                "sub_status".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sub_status",
                     &self.r#sub_status,
-                )
-                .await,
-            );
-            map.insert(
-                "sub_statuses".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sub_statuses",
                     &self.r#sub_statuses,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -90,151 +90,90 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "bool_equals".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "bool_equals",
                     &self.r#bool_equals,
-                )
-                .await,
-            );
-            map.insert(
-                "is_not_nulls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_not_nulls",
                     &self.r#is_not_nulls,
-                )
-                .await,
-            );
-            map.insert(
-                "is_null_or_undefineds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_null_or_undefineds",
                     &self.r#is_null_or_undefineds,
-                )
-                .await,
-            );
-            map.insert(
-                "number_greater_than_or_equals".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "number_greater_than_or_equals",
                     &self.r#number_greater_than_or_equals,
-                )
-                .await,
-            );
-            map.insert(
-                "number_greater_thans".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "number_greater_thans",
                     &self.r#number_greater_thans,
-                )
-                .await,
-            );
-            map.insert(
-                "number_in_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "number_in_ranges",
                     &self.r#number_in_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "number_ins".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "number_ins",
                     &self.r#number_ins,
-                )
-                .await,
-            );
-            map.insert(
-                "number_less_than_or_equals".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "number_less_than_or_equals",
                     &self.r#number_less_than_or_equals,
-                )
-                .await,
-            );
-            map.insert(
-                "number_less_thans".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "number_less_thans",
                     &self.r#number_less_thans,
-                )
-                .await,
-            );
-            map.insert(
-                "number_not_in_ranges".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "number_not_in_ranges",
                     &self.r#number_not_in_ranges,
-                )
-                .await,
-            );
-            map.insert(
-                "number_not_ins".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "number_not_ins",
                     &self.r#number_not_ins,
-                )
-                .await,
-            );
-            map.insert(
-                "string_begins_withs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "string_begins_withs",
                     &self.r#string_begins_withs,
-                )
-                .await,
-            );
-            map.insert(
-                "string_contains".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "string_contains",
                     &self.r#string_contains,
-                )
-                .await,
-            );
-            map.insert(
-                "string_ends_withs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "string_ends_withs",
                     &self.r#string_ends_withs,
-                )
-                .await,
-            );
-            map.insert(
-                "string_ins".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "string_ins",
                     &self.r#string_ins,
-                )
-                .await,
-            );
-            map.insert(
-                "string_not_begins_withs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "string_not_begins_withs",
                     &self.r#string_not_begins_withs,
-                )
-                .await,
-            );
-            map.insert(
-                "string_not_contains".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "string_not_contains",
                     &self.r#string_not_contains,
-                )
-                .await,
-            );
-            map.insert(
-                "string_not_ends_withs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "string_not_ends_withs",
                     &self.r#string_not_ends_withs,
-                )
-                .await,
-            );
-            map.insert(
-                "string_not_ins".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "string_not_ins",
                     &self.r#string_not_ins,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

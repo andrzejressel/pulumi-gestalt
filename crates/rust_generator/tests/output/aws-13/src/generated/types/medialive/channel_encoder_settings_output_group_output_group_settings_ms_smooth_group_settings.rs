@@ -73,151 +73,90 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "acquisition_point_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "acquisition_point_id",
                     &self.r#acquisition_point_id,
-                )
-                .await,
-            );
-            map.insert(
-                "audio_only_timecode_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "audio_only_timecode_control",
                     &self.r#audio_only_timecode_control,
-                )
-                .await,
-            );
-            map.insert(
-                "certificate_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "certificate_mode",
                     &self.r#certificate_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "connection_retry_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connection_retry_interval",
                     &self.r#connection_retry_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "destination".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "destination",
                     &self.r#destination,
-                )
-                .await,
-            );
-            map.insert(
-                "event_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "event_id",
                     &self.r#event_id,
-                )
-                .await,
-            );
-            map.insert(
-                "event_id_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "event_id_mode",
                     &self.r#event_id_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "event_stop_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "event_stop_behavior",
                     &self.r#event_stop_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "filecache_duration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "filecache_duration",
                     &self.r#filecache_duration,
-                )
-                .await,
-            );
-            map.insert(
-                "fragment_length".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fragment_length",
                     &self.r#fragment_length,
-                )
-                .await,
-            );
-            map.insert(
-                "input_loss_action".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_loss_action",
                     &self.r#input_loss_action,
-                )
-                .await,
-            );
-            map.insert(
-                "num_retries".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "num_retries",
                     &self.r#num_retries,
-                )
-                .await,
-            );
-            map.insert(
-                "restart_delay".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "restart_delay",
                     &self.r#restart_delay,
-                )
-                .await,
-            );
-            map.insert(
-                "segmentation_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "segmentation_mode",
                     &self.r#segmentation_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "send_delay_ms".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "send_delay_ms",
                     &self.r#send_delay_ms,
-                )
-                .await,
-            );
-            map.insert(
-                "sparse_track_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sparse_track_type",
                     &self.r#sparse_track_type,
-                )
-                .await,
-            );
-            map.insert(
-                "stream_manifest_behavior".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stream_manifest_behavior",
                     &self.r#stream_manifest_behavior,
-                )
-                .await,
-            );
-            map.insert(
-                "timestamp_offset".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timestamp_offset",
                     &self.r#timestamp_offset,
-                )
-                .await,
-            );
-            map.insert(
-                "timestamp_offset_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timestamp_offset_mode",
                     &self.r#timestamp_offset_mode,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -43,67 +43,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "deidentify".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "deidentify",
                     &self.r#deidentify,
-                )
-                .await,
-            );
-            map.insert(
-                "job_notification_emails".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "job_notification_emails",
                     &self.r#job_notification_emails,
-                )
-                .await,
-            );
-            map.insert(
-                "pub_sub".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pub_sub",
                     &self.r#pub_sub,
-                )
-                .await,
-            );
-            map.insert(
-                "publish_findings_to_cloud_data_catalog".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "publish_findings_to_cloud_data_catalog",
                     &self.r#publish_findings_to_cloud_data_catalog,
-                )
-                .await,
-            );
-            map.insert(
-                "publish_summary_to_cscc".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "publish_summary_to_cscc",
                     &self.r#publish_summary_to_cscc,
-                )
-                .await,
-            );
-            map.insert(
-                "publish_to_stackdriver".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "publish_to_stackdriver",
                     &self.r#publish_to_stackdriver,
-                )
-                .await,
-            );
-            map.insert(
-                "save_findings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "save_findings",
                     &self.r#save_findings,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

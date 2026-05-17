@@ -56,95 +56,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allowed_external_redirect_urls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allowed_external_redirect_urls",
                     &self.r#allowed_external_redirect_urls,
-                )
-                .await,
-            );
-            map.insert(
-                "cookie_expiration_convention".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cookie_expiration_convention",
                     &self.r#cookie_expiration_convention,
-                )
-                .await,
-            );
-            map.insert(
-                "cookie_expiration_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cookie_expiration_time",
                     &self.r#cookie_expiration_time,
-                )
-                .await,
-            );
-            map.insert(
-                "logout_endpoint".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "logout_endpoint",
                     &self.r#logout_endpoint,
-                )
-                .await,
-            );
-            map.insert(
-                "nonce_expiration_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "nonce_expiration_time",
                     &self.r#nonce_expiration_time,
-                )
-                .await,
-            );
-            map.insert(
-                "preserve_url_fragments_for_logins".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preserve_url_fragments_for_logins",
                     &self.r#preserve_url_fragments_for_logins,
-                )
-                .await,
-            );
-            map.insert(
-                "token_refresh_extension_time".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "token_refresh_extension_time",
                     &self.r#token_refresh_extension_time,
-                )
-                .await,
-            );
-            map.insert(
-                "token_store_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "token_store_enabled",
                     &self.r#token_store_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "token_store_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "token_store_path",
                     &self.r#token_store_path,
-                )
-                .await,
-            );
-            map.insert(
-                "token_store_sas_setting_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "token_store_sas_setting_name",
                     &self.r#token_store_sas_setting_name,
-                )
-                .await,
-            );
-            map.insert(
-                "validate_nonce".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "validate_nonce",
                     &self.r#validate_nonce,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

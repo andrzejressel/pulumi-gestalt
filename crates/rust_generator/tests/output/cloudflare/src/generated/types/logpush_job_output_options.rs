@@ -61,102 +61,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Log
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "batch_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "batch_prefix",
                     &self.r#batch_prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "batch_suffix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "batch_suffix",
                     &self.r#batch_suffix,
-                )
-                .await,
-            );
-            map.insert(
-                "cve_20214428".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cve_20214428",
                     &self.r#cve_20214428,
-                )
-                .await,
-            );
-            map.insert(
-                "field_delimiter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "field_delimiter",
                     &self.r#field_delimiter,
-                )
-                .await,
-            );
-            map.insert(
-                "field_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "field_names",
                     &self.r#field_names,
-                )
-                .await,
-            );
-            map.insert(
-                "output_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "output_type",
                     &self.r#output_type,
-                )
-                .await,
-            );
-            map.insert(
-                "record_delimiter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "record_delimiter",
                     &self.r#record_delimiter,
-                )
-                .await,
-            );
-            map.insert(
-                "record_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "record_prefix",
                     &self.r#record_prefix,
-                )
-                .await,
-            );
-            map.insert(
-                "record_suffix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "record_suffix",
                     &self.r#record_suffix,
-                )
-                .await,
-            );
-            map.insert(
-                "record_template".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "record_template",
                     &self.r#record_template,
-                )
-                .await,
-            );
-            map.insert(
-                "sample_rate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sample_rate",
                     &self.r#sample_rate,
-                )
-                .await,
-            );
-            map.insert(
-                "timestamp_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timestamp_format",
                     &self.r#timestamp_format,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

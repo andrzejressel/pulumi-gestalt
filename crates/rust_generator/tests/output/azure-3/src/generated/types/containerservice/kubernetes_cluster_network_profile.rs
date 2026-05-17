@@ -94,123 +94,74 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "dns_service_ip".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "dns_service_ip",
                     &self.r#dns_service_ip,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_versions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_versions",
                     &self.r#ip_versions,
-                )
-                .await,
-            );
-            map.insert(
-                "load_balancer_profile".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "load_balancer_profile",
                     &self.r#load_balancer_profile,
-                )
-                .await,
-            );
-            map.insert(
-                "load_balancer_sku".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "load_balancer_sku",
                     &self.r#load_balancer_sku,
-                )
-                .await,
-            );
-            map.insert(
-                "nat_gateway_profile".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "nat_gateway_profile",
                     &self.r#nat_gateway_profile,
-                )
-                .await,
-            );
-            map.insert(
-                "network_data_plane".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_data_plane",
                     &self.r#network_data_plane,
-                )
-                .await,
-            );
-            map.insert(
-                "network_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_mode",
                     &self.r#network_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "network_plugin".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_plugin",
                     &self.r#network_plugin,
-                )
-                .await,
-            );
-            map.insert(
-                "network_plugin_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_plugin_mode",
                     &self.r#network_plugin_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "network_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "network_policy",
                     &self.r#network_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "outbound_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "outbound_type",
                     &self.r#outbound_type,
-                )
-                .await,
-            );
-            map.insert(
-                "pod_cidr".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pod_cidr",
                     &self.r#pod_cidr,
-                )
-                .await,
-            );
-            map.insert(
-                "pod_cidrs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pod_cidrs",
                     &self.r#pod_cidrs,
-                )
-                .await,
-            );
-            map.insert(
-                "service_cidr".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_cidr",
                     &self.r#service_cidr,
-                )
-                .await,
-            );
-            map.insert(
-                "service_cidrs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_cidrs",
                     &self.r#service_cidrs,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

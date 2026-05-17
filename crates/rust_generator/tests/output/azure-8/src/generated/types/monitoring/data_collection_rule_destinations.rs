@@ -48,74 +48,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "azure_monitor_metrics".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "azure_monitor_metrics",
                     &self.r#azure_monitor_metrics,
-                )
-                .await,
-            );
-            map.insert(
-                "event_hub".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "event_hub",
                     &self.r#event_hub,
-                )
-                .await,
-            );
-            map.insert(
-                "event_hub_direct".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "event_hub_direct",
                     &self.r#event_hub_direct,
-                )
-                .await,
-            );
-            map.insert(
-                "log_analytics".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "log_analytics",
                     &self.r#log_analytics,
-                )
-                .await,
-            );
-            map.insert(
-                "monitor_accounts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "monitor_accounts",
                     &self.r#monitor_accounts,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_blob_directs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_blob_directs",
                     &self.r#storage_blob_directs,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_blobs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_blobs",
                     &self.r#storage_blobs,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_table_directs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_table_directs",
                     &self.r#storage_table_directs,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

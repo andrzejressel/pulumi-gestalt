@@ -45,67 +45,42 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "customized_scaling_metric_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "customized_scaling_metric_specification",
                     &self.r#customized_scaling_metric_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_scale_in".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_scale_in",
                     &self.r#disable_scale_in,
-                )
-                .await,
-            );
-            map.insert(
-                "estimated_instance_warmup".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "estimated_instance_warmup",
                     &self.r#estimated_instance_warmup,
-                )
-                .await,
-            );
-            map.insert(
-                "predefined_scaling_metric_specification".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "predefined_scaling_metric_specification",
                     &self.r#predefined_scaling_metric_specification,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_in_cooldown".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_in_cooldown",
                     &self.r#scale_in_cooldown,
-                )
-                .await,
-            );
-            map.insert(
-                "scale_out_cooldown".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "scale_out_cooldown",
                     &self.r#scale_out_cooldown,
-                )
-                .await,
-            );
-            map.insert(
-                "target_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "target_value",
                     &self.r#target_value,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

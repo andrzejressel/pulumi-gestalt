@@ -129,291 +129,170 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "add_column_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "add_column_name",
                     &self.r#add_column_name,
-                )
-                .await,
-            );
-            map.insert(
-                "bucket_folder".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bucket_folder",
                     &self.r#bucket_folder,
-                )
-                .await,
-            );
-            map.insert(
-                "bucket_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bucket_name",
                     &self.r#bucket_name,
-                )
-                .await,
-            );
-            map.insert(
-                "canned_acl_for_objects".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "canned_acl_for_objects",
                     &self.r#canned_acl_for_objects,
-                )
-                .await,
-            );
-            map.insert(
-                "cdc_inserts_and_updates".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cdc_inserts_and_updates",
                     &self.r#cdc_inserts_and_updates,
-                )
-                .await,
-            );
-            map.insert(
-                "cdc_inserts_only".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cdc_inserts_only",
                     &self.r#cdc_inserts_only,
-                )
-                .await,
-            );
-            map.insert(
-                "cdc_max_batch_interval".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cdc_max_batch_interval",
                     &self.r#cdc_max_batch_interval,
-                )
-                .await,
-            );
-            map.insert(
-                "cdc_min_file_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cdc_min_file_size",
                     &self.r#cdc_min_file_size,
-                )
-                .await,
-            );
-            map.insert(
-                "cdc_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cdc_path",
                     &self.r#cdc_path,
-                )
-                .await,
-            );
-            map.insert(
-                "compression_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "compression_type",
                     &self.r#compression_type,
-                )
-                .await,
-            );
-            map.insert(
-                "csv_delimiter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "csv_delimiter",
                     &self.r#csv_delimiter,
-                )
-                .await,
-            );
-            map.insert(
-                "csv_no_sup_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "csv_no_sup_value",
                     &self.r#csv_no_sup_value,
-                )
-                .await,
-            );
-            map.insert(
-                "csv_null_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "csv_null_value",
                     &self.r#csv_null_value,
-                )
-                .await,
-            );
-            map.insert(
-                "csv_row_delimiter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "csv_row_delimiter",
                     &self.r#csv_row_delimiter,
-                )
-                .await,
-            );
-            map.insert(
-                "data_format".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_format",
                     &self.r#data_format,
-                )
-                .await,
-            );
-            map.insert(
-                "data_page_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "data_page_size",
                     &self.r#data_page_size,
-                )
-                .await,
-            );
-            map.insert(
-                "date_partition_delimiter".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "date_partition_delimiter",
                     &self.r#date_partition_delimiter,
-                )
-                .await,
-            );
-            map.insert(
-                "date_partition_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "date_partition_enabled",
                     &self.r#date_partition_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "date_partition_sequence".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "date_partition_sequence",
                     &self.r#date_partition_sequence,
-                )
-                .await,
-            );
-            map.insert(
-                "dict_page_size_limit".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dict_page_size_limit",
                     &self.r#dict_page_size_limit,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_statistics".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_statistics",
                     &self.r#enable_statistics,
-                )
-                .await,
-            );
-            map.insert(
-                "encoding_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encoding_type",
                     &self.r#encoding_type,
-                )
-                .await,
-            );
-            map.insert(
-                "encryption_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "encryption_mode",
                     &self.r#encryption_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "external_table_definition".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "external_table_definition",
                     &self.r#external_table_definition,
-                )
-                .await,
-            );
-            map.insert(
-                "glue_catalog_generation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "glue_catalog_generation",
                     &self.r#glue_catalog_generation,
-                )
-                .await,
-            );
-            map.insert(
-                "ignore_header_rows".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ignore_header_rows",
                     &self.r#ignore_header_rows,
-                )
-                .await,
-            );
-            map.insert(
-                "ignore_headers_row".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ignore_headers_row",
                     &self.r#ignore_headers_row,
-                )
-                .await,
-            );
-            map.insert(
-                "include_op_for_full_load".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "include_op_for_full_load",
                     &self.r#include_op_for_full_load,
-                )
-                .await,
-            );
-            map.insert(
-                "max_file_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "max_file_size",
                     &self.r#max_file_size,
-                )
-                .await,
-            );
-            map.insert(
-                "parquet_timestamp_in_millisecond".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "parquet_timestamp_in_millisecond",
                     &self.r#parquet_timestamp_in_millisecond,
-                )
-                .await,
-            );
-            map.insert(
-                "parquet_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "parquet_version",
                     &self.r#parquet_version,
-                )
-                .await,
-            );
-            map.insert(
-                "preserve_transactions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preserve_transactions",
                     &self.r#preserve_transactions,
-                )
-                .await,
-            );
-            map.insert(
-                "rfc_4180".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "rfc_4180",
                     &self.r#rfc_4180,
-                )
-                .await,
-            );
-            map.insert(
-                "row_group_length".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "row_group_length",
                     &self.r#row_group_length,
-                )
-                .await,
-            );
-            map.insert(
-                "server_side_encryption_kms_key_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "server_side_encryption_kms_key_id",
                     &self.r#server_side_encryption_kms_key_id,
-                )
-                .await,
-            );
-            map.insert(
-                "service_access_role_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_access_role_arn",
                     &self.r#service_access_role_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "timestamp_column_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "timestamp_column_name",
                     &self.r#timestamp_column_name,
-                )
-                .await,
-            );
-            map.insert(
-                "use_csv_no_sup_value".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_csv_no_sup_value",
                     &self.r#use_csv_no_sup_value,
-                )
-                .await,
-            );
-            map.insert(
-                "use_task_start_time_for_full_load_timestamp".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "use_task_start_time_for_full_load_timestamp",
                     &self.r#use_task_start_time_for_full_load_timestamp,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

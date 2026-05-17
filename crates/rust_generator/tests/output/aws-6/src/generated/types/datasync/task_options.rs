@@ -72,123 +72,74 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "atime".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "atime",
                     &self.r#atime,
-                )
-                .await,
-            );
-            map.insert(
-                "bytes_per_second".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bytes_per_second",
                     &self.r#bytes_per_second,
-                )
-                .await,
-            );
-            map.insert(
-                "gid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gid",
                     &self.r#gid,
-                )
-                .await,
-            );
-            map.insert(
-                "log_level".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "log_level",
                     &self.r#log_level,
-                )
-                .await,
-            );
-            map.insert(
-                "mtime".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "mtime",
                     &self.r#mtime,
-                )
-                .await,
-            );
-            map.insert(
-                "object_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "object_tags",
                     &self.r#object_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "overwrite_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "overwrite_mode",
                     &self.r#overwrite_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "posix_permissions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "posix_permissions",
                     &self.r#posix_permissions,
-                )
-                .await,
-            );
-            map.insert(
-                "preserve_deleted_files".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preserve_deleted_files",
                     &self.r#preserve_deleted_files,
-                )
-                .await,
-            );
-            map.insert(
-                "preserve_devices".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preserve_devices",
                     &self.r#preserve_devices,
-                )
-                .await,
-            );
-            map.insert(
-                "security_descriptor_copy_flags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "security_descriptor_copy_flags",
                     &self.r#security_descriptor_copy_flags,
-                )
-                .await,
-            );
-            map.insert(
-                "task_queueing".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "task_queueing",
                     &self.r#task_queueing,
-                )
-                .await,
-            );
-            map.insert(
-                "transfer_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "transfer_mode",
                     &self.r#transfer_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "uid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "uid",
                     &self.r#uid,
-                )
-                .await,
-            );
-            map.insert(
-                "verify_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "verify_mode",
                     &self.r#verify_mode,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -48,81 +48,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "human_task_ui_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "human_task_ui_arn",
                     &self.r#human_task_ui_arn,
-                )
-                .await,
-            );
-            map.insert(
-                "public_workforce_task_price".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "public_workforce_task_price",
                     &self.r#public_workforce_task_price,
-                )
-                .await,
-            );
-            map.insert(
-                "task_availability_lifetime_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "task_availability_lifetime_in_seconds",
                     &self.r#task_availability_lifetime_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "task_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "task_count",
                     &self.r#task_count,
-                )
-                .await,
-            );
-            map.insert(
-                "task_description".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "task_description",
                     &self.r#task_description,
-                )
-                .await,
-            );
-            map.insert(
-                "task_keywords".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "task_keywords",
                     &self.r#task_keywords,
-                )
-                .await,
-            );
-            map.insert(
-                "task_time_limit_in_seconds".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "task_time_limit_in_seconds",
                     &self.r#task_time_limit_in_seconds,
-                )
-                .await,
-            );
-            map.insert(
-                "task_title".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "task_title",
                     &self.r#task_title,
-                )
-                .await,
-            );
-            map.insert(
-                "workteam_arn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "workteam_arn",
                     &self.r#workteam_arn,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

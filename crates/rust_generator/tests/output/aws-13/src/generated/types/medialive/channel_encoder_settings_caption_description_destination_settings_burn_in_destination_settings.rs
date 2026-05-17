@@ -80,137 +80,82 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "alignment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "alignment",
                     &self.r#alignment,
-                )
-                .await,
-            );
-            map.insert(
-                "background_color".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "background_color",
                     &self.r#background_color,
-                )
-                .await,
-            );
-            map.insert(
-                "background_opacity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "background_opacity",
                     &self.r#background_opacity,
-                )
-                .await,
-            );
-            map.insert(
-                "font".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "font",
                     &self.r#font,
-                )
-                .await,
-            );
-            map.insert(
-                "font_color".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "font_color",
                     &self.r#font_color,
-                )
-                .await,
-            );
-            map.insert(
-                "font_opacity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "font_opacity",
                     &self.r#font_opacity,
-                )
-                .await,
-            );
-            map.insert(
-                "font_resolution".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "font_resolution",
                     &self.r#font_resolution,
-                )
-                .await,
-            );
-            map.insert(
-                "font_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "font_size",
                     &self.r#font_size,
-                )
-                .await,
-            );
-            map.insert(
-                "outline_color".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "outline_color",
                     &self.r#outline_color,
-                )
-                .await,
-            );
-            map.insert(
-                "outline_size".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "outline_size",
                     &self.r#outline_size,
-                )
-                .await,
-            );
-            map.insert(
-                "shadow_color".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shadow_color",
                     &self.r#shadow_color,
-                )
-                .await,
-            );
-            map.insert(
-                "shadow_opacity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shadow_opacity",
                     &self.r#shadow_opacity,
-                )
-                .await,
-            );
-            map.insert(
-                "shadow_x_offset".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shadow_x_offset",
                     &self.r#shadow_x_offset,
-                )
-                .await,
-            );
-            map.insert(
-                "shadow_y_offset".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shadow_y_offset",
                     &self.r#shadow_y_offset,
-                )
-                .await,
-            );
-            map.insert(
-                "teletext_grid_control".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "teletext_grid_control",
                     &self.r#teletext_grid_control,
-                )
-                .await,
-            );
-            map.insert(
-                "x_position".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "x_position",
                     &self.r#x_position,
-                )
-                .await,
-            );
-            map.insert(
-                "y_position".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "y_position",
                     &self.r#y_position,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

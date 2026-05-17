@@ -52,88 +52,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "data_import".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "data_import",
                     &self.r#data_import,
-                )
-                .await,
-            );
-            map.insert(
-                "extensions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "extensions",
                     &self.r#extensions,
-                )
-                .await,
-            );
-            map.insert(
-                "iis_logs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "iis_logs",
                     &self.r#iis_logs,
-                )
-                .await,
-            );
-            map.insert(
-                "log_files".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "log_files",
                     &self.r#log_files,
-                )
-                .await,
-            );
-            map.insert(
-                "performance_counters".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "performance_counters",
                     &self.r#performance_counters,
-                )
-                .await,
-            );
-            map.insert(
-                "platform_telemetries".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "platform_telemetries",
                     &self.r#platform_telemetries,
-                )
-                .await,
-            );
-            map.insert(
-                "prometheus_forwarders".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "prometheus_forwarders",
                     &self.r#prometheus_forwarders,
-                )
-                .await,
-            );
-            map.insert(
-                "syslogs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "syslogs",
                     &self.r#syslogs,
-                )
-                .await,
-            );
-            map.insert(
-                "windows_event_logs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "windows_event_logs",
                     &self.r#windows_event_logs,
-                )
-                .await,
-            );
-            map.insert(
-                "windows_firewall_logs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "windows_firewall_logs",
                     &self.r#windows_firewall_logs,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

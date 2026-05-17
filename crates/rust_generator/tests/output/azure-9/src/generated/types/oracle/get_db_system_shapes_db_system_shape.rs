@@ -92,158 +92,94 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "available_core_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "available_core_count",
                     &self.r#available_core_count,
-                )
-                .await,
-            );
-            map.insert(
-                "available_core_count_per_node".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "available_core_count_per_node",
                     &self.r#available_core_count_per_node,
-                )
-                .await,
-            );
-            map.insert(
-                "available_data_storage_in_tbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "available_data_storage_in_tbs",
                     &self.r#available_data_storage_in_tbs,
-                )
-                .await,
-            );
-            map.insert(
-                "available_data_storage_per_server_in_tbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "available_data_storage_per_server_in_tbs",
                     &self.r#available_data_storage_per_server_in_tbs,
-                )
-                .await,
-            );
-            map.insert(
-                "available_db_node_per_node_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "available_db_node_per_node_in_gbs",
                     &self.r#available_db_node_per_node_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "available_db_node_storage_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "available_db_node_storage_in_gbs",
                     &self.r#available_db_node_storage_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "available_memory_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "available_memory_in_gbs",
                     &self.r#available_memory_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "available_memory_per_node_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "available_memory_per_node_in_gbs",
                     &self.r#available_memory_per_node_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "core_count_increment".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "core_count_increment",
                     &self.r#core_count_increment,
-                )
-                .await,
-            );
-            map.insert(
-                "maximum_node_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maximum_node_count",
                     &self.r#maximum_node_count,
-                )
-                .await,
-            );
-            map.insert(
-                "maximum_storage_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "maximum_storage_count",
                     &self.r#maximum_storage_count,
-                )
-                .await,
-            );
-            map.insert(
-                "minimum_core_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimum_core_count",
                     &self.r#minimum_core_count,
-                )
-                .await,
-            );
-            map.insert(
-                "minimum_core_count_per_node".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimum_core_count_per_node",
                     &self.r#minimum_core_count_per_node,
-                )
-                .await,
-            );
-            map.insert(
-                "minimum_data_storage_in_tbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimum_data_storage_in_tbs",
                     &self.r#minimum_data_storage_in_tbs,
-                )
-                .await,
-            );
-            map.insert(
-                "minimum_db_node_storage_per_node_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimum_db_node_storage_per_node_in_gbs",
                     &self.r#minimum_db_node_storage_per_node_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "minimum_memory_per_node_in_gbs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimum_memory_per_node_in_gbs",
                     &self.r#minimum_memory_per_node_in_gbs,
-                )
-                .await,
-            );
-            map.insert(
-                "minimum_node_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimum_node_count",
                     &self.r#minimum_node_count,
-                )
-                .await,
-            );
-            map.insert(
-                "minimum_storage_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "minimum_storage_count",
                     &self.r#minimum_storage_count,
-                )
-                .await,
-            );
-            map.insert(
-                "runtime_minimum_core_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "runtime_minimum_core_count",
                     &self.r#runtime_minimum_core_count,
-                )
-                .await,
-            );
-            map.insert(
-                "shape_family".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shape_family",
                     &self.r#shape_family,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

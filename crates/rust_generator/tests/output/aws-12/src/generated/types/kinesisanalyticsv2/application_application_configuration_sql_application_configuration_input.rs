@@ -47,81 +47,50 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "in_app_stream_names".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "in_app_stream_names",
                     &self.r#in_app_stream_names,
-                )
-                .await,
-            );
-            map.insert(
-                "input_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_id",
                     &self.r#input_id,
-                )
-                .await,
-            );
-            map.insert(
-                "input_parallelism".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_parallelism",
                     &self.r#input_parallelism,
-                )
-                .await,
-            );
-            map.insert(
-                "input_processing_configuration".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_processing_configuration",
                     &self.r#input_processing_configuration,
-                )
-                .await,
-            );
-            map.insert(
-                "input_schema".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_schema",
                     &self.r#input_schema,
-                )
-                .await,
-            );
-            map.insert(
-                "input_starting_position_configurations".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "input_starting_position_configurations",
                     &self.r#input_starting_position_configurations,
-                )
-                .await,
-            );
-            map.insert(
-                "kinesis_firehose_input".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kinesis_firehose_input",
                     &self.r#kinesis_firehose_input,
-                )
-                .await,
-            );
-            map.insert(
-                "kinesis_streams_input".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kinesis_streams_input",
                     &self.r#kinesis_streams_input,
-                )
-                .await,
-            );
-            map.insert(
-                "name_prefix".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "name_prefix",
                     &self.r#name_prefix,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

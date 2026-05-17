@@ -97,102 +97,62 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "all_namespaces".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "all_namespaces",
                     &self.r#all_namespaces,
-                )
-                .await,
-            );
-            map.insert(
-                "cluster_resource_conflict_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cluster_resource_conflict_policy",
                     &self.r#cluster_resource_conflict_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "cluster_resource_restore_scope".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cluster_resource_restore_scope",
                     &self.r#cluster_resource_restore_scope,
-                )
-                .await,
-            );
-            map.insert(
-                "excluded_namespaces".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "excluded_namespaces",
                     &self.r#excluded_namespaces,
-                )
-                .await,
-            );
-            map.insert(
-                "namespaced_resource_restore_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "namespaced_resource_restore_mode",
                     &self.r#namespaced_resource_restore_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "no_namespaces".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "no_namespaces",
                     &self.r#no_namespaces,
-                )
-                .await,
-            );
-            map.insert(
-                "restore_order".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "restore_order",
                     &self.r#restore_order,
-                )
-                .await,
-            );
-            map.insert(
-                "selected_applications".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "selected_applications",
                     &self.r#selected_applications,
-                )
-                .await,
-            );
-            map.insert(
-                "selected_namespaces".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "selected_namespaces",
                     &self.r#selected_namespaces,
-                )
-                .await,
-            );
-            map.insert(
-                "transformation_rules".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "transformation_rules",
                     &self.r#transformation_rules,
-                )
-                .await,
-            );
-            map.insert(
-                "volume_data_restore_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "volume_data_restore_policy",
                     &self.r#volume_data_restore_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "volume_data_restore_policy_bindings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "volume_data_restore_policy_bindings",
                     &self.r#volume_data_restore_policy_bindings,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

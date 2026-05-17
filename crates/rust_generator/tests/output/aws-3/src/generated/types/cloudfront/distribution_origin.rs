@@ -55,95 +55,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "connection_attempts".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "connection_attempts",
                     &self.r#connection_attempts,
-                )
-                .await,
-            );
-            map.insert(
-                "connection_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connection_timeout",
                     &self.r#connection_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_headers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_headers",
                     &self.r#custom_headers,
-                )
-                .await,
-            );
-            map.insert(
-                "custom_origin_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "custom_origin_config",
                     &self.r#custom_origin_config,
-                )
-                .await,
-            );
-            map.insert(
-                "domain_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "domain_name",
                     &self.r#domain_name,
-                )
-                .await,
-            );
-            map.insert(
-                "origin_access_control_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "origin_access_control_id",
                     &self.r#origin_access_control_id,
-                )
-                .await,
-            );
-            map.insert(
-                "origin_id".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "origin_id",
                     &self.r#origin_id,
-                )
-                .await,
-            );
-            map.insert(
-                "origin_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "origin_path",
                     &self.r#origin_path,
-                )
-                .await,
-            );
-            map.insert(
-                "origin_shield".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "origin_shield",
                     &self.r#origin_shield,
-                )
-                .await,
-            );
-            map.insert(
-                "s_3_origin_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "s_3_origin_config",
                     &self.r#s_3_origin_config,
-                )
-                .await,
-            );
-            map.insert(
-                "vpc_origin_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vpc_origin_config",
                     &self.r#vpc_origin_config,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

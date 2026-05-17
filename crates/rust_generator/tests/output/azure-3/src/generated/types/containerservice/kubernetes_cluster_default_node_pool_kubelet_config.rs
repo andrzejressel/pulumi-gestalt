@@ -52,88 +52,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "allowed_unsafe_sysctls".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "allowed_unsafe_sysctls",
                     &self.r#allowed_unsafe_sysctls,
-                )
-                .await,
-            );
-            map.insert(
-                "container_log_max_line".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "container_log_max_line",
                     &self.r#container_log_max_line,
-                )
-                .await,
-            );
-            map.insert(
-                "container_log_max_size_mb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "container_log_max_size_mb",
                     &self.r#container_log_max_size_mb,
-                )
-                .await,
-            );
-            map.insert(
-                "cpu_cfs_quota_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cpu_cfs_quota_enabled",
                     &self.r#cpu_cfs_quota_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "cpu_cfs_quota_period".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cpu_cfs_quota_period",
                     &self.r#cpu_cfs_quota_period,
-                )
-                .await,
-            );
-            map.insert(
-                "cpu_manager_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cpu_manager_policy",
                     &self.r#cpu_manager_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "image_gc_high_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "image_gc_high_threshold",
                     &self.r#image_gc_high_threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "image_gc_low_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "image_gc_low_threshold",
                     &self.r#image_gc_low_threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "pod_max_pid".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "pod_max_pid",
                     &self.r#pod_max_pid,
-                )
-                .await,
-            );
-            map.insert(
-                "topology_manager_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "topology_manager_policy",
                     &self.r#topology_manager_policy,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

@@ -76,130 +76,78 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "acr_authentication".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "acr_authentication",
                     &self.r#acr_authentication,
-                )
-                .await,
-            );
-            map.insert(
-                "agent_send_unutilized_msg".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "agent_send_unutilized_msg",
                     &self.r#agent_send_unutilized_msg,
-                )
-                .await,
-            );
-            map.insert(
-                "baseline".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "baseline",
                     &self.r#baseline,
-                )
-                .await,
-            );
-            map.insert(
-                "edge_hub_mem_optimize".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "edge_hub_mem_optimize",
                     &self.r#edge_hub_mem_optimize,
-                )
-                .await,
-            );
-            map.insert(
-                "edge_logging_option".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "edge_logging_option",
                     &self.r#edge_logging_option,
-                )
-                .await,
-            );
-            map.insert(
-                "inconsistent_module_settings".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "inconsistent_module_settings",
                     &self.r#inconsistent_module_settings,
-                )
-                .await,
-            );
-            map.insert(
-                "install_agent".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "install_agent",
                     &self.r#install_agent,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_filter_deny_all".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_filter_deny_all",
                     &self.r#ip_filter_deny_all,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_filter_permissive_rule".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_filter_permissive_rule",
                     &self.r#ip_filter_permissive_rule,
-                )
-                .await,
-            );
-            map.insert(
-                "open_ports".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "open_ports",
                     &self.r#open_ports,
-                )
-                .await,
-            );
-            map.insert(
-                "permissive_firewall_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "permissive_firewall_policy",
                     &self.r#permissive_firewall_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "permissive_input_firewall_rules".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "permissive_input_firewall_rules",
                     &self.r#permissive_input_firewall_rules,
-                )
-                .await,
-            );
-            map.insert(
-                "permissive_output_firewall_rules".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "permissive_output_firewall_rules",
                     &self.r#permissive_output_firewall_rules,
-                )
-                .await,
-            );
-            map.insert(
-                "privileged_docker_options".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "privileged_docker_options",
                     &self.r#privileged_docker_options,
-                )
-                .await,
-            );
-            map.insert(
-                "shared_credentials".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shared_credentials",
                     &self.r#shared_credentials,
-                )
-                .await,
-            );
-            map.insert(
-                "vulnerable_tls_cipher_suite".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "vulnerable_tls_cipher_suite",
                     &self.r#vulnerable_tls_cipher_suite,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

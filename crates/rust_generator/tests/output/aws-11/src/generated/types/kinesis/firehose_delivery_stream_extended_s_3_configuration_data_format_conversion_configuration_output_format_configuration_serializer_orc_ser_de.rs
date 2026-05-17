@@ -52,88 +52,54 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "block_size_bytes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "block_size_bytes",
                     &self.r#block_size_bytes,
-                )
-                .await,
-            );
-            map.insert(
-                "bloom_filter_columns".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bloom_filter_columns",
                     &self.r#bloom_filter_columns,
-                )
-                .await,
-            );
-            map.insert(
-                "bloom_filter_false_positive_probability".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bloom_filter_false_positive_probability",
                     &self.r#bloom_filter_false_positive_probability,
-                )
-                .await,
-            );
-            map.insert(
-                "compression".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "compression",
                     &self.r#compression,
-                )
-                .await,
-            );
-            map.insert(
-                "dictionary_key_threshold".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dictionary_key_threshold",
                     &self.r#dictionary_key_threshold,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_padding".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_padding",
                     &self.r#enable_padding,
-                )
-                .await,
-            );
-            map.insert(
-                "format_version".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "format_version",
                     &self.r#format_version,
-                )
-                .await,
-            );
-            map.insert(
-                "padding_tolerance".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "padding_tolerance",
                     &self.r#padding_tolerance,
-                )
-                .await,
-            );
-            map.insert(
-                "row_index_stride".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "row_index_stride",
                     &self.r#row_index_stride,
-                )
-                .await,
-            );
-            map.insert(
-                "stripe_size_bytes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "stripe_size_bytes",
                     &self.r#stripe_size_bytes,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

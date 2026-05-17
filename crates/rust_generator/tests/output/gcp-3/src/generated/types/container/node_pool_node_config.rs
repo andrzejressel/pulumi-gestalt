@@ -183,312 +183,182 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "advanced_machine_features".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "advanced_machine_features",
                     &self.r#advanced_machine_features,
-                )
-                .await,
-            );
-            map.insert(
-                "boot_disk_kms_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "boot_disk_kms_key",
                     &self.r#boot_disk_kms_key,
-                )
-                .await,
-            );
-            map.insert(
-                "confidential_nodes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "confidential_nodes",
                     &self.r#confidential_nodes,
-                )
-                .await,
-            );
-            map.insert(
-                "containerd_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "containerd_config",
                     &self.r#containerd_config,
-                )
-                .await,
-            );
-            map.insert(
-                "disk_size_gb".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disk_size_gb",
                     &self.r#disk_size_gb,
-                )
-                .await,
-            );
-            map.insert(
-                "disk_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disk_type",
                     &self.r#disk_type,
-                )
-                .await,
-            );
-            map.insert(
-                "effective_taints".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "effective_taints",
                     &self.r#effective_taints,
-                )
-                .await,
-            );
-            map.insert(
-                "enable_confidential_storage".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "enable_confidential_storage",
                     &self.r#enable_confidential_storage,
-                )
-                .await,
-            );
-            map.insert(
-                "ephemeral_storage_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ephemeral_storage_config",
                     &self.r#ephemeral_storage_config,
-                )
-                .await,
-            );
-            map.insert(
-                "ephemeral_storage_local_ssd_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ephemeral_storage_local_ssd_config",
                     &self.r#ephemeral_storage_local_ssd_config,
-                )
-                .await,
-            );
-            map.insert(
-                "fast_socket".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fast_socket",
                     &self.r#fast_socket,
-                )
-                .await,
-            );
-            map.insert(
-                "gcfs_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gcfs_config",
                     &self.r#gcfs_config,
-                )
-                .await,
-            );
-            map.insert(
-                "guest_accelerators".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "guest_accelerators",
                     &self.r#guest_accelerators,
-                )
-                .await,
-            );
-            map.insert(
-                "gvnic".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "gvnic",
                     &self.r#gvnic,
-                )
-                .await,
-            );
-            map.insert(
-                "host_maintenance_policy".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "host_maintenance_policy",
                     &self.r#host_maintenance_policy,
-                )
-                .await,
-            );
-            map.insert(
-                "image_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "image_type",
                     &self.r#image_type,
-                )
-                .await,
-            );
-            map.insert(
-                "kubelet_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kubelet_config",
                     &self.r#kubelet_config,
-                )
-                .await,
-            );
-            map.insert(
-                "labels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "labels",
                     &self.r#labels,
-                )
-                .await,
-            );
-            map.insert(
-                "linux_node_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "linux_node_config",
                     &self.r#linux_node_config,
-                )
-                .await,
-            );
-            map.insert(
-                "local_nvme_ssd_block_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "local_nvme_ssd_block_config",
                     &self.r#local_nvme_ssd_block_config,
-                )
-                .await,
-            );
-            map.insert(
-                "local_ssd_count".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "local_ssd_count",
                     &self.r#local_ssd_count,
-                )
-                .await,
-            );
-            map.insert(
-                "local_ssd_encryption_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "local_ssd_encryption_mode",
                     &self.r#local_ssd_encryption_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "logging_variant".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "logging_variant",
                     &self.r#logging_variant,
-                )
-                .await,
-            );
-            map.insert(
-                "machine_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "machine_type",
                     &self.r#machine_type,
-                )
-                .await,
-            );
-            map.insert(
-                "metadata".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "metadata",
                     &self.r#metadata,
-                )
-                .await,
-            );
-            map.insert(
-                "min_cpu_platform".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "min_cpu_platform",
                     &self.r#min_cpu_platform,
-                )
-                .await,
-            );
-            map.insert(
-                "node_group".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "node_group",
                     &self.r#node_group,
-                )
-                .await,
-            );
-            map.insert(
-                "oauth_scopes".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "oauth_scopes",
                     &self.r#oauth_scopes,
-                )
-                .await,
-            );
-            map.insert(
-                "preemptible".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "preemptible",
                     &self.r#preemptible,
-                )
-                .await,
-            );
-            map.insert(
-                "reservation_affinity".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "reservation_affinity",
                     &self.r#reservation_affinity,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_labels".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_labels",
                     &self.r#resource_labels,
-                )
-                .await,
-            );
-            map.insert(
-                "resource_manager_tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "resource_manager_tags",
                     &self.r#resource_manager_tags,
-                )
-                .await,
-            );
-            map.insert(
-                "sandbox_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sandbox_config",
                     &self.r#sandbox_config,
-                )
-                .await,
-            );
-            map.insert(
-                "secondary_boot_disks".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "secondary_boot_disks",
                     &self.r#secondary_boot_disks,
-                )
-                .await,
-            );
-            map.insert(
-                "service_account".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "service_account",
                     &self.r#service_account,
-                )
-                .await,
-            );
-            map.insert(
-                "shielded_instance_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "shielded_instance_config",
                     &self.r#shielded_instance_config,
-                )
-                .await,
-            );
-            map.insert(
-                "sole_tenant_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sole_tenant_config",
                     &self.r#sole_tenant_config,
-                )
-                .await,
-            );
-            map.insert(
-                "spot".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "spot",
                     &self.r#spot,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_pools".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_pools",
                     &self.r#storage_pools,
-                )
-                .await,
-            );
-            map.insert(
-                "tags".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tags",
                     &self.r#tags,
-                )
-                .await,
-            );
-            map.insert(
-                "taints".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "taints",
                     &self.r#taints,
-                )
-                .await,
-            );
-            map.insert(
-                "workload_metadata_config".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "workload_metadata_config",
                     &self.r#workload_metadata_config,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

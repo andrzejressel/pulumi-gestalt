@@ -88,151 +88,90 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "client_port_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "client_port_conditions",
                     &self.r#client_port_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "cookies_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cookies_conditions",
                     &self.r#cookies_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "host_name_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "host_name_conditions",
                     &self.r#host_name_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "http_version_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_version_conditions",
                     &self.r#http_version_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "is_device_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "is_device_conditions",
                     &self.r#is_device_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "post_args_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "post_args_conditions",
                     &self.r#post_args_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "query_string_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "query_string_conditions",
                     &self.r#query_string_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "remote_address_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "remote_address_conditions",
                     &self.r#remote_address_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "request_body_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_body_conditions",
                     &self.r#request_body_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "request_header_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_header_conditions",
                     &self.r#request_header_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "request_method_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_method_conditions",
                     &self.r#request_method_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "request_scheme_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_scheme_conditions",
                     &self.r#request_scheme_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "request_uri_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "request_uri_conditions",
                     &self.r#request_uri_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "server_port_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "server_port_conditions",
                     &self.r#server_port_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "socket_address_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "socket_address_conditions",
                     &self.r#socket_address_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "ssl_protocol_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ssl_protocol_conditions",
                     &self.r#ssl_protocol_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "url_file_extension_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url_file_extension_conditions",
                     &self.r#url_file_extension_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "url_filename_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url_filename_conditions",
                     &self.r#url_filename_conditions,
-                )
-                .await,
-            );
-            map.insert(
-                "url_path_conditions".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "url_path_conditions",
                     &self.r#url_path_conditions,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

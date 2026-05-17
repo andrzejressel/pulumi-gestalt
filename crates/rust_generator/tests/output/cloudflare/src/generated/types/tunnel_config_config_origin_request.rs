@@ -84,144 +84,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tun
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "access".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "access",
                     &self.r#access,
-                )
-                .await,
-            );
-            map.insert(
-                "bastion_mode".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "bastion_mode",
                     &self.r#bastion_mode,
-                )
-                .await,
-            );
-            map.insert(
-                "ca_pool".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ca_pool",
                     &self.r#ca_pool,
-                )
-                .await,
-            );
-            map.insert(
-                "connect_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "connect_timeout",
                     &self.r#connect_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "disable_chunked_encoding".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "disable_chunked_encoding",
                     &self.r#disable_chunked_encoding,
-                )
-                .await,
-            );
-            map.insert(
-                "http_2_origin".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_2_origin",
                     &self.r#http_2_origin,
-                )
-                .await,
-            );
-            map.insert(
-                "http_host_header".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "http_host_header",
                     &self.r#http_host_header,
-                )
-                .await,
-            );
-            map.insert(
-                "ip_rules".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ip_rules",
                     &self.r#ip_rules,
-                )
-                .await,
-            );
-            map.insert(
-                "keep_alive_connections".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "keep_alive_connections",
                     &self.r#keep_alive_connections,
-                )
-                .await,
-            );
-            map.insert(
-                "keep_alive_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "keep_alive_timeout",
                     &self.r#keep_alive_timeout,
-                )
-                .await,
-            );
-            map.insert(
-                "no_happy_eyeballs".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "no_happy_eyeballs",
                     &self.r#no_happy_eyeballs,
-                )
-                .await,
-            );
-            map.insert(
-                "no_tls_verify".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "no_tls_verify",
                     &self.r#no_tls_verify,
-                )
-                .await,
-            );
-            map.insert(
-                "origin_server_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "origin_server_name",
                     &self.r#origin_server_name,
-                )
-                .await,
-            );
-            map.insert(
-                "proxy_address".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "proxy_address",
                     &self.r#proxy_address,
-                )
-                .await,
-            );
-            map.insert(
-                "proxy_port".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "proxy_port",
                     &self.r#proxy_port,
-                )
-                .await,
-            );
-            map.insert(
-                "proxy_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "proxy_type",
                     &self.r#proxy_type,
-                )
-                .await,
-            );
-            map.insert(
-                "tcp_keep_alive".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tcp_keep_alive",
                     &self.r#tcp_keep_alive,
-                )
-                .await,
-            );
-            map.insert(
-                "tls_timeout".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tls_timeout",
                     &self.r#tls_timeout,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

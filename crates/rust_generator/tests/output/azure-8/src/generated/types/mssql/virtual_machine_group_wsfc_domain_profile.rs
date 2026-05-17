@@ -44,74 +44,46 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "cluster_bootstrap_account_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "cluster_bootstrap_account_name",
                     &self.r#cluster_bootstrap_account_name,
-                )
-                .await,
-            );
-            map.insert(
-                "cluster_operator_account_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cluster_operator_account_name",
                     &self.r#cluster_operator_account_name,
-                )
-                .await,
-            );
-            map.insert(
-                "cluster_subnet_type".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "cluster_subnet_type",
                     &self.r#cluster_subnet_type,
-                )
-                .await,
-            );
-            map.insert(
-                "fqdn".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "fqdn",
                     &self.r#fqdn,
-                )
-                .await,
-            );
-            map.insert(
-                "organizational_unit_path".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "organizational_unit_path",
                     &self.r#organizational_unit_path,
-                )
-                .await,
-            );
-            map.insert(
-                "sql_service_account_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "sql_service_account_name",
                     &self.r#sql_service_account_name,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_account_primary_key".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_account_primary_key",
                     &self.r#storage_account_primary_key,
-                )
-                .await,
-            );
-            map.insert(
-                "storage_account_url".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "storage_account_url",
                     &self.r#storage_account_url,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

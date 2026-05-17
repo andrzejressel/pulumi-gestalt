@@ -32,53 +32,34 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "change_tier_to_archive_after_days_since_creation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "change_tier_to_archive_after_days_since_creation",
                     &self.r#change_tier_to_archive_after_days_since_creation,
-                )
-                .await,
-            );
-            map.insert(
-                "change_tier_to_cool_after_days_since_creation".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "change_tier_to_cool_after_days_since_creation",
                     &self.r#change_tier_to_cool_after_days_since_creation,
-                )
-                .await,
-            );
-            map.insert(
-                "delete_after_days_since_creation_greater_than".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "delete_after_days_since_creation_greater_than",
                     &self.r#delete_after_days_since_creation_greater_than,
-                )
-                .await,
-            );
-            map.insert(
-                "tier_to_archive_after_days_since_last_tier_change_greater_than".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tier_to_archive_after_days_since_last_tier_change_greater_than",
                     &self.r#tier_to_archive_after_days_since_last_tier_change_greater_than,
-                )
-                .await,
-            );
-            map.insert(
-                "tier_to_cold_after_days_since_creation_greater_than".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "tier_to_cold_after_days_since_creation_greater_than",
                     &self.r#tier_to_cold_after_days_since_creation_greater_than,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }

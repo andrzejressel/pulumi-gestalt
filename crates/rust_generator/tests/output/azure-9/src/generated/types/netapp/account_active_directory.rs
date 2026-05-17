@@ -70,116 +70,70 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
-            use std::collections::BTreeMap;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
-            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
-
-            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
-            map.insert(
-                "aes_encryption_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
+            };
+            let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
+                to_pulumi_object_field(
+                    "aes_encryption_enabled",
                     &self.r#aes_encryption_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "dns_servers".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "dns_servers",
                     &self.r#dns_servers,
-                )
-                .await,
-            );
-            map.insert(
-                "domain".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "domain",
                     &self.r#domain,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_ad_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_ad_name",
                     &self.r#kerberos_ad_name,
-                )
-                .await,
-            );
-            map.insert(
-                "kerberos_kdc_ip".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "kerberos_kdc_ip",
                     &self.r#kerberos_kdc_ip,
-                )
-                .await,
-            );
-            map.insert(
-                "ldap_over_tls_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ldap_over_tls_enabled",
                     &self.r#ldap_over_tls_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "ldap_signing_enabled".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "ldap_signing_enabled",
                     &self.r#ldap_signing_enabled,
-                )
-                .await,
-            );
-            map.insert(
-                "local_nfs_users_with_ldap_allowed".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "local_nfs_users_with_ldap_allowed",
                     &self.r#local_nfs_users_with_ldap_allowed,
-                )
-                .await,
-            );
-            map.insert(
-                "organizational_unit".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "organizational_unit",
                     &self.r#organizational_unit,
-                )
-                .await,
-            );
-            map.insert(
-                "password".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "password",
                     &self.r#password,
-                )
-                .await,
-            );
-            map.insert(
-                "server_root_ca_certificate".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "server_root_ca_certificate",
                     &self.r#server_root_ca_certificate,
-                )
-                .await,
-            );
-            map.insert(
-                "site_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "site_name",
                     &self.r#site_name,
-                )
-                .await,
-            );
-            map.insert(
-                "smb_server_name".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "smb_server_name",
                     &self.r#smb_server_name,
-                )
-                .await,
-            );
-            map.insert(
-                "username".to_string(),
-                ToPulumiValue::to_pulumi_value(
+                ),
+                to_pulumi_object_field(
+                    "username",
                     &self.r#username,
-                )
-                .await,
-            );
-
-            ToPulumiValue::to_pulumi_value(
-                &map,
-            )
-            .await
+                ),
+            ];
+            to_pulumi_object_concurrent(field_futures).await
         }
         .boxed_local()
     }
