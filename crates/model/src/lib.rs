@@ -1,4 +1,3 @@
-mod enum_macros;
 mod from_value;
 pub mod output;
 mod to_value;
