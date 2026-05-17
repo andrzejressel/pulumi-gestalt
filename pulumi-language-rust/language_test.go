@@ -162,7 +162,6 @@ func TestRegenerateJsonWithTests(t *testing.T) {
 var expectedFailures = map[string]string{
 	"l1-builtin-can":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2034",
 	"l1-builtin-to-json":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2027",
-	"l1-builtin-string":                            "https://github.com/andrzejressel/pulumi-gestalt/issues/2239",
 	"l1-builtin-try":                               "https://github.com/andrzejressel/pulumi-gestalt/issues/2035",
 	"l1-config-types-object":                       "https://github.com/andrzejressel/pulumi-gestalt/issues/2037",
 	"l1-keyword-overlap":                           "https://github.com/andrzejressel/pulumi-gestalt/issues/2063",

@@ -23,6 +23,7 @@ pulumi_gestalt_rust_integration.workspace = true
 pulumi_gestalt_model.workspace = true
 tokio.workspace = true
 hex.workspace = true
+unicode-segmentation.workspace = true
 
 [dev-dependencies]
 pulumi_gestalt_build = { path = "../rust_build" }

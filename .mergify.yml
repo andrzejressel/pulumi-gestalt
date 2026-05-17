@@ -21,6 +21,7 @@ queue_rules:
       - check-success=test-pulumi-language-rust-macos (l1-builtin-secret)
       - check-success=test-pulumi-language-rust-macos (l1-builtin-sha1)
       - check-success=test-pulumi-language-rust-macos (l1-builtin-stash)
+      - check-success=test-pulumi-language-rust-macos (l1-builtin-string)
       - check-success=test-pulumi-language-rust-macos (l1-config-secret)
       - check-success=test-pulumi-language-rust-macos (l1-config-types-primitive)
       - check-success=test-pulumi-language-rust-macos (l1-elide-index)
