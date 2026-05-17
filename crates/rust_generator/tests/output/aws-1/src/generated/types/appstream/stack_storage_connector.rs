@@ -17,3 +17,92 @@ pub struct StackStorageConnector {
     #[serde(rename = "resourceIdentifier")]
     pub r#resource_identifier: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for StackStorageConnector {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "connector_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connector_type,
+                )
+                .await,
+            );
+            map.insert(
+                "domains".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#domains,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_identifier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_identifier,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for StackStorageConnector {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#connector_type: {
+                        let field_value = match fields_map.get("connector_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'connector_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#domains: {
+                        let field_value = match fields_map.get("domains") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_identifier: {
+                        let field_value = match fields_map.get("resource_identifier") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

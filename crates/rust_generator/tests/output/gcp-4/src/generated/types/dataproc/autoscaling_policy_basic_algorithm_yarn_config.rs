@@ -45,3 +45,120 @@ pub struct AutoscalingPolicyBasicAlgorithmYarnConfig {
     #[serde(rename = "scaleUpMinWorkerFraction")]
     pub r#scale_up_min_worker_fraction: Option<f64>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AutoscalingPolicyBasicAlgorithmYarnConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "graceful_decommission_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#graceful_decommission_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "scale_down_factor".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scale_down_factor,
+                )
+                .await,
+            );
+            map.insert(
+                "scale_down_min_worker_fraction".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scale_down_min_worker_fraction,
+                )
+                .await,
+            );
+            map.insert(
+                "scale_up_factor".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scale_up_factor,
+                )
+                .await,
+            );
+            map.insert(
+                "scale_up_min_worker_fraction".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scale_up_min_worker_fraction,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AutoscalingPolicyBasicAlgorithmYarnConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#graceful_decommission_timeout: {
+                        let field_value = match fields_map.get("graceful_decommission_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'graceful_decommission_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scale_down_factor: {
+                        let field_value = match fields_map.get("scale_down_factor") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scale_down_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scale_down_min_worker_fraction: {
+                        let field_value = match fields_map.get("scale_down_min_worker_fraction") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scale_down_min_worker_fraction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scale_up_factor: {
+                        let field_value = match fields_map.get("scale_up_factor") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scale_up_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scale_up_min_worker_fraction: {
+                        let field_value = match fields_map.get("scale_up_min_worker_fraction") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scale_up_min_worker_fraction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

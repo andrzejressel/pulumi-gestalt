@@ -47,3 +47,148 @@ pub struct LbTrafficExtensionExtensionChainExtension {
     #[serde(rename = "timeout")]
     pub r#timeout: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LbTrafficExtensionExtensionChainExtension {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "authority".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authority,
+                )
+                .await,
+            );
+            map.insert(
+                "fail_open".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fail_open,
+                )
+                .await,
+            );
+            map.insert(
+                "forward_headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forward_headers,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "service".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service,
+                )
+                .await,
+            );
+            map.insert(
+                "supported_events".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#supported_events,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for LbTrafficExtensionExtensionChainExtension {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#authority: {
+                        let field_value = match fields_map.get("authority") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'authority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fail_open: {
+                        let field_value = match fields_map.get("fail_open") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fail_open' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#forward_headers: {
+                        let field_value = match fields_map.get("forward_headers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'forward_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service: {
+                        let field_value = match fields_map.get("service") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#supported_events: {
+                        let field_value = match fields_map.get("supported_events") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'supported_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timeout: {
+                        let field_value = match fields_map.get("timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

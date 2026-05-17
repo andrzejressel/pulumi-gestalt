@@ -24,3 +24,120 @@ pub struct FlowTask {
     #[serde(rename = "taskType")]
     pub r#task_type: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FlowTask {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "connector_operators".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connector_operators,
+                )
+                .await,
+            );
+            map.insert(
+                "destination_field".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_field,
+                )
+                .await,
+            );
+            map.insert(
+                "source_fields".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_fields,
+                )
+                .await,
+            );
+            map.insert(
+                "task_properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_properties,
+                )
+                .await,
+            );
+            map.insert(
+                "task_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_type,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FlowTask {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#connector_operators: {
+                        let field_value = match fields_map.get("connector_operators") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'connector_operators' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#destination_field: {
+                        let field_value = match fields_map.get("destination_field") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'destination_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_fields: {
+                        let field_value = match fields_map.get("source_fields") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_properties: {
+                        let field_value = match fields_map.get("task_properties") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_type: {
+                        let field_value = match fields_map.get("task_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

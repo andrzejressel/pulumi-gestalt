@@ -24,3 +24,120 @@ pub struct PipeLogConfiguration {
     #[serde(rename = "s3LogDestination")]
     pub r#s_3_log_destination: Option<Box<super::super::types::pipes::PipeLogConfigurationS3LogDestination>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PipeLogConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloudwatch_logs_log_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloudwatch_logs_log_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "firehose_log_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#firehose_log_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "include_execution_datas".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_execution_datas,
+                )
+                .await,
+            );
+            map.insert(
+                "level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#level,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_log_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_log_destination,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PipeLogConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cloudwatch_logs_log_destination: {
+                        let field_value = match fields_map.get("cloudwatch_logs_log_destination") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloudwatch_logs_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#firehose_log_destination: {
+                        let field_value = match fields_map.get("firehose_log_destination") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'firehose_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#include_execution_datas: {
+                        let field_value = match fields_map.get("include_execution_datas") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'include_execution_datas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#level: {
+                        let field_value = match fields_map.get("level") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_log_destination: {
+                        let field_value = match fields_map.get("s_3_log_destination") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -76,3 +76,302 @@ pub struct ZeroTrustTunnelCloudflaredConfigConfigIngressRuleOriginRequest {
     #[serde(rename = "tlsTimeout")]
     pub r#tls_timeout: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ZeroTrustTunnelCloudflaredConfigConfigIngressRuleOriginRequest {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "access".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access,
+                )
+                .await,
+            );
+            map.insert(
+                "bastion_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bastion_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "ca_pool".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ca_pool,
+                )
+                .await,
+            );
+            map.insert(
+                "connect_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connect_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "disable_chunked_encoding".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disable_chunked_encoding,
+                )
+                .await,
+            );
+            map.insert(
+                "http_2_origin".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_2_origin,
+                )
+                .await,
+            );
+            map.insert(
+                "http_host_header".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_host_header,
+                )
+                .await,
+            );
+            map.insert(
+                "ip_rules".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ip_rules,
+                )
+                .await,
+            );
+            map.insert(
+                "keep_alive_connections".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#keep_alive_connections,
+                )
+                .await,
+            );
+            map.insert(
+                "keep_alive_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#keep_alive_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "no_happy_eyeballs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#no_happy_eyeballs,
+                )
+                .await,
+            );
+            map.insert(
+                "no_tls_verify".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#no_tls_verify,
+                )
+                .await,
+            );
+            map.insert(
+                "origin_server_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#origin_server_name,
+                )
+                .await,
+            );
+            map.insert(
+                "proxy_address".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#proxy_address,
+                )
+                .await,
+            );
+            map.insert(
+                "proxy_port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#proxy_port,
+                )
+                .await,
+            );
+            map.insert(
+                "proxy_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#proxy_type,
+                )
+                .await,
+            );
+            map.insert(
+                "tcp_keep_alive".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tcp_keep_alive,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_timeout,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ZeroTrustTunnelCloudflaredConfigConfigIngressRuleOriginRequest {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#access: {
+                        let field_value = match fields_map.get("access") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#bastion_mode: {
+                        let field_value = match fields_map.get("bastion_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bastion_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ca_pool: {
+                        let field_value = match fields_map.get("ca_pool") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ca_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#connect_timeout: {
+                        let field_value = match fields_map.get("connect_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'connect_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#disable_chunked_encoding: {
+                        let field_value = match fields_map.get("disable_chunked_encoding") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disable_chunked_encoding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#http_2_origin: {
+                        let field_value = match fields_map.get("http_2_origin") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'http_2_origin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#http_host_header: {
+                        let field_value = match fields_map.get("http_host_header") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'http_host_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ip_rules: {
+                        let field_value = match fields_map.get("ip_rules") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ip_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#keep_alive_connections: {
+                        let field_value = match fields_map.get("keep_alive_connections") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'keep_alive_connections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#keep_alive_timeout: {
+                        let field_value = match fields_map.get("keep_alive_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'keep_alive_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#no_happy_eyeballs: {
+                        let field_value = match fields_map.get("no_happy_eyeballs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'no_happy_eyeballs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#no_tls_verify: {
+                        let field_value = match fields_map.get("no_tls_verify") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'no_tls_verify' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#origin_server_name: {
+                        let field_value = match fields_map.get("origin_server_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'origin_server_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#proxy_address: {
+                        let field_value = match fields_map.get("proxy_address") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'proxy_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#proxy_port: {
+                        let field_value = match fields_map.get("proxy_port") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'proxy_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#proxy_type: {
+                        let field_value = match fields_map.get("proxy_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'proxy_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tcp_keep_alive: {
+                        let field_value = match fields_map.get("tcp_keep_alive") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tcp_keep_alive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_timeout: {
+                        let field_value = match fields_map.get("tls_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -32,3 +32,148 @@ pub struct VolumeGroupSapHanaVolumeExportPolicyRule {
     #[serde(rename = "unixReadWrite")]
     pub r#unix_read_write: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VolumeGroupSapHanaVolumeExportPolicyRule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allowed_clients".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed_clients,
+                )
+                .await,
+            );
+            map.insert(
+                "nfsv_3_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#nfsv_3_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "nfsv_41_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#nfsv_41_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "root_access_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#root_access_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "rule_index".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rule_index,
+                )
+                .await,
+            );
+            map.insert(
+                "unix_read_only".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#unix_read_only,
+                )
+                .await,
+            );
+            map.insert(
+                "unix_read_write".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#unix_read_write,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for VolumeGroupSapHanaVolumeExportPolicyRule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#allowed_clients: {
+                        let field_value = match fields_map.get("allowed_clients") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allowed_clients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#nfsv_3_enabled: {
+                        let field_value = match fields_map.get("nfsv_3_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'nfsv_3_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#nfsv_41_enabled: {
+                        let field_value = match fields_map.get("nfsv_41_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'nfsv_41_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#root_access_enabled: {
+                        let field_value = match fields_map.get("root_access_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'root_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rule_index: {
+                        let field_value = match fields_map.get("rule_index") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rule_index' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#unix_read_only: {
+                        let field_value = match fields_map.get("unix_read_only") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'unix_read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#unix_read_write: {
+                        let field_value = match fields_map.get("unix_read_write") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'unix_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

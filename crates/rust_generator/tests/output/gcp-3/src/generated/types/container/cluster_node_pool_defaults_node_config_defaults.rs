@@ -20,3 +20,106 @@ pub struct ClusterNodePoolDefaultsNodeConfigDefaults {
     #[serde(rename = "loggingVariant")]
     pub r#logging_variant: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterNodePoolDefaultsNodeConfigDefaults {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "containerd_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#containerd_config,
+                )
+                .await,
+            );
+            map.insert(
+                "gcfs_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gcfs_config,
+                )
+                .await,
+            );
+            map.insert(
+                "insecure_kubelet_readonly_port_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#insecure_kubelet_readonly_port_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "logging_variant".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#logging_variant,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterNodePoolDefaultsNodeConfigDefaults {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#containerd_config: {
+                        let field_value = match fields_map.get("containerd_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'containerd_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gcfs_config: {
+                        let field_value = match fields_map.get("gcfs_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gcfs_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#insecure_kubelet_readonly_port_enabled: {
+                        let field_value = match fields_map.get("insecure_kubelet_readonly_port_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'insecure_kubelet_readonly_port_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#logging_variant: {
+                        let field_value = match fields_map.get("logging_variant") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'logging_variant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

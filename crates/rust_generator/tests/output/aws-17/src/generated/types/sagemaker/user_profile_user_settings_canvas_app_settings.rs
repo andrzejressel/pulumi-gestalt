@@ -35,3 +35,162 @@ pub struct UserProfileUserSettingsCanvasAppSettings {
     #[serde(rename = "workspaceSettings")]
     pub r#workspace_settings: Option<Box<super::super::types::sagemaker::UserProfileUserSettingsCanvasAppSettingsWorkspaceSettings>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for UserProfileUserSettingsCanvasAppSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "direct_deploy_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#direct_deploy_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "emr_serverless_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#emr_serverless_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "generative_ai_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#generative_ai_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "identity_provider_oauth_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#identity_provider_oauth_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "kendra_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kendra_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "model_register_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#model_register_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "time_series_forecasting_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#time_series_forecasting_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "workspace_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#workspace_settings,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for UserProfileUserSettingsCanvasAppSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#direct_deploy_settings: {
+                        let field_value = match fields_map.get("direct_deploy_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'direct_deploy_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#emr_serverless_settings: {
+                        let field_value = match fields_map.get("emr_serverless_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'emr_serverless_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#generative_ai_settings: {
+                        let field_value = match fields_map.get("generative_ai_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'generative_ai_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#identity_provider_oauth_settings: {
+                        let field_value = match fields_map.get("identity_provider_oauth_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'identity_provider_oauth_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kendra_settings: {
+                        let field_value = match fields_map.get("kendra_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kendra_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#model_register_settings: {
+                        let field_value = match fields_map.get("model_register_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'model_register_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#time_series_forecasting_settings: {
+                        let field_value = match fields_map.get("time_series_forecasting_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'time_series_forecasting_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#workspace_settings: {
+                        let field_value = match fields_map.get("workspace_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'workspace_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

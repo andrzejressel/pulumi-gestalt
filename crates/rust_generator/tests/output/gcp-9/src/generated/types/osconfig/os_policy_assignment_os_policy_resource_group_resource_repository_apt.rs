@@ -27,3 +27,120 @@ pub struct OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt {
     #[serde(rename = "uri")]
     pub r#uri: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "archive_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#archive_type,
+                )
+                .await,
+            );
+            map.insert(
+                "components".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#components,
+                )
+                .await,
+            );
+            map.insert(
+                "distribution".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#distribution,
+                )
+                .await,
+            );
+            map.insert(
+                "gpg_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gpg_key,
+                )
+                .await,
+            );
+            map.insert(
+                "uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#uri,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for OsPolicyAssignmentOsPolicyResourceGroupResourceRepositoryApt {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#archive_type: {
+                        let field_value = match fields_map.get("archive_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'archive_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#components: {
+                        let field_value = match fields_map.get("components") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'components' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#distribution: {
+                        let field_value = match fields_map.get("distribution") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'distribution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gpg_key: {
+                        let field_value = match fields_map.get("gpg_key") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gpg_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#uri: {
+                        let field_value = match fields_map.get("uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -91,3 +91,106 @@ pub struct AlertPolicyConditionConditionThresholdDenominatorAggregation {
     #[serde(rename = "perSeriesAligner")]
     pub r#per_series_aligner: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AlertPolicyConditionConditionThresholdDenominatorAggregation {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "alignment_period".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alignment_period,
+                )
+                .await,
+            );
+            map.insert(
+                "cross_series_reducer".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cross_series_reducer,
+                )
+                .await,
+            );
+            map.insert(
+                "group_by_fields".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#group_by_fields,
+                )
+                .await,
+            );
+            map.insert(
+                "per_series_aligner".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#per_series_aligner,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AlertPolicyConditionConditionThresholdDenominatorAggregation {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#alignment_period: {
+                        let field_value = match fields_map.get("alignment_period") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'alignment_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cross_series_reducer: {
+                        let field_value = match fields_map.get("cross_series_reducer") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cross_series_reducer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#group_by_fields: {
+                        let field_value = match fields_map.get("group_by_fields") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'group_by_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#per_series_aligner: {
+                        let field_value = match fields_map.get("per_series_aligner") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'per_series_aligner' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

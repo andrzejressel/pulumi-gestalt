@@ -56,3 +56,232 @@ pub struct LoadBalancerRuleOverride {
     #[serde(rename = "ttl")]
     pub r#ttl: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LoadBalancerRuleOverride {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "adaptive_routings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#adaptive_routings,
+                )
+                .await,
+            );
+            map.insert(
+                "country_pools".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#country_pools,
+                )
+                .await,
+            );
+            map.insert(
+                "default_pools".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_pools,
+                )
+                .await,
+            );
+            map.insert(
+                "fallback_pool".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fallback_pool,
+                )
+                .await,
+            );
+            map.insert(
+                "location_strategies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#location_strategies,
+                )
+                .await,
+            );
+            map.insert(
+                "pop_pools".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pop_pools,
+                )
+                .await,
+            );
+            map.insert(
+                "random_steerings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#random_steerings,
+                )
+                .await,
+            );
+            map.insert(
+                "region_pools".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#region_pools,
+                )
+                .await,
+            );
+            map.insert(
+                "session_affinity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_affinity,
+                )
+                .await,
+            );
+            map.insert(
+                "session_affinity_attributes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_affinity_attributes,
+                )
+                .await,
+            );
+            map.insert(
+                "session_affinity_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_affinity_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "steering_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#steering_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ttl,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for LoadBalancerRuleOverride {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#adaptive_routings: {
+                        let field_value = match fields_map.get("adaptive_routings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'adaptive_routings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#country_pools: {
+                        let field_value = match fields_map.get("country_pools") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'country_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_pools: {
+                        let field_value = match fields_map.get("default_pools") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fallback_pool: {
+                        let field_value = match fields_map.get("fallback_pool") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fallback_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#location_strategies: {
+                        let field_value = match fields_map.get("location_strategies") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'location_strategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pop_pools: {
+                        let field_value = match fields_map.get("pop_pools") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pop_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#random_steerings: {
+                        let field_value = match fields_map.get("random_steerings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'random_steerings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#region_pools: {
+                        let field_value = match fields_map.get("region_pools") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'region_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#session_affinity: {
+                        let field_value = match fields_map.get("session_affinity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'session_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#session_affinity_attributes: {
+                        let field_value = match fields_map.get("session_affinity_attributes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'session_affinity_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#session_affinity_ttl: {
+                        let field_value = match fields_map.get("session_affinity_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'session_affinity_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#steering_policy: {
+                        let field_value = match fields_map.get("steering_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'steering_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ttl: {
+                        let field_value = match fields_map.get("ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

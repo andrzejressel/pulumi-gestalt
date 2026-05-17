@@ -33,3 +33,120 @@ pub struct JobRetryConfig {
     #[serde(rename = "retryCount")]
     pub r#retry_count: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobRetryConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "max_backoff_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_backoff_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "max_doublings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_doublings,
+                )
+                .await,
+            );
+            map.insert(
+                "max_retry_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_retry_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "min_backoff_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_backoff_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "retry_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#retry_count,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for JobRetryConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#max_backoff_duration: {
+                        let field_value = match fields_map.get("max_backoff_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_backoff_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_doublings: {
+                        let field_value = match fields_map.get("max_doublings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_doublings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_retry_duration: {
+                        let field_value = match fields_map.get("max_retry_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_retry_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_backoff_duration: {
+                        let field_value = match fields_map.get("min_backoff_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_backoff_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#retry_count: {
+                        let field_value = match fields_map.get("retry_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'retry_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

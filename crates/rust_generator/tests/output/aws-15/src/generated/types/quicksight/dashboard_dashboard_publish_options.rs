@@ -44,3 +44,190 @@ pub struct DashboardDashboardPublishOptions {
     #[serde(rename = "visualMenuOption")]
     pub r#visual_menu_option: Option<Box<super::super::types::quicksight::DashboardDashboardPublishOptionsVisualMenuOption>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DashboardDashboardPublishOptions {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "ad_hoc_filtering_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ad_hoc_filtering_option,
+                )
+                .await,
+            );
+            map.insert(
+                "data_point_drill_up_down_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_point_drill_up_down_option,
+                )
+                .await,
+            );
+            map.insert(
+                "data_point_menu_label_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_point_menu_label_option,
+                )
+                .await,
+            );
+            map.insert(
+                "data_point_tooltip_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_point_tooltip_option,
+                )
+                .await,
+            );
+            map.insert(
+                "export_to_csv_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#export_to_csv_option,
+                )
+                .await,
+            );
+            map.insert(
+                "export_with_hidden_fields_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#export_with_hidden_fields_option,
+                )
+                .await,
+            );
+            map.insert(
+                "sheet_controls_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sheet_controls_option,
+                )
+                .await,
+            );
+            map.insert(
+                "sheet_layout_element_maximization_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sheet_layout_element_maximization_option,
+                )
+                .await,
+            );
+            map.insert(
+                "visual_axis_sort_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#visual_axis_sort_option,
+                )
+                .await,
+            );
+            map.insert(
+                "visual_menu_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#visual_menu_option,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DashboardDashboardPublishOptions {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#ad_hoc_filtering_option: {
+                        let field_value = match fields_map.get("ad_hoc_filtering_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ad_hoc_filtering_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_point_drill_up_down_option: {
+                        let field_value = match fields_map.get("data_point_drill_up_down_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_point_drill_up_down_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_point_menu_label_option: {
+                        let field_value = match fields_map.get("data_point_menu_label_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_point_menu_label_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_point_tooltip_option: {
+                        let field_value = match fields_map.get("data_point_tooltip_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_point_tooltip_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#export_to_csv_option: {
+                        let field_value = match fields_map.get("export_to_csv_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'export_to_csv_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#export_with_hidden_fields_option: {
+                        let field_value = match fields_map.get("export_with_hidden_fields_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'export_with_hidden_fields_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sheet_controls_option: {
+                        let field_value = match fields_map.get("sheet_controls_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sheet_controls_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sheet_layout_element_maximization_option: {
+                        let field_value = match fields_map.get("sheet_layout_element_maximization_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sheet_layout_element_maximization_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#visual_axis_sort_option: {
+                        let field_value = match fields_map.get("visual_axis_sort_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'visual_axis_sort_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#visual_menu_option: {
+                        let field_value = match fields_map.get("visual_menu_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'visual_menu_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

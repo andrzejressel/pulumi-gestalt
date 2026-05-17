@@ -42,3 +42,176 @@ pub struct FirewallPolicyFirewallPolicy {
     #[serde(rename = "tlsInspectionConfigurationArn")]
     pub r#tls_inspection_configuration_arn: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FirewallPolicyFirewallPolicy {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "policy_variables".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#policy_variables,
+                )
+                .await,
+            );
+            map.insert(
+                "stateful_default_actions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stateful_default_actions,
+                )
+                .await,
+            );
+            map.insert(
+                "stateful_engine_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stateful_engine_options,
+                )
+                .await,
+            );
+            map.insert(
+                "stateful_rule_group_references".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stateful_rule_group_references,
+                )
+                .await,
+            );
+            map.insert(
+                "stateless_custom_actions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stateless_custom_actions,
+                )
+                .await,
+            );
+            map.insert(
+                "stateless_default_actions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stateless_default_actions,
+                )
+                .await,
+            );
+            map.insert(
+                "stateless_fragment_default_actions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stateless_fragment_default_actions,
+                )
+                .await,
+            );
+            map.insert(
+                "stateless_rule_group_references".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stateless_rule_group_references,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_inspection_configuration_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_inspection_configuration_arn,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FirewallPolicyFirewallPolicy {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#policy_variables: {
+                        let field_value = match fields_map.get("policy_variables") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'policy_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stateful_default_actions: {
+                        let field_value = match fields_map.get("stateful_default_actions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateful_default_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stateful_engine_options: {
+                        let field_value = match fields_map.get("stateful_engine_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateful_engine_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stateful_rule_group_references: {
+                        let field_value = match fields_map.get("stateful_rule_group_references") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateful_rule_group_references' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stateless_custom_actions: {
+                        let field_value = match fields_map.get("stateless_custom_actions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateless_custom_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stateless_default_actions: {
+                        let field_value = match fields_map.get("stateless_default_actions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateless_default_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stateless_fragment_default_actions: {
+                        let field_value = match fields_map.get("stateless_fragment_default_actions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateless_fragment_default_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stateless_rule_group_references: {
+                        let field_value = match fields_map.get("stateless_rule_group_references") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stateless_rule_group_references' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_inspection_configuration_arn: {
+                        let field_value = match fields_map.get("tls_inspection_configuration_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_inspection_configuration_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

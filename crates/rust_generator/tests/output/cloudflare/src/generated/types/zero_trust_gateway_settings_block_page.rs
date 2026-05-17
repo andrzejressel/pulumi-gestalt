@@ -36,3 +36,162 @@ pub struct ZeroTrustGatewaySettingsBlockPage {
     #[serde(rename = "name")]
     pub r#name: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ZeroTrustGatewaySettingsBlockPage {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "background_color".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#background_color,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "footer_text".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#footer_text,
+                )
+                .await,
+            );
+            map.insert(
+                "header_text".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#header_text,
+                )
+                .await,
+            );
+            map.insert(
+                "logo_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#logo_path,
+                )
+                .await,
+            );
+            map.insert(
+                "mailto_address".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mailto_address,
+                )
+                .await,
+            );
+            map.insert(
+                "mailto_subject".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mailto_subject,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ZeroTrustGatewaySettingsBlockPage {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#background_color: {
+                        let field_value = match fields_map.get("background_color") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'background_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#footer_text: {
+                        let field_value = match fields_map.get("footer_text") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'footer_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#header_text: {
+                        let field_value = match fields_map.get("header_text") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'header_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#logo_path: {
+                        let field_value = match fields_map.get("logo_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'logo_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mailto_address: {
+                        let field_value = match fields_map.get("mailto_address") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mailto_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mailto_subject: {
+                        let field_value = match fields_map.get("mailto_subject") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mailto_subject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

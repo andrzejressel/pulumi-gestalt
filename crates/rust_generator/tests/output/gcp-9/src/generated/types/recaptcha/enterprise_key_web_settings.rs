@@ -24,3 +24,120 @@ pub struct EnterpriseKeyWebSettings {
     #[serde(rename = "integrationType")]
     pub r#integration_type: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EnterpriseKeyWebSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allow_all_domains".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow_all_domains,
+                )
+                .await,
+            );
+            map.insert(
+                "allow_amp_traffic".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow_amp_traffic,
+                )
+                .await,
+            );
+            map.insert(
+                "allowed_domains".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed_domains,
+                )
+                .await,
+            );
+            map.insert(
+                "challenge_security_preference".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#challenge_security_preference,
+                )
+                .await,
+            );
+            map.insert(
+                "integration_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#integration_type,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EnterpriseKeyWebSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#allow_all_domains: {
+                        let field_value = match fields_map.get("allow_all_domains") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allow_all_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allow_amp_traffic: {
+                        let field_value = match fields_map.get("allow_amp_traffic") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allow_amp_traffic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allowed_domains: {
+                        let field_value = match fields_map.get("allowed_domains") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allowed_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#challenge_security_preference: {
+                        let field_value = match fields_map.get("challenge_security_preference") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'challenge_security_preference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#integration_type: {
+                        let field_value = match fields_map.get("integration_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'integration_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

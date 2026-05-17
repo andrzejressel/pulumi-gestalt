@@ -33,3 +33,92 @@ pub struct RegionBackendServiceFailoverPolicy {
     #[serde(rename = "failoverRatio")]
     pub r#failover_ratio: Option<f64>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RegionBackendServiceFailoverPolicy {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "disable_connection_drain_on_failover".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disable_connection_drain_on_failover,
+                )
+                .await,
+            );
+            map.insert(
+                "drop_traffic_if_unhealthy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#drop_traffic_if_unhealthy,
+                )
+                .await,
+            );
+            map.insert(
+                "failover_ratio".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#failover_ratio,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RegionBackendServiceFailoverPolicy {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#disable_connection_drain_on_failover: {
+                        let field_value = match fields_map.get("disable_connection_drain_on_failover") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disable_connection_drain_on_failover' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#drop_traffic_if_unhealthy: {
+                        let field_value = match fields_map.get("drop_traffic_if_unhealthy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'drop_traffic_if_unhealthy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#failover_ratio: {
+                        let field_value = match fields_map.get("failover_ratio") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'failover_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -32,3 +32,148 @@ pub struct GetCoreNetworkPolicyDocumentSegment {
     #[serde(rename = "requireAttachmentAcceptance")]
     pub r#require_attachment_acceptance: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetCoreNetworkPolicyDocumentSegment {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allow_filters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow_filters,
+                )
+                .await,
+            );
+            map.insert(
+                "deny_filters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#deny_filters,
+                )
+                .await,
+            );
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "edge_locations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#edge_locations,
+                )
+                .await,
+            );
+            map.insert(
+                "isolate_attachments".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#isolate_attachments,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "require_attachment_acceptance".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#require_attachment_acceptance,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetCoreNetworkPolicyDocumentSegment {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#allow_filters: {
+                        let field_value = match fields_map.get("allow_filters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allow_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#deny_filters: {
+                        let field_value = match fields_map.get("deny_filters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'deny_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#description: {
+                        let field_value = match fields_map.get("description") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#edge_locations: {
+                        let field_value = match fields_map.get("edge_locations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'edge_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#isolate_attachments: {
+                        let field_value = match fields_map.get("isolate_attachments") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'isolate_attachments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#require_attachment_acceptance: {
+                        let field_value = match fields_map.get("require_attachment_acceptance") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'require_attachment_acceptance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

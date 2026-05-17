@@ -46,3 +46,176 @@ pub struct GroupContainerVolume {
     #[serde(rename = "storageAccountName")]
     pub r#storage_account_name: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GroupContainerVolume {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "empty_dir".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#empty_dir,
+                )
+                .await,
+            );
+            map.insert(
+                "git_repo".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#git_repo,
+                )
+                .await,
+            );
+            map.insert(
+                "mount_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mount_path,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "read_only".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#read_only,
+                )
+                .await,
+            );
+            map.insert(
+                "secret".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secret,
+                )
+                .await,
+            );
+            map.insert(
+                "share_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#share_name,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_account_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_account_key,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_account_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_account_name,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GroupContainerVolume {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#empty_dir: {
+                        let field_value = match fields_map.get("empty_dir") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'empty_dir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#git_repo: {
+                        let field_value = match fields_map.get("git_repo") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'git_repo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mount_path: {
+                        let field_value = match fields_map.get("mount_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mount_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#read_only: {
+                        let field_value = match fields_map.get("read_only") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secret: {
+                        let field_value = match fields_map.get("secret") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#share_name: {
+                        let field_value = match fields_map.get("share_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'share_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_account_key: {
+                        let field_value = match fields_map.get("storage_account_key") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_account_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_account_name: {
+                        let field_value = match fields_map.get("storage_account_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

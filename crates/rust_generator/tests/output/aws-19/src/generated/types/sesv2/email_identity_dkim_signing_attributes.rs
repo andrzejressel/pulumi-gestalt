@@ -38,3 +38,162 @@ pub struct EmailIdentityDkimSigningAttributes {
     #[serde(rename = "tokens")]
     pub r#tokens: Option<Vec<String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EmailIdentityDkimSigningAttributes {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "current_signing_key_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#current_signing_key_length,
+                )
+                .await,
+            );
+            map.insert(
+                "domain_signing_private_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#domain_signing_private_key,
+                )
+                .await,
+            );
+            map.insert(
+                "domain_signing_selector".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#domain_signing_selector,
+                )
+                .await,
+            );
+            map.insert(
+                "last_key_generation_timestamp".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#last_key_generation_timestamp,
+                )
+                .await,
+            );
+            map.insert(
+                "next_signing_key_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#next_signing_key_length,
+                )
+                .await,
+            );
+            map.insert(
+                "signing_attributes_origin".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#signing_attributes_origin,
+                )
+                .await,
+            );
+            map.insert(
+                "status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#status,
+                )
+                .await,
+            );
+            map.insert(
+                "tokens".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tokens,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EmailIdentityDkimSigningAttributes {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#current_signing_key_length: {
+                        let field_value = match fields_map.get("current_signing_key_length") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'current_signing_key_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#domain_signing_private_key: {
+                        let field_value = match fields_map.get("domain_signing_private_key") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'domain_signing_private_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#domain_signing_selector: {
+                        let field_value = match fields_map.get("domain_signing_selector") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'domain_signing_selector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#last_key_generation_timestamp: {
+                        let field_value = match fields_map.get("last_key_generation_timestamp") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'last_key_generation_timestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#next_signing_key_length: {
+                        let field_value = match fields_map.get("next_signing_key_length") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'next_signing_key_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#signing_attributes_origin: {
+                        let field_value = match fields_map.get("signing_attributes_origin") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'signing_attributes_origin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#status: {
+                        let field_value = match fields_map.get("status") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tokens: {
+                        let field_value = match fields_map.get("tokens") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

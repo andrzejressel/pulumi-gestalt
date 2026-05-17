@@ -20,3 +20,106 @@ pub struct RuleSource {
     #[serde(rename = "sourceIdentifier")]
     pub r#source_identifier: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RuleSource {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "custom_policy_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_policy_details,
+                )
+                .await,
+            );
+            map.insert(
+                "owner".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#owner,
+                )
+                .await,
+            );
+            map.insert(
+                "source_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_details,
+                )
+                .await,
+            );
+            map.insert(
+                "source_identifier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_identifier,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RuleSource {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#custom_policy_details: {
+                        let field_value = match fields_map.get("custom_policy_details") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_policy_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#owner: {
+                        let field_value = match fields_map.get("owner") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'owner' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_details: {
+                        let field_value = match fields_map.get("source_details") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_identifier: {
+                        let field_value = match fields_map.get("source_identifier") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

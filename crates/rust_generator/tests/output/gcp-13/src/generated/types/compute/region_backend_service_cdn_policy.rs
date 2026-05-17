@@ -54,3 +54,176 @@ pub struct RegionBackendServiceCdnPolicy {
     #[serde(rename = "signedUrlCacheMaxAgeSec")]
     pub r#signed_url_cache_max_age_sec: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RegionBackendServiceCdnPolicy {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cache_key_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_key_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "client_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "default_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "max_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "negative_caching".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#negative_caching,
+                )
+                .await,
+            );
+            map.insert(
+                "negative_caching_policies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#negative_caching_policies,
+                )
+                .await,
+            );
+            map.insert(
+                "serve_while_stale".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#serve_while_stale,
+                )
+                .await,
+            );
+            map.insert(
+                "signed_url_cache_max_age_sec".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#signed_url_cache_max_age_sec,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RegionBackendServiceCdnPolicy {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cache_key_policy: {
+                        let field_value = match fields_map.get("cache_key_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_key_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_mode: {
+                        let field_value = match fields_map.get("cache_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_ttl: {
+                        let field_value = match fields_map.get("client_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_ttl: {
+                        let field_value = match fields_map.get("default_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_ttl: {
+                        let field_value = match fields_map.get("max_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#negative_caching: {
+                        let field_value = match fields_map.get("negative_caching") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'negative_caching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#negative_caching_policies: {
+                        let field_value = match fields_map.get("negative_caching_policies") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'negative_caching_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#serve_while_stale: {
+                        let field_value = match fields_map.get("serve_while_stale") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'serve_while_stale' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#signed_url_cache_max_age_sec: {
+                        let field_value = match fields_map.get("signed_url_cache_max_age_sec") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'signed_url_cache_max_age_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

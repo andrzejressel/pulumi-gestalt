@@ -39,3 +39,120 @@ pub struct JobCopy {
     #[serde(rename = "writeDisposition")]
     pub r#write_disposition: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobCopy {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "create_disposition".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#create_disposition,
+                )
+                .await,
+            );
+            map.insert(
+                "destination_encryption_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_encryption_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "destination_table".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_table,
+                )
+                .await,
+            );
+            map.insert(
+                "source_tables".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_tables,
+                )
+                .await,
+            );
+            map.insert(
+                "write_disposition".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#write_disposition,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for JobCopy {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#create_disposition: {
+                        let field_value = match fields_map.get("create_disposition") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'create_disposition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#destination_encryption_configuration: {
+                        let field_value = match fields_map.get("destination_encryption_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'destination_encryption_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#destination_table: {
+                        let field_value = match fields_map.get("destination_table") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'destination_table' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_tables: {
+                        let field_value = match fields_map.get("source_tables") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_tables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#write_disposition: {
+                        let field_value = match fields_map.get("write_disposition") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'write_disposition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

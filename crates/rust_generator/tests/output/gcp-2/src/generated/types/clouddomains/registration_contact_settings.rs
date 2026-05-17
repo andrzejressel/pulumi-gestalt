@@ -30,3 +30,106 @@ pub struct RegistrationContactSettings {
     #[serde(rename = "technicalContact")]
     pub r#technical_contact: Box<super::super::types::clouddomains::RegistrationContactSettingsTechnicalContact>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RegistrationContactSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "admin_contact".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#admin_contact,
+                )
+                .await,
+            );
+            map.insert(
+                "privacy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#privacy,
+                )
+                .await,
+            );
+            map.insert(
+                "registrant_contact".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#registrant_contact,
+                )
+                .await,
+            );
+            map.insert(
+                "technical_contact".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#technical_contact,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RegistrationContactSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#admin_contact: {
+                        let field_value = match fields_map.get("admin_contact") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'admin_contact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#privacy: {
+                        let field_value = match fields_map.get("privacy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'privacy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#registrant_contact: {
+                        let field_value = match fields_map.get("registrant_contact") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'registrant_contact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#technical_contact: {
+                        let field_value = match fields_map.get("technical_contact") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'technical_contact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

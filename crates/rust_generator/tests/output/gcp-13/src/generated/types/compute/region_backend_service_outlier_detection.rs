@@ -76,3 +76,204 @@ pub struct RegionBackendServiceOutlierDetection {
     #[serde(rename = "successRateStdevFactor")]
     pub r#success_rate_stdev_factor: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RegionBackendServiceOutlierDetection {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "base_ejection_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#base_ejection_time,
+                )
+                .await,
+            );
+            map.insert(
+                "consecutive_errors".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#consecutive_errors,
+                )
+                .await,
+            );
+            map.insert(
+                "consecutive_gateway_failure".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#consecutive_gateway_failure,
+                )
+                .await,
+            );
+            map.insert(
+                "enforcing_consecutive_errors".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enforcing_consecutive_errors,
+                )
+                .await,
+            );
+            map.insert(
+                "enforcing_consecutive_gateway_failure".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enforcing_consecutive_gateway_failure,
+                )
+                .await,
+            );
+            map.insert(
+                "enforcing_success_rate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enforcing_success_rate,
+                )
+                .await,
+            );
+            map.insert(
+                "interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#interval,
+                )
+                .await,
+            );
+            map.insert(
+                "max_ejection_percent".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_ejection_percent,
+                )
+                .await,
+            );
+            map.insert(
+                "success_rate_minimum_hosts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#success_rate_minimum_hosts,
+                )
+                .await,
+            );
+            map.insert(
+                "success_rate_request_volume".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#success_rate_request_volume,
+                )
+                .await,
+            );
+            map.insert(
+                "success_rate_stdev_factor".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#success_rate_stdev_factor,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RegionBackendServiceOutlierDetection {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#base_ejection_time: {
+                        let field_value = match fields_map.get("base_ejection_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'base_ejection_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#consecutive_errors: {
+                        let field_value = match fields_map.get("consecutive_errors") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'consecutive_errors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#consecutive_gateway_failure: {
+                        let field_value = match fields_map.get("consecutive_gateway_failure") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'consecutive_gateway_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enforcing_consecutive_errors: {
+                        let field_value = match fields_map.get("enforcing_consecutive_errors") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enforcing_consecutive_errors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enforcing_consecutive_gateway_failure: {
+                        let field_value = match fields_map.get("enforcing_consecutive_gateway_failure") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enforcing_consecutive_gateway_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enforcing_success_rate: {
+                        let field_value = match fields_map.get("enforcing_success_rate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enforcing_success_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#interval: {
+                        let field_value = match fields_map.get("interval") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_ejection_percent: {
+                        let field_value = match fields_map.get("max_ejection_percent") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_ejection_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#success_rate_minimum_hosts: {
+                        let field_value = match fields_map.get("success_rate_minimum_hosts") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'success_rate_minimum_hosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#success_rate_request_volume: {
+                        let field_value = match fields_map.get("success_rate_request_volume") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'success_rate_request_volume' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#success_rate_stdev_factor: {
+                        let field_value = match fields_map.get("success_rate_stdev_factor") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'success_rate_stdev_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

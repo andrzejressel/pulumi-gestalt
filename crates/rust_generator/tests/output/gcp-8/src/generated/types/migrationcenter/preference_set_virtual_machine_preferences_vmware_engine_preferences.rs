@@ -20,3 +20,106 @@ pub struct PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences {
     #[serde(rename = "storageDeduplicationCompressionRatio")]
     pub r#storage_deduplication_compression_ratio: Option<f64>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "commitment_plan".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#commitment_plan,
+                )
+                .await,
+            );
+            map.insert(
+                "cpu_overcommit_ratio".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cpu_overcommit_ratio,
+                )
+                .await,
+            );
+            map.insert(
+                "memory_overcommit_ratio".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#memory_overcommit_ratio,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_deduplication_compression_ratio".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_deduplication_compression_ratio,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PreferenceSetVirtualMachinePreferencesVmwareEnginePreferences {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#commitment_plan: {
+                        let field_value = match fields_map.get("commitment_plan") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'commitment_plan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cpu_overcommit_ratio: {
+                        let field_value = match fields_map.get("cpu_overcommit_ratio") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cpu_overcommit_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#memory_overcommit_ratio: {
+                        let field_value = match fields_map.get("memory_overcommit_ratio") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'memory_overcommit_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_deduplication_compression_ratio: {
+                        let field_value = match fields_map.get("storage_deduplication_compression_ratio") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_deduplication_compression_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -53,3 +53,134 @@ pub struct RegionUrlMapPathMatcherPathRuleUrlRedirect {
     #[serde(rename = "stripQuery")]
     pub r#strip_query: bool,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RegionUrlMapPathMatcherPathRuleUrlRedirect {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "host_redirect".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#host_redirect,
+                )
+                .await,
+            );
+            map.insert(
+                "https_redirect".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#https_redirect,
+                )
+                .await,
+            );
+            map.insert(
+                "path_redirect".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#path_redirect,
+                )
+                .await,
+            );
+            map.insert(
+                "prefix_redirect".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prefix_redirect,
+                )
+                .await,
+            );
+            map.insert(
+                "redirect_response_code".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redirect_response_code,
+                )
+                .await,
+            );
+            map.insert(
+                "strip_query".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#strip_query,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RegionUrlMapPathMatcherPathRuleUrlRedirect {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#host_redirect: {
+                        let field_value = match fields_map.get("host_redirect") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'host_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#https_redirect: {
+                        let field_value = match fields_map.get("https_redirect") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'https_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#path_redirect: {
+                        let field_value = match fields_map.get("path_redirect") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'path_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#prefix_redirect: {
+                        let field_value = match fields_map.get("prefix_redirect") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prefix_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redirect_response_code: {
+                        let field_value = match fields_map.get("redirect_response_code") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redirect_response_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#strip_query: {
+                        let field_value = match fields_map.get("strip_query") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'strip_query' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

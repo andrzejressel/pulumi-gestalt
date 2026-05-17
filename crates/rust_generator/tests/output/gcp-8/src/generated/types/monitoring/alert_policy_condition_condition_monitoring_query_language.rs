@@ -45,3 +45,106 @@ pub struct AlertPolicyConditionConditionMonitoringQueryLanguage {
     #[serde(rename = "trigger")]
     pub r#trigger: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionMonitoringQueryLanguageTrigger>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AlertPolicyConditionConditionMonitoringQueryLanguage {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#duration,
+                )
+                .await,
+            );
+            map.insert(
+                "evaluation_missing_data".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#evaluation_missing_data,
+                )
+                .await,
+            );
+            map.insert(
+                "query".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#query,
+                )
+                .await,
+            );
+            map.insert(
+                "trigger".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#trigger,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AlertPolicyConditionConditionMonitoringQueryLanguage {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#duration: {
+                        let field_value = match fields_map.get("duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#evaluation_missing_data: {
+                        let field_value = match fields_map.get("evaluation_missing_data") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'evaluation_missing_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#query: {
+                        let field_value = match fields_map.get("query") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'query' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#trigger: {
+                        let field_value = match fields_map.get("trigger") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'trigger' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

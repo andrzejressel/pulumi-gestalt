@@ -20,3 +20,106 @@ pub struct JobTemplateConfigEncryptionDrmSystems {
     #[serde(rename = "widevine")]
     pub r#widevine: Option<Box<super::super::types::transcoder::JobTemplateConfigEncryptionDrmSystemsWidevine>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobTemplateConfigEncryptionDrmSystems {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "clearkey".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#clearkey,
+                )
+                .await,
+            );
+            map.insert(
+                "fairplay".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fairplay,
+                )
+                .await,
+            );
+            map.insert(
+                "playready".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#playready,
+                )
+                .await,
+            );
+            map.insert(
+                "widevine".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#widevine,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for JobTemplateConfigEncryptionDrmSystems {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#clearkey: {
+                        let field_value = match fields_map.get("clearkey") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'clearkey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fairplay: {
+                        let field_value = match fields_map.get("fairplay") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fairplay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#playready: {
+                        let field_value = match fields_map.get("playready") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'playready' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#widevine: {
+                        let field_value = match fields_map.get("widevine") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'widevine' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

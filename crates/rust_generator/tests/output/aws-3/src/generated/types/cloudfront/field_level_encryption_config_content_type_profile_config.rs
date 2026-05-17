@@ -12,3 +12,78 @@ pub struct FieldLevelEncryptionConfigContentTypeProfileConfig {
     #[serde(rename = "forwardWhenContentTypeIsUnknown")]
     pub r#forward_when_content_type_is_unknown: bool,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FieldLevelEncryptionConfigContentTypeProfileConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "content_type_profiles".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#content_type_profiles,
+                )
+                .await,
+            );
+            map.insert(
+                "forward_when_content_type_is_unknown".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forward_when_content_type_is_unknown,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FieldLevelEncryptionConfigContentTypeProfileConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#content_type_profiles: {
+                        let field_value = match fields_map.get("content_type_profiles") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'content_type_profiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#forward_when_content_type_is_unknown: {
+                        let field_value = match fields_map.get("forward_when_content_type_is_unknown") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'forward_when_content_type_is_unknown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

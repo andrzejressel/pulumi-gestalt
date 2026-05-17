@@ -43,3 +43,106 @@ pub struct SubscriptionPushConfig {
     #[serde(rename = "pushEndpoint")]
     pub r#push_endpoint: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for SubscriptionPushConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "attributes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#attributes,
+                )
+                .await,
+            );
+            map.insert(
+                "no_wrapper".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#no_wrapper,
+                )
+                .await,
+            );
+            map.insert(
+                "oidc_token".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#oidc_token,
+                )
+                .await,
+            );
+            map.insert(
+                "push_endpoint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#push_endpoint,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for SubscriptionPushConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#attributes: {
+                        let field_value = match fields_map.get("attributes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#no_wrapper: {
+                        let field_value = match fields_map.get("no_wrapper") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'no_wrapper' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#oidc_token: {
+                        let field_value = match fields_map.get("oidc_token") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'oidc_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#push_endpoint: {
+                        let field_value = match fields_map.get("push_endpoint") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'push_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

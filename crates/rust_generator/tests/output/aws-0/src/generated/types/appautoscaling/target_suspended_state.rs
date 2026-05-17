@@ -16,3 +16,92 @@ pub struct TargetSuspendedState {
     #[serde(rename = "scheduledScalingSuspended")]
     pub r#scheduled_scaling_suspended: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TargetSuspendedState {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "dynamic_scaling_in_suspended".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dynamic_scaling_in_suspended,
+                )
+                .await,
+            );
+            map.insert(
+                "dynamic_scaling_out_suspended".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dynamic_scaling_out_suspended,
+                )
+                .await,
+            );
+            map.insert(
+                "scheduled_scaling_suspended".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scheduled_scaling_suspended,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TargetSuspendedState {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#dynamic_scaling_in_suspended: {
+                        let field_value = match fields_map.get("dynamic_scaling_in_suspended") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dynamic_scaling_in_suspended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dynamic_scaling_out_suspended: {
+                        let field_value = match fields_map.get("dynamic_scaling_out_suspended") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dynamic_scaling_out_suspended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scheduled_scaling_suspended: {
+                        let field_value = match fields_map.get("scheduled_scaling_suspended") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scheduled_scaling_suspended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -36,3 +36,162 @@ pub struct DomainDefaultSpaceSettings {
     #[serde(rename = "spaceStorageSettings")]
     pub r#space_storage_settings: Option<Box<super::super::types::sagemaker::DomainDefaultSpaceSettingsSpaceStorageSettings>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DomainDefaultSpaceSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "custom_file_system_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_file_system_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_posix_user_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_posix_user_config,
+                )
+                .await,
+            );
+            map.insert(
+                "execution_role".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#execution_role,
+                )
+                .await,
+            );
+            map.insert(
+                "jupyter_lab_app_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#jupyter_lab_app_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "jupyter_server_app_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#jupyter_server_app_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "kernel_gateway_app_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kernel_gateway_app_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "security_groups".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#security_groups,
+                )
+                .await,
+            );
+            map.insert(
+                "space_storage_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#space_storage_settings,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DomainDefaultSpaceSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#custom_file_system_configs: {
+                        let field_value = match fields_map.get("custom_file_system_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_file_system_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#custom_posix_user_config: {
+                        let field_value = match fields_map.get("custom_posix_user_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_posix_user_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#execution_role: {
+                        let field_value = match fields_map.get("execution_role") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'execution_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#jupyter_lab_app_settings: {
+                        let field_value = match fields_map.get("jupyter_lab_app_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'jupyter_lab_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#jupyter_server_app_settings: {
+                        let field_value = match fields_map.get("jupyter_server_app_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'jupyter_server_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kernel_gateway_app_settings: {
+                        let field_value = match fields_map.get("kernel_gateway_app_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kernel_gateway_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#security_groups: {
+                        let field_value = match fields_map.get("security_groups") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'security_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#space_storage_settings: {
+                        let field_value = match fields_map.get("space_storage_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'space_storage_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

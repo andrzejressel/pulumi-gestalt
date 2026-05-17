@@ -34,3 +34,148 @@ pub struct ScaleSetStorageProfileOsDisk {
     #[serde(rename = "vhdContainers")]
     pub r#vhd_containers: Option<Vec<String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ScaleSetStorageProfileOsDisk {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "caching".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#caching,
+                )
+                .await,
+            );
+            map.insert(
+                "create_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#create_option,
+                )
+                .await,
+            );
+            map.insert(
+                "image".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#image,
+                )
+                .await,
+            );
+            map.insert(
+                "managed_disk_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#managed_disk_type,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "os_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#os_type,
+                )
+                .await,
+            );
+            map.insert(
+                "vhd_containers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vhd_containers,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ScaleSetStorageProfileOsDisk {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#caching: {
+                        let field_value = match fields_map.get("caching") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'caching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#create_option: {
+                        let field_value = match fields_map.get("create_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'create_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#image: {
+                        let field_value = match fields_map.get("image") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'image' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#managed_disk_type: {
+                        let field_value = match fields_map.get("managed_disk_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'managed_disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#os_type: {
+                        let field_value = match fields_map.get("os_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'os_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vhd_containers: {
+                        let field_value = match fields_map.get("vhd_containers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vhd_containers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

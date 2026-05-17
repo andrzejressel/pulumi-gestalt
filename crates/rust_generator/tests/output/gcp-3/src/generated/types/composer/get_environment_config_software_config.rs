@@ -36,3 +36,162 @@ pub struct GetEnvironmentConfigSoftwareConfig {
     #[serde(rename = "webServerPluginsMode")]
     pub r#web_server_plugins_mode: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetEnvironmentConfigSoftwareConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "airflow_config_overrides".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#airflow_config_overrides,
+                )
+                .await,
+            );
+            map.insert(
+                "cloud_data_lineage_integrations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloud_data_lineage_integrations,
+                )
+                .await,
+            );
+            map.insert(
+                "env_variables".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#env_variables,
+                )
+                .await,
+            );
+            map.insert(
+                "image_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#image_version,
+                )
+                .await,
+            );
+            map.insert(
+                "pypi_packages".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pypi_packages,
+                )
+                .await,
+            );
+            map.insert(
+                "python_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#python_version,
+                )
+                .await,
+            );
+            map.insert(
+                "scheduler_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scheduler_count,
+                )
+                .await,
+            );
+            map.insert(
+                "web_server_plugins_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#web_server_plugins_mode,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetEnvironmentConfigSoftwareConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#airflow_config_overrides: {
+                        let field_value = match fields_map.get("airflow_config_overrides") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'airflow_config_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cloud_data_lineage_integrations: {
+                        let field_value = match fields_map.get("cloud_data_lineage_integrations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloud_data_lineage_integrations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#env_variables: {
+                        let field_value = match fields_map.get("env_variables") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'env_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#image_version: {
+                        let field_value = match fields_map.get("image_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'image_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pypi_packages: {
+                        let field_value = match fields_map.get("pypi_packages") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pypi_packages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#python_version: {
+                        let field_value = match fields_map.get("python_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'python_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scheduler_count: {
+                        let field_value = match fields_map.get("scheduler_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scheduler_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#web_server_plugins_mode: {
+                        let field_value = match fields_map.get("web_server_plugins_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'web_server_plugins_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

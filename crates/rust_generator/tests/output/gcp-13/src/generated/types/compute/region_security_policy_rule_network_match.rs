@@ -37,3 +37,162 @@ pub struct RegionSecurityPolicyRuleNetworkMatch {
     #[serde(rename = "userDefinedFields")]
     pub r#user_defined_fields: Option<Vec<super::super::types::compute::RegionSecurityPolicyRuleNetworkMatchUserDefinedField>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RegionSecurityPolicyRuleNetworkMatch {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "dest_ip_ranges".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dest_ip_ranges,
+                )
+                .await,
+            );
+            map.insert(
+                "dest_ports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dest_ports,
+                )
+                .await,
+            );
+            map.insert(
+                "ip_protocols".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ip_protocols,
+                )
+                .await,
+            );
+            map.insert(
+                "src_asns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#src_asns,
+                )
+                .await,
+            );
+            map.insert(
+                "src_ip_ranges".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#src_ip_ranges,
+                )
+                .await,
+            );
+            map.insert(
+                "src_ports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#src_ports,
+                )
+                .await,
+            );
+            map.insert(
+                "src_region_codes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#src_region_codes,
+                )
+                .await,
+            );
+            map.insert(
+                "user_defined_fields".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_defined_fields,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RegionSecurityPolicyRuleNetworkMatch {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#dest_ip_ranges: {
+                        let field_value = match fields_map.get("dest_ip_ranges") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dest_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dest_ports: {
+                        let field_value = match fields_map.get("dest_ports") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dest_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ip_protocols: {
+                        let field_value = match fields_map.get("ip_protocols") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ip_protocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#src_asns: {
+                        let field_value = match fields_map.get("src_asns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'src_asns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#src_ip_ranges: {
+                        let field_value = match fields_map.get("src_ip_ranges") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'src_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#src_ports: {
+                        let field_value = match fields_map.get("src_ports") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'src_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#src_region_codes: {
+                        let field_value = match fields_map.get("src_region_codes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'src_region_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#user_defined_fields: {
+                        let field_value = match fields_map.get("user_defined_fields") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'user_defined_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

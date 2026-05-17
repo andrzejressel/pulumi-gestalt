@@ -20,3 +20,106 @@ pub struct ServerlessSecurityConfigSamlOptions {
     #[serde(rename = "userAttribute")]
     pub r#user_attribute: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ServerlessSecurityConfigSamlOptions {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "group_attribute".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#group_attribute,
+                )
+                .await,
+            );
+            map.insert(
+                "metadata".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metadata,
+                )
+                .await,
+            );
+            map.insert(
+                "session_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "user_attribute".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_attribute,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ServerlessSecurityConfigSamlOptions {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#group_attribute: {
+                        let field_value = match fields_map.get("group_attribute") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'group_attribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metadata: {
+                        let field_value = match fields_map.get("metadata") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#session_timeout: {
+                        let field_value = match fields_map.get("session_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'session_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#user_attribute: {
+                        let field_value = match fields_map.get("user_attribute") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'user_attribute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

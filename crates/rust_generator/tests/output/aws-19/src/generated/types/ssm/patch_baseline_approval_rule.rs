@@ -24,3 +24,120 @@ pub struct PatchBaselineApprovalRule {
     #[serde(rename = "patchFilters")]
     pub r#patch_filters: Vec<super::super::types::ssm::PatchBaselineApprovalRulePatchFilter>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PatchBaselineApprovalRule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "approve_after_days".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#approve_after_days,
+                )
+                .await,
+            );
+            map.insert(
+                "approve_until_date".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#approve_until_date,
+                )
+                .await,
+            );
+            map.insert(
+                "compliance_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compliance_level,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_non_security".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_non_security,
+                )
+                .await,
+            );
+            map.insert(
+                "patch_filters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#patch_filters,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PatchBaselineApprovalRule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#approve_after_days: {
+                        let field_value = match fields_map.get("approve_after_days") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'approve_after_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#approve_until_date: {
+                        let field_value = match fields_map.get("approve_until_date") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'approve_until_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#compliance_level: {
+                        let field_value = match fields_map.get("compliance_level") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'compliance_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_non_security: {
+                        let field_value = match fields_map.get("enable_non_security") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_non_security' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#patch_filters: {
+                        let field_value = match fields_map.get("patch_filters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'patch_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

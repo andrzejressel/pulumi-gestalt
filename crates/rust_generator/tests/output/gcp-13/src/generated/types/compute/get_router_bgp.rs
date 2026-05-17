@@ -54,3 +54,134 @@ pub struct GetRouterBgp {
     #[serde(rename = "keepaliveInterval")]
     pub r#keepalive_interval: i32,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetRouterBgp {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "advertise_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#advertise_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "advertised_groups".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#advertised_groups,
+                )
+                .await,
+            );
+            map.insert(
+                "advertised_ip_ranges".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#advertised_ip_ranges,
+                )
+                .await,
+            );
+            map.insert(
+                "asn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#asn,
+                )
+                .await,
+            );
+            map.insert(
+                "identifier_range".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#identifier_range,
+                )
+                .await,
+            );
+            map.insert(
+                "keepalive_interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#keepalive_interval,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetRouterBgp {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#advertise_mode: {
+                        let field_value = match fields_map.get("advertise_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'advertise_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#advertised_groups: {
+                        let field_value = match fields_map.get("advertised_groups") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'advertised_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#advertised_ip_ranges: {
+                        let field_value = match fields_map.get("advertised_ip_ranges") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'advertised_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#asn: {
+                        let field_value = match fields_map.get("asn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'asn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#identifier_range: {
+                        let field_value = match fields_map.get("identifier_range") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'identifier_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#keepalive_interval: {
+                        let field_value = match fields_map.get("keepalive_interval") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'keepalive_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

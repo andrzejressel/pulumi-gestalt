@@ -52,3 +52,218 @@ pub struct WebAclRuleStatementRateBasedStatementScopeDownStatement {
     #[serde(rename = "xssMatchStatement")]
     pub r#xss_match_statement: Option<Box<super::super::types::wafv2::WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatement>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WebAclRuleStatementRateBasedStatementScopeDownStatement {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "and_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#and_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "byte_match_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#byte_match_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "geo_match_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#geo_match_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "ip_set_reference_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ip_set_reference_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "label_match_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#label_match_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "not_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#not_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "or_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#or_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "regex_match_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#regex_match_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "regex_pattern_set_reference_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#regex_pattern_set_reference_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "size_constraint_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#size_constraint_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "sqli_match_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sqli_match_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "xss_match_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#xss_match_statement,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclRuleStatementRateBasedStatementScopeDownStatement {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#and_statement: {
+                        let field_value = match fields_map.get("and_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'and_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#byte_match_statement: {
+                        let field_value = match fields_map.get("byte_match_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'byte_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#geo_match_statement: {
+                        let field_value = match fields_map.get("geo_match_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'geo_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ip_set_reference_statement: {
+                        let field_value = match fields_map.get("ip_set_reference_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ip_set_reference_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#label_match_statement: {
+                        let field_value = match fields_map.get("label_match_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'label_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#not_statement: {
+                        let field_value = match fields_map.get("not_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'not_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#or_statement: {
+                        let field_value = match fields_map.get("or_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'or_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#regex_match_statement: {
+                        let field_value = match fields_map.get("regex_match_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'regex_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#regex_pattern_set_reference_statement: {
+                        let field_value = match fields_map.get("regex_pattern_set_reference_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'regex_pattern_set_reference_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#size_constraint_statement: {
+                        let field_value = match fields_map.get("size_constraint_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'size_constraint_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sqli_match_statement: {
+                        let field_value = match fields_map.get("sqli_match_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sqli_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#xss_match_statement: {
+                        let field_value = match fields_map.get("xss_match_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'xss_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

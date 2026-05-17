@@ -8,5 +8,4 @@ readme.workspace = true
 
 [dependencies]
 futures.workspace = true
-pulumi_gestalt_model_macros = { path = "../model_macros" }
 rootcause.workspace = true

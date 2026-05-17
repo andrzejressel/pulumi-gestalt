@@ -40,3 +40,176 @@ pub struct ClusterUpgradePolicy {
     #[serde(rename = "upgradeTimeout")]
     pub r#upgrade_timeout: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterUpgradePolicy {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "delta_health_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#delta_health_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "force_restart_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#force_restart_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "health_check_retry_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#health_check_retry_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "health_check_stable_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#health_check_stable_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "health_check_wait_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#health_check_wait_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "health_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#health_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "upgrade_domain_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#upgrade_domain_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "upgrade_replica_set_check_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#upgrade_replica_set_check_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "upgrade_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#upgrade_timeout,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterUpgradePolicy {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#delta_health_policy: {
+                        let field_value = match fields_map.get("delta_health_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'delta_health_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#force_restart_enabled: {
+                        let field_value = match fields_map.get("force_restart_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'force_restart_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#health_check_retry_timeout: {
+                        let field_value = match fields_map.get("health_check_retry_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'health_check_retry_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#health_check_stable_duration: {
+                        let field_value = match fields_map.get("health_check_stable_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'health_check_stable_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#health_check_wait_duration: {
+                        let field_value = match fields_map.get("health_check_wait_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'health_check_wait_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#health_policy: {
+                        let field_value = match fields_map.get("health_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'health_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#upgrade_domain_timeout: {
+                        let field_value = match fields_map.get("upgrade_domain_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'upgrade_domain_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#upgrade_replica_set_check_timeout: {
+                        let field_value = match fields_map.get("upgrade_replica_set_check_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'upgrade_replica_set_check_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#upgrade_timeout: {
+                        let field_value = match fields_map.get("upgrade_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'upgrade_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

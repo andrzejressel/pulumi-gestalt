@@ -84,3 +84,330 @@ pub struct GetDbSystemShapesDbSystemShape {
     #[serde(rename = "shapeFamily")]
     pub r#shape_family: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetDbSystemShapesDbSystemShape {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "available_core_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_core_count,
+                )
+                .await,
+            );
+            map.insert(
+                "available_core_count_per_node".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_core_count_per_node,
+                )
+                .await,
+            );
+            map.insert(
+                "available_data_storage_in_tbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_data_storage_in_tbs,
+                )
+                .await,
+            );
+            map.insert(
+                "available_data_storage_per_server_in_tbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_data_storage_per_server_in_tbs,
+                )
+                .await,
+            );
+            map.insert(
+                "available_db_node_per_node_in_gbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_db_node_per_node_in_gbs,
+                )
+                .await,
+            );
+            map.insert(
+                "available_db_node_storage_in_gbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_db_node_storage_in_gbs,
+                )
+                .await,
+            );
+            map.insert(
+                "available_memory_in_gbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_memory_in_gbs,
+                )
+                .await,
+            );
+            map.insert(
+                "available_memory_per_node_in_gbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#available_memory_per_node_in_gbs,
+                )
+                .await,
+            );
+            map.insert(
+                "core_count_increment".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#core_count_increment,
+                )
+                .await,
+            );
+            map.insert(
+                "maximum_node_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maximum_node_count,
+                )
+                .await,
+            );
+            map.insert(
+                "maximum_storage_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maximum_storage_count,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_core_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_core_count,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_core_count_per_node".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_core_count_per_node,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_data_storage_in_tbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_data_storage_in_tbs,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_db_node_storage_per_node_in_gbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_db_node_storage_per_node_in_gbs,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_memory_per_node_in_gbs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_memory_per_node_in_gbs,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_node_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_node_count,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_storage_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_storage_count,
+                )
+                .await,
+            );
+            map.insert(
+                "runtime_minimum_core_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#runtime_minimum_core_count,
+                )
+                .await,
+            );
+            map.insert(
+                "shape_family".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shape_family,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDbSystemShapesDbSystemShape {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#available_core_count: {
+                        let field_value = match fields_map.get("available_core_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_core_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#available_core_count_per_node: {
+                        let field_value = match fields_map.get("available_core_count_per_node") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_core_count_per_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#available_data_storage_in_tbs: {
+                        let field_value = match fields_map.get("available_data_storage_in_tbs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_data_storage_in_tbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#available_data_storage_per_server_in_tbs: {
+                        let field_value = match fields_map.get("available_data_storage_per_server_in_tbs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_data_storage_per_server_in_tbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#available_db_node_per_node_in_gbs: {
+                        let field_value = match fields_map.get("available_db_node_per_node_in_gbs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_db_node_per_node_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#available_db_node_storage_in_gbs: {
+                        let field_value = match fields_map.get("available_db_node_storage_in_gbs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_db_node_storage_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#available_memory_in_gbs: {
+                        let field_value = match fields_map.get("available_memory_in_gbs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_memory_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#available_memory_per_node_in_gbs: {
+                        let field_value = match fields_map.get("available_memory_per_node_in_gbs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'available_memory_per_node_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#core_count_increment: {
+                        let field_value = match fields_map.get("core_count_increment") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'core_count_increment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#maximum_node_count: {
+                        let field_value = match fields_map.get("maximum_node_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'maximum_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#maximum_storage_count: {
+                        let field_value = match fields_map.get("maximum_storage_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'maximum_storage_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#minimum_core_count: {
+                        let field_value = match fields_map.get("minimum_core_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'minimum_core_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#minimum_core_count_per_node: {
+                        let field_value = match fields_map.get("minimum_core_count_per_node") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'minimum_core_count_per_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#minimum_data_storage_in_tbs: {
+                        let field_value = match fields_map.get("minimum_data_storage_in_tbs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'minimum_data_storage_in_tbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#minimum_db_node_storage_per_node_in_gbs: {
+                        let field_value = match fields_map.get("minimum_db_node_storage_per_node_in_gbs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'minimum_db_node_storage_per_node_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#minimum_memory_per_node_in_gbs: {
+                        let field_value = match fields_map.get("minimum_memory_per_node_in_gbs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'minimum_memory_per_node_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#minimum_node_count: {
+                        let field_value = match fields_map.get("minimum_node_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'minimum_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#minimum_storage_count: {
+                        let field_value = match fields_map.get("minimum_storage_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'minimum_storage_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#runtime_minimum_core_count: {
+                        let field_value = match fields_map.get("runtime_minimum_core_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'runtime_minimum_core_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#shape_family: {
+                        let field_value = match fields_map.get("shape_family") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'shape_family' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -42,3 +42,162 @@ pub struct CxPageFormParameter {
     #[serde(rename = "required")]
     pub r#required: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxPageFormParameter {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "advanced_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#advanced_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "default_value".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_value,
+                )
+                .await,
+            );
+            map.insert(
+                "display_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#display_name,
+                )
+                .await,
+            );
+            map.insert(
+                "entity_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#entity_type,
+                )
+                .await,
+            );
+            map.insert(
+                "fill_behavior".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fill_behavior,
+                )
+                .await,
+            );
+            map.insert(
+                "is_list".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#is_list,
+                )
+                .await,
+            );
+            map.insert(
+                "redact".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redact,
+                )
+                .await,
+            );
+            map.insert(
+                "required".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#required,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CxPageFormParameter {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#advanced_settings: {
+                        let field_value = match fields_map.get("advanced_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'advanced_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_value: {
+                        let field_value = match fields_map.get("default_value") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#display_name: {
+                        let field_value = match fields_map.get("display_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#entity_type: {
+                        let field_value = match fields_map.get("entity_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'entity_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fill_behavior: {
+                        let field_value = match fields_map.get("fill_behavior") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fill_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#is_list: {
+                        let field_value = match fields_map.get("is_list") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'is_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redact: {
+                        let field_value = match fields_map.get("redact") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redact' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#required: {
+                        let field_value = match fields_map.get("required") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

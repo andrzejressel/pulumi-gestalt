@@ -51,3 +51,218 @@ pub struct RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchSt
     #[serde(rename = "uriPath")]
     pub r#uri_path: Option<Box<super::super::types::wafv2::RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPath>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatch {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "all_query_arguments".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#all_query_arguments,
+                )
+                .await,
+            );
+            map.insert(
+                "body".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#body,
+                )
+                .await,
+            );
+            map.insert(
+                "cookies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cookies,
+                )
+                .await,
+            );
+            map.insert(
+                "header_orders".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#header_orders,
+                )
+                .await,
+            );
+            map.insert(
+                "headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#headers,
+                )
+                .await,
+            );
+            map.insert(
+                "ja_3_fingerprint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ja_3_fingerprint,
+                )
+                .await,
+            );
+            map.insert(
+                "json_body".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#json_body,
+                )
+                .await,
+            );
+            map.insert(
+                "method".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#method,
+                )
+                .await,
+            );
+            map.insert(
+                "query_string".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#query_string,
+                )
+                .await,
+            );
+            map.insert(
+                "single_header".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#single_header,
+                )
+                .await,
+            );
+            map.insert(
+                "single_query_argument".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#single_query_argument,
+                )
+                .await,
+            );
+            map.insert(
+                "uri_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#uri_path,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatch {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#all_query_arguments: {
+                        let field_value = match fields_map.get("all_query_arguments") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'all_query_arguments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#body: {
+                        let field_value = match fields_map.get("body") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'body' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cookies: {
+                        let field_value = match fields_map.get("cookies") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#header_orders: {
+                        let field_value = match fields_map.get("header_orders") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'header_orders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#headers: {
+                        let field_value = match fields_map.get("headers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ja_3_fingerprint: {
+                        let field_value = match fields_map.get("ja_3_fingerprint") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ja_3_fingerprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#json_body: {
+                        let field_value = match fields_map.get("json_body") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'json_body' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#method: {
+                        let field_value = match fields_map.get("method") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#query_string: {
+                        let field_value = match fields_map.get("query_string") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#single_header: {
+                        let field_value = match fields_map.get("single_header") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'single_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#single_query_argument: {
+                        let field_value = match fields_map.get("single_query_argument") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'single_query_argument' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#uri_path: {
+                        let field_value = match fields_map.get("uri_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'uri_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

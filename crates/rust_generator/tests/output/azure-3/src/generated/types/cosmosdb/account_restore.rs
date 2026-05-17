@@ -26,3 +26,120 @@ pub struct AccountRestore {
     #[serde(rename = "tablesToRestores")]
     pub r#tables_to_restores: Option<Vec<String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AccountRestore {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "databases".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#databases,
+                )
+                .await,
+            );
+            map.insert(
+                "gremlin_databases".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gremlin_databases,
+                )
+                .await,
+            );
+            map.insert(
+                "restore_timestamp_in_utc".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#restore_timestamp_in_utc,
+                )
+                .await,
+            );
+            map.insert(
+                "source_cosmosdb_account_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_cosmosdb_account_id,
+                )
+                .await,
+            );
+            map.insert(
+                "tables_to_restores".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tables_to_restores,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AccountRestore {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#databases: {
+                        let field_value = match fields_map.get("databases") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'databases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gremlin_databases: {
+                        let field_value = match fields_map.get("gremlin_databases") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gremlin_databases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#restore_timestamp_in_utc: {
+                        let field_value = match fields_map.get("restore_timestamp_in_utc") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'restore_timestamp_in_utc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_cosmosdb_account_id: {
+                        let field_value = match fields_map.get("source_cosmosdb_account_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_cosmosdb_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tables_to_restores: {
+                        let field_value = match fields_map.get("tables_to_restores") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tables_to_restores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

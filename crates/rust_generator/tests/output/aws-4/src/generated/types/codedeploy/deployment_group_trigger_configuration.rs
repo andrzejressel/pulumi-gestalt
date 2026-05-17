@@ -16,3 +16,92 @@ pub struct DeploymentGroupTriggerConfiguration {
     #[serde(rename = "triggerTargetArn")]
     pub r#trigger_target_arn: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DeploymentGroupTriggerConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "trigger_events".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#trigger_events,
+                )
+                .await,
+            );
+            map.insert(
+                "trigger_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#trigger_name,
+                )
+                .await,
+            );
+            map.insert(
+                "trigger_target_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#trigger_target_arn,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DeploymentGroupTriggerConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#trigger_events: {
+                        let field_value = match fields_map.get("trigger_events") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'trigger_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#trigger_name: {
+                        let field_value = match fields_map.get("trigger_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'trigger_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#trigger_target_arn: {
+                        let field_value = match fields_map.get("trigger_target_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'trigger_target_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

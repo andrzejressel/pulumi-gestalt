@@ -59,3 +59,218 @@ pub struct FlexibleAppVersionAutomaticScaling {
     #[serde(rename = "requestUtilization")]
     pub r#request_utilization: Option<Box<super::super::types::appengine::FlexibleAppVersionAutomaticScalingRequestUtilization>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FlexibleAppVersionAutomaticScaling {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cool_down_period".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cool_down_period,
+                )
+                .await,
+            );
+            map.insert(
+                "cpu_utilization".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cpu_utilization,
+                )
+                .await,
+            );
+            map.insert(
+                "disk_utilization".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disk_utilization,
+                )
+                .await,
+            );
+            map.insert(
+                "max_concurrent_requests".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_concurrent_requests,
+                )
+                .await,
+            );
+            map.insert(
+                "max_idle_instances".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_idle_instances,
+                )
+                .await,
+            );
+            map.insert(
+                "max_pending_latency".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_pending_latency,
+                )
+                .await,
+            );
+            map.insert(
+                "max_total_instances".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_total_instances,
+                )
+                .await,
+            );
+            map.insert(
+                "min_idle_instances".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_idle_instances,
+                )
+                .await,
+            );
+            map.insert(
+                "min_pending_latency".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_pending_latency,
+                )
+                .await,
+            );
+            map.insert(
+                "min_total_instances".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_total_instances,
+                )
+                .await,
+            );
+            map.insert(
+                "network_utilization".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network_utilization,
+                )
+                .await,
+            );
+            map.insert(
+                "request_utilization".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#request_utilization,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FlexibleAppVersionAutomaticScaling {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cool_down_period: {
+                        let field_value = match fields_map.get("cool_down_period") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cool_down_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cpu_utilization: {
+                        let field_value = match fields_map.get("cpu_utilization") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cpu_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#disk_utilization: {
+                        let field_value = match fields_map.get("disk_utilization") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disk_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_concurrent_requests: {
+                        let field_value = match fields_map.get("max_concurrent_requests") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_concurrent_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_idle_instances: {
+                        let field_value = match fields_map.get("max_idle_instances") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_idle_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_pending_latency: {
+                        let field_value = match fields_map.get("max_pending_latency") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_pending_latency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_total_instances: {
+                        let field_value = match fields_map.get("max_total_instances") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_total_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_idle_instances: {
+                        let field_value = match fields_map.get("min_idle_instances") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_idle_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_pending_latency: {
+                        let field_value = match fields_map.get("min_pending_latency") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_pending_latency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_total_instances: {
+                        let field_value = match fields_map.get("min_total_instances") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_total_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network_utilization: {
+                        let field_value = match fields_map.get("network_utilization") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#request_utilization: {
+                        let field_value = match fields_map.get("request_utilization") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'request_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

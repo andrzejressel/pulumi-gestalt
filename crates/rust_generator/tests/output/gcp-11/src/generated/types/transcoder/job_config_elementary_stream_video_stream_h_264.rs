@@ -64,3 +64,260 @@ pub struct JobConfigElementaryStreamVideoStreamH264 {
     #[serde(rename = "widthPixels")]
     pub r#width_pixels: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobConfigElementaryStreamVideoStreamH264 {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "bitrate_bps".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bitrate_bps,
+                )
+                .await,
+            );
+            map.insert(
+                "crf_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#crf_level,
+                )
+                .await,
+            );
+            map.insert(
+                "entropy_coder".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#entropy_coder,
+                )
+                .await,
+            );
+            map.insert(
+                "frame_rate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#frame_rate,
+                )
+                .await,
+            );
+            map.insert(
+                "gop_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gop_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "height_pixels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#height_pixels,
+                )
+                .await,
+            );
+            map.insert(
+                "hlg".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#hlg,
+                )
+                .await,
+            );
+            map.insert(
+                "pixel_format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pixel_format,
+                )
+                .await,
+            );
+            map.insert(
+                "preset".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#preset,
+                )
+                .await,
+            );
+            map.insert(
+                "profile".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#profile,
+                )
+                .await,
+            );
+            map.insert(
+                "rate_control_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rate_control_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "sdr".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sdr,
+                )
+                .await,
+            );
+            map.insert(
+                "vbv_fullness_bits".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vbv_fullness_bits,
+                )
+                .await,
+            );
+            map.insert(
+                "vbv_size_bits".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vbv_size_bits,
+                )
+                .await,
+            );
+            map.insert(
+                "width_pixels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#width_pixels,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for JobConfigElementaryStreamVideoStreamH264 {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#bitrate_bps: {
+                        let field_value = match fields_map.get("bitrate_bps") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bitrate_bps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#crf_level: {
+                        let field_value = match fields_map.get("crf_level") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'crf_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#entropy_coder: {
+                        let field_value = match fields_map.get("entropy_coder") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'entropy_coder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#frame_rate: {
+                        let field_value = match fields_map.get("frame_rate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'frame_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gop_duration: {
+                        let field_value = match fields_map.get("gop_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gop_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#height_pixels: {
+                        let field_value = match fields_map.get("height_pixels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'height_pixels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#hlg: {
+                        let field_value = match fields_map.get("hlg") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'hlg' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pixel_format: {
+                        let field_value = match fields_map.get("pixel_format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pixel_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#preset: {
+                        let field_value = match fields_map.get("preset") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'preset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#profile: {
+                        let field_value = match fields_map.get("profile") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'profile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rate_control_mode: {
+                        let field_value = match fields_map.get("rate_control_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rate_control_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sdr: {
+                        let field_value = match fields_map.get("sdr") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sdr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vbv_fullness_bits: {
+                        let field_value = match fields_map.get("vbv_fullness_bits") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vbv_fullness_bits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vbv_size_bits: {
+                        let field_value = match fields_map.get("vbv_size_bits") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vbv_size_bits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#width_pixels: {
+                        let field_value = match fields_map.get("width_pixels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'width_pixels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

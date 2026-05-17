@@ -72,3 +72,274 @@ pub struct GetSecretsSecret {
     #[serde(rename = "versionDestroyTtl")]
     pub r#version_destroy_ttl: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetSecretsSecret {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "annotations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#annotations,
+                )
+                .await,
+            );
+            map.insert(
+                "create_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#create_time,
+                )
+                .await,
+            );
+            map.insert(
+                "effective_annotations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#effective_annotations,
+                )
+                .await,
+            );
+            map.insert(
+                "effective_labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#effective_labels,
+                )
+                .await,
+            );
+            map.insert(
+                "expire_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#expire_time,
+                )
+                .await,
+            );
+            map.insert(
+                "labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#labels,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "project".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#project,
+                )
+                .await,
+            );
+            map.insert(
+                "pulumi_labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pulumi_labels,
+                )
+                .await,
+            );
+            map.insert(
+                "replications".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#replications,
+                )
+                .await,
+            );
+            map.insert(
+                "rotations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rotations,
+                )
+                .await,
+            );
+            map.insert(
+                "secret_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secret_id,
+                )
+                .await,
+            );
+            map.insert(
+                "topics".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#topics,
+                )
+                .await,
+            );
+            map.insert(
+                "ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "version_aliases".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#version_aliases,
+                )
+                .await,
+            );
+            map.insert(
+                "version_destroy_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#version_destroy_ttl,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetSecretsSecret {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#annotations: {
+                        let field_value = match fields_map.get("annotations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'annotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#create_time: {
+                        let field_value = match fields_map.get("create_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'create_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#effective_annotations: {
+                        let field_value = match fields_map.get("effective_annotations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'effective_annotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#effective_labels: {
+                        let field_value = match fields_map.get("effective_labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'effective_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#expire_time: {
+                        let field_value = match fields_map.get("expire_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'expire_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#labels: {
+                        let field_value = match fields_map.get("labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#project: {
+                        let field_value = match fields_map.get("project") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'project' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pulumi_labels: {
+                        let field_value = match fields_map.get("pulumi_labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pulumi_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#replications: {
+                        let field_value = match fields_map.get("replications") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'replications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rotations: {
+                        let field_value = match fields_map.get("rotations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secret_id: {
+                        let field_value = match fields_map.get("secret_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#topics: {
+                        let field_value = match fields_map.get("topics") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'topics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ttl: {
+                        let field_value = match fields_map.get("ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#version_aliases: {
+                        let field_value = match fields_map.get("version_aliases") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'version_aliases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#version_destroy_ttl: {
+                        let field_value = match fields_map.get("version_destroy_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'version_destroy_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

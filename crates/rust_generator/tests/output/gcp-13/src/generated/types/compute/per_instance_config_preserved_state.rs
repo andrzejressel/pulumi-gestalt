@@ -23,3 +23,106 @@ pub struct PerInstanceConfigPreservedState {
     #[serde(rename = "metadata")]
     pub r#metadata: Option<std::collections::HashMap<String, String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PerInstanceConfigPreservedState {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "disks".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disks,
+                )
+                .await,
+            );
+            map.insert(
+                "external_ips".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#external_ips,
+                )
+                .await,
+            );
+            map.insert(
+                "internal_ips".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#internal_ips,
+                )
+                .await,
+            );
+            map.insert(
+                "metadata".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metadata,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PerInstanceConfigPreservedState {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#disks: {
+                        let field_value = match fields_map.get("disks") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#external_ips: {
+                        let field_value = match fields_map.get("external_ips") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'external_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#internal_ips: {
+                        let field_value = match fields_map.get("internal_ips") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'internal_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metadata: {
+                        let field_value = match fields_map.get("metadata") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

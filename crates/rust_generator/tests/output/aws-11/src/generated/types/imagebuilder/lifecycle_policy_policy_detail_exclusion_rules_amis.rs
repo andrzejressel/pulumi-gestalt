@@ -24,3 +24,120 @@ pub struct LifecyclePolicyPolicyDetailExclusionRulesAmis {
     #[serde(rename = "tagMap")]
     pub r#tag_map: Option<std::collections::HashMap<String, String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LifecyclePolicyPolicyDetailExclusionRulesAmis {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "is_public".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#is_public,
+                )
+                .await,
+            );
+            map.insert(
+                "last_launched".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#last_launched,
+                )
+                .await,
+            );
+            map.insert(
+                "regions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#regions,
+                )
+                .await,
+            );
+            map.insert(
+                "shared_accounts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shared_accounts,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_map".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_map,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for LifecyclePolicyPolicyDetailExclusionRulesAmis {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#is_public: {
+                        let field_value = match fields_map.get("is_public") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'is_public' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#last_launched: {
+                        let field_value = match fields_map.get("last_launched") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'last_launched' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#regions: {
+                        let field_value = match fields_map.get("regions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'regions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#shared_accounts: {
+                        let field_value = match fields_map.get("shared_accounts") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'shared_accounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tag_map: {
+                        let field_value = match fields_map.get("tag_map") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tag_map' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

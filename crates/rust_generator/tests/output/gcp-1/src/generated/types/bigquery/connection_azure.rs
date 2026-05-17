@@ -37,3 +37,148 @@ pub struct ConnectionAzure {
     #[serde(rename = "redirectUri")]
     pub r#redirect_uri: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ConnectionAzure {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "application".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#application,
+                )
+                .await,
+            );
+            map.insert(
+                "client_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_id,
+                )
+                .await,
+            );
+            map.insert(
+                "customer_tenant_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#customer_tenant_id,
+                )
+                .await,
+            );
+            map.insert(
+                "federated_application_client_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#federated_application_client_id,
+                )
+                .await,
+            );
+            map.insert(
+                "identity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#identity,
+                )
+                .await,
+            );
+            map.insert(
+                "object_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#object_id,
+                )
+                .await,
+            );
+            map.insert(
+                "redirect_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redirect_uri,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ConnectionAzure {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#application: {
+                        let field_value = match fields_map.get("application") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'application' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_id: {
+                        let field_value = match fields_map.get("client_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#customer_tenant_id: {
+                        let field_value = match fields_map.get("customer_tenant_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'customer_tenant_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#federated_application_client_id: {
+                        let field_value = match fields_map.get("federated_application_client_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'federated_application_client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#identity: {
+                        let field_value = match fields_map.get("identity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'identity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#object_id: {
+                        let field_value = match fields_map.get("object_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'object_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redirect_uri: {
+                        let field_value = match fields_map.get("redirect_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redirect_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -44,3 +44,190 @@ pub struct GetDataCollectionRuleDataSource {
     #[serde(rename = "windowsFirewallLogs")]
     pub r#windows_firewall_logs: Vec<super::super::types::monitoring::GetDataCollectionRuleDataSourceWindowsFirewallLog>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetDataCollectionRuleDataSource {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "data_imports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_imports,
+                )
+                .await,
+            );
+            map.insert(
+                "extensions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#extensions,
+                )
+                .await,
+            );
+            map.insert(
+                "iis_logs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#iis_logs,
+                )
+                .await,
+            );
+            map.insert(
+                "log_files".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#log_files,
+                )
+                .await,
+            );
+            map.insert(
+                "performance_counters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#performance_counters,
+                )
+                .await,
+            );
+            map.insert(
+                "platform_telemetries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#platform_telemetries,
+                )
+                .await,
+            );
+            map.insert(
+                "prometheus_forwarders".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prometheus_forwarders,
+                )
+                .await,
+            );
+            map.insert(
+                "syslogs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#syslogs,
+                )
+                .await,
+            );
+            map.insert(
+                "windows_event_logs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#windows_event_logs,
+                )
+                .await,
+            );
+            map.insert(
+                "windows_firewall_logs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#windows_firewall_logs,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDataCollectionRuleDataSource {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#data_imports: {
+                        let field_value = match fields_map.get("data_imports") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_imports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#extensions: {
+                        let field_value = match fields_map.get("extensions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'extensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#iis_logs: {
+                        let field_value = match fields_map.get("iis_logs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'iis_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#log_files: {
+                        let field_value = match fields_map.get("log_files") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'log_files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#performance_counters: {
+                        let field_value = match fields_map.get("performance_counters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'performance_counters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#platform_telemetries: {
+                        let field_value = match fields_map.get("platform_telemetries") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'platform_telemetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#prometheus_forwarders: {
+                        let field_value = match fields_map.get("prometheus_forwarders") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prometheus_forwarders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#syslogs: {
+                        let field_value = match fields_map.get("syslogs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'syslogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#windows_event_logs: {
+                        let field_value = match fields_map.get("windows_event_logs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'windows_event_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#windows_firewall_logs: {
+                        let field_value = match fields_map.get("windows_firewall_logs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'windows_firewall_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

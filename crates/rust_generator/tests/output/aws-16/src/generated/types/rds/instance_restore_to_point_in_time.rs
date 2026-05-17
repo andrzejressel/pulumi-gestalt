@@ -24,3 +24,120 @@ pub struct InstanceRestoreToPointInTime {
     #[serde(rename = "useLatestRestorableTime")]
     pub r#use_latest_restorable_time: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for InstanceRestoreToPointInTime {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "restore_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#restore_time,
+                )
+                .await,
+            );
+            map.insert(
+                "source_db_instance_automated_backups_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_db_instance_automated_backups_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "source_db_instance_identifier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_db_instance_identifier,
+                )
+                .await,
+            );
+            map.insert(
+                "source_dbi_resource_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_dbi_resource_id,
+                )
+                .await,
+            );
+            map.insert(
+                "use_latest_restorable_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#use_latest_restorable_time,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for InstanceRestoreToPointInTime {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#restore_time: {
+                        let field_value = match fields_map.get("restore_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'restore_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_db_instance_automated_backups_arn: {
+                        let field_value = match fields_map.get("source_db_instance_automated_backups_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_db_instance_automated_backups_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_db_instance_identifier: {
+                        let field_value = match fields_map.get("source_db_instance_identifier") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_db_instance_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_dbi_resource_id: {
+                        let field_value = match fields_map.get("source_dbi_resource_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_dbi_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#use_latest_restorable_time: {
+                        let field_value = match fields_map.get("use_latest_restorable_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'use_latest_restorable_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -36,3 +36,162 @@ pub struct GetClusterNodePoolNetworkConfig {
     #[serde(rename = "podRange")]
     pub r#pod_range: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetClusterNodePoolNetworkConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "additional_node_network_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#additional_node_network_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "additional_pod_network_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#additional_pod_network_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "create_pod_range".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#create_pod_range,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_private_nodes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_private_nodes,
+                )
+                .await,
+            );
+            map.insert(
+                "network_performance_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network_performance_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "pod_cidr_overprovision_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pod_cidr_overprovision_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "pod_ipv_4_cidr_block".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pod_ipv_4_cidr_block,
+                )
+                .await,
+            );
+            map.insert(
+                "pod_range".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pod_range,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetClusterNodePoolNetworkConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#additional_node_network_configs: {
+                        let field_value = match fields_map.get("additional_node_network_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'additional_node_network_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#additional_pod_network_configs: {
+                        let field_value = match fields_map.get("additional_pod_network_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'additional_pod_network_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#create_pod_range: {
+                        let field_value = match fields_map.get("create_pod_range") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'create_pod_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_private_nodes: {
+                        let field_value = match fields_map.get("enable_private_nodes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_private_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network_performance_configs: {
+                        let field_value = match fields_map.get("network_performance_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network_performance_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pod_cidr_overprovision_configs: {
+                        let field_value = match fields_map.get("pod_cidr_overprovision_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pod_cidr_overprovision_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pod_ipv_4_cidr_block: {
+                        let field_value = match fields_map.get("pod_ipv_4_cidr_block") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pod_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pod_range: {
+                        let field_value = match fields_map.get("pod_range") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pod_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

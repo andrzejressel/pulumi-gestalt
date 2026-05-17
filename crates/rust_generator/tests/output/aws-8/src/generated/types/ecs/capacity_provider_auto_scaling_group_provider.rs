@@ -20,3 +20,106 @@ pub struct CapacityProviderAutoScalingGroupProvider {
     #[serde(rename = "managedTerminationProtection")]
     pub r#managed_termination_protection: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CapacityProviderAutoScalingGroupProvider {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "auto_scaling_group_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_scaling_group_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "managed_draining".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#managed_draining,
+                )
+                .await,
+            );
+            map.insert(
+                "managed_scaling".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#managed_scaling,
+                )
+                .await,
+            );
+            map.insert(
+                "managed_termination_protection".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#managed_termination_protection,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CapacityProviderAutoScalingGroupProvider {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#auto_scaling_group_arn: {
+                        let field_value = match fields_map.get("auto_scaling_group_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auto_scaling_group_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#managed_draining: {
+                        let field_value = match fields_map.get("managed_draining") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'managed_draining' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#managed_scaling: {
+                        let field_value = match fields_map.get("managed_scaling") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'managed_scaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#managed_termination_protection: {
+                        let field_value = match fields_map.get("managed_termination_protection") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'managed_termination_protection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

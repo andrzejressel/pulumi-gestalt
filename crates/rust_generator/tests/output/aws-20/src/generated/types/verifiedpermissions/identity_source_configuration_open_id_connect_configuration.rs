@@ -20,3 +20,106 @@ pub struct IdentitySourceConfigurationOpenIdConnectConfiguration {
     #[serde(rename = "tokenSelection")]
     pub r#token_selection: Option<Box<super::super::types::verifiedpermissions::IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelection>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IdentitySourceConfigurationOpenIdConnectConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "entity_id_prefix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#entity_id_prefix,
+                )
+                .await,
+            );
+            map.insert(
+                "group_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#group_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "issuer".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#issuer,
+                )
+                .await,
+            );
+            map.insert(
+                "token_selection".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#token_selection,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for IdentitySourceConfigurationOpenIdConnectConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#entity_id_prefix: {
+                        let field_value = match fields_map.get("entity_id_prefix") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'entity_id_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#group_configuration: {
+                        let field_value = match fields_map.get("group_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'group_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#issuer: {
+                        let field_value = match fields_map.get("issuer") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'issuer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#token_selection: {
+                        let field_value = match fields_map.get("token_selection") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'token_selection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -24,3 +24,120 @@ pub struct GetPolicyRuleActionVersion {
     #[serde(rename = "tierToColdAfterDaysSinceCreationGreaterThan")]
     pub r#tier_to_cold_after_days_since_creation_greater_than: i32,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetPolicyRuleActionVersion {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "change_tier_to_archive_after_days_since_creation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#change_tier_to_archive_after_days_since_creation,
+                )
+                .await,
+            );
+            map.insert(
+                "change_tier_to_cool_after_days_since_creation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#change_tier_to_cool_after_days_since_creation,
+                )
+                .await,
+            );
+            map.insert(
+                "delete_after_days_since_creation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#delete_after_days_since_creation,
+                )
+                .await,
+            );
+            map.insert(
+                "tier_to_archive_after_days_since_last_tier_change_greater_than".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tier_to_archive_after_days_since_last_tier_change_greater_than,
+                )
+                .await,
+            );
+            map.insert(
+                "tier_to_cold_after_days_since_creation_greater_than".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tier_to_cold_after_days_since_creation_greater_than,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetPolicyRuleActionVersion {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#change_tier_to_archive_after_days_since_creation: {
+                        let field_value = match fields_map.get("change_tier_to_archive_after_days_since_creation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'change_tier_to_archive_after_days_since_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#change_tier_to_cool_after_days_since_creation: {
+                        let field_value = match fields_map.get("change_tier_to_cool_after_days_since_creation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'change_tier_to_cool_after_days_since_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#delete_after_days_since_creation: {
+                        let field_value = match fields_map.get("delete_after_days_since_creation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'delete_after_days_since_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tier_to_archive_after_days_since_last_tier_change_greater_than: {
+                        let field_value = match fields_map.get("tier_to_archive_after_days_since_last_tier_change_greater_than") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tier_to_archive_after_days_since_last_tier_change_greater_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tier_to_cold_after_days_since_creation_greater_than: {
+                        let field_value = match fields_map.get("tier_to_cold_after_days_since_creation_greater_than") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tier_to_cold_after_days_since_creation_greater_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

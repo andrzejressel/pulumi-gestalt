@@ -65,3 +65,260 @@ pub struct GetBucketLifecycleRuleCondition {
     #[serde(rename = "withState")]
     pub r#with_state: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetBucketLifecycleRuleCondition {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "age".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#age,
+                )
+                .await,
+            );
+            map.insert(
+                "created_before".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#created_before,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_time_before".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_time_before,
+                )
+                .await,
+            );
+            map.insert(
+                "days_since_custom_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#days_since_custom_time,
+                )
+                .await,
+            );
+            map.insert(
+                "days_since_noncurrent_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#days_since_noncurrent_time,
+                )
+                .await,
+            );
+            map.insert(
+                "matches_prefixes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#matches_prefixes,
+                )
+                .await,
+            );
+            map.insert(
+                "matches_storage_classes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#matches_storage_classes,
+                )
+                .await,
+            );
+            map.insert(
+                "matches_suffixes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#matches_suffixes,
+                )
+                .await,
+            );
+            map.insert(
+                "noncurrent_time_before".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#noncurrent_time_before,
+                )
+                .await,
+            );
+            map.insert(
+                "num_newer_versions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#num_newer_versions,
+                )
+                .await,
+            );
+            map.insert(
+                "send_age_if_zero".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#send_age_if_zero,
+                )
+                .await,
+            );
+            map.insert(
+                "send_days_since_custom_time_if_zero".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#send_days_since_custom_time_if_zero,
+                )
+                .await,
+            );
+            map.insert(
+                "send_days_since_noncurrent_time_if_zero".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#send_days_since_noncurrent_time_if_zero,
+                )
+                .await,
+            );
+            map.insert(
+                "send_num_newer_versions_if_zero".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#send_num_newer_versions_if_zero,
+                )
+                .await,
+            );
+            map.insert(
+                "with_state".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#with_state,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetBucketLifecycleRuleCondition {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#age: {
+                        let field_value = match fields_map.get("age") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'age' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#created_before: {
+                        let field_value = match fields_map.get("created_before") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'created_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#custom_time_before: {
+                        let field_value = match fields_map.get("custom_time_before") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_time_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#days_since_custom_time: {
+                        let field_value = match fields_map.get("days_since_custom_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'days_since_custom_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#days_since_noncurrent_time: {
+                        let field_value = match fields_map.get("days_since_noncurrent_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'days_since_noncurrent_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#matches_prefixes: {
+                        let field_value = match fields_map.get("matches_prefixes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'matches_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#matches_storage_classes: {
+                        let field_value = match fields_map.get("matches_storage_classes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'matches_storage_classes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#matches_suffixes: {
+                        let field_value = match fields_map.get("matches_suffixes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'matches_suffixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#noncurrent_time_before: {
+                        let field_value = match fields_map.get("noncurrent_time_before") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'noncurrent_time_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#num_newer_versions: {
+                        let field_value = match fields_map.get("num_newer_versions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'num_newer_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#send_age_if_zero: {
+                        let field_value = match fields_map.get("send_age_if_zero") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'send_age_if_zero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#send_days_since_custom_time_if_zero: {
+                        let field_value = match fields_map.get("send_days_since_custom_time_if_zero") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'send_days_since_custom_time_if_zero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#send_days_since_noncurrent_time_if_zero: {
+                        let field_value = match fields_map.get("send_days_since_noncurrent_time_if_zero") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'send_days_since_noncurrent_time_if_zero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#send_num_newer_versions_if_zero: {
+                        let field_value = match fields_map.get("send_num_newer_versions_if_zero") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'send_num_newer_versions_if_zero' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#with_state: {
+                        let field_value = match fields_map.get("with_state") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'with_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

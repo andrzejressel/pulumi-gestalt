@@ -40,3 +40,176 @@ pub struct DockerBuild {
     #[serde(rename = "target")]
     pub r#target: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DockerBuild {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "add_hosts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#add_hosts,
+                )
+                .await,
+            );
+            map.insert(
+                "args".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#args,
+                )
+                .await,
+            );
+            map.insert(
+                "builder_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#builder_version,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_from".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_from,
+                )
+                .await,
+            );
+            map.insert(
+                "context".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#context,
+                )
+                .await,
+            );
+            map.insert(
+                "dockerfile".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dockerfile,
+                )
+                .await,
+            );
+            map.insert(
+                "network".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network,
+                )
+                .await,
+            );
+            map.insert(
+                "platform".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#platform,
+                )
+                .await,
+            );
+            map.insert(
+                "target".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#target,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DockerBuild {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#add_hosts: {
+                        let field_value = match fields_map.get("add_hosts") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'add_hosts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#args: {
+                        let field_value = match fields_map.get("args") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'args' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#builder_version: {
+                        let field_value = match fields_map.get("builder_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'builder_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_from: {
+                        let field_value = match fields_map.get("cache_from") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_from' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#context: {
+                        let field_value = match fields_map.get("context") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'context' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dockerfile: {
+                        let field_value = match fields_map.get("dockerfile") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dockerfile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network: {
+                        let field_value = match fields_map.get("network") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#platform: {
+                        let field_value = match fields_map.get("platform") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'platform' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#target: {
+                        let field_value = match fields_map.get("target") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

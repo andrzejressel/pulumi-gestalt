@@ -36,3 +36,162 @@ pub struct FluxConfigurationBucket {
     #[serde(rename = "url")]
     pub r#url: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FluxConfigurationBucket {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "access_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_key,
+                )
+                .await,
+            );
+            map.insert(
+                "bucket_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bucket_name,
+                )
+                .await,
+            );
+            map.insert(
+                "local_auth_reference".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#local_auth_reference,
+                )
+                .await,
+            );
+            map.insert(
+                "secret_key_base_64".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secret_key_base_64,
+                )
+                .await,
+            );
+            map.insert(
+                "sync_interval_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sync_interval_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "tls_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tls_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "url".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#url,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FluxConfigurationBucket {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#access_key: {
+                        let field_value = match fields_map.get("access_key") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'access_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#bucket_name: {
+                        let field_value = match fields_map.get("bucket_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bucket_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#local_auth_reference: {
+                        let field_value = match fields_map.get("local_auth_reference") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'local_auth_reference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secret_key_base_64: {
+                        let field_value = match fields_map.get("secret_key_base_64") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secret_key_base_64' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sync_interval_in_seconds: {
+                        let field_value = match fields_map.get("sync_interval_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sync_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timeout_in_seconds: {
+                        let field_value = match fields_map.get("timeout_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tls_enabled: {
+                        let field_value = match fields_map.get("tls_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tls_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#url: {
+                        let field_value = match fields_map.get("url") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

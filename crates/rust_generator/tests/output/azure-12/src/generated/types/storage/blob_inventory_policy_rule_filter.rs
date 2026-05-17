@@ -36,3 +36,134 @@ pub struct BlobInventoryPolicyRuleFilter {
     #[serde(rename = "prefixMatches")]
     pub r#prefix_matches: Option<Vec<String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BlobInventoryPolicyRuleFilter {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "blob_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#blob_types,
+                )
+                .await,
+            );
+            map.insert(
+                "exclude_prefixes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_prefixes,
+                )
+                .await,
+            );
+            map.insert(
+                "include_blob_versions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_blob_versions,
+                )
+                .await,
+            );
+            map.insert(
+                "include_deleted".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_deleted,
+                )
+                .await,
+            );
+            map.insert(
+                "include_snapshots".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_snapshots,
+                )
+                .await,
+            );
+            map.insert(
+                "prefix_matches".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prefix_matches,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for BlobInventoryPolicyRuleFilter {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#blob_types: {
+                        let field_value = match fields_map.get("blob_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'blob_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#exclude_prefixes: {
+                        let field_value = match fields_map.get("exclude_prefixes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exclude_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#include_blob_versions: {
+                        let field_value = match fields_map.get("include_blob_versions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'include_blob_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#include_deleted: {
+                        let field_value = match fields_map.get("include_deleted") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'include_deleted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#include_snapshots: {
+                        let field_value = match fields_map.get("include_snapshots") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'include_snapshots' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#prefix_matches: {
+                        let field_value = match fields_map.get("prefix_matches") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prefix_matches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

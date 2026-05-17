@@ -28,3 +28,134 @@ pub struct KxClusterAutoScalingConfiguration {
     #[serde(rename = "scaleOutCooldownSeconds")]
     pub r#scale_out_cooldown_seconds: f64,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxClusterAutoScalingConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "auto_scaling_metric".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_scaling_metric,
+                )
+                .await,
+            );
+            map.insert(
+                "max_node_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_node_count,
+                )
+                .await,
+            );
+            map.insert(
+                "metric_target".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_target,
+                )
+                .await,
+            );
+            map.insert(
+                "min_node_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_node_count,
+                )
+                .await,
+            );
+            map.insert(
+                "scale_in_cooldown_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scale_in_cooldown_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "scale_out_cooldown_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scale_out_cooldown_seconds,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for KxClusterAutoScalingConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#auto_scaling_metric: {
+                        let field_value = match fields_map.get("auto_scaling_metric") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auto_scaling_metric' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_node_count: {
+                        let field_value = match fields_map.get("max_node_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metric_target: {
+                        let field_value = match fields_map.get("metric_target") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_node_count: {
+                        let field_value = match fields_map.get("min_node_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scale_in_cooldown_seconds: {
+                        let field_value = match fields_map.get("scale_in_cooldown_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scale_in_cooldown_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scale_out_cooldown_seconds: {
+                        let field_value = match fields_map.get("scale_out_cooldown_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scale_out_cooldown_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

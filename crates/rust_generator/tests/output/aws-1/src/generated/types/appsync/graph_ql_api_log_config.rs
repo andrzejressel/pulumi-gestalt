@@ -16,3 +16,92 @@ pub struct GraphQlApiLogConfig {
     #[serde(rename = "fieldLogLevel")]
     pub r#field_log_level: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GraphQlApiLogConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloudwatch_logs_role_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloudwatch_logs_role_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "exclude_verbose_content".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_verbose_content,
+                )
+                .await,
+            );
+            map.insert(
+                "field_log_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#field_log_level,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GraphQlApiLogConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cloudwatch_logs_role_arn: {
+                        let field_value = match fields_map.get("cloudwatch_logs_role_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloudwatch_logs_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#exclude_verbose_content: {
+                        let field_value = match fields_map.get("exclude_verbose_content") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exclude_verbose_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#field_log_level: {
+                        let field_value = match fields_map.get("field_log_level") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'field_log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

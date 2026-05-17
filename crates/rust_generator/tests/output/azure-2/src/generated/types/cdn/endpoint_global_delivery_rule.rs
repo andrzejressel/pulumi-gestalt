@@ -28,3 +28,134 @@ pub struct EndpointGlobalDeliveryRule {
     #[serde(rename = "urlRewriteAction")]
     pub r#url_rewrite_action: Option<Box<super::super::types::cdn::EndpointGlobalDeliveryRuleUrlRewriteAction>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EndpointGlobalDeliveryRule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cache_expiration_action".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_expiration_action,
+                )
+                .await,
+            );
+            map.insert(
+                "cache_key_query_string_action".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cache_key_query_string_action,
+                )
+                .await,
+            );
+            map.insert(
+                "modify_request_header_actions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#modify_request_header_actions,
+                )
+                .await,
+            );
+            map.insert(
+                "modify_response_header_actions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#modify_response_header_actions,
+                )
+                .await,
+            );
+            map.insert(
+                "url_redirect_action".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#url_redirect_action,
+                )
+                .await,
+            );
+            map.insert(
+                "url_rewrite_action".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#url_rewrite_action,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EndpointGlobalDeliveryRule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cache_expiration_action: {
+                        let field_value = match fields_map.get("cache_expiration_action") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_expiration_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cache_key_query_string_action: {
+                        let field_value = match fields_map.get("cache_key_query_string_action") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cache_key_query_string_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#modify_request_header_actions: {
+                        let field_value = match fields_map.get("modify_request_header_actions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'modify_request_header_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#modify_response_header_actions: {
+                        let field_value = match fields_map.get("modify_response_header_actions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'modify_response_header_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#url_redirect_action: {
+                        let field_value = match fields_map.get("url_redirect_action") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'url_redirect_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#url_rewrite_action: {
+                        let field_value = match fields_map.get("url_rewrite_action") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'url_rewrite_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -26,3 +26,120 @@ pub struct ServicesCommunicationsGatewayServiceLocation {
     #[serde(rename = "operatorAddresses")]
     pub r#operator_addresses: Vec<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ServicesCommunicationsGatewayServiceLocation {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allowed_media_source_address_prefixes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed_media_source_address_prefixes,
+                )
+                .await,
+            );
+            map.insert(
+                "allowed_signaling_source_address_prefixes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed_signaling_source_address_prefixes,
+                )
+                .await,
+            );
+            map.insert(
+                "esrp_addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#esrp_addresses,
+                )
+                .await,
+            );
+            map.insert(
+                "location".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#location,
+                )
+                .await,
+            );
+            map.insert(
+                "operator_addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#operator_addresses,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ServicesCommunicationsGatewayServiceLocation {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#allowed_media_source_address_prefixes: {
+                        let field_value = match fields_map.get("allowed_media_source_address_prefixes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allowed_media_source_address_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allowed_signaling_source_address_prefixes: {
+                        let field_value = match fields_map.get("allowed_signaling_source_address_prefixes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allowed_signaling_source_address_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#esrp_addresses: {
+                        let field_value = match fields_map.get("esrp_addresses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'esrp_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#location: {
+                        let field_value = match fields_map.get("location") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#operator_addresses: {
+                        let field_value = match fields_map.get("operator_addresses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'operator_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

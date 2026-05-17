@@ -30,3 +30,134 @@ pub struct ListenerRuleCondition {
     #[serde(rename = "sourceIp")]
     pub r#source_ip: Option<Box<super::super::types::lb::ListenerRuleConditionSourceIp>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ListenerRuleCondition {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "host_header".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#host_header,
+                )
+                .await,
+            );
+            map.insert(
+                "http_header".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_header,
+                )
+                .await,
+            );
+            map.insert(
+                "http_request_method".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_request_method,
+                )
+                .await,
+            );
+            map.insert(
+                "path_pattern".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#path_pattern,
+                )
+                .await,
+            );
+            map.insert(
+                "query_strings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#query_strings,
+                )
+                .await,
+            );
+            map.insert(
+                "source_ip".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_ip,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ListenerRuleCondition {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#host_header: {
+                        let field_value = match fields_map.get("host_header") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'host_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#http_header: {
+                        let field_value = match fields_map.get("http_header") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'http_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#http_request_method: {
+                        let field_value = match fields_map.get("http_request_method") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'http_request_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#path_pattern: {
+                        let field_value = match fields_map.get("path_pattern") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'path_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#query_strings: {
+                        let field_value = match fields_map.get("query_strings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'query_strings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_ip: {
+                        let field_value = match fields_map.get("source_ip") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -41,3 +41,162 @@ pub struct JobTemplateTemplate {
     #[serde(rename = "vpcAccess")]
     pub r#vpc_access: Option<Box<super::super::types::cloudrunv2::JobTemplateTemplateVpcAccess>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobTemplateTemplate {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "containers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#containers,
+                )
+                .await,
+            );
+            map.insert(
+                "encryption_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#encryption_key,
+                )
+                .await,
+            );
+            map.insert(
+                "execution_environment".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#execution_environment,
+                )
+                .await,
+            );
+            map.insert(
+                "max_retries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_retries,
+                )
+                .await,
+            );
+            map.insert(
+                "service_account".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_account,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "volumes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volumes,
+                )
+                .await,
+            );
+            map.insert(
+                "vpc_access".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vpc_access,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for JobTemplateTemplate {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#containers: {
+                        let field_value = match fields_map.get("containers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'containers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#encryption_key: {
+                        let field_value = match fields_map.get("encryption_key") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'encryption_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#execution_environment: {
+                        let field_value = match fields_map.get("execution_environment") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'execution_environment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_retries: {
+                        let field_value = match fields_map.get("max_retries") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_account: {
+                        let field_value = match fields_map.get("service_account") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timeout: {
+                        let field_value = match fields_map.get("timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#volumes: {
+                        let field_value = match fields_map.get("volumes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'volumes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vpc_access: {
+                        let field_value = match fields_map.get("vpc_access") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vpc_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

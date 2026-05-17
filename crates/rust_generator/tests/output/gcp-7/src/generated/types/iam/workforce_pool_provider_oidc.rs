@@ -48,3 +48,120 @@ pub struct WorkforcePoolProviderOidc {
     #[serde(rename = "webSsoConfig")]
     pub r#web_sso_config: Option<Box<super::super::types::iam::WorkforcePoolProviderOidcWebSsoConfig>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WorkforcePoolProviderOidc {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "client_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_id,
+                )
+                .await,
+            );
+            map.insert(
+                "client_secret".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_secret,
+                )
+                .await,
+            );
+            map.insert(
+                "issuer_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#issuer_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "jwks_json".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#jwks_json,
+                )
+                .await,
+            );
+            map.insert(
+                "web_sso_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#web_sso_config,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WorkforcePoolProviderOidc {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#client_id: {
+                        let field_value = match fields_map.get("client_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_secret: {
+                        let field_value = match fields_map.get("client_secret") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#issuer_uri: {
+                        let field_value = match fields_map.get("issuer_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'issuer_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#jwks_json: {
+                        let field_value = match fields_map.get("jwks_json") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'jwks_json' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#web_sso_config: {
+                        let field_value = match fields_map.get("web_sso_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'web_sso_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

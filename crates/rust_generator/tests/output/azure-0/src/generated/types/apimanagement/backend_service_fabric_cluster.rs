@@ -31,3 +31,134 @@ pub struct BackendServiceFabricCluster {
     #[serde(rename = "serverX509Names")]
     pub r#server_x_509_names: Option<Vec<super::super::types::apimanagement::BackendServiceFabricClusterServerX509Name>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BackendServiceFabricCluster {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "client_certificate_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_certificate_id,
+                )
+                .await,
+            );
+            map.insert(
+                "client_certificate_thumbprint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_certificate_thumbprint,
+                )
+                .await,
+            );
+            map.insert(
+                "management_endpoints".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#management_endpoints,
+                )
+                .await,
+            );
+            map.insert(
+                "max_partition_resolution_retries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_partition_resolution_retries,
+                )
+                .await,
+            );
+            map.insert(
+                "server_certificate_thumbprints".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#server_certificate_thumbprints,
+                )
+                .await,
+            );
+            map.insert(
+                "server_x_509_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#server_x_509_names,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for BackendServiceFabricCluster {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#client_certificate_id: {
+                        let field_value = match fields_map.get("client_certificate_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_certificate_thumbprint: {
+                        let field_value = match fields_map.get("client_certificate_thumbprint") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_certificate_thumbprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#management_endpoints: {
+                        let field_value = match fields_map.get("management_endpoints") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'management_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_partition_resolution_retries: {
+                        let field_value = match fields_map.get("max_partition_resolution_retries") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_partition_resolution_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#server_certificate_thumbprints: {
+                        let field_value = match fields_map.get("server_certificate_thumbprints") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'server_certificate_thumbprints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#server_x_509_names: {
+                        let field_value = match fields_map.get("server_x_509_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'server_x_509_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

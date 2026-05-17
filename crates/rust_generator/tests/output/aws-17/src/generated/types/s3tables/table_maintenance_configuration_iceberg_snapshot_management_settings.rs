@@ -14,3 +14,78 @@ pub struct TableMaintenanceConfigurationIcebergSnapshotManagementSettings {
     #[serde(rename = "minSnapshotsToKeep")]
     pub r#min_snapshots_to_keep: f64,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TableMaintenanceConfigurationIcebergSnapshotManagementSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "max_snapshot_age_hours".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_snapshot_age_hours,
+                )
+                .await,
+            );
+            map.insert(
+                "min_snapshots_to_keep".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_snapshots_to_keep,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TableMaintenanceConfigurationIcebergSnapshotManagementSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#max_snapshot_age_hours: {
+                        let field_value = match fields_map.get("max_snapshot_age_hours") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_snapshot_age_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_snapshots_to_keep: {
+                        let field_value = match fields_map.get("min_snapshots_to_keep") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_snapshots_to_keep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

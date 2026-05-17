@@ -38,3 +38,120 @@ pub struct BackupPlanBackupScheduleRpoConfigExclusionWindow {
     #[serde(rename = "startTime")]
     pub r#start_time: Box<super::super::types::gkebackup::BackupPlanBackupScheduleRpoConfigExclusionWindowStartTime>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BackupPlanBackupScheduleRpoConfigExclusionWindow {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "daily".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#daily,
+                )
+                .await,
+            );
+            map.insert(
+                "days_of_week".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#days_of_week,
+                )
+                .await,
+            );
+            map.insert(
+                "duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#duration,
+                )
+                .await,
+            );
+            map.insert(
+                "single_occurrence_date".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#single_occurrence_date,
+                )
+                .await,
+            );
+            map.insert(
+                "start_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#start_time,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for BackupPlanBackupScheduleRpoConfigExclusionWindow {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#daily: {
+                        let field_value = match fields_map.get("daily") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'daily' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#days_of_week: {
+                        let field_value = match fields_map.get("days_of_week") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'days_of_week' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#duration: {
+                        let field_value = match fields_map.get("duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#single_occurrence_date: {
+                        let field_value = match fields_map.get("single_occurrence_date") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'single_occurrence_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#start_time: {
+                        let field_value = match fields_map.get("start_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

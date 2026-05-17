@@ -22,3 +22,106 @@ pub struct V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSetting {
     #[serde(rename = "waitAndContinueSpecifications")]
     pub r#wait_and_continue_specifications: Option<Vec<super::super::types::lex::V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecification>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSetting {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "default_value_specifications".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_value_specifications,
+                )
+                .await,
+            );
+            map.insert(
+                "prompt_specification".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prompt_specification,
+                )
+                .await,
+            );
+            map.insert(
+                "sample_utterances".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sample_utterances,
+                )
+                .await,
+            );
+            map.insert(
+                "wait_and_continue_specifications".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#wait_and_continue_specifications,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V2ModelsSlotSubSlotSettingSlotSpecificationValueElicitationSetting {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#default_value_specifications: {
+                        let field_value = match fields_map.get("default_value_specifications") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_value_specifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#prompt_specification: {
+                        let field_value = match fields_map.get("prompt_specification") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prompt_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sample_utterances: {
+                        let field_value = match fields_map.get("sample_utterances") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sample_utterances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#wait_and_continue_specifications: {
+                        let field_value = match fields_map.get("wait_and_continue_specifications") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'wait_and_continue_specifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

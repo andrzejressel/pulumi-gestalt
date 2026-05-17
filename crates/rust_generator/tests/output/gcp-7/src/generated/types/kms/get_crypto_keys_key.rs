@@ -85,3 +85,260 @@ pub struct GetCryptoKeysKey {
     #[serde(rename = "versionTemplates")]
     pub r#version_templates: Vec<super::super::types::kms::GetCryptoKeysKeyVersionTemplate>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetCryptoKeysKey {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "crypto_key_backend".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#crypto_key_backend,
+                )
+                .await,
+            );
+            map.insert(
+                "destroy_scheduled_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destroy_scheduled_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "effective_labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#effective_labels,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "import_only".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#import_only,
+                )
+                .await,
+            );
+            map.insert(
+                "key_access_justifications_policies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key_access_justifications_policies,
+                )
+                .await,
+            );
+            map.insert(
+                "key_ring".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key_ring,
+                )
+                .await,
+            );
+            map.insert(
+                "labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#labels,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "primaries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#primaries,
+                )
+                .await,
+            );
+            map.insert(
+                "pulumi_labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pulumi_labels,
+                )
+                .await,
+            );
+            map.insert(
+                "purpose".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#purpose,
+                )
+                .await,
+            );
+            map.insert(
+                "rotation_period".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rotation_period,
+                )
+                .await,
+            );
+            map.insert(
+                "skip_initial_version_creation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#skip_initial_version_creation,
+                )
+                .await,
+            );
+            map.insert(
+                "version_templates".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#version_templates,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetCryptoKeysKey {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#crypto_key_backend: {
+                        let field_value = match fields_map.get("crypto_key_backend") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'crypto_key_backend' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#destroy_scheduled_duration: {
+                        let field_value = match fields_map.get("destroy_scheduled_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'destroy_scheduled_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#effective_labels: {
+                        let field_value = match fields_map.get("effective_labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'effective_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#id: {
+                        let field_value = match fields_map.get("id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#import_only: {
+                        let field_value = match fields_map.get("import_only") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'import_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#key_access_justifications_policies: {
+                        let field_value = match fields_map.get("key_access_justifications_policies") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'key_access_justifications_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#key_ring: {
+                        let field_value = match fields_map.get("key_ring") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'key_ring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#labels: {
+                        let field_value = match fields_map.get("labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#primaries: {
+                        let field_value = match fields_map.get("primaries") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'primaries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pulumi_labels: {
+                        let field_value = match fields_map.get("pulumi_labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pulumi_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#purpose: {
+                        let field_value = match fields_map.get("purpose") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'purpose' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rotation_period: {
+                        let field_value = match fields_map.get("rotation_period") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rotation_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#skip_initial_version_creation: {
+                        let field_value = match fields_map.get("skip_initial_version_creation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'skip_initial_version_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#version_templates: {
+                        let field_value = match fields_map.get("version_templates") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'version_templates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

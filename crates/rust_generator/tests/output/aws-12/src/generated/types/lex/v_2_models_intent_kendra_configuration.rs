@@ -16,3 +16,92 @@ pub struct V2ModelsIntentKendraConfiguration {
     #[serde(rename = "queryFilterStringEnabled")]
     pub r#query_filter_string_enabled: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2ModelsIntentKendraConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "kendra_index".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kendra_index,
+                )
+                .await,
+            );
+            map.insert(
+                "query_filter_string".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#query_filter_string,
+                )
+                .await,
+            );
+            map.insert(
+                "query_filter_string_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#query_filter_string_enabled,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V2ModelsIntentKendraConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#kendra_index: {
+                        let field_value = match fields_map.get("kendra_index") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kendra_index' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#query_filter_string: {
+                        let field_value = match fields_map.get("query_filter_string") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'query_filter_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#query_filter_string_enabled: {
+                        let field_value = match fields_map.get("query_filter_string_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'query_filter_string_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

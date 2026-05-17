@@ -40,3 +40,190 @@ pub struct LifecyclePolicyPolicyDetailsSchedule {
     #[serde(rename = "variableTags")]
     pub r#variable_tags: Option<std::collections::HashMap<String, String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LifecyclePolicyPolicyDetailsSchedule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "copy_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#copy_tags,
+                )
+                .await,
+            );
+            map.insert(
+                "create_rule".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#create_rule,
+                )
+                .await,
+            );
+            map.insert(
+                "cross_region_copy_rules".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cross_region_copy_rules,
+                )
+                .await,
+            );
+            map.insert(
+                "deprecate_rule".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#deprecate_rule,
+                )
+                .await,
+            );
+            map.insert(
+                "fast_restore_rule".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fast_restore_rule,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "retain_rule".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#retain_rule,
+                )
+                .await,
+            );
+            map.insert(
+                "share_rule".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#share_rule,
+                )
+                .await,
+            );
+            map.insert(
+                "tags_to_add".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tags_to_add,
+                )
+                .await,
+            );
+            map.insert(
+                "variable_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#variable_tags,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for LifecyclePolicyPolicyDetailsSchedule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#copy_tags: {
+                        let field_value = match fields_map.get("copy_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'copy_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#create_rule: {
+                        let field_value = match fields_map.get("create_rule") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'create_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cross_region_copy_rules: {
+                        let field_value = match fields_map.get("cross_region_copy_rules") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cross_region_copy_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#deprecate_rule: {
+                        let field_value = match fields_map.get("deprecate_rule") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'deprecate_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fast_restore_rule: {
+                        let field_value = match fields_map.get("fast_restore_rule") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fast_restore_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#retain_rule: {
+                        let field_value = match fields_map.get("retain_rule") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'retain_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#share_rule: {
+                        let field_value = match fields_map.get("share_rule") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'share_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tags_to_add: {
+                        let field_value = match fields_map.get("tags_to_add") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tags_to_add' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#variable_tags: {
+                        let field_value = match fields_map.get("variable_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'variable_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

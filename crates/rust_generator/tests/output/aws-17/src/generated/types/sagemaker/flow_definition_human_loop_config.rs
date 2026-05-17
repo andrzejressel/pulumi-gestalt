@@ -40,3 +40,176 @@ pub struct FlowDefinitionHumanLoopConfig {
     #[serde(rename = "workteamArn")]
     pub r#workteam_arn: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FlowDefinitionHumanLoopConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "human_task_ui_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#human_task_ui_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "public_workforce_task_price".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#public_workforce_task_price,
+                )
+                .await,
+            );
+            map.insert(
+                "task_availability_lifetime_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_availability_lifetime_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "task_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_count,
+                )
+                .await,
+            );
+            map.insert(
+                "task_description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_description,
+                )
+                .await,
+            );
+            map.insert(
+                "task_keywords".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_keywords,
+                )
+                .await,
+            );
+            map.insert(
+                "task_time_limit_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_time_limit_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "task_title".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_title,
+                )
+                .await,
+            );
+            map.insert(
+                "workteam_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#workteam_arn,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FlowDefinitionHumanLoopConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#human_task_ui_arn: {
+                        let field_value = match fields_map.get("human_task_ui_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'human_task_ui_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#public_workforce_task_price: {
+                        let field_value = match fields_map.get("public_workforce_task_price") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'public_workforce_task_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_availability_lifetime_in_seconds: {
+                        let field_value = match fields_map.get("task_availability_lifetime_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_availability_lifetime_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_count: {
+                        let field_value = match fields_map.get("task_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_description: {
+                        let field_value = match fields_map.get("task_description") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_keywords: {
+                        let field_value = match fields_map.get("task_keywords") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_keywords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_time_limit_in_seconds: {
+                        let field_value = match fields_map.get("task_time_limit_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_time_limit_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_title: {
+                        let field_value = match fields_map.get("task_title") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_title' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#workteam_arn: {
+                        let field_value = match fields_map.get("workteam_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'workteam_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

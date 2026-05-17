@@ -42,3 +42,176 @@ pub struct ClusterEc2Attributes {
     #[serde(rename = "subnetIds")]
     pub r#subnet_ids: Option<Vec<String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterEc2Attributes {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "additional_master_security_groups".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#additional_master_security_groups,
+                )
+                .await,
+            );
+            map.insert(
+                "additional_slave_security_groups".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#additional_slave_security_groups,
+                )
+                .await,
+            );
+            map.insert(
+                "emr_managed_master_security_group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#emr_managed_master_security_group,
+                )
+                .await,
+            );
+            map.insert(
+                "emr_managed_slave_security_group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#emr_managed_slave_security_group,
+                )
+                .await,
+            );
+            map.insert(
+                "instance_profile".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#instance_profile,
+                )
+                .await,
+            );
+            map.insert(
+                "key_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key_name,
+                )
+                .await,
+            );
+            map.insert(
+                "service_access_security_group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_access_security_group,
+                )
+                .await,
+            );
+            map.insert(
+                "subnet_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subnet_id,
+                )
+                .await,
+            );
+            map.insert(
+                "subnet_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subnet_ids,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterEc2Attributes {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#additional_master_security_groups: {
+                        let field_value = match fields_map.get("additional_master_security_groups") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'additional_master_security_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#additional_slave_security_groups: {
+                        let field_value = match fields_map.get("additional_slave_security_groups") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'additional_slave_security_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#emr_managed_master_security_group: {
+                        let field_value = match fields_map.get("emr_managed_master_security_group") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'emr_managed_master_security_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#emr_managed_slave_security_group: {
+                        let field_value = match fields_map.get("emr_managed_slave_security_group") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'emr_managed_slave_security_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#instance_profile: {
+                        let field_value = match fields_map.get("instance_profile") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'instance_profile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#key_name: {
+                        let field_value = match fields_map.get("key_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'key_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_access_security_group: {
+                        let field_value = match fields_map.get("service_access_security_group") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_access_security_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#subnet_id: {
+                        let field_value = match fields_map.get("subnet_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#subnet_ids: {
+                        let field_value = match fields_map.get("subnet_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'subnet_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

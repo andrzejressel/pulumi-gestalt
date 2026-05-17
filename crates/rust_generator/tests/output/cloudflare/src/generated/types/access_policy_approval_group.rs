@@ -15,3 +15,92 @@ pub struct AccessPolicyApprovalGroup {
     #[serde(rename = "emailListUuid")]
     pub r#email_list_uuid: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AccessPolicyApprovalGroup {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "approvals_needed".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#approvals_needed,
+                )
+                .await,
+            );
+            map.insert(
+                "email_addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#email_addresses,
+                )
+                .await,
+            );
+            map.insert(
+                "email_list_uuid".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#email_list_uuid,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AccessPolicyApprovalGroup {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#approvals_needed: {
+                        let field_value = match fields_map.get("approvals_needed") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'approvals_needed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#email_addresses: {
+                        let field_value = match fields_map.get("email_addresses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#email_list_uuid: {
+                        let field_value = match fields_map.get("email_list_uuid") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'email_list_uuid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

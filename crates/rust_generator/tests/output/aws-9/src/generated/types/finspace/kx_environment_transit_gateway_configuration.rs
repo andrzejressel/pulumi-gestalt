@@ -16,3 +16,92 @@ pub struct KxEnvironmentTransitGatewayConfiguration {
     #[serde(rename = "transitGatewayId")]
     pub r#transit_gateway_id: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxEnvironmentTransitGatewayConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "attachment_network_acl_configurations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#attachment_network_acl_configurations,
+                )
+                .await,
+            );
+            map.insert(
+                "routable_cidr_space".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#routable_cidr_space,
+                )
+                .await,
+            );
+            map.insert(
+                "transit_gateway_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#transit_gateway_id,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for KxEnvironmentTransitGatewayConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#attachment_network_acl_configurations: {
+                        let field_value = match fields_map.get("attachment_network_acl_configurations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'attachment_network_acl_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#routable_cidr_space: {
+                        let field_value = match fields_map.get("routable_cidr_space") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'routable_cidr_space' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#transit_gateway_id: {
+                        let field_value = match fields_map.get("transit_gateway_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'transit_gateway_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -36,3 +36,162 @@ pub struct ZeroTrustDevicePostureIntegrationConfig {
     #[serde(rename = "customerId")]
     pub r#customer_id: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ZeroTrustDevicePostureIntegrationConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "access_client_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_client_id,
+                )
+                .await,
+            );
+            map.insert(
+                "access_client_secret".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_client_secret,
+                )
+                .await,
+            );
+            map.insert(
+                "api_url".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#api_url,
+                )
+                .await,
+            );
+            map.insert(
+                "auth_url".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auth_url,
+                )
+                .await,
+            );
+            map.insert(
+                "client_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_id,
+                )
+                .await,
+            );
+            map.insert(
+                "client_key".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_key,
+                )
+                .await,
+            );
+            map.insert(
+                "client_secret".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_secret,
+                )
+                .await,
+            );
+            map.insert(
+                "customer_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#customer_id,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ZeroTrustDevicePostureIntegrationConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#access_client_id: {
+                        let field_value = match fields_map.get("access_client_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'access_client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#access_client_secret: {
+                        let field_value = match fields_map.get("access_client_secret") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'access_client_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#api_url: {
+                        let field_value = match fields_map.get("api_url") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'api_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#auth_url: {
+                        let field_value = match fields_map.get("auth_url") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auth_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_id: {
+                        let field_value = match fields_map.get("client_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_key: {
+                        let field_value = match fields_map.get("client_key") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_secret: {
+                        let field_value = match fields_map.get("client_secret") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#customer_id: {
+                        let field_value = match fields_map.get("customer_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'customer_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

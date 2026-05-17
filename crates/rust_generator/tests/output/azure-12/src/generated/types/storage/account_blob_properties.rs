@@ -52,3 +52,176 @@ pub struct AccountBlobProperties {
     #[serde(rename = "versioningEnabled")]
     pub r#versioning_enabled: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AccountBlobProperties {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "change_feed_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#change_feed_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "change_feed_retention_in_days".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#change_feed_retention_in_days,
+                )
+                .await,
+            );
+            map.insert(
+                "container_delete_retention_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#container_delete_retention_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "cors_rules".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cors_rules,
+                )
+                .await,
+            );
+            map.insert(
+                "default_service_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_service_version,
+                )
+                .await,
+            );
+            map.insert(
+                "delete_retention_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#delete_retention_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "last_access_time_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#last_access_time_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "restore_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#restore_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "versioning_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#versioning_enabled,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AccountBlobProperties {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#change_feed_enabled: {
+                        let field_value = match fields_map.get("change_feed_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'change_feed_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#change_feed_retention_in_days: {
+                        let field_value = match fields_map.get("change_feed_retention_in_days") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'change_feed_retention_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#container_delete_retention_policy: {
+                        let field_value = match fields_map.get("container_delete_retention_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'container_delete_retention_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cors_rules: {
+                        let field_value = match fields_map.get("cors_rules") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cors_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_service_version: {
+                        let field_value = match fields_map.get("default_service_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_service_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#delete_retention_policy: {
+                        let field_value = match fields_map.get("delete_retention_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'delete_retention_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#last_access_time_enabled: {
+                        let field_value = match fields_map.get("last_access_time_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'last_access_time_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#restore_policy: {
+                        let field_value = match fields_map.get("restore_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'restore_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#versioning_enabled: {
+                        let field_value = match fields_map.get("versioning_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'versioning_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

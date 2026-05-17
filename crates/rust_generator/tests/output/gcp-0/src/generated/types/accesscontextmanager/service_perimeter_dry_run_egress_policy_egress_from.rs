@@ -29,3 +29,106 @@ pub struct ServicePerimeterDryRunEgressPolicyEgressFrom {
     #[serde(rename = "sources")]
     pub r#sources: Option<Vec<super::super::types::accesscontextmanager::ServicePerimeterDryRunEgressPolicyEgressFromSource>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ServicePerimeterDryRunEgressPolicyEgressFrom {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "identities".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#identities,
+                )
+                .await,
+            );
+            map.insert(
+                "identity_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#identity_type,
+                )
+                .await,
+            );
+            map.insert(
+                "source_restriction".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_restriction,
+                )
+                .await,
+            );
+            map.insert(
+                "sources".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sources,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ServicePerimeterDryRunEgressPolicyEgressFrom {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#identities: {
+                        let field_value = match fields_map.get("identities") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'identities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#identity_type: {
+                        let field_value = match fields_map.get("identity_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'identity_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_restriction: {
+                        let field_value = match fields_map.get("source_restriction") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_restriction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sources: {
+                        let field_value = match fields_map.get("sources") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

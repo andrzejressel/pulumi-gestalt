@@ -28,3 +28,134 @@ pub struct FrontdoorRoutingRuleRedirectConfiguration {
     #[serde(rename = "redirectType")]
     pub r#redirect_type: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FrontdoorRoutingRuleRedirectConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "custom_fragment".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_fragment,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_host".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_host,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_path,
+                )
+                .await,
+            );
+            map.insert(
+                "custom_query_string".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_query_string,
+                )
+                .await,
+            );
+            map.insert(
+                "redirect_protocol".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redirect_protocol,
+                )
+                .await,
+            );
+            map.insert(
+                "redirect_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redirect_type,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FrontdoorRoutingRuleRedirectConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#custom_fragment: {
+                        let field_value = match fields_map.get("custom_fragment") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_fragment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#custom_host: {
+                        let field_value = match fields_map.get("custom_host") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_host' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#custom_path: {
+                        let field_value = match fields_map.get("custom_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#custom_query_string: {
+                        let field_value = match fields_map.get("custom_query_string") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redirect_protocol: {
+                        let field_value = match fields_map.get("redirect_protocol") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redirect_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redirect_type: {
+                        let field_value = match fields_map.get("redirect_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redirect_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

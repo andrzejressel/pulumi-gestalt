@@ -26,3 +26,120 @@ pub struct VirtualMachineAutoBackupManualSchedule {
     #[serde(rename = "logBackupFrequencyInMinutes")]
     pub r#log_backup_frequency_in_minutes: i32,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VirtualMachineAutoBackupManualSchedule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "days_of_weeks".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#days_of_weeks,
+                )
+                .await,
+            );
+            map.insert(
+                "full_backup_frequency".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#full_backup_frequency,
+                )
+                .await,
+            );
+            map.insert(
+                "full_backup_start_hour".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#full_backup_start_hour,
+                )
+                .await,
+            );
+            map.insert(
+                "full_backup_window_in_hours".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#full_backup_window_in_hours,
+                )
+                .await,
+            );
+            map.insert(
+                "log_backup_frequency_in_minutes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#log_backup_frequency_in_minutes,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for VirtualMachineAutoBackupManualSchedule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#days_of_weeks: {
+                        let field_value = match fields_map.get("days_of_weeks") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'days_of_weeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#full_backup_frequency: {
+                        let field_value = match fields_map.get("full_backup_frequency") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'full_backup_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#full_backup_start_hour: {
+                        let field_value = match fields_map.get("full_backup_start_hour") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'full_backup_start_hour' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#full_backup_window_in_hours: {
+                        let field_value = match fields_map.get("full_backup_window_in_hours") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'full_backup_window_in_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#log_backup_frequency_in_minutes: {
+                        let field_value = match fields_map.get("log_backup_frequency_in_minutes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'log_backup_frequency_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -20,3 +20,106 @@ pub struct IndexDocumentMetadataConfigurationUpdateSearch {
     #[serde(rename = "sortable")]
     pub r#sortable: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IndexDocumentMetadataConfigurationUpdateSearch {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "displayable".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#displayable,
+                )
+                .await,
+            );
+            map.insert(
+                "facetable".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#facetable,
+                )
+                .await,
+            );
+            map.insert(
+                "searchable".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#searchable,
+                )
+                .await,
+            );
+            map.insert(
+                "sortable".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sortable,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for IndexDocumentMetadataConfigurationUpdateSearch {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#displayable: {
+                        let field_value = match fields_map.get("displayable") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'displayable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#facetable: {
+                        let field_value = match fields_map.get("facetable") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'facetable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#searchable: {
+                        let field_value = match fields_map.get("searchable") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'searchable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sortable: {
+                        let field_value = match fields_map.get("sortable") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sortable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

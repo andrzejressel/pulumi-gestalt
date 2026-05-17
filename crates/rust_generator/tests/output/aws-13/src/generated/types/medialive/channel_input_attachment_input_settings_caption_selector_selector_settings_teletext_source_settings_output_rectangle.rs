@@ -18,3 +18,106 @@ pub struct ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsTel
     #[serde(rename = "width")]
     pub r#width: f64,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsTeletextSourceSettingsOutputRectangle {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "height".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#height,
+                )
+                .await,
+            );
+            map.insert(
+                "left_offset".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#left_offset,
+                )
+                .await,
+            );
+            map.insert(
+                "top_offset".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#top_offset,
+                )
+                .await,
+            );
+            map.insert(
+                "width".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#width,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsTeletextSourceSettingsOutputRectangle {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#height: {
+                        let field_value = match fields_map.get("height") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'height' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#left_offset: {
+                        let field_value = match fields_map.get("left_offset") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'left_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#top_offset: {
+                        let field_value = match fields_map.get("top_offset") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'top_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#width: {
+                        let field_value = match fields_map.get("width") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'width' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

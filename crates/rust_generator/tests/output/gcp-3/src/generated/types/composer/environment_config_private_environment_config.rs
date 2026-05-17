@@ -36,3 +36,162 @@ pub struct EnvironmentConfigPrivateEnvironmentConfig {
     #[serde(rename = "webServerIpv4CidrBlock")]
     pub r#web_server_ipv_4_cidr_block: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EnvironmentConfigPrivateEnvironmentConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloud_composer_connection_subnetwork".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloud_composer_connection_subnetwork,
+                )
+                .await,
+            );
+            map.insert(
+                "cloud_composer_network_ipv_4_cidr_block".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloud_composer_network_ipv_4_cidr_block,
+                )
+                .await,
+            );
+            map.insert(
+                "cloud_sql_ipv_4_cidr_block".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloud_sql_ipv_4_cidr_block,
+                )
+                .await,
+            );
+            map.insert(
+                "connection_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#connection_type,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_private_endpoint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_private_endpoint,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_privately_used_public_ips".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_privately_used_public_ips,
+                )
+                .await,
+            );
+            map.insert(
+                "master_ipv_4_cidr_block".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#master_ipv_4_cidr_block,
+                )
+                .await,
+            );
+            map.insert(
+                "web_server_ipv_4_cidr_block".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#web_server_ipv_4_cidr_block,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EnvironmentConfigPrivateEnvironmentConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cloud_composer_connection_subnetwork: {
+                        let field_value = match fields_map.get("cloud_composer_connection_subnetwork") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloud_composer_connection_subnetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cloud_composer_network_ipv_4_cidr_block: {
+                        let field_value = match fields_map.get("cloud_composer_network_ipv_4_cidr_block") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloud_composer_network_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cloud_sql_ipv_4_cidr_block: {
+                        let field_value = match fields_map.get("cloud_sql_ipv_4_cidr_block") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloud_sql_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#connection_type: {
+                        let field_value = match fields_map.get("connection_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'connection_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_private_endpoint: {
+                        let field_value = match fields_map.get("enable_private_endpoint") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_private_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_privately_used_public_ips: {
+                        let field_value = match fields_map.get("enable_privately_used_public_ips") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_privately_used_public_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#master_ipv_4_cidr_block: {
+                        let field_value = match fields_map.get("master_ipv_4_cidr_block") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'master_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#web_server_ipv_4_cidr_block: {
+                        let field_value = match fields_map.get("web_server_ipv_4_cidr_block") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'web_server_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -37,3 +37,148 @@ pub struct GetListenerRuleAction {
     #[serde(rename = "type")]
     pub r#type_: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetListenerRuleAction {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "authenticate_cognito".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authenticate_cognito,
+                )
+                .await,
+            );
+            map.insert(
+                "authenticate_oidc".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authenticate_oidc,
+                )
+                .await,
+            );
+            map.insert(
+                "fixed_response".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fixed_response,
+                )
+                .await,
+            );
+            map.insert(
+                "forward".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forward,
+                )
+                .await,
+            );
+            map.insert(
+                "order".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#order,
+                )
+                .await,
+            );
+            map.insert(
+                "redirect".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redirect,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetListenerRuleAction {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#authenticate_cognito: {
+                        let field_value = match fields_map.get("authenticate_cognito") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'authenticate_cognito' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#authenticate_oidc: {
+                        let field_value = match fields_map.get("authenticate_oidc") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'authenticate_oidc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fixed_response: {
+                        let field_value = match fields_map.get("fixed_response") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fixed_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#forward: {
+                        let field_value = match fields_map.get("forward") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'forward' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#order: {
+                        let field_value = match fields_map.get("order") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redirect: {
+                        let field_value = match fields_map.get("redirect") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#type_: {
+                        let field_value = match fields_map.get("type_") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

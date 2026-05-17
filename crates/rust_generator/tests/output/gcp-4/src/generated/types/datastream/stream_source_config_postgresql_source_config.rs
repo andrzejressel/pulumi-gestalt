@@ -29,3 +29,120 @@ pub struct StreamSourceConfigPostgresqlSourceConfig {
     #[serde(rename = "replicationSlot")]
     pub r#replication_slot: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for StreamSourceConfigPostgresqlSourceConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "exclude_objects".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_objects,
+                )
+                .await,
+            );
+            map.insert(
+                "include_objects".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_objects,
+                )
+                .await,
+            );
+            map.insert(
+                "max_concurrent_backfill_tasks".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_concurrent_backfill_tasks,
+                )
+                .await,
+            );
+            map.insert(
+                "publication".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#publication,
+                )
+                .await,
+            );
+            map.insert(
+                "replication_slot".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#replication_slot,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for StreamSourceConfigPostgresqlSourceConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#exclude_objects: {
+                        let field_value = match fields_map.get("exclude_objects") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exclude_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#include_objects: {
+                        let field_value = match fields_map.get("include_objects") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'include_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_concurrent_backfill_tasks: {
+                        let field_value = match fields_map.get("max_concurrent_backfill_tasks") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_concurrent_backfill_tasks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#publication: {
+                        let field_value = match fields_map.get("publication") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'publication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#replication_slot: {
+                        let field_value = match fields_map.get("replication_slot") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'replication_slot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

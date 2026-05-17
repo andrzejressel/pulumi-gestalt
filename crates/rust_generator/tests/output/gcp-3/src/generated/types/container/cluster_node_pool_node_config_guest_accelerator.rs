@@ -24,3 +24,120 @@ pub struct ClusterNodePoolNodeConfigGuestAccelerator {
     #[serde(rename = "type")]
     pub r#type_: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterNodePoolNodeConfigGuestAccelerator {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#count,
+                )
+                .await,
+            );
+            map.insert(
+                "gpu_driver_installation_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gpu_driver_installation_config,
+                )
+                .await,
+            );
+            map.insert(
+                "gpu_partition_size".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gpu_partition_size,
+                )
+                .await,
+            );
+            map.insert(
+                "gpu_sharing_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gpu_sharing_config,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterNodePoolNodeConfigGuestAccelerator {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#count: {
+                        let field_value = match fields_map.get("count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gpu_driver_installation_config: {
+                        let field_value = match fields_map.get("gpu_driver_installation_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gpu_driver_installation_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gpu_partition_size: {
+                        let field_value = match fields_map.get("gpu_partition_size") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gpu_partition_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gpu_sharing_config: {
+                        let field_value = match fields_map.get("gpu_sharing_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gpu_sharing_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#type_: {
+                        let field_value = match fields_map.get("type_") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

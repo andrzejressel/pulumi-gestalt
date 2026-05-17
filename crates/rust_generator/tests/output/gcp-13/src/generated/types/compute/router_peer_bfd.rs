@@ -37,3 +37,106 @@ pub struct RouterPeerBfd {
     #[serde(rename = "sessionInitializationMode")]
     pub r#session_initialization_mode: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RouterPeerBfd {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "min_receive_interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_receive_interval,
+                )
+                .await,
+            );
+            map.insert(
+                "min_transmit_interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_transmit_interval,
+                )
+                .await,
+            );
+            map.insert(
+                "multiplier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#multiplier,
+                )
+                .await,
+            );
+            map.insert(
+                "session_initialization_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_initialization_mode,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RouterPeerBfd {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#min_receive_interval: {
+                        let field_value = match fields_map.get("min_receive_interval") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_receive_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_transmit_interval: {
+                        let field_value = match fields_map.get("min_transmit_interval") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_transmit_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#multiplier: {
+                        let field_value = match fields_map.get("multiplier") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'multiplier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#session_initialization_mode: {
+                        let field_value = match fields_map.get("session_initialization_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'session_initialization_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

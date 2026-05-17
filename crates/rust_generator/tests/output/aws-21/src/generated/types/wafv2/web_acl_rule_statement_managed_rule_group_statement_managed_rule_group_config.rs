@@ -32,3 +32,148 @@ pub struct WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfig {
     #[serde(rename = "usernameField")]
     pub r#username_field: Option<Box<super::super::types::wafv2::WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameField>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "aws_managed_rules_acfp_rule_set".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aws_managed_rules_acfp_rule_set,
+                )
+                .await,
+            );
+            map.insert(
+                "aws_managed_rules_atp_rule_set".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aws_managed_rules_atp_rule_set,
+                )
+                .await,
+            );
+            map.insert(
+                "aws_managed_rules_bot_control_rule_set".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aws_managed_rules_bot_control_rule_set,
+                )
+                .await,
+            );
+            map.insert(
+                "login_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#login_path,
+                )
+                .await,
+            );
+            map.insert(
+                "password_field".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#password_field,
+                )
+                .await,
+            );
+            map.insert(
+                "payload_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#payload_type,
+                )
+                .await,
+            );
+            map.insert(
+                "username_field".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#username_field,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#aws_managed_rules_acfp_rule_set: {
+                        let field_value = match fields_map.get("aws_managed_rules_acfp_rule_set") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aws_managed_rules_acfp_rule_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#aws_managed_rules_atp_rule_set: {
+                        let field_value = match fields_map.get("aws_managed_rules_atp_rule_set") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aws_managed_rules_atp_rule_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#aws_managed_rules_bot_control_rule_set: {
+                        let field_value = match fields_map.get("aws_managed_rules_bot_control_rule_set") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aws_managed_rules_bot_control_rule_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#login_path: {
+                        let field_value = match fields_map.get("login_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'login_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#password_field: {
+                        let field_value = match fields_map.get("password_field") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'password_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#payload_type: {
+                        let field_value = match fields_map.get("payload_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'payload_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#username_field: {
+                        let field_value = match fields_map.get("username_field") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'username_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

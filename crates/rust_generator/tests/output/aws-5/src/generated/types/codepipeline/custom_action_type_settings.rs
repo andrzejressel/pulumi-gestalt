@@ -20,3 +20,106 @@ pub struct CustomActionTypeSettings {
     #[serde(rename = "thirdPartyConfigurationUrl")]
     pub r#third_party_configuration_url: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CustomActionTypeSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "entity_url_template".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#entity_url_template,
+                )
+                .await,
+            );
+            map.insert(
+                "execution_url_template".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#execution_url_template,
+                )
+                .await,
+            );
+            map.insert(
+                "revision_url_template".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#revision_url_template,
+                )
+                .await,
+            );
+            map.insert(
+                "third_party_configuration_url".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#third_party_configuration_url,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CustomActionTypeSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#entity_url_template: {
+                        let field_value = match fields_map.get("entity_url_template") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'entity_url_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#execution_url_template: {
+                        let field_value = match fields_map.get("execution_url_template") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'execution_url_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#revision_url_template: {
+                        let field_value = match fields_map.get("revision_url_template") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'revision_url_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#third_party_configuration_url: {
+                        let field_value = match fields_map.get("third_party_configuration_url") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'third_party_configuration_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

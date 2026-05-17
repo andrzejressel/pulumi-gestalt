@@ -26,3 +26,148 @@ pub struct GroupInitialLifecycleHook {
     #[serde(rename = "roleArn")]
     pub r#role_arn: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GroupInitialLifecycleHook {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "default_result".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_result,
+                )
+                .await,
+            );
+            map.insert(
+                "heartbeat_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#heartbeat_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "lifecycle_transition".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lifecycle_transition,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "notification_metadata".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#notification_metadata,
+                )
+                .await,
+            );
+            map.insert(
+                "notification_target_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#notification_target_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "role_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role_arn,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GroupInitialLifecycleHook {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#default_result: {
+                        let field_value = match fields_map.get("default_result") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_result' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#heartbeat_timeout: {
+                        let field_value = match fields_map.get("heartbeat_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'heartbeat_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#lifecycle_transition: {
+                        let field_value = match fields_map.get("lifecycle_transition") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'lifecycle_transition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#notification_metadata: {
+                        let field_value = match fields_map.get("notification_metadata") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'notification_metadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#notification_target_arn: {
+                        let field_value = match fields_map.get("notification_target_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'notification_target_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#role_arn: {
+                        let field_value = match fields_map.get("role_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

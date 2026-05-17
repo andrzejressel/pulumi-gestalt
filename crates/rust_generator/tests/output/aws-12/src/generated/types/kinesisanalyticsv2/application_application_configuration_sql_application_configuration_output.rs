@@ -27,3 +27,134 @@ pub struct ApplicationApplicationConfigurationSqlApplicationConfigurationOutput 
     #[serde(rename = "outputId")]
     pub r#output_id: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ApplicationApplicationConfigurationSqlApplicationConfigurationOutput {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "destination_schema".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_schema,
+                )
+                .await,
+            );
+            map.insert(
+                "kinesis_firehose_output".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kinesis_firehose_output,
+                )
+                .await,
+            );
+            map.insert(
+                "kinesis_streams_output".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kinesis_streams_output,
+                )
+                .await,
+            );
+            map.insert(
+                "lambda_output".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lambda_output,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "output_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#output_id,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ApplicationApplicationConfigurationSqlApplicationConfigurationOutput {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#destination_schema: {
+                        let field_value = match fields_map.get("destination_schema") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'destination_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kinesis_firehose_output: {
+                        let field_value = match fields_map.get("kinesis_firehose_output") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kinesis_firehose_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kinesis_streams_output: {
+                        let field_value = match fields_map.get("kinesis_streams_output") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kinesis_streams_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#lambda_output: {
+                        let field_value = match fields_map.get("lambda_output") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'lambda_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#output_id: {
+                        let field_value = match fields_map.get("output_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'output_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -28,3 +28,134 @@ pub struct OpenZfsFileSystemRootVolumeConfiguration {
     #[serde(rename = "userAndGroupQuotas")]
     pub r#user_and_group_quotas: Option<Vec<super::super::types::fsx::OpenZfsFileSystemRootVolumeConfigurationUserAndGroupQuota>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OpenZfsFileSystemRootVolumeConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "copy_tags_to_snapshots".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#copy_tags_to_snapshots,
+                )
+                .await,
+            );
+            map.insert(
+                "data_compression_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_compression_type,
+                )
+                .await,
+            );
+            map.insert(
+                "nfs_exports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#nfs_exports,
+                )
+                .await,
+            );
+            map.insert(
+                "read_only".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#read_only,
+                )
+                .await,
+            );
+            map.insert(
+                "record_size_kib".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#record_size_kib,
+                )
+                .await,
+            );
+            map.insert(
+                "user_and_group_quotas".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_and_group_quotas,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for OpenZfsFileSystemRootVolumeConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#copy_tags_to_snapshots: {
+                        let field_value = match fields_map.get("copy_tags_to_snapshots") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'copy_tags_to_snapshots' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_compression_type: {
+                        let field_value = match fields_map.get("data_compression_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_compression_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#nfs_exports: {
+                        let field_value = match fields_map.get("nfs_exports") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'nfs_exports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#read_only: {
+                        let field_value = match fields_map.get("read_only") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#record_size_kib: {
+                        let field_value = match fields_map.get("record_size_kib") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'record_size_kib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#user_and_group_quotas: {
+                        let field_value = match fields_map.get("user_and_group_quotas") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'user_and_group_quotas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

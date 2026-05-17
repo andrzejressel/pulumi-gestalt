@@ -36,3 +36,162 @@ pub struct WorkflowTemplateJobSparkJob {
     #[serde(rename = "properties")]
     pub r#properties: Option<std::collections::HashMap<String, String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WorkflowTemplateJobSparkJob {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "archive_uris".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#archive_uris,
+                )
+                .await,
+            );
+            map.insert(
+                "args".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#args,
+                )
+                .await,
+            );
+            map.insert(
+                "file_uris".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#file_uris,
+                )
+                .await,
+            );
+            map.insert(
+                "jar_file_uris".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#jar_file_uris,
+                )
+                .await,
+            );
+            map.insert(
+                "logging_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#logging_config,
+                )
+                .await,
+            );
+            map.insert(
+                "main_class".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#main_class,
+                )
+                .await,
+            );
+            map.insert(
+                "main_jar_file_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#main_jar_file_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#properties,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WorkflowTemplateJobSparkJob {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#archive_uris: {
+                        let field_value = match fields_map.get("archive_uris") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'archive_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#args: {
+                        let field_value = match fields_map.get("args") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'args' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#file_uris: {
+                        let field_value = match fields_map.get("file_uris") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'file_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#jar_file_uris: {
+                        let field_value = match fields_map.get("jar_file_uris") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'jar_file_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#logging_config: {
+                        let field_value = match fields_map.get("logging_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'logging_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#main_class: {
+                        let field_value = match fields_map.get("main_class") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'main_class' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#main_jar_file_uri: {
+                        let field_value = match fields_map.get("main_jar_file_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'main_jar_file_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#properties: {
+                        let field_value = match fields_map.get("properties") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

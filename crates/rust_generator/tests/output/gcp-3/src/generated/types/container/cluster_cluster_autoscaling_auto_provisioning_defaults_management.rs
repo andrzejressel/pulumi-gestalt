@@ -18,3 +18,92 @@ pub struct ClusterClusterAutoscalingAutoProvisioningDefaultsManagement {
     #[serde(rename = "upgradeOptions")]
     pub r#upgrade_options: Option<Vec<super::super::types::container::ClusterClusterAutoscalingAutoProvisioningDefaultsManagementUpgradeOption>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterClusterAutoscalingAutoProvisioningDefaultsManagement {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "auto_repair".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_repair,
+                )
+                .await,
+            );
+            map.insert(
+                "auto_upgrade".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_upgrade,
+                )
+                .await,
+            );
+            map.insert(
+                "upgrade_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#upgrade_options,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterClusterAutoscalingAutoProvisioningDefaultsManagement {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#auto_repair: {
+                        let field_value = match fields_map.get("auto_repair") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auto_repair' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#auto_upgrade: {
+                        let field_value = match fields_map.get("auto_upgrade") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auto_upgrade' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#upgrade_options: {
+                        let field_value = match fields_map.get("upgrade_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'upgrade_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

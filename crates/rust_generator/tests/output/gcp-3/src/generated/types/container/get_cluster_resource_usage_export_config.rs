@@ -16,3 +16,92 @@ pub struct GetClusterResourceUsageExportConfig {
     #[serde(rename = "enableResourceConsumptionMetering")]
     pub r#enable_resource_consumption_metering: bool,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetClusterResourceUsageExportConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "bigquery_destinations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bigquery_destinations,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_network_egress_metering".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_network_egress_metering,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_resource_consumption_metering".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_resource_consumption_metering,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetClusterResourceUsageExportConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#bigquery_destinations: {
+                        let field_value = match fields_map.get("bigquery_destinations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bigquery_destinations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_network_egress_metering: {
+                        let field_value = match fields_map.get("enable_network_egress_metering") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_network_egress_metering' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_resource_consumption_metering: {
+                        let field_value = match fields_map.get("enable_resource_consumption_metering") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_resource_consumption_metering' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

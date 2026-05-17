@@ -32,3 +32,148 @@ pub struct GetPrincipalPolicySimulationResult {
     #[serde(rename = "resourceArn")]
     pub r#resource_arn: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetPrincipalPolicySimulationResult {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "action_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#action_name,
+                )
+                .await,
+            );
+            map.insert(
+                "allowed".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed,
+                )
+                .await,
+            );
+            map.insert(
+                "decision".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#decision,
+                )
+                .await,
+            );
+            map.insert(
+                "decision_details".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#decision_details,
+                )
+                .await,
+            );
+            map.insert(
+                "matched_statements".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#matched_statements,
+                )
+                .await,
+            );
+            map.insert(
+                "missing_context_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#missing_context_keys,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_arn,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetPrincipalPolicySimulationResult {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#action_name: {
+                        let field_value = match fields_map.get("action_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'action_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allowed: {
+                        let field_value = match fields_map.get("allowed") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#decision: {
+                        let field_value = match fields_map.get("decision") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'decision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#decision_details: {
+                        let field_value = match fields_map.get("decision_details") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'decision_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#matched_statements: {
+                        let field_value = match fields_map.get("matched_statements") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'matched_statements' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#missing_context_keys: {
+                        let field_value = match fields_map.get("missing_context_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'missing_context_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_arn: {
+                        let field_value = match fields_map.get("resource_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

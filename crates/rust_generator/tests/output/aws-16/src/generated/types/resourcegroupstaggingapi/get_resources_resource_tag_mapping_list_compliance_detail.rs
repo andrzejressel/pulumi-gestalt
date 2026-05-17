@@ -16,3 +16,92 @@ pub struct GetResourcesResourceTagMappingListComplianceDetail {
     #[serde(rename = "nonCompliantKeys")]
     pub r#non_compliant_keys: Vec<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetResourcesResourceTagMappingListComplianceDetail {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "compliance_status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compliance_status,
+                )
+                .await,
+            );
+            map.insert(
+                "keys_with_noncompliant_values".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#keys_with_noncompliant_values,
+                )
+                .await,
+            );
+            map.insert(
+                "non_compliant_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#non_compliant_keys,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetResourcesResourceTagMappingListComplianceDetail {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#compliance_status: {
+                        let field_value = match fields_map.get("compliance_status") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'compliance_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#keys_with_noncompliant_values: {
+                        let field_value = match fields_map.get("keys_with_noncompliant_values") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'keys_with_noncompliant_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#non_compliant_keys: {
+                        let field_value = match fields_map.get("non_compliant_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'non_compliant_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

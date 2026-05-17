@@ -20,3 +20,106 @@ pub struct GetLinuxWebAppAuthSettingsV2FacebookV2 {
     #[serde(rename = "loginScopes")]
     pub r#login_scopes: Vec<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetLinuxWebAppAuthSettingsV2FacebookV2 {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "app_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#app_id,
+                )
+                .await,
+            );
+            map.insert(
+                "app_secret_setting_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#app_secret_setting_name,
+                )
+                .await,
+            );
+            map.insert(
+                "graph_api_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#graph_api_version,
+                )
+                .await,
+            );
+            map.insert(
+                "login_scopes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#login_scopes,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetLinuxWebAppAuthSettingsV2FacebookV2 {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#app_id: {
+                        let field_value = match fields_map.get("app_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'app_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#app_secret_setting_name: {
+                        let field_value = match fields_map.get("app_secret_setting_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'app_secret_setting_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#graph_api_version: {
+                        let field_value = match fields_map.get("graph_api_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'graph_api_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#login_scopes: {
+                        let field_value = match fields_map.get("login_scopes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'login_scopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

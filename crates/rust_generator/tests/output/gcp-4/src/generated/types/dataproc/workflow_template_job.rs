@@ -52,3 +52,218 @@ pub struct WorkflowTemplateJob {
     #[serde(rename = "stepId")]
     pub r#step_id: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WorkflowTemplateJob {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "hadoop_job".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#hadoop_job,
+                )
+                .await,
+            );
+            map.insert(
+                "hive_job".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#hive_job,
+                )
+                .await,
+            );
+            map.insert(
+                "labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#labels,
+                )
+                .await,
+            );
+            map.insert(
+                "pig_job".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pig_job,
+                )
+                .await,
+            );
+            map.insert(
+                "prerequisite_step_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prerequisite_step_ids,
+                )
+                .await,
+            );
+            map.insert(
+                "presto_job".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#presto_job,
+                )
+                .await,
+            );
+            map.insert(
+                "pyspark_job".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pyspark_job,
+                )
+                .await,
+            );
+            map.insert(
+                "scheduling".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scheduling,
+                )
+                .await,
+            );
+            map.insert(
+                "spark_job".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#spark_job,
+                )
+                .await,
+            );
+            map.insert(
+                "spark_r_job".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#spark_r_job,
+                )
+                .await,
+            );
+            map.insert(
+                "spark_sql_job".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#spark_sql_job,
+                )
+                .await,
+            );
+            map.insert(
+                "step_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#step_id,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WorkflowTemplateJob {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#hadoop_job: {
+                        let field_value = match fields_map.get("hadoop_job") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'hadoop_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#hive_job: {
+                        let field_value = match fields_map.get("hive_job") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'hive_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#labels: {
+                        let field_value = match fields_map.get("labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pig_job: {
+                        let field_value = match fields_map.get("pig_job") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pig_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#prerequisite_step_ids: {
+                        let field_value = match fields_map.get("prerequisite_step_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prerequisite_step_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#presto_job: {
+                        let field_value = match fields_map.get("presto_job") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'presto_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pyspark_job: {
+                        let field_value = match fields_map.get("pyspark_job") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pyspark_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scheduling: {
+                        let field_value = match fields_map.get("scheduling") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scheduling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#spark_job: {
+                        let field_value = match fields_map.get("spark_job") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'spark_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#spark_r_job: {
+                        let field_value = match fields_map.get("spark_r_job") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'spark_r_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#spark_sql_job: {
+                        let field_value = match fields_map.get("spark_sql_job") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'spark_sql_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#step_id: {
+                        let field_value = match fields_map.get("step_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'step_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

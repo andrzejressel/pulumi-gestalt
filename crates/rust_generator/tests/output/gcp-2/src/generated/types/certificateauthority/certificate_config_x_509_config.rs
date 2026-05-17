@@ -40,3 +40,134 @@ pub struct CertificateConfigX509Config {
     #[serde(rename = "policyIds")]
     pub r#policy_ids: Option<Vec<super::super::types::certificateauthority::CertificateConfigX509ConfigPolicyId>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CertificateConfigX509Config {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "additional_extensions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#additional_extensions,
+                )
+                .await,
+            );
+            map.insert(
+                "aia_ocsp_servers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aia_ocsp_servers,
+                )
+                .await,
+            );
+            map.insert(
+                "ca_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ca_options,
+                )
+                .await,
+            );
+            map.insert(
+                "key_usage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key_usage,
+                )
+                .await,
+            );
+            map.insert(
+                "name_constraints".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name_constraints,
+                )
+                .await,
+            );
+            map.insert(
+                "policy_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#policy_ids,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CertificateConfigX509Config {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#additional_extensions: {
+                        let field_value = match fields_map.get("additional_extensions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'additional_extensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#aia_ocsp_servers: {
+                        let field_value = match fields_map.get("aia_ocsp_servers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aia_ocsp_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ca_options: {
+                        let field_value = match fields_map.get("ca_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ca_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#key_usage: {
+                        let field_value = match fields_map.get("key_usage") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'key_usage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name_constraints: {
+                        let field_value = match fields_map.get("name_constraints") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#policy_ids: {
+                        let field_value = match fields_map.get("policy_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'policy_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -125,3 +125,246 @@ pub struct GetTriggerBuildStep {
     #[serde(rename = "waitFors")]
     pub r#wait_fors: Vec<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetTriggerBuildStep {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allow_exit_codes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow_exit_codes,
+                )
+                .await,
+            );
+            map.insert(
+                "allow_failure".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow_failure,
+                )
+                .await,
+            );
+            map.insert(
+                "args".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#args,
+                )
+                .await,
+            );
+            map.insert(
+                "dir".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dir,
+                )
+                .await,
+            );
+            map.insert(
+                "entrypoint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#entrypoint,
+                )
+                .await,
+            );
+            map.insert(
+                "envs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#envs,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "script".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#script,
+                )
+                .await,
+            );
+            map.insert(
+                "secret_envs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secret_envs,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "timing".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timing,
+                )
+                .await,
+            );
+            map.insert(
+                "volumes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#volumes,
+                )
+                .await,
+            );
+            map.insert(
+                "wait_fors".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#wait_fors,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetTriggerBuildStep {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#allow_exit_codes: {
+                        let field_value = match fields_map.get("allow_exit_codes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allow_exit_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allow_failure: {
+                        let field_value = match fields_map.get("allow_failure") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allow_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#args: {
+                        let field_value = match fields_map.get("args") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'args' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dir: {
+                        let field_value = match fields_map.get("dir") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dir' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#entrypoint: {
+                        let field_value = match fields_map.get("entrypoint") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'entrypoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#envs: {
+                        let field_value = match fields_map.get("envs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'envs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#id: {
+                        let field_value = match fields_map.get("id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#script: {
+                        let field_value = match fields_map.get("script") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'script' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secret_envs: {
+                        let field_value = match fields_map.get("secret_envs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secret_envs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timeout: {
+                        let field_value = match fields_map.get("timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timing: {
+                        let field_value = match fields_map.get("timing") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#volumes: {
+                        let field_value = match fields_map.get("volumes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'volumes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#wait_fors: {
+                        let field_value = match fields_map.get("wait_fors") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'wait_fors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

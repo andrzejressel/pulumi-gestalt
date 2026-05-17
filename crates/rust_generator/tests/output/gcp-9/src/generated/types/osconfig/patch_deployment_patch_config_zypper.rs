@@ -29,3 +29,134 @@ pub struct PatchDeploymentPatchConfigZypper {
     #[serde(rename = "withUpdate")]
     pub r#with_update: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PatchDeploymentPatchConfigZypper {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "categories".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#categories,
+                )
+                .await,
+            );
+            map.insert(
+                "excludes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#excludes,
+                )
+                .await,
+            );
+            map.insert(
+                "exclusive_patches".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclusive_patches,
+                )
+                .await,
+            );
+            map.insert(
+                "severities".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#severities,
+                )
+                .await,
+            );
+            map.insert(
+                "with_optional".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#with_optional,
+                )
+                .await,
+            );
+            map.insert(
+                "with_update".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#with_update,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PatchDeploymentPatchConfigZypper {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#categories: {
+                        let field_value = match fields_map.get("categories") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'categories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#excludes: {
+                        let field_value = match fields_map.get("excludes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'excludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#exclusive_patches: {
+                        let field_value = match fields_map.get("exclusive_patches") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exclusive_patches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#severities: {
+                        let field_value = match fields_map.get("severities") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'severities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#with_optional: {
+                        let field_value = match fields_map.get("with_optional") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'with_optional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#with_update: {
+                        let field_value = match fields_map.get("with_update") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'with_update' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

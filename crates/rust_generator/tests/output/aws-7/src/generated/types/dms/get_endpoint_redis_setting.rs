@@ -25,3 +25,148 @@ pub struct GetEndpointRedisSetting {
     #[serde(rename = "sslSecurityProtocol")]
     pub r#ssl_security_protocol: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetEndpointRedisSetting {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "auth_password".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auth_password,
+                )
+                .await,
+            );
+            map.insert(
+                "auth_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auth_type,
+                )
+                .await,
+            );
+            map.insert(
+                "auth_user_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auth_user_name,
+                )
+                .await,
+            );
+            map.insert(
+                "port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#port,
+                )
+                .await,
+            );
+            map.insert(
+                "server_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#server_name,
+                )
+                .await,
+            );
+            map.insert(
+                "ssl_ca_certificate_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ssl_ca_certificate_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "ssl_security_protocol".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ssl_security_protocol,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetEndpointRedisSetting {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#auth_password: {
+                        let field_value = match fields_map.get("auth_password") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auth_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#auth_type: {
+                        let field_value = match fields_map.get("auth_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auth_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#auth_user_name: {
+                        let field_value = match fields_map.get("auth_user_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auth_user_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#port: {
+                        let field_value = match fields_map.get("port") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#server_name: {
+                        let field_value = match fields_map.get("server_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'server_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ssl_ca_certificate_arn: {
+                        let field_value = match fields_map.get("ssl_ca_certificate_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ssl_ca_certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ssl_security_protocol: {
+                        let field_value = match fields_map.get("ssl_security_protocol") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ssl_security_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

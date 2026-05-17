@@ -19,3 +19,106 @@ pub struct GetFirewallFirewallStatus {
     #[serde(rename = "syncStates")]
     pub r#sync_states: Vec<super::super::types::networkfirewall::GetFirewallFirewallStatusSyncState>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetFirewallFirewallStatus {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "capacity_usage_summaries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#capacity_usage_summaries,
+                )
+                .await,
+            );
+            map.insert(
+                "configuration_sync_state_summary".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#configuration_sync_state_summary,
+                )
+                .await,
+            );
+            map.insert(
+                "status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#status,
+                )
+                .await,
+            );
+            map.insert(
+                "sync_states".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sync_states,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetFirewallFirewallStatus {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#capacity_usage_summaries: {
+                        let field_value = match fields_map.get("capacity_usage_summaries") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'capacity_usage_summaries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#configuration_sync_state_summary: {
+                        let field_value = match fields_map.get("configuration_sync_state_summary") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'configuration_sync_state_summary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#status: {
+                        let field_value = match fields_map.get("status") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sync_states: {
+                        let field_value = match fields_map.get("sync_states") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sync_states' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

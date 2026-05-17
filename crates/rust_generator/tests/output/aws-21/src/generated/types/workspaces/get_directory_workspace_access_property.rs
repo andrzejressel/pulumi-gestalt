@@ -36,3 +36,162 @@ pub struct GetDirectoryWorkspaceAccessProperty {
     #[serde(rename = "deviceTypeZeroclient")]
     pub r#device_type_zeroclient: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetDirectoryWorkspaceAccessProperty {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "device_type_android".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_type_android,
+                )
+                .await,
+            );
+            map.insert(
+                "device_type_chromeos".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_type_chromeos,
+                )
+                .await,
+            );
+            map.insert(
+                "device_type_ios".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_type_ios,
+                )
+                .await,
+            );
+            map.insert(
+                "device_type_linux".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_type_linux,
+                )
+                .await,
+            );
+            map.insert(
+                "device_type_osx".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_type_osx,
+                )
+                .await,
+            );
+            map.insert(
+                "device_type_web".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_type_web,
+                )
+                .await,
+            );
+            map.insert(
+                "device_type_windows".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_type_windows,
+                )
+                .await,
+            );
+            map.insert(
+                "device_type_zeroclient".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#device_type_zeroclient,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDirectoryWorkspaceAccessProperty {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#device_type_android: {
+                        let field_value = match fields_map.get("device_type_android") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_type_android' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#device_type_chromeos: {
+                        let field_value = match fields_map.get("device_type_chromeos") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_type_chromeos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#device_type_ios: {
+                        let field_value = match fields_map.get("device_type_ios") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_type_ios' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#device_type_linux: {
+                        let field_value = match fields_map.get("device_type_linux") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_type_linux' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#device_type_osx: {
+                        let field_value = match fields_map.get("device_type_osx") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_type_osx' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#device_type_web: {
+                        let field_value = match fields_map.get("device_type_web") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_type_web' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#device_type_windows: {
+                        let field_value = match fields_map.get("device_type_windows") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_type_windows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#device_type_zeroclient: {
+                        let field_value = match fields_map.get("device_type_zeroclient") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'device_type_zeroclient' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

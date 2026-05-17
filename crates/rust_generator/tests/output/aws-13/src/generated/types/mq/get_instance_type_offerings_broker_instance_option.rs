@@ -28,3 +28,134 @@ pub struct GetInstanceTypeOfferingsBrokerInstanceOption {
     #[serde(rename = "supportedEngineVersions")]
     pub r#supported_engine_versions: Vec<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetInstanceTypeOfferingsBrokerInstanceOption {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "availability_zones".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#availability_zones,
+                )
+                .await,
+            );
+            map.insert(
+                "engine_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#engine_type,
+                )
+                .await,
+            );
+            map.insert(
+                "host_instance_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#host_instance_type,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_type,
+                )
+                .await,
+            );
+            map.insert(
+                "supported_deployment_modes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#supported_deployment_modes,
+                )
+                .await,
+            );
+            map.insert(
+                "supported_engine_versions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#supported_engine_versions,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetInstanceTypeOfferingsBrokerInstanceOption {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#availability_zones: {
+                        let field_value = match fields_map.get("availability_zones") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'availability_zones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#engine_type: {
+                        let field_value = match fields_map.get("engine_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'engine_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#host_instance_type: {
+                        let field_value = match fields_map.get("host_instance_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'host_instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_type: {
+                        let field_value = match fields_map.get("storage_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#supported_deployment_modes: {
+                        let field_value = match fields_map.get("supported_deployment_modes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'supported_deployment_modes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#supported_engine_versions: {
+                        let field_value = match fields_map.get("supported_engine_versions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'supported_engine_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

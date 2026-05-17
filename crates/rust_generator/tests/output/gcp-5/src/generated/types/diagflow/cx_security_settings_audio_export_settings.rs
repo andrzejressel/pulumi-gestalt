@@ -24,3 +24,106 @@ pub struct CxSecuritySettingsAudioExportSettings {
     #[serde(rename = "gcsBucket")]
     pub r#gcs_bucket: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxSecuritySettingsAudioExportSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "audio_export_pattern".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audio_export_pattern,
+                )
+                .await,
+            );
+            map.insert(
+                "audio_format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audio_format,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_audio_redaction".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_audio_redaction,
+                )
+                .await,
+            );
+            map.insert(
+                "gcs_bucket".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gcs_bucket,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for CxSecuritySettingsAudioExportSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#audio_export_pattern: {
+                        let field_value = match fields_map.get("audio_export_pattern") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'audio_export_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#audio_format: {
+                        let field_value = match fields_map.get("audio_format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'audio_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_audio_redaction: {
+                        let field_value = match fields_map.get("enable_audio_redaction") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_audio_redaction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gcs_bucket: {
+                        let field_value = match fields_map.get("gcs_bucket") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gcs_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

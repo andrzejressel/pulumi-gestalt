@@ -28,3 +28,134 @@ pub struct LoadBalancerSessionAffinityAttribute {
     #[serde(rename = "zeroDowntimeFailover")]
     pub r#zero_downtime_failover: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LoadBalancerSessionAffinityAttribute {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "drain_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#drain_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#headers,
+                )
+                .await,
+            );
+            map.insert(
+                "require_all_headers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#require_all_headers,
+                )
+                .await,
+            );
+            map.insert(
+                "samesite".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#samesite,
+                )
+                .await,
+            );
+            map.insert(
+                "secure".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secure,
+                )
+                .await,
+            );
+            map.insert(
+                "zero_downtime_failover".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#zero_downtime_failover,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for LoadBalancerSessionAffinityAttribute {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#drain_duration: {
+                        let field_value = match fields_map.get("drain_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'drain_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#headers: {
+                        let field_value = match fields_map.get("headers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#require_all_headers: {
+                        let field_value = match fields_map.get("require_all_headers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'require_all_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#samesite: {
+                        let field_value = match fields_map.get("samesite") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'samesite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secure: {
+                        let field_value = match fields_map.get("secure") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#zero_downtime_failover: {
+                        let field_value = match fields_map.get("zero_downtime_failover") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'zero_downtime_failover' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

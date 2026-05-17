@@ -39,3 +39,176 @@ pub struct GetConnectorAs2Config {
     #[serde(rename = "singingAlgorithm")]
     pub r#singing_algorithm: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetConnectorAs2Config {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "basic_auth_secret_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#basic_auth_secret_id,
+                )
+                .await,
+            );
+            map.insert(
+                "compression".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compression,
+                )
+                .await,
+            );
+            map.insert(
+                "encryption_algorithm".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#encryption_algorithm,
+                )
+                .await,
+            );
+            map.insert(
+                "local_profile_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#local_profile_id,
+                )
+                .await,
+            );
+            map.insert(
+                "mdn_response".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mdn_response,
+                )
+                .await,
+            );
+            map.insert(
+                "mdn_signing_algorithm".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mdn_signing_algorithm,
+                )
+                .await,
+            );
+            map.insert(
+                "message_subject".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#message_subject,
+                )
+                .await,
+            );
+            map.insert(
+                "partner_profile_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#partner_profile_id,
+                )
+                .await,
+            );
+            map.insert(
+                "singing_algorithm".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#singing_algorithm,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetConnectorAs2Config {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#basic_auth_secret_id: {
+                        let field_value = match fields_map.get("basic_auth_secret_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'basic_auth_secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#compression: {
+                        let field_value = match fields_map.get("compression") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'compression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#encryption_algorithm: {
+                        let field_value = match fields_map.get("encryption_algorithm") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'encryption_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#local_profile_id: {
+                        let field_value = match fields_map.get("local_profile_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'local_profile_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mdn_response: {
+                        let field_value = match fields_map.get("mdn_response") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mdn_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mdn_signing_algorithm: {
+                        let field_value = match fields_map.get("mdn_signing_algorithm") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mdn_signing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#message_subject: {
+                        let field_value = match fields_map.get("message_subject") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'message_subject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#partner_profile_id: {
+                        let field_value = match fields_map.get("partner_profile_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'partner_profile_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#singing_algorithm: {
+                        let field_value = match fields_map.get("singing_algorithm") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'singing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

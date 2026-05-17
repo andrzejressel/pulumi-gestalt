@@ -33,3 +33,148 @@ pub struct GatewaySmbActiveDirectorySettings {
     #[serde(rename = "username")]
     pub r#username: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GatewaySmbActiveDirectorySettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "active_directory_status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#active_directory_status,
+                )
+                .await,
+            );
+            map.insert(
+                "domain_controllers".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#domain_controllers,
+                )
+                .await,
+            );
+            map.insert(
+                "domain_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#domain_name,
+                )
+                .await,
+            );
+            map.insert(
+                "organizational_unit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#organizational_unit,
+                )
+                .await,
+            );
+            map.insert(
+                "password".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#password,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "username".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#username,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GatewaySmbActiveDirectorySettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#active_directory_status: {
+                        let field_value = match fields_map.get("active_directory_status") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'active_directory_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#domain_controllers: {
+                        let field_value = match fields_map.get("domain_controllers") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'domain_controllers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#domain_name: {
+                        let field_value = match fields_map.get("domain_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#organizational_unit: {
+                        let field_value = match fields_map.get("organizational_unit") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'organizational_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#password: {
+                        let field_value = match fields_map.get("password") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timeout_in_seconds: {
+                        let field_value = match fields_map.get("timeout_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#username: {
+                        let field_value = match fields_map.get("username") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

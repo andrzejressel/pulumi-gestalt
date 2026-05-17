@@ -24,3 +24,120 @@ pub struct GetCertificateCertificatePolicyX509CertificateProperty {
     #[serde(rename = "validityInMonths")]
     pub r#validity_in_months: i32,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetCertificateCertificatePolicyX509CertificateProperty {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "extended_key_usages".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#extended_key_usages,
+                )
+                .await,
+            );
+            map.insert(
+                "key_usages".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key_usages,
+                )
+                .await,
+            );
+            map.insert(
+                "subject".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subject,
+                )
+                .await,
+            );
+            map.insert(
+                "subject_alternative_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#subject_alternative_names,
+                )
+                .await,
+            );
+            map.insert(
+                "validity_in_months".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#validity_in_months,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetCertificateCertificatePolicyX509CertificateProperty {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#extended_key_usages: {
+                        let field_value = match fields_map.get("extended_key_usages") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'extended_key_usages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#key_usages: {
+                        let field_value = match fields_map.get("key_usages") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'key_usages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#subject: {
+                        let field_value = match fields_map.get("subject") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'subject' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#subject_alternative_names: {
+                        let field_value = match fields_map.get("subject_alternative_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'subject_alternative_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#validity_in_months: {
+                        let field_value = match fields_map.get("validity_in_months") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'validity_in_months' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -28,3 +28,134 @@ pub struct RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessR
     #[serde(rename = "tcpFlags")]
     pub r#tcp_flags: Option<Vec<super::super::types::networkfirewall::RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesTcpFlag>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributes {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "destination_ports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_ports,
+                )
+                .await,
+            );
+            map.insert(
+                "destinations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destinations,
+                )
+                .await,
+            );
+            map.insert(
+                "protocols".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#protocols,
+                )
+                .await,
+            );
+            map.insert(
+                "source_ports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_ports,
+                )
+                .await,
+            );
+            map.insert(
+                "sources".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sources,
+                )
+                .await,
+            );
+            map.insert(
+                "tcp_flags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tcp_flags,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributes {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#destination_ports: {
+                        let field_value = match fields_map.get("destination_ports") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'destination_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#destinations: {
+                        let field_value = match fields_map.get("destinations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'destinations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#protocols: {
+                        let field_value = match fields_map.get("protocols") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'protocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_ports: {
+                        let field_value = match fields_map.get("source_ports") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sources: {
+                        let field_value = match fields_map.get("sources") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tcp_flags: {
+                        let field_value = match fields_map.get("tcp_flags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tcp_flags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

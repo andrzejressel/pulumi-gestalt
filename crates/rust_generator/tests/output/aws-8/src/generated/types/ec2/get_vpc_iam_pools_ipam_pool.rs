@@ -73,3 +73,302 @@ pub struct GetVpcIamPoolsIpamPool {
     #[serde(rename = "tags")]
     pub r#tags: std::collections::HashMap<String, String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetVpcIamPoolsIpamPool {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "address_family".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#address_family,
+                )
+                .await,
+            );
+            map.insert(
+                "allocation_default_netmask_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allocation_default_netmask_length,
+                )
+                .await,
+            );
+            map.insert(
+                "allocation_max_netmask_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allocation_max_netmask_length,
+                )
+                .await,
+            );
+            map.insert(
+                "allocation_min_netmask_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allocation_min_netmask_length,
+                )
+                .await,
+            );
+            map.insert(
+                "allocation_resource_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allocation_resource_tags,
+                )
+                .await,
+            );
+            map.insert(
+                "arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#arn,
+                )
+                .await,
+            );
+            map.insert(
+                "auto_import".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_import,
+                )
+                .await,
+            );
+            map.insert(
+                "aws_service".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aws_service,
+                )
+                .await,
+            );
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "ipam_scope_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ipam_scope_id,
+                )
+                .await,
+            );
+            map.insert(
+                "ipam_scope_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ipam_scope_type,
+                )
+                .await,
+            );
+            map.insert(
+                "locale".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#locale,
+                )
+                .await,
+            );
+            map.insert(
+                "pool_depth".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pool_depth,
+                )
+                .await,
+            );
+            map.insert(
+                "publicly_advertisable".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#publicly_advertisable,
+                )
+                .await,
+            );
+            map.insert(
+                "source_ipam_pool_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_ipam_pool_id,
+                )
+                .await,
+            );
+            map.insert(
+                "state".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#state,
+                )
+                .await,
+            );
+            map.insert(
+                "tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tags,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetVpcIamPoolsIpamPool {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#address_family: {
+                        let field_value = match fields_map.get("address_family") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'address_family' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allocation_default_netmask_length: {
+                        let field_value = match fields_map.get("allocation_default_netmask_length") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allocation_default_netmask_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allocation_max_netmask_length: {
+                        let field_value = match fields_map.get("allocation_max_netmask_length") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allocation_max_netmask_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allocation_min_netmask_length: {
+                        let field_value = match fields_map.get("allocation_min_netmask_length") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allocation_min_netmask_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allocation_resource_tags: {
+                        let field_value = match fields_map.get("allocation_resource_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allocation_resource_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#arn: {
+                        let field_value = match fields_map.get("arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#auto_import: {
+                        let field_value = match fields_map.get("auto_import") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auto_import' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#aws_service: {
+                        let field_value = match fields_map.get("aws_service") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aws_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#description: {
+                        let field_value = match fields_map.get("description") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#id: {
+                        let field_value = match fields_map.get("id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ipam_scope_id: {
+                        let field_value = match fields_map.get("ipam_scope_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ipam_scope_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ipam_scope_type: {
+                        let field_value = match fields_map.get("ipam_scope_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ipam_scope_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#locale: {
+                        let field_value = match fields_map.get("locale") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'locale' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pool_depth: {
+                        let field_value = match fields_map.get("pool_depth") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pool_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#publicly_advertisable: {
+                        let field_value = match fields_map.get("publicly_advertisable") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'publicly_advertisable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_ipam_pool_id: {
+                        let field_value = match fields_map.get("source_ipam_pool_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_ipam_pool_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#state: {
+                        let field_value = match fields_map.get("state") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tags: {
+                        let field_value = match fields_map.get("tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

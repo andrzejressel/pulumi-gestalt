@@ -24,3 +24,120 @@ pub struct EnvironmentConfigWorkloadsConfig {
     #[serde(rename = "worker")]
     pub r#worker: Option<Box<super::super::types::composer::EnvironmentConfigWorkloadsConfigWorker>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EnvironmentConfigWorkloadsConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "dag_processor".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dag_processor,
+                )
+                .await,
+            );
+            map.insert(
+                "scheduler".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scheduler,
+                )
+                .await,
+            );
+            map.insert(
+                "triggerer".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#triggerer,
+                )
+                .await,
+            );
+            map.insert(
+                "web_server".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#web_server,
+                )
+                .await,
+            );
+            map.insert(
+                "worker".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#worker,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EnvironmentConfigWorkloadsConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#dag_processor: {
+                        let field_value = match fields_map.get("dag_processor") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dag_processor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scheduler: {
+                        let field_value = match fields_map.get("scheduler") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scheduler' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#triggerer: {
+                        let field_value = match fields_map.get("triggerer") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'triggerer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#web_server: {
+                        let field_value = match fields_map.get("web_server") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'web_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#worker: {
+                        let field_value = match fields_map.get("worker") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'worker' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -32,3 +32,148 @@ pub struct NetworkAttachedDataNetworkNetworkAddressPortTranslation {
     #[serde(rename = "udpPortReuseMinimumHoldTimeInSeconds")]
     pub r#udp_port_reuse_minimum_hold_time_in_seconds: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for NetworkAttachedDataNetworkNetworkAddressPortTranslation {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "icmp_pinhole_timeout_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#icmp_pinhole_timeout_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "pinhole_maximum_number".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pinhole_maximum_number,
+                )
+                .await,
+            );
+            map.insert(
+                "port_range".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#port_range,
+                )
+                .await,
+            );
+            map.insert(
+                "tcp_pinhole_timeout_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tcp_pinhole_timeout_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "tcp_port_reuse_minimum_hold_time_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tcp_port_reuse_minimum_hold_time_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "udp_pinhole_timeout_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#udp_pinhole_timeout_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "udp_port_reuse_minimum_hold_time_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#udp_port_reuse_minimum_hold_time_in_seconds,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for NetworkAttachedDataNetworkNetworkAddressPortTranslation {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#icmp_pinhole_timeout_in_seconds: {
+                        let field_value = match fields_map.get("icmp_pinhole_timeout_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'icmp_pinhole_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pinhole_maximum_number: {
+                        let field_value = match fields_map.get("pinhole_maximum_number") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pinhole_maximum_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#port_range: {
+                        let field_value = match fields_map.get("port_range") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'port_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tcp_pinhole_timeout_in_seconds: {
+                        let field_value = match fields_map.get("tcp_pinhole_timeout_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tcp_pinhole_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tcp_port_reuse_minimum_hold_time_in_seconds: {
+                        let field_value = match fields_map.get("tcp_port_reuse_minimum_hold_time_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tcp_port_reuse_minimum_hold_time_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#udp_pinhole_timeout_in_seconds: {
+                        let field_value = match fields_map.get("udp_pinhole_timeout_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'udp_pinhole_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#udp_port_reuse_minimum_hold_time_in_seconds: {
+                        let field_value = match fields_map.get("udp_port_reuse_minimum_hold_time_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'udp_port_reuse_minimum_hold_time_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

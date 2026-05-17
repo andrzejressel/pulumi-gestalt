@@ -24,3 +24,120 @@ pub struct PipeTargetParametersEventbridgeEventBusParameters {
     #[serde(rename = "time")]
     pub r#time: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PipeTargetParametersEventbridgeEventBusParameters {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "detail_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#detail_type,
+                )
+                .await,
+            );
+            map.insert(
+                "endpoint_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#endpoint_id,
+                )
+                .await,
+            );
+            map.insert(
+                "resources".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resources,
+                )
+                .await,
+            );
+            map.insert(
+                "source".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source,
+                )
+                .await,
+            );
+            map.insert(
+                "time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#time,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PipeTargetParametersEventbridgeEventBusParameters {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#detail_type: {
+                        let field_value = match fields_map.get("detail_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'detail_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#endpoint_id: {
+                        let field_value = match fields_map.get("endpoint_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'endpoint_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resources: {
+                        let field_value = match fields_map.get("resources") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source: {
+                        let field_value = match fields_map.get("source") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#time: {
+                        let field_value = match fields_map.get("time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

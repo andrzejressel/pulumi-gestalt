@@ -32,3 +32,148 @@ pub struct DataSetLogicalTableMapDataTransform {
     #[serde(rename = "untagColumnOperation")]
     pub r#untag_column_operation: Option<Box<super::super::types::quicksight::DataSetLogicalTableMapDataTransformUntagColumnOperation>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataSetLogicalTableMapDataTransform {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cast_column_type_operation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cast_column_type_operation,
+                )
+                .await,
+            );
+            map.insert(
+                "create_columns_operation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#create_columns_operation,
+                )
+                .await,
+            );
+            map.insert(
+                "filter_operation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filter_operation,
+                )
+                .await,
+            );
+            map.insert(
+                "project_operation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#project_operation,
+                )
+                .await,
+            );
+            map.insert(
+                "rename_column_operation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rename_column_operation,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_column_operation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_column_operation,
+                )
+                .await,
+            );
+            map.insert(
+                "untag_column_operation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#untag_column_operation,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataSetLogicalTableMapDataTransform {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cast_column_type_operation: {
+                        let field_value = match fields_map.get("cast_column_type_operation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cast_column_type_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#create_columns_operation: {
+                        let field_value = match fields_map.get("create_columns_operation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'create_columns_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#filter_operation: {
+                        let field_value = match fields_map.get("filter_operation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'filter_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#project_operation: {
+                        let field_value = match fields_map.get("project_operation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'project_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rename_column_operation: {
+                        let field_value = match fields_map.get("rename_column_operation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rename_column_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tag_column_operation: {
+                        let field_value = match fields_map.get("tag_column_operation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tag_column_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#untag_column_operation: {
+                        let field_value = match fields_map.get("untag_column_operation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'untag_column_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

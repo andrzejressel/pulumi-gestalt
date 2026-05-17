@@ -24,3 +24,120 @@ pub struct ConfigurationBackup {
     #[serde(rename = "timeZone")]
     pub r#time_zone: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ConfigurationBackup {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "instant_rp_retention_range_in_days".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#instant_rp_retention_range_in_days,
+                )
+                .await,
+            );
+            map.insert(
+                "policy_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#policy_name,
+                )
+                .await,
+            );
+            map.insert(
+                "retention_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#retention_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "schedule_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#schedule_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "time_zone".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#time_zone,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ConfigurationBackup {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#instant_rp_retention_range_in_days: {
+                        let field_value = match fields_map.get("instant_rp_retention_range_in_days") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'instant_rp_retention_range_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#policy_name: {
+                        let field_value = match fields_map.get("policy_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'policy_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#retention_policy: {
+                        let field_value = match fields_map.get("retention_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'retention_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#schedule_policy: {
+                        let field_value = match fields_map.get("schedule_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'schedule_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#time_zone: {
+                        let field_value = match fields_map.get("time_zone") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'time_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

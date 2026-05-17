@@ -18,3 +18,92 @@ pub struct JobQueryScriptOptions {
     #[serde(rename = "statementTimeoutMs")]
     pub r#statement_timeout_ms: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobQueryScriptOptions {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "key_result_statement".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#key_result_statement,
+                )
+                .await,
+            );
+            map.insert(
+                "statement_byte_budget".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#statement_byte_budget,
+                )
+                .await,
+            );
+            map.insert(
+                "statement_timeout_ms".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#statement_timeout_ms,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for JobQueryScriptOptions {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#key_result_statement: {
+                        let field_value = match fields_map.get("key_result_statement") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'key_result_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#statement_byte_budget: {
+                        let field_value = match fields_map.get("statement_byte_budget") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'statement_byte_budget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#statement_timeout_ms: {
+                        let field_value = match fields_map.get("statement_timeout_ms") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'statement_timeout_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

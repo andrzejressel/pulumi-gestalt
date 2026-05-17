@@ -28,3 +28,134 @@ pub struct EndpointMongodbSettings {
     #[serde(rename = "nestingLevel")]
     pub r#nesting_level: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EndpointMongodbSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "auth_mechanism".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auth_mechanism,
+                )
+                .await,
+            );
+            map.insert(
+                "auth_source".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auth_source,
+                )
+                .await,
+            );
+            map.insert(
+                "auth_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auth_type,
+                )
+                .await,
+            );
+            map.insert(
+                "docs_to_investigate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#docs_to_investigate,
+                )
+                .await,
+            );
+            map.insert(
+                "extract_doc_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#extract_doc_id,
+                )
+                .await,
+            );
+            map.insert(
+                "nesting_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#nesting_level,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EndpointMongodbSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#auth_mechanism: {
+                        let field_value = match fields_map.get("auth_mechanism") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auth_mechanism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#auth_source: {
+                        let field_value = match fields_map.get("auth_source") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auth_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#auth_type: {
+                        let field_value = match fields_map.get("auth_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auth_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#docs_to_investigate: {
+                        let field_value = match fields_map.get("docs_to_investigate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'docs_to_investigate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#extract_doc_id: {
+                        let field_value = match fields_map.get("extract_doc_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'extract_doc_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#nesting_level: {
+                        let field_value = match fields_map.get("nesting_level") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'nesting_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

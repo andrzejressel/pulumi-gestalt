@@ -39,3 +39,162 @@ pub struct RepositoryReleaseConfigCodeCompilationConfig {
     #[serde(rename = "vars")]
     pub r#vars: Option<std::collections::HashMap<String, String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RepositoryReleaseConfigCodeCompilationConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "assertion_schema".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#assertion_schema,
+                )
+                .await,
+            );
+            map.insert(
+                "database_suffix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#database_suffix,
+                )
+                .await,
+            );
+            map.insert(
+                "default_database".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_database,
+                )
+                .await,
+            );
+            map.insert(
+                "default_location".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_location,
+                )
+                .await,
+            );
+            map.insert(
+                "default_schema".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_schema,
+                )
+                .await,
+            );
+            map.insert(
+                "schema_suffix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#schema_suffix,
+                )
+                .await,
+            );
+            map.insert(
+                "table_prefix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#table_prefix,
+                )
+                .await,
+            );
+            map.insert(
+                "vars".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vars,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RepositoryReleaseConfigCodeCompilationConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#assertion_schema: {
+                        let field_value = match fields_map.get("assertion_schema") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'assertion_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#database_suffix: {
+                        let field_value = match fields_map.get("database_suffix") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'database_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_database: {
+                        let field_value = match fields_map.get("default_database") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_database' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_location: {
+                        let field_value = match fields_map.get("default_location") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_schema: {
+                        let field_value = match fields_map.get("default_schema") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#schema_suffix: {
+                        let field_value = match fields_map.get("schema_suffix") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'schema_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#table_prefix: {
+                        let field_value = match fields_map.get("table_prefix") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'table_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vars: {
+                        let field_value = match fields_map.get("vars") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vars' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

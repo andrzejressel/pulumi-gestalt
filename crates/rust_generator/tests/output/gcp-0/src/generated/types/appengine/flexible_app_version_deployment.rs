@@ -25,3 +25,106 @@ pub struct FlexibleAppVersionDeployment {
     #[serde(rename = "zip")]
     pub r#zip: Option<Box<super::super::types::appengine::FlexibleAppVersionDeploymentZip>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FlexibleAppVersionDeployment {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloud_build_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloud_build_options,
+                )
+                .await,
+            );
+            map.insert(
+                "container".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#container,
+                )
+                .await,
+            );
+            map.insert(
+                "files".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#files,
+                )
+                .await,
+            );
+            map.insert(
+                "zip".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#zip,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FlexibleAppVersionDeployment {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cloud_build_options: {
+                        let field_value = match fields_map.get("cloud_build_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloud_build_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#container: {
+                        let field_value = match fields_map.get("container") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'container' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#files: {
+                        let field_value = match fields_map.get("files") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#zip: {
+                        let field_value = match fields_map.get("zip") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'zip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -28,3 +28,134 @@ pub struct IntegrationRuntimeSsisCatalogInfo {
     #[serde(rename = "serverEndpoint")]
     pub r#server_endpoint: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IntegrationRuntimeSsisCatalogInfo {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "administrator_login".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#administrator_login,
+                )
+                .await,
+            );
+            map.insert(
+                "administrator_password".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#administrator_password,
+                )
+                .await,
+            );
+            map.insert(
+                "dual_standby_pair_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dual_standby_pair_name,
+                )
+                .await,
+            );
+            map.insert(
+                "elastic_pool_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#elastic_pool_name,
+                )
+                .await,
+            );
+            map.insert(
+                "pricing_tier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pricing_tier,
+                )
+                .await,
+            );
+            map.insert(
+                "server_endpoint".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#server_endpoint,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for IntegrationRuntimeSsisCatalogInfo {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#administrator_login: {
+                        let field_value = match fields_map.get("administrator_login") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'administrator_login' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#administrator_password: {
+                        let field_value = match fields_map.get("administrator_password") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'administrator_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dual_standby_pair_name: {
+                        let field_value = match fields_map.get("dual_standby_pair_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dual_standby_pair_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#elastic_pool_name: {
+                        let field_value = match fields_map.get("elastic_pool_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'elastic_pool_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pricing_tier: {
+                        let field_value = match fields_map.get("pricing_tier") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pricing_tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#server_endpoint: {
+                        let field_value = match fields_map.get("server_endpoint") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'server_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

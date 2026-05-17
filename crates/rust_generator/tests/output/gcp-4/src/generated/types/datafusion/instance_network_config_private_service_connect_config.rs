@@ -23,3 +23,92 @@ pub struct InstanceNetworkConfigPrivateServiceConnectConfig {
     #[serde(rename = "unreachableCidrBlock")]
     pub r#unreachable_cidr_block: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for InstanceNetworkConfigPrivateServiceConnectConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "effective_unreachable_cidr_block".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#effective_unreachable_cidr_block,
+                )
+                .await,
+            );
+            map.insert(
+                "network_attachment".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network_attachment,
+                )
+                .await,
+            );
+            map.insert(
+                "unreachable_cidr_block".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#unreachable_cidr_block,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for InstanceNetworkConfigPrivateServiceConnectConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#effective_unreachable_cidr_block: {
+                        let field_value = match fields_map.get("effective_unreachable_cidr_block") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'effective_unreachable_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network_attachment: {
+                        let field_value = match fields_map.get("network_attachment") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network_attachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#unreachable_cidr_block: {
+                        let field_value = match fields_map.get("unreachable_cidr_block") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'unreachable_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

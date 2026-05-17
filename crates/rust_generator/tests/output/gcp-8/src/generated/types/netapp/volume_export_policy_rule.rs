@@ -49,3 +49,204 @@ pub struct VolumeExportPolicyRule {
     #[serde(rename = "nfsv4")]
     pub r#nfsv_4: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VolumeExportPolicyRule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "access_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#access_type,
+                )
+                .await,
+            );
+            map.insert(
+                "allowed_clients".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed_clients,
+                )
+                .await,
+            );
+            map.insert(
+                "has_root_access".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#has_root_access,
+                )
+                .await,
+            );
+            map.insert(
+                "kerberos_5_read_only".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kerberos_5_read_only,
+                )
+                .await,
+            );
+            map.insert(
+                "kerberos_5_read_write".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kerberos_5_read_write,
+                )
+                .await,
+            );
+            map.insert(
+                "kerberos_5_i_read_only".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kerberos_5_i_read_only,
+                )
+                .await,
+            );
+            map.insert(
+                "kerberos_5_i_read_write".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kerberos_5_i_read_write,
+                )
+                .await,
+            );
+            map.insert(
+                "kerberos_5_p_read_only".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kerberos_5_p_read_only,
+                )
+                .await,
+            );
+            map.insert(
+                "kerberos_5_p_read_write".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kerberos_5_p_read_write,
+                )
+                .await,
+            );
+            map.insert(
+                "nfsv_3".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#nfsv_3,
+                )
+                .await,
+            );
+            map.insert(
+                "nfsv_4".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#nfsv_4,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for VolumeExportPolicyRule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#access_type: {
+                        let field_value = match fields_map.get("access_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'access_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allowed_clients: {
+                        let field_value = match fields_map.get("allowed_clients") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allowed_clients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#has_root_access: {
+                        let field_value = match fields_map.get("has_root_access") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'has_root_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kerberos_5_read_only: {
+                        let field_value = match fields_map.get("kerberos_5_read_only") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kerberos_5_read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kerberos_5_read_write: {
+                        let field_value = match fields_map.get("kerberos_5_read_write") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kerberos_5_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kerberos_5_i_read_only: {
+                        let field_value = match fields_map.get("kerberos_5_i_read_only") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kerberos_5_i_read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kerberos_5_i_read_write: {
+                        let field_value = match fields_map.get("kerberos_5_i_read_write") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kerberos_5_i_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kerberos_5_p_read_only: {
+                        let field_value = match fields_map.get("kerberos_5_p_read_only") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kerberos_5_p_read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kerberos_5_p_read_write: {
+                        let field_value = match fields_map.get("kerberos_5_p_read_write") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kerberos_5_p_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#nfsv_3: {
+                        let field_value = match fields_map.get("nfsv_3") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'nfsv_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#nfsv_4: {
+                        let field_value = match fields_map.get("nfsv_4") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'nfsv_4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -66,3 +66,260 @@ pub struct GetImageApplication {
     #[serde(rename = "workingDirectory")]
     pub r#working_directory: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetImageApplication {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "app_block_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#app_block_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#arn,
+                )
+                .await,
+            );
+            map.insert(
+                "created_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#created_time,
+                )
+                .await,
+            );
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "display_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#display_name,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "icon_s_3_locations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#icon_s_3_locations,
+                )
+                .await,
+            );
+            map.insert(
+                "icon_url".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#icon_url,
+                )
+                .await,
+            );
+            map.insert(
+                "instance_families".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#instance_families,
+                )
+                .await,
+            );
+            map.insert(
+                "launch_parameters".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#launch_parameters,
+                )
+                .await,
+            );
+            map.insert(
+                "launch_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#launch_path,
+                )
+                .await,
+            );
+            map.insert(
+                "metadata".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metadata,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "platforms".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#platforms,
+                )
+                .await,
+            );
+            map.insert(
+                "working_directory".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#working_directory,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetImageApplication {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#app_block_arn: {
+                        let field_value = match fields_map.get("app_block_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'app_block_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#arn: {
+                        let field_value = match fields_map.get("arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#created_time: {
+                        let field_value = match fields_map.get("created_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'created_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#description: {
+                        let field_value = match fields_map.get("description") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#display_name: {
+                        let field_value = match fields_map.get("display_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#icon_s_3_locations: {
+                        let field_value = match fields_map.get("icon_s_3_locations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'icon_s_3_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#icon_url: {
+                        let field_value = match fields_map.get("icon_url") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'icon_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#instance_families: {
+                        let field_value = match fields_map.get("instance_families") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'instance_families' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#launch_parameters: {
+                        let field_value = match fields_map.get("launch_parameters") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'launch_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#launch_path: {
+                        let field_value = match fields_map.get("launch_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'launch_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metadata: {
+                        let field_value = match fields_map.get("metadata") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#platforms: {
+                        let field_value = match fields_map.get("platforms") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'platforms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#working_directory: {
+                        let field_value = match fields_map.get("working_directory") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'working_directory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

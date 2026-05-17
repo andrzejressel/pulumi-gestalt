@@ -70,3 +70,274 @@ pub struct ApplicationGatewayHttpListener {
     #[serde(rename = "sslProfileName")]
     pub r#ssl_profile_name: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ApplicationGatewayHttpListener {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "custom_error_configurations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_error_configurations,
+                )
+                .await,
+            );
+            map.insert(
+                "firewall_policy_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#firewall_policy_id,
+                )
+                .await,
+            );
+            map.insert(
+                "frontend_ip_configuration_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#frontend_ip_configuration_id,
+                )
+                .await,
+            );
+            map.insert(
+                "frontend_ip_configuration_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#frontend_ip_configuration_name,
+                )
+                .await,
+            );
+            map.insert(
+                "frontend_port_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#frontend_port_id,
+                )
+                .await,
+            );
+            map.insert(
+                "frontend_port_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#frontend_port_name,
+                )
+                .await,
+            );
+            map.insert(
+                "host_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#host_name,
+                )
+                .await,
+            );
+            map.insert(
+                "host_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#host_names,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "protocol".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#protocol,
+                )
+                .await,
+            );
+            map.insert(
+                "require_sni".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#require_sni,
+                )
+                .await,
+            );
+            map.insert(
+                "ssl_certificate_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ssl_certificate_id,
+                )
+                .await,
+            );
+            map.insert(
+                "ssl_certificate_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ssl_certificate_name,
+                )
+                .await,
+            );
+            map.insert(
+                "ssl_profile_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ssl_profile_id,
+                )
+                .await,
+            );
+            map.insert(
+                "ssl_profile_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ssl_profile_name,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ApplicationGatewayHttpListener {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#custom_error_configurations: {
+                        let field_value = match fields_map.get("custom_error_configurations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_error_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#firewall_policy_id: {
+                        let field_value = match fields_map.get("firewall_policy_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'firewall_policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#frontend_ip_configuration_id: {
+                        let field_value = match fields_map.get("frontend_ip_configuration_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'frontend_ip_configuration_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#frontend_ip_configuration_name: {
+                        let field_value = match fields_map.get("frontend_ip_configuration_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'frontend_ip_configuration_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#frontend_port_id: {
+                        let field_value = match fields_map.get("frontend_port_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'frontend_port_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#frontend_port_name: {
+                        let field_value = match fields_map.get("frontend_port_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'frontend_port_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#host_name: {
+                        let field_value = match fields_map.get("host_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'host_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#host_names: {
+                        let field_value = match fields_map.get("host_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'host_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#id: {
+                        let field_value = match fields_map.get("id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#protocol: {
+                        let field_value = match fields_map.get("protocol") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#require_sni: {
+                        let field_value = match fields_map.get("require_sni") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'require_sni' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ssl_certificate_id: {
+                        let field_value = match fields_map.get("ssl_certificate_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ssl_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ssl_certificate_name: {
+                        let field_value = match fields_map.get("ssl_certificate_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ssl_certificate_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ssl_profile_id: {
+                        let field_value = match fields_map.get("ssl_profile_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ssl_profile_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ssl_profile_name: {
+                        let field_value = match fields_map.get("ssl_profile_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ssl_profile_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

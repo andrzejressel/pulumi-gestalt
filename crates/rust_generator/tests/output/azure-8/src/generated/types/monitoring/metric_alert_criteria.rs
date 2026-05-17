@@ -32,3 +32,148 @@ pub struct MetricAlertCriteria {
     #[serde(rename = "threshold")]
     pub r#threshold: f64,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for MetricAlertCriteria {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "aggregation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aggregation,
+                )
+                .await,
+            );
+            map.insert(
+                "dimensions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dimensions,
+                )
+                .await,
+            );
+            map.insert(
+                "metric_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_name,
+                )
+                .await,
+            );
+            map.insert(
+                "metric_namespace".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_namespace,
+                )
+                .await,
+            );
+            map.insert(
+                "operator".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#operator,
+                )
+                .await,
+            );
+            map.insert(
+                "skip_metric_validation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#skip_metric_validation,
+                )
+                .await,
+            );
+            map.insert(
+                "threshold".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#threshold,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for MetricAlertCriteria {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#aggregation: {
+                        let field_value = match fields_map.get("aggregation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aggregation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dimensions: {
+                        let field_value = match fields_map.get("dimensions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dimensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metric_name: {
+                        let field_value = match fields_map.get("metric_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metric_namespace: {
+                        let field_value = match fields_map.get("metric_namespace") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#operator: {
+                        let field_value = match fields_map.get("operator") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#skip_metric_validation: {
+                        let field_value = match fields_map.get("skip_metric_validation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'skip_metric_validation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#threshold: {
+                        let field_value = match fields_map.get("threshold") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

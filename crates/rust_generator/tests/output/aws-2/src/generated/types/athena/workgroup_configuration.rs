@@ -32,3 +32,148 @@ pub struct WorkgroupConfiguration {
     #[serde(rename = "resultConfiguration")]
     pub r#result_configuration: Option<Box<super::super::types::athena::WorkgroupConfigurationResultConfiguration>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for WorkgroupConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "bytes_scanned_cutoff_per_query".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bytes_scanned_cutoff_per_query,
+                )
+                .await,
+            );
+            map.insert(
+                "enforce_workgroup_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enforce_workgroup_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "engine_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#engine_version,
+                )
+                .await,
+            );
+            map.insert(
+                "execution_role".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#execution_role,
+                )
+                .await,
+            );
+            map.insert(
+                "publish_cloudwatch_metrics_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#publish_cloudwatch_metrics_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "requester_pays_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#requester_pays_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "result_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#result_configuration,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for WorkgroupConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#bytes_scanned_cutoff_per_query: {
+                        let field_value = match fields_map.get("bytes_scanned_cutoff_per_query") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bytes_scanned_cutoff_per_query' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enforce_workgroup_configuration: {
+                        let field_value = match fields_map.get("enforce_workgroup_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enforce_workgroup_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#engine_version: {
+                        let field_value = match fields_map.get("engine_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'engine_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#execution_role: {
+                        let field_value = match fields_map.get("execution_role") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'execution_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#publish_cloudwatch_metrics_enabled: {
+                        let field_value = match fields_map.get("publish_cloudwatch_metrics_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'publish_cloudwatch_metrics_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#requester_pays_enabled: {
+                        let field_value = match fields_map.get("requester_pays_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'requester_pays_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#result_configuration: {
+                        let field_value = match fields_map.get("result_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'result_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

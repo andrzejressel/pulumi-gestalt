@@ -16,3 +16,74 @@ pub struct {{type.struct_name}} {
     {{#unless private}}pub {{/unless}}r#{{field.name}}: {{&field.cycle_safe_type}},
     {{/each}}
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for {{type.struct_name}} {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            {{#if type.fields}}
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            {{#each type.fields as |field|}}
+            map.insert(
+                "{{field.name}}".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#{{field.name}},
+                )
+                .await,
+            );
+            {{/each}}
+            {{else}}
+            let map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            {{/if}}
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for {{type.struct_name}} {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                {{#if type.fields}}
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+                {{/if}}
+
+                Ok(Self {
+                    {{#each type.fields as |field|}}
+                    r#{{field.name}}: {
+                        let field_value = match fields_map.get("{{field.name}}") {
+                            Some(value) => value,
+                            None => bail!("Missing field '{{field.name}}' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    {{/each}}
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -31,3 +31,148 @@ pub struct GetKubernetesClusterNetworkProfile {
     #[serde(rename = "serviceCidr")]
     pub r#service_cidr: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetKubernetesClusterNetworkProfile {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "dns_service_ip".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dns_service_ip,
+                )
+                .await,
+            );
+            map.insert(
+                "docker_bridge_cidr".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#docker_bridge_cidr,
+                )
+                .await,
+            );
+            map.insert(
+                "load_balancer_sku".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#load_balancer_sku,
+                )
+                .await,
+            );
+            map.insert(
+                "network_plugin".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network_plugin,
+                )
+                .await,
+            );
+            map.insert(
+                "network_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "pod_cidr".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pod_cidr,
+                )
+                .await,
+            );
+            map.insert(
+                "service_cidr".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_cidr,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetKubernetesClusterNetworkProfile {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#dns_service_ip: {
+                        let field_value = match fields_map.get("dns_service_ip") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dns_service_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#docker_bridge_cidr: {
+                        let field_value = match fields_map.get("docker_bridge_cidr") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'docker_bridge_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#load_balancer_sku: {
+                        let field_value = match fields_map.get("load_balancer_sku") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'load_balancer_sku' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network_plugin: {
+                        let field_value = match fields_map.get("network_plugin") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network_plugin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network_policy: {
+                        let field_value = match fields_map.get("network_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pod_cidr: {
+                        let field_value = match fields_map.get("pod_cidr") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pod_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_cidr: {
+                        let field_value = match fields_map.get("service_cidr") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

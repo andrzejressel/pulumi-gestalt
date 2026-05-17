@@ -28,3 +28,134 @@ pub struct TopicRuleCloudwatchMetric {
     #[serde(rename = "roleArn")]
     pub r#role_arn: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TopicRuleCloudwatchMetric {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "metric_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_name,
+                )
+                .await,
+            );
+            map.insert(
+                "metric_namespace".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_namespace,
+                )
+                .await,
+            );
+            map.insert(
+                "metric_timestamp".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_timestamp,
+                )
+                .await,
+            );
+            map.insert(
+                "metric_unit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_unit,
+                )
+                .await,
+            );
+            map.insert(
+                "metric_value".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_value,
+                )
+                .await,
+            );
+            map.insert(
+                "role_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role_arn,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TopicRuleCloudwatchMetric {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#metric_name: {
+                        let field_value = match fields_map.get("metric_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metric_namespace: {
+                        let field_value = match fields_map.get("metric_namespace") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metric_timestamp: {
+                        let field_value = match fields_map.get("metric_timestamp") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_timestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metric_unit: {
+                        let field_value = match fields_map.get("metric_unit") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metric_value: {
+                        let field_value = match fields_map.get("metric_value") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#role_arn: {
+                        let field_value = match fields_map.get("role_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

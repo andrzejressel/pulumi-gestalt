@@ -20,3 +20,106 @@ pub struct DataQualityJobDefinitionDataQualityJobInputEndpointInput {
     #[serde(rename = "s3InputMode")]
     pub r#s_3_input_mode: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataQualityJobDefinitionDataQualityJobInputEndpointInput {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "endpoint_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#endpoint_name,
+                )
+                .await,
+            );
+            map.insert(
+                "local_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#local_path,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_data_distribution_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_data_distribution_type,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_input_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_input_mode,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataQualityJobDefinitionDataQualityJobInputEndpointInput {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#endpoint_name: {
+                        let field_value = match fields_map.get("endpoint_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'endpoint_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#local_path: {
+                        let field_value = match fields_map.get("local_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'local_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_data_distribution_type: {
+                        let field_value = match fields_map.get("s_3_data_distribution_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_data_distribution_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_input_mode: {
+                        let field_value = match fields_map.get("s_3_input_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_input_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

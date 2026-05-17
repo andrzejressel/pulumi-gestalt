@@ -31,3 +31,148 @@ pub struct ConfigurationSetEventDestinationEventDestination {
     #[serde(rename = "snsDestination")]
     pub r#sns_destination: Option<Box<super::super::types::sesv2::ConfigurationSetEventDestinationEventDestinationSnsDestination>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ConfigurationSetEventDestinationEventDestination {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloud_watch_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloud_watch_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "event_bridge_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#event_bridge_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "kinesis_firehose_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kinesis_firehose_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "matching_event_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#matching_event_types,
+                )
+                .await,
+            );
+            map.insert(
+                "pinpoint_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pinpoint_destination,
+                )
+                .await,
+            );
+            map.insert(
+                "sns_destination".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sns_destination,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ConfigurationSetEventDestinationEventDestination {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cloud_watch_destination: {
+                        let field_value = match fields_map.get("cloud_watch_destination") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloud_watch_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#event_bridge_destination: {
+                        let field_value = match fields_map.get("event_bridge_destination") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'event_bridge_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kinesis_firehose_destination: {
+                        let field_value = match fields_map.get("kinesis_firehose_destination") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kinesis_firehose_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#matching_event_types: {
+                        let field_value = match fields_map.get("matching_event_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'matching_event_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pinpoint_destination: {
+                        let field_value = match fields_map.get("pinpoint_destination") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pinpoint_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sns_destination: {
+                        let field_value = match fields_map.get("sns_destination") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sns_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

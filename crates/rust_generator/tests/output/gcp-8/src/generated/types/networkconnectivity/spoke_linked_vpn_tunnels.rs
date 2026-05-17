@@ -17,3 +17,92 @@ pub struct SpokeLinkedVpnTunnels {
     #[serde(rename = "uris")]
     pub r#uris: Vec<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for SpokeLinkedVpnTunnels {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "include_import_ranges".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#include_import_ranges,
+                )
+                .await,
+            );
+            map.insert(
+                "site_to_site_data_transfer".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#site_to_site_data_transfer,
+                )
+                .await,
+            );
+            map.insert(
+                "uris".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#uris,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for SpokeLinkedVpnTunnels {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#include_import_ranges: {
+                        let field_value = match fields_map.get("include_import_ranges") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'include_import_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#site_to_site_data_transfer: {
+                        let field_value = match fields_map.get("site_to_site_data_transfer") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'site_to_site_data_transfer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#uris: {
+                        let field_value = match fields_map.get("uris") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

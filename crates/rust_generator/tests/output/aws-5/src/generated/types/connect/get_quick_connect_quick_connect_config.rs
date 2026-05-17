@@ -20,3 +20,106 @@ pub struct GetQuickConnectQuickConnectConfig {
     #[serde(rename = "userConfigs")]
     pub r#user_configs: Vec<super::super::types::connect::GetQuickConnectQuickConnectConfigUserConfig>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetQuickConnectQuickConnectConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "phone_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#phone_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "queue_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#queue_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "quick_connect_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#quick_connect_type,
+                )
+                .await,
+            );
+            map.insert(
+                "user_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_configs,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetQuickConnectQuickConnectConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#phone_configs: {
+                        let field_value = match fields_map.get("phone_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'phone_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#queue_configs: {
+                        let field_value = match fields_map.get("queue_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'queue_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#quick_connect_type: {
+                        let field_value = match fields_map.get("quick_connect_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'quick_connect_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#user_configs: {
+                        let field_value = match fields_map.get("user_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'user_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

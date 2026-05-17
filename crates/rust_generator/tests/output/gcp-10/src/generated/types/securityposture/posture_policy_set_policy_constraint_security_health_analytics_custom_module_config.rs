@@ -39,3 +39,134 @@ pub struct PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleCo
     #[serde(rename = "severity")]
     pub r#severity: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "custom_output".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#custom_output,
+                )
+                .await,
+            );
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "predicate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#predicate,
+                )
+                .await,
+            );
+            map.insert(
+                "recommendation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recommendation,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_selector".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_selector,
+                )
+                .await,
+            );
+            map.insert(
+                "severity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#severity,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PosturePolicySetPolicyConstraintSecurityHealthAnalyticsCustomModuleConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#custom_output: {
+                        let field_value = match fields_map.get("custom_output") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'custom_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#description: {
+                        let field_value = match fields_map.get("description") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#predicate: {
+                        let field_value = match fields_map.get("predicate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'predicate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recommendation: {
+                        let field_value = match fields_map.get("recommendation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recommendation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_selector: {
+                        let field_value = match fields_map.get("resource_selector") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_selector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#severity: {
+                        let field_value = match fields_map.get("severity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'severity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -44,3 +44,190 @@ pub struct AlertPrometheusRuleGroupRule {
     #[serde(rename = "severity")]
     pub r#severity: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AlertPrometheusRuleGroupRule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "actions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#actions,
+                )
+                .await,
+            );
+            map.insert(
+                "alert".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alert,
+                )
+                .await,
+            );
+            map.insert(
+                "alert_resolution".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alert_resolution,
+                )
+                .await,
+            );
+            map.insert(
+                "annotations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#annotations,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "expression".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#expression,
+                )
+                .await,
+            );
+            map.insert(
+                "for_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#for_,
+                )
+                .await,
+            );
+            map.insert(
+                "labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#labels,
+                )
+                .await,
+            );
+            map.insert(
+                "record".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#record,
+                )
+                .await,
+            );
+            map.insert(
+                "severity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#severity,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AlertPrometheusRuleGroupRule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#actions: {
+                        let field_value = match fields_map.get("actions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#alert: {
+                        let field_value = match fields_map.get("alert") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'alert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#alert_resolution: {
+                        let field_value = match fields_map.get("alert_resolution") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'alert_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#annotations: {
+                        let field_value = match fields_map.get("annotations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'annotations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#expression: {
+                        let field_value = match fields_map.get("expression") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#for_: {
+                        let field_value = match fields_map.get("for_") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'for_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#labels: {
+                        let field_value = match fields_map.get("labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#record: {
+                        let field_value = match fields_map.get("record") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'record' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#severity: {
+                        let field_value = match fields_map.get("severity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'severity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

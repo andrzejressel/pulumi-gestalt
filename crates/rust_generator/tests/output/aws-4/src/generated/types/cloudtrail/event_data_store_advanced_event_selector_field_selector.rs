@@ -32,3 +32,148 @@ pub struct EventDataStoreAdvancedEventSelectorFieldSelector {
     #[serde(rename = "startsWiths")]
     pub r#starts_withs: Option<Vec<String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EventDataStoreAdvancedEventSelectorFieldSelector {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "ends_withs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ends_withs,
+                )
+                .await,
+            );
+            map.insert(
+                "equals".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#equals,
+                )
+                .await,
+            );
+            map.insert(
+                "field".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#field,
+                )
+                .await,
+            );
+            map.insert(
+                "not_ends_withs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#not_ends_withs,
+                )
+                .await,
+            );
+            map.insert(
+                "not_equals".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#not_equals,
+                )
+                .await,
+            );
+            map.insert(
+                "not_starts_withs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#not_starts_withs,
+                )
+                .await,
+            );
+            map.insert(
+                "starts_withs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#starts_withs,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EventDataStoreAdvancedEventSelectorFieldSelector {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#ends_withs: {
+                        let field_value = match fields_map.get("ends_withs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ends_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#equals: {
+                        let field_value = match fields_map.get("equals") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#field: {
+                        let field_value = match fields_map.get("field") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#not_ends_withs: {
+                        let field_value = match fields_map.get("not_ends_withs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'not_ends_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#not_equals: {
+                        let field_value = match fields_map.get("not_equals") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'not_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#not_starts_withs: {
+                        let field_value = match fields_map.get("not_starts_withs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'not_starts_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#starts_withs: {
+                        let field_value = match fields_map.get("starts_withs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'starts_withs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

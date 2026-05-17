@@ -7,3 +7,39 @@ pub enum Farm {
     #[serde(rename = "Plants'R'Us")]
     PlantsRUs,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Farm {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        let value = match self {
+            Farm::PulumiPlantersInc => "Pulumi Planters Inc.".to_string(),
+            Farm::PlantsRUs => "Plants'R'Us".to_string(),
+        };
+        std::future::ready(pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue {
+            content: pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent::String(value),
+            secret: false,
+            dependencies: std::collections::HashSet::new(),
+        })
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Farm {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+
+        match &value.content {
+            PulumiValueContent::String(s) => match s.as_str() {
+                "Pulumi Planters Inc." => Ok(Farm::PulumiPlantersInc),
+                "Plants'R'Us" => Ok(Farm::PlantsRUs),
+                _ => bail!("Invalid string enum value: {}", s),
+            },
+            _ => bail!("Expected String, got {:?}", value.content),
+        }
+    }
+}

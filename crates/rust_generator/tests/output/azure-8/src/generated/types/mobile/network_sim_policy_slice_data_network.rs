@@ -44,3 +44,190 @@ pub struct NetworkSimPolicySliceDataNetwork {
     #[serde(rename = "sessionAggregateMaximumBitRate")]
     pub r#session_aggregate_maximum_bit_rate: Box<super::super::types::mobile::NetworkSimPolicySliceDataNetworkSessionAggregateMaximumBitRate>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for NetworkSimPolicySliceDataNetwork {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "additional_allowed_session_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#additional_allowed_session_types,
+                )
+                .await,
+            );
+            map.insert(
+                "allocation_and_retention_priority_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allocation_and_retention_priority_level,
+                )
+                .await,
+            );
+            map.insert(
+                "allowed_services_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allowed_services_ids,
+                )
+                .await,
+            );
+            map.insert(
+                "data_network_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_network_id,
+                )
+                .await,
+            );
+            map.insert(
+                "default_session_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_session_type,
+                )
+                .await,
+            );
+            map.insert(
+                "max_buffered_packets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_buffered_packets,
+                )
+                .await,
+            );
+            map.insert(
+                "preemption_capability".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#preemption_capability,
+                )
+                .await,
+            );
+            map.insert(
+                "preemption_vulnerability".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#preemption_vulnerability,
+                )
+                .await,
+            );
+            map.insert(
+                "qos_indicator".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#qos_indicator,
+                )
+                .await,
+            );
+            map.insert(
+                "session_aggregate_maximum_bit_rate".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#session_aggregate_maximum_bit_rate,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for NetworkSimPolicySliceDataNetwork {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#additional_allowed_session_types: {
+                        let field_value = match fields_map.get("additional_allowed_session_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'additional_allowed_session_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allocation_and_retention_priority_level: {
+                        let field_value = match fields_map.get("allocation_and_retention_priority_level") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allocation_and_retention_priority_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allowed_services_ids: {
+                        let field_value = match fields_map.get("allowed_services_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allowed_services_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_network_id: {
+                        let field_value = match fields_map.get("data_network_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_network_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#default_session_type: {
+                        let field_value = match fields_map.get("default_session_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_session_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_buffered_packets: {
+                        let field_value = match fields_map.get("max_buffered_packets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_buffered_packets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#preemption_capability: {
+                        let field_value = match fields_map.get("preemption_capability") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'preemption_capability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#preemption_vulnerability: {
+                        let field_value = match fields_map.get("preemption_vulnerability") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'preemption_vulnerability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#qos_indicator: {
+                        let field_value = match fields_map.get("qos_indicator") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'qos_indicator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#session_aggregate_maximum_bit_rate: {
+                        let field_value = match fields_map.get("session_aggregate_maximum_bit_rate") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'session_aggregate_maximum_bit_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

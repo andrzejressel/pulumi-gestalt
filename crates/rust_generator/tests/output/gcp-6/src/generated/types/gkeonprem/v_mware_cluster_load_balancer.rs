@@ -24,3 +24,106 @@ pub struct VMwareClusterLoadBalancer {
     #[serde(rename = "vipConfig")]
     pub r#vip_config: Option<Box<super::super::types::gkeonprem::VMwareClusterLoadBalancerVipConfig>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMwareClusterLoadBalancer {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "f_5_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#f_5_config,
+                )
+                .await,
+            );
+            map.insert(
+                "manual_lb_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#manual_lb_config,
+                )
+                .await,
+            );
+            map.insert(
+                "metal_lb_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metal_lb_config,
+                )
+                .await,
+            );
+            map.insert(
+                "vip_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vip_config,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for VMwareClusterLoadBalancer {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#f_5_config: {
+                        let field_value = match fields_map.get("f_5_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'f_5_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#manual_lb_config: {
+                        let field_value = match fields_map.get("manual_lb_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'manual_lb_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metal_lb_config: {
+                        let field_value = match fields_map.get("metal_lb_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metal_lb_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vip_config: {
+                        let field_value = match fields_map.get("vip_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vip_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

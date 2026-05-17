@@ -23,3 +23,106 @@ pub struct MigrationJobReverseSshConnectivity {
     #[serde(rename = "vpc")]
     pub r#vpc: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for MigrationJobReverseSshConnectivity {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "vm".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_ip".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_ip,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_port,
+                )
+                .await,
+            );
+            map.insert(
+                "vpc".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vpc,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for MigrationJobReverseSshConnectivity {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#vm: {
+                        let field_value = match fields_map.get("vm") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_ip: {
+                        let field_value = match fields_map.get("vm_ip") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_port: {
+                        let field_value = match fields_map.get("vm_port") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vpc: {
+                        let field_value = match fields_map.get("vpc") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vpc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

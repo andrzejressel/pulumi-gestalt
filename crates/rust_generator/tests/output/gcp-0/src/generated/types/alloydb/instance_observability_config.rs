@@ -36,3 +36,162 @@ pub struct InstanceObservabilityConfig {
     #[serde(rename = "trackWaitEvents")]
     pub r#track_wait_events: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for InstanceObservabilityConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "max_query_string_length".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_query_string_length,
+                )
+                .await,
+            );
+            map.insert(
+                "preserve_comments".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#preserve_comments,
+                )
+                .await,
+            );
+            map.insert(
+                "query_plans_per_minute".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#query_plans_per_minute,
+                )
+                .await,
+            );
+            map.insert(
+                "record_application_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#record_application_tags,
+                )
+                .await,
+            );
+            map.insert(
+                "track_active_queries".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#track_active_queries,
+                )
+                .await,
+            );
+            map.insert(
+                "track_wait_event_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#track_wait_event_types,
+                )
+                .await,
+            );
+            map.insert(
+                "track_wait_events".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#track_wait_events,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for InstanceObservabilityConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_query_string_length: {
+                        let field_value = match fields_map.get("max_query_string_length") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_query_string_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#preserve_comments: {
+                        let field_value = match fields_map.get("preserve_comments") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'preserve_comments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#query_plans_per_minute: {
+                        let field_value = match fields_map.get("query_plans_per_minute") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'query_plans_per_minute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#record_application_tags: {
+                        let field_value = match fields_map.get("record_application_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'record_application_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#track_active_queries: {
+                        let field_value = match fields_map.get("track_active_queries") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'track_active_queries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#track_wait_event_types: {
+                        let field_value = match fields_map.get("track_wait_event_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'track_wait_event_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#track_wait_events: {
+                        let field_value = match fields_map.get("track_wait_events") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'track_wait_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

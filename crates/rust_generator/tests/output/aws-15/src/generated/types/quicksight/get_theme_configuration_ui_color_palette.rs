@@ -68,3 +68,274 @@ pub struct GetThemeConfigurationUiColorPalette {
     #[serde(rename = "warningForeground")]
     pub r#warning_foreground: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetThemeConfigurationUiColorPalette {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "accent".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#accent,
+                )
+                .await,
+            );
+            map.insert(
+                "accent_foreground".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#accent_foreground,
+                )
+                .await,
+            );
+            map.insert(
+                "danger".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#danger,
+                )
+                .await,
+            );
+            map.insert(
+                "danger_foreground".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#danger_foreground,
+                )
+                .await,
+            );
+            map.insert(
+                "dimension".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dimension,
+                )
+                .await,
+            );
+            map.insert(
+                "dimension_foreground".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dimension_foreground,
+                )
+                .await,
+            );
+            map.insert(
+                "measure".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#measure,
+                )
+                .await,
+            );
+            map.insert(
+                "measure_foreground".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#measure_foreground,
+                )
+                .await,
+            );
+            map.insert(
+                "primary_background".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#primary_background,
+                )
+                .await,
+            );
+            map.insert(
+                "primary_foreground".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#primary_foreground,
+                )
+                .await,
+            );
+            map.insert(
+                "secondary_background".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secondary_background,
+                )
+                .await,
+            );
+            map.insert(
+                "secondary_foreground".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secondary_foreground,
+                )
+                .await,
+            );
+            map.insert(
+                "success".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#success,
+                )
+                .await,
+            );
+            map.insert(
+                "success_foreground".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#success_foreground,
+                )
+                .await,
+            );
+            map.insert(
+                "warning".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#warning,
+                )
+                .await,
+            );
+            map.insert(
+                "warning_foreground".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#warning_foreground,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetThemeConfigurationUiColorPalette {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#accent: {
+                        let field_value = match fields_map.get("accent") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'accent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#accent_foreground: {
+                        let field_value = match fields_map.get("accent_foreground") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'accent_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#danger: {
+                        let field_value = match fields_map.get("danger") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'danger' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#danger_foreground: {
+                        let field_value = match fields_map.get("danger_foreground") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'danger_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dimension: {
+                        let field_value = match fields_map.get("dimension") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dimension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dimension_foreground: {
+                        let field_value = match fields_map.get("dimension_foreground") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dimension_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#measure: {
+                        let field_value = match fields_map.get("measure") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'measure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#measure_foreground: {
+                        let field_value = match fields_map.get("measure_foreground") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'measure_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#primary_background: {
+                        let field_value = match fields_map.get("primary_background") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'primary_background' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#primary_foreground: {
+                        let field_value = match fields_map.get("primary_foreground") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'primary_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secondary_background: {
+                        let field_value = match fields_map.get("secondary_background") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secondary_background' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secondary_foreground: {
+                        let field_value = match fields_map.get("secondary_foreground") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secondary_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#success: {
+                        let field_value = match fields_map.get("success") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'success' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#success_foreground: {
+                        let field_value = match fields_map.get("success_foreground") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'success_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#warning: {
+                        let field_value = match fields_map.get("warning") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'warning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#warning_foreground: {
+                        let field_value = match fields_map.get("warning_foreground") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'warning_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

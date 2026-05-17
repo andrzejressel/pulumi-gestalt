@@ -50,3 +50,204 @@ pub struct AlertProcessingRuleActionGroupCondition {
     #[serde(rename = "targetResourceType")]
     pub r#target_resource_type: Option<Box<super::super::types::monitoring::AlertProcessingRuleActionGroupConditionTargetResourceType>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AlertProcessingRuleActionGroupCondition {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "alert_context".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alert_context,
+                )
+                .await,
+            );
+            map.insert(
+                "alert_rule_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alert_rule_id,
+                )
+                .await,
+            );
+            map.insert(
+                "alert_rule_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#alert_rule_name,
+                )
+                .await,
+            );
+            map.insert(
+                "description".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#description,
+                )
+                .await,
+            );
+            map.insert(
+                "monitor_condition".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#monitor_condition,
+                )
+                .await,
+            );
+            map.insert(
+                "monitor_service".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#monitor_service,
+                )
+                .await,
+            );
+            map.insert(
+                "severity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#severity,
+                )
+                .await,
+            );
+            map.insert(
+                "signal_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#signal_type,
+                )
+                .await,
+            );
+            map.insert(
+                "target_resource".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#target_resource,
+                )
+                .await,
+            );
+            map.insert(
+                "target_resource_group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#target_resource_group,
+                )
+                .await,
+            );
+            map.insert(
+                "target_resource_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#target_resource_type,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AlertProcessingRuleActionGroupCondition {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#alert_context: {
+                        let field_value = match fields_map.get("alert_context") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'alert_context' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#alert_rule_id: {
+                        let field_value = match fields_map.get("alert_rule_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'alert_rule_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#alert_rule_name: {
+                        let field_value = match fields_map.get("alert_rule_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'alert_rule_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#description: {
+                        let field_value = match fields_map.get("description") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#monitor_condition: {
+                        let field_value = match fields_map.get("monitor_condition") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'monitor_condition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#monitor_service: {
+                        let field_value = match fields_map.get("monitor_service") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'monitor_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#severity: {
+                        let field_value = match fields_map.get("severity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'severity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#signal_type: {
+                        let field_value = match fields_map.get("signal_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'signal_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#target_resource: {
+                        let field_value = match fields_map.get("target_resource") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'target_resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#target_resource_group: {
+                        let field_value = match fields_map.get("target_resource_group") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'target_resource_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#target_resource_type: {
+                        let field_value = match fields_map.get("target_resource_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'target_resource_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -16,3 +16,92 @@ pub struct OntapVolumeSnaplockConfigurationRetentionPeriod {
     #[serde(rename = "minimumRetention")]
     pub r#minimum_retention: Option<Box<super::super::types::fsx::OntapVolumeSnaplockConfigurationRetentionPeriodMinimumRetention>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OntapVolumeSnaplockConfigurationRetentionPeriod {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "default_retention".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_retention,
+                )
+                .await,
+            );
+            map.insert(
+                "maximum_retention".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maximum_retention,
+                )
+                .await,
+            );
+            map.insert(
+                "minimum_retention".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#minimum_retention,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for OntapVolumeSnaplockConfigurationRetentionPeriod {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#default_retention: {
+                        let field_value = match fields_map.get("default_retention") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#maximum_retention: {
+                        let field_value = match fields_map.get("maximum_retention") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'maximum_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#minimum_retention: {
+                        let field_value = match fields_map.get("minimum_retention") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'minimum_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

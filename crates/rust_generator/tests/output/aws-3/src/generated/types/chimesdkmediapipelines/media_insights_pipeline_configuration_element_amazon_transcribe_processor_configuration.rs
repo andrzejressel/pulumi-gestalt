@@ -52,3 +52,218 @@ pub struct MediaInsightsPipelineConfigurationElementAmazonTranscribeProcessorCon
     #[serde(rename = "vocabularyName")]
     pub r#vocabulary_name: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for MediaInsightsPipelineConfigurationElementAmazonTranscribeProcessorConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "content_identification_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#content_identification_type,
+                )
+                .await,
+            );
+            map.insert(
+                "content_redaction_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#content_redaction_type,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_partial_results_stabilization".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_partial_results_stabilization,
+                )
+                .await,
+            );
+            map.insert(
+                "filter_partial_results".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filter_partial_results,
+                )
+                .await,
+            );
+            map.insert(
+                "language_code".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#language_code,
+                )
+                .await,
+            );
+            map.insert(
+                "language_model_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#language_model_name,
+                )
+                .await,
+            );
+            map.insert(
+                "partial_results_stability".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#partial_results_stability,
+                )
+                .await,
+            );
+            map.insert(
+                "pii_entity_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#pii_entity_types,
+                )
+                .await,
+            );
+            map.insert(
+                "show_speaker_label".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#show_speaker_label,
+                )
+                .await,
+            );
+            map.insert(
+                "vocabulary_filter_method".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vocabulary_filter_method,
+                )
+                .await,
+            );
+            map.insert(
+                "vocabulary_filter_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vocabulary_filter_name,
+                )
+                .await,
+            );
+            map.insert(
+                "vocabulary_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vocabulary_name,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for MediaInsightsPipelineConfigurationElementAmazonTranscribeProcessorConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#content_identification_type: {
+                        let field_value = match fields_map.get("content_identification_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'content_identification_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#content_redaction_type: {
+                        let field_value = match fields_map.get("content_redaction_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'content_redaction_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_partial_results_stabilization: {
+                        let field_value = match fields_map.get("enable_partial_results_stabilization") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_partial_results_stabilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#filter_partial_results: {
+                        let field_value = match fields_map.get("filter_partial_results") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'filter_partial_results' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#language_code: {
+                        let field_value = match fields_map.get("language_code") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'language_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#language_model_name: {
+                        let field_value = match fields_map.get("language_model_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'language_model_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#partial_results_stability: {
+                        let field_value = match fields_map.get("partial_results_stability") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'partial_results_stability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#pii_entity_types: {
+                        let field_value = match fields_map.get("pii_entity_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'pii_entity_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#show_speaker_label: {
+                        let field_value = match fields_map.get("show_speaker_label") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'show_speaker_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vocabulary_filter_method: {
+                        let field_value = match fields_map.get("vocabulary_filter_method") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vocabulary_filter_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vocabulary_filter_name: {
+                        let field_value = match fields_map.get("vocabulary_filter_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vocabulary_filter_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vocabulary_name: {
+                        let field_value = match fields_map.get("vocabulary_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vocabulary_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

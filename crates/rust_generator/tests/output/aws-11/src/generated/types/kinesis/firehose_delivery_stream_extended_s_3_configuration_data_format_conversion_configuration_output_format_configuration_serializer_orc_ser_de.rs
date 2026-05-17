@@ -44,3 +44,190 @@ pub struct FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConf
     #[serde(rename = "stripeSizeBytes")]
     pub r#stripe_size_bytes: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDe {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "block_size_bytes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#block_size_bytes,
+                )
+                .await,
+            );
+            map.insert(
+                "bloom_filter_columns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bloom_filter_columns,
+                )
+                .await,
+            );
+            map.insert(
+                "bloom_filter_false_positive_probability".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#bloom_filter_false_positive_probability,
+                )
+                .await,
+            );
+            map.insert(
+                "compression".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compression,
+                )
+                .await,
+            );
+            map.insert(
+                "dictionary_key_threshold".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dictionary_key_threshold,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_padding".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_padding,
+                )
+                .await,
+            );
+            map.insert(
+                "format_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#format_version,
+                )
+                .await,
+            );
+            map.insert(
+                "padding_tolerance".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#padding_tolerance,
+                )
+                .await,
+            );
+            map.insert(
+                "row_index_stride".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#row_index_stride,
+                )
+                .await,
+            );
+            map.insert(
+                "stripe_size_bytes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#stripe_size_bytes,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FirehoseDeliveryStreamExtendedS3ConfigurationDataFormatConversionConfigurationOutputFormatConfigurationSerializerOrcSerDe {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#block_size_bytes: {
+                        let field_value = match fields_map.get("block_size_bytes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'block_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#bloom_filter_columns: {
+                        let field_value = match fields_map.get("bloom_filter_columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bloom_filter_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#bloom_filter_false_positive_probability: {
+                        let field_value = match fields_map.get("bloom_filter_false_positive_probability") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'bloom_filter_false_positive_probability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#compression: {
+                        let field_value = match fields_map.get("compression") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'compression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dictionary_key_threshold: {
+                        let field_value = match fields_map.get("dictionary_key_threshold") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dictionary_key_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_padding: {
+                        let field_value = match fields_map.get("enable_padding") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_padding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#format_version: {
+                        let field_value = match fields_map.get("format_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'format_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#padding_tolerance: {
+                        let field_value = match fields_map.get("padding_tolerance") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'padding_tolerance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#row_index_stride: {
+                        let field_value = match fields_map.get("row_index_stride") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'row_index_stride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#stripe_size_bytes: {
+                        let field_value = match fields_map.get("stripe_size_bytes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'stripe_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

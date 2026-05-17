@@ -16,3 +16,92 @@ pub struct DataSourceDynamodbConfigDeltaSyncConfig {
     #[serde(rename = "deltaSyncTableTtl")]
     pub r#delta_sync_table_ttl: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataSourceDynamodbConfigDeltaSyncConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "base_table_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#base_table_ttl,
+                )
+                .await,
+            );
+            map.insert(
+                "delta_sync_table_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#delta_sync_table_name,
+                )
+                .await,
+            );
+            map.insert(
+                "delta_sync_table_ttl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#delta_sync_table_ttl,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataSourceDynamodbConfigDeltaSyncConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#base_table_ttl: {
+                        let field_value = match fields_map.get("base_table_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'base_table_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#delta_sync_table_name: {
+                        let field_value = match fields_map.get("delta_sync_table_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'delta_sync_table_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#delta_sync_table_ttl: {
+                        let field_value = match fields_map.get("delta_sync_table_ttl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'delta_sync_table_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

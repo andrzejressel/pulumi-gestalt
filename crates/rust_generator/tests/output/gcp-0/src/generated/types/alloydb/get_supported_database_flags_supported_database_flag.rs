@@ -36,3 +36,162 @@ pub struct GetSupportedDatabaseFlagsSupportedDatabaseFlag {
     #[serde(rename = "valueType")]
     pub r#value_type: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetSupportedDatabaseFlagsSupportedDatabaseFlag {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "accepts_multiple_values".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#accepts_multiple_values,
+                )
+                .await,
+            );
+            map.insert(
+                "flag_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#flag_name,
+                )
+                .await,
+            );
+            map.insert(
+                "integer_restrictions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#integer_restrictions,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "requires_db_restart".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#requires_db_restart,
+                )
+                .await,
+            );
+            map.insert(
+                "string_restrictions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#string_restrictions,
+                )
+                .await,
+            );
+            map.insert(
+                "supported_db_versions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#supported_db_versions,
+                )
+                .await,
+            );
+            map.insert(
+                "value_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#value_type,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetSupportedDatabaseFlagsSupportedDatabaseFlag {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#accepts_multiple_values: {
+                        let field_value = match fields_map.get("accepts_multiple_values") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'accepts_multiple_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#flag_name: {
+                        let field_value = match fields_map.get("flag_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'flag_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#integer_restrictions: {
+                        let field_value = match fields_map.get("integer_restrictions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'integer_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#requires_db_restart: {
+                        let field_value = match fields_map.get("requires_db_restart") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'requires_db_restart' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#string_restrictions: {
+                        let field_value = match fields_map.get("string_restrictions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'string_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#supported_db_versions: {
+                        let field_value = match fields_map.get("supported_db_versions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'supported_db_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#value_type: {
+                        let field_value = match fields_map.get("value_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'value_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

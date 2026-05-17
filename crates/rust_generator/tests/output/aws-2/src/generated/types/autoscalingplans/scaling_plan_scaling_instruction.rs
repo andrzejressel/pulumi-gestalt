@@ -64,3 +64,246 @@ pub struct ScalingPlanScalingInstruction {
     #[serde(rename = "targetTrackingConfigurations")]
     pub r#target_tracking_configurations: Vec<super::super::types::autoscalingplans::ScalingPlanScalingInstructionTargetTrackingConfiguration>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ScalingPlanScalingInstruction {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "customized_load_metric_specification".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#customized_load_metric_specification,
+                )
+                .await,
+            );
+            map.insert(
+                "disable_dynamic_scaling".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#disable_dynamic_scaling,
+                )
+                .await,
+            );
+            map.insert(
+                "max_capacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_capacity,
+                )
+                .await,
+            );
+            map.insert(
+                "min_capacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#min_capacity,
+                )
+                .await,
+            );
+            map.insert(
+                "predefined_load_metric_specification".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#predefined_load_metric_specification,
+                )
+                .await,
+            );
+            map.insert(
+                "predictive_scaling_max_capacity_behavior".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#predictive_scaling_max_capacity_behavior,
+                )
+                .await,
+            );
+            map.insert(
+                "predictive_scaling_max_capacity_buffer".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#predictive_scaling_max_capacity_buffer,
+                )
+                .await,
+            );
+            map.insert(
+                "predictive_scaling_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#predictive_scaling_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_id,
+                )
+                .await,
+            );
+            map.insert(
+                "scalable_dimension".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scalable_dimension,
+                )
+                .await,
+            );
+            map.insert(
+                "scaling_policy_update_behavior".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scaling_policy_update_behavior,
+                )
+                .await,
+            );
+            map.insert(
+                "scheduled_action_buffer_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scheduled_action_buffer_time,
+                )
+                .await,
+            );
+            map.insert(
+                "service_namespace".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_namespace,
+                )
+                .await,
+            );
+            map.insert(
+                "target_tracking_configurations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#target_tracking_configurations,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ScalingPlanScalingInstruction {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#customized_load_metric_specification: {
+                        let field_value = match fields_map.get("customized_load_metric_specification") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'customized_load_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#disable_dynamic_scaling: {
+                        let field_value = match fields_map.get("disable_dynamic_scaling") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'disable_dynamic_scaling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_capacity: {
+                        let field_value = match fields_map.get("max_capacity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#min_capacity: {
+                        let field_value = match fields_map.get("min_capacity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'min_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#predefined_load_metric_specification: {
+                        let field_value = match fields_map.get("predefined_load_metric_specification") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'predefined_load_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#predictive_scaling_max_capacity_behavior: {
+                        let field_value = match fields_map.get("predictive_scaling_max_capacity_behavior") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'predictive_scaling_max_capacity_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#predictive_scaling_max_capacity_buffer: {
+                        let field_value = match fields_map.get("predictive_scaling_max_capacity_buffer") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'predictive_scaling_max_capacity_buffer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#predictive_scaling_mode: {
+                        let field_value = match fields_map.get("predictive_scaling_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'predictive_scaling_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_id: {
+                        let field_value = match fields_map.get("resource_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scalable_dimension: {
+                        let field_value = match fields_map.get("scalable_dimension") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scalable_dimension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scaling_policy_update_behavior: {
+                        let field_value = match fields_map.get("scaling_policy_update_behavior") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scaling_policy_update_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scheduled_action_buffer_time: {
+                        let field_value = match fields_map.get("scheduled_action_buffer_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scheduled_action_buffer_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_namespace: {
+                        let field_value = match fields_map.get("service_namespace") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#target_tracking_configurations: {
+                        let field_value = match fields_map.get("target_tracking_configurations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'target_tracking_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

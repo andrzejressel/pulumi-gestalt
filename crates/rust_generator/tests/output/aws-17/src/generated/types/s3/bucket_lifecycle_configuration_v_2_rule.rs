@@ -40,3 +40,176 @@ pub struct BucketLifecycleConfigurationV2Rule {
     #[serde(rename = "transitions")]
     pub r#transitions: Option<Vec<super::super::types::s3::BucketLifecycleConfigurationV2RuleTransition>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for BucketLifecycleConfigurationV2Rule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "abort_incomplete_multipart_upload".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#abort_incomplete_multipart_upload,
+                )
+                .await,
+            );
+            map.insert(
+                "expiration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#expiration,
+                )
+                .await,
+            );
+            map.insert(
+                "filter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filter,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "noncurrent_version_expiration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#noncurrent_version_expiration,
+                )
+                .await,
+            );
+            map.insert(
+                "noncurrent_version_transitions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#noncurrent_version_transitions,
+                )
+                .await,
+            );
+            map.insert(
+                "prefix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prefix,
+                )
+                .await,
+            );
+            map.insert(
+                "status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#status,
+                )
+                .await,
+            );
+            map.insert(
+                "transitions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#transitions,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for BucketLifecycleConfigurationV2Rule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#abort_incomplete_multipart_upload: {
+                        let field_value = match fields_map.get("abort_incomplete_multipart_upload") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'abort_incomplete_multipart_upload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#expiration: {
+                        let field_value = match fields_map.get("expiration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'expiration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#filter: {
+                        let field_value = match fields_map.get("filter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#id: {
+                        let field_value = match fields_map.get("id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#noncurrent_version_expiration: {
+                        let field_value = match fields_map.get("noncurrent_version_expiration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'noncurrent_version_expiration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#noncurrent_version_transitions: {
+                        let field_value = match fields_map.get("noncurrent_version_transitions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'noncurrent_version_transitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#prefix: {
+                        let field_value = match fields_map.get("prefix") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#status: {
+                        let field_value = match fields_map.get("status") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#transitions: {
+                        let field_value = match fields_map.get("transitions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'transitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

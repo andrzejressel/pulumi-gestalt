@@ -25,3 +25,106 @@ pub struct ClusterControlPlaneLocal {
     #[serde(rename = "sharedDeploymentPolicy")]
     pub r#shared_deployment_policy: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterControlPlaneLocal {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "machine_filter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#machine_filter,
+                )
+                .await,
+            );
+            map.insert(
+                "node_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#node_count,
+                )
+                .await,
+            );
+            map.insert(
+                "node_location".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#node_location,
+                )
+                .await,
+            );
+            map.insert(
+                "shared_deployment_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shared_deployment_policy,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterControlPlaneLocal {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#machine_filter: {
+                        let field_value = match fields_map.get("machine_filter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'machine_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#node_count: {
+                        let field_value = match fields_map.get("node_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#node_location: {
+                        let field_value = match fields_map.get("node_location") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'node_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#shared_deployment_policy: {
+                        let field_value = match fields_map.get("shared_deployment_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'shared_deployment_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

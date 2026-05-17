@@ -120,3 +120,456 @@ pub struct KubernetesClusterDefaultNodePoolLinuxOsConfigSysctlConfig {
     #[serde(rename = "vmVfsCachePressure")]
     pub r#vm_vfs_cache_pressure: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KubernetesClusterDefaultNodePoolLinuxOsConfigSysctlConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "fs_aio_max_nr".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fs_aio_max_nr,
+                )
+                .await,
+            );
+            map.insert(
+                "fs_file_max".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fs_file_max,
+                )
+                .await,
+            );
+            map.insert(
+                "fs_inotify_max_user_watches".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fs_inotify_max_user_watches,
+                )
+                .await,
+            );
+            map.insert(
+                "fs_nr_open".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fs_nr_open,
+                )
+                .await,
+            );
+            map.insert(
+                "kernel_threads_max".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#kernel_threads_max,
+                )
+                .await,
+            );
+            map.insert(
+                "net_core_netdev_max_backlog".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_core_netdev_max_backlog,
+                )
+                .await,
+            );
+            map.insert(
+                "net_core_optmem_max".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_core_optmem_max,
+                )
+                .await,
+            );
+            map.insert(
+                "net_core_rmem_default".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_core_rmem_default,
+                )
+                .await,
+            );
+            map.insert(
+                "net_core_rmem_max".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_core_rmem_max,
+                )
+                .await,
+            );
+            map.insert(
+                "net_core_somaxconn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_core_somaxconn,
+                )
+                .await,
+            );
+            map.insert(
+                "net_core_wmem_default".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_core_wmem_default,
+                )
+                .await,
+            );
+            map.insert(
+                "net_core_wmem_max".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_core_wmem_max,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_ip_local_port_range_max".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_ip_local_port_range_max,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_ip_local_port_range_min".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_ip_local_port_range_min,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_neigh_default_gc_thresh_1".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_neigh_default_gc_thresh_1,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_neigh_default_gc_thresh_2".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_neigh_default_gc_thresh_2,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_neigh_default_gc_thresh_3".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_neigh_default_gc_thresh_3,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_tcp_fin_timeout".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_tcp_fin_timeout,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_tcp_keepalive_intvl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_tcp_keepalive_intvl,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_tcp_keepalive_probes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_tcp_keepalive_probes,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_tcp_keepalive_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_tcp_keepalive_time,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_tcp_max_syn_backlog".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_tcp_max_syn_backlog,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_tcp_max_tw_buckets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_tcp_max_tw_buckets,
+                )
+                .await,
+            );
+            map.insert(
+                "net_ipv_4_tcp_tw_reuse".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_ipv_4_tcp_tw_reuse,
+                )
+                .await,
+            );
+            map.insert(
+                "net_netfilter_nf_conntrack_buckets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_netfilter_nf_conntrack_buckets,
+                )
+                .await,
+            );
+            map.insert(
+                "net_netfilter_nf_conntrack_max".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#net_netfilter_nf_conntrack_max,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_max_map_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_max_map_count,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_swappiness".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_swappiness,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_vfs_cache_pressure".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_vfs_cache_pressure,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for KubernetesClusterDefaultNodePoolLinuxOsConfigSysctlConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#fs_aio_max_nr: {
+                        let field_value = match fields_map.get("fs_aio_max_nr") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fs_aio_max_nr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fs_file_max: {
+                        let field_value = match fields_map.get("fs_file_max") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fs_file_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fs_inotify_max_user_watches: {
+                        let field_value = match fields_map.get("fs_inotify_max_user_watches") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fs_inotify_max_user_watches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fs_nr_open: {
+                        let field_value = match fields_map.get("fs_nr_open") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fs_nr_open' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#kernel_threads_max: {
+                        let field_value = match fields_map.get("kernel_threads_max") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'kernel_threads_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_core_netdev_max_backlog: {
+                        let field_value = match fields_map.get("net_core_netdev_max_backlog") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_core_netdev_max_backlog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_core_optmem_max: {
+                        let field_value = match fields_map.get("net_core_optmem_max") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_core_optmem_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_core_rmem_default: {
+                        let field_value = match fields_map.get("net_core_rmem_default") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_core_rmem_default' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_core_rmem_max: {
+                        let field_value = match fields_map.get("net_core_rmem_max") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_core_rmem_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_core_somaxconn: {
+                        let field_value = match fields_map.get("net_core_somaxconn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_core_somaxconn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_core_wmem_default: {
+                        let field_value = match fields_map.get("net_core_wmem_default") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_core_wmem_default' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_core_wmem_max: {
+                        let field_value = match fields_map.get("net_core_wmem_max") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_core_wmem_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_ip_local_port_range_max: {
+                        let field_value = match fields_map.get("net_ipv_4_ip_local_port_range_max") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_ip_local_port_range_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_ip_local_port_range_min: {
+                        let field_value = match fields_map.get("net_ipv_4_ip_local_port_range_min") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_ip_local_port_range_min' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_neigh_default_gc_thresh_1: {
+                        let field_value = match fields_map.get("net_ipv_4_neigh_default_gc_thresh_1") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_neigh_default_gc_thresh_1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_neigh_default_gc_thresh_2: {
+                        let field_value = match fields_map.get("net_ipv_4_neigh_default_gc_thresh_2") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_neigh_default_gc_thresh_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_neigh_default_gc_thresh_3: {
+                        let field_value = match fields_map.get("net_ipv_4_neigh_default_gc_thresh_3") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_neigh_default_gc_thresh_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_tcp_fin_timeout: {
+                        let field_value = match fields_map.get("net_ipv_4_tcp_fin_timeout") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_tcp_fin_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_tcp_keepalive_intvl: {
+                        let field_value = match fields_map.get("net_ipv_4_tcp_keepalive_intvl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_tcp_keepalive_intvl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_tcp_keepalive_probes: {
+                        let field_value = match fields_map.get("net_ipv_4_tcp_keepalive_probes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_tcp_keepalive_probes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_tcp_keepalive_time: {
+                        let field_value = match fields_map.get("net_ipv_4_tcp_keepalive_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_tcp_keepalive_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_tcp_max_syn_backlog: {
+                        let field_value = match fields_map.get("net_ipv_4_tcp_max_syn_backlog") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_tcp_max_syn_backlog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_tcp_max_tw_buckets: {
+                        let field_value = match fields_map.get("net_ipv_4_tcp_max_tw_buckets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_tcp_max_tw_buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_ipv_4_tcp_tw_reuse: {
+                        let field_value = match fields_map.get("net_ipv_4_tcp_tw_reuse") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_ipv_4_tcp_tw_reuse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_netfilter_nf_conntrack_buckets: {
+                        let field_value = match fields_map.get("net_netfilter_nf_conntrack_buckets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_netfilter_nf_conntrack_buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#net_netfilter_nf_conntrack_max: {
+                        let field_value = match fields_map.get("net_netfilter_nf_conntrack_max") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'net_netfilter_nf_conntrack_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_max_map_count: {
+                        let field_value = match fields_map.get("vm_max_map_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_max_map_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_swappiness: {
+                        let field_value = match fields_map.get("vm_swappiness") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_swappiness' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_vfs_cache_pressure: {
+                        let field_value = match fields_map.get("vm_vfs_cache_pressure") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_vfs_cache_pressure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

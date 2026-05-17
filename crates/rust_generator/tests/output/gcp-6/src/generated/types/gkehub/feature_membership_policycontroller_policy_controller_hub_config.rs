@@ -44,3 +44,190 @@ pub struct FeatureMembershipPolicycontrollerPolicyControllerHubConfig {
     #[serde(rename = "referentialRulesEnabled")]
     pub r#referential_rules_enabled: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FeatureMembershipPolicycontrollerPolicyControllerHubConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "audit_interval_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audit_interval_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "constraint_violation_limit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#constraint_violation_limit,
+                )
+                .await,
+            );
+            map.insert(
+                "deployment_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#deployment_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "exemptable_namespaces".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exemptable_namespaces,
+                )
+                .await,
+            );
+            map.insert(
+                "install_spec".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#install_spec,
+                )
+                .await,
+            );
+            map.insert(
+                "log_denies_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#log_denies_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "monitoring".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#monitoring,
+                )
+                .await,
+            );
+            map.insert(
+                "mutation_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mutation_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "policy_content".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#policy_content,
+                )
+                .await,
+            );
+            map.insert(
+                "referential_rules_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#referential_rules_enabled,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FeatureMembershipPolicycontrollerPolicyControllerHubConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#audit_interval_seconds: {
+                        let field_value = match fields_map.get("audit_interval_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'audit_interval_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#constraint_violation_limit: {
+                        let field_value = match fields_map.get("constraint_violation_limit") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'constraint_violation_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#deployment_configs: {
+                        let field_value = match fields_map.get("deployment_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'deployment_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#exemptable_namespaces: {
+                        let field_value = match fields_map.get("exemptable_namespaces") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exemptable_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#install_spec: {
+                        let field_value = match fields_map.get("install_spec") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'install_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#log_denies_enabled: {
+                        let field_value = match fields_map.get("log_denies_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'log_denies_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#monitoring: {
+                        let field_value = match fields_map.get("monitoring") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'monitoring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mutation_enabled: {
+                        let field_value = match fields_map.get("mutation_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mutation_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#policy_content: {
+                        let field_value = match fields_map.get("policy_content") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'policy_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#referential_rules_enabled: {
+                        let field_value = match fields_map.get("referential_rules_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'referential_rules_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

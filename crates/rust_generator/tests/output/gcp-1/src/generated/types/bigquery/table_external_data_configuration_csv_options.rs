@@ -39,3 +39,134 @@ pub struct TableExternalDataConfigurationCsvOptions {
     #[serde(rename = "skipLeadingRows")]
     pub r#skip_leading_rows: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TableExternalDataConfigurationCsvOptions {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "allow_jagged_rows".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow_jagged_rows,
+                )
+                .await,
+            );
+            map.insert(
+                "allow_quoted_newlines".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#allow_quoted_newlines,
+                )
+                .await,
+            );
+            map.insert(
+                "encoding".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#encoding,
+                )
+                .await,
+            );
+            map.insert(
+                "field_delimiter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#field_delimiter,
+                )
+                .await,
+            );
+            map.insert(
+                "quote".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#quote,
+                )
+                .await,
+            );
+            map.insert(
+                "skip_leading_rows".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#skip_leading_rows,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TableExternalDataConfigurationCsvOptions {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#allow_jagged_rows: {
+                        let field_value = match fields_map.get("allow_jagged_rows") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allow_jagged_rows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#allow_quoted_newlines: {
+                        let field_value = match fields_map.get("allow_quoted_newlines") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'allow_quoted_newlines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#encoding: {
+                        let field_value = match fields_map.get("encoding") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'encoding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#field_delimiter: {
+                        let field_value = match fields_map.get("field_delimiter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'field_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#quote: {
+                        let field_value = match fields_map.get("quote") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'quote' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#skip_leading_rows: {
+                        let field_value = match fields_map.get("skip_leading_rows") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'skip_leading_rows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

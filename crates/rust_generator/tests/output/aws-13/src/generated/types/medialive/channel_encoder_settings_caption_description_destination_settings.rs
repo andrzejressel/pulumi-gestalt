@@ -56,3 +56,232 @@ pub struct ChannelEncoderSettingsCaptionDescriptionDestinationSettings {
     #[serde(rename = "webvttDestinationSettings")]
     pub r#webvtt_destination_settings: Option<Box<super::super::types::medialive::ChannelEncoderSettingsCaptionDescriptionDestinationSettingsWebvttDestinationSettings>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ChannelEncoderSettingsCaptionDescriptionDestinationSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "arib_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#arib_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "burn_in_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#burn_in_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "dvb_sub_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dvb_sub_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "ebu_tt_d_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ebu_tt_d_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "embedded_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#embedded_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "embedded_plus_scte_20_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#embedded_plus_scte_20_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "rtmp_caption_info_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rtmp_caption_info_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "scte_20_plus_embedded_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scte_20_plus_embedded_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "scte_27_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#scte_27_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "smpte_tt_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#smpte_tt_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "teletext_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#teletext_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "ttml_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ttml_destination_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "webvtt_destination_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#webvtt_destination_settings,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelEncoderSettingsCaptionDescriptionDestinationSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#arib_destination_settings: {
+                        let field_value = match fields_map.get("arib_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'arib_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#burn_in_destination_settings: {
+                        let field_value = match fields_map.get("burn_in_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'burn_in_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dvb_sub_destination_settings: {
+                        let field_value = match fields_map.get("dvb_sub_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dvb_sub_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ebu_tt_d_destination_settings: {
+                        let field_value = match fields_map.get("ebu_tt_d_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ebu_tt_d_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#embedded_destination_settings: {
+                        let field_value = match fields_map.get("embedded_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'embedded_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#embedded_plus_scte_20_destination_settings: {
+                        let field_value = match fields_map.get("embedded_plus_scte_20_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'embedded_plus_scte_20_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rtmp_caption_info_destination_settings: {
+                        let field_value = match fields_map.get("rtmp_caption_info_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rtmp_caption_info_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scte_20_plus_embedded_destination_settings: {
+                        let field_value = match fields_map.get("scte_20_plus_embedded_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scte_20_plus_embedded_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#scte_27_destination_settings: {
+                        let field_value = match fields_map.get("scte_27_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'scte_27_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#smpte_tt_destination_settings: {
+                        let field_value = match fields_map.get("smpte_tt_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'smpte_tt_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#teletext_destination_settings: {
+                        let field_value = match fields_map.get("teletext_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'teletext_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ttml_destination_settings: {
+                        let field_value = match fields_map.get("ttml_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ttml_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#webvtt_destination_settings: {
+                        let field_value = match fields_map.get("webvtt_destination_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'webvtt_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -138,3 +138,190 @@ pub struct AlertPolicyConditionConditionThreshold {
     #[serde(rename = "trigger")]
     pub r#trigger: Option<Box<super::super::types::monitoring::AlertPolicyConditionConditionThresholdTrigger>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AlertPolicyConditionConditionThreshold {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "aggregations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aggregations,
+                )
+                .await,
+            );
+            map.insert(
+                "comparison".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#comparison,
+                )
+                .await,
+            );
+            map.insert(
+                "denominator_aggregations".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#denominator_aggregations,
+                )
+                .await,
+            );
+            map.insert(
+                "denominator_filter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#denominator_filter,
+                )
+                .await,
+            );
+            map.insert(
+                "duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#duration,
+                )
+                .await,
+            );
+            map.insert(
+                "evaluation_missing_data".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#evaluation_missing_data,
+                )
+                .await,
+            );
+            map.insert(
+                "filter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#filter,
+                )
+                .await,
+            );
+            map.insert(
+                "forecast_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#forecast_options,
+                )
+                .await,
+            );
+            map.insert(
+                "threshold_value".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#threshold_value,
+                )
+                .await,
+            );
+            map.insert(
+                "trigger".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#trigger,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AlertPolicyConditionConditionThreshold {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#aggregations: {
+                        let field_value = match fields_map.get("aggregations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aggregations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#comparison: {
+                        let field_value = match fields_map.get("comparison") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'comparison' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#denominator_aggregations: {
+                        let field_value = match fields_map.get("denominator_aggregations") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'denominator_aggregations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#denominator_filter: {
+                        let field_value = match fields_map.get("denominator_filter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'denominator_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#duration: {
+                        let field_value = match fields_map.get("duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#evaluation_missing_data: {
+                        let field_value = match fields_map.get("evaluation_missing_data") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'evaluation_missing_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#filter: {
+                        let field_value = match fields_map.get("filter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#forecast_options: {
+                        let field_value = match fields_map.get("forecast_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'forecast_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#threshold_value: {
+                        let field_value = match fields_map.get("threshold_value") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'threshold_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#trigger: {
+                        let field_value = match fields_map.get("trigger") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'trigger' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -28,3 +28,134 @@ pub struct ContainerUpload {
     #[serde(rename = "sourceHash")]
     pub r#source_hash: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ContainerUpload {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "content".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#content,
+                )
+                .await,
+            );
+            map.insert(
+                "content_base_64".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#content_base_64,
+                )
+                .await,
+            );
+            map.insert(
+                "executable".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#executable,
+                )
+                .await,
+            );
+            map.insert(
+                "file".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#file,
+                )
+                .await,
+            );
+            map.insert(
+                "source".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source,
+                )
+                .await,
+            );
+            map.insert(
+                "source_hash".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_hash,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ContainerUpload {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#content: {
+                        let field_value = match fields_map.get("content") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#content_base_64: {
+                        let field_value = match fields_map.get("content_base_64") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'content_base_64' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#executable: {
+                        let field_value = match fields_map.get("executable") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'executable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#file: {
+                        let field_value = match fields_map.get("file") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source: {
+                        let field_value = match fields_map.get("source") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_hash: {
+                        let field_value = match fields_map.get("source_hash") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_hash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

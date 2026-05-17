@@ -27,3 +27,134 @@ pub struct GetGroupMixedInstancesPolicyInstancesDistribution {
     #[serde(rename = "spotMaxPrice")]
     pub r#spot_max_price: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetGroupMixedInstancesPolicyInstancesDistribution {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "on_demand_allocation_strategy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#on_demand_allocation_strategy,
+                )
+                .await,
+            );
+            map.insert(
+                "on_demand_base_capacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#on_demand_base_capacity,
+                )
+                .await,
+            );
+            map.insert(
+                "on_demand_percentage_above_base_capacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#on_demand_percentage_above_base_capacity,
+                )
+                .await,
+            );
+            map.insert(
+                "spot_allocation_strategy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#spot_allocation_strategy,
+                )
+                .await,
+            );
+            map.insert(
+                "spot_instance_pools".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#spot_instance_pools,
+                )
+                .await,
+            );
+            map.insert(
+                "spot_max_price".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#spot_max_price,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetGroupMixedInstancesPolicyInstancesDistribution {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#on_demand_allocation_strategy: {
+                        let field_value = match fields_map.get("on_demand_allocation_strategy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'on_demand_allocation_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#on_demand_base_capacity: {
+                        let field_value = match fields_map.get("on_demand_base_capacity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'on_demand_base_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#on_demand_percentage_above_base_capacity: {
+                        let field_value = match fields_map.get("on_demand_percentage_above_base_capacity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'on_demand_percentage_above_base_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#spot_allocation_strategy: {
+                        let field_value = match fields_map.get("spot_allocation_strategy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'spot_allocation_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#spot_instance_pools: {
+                        let field_value = match fields_map.get("spot_instance_pools") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'spot_instance_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#spot_max_price: {
+                        let field_value = match fields_map.get("spot_max_price") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'spot_max_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -23,3 +23,120 @@ pub struct ManagedDatabaseLongTermRetentionPolicy {
     #[serde(rename = "yearlyRetention")]
     pub r#yearly_retention: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ManagedDatabaseLongTermRetentionPolicy {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "immutable_backups_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#immutable_backups_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "monthly_retention".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#monthly_retention,
+                )
+                .await,
+            );
+            map.insert(
+                "week_of_year".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#week_of_year,
+                )
+                .await,
+            );
+            map.insert(
+                "weekly_retention".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#weekly_retention,
+                )
+                .await,
+            );
+            map.insert(
+                "yearly_retention".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#yearly_retention,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ManagedDatabaseLongTermRetentionPolicy {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#immutable_backups_enabled: {
+                        let field_value = match fields_map.get("immutable_backups_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'immutable_backups_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#monthly_retention: {
+                        let field_value = match fields_map.get("monthly_retention") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'monthly_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#week_of_year: {
+                        let field_value = match fields_map.get("week_of_year") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'week_of_year' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#weekly_retention: {
+                        let field_value = match fields_map.get("weekly_retention") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'weekly_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#yearly_retention: {
+                        let field_value = match fields_map.get("yearly_retention") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'yearly_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

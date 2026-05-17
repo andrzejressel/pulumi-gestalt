@@ -81,3 +81,288 @@ pub struct ConnectionProfileCloudsqlSettings {
     #[serde(rename = "zone")]
     pub r#zone: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ConnectionProfileCloudsqlSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "activation_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#activation_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "auto_storage_increase".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#auto_storage_increase,
+                )
+                .await,
+            );
+            map.insert(
+                "cmek_key_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cmek_key_name,
+                )
+                .await,
+            );
+            map.insert(
+                "collation".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#collation,
+                )
+                .await,
+            );
+            map.insert(
+                "data_disk_size_gb".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_disk_size_gb,
+                )
+                .await,
+            );
+            map.insert(
+                "data_disk_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_disk_type,
+                )
+                .await,
+            );
+            map.insert(
+                "database_flags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#database_flags,
+                )
+                .await,
+            );
+            map.insert(
+                "database_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#database_version,
+                )
+                .await,
+            );
+            map.insert(
+                "edition".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#edition,
+                )
+                .await,
+            );
+            map.insert(
+                "ip_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ip_config,
+                )
+                .await,
+            );
+            map.insert(
+                "root_password".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#root_password,
+                )
+                .await,
+            );
+            map.insert(
+                "root_password_set".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#root_password_set,
+                )
+                .await,
+            );
+            map.insert(
+                "source_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_id,
+                )
+                .await,
+            );
+            map.insert(
+                "storage_auto_resize_limit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#storage_auto_resize_limit,
+                )
+                .await,
+            );
+            map.insert(
+                "tier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tier,
+                )
+                .await,
+            );
+            map.insert(
+                "user_labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_labels,
+                )
+                .await,
+            );
+            map.insert(
+                "zone".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#zone,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ConnectionProfileCloudsqlSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#activation_policy: {
+                        let field_value = match fields_map.get("activation_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'activation_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#auto_storage_increase: {
+                        let field_value = match fields_map.get("auto_storage_increase") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'auto_storage_increase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cmek_key_name: {
+                        let field_value = match fields_map.get("cmek_key_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cmek_key_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#collation: {
+                        let field_value = match fields_map.get("collation") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'collation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_disk_size_gb: {
+                        let field_value = match fields_map.get("data_disk_size_gb") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_disk_type: {
+                        let field_value = match fields_map.get("data_disk_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#database_flags: {
+                        let field_value = match fields_map.get("database_flags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'database_flags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#database_version: {
+                        let field_value = match fields_map.get("database_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'database_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#edition: {
+                        let field_value = match fields_map.get("edition") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'edition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ip_config: {
+                        let field_value = match fields_map.get("ip_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ip_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#root_password: {
+                        let field_value = match fields_map.get("root_password") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'root_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#root_password_set: {
+                        let field_value = match fields_map.get("root_password_set") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'root_password_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_id: {
+                        let field_value = match fields_map.get("source_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#storage_auto_resize_limit: {
+                        let field_value = match fields_map.get("storage_auto_resize_limit") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'storage_auto_resize_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tier: {
+                        let field_value = match fields_map.get("tier") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#user_labels: {
+                        let field_value = match fields_map.get("user_labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'user_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#zone: {
+                        let field_value = match fields_map.get("zone") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

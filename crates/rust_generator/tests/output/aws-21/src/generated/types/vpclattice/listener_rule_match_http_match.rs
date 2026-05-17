@@ -16,3 +16,92 @@ pub struct ListenerRuleMatchHttpMatch {
     #[serde(rename = "pathMatch")]
     pub r#path_match: Option<Box<super::super::types::vpclattice::ListenerRuleMatchHttpMatchPathMatch>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ListenerRuleMatchHttpMatch {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "header_matches".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#header_matches,
+                )
+                .await,
+            );
+            map.insert(
+                "method".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#method,
+                )
+                .await,
+            );
+            map.insert(
+                "path_match".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#path_match,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ListenerRuleMatchHttpMatch {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#header_matches: {
+                        let field_value = match fields_map.get("header_matches") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'header_matches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#method: {
+                        let field_value = match fields_map.get("method") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#path_match: {
+                        let field_value = match fields_map.get("path_match") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'path_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

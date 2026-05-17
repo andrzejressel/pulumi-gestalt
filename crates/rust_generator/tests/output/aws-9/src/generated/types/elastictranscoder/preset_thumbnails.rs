@@ -36,3 +36,162 @@ pub struct PresetThumbnails {
     #[serde(rename = "sizingPolicy")]
     pub r#sizing_policy: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PresetThumbnails {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "aspect_ratio".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aspect_ratio,
+                )
+                .await,
+            );
+            map.insert(
+                "format".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#format,
+                )
+                .await,
+            );
+            map.insert(
+                "interval".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#interval,
+                )
+                .await,
+            );
+            map.insert(
+                "max_height".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_height,
+                )
+                .await,
+            );
+            map.insert(
+                "max_width".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_width,
+                )
+                .await,
+            );
+            map.insert(
+                "padding_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#padding_policy,
+                )
+                .await,
+            );
+            map.insert(
+                "resolution".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resolution,
+                )
+                .await,
+            );
+            map.insert(
+                "sizing_policy".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sizing_policy,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PresetThumbnails {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#aspect_ratio: {
+                        let field_value = match fields_map.get("aspect_ratio") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aspect_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#format: {
+                        let field_value = match fields_map.get("format") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#interval: {
+                        let field_value = match fields_map.get("interval") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_height: {
+                        let field_value = match fields_map.get("max_height") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_height' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_width: {
+                        let field_value = match fields_map.get("max_width") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_width' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#padding_policy: {
+                        let field_value = match fields_map.get("padding_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'padding_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resolution: {
+                        let field_value = match fields_map.get("resolution") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sizing_policy: {
+                        let field_value = match fields_map.get("sizing_policy") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sizing_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

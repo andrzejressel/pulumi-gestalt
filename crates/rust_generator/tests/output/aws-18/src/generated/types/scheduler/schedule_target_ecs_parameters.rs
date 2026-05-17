@@ -62,3 +62,246 @@ pub struct ScheduleTargetEcsParameters {
     #[serde(rename = "taskDefinitionArn")]
     pub r#task_definition_arn: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ScheduleTargetEcsParameters {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "capacity_provider_strategies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#capacity_provider_strategies,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_ecs_managed_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_ecs_managed_tags,
+                )
+                .await,
+            );
+            map.insert(
+                "enable_execute_command".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enable_execute_command,
+                )
+                .await,
+            );
+            map.insert(
+                "group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#group,
+                )
+                .await,
+            );
+            map.insert(
+                "launch_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#launch_type,
+                )
+                .await,
+            );
+            map.insert(
+                "network_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#network_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "placement_constraints".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#placement_constraints,
+                )
+                .await,
+            );
+            map.insert(
+                "placement_strategies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#placement_strategies,
+                )
+                .await,
+            );
+            map.insert(
+                "platform_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#platform_version,
+                )
+                .await,
+            );
+            map.insert(
+                "propagate_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#propagate_tags,
+                )
+                .await,
+            );
+            map.insert(
+                "reference_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#reference_id,
+                )
+                .await,
+            );
+            map.insert(
+                "tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tags,
+                )
+                .await,
+            );
+            map.insert(
+                "task_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_count,
+                )
+                .await,
+            );
+            map.insert(
+                "task_definition_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#task_definition_arn,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ScheduleTargetEcsParameters {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#capacity_provider_strategies: {
+                        let field_value = match fields_map.get("capacity_provider_strategies") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'capacity_provider_strategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_ecs_managed_tags: {
+                        let field_value = match fields_map.get("enable_ecs_managed_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_ecs_managed_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enable_execute_command: {
+                        let field_value = match fields_map.get("enable_execute_command") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enable_execute_command' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#group: {
+                        let field_value = match fields_map.get("group") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#launch_type: {
+                        let field_value = match fields_map.get("launch_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'launch_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#network_configuration: {
+                        let field_value = match fields_map.get("network_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'network_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#placement_constraints: {
+                        let field_value = match fields_map.get("placement_constraints") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'placement_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#placement_strategies: {
+                        let field_value = match fields_map.get("placement_strategies") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'placement_strategies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#platform_version: {
+                        let field_value = match fields_map.get("platform_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'platform_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#propagate_tags: {
+                        let field_value = match fields_map.get("propagate_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'propagate_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#reference_id: {
+                        let field_value = match fields_map.get("reference_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'reference_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tags: {
+                        let field_value = match fields_map.get("tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_count: {
+                        let field_value = match fields_map.get("task_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#task_definition_arn: {
+                        let field_value = match fields_map.get("task_definition_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'task_definition_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

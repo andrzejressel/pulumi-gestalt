@@ -4,7 +4,7 @@ use crate::{PulumiValue, PulumiValueContent};
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
 use std::boxed::Box;
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, HashMap};
 use std::sync::Arc;
 
 pub trait FromPulumiValue {
@@ -111,6 +111,32 @@ where
 }
 
 impl<T> FromPulumiValue for BTreeMap<String, T>
+where
+    T: FromPulumiValue,
+{
+    fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
+        match value.content {
+            PulumiValueContent::Object(ref obj) => obj
+                .iter()
+                .map(|(k, v)| {
+                    Ok((
+                        k.clone(),
+                        T::from_pulumi_value(v).context_with(move || {
+                            format!(
+                                "Failed to convert PulumiValue at key '{}' to {}",
+                                k,
+                                std::any::type_name::<T>()
+                            )
+                        })?,
+                    ))
+                })
+                .collect(),
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}
+
+impl<T> FromPulumiValue for HashMap<String, T>
 where
     T: FromPulumiValue,
 {

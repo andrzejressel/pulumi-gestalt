@@ -16,3 +16,92 @@ pub struct FlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd {
     #[serde(rename = "tenthFractionsOfACent")]
     pub r#tenth_fractions_of_a_cent: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cents".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cents,
+                )
+                .await,
+            );
+            map.insert(
+                "dollars".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dollars,
+                )
+                .await,
+            );
+            map.insert(
+                "tenth_fractions_of_a_cent".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tenth_fractions_of_a_cent,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsd {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cents: {
+                        let field_value = match fields_map.get("cents") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#dollars: {
+                        let field_value = match fields_map.get("dollars") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dollars' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tenth_fractions_of_a_cent: {
+                        let field_value = match fields_map.get("tenth_fractions_of_a_cent") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tenth_fractions_of_a_cent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

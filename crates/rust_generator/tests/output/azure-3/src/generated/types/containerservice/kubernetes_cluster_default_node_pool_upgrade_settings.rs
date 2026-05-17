@@ -18,3 +18,92 @@ pub struct KubernetesClusterDefaultNodePoolUpgradeSettings {
     #[serde(rename = "nodeSoakDurationInMinutes")]
     pub r#node_soak_duration_in_minutes: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KubernetesClusterDefaultNodePoolUpgradeSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "drain_timeout_in_minutes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#drain_timeout_in_minutes,
+                )
+                .await,
+            );
+            map.insert(
+                "max_surge".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#max_surge,
+                )
+                .await,
+            );
+            map.insert(
+                "node_soak_duration_in_minutes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#node_soak_duration_in_minutes,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for KubernetesClusterDefaultNodePoolUpgradeSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#drain_timeout_in_minutes: {
+                        let field_value = match fields_map.get("drain_timeout_in_minutes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'drain_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#max_surge: {
+                        let field_value = match fields_map.get("max_surge") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'max_surge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#node_soak_duration_in_minutes: {
+                        let field_value = match fields_map.get("node_soak_duration_in_minutes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'node_soak_duration_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

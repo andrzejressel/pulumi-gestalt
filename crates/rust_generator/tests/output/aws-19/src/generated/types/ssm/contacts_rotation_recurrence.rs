@@ -27,3 +27,134 @@ pub struct ContactsRotationRecurrence {
     #[serde(rename = "weeklySettings")]
     pub r#weekly_settings: Option<Vec<super::super::types::ssm::ContactsRotationRecurrenceWeeklySetting>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ContactsRotationRecurrence {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "daily_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#daily_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "monthly_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#monthly_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "number_of_on_calls".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#number_of_on_calls,
+                )
+                .await,
+            );
+            map.insert(
+                "recurrence_multiplier".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recurrence_multiplier,
+                )
+                .await,
+            );
+            map.insert(
+                "shift_coverages".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#shift_coverages,
+                )
+                .await,
+            );
+            map.insert(
+                "weekly_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#weekly_settings,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ContactsRotationRecurrence {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#daily_settings: {
+                        let field_value = match fields_map.get("daily_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'daily_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#monthly_settings: {
+                        let field_value = match fields_map.get("monthly_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'monthly_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#number_of_on_calls: {
+                        let field_value = match fields_map.get("number_of_on_calls") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'number_of_on_calls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recurrence_multiplier: {
+                        let field_value = match fields_map.get("recurrence_multiplier") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recurrence_multiplier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#shift_coverages: {
+                        let field_value = match fields_map.get("shift_coverages") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'shift_coverages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#weekly_settings: {
+                        let field_value = match fields_map.get("weekly_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'weekly_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

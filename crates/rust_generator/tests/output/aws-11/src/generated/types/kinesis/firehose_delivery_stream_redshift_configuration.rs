@@ -60,3 +60,246 @@ pub struct FirehoseDeliveryStreamRedshiftConfiguration {
     #[serde(rename = "username")]
     pub r#username: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FirehoseDeliveryStreamRedshiftConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "cloudwatch_logging_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cloudwatch_logging_options,
+                )
+                .await,
+            );
+            map.insert(
+                "cluster_jdbcurl".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cluster_jdbcurl,
+                )
+                .await,
+            );
+            map.insert(
+                "copy_options".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#copy_options,
+                )
+                .await,
+            );
+            map.insert(
+                "data_table_columns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_table_columns,
+                )
+                .await,
+            );
+            map.insert(
+                "data_table_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#data_table_name,
+                )
+                .await,
+            );
+            map.insert(
+                "password".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#password,
+                )
+                .await,
+            );
+            map.insert(
+                "processing_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#processing_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "retry_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#retry_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "role_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_backup_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_backup_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_backup_mode".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_backup_mode,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "secrets_manager_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secrets_manager_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "username".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#username,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FirehoseDeliveryStreamRedshiftConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#cloudwatch_logging_options: {
+                        let field_value = match fields_map.get("cloudwatch_logging_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cloudwatch_logging_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cluster_jdbcurl: {
+                        let field_value = match fields_map.get("cluster_jdbcurl") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cluster_jdbcurl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#copy_options: {
+                        let field_value = match fields_map.get("copy_options") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'copy_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_table_columns: {
+                        let field_value = match fields_map.get("data_table_columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_table_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#data_table_name: {
+                        let field_value = match fields_map.get("data_table_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'data_table_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#password: {
+                        let field_value = match fields_map.get("password") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#processing_configuration: {
+                        let field_value = match fields_map.get("processing_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'processing_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#retry_duration: {
+                        let field_value = match fields_map.get("retry_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'retry_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#role_arn: {
+                        let field_value = match fields_map.get("role_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_backup_configuration: {
+                        let field_value = match fields_map.get("s_3_backup_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_backup_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_backup_mode: {
+                        let field_value = match fields_map.get("s_3_backup_mode") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_backup_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#s_3_configuration: {
+                        let field_value = match fields_map.get("s_3_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secrets_manager_configuration: {
+                        let field_value = match fields_map.get("secrets_manager_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secrets_manager_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#username: {
+                        let field_value = match fields_map.get("username") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

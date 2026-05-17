@@ -24,3 +24,120 @@ pub struct ChannelEncoderSettingsOutputGroupOutput {
     #[serde(rename = "videoDescriptionName")]
     pub r#video_description_name: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ChannelEncoderSettingsOutputGroupOutput {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "audio_description_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#audio_description_names,
+                )
+                .await,
+            );
+            map.insert(
+                "caption_description_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#caption_description_names,
+                )
+                .await,
+            );
+            map.insert(
+                "output_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#output_name,
+                )
+                .await,
+            );
+            map.insert(
+                "output_settings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#output_settings,
+                )
+                .await,
+            );
+            map.insert(
+                "video_description_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#video_description_name,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ChannelEncoderSettingsOutputGroupOutput {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#audio_description_names: {
+                        let field_value = match fields_map.get("audio_description_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'audio_description_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#caption_description_names: {
+                        let field_value = match fields_map.get("caption_description_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'caption_description_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#output_name: {
+                        let field_value = match fields_map.get("output_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'output_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#output_settings: {
+                        let field_value = match fields_map.get("output_settings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'output_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#video_description_name: {
+                        let field_value = match fields_map.get("video_description_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'video_description_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

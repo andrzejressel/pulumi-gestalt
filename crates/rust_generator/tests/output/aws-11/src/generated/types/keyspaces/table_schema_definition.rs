@@ -20,3 +20,106 @@ pub struct TableSchemaDefinition {
     #[serde(rename = "staticColumns")]
     pub r#static_columns: Option<Vec<super::super::types::keyspaces::TableSchemaDefinitionStaticColumn>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TableSchemaDefinition {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "clustering_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#clustering_keys,
+                )
+                .await,
+            );
+            map.insert(
+                "columns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#columns,
+                )
+                .await,
+            );
+            map.insert(
+                "partition_keys".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#partition_keys,
+                )
+                .await,
+            );
+            map.insert(
+                "static_columns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#static_columns,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TableSchemaDefinition {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#clustering_keys: {
+                        let field_value = match fields_map.get("clustering_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'clustering_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#columns: {
+                        let field_value = match fields_map.get("columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#partition_keys: {
+                        let field_value = match fields_map.get("partition_keys") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'partition_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#static_columns: {
+                        let field_value = match fields_map.get("static_columns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'static_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

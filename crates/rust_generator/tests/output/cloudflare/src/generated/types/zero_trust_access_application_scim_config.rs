@@ -28,3 +28,134 @@ pub struct ZeroTrustAccessApplicationScimConfig {
     #[serde(rename = "remoteUri")]
     pub r#remote_uri: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ZeroTrustAccessApplicationScimConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "authentication".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#authentication,
+                )
+                .await,
+            );
+            map.insert(
+                "deactivate_on_delete".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#deactivate_on_delete,
+                )
+                .await,
+            );
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "idp_uid".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#idp_uid,
+                )
+                .await,
+            );
+            map.insert(
+                "mappings".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mappings,
+                )
+                .await,
+            );
+            map.insert(
+                "remote_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#remote_uri,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ZeroTrustAccessApplicationScimConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#authentication: {
+                        let field_value = match fields_map.get("authentication") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#deactivate_on_delete: {
+                        let field_value = match fields_map.get("deactivate_on_delete") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'deactivate_on_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#idp_uid: {
+                        let field_value = match fields_map.get("idp_uid") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'idp_uid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mappings: {
+                        let field_value = match fields_map.get("mappings") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#remote_uri: {
+                        let field_value = match fields_map.get("remote_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'remote_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

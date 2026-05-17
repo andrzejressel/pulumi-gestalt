@@ -32,3 +32,148 @@ pub struct ActionGroupAutomationRunbookReceiver {
     #[serde(rename = "webhookResourceId")]
     pub r#webhook_resource_id: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ActionGroupAutomationRunbookReceiver {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "automation_account_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#automation_account_id,
+                )
+                .await,
+            );
+            map.insert(
+                "is_global_runbook".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#is_global_runbook,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "runbook_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#runbook_name,
+                )
+                .await,
+            );
+            map.insert(
+                "service_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "use_common_alert_schema".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#use_common_alert_schema,
+                )
+                .await,
+            );
+            map.insert(
+                "webhook_resource_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#webhook_resource_id,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ActionGroupAutomationRunbookReceiver {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#automation_account_id: {
+                        let field_value = match fields_map.get("automation_account_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'automation_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#is_global_runbook: {
+                        let field_value = match fields_map.get("is_global_runbook") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'is_global_runbook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#runbook_name: {
+                        let field_value = match fields_map.get("runbook_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'runbook_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_uri: {
+                        let field_value = match fields_map.get("service_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#use_common_alert_schema: {
+                        let field_value = match fields_map.get("use_common_alert_schema") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'use_common_alert_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#webhook_resource_id: {
+                        let field_value = match fields_map.get("webhook_resource_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'webhook_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -20,3 +20,106 @@ pub struct PoolMount {
     #[serde(rename = "nfsMounts")]
     pub r#nfs_mounts: Option<Vec<super::super::types::batch::PoolMountNfsMount>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PoolMount {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "azure_blob_file_system".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#azure_blob_file_system,
+                )
+                .await,
+            );
+            map.insert(
+                "azure_file_shares".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#azure_file_shares,
+                )
+                .await,
+            );
+            map.insert(
+                "cifs_mounts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#cifs_mounts,
+                )
+                .await,
+            );
+            map.insert(
+                "nfs_mounts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#nfs_mounts,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PoolMount {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#azure_blob_file_system: {
+                        let field_value = match fields_map.get("azure_blob_file_system") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'azure_blob_file_system' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#azure_file_shares: {
+                        let field_value = match fields_map.get("azure_file_shares") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'azure_file_shares' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#cifs_mounts: {
+                        let field_value = match fields_map.get("cifs_mounts") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'cifs_mounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#nfs_mounts: {
+                        let field_value = match fields_map.get("nfs_mounts") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'nfs_mounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -20,3 +20,106 @@ pub struct GetInstanceGroupManagerStatus {
     #[serde(rename = "versionTargets")]
     pub r#version_targets: Vec<super::super::types::compute::GetInstanceGroupManagerStatusVersionTarget>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetInstanceGroupManagerStatus {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "all_instances_configs".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#all_instances_configs,
+                )
+                .await,
+            );
+            map.insert(
+                "is_stable".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#is_stable,
+                )
+                .await,
+            );
+            map.insert(
+                "statefuls".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#statefuls,
+                )
+                .await,
+            );
+            map.insert(
+                "version_targets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#version_targets,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetInstanceGroupManagerStatus {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#all_instances_configs: {
+                        let field_value = match fields_map.get("all_instances_configs") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'all_instances_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#is_stable: {
+                        let field_value = match fields_map.get("is_stable") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'is_stable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#statefuls: {
+                        let field_value = match fields_map.get("statefuls") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'statefuls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#version_targets: {
+                        let field_value = match fields_map.get("version_targets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'version_targets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

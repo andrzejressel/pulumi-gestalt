@@ -38,3 +38,41 @@ impl<'de> pulumi_gestalt_rust::__private::serde::Deserialize<'de> for {{enum.str
         }
     }
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for {{enum.struct_name}} {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        let value: i32 = match self {
+            {{#each enum.values as |value|}}
+            {{@root.enum.struct_name}}::{{value.name}} => {{value.value}},
+            {{/each}}
+        };
+        std::future::ready(pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue {
+            content: pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent::Integer(value),
+            secret: false,
+            dependencies: std::collections::HashSet::new(),
+        })
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for {{enum.struct_name}} {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+
+        match &value.content {
+            PulumiValueContent::Integer(i) => match i {
+                {{#each enum.values as |value|}}
+                {{value.value}} => Ok({{@root.enum.struct_name}}::{{value.name}}),
+                {{/each}}
+                _ => bail!("Invalid integer enum value: {}", i),
+            },
+            _ => bail!("Expected Integer, got {:?}", value.content),
+        }
+    }
+}

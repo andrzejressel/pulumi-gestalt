@@ -44,3 +44,162 @@ pub struct ReplicationRecoveryPlanFailoverRecoveryGroupPreAction {
     #[serde(rename = "type")]
     pub r#type_: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ReplicationRecoveryPlanFailoverRecoveryGroupPreAction {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "fabric_location".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fabric_location,
+                )
+                .await,
+            );
+            map.insert(
+                "fail_over_directions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fail_over_directions,
+                )
+                .await,
+            );
+            map.insert(
+                "fail_over_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#fail_over_types,
+                )
+                .await,
+            );
+            map.insert(
+                "manual_action_instruction".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#manual_action_instruction,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "runbook_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#runbook_id,
+                )
+                .await,
+            );
+            map.insert(
+                "script_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#script_path,
+                )
+                .await,
+            );
+            map.insert(
+                "type_".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#type_,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ReplicationRecoveryPlanFailoverRecoveryGroupPreAction {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#fabric_location: {
+                        let field_value = match fields_map.get("fabric_location") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fabric_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fail_over_directions: {
+                        let field_value = match fields_map.get("fail_over_directions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fail_over_directions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#fail_over_types: {
+                        let field_value = match fields_map.get("fail_over_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'fail_over_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#manual_action_instruction: {
+                        let field_value = match fields_map.get("manual_action_instruction") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'manual_action_instruction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#runbook_id: {
+                        let field_value = match fields_map.get("runbook_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'runbook_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#script_path: {
+                        let field_value = match fields_map.get("script_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'script_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#type_: {
+                        let field_value = match fields_map.get("type_") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

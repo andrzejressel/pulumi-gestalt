@@ -38,3 +38,162 @@ pub struct ScheduledQueryRulesAlertV2Criteria {
     #[serde(rename = "timeAggregationMethod")]
     pub r#time_aggregation_method: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ScheduledQueryRulesAlertV2Criteria {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "dimensions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dimensions,
+                )
+                .await,
+            );
+            map.insert(
+                "failing_periods".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#failing_periods,
+                )
+                .await,
+            );
+            map.insert(
+                "metric_measure_column".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#metric_measure_column,
+                )
+                .await,
+            );
+            map.insert(
+                "operator".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#operator,
+                )
+                .await,
+            );
+            map.insert(
+                "query".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#query,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_id_column".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_id_column,
+                )
+                .await,
+            );
+            map.insert(
+                "threshold".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#threshold,
+                )
+                .await,
+            );
+            map.insert(
+                "time_aggregation_method".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#time_aggregation_method,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ScheduledQueryRulesAlertV2Criteria {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#dimensions: {
+                        let field_value = match fields_map.get("dimensions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dimensions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#failing_periods: {
+                        let field_value = match fields_map.get("failing_periods") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'failing_periods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#metric_measure_column: {
+                        let field_value = match fields_map.get("metric_measure_column") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'metric_measure_column' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#operator: {
+                        let field_value = match fields_map.get("operator") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#query: {
+                        let field_value = match fields_map.get("query") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'query' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_id_column: {
+                        let field_value = match fields_map.get("resource_id_column") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_id_column' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#threshold: {
+                        let field_value = match fields_map.get("threshold") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#time_aggregation_method: {
+                        let field_value = match fields_map.get("time_aggregation_method") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'time_aggregation_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

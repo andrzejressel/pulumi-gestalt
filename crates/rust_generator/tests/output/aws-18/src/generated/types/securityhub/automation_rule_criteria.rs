@@ -156,3 +156,582 @@ pub struct AutomationRuleCriteria {
     #[serde(rename = "workflowStatuses")]
     pub r#workflow_statuses: Option<Vec<super::super::types::securityhub::AutomationRuleCriteriaWorkflowStatus>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AutomationRuleCriteria {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "aws_account_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aws_account_ids,
+                )
+                .await,
+            );
+            map.insert(
+                "aws_account_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aws_account_names,
+                )
+                .await,
+            );
+            map.insert(
+                "company_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#company_names,
+                )
+                .await,
+            );
+            map.insert(
+                "compliance_associated_standards_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compliance_associated_standards_ids,
+                )
+                .await,
+            );
+            map.insert(
+                "compliance_security_control_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compliance_security_control_ids,
+                )
+                .await,
+            );
+            map.insert(
+                "compliance_statuses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#compliance_statuses,
+                )
+                .await,
+            );
+            map.insert(
+                "confidences".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#confidences,
+                )
+                .await,
+            );
+            map.insert(
+                "created_ats".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#created_ats,
+                )
+                .await,
+            );
+            map.insert(
+                "criticalities".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#criticalities,
+                )
+                .await,
+            );
+            map.insert(
+                "descriptions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#descriptions,
+                )
+                .await,
+            );
+            map.insert(
+                "first_observed_ats".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#first_observed_ats,
+                )
+                .await,
+            );
+            map.insert(
+                "generator_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#generator_ids,
+                )
+                .await,
+            );
+            map.insert(
+                "ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ids,
+                )
+                .await,
+            );
+            map.insert(
+                "last_observed_ats".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#last_observed_ats,
+                )
+                .await,
+            );
+            map.insert(
+                "note_texts".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#note_texts,
+                )
+                .await,
+            );
+            map.insert(
+                "note_updated_ats".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#note_updated_ats,
+                )
+                .await,
+            );
+            map.insert(
+                "note_updated_bies".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#note_updated_bies,
+                )
+                .await,
+            );
+            map.insert(
+                "product_arns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#product_arns,
+                )
+                .await,
+            );
+            map.insert(
+                "product_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#product_names,
+                )
+                .await,
+            );
+            map.insert(
+                "record_states".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#record_states,
+                )
+                .await,
+            );
+            map.insert(
+                "related_findings_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#related_findings_ids,
+                )
+                .await,
+            );
+            map.insert(
+                "related_findings_product_arns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#related_findings_product_arns,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_application_arns".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_application_arns,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_application_names".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_application_names,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_details_others".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_details_others,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_ids".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_ids,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_partitions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_partitions,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_regions".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_regions,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_tags".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_tags,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_types,
+                )
+                .await,
+            );
+            map.insert(
+                "severity_labels".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#severity_labels,
+                )
+                .await,
+            );
+            map.insert(
+                "source_urls".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#source_urls,
+                )
+                .await,
+            );
+            map.insert(
+                "titles".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#titles,
+                )
+                .await,
+            );
+            map.insert(
+                "types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#types,
+                )
+                .await,
+            );
+            map.insert(
+                "updated_ats".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#updated_ats,
+                )
+                .await,
+            );
+            map.insert(
+                "user_defined_fields".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_defined_fields,
+                )
+                .await,
+            );
+            map.insert(
+                "verification_states".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#verification_states,
+                )
+                .await,
+            );
+            map.insert(
+                "workflow_statuses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#workflow_statuses,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AutomationRuleCriteria {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#aws_account_ids: {
+                        let field_value = match fields_map.get("aws_account_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aws_account_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#aws_account_names: {
+                        let field_value = match fields_map.get("aws_account_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aws_account_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#company_names: {
+                        let field_value = match fields_map.get("company_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'company_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#compliance_associated_standards_ids: {
+                        let field_value = match fields_map.get("compliance_associated_standards_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'compliance_associated_standards_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#compliance_security_control_ids: {
+                        let field_value = match fields_map.get("compliance_security_control_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'compliance_security_control_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#compliance_statuses: {
+                        let field_value = match fields_map.get("compliance_statuses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'compliance_statuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#confidences: {
+                        let field_value = match fields_map.get("confidences") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'confidences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#created_ats: {
+                        let field_value = match fields_map.get("created_ats") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'created_ats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#criticalities: {
+                        let field_value = match fields_map.get("criticalities") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'criticalities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#descriptions: {
+                        let field_value = match fields_map.get("descriptions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'descriptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#first_observed_ats: {
+                        let field_value = match fields_map.get("first_observed_ats") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'first_observed_ats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#generator_ids: {
+                        let field_value = match fields_map.get("generator_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'generator_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ids: {
+                        let field_value = match fields_map.get("ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#last_observed_ats: {
+                        let field_value = match fields_map.get("last_observed_ats") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'last_observed_ats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#note_texts: {
+                        let field_value = match fields_map.get("note_texts") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'note_texts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#note_updated_ats: {
+                        let field_value = match fields_map.get("note_updated_ats") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'note_updated_ats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#note_updated_bies: {
+                        let field_value = match fields_map.get("note_updated_bies") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'note_updated_bies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#product_arns: {
+                        let field_value = match fields_map.get("product_arns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'product_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#product_names: {
+                        let field_value = match fields_map.get("product_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'product_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#record_states: {
+                        let field_value = match fields_map.get("record_states") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'record_states' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#related_findings_ids: {
+                        let field_value = match fields_map.get("related_findings_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'related_findings_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#related_findings_product_arns: {
+                        let field_value = match fields_map.get("related_findings_product_arns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'related_findings_product_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_application_arns: {
+                        let field_value = match fields_map.get("resource_application_arns") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_application_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_application_names: {
+                        let field_value = match fields_map.get("resource_application_names") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_application_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_details_others: {
+                        let field_value = match fields_map.get("resource_details_others") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_details_others' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_ids: {
+                        let field_value = match fields_map.get("resource_ids") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_partitions: {
+                        let field_value = match fields_map.get("resource_partitions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_partitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_regions: {
+                        let field_value = match fields_map.get("resource_regions") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_regions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_tags: {
+                        let field_value = match fields_map.get("resource_tags") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_types: {
+                        let field_value = match fields_map.get("resource_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#severity_labels: {
+                        let field_value = match fields_map.get("severity_labels") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'severity_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#source_urls: {
+                        let field_value = match fields_map.get("source_urls") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'source_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#titles: {
+                        let field_value = match fields_map.get("titles") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'titles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#types: {
+                        let field_value = match fields_map.get("types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#updated_ats: {
+                        let field_value = match fields_map.get("updated_ats") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'updated_ats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#user_defined_fields: {
+                        let field_value = match fields_map.get("user_defined_fields") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'user_defined_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#verification_states: {
+                        let field_value = match fields_map.get("verification_states") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'verification_states' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#workflow_statuses: {
+                        let field_value = match fields_map.get("workflow_statuses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'workflow_statuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

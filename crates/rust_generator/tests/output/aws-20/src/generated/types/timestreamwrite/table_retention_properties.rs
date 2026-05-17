@@ -12,3 +12,78 @@ pub struct TableRetentionProperties {
     #[serde(rename = "memoryStoreRetentionPeriodInHours")]
     pub r#memory_store_retention_period_in_hours: i32,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TableRetentionProperties {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "magnetic_store_retention_period_in_days".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#magnetic_store_retention_period_in_days,
+                )
+                .await,
+            );
+            map.insert(
+                "memory_store_retention_period_in_hours".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#memory_store_retention_period_in_hours,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TableRetentionProperties {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#magnetic_store_retention_period_in_days: {
+                        let field_value = match fields_map.get("magnetic_store_retention_period_in_days") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'magnetic_store_retention_period_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#memory_store_retention_period_in_hours: {
+                        let field_value = match fields_map.get("memory_store_retention_period_in_hours") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'memory_store_retention_period_in_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

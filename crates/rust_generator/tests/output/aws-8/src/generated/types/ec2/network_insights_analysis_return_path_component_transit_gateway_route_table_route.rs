@@ -25,3 +25,148 @@ pub struct NetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRou
     #[serde(rename = "state")]
     pub r#state: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for NetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "attachment_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#attachment_id,
+                )
+                .await,
+            );
+            map.insert(
+                "destination_cidr".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#destination_cidr,
+                )
+                .await,
+            );
+            map.insert(
+                "prefix_list_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#prefix_list_id,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_id,
+                )
+                .await,
+            );
+            map.insert(
+                "resource_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#resource_type,
+                )
+                .await,
+            );
+            map.insert(
+                "route_origin".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#route_origin,
+                )
+                .await,
+            );
+            map.insert(
+                "state".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#state,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for NetworkInsightsAnalysisReturnPathComponentTransitGatewayRouteTableRoute {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#attachment_id: {
+                        let field_value = match fields_map.get("attachment_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'attachment_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#destination_cidr: {
+                        let field_value = match fields_map.get("destination_cidr") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'destination_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#prefix_list_id: {
+                        let field_value = match fields_map.get("prefix_list_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'prefix_list_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_id: {
+                        let field_value = match fields_map.get("resource_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#resource_type: {
+                        let field_value = match fields_map.get("resource_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'resource_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#route_origin: {
+                        let field_value = match fields_map.get("route_origin") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'route_origin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#state: {
+                        let field_value = match fields_map.get("state") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

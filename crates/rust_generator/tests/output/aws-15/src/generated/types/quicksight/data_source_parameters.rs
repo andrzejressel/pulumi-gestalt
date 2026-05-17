@@ -88,3 +88,344 @@ pub struct DataSourceParameters {
     #[serde(rename = "twitter")]
     pub r#twitter: Option<Box<super::super::types::quicksight::DataSourceParametersTwitter>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for DataSourceParameters {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "amazon_elasticsearch".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#amazon_elasticsearch,
+                )
+                .await,
+            );
+            map.insert(
+                "athena".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#athena,
+                )
+                .await,
+            );
+            map.insert(
+                "aurora".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aurora,
+                )
+                .await,
+            );
+            map.insert(
+                "aurora_postgresql".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aurora_postgresql,
+                )
+                .await,
+            );
+            map.insert(
+                "aws_iot_analytics".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aws_iot_analytics,
+                )
+                .await,
+            );
+            map.insert(
+                "databricks".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#databricks,
+                )
+                .await,
+            );
+            map.insert(
+                "jira".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#jira,
+                )
+                .await,
+            );
+            map.insert(
+                "maria_db".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#maria_db,
+                )
+                .await,
+            );
+            map.insert(
+                "mysql".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mysql,
+                )
+                .await,
+            );
+            map.insert(
+                "oracle".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#oracle,
+                )
+                .await,
+            );
+            map.insert(
+                "postgresql".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#postgresql,
+                )
+                .await,
+            );
+            map.insert(
+                "presto".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#presto,
+                )
+                .await,
+            );
+            map.insert(
+                "rds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#rds,
+                )
+                .await,
+            );
+            map.insert(
+                "redshift".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#redshift,
+                )
+                .await,
+            );
+            map.insert(
+                "s_3".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#s_3,
+                )
+                .await,
+            );
+            map.insert(
+                "service_now".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_now,
+                )
+                .await,
+            );
+            map.insert(
+                "snowflake".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#snowflake,
+                )
+                .await,
+            );
+            map.insert(
+                "spark".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#spark,
+                )
+                .await,
+            );
+            map.insert(
+                "sql_server".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sql_server,
+                )
+                .await,
+            );
+            map.insert(
+                "teradata".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#teradata,
+                )
+                .await,
+            );
+            map.insert(
+                "twitter".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#twitter,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for DataSourceParameters {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#amazon_elasticsearch: {
+                        let field_value = match fields_map.get("amazon_elasticsearch") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'amazon_elasticsearch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#athena: {
+                        let field_value = match fields_map.get("athena") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'athena' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#aurora: {
+                        let field_value = match fields_map.get("aurora") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aurora' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#aurora_postgresql: {
+                        let field_value = match fields_map.get("aurora_postgresql") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aurora_postgresql' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#aws_iot_analytics: {
+                        let field_value = match fields_map.get("aws_iot_analytics") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aws_iot_analytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#databricks: {
+                        let field_value = match fields_map.get("databricks") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'databricks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#jira: {
+                        let field_value = match fields_map.get("jira") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'jira' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#maria_db: {
+                        let field_value = match fields_map.get("maria_db") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'maria_db' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mysql: {
+                        let field_value = match fields_map.get("mysql") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mysql' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#oracle: {
+                        let field_value = match fields_map.get("oracle") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'oracle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#postgresql: {
+                        let field_value = match fields_map.get("postgresql") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'postgresql' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#presto: {
+                        let field_value = match fields_map.get("presto") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'presto' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#rds: {
+                        let field_value = match fields_map.get("rds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'rds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#redshift: {
+                        let field_value = match fields_map.get("redshift") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'redshift' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#s_3: {
+                        let field_value = match fields_map.get("s_3") {
+                            Some(value) => value,
+                            None => bail!("Missing field 's_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_now: {
+                        let field_value = match fields_map.get("service_now") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_now' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#snowflake: {
+                        let field_value = match fields_map.get("snowflake") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'snowflake' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#spark: {
+                        let field_value = match fields_map.get("spark") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'spark' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sql_server: {
+                        let field_value = match fields_map.get("sql_server") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sql_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#teradata: {
+                        let field_value = match fields_map.get("teradata") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'teradata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#twitter: {
+                        let field_value = match fields_map.get("twitter") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'twitter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

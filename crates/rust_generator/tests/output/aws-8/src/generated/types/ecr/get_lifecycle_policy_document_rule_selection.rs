@@ -28,3 +28,134 @@ pub struct GetLifecyclePolicyDocumentRuleSelection {
     #[serde(rename = "tagStatus")]
     pub r#tag_status: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetLifecyclePolicyDocumentRuleSelection {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "count_number".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#count_number,
+                )
+                .await,
+            );
+            map.insert(
+                "count_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#count_type,
+                )
+                .await,
+            );
+            map.insert(
+                "count_unit".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#count_unit,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_pattern_lists".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_pattern_lists,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_prefix_lists".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_prefix_lists,
+                )
+                .await,
+            );
+            map.insert(
+                "tag_status".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#tag_status,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetLifecyclePolicyDocumentRuleSelection {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#count_number: {
+                        let field_value = match fields_map.get("count_number") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'count_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#count_type: {
+                        let field_value = match fields_map.get("count_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'count_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#count_unit: {
+                        let field_value = match fields_map.get("count_unit") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'count_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tag_pattern_lists: {
+                        let field_value = match fields_map.get("tag_pattern_lists") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tag_pattern_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tag_prefix_lists: {
+                        let field_value = match fields_map.get("tag_prefix_lists") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tag_prefix_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#tag_status: {
+                        let field_value = match fields_map.get("tag_status") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'tag_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

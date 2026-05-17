@@ -42,3 +42,176 @@ pub struct InstanceUpgradeHistory {
     #[serde(rename = "vmImage")]
     pub r#vm_image: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for InstanceUpgradeHistory {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "action".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#action,
+                )
+                .await,
+            );
+            map.insert(
+                "container_image".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#container_image,
+                )
+                .await,
+            );
+            map.insert(
+                "create_time".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#create_time,
+                )
+                .await,
+            );
+            map.insert(
+                "framework".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#framework,
+                )
+                .await,
+            );
+            map.insert(
+                "snapshot".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#snapshot,
+                )
+                .await,
+            );
+            map.insert(
+                "state".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#state,
+                )
+                .await,
+            );
+            map.insert(
+                "target_version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#target_version,
+                )
+                .await,
+            );
+            map.insert(
+                "version".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#version,
+                )
+                .await,
+            );
+            map.insert(
+                "vm_image".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#vm_image,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for InstanceUpgradeHistory {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#action: {
+                        let field_value = match fields_map.get("action") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#container_image: {
+                        let field_value = match fields_map.get("container_image") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'container_image' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#create_time: {
+                        let field_value = match fields_map.get("create_time") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'create_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#framework: {
+                        let field_value = match fields_map.get("framework") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'framework' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#snapshot: {
+                        let field_value = match fields_map.get("snapshot") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'snapshot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#state: {
+                        let field_value = match fields_map.get("state") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#target_version: {
+                        let field_value = match fields_map.get("target_version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'target_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#version: {
+                        let field_value = match fields_map.get("version") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#vm_image: {
+                        let field_value = match fields_map.get("vm_image") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'vm_image' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

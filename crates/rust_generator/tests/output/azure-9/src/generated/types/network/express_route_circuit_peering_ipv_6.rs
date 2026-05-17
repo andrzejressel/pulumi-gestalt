@@ -26,3 +26,120 @@ pub struct ExpressRouteCircuitPeeringIpv6 {
     #[serde(rename = "secondaryPeerAddressPrefix")]
     pub r#secondary_peer_address_prefix: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ExpressRouteCircuitPeeringIpv6 {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "microsoft_peering".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#microsoft_peering,
+                )
+                .await,
+            );
+            map.insert(
+                "primary_peer_address_prefix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#primary_peer_address_prefix,
+                )
+                .await,
+            );
+            map.insert(
+                "route_filter_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#route_filter_id,
+                )
+                .await,
+            );
+            map.insert(
+                "secondary_peer_address_prefix".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secondary_peer_address_prefix,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ExpressRouteCircuitPeeringIpv6 {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#enabled: {
+                        let field_value = match fields_map.get("enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#microsoft_peering: {
+                        let field_value = match fields_map.get("microsoft_peering") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'microsoft_peering' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#primary_peer_address_prefix: {
+                        let field_value = match fields_map.get("primary_peer_address_prefix") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'primary_peer_address_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#route_filter_id: {
+                        let field_value = match fields_map.get("route_filter_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'route_filter_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secondary_peer_address_prefix: {
+                        let field_value = match fields_map.get("secondary_peer_address_prefix") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secondary_peer_address_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

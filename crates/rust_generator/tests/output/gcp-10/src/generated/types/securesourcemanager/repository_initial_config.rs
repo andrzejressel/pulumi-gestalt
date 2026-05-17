@@ -23,3 +23,106 @@ pub struct RepositoryInitialConfig {
     #[serde(rename = "readme")]
     pub r#readme: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for RepositoryInitialConfig {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "default_branch".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#default_branch,
+                )
+                .await,
+            );
+            map.insert(
+                "gitignores".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gitignores,
+                )
+                .await,
+            );
+            map.insert(
+                "license".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#license,
+                )
+                .await,
+            );
+            map.insert(
+                "readme".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#readme,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for RepositoryInitialConfig {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#default_branch: {
+                        let field_value = match fields_map.get("default_branch") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'default_branch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gitignores: {
+                        let field_value = match fields_map.get("gitignores") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gitignores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#license: {
+                        let field_value = match fields_map.get("license") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'license' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#readme: {
+                        let field_value = match fields_map.get("readme") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'readme' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

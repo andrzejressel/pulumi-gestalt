@@ -59,3 +59,176 @@ pub struct GetDatasetAccess {
     #[serde(rename = "views")]
     pub r#views: Vec<super::super::types::bigquery::GetDatasetAccessView>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for GetDatasetAccess {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "datasets".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#datasets,
+                )
+                .await,
+            );
+            map.insert(
+                "domain".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#domain,
+                )
+                .await,
+            );
+            map.insert(
+                "group_by_email".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#group_by_email,
+                )
+                .await,
+            );
+            map.insert(
+                "iam_member".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#iam_member,
+                )
+                .await,
+            );
+            map.insert(
+                "role".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#role,
+                )
+                .await,
+            );
+            map.insert(
+                "routines".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#routines,
+                )
+                .await,
+            );
+            map.insert(
+                "special_group".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#special_group,
+                )
+                .await,
+            );
+            map.insert(
+                "user_by_email".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#user_by_email,
+                )
+                .await,
+            );
+            map.insert(
+                "views".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#views,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for GetDatasetAccess {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#datasets: {
+                        let field_value = match fields_map.get("datasets") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'datasets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#domain: {
+                        let field_value = match fields_map.get("domain") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'domain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#group_by_email: {
+                        let field_value = match fields_map.get("group_by_email") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'group_by_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#iam_member: {
+                        let field_value = match fields_map.get("iam_member") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'iam_member' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#role: {
+                        let field_value = match fields_map.get("role") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#routines: {
+                        let field_value = match fields_map.get("routines") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'routines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#special_group: {
+                        let field_value = match fields_map.get("special_group") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'special_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#user_by_email: {
+                        let field_value = match fields_map.get("user_by_email") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'user_by_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#views: {
+                        let field_value = match fields_map.get("views") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'views' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

@@ -29,3 +29,120 @@ pub struct PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRule {
     #[serde(rename = "regex")]
     pub r#regex: Option<Box<super::super::types::dataloss::PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleRegex>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRule {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "dictionary".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#dictionary,
+                )
+                .await,
+            );
+            map.insert(
+                "exclude_by_hotword".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_by_hotword,
+                )
+                .await,
+            );
+            map.insert(
+                "exclude_info_types".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#exclude_info_types,
+                )
+                .await,
+            );
+            map.insert(
+                "matching_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#matching_type,
+                )
+                .await,
+            );
+            map.insert(
+                "regex".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#regex,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRule {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#dictionary: {
+                        let field_value = match fields_map.get("dictionary") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'dictionary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#exclude_by_hotword: {
+                        let field_value = match fields_map.get("exclude_by_hotword") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exclude_by_hotword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#exclude_info_types: {
+                        let field_value = match fields_map.get("exclude_info_types") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'exclude_info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#matching_type: {
+                        let field_value = match fields_map.get("matching_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'matching_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#regex: {
+                        let field_value = match fields_map.get("regex") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

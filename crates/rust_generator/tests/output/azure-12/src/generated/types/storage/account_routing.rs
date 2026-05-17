@@ -16,3 +16,92 @@ pub struct AccountRouting {
     #[serde(rename = "publishMicrosoftEndpoints")]
     pub r#publish_microsoft_endpoints: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AccountRouting {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "choice".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#choice,
+                )
+                .await,
+            );
+            map.insert(
+                "publish_internet_endpoints".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#publish_internet_endpoints,
+                )
+                .await,
+            );
+            map.insert(
+                "publish_microsoft_endpoints".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#publish_microsoft_endpoints,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for AccountRouting {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#choice: {
+                        let field_value = match fields_map.get("choice") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'choice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#publish_internet_endpoints: {
+                        let field_value = match fields_map.get("publish_internet_endpoints") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'publish_internet_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#publish_microsoft_endpoints: {
+                        let field_value = match fields_map.get("publish_microsoft_endpoints") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'publish_microsoft_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

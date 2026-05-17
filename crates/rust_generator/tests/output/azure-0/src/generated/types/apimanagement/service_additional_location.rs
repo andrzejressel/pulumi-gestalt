@@ -42,3 +42,176 @@ pub struct ServiceAdditionalLocation {
     #[serde(rename = "zones")]
     pub r#zones: Option<Vec<String>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ServiceAdditionalLocation {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "capacity".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#capacity,
+                )
+                .await,
+            );
+            map.insert(
+                "gateway_disabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gateway_disabled,
+                )
+                .await,
+            );
+            map.insert(
+                "gateway_regional_url".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#gateway_regional_url,
+                )
+                .await,
+            );
+            map.insert(
+                "location".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#location,
+                )
+                .await,
+            );
+            map.insert(
+                "private_ip_addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#private_ip_addresses,
+                )
+                .await,
+            );
+            map.insert(
+                "public_ip_address_id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#public_ip_address_id,
+                )
+                .await,
+            );
+            map.insert(
+                "public_ip_addresses".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#public_ip_addresses,
+                )
+                .await,
+            );
+            map.insert(
+                "virtual_network_configuration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#virtual_network_configuration,
+                )
+                .await,
+            );
+            map.insert(
+                "zones".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#zones,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ServiceAdditionalLocation {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#capacity: {
+                        let field_value = match fields_map.get("capacity") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gateway_disabled: {
+                        let field_value = match fields_map.get("gateway_disabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gateway_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#gateway_regional_url: {
+                        let field_value = match fields_map.get("gateway_regional_url") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'gateway_regional_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#location: {
+                        let field_value = match fields_map.get("location") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#private_ip_addresses: {
+                        let field_value = match fields_map.get("private_ip_addresses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'private_ip_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#public_ip_address_id: {
+                        let field_value = match fields_map.get("public_ip_address_id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'public_ip_address_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#public_ip_addresses: {
+                        let field_value = match fields_map.get("public_ip_addresses") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'public_ip_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#virtual_network_configuration: {
+                        let field_value = match fields_map.get("virtual_network_configuration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'virtual_network_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#zones: {
+                        let field_value = match fields_map.get("zones") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'zones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

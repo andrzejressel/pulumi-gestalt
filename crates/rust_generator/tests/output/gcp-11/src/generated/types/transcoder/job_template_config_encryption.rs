@@ -31,3 +31,134 @@ pub struct JobTemplateConfigEncryption {
     #[serde(rename = "secretManagerKeySource")]
     pub r#secret_manager_key_source: Option<Box<super::super::types::transcoder::JobTemplateConfigEncryptionSecretManagerKeySource>>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for JobTemplateConfigEncryption {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "aes_128".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#aes_128,
+                )
+                .await,
+            );
+            map.insert(
+                "drm_systems".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#drm_systems,
+                )
+                .await,
+            );
+            map.insert(
+                "id".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#id,
+                )
+                .await,
+            );
+            map.insert(
+                "mpeg_cenc".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#mpeg_cenc,
+                )
+                .await,
+            );
+            map.insert(
+                "sample_aes".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sample_aes,
+                )
+                .await,
+            );
+            map.insert(
+                "secret_manager_key_source".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#secret_manager_key_source,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for JobTemplateConfigEncryption {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#aes_128: {
+                        let field_value = match fields_map.get("aes_128") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'aes_128' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#drm_systems: {
+                        let field_value = match fields_map.get("drm_systems") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'drm_systems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#id: {
+                        let field_value = match fields_map.get("id") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#mpeg_cenc: {
+                        let field_value = match fields_map.get("mpeg_cenc") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'mpeg_cenc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sample_aes: {
+                        let field_value = match fields_map.get("sample_aes") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sample_aes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#secret_manager_key_source: {
+                        let field_value = match fields_map.get("secret_manager_key_source") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'secret_manager_key_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

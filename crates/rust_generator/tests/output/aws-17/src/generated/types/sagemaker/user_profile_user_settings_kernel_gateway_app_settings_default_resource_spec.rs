@@ -24,3 +24,120 @@ pub struct UserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec {
     #[serde(rename = "sagemakerImageVersionArn")]
     pub r#sagemaker_image_version_arn: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for UserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "instance_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#instance_type,
+                )
+                .await,
+            );
+            map.insert(
+                "lifecycle_config_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#lifecycle_config_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "sagemaker_image_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sagemaker_image_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "sagemaker_image_version_alias".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sagemaker_image_version_alias,
+                )
+                .await,
+            );
+            map.insert(
+                "sagemaker_image_version_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sagemaker_image_version_arn,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for UserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpec {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#instance_type: {
+                        let field_value = match fields_map.get("instance_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#lifecycle_config_arn: {
+                        let field_value = match fields_map.get("lifecycle_config_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'lifecycle_config_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sagemaker_image_arn: {
+                        let field_value = match fields_map.get("sagemaker_image_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sagemaker_image_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sagemaker_image_version_alias: {
+                        let field_value = match fields_map.get("sagemaker_image_version_alias") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sagemaker_image_version_alias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sagemaker_image_version_arn: {
+                        let field_value = match fields_map.get("sagemaker_image_version_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sagemaker_image_version_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

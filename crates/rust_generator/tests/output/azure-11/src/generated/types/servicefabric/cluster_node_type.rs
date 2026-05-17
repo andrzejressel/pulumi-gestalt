@@ -56,3 +56,232 @@ pub struct ClusterNodeType {
     #[serde(rename = "reverseProxyEndpointPort")]
     pub r#reverse_proxy_endpoint_port: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for ClusterNodeType {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "application_ports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#application_ports,
+                )
+                .await,
+            );
+            map.insert(
+                "capacities".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#capacities,
+                )
+                .await,
+            );
+            map.insert(
+                "client_endpoint_port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#client_endpoint_port,
+                )
+                .await,
+            );
+            map.insert(
+                "durability_level".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#durability_level,
+                )
+                .await,
+            );
+            map.insert(
+                "ephemeral_ports".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#ephemeral_ports,
+                )
+                .await,
+            );
+            map.insert(
+                "http_endpoint_port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#http_endpoint_port,
+                )
+                .await,
+            );
+            map.insert(
+                "instance_count".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#instance_count,
+                )
+                .await,
+            );
+            map.insert(
+                "is_primary".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#is_primary,
+                )
+                .await,
+            );
+            map.insert(
+                "is_stateless".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#is_stateless,
+                )
+                .await,
+            );
+            map.insert(
+                "multiple_availability_zones".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#multiple_availability_zones,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "placement_properties".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#placement_properties,
+                )
+                .await,
+            );
+            map.insert(
+                "reverse_proxy_endpoint_port".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#reverse_proxy_endpoint_port,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for ClusterNodeType {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#application_ports: {
+                        let field_value = match fields_map.get("application_ports") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'application_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#capacities: {
+                        let field_value = match fields_map.get("capacities") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'capacities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#client_endpoint_port: {
+                        let field_value = match fields_map.get("client_endpoint_port") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'client_endpoint_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#durability_level: {
+                        let field_value = match fields_map.get("durability_level") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'durability_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#ephemeral_ports: {
+                        let field_value = match fields_map.get("ephemeral_ports") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'ephemeral_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#http_endpoint_port: {
+                        let field_value = match fields_map.get("http_endpoint_port") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'http_endpoint_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#instance_count: {
+                        let field_value = match fields_map.get("instance_count") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#is_primary: {
+                        let field_value = match fields_map.get("is_primary") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'is_primary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#is_stateless: {
+                        let field_value = match fields_map.get("is_stateless") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'is_stateless' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#multiple_availability_zones: {
+                        let field_value = match fields_map.get("multiple_availability_zones") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'multiple_availability_zones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#placement_properties: {
+                        let field_value = match fields_map.get("placement_properties") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'placement_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#reverse_proxy_endpoint_port: {
+                        let field_value = match fields_map.get("reverse_proxy_endpoint_port") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'reverse_proxy_endpoint_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

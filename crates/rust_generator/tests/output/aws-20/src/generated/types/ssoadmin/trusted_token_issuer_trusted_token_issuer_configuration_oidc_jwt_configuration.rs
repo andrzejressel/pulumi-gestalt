@@ -20,3 +20,106 @@ pub struct TrustedTokenIssuerTrustedTokenIssuerConfigurationOidcJwtConfiguration
     #[serde(rename = "jwksRetrievalOption")]
     pub r#jwks_retrieval_option: String,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for TrustedTokenIssuerTrustedTokenIssuerConfigurationOidcJwtConfiguration {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "claim_attribute_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#claim_attribute_path,
+                )
+                .await,
+            );
+            map.insert(
+                "identity_store_attribute_path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#identity_store_attribute_path,
+                )
+                .await,
+            );
+            map.insert(
+                "issuer_url".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#issuer_url,
+                )
+                .await,
+            );
+            map.insert(
+                "jwks_retrieval_option".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#jwks_retrieval_option,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for TrustedTokenIssuerTrustedTokenIssuerConfigurationOidcJwtConfiguration {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#claim_attribute_path: {
+                        let field_value = match fields_map.get("claim_attribute_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'claim_attribute_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#identity_store_attribute_path: {
+                        let field_value = match fields_map.get("identity_store_attribute_path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'identity_store_attribute_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#issuer_url: {
+                        let field_value = match fields_map.get("issuer_url") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'issuer_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#jwks_retrieval_option: {
+                        let field_value = match fields_map.get("jwks_retrieval_option") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'jwks_retrieval_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

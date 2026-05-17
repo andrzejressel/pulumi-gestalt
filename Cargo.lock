@@ -642,7 +642,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cea14ef9355e3beab063703aa9dab15afd25f0667c341310c1e5274bb1d0da18"
 dependencies = [
  "libc",
- "windows-sys 0.52.0",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -2032,7 +2032,7 @@ dependencies = [
  "portable-atomic",
  "portable-atomic-util",
  "serde_core",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -2684,6 +2684,7 @@ dependencies = [
 name = "pulumi_gestalt_example_typesystem"
 version = "0.0.0-DEV"
 dependencies = [
+ "futures",
  "pulumi_gestalt_providers_typesystem",
  "pulumi_gestalt_rust",
  "serde_json",
@@ -2743,19 +2744,7 @@ name = "pulumi_gestalt_model"
 version = "0.0.0-DEV"
 dependencies = [
  "futures",
- "pulumi_gestalt_model_macros",
  "rootcause",
-]
-
-[[package]]
-name = "pulumi_gestalt_model_macros"
-version = "0.0.0-DEV"
-dependencies = [
- "futures",
- "pulumi_gestalt_model",
- "quote",
- "rootcause",
- "syn",
 ]
 
 [[package]]
@@ -3123,7 +3112,7 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -3384,10 +3373,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd"
 dependencies = [
  "fastrand",
- "getrandom 0.3.3",
+ "getrandom 0.4.2",
  "once_cell",
  "rustix",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -3892,7 +3881,7 @@ version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb"
 dependencies = [
- "windows-sys 0.52.0",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]

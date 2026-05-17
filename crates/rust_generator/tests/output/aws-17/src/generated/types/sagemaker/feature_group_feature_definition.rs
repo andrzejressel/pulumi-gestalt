@@ -18,3 +18,106 @@ pub struct FeatureGroupFeatureDefinition {
     #[serde(rename = "featureType")]
     pub r#feature_type: Option<String>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FeatureGroupFeatureDefinition {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "collection_config".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#collection_config,
+                )
+                .await,
+            );
+            map.insert(
+                "collection_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#collection_type,
+                )
+                .await,
+            );
+            map.insert(
+                "feature_name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#feature_name,
+                )
+                .await,
+            );
+            map.insert(
+                "feature_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#feature_type,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FeatureGroupFeatureDefinition {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#collection_config: {
+                        let field_value = match fields_map.get("collection_config") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'collection_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#collection_type: {
+                        let field_value = match fields_map.get("collection_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'collection_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#feature_name: {
+                        let field_value = match fields_map.get("feature_name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'feature_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#feature_type: {
+                        let field_value = match fields_map.get("feature_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'feature_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

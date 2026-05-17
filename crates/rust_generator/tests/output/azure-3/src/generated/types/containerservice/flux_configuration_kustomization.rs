@@ -36,3 +36,162 @@ pub struct FluxConfigurationKustomization {
     #[serde(rename = "timeoutInSeconds")]
     pub r#timeout_in_seconds: Option<i32>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for FluxConfigurationKustomization {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "depends_ons".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#depends_ons,
+                )
+                .await,
+            );
+            map.insert(
+                "garbage_collection_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#garbage_collection_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "name".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#name,
+                )
+                .await,
+            );
+            map.insert(
+                "path".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#path,
+                )
+                .await,
+            );
+            map.insert(
+                "recreating_enabled".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#recreating_enabled,
+                )
+                .await,
+            );
+            map.insert(
+                "retry_interval_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#retry_interval_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "sync_interval_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#sync_interval_in_seconds,
+                )
+                .await,
+            );
+            map.insert(
+                "timeout_in_seconds".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#timeout_in_seconds,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for FluxConfigurationKustomization {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#depends_ons: {
+                        let field_value = match fields_map.get("depends_ons") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'depends_ons' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#garbage_collection_enabled: {
+                        let field_value = match fields_map.get("garbage_collection_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'garbage_collection_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#name: {
+                        let field_value = match fields_map.get("name") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#path: {
+                        let field_value = match fields_map.get("path") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#recreating_enabled: {
+                        let field_value = match fields_map.get("recreating_enabled") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'recreating_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#retry_interval_in_seconds: {
+                        let field_value = match fields_map.get("retry_interval_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'retry_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#sync_interval_in_seconds: {
+                        let field_value = match fields_map.get("sync_interval_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'sync_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#timeout_in_seconds: {
+                        let field_value = match fields_map.get("timeout_in_seconds") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}

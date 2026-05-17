@@ -24,3 +24,120 @@ pub struct EndpointElasticsearchSettings {
     #[serde(rename = "useNewMappingType")]
     pub r#use_new_mapping_type: Option<bool>,
 }
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for EndpointElasticsearchSettings {
+    fn to_pulumi_value(
+        &self,
+    ) -> impl std::future::Future<
+        Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    > {
+        use pulumi_gestalt_rust::__private::futures::FutureExt;
+
+        async move {
+            use std::collections::BTreeMap;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue;
+            use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+
+            let mut map: BTreeMap<String, PulumiValue> = BTreeMap::new();
+            map.insert(
+                "endpoint_uri".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#endpoint_uri,
+                )
+                .await,
+            );
+            map.insert(
+                "error_retry_duration".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#error_retry_duration,
+                )
+                .await,
+            );
+            map.insert(
+                "full_load_error_percentage".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#full_load_error_percentage,
+                )
+                .await,
+            );
+            map.insert(
+                "service_access_role_arn".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#service_access_role_arn,
+                )
+                .await,
+            );
+            map.insert(
+                "use_new_mapping_type".to_string(),
+                ToPulumiValue::to_pulumi_value(
+                    &self.r#use_new_mapping_type,
+                )
+                .await,
+            );
+
+            ToPulumiValue::to_pulumi_value(
+                &map,
+            )
+            .await
+        }
+        .boxed_local()
+    }
+}
+
+impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for EndpointElasticsearchSettings {
+    fn from_pulumi_value(
+        value: &pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
+    ) -> pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::Result<Self> {
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValueContent;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::rootcause::bail;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue;
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue;
+
+        match value.content {
+            PulumiValueContent::Object(ref _obj) => {
+                use std::collections::BTreeMap;
+                let fields_map: BTreeMap<String, PulumiValue> =
+                    _obj.iter().cloned().collect();
+
+                Ok(Self {
+                    r#endpoint_uri: {
+                        let field_value = match fields_map.get("endpoint_uri") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'endpoint_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#error_retry_duration: {
+                        let field_value = match fields_map.get("error_retry_duration") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'error_retry_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#full_load_error_percentage: {
+                        let field_value = match fields_map.get("full_load_error_percentage") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'full_load_error_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#service_access_role_arn: {
+                        let field_value = match fields_map.get("service_access_role_arn") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'service_access_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                    r#use_new_mapping_type: {
+                        let field_value = match fields_map.get("use_new_mapping_type") {
+                            Some(value) => value,
+                            None => bail!("Missing field 'use_new_mapping_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                        };
+                        FromPulumiValue::from_pulumi_value(field_value)?
+                    },
+                })
+            }
+            _ => bail!("Expected Object, got {:?}", value.content),
+        }
+    }
+}
