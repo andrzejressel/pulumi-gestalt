@@ -26,10 +26,10 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
     > {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
-
+        use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
             use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::{
-                to_pulumi_object_concurrent, to_pulumi_object_field, ToPulumiObjectFieldFuture,
+                to_pulumi_object_field, ToPulumiObjectFieldFuture,
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
