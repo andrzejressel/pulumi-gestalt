@@ -420,7 +420,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "fromBase64" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::FromBase64,
                     args: args_lowered()?,
@@ -430,7 +430,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "toBase64" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::ToBase64,
                     args: args_lowered()?,
@@ -440,7 +440,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "sha1" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Sha1,
                     args: args_lowered()?,
@@ -450,7 +450,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "readFile" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::ReadFile,
                     args: args_lowered()?,
@@ -460,7 +460,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "filebase64" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::FileBase64,
                     args: args_lowered()?,
@@ -470,7 +470,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "filebase64sha256" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::FileBase64Sha256,
                     args: args_lowered()?,
@@ -502,7 +502,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "element" => {
             ensure_arity(&call.name, arg_count, 2)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Element,
                     args: args_lowered()?,
@@ -512,7 +512,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "join" => {
             ensure_arity(&call.name, arg_count, 2)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Join,
                     args: args_lowered()?,
@@ -522,7 +522,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "length" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Length,
                     args: args_lowered()?,
@@ -532,7 +532,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "split" => {
             ensure_arity(&call.name, arg_count, 2)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Split,
                     args: args_lowered()?,
@@ -542,7 +542,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "singleOrNone" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::SingleOrNone,
                     args: args_lowered()?,
@@ -552,7 +552,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "cwd" => {
             ensure_arity(&call.name, arg_count, 0)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Cwd,
                     args: vec![],
@@ -562,7 +562,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "rootDirectory" => {
             ensure_arity(&call.name, arg_count, 0)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::RootDirectory,
                     args: vec![],
@@ -572,7 +572,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "stack" => {
             ensure_arity(&call.name, arg_count, 0)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Stack,
                     args: vec![],
@@ -582,7 +582,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "organization" => {
             ensure_arity(&call.name, arg_count, 0)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Organization,
                     args: vec![],
@@ -592,7 +592,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "project" => {
             ensure_arity(&call.name, arg_count, 0)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Project,
                     args: vec![],
@@ -602,7 +602,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "entries" => {
             ensure_arity(&call.name, arg_count, 1)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Entries,
                     args: args_lowered()?,
@@ -612,7 +612,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "lookup" => {
             ensure_arity(&call.name, arg_count, 3)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Lookup,
                     args: args_lowered()?,
@@ -622,7 +622,7 @@ fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Re
         "min" => {
             ensure_arity(&call.name, arg_count, 2)?;
             Ok(make_expr(
-                expr_type.clone(),
+                expr_type,
                 ExprValue::StdlibCall {
                     func: StdlibFn::Min,
                     args: args_lowered()?,
