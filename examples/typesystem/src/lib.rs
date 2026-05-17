@@ -2,7 +2,6 @@
 mod tests {
     use futures::executor::block_on;
     use pulumi_gestalt_providers_typesystem::deep::nested::module::some_resource::SomeResourceArgs;
-    use pulumi_gestalt_providers_typesystem::types::deep::nested::module::SomeType;
     use pulumi_gestalt_providers_typesystem::types::{
         IntegerEnum, MyEnum, NumberEnum, UnionCase1, UnionCase2, UnionCaseWithConst1,
         UnionCaseWithConst2,
