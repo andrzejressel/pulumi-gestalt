@@ -22,7 +22,7 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
     );
     ctx.add_export("joinOutput", &pulumi_gestalt_rust::stdlib::join("|", &aList));
     ctx.add_export("lengthOutput", &pulumi_gestalt_rust::stdlib::length(&aList));
-    ctx.add_export("splitOutput", &pulumi_gestalt_rust::stdlib::split("-", aString));
+    ctx.add_export("splitOutput", &pulumi_gestalt_rust::stdlib::split("-", &aString));
     ctx.add_export(
         "singleOrNoneOutput",
         &vec!(
