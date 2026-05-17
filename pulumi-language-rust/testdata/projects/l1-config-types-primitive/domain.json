@@ -12,13 +12,22 @@
       "Export": {
         "name": "theNumber",
         "value": {
-          "BinaryOp": {
-            "left": {
-              "Variable": "aNumber"
-            },
-            "op": "Add",
-            "right": {
-              "Number": 1.25
+          "expr_type": "Number",
+          "value": {
+            "BinaryOp": {
+              "left": {
+                "expr_type": "Number",
+                "value": {
+                  "Variable": "aNumber"
+                }
+              },
+              "op": "Add",
+              "right": {
+                "expr_type": "Number",
+                "value": {
+                  "Number": 1.25
+                }
+              }
             }
           }
         }
@@ -29,7 +38,10 @@
         "name": "optionalNumber",
         "config_type": "Number",
         "default": {
-          "Number": 41.5
+          "expr_type": "Number",
+          "value": {
+            "Number": 41.5
+          }
         },
         "secret": false
       }
@@ -38,13 +50,22 @@
       "Export": {
         "name": "defaultNumber",
         "value": {
-          "BinaryOp": {
-            "left": {
-              "Variable": "optionalNumber"
-            },
-            "op": "Add",
-            "right": {
-              "Number": 1.2
+          "expr_type": "Number",
+          "value": {
+            "BinaryOp": {
+              "left": {
+                "expr_type": "Number",
+                "value": {
+                  "Variable": "optionalNumber"
+                }
+              },
+              "op": "Add",
+              "right": {
+                "expr_type": "Number",
+                "value": {
+                  "Number": 1.2
+                }
+              }
             }
           }
         }
@@ -62,13 +83,22 @@
       "Export": {
         "name": "theInteger",
         "value": {
-          "BinaryOp": {
-            "left": {
-              "Variable": "anInt"
-            },
-            "op": "Add",
-            "right": {
-              "Number": 4.0
+          "expr_type": "Number",
+          "value": {
+            "BinaryOp": {
+              "left": {
+                "expr_type": "Int",
+                "value": {
+                  "Variable": "anInt"
+                }
+              },
+              "op": "Add",
+              "right": {
+                "expr_type": "Int",
+                "value": {
+                  "Number": 4.0
+                }
+              }
             }
           }
         }
@@ -79,7 +109,10 @@
         "name": "optionalInt",
         "config_type": "Int",
         "default": {
-          "Number": 1.0
+          "expr_type": "Int",
+          "value": {
+            "Number": 1.0
+          }
         },
         "secret": false
       }
@@ -88,13 +121,22 @@
       "Export": {
         "name": "defaultInteger",
         "value": {
-          "BinaryOp": {
-            "left": {
-              "Variable": "optionalInt"
-            },
-            "op": "Add",
-            "right": {
-              "Number": 2.0
+          "expr_type": "Number",
+          "value": {
+            "BinaryOp": {
+              "left": {
+                "expr_type": "Int",
+                "value": {
+                  "Variable": "optionalInt"
+                }
+              },
+              "op": "Add",
+              "right": {
+                "expr_type": "Int",
+                "value": {
+                  "Number": 2.0
+                }
+              }
             }
           }
         }
@@ -112,15 +154,24 @@
       "Export": {
         "name": "theString",
         "value": {
-          "Format": {
-            "parts": [
-              {
-                "Variable": "aString"
-              },
-              {
-                "String": " World"
-              }
-            ]
+          "expr_type": "String",
+          "value": {
+            "Format": {
+              "parts": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "Variable": "aString"
+                  }
+                },
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": " World"
+                  }
+                }
+              ]
+            }
           }
         }
       }
@@ -130,7 +181,10 @@
         "name": "optionalString",
         "config_type": "String",
         "default": {
-          "String": "defaultStringValue"
+          "expr_type": "String",
+          "value": {
+            "String": "defaultStringValue"
+          }
         },
         "secret": false
       }
@@ -139,7 +193,10 @@
       "Export": {
         "name": "defaultString",
         "value": {
-          "Variable": "optionalString"
+          "expr_type": "String",
+          "value": {
+            "Variable": "optionalString"
+          }
         }
       }
     },
@@ -155,18 +212,30 @@
       "Export": {
         "name": "theBool",
         "value": {
-          "BinaryOp": {
-            "left": {
-              "UnaryOp": {
-                "op": "Not",
-                "operand": {
-                  "Variable": "aBool"
+          "expr_type": "Bool",
+          "value": {
+            "BinaryOp": {
+              "left": {
+                "expr_type": "Bool",
+                "value": {
+                  "UnaryOp": {
+                    "op": "Not",
+                    "operand": {
+                      "expr_type": "Bool",
+                      "value": {
+                        "Variable": "aBool"
+                      }
+                    }
+                  }
+                }
+              },
+              "op": "And",
+              "right": {
+                "expr_type": "Bool",
+                "value": {
+                  "Bool": true
                 }
               }
-            },
-            "op": "And",
-            "right": {
-              "Bool": true
             }
           }
         }
@@ -177,7 +246,10 @@
         "name": "optionalBool",
         "config_type": "Bool",
         "default": {
-          "Bool": false
+          "expr_type": "Bool",
+          "value": {
+            "Bool": false
+          }
         },
         "secret": false
       }
@@ -186,7 +258,10 @@
       "Export": {
         "name": "defaultBool",
         "value": {
-          "Variable": "optionalBool"
+          "expr_type": "Bool",
+          "value": {
+            "Variable": "optionalBool"
+          }
         }
       }
     }

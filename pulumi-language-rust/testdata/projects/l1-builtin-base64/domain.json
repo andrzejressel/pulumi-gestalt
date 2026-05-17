@@ -12,13 +12,19 @@
       "LocalBinding": {
         "name": "bytes",
         "value": {
-          "StdlibCall": {
-            "func": "FromBase64",
-            "args": [
-              {
-                "Variable": "input"
-              }
-            ]
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "FromBase64",
+              "args": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "Variable": "input"
+                  }
+                }
+              ]
+            }
           }
         }
       }
@@ -27,7 +33,10 @@
       "Export": {
         "name": "data",
         "value": {
-          "Variable": "bytes"
+          "expr_type": "String",
+          "value": {
+            "Variable": "bytes"
+          }
         }
       }
     },
@@ -35,13 +44,19 @@
       "Export": {
         "name": "roundtrip",
         "value": {
-          "StdlibCall": {
-            "func": "ToBase64",
-            "args": [
-              {
-                "Variable": "bytes"
-              }
-            ]
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "ToBase64",
+              "args": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "Variable": "bytes"
+                  }
+                }
+              ]
+            }
           }
         }
       }

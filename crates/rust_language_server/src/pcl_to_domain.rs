@@ -4,8 +4,8 @@
 /// `__apply` intrinsics, stdlib function names) into high-level Pulumi domain
 /// concepts (`OutputMap`, `CombineOutputs`, `StdlibCall`, etc.).
 use crate::domain_ir::{
-    BinOp, ConfigBinding, ConfigType, Expr, JsonValue, Program, ResourceInput, ResourceToken,
-    Statement, StdlibFn, UnaryOp,
+    BinOp, ConfigBinding, ConfigType, Expr, ExprType, ExprValue, JsonValue, Program, ResourceInput,
+    ResourceToken, Statement, StdlibFn, UnaryOp,
 };
 use crate::pcl_model::node::Value;
 use crate::pcl_model::r#type::Value::OutputType;
@@ -147,15 +147,25 @@ fn create_resource_token(resource: &Resource) -> Result<ResourceToken> {
 }
 
 fn lower_expression(expression: &Expression) -> Result<Expr> {
+    let expr_type = require_expression_type(expression)?;
     match &expression.value {
         expression::Value::LiteralValueExpression(lit) => match &lit.value {
-            literal_value_expression::Value::UnknownValue(_) => Ok(Expr::Null),
-            literal_value_expression::Value::StringValue(s) => Ok(Expr::String(s.clone())),
-            literal_value_expression::Value::NumberValue(n) => Ok(Expr::Number(*n)),
-            literal_value_expression::Value::BoolValue(b) => Ok(Expr::Bool(*b)),
+            literal_value_expression::Value::UnknownValue(_) => {
+                Ok(make_expr(expr_type, ExprValue::Null))
+            }
+            literal_value_expression::Value::StringValue(s) => {
+                Ok(make_expr(expr_type, ExprValue::String(s.clone())))
+            }
+            literal_value_expression::Value::NumberValue(n) => {
+                Ok(make_expr(expr_type, ExprValue::Number(*n)))
+            }
+            literal_value_expression::Value::BoolValue(b) => {
+                Ok(make_expr(expr_type, ExprValue::Bool(*b)))
+            }
         },
         expression::Value::TemplateExpression(TemplateExpression { parts }) if parts.len() == 1 => {
-            lower_expression(&parts[0])
+            let single = lower_expression(&parts[0])?;
+            Ok(make_expr(expr_type, single.value))
         }
         expression::Value::TemplateExpression(TemplateExpression { parts }) => {
             let lowered = parts
@@ -163,20 +173,16 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
                 .map(lower_expression)
                 .collect::<Result<Vec<_>>>()
                 .context("Failed to lower template parts")?;
-            Ok(Expr::Format { parts: lowered })
+            Ok(make_expr(expr_type, ExprValue::Format { parts: lowered }))
         }
         expression::Value::IndexExpression(_) => {
             bail!("IndexExpression not yet supported")
         }
-        expression::Value::ObjectConsExpression(obj) => match &expression.expression_type {
-            Some(pcl_model::ExpressionType::Dynamic)
-            | Some(pcl_model::ExpressionType::Object(_))
-            | Some(pcl_model::ExpressionType::None)
-            | Some(pcl_model::ExpressionType::Union(_))
-            | None => {
+        expression::Value::ObjectConsExpression(obj) => match &expr_type {
+            ExprType::Dynamic | ExprType::Object(_) | ExprType::None | ExprType::Union(_) => {
                 let json = lower_object_to_json(obj, expression)
                     .context("Failed to lower ObjectConsExpression")?;
-                Ok(Expr::PulumiAny(json))
+                Ok(make_expr(expr_type, ExprValue::PulumiAny(json)))
             }
             other => bail!(
                 "ObjectConsExpression with non-dynamic expression type {:?} is not supported",
@@ -189,35 +195,55 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
                 .map(lower_expression)
                 .collect::<Result<Vec<_>>>()
                 .context("Failed to lower tuple items")?;
-            Ok(Expr::List(lowered))
+            Ok(make_expr(expr_type, ExprValue::List(lowered)))
         }
         expression::Value::FunctionCallExpression(call) => {
             if call.name == "__apply" {
-                return Ok(lower_apply_call(call).context("Failed to lower __apply call")?);
+                return Ok(
+                    lower_apply_call(call, expr_type).context("Failed to lower __apply call")?
+                );
             }
-            Ok(lower_function_call(call).context("Failed to lower function call")?)
+            Ok(lower_function_call(call, expr_type).context("Failed to lower function call")?)
         }
         expression::Value::RelativeTraversalExpression(_) => {
             bail!("RelativeTraversalExpression not yet supported")
         }
         expression::Value::ScopeTraversalExpression(scope) => {
-            let mut expr = Expr::Variable(scope.root_name.clone());
+            let mut expr = make_expr(
+                ExprType::Dynamic,
+                ExprValue::Variable(scope.root_name.clone()),
+            );
             for traverser in &scope.traversal.each {
                 match &traverser.value {
                     traverser::Value::TraverseAttr(attr) => {
-                        expr = Expr::FieldAccess(Box::new(expr), attr.name.clone());
+                        expr = make_expr(
+                            ExprType::Dynamic,
+                            ExprValue::FieldAccess(Box::new(expr), attr.name.clone()),
+                        );
                     }
                     traverser::Value::TraverseIndex(index) => match &index.value {
                         traverse_index::Value::IntIndex(i) => {
-                            expr = Expr::IndexAccess(
-                                Box::new(expr),
-                                Box::new(Expr::Number(*i as f64)),
+                            expr = make_expr(
+                                ExprType::Dynamic,
+                                ExprValue::IndexAccess(
+                                    Box::new(expr),
+                                    Box::new(make_expr(
+                                        ExprType::Int,
+                                        ExprValue::Number(*i as f64),
+                                    )),
+                                ),
                             );
                         }
                         traverse_index::Value::StringIndex(s) => {
-                            expr = Expr::IndexAccess(
-                                Box::new(expr),
-                                Box::new(Expr::String(s.clone())),
+                            expr = make_expr(
+                                ExprType::Dynamic,
+                                ExprValue::IndexAccess(
+                                    Box::new(expr),
+                                    Box::new(make_expr(
+                                        ExprType::String,
+                                        ExprValue::String(s.clone()),
+                                    )),
+                                ),
                             );
                         }
                     },
@@ -229,15 +255,18 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
                     }
                 }
             }
-            Ok(expr)
+            Ok(make_expr(expr_type, expr.value))
         }
         expression::Value::AnonymousFunctionExpression(anon_fn) => {
             let body =
                 lower_expression(&anon_fn.body).context("Failed to lower anonymous fn body")?;
-            Ok(Expr::Closure {
-                params: anon_fn.parameters.clone(),
-                body: Box::new(body),
-            })
+            Ok(make_expr(
+                expr_type,
+                ExprValue::Closure {
+                    params: anon_fn.parameters.clone(),
+                    body: Box::new(body),
+                },
+            ))
         }
         expression::Value::ConditionalExpression(_) => {
             bail!("ConditionalExpression not yet supported")
@@ -246,19 +275,25 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
             let left = lower_expression(&bin.left).context("Failed to lower left operand")?;
             let right = lower_expression(&bin.right).context("Failed to lower right operand")?;
             let op = lower_bin_op(bin.operation)?;
-            Ok(Expr::BinaryOp {
-                left: Box::new(left),
-                op,
-                right: Box::new(right),
-            })
+            Ok(make_expr(
+                expr_type,
+                ExprValue::BinaryOp {
+                    left: Box::new(left),
+                    op,
+                    right: Box::new(right),
+                },
+            ))
         }
         expression::Value::UnaryOpExpression(un) => {
             let operand = lower_expression(&un.operand).context("Failed to lower operand")?;
             let op = lower_unary_op(un.operation)?;
-            Ok(Expr::UnaryOp {
-                op,
-                operand: Box::new(operand),
-            })
+            Ok(make_expr(
+                expr_type,
+                ExprValue::UnaryOp {
+                    op,
+                    operand: Box::new(operand),
+                },
+            ))
         }
     }
 }
@@ -288,16 +323,17 @@ fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
             literal_value_expression::Value::NumberValue(n) => Ok(JsonValue::Number(*n)),
             literal_value_expression::Value::BoolValue(b) => Ok(JsonValue::Bool(*b)),
         },
-        expression::Value::ObjectConsExpression(obj) => match &expression.expression_type {
-            Some(pcl_model::ExpressionType::Dynamic)
-            | Some(pcl_model::ExpressionType::Object(_))
-            | Some(pcl_model::ExpressionType::None)
-            | Some(pcl_model::ExpressionType::Union(_)) => lower_object_to_json(obj, expression),
-            other => bail!(
-                "ObjectConsExpression with non-dynamic expression type {:?} is not supported",
-                other
-            ),
-        },
+        expression::Value::ObjectConsExpression(obj) => {
+            match require_expression_type(expression)? {
+                ExprType::Dynamic | ExprType::Object(_) | ExprType::None | ExprType::Union(_) => {
+                    lower_object_to_json(obj, expression)
+                }
+                other => bail!(
+                    "ObjectConsExpression with non-dynamic expression type {:?} is not supported",
+                    other
+                ),
+            }
+        }
         expression::Value::TupleConsExpression(TupleConsExpression { items }) => {
             let elems = items
                 .iter()
@@ -314,7 +350,7 @@ fn lower_expression_to_json(expression: &Expression) -> Result<JsonValue> {
     }
 }
 
-fn lower_apply_call(call: &FunctionCallExpression) -> Result<Expr> {
+fn lower_apply_call(call: &FunctionCallExpression, expr_type: ExprType) -> Result<Expr> {
     let n_args = call.args.len();
     if n_args < 2 {
         bail!(
@@ -340,11 +376,14 @@ fn lower_apply_call(call: &FunctionCallExpression) -> Result<Expr> {
             .parameters
             .first()
             .context("__apply callback must have at least one parameter")?;
-        Ok(Expr::OutputMap {
-            output: Box::new(output),
-            params: vec![param.clone()],
-            body: Box::new(body),
-        })
+        Ok(make_expr(
+            expr_type,
+            ExprValue::OutputMap {
+                output: Box::new(output),
+                params: vec![param.clone()],
+                body: Box::new(body),
+            },
+        ))
     } else {
         if output_args.len() > 16 {
             bail!("__apply with more than 16 output arguments is not supported");
@@ -355,15 +394,18 @@ fn lower_apply_call(call: &FunctionCallExpression) -> Result<Expr> {
                 lower_expression(&a.value).context("Failed to lower __apply output argument")?,
             );
         }
-        Ok(Expr::CombineOutputs {
-            outputs,
-            params: anon_fn.parameters.clone(),
-            body: Box::new(body),
-        })
+        Ok(make_expr(
+            expr_type,
+            ExprValue::CombineOutputs {
+                outputs,
+                params: anon_fn.parameters.clone(),
+                body: Box::new(body),
+            },
+        ))
     }
 }
 
-fn lower_function_call(call: &FunctionCallExpression) -> Result<Expr> {
+fn lower_function_call(call: &FunctionCallExpression, expr_type: ExprType) -> Result<Expr> {
     let arg_count = call.args.len();
     let args_lowered = || -> Result<Vec<Expr>> {
         Ok(call
@@ -377,45 +419,63 @@ fn lower_function_call(call: &FunctionCallExpression) -> Result<Expr> {
     match call.name.as_str() {
         "fromBase64" => {
             ensure_arity(&call.name, arg_count, 1)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::FromBase64,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::FromBase64,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "toBase64" => {
             ensure_arity(&call.name, arg_count, 1)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::ToBase64,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::ToBase64,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "sha1" => {
             ensure_arity(&call.name, arg_count, 1)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Sha1,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Sha1,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "readFile" => {
             ensure_arity(&call.name, arg_count, 1)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::ReadFile,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::ReadFile,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "filebase64" => {
             ensure_arity(&call.name, arg_count, 1)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::FileBase64,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::FileBase64,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "filebase64sha256" => {
             ensure_arity(&call.name, arg_count, 1)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::FileBase64Sha256,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::FileBase64Sha256,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "secret" => {
             ensure_arity(&call.name, arg_count, 1)?;
@@ -423,9 +483,9 @@ fn lower_function_call(call: &FunctionCallExpression) -> Result<Expr> {
                 lower_expression(&call.args[0].value).context("Failed to lower secret argument")?;
             let arg_type = &call.args[0].r#type;
             if let OutputType(_) = arg_type.value {
-                Ok(Expr::MakeSecret(Box::new(arg)))
+                Ok(make_expr(expr_type, ExprValue::MakeSecret(Box::new(arg))))
             } else {
-                Ok(Expr::NewSecret(Box::new(arg)))
+                Ok(make_expr(expr_type, ExprValue::NewSecret(Box::new(arg))))
             }
         }
         "unsecret" => {
@@ -434,111 +494,197 @@ fn lower_function_call(call: &FunctionCallExpression) -> Result<Expr> {
                 .context("Failed to lower unsecret argument")?;
             let arg_type = &call.args[0].r#type;
             if let OutputType(_) = arg_type.value {
-                Ok(Expr::MakeUnsecret(Box::new(arg)))
+                Ok(make_expr(expr_type, ExprValue::MakeUnsecret(Box::new(arg))))
             } else {
-                Ok(Expr::NewOutput(Box::new(arg)))
+                Ok(make_expr(expr_type, ExprValue::NewOutput(Box::new(arg))))
             }
         }
         "element" => {
             ensure_arity(&call.name, arg_count, 2)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Element,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Element,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "join" => {
             ensure_arity(&call.name, arg_count, 2)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Join,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Join,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "length" => {
             ensure_arity(&call.name, arg_count, 1)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Length,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Length,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "split" => {
             ensure_arity(&call.name, arg_count, 2)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Split,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Split,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "singleOrNone" => {
             ensure_arity(&call.name, arg_count, 1)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::SingleOrNone,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::SingleOrNone,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "cwd" => {
             ensure_arity(&call.name, arg_count, 0)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Cwd,
-                args: vec![],
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Cwd,
+                    args: vec![],
+                },
+            ))
         }
         "rootDirectory" => {
             ensure_arity(&call.name, arg_count, 0)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::RootDirectory,
-                args: vec![],
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::RootDirectory,
+                    args: vec![],
+                },
+            ))
         }
         "stack" => {
             ensure_arity(&call.name, arg_count, 0)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Stack,
-                args: vec![],
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Stack,
+                    args: vec![],
+                },
+            ))
         }
         "organization" => {
             ensure_arity(&call.name, arg_count, 0)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Organization,
-                args: vec![],
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Organization,
+                    args: vec![],
+                },
+            ))
         }
         "project" => {
             ensure_arity(&call.name, arg_count, 0)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Project,
-                args: vec![],
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Project,
+                    args: vec![],
+                },
+            ))
         }
         "entries" => {
             ensure_arity(&call.name, arg_count, 1)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Entries,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Entries,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "lookup" => {
             ensure_arity(&call.name, arg_count, 3)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Lookup,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Lookup,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "min" => {
             ensure_arity(&call.name, arg_count, 2)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Min,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type.clone(),
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Min,
+                    args: args_lowered()?,
+                },
+            ))
         }
         "max" => {
             ensure_arity(&call.name, arg_count, 2)?;
-            Ok(Expr::StdlibCall {
-                func: StdlibFn::Max,
-                args: args_lowered()?,
-            })
+            Ok(make_expr(
+                expr_type,
+                ExprValue::StdlibCall {
+                    func: StdlibFn::Max,
+                    args: args_lowered()?,
+                },
+            ))
         }
         _ => bail!("Unsupported stdlib function: {}", call.name),
     }
+}
+
+fn require_expression_type(expression: &Expression) -> Result<ExprType> {
+    let expression_type = expression
+        .expression_type
+        .as_ref()
+        .context_with(|| format!("Expression [{:?}] is missing expression type", expression))?;
+    Ok(lower_expression_type(expression_type))
+}
+
+fn lower_expression_type(expression_type: &pcl_model::ExpressionType) -> ExprType {
+    match expression_type {
+        pcl_model::ExpressionType::String => ExprType::String,
+        pcl_model::ExpressionType::Number => ExprType::Number,
+        pcl_model::ExpressionType::Int => ExprType::Int,
+        pcl_model::ExpressionType::Bool => ExprType::Bool,
+        pcl_model::ExpressionType::Dynamic => ExprType::Dynamic,
+        pcl_model::ExpressionType::None => ExprType::None,
+        pcl_model::ExpressionType::List(inner) => {
+            ExprType::List(Box::new(lower_expression_type(inner)))
+        }
+        pcl_model::ExpressionType::Map(inner) => {
+            ExprType::Map(Box::new(lower_expression_type(inner)))
+        }
+        pcl_model::ExpressionType::Output(inner) => {
+            ExprType::Output(Box::new(lower_expression_type(inner)))
+        }
+        pcl_model::ExpressionType::Tuple(items) => {
+            ExprType::Tuple(items.iter().map(lower_expression_type).collect())
+        }
+        pcl_model::ExpressionType::Object(props) => ExprType::Object(
+            props
+                .iter()
+                .map(|(key, value)| (key.clone(), lower_expression_type(value)))
+                .collect(),
+        ),
+        pcl_model::ExpressionType::Union(items) => {
+            ExprType::Union(items.iter().map(lower_expression_type).collect())
+        }
+    }
+}
+
+fn make_expr(expr_type: ExprType, value: ExprValue) -> Expr {
+    Expr { expr_type, value }
 }
 
 fn lower_bin_op(op: pcl_model::Operation) -> Result<BinOp> {

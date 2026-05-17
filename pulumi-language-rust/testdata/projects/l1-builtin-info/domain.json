@@ -4,9 +4,12 @@
       "Export": {
         "name": "stackOutput",
         "value": {
-          "StdlibCall": {
-            "func": "Stack",
-            "args": []
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Stack",
+              "args": []
+            }
           }
         }
       }
@@ -15,9 +18,12 @@
       "Export": {
         "name": "projectOutput",
         "value": {
-          "StdlibCall": {
-            "func": "Project",
-            "args": []
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Project",
+              "args": []
+            }
           }
         }
       }
@@ -26,9 +32,12 @@
       "Export": {
         "name": "organizationOutput",
         "value": {
-          "StdlibCall": {
-            "func": "Organization",
-            "args": []
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Organization",
+              "args": []
+            }
           }
         }
       }

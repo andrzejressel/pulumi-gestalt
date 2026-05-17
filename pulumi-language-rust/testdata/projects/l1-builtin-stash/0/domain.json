@@ -9,32 +9,51 @@
           {
             "name": "input",
             "expression": {
-              "PulumiAny": {
-                "Object": [
-                  [
-                    "",
-                    {
-                      "Bool": false
-                    }
-                  ],
-                  [
-                    "key",
-                    {
-                      "Array": [
-                        {
-                          "Expr": {
-                            "String": "value"
+              "expr_type": {
+                "Object": {
+                  "": "Bool",
+                  "key": {
+                    "Tuple": [
+                      "String",
+                      "String"
+                    ]
+                  }
+                }
+              },
+              "value": {
+                "PulumiAny": {
+                  "Object": [
+                    [
+                      "",
+                      {
+                        "Bool": false
+                      }
+                    ],
+                    [
+                      "key",
+                      {
+                        "Array": [
+                          {
+                            "Expr": {
+                              "expr_type": "String",
+                              "value": {
+                                "String": "value"
+                              }
+                            }
+                          },
+                          {
+                            "Expr": {
+                              "expr_type": "String",
+                              "value": {
+                                "String": "s"
+                              }
+                            }
                           }
-                        },
-                        {
-                          "Expr": {
-                            "String": "s"
-                          }
-                        }
-                      ]
-                    }
+                        ]
+                      }
+                    ]
                   ]
-                ]
+                }
               }
             }
           }
@@ -45,12 +64,20 @@
       "Export": {
         "name": "stashInput",
         "value": {
-          "FieldAccess": [
-            {
-              "Variable": "myStash"
-            },
-            "input"
-          ]
+          "expr_type": {
+            "Output": "Dynamic"
+          },
+          "value": {
+            "FieldAccess": [
+              {
+                "expr_type": "Dynamic",
+                "value": {
+                  "Variable": "myStash"
+                }
+              },
+              "input"
+            ]
+          }
         }
       }
     },
@@ -58,12 +85,20 @@
       "Export": {
         "name": "stashOutput",
         "value": {
-          "FieldAccess": [
-            {
-              "Variable": "myStash"
-            },
-            "output"
-          ]
+          "expr_type": {
+            "Output": "Dynamic"
+          },
+          "value": {
+            "FieldAccess": [
+              {
+                "expr_type": "Dynamic",
+                "value": {
+                  "Variable": "myStash"
+                }
+              },
+              "output"
+            ]
+          }
         }
       }
     }

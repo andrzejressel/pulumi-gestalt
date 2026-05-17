@@ -20,7 +20,12 @@
       "Export": {
         "name": "roundtripSecret",
         "value": {
-          "Variable": "aSecret"
+          "expr_type": {
+            "Output": "String"
+          },
+          "value": {
+            "Variable": "aSecret"
+          }
         }
       }
     },
@@ -28,7 +33,10 @@
       "Export": {
         "name": "roundtripNotSecret",
         "value": {
-          "Variable": "notSecret"
+          "expr_type": "String",
+          "value": {
+            "Variable": "notSecret"
+          }
         }
       }
     },
@@ -36,8 +44,18 @@
       "Export": {
         "name": "double",
         "value": {
-          "MakeSecret": {
-            "Variable": "aSecret"
+          "expr_type": {
+            "Output": "String"
+          },
+          "value": {
+            "MakeSecret": {
+              "expr_type": {
+                "Output": "String"
+              },
+              "value": {
+                "Variable": "aSecret"
+              }
+            }
           }
         }
       }
@@ -46,8 +64,18 @@
       "Export": {
         "name": "open",
         "value": {
-          "MakeUnsecret": {
-            "Variable": "aSecret"
+          "expr_type": {
+            "Output": "String"
+          },
+          "value": {
+            "MakeUnsecret": {
+              "expr_type": {
+                "Output": "String"
+              },
+              "value": {
+                "Variable": "aSecret"
+              }
+            }
           }
         }
       }
@@ -56,8 +84,16 @@
       "Export": {
         "name": "close",
         "value": {
-          "NewSecret": {
-            "Variable": "notSecret"
+          "expr_type": {
+            "Output": "String"
+          },
+          "value": {
+            "NewSecret": {
+              "expr_type": "String",
+              "value": {
+                "Variable": "notSecret"
+              }
+            }
           }
         }
       }

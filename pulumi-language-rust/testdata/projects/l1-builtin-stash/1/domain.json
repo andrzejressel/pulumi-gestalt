@@ -9,7 +9,10 @@
           {
             "name": "input",
             "expression": {
-              "String": "ignored"
+              "expr_type": "String",
+              "value": {
+                "String": "ignored"
+              }
             }
           }
         ]
@@ -19,12 +22,20 @@
       "Export": {
         "name": "stashInput",
         "value": {
-          "FieldAccess": [
-            {
-              "Variable": "myStash"
-            },
-            "input"
-          ]
+          "expr_type": {
+            "Output": "Dynamic"
+          },
+          "value": {
+            "FieldAccess": [
+              {
+                "expr_type": "Dynamic",
+                "value": {
+                  "Variable": "myStash"
+                }
+              },
+              "input"
+            ]
+          }
         }
       }
     },
@@ -32,12 +43,20 @@
       "Export": {
         "name": "stashOutput",
         "value": {
-          "FieldAccess": [
-            {
-              "Variable": "myStash"
-            },
-            "output"
-          ]
+          "expr_type": {
+            "Output": "Dynamic"
+          },
+          "value": {
+            "FieldAccess": [
+              {
+                "expr_type": "Dynamic",
+                "value": {
+                  "Variable": "myStash"
+                }
+              },
+              "output"
+            ]
+          }
         }
       }
     }
