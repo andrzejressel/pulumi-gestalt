@@ -6,7 +6,9 @@ pub mod value;
 #[doc(hidden)]
 pub mod __private {
     pub use crate::to_value::{
-        ToPulumiObjectFieldFuture, to_pulumi_object_concurrent, to_pulumi_object_field,
+        ToPulumiObjectFieldFuture, pulumi_value_output, pulumi_value_output_array,
+        pulumi_value_output_object, to_pulumi_object_concurrent, to_pulumi_object_field,
+        to_pulumi_value_output,
     };
     pub use futures;
     pub use rootcause;

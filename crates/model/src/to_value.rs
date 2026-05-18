@@ -1,6 +1,7 @@
-use crate::output::NodeValue;
+use crate::output::{Node, NodeValue};
 use crate::{Output, PulumiValue, PulumiValueContent};
 use std::collections::{BTreeMap, HashMap, HashSet};
+use std::sync::Arc;
 
 pub type ToPulumiObjectFieldFuture<'a> = futures::future::BoxFuture<'a, (String, PulumiValue)>;
 
@@ -12,8 +13,9 @@ where
     T: ToPulumiValue + Sync + ?Sized + 'a,
 {
     use futures::FutureExt;
+    let pulumi_value_future = value.to_pulumi_value();
 
-    async move { (name.to_string(), value.to_pulumi_value().await) }.boxed()
+    async move { (name.to_string(), pulumi_value_future.await) }.boxed()
 }
 
 pub async fn to_pulumi_object_concurrent<'a>(
@@ -22,6 +24,55 @@ pub async fn to_pulumi_object_concurrent<'a>(
     let results = futures::future::join_all(fields).await;
     let map: BTreeMap<String, PulumiValue> = results.into_iter().collect();
     ToPulumiValue::to_pulumi_value(&map).await
+}
+
+pub fn to_pulumi_value_output<T>(value: T) -> Output<PulumiValue>
+where
+    T: ToPulumiValue + Sync + Send + 'static,
+{
+    Output::from_future(async move {
+        let value = value.to_pulumi_value().await;
+        Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(value)),
+            secret: false,
+            dependencies: HashSet::new(),
+        })
+    })
+}
+
+pub fn pulumi_value_output(content: PulumiValueContent) -> Output<PulumiValue> {
+    Output::new(PulumiValue {
+        content,
+        secret: false,
+        dependencies: HashSet::new(),
+    })
+}
+
+pub fn pulumi_value_output_array(values: Vec<Output<PulumiValue>>) -> Output<PulumiValue> {
+    Output::from_future(async move {
+        let value = values.to_pulumi_value().await;
+
+        Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(value)),
+            secret: false,
+            dependencies: HashSet::new(),
+        })
+    })
+}
+
+pub fn pulumi_value_output_object(
+    values: Vec<(String, Output<PulumiValue>)>,
+) -> Output<PulumiValue> {
+    Output::from_future(async move {
+        let map: BTreeMap<String, Output<PulumiValue>> = values.into_iter().collect();
+        let value = map.to_pulumi_value().await;
+
+        Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(value)),
+            secret: false,
+            dependencies: HashSet::new(),
+        })
+    })
 }
 
 pub trait ToPulumiValue {
@@ -229,47 +280,100 @@ mod tests {
     fn test_primitive_string() {
         let val = "hello".to_string();
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::String("hello".to_string()));
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::String("hello".to_string()),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_primitive_str() {
         let val = "hello";
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::String("hello".to_string()));
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::String("hello".to_string()),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_primitive_i32() {
         let val = 42i32;
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Integer(42));
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_primitive_f64() {
         let val = 1.23f64;
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Number(1.23));
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Number(1.23),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_primitive_bool() {
         let val = true;
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Boolean(true));
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Boolean(true),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_vec() {
         let val = vec![1i32, 2, 3];
         let pv = block_on(val.to_pulumi_value());
-        if let PulumiValueContent::Array(arr) = pv.content {
-            assert_eq!(arr.len(), 3);
-            assert_eq!(arr[0].content, PulumiValueContent::Integer(1));
-        } else {
-            panic!("Expected Array");
-        }
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Array(vec![
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(1),
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(2),
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(3),
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                ]),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
@@ -277,36 +381,63 @@ mod tests {
         let mut val = BTreeMap::new();
         val.insert("a".to_string(), 1i32);
         let pv = block_on(val.to_pulumi_value());
-        if let PulumiValueContent::Object(obj) = pv.content {
-            assert_eq!(obj.len(), 1);
-            assert_eq!(obj[0].0, "a");
-            assert_eq!(obj[0].1.content, PulumiValueContent::Integer(1));
-        } else {
-            panic!("Expected Object");
-        }
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Object(vec![(
+                    "a".to_string(),
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(1),
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                )]),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_option_some_primitive() {
         let val = Some(42i32);
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Integer(42));
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_option_none() {
         let val: Option<i32> = None;
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::None);
-        assert!(!pv.secret);
-        assert!(pv.dependencies.is_empty());
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::None,
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_box_primitive() {
         let val = Box::new(42i32);
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Integer(42));
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
@@ -320,9 +451,16 @@ mod tests {
         };
         let val = Box::new(Output::from_future(futures::future::ready(Arc::new(node))));
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Integer(42));
-        assert!(pv.secret);
-        assert!(pv.dependencies.contains("dep1"));
+        let mut expected_deps = HashSet::new();
+        expected_deps.insert("dep1".to_string());
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
+                secret: true,
+                dependencies: expected_deps,
+            }
+        );
     }
 
     #[test]
@@ -336,32 +474,58 @@ mod tests {
         };
         let val = Some(Output::from_future(futures::future::ready(Arc::new(node))));
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Integer(42));
-        assert!(pv.secret);
-        assert!(pv.dependencies.contains("dep1"));
+        let mut expected_deps = HashSet::new();
+        expected_deps.insert("dep1".to_string());
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
+                secret: true,
+                dependencies: expected_deps,
+            }
+        );
     }
 
     #[test]
     fn test_output_string() {
         let val = Output::new("hello".to_string());
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::String("hello".to_string()));
-        assert!(!pv.secret);
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::String("hello".to_string()),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_output_secret() {
         let val = Output::new_secret(42i32);
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Integer(42));
-        assert!(pv.secret);
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
+                secret: true,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
     fn test_output_nothing() {
         let val: Output<i32> = Output::new_nothing();
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Nothing);
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Nothing,
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
@@ -375,8 +539,16 @@ mod tests {
         };
         let val = Output::from_future(futures::future::ready(Arc::new(node)));
         let pv = block_on(val.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Integer(42));
-        assert!(pv.dependencies.contains("dep1"));
+        let mut expected_deps = HashSet::new();
+        expected_deps.insert("dep1".to_string());
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
+                secret: false,
+                dependencies: expected_deps,
+            }
+        );
     }
 
     #[test]
@@ -384,7 +556,14 @@ mod tests {
         let inner = Output::new(42i32);
         let outer = Output::new(inner);
         let pv = block_on(outer.to_pulumi_value());
-        assert_eq!(pv.content, PulumiValueContent::Integer(42));
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
     }
 
     #[test]
@@ -433,12 +612,168 @@ mod tests {
 
         let pv = block_on(test_future);
 
-        if let PulumiValueContent::Array(arr) = pv.content {
-            assert_eq!(arr.len(), 2);
-            assert_eq!(arr[0].content, PulumiValueContent::Integer(1));
-            assert_eq!(arr[1].content, PulumiValueContent::Integer(2));
-        } else {
-            panic!("Expected Array");
-        }
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Array(vec![
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(1),
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(2),
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                ]),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
+    }
+
+    #[test]
+    fn test_pulumi_value_output_array_propagates_secret_and_dependencies() {
+        let mut deps1 = HashSet::new();
+        deps1.insert("dep-a".to_string());
+        let val1 = Output::from_future(futures::future::ready(Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(PulumiValue {
+                content: PulumiValueContent::Integer(1),
+                secret: false,
+                dependencies: HashSet::new(),
+            })),
+            secret: true,
+            dependencies: deps1,
+        })));
+
+        let mut deps2 = HashSet::new();
+        deps2.insert("dep-b".to_string());
+        let val2 = Output::from_future(futures::future::ready(Arc::new(Node {
+            node_value: NodeValue::Nothing,
+            secret: false,
+            dependencies: deps2,
+        })));
+
+        let out = pulumi_value_output_array(vec![val1, val2]);
+        let pv = block_on(out.to_pulumi_value());
+
+        let mut expected_deps = HashSet::new();
+        expected_deps.insert("dep-a".to_string());
+        expected_deps.insert("dep-b".to_string());
+
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Array(vec![
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(1),
+                        secret: true,
+                        dependencies: HashSet::new(),
+                    },
+                    PulumiValue {
+                        content: PulumiValueContent::Nothing,
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                ]),
+                secret: true,
+                dependencies: expected_deps,
+            }
+        );
+    }
+
+    #[test]
+    fn test_pulumi_value_output_object_sorts_keys_and_last_wins_duplicates() {
+        let values = vec![
+            ("z".to_string(), to_pulumi_value_output(Output::new(3i32))),
+            ("a".to_string(), to_pulumi_value_output(Output::new(1i32))),
+            ("a".to_string(), to_pulumi_value_output(Output::new(2i32))),
+        ];
+
+        let pv = block_on(pulumi_value_output_object(values).to_pulumi_value());
+
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Object(vec![
+                    (
+                        "a".to_string(),
+                        PulumiValue {
+                            content: PulumiValueContent::Integer(2),
+                            secret: false,
+                            dependencies: HashSet::new(),
+                        },
+                    ),
+                    (
+                        "z".to_string(),
+                        PulumiValue {
+                            content: PulumiValueContent::Integer(3),
+                            secret: false,
+                            dependencies: HashSet::new(),
+                        },
+                    ),
+                ]),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
+    }
+
+    #[test]
+    fn test_pulumi_value_output_object_propagates_secret_and_dependencies() {
+        let mut deps1 = HashSet::new();
+        deps1.insert("dep-a".to_string());
+        let val1 = Output::from_future(futures::future::ready(Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(PulumiValue {
+                content: PulumiValueContent::Integer(1),
+                secret: false,
+                dependencies: HashSet::new(),
+            })),
+            secret: true,
+            dependencies: deps1,
+        })));
+
+        let mut deps2 = HashSet::new();
+        deps2.insert("dep-b".to_string());
+        let val2 = Output::from_future(futures::future::ready(Arc::new(Node {
+            node_value: NodeValue::Nothing,
+            secret: false,
+            dependencies: deps2,
+        })));
+
+        let out =
+            pulumi_value_output_object(vec![("b".to_string(), val2), ("a".to_string(), val1)]);
+        let pv = block_on(out.to_pulumi_value());
+
+        let mut expected_deps = HashSet::new();
+        expected_deps.insert("dep-a".to_string());
+        expected_deps.insert("dep-b".to_string());
+
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Object(vec![
+                    (
+                        "a".to_string(),
+                        PulumiValue {
+                            content: PulumiValueContent::Integer(1),
+                            secret: true,
+                            dependencies: HashSet::new(),
+                        },
+                    ),
+                    (
+                        "b".to_string(),
+                        PulumiValue {
+                            content: PulumiValueContent::Nothing,
+                            secret: false,
+                            dependencies: HashSet::new(),
+                        },
+                    ),
+                ]),
+                secret: true,
+                dependencies: expected_deps,
+            }
+        );
     }
 }
