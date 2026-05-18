@@ -317,8 +317,11 @@ where
 mod tests {
     use super::{PulumiAny, ToPulumiAny};
     use pulumi_gestalt_model::__private::futures::executor::block_on;
-    use pulumi_gestalt_model::{Output as ModelOutput, PulumiValueContent, ToPulumiValue};
+    use pulumi_gestalt_model::{
+        Output as ModelOutput, PulumiValue, PulumiValueContent, ToPulumiValue,
+    };
     use serde::Serialize;
+    use std::collections::HashSet;
 
     #[derive(Debug, PartialEq, serde::Serialize, serde::Deserialize)]
     struct ExampleInput {
@@ -328,12 +331,46 @@ mod tests {
 
     struct FailingSerialize;
 
+    struct CustomToPulumiValue {
+        id: i32,
+    }
+
     impl Serialize for FailingSerialize {
         fn serialize<S>(&self, _serializer: S) -> Result<S::Ok, S::Error>
         where
             S: serde::Serializer,
         {
             Err(serde::ser::Error::custom("serialization failed"))
+        }
+    }
+
+    impl ToPulumiValue for CustomToPulumiValue {
+        fn to_pulumi_value(&self) -> impl std::future::Future<Output = PulumiValue> {
+            let id = self.id;
+            std::future::ready(PulumiValue {
+                content: PulumiValueContent::Object(vec![(
+                    "custom-id".to_string(),
+                    pv(PulumiValueContent::Integer(id + 1000)),
+                )]),
+                secret: false,
+                dependencies: HashSet::new(),
+            })
+        }
+    }
+
+    fn pv(content: PulumiValueContent) -> PulumiValue {
+        PulumiValue {
+            content,
+            secret: false,
+            dependencies: HashSet::new(),
+        }
+    }
+
+    fn pvs(content: PulumiValueContent) -> PulumiValue {
+        PulumiValue {
+            content,
+            secret: true,
+            dependencies: HashSet::new(),
         }
     }
 
@@ -408,34 +445,41 @@ mod tests {
     #[test]
     fn pulumi_any_v2_macro_scalar() {
         let integer = block_on(pulumi_any_v2!(42).to_pulumi_value());
-        assert_eq!(integer.content, PulumiValueContent::Integer(42));
+        assert_eq!(integer, pv(PulumiValueContent::Integer(42)));
 
         let float = block_on(pulumi_any_v2!(1.5f64).to_pulumi_value());
-        assert_eq!(float.content, PulumiValueContent::Number(1.5));
+        assert_eq!(float, pv(PulumiValueContent::Number(1.5)));
 
         let boolean = block_on(pulumi_any_v2!(true).to_pulumi_value());
-        assert_eq!(boolean.content, PulumiValueContent::Boolean(true));
+        assert_eq!(boolean, pv(PulumiValueContent::Boolean(true)));
 
         let string = block_on(pulumi_any_v2!("hello").to_pulumi_value());
-        assert_eq!(
-            string.content,
-            PulumiValueContent::String("hello".to_string())
-        );
+        assert_eq!(string, pv(PulumiValueContent::String("hello".to_string())));
     }
 
     #[test]
     fn pulumi_any_v2_macro_array_and_object() {
         let array = block_on(pulumi_any_v2!([1, 2, 3]).to_pulumi_value());
-        match array.content {
-            PulumiValueContent::Array(values) => assert_eq!(values.len(), 3),
-            _ => panic!("Expected array content"),
-        }
+        assert_eq!(
+            array,
+            pv(PulumiValueContent::Array(vec![
+                pv(PulumiValueContent::Integer(1)),
+                pv(PulumiValueContent::Integer(2)),
+                pv(PulumiValueContent::Integer(3)),
+            ]))
+        );
 
         let object = block_on(pulumi_any_v2!({"name": "macro_test", "count": 5}).to_pulumi_value());
-        match object.content {
-            PulumiValueContent::Object(values) => assert_eq!(values.len(), 2),
-            _ => panic!("Expected object content"),
-        }
+        assert_eq!(
+            object,
+            pv(PulumiValueContent::Object(vec![
+                ("count".to_string(), pv(PulumiValueContent::Integer(5))),
+                (
+                    "name".to_string(),
+                    pv(PulumiValueContent::String("macro_test".to_string()))
+                ),
+            ]))
+        );
     }
 
     #[test]
@@ -451,12 +495,22 @@ mod tests {
             .to_pulumi_value(),
         );
 
-        match value.content {
-            PulumiValueContent::Object(values) => {
-                assert_eq!(values.len(), 2);
-            }
-            _ => panic!("Expected object content"),
-        }
+        assert_eq!(
+            value,
+            pv(PulumiValueContent::Object(vec![
+                (
+                    "items".to_string(),
+                    pv(PulumiValueContent::Array(vec![
+                        pv(PulumiValueContent::Integer(1)),
+                        pv(PulumiValueContent::Object(vec![(
+                            "name".to_string(),
+                            pv(PulumiValueContent::String("a".to_string())),
+                        )])),
+                    ])),
+                ),
+                ("ok".to_string(), pv(PulumiValueContent::Boolean(true))),
+            ]))
+        );
     }
 
     #[test]
@@ -471,15 +525,98 @@ mod tests {
             .to_pulumi_value(),
         );
 
-        assert!(value.secret);
-        assert!(value.dependencies.is_empty());
+        assert_eq!(
+            value,
+            pvs(PulumiValueContent::Object(vec![
+                ("known".to_string(), pv(PulumiValueContent::Integer(7))),
+                (
+                    "nested".to_string(),
+                    pv(PulumiValueContent::Array(vec![pv(
+                        PulumiValueContent::Boolean(true)
+                    )])),
+                ),
+                (
+                    "secret".to_string(),
+                    pvs(PulumiValueContent::String("sensitive".to_string())),
+                ),
+                ("unknown".to_string(), pv(PulumiValueContent::Nothing)),
+            ]))
+        );
+    }
 
-        match value.content {
-            PulumiValueContent::Object(fields) => {
-                let unknown = fields.iter().find(|(k, _)| k == "unknown").unwrap();
-                assert_eq!(unknown.1.content, PulumiValueContent::Nothing);
-            }
-            _ => panic!("Expected object content"),
-        }
+    #[test]
+    fn pulumi_any_v2_macro_object_sorts_keys() {
+        let value = block_on(
+            pulumi_any_v2!({
+                "z": 1,
+                "a": 2,
+            })
+            .to_pulumi_value(),
+        );
+
+        assert_eq!(
+            value,
+            pv(PulumiValueContent::Object(vec![
+                ("a".to_string(), pv(PulumiValueContent::Integer(2))),
+                ("z".to_string(), pv(PulumiValueContent::Integer(1))),
+            ]))
+        );
+    }
+
+    #[test]
+    fn pulumi_any_v2_macro_object_last_wins_for_duplicate_keys() {
+        let value = block_on(
+            pulumi_any_v2!({
+                "a": 1,
+                "a": 2,
+                "b": 3,
+            })
+            .to_pulumi_value(),
+        );
+
+        assert_eq!(
+            value,
+            pv(PulumiValueContent::Object(vec![
+                ("a".to_string(), pv(PulumiValueContent::Integer(2))),
+                ("b".to_string(), pv(PulumiValueContent::Integer(3))),
+            ]))
+        );
+    }
+
+    #[test]
+    fn pulumi_any_v2_macro_array_propagates_secret_from_nested_output() {
+        let value = block_on(
+            pulumi_any_v2!([ModelOutput::new(1i32), ModelOutput::new_secret(2i32),])
+                .to_pulumi_value(),
+        );
+
+        assert_eq!(
+            value,
+            pvs(PulumiValueContent::Array(vec![
+                pv(PulumiValueContent::Integer(1)),
+                pvs(PulumiValueContent::Integer(2)),
+            ]))
+        );
+    }
+
+    #[test]
+    fn pulumi_any_v2_macro_uses_custom_to_pulumi_value_impl() {
+        let value = block_on(
+            pulumi_any_v2!({
+                "custom": CustomToPulumiValue { id: 7 },
+            })
+            .to_pulumi_value(),
+        );
+
+        assert_eq!(
+            value,
+            pv(PulumiValueContent::Object(vec![(
+                "custom".to_string(),
+                pv(PulumiValueContent::Object(vec![(
+                    "custom-id".to_string(),
+                    pv(PulumiValueContent::Integer(1007)),
+                )])),
+            )]))
+        );
     }
 }

@@ -42,40 +42,10 @@ pub fn pulumi_value_output(content: PulumiValueContent) -> Output<PulumiValue> {
 
 pub fn pulumi_value_output_array(values: Vec<Output<PulumiValue>>) -> Output<PulumiValue> {
     Output::from_future(async move {
-        let futures = values.into_iter().map(|output| async move {
-            let node = output.future.await;
-            match &node.node_value {
-                NodeValue::Nothing => PulumiValue {
-                    content: PulumiValueContent::Nothing,
-                    secret: node.secret,
-                    dependencies: node.dependencies.clone(),
-                },
-                NodeValue::Exists(value) => {
-                    let mut value = value.as_ref().clone();
-                    value.secret |= node.secret;
-                    value.dependencies.extend(node.dependencies.iter().cloned());
-                    value
-                }
-            }
-        });
-        let results = futures::future::join_all(futures).await;
-
-        let mut secret = false;
-        let mut dependencies = HashSet::new();
-        let mut content = Vec::new();
-
-        for mut value in results {
-            secret |= value.secret;
-            dependencies.extend(value.dependencies.drain());
-            content.push(value);
-        }
+        let value = values.to_pulumi_value().await;
 
         Arc::new(Node {
-            node_value: NodeValue::Exists(Arc::new(PulumiValue {
-                content: PulumiValueContent::Array(content),
-                secret,
-                dependencies,
-            })),
+            node_value: NodeValue::Exists(Arc::new(value)),
             secret: false,
             dependencies: HashSet::new(),
         })
@@ -86,41 +56,11 @@ pub fn pulumi_value_output_object(
     values: Vec<(String, Output<PulumiValue>)>,
 ) -> Output<PulumiValue> {
     Output::from_future(async move {
-        let futures = values.into_iter().map(|(key, output)| async move {
-            let node = output.future.await;
-            let value = match &node.node_value {
-                NodeValue::Nothing => PulumiValue {
-                    content: PulumiValueContent::Nothing,
-                    secret: node.secret,
-                    dependencies: node.dependencies.clone(),
-                },
-                NodeValue::Exists(value) => {
-                    let mut value = value.as_ref().clone();
-                    value.secret |= node.secret;
-                    value.dependencies.extend(node.dependencies.iter().cloned());
-                    value
-                }
-            };
-            (key, value)
-        });
-        let results = futures::future::join_all(futures).await;
-
-        let mut secret = false;
-        let mut dependencies = HashSet::new();
-        let mut content = Vec::new();
-
-        for (key, mut value) in results {
-            secret |= value.secret;
-            dependencies.extend(value.dependencies.drain());
-            content.push((key, value));
-        }
+        let map: BTreeMap<String, Output<PulumiValue>> = values.into_iter().collect();
+        let value = map.to_pulumi_value().await;
 
         Arc::new(Node {
-            node_value: NodeValue::Exists(Arc::new(PulumiValue {
-                content: PulumiValueContent::Object(content),
-                secret,
-                dependencies,
-            })),
+            node_value: NodeValue::Exists(Arc::new(value)),
             secret: false,
             dependencies: HashSet::new(),
         })
@@ -542,6 +482,104 @@ mod tests {
             assert_eq!(arr[1].content, PulumiValueContent::Integer(2));
         } else {
             panic!("Expected Array");
+        }
+    }
+
+    #[test]
+    fn test_pulumi_value_output_array_propagates_secret_and_dependencies() {
+        let mut deps1 = HashSet::new();
+        deps1.insert("dep-a".to_string());
+        let val1 = Output::from_future(futures::future::ready(Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(PulumiValue {
+                content: PulumiValueContent::Integer(1),
+                secret: false,
+                dependencies: HashSet::new(),
+            })),
+            secret: true,
+            dependencies: deps1,
+        })));
+
+        let mut deps2 = HashSet::new();
+        deps2.insert("dep-b".to_string());
+        let val2 = Output::from_future(futures::future::ready(Arc::new(Node {
+            node_value: NodeValue::Nothing,
+            secret: false,
+            dependencies: deps2,
+        })));
+
+        let out = pulumi_value_output_array(vec![val1, val2]);
+        let pv = block_on(out.to_pulumi_value());
+
+        assert!(pv.secret);
+        assert!(pv.dependencies.contains("dep-a"));
+        assert!(pv.dependencies.contains("dep-b"));
+        if let PulumiValueContent::Array(arr) = pv.content {
+            assert_eq!(arr.len(), 2);
+            assert_eq!(arr[0].content, PulumiValueContent::Integer(1));
+            assert_eq!(arr[1].content, PulumiValueContent::Nothing);
+        } else {
+            panic!("Expected Array");
+        }
+    }
+
+    #[test]
+    fn test_pulumi_value_output_object_sorts_keys_and_last_wins_duplicates() {
+        let values = vec![
+            ("z".to_string(), to_pulumi_value_output(Output::new(3i32))),
+            ("a".to_string(), to_pulumi_value_output(Output::new(1i32))),
+            ("a".to_string(), to_pulumi_value_output(Output::new(2i32))),
+        ];
+
+        let pv = block_on(pulumi_value_output_object(values).to_pulumi_value());
+
+        if let PulumiValueContent::Object(obj) = pv.content {
+            assert_eq!(obj.len(), 2);
+            assert_eq!(obj[0].0, "a");
+            assert_eq!(obj[0].1.content, PulumiValueContent::Integer(2));
+            assert_eq!(obj[1].0, "z");
+            assert_eq!(obj[1].1.content, PulumiValueContent::Integer(3));
+        } else {
+            panic!("Expected Object");
+        }
+    }
+
+    #[test]
+    fn test_pulumi_value_output_object_propagates_secret_and_dependencies() {
+        let mut deps1 = HashSet::new();
+        deps1.insert("dep-a".to_string());
+        let val1 = Output::from_future(futures::future::ready(Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(PulumiValue {
+                content: PulumiValueContent::Integer(1),
+                secret: false,
+                dependencies: HashSet::new(),
+            })),
+            secret: true,
+            dependencies: deps1,
+        })));
+
+        let mut deps2 = HashSet::new();
+        deps2.insert("dep-b".to_string());
+        let val2 = Output::from_future(futures::future::ready(Arc::new(Node {
+            node_value: NodeValue::Nothing,
+            secret: false,
+            dependencies: deps2,
+        })));
+
+        let out =
+            pulumi_value_output_object(vec![("b".to_string(), val2), ("a".to_string(), val1)]);
+        let pv = block_on(out.to_pulumi_value());
+
+        assert!(pv.secret);
+        assert!(pv.dependencies.contains("dep-a"));
+        assert!(pv.dependencies.contains("dep-b"));
+        if let PulumiValueContent::Object(obj) = pv.content {
+            assert_eq!(obj.len(), 2);
+            assert_eq!(obj[0].0, "a");
+            assert_eq!(obj[0].1.content, PulumiValueContent::Integer(1));
+            assert_eq!(obj[1].0, "b");
+            assert_eq!(obj[1].1.content, PulumiValueContent::Nothing);
+        } else {
+            panic!("Expected Object");
         }
     }
 }
