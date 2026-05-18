@@ -11,7 +11,7 @@ pub fn to_pulumi_object_field<'a, T>(
     value: &'a T,
 ) -> ToPulumiObjectFieldFuture<'a>
 where
-    T: ToPulumiValue + ?Sized + 'a,
+    T: ToPulumiValue + Sync + ?Sized + 'a,
 {
     use futures::FutureExt;
     let pulumi_value_future = value.to_pulumi_value();
