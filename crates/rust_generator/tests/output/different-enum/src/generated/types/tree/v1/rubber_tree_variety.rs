@@ -18,7 +18,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rub
         &self,
     ) -> impl std::future::Future<
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    > {
+    > + Send {
         let value = match self {
             RubberTreeVariety::Burgundy => "Burgundy".to_string(),
             RubberTreeVariety::Ruby => "Ruby".to_string(),

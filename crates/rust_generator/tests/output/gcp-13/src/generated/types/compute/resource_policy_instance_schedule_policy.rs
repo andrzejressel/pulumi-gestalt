@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
         &self,
     ) -> impl std::future::Future<
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    > {
+    > + Send {
         use pulumi_gestalt_rust::__private::futures::FutureExt;
         use pulumi_gestalt_rust::__private::pulumi_gestalt_model::__private::to_pulumi_object_concurrent;
         async move {
@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             ];
             to_pulumi_object_concurrent(field_futures).await
         }
-        .boxed_local()
+        .boxed()
     }
 }
 

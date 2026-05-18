@@ -13,7 +13,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Far
         &self,
     ) -> impl std::future::Future<
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    > {
+    > + Send {
         let value = match self {
             Farm::PulumiPlantersInc => "Pulumi Planters Inc.".to_string(),
             Farm::PlantsRUs => "Plants'R'Us".to_string(),

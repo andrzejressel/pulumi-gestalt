@@ -21,7 +21,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clo
         &self,
     ) -> impl std::future::Future<
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    > {
+    > + Send {
         let value = match self {
             CloudAuditOptionsLogName::UnspecifiedLogName => "UNSPECIFIED_LOG_NAME".to_string(),
             CloudAuditOptionsLogName::AdminActivity => "ADMIN_ACTIVITY".to_string(),

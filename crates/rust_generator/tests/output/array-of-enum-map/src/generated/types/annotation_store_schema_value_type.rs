@@ -21,7 +21,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ann
         &self,
     ) -> impl std::future::Future<
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    > {
+    > + Send {
         let value = match self {
             AnnotationStoreSchemaValueType::Long => "LONG".to_string(),
             AnnotationStoreSchemaValueType::Int => "INT".to_string(),
