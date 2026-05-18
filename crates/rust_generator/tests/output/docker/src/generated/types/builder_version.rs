@@ -15,7 +15,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bui
         &self,
     ) -> impl std::future::Future<
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    > {
+    > + Send {
         let value = match self {
             BuilderVersion::BuilderV1 => "BuilderV1".to_string(),
             BuilderVersion::BuilderBuildKit => "BuilderBuildKit".to_string(),

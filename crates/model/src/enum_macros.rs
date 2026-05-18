@@ -7,7 +7,9 @@ macro_rules! pulumi_value_string_enum {
         }
     ) => {
         impl $crate::ToPulumiValue for $enum_name {
-            fn to_pulumi_value(&self) -> impl std::future::Future<Output = $crate::PulumiValue> {
+            fn to_pulumi_value(
+                &self,
+            ) -> impl std::future::Future<Output = $crate::PulumiValue> + Send {
                 let value = match self {
                     $($enum_name::$variant => $value.to_string()),*
                 };
@@ -46,7 +48,9 @@ macro_rules! pulumi_value_integer_enum {
         }
     ) => {
         impl $crate::ToPulumiValue for $enum_name {
-            fn to_pulumi_value(&self) -> impl std::future::Future<Output = $crate::PulumiValue> {
+            fn to_pulumi_value(
+                &self,
+            ) -> impl std::future::Future<Output = $crate::PulumiValue> + Send {
                 let value: i32 = match self {
                     $($enum_name::$variant => $value),*
                 };
@@ -85,7 +89,9 @@ macro_rules! pulumi_value_number_enum {
         }
     ) => {
         impl $crate::ToPulumiValue for $enum_name {
-            fn to_pulumi_value(&self) -> impl std::future::Future<Output = $crate::PulumiValue> {
+            fn to_pulumi_value(
+                &self,
+            ) -> impl std::future::Future<Output = $crate::PulumiValue> + Send {
                 let value: f64 = match self {
                     $($enum_name::$variant => $value),*
                 };

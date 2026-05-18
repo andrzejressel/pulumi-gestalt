@@ -15,7 +15,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sup
         &self,
     ) -> impl std::future::Future<
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    > {
+    > + Send {
         let value = match self {
             SupportedFilterTypes::ShipToCountries => "ShipToCountries".to_string(),
             SupportedFilterTypes::DoubleEncryptionStatus => "DoubleEncryptionStatus".to_string(),

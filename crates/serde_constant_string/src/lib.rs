@@ -84,11 +84,9 @@ macro_rules! generate_string_const {
 
                 match &value.content {
                     PulumiValueContent::String(s) if s == $constant => Ok($struct_name {}),
-                    PulumiValueContent::String(s) => bail!(
-                        "Expected string '{}', got '{}'",
-                        $constant,
-                        s
-                    ),
+                    PulumiValueContent::String(s) => {
+                        bail!("Expected string '{}', got '{}'", $constant, s)
+                    }
                     _ => bail!("Expected String, got {:?}", value.content),
                 }
             }
@@ -99,12 +97,13 @@ macro_rules! generate_string_const {
                 &self,
             ) -> impl std::future::Future<
                 Output = $crate::__private::pulumi_gestalt_model::PulumiValue,
-            > {
+            > + Send {
                 async move {
                     $crate::__private::pulumi_gestalt_model::PulumiValue {
-                        content: $crate::__private::pulumi_gestalt_model::PulumiValueContent::String(
-                            $constant.to_string(),
-                        ),
+                        content:
+                            $crate::__private::pulumi_gestalt_model::PulumiValueContent::String(
+                                $constant.to_string(),
+                            ),
                         secret: false,
                         dependencies: std::collections::HashSet::new(),
                     }
