@@ -345,7 +345,7 @@ mod tests {
     }
 
     impl ToPulumiValue for CustomToPulumiValue {
-        fn to_pulumi_value(&self) -> impl std::future::Future<Output = PulumiValue> {
+        fn to_pulumi_value(&self) -> impl std::future::Future<Output = PulumiValue> + Send {
             let id = self.id;
             std::future::ready(PulumiValue {
                 content: PulumiValueContent::Object(vec![(

@@ -21,10 +21,10 @@ impl<A: Serialize + Debug, B: Serialize + Debug> OneOf2<A, B> {
 
 impl<A, B> ToPulumiValue for OneOf2<A, B>
 where
-    A: Serialize + Debug + ToPulumiValue,
-    B: Serialize + Debug + ToPulumiValue,
+    A: Serialize + Debug + ToPulumiValue + Sync,
+    B: Serialize + Debug + ToPulumiValue + Sync,
 {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         async move {
             match self {
                 OneOf2::Left(a) => a.to_pulumi_value().await,
@@ -78,11 +78,11 @@ impl<A: Serialize + Debug, B: Serialize + Debug, C: Serialize + Debug> OneOf3<A,
 
 impl<A, B, C> ToPulumiValue for OneOf3<A, B, C>
 where
-    A: Serialize + Debug + ToPulumiValue,
-    B: Serialize + Debug + ToPulumiValue,
-    C: Serialize + Debug + ToPulumiValue,
+    A: Serialize + Debug + ToPulumiValue + Sync,
+    B: Serialize + Debug + ToPulumiValue + Sync,
+    C: Serialize + Debug + ToPulumiValue + Sync,
 {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         async move {
             match self {
                 OneOf3::Left(a) => a.to_pulumi_value().await,
@@ -154,12 +154,12 @@ impl<A: Serialize + Debug, B: Serialize + Debug, C: Serialize + Debug, D: Serial
 
 impl<A, B, C, D> ToPulumiValue for OneOf4<A, B, C, D>
 where
-    A: Serialize + Debug + ToPulumiValue,
-    B: Serialize + Debug + ToPulumiValue,
-    C: Serialize + Debug + ToPulumiValue,
-    D: Serialize + Debug + ToPulumiValue,
+    A: Serialize + Debug + ToPulumiValue + Sync,
+    B: Serialize + Debug + ToPulumiValue + Sync,
+    C: Serialize + Debug + ToPulumiValue + Sync,
+    D: Serialize + Debug + ToPulumiValue + Sync,
 {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         async move {
             match self {
                 OneOf4::Left(a) => a.to_pulumi_value().await,

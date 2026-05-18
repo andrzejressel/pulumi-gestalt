@@ -1,9 +1,10 @@
 use crate::output::{Node, NodeValue};
 use crate::{Output, PulumiValue, PulumiValueContent};
+use futures::FutureExt;
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::sync::Arc;
 
-pub type ToPulumiObjectFieldFuture<'a> = futures::future::LocalBoxFuture<'a, (String, PulumiValue)>;
+pub type ToPulumiObjectFieldFuture<'a> = futures::future::BoxFuture<'a, (String, PulumiValue)>;
 
 pub fn to_pulumi_object_field<'a, T>(
     name: &'static str,
@@ -13,8 +14,9 @@ where
     T: ToPulumiValue + ?Sized + 'a,
 {
     use futures::FutureExt;
+    let pulumi_value_future = value.to_pulumi_value();
 
-    async move { (name.to_string(), value.to_pulumi_value().await) }.boxed_local()
+    async move { (name.to_string(), pulumi_value_future.await) }.boxed()
 }
 
 pub async fn to_pulumi_object_concurrent<'a>(
@@ -29,7 +31,14 @@ pub fn to_pulumi_value_output<T>(value: T) -> Output<PulumiValue>
 where
     T: ToPulumiValue + Sync + Send + 'static,
 {
-    Output::new(futures::executor::block_on(value.to_pulumi_value()))
+    Output::from_future(async move {
+        let value = value.to_pulumi_value().await;
+        Arc::new(Node {
+            node_value: NodeValue::Exists(Arc::new(value)),
+            secret: false,
+            dependencies: HashSet::new(),
+        })
+    })
 }
 
 pub fn pulumi_value_output(content: PulumiValueContent) -> Output<PulumiValue> {
@@ -68,17 +77,17 @@ pub fn pulumi_value_output_object(
 }
 
 pub trait ToPulumiValue {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue>;
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send;
 }
 
 impl ToPulumiValue for PulumiValue {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         futures::future::ready(self.clone())
     }
 }
 
 impl ToPulumiValue for String {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         futures::future::ready(PulumiValue {
             content: PulumiValueContent::String(self.clone()),
             secret: false,
@@ -88,7 +97,7 @@ impl ToPulumiValue for String {
 }
 
 impl ToPulumiValue for &str {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         futures::future::ready(PulumiValue {
             content: PulumiValueContent::String(self.to_string()),
             secret: false,
@@ -98,7 +107,7 @@ impl ToPulumiValue for &str {
 }
 
 impl ToPulumiValue for i32 {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         futures::future::ready(PulumiValue {
             content: PulumiValueContent::Integer(*self),
             secret: false,
@@ -108,7 +117,7 @@ impl ToPulumiValue for i32 {
 }
 
 impl ToPulumiValue for f64 {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         futures::future::ready(PulumiValue {
             content: PulumiValueContent::Number(*self),
             secret: false,
@@ -118,7 +127,7 @@ impl ToPulumiValue for f64 {
 }
 
 impl ToPulumiValue for bool {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         futures::future::ready(PulumiValue {
             content: PulumiValueContent::Boolean(*self),
             secret: false,
@@ -128,7 +137,7 @@ impl ToPulumiValue for bool {
 }
 
 impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Vec<T> {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         let futures: Vec<_> = self.iter().map(|item| item.to_pulumi_value()).collect();
         async move {
             let results = futures::future::join_all(futures).await;
@@ -152,7 +161,7 @@ impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Vec<T> {
 }
 
 impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Option<T> {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         let value = self.as_ref().map(ToPulumiValue::to_pulumi_value);
         async move {
             match value {
@@ -168,13 +177,13 @@ impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Option<T> {
 }
 
 impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Box<T> {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         self.as_ref().to_pulumi_value()
     }
 }
 
 impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for BTreeMap<String, T> {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         let futures: Vec<_> = self
             .iter()
             .map(|(key, value)| {
@@ -206,7 +215,7 @@ impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for BTreeMap<String
 }
 
 impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for HashMap<String, T> {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         let futures: Vec<_> = self
             .iter()
             .map(|(key, value)| {
@@ -238,7 +247,7 @@ impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for HashMap<String,
 }
 
 impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Output<T> {
-    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         let future = self.future.clone();
         async move {
             let node = future.await;

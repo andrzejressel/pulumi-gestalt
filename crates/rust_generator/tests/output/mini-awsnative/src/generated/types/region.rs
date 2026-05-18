@@ -84,7 +84,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
         &self,
     ) -> impl std::future::Future<
         Output = pulumi_gestalt_rust::__private::pulumi_gestalt_model::PulumiValue,
-    > {
+    > + Send {
         let value = match self {
             Region::AfSouth1 => "af-south-1".to_string(),
             Region::ApEast1 => "ap-east-1".to_string(),
