@@ -66,7 +66,7 @@ macro_rules! pulumi_any {
 #[macro_export]
 macro_rules! pulumi_any_v2_internal {
     (null) => {
-        $crate::__private::pulumi_gestalt_model::__private::pulumi_value_output(
+        $crate::__private::pulumi_gestalt_model::__private::pulumi_value_middleware(
             $crate::__private::pulumi_gestalt_model::PulumiValueContent::None,
         )
     };
@@ -77,7 +77,7 @@ macro_rules! pulumi_any_v2_internal {
         $crate::pulumi_any_v2_internal_object!([] $($tt)*)
     };
     ($other:expr) => {
-        $crate::__private::pulumi_gestalt_model::__private::to_pulumi_value_output($other)
+        $crate::__private::pulumi_gestalt_model::__private::to_pulumi_value_middleware($other)
     };
 }
 
@@ -85,7 +85,7 @@ macro_rules! pulumi_any_v2_internal {
 #[macro_export]
 macro_rules! pulumi_any_v2_internal_array {
     ([$($elems:expr,)*]) => {
-        $crate::__private::pulumi_gestalt_model::__private::pulumi_value_output_array(
+        $crate::__private::pulumi_gestalt_model::__private::pulumi_value_middleware_array(
             vec![$($elems,)*]
         )
     };
@@ -166,7 +166,7 @@ macro_rules! pulumi_any_v2_internal_array {
 #[macro_export]
 macro_rules! pulumi_any_v2_internal_object {
     ([$($fields:expr,)*]) => {
-        $crate::__private::pulumi_gestalt_model::__private::pulumi_value_output_object(
+        $crate::__private::pulumi_gestalt_model::__private::pulumi_value_middleware_object(
             vec![$($fields,)*]
         )
     };
@@ -267,11 +267,12 @@ macro_rules! pulumi_any_v2_internal_object {
     };
 }
 
-/// Construct an [`pulumi_gestalt_model::Output<pulumi_gestalt_model::PulumiValue>`] from
+/// Construct an [`pulumi_gestalt_model::PulumiValueMiddleware`] from
 /// JSON-like literals.
 ///
 /// The syntax is serde_json-style and supports nested arrays/objects, trailing commas,
-/// and values that are already `pulumi_gestalt_model::Output<T>`.
+/// and values that are already `pulumi_gestalt_model::Output<T>`. Resolve with
+/// `.to_pulumi_value()` when a final `PulumiValue` is needed.
 #[macro_export]
 macro_rules! pulumi_any_v2 {
     ($($tt:tt)+) => {
