@@ -2745,6 +2745,8 @@ version = "0.0.0-DEV"
 dependencies = [
  "futures",
  "rootcause",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

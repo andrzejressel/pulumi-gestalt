@@ -15,9 +15,9 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
         StashArgs::builder().input(stash_input).build_struct(),
     );
 
-    add_export("stash_input", &stash.input);
-    add_export("stash_output", &stash.output);
-    add_export("stash_id", &stash.id);
-    add_export("stash_urn", &stash.urn);
+    ctx.add_export("stash_input", &stash.input);
+    ctx.add_export("stash_output", &stash.output);
+    ctx.add_export("stash_id", &stash.id);
+    ctx.add_export("stash_urn", &stash.urn);
     Ok(())
 }

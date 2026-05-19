@@ -36,9 +36,9 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
             .build_struct(),
     );
 
-    add_export("logs", &cont.container_logs);
-    add_export("result", &random_string.result);
-    add_export("transformed_result", &t);
-    add_export("number", &number);
+    ctx.add_export("logs", &cont.container_logs);
+    ctx.add_export("result", &random_string.result);
+    ctx.add_export("transformed_result", &t);
+    ctx.add_export("number", &number);
     Ok(())
 }

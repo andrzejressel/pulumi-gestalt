@@ -27,10 +27,10 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
             CustomResourceOptions::builder().provider(&provider).build(),
         );
 
-    add_export("provider_prefix", &provider.prefix);
-    add_export("result", &combine_string_res.result);
-    add_export("result_with_provider", &combine_string_with_provider.result);
-    add_export("provider_urn", &provider.urn);
+    ctx.add_export("provider_prefix", &provider.prefix);
+    ctx.add_export("result", &combine_string_res.result);
+    ctx.add_export("result_with_provider", &combine_string_with_provider.result);
+    ctx.add_export("provider_urn", &provider.urn);
 
     Ok(())
 }

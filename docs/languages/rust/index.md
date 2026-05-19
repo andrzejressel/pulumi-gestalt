@@ -79,11 +79,10 @@ fn pulumi_main(context: &Context) -> Result<()> {
             .length(random_string_2.length.map(|i| i * 2))
             .build_struct(),
     );
-
-    add_export("result", &random_string_1.result);
-    add_export("number_1", &random_string_1.length);
-    add_export("number_2", &random_string_2.length);
-    add_export("number_3", &random_string_3.length);
+    context.add_export("result", &random_string_1.result);
+    context.add_export("number_1", &random_string_1.length);
+    context.add_export("number_2", &random_string_2.length);
+    context.add_export("number_3", &random_string_3.length);
     Ok(())
 }
 ```

@@ -1,13 +1,34 @@
 use crate::Output;
-use serde::Serialize;
+use pulumi_gestalt_model::ResolvedOutput;
 
 macro_rules! impl_combine {
     ($($func_name:ident => ($($var_lower:ident : $var_upper:ident),+)),+) => {
         $(
             #[allow(clippy::too_many_arguments)]
             pub fn $func_name<A, $($var_upper),+>(a: crate::Output<A>, $($var_lower: crate::Output<$var_upper>),+) -> Output<(A, $($var_upper),+)>
-            where A: Serialize, $($var_upper: Serialize),+ {
-                a.combine::<(A, $($var_upper),+)>(&[$(&$var_lower.drop_type()),+])
+            where
+                A: Clone + Send + Sync + 'static,
+                $($var_upper: Clone + Send + Sync + 'static),+
+            {
+                Output::from_resolved_future(async move {
+                    let a_result = a.resolve().await;
+                    $(let $var_lower = $var_lower.resolve().await;)+
+
+                    let mut dependencies = a_result.dependencies;
+                    let mut secret = a_result.secret;
+                    $(dependencies.extend($var_lower.dependencies); secret |= $var_lower.secret;)+
+
+                    let value = match (a_result.value, $($var_lower.value),+) {
+                        (Some(a_value), $(Some($var_lower)),+) => Some((a_value, $($var_lower),+)),
+                        _ => None,
+                    };
+
+                    ResolvedOutput {
+                        value,
+                        secret,
+                        dependencies,
+                    }
+                })
             }
         )+
     };

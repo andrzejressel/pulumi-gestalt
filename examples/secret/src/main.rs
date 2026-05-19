@@ -22,9 +22,9 @@ fn pulumi_main(ctx: &Context) -> Result<(), Error> {
     let combined_with_secret = pulumi_combine!(non_secret, secret_mapped.clone())
         .map(|(a, b)| format!("[{}, \"{}\"]", a, b));
 
-    add_export("secret_output", &secret.base64);
-    add_export("secret_output_mapped", &secret_mapped);
-    add_export("combined_with_secret", &combined_with_secret);
-    add_export("custom_secret", &custom_secret);
+    ctx.add_export("secret_output", &secret.base64);
+    ctx.add_export("secret_output_mapped", &secret_mapped);
+    ctx.add_export("combined_with_secret", &combined_with_secret);
+    ctx.add_export("custom_secret", &custom_secret);
     Ok(())
 }

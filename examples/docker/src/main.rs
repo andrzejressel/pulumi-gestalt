@@ -44,9 +44,9 @@ fn pulumi_main(ctx: &Context) -> anyhow::Result<()> {
             .build_struct(),
     );
 
-    add_export("logs", &cont.container_logs);
-    add_export("image_id", &image.image_name);
-    add_export("labels", &cont.labels.map(|f| f[0].value.clone()));
-    add_export("repo_digest", &remote_image.repo_digest);
+    ctx.add_export("logs", &cont.container_logs);
+    ctx.add_export("image_id", &image.image_name);
+    ctx.add_export("labels", &cont.labels.map(|f| f[0].value.clone()));
+    ctx.add_export("repo_digest", &remote_image.repo_digest);
     Ok(())
 }

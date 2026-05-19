@@ -10,6 +10,7 @@ use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
 pub use model::FunctionName;
 use pulumi_gestalt_domain::{NodeValue, ResourceFields};
+use std::future::Future;
 use std::sync::Arc;
 
 pub type RawOutput = Output<NodeValue>;
@@ -47,6 +48,17 @@ impl RawOutput {
             }
         })
     }
+
+    pub fn from_future_node_value<F>(future: F) -> Self
+    where
+        F: Future<Output = NodeValue> + Send + 'static,
+    {
+        Self::from_future(future)
+    }
+
+    pub async fn resolve_node_value(&self) -> NodeValue {
+        self.value.clone().await
+    }
 }
 
 #[derive(Clone)]
@@ -82,7 +94,7 @@ pub struct Output<T> {
 }
 
 impl<T: Clone + 'static + Send + Sync> Output<T> {
-    pub(crate) fn from_future<F>(future: F) -> Output<T>
+    pub fn from_future<F>(future: F) -> Output<T>
     where
         F: Future<Output = T> + Send + 'static,
     {

@@ -6,6 +6,7 @@ pub mod finish;
 
 pub use engine::*;
 pub use pulumi_gestalt_domain::FieldName;
+pub use pulumi_gestalt_domain::NodeValue;
 
 /// Requires `pulumi` CLI to be installed and available in PATH
 /// Modules for provider can be found in Pulumi registry on left side with (M) icon:

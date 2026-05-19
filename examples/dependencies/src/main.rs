@@ -32,9 +32,9 @@ fn pulumi_main(ctx: &Context) -> anyhow::Result<()> {
             .build_struct(),
     );
 
-    add_export("result", &random_string_1.result);
-    add_export("number_1", &random_string_1.length);
-    add_export("number_2", &random_string_2.length);
-    add_export("number_3", &random_string_3.length);
+    ctx.add_export("result", &random_string_1.result);
+    ctx.add_export("number_1", &random_string_1.length);
+    ctx.add_export("number_2", &random_string_2.length);
+    ctx.add_export("number_3", &random_string_3.length);
     Ok(())
 }

@@ -2,10 +2,11 @@ use anyhow::Context as AnyhowContext;
 use futures::lock::Mutex;
 use pulumi_gestalt_core as core;
 use pulumi_gestalt_core::{Config, Engine};
-use pulumi_gestalt_domain::FieldName;
+use pulumi_gestalt_domain::{FieldName, NodeValue};
 use pulumi_gestalt_grpc_connection::RealPulumiConnector;
 use serde_json::Value;
 use std::collections::HashMap;
+use std::future::Future;
 use std::sync::Arc;
 
 #[derive(bon::Builder)]
@@ -165,6 +166,17 @@ impl<T> Context<T> {
         }
     }
 
+    pub fn create_output_from_future<F>(&self, future: F) -> Output<T>
+    where
+        F: Future<Output = NodeValue> + Send + 'static,
+    {
+        let raw_output = core::RawOutput::from_future_node_value(future);
+        Output {
+            inner: raw_output,
+            engine: Arc::clone(&self.inner),
+        }
+    }
+
     pub async fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue<T>> {
         self.inner
             .lock()
@@ -249,6 +261,10 @@ impl<T> Output<T> {
 
     pub async fn add_export(&self, key: FieldName) {
         self.engine.lock().await.add_output(key, self.inner.clone());
+    }
+
+    pub async fn resolve_node_value(&self) -> NodeValue {
+        self.inner.resolve_node_value().await
     }
 }
 
