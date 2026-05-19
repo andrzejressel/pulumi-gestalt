@@ -1,6 +1,5 @@
 use crate::{Context, Output};
-use serde::Serialize;
-use serde::de::DeserializeOwned;
+use serde::{Serialize, de::DeserializeOwned};
 
 /// Wrapper for either static value or [Output]
 pub enum Input<T> {
@@ -8,7 +7,10 @@ pub enum Input<T> {
     Output(Output<T>),
 }
 
-impl<T: Serialize> Input<T> {
+impl<T> Input<T>
+where
+    T: Serialize + DeserializeOwned + Clone + Send + Sync + 'static,
+{
     #[doc(hidden)]
     pub fn get_output(self, engine: &Context) -> Output<T> {
         match self {
@@ -42,7 +44,7 @@ impl<T: Serialize> From<T> for Input<Option<T>> {
     }
 }
 
-impl<T: Serialize + DeserializeOwned> From<Output<T>> for Input<Option<T>> {
+impl<T: Serialize + Clone + Send + Sync + 'static> From<Output<T>> for Input<Option<T>> {
     fn from(output: Output<T>) -> Self {
         Input::Output(output.map(|v| Some(v)))
     }

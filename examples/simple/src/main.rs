@@ -3,7 +3,7 @@ use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
 use pulumi_gestalt_rust::ToOutput;
 use pulumi_gestalt_rust::{Context, Output};
-use pulumi_gestalt_rust::{add_export, pulumi_combine, pulumi_format};
+use pulumi_gestalt_rust::{pulumi_combine, pulumi_format};
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
@@ -57,14 +57,14 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
         .require_config_secret(None, "secret")
         .context("Failed to load required secret config `secret`")?;
 
-    add_export("result", &random_string.result);
-    add_export("transformed_result", &t);
-    add_export("number", &number);
-    add_export("combined_string", &combined_string);
-    add_export("combined_2_string", &combined_2_string);
-    add_export("keepers", &keepers);
-    add_export("result_2", &random_string_2.result);
-    add_export("secret_config", &secret_config);
-    add_export("id", &random_string.id);
+    ctx.add_export("result", &random_string.result);
+    ctx.add_export("transformed_result", &t);
+    ctx.add_export("number", &number);
+    ctx.add_export("combined_string", &combined_string);
+    ctx.add_export("combined_2_string", &combined_2_string);
+    ctx.add_export("keepers", &keepers);
+    ctx.add_export("result_2", &random_string_2.result);
+    ctx.add_export("secret_config", &secret_config);
+    ctx.add_export("id", &random_string.id);
     Ok(())
 }

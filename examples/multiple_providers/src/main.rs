@@ -3,8 +3,8 @@ use pulumi_gestalt_providers_docker::container;
 use pulumi_gestalt_providers_docker::container::ContainerArgs;
 use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
+use pulumi_gestalt_rust::Context;
 use pulumi_gestalt_rust::Output;
-use pulumi_gestalt_rust::{Context, add_export};
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
@@ -36,9 +36,9 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
             .build_struct(),
     );
 
-    add_export("logs", &cont.container_logs);
-    add_export("result", &random_string.result);
-    add_export("transformed_result", &t);
-    add_export("number", &number);
+    ctx.add_export("logs", &cont.container_logs);
+    ctx.add_export("result", &random_string.result);
+    ctx.add_export("transformed_result", &t);
+    ctx.add_export("number", &number);
     Ok(())
 }

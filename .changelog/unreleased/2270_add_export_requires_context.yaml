@@ -1,0 +1,9 @@
+type: Changed
+title: Require `Context` for stack exports in Rust
+description: |
+  Top-level `pulumi_gestalt_rust::add_export` is no longer supported.
+  Use `ctx.add_export("name", &output)` from the active `Context` instead.
+
+  Migration:
+  - Before: `add_export("result", &value)`
+  - After: `ctx.add_export("result", &value)`

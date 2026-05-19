@@ -4,7 +4,6 @@ use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
 use std::collections::HashSet;
 use std::future::Future;
-use std::ops::Deref;
 use std::sync::Arc;
 
 #[derive(Debug, PartialEq, Eq)]
@@ -28,15 +27,6 @@ impl<T> Clone for NodeValue<T> {
     }
 }
 
-impl<T> NodeValue<T> {
-    fn map<U>(&self, f: fn(&T) -> U) -> NodeValue<U> {
-        match self {
-            Nothing => Nothing,
-            Exists(value) => Exists(Arc::new(f(value.deref()))),
-        }
-    }
-}
-
 #[derive(Debug, PartialEq, Eq)]
 pub(crate) struct Node<T> {
     pub(crate) node_value: NodeValue<T>,
@@ -54,18 +44,14 @@ impl<T> Clone for Node<T> {
     }
 }
 
-impl<T> Node<T> {
-    pub(crate) fn map<U>(&self, f: fn(&T) -> U) -> Node<U> {
-        Node {
-            node_value: self.node_value.map(f),
-            secret: self.secret,
-            dependencies: self.dependencies.clone(),
-        }
-    }
-}
-
 pub struct Output<T> {
     pub(crate) future: Shared<BoxFuture<'static, Arc<Node<T>>>>,
+}
+
+pub struct ResolvedOutput<T> {
+    pub value: Option<T>,
+    pub secret: bool,
+    pub dependencies: HashSet<String>,
 }
 
 impl<T> Clone for Output<T> {
@@ -77,6 +63,10 @@ impl<T> Clone for Output<T> {
 }
 
 impl<T: Send + Sync + 'static> Output<T> {
+    pub fn drop_type(self) -> Self {
+        self
+    }
+
     pub fn new_nothing() -> Self {
         let value = Arc::new(Node {
             node_value: Nothing,
@@ -110,10 +100,11 @@ impl<T: Send + Sync + 'static> Output<T> {
         }
     }
 
-    pub fn secret(self) -> Self {
+    pub fn secret(&self) -> Self {
         Self {
             future: self
                 .future
+                .clone()
                 .map(|node| {
                     Arc::new(Node {
                         node_value: node.node_value.clone(),
@@ -126,10 +117,11 @@ impl<T: Send + Sync + 'static> Output<T> {
         }
     }
 
-    pub fn unsecret(self) -> Self {
+    pub fn unsecret(&self) -> Self {
         Self {
             future: self
                 .future
+                .clone()
                 .map(|node| {
                     Arc::new(Node {
                         node_value: node.node_value.clone(),
@@ -152,11 +144,62 @@ impl<T: Send + Sync + 'static> Output<T> {
         }
     }
 
-    pub fn map<T2: Sync + Send + 'static>(&self, f: fn(&T) -> T2) -> Output<T2> {
-        Output::from_future(self.future.clone().map(move |value| Arc::new(value.map(f))))
+    pub fn from_resolved_future(
+        future: impl Future<Output = ResolvedOutput<T>> + Send + 'static,
+    ) -> Self {
+        Self::from_future(async move {
+            let resolved = future.await;
+            Arc::new(Node {
+                node_value: match resolved.value {
+                    Some(value) => Exists(Arc::new(value)),
+                    None => Nothing,
+                },
+                secret: resolved.secret,
+                dependencies: resolved.dependencies,
+            })
+        })
     }
 
-    pub fn and_then<T2: Sync + Send + 'static>(&self, f: fn(&T) -> Output<T2>) -> Output<T2> {
+    pub async fn resolve(&self) -> ResolvedOutput<T>
+    where
+        T: Clone,
+    {
+        let node = self.future.clone().await;
+        let value = match &node.node_value {
+            Nothing => None,
+            Exists(value) => Some(value.as_ref().clone()),
+        };
+        ResolvedOutput {
+            value,
+            secret: node.secret,
+            dependencies: node.dependencies.clone(),
+        }
+    }
+
+    pub fn map<T2, F>(&self, f: F) -> Output<T2>
+    where
+        T: Clone,
+        T2: Sync + Send + 'static,
+        F: Fn(T) -> T2 + Send + Sync + 'static,
+    {
+        Output::from_future(self.future.clone().map(move |node| {
+            Arc::new(Node {
+                node_value: match &node.node_value {
+                    Nothing => Nothing,
+                    Exists(value) => Exists(Arc::new(f(value.as_ref().clone()))),
+                },
+                secret: node.secret,
+                dependencies: node.dependencies.clone(),
+            })
+        }))
+    }
+
+    pub fn and_then<T2, F>(&self, f: F) -> Output<T2>
+    where
+        T: Clone,
+        T2: Sync + Send + 'static,
+        F: Fn(T) -> Output<T2> + Send + Sync + 'static,
+    {
         Output::from_future(self.future.clone().then(move |node| async move {
             match &node.node_value {
                 Nothing => Arc::new(Node {
@@ -165,7 +208,7 @@ impl<T: Send + Sync + 'static> Output<T> {
                     dependencies: node.dependencies.clone(),
                 }),
                 Exists(value) => {
-                    let next_output = f(value.as_ref());
+                    let next_output = f(value.as_ref().clone());
                     let next_node = next_output.future.await;
 
                     let mut dependencies = node.dependencies.clone();
@@ -259,7 +302,7 @@ mod tests {
 
     #[test]
     fn test_nothing_mapping() {
-        let output = Output::new_nothing();
+        let output = Output::<i32>::new_nothing();
         let mapped_output = output.map(|x| x * 2);
         let value = futures::executor::block_on(mapped_output.future.clone());
         assert_eq!(
@@ -274,7 +317,7 @@ mod tests {
 
     #[test]
     fn test_secret_nothing_mapping() {
-        let output = Output::new_nothing().secret();
+        let output = Output::<i32>::new_nothing().secret();
         let mapped_output = output.map(|x| x * 2);
         let value = futures::executor::block_on(mapped_output.future.clone());
         assert_eq!(

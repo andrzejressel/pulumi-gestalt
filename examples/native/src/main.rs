@@ -2,7 +2,7 @@ use anyhow::{Context as AnyhowContext, Result};
 use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
 use pulumi_gestalt_rust::ToOutput;
-use pulumi_gestalt_rust::{Context, Output, add_export, pulumi_combine, pulumi_format};
+use pulumi_gestalt_rust::{Context, Output, pulumi_combine, pulumi_format};
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
@@ -57,15 +57,15 @@ fn pulumi_main(ctx: &Context) -> Result<()> {
     let forced_secret = ctx.new_output(&"forced_secret_value").secret();
     let forced_plaintext = secret_config.unsecret();
 
-    add_export("result", &random_string.result);
-    add_export("transformed_result", &t);
-    add_export("number", &number);
-    add_export("combined_string", &combined_string);
-    add_export("combined_2_string", &combined_2_string);
-    add_export("keepers", &keepers);
-    add_export("result_2", &random_string_2.result);
-    add_export("secret_config", &secret_config);
-    add_export("forced_secret", &forced_secret);
-    add_export("forced_plaintext", &forced_plaintext);
+    ctx.add_export("result", &random_string.result);
+    ctx.add_export("transformed_result", &t);
+    ctx.add_export("number", &number);
+    ctx.add_export("combined_string", &combined_string);
+    ctx.add_export("combined_2_string", &combined_2_string);
+    ctx.add_export("keepers", &keepers);
+    ctx.add_export("result_2", &random_string_2.result);
+    ctx.add_export("secret_config", &secret_config);
+    ctx.add_export("forced_secret", &forced_secret);
+    ctx.add_export("forced_plaintext", &forced_plaintext);
     Ok(())
 }

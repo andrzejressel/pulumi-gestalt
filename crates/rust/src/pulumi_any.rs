@@ -1,4 +1,3 @@
-use crate::Output;
 use anyhow::{Context as AnyhowContext, Result};
 use serde::{Deserialize, Serialize, de::DeserializeOwned};
 use serde_json::Value;
@@ -300,17 +299,6 @@ where
     fn to_pulumi_any(self) -> Self::Converted {
         PulumiAny::from_serializable(self)
             .expect("Failed to serialize value while converting to `PulumiAny`")
-    }
-}
-
-impl<T> ToPulumiAny for Output<T>
-where
-    T: Serialize + DeserializeOwned,
-{
-    type Converted = Output<PulumiAny>;
-
-    fn to_pulumi_any(self) -> Self::Converted {
-        self.map(|value| value.to_pulumi_any())
     }
 }
 

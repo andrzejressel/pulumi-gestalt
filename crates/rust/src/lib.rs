@@ -5,7 +5,6 @@ mod native;
 #[doc(hidden)]
 #[path = "private/mod.rs"]
 pub mod __private;
-pub mod any_export;
 mod input;
 mod oneof;
 mod pulumi_any;
@@ -21,18 +20,20 @@ pub use oneof::OneOf4;
 
 use anyhow::{Context as AnyhowContext, Result};
 pub use native::{
-    CompositeOutput, Context, CustomResourceOptions, InvokeResourceRequest, Output, Provider,
+    CompositeOutput, Context, CustomResourceOptions, InvokeResourceRequest, Provider,
     RegisterResourceRequest, ResourceRequestObjectField,
 };
 pub use pulumi_gestalt_model::FromPulumiValue;
+pub use pulumi_gestalt_model::Output;
 pub use pulumi_gestalt_model::ToPulumiValue;
+pub use pulumi_gestalt_model::any_export::IntoOutputAny;
 
 /// Entrypoint for execution
 /// ```rust,no_run
 /// pulumi_gestalt_rust::run(|ctx| {
 ///     // your code here
-///     let output = ctx.new_output(&"Hello, Pulumi!");
-///     pulumi_gestalt_rust::add_export("greeting", &output);
+///     let output = ctx.new_output(&"Hello, Pulumi!".to_string());
+///     ctx.add_export("greeting", &output);
 ///     Ok(())
 /// }).unwrap();
 pub fn run<F: Fn(&Context) -> Result<()>>(f: F) -> Result<()> {
@@ -40,11 +41,6 @@ pub fn run<F: Fn(&Context) -> Result<()>>(f: F) -> Result<()> {
     f(&ctx).context("Failed to run Pulumi program")?;
     ctx.finish();
     Ok(())
-}
-
-/// Add the given [Output] to [Stack Output](https://www.pulumi.com/tutorials/building-with-pulumi/stack-outputs/)
-pub fn add_export<T>(name: &str, output: &Output<T>) {
-    output.add_to_export(name);
 }
 
 /// Load specific generated provider

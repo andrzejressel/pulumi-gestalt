@@ -1,24 +1,18 @@
-use crate::any_export::IntoOutputAny;
+use crate::PulumiAny;
 use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
+use pulumi_gestalt_model::Output;
+use pulumi_gestalt_model::any_export::IntoOutputAny;
 use pulumi_gestalt_rust_integration as integration;
-use pulumi_gestalt_rust_integration::{ConfigValue, FieldName};
+use pulumi_gestalt_rust_integration::{ConfigValue, FieldName, NodeValue};
 use serde::{Deserialize, Serialize, de::DeserializeOwned};
-use serde_json::{Value, from_value, to_value};
+use serde_json::Value;
 use std::collections::HashMap;
-use std::marker::PhantomData;
-use std::rc::Rc;
+use std::sync::Arc;
 use tokio::runtime::Runtime;
 
 pub trait Provider {
-    /// Pulumi Provider ID is the combination of URN and ID. It is used when creating a resource.
     fn get_provider_id(&self) -> Output<String>;
-}
-
-impl<T: Provider> From<&T> for Output<String> {
-    fn from(provider: &T) -> Self {
-        provider.get_provider_id()
-    }
 }
 
 #[derive(Default, Builder, Clone)]
@@ -29,188 +23,113 @@ pub struct CustomResourceOptions {
 
 pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
 
-pub struct Output<T> {
-    inner: integration::Output<FunctionContext>,
-    phantom: PhantomData<T>,
-    runtime: Rc<Runtime>,
-}
-
-impl<T> Output<T> {
-    pub fn secret(&self) -> Output<T> {
-        Output {
-            inner: self.inner.secret(),
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
-    }
-
-    pub fn unsecret(&self) -> Output<T> {
-        Output {
-            inner: self.inner.unsecret(),
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
-    }
-
-    pub fn map<B, F>(&self, f: F) -> Output<B>
-    where
-        F: Fn(T) -> B + Send + 'static,
-        T: DeserializeOwned,
-        B: Serialize,
-    {
-        let function: FunctionContext = Box::new(move |v: Value| {
-            let t: T = from_value(v).unwrap();
-            let b = f(t);
-            to_value(b).unwrap()
-        });
-        let res = self.runtime.block_on(self.inner.map(function));
-        Output {
-            inner: res,
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
-    }
-    pub fn add_to_export(&self, key: &str) {
-        self.runtime
-            .block_on(self.inner.add_export(FieldName::from(key.to_string())));
-    }
-    pub fn combine<RESULT>(&self, others: &[&Output<()>]) -> Output<RESULT> {
-        let outputs = others.iter().map(|o| &o.inner).collect::<Vec<_>>();
-        let combined = self.runtime.block_on(self.inner.combine(&outputs));
-        Output {
-            inner: combined,
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
-    }
-    pub fn drop_type(self) -> Output<()> {
-        unsafe { self.transmute::<()>() }
-    }
-    unsafe fn transmute<F>(self) -> Output<F> {
-        Output {
-            inner: self.inner,
-            phantom: PhantomData,
-            runtime: self.runtime,
-        }
-    }
-}
-
-impl<T> Clone for Output<T> {
-    fn clone(&self) -> Self {
-        Self {
-            inner: self.inner.clone(),
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
-    }
-}
-
 pub struct CompositeOutput {
     inner: integration::RegisterResourceOutput<FunctionContext>,
-    runtime: Rc<Runtime>,
+    runtime: Arc<Runtime>,
 }
+
 impl CompositeOutput {
+    fn from_internal(
+        inner: integration::RegisterResourceOutput<FunctionContext>,
+        runtime: Arc<Runtime>,
+    ) -> Self {
+        Self { inner, runtime }
+    }
+
     pub fn get_field<T>(&self, key: &str) -> Output<T>
     where
-        T: DeserializeOwned,
+        T: DeserializeOwned + Send + Sync + 'static,
     {
         let res = self
             .runtime
             .block_on(self.inner.get_field(FieldName::from(key.to_string())));
-        Output {
-            inner: res,
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
+        Context::integration_to_model_output(res)
     }
 
     pub fn get_urn(&self) -> Output<String> {
         let res = self.runtime.block_on(self.inner.get_urn());
-        Output {
-            inner: res,
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
+        Context::integration_to_model_output(res)
     }
 
     pub fn get_id(&self) -> Output<String> {
         let res = self.runtime.block_on(self.inner.get_id());
-        Output {
-            inner: res,
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
+        Context::integration_to_model_output(res)
     }
 
     pub fn get_provider_id(&self) -> Output<String> {
         let res = self.runtime.block_on(self.inner.get_provider_id());
-        Output {
-            inner: res,
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
+        Context::integration_to_model_output(res)
     }
 }
 
 pub struct Context {
     inner: integration::Context<FunctionContext>,
-    runtime: Rc<Runtime>,
+    runtime: Arc<Runtime>,
 }
+
 impl Default for Context {
     fn default() -> Self {
         Self::new()
     }
 }
+
 impl Context {
     pub fn new() -> Self {
         let runtime = Runtime::new().unwrap();
         let ctx = runtime.block_on(integration::Context::new());
         Self {
             inner: ctx,
-            runtime: Rc::new(runtime),
+            runtime: Arc::new(runtime),
         }
     }
+
     pub fn finish(&self) {
         self.runtime.block_on(
             pulumi_gestalt_rust_integration::finish::finish_lambdas_sequentially(&self.inner),
         )
     }
-    pub fn new_output<T: Serialize>(&self, value: &T) -> Output<T> {
-        let json_value = to_value(value).unwrap();
-        Output {
-            inner: self.inner.create_output(json_value, false),
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
-    }
-    pub fn new_secret<T: Serialize>(&self, value: &T) -> Output<T> {
-        let json_value = to_value(value).unwrap();
-        Output {
-            inner: self.inner.create_output(json_value, true),
-            phantom: PhantomData,
-            runtime: self.runtime.clone(),
-        }
-    }
-    pub fn add_export(&self, key: &str, input: &impl IntoOutputAny) {
-        input.as_output(self).add_to_export(key);
+
+    pub fn new_output<'a, T>(&self, value: &'a T) -> Output<T>
+    where
+        T: Serialize + Deserialize<'a> + Clone + Send + Sync + 'static,
+    {
+        let value = value.clone();
+        Output::from_resolved_future(async move {
+            pulumi_gestalt_model::ResolvedOutput {
+                value: Some(value),
+                secret: false,
+                dependencies: Default::default(),
+            }
+        })
     }
 
-    pub fn register_resource(
-        &self,
-        request: RegisterResourceRequest<Output<()>>,
-    ) -> CompositeOutput {
+    pub fn new_secret<T>(&self, value: &T) -> Output<T>
+    where
+        T: Serialize + DeserializeOwned + Clone + Send + Sync + 'static,
+    {
+        self.new_output(value).secret()
+    }
+
+    pub fn add_export(&self, key: &str, output: &impl IntoOutputAny) {
+        let internal_output =
+            self.model_to_integration_output(output.as_output().map(PulumiAny::from));
+        self.runtime
+            .block_on(internal_output.add_export(FieldName::from(key.to_string())));
+    }
+
+    pub fn register_resource(&self, request: RegisterResourceRequest) -> CompositeOutput {
         let mut inputs = HashMap::new();
         for object in request.object {
             inputs.insert(
                 FieldName::from(object.name.clone()),
-                object.value.inner.clone(),
+                object.value.as_internal_output(self),
             );
         }
         let provider = request
             .options
             .as_ref()
             .and_then(|o| o.provider.as_ref())
-            .map(|p| p.inner.clone());
+            .map(|p| self.model_to_integration_output(p.clone()));
 
         let result = self.runtime.block_on(self.inner.register_resource(
             integration::RegisterResourceRequest {
@@ -221,17 +140,16 @@ impl Context {
                 provider,
             },
         ));
-        CompositeOutput {
-            inner: result,
-            runtime: self.runtime.clone(),
-        }
+
+        CompositeOutput::from_internal(result, self.runtime.clone())
     }
-    pub fn invoke_resource(&self, request: InvokeResourceRequest<Output<()>>) -> CompositeOutput {
+
+    pub fn invoke_resource(&self, request: InvokeResourceRequest) -> CompositeOutput {
         let mut inputs = HashMap::new();
         for object in request.object {
             inputs.insert(
                 FieldName::from(object.name.clone()),
-                object.value.inner.clone(),
+                object.value.as_internal_output(self),
             );
         }
         let result = self.runtime.block_on(self.inner.invoke_resource(
@@ -241,11 +159,47 @@ impl Context {
                 inputs,
             },
         ));
-        CompositeOutput {
-            inner: result,
-            runtime: self.runtime.clone(),
-        }
+        CompositeOutput::from_internal(result, self.runtime.clone())
     }
+
+    fn model_to_integration_output<T>(
+        &self,
+        output: Output<T>,
+    ) -> integration::Output<FunctionContext>
+    where
+        T: Serialize + Clone + Send + Sync + 'static,
+    {
+        self.inner.create_output_from_future(async move {
+            let resolved = output.resolve().await;
+            match resolved.value {
+                None => NodeValue::Nothing,
+                Some(value) => {
+                    NodeValue::exists(serde_json::to_value(value).unwrap(), resolved.secret)
+                }
+            }
+        })
+    }
+
+    fn integration_to_model_output<T>(output: integration::Output<FunctionContext>) -> Output<T>
+    where
+        T: DeserializeOwned + Send + Sync + 'static,
+    {
+        Output::from_resolved_future(async move {
+            match output.resolve_node_value().await {
+                NodeValue::Nothing => pulumi_gestalt_model::ResolvedOutput {
+                    value: None,
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                NodeValue::Exists(existing) => pulumi_gestalt_model::ResolvedOutput {
+                    value: Some(serde_json::from_value(existing.value).unwrap()),
+                    secret: existing.secret,
+                    dependencies: Default::default(),
+                },
+            }
+        })
+    }
+
     fn config_full_key(name: Option<&str>, key: &str) -> String {
         let namespace = name
             .map(|value| value.to_string())
@@ -288,11 +242,7 @@ impl Context {
             .runtime
             .block_on(self.inner.get_config_value(name, key))
         {
-            Some(ConfigValue::Secret(sec)) => Ok(Output {
-                inner: sec,
-                phantom: PhantomData,
-                runtime: self.runtime.clone(),
-            }),
+            Some(ConfigValue::Secret(sec)) => Ok(Self::integration_to_model_output(sec)),
             Some(ConfigValue::PlainText(_)) => {
                 bail!("Config `{full_key}` is plaintext and cannot be read as secret")
             }
@@ -308,7 +258,7 @@ impl Context {
         key: &str,
     ) -> Result<Output<T>>
     where
-        T: for<'de> Deserialize<'de> + Serialize,
+        T: for<'de> Deserialize<'de> + Serialize + Clone + Send + Sync + 'static,
     {
         let secret_output = self
             .require_config_secret(name, key)
@@ -347,19 +297,34 @@ impl Context {
     }
 }
 
-pub struct RegisterResourceRequest<'a, OUTPUT> {
+pub trait IntoInternalOutput {
+    fn as_internal_output(&self, ctx: &Context) -> integration::Output<FunctionContext>;
+}
+
+impl<T> IntoInternalOutput for Output<T>
+where
+    T: Serialize + Clone + Send + Sync + 'static,
+{
+    fn as_internal_output(&self, ctx: &Context) -> integration::Output<FunctionContext> {
+        ctx.model_to_integration_output(self.clone())
+    }
+}
+
+pub struct RegisterResourceRequest<'a> {
     pub type_: String,
     pub name: String,
     pub version: String,
-    pub object: &'a [ResourceRequestObjectField<'a, OUTPUT>],
+    pub object: &'a [ResourceRequestObjectField<'a>],
     pub options: Option<CustomResourceOptions>,
 }
-pub struct InvokeResourceRequest<'a, OUTPUT> {
+
+pub struct InvokeResourceRequest<'a> {
     pub token: String,
     pub version: String,
-    pub object: &'a [ResourceRequestObjectField<'a, OUTPUT>],
+    pub object: &'a [ResourceRequestObjectField<'a>],
 }
-pub struct ResourceRequestObjectField<'a, OUTPUT> {
+
+pub struct ResourceRequestObjectField<'a> {
     pub name: String,
-    pub value: &'a OUTPUT,
+    pub value: &'a dyn IntoInternalOutput,
 }

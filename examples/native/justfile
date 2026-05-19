@@ -13,3 +13,9 @@ local-test:
     $env:PULUMI_CONFIG_PASSPHRASE=" "
     pulumi destroy -y
     pulumi up -y
+    
+[unix]
+local-test $PULUMI_CONFIG_PASSPHRASE=" ":
+    cargo build -p pulumi_gestalt_example_{{test_name}}
+    pulumi destroy -y
+    pulumi up -y

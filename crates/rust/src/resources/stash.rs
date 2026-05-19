@@ -54,7 +54,7 @@ fn __create(
         version: String::new(),
         object: &[ResourceRequestObjectField {
             name: "input".into(),
-            value: &input_binding.drop_type(),
+            value: &input_binding,
         }],
         options,
     };

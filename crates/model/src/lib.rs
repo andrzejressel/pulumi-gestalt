@@ -1,3 +1,4 @@
+pub mod any_export;
 mod from_value;
 pub mod output;
 mod to_value;
@@ -15,7 +16,7 @@ pub mod __private {
 }
 
 pub use from_value::FromPulumiValue;
-pub use output::Output;
+pub use output::{Output, ResolvedOutput};
 pub use to_value::PulumiValueMiddleware;
 pub use to_value::ToPulumiValue;
 pub use value::PulumiValue;
