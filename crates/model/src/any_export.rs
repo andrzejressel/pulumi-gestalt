@@ -1,6 +1,6 @@
+use crate::Output;
 use serde::Serialize;
 use serde_json::Value;
-use crate::Output;
 
 pub trait IntoOutputAny {
     fn as_output(&self) -> Output<Value>;

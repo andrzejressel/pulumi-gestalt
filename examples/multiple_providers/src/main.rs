@@ -3,8 +3,8 @@ use pulumi_gestalt_providers_docker::container;
 use pulumi_gestalt_providers_docker::container::ContainerArgs;
 use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
+use pulumi_gestalt_rust::Context;
 use pulumi_gestalt_rust::Output;
-use pulumi_gestalt_rust::{Context};
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();

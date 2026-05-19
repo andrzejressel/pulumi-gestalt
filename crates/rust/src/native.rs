@@ -2,6 +2,7 @@ use crate::PulumiAny;
 use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
 use pulumi_gestalt_model::Output;
+use pulumi_gestalt_model::any_export::IntoOutputAny;
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::{ConfigValue, FieldName, NodeValue};
 use serde::{Deserialize, Serialize, de::DeserializeOwned};
@@ -9,7 +10,6 @@ use serde_json::Value;
 use std::collections::HashMap;
 use std::sync::Arc;
 use tokio::runtime::Runtime;
-use pulumi_gestalt_model::any_export::IntoOutputAny;
 
 pub trait Provider {
     fn get_provider_id(&self) -> Output<String>;
