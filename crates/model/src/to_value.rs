@@ -1,9 +1,34 @@
-use crate::output::{Node, NodeValue};
+use crate::output::NodeValue;
 use crate::{Output, PulumiValue, PulumiValueContent};
+use futures::FutureExt;
+use futures::future::{BoxFuture, Shared};
 use std::collections::{BTreeMap, HashMap, HashSet};
-use std::sync::Arc;
+use std::future::Future;
 
 pub type ToPulumiObjectFieldFuture<'a> = futures::future::BoxFuture<'a, (String, PulumiValue)>;
+
+#[derive(Clone)]
+pub enum PulumiValueMiddleware {
+    Ready(PulumiValue),
+    Deferred(Shared<BoxFuture<'static, PulumiValue>>),
+}
+
+impl PulumiValueMiddleware {
+    pub fn ready(value: PulumiValue) -> Self {
+        Self::Ready(value)
+    }
+
+    pub fn deferred(future: impl Future<Output = PulumiValue> + Send + 'static) -> Self {
+        Self::Deferred(future.boxed().shared())
+    }
+
+    fn into_future(self) -> BoxFuture<'static, PulumiValue> {
+        match self {
+            Self::Ready(value) => futures::future::ready(value).boxed(),
+            Self::Deferred(future) => future.boxed(),
+        }
+    }
+}
 
 pub fn to_pulumi_object_field<'a, T>(
     name: &'static str,
@@ -26,52 +51,31 @@ pub async fn to_pulumi_object_concurrent<'a>(
     ToPulumiValue::to_pulumi_value(&map).await
 }
 
-pub fn to_pulumi_value_output<T>(value: T) -> Output<PulumiValue>
+pub fn to_pulumi_value_middleware<T>(value: T) -> PulumiValueMiddleware
 where
     T: ToPulumiValue + Sync + Send + 'static,
 {
-    Output::from_future(async move {
-        let value = value.to_pulumi_value().await;
-        Arc::new(Node {
-            node_value: NodeValue::Exists(Arc::new(value)),
-            secret: false,
-            dependencies: HashSet::new(),
-        })
-    })
+    PulumiValueMiddleware::deferred(async move { value.to_pulumi_value().await })
 }
 
-pub fn pulumi_value_output(content: PulumiValueContent) -> Output<PulumiValue> {
-    Output::new(PulumiValue {
+pub fn pulumi_value_middleware(content: PulumiValueContent) -> PulumiValueMiddleware {
+    PulumiValueMiddleware::ready(PulumiValue {
         content,
         secret: false,
         dependencies: HashSet::new(),
     })
 }
 
-pub fn pulumi_value_output_array(values: Vec<Output<PulumiValue>>) -> Output<PulumiValue> {
-    Output::from_future(async move {
-        let value = values.to_pulumi_value().await;
-
-        Arc::new(Node {
-            node_value: NodeValue::Exists(Arc::new(value)),
-            secret: false,
-            dependencies: HashSet::new(),
-        })
-    })
+pub fn pulumi_value_middleware_array(values: Vec<PulumiValueMiddleware>) -> PulumiValueMiddleware {
+    PulumiValueMiddleware::deferred(async move { values.to_pulumi_value().await })
 }
 
-pub fn pulumi_value_output_object(
-    values: Vec<(String, Output<PulumiValue>)>,
-) -> Output<PulumiValue> {
-    Output::from_future(async move {
-        let map: BTreeMap<String, Output<PulumiValue>> = values.into_iter().collect();
-        let value = map.to_pulumi_value().await;
-
-        Arc::new(Node {
-            node_value: NodeValue::Exists(Arc::new(value)),
-            secret: false,
-            dependencies: HashSet::new(),
-        })
+pub fn pulumi_value_middleware_object(
+    values: Vec<(String, PulumiValueMiddleware)>,
+) -> PulumiValueMiddleware {
+    PulumiValueMiddleware::deferred(async move {
+        let map: BTreeMap<String, PulumiValueMiddleware> = values.into_iter().collect();
+        map.to_pulumi_value().await
     })
 }
 
@@ -264,6 +268,12 @@ impl<T: ToPulumiValue + Sync + Send + 'static> ToPulumiValue for Output<T> {
                 }
             }
         }
+    }
+}
+
+impl ToPulumiValue for PulumiValueMiddleware {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
+        self.clone().into_future()
     }
 }
 
@@ -634,7 +644,7 @@ mod tests {
     }
 
     #[test]
-    fn test_pulumi_value_output_array_propagates_secret_and_dependencies() {
+    fn test_pulumi_value_middleware_array_propagates_secret_and_dependencies() {
         let mut deps1 = HashSet::new();
         deps1.insert("dep-a".to_string());
         let val1 = Output::from_future(futures::future::ready(Arc::new(Node {
@@ -649,13 +659,17 @@ mod tests {
 
         let mut deps2 = HashSet::new();
         deps2.insert("dep-b".to_string());
-        let val2 = Output::from_future(futures::future::ready(Arc::new(Node {
-            node_value: NodeValue::Nothing,
-            secret: false,
-            dependencies: deps2,
-        })));
+        let val2: Output<PulumiValue> =
+            Output::from_future(futures::future::ready(Arc::new(Node {
+                node_value: NodeValue::Nothing,
+                secret: false,
+                dependencies: deps2,
+            })));
 
-        let out = pulumi_value_output_array(vec![val1, val2]);
+        let out = pulumi_value_middleware_array(vec![
+            to_pulumi_value_middleware(val1),
+            to_pulumi_value_middleware(val2),
+        ]);
         let pv = block_on(out.to_pulumi_value());
 
         let mut expected_deps = HashSet::new();
@@ -684,14 +698,23 @@ mod tests {
     }
 
     #[test]
-    fn test_pulumi_value_output_object_sorts_keys_and_last_wins_duplicates() {
+    fn test_pulumi_value_middleware_object_sorts_keys_and_last_wins_duplicates() {
         let values = vec![
-            ("z".to_string(), to_pulumi_value_output(Output::new(3i32))),
-            ("a".to_string(), to_pulumi_value_output(Output::new(1i32))),
-            ("a".to_string(), to_pulumi_value_output(Output::new(2i32))),
+            (
+                "z".to_string(),
+                to_pulumi_value_middleware(Output::new(3i32)),
+            ),
+            (
+                "a".to_string(),
+                to_pulumi_value_middleware(Output::new(1i32)),
+            ),
+            (
+                "a".to_string(),
+                to_pulumi_value_middleware(Output::new(2i32)),
+            ),
         ];
 
-        let pv = block_on(pulumi_value_output_object(values).to_pulumi_value());
+        let pv = block_on(pulumi_value_middleware_object(values).to_pulumi_value());
 
         assert_eq!(
             pv,
@@ -721,7 +744,7 @@ mod tests {
     }
 
     #[test]
-    fn test_pulumi_value_output_object_propagates_secret_and_dependencies() {
+    fn test_pulumi_value_middleware_object_propagates_secret_and_dependencies() {
         let mut deps1 = HashSet::new();
         deps1.insert("dep-a".to_string());
         let val1 = Output::from_future(futures::future::ready(Arc::new(Node {
@@ -736,14 +759,17 @@ mod tests {
 
         let mut deps2 = HashSet::new();
         deps2.insert("dep-b".to_string());
-        let val2 = Output::from_future(futures::future::ready(Arc::new(Node {
-            node_value: NodeValue::Nothing,
-            secret: false,
-            dependencies: deps2,
-        })));
+        let val2: Output<PulumiValue> =
+            Output::from_future(futures::future::ready(Arc::new(Node {
+                node_value: NodeValue::Nothing,
+                secret: false,
+                dependencies: deps2,
+            })));
 
-        let out =
-            pulumi_value_output_object(vec![("b".to_string(), val2), ("a".to_string(), val1)]);
+        let out = pulumi_value_middleware_object(vec![
+            ("b".to_string(), to_pulumi_value_middleware(val2)),
+            ("a".to_string(), to_pulumi_value_middleware(val1)),
+        ]);
         let pv = block_on(out.to_pulumi_value());
 
         let mut expected_deps = HashSet::new();
