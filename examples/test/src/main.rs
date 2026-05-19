@@ -1,7 +1,7 @@
 use anyhow::Result;
 use pulumi_gestalt_providers_test::combine_string::CombineStringArgs;
 use pulumi_gestalt_providers_test::provider::ProviderArgs;
-use pulumi_gestalt_rust::{Context, CustomResourceOptions, add_export};
+use pulumi_gestalt_rust::{Context, CustomResourceOptions};
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();

@@ -2,7 +2,7 @@ use anyhow::{Context as AnyhowContext, Result};
 use pulumi_gestalt_providers_random::random_string;
 use pulumi_gestalt_providers_random::random_string::RandomStringArgs;
 use pulumi_gestalt_rust::ToOutput;
-use pulumi_gestalt_rust::{Context, Output, add_export, pulumi_combine, pulumi_format};
+use pulumi_gestalt_rust::{Context, Output, pulumi_combine, pulumi_format};
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
