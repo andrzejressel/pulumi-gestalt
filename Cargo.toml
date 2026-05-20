@@ -14,7 +14,6 @@ members = [
     "examples/failure",
     "examples/multiple_providers",
     "examples/native",
-    "examples/raw_rust",
     "examples/secret",
     "examples/stash",
     "examples/simple",
