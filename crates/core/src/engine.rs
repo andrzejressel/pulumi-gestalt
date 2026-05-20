@@ -10,7 +10,7 @@ use pulumi_gestalt_domain::connector::{
     PulumiConnector, RegisterOutputsRequest, RegisterResourceRequest, ResourceInvokeRequest,
 };
 use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue};
-use serde_json::Value;
+use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
 use std::collections::HashMap;
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::SeqCst;
@@ -19,14 +19,14 @@ use uuid::Uuid;
 
 struct InternalNativeFunctionRequest {
     pub context_key: Uuid,
-    pub data: Value,
-    pub return_mailbox: Sender<Value>,
+    pub data: PulumiValue,
+    pub return_mailbox: Sender<PulumiValue>,
 }
 
 pub struct NativeFunctionRequest<FunctionContext> {
     pub context: FunctionContext,
-    pub data: Value,
-    pub return_mailbox: Sender<Value>,
+    pub data: PulumiValue,
+    pub return_mailbox: Sender<PulumiValue>,
 }
 
 pub enum ConfigValue {
@@ -95,7 +95,11 @@ impl<FunctionContext> Engine<FunctionContext> {
                 None => None,
                 Some(p) => match p.value.await {
                     NodeValue::Exists(ExistingNodeValue {
-                        value: serde_json::Value::String(s),
+                        value:
+                            PulumiValue {
+                                content: PulumiValueContent::String(s),
+                                ..
+                            },
                         ..
                     }) => Some(s),
                     NodeValue::Exists(v) => {
@@ -145,8 +149,12 @@ impl<FunctionContext> Engine<FunctionContext> {
                 let id_val = id.value.await;
                 match (urn_val, id_val) {
                     (NodeValue::Exists(urn_e), NodeValue::Exists(id_e)) => {
-                        let urn_str = urn_e.value.as_str().expect("Expected URN to be a string");
-                        let id_str = id_e.value.as_str().expect("Expected ID to be a string");
+                        let PulumiValueContent::String(urn_str) = &urn_e.value.content else {
+                            panic!("Expected URN to be a string");
+                        };
+                        let PulumiValueContent::String(id_str) = &id_e.value.content else {
+                            panic!("Expected ID to be a string");
+                        };
                         NodeValue::exists(
                             format!("{}::{}", urn_str, id_str),
                             urn_e.secret || id_e.secret,
@@ -267,11 +275,18 @@ impl<FunctionContext> Engine<FunctionContext> {
                 }
             }
 
-            NodeValue::exists(Value::Array(combined), secret)
+            NodeValue::exists(
+                PulumiValue {
+                    content: PulumiValueContent::Array(combined),
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                secret,
+            )
         })
     }
 
-    pub fn create_done_node(value: Value, secret: bool) -> RawOutput {
+    pub fn create_done_node(value: PulumiValue, secret: bool) -> RawOutput {
         let node_value = NodeValue::exists(value, secret);
         RawOutput::from_node_value(node_value)
     }
@@ -377,7 +392,7 @@ impl<FunctionContext> Engine<FunctionContext> {
             None => None,
             Some(RawConfigValue::PlainText(value)) => Some(ConfigValue::PlainText(value.clone())),
             Some(RawConfigValue::Secret(secret)) => {
-                let value = Value::String(secret.clone());
+                let value = PulumiValue::from(secret.clone());
                 let output_id = UnitEngine::create_done_node(value, true);
                 Some(ConfigValue::Secret(output_id))
             }
@@ -464,7 +479,7 @@ mod tests {
             let mock = MockPulumiConnector::new();
             let mut engine = StrEngine::new_without_configs(mock);
 
-            let source_output = StrEngine::create_done_node(json!("value"), false);
+            let source_output = StrEngine::create_done_node(json!("value").into(), false);
             let mapped_output = engine.create_native_function_node("nativeFunc", source_output);
             engine.add_output("mapped_output".into(), mapped_output);
 
@@ -476,7 +491,7 @@ mod tests {
                 }
                 Some(request) => {
                     assert_eq!(request.context, "nativeFunc");
-                    assert_eq!(request.data, json!("value"));
+                    assert_eq!(request.data, json!("value").into());
                 }
             }
         }
@@ -492,7 +507,7 @@ mod tests {
                 .returning(|_| ());
             let mut engine = StrEngine::new_without_configs(mock);
 
-            let source_output = StrEngine::create_done_node(json!("value"), false);
+            let source_output = StrEngine::create_done_node(json!("value").into(), false);
             let _ = engine.create_native_function_node("nativeFunc", source_output);
 
             let result = engine.run().await;
@@ -503,7 +518,7 @@ mod tests {
                 }
                 Some(request) => {
                     assert_eq!(request.context, "nativeFunc");
-                    assert_eq!(request.data, json!("value"));
+                    assert_eq!(request.data, json!("value").into());
                 }
             }
         }
@@ -559,8 +574,8 @@ mod tests {
 
             let engine = StrEngine::new_without_configs(mock);
 
-            let output1 = StrEngine::create_done_node(json!("1"), false);
-            let output2 = StrEngine::create_done_node(json!(2), false);
+            let output1 = StrEngine::create_done_node(json!("1").into(), false);
+            let output2 = StrEngine::create_done_node(json!(2).into(), false);
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
@@ -574,7 +589,7 @@ mod tests {
             let engine = StrEngine::new_without_configs(mock);
 
             let output1 = StrEngine::create_nothing_node();
-            let output2 = StrEngine::create_done_node(json!(2), false);
+            let output2 = StrEngine::create_done_node(json!(2).into(), false);
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
@@ -589,8 +604,8 @@ mod tests {
 
             let engine = StrEngine::new_without_configs(mock);
 
-            let output1 = StrEngine::create_done_node(json!("1"), false);
-            let output2 = StrEngine::create_done_node(json!(2), true);
+            let output1 = StrEngine::create_done_node(json!("1").into(), false);
+            let output2 = StrEngine::create_done_node(json!(2).into(), true);
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
@@ -681,7 +696,7 @@ mod tests {
                     let result = output.value.await;
                     match result {
                         NodeValue::Exists(ExistingNodeValue { value, secret }) => {
-                            assert_eq!(value, Value::String("secret".to_string()));
+                            assert_eq!(value, PulumiValue::from("secret".to_string()));
                             assert!(secret);
                         }
                         _ => {

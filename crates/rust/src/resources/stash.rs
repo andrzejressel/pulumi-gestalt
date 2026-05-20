@@ -1,8 +1,9 @@
 use crate::{
-    Context, CustomResourceOptions, Input, Output, PulumiAny, RegisterResourceRequest,
+    Context, CustomResourceOptions, Input, Output, RegisterResourceRequest,
     ResourceRequestObjectField,
 };
 use bon::Builder;
+use pulumi_gestalt_model::PulumiValue;
 
 /// Input arguments used to create a [`Stash`] resource.
 #[derive(Builder)]
@@ -10,7 +11,7 @@ use bon::Builder;
 pub struct StashArgs {
     /// The value to store in stash state.
     #[builder(into)]
-    pub input: Input<PulumiAny>,
+    pub input: Input<PulumiValue>,
 }
 
 /// Output object returned from stash creation.
@@ -21,9 +22,9 @@ pub struct StashResult {
     /// Pulumi URN is the stable logical identity of this resource in the Pulumi stack.
     pub urn: Output<String>,
     /// The most recent value passed to the stash resource.
-    pub input: Output<PulumiAny>,
+    pub input: Output<PulumiValue>,
     /// The value saved in state for the stash.
-    pub output: Output<PulumiAny>,
+    pub output: Output<PulumiValue>,
 }
 
 /// Registers a new stash resource with the given unique name and arguments.

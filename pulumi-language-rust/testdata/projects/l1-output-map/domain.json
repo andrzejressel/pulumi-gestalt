@@ -8,7 +8,7 @@
             "Object": {}
           },
           "value": {
-            "PulumiAny": {
+            "DynamicValue": {
               "Object": []
             }
           }
@@ -26,7 +26,7 @@
             }
           },
           "value": {
-            "PulumiAny": {
+            "DynamicValue": {
               "Object": [
                 [
                   "farewell",
@@ -73,7 +73,7 @@
             }
           },
           "value": {
-            "PulumiAny": {
+            "DynamicValue": {
               "Object": [
                 [
                   "",
@@ -180,7 +180,7 @@
             }
           },
           "value": {
-            "PulumiAny": {
+            "DynamicValue": {
               "Object": [
                 [
                   "1",
@@ -215,7 +215,7 @@
             }
           },
           "value": {
-            "PulumiAny": {
+            "DynamicValue": {
               "Object": [
                 [
                   "MYKEY",

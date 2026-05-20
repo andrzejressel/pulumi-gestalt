@@ -1,12 +1,10 @@
-use crate::PulumiAny;
 use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
-use pulumi_gestalt_model::Output;
-use pulumi_gestalt_model::any_export::IntoOutputAny;
+use pulumi_gestalt_model::any_export::IntoOutputValue;
+use pulumi_gestalt_model::{FromPulumiValue, Output, PulumiValue, ToPulumiValue};
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::{ConfigValue, FieldName, NodeValue};
-use serde::{Deserialize, Serialize, de::DeserializeOwned};
-use serde_json::Value;
+use serde::Deserialize;
 use std::collections::HashMap;
 use std::sync::Arc;
 use tokio::runtime::Runtime;
@@ -21,7 +19,7 @@ pub struct CustomResourceOptions {
     pub provider: Option<Output<String>>,
 }
 
-pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
+pub type FunctionContext = Box<dyn Fn(PulumiValue) -> PulumiValue + Send>;
 
 pub struct CompositeOutput {
     inner: integration::RegisterResourceOutput<FunctionContext>,
@@ -38,7 +36,7 @@ impl CompositeOutput {
 
     pub fn get_field<T>(&self, key: &str) -> Output<T>
     where
-        T: DeserializeOwned + Send + Sync + 'static,
+        T: FromPulumiValue + Send + Sync + 'static,
     {
         let res = self
             .runtime
@@ -89,9 +87,9 @@ impl Context {
         )
     }
 
-    pub fn new_output<'a, T>(&self, value: &'a T) -> Output<T>
+    pub fn new_output<T>(&self, value: &T) -> Output<T>
     where
-        T: Serialize + Deserialize<'a> + Clone + Send + Sync + 'static,
+        T: ToPulumiValue + Clone + Send + Sync + 'static,
     {
         let value = value.clone();
         Output::from_resolved_future(async move {
@@ -105,14 +103,13 @@ impl Context {
 
     pub fn new_secret<T>(&self, value: &T) -> Output<T>
     where
-        T: Serialize + DeserializeOwned + Clone + Send + Sync + 'static,
+        T: ToPulumiValue + Clone + Send + Sync + 'static,
     {
         self.new_output(value).secret()
     }
 
-    pub fn add_export(&self, key: &str, output: &impl IntoOutputAny) {
-        let internal_output =
-            self.model_to_integration_output(output.as_output().map(PulumiAny::from));
+    pub fn add_export(&self, key: &str, output: &impl IntoOutputValue) {
+        let internal_output = self.model_to_integration_output(output.as_output());
         self.runtime
             .block_on(internal_output.add_export(FieldName::from(key.to_string())));
     }
@@ -167,22 +164,20 @@ impl Context {
         output: Output<T>,
     ) -> integration::Output<FunctionContext>
     where
-        T: Serialize + Clone + Send + Sync + 'static,
+        T: ToPulumiValue + Clone + Send + Sync + 'static,
     {
         self.inner.create_output_from_future(async move {
             let resolved = output.resolve().await;
             match resolved.value {
                 None => NodeValue::Nothing,
-                Some(value) => {
-                    NodeValue::exists(serde_json::to_value(value).unwrap(), resolved.secret)
-                }
+                Some(value) => NodeValue::exists(value.to_pulumi_value().await, resolved.secret),
             }
         })
     }
 
     fn integration_to_model_output<T>(output: integration::Output<FunctionContext>) -> Output<T>
     where
-        T: DeserializeOwned + Send + Sync + 'static,
+        T: FromPulumiValue + Send + Sync + 'static,
     {
         Output::from_resolved_future(async move {
             match output.resolve_node_value().await {
@@ -192,7 +187,7 @@ impl Context {
                     dependencies: Default::default(),
                 },
                 NodeValue::Exists(existing) => pulumi_gestalt_model::ResolvedOutput {
-                    value: Some(serde_json::from_value(existing.value).unwrap()),
+                    value: Some(T::from_pulumi_value(&existing.value).unwrap()),
                     secret: existing.secret,
                     dependencies: Default::default(),
                 },
@@ -258,7 +253,7 @@ impl Context {
         key: &str,
     ) -> Result<Output<T>>
     where
-        T: for<'de> Deserialize<'de> + Serialize + Clone + Send + Sync + 'static,
+        T: for<'de> Deserialize<'de> + Clone + Send + Sync + 'static,
     {
         let secret_output = self
             .require_config_secret(name, key)
@@ -303,7 +298,7 @@ pub trait IntoInternalOutput {
 
 impl<T> IntoInternalOutput for Output<T>
 where
-    T: Serialize + Clone + Send + Sync + 'static,
+    T: ToPulumiValue + Clone + Send + Sync + 'static,
 {
     fn as_internal_output(&self, ctx: &Context) -> integration::Output<FunctionContext> {
         ctx.model_to_integration_output(self.clone())

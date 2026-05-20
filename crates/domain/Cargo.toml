@@ -12,11 +12,11 @@ default = []
 test-utils = ["mockall"]
 
 [dependencies]
-serde_json.workspace = true
 bon.workspace = true
 mockall = { workspace = true, optional = true }
 async-trait.workspace = true
 anyhow.workspace = true
+pulumi_gestalt_model = { path = "../model" }
 
 [lints]
 workspace = true

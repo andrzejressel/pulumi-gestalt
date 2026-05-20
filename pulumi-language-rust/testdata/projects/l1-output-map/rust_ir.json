@@ -15,7 +15,7 @@
             {
               "Ref": {
                 "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "path": "pulumi_gestalt_rust::pulumi_any_v2!",
                   "body": "{}"
                 }
               }
@@ -39,7 +39,7 @@
             {
               "Ref": {
                 "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "path": "pulumi_gestalt_rust::pulumi_any_v2!",
                   "body": "{\"farewell\": (\"Goodbye, world!\"), \"greeting\": (\"Hello, world!\")}"
                 }
               }
@@ -63,7 +63,7 @@
             {
               "Ref": {
                 "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "path": "pulumi_gestalt_rust::pulumi_any_v2!",
                   "body": "{\"\": (\"empty key\"), \"Some ${common} \\\"characters\\\" 'that' need escaping: \\\\ (backslash), \\t (tab), \\u{1b} (escape), \\u{7} (bell), \\0 (null), \\u{e0021} (tag space)\": (\"Some ${common} \\\"characters\\\" 'that' need escaping: \\\\ (backslash), \\t (tab), \\u{1b} (escape), \\u{7} (bell), \\0 (null), \\u{e0021} (tag space)\"), \"__internal\": (\"dunder internal\"), \"__provider\": (\"dunder provider\"), \"__type\": (\"dunder type\"), \"__version\": (\"dunder version\"), \"dunder value\": (\"__dunder\"), \"empty value\": (\"\")}"
                 }
               }
@@ -87,7 +87,7 @@
             {
               "Ref": {
                 "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "path": "pulumi_gestalt_rust::pulumi_any_v2!",
                   "body": "{\"1\": 1, \"2\": 2}"
                 }
               }
@@ -111,7 +111,7 @@
             {
               "Ref": {
                 "MacroCall": {
-                  "path": "pulumi_gestalt_rust::pulumi_any!",
+                  "path": "pulumi_gestalt_rust::pulumi_any_v2!",
                   "body": "{\"MYKEY\": 6, \"MY_KEY\": 4, \"my-key\": 2, \"my.key\": 1, \"my_key\": 3, \"mykey\": 5}"
                 }
               }

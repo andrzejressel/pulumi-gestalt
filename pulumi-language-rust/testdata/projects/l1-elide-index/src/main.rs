@@ -7,7 +7,7 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
         &ctx,
         "myStash",
         pulumi_gestalt_rust::resources::stash::StashArgs::builder()
-            .input(pulumi_gestalt_rust::pulumi_any!("test"))
+            .input(pulumi_gestalt_rust::pulumi_any_v2!("test"))
             .build_struct(),
     );
     ctx.add_export("stashInput", &myStash.input);

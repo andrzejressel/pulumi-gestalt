@@ -30,7 +30,7 @@
                       "args": [
                         {
                           "MacroCall": {
-                            "path": "pulumi_gestalt_rust::pulumi_any!",
+                            "path": "pulumi_gestalt_rust::pulumi_any_v2!",
                             "body": "\"test\""
                           }
                         }

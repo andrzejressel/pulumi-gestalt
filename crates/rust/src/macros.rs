@@ -1,5 +1,4 @@
-use crate::{Context, Output};
-use serde::{Serialize, de::DeserializeOwned};
+use crate::{Context, Output, ToPulumiValue};
 
 /// Generates Output<String> with formatted string. Supports up to 16 arguments.
 ///
@@ -338,12 +337,12 @@ pub trait ToOutput<T> {
     fn create_output(&self, engine: &Context) -> Output<T>;
 }
 
-impl<T> ToOutput<T> for T
+impl<T> ToOutput<T> for &T
 where
-    T: Serialize + DeserializeOwned + Clone + Send + Sync + 'static,
+    T: ToPulumiValue + Clone + Send + Sync + 'static,
 {
     fn create_output(&self, engine: &Context) -> Output<T> {
-        engine.new_output(self)
+        engine.new_output(*self)
     }
 }
 

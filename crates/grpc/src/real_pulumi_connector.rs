@@ -8,13 +8,13 @@ use pulumi_gestalt_domain::connector::{
     PulumiConnector, RegisterOutputsRequest, RegisterResourceResult, ResourceInvokeResult,
 };
 use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue, ResourceFields};
+use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
 use pulumi_gestalt_proto::pulumi::pulumirpc::engine_client::EngineClient;
 use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_client::ResourceMonitorClient;
 use pulumi_gestalt_proto::pulumi::pulumirpc::{
     InvokeResponse, RegisterResourceOutputsRequest, ResourceInvokeRequest,
 };
 use pulumi_gestalt_proto::pulumi::pulumirpc::{RegisterResourceRequest, RegisterResourceResponse};
-use serde_json::{Number, Value, json};
 use std::collections::{BTreeMap, HashMap};
 use tonic::transport::Channel;
 
@@ -251,21 +251,30 @@ fn create_map_of_node_values(s: Struct) -> HashMap<FieldName, ExistingNodeValue>
     s.fields
         .into_iter()
         .map(|(k, v)| {
-            let json_value = protobuf_to_json(&v);
+            let value = protobuf_to_pulumi_value(&v);
 
-            let node_value = match &json_value {
-                Value::Object(obj) if obj.contains_key(crate::constants::SPECIAL_SIG_KEY) => {
+            let node_value = match &value.content {
+                PulumiValueContent::Object(obj)
+                    if obj
+                        .iter()
+                        .any(|(k, _)| k == crate::constants::SPECIAL_SIG_KEY) =>
+                {
                     let secret_value = obj
-                        .get(crate::constants::SECRET_VALUE_NAME)
-                        .cloned()
-                        .unwrap_or(Value::Null);
+                        .iter()
+                        .find(|(k, _)| k == crate::constants::SECRET_VALUE_NAME)
+                        .map(|(_, v)| v.clone())
+                        .unwrap_or(PulumiValue {
+                            content: PulumiValueContent::None,
+                            secret: false,
+                            dependencies: Default::default(),
+                        });
                     ExistingNodeValue {
                         value: secret_value,
                         secret: true,
                     }
                 }
                 _ => ExistingNodeValue {
-                    value: json_value,
+                    value,
                     secret: false,
                 },
             };
@@ -285,17 +294,21 @@ fn create_protobuf_struct(fields: HashMap<FieldName, NodeValue>) -> Struct {
                 NodeValue::Exists(ExistingNodeValue {
                     value,
                     secret: true,
-                }) => {
-                    let value = json!({
-                        crate::constants::SPECIAL_SIG_KEY: crate::constants::SPECIAL_SECRET_SIG,
-                        crate::constants::SECRET_VALUE_NAME: value
-                    });
-                    json_to_protobuf(value)
-                }
+                }) => pulumi_value_to_protobuf(PulumiValue {
+                    content: PulumiValueContent::Object(vec![
+                        (
+                            crate::constants::SPECIAL_SIG_KEY.to_string(),
+                            PulumiValue::from(crate::constants::SPECIAL_SECRET_SIG),
+                        ),
+                        (crate::constants::SECRET_VALUE_NAME.to_string(), value),
+                    ]),
+                    secret: false,
+                    dependencies: Default::default(),
+                }),
                 NodeValue::Exists(ExistingNodeValue {
                     value,
                     secret: false,
-                }) => json_to_protobuf(value),
+                }) => pulumi_value_to_protobuf(value),
             };
             (name.get_inner(), v)
         })
@@ -306,33 +319,36 @@ fn create_protobuf_struct(fields: HashMap<FieldName, NodeValue>) -> Struct {
     }
 }
 
-fn json_to_protobuf(json: Value) -> prost_types::Value {
-    match json {
-        Value::Null => prost_types::Value {
+fn pulumi_value_to_protobuf(value: PulumiValue) -> prost_types::Value {
+    match value.content {
+        PulumiValueContent::None | PulumiValueContent::Nothing => prost_types::Value {
             kind: Some(Kind::NullValue(0)),
         },
-        Value::Bool(b) => prost_types::Value {
+        PulumiValueContent::Boolean(b) => prost_types::Value {
             kind: Some(Kind::BoolValue(b)),
         },
-        Value::Number(n) => prost_types::Value {
-            kind: Some(Kind::NumberValue(n.as_f64().unwrap())),
+        PulumiValueContent::Integer(i) => prost_types::Value {
+            kind: Some(Kind::NumberValue(i as f64)),
         },
-        Value::String(s) => prost_types::Value {
+        PulumiValueContent::Number(n) => prost_types::Value {
+            kind: Some(Kind::NumberValue(n)),
+        },
+        PulumiValueContent::String(s) => prost_types::Value {
             kind: Some(Kind::StringValue(s)),
         },
-        Value::Array(arr) => {
+        PulumiValueContent::Array(arr) => {
             let list_value = ListValue {
-                values: arr.into_iter().map(json_to_protobuf).collect(),
+                values: arr.into_iter().map(pulumi_value_to_protobuf).collect(),
             };
             prost_types::Value {
                 kind: Some(Kind::ListValue(list_value)),
             }
         }
-        Value::Object(obj) => {
+        PulumiValueContent::Object(obj) => {
             let struct_value = Struct {
                 fields: obj
                     .into_iter()
-                    .map(|(k, v)| (k, json_to_protobuf(v)))
+                    .map(|(k, v)| (k, pulumi_value_to_protobuf(v)))
                     .collect(),
             };
             prost_types::Value {
@@ -342,29 +358,40 @@ fn json_to_protobuf(json: Value) -> prost_types::Value {
     }
 }
 
-fn protobuf_to_json(protobuf: &prost_types::Value) -> Value {
-    match &protobuf.kind {
+fn protobuf_to_pulumi_value(protobuf: &prost_types::Value) -> PulumiValue {
+    let content = match &protobuf.kind {
         None => {
             error!("Unknown kind in protobuf value");
             panic!("Unknown kind in protobuf value");
         }
-        Some(Kind::NullValue(_)) => Value::Null,
+        Some(Kind::NullValue(_)) => PulumiValueContent::None,
         Some(Kind::NumberValue(n)) => {
             if n.fract() == 0.0 {
-                Value::Number(Number::from(*n as i64))
+                if *n < i32::MIN as f64 || *n > i32::MAX as f64 {
+                    panic!("Integer value {n} cannot be represented as i32");
+                }
+                PulumiValueContent::Integer(*n as i32)
             } else {
-                Value::Number(Number::from_f64(*n).unwrap())
+                PulumiValueContent::Number(*n)
             }
         }
-        Some(Kind::StringValue(s)) => Value::String(s.clone()),
-        Some(Kind::BoolValue(b)) => Value::Bool(*b),
-        Some(Kind::StructValue(s)) => Value::Object(
+        Some(Kind::StringValue(s)) => PulumiValueContent::String(s.clone()),
+        Some(Kind::BoolValue(b)) => PulumiValueContent::Boolean(*b),
+        Some(Kind::StructValue(s)) => PulumiValueContent::Object(
             s.fields
                 .iter()
-                .map(|(k, v)| (k.clone(), protobuf_to_json(v)))
+                .map(|(k, v)| (k.clone(), protobuf_to_pulumi_value(v)))
                 .collect(),
         ),
-        Some(Kind::ListValue(l)) => Value::Array(l.values.iter().map(protobuf_to_json).collect()),
+        Some(Kind::ListValue(l)) => {
+            PulumiValueContent::Array(l.values.iter().map(protobuf_to_pulumi_value).collect())
+        }
+    };
+
+    PulumiValue {
+        content,
+        secret: false,
+        dependencies: Default::default(),
     }
 }
 

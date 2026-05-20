@@ -3,6 +3,7 @@ use crate::{PulumiValue, PulumiValueContent};
 
 use rootcause::prelude::ResultExt;
 use rootcause::{Result, bail};
+use serde_json::{Number as JsonNumber, Value as JsonValue};
 use std::boxed::Box;
 use std::collections::{BTreeMap, HashMap};
 use std::sync::Arc;
@@ -11,6 +12,12 @@ pub trait FromPulumiValue {
     fn from_pulumi_value(value: &PulumiValue) -> Result<Self>
     where
         Self: Sized;
+}
+
+impl FromPulumiValue for PulumiValue {
+    fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
+        Ok(value.clone())
+    }
 }
 
 impl FromPulumiValue for String {
@@ -184,6 +191,40 @@ where
             secret: value.secret,
             dependencies: value.dependencies.clone(),
         }))
+    }
+}
+
+impl FromPulumiValue for JsonValue {
+    fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
+        fn convert(content: &PulumiValueContent) -> Result<JsonValue> {
+            Ok(match content {
+                PulumiValueContent::String(s) => JsonValue::String(s.clone()),
+                PulumiValueContent::Integer(i) => JsonValue::Number(JsonNumber::from(*i)),
+                PulumiValueContent::Number(f) => {
+                    let Some(number) = JsonNumber::from_f64(*f) else {
+                        bail!("Invalid f64 value: {f}");
+                    };
+                    JsonValue::Number(number)
+                }
+                PulumiValueContent::Boolean(b) => JsonValue::Bool(*b),
+                PulumiValueContent::Array(values) => JsonValue::Array(
+                    values
+                        .iter()
+                        .map(|v| convert(&v.content))
+                        .collect::<Result<Vec<_>>>()?,
+                ),
+                PulumiValueContent::Object(values) => JsonValue::Object(
+                    values
+                        .iter()
+                        .map(|(k, v)| Ok((k.clone(), convert(&v.content)?)))
+                        .collect::<Result<_>>()?,
+                ),
+                PulumiValueContent::None => JsonValue::Null,
+                PulumiValueContent::Nothing => JsonValue::Null,
+            })
+        }
+
+        convert(&value.content)
     }
 }
 

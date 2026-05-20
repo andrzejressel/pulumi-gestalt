@@ -105,7 +105,7 @@ pub enum ExprValue {
     MakeUnsecret(Box<Expr>),
     NewSecret(Box<Expr>),
     NewOutput(Box<Expr>),
-    PulumiAny(JsonValue),
+    DynamicValue(JsonValue),
 
     // Stdlib
     StdlibCall {

@@ -12,11 +12,11 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
         .unwrap_or(41.5);
     ctx.add_export("defaultNumber", &(optionalNumber + 1.2));
     let anInt = ctx
-        .require_config_deserialize::<i64>(None, "anInt")
+        .require_config_deserialize::<i32>(None, "anInt")
         .expect("Expected config [anInt] to exist");
     ctx.add_export("theInteger", &(anInt + 4));
     let optionalInt = ctx
-        .require_config_deserialize::<i64>(None, "optionalInt")
+        .require_config_deserialize::<i32>(None, "optionalInt")
         .unwrap_or(1);
     ctx.add_export("defaultInteger", &(optionalInt + 2));
     let aString = ctx

@@ -124,26 +124,26 @@ fn lower_resource(
     })
 }
 
-/// Wraps a plain value expression in `pulumi_gestalt_rust::pulumi_any!(...)`.
+/// Wraps a plain value expression in `pulumi_gestalt_rust::pulumi_any_v2!(...)`.
 ///
 /// Plain literals (`"test"`, `42`, `true`, `null`) cannot be passed directly to
-/// resource input fields typed as `Input<PulumiAny>`.  They must be
+/// resource input fields typed as `Input<DynamicValue>`.  They must be
 /// wrapped.  Expressions that already produce an `Output` or are already a
-/// `pulumi_any!` invocation are passed through unchanged.
+/// `pulumi_any_v2!` invocation are passed through unchanged.
 fn wrap_as_pulumi_any(expr: RustExpr) -> RustExpr {
     match &expr {
         // Already wrapped — pass through.
-        RustExpr::MacroCall { path, .. } if path == "pulumi_gestalt_rust::pulumi_any!" => expr,
+        RustExpr::MacroCall { path, .. } if path == "pulumi_gestalt_rust::pulumi_any_v2!" => expr,
         // Output-producing expressions — pass through directly.
         RustExpr::FieldAccess(..)
         | RustExpr::MethodCall { .. }
         | RustExpr::FunctionCall { .. }
         | RustExpr::Identifier(_) => expr,
-        // Plain literals and everything else — wrap in pulumi_any!.
+        // Plain literals and everything else — wrap in pulumi_any_v2!.
         _ => {
             let body = crate::rust_to_string::render_expr(&expr);
             RustExpr::MacroCall {
-                path: "pulumi_gestalt_rust::pulumi_any!".to_string(),
+                path: "pulumi_gestalt_rust::pulumi_any_v2!".to_string(),
                 body,
             }
         }
@@ -302,7 +302,7 @@ fn rust_config_type(ct: &ConfigType) -> String {
     match ct {
         ConfigType::String => "String".to_string(),
         ConfigType::Number => "f64".to_string(),
-        ConfigType::Int => "i64".to_string(),
+        ConfigType::Int => "i32".to_string(),
         ConfigType::Bool => "bool".to_string(),
         ConfigType::List(inner) => format!("Vec<{}>", rust_config_type(inner)),
         ConfigType::Map(inner) => {
@@ -417,10 +417,10 @@ fn lower_expr(expr: &Expr) -> RustExpr {
             type_params: vec![],
             args: vec![RustExpr::Ref(Box::new(lower_expr(inner)))],
         },
-        ExprValue::PulumiAny(json) => {
+        ExprValue::DynamicValue(json) => {
             let body = render_json_value(json);
             RustExpr::MacroCall {
-                path: "pulumi_gestalt_rust::pulumi_any!".to_string(),
+                path: "pulumi_gestalt_rust::pulumi_any_v2!".to_string(),
                 body,
             }
         }
@@ -625,7 +625,7 @@ fn render_json_value(json: &JsonValue) -> String {
         }
         JsonValue::Expr(expr) => {
             // For interpolated expressions we render the Rust IR to string and wrap in parens.
-            // This is a slight layering violation but acceptable since `pulumi_any!` is a macro
+            // This is a slight layering violation but acceptable since `pulumi_any_v2!` is a macro
             // that needs pre-rendered content.
             let rust_expr = lower_expr(expr);
             format!("({})", crate::rust_to_string::render_expr(&rust_expr))

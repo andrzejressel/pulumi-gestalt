@@ -1,13 +1,14 @@
+use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
 use pulumi_gestalt_rust_integration::{
     ConfigValue, InvokeResourceRequest, RegisterResourceRequest, get_schema,
 };
-use serde_json::{Value, json};
+use serde_json::json;
 use std::collections::HashMap;
 
-type Context = pulumi_gestalt_rust_integration::Context<Box<dyn Fn(Value) -> Value>>;
+type Context = pulumi_gestalt_rust_integration::Context<Box<dyn Fn(PulumiValue) -> PulumiValue>>;
 
 async fn generate_random_value(ctx: &Context) {
-    let output = ctx.create_output(json!(16), false);
+    let output = ctx.create_output(json!(16).into(), false);
 
     let register_resource_request = RegisterResourceRequest {
         r#type: "random:index/randomString:RandomString".to_string(),
@@ -38,7 +39,7 @@ async fn create_provider_and_use_it(ctx: &Context) {
     let provider = ctx.register_resource(provider_request).await;
     let provider_id = provider.get_provider_id().await;
 
-    let output = ctx.create_output(json!(16), false);
+    let output = ctx.create_output(json!(16).into(), false);
 
     let register_resource_request = RegisterResourceRequest {
         r#type: "random:index/randomString:RandomString".to_string(),
@@ -53,7 +54,7 @@ async fn create_provider_and_use_it(ctx: &Context) {
 }
 
 async fn run_command(ctx: &Context) {
-    let output = ctx.create_output(json!("whoami"), false);
+    let output = ctx.create_output(json!("whoami").into(), false);
 
     let register_resource_request = InvokeResourceRequest {
         token: "command:local:run".to_string(),
@@ -69,15 +70,19 @@ async fn run_command(ctx: &Context) {
 }
 
 async fn perform_operations_on_outputs(ctx: &Context) {
-    let output = ctx.create_output(json!(16), false);
+    let output = ctx.create_output(json!(16).into(), false);
 
     let output_2 = output
         .map(Box::new(|s| {
-            let i = s.as_i64().unwrap();
-            (i * 2).into()
+            let PulumiValueContent::Integer(i) = s.content else {
+                panic!("Expected integer");
+            };
+            PulumiValue::from(i * 2)
         }))
         .await;
-    let output_3 = output_2.map(Box::new(|_| json!("my_string"))).await;
+    let output_3 = output_2
+        .map(Box::new(|_| PulumiValue::from("my_string")))
+        .await;
 
     let output_4 = output.combine(&[&output_2, &output_3]).await;
 
@@ -112,7 +117,7 @@ async fn perform_operations_on_default_config(ctx: &Context) {
         .expect("Expected secret value");
     if let ConfigValue::Secret(secret_output) = secret {
         let forced_secret = ctx
-            .create_output(json!("forced_secret_value"), false)
+            .create_output(json!("forced_secret_value").into(), false)
             .secret();
         let forced_plaintext = secret_output.unsecret();
         secret_output.add_export("secret".into()).await;

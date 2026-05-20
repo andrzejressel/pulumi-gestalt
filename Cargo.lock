@@ -2550,6 +2550,7 @@ dependencies = [
  "futures",
  "mockall",
  "pulumi_gestalt_domain",
+ "pulumi_gestalt_model",
  "serde_json",
  "static_assertions",
  "tokio",
@@ -2577,7 +2578,7 @@ dependencies = [
  "async-trait",
  "bon",
  "mockall",
- "serde_json",
+ "pulumi_gestalt_model",
 ]
 
 [[package]]
@@ -2636,6 +2637,7 @@ version = "0.0.0-DEV"
 dependencies = [
  "anyhow",
  "pulumi_gestalt_examples_common",
+ "pulumi_gestalt_model",
  "pulumi_gestalt_rust_integration",
  "serde_json",
  "tokio",
@@ -2732,8 +2734,8 @@ dependencies = [
  "prost",
  "prost-types",
  "pulumi_gestalt_domain",
+ "pulumi_gestalt_model",
  "pulumi_gestalt_proto",
- "serde_json",
  "tokio",
  "tokio-stream",
  "tonic",
@@ -2870,9 +2872,9 @@ dependencies = [
  "pulumi_gestalt_core",
  "pulumi_gestalt_domain",
  "pulumi_gestalt_grpc_connection",
+ "pulumi_gestalt_model",
  "pulumi_gestalt_proto",
  "pulumi_gestalt_schema",
- "serde_json",
  "static_assertions",
  "tokio",
  "uuid",

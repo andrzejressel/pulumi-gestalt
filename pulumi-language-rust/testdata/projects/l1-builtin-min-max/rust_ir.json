@@ -70,7 +70,7 @@
                 },
                 "method": "require_config_deserialize",
                 "type_params": [
-                  "i64"
+                  "i32"
                 ],
                 "args": [
                   {
@@ -99,7 +99,7 @@
                 },
                 "method": "require_config_deserialize",
                 "type_params": [
-                  "i64"
+                  "i32"
                 ],
                 "args": [
                   {

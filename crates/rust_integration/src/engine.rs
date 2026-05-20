@@ -4,7 +4,7 @@ use pulumi_gestalt_core as core;
 use pulumi_gestalt_core::{Config, Engine};
 use pulumi_gestalt_domain::{FieldName, NodeValue};
 use pulumi_gestalt_grpc_connection::RealPulumiConnector;
-use serde_json::Value;
+use pulumi_gestalt_model::PulumiValue;
 use std::collections::HashMap;
 use std::future::Future;
 use std::sync::Arc;
@@ -158,7 +158,7 @@ impl<T> Context<T> {
         }
     }
 
-    pub fn create_output(&self, value: Value, secret: bool) -> Output<T> {
+    pub fn create_output(&self, value: PulumiValue, secret: bool) -> Output<T> {
         let raw_output = core::Engine::<T>::create_done_node(value, secret);
         Output {
             inner: raw_output,

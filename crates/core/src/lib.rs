@@ -128,7 +128,7 @@ mod tests {
         assert_eq!(
             result,
             NodeValue::Exists(ExistingNodeValue {
-                value: json!(42),
+                value: json!(42).into(),
                 secret: true,
             })
         );
@@ -143,7 +143,7 @@ mod tests {
         assert_eq!(
             result,
             NodeValue::Exists(ExistingNodeValue {
-                value: json!("x"),
+                value: json!("x").into(),
                 secret: false,
             })
         );

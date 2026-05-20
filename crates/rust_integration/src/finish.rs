@@ -1,8 +1,10 @@
 use crate::Context;
 use pulumi_gestalt_core::NativeFunctionRequest;
-use serde_json::Value;
+use pulumi_gestalt_model::PulumiValue;
 
-pub async fn finish_lambdas_sequentially<F: Fn(Value) -> Value + ?Sized>(ctx: &Context<Box<F>>) {
+pub async fn finish_lambdas_sequentially<F: Fn(PulumiValue) -> PulumiValue + ?Sized>(
+    ctx: &Context<Box<F>>,
+) {
     loop {
         let result = ctx.finish().await;
 

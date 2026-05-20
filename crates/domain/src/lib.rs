@@ -1,4 +1,4 @@
-use serde_json::Value;
+use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
 use std::collections::HashMap;
 
 pub mod connector;
@@ -36,12 +36,12 @@ impl From<&String> for FieldName {
 
 #[derive(Clone, Debug, PartialEq)]
 pub struct ExistingNodeValue {
-    pub value: Value,
+    pub value: PulumiValue,
     pub secret: bool,
 }
 
 impl ExistingNodeValue {
-    pub fn new<T: Into<Value>>(value: T, secret: bool) -> Self {
+    pub fn new<T: Into<PulumiValue>>(value: T, secret: bool) -> Self {
         Self {
             value: value.into(),
             secret,
@@ -56,7 +56,7 @@ pub enum NodeValue {
 }
 
 impl NodeValue {
-    pub fn exists<T: Into<Value>>(value: T, secret: bool) -> Self {
+    pub fn exists<T: Into<PulumiValue>>(value: T, secret: bool) -> Self {
         Self::Exists(ExistingNodeValue::new(value, secret))
     }
 }
@@ -73,7 +73,14 @@ impl ResourceFields {
                 NodeValue::exists(existing_value.value.clone(), existing_value.secret)
             }
             (None, true) => NodeValue::Nothing,
-            (None, false) => NodeValue::exists(Value::Null, false),
+            (None, false) => NodeValue::exists(
+                PulumiValue {
+                    content: PulumiValueContent::None,
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                false,
+            ),
         }
     }
 }
@@ -82,7 +89,7 @@ impl ResourceFields {
 mod tests {
     use super::{ExistingNodeValue, FieldName, NodeValue, ResourceFields};
     use NodeValue::Nothing;
-    use serde_json::Value::Null;
+    use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
     use std::collections::HashMap;
 
     #[test]
@@ -127,6 +134,16 @@ mod tests {
         let field_name = FieldName::from("non_existing_field");
         let result = resource_fields.get_field_value(&field_name);
 
-        assert_eq!(result, NodeValue::exists(Null, false));
+        assert_eq!(
+            result,
+            NodeValue::exists(
+                PulumiValue {
+                    content: PulumiValueContent::None,
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                false
+            )
+        );
     }
 }

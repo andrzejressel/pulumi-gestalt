@@ -18,3 +18,43 @@ pub struct PulumiValue {
     pub secret: bool,
     pub dependencies: HashSet<String>,
 }
+
+impl PulumiValue {
+    fn plain(content: PulumiValueContent) -> Self {
+        Self {
+            content,
+            secret: false,
+            dependencies: HashSet::new(),
+        }
+    }
+}
+
+impl From<String> for PulumiValue {
+    fn from(value: String) -> Self {
+        Self::plain(PulumiValueContent::String(value))
+    }
+}
+
+impl From<&str> for PulumiValue {
+    fn from(value: &str) -> Self {
+        Self::plain(PulumiValueContent::String(value.to_string()))
+    }
+}
+
+impl From<i32> for PulumiValue {
+    fn from(value: i32) -> Self {
+        Self::plain(PulumiValueContent::Integer(value))
+    }
+}
+
+impl From<f64> for PulumiValue {
+    fn from(value: f64) -> Self {
+        Self::plain(PulumiValueContent::Number(value))
+    }
+}
+
+impl From<bool> for PulumiValue {
+    fn from(value: bool) -> Self {
+        Self::plain(PulumiValueContent::Boolean(value))
+    }
+}

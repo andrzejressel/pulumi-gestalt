@@ -1,14 +1,14 @@
 use anyhow::Result;
+use pulumi_gestalt_rust::{Context, PulumiValue};
 use pulumi_gestalt_rust::resources::stash;
 use pulumi_gestalt_rust::resources::stash::StashArgs;
-use pulumi_gestalt_rust::{Context, ToPulumiAny};
 
 fn main() {
     pulumi_gestalt_rust::run(pulumi_main).unwrap();
 }
 
 fn pulumi_main(ctx: &Context) -> Result<()> {
-    let stash_input = "stash-value".to_pulumi_any();
+    let stash_input = PulumiValue::from("stash-value");
     let stash = stash::create(
         ctx,
         "example_stash",

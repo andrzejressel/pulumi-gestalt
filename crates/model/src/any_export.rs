@@ -1,24 +1,19 @@
-use crate::Output;
-use serde::Serialize;
-use serde_json::Value;
+use crate::{Output, PulumiValue, ToPulumiValue};
 
-pub trait IntoOutputAny {
-    fn as_output(&self) -> Output<Value>;
+pub trait IntoOutputValue {
+    fn as_output(&self) -> Output<PulumiValue>;
 }
 
-impl<T: Serialize> IntoOutputAny for T {
-    fn as_output(&self) -> Output<Value> {
-        let value =
-            serde_json::to_value(self).expect("Failed to serialize value while exporting output");
-        Output::new(value)
-    }
-}
-
-impl<T: Serialize + Clone + Send + Sync + 'static> IntoOutputAny for Output<T> {
-    fn as_output(&self) -> Output<Value> {
-        self.clone().map(|value| {
-            serde_json::to_value(value)
-                .expect("Failed to serialize output value while exporting output")
+impl<T: ToPulumiValue + Clone + Send + Sync + 'static> IntoOutputValue for T {
+    fn as_output(&self) -> Output<PulumiValue> {
+        let value = (*self).clone();
+        Output::from_resolved_future(async move {
+            let value = value.to_pulumi_value().await;
+            crate::ResolvedOutput {
+                value: Some(value),
+                secret: false,
+                dependencies: Default::default(),
+            }
         })
     }
 }

@@ -10,10 +10,10 @@ fn pulumi_main(ctx: &pulumi_gestalt_rust::Context) -> Result<()> {
         .require_config_deserialize::<f64>(None, "b")
         .expect("Expected config [b] to exist");
     let c = ctx
-        .require_config_deserialize::<i64>(None, "c")
+        .require_config_deserialize::<i32>(None, "c")
         .expect("Expected config [c] to exist");
     let d = ctx
-        .require_config_deserialize::<i64>(None, "d")
+        .require_config_deserialize::<i32>(None, "d")
         .expect("Expected config [d] to exist");
     ctx.add_export("maxResult", &a.max(b));
     ctx.add_export("minResult", &a.min(b));

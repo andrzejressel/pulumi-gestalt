@@ -21,7 +21,7 @@
                 }
               },
               "value": {
-                "PulumiAny": {
+                "DynamicValue": {
                   "Object": [
                     [
                       "",

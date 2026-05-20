@@ -2,6 +2,7 @@ use crate::output::NodeValue;
 use crate::{Output, PulumiValue, PulumiValueContent};
 use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
+use serde_json::Value as JsonValue;
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::future::Future;
 
@@ -86,6 +87,56 @@ pub trait ToPulumiValue {
 impl ToPulumiValue for PulumiValue {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         futures::future::ready(self.clone())
+    }
+}
+
+impl ToPulumiValue for JsonValue {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
+        fn convert(value: &JsonValue) -> PulumiValueContent {
+            match value {
+                JsonValue::Null => PulumiValueContent::None,
+                JsonValue::Bool(b) => PulumiValueContent::Boolean(*b),
+                JsonValue::Number(n) => {
+                    if let Some(i) = n.as_i64() {
+                        let int = i32::try_from(i).unwrap_or_else(|_| {
+                            panic!("Integer value {i} cannot be represented as i32")
+                        });
+                        PulumiValueContent::Integer(int)
+                    } else if let Some(f) = n.as_f64() {
+                        PulumiValueContent::Number(f)
+                    } else {
+                        panic!("Unsupported JSON number representation: {n}");
+                    }
+                }
+                JsonValue::String(s) => PulumiValueContent::String(s.clone()),
+                JsonValue::Array(items) => {
+                    PulumiValueContent::Array(items.iter().map(|item| item.into()).collect())
+                }
+                JsonValue::Object(map) => PulumiValueContent::Object(
+                    map.iter()
+                        .map(|(k, v)| (k.clone(), v.into()))
+                        .collect::<Vec<_>>(),
+                ),
+            }
+        }
+
+        futures::future::ready(PulumiValue {
+            content: convert(self),
+            secret: false,
+            dependencies: HashSet::new(),
+        })
+    }
+}
+
+impl From<&JsonValue> for PulumiValue {
+    fn from(value: &JsonValue) -> Self {
+        futures::executor::block_on(value.to_pulumi_value())
+    }
+}
+
+impl From<JsonValue> for PulumiValue {
+    fn from(value: JsonValue) -> Self {
+        PulumiValue::from(&value)
     }
 }
 

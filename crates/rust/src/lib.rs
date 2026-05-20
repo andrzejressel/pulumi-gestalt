@@ -12,7 +12,6 @@ pub mod resources;
 pub mod stdlib;
 
 pub use input::Input;
-pub use pulumi_any::{PulumiAny, ToPulumiAny};
 
 pub use oneof::OneOf2;
 pub use oneof::OneOf3;
@@ -26,7 +25,7 @@ pub use native::{
 pub use pulumi_gestalt_model::FromPulumiValue;
 pub use pulumi_gestalt_model::Output;
 pub use pulumi_gestalt_model::ToPulumiValue;
-pub use pulumi_gestalt_model::any_export::IntoOutputAny;
+pub use pulumi_gestalt_model::any_export::IntoOutputValue;
 
 /// Entrypoint for execution
 /// ```rust,no_run

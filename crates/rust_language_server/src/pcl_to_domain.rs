@@ -182,7 +182,7 @@ fn lower_expression(expression: &Expression) -> Result<Expr> {
             ExprType::Dynamic | ExprType::Object(_) | ExprType::None | ExprType::Union(_) => {
                 let json = lower_object_to_json(obj, expression)
                     .context("Failed to lower ObjectConsExpression")?;
-                Ok(make_expr(expr_type, ExprValue::PulumiAny(json)))
+                Ok(make_expr(expr_type, ExprValue::DynamicValue(json)))
             }
             other => bail!(
                 "ObjectConsExpression with non-dynamic expression type {:?} is not supported",
