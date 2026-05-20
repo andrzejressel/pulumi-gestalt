@@ -1,8 +1,7 @@
 use crate::PulumiAny;
 use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
-use pulumi_gestalt_model::Output;
-use pulumi_gestalt_model::any_export::IntoOutputAny;
+use pulumi_gestalt_model::{Output, PulumiValue, PulumiValueContent, ToPulumiValue};
 use pulumi_gestalt_rust_integration as integration;
 use pulumi_gestalt_rust_integration::{ConfigValue, FieldName, NodeValue};
 use serde::{Deserialize, Serialize, de::DeserializeOwned};
@@ -44,6 +43,13 @@ impl CompositeOutput {
             .runtime
             .block_on(self.inner.get_field(FieldName::from(key.to_string())));
         Context::integration_to_model_output(res)
+    }
+
+    pub fn get_field_any(&self, key: &str) -> Output<PulumiAny> {
+        let res = self
+            .runtime
+            .block_on(self.inner.get_field(FieldName::from(key.to_string())));
+        Context::integration_to_pulumi_any_output(res)
     }
 
     pub fn get_urn(&self) -> Output<String> {
@@ -110,11 +116,16 @@ impl Context {
         self.new_output(value).secret()
     }
 
-    pub fn add_export(&self, key: &str, output: &impl IntoOutputAny) {
-        let internal_output =
-            self.model_to_integration_output(output.as_output().map(PulumiAny::from));
-        self.runtime
-            .block_on(internal_output.add_export(FieldName::from(key.to_string())));
+    pub fn add_export(&self, key: &str, output: &impl ToPulumiValue) {
+        let key = FieldName::from(key.to_string());
+        let output = self.runtime.block_on(output.to_pulumi_value());
+        let internal_output = self.inner.create_output_from_future(async move {
+            NodeValue::exists(
+                Self::pulumi_value_to_json_value(output.clone()),
+                output.secret,
+            )
+        });
+        self.runtime.block_on(internal_output.add_export(key));
     }
 
     pub fn register_resource(&self, request: RegisterResourceRequest) -> CompositeOutput {
@@ -167,14 +178,18 @@ impl Context {
         output: Output<T>,
     ) -> integration::Output<FunctionContext>
     where
-        T: Serialize + Clone + Send + Sync + 'static,
+        T: ToPulumiValue + Clone + Send + Sync + 'static,
     {
         self.inner.create_output_from_future(async move {
             let resolved = output.resolve().await;
             match resolved.value {
                 None => NodeValue::Nothing,
                 Some(value) => {
-                    NodeValue::exists(serde_json::to_value(value).unwrap(), resolved.secret)
+                    let pulumi_value = value.to_pulumi_value().await;
+                    NodeValue::exists(
+                        Self::pulumi_value_to_json_value(pulumi_value),
+                        resolved.secret,
+                    )
                 }
             }
         })
@@ -198,6 +213,86 @@ impl Context {
                 },
             }
         })
+    }
+
+    fn integration_to_pulumi_any_output(
+        output: integration::Output<FunctionContext>,
+    ) -> Output<PulumiAny> {
+        Output::from_resolved_future(async move {
+            match output.resolve_node_value().await {
+                NodeValue::Nothing => pulumi_gestalt_model::ResolvedOutput {
+                    value: None,
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                NodeValue::Exists(existing) => pulumi_gestalt_model::ResolvedOutput {
+                    value: Some(Self::json_value_to_middleware(existing.value)),
+                    secret: existing.secret,
+                    dependencies: Default::default(),
+                },
+            }
+        })
+    }
+
+    fn pulumi_value_to_json_value(value: PulumiValue) -> Value {
+        match value.content {
+            PulumiValueContent::String(value) => Value::String(value),
+            PulumiValueContent::Integer(value) => Value::from(value),
+            PulumiValueContent::Number(value) => Value::from(value),
+            PulumiValueContent::Boolean(value) => Value::from(value),
+            PulumiValueContent::Array(values) => Value::Array(
+                values
+                    .into_iter()
+                    .map(Self::pulumi_value_to_json_value)
+                    .collect(),
+            ),
+            PulumiValueContent::Object(values) => Value::Object(
+                values
+                    .into_iter()
+                    .map(|(key, value)| (key, Self::pulumi_value_to_json_value(value)))
+                    .collect(),
+            ),
+            PulumiValueContent::None | PulumiValueContent::Nothing => Value::Null,
+        }
+    }
+
+    fn json_value_to_middleware(value: Value) -> PulumiAny {
+        match value {
+            Value::Null => {
+                pulumi_gestalt_model::__private::pulumi_value_middleware(PulumiValueContent::None)
+            }
+            Value::Bool(value) => {
+                pulumi_gestalt_model::__private::to_pulumi_value_middleware(value)
+            }
+            Value::Number(value) => {
+                if let Some(integer) = value.as_i64() {
+                    pulumi_gestalt_model::__private::to_pulumi_value_middleware(integer)
+                } else if let Some(number) = value.as_f64() {
+                    pulumi_gestalt_model::__private::to_pulumi_value_middleware(number)
+                } else {
+                    pulumi_gestalt_model::__private::pulumi_value_middleware(
+                        PulumiValueContent::None,
+                    )
+                }
+            }
+            Value::String(value) => {
+                pulumi_gestalt_model::__private::to_pulumi_value_middleware(value)
+            }
+            Value::Array(values) => pulumi_gestalt_model::__private::pulumi_value_middleware_array(
+                values
+                    .into_iter()
+                    .map(Self::json_value_to_middleware)
+                    .collect(),
+            ),
+            Value::Object(values) => {
+                pulumi_gestalt_model::__private::pulumi_value_middleware_object(
+                    values
+                        .into_iter()
+                        .map(|(key, value)| (key, Self::json_value_to_middleware(value)))
+                        .collect(),
+                )
+            }
+        }
     }
 
     fn config_full_key(name: Option<&str>, key: &str) -> String {
@@ -303,7 +398,7 @@ pub trait IntoInternalOutput {
 
 impl<T> IntoInternalOutput for Output<T>
 where
-    T: Serialize + Clone + Send + Sync + 'static,
+    T: ToPulumiValue + Clone + Send + Sync + 'static,
 {
     fn as_internal_output(&self, ctx: &Context) -> integration::Output<FunctionContext> {
         ctx.model_to_integration_output(self.clone())

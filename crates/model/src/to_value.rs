@@ -2,6 +2,7 @@ use crate::output::NodeValue;
 use crate::{Output, PulumiValue, PulumiValueContent};
 use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
+use serde_json::Value as JsonValue;
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::future::Future;
 
@@ -119,6 +120,18 @@ impl ToPulumiValue for i32 {
     }
 }
 
+impl ToPulumiValue for i64 {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
+        let integer = i32::try_from(*self)
+            .expect("i64 value is outside supported i32 range for Pulumi integer values");
+        futures::future::ready(PulumiValue {
+            content: PulumiValueContent::Integer(integer),
+            secret: false,
+            dependencies: HashSet::new(),
+        })
+    }
+}
+
 impl ToPulumiValue for f64 {
     fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
         futures::future::ready(PulumiValue {
@@ -136,6 +149,42 @@ impl ToPulumiValue for bool {
             secret: false,
             dependencies: HashSet::new(),
         })
+    }
+}
+
+impl ToPulumiValue for JsonValue {
+    fn to_pulumi_value(&self) -> impl Future<Output = PulumiValue> + Send {
+        let value = self.clone();
+        async move {
+            match value {
+                JsonValue::Null => PulumiValue {
+                    content: PulumiValueContent::None,
+                    secret: false,
+                    dependencies: HashSet::new(),
+                },
+                JsonValue::Bool(boolean) => boolean.to_pulumi_value().await,
+                JsonValue::Number(number) => {
+                    if let Some(integer) = number.as_i64() {
+                        integer.to_pulumi_value().await
+                    } else {
+                        number
+                            .as_f64()
+                            .expect("serde_json::Number must be convertible to f64")
+                            .to_pulumi_value()
+                            .await
+                    }
+                }
+                JsonValue::String(string) => string.to_pulumi_value().await,
+                JsonValue::Array(array) => array.to_pulumi_value().await,
+                JsonValue::Object(object) => {
+                    object
+                        .into_iter()
+                        .collect::<BTreeMap<String, JsonValue>>()
+                        .to_pulumi_value()
+                        .await
+                }
+            }
+        }
     }
 }
 
@@ -799,6 +848,50 @@ mod tests {
                 ]),
                 secret: true,
                 dependencies: expected_deps,
+            }
+        );
+    }
+
+    #[test]
+    fn test_primitive_i64() {
+        let val = 42i64;
+        let pv = block_on(val.to_pulumi_value());
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        );
+    }
+
+    #[test]
+    fn test_json_value_array_with_null() {
+        let val = serde_json::json!([null, 1, "x"]);
+        let pv = block_on(val.to_pulumi_value());
+        assert_eq!(
+            pv,
+            PulumiValue {
+                content: PulumiValueContent::Array(vec![
+                    PulumiValue {
+                        content: PulumiValueContent::None,
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(1),
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                    PulumiValue {
+                        content: PulumiValueContent::String("x".to_string()),
+                        secret: false,
+                        dependencies: HashSet::new(),
+                    },
+                ]),
+                secret: false,
+                dependencies: HashSet::new(),
             }
         );
     }
