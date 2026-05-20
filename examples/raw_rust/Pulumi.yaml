@@ -1,5 +1,0 @@
-name: Pulumi-raw-rust-Sample
-runtime: 
-  name: rust
-  options:
-    binary: ../../target/debug/pulumi_gestalt_example_raw_rust
