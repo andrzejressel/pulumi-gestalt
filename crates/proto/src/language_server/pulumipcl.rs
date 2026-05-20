@@ -391,8 +391,8 @@ pub struct TraverseIndex {
 pub mod traverse_index {
     #[derive(Clone, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum Value {
-        #[prost(int64, tag = "1")]
-        IntIndex(i64),
+        #[prost(int32, tag = "1")]
+        IntIndex(i32),
         #[prost(string, tag = "2")]
         StringIndex(::prost::alloc::string::String),
     }

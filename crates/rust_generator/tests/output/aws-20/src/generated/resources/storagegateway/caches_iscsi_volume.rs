@@ -19,9 +19,9 @@
 ///         "example",
 ///         CachesIscsiVolumeArgs::builder()
 ///             .gateway_arn("${exampleAwsStoragegatewayCache.gatewayArn}")
-///             .network_interface_id("${exampleAwsInstance.privateIp}")
+///             .network_interface_id("$I found{exampleAwsInstance.privateIp}")
 ///             .target_name("example")
-///             .volume_size_in_bytes(5368709120)
+///             .volume_size_in_bytes(2147483647)
 ///             .build_struct(),
 ///     );
 /// }

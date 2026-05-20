@@ -302,7 +302,7 @@ fn rust_config_type(ct: &ConfigType) -> String {
     match ct {
         ConfigType::String => "String".to_string(),
         ConfigType::Number => "f64".to_string(),
-        ConfigType::Int => "i64".to_string(),
+        ConfigType::Int => "i32".to_string(),
         ConfigType::Bool => "bool".to_string(),
         ConfigType::List(inner) => format!("Vec<{}>", rust_config_type(inner)),
         ConfigType::Map(inner) => {

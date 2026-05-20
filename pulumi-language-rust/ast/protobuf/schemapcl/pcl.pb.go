@@ -2748,7 +2748,7 @@ func (x *TraverseIndex) GetValue() isTraverseIndex_Value {
 	return nil
 }
 
-func (x *TraverseIndex) GetIntIndex() int64 {
+func (x *TraverseIndex) GetIntIndex() int32 {
 	if x != nil {
 		if x, ok := x.Value.(*TraverseIndex_IntIndex); ok {
 			return x.IntIndex
@@ -2771,7 +2771,7 @@ type isTraverseIndex_Value interface {
 }
 
 type TraverseIndex_IntIndex struct {
-	IntIndex int64 `protobuf:"varint,1,opt,name=intIndex,proto3,oneof"`
+	IntIndex int32 `protobuf:"varint,1,opt,name=intIndex,proto3,oneof"`
 }
 
 type TraverseIndex_StringIndex struct {
@@ -3080,7 +3080,7 @@ const file_pcl_proto_rawDesc = "" +
 	"\fTraverseAttr\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\"Z\n" +
 	"\rTraverseIndex\x12\x1c\n" +
-	"\bintIndex\x18\x01 \x01(\x03H\x00R\bintIndex\x12\"\n" +
+	"\bintIndex\x18\x01 \x01(\x05H\x00R\bintIndex\x12\"\n" +
 	"\vstringIndex\x18\x02 \x01(\tH\x00R\vstringIndexB\a\n" +
 	"\x05value\"\"\n" +
 	"\fTraverseRoot\x12\x12\n" +
