@@ -63,7 +63,7 @@ fn __create(
     StashResult {
         id: composite.get_id(),
         urn: composite.get_urn(),
-        input: composite.get_field("input"),
-        output: composite.get_field("output"),
+        input: composite.get_field_any("input"),
+        output: composite.get_field_any("output"),
     }
 }

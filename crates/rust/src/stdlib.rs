@@ -1,15 +1,47 @@
 use anyhow::{Context as AnyhowContext, Result, anyhow, bail};
 use base64::Engine;
 use base64::engine::general_purpose::STANDARD;
+use pulumi_gestalt_model::{PulumiValue, PulumiValueContent, ToPulumiValue};
 use sha1::{Digest, Sha1};
 use std::borrow::Borrow;
 use std::collections::BTreeMap;
+use std::collections::HashSet;
 use unicode_segmentation::UnicodeSegmentation;
 
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct Entry<T> {
     pub key: String,
     pub value: T,
+}
+
+impl<T> ToPulumiValue for Entry<T>
+where
+    T: ToPulumiValue + Send + Sync + 'static,
+{
+    fn to_pulumi_value(&self) -> impl std::future::Future<Output = PulumiValue> + Send {
+        let key = self.key.clone();
+        let value_future = self.value.to_pulumi_value();
+        async move {
+            let value = value_future.await;
+            let secret = value.secret;
+            let dependencies = value.dependencies.clone();
+            PulumiValue {
+                content: PulumiValueContent::Object(vec![
+                    (
+                        "key".to_string(),
+                        PulumiValue {
+                            content: PulumiValueContent::String(key),
+                            secret: false,
+                            dependencies: HashSet::new(),
+                        },
+                    ),
+                    ("value".to_string(), value),
+                ]),
+                secret,
+                dependencies,
+            }
+        }
+    }
 }
 
 pub fn cwd() -> Result<String> {
@@ -144,6 +176,7 @@ mod tests {
         Entry, cwd, element, entries, filebase64, filebase64sha256, from_base64, join, length,
         length_string, lookup, read_file, sha1, single_or_none, split, to_base64,
     };
+    use pulumi_gestalt_model::{PulumiValueContent, ToPulumiValue};
     use std::collections::BTreeMap;
 
     #[test]
@@ -398,5 +431,16 @@ mod tests {
             lookup(Box::new(map), "missing", "default"),
             "default".to_string()
         );
+    }
+
+    #[test]
+    fn entries_are_convertible_to_pulumi_values() {
+        let mut map = BTreeMap::new();
+        map.insert("a".to_string(), 1i32);
+        let values = entries(&map);
+        let output =
+            pulumi_gestalt_model::__private::futures::executor::block_on(values.to_pulumi_value());
+
+        assert!(matches!(output.content, PulumiValueContent::Array(_)));
     }
 }

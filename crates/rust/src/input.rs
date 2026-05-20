@@ -1,5 +1,4 @@
 use crate::{Context, Output};
-use serde::{Serialize, de::DeserializeOwned};
 
 /// Wrapper for either static value or [Output]
 pub enum Input<T> {
@@ -9,12 +8,12 @@ pub enum Input<T> {
 
 impl<T> Input<T>
 where
-    T: Serialize + DeserializeOwned + Clone + Send + Sync + 'static,
+    T: Clone + Send + Sync + 'static,
 {
     #[doc(hidden)]
-    pub fn get_output(self, engine: &Context) -> Output<T> {
+    pub fn get_output(self, _engine: &Context) -> Output<T> {
         match self {
-            Input::StaticValue(value) => engine.new_output(&value),
+            Input::StaticValue(value) => Output::new(value),
             Input::Output(output) => output,
         }
     }
@@ -26,25 +25,25 @@ impl<T> From<Output<T>> for Input<T> {
     }
 }
 
-impl<T: Default + Serialize> Default for Input<T> {
+impl<T: Default> Default for Input<T> {
     fn default() -> Self {
         Input::StaticValue(Default::default())
     }
 }
 
-impl<T: Serialize> From<T> for Input<T> {
+impl<T> From<T> for Input<T> {
     fn from(value: T) -> Input<T> {
         Input::StaticValue(value)
     }
 }
 
-impl<T: Serialize> From<T> for Input<Option<T>> {
+impl<T> From<T> for Input<Option<T>> {
     fn from(value: T) -> Self {
         Input::StaticValue(Some(value))
     }
 }
 
-impl<T: Serialize + Clone + Send + Sync + 'static> From<Output<T>> for Input<Option<T>> {
+impl<T: Clone + Send + Sync + 'static> From<Output<T>> for Input<Option<T>> {
     fn from(output: Output<T>) -> Self {
         Input::Output(output.map(|v| Some(v)))
     }
@@ -74,19 +73,13 @@ impl From<Vec<&str>> for Input<Option<Vec<String>>> {
     }
 }
 
-impl<T: Serialize, const N: usize> From<[T; N]> for Input<Vec<T>>
-where
-    T: Serialize,
-{
+impl<T, const N: usize> From<[T; N]> for Input<Vec<T>> {
     fn from(value: [T; N]) -> Self {
         Input::StaticValue(value.into_iter().collect())
     }
 }
 
-impl<T: Serialize, const N: usize> From<[T; N]> for Input<Option<Vec<T>>>
-where
-    T: Serialize,
-{
+impl<T, const N: usize> From<[T; N]> for Input<Option<Vec<T>>> {
     fn from(value: [T; N]) -> Self {
         Input::StaticValue(Some(value.into_iter().collect()))
     }

@@ -26,7 +26,6 @@ pub use native::{
 pub use pulumi_gestalt_model::FromPulumiValue;
 pub use pulumi_gestalt_model::Output;
 pub use pulumi_gestalt_model::ToPulumiValue;
-pub use pulumi_gestalt_model::any_export::IntoOutputAny;
 
 /// Entrypoint for execution
 /// ```rust,no_run
