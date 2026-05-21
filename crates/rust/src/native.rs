@@ -20,18 +20,13 @@ pub struct CustomResourceOptions {
     pub provider: Option<Output<String>>,
 }
 
-pub type FunctionContext = Box<dyn Fn(PulumiValue) -> PulumiValue + Send>;
-
 pub struct CompositeOutput {
-    inner: integration::RegisterResourceOutput<FunctionContext>,
+    inner: integration::RegisterResourceOutput,
     runtime: Arc<Runtime>,
 }
 
 impl CompositeOutput {
-    fn from_internal(
-        inner: integration::RegisterResourceOutput<FunctionContext>,
-        runtime: Arc<Runtime>,
-    ) -> Self {
+    fn from_internal(inner: integration::RegisterResourceOutput, runtime: Arc<Runtime>) -> Self {
         Self { inner, runtime }
     }
 
@@ -69,7 +64,7 @@ impl CompositeOutput {
 }
 
 pub struct Context {
-    inner: integration::Context<FunctionContext>,
+    inner: integration::Context,
     runtime: Arc<Runtime>,
 }
 
@@ -90,9 +85,7 @@ impl Context {
     }
 
     pub fn finish(&self) {
-        self.runtime.block_on(
-            pulumi_gestalt_rust_integration::finish::finish_lambdas_sequentially(&self.inner),
-        )
+        self.runtime.block_on(self.inner.finish())
     }
 
     pub fn new_output<'a, T>(&self, value: &'a T) -> Output<T>

@@ -2,7 +2,6 @@ use anyhow::Result;
 use pulumi_gestalt_schema::model::Package;
 
 mod engine;
-pub mod finish;
 
 pub use engine::*;
 pub use pulumi_gestalt_domain::FieldName;

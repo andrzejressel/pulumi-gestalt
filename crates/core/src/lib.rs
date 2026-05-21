@@ -5,7 +5,6 @@ mod model;
 pub use config::Config;
 pub use engine::ConfigValue;
 pub use engine::Engine;
-pub use engine::NativeFunctionRequest;
 use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
 pub use model::FunctionName;
