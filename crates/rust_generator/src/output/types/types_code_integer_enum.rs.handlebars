@@ -20,7 +20,7 @@ impl pulumi_gestalt_rust::__private::serde::Serialize for {{enum.struct_name}} {
             {{@root.enum.struct_name}}::{{value.name}} => {{value.value}},
             {{/each}}
         };
-        serializer.serialize_i64(value)
+        serializer.serialize_i32(value)
     }
 }
 
@@ -29,7 +29,7 @@ impl<'de> pulumi_gestalt_rust::__private::serde::Deserialize<'de> for {{enum.str
     where
         D: serde::Deserializer<'de>,
     {
-        let f = i64::deserialize(deserializer)?;
+        let f = i32::deserialize(deserializer)?;
         match f {
             {{#each enum.values as |value|}}
             {{value.value}} => Ok({{@root.enum.struct_name}}::{{value.name}}),

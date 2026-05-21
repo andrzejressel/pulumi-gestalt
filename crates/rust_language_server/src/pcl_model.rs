@@ -248,7 +248,7 @@ pub struct TraverseIndex {
 pub mod traverse_index {
     #[derive(Clone, PartialEq, Eq, Hash, Debug, serde::Serialize)]
     pub enum Value {
-        IntIndex(i64),
+        IntIndex(i32),
         StringIndex(String),
     }
 }

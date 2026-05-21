@@ -17,7 +17,7 @@ impl pulumi_gestalt_rust::__private::serde::Serialize for ContainerSize {
             ContainerSize::SixInch => 6,
             ContainerSize::EightInch => 8,
         };
-        serializer.serialize_i64(value)
+        serializer.serialize_i32(value)
     }
 }
 
@@ -26,7 +26,7 @@ impl<'de> pulumi_gestalt_rust::__private::serde::Deserialize<'de> for ContainerS
     where
         D: serde::Deserializer<'de>,
     {
-        let f = i64::deserialize(deserializer)?;
+        let f = i32::deserialize(deserializer)?;
         match f {
             4 => Ok(ContainerSize::FourInch),
             6 => Ok(ContainerSize::SixInch),

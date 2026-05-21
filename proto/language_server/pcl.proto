@@ -249,7 +249,7 @@ message TraverseAttr {
 
 message TraverseIndex {
   oneof value {
-    int64 intIndex = 1;
+    int32 intIndex = 1;
     string stringIndex = 2;
   }
 }

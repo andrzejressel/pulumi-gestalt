@@ -81,7 +81,7 @@ func transformTraverser(part hcl.Traverser) (*astproto.Traverser, error) {
 				Value: &astproto.Traverser_TraverseIndex{
 					TraverseIndex: &astproto.TraverseIndex{
 						Value: &astproto.TraverseIndex_IntIndex{
-							IntIndex: int64(number),
+							IntIndex: int32(number),
 						},
 					},
 				},

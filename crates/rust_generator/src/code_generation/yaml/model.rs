@@ -65,7 +65,7 @@ pub(crate) struct FnInvoke {
 #[derive(Debug, PartialEq)]
 pub(crate) enum Expression {
     String(String),
-    Integer(i64),
+    Integer(i32),
     Number(f64),
     Boolean(bool),
     Object(ElementId, BTreeMap<String, Expression>),
@@ -233,7 +233,7 @@ fn map_expression(
             map_type(package_context, r, properties)
         }
         (TypeWithoutOption::Integer, YamlExpression::Number(f)) => {
-            Ok(Expression::Integer(f.round() as i64))
+            Ok(Expression::Integer(f.round() as i32))
         }
         (TypeWithoutOption::Number, YamlExpression::Number(f)) => Ok(Expression::Number(*f)),
         (a, b) => Err(anyhow!("Invalid type combination: {:?} with {:?}", a, b)),
