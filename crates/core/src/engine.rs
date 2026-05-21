@@ -1,8 +1,6 @@
 use crate::config::{Config, RawConfigValue};
 use crate::{Output, RawOutput, RegisterResourceOutput};
 use futures::FutureExt;
-use futures::channel::mpsc::{UnboundedReceiver, UnboundedSender, unbounded};
-use futures::channel::oneshot::{Sender, channel};
 use futures::future::{BoxFuture, Shared};
 use futures::stream::StreamExt;
 use futures::stream::{FuturesOrdered, FuturesUnordered};
@@ -15,50 +13,27 @@ use std::collections::HashMap;
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::SeqCst;
 use std::sync::{Arc, Mutex};
-use uuid::Uuid;
-
-struct InternalNativeFunctionRequest {
-    pub context_key: Uuid,
-    pub data: Value,
-    pub return_mailbox: Sender<Value>,
-}
-
-pub struct NativeFunctionRequest<FunctionContext> {
-    pub context: FunctionContext,
-    pub data: Value,
-    pub return_mailbox: Sender<Value>,
-}
 
 pub enum ConfigValue {
     PlainText(String),
     Secret(RawOutput),
 }
 
-pub struct Engine<FunctionContext> {
+pub struct Engine {
     outputs: Mutex<HashMap<FieldName, RawOutput>>,
-    function_contexts: Mutex<HashMap<Uuid, FunctionContext>>,
     join_set: FuturesUnordered<Shared<BoxFuture<'static, ()>>>,
-    native_function_queue_sender: UnboundedSender<InternalNativeFunctionRequest>,
-    native_function_queue_receiver: UnboundedReceiver<InternalNativeFunctionRequest>,
-
     output_task_created: AtomicBool,
     pulumi: Arc<Box<dyn PulumiConnector>>,
     config: Config,
 }
 
-type UnitEngine = Engine<()>;
-
-impl<FunctionContext> Engine<FunctionContext> {
+impl Engine {
     pub fn new(pulumi: impl PulumiConnector + 'static, config: Config) -> Self {
-        let (tx, rx) = unbounded();
         Self {
             outputs: Default::default(),
-            function_contexts: Default::default(),
             join_set: Default::default(),
             pulumi: Arc::new(Box::new(pulumi)),
             output_task_created: AtomicBool::new(false),
-            native_function_queue_sender: tx,
-            native_function_queue_receiver: rx,
             config,
         }
     }
@@ -208,38 +183,6 @@ impl<FunctionContext> Engine<FunctionContext> {
         output
     }
 
-    pub fn create_native_function_node(
-        &self,
-        function_context: FunctionContext,
-        source: RawOutput,
-    ) -> RawOutput {
-        let function_context_key = Uuid::now_v7();
-        let mut function_contexts = self.function_contexts.lock().unwrap();
-        function_contexts.insert(function_context_key, function_context);
-        drop(function_contexts);
-        let request_receiver = self.native_function_queue_sender.clone();
-        let output = RawOutput::from_future(async move {
-            let source_value = source.value.await;
-            match source_value {
-                NodeValue::Nothing => NodeValue::Nothing,
-                NodeValue::Exists(ExistingNodeValue { value, secret }) => {
-                    let (tx, rx) = channel();
-                    let request = InternalNativeFunctionRequest {
-                        context_key: function_context_key,
-                        data: value,
-                        return_mailbox: tx,
-                    };
-                    request_receiver.unbounded_send(request).unwrap();
-
-                    let result = rx.await.unwrap();
-                    NodeValue::exists(result, secret)
-                }
-            }
-        });
-        self.join_set.push(output.clone().invoke_void());
-        output
-    }
-
     pub fn create_combine_outputs(&self, outputs: Vec<RawOutput>) -> RawOutput {
         use futures::StreamExt;
         RawOutput::from_future(async move {
@@ -303,7 +246,7 @@ impl<FunctionContext> Engine<FunctionContext> {
         RawOutput::from_node_value(NodeValue::Nothing)
     }
 
-    pub async fn run(&mut self) -> Option<NativeFunctionRequest<FunctionContext>> {
+    pub async fn run(&mut self) {
         if self
             .output_task_created
             .compare_exchange(false, true, SeqCst, SeqCst)
@@ -333,43 +276,7 @@ impl<FunctionContext> Engine<FunctionContext> {
             self.join_set.push(f.boxed().shared());
         }
 
-        loop {
-            futures::select! {
-                res = self.join_set.next() => {
-                    match res {
-                        Some(_) => {
-                            continue
-                        }
-                        None => {
-                            // All tasks complete
-                            // Tokio and futures structs have different behaviors when streams complete
-                            // Tokio will be returning None, but futures will not return anything anymore
-                            // Due to that if someone calls run again the select will wait for receiver - and since
-                            // there is no more tasks it will be stuck forever. To avoid that we close the receiver here.
-                            // That way futures will panic
-                            self.native_function_queue_receiver.close();
-                            return None;
-                        }
-                    }
-                }
-                request = self.native_function_queue_receiver.next() => {
-                    match request {
-                        Some(request) => {
-                            let mut function_contexts = self.function_contexts.lock().unwrap();
-                            let function_context = function_contexts.remove(&request.context_key).unwrap();
-                            return Some(NativeFunctionRequest {
-                                context: function_context,
-                                data: request.data,
-                                return_mailbox: request.return_mailbox,
-                            });
-                        }
-                        None => {
-                            continue;
-                        }
-                    }
-                }
-            }
-        }
+        while self.join_set.next().await.is_some() {}
     }
 
     pub fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
@@ -378,7 +285,7 @@ impl<FunctionContext> Engine<FunctionContext> {
             Some(RawConfigValue::PlainText(value)) => Some(ConfigValue::PlainText(value.clone())),
             Some(RawConfigValue::Secret(secret)) => {
                 let value = Value::String(secret.clone());
-                let output_id = UnitEngine::create_done_node(value, true);
+                let output_id = Engine::create_done_node(value, true);
                 Some(ConfigValue::Secret(output_id))
             }
         }
@@ -395,11 +302,9 @@ mod tests {
     use mockall::predicate::eq;
     use std::collections::HashMap;
 
-    use std::sync::RwLock;
+    static_assertions::assert_impl_all!(Engine: Send, Sync);
 
-    static_assertions::assert_impl_all!(Engine<RwLock<()>>: Send, Sync);
-
-    type StrEngine = Engine<&'static str>;
+    type StrEngine = Engine;
 
     mod register_outputs {
         use super::*;
@@ -421,8 +326,7 @@ mod tests {
             let output_id = StrEngine::create_done_node(1.into(), false);
             engine.add_output("output".into(), output_id);
 
-            let result = engine.run().await;
-            assert!(result.is_none());
+            engine.run().await;
         }
 
         #[tokio::test]
@@ -439,110 +343,10 @@ mod tests {
             let mut engine = StrEngine::new_without_configs(mock);
 
             let output_id = StrEngine::create_done_node(1.into(), false);
-            engine.add_output("output".into(), output_id.clone());
-            engine.create_native_function_node("nativeFunc", output_id.clone());
-            engine.create_native_function_node("nativeFunc2", output_id);
+            engine.add_output("output".into(), output_id);
 
-            let result = engine.run().await;
-            // nativeFunc
-            assert!(result.is_some());
-
-            let result = engine.run().await;
-            // nativeFunc2
-            assert!(result.is_some());
-        }
-    }
-
-    mod mapping {
-        use super::*;
-        use pulumi_gestalt_domain::connector::MockPulumiConnector;
-
-        #[tokio::test]
-        async fn should_return_map_function() {
-            use serde_json::json;
-
-            let mock = MockPulumiConnector::new();
-            let mut engine = StrEngine::new_without_configs(mock);
-
-            let source_output = StrEngine::create_done_node(json!("value"), false);
-            let mapped_output = engine.create_native_function_node("nativeFunc", source_output);
-            engine.add_output("mapped_output".into(), mapped_output);
-
-            let result = engine.run().await;
-
-            match result {
-                None => {
-                    panic!("Expected NativeFunctionRequest, got None");
-                }
-                Some(request) => {
-                    assert_eq!(request.context, "nativeFunc");
-                    assert_eq!(request.data, json!("value"));
-                }
-            }
-        }
-
-        #[tokio::test]
-        async fn should_invoke_map_even_if_it_is_not_in_output() {
-            use serde_json::json;
-
-            let mut mock = MockPulumiConnector::new();
-            mock.expect_register_outputs()
-                .times(1)
-                .with(eq(RegisterOutputsRequest::new(HashMap::new())))
-                .returning(|_| ());
-            let mut engine = StrEngine::new_without_configs(mock);
-
-            let source_output = StrEngine::create_done_node(json!("value"), false);
-            let _ = engine.create_native_function_node("nativeFunc", source_output);
-
-            let result = engine.run().await;
-
-            match result {
-                None => {
-                    panic!("Expected NativeFunctionRequest, got None");
-                }
-                Some(request) => {
-                    assert_eq!(request.context, "nativeFunc");
-                    assert_eq!(request.data, json!("value"));
-                }
-            }
-        }
-
-        #[tokio::test]
-        async fn should_handle_function_result() {
-            let mut mock = MockPulumiConnector::new();
-            mock.expect_register_outputs()
-                .times(1)
-                .with(eq(RegisterOutputsRequest::new(HashMap::from([(
-                    "mapped_output".into(),
-                    NodeValue::exists("result", false),
-                )]))))
-                .returning(|_| ());
-            let mut engine = StrEngine::new_without_configs(mock);
-
-            let source_output = StrEngine::create_done_node("value".into(), false);
-            let mapped_output = engine.create_native_function_node("nativeFunc", source_output);
-            engine.add_output("mapped_output".into(), mapped_output);
-
-            let result = engine.run().await;
-
-            match result {
-                None => {
-                    panic!("Expected NativeFunctionRequest, got None");
-                }
-                Some(request) => {
-                    request.return_mailbox.send("result".into()).unwrap();
-                }
-            }
-
-            let result = engine.run().await;
-
-            match result {
-                None => {}
-                Some(_) => {
-                    panic!("Expected None, got NativeFunctionRequest");
-                }
-            }
+            engine.run().await;
+            engine.run().await;
         }
     }
 

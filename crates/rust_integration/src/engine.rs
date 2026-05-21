@@ -12,8 +12,8 @@ use std::future::Future;
 use std::sync::Arc;
 
 #[derive(bon::Builder)]
-pub struct Context<FunctionContext> {
-    inner: Arc<Mutex<core::Engine<FunctionContext>>>,
+pub struct Context {
+    inner: Arc<Mutex<core::Engine>>,
     stack: String,
     project: String,
     organization: String,
@@ -22,15 +22,8 @@ pub struct Context<FunctionContext> {
 
 pub type Output = pulumi_gestalt_model::Output<PulumiValue>;
 
-pub struct RegisterResourceOutput<FunctionContext> {
+pub struct RegisterResourceOutput {
     pub(crate) inner: core::RegisterResourceOutput,
-    pub(crate) _phantom: std::marker::PhantomData<FunctionContext>,
-}
-
-pub struct NativeFunctionRequest<FunctionContext> {
-    pub context: FunctionContext,
-    pub data: PulumiValue,
-    pub(crate) return_mailbox: futures::channel::oneshot::Sender<Value>,
 }
 
 pub struct RegisterResourceRequest {
@@ -85,8 +78,8 @@ fn raw_output_to_model_output(output: core::RawOutput) -> Output {
     })
 }
 
-impl<T> Context<T> {
-    pub async fn new() -> Context<T> {
+impl Context {
+    pub async fn new() -> Context {
         let pulumi_engine_url = std::env::var("PULUMI_ENGINE").unwrap();
         let pulumi_monitor_url = std::env::var("PULUMI_MONITOR").unwrap();
         let pulumi_stack = std::env::var("PULUMI_STACK").unwrap();
@@ -114,7 +107,7 @@ impl<T> Context<T> {
             .context("Failed to create config instance")
             .unwrap();
 
-        Context::<T>::builder()
+        Context::builder()
             .inner(Arc::new(Mutex::new(Engine::new(pulumi_connector, config))))
             .stack(pulumi_stack)
             .project(pulumi_project)
@@ -130,10 +123,7 @@ impl<T> Context<T> {
             .add_output(field_name, model_output_to_raw_output(output))
     }
 
-    pub async fn register_resource(
-        &self,
-        args: RegisterResourceRequest,
-    ) -> RegisterResourceOutput<T> {
+    pub async fn register_resource(&self, args: RegisterResourceRequest) -> RegisterResourceOutput {
         let inputs = args
             .inputs
             .into_iter()
@@ -147,13 +137,10 @@ impl<T> Context<T> {
             args.version,
             provider,
         );
-        RegisterResourceOutput {
-            inner,
-            _phantom: std::marker::PhantomData,
-        }
+        RegisterResourceOutput { inner }
     }
 
-    pub async fn invoke_resource(&self, args: InvokeResourceRequest) -> RegisterResourceOutput<T> {
+    pub async fn invoke_resource(&self, args: InvokeResourceRequest) -> RegisterResourceOutput {
         let inputs = args
             .inputs
             .into_iter()
@@ -164,28 +151,7 @@ impl<T> Context<T> {
                 .lock()
                 .await
                 .create_resource_invoke_node(args.token, inputs, args.version);
-        RegisterResourceOutput {
-            inner,
-            _phantom: std::marker::PhantomData,
-        }
-    }
-
-    pub async fn create_native_function_node(&self, function_context: T, source: Output) -> Output {
-        let raw_output = self
-            .inner
-            .lock()
-            .await
-            .create_native_function_node(function_context, model_output_to_raw_output(source));
-        raw_output_to_model_output(raw_output)
-    }
-
-    pub async fn create_combine_outputs(&self, outputs: Vec<Output>) -> Output {
-        let raw_outputs: Vec<core::RawOutput> = outputs
-            .into_iter()
-            .map(model_output_to_raw_output)
-            .collect();
-        let raw_output = self.inner.lock().await.create_combine_outputs(raw_outputs);
-        raw_output_to_model_output(raw_output)
+        RegisterResourceOutput { inner }
     }
 
     pub fn create_output(&self, value: PulumiValue) -> Output {
@@ -216,17 +182,8 @@ impl<T> Context<T> {
             })
     }
 
-    pub async fn finish(&self) -> Option<NativeFunctionRequest<T>> {
-        self.inner
-            .lock()
-            .await
-            .run()
-            .await
-            .map(|request| NativeFunctionRequest {
-                context: request.context,
-                data: json_value_to_pulumi_value(request.data, false),
-                return_mailbox: request.return_mailbox,
-            })
+    pub async fn finish(&self) {
+        self.inner.lock().await.run().await
     }
 
     pub fn get_organization(&self) -> &str {
@@ -254,24 +211,24 @@ impl<T> Context<T> {
     }
 }
 
-impl<T> RegisterResourceOutput<T> {
+impl RegisterResourceOutput {
     pub async fn get_field(&self, field_name: FieldName) -> Output {
-        let raw_output = core::Engine::<T>::create_extract_field(field_name, self.inner.clone());
+        let raw_output = core::Engine::create_extract_field(field_name, self.inner.clone());
         raw_output_to_model_output(raw_output)
     }
 
     pub async fn get_urn(&self) -> Output {
-        let raw_output = core::Engine::<T>::create_extract_urn(self.inner.clone());
+        let raw_output = core::Engine::create_extract_urn(self.inner.clone());
         raw_output_to_model_output(raw_output)
     }
 
     pub async fn get_id(&self) -> Output {
-        let raw_output = core::Engine::<T>::create_extract_id(self.inner.clone());
+        let raw_output = core::Engine::create_extract_id(self.inner.clone());
         raw_output_to_model_output(raw_output)
     }
 
     pub async fn get_provider_id(&self) -> Output {
-        let raw_output = core::Engine::<T>::create_extract_provider_id(self.inner.clone());
+        let raw_output = core::Engine::create_extract_provider_id(self.inner.clone());
         raw_output_to_model_output(raw_output)
     }
 }
