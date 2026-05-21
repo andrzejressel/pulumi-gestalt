@@ -122,7 +122,8 @@ impl Context {
         let internal_output = self
             .inner
             .create_output_from_future(async move { output.clone() });
-        self.runtime.block_on(internal_output.add_export(key));
+        self.runtime
+            .block_on(self.inner.add_output(key, internal_output));
     }
 
     pub fn register_resource(&self, request: RegisterResourceRequest) -> CompositeOutput {
@@ -170,10 +171,7 @@ impl Context {
         CompositeOutput::from_internal(result, self.runtime.clone())
     }
 
-    fn model_to_integration_output<T>(
-        &self,
-        output: Output<T>,
-    ) -> integration::Output<FunctionContext>
+    fn model_to_integration_output<T>(&self, output: Output<T>) -> integration::Output
     where
         T: ToPulumiValue + Clone + Send + Sync + 'static,
     {
@@ -195,12 +193,20 @@ impl Context {
         })
     }
 
-    fn integration_to_model_output<T>(output: integration::Output<FunctionContext>) -> Output<T>
+    fn integration_to_model_output<T>(output: integration::Output) -> Output<T>
     where
         T: DeserializeOwned + Send + Sync + 'static,
     {
         Output::from_resolved_future(async move {
-            let pulumi_value = output.resolve_pulumi_value().await;
+            let resolved = output.resolve().await;
+            let Some(pulumi_value) = resolved.value else {
+                return pulumi_gestalt_model::ResolvedOutput {
+                    value: None,
+                    secret: false,
+                    dependencies: Default::default(),
+                };
+            };
+
             if matches!(pulumi_value.content, PulumiValueContent::Nothing) {
                 pulumi_gestalt_model::ResolvedOutput {
                     value: None,
@@ -218,11 +224,17 @@ impl Context {
         })
     }
 
-    fn integration_to_pulumi_any_output(
-        output: integration::Output<FunctionContext>,
-    ) -> Output<PulumiAny> {
+    fn integration_to_pulumi_any_output(output: integration::Output) -> Output<PulumiAny> {
         Output::from_resolved_future(async move {
-            let pulumi_value = output.resolve_pulumi_value().await;
+            let resolved = output.resolve().await;
+            let Some(pulumi_value) = resolved.value else {
+                return pulumi_gestalt_model::ResolvedOutput {
+                    value: None,
+                    secret: false,
+                    dependencies: Default::default(),
+                };
+            };
+
             if matches!(pulumi_value.content, PulumiValueContent::Nothing) {
                 pulumi_gestalt_model::ResolvedOutput {
                     value: None,
@@ -361,14 +373,14 @@ impl Context {
 }
 
 pub trait IntoInternalOutput {
-    fn as_internal_output(&self, ctx: &Context) -> integration::Output<FunctionContext>;
+    fn as_internal_output(&self, ctx: &Context) -> integration::Output;
 }
 
 impl<T> IntoInternalOutput for Output<T>
 where
     T: ToPulumiValue + Clone + Send + Sync + 'static,
 {
-    fn as_internal_output(&self, ctx: &Context) -> integration::Output<FunctionContext> {
+    fn as_internal_output(&self, ctx: &Context) -> integration::Output {
         ctx.model_to_integration_output(self.clone())
     }
 }

@@ -4,7 +4,7 @@ use pulumi_gestalt_core as core;
 use pulumi_gestalt_core::{Config, Engine};
 use pulumi_gestalt_domain::{FieldName, NodeValue};
 use pulumi_gestalt_grpc_connection::RealPulumiConnector;
-use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
+use pulumi_gestalt_model::{PulumiValue, PulumiValueContent, ResolvedOutput};
 use serde_json::Value;
 use std::collections::HashMap;
 use std::collections::HashSet;
@@ -20,23 +20,11 @@ pub struct Context<FunctionContext> {
     root_directory: String,
 }
 
-pub struct Output<FunctionContext> {
-    inner: core::RawOutput,
-    engine: Arc<Mutex<core::Engine<FunctionContext>>>,
-}
-
-impl<T> Clone for Output<T> {
-    fn clone(&self) -> Self {
-        Self {
-            inner: self.inner.clone(),
-            engine: Arc::clone(&self.engine),
-        }
-    }
-}
+pub type Output = pulumi_gestalt_model::Output<PulumiValue>;
 
 pub struct RegisterResourceOutput<FunctionContext> {
     pub(crate) inner: core::RegisterResourceOutput,
-    pub(crate) engine: Arc<Mutex<core::Engine<FunctionContext>>>,
+    pub(crate) _phantom: std::marker::PhantomData<FunctionContext>,
 }
 
 pub struct NativeFunctionRequest<FunctionContext> {
@@ -45,23 +33,56 @@ pub struct NativeFunctionRequest<FunctionContext> {
     pub(crate) return_mailbox: futures::channel::oneshot::Sender<Value>,
 }
 
-pub struct RegisterResourceRequest<FunctionContext> {
+pub struct RegisterResourceRequest {
     pub r#type: String,
     pub name: String,
-    pub inputs: HashMap<FieldName, Output<FunctionContext>>,
+    pub inputs: HashMap<FieldName, Output>,
     pub version: String,
-    pub provider: Option<Output<FunctionContext>>,
+    pub provider: Option<Output>,
 }
 
-pub struct InvokeResourceRequest<FunctionContext> {
+pub struct InvokeResourceRequest {
     pub token: String,
-    pub inputs: HashMap<FieldName, Output<FunctionContext>>,
+    pub inputs: HashMap<FieldName, Output>,
     pub version: String,
 }
 
-pub enum ConfigValue<FunctionContext> {
+pub enum ConfigValue {
     PlainText(String),
-    Secret(Output<FunctionContext>),
+    Secret(Output),
+}
+
+fn model_output_to_raw_output(output: Output) -> core::RawOutput {
+    core::RawOutput::from_future_node_value(async move {
+        let resolved = output.resolve().await;
+        match resolved.value {
+            Some(mut value) => {
+                value.secret |= resolved.secret;
+                value.dependencies.extend(resolved.dependencies);
+                pulumi_value_to_node_value(value)
+            }
+            None => NodeValue::Nothing,
+        }
+    })
+}
+
+fn raw_output_to_model_output(output: core::RawOutput) -> Output {
+    Output::from_resolved_future(async move {
+        let pulumi_value = node_value_to_pulumi_value(output.resolve_node_value().await);
+        if matches!(pulumi_value.content, PulumiValueContent::Nothing) {
+            ResolvedOutput {
+                value: None,
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        } else {
+            ResolvedOutput {
+                value: Some(pulumi_value.clone()),
+                secret: pulumi_value.secret,
+                dependencies: pulumi_value.dependencies,
+            }
+        }
+    })
 }
 
 impl<T> Context<T> {
@@ -102,16 +123,23 @@ impl<T> Context<T> {
             .build()
     }
 
-    pub async fn add_output(&self, field_name: FieldName, output: Output<T>) {
-        self.inner.lock().await.add_output(field_name, output.inner)
+    pub async fn add_output(&self, field_name: FieldName, output: Output) {
+        self.inner
+            .lock()
+            .await
+            .add_output(field_name, model_output_to_raw_output(output))
     }
 
     pub async fn register_resource(
         &self,
-        args: RegisterResourceRequest<T>,
+        args: RegisterResourceRequest,
     ) -> RegisterResourceOutput<T> {
-        let inputs = args.inputs.into_iter().map(|(k, v)| (k, v.inner)).collect();
-        let provider = args.provider.map(|p| p.inner);
+        let inputs = args
+            .inputs
+            .into_iter()
+            .map(|(k, v)| (k, model_output_to_raw_output(v)))
+            .collect();
+        let provider = args.provider.map(model_output_to_raw_output);
         let inner = self.inner.lock().await.create_register_resource_node(
             args.r#type,
             args.name,
@@ -121,15 +149,16 @@ impl<T> Context<T> {
         );
         RegisterResourceOutput {
             inner,
-            engine: Arc::clone(&self.inner),
+            _phantom: std::marker::PhantomData,
         }
     }
 
-    pub async fn invoke_resource(
-        &self,
-        args: InvokeResourceRequest<T>,
-    ) -> RegisterResourceOutput<T> {
-        let inputs = args.inputs.into_iter().map(|(k, v)| (k, v.inner)).collect();
+    pub async fn invoke_resource(&self, args: InvokeResourceRequest) -> RegisterResourceOutput<T> {
+        let inputs = args
+            .inputs
+            .into_iter()
+            .map(|(k, v)| (k, model_output_to_raw_output(v)))
+            .collect();
         let inner =
             self.inner
                 .lock()
@@ -137,70 +166,53 @@ impl<T> Context<T> {
                 .create_resource_invoke_node(args.token, inputs, args.version);
         RegisterResourceOutput {
             inner,
-            engine: Arc::clone(&self.inner),
+            _phantom: std::marker::PhantomData,
         }
     }
 
-    pub async fn create_native_function_node(
-        &self,
-        function_context: T,
-        source: Output<T>,
-    ) -> Output<T> {
+    pub async fn create_native_function_node(&self, function_context: T, source: Output) -> Output {
         let raw_output = self
             .inner
             .lock()
             .await
-            .create_native_function_node(function_context, source.inner);
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.inner),
-        }
+            .create_native_function_node(function_context, model_output_to_raw_output(source));
+        raw_output_to_model_output(raw_output)
     }
 
-    pub async fn create_combine_outputs(&self, outputs: Vec<Output<T>>) -> Output<T> {
-        let raw_outputs: Vec<core::RawOutput> = outputs.into_iter().map(|o| o.inner).collect();
+    pub async fn create_combine_outputs(&self, outputs: Vec<Output>) -> Output {
+        let raw_outputs: Vec<core::RawOutput> = outputs
+            .into_iter()
+            .map(model_output_to_raw_output)
+            .collect();
         let raw_output = self.inner.lock().await.create_combine_outputs(raw_outputs);
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.inner),
-        }
+        raw_output_to_model_output(raw_output)
     }
 
-    pub fn create_output(&self, value: PulumiValue) -> Output<T> {
-        let raw_output =
-            core::RawOutput::from_future_node_value(
-                async move { pulumi_value_to_node_value(value) },
-            );
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.inner),
-        }
+    pub fn create_output(&self, value: PulumiValue) -> Output {
+        Output::new(value)
     }
 
-    pub fn create_output_from_future<F>(&self, future: F) -> Output<T>
+    pub fn create_output_from_future<F>(&self, future: F) -> Output
     where
         F: Future<Output = PulumiValue> + Send + 'static,
     {
-        let raw_output = core::RawOutput::from_future_node_value(async move {
-            pulumi_value_to_node_value(future.await)
-        });
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.inner),
-        }
+        Output::from_resolved_future(async move {
+            ResolvedOutput {
+                value: Some(future.await),
+                secret: false,
+                dependencies: HashSet::new(),
+            }
+        })
     }
 
-    pub async fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue<T>> {
+    pub async fn get_config_value(&self, name: Option<&str>, key: &str) -> Option<ConfigValue> {
         self.inner
             .lock()
             .await
             .get_config_value(name, key)
             .map(|v| match v {
                 core::ConfigValue::PlainText(s) => ConfigValue::PlainText(s),
-                core::ConfigValue::Secret(o) => ConfigValue::Secret(Output {
-                    inner: o,
-                    engine: Arc::clone(&self.inner),
-                }),
+                core::ConfigValue::Secret(o) => ConfigValue::Secret(raw_output_to_model_output(o)),
             })
     }
 
@@ -242,85 +254,25 @@ impl<T> Context<T> {
     }
 }
 
-impl<T> Output<T> {
-    pub fn secret(&self) -> Self {
-        Output {
-            inner: self.inner.secret(),
-            engine: Arc::clone(&self.engine),
-        }
-    }
-
-    pub fn unsecret(&self) -> Self {
-        Output {
-            inner: self.inner.unsecret(),
-            engine: Arc::clone(&self.engine),
-        }
-    }
-
-    pub async fn map(&self, func: T) -> Self {
-        let raw_output = self
-            .engine
-            .lock()
-            .await
-            .create_native_function_node(func, self.inner.clone());
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.engine),
-        }
-    }
-
-    pub async fn combine(&self, others: &[&Output<T>]) -> Self {
-        let mut all_outputs = vec![self.inner.clone()];
-        for other in others {
-            all_outputs.push(other.inner.clone());
-        }
-        let raw_output = self.engine.lock().await.create_combine_outputs(all_outputs);
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.engine),
-        }
-    }
-
-    pub async fn add_export(&self, key: FieldName) {
-        self.engine.lock().await.add_output(key, self.inner.clone());
-    }
-
-    pub async fn resolve_pulumi_value(&self) -> PulumiValue {
-        node_value_to_pulumi_value(self.inner.resolve_node_value().await)
-    }
-}
-
 impl<T> RegisterResourceOutput<T> {
-    pub async fn get_field(&self, field_name: FieldName) -> Output<T> {
+    pub async fn get_field(&self, field_name: FieldName) -> Output {
         let raw_output = core::Engine::<T>::create_extract_field(field_name, self.inner.clone());
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.engine),
-        }
+        raw_output_to_model_output(raw_output)
     }
 
-    pub async fn get_urn(&self) -> Output<T> {
+    pub async fn get_urn(&self) -> Output {
         let raw_output = core::Engine::<T>::create_extract_urn(self.inner.clone());
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.engine),
-        }
+        raw_output_to_model_output(raw_output)
     }
 
-    pub async fn get_id(&self) -> Output<T> {
+    pub async fn get_id(&self) -> Output {
         let raw_output = core::Engine::<T>::create_extract_id(self.inner.clone());
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.engine),
-        }
+        raw_output_to_model_output(raw_output)
     }
 
-    pub async fn get_provider_id(&self) -> Output<T> {
+    pub async fn get_provider_id(&self) -> Output {
         let raw_output = core::Engine::<T>::create_extract_provider_id(self.inner.clone());
-        Output {
-            inner: raw_output,
-            engine: Arc::clone(&self.engine),
-        }
+        raw_output_to_model_output(raw_output)
     }
 }
 
