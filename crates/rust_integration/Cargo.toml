@@ -10,6 +10,7 @@ description = "Rust helper functions for Pulumi Gestalt"
 [dependencies]
 anyhow.workspace = true
 pulumi_gestalt_core.workspace = true
+pulumi_gestalt_model.workspace = true
 serde_json.workspace = true
 pulumi_gestalt_grpc_connection.workspace = true
 pulumi_gestalt_proto.workspace = true

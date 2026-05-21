@@ -3,7 +3,7 @@ use anyhow::{Context as anyhowContext, Result, bail};
 use bon::Builder;
 use pulumi_gestalt_model::{Output, PulumiValue, PulumiValueContent, ToPulumiValue};
 use pulumi_gestalt_rust_integration as integration;
-use pulumi_gestalt_rust_integration::{ConfigValue, FieldName, NodeValue};
+use pulumi_gestalt_rust_integration::{ConfigValue, FieldName};
 use serde::{Deserialize, Serialize, de::DeserializeOwned};
 use serde_json::Value;
 use std::collections::HashMap;
@@ -20,7 +20,7 @@ pub struct CustomResourceOptions {
     pub provider: Option<Output<String>>,
 }
 
-pub type FunctionContext = Box<dyn Fn(Value) -> Value + Send>;
+pub type FunctionContext = Box<dyn Fn(PulumiValue) -> PulumiValue + Send>;
 
 pub struct CompositeOutput {
     inner: integration::RegisterResourceOutput<FunctionContext>,
@@ -119,12 +119,9 @@ impl Context {
     pub fn add_export(&self, key: &str, output: &impl ToPulumiValue) {
         let key = FieldName::from(key.to_string());
         let output = self.runtime.block_on(output.to_pulumi_value());
-        let internal_output = self.inner.create_output_from_future(async move {
-            NodeValue::exists(
-                Self::pulumi_value_to_json_value(output.clone()),
-                output.secret,
-            )
-        });
+        let internal_output = self
+            .inner
+            .create_output_from_future(async move { output.clone() });
         self.runtime.block_on(internal_output.add_export(key));
     }
 
@@ -183,13 +180,16 @@ impl Context {
         self.inner.create_output_from_future(async move {
             let resolved = output.resolve().await;
             match resolved.value {
-                None => NodeValue::Nothing,
+                None => PulumiValue {
+                    content: PulumiValueContent::Nothing,
+                    secret: resolved.secret,
+                    dependencies: resolved.dependencies,
+                },
                 Some(value) => {
-                    let pulumi_value = value.to_pulumi_value().await;
-                    NodeValue::exists(
-                        Self::pulumi_value_to_json_value(pulumi_value),
-                        resolved.secret,
-                    )
+                    let mut pulumi_value = value.to_pulumi_value().await;
+                    pulumi_value.secret |= resolved.secret;
+                    pulumi_value.dependencies.extend(resolved.dependencies);
+                    pulumi_value
                 }
             }
         })
@@ -200,17 +200,20 @@ impl Context {
         T: DeserializeOwned + Send + Sync + 'static,
     {
         Output::from_resolved_future(async move {
-            match output.resolve_node_value().await {
-                NodeValue::Nothing => pulumi_gestalt_model::ResolvedOutput {
+            let pulumi_value = output.resolve_pulumi_value().await;
+            if matches!(pulumi_value.content, PulumiValueContent::Nothing) {
+                pulumi_gestalt_model::ResolvedOutput {
                     value: None,
                     secret: false,
                     dependencies: Default::default(),
-                },
-                NodeValue::Exists(existing) => pulumi_gestalt_model::ResolvedOutput {
-                    value: Some(serde_json::from_value(existing.value).unwrap()),
-                    secret: existing.secret,
-                    dependencies: Default::default(),
-                },
+                }
+            } else {
+                let json_value = Self::pulumi_value_to_json_value(pulumi_value.clone());
+                pulumi_gestalt_model::ResolvedOutput {
+                    value: Some(serde_json::from_value(json_value).unwrap()),
+                    secret: pulumi_value.secret,
+                    dependencies: pulumi_value.dependencies,
+                }
             }
         })
     }
@@ -219,17 +222,21 @@ impl Context {
         output: integration::Output<FunctionContext>,
     ) -> Output<PulumiAny> {
         Output::from_resolved_future(async move {
-            match output.resolve_node_value().await {
-                NodeValue::Nothing => pulumi_gestalt_model::ResolvedOutput {
+            let pulumi_value = output.resolve_pulumi_value().await;
+            if matches!(pulumi_value.content, PulumiValueContent::Nothing) {
+                pulumi_gestalt_model::ResolvedOutput {
                     value: None,
                     secret: false,
                     dependencies: Default::default(),
-                },
-                NodeValue::Exists(existing) => pulumi_gestalt_model::ResolvedOutput {
-                    value: Some(Self::json_value_to_middleware(existing.value)),
-                    secret: existing.secret,
-                    dependencies: Default::default(),
-                },
+                }
+            } else {
+                pulumi_gestalt_model::ResolvedOutput {
+                    value: Some(pulumi_gestalt_model::PulumiValueMiddleware::ready(
+                        pulumi_value.clone(),
+                    )),
+                    secret: pulumi_value.secret,
+                    dependencies: pulumi_value.dependencies,
+                }
             }
         })
     }
@@ -253,45 +260,6 @@ impl Context {
                     .collect(),
             ),
             PulumiValueContent::None | PulumiValueContent::Nothing => Value::Null,
-        }
-    }
-
-    fn json_value_to_middleware(value: Value) -> PulumiAny {
-        match value {
-            Value::Null => {
-                pulumi_gestalt_model::__private::pulumi_value_middleware(PulumiValueContent::None)
-            }
-            Value::Bool(value) => {
-                pulumi_gestalt_model::__private::to_pulumi_value_middleware(value)
-            }
-            Value::Number(value) => {
-                if let Some(integer) = value.as_i64() {
-                    pulumi_gestalt_model::__private::to_pulumi_value_middleware(integer)
-                } else if let Some(number) = value.as_f64() {
-                    pulumi_gestalt_model::__private::to_pulumi_value_middleware(number)
-                } else {
-                    pulumi_gestalt_model::__private::pulumi_value_middleware(
-                        PulumiValueContent::None,
-                    )
-                }
-            }
-            Value::String(value) => {
-                pulumi_gestalt_model::__private::to_pulumi_value_middleware(value)
-            }
-            Value::Array(values) => pulumi_gestalt_model::__private::pulumi_value_middleware_array(
-                values
-                    .into_iter()
-                    .map(Self::json_value_to_middleware)
-                    .collect(),
-            ),
-            Value::Object(values) => {
-                pulumi_gestalt_model::__private::pulumi_value_middleware_object(
-                    values
-                        .into_iter()
-                        .map(|(key, value)| (key, Self::json_value_to_middleware(value)))
-                        .collect(),
-                )
-            }
         }
     }
 
