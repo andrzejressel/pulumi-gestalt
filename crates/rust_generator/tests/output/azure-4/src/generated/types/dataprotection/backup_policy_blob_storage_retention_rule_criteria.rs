@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "absolute_criteria",
+                    "absoluteCriteria",
                     &self.r#absolute_criteria,
                 ),
                 to_pulumi_object_field(
-                    "days_of_months",
+                    "daysOfMonths",
                     &self.r#days_of_months,
                 ),
                 to_pulumi_object_field(
-                    "days_of_weeks",
+                    "daysOfWeeks",
                     &self.r#days_of_weeks,
                 ),
                 to_pulumi_object_field(
-                    "months_of_years",
+                    "monthsOfYears",
                     &self.r#months_of_years,
                 ),
                 to_pulumi_object_field(
-                    "scheduled_backup_times",
+                    "scheduledBackupTimes",
                     &self.r#scheduled_backup_times,
                 ),
                 to_pulumi_object_field(
-                    "weeks_of_months",
+                    "weeksOfMonths",
                     &self.r#weeks_of_months,
                 ),
             ];

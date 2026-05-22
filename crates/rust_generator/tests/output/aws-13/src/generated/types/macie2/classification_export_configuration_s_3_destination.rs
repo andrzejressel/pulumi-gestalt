@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "key_prefix",
+                    "keyPrefix",
                     &self.r#key_prefix,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_arn",
+                    "kmsKeyArn",
                     &self.r#kms_key_arn,
                 ),
             ];

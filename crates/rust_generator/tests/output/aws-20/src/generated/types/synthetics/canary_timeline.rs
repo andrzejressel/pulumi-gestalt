@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Can
                     &self.r#created,
                 ),
                 to_pulumi_object_field(
-                    "last_modified",
+                    "lastModified",
                     &self.r#last_modified,
                 ),
                 to_pulumi_object_field(
-                    "last_started",
+                    "lastStarted",
                     &self.r#last_started,
                 ),
                 to_pulumi_object_field(
-                    "last_stopped",
+                    "lastStopped",
                     &self.r#last_stopped,
                 ),
             ];

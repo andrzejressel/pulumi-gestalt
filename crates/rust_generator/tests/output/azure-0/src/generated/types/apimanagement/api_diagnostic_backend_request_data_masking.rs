@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "query_params",
+                    "queryParams",
                     &self.r#query_params,
                 ),
             ];

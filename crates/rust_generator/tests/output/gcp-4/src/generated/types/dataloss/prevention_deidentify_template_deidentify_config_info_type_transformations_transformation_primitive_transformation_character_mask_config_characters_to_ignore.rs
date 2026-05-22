@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "characters_to_skip",
+                    "charactersToSkip",
                     &self.r#characters_to_skip,
                 ),
                 to_pulumi_object_field(
-                    "common_characters_to_ignore",
+                    "commonCharactersToIgnore",
                     &self.r#common_characters_to_ignore,
                 ),
             ];

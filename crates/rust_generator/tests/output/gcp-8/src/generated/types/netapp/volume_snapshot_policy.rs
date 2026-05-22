@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "daily_schedule",
+                    "dailySchedule",
                     &self.r#daily_schedule,
                 ),
                 to_pulumi_object_field(
@@ -52,15 +52,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "hourly_schedule",
+                    "hourlySchedule",
                     &self.r#hourly_schedule,
                 ),
                 to_pulumi_object_field(
-                    "monthly_schedule",
+                    "monthlySchedule",
                     &self.r#monthly_schedule,
                 ),
                 to_pulumi_object_field(
-                    "weekly_schedule",
+                    "weeklySchedule",
                     &self.r#weekly_schedule,
                 ),
             ];

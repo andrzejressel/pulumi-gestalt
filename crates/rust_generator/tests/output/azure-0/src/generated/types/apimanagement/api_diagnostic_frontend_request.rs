@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "body_bytes",
+                    "bodyBytes",
                     &self.r#body_bytes,
                 ),
                 to_pulumi_object_field(
-                    "data_masking",
+                    "dataMasking",
                     &self.r#data_masking,
                 ),
                 to_pulumi_object_field(
-                    "headers_to_logs",
+                    "headersToLogs",
                     &self.r#headers_to_logs,
                 ),
             ];

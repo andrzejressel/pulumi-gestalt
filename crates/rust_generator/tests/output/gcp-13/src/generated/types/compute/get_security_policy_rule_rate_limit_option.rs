@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ban_duration_sec",
+                    "banDurationSec",
                     &self.r#ban_duration_sec,
                 ),
                 to_pulumi_object_field(
-                    "ban_thresholds",
+                    "banThresholds",
                     &self.r#ban_thresholds,
                 ),
                 to_pulumi_object_field(
-                    "conform_action",
+                    "conformAction",
                     &self.r#conform_action,
                 ),
                 to_pulumi_object_field(
-                    "enforce_on_key",
+                    "enforceOnKey",
                     &self.r#enforce_on_key,
                 ),
                 to_pulumi_object_field(
-                    "enforce_on_key_configs",
+                    "enforceOnKeyConfigs",
                     &self.r#enforce_on_key_configs,
                 ),
                 to_pulumi_object_field(
-                    "enforce_on_key_name",
+                    "enforceOnKeyName",
                     &self.r#enforce_on_key_name,
                 ),
                 to_pulumi_object_field(
-                    "exceed_action",
+                    "exceedAction",
                     &self.r#exceed_action,
                 ),
                 to_pulumi_object_field(
-                    "exceed_redirect_options",
+                    "exceedRedirectOptions",
                     &self.r#exceed_redirect_options,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_thresholds",
+                    "rateLimitThresholds",
                     &self.r#rate_limit_thresholds,
                 ),
             ];

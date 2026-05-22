@@ -54,31 +54,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "control_plane_v_2_config",
+                    "controlPlaneV2Config",
                     &self.r#control_plane_v_2_config,
                 ),
                 to_pulumi_object_field(
-                    "dhcp_ip_config",
+                    "dhcpIpConfig",
                     &self.r#dhcp_ip_config,
                 ),
                 to_pulumi_object_field(
-                    "host_config",
+                    "hostConfig",
                     &self.r#host_config,
                 ),
                 to_pulumi_object_field(
-                    "pod_address_cidr_blocks",
+                    "podAddressCidrBlocks",
                     &self.r#pod_address_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "service_address_cidr_blocks",
+                    "serviceAddressCidrBlocks",
                     &self.r#service_address_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "static_ip_config",
+                    "staticIpConfig",
                     &self.r#static_ip_config,
                 ),
                 to_pulumi_object_field(
-                    "vcenter_network",
+                    "vcenterNetwork",
                     &self.r#vcenter_network,
                 ),
             ];

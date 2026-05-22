@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_success_codes",
+                    "allowedSuccessCodes",
                     &self.r#allowed_success_codes,
                 ),
                 to_pulumi_object_field(
-                    "gcs_object",
+                    "gcsObject",
                     &self.r#gcs_object,
                 ),
                 to_pulumi_object_field(
@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#interpreter,
                 ),
                 to_pulumi_object_field(
-                    "local_path",
+                    "localPath",
                     &self.r#local_path,
                 ),
             ];

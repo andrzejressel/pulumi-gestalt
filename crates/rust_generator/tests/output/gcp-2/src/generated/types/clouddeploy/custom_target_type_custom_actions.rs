@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deploy_action",
+                    "deployAction",
                     &self.r#deploy_action,
                 ),
                 to_pulumi_object_field(
-                    "include_skaffold_modules",
+                    "includeSkaffoldModules",
                     &self.r#include_skaffold_modules,
                 ),
                 to_pulumi_object_field(
-                    "render_action",
+                    "renderAction",
                     &self.r#render_action,
                 ),
             ];

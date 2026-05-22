@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "command_keys",
+                    "commandKeys",
                     &self.r#command_keys,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#environment,
                 ),
                 to_pulumi_object_field(
-                    "powershell_version",
+                    "powershellVersion",
                     &self.r#powershell_version,
                 ),
             ];

@@ -36,11 +36,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclusion_windows",
+                    "exclusionWindows",
                     &self.r#exclusion_windows,
                 ),
                 to_pulumi_object_field(
-                    "target_rpo_minutes",
+                    "targetRpoMinutes",
                     &self.r#target_rpo_minutes,
                 ),
             ];

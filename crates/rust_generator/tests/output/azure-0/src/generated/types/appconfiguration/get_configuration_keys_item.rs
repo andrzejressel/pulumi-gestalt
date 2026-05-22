@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_type",
+                    "contentType",
                     &self.r#content_type,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#value,
                 ),
                 to_pulumi_object_field(
-                    "vault_key_reference",
+                    "vaultKeyReference",
                     &self.r#vault_key_reference,
                 ),
             ];

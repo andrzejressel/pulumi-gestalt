@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "s_3_bucket",
+                    "s3Bucket",
                     &self.r#s_3_bucket,
                 ),
                 to_pulumi_object_field(
-                    "s_3_output_configurations",
+                    "s3OutputConfigurations",
                     &self.r#s_3_output_configurations,
                 ),
                 to_pulumi_object_field(
-                    "s_3_prefix",
+                    "s3Prefix",
                     &self.r#s_3_prefix,
                 ),
                 to_pulumi_object_field(
-                    "s_3_region",
+                    "s3Region",
                     &self.r#s_3_region,
                 ),
             ];

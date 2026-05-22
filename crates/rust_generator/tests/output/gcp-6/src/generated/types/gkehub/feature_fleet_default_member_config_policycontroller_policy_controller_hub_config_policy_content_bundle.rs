@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#bundle,
                 ),
                 to_pulumi_object_field(
-                    "exempted_namespaces",
+                    "exemptedNamespaces",
                     &self.r#exempted_namespaces,
                 ),
             ];

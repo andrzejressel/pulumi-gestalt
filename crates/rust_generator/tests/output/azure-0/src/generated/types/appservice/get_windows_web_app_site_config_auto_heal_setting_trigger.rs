@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "private_memory_kb",
+                    "privateMemoryKb",
                     &self.r#private_memory_kb,
                 ),
                 to_pulumi_object_field(
@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#requests,
                 ),
                 to_pulumi_object_field(
-                    "slow_request_with_paths",
+                    "slowRequestWithPaths",
                     &self.r#slow_request_with_paths,
                 ),
                 to_pulumi_object_field(
-                    "slow_requests",
+                    "slowRequests",
                     &self.r#slow_requests,
                 ),
                 to_pulumi_object_field(
-                    "status_codes",
+                    "statusCodes",
                     &self.r#status_codes,
                 ),
             ];

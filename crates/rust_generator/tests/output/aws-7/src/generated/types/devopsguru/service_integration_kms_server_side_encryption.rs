@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kms_key_id",
+                    "kmsKeyId",
                     &self.r#kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "opt_in_status",
+                    "optInStatus",
                     &self.r#opt_in_status,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

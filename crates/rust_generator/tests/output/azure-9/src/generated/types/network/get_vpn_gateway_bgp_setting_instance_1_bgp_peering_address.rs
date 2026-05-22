@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_ips",
+                    "customIps",
                     &self.r#custom_ips,
                 ),
                 to_pulumi_object_field(
-                    "default_ips",
+                    "defaultIps",
                     &self.r#default_ips,
                 ),
                 to_pulumi_object_field(
-                    "ip_configuration_id",
+                    "ipConfigurationId",
                     &self.r#ip_configuration_id,
                 ),
                 to_pulumi_object_field(
-                    "tunnel_ips",
+                    "tunnelIps",
                     &self.r#tunnel_ips,
                 ),
             ];

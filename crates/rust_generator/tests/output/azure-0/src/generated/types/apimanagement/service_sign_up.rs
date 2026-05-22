@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "terms_of_service",
+                    "termsOfService",
                     &self.r#terms_of_service,
                 ),
             ];

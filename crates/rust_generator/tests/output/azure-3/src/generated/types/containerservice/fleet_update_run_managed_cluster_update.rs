@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "node_image_selection",
+                    "nodeImageSelection",
                     &self.r#node_image_selection,
                 ),
                 to_pulumi_object_field(

@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "http_redirect_code",
+                    "httpRedirectCode",
                     &self.r#http_redirect_code,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "replace_key_prefix_with",
+                    "replaceKeyPrefixWith",
                     &self.r#replace_key_prefix_with,
                 ),
                 to_pulumi_object_field(
-                    "replace_key_with",
+                    "replaceKeyWith",
                     &self.r#replace_key_with,
                 ),
             ];

@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "require_partition_filter",
+                    "requirePartitionFilter",
                     &self.r#require_partition_filter,
                 ),
                 to_pulumi_object_field(
-                    "source_uri_prefix",
+                    "sourceUriPrefix",
                     &self.r#source_uri_prefix,
                 ),
             ];

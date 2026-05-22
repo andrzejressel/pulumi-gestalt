@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_token_site_keys",
+                    "actionTokenSiteKeys",
                     &self.r#action_token_site_keys,
                 ),
                 to_pulumi_object_field(
-                    "session_token_site_keys",
+                    "sessionTokenSiteKeys",
                     &self.r#session_token_site_keys,
                 ),
             ];

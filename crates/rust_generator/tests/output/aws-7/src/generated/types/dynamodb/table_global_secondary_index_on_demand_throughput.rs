@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_read_request_units",
+                    "maxReadRequestUnits",
                     &self.r#max_read_request_units,
                 ),
                 to_pulumi_object_field(
-                    "max_write_request_units",
+                    "maxWriteRequestUnits",
                     &self.r#max_write_request_units,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lit
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "publish_mib_per_sec",
+                    "publishMibPerSec",
                     &self.r#publish_mib_per_sec,
                 ),
                 to_pulumi_object_field(
-                    "subscribe_mib_per_sec",
+                    "subscribeMibPerSec",
                     &self.r#subscribe_mib_per_sec,
                 ),
             ];

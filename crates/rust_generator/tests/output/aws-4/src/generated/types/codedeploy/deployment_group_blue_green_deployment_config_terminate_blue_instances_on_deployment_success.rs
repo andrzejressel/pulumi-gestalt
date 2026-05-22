@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "termination_wait_time_in_minutes",
+                    "terminationWaitTimeInMinutes",
                     &self.r#termination_wait_time_in_minutes,
                 ),
             ];

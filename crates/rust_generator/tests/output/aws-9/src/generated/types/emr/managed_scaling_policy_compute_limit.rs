@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maximum_capacity_units",
+                    "maximumCapacityUnits",
                     &self.r#maximum_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "maximum_core_capacity_units",
+                    "maximumCoreCapacityUnits",
                     &self.r#maximum_core_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "maximum_ondemand_capacity_units",
+                    "maximumOndemandCapacityUnits",
                     &self.r#maximum_ondemand_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "minimum_capacity_units",
+                    "minimumCapacityUnits",
                     &self.r#minimum_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "unit_type",
+                    "unitType",
                     &self.r#unit_type,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_automatic_rollback",
+                    "disableAutomaticRollback",
                     &self.r#disable_automatic_rollback,
                 ),
                 to_pulumi_object_field(
-                    "enable_automatic_os_upgrade",
+                    "enableAutomaticOsUpgrade",
                     &self.r#enable_automatic_os_upgrade,
                 ),
             ];

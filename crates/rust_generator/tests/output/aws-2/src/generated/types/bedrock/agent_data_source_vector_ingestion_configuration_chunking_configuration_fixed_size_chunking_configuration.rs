@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_tokens",
+                    "maxTokens",
                     &self.r#max_tokens,
                 ),
                 to_pulumi_object_field(
-                    "overlap_percentage",
+                    "overlapPercentage",
                     &self.r#overlap_percentage,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#invert,
                 ),
                 to_pulumi_object_field(
-                    "match_",
+                    "match",
                     &self.r#match_,
                 ),
                 to_pulumi_object_field(

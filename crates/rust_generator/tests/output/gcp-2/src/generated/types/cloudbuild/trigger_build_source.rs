@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "repo_source",
+                    "repoSource",
                     &self.r#repo_source,
                 ),
                 to_pulumi_object_field(
-                    "storage_source",
+                    "storageSource",
                     &self.r#storage_source,
                 ),
             ];

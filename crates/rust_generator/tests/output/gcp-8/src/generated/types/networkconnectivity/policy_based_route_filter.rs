@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dest_range",
+                    "destRange",
                     &self.r#dest_range,
                 ),
                 to_pulumi_object_field(
-                    "ip_protocol",
+                    "ipProtocol",
                     &self.r#ip_protocol,
                 ),
                 to_pulumi_object_field(
-                    "protocol_version",
+                    "protocolVersion",
                     &self.r#protocol_version,
                 ),
                 to_pulumi_object_field(
-                    "src_range",
+                    "srcRange",
                     &self.r#src_range,
                 ),
             ];

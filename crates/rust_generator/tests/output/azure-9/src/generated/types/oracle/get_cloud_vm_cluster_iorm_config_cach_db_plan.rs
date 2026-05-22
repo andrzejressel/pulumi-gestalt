@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "db_name",
+                    "dbName",
                     &self.r#db_name,
                 ),
                 to_pulumi_object_field(
-                    "flash_cache_limit",
+                    "flashCacheLimit",
                     &self.r#flash_cache_limit,
                 ),
                 to_pulumi_object_field(

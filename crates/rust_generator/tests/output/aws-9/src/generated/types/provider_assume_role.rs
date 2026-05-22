@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "external_id",
+                    "externalId",
                     &self.r#external_id,
                 ),
                 to_pulumi_object_field(
@@ -67,19 +67,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#policy,
                 ),
                 to_pulumi_object_field(
-                    "policy_arns",
+                    "policyArns",
                     &self.r#policy_arns,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "session_name",
+                    "sessionName",
                     &self.r#session_name,
                 ),
                 to_pulumi_object_field(
-                    "source_identity",
+                    "sourceIdentity",
                     &self.r#source_identity,
                 ),
                 to_pulumi_object_field(
@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "transitive_tag_keys",
+                    "transitiveTagKeys",
                     &self.r#transitive_tag_keys,
                 ),
             ];

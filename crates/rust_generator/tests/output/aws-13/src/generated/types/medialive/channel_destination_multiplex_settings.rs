@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "multiplex_id",
+                    "multiplexId",
                     &self.r#multiplex_id,
                 ),
                 to_pulumi_object_field(
-                    "program_name",
+                    "programName",
                     &self.r#program_name,
                 ),
             ];

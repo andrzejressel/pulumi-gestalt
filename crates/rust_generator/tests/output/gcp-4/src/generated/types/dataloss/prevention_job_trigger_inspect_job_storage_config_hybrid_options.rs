@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "required_finding_label_keys",
+                    "requiredFindingLabelKeys",
                     &self.r#required_finding_label_keys,
                 ),
                 to_pulumi_object_field(
-                    "table_options",
+                    "tableOptions",
                     &self.r#table_options,
                 ),
             ];

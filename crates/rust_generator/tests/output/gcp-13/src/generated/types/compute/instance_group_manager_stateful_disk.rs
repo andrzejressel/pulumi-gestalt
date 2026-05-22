@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_rule",
+                    "deleteRule",
                     &self.r#delete_rule,
                 ),
                 to_pulumi_object_field(
-                    "device_name",
+                    "deviceName",
                     &self.r#device_name,
                 ),
             ];

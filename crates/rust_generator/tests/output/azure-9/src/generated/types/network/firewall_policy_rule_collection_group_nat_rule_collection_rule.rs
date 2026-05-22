@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "destination_address",
+                    "destinationAddress",
                     &self.r#destination_address,
                 ),
                 to_pulumi_object_field(
-                    "destination_ports",
+                    "destinationPorts",
                     &self.r#destination_ports,
                 ),
                 to_pulumi_object_field(
@@ -76,23 +76,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "source_addresses",
+                    "sourceAddresses",
                     &self.r#source_addresses,
                 ),
                 to_pulumi_object_field(
-                    "source_ip_groups",
+                    "sourceIpGroups",
                     &self.r#source_ip_groups,
                 ),
                 to_pulumi_object_field(
-                    "translated_address",
+                    "translatedAddress",
                     &self.r#translated_address,
                 ),
                 to_pulumi_object_field(
-                    "translated_fqdn",
+                    "translatedFqdn",
                     &self.r#translated_fqdn,
                 ),
                 to_pulumi_object_field(
-                    "translated_port",
+                    "translatedPort",
                     &self.r#translated_port,
                 ),
             ];

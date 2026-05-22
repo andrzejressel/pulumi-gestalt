@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "assured_workloads_monitoring",
+                    "assuredWorkloadsMonitoring",
                     &self.r#assured_workloads_monitoring,
                 ),
                 to_pulumi_object_field(
-                    "data_logs_viewer",
+                    "dataLogsViewer",
                     &self.r#data_logs_viewer,
                 ),
                 to_pulumi_object_field(
-                    "service_access_approver",
+                    "serviceAccessApprover",
                     &self.r#service_access_approver,
                 ),
             ];

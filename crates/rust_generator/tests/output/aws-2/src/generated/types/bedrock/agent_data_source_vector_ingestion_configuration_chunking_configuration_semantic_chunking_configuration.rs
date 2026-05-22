@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "breakpoint_percentile_threshold",
+                    "breakpointPercentileThreshold",
                     &self.r#breakpoint_percentile_threshold,
                 ),
                 to_pulumi_object_field(
-                    "buffer_size",
+                    "bufferSize",
                     &self.r#buffer_size,
                 ),
                 to_pulumi_object_field(
-                    "max_token",
+                    "maxToken",
                     &self.r#max_token,
                 ),
             ];

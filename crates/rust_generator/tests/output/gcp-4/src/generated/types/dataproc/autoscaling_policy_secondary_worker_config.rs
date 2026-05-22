@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_instances",
+                    "maxInstances",
                     &self.r#max_instances,
                 ),
                 to_pulumi_object_field(
-                    "min_instances",
+                    "minInstances",
                     &self.r#min_instances,
                 ),
                 to_pulumi_object_field(

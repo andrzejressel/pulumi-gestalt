@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hie
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "configuration_name",
+                    "configurationName",
                     &self.r#configuration_name,
                 ),
                 to_pulumi_object_field(
-                    "product_family_name",
+                    "productFamilyName",
                     &self.r#product_family_name,
                 ),
                 to_pulumi_object_field(
-                    "product_line_name",
+                    "productLineName",
                     &self.r#product_line_name,
                 ),
                 to_pulumi_object_field(
-                    "product_name",
+                    "productName",
                     &self.r#product_name,
                 ),
             ];

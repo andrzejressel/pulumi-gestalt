@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advertise_trust_store_ca_names",
+                    "advertiseTrustStoreCaNames",
                     &self.r#advertise_trust_store_ca_names,
                 ),
                 to_pulumi_object_field(
-                    "ignore_client_certificate_expiry",
+                    "ignoreClientCertificateExpiry",
                     &self.r#ignore_client_certificate_expiry,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "trust_store_arn",
+                    "trustStoreArn",
                     &self.r#trust_store_arn,
                 ),
             ];

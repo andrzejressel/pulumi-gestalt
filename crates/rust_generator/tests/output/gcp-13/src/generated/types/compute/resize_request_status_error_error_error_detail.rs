@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_infos",
+                    "errorInfos",
                     &self.r#error_infos,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#helps,
                 ),
                 to_pulumi_object_field(
-                    "localized_messages",
+                    "localizedMessages",
                     &self.r#localized_messages,
                 ),
                 to_pulumi_object_field(
-                    "quota_infos",
+                    "quotaInfos",
                     &self.r#quota_infos,
                 ),
             ];

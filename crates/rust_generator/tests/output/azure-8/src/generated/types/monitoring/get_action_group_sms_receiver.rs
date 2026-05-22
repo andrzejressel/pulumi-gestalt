@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "country_code",
+                    "countryCode",
                     &self.r#country_code,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "phone_number",
+                    "phoneNumber",
                     &self.r#phone_number,
                 ),
             ];

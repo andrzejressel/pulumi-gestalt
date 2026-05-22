@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "after_contact_work_time_limit",
+                    "afterContactWorkTimeLimit",
                     &self.r#after_contact_work_time_limit,
                 ),
                 to_pulumi_object_field(
-                    "auto_accept",
+                    "autoAccept",
                     &self.r#auto_accept,
                 ),
                 to_pulumi_object_field(
-                    "desk_phone_number",
+                    "deskPhoneNumber",
                     &self.r#desk_phone_number,
                 ),
                 to_pulumi_object_field(
-                    "phone_type",
+                    "phoneType",
                     &self.r#phone_type,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#authentications,
                 ),
                 to_pulumi_object_field(
-                    "concurrent_requests",
+                    "concurrentRequests",
                     &self.r#concurrent_requests,
                 ),
                 to_pulumi_object_field(

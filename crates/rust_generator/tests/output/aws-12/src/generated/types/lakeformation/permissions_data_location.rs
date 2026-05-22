@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Per
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "catalog_id",
+                    "catalogId",
                     &self.r#catalog_id,
                 ),
             ];

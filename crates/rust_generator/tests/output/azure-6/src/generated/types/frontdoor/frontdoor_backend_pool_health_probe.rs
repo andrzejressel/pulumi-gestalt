@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "interval_in_seconds",
+                    "intervalInSeconds",
                     &self.r#interval_in_seconds,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "probe_method",
+                    "probeMethod",
                     &self.r#probe_method,
                 ),
                 to_pulumi_object_field(

@@ -48,7 +48,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#host,
                 ),
                 to_pulumi_object_field(
-                    "node_id",
+                    "nodeId",
                     &self.r#node_id,
                 ),
                 to_pulumi_object_field(

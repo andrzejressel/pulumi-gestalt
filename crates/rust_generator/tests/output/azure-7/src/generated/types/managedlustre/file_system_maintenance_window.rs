@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_week",
+                    "dayOfWeek",
                     &self.r#day_of_week,
                 ),
                 to_pulumi_object_field(
-                    "time_of_day_in_utc",
+                    "timeOfDayInUtc",
                     &self.r#time_of_day_in_utc,
                 ),
             ];

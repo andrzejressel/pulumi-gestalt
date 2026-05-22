@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "constraints_resource",
+                    "constraintsResource",
                     &self.r#constraints_resource,
                 ),
                 to_pulumi_object_field(
-                    "statistics_resource",
+                    "statisticsResource",
                     &self.r#statistics_resource,
                 ),
             ];

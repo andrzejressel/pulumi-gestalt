@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "ssl_policy",
+                    "sslPolicy",
                     &self.r#ssl_policy,
                 ),
                 to_pulumi_object_field(
-                    "trusted_client_certificate_names",
+                    "trustedClientCertificateNames",
                     &self.r#trusted_client_certificate_names,
                 ),
                 to_pulumi_object_field(
-                    "verify_client_cert_issuer_dn",
+                    "verifyClientCertIssuerDn",
                     &self.r#verify_client_cert_issuer_dn,
                 ),
                 to_pulumi_object_field(
-                    "verify_client_certificate_revocation",
+                    "verifyClientCertificateRevocation",
                     &self.r#verify_client_certificate_revocation,
                 ),
             ];

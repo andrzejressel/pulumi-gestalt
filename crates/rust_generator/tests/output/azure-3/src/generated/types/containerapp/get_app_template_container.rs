@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#envs,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_storage",
+                    "ephemeralStorage",
                     &self.r#ephemeral_storage,
                 ),
                 to_pulumi_object_field(
@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "liveness_probes",
+                    "livenessProbes",
                     &self.r#liveness_probes,
                 ),
                 to_pulumi_object_field(
@@ -103,15 +103,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "readiness_probes",
+                    "readinessProbes",
                     &self.r#readiness_probes,
                 ),
                 to_pulumi_object_field(
-                    "startup_probes",
+                    "startupProbes",
                     &self.r#startup_probes,
                 ),
                 to_pulumi_object_field(
-                    "volume_mounts",
+                    "volumeMounts",
                     &self.r#volume_mounts,
                 ),
             ];

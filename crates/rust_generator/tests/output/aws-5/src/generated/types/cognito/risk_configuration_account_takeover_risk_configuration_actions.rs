@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ris
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "high_action",
+                    "highAction",
                     &self.r#high_action,
                 ),
                 to_pulumi_object_field(
-                    "low_action",
+                    "lowAction",
                     &self.r#low_action,
                 ),
                 to_pulumi_object_field(
-                    "medium_action",
+                    "mediumAction",
                     &self.r#medium_action,
                 ),
             ];

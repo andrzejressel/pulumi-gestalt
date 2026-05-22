@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "assumable_role_arns",
+                    "assumableRoleArns",
                     &self.r#assumable_role_arns,
                 ),
                 to_pulumi_object_field(
-                    "execution_role_arns",
+                    "executionRoleArns",
                     &self.r#execution_role_arns,
                 ),
             ];

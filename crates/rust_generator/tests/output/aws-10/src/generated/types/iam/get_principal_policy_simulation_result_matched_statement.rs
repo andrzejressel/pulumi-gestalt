@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_policy_id",
+                    "sourcePolicyId",
                     &self.r#source_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "source_policy_type",
+                    "sourcePolicyType",
                     &self.r#source_policy_type,
                 ),
             ];

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_owner_access",
+                    "bucketOwnerAccess",
                     &self.r#bucket_owner_access,
                 ),
                 to_pulumi_object_field(
-                    "encryption_disabled",
+                    "encryptionDisabled",
                     &self.r#encryption_disabled,
                 ),
                 to_pulumi_object_field(

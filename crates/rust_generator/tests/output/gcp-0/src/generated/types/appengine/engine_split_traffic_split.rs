@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eng
                     &self.r#allocations,
                 ),
                 to_pulumi_object_field(
-                    "shard_by",
+                    "shardBy",
                     &self.r#shard_by,
                 ),
             ];

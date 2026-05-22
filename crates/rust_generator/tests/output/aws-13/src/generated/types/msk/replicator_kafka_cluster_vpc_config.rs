@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "security_groups_ids",
+                    "securityGroupsIds",
                     &self.r#security_groups_ids,
                 ),
                 to_pulumi_object_field(
-                    "subnet_ids",
+                    "subnetIds",
                     &self.r#subnet_ids,
                 ),
             ];

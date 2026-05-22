@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_directories",
+                    "logDirectories",
                     &self.r#log_directories,
                 ),
                 to_pulumi_object_field(

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#paths,
                 ),
                 to_pulumi_object_field(
-                    "trust_stores",
+                    "trustStores",
                     &self.r#trust_stores,
                 ),
             ];

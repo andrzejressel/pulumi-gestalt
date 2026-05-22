@@ -124,99 +124,99 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_count",
+                    "acceleratorCount",
                     &self.r#accelerator_count,
                 ),
                 to_pulumi_object_field(
-                    "accelerator_manufacturers",
+                    "acceleratorManufacturers",
                     &self.r#accelerator_manufacturers,
                 ),
                 to_pulumi_object_field(
-                    "accelerator_names",
+                    "acceleratorNames",
                     &self.r#accelerator_names,
                 ),
                 to_pulumi_object_field(
-                    "accelerator_total_memory_mib",
+                    "acceleratorTotalMemoryMib",
                     &self.r#accelerator_total_memory_mib,
                 ),
                 to_pulumi_object_field(
-                    "accelerator_types",
+                    "acceleratorTypes",
                     &self.r#accelerator_types,
                 ),
                 to_pulumi_object_field(
-                    "allowed_instance_types",
+                    "allowedInstanceTypes",
                     &self.r#allowed_instance_types,
                 ),
                 to_pulumi_object_field(
-                    "bare_metal",
+                    "bareMetal",
                     &self.r#bare_metal,
                 ),
                 to_pulumi_object_field(
-                    "baseline_ebs_bandwidth_mbps",
+                    "baselineEbsBandwidthMbps",
                     &self.r#baseline_ebs_bandwidth_mbps,
                 ),
                 to_pulumi_object_field(
-                    "burstable_performance",
+                    "burstablePerformance",
                     &self.r#burstable_performance,
                 ),
                 to_pulumi_object_field(
-                    "cpu_manufacturers",
+                    "cpuManufacturers",
                     &self.r#cpu_manufacturers,
                 ),
                 to_pulumi_object_field(
-                    "excluded_instance_types",
+                    "excludedInstanceTypes",
                     &self.r#excluded_instance_types,
                 ),
                 to_pulumi_object_field(
-                    "instance_generations",
+                    "instanceGenerations",
                     &self.r#instance_generations,
                 ),
                 to_pulumi_object_field(
-                    "local_storage",
+                    "localStorage",
                     &self.r#local_storage,
                 ),
                 to_pulumi_object_field(
-                    "local_storage_types",
+                    "localStorageTypes",
                     &self.r#local_storage_types,
                 ),
                 to_pulumi_object_field(
-                    "max_spot_price_as_percentage_of_optimal_on_demand_price",
+                    "maxSpotPriceAsPercentageOfOptimalOnDemandPrice",
                     &self.r#max_spot_price_as_percentage_of_optimal_on_demand_price,
                 ),
                 to_pulumi_object_field(
-                    "memory_gib_per_vcpu",
+                    "memoryGibPerVcpu",
                     &self.r#memory_gib_per_vcpu,
                 ),
                 to_pulumi_object_field(
-                    "memory_mib",
+                    "memoryMib",
                     &self.r#memory_mib,
                 ),
                 to_pulumi_object_field(
-                    "network_bandwidth_gbps",
+                    "networkBandwidthGbps",
                     &self.r#network_bandwidth_gbps,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_count",
+                    "networkInterfaceCount",
                     &self.r#network_interface_count,
                 ),
                 to_pulumi_object_field(
-                    "on_demand_max_price_percentage_over_lowest_price",
+                    "onDemandMaxPricePercentageOverLowestPrice",
                     &self.r#on_demand_max_price_percentage_over_lowest_price,
                 ),
                 to_pulumi_object_field(
-                    "require_hibernate_support",
+                    "requireHibernateSupport",
                     &self.r#require_hibernate_support,
                 ),
                 to_pulumi_object_field(
-                    "spot_max_price_percentage_over_lowest_price",
+                    "spotMaxPricePercentageOverLowestPrice",
                     &self.r#spot_max_price_percentage_over_lowest_price,
                 ),
                 to_pulumi_object_field(
-                    "total_local_storage_gb",
+                    "totalLocalStorageGb",
                     &self.r#total_local_storage_gb,
                 ),
                 to_pulumi_object_field(
-                    "vcpu_count",
+                    "vcpuCount",
                     &self.r#vcpu_count,
                 ),
             ];

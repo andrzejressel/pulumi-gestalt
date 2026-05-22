@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#cpu,
                 ),
                 to_pulumi_object_field(
-                    "max_count",
+                    "maxCount",
                     &self.r#max_count,
                 ),
                 to_pulumi_object_field(
-                    "memory_gb",
+                    "memoryGb",
                     &self.r#memory_gb,
                 ),
                 to_pulumi_object_field(
-                    "min_count",
+                    "minCount",
                     &self.r#min_count,
                 ),
                 to_pulumi_object_field(
-                    "storage_gb",
+                    "storageGb",
                     &self.r#storage_gb,
                 ),
             ];

@@ -68,7 +68,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#collation,
                 ),
                 to_pulumi_object_field(
-                    "deletion_policy",
+                    "deletionPolicy",
                     &self.r#deletion_policy,
                 ),
                 to_pulumi_object_field(
@@ -84,7 +84,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#project,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
             ];

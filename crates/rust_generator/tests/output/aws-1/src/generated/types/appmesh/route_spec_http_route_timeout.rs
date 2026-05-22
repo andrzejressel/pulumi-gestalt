@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#idle,
                 ),
                 to_pulumi_object_field(
-                    "per_request",
+                    "perRequest",
                     &self.r#per_request,
                 ),
             ];

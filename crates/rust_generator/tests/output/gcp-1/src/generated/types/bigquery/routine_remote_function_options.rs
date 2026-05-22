@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#endpoint,
                 ),
                 to_pulumi_object_field(
-                    "max_batching_rows",
+                    "maxBatchingRows",
                     &self.r#max_batching_rows,
                 ),
                 to_pulumi_object_field(
-                    "user_defined_context",
+                    "userDefinedContext",
                     &self.r#user_defined_context,
                 ),
             ];

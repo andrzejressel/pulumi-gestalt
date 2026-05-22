@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#minutes,
                 ),
                 to_pulumi_object_field(
-                    "month_days",
+                    "monthDays",
                     &self.r#month_days,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#monthlies,
                 ),
                 to_pulumi_object_field(
-                    "week_days",
+                    "weekDays",
                     &self.r#week_days,
                 ),
             ];

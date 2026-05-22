@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_pac_file",
+                    "enablePacFile",
                     &self.r#enable_pac_file,
                 ),
                 to_pulumi_object_field(
@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "http_port",
+                    "httpPort",
                     &self.r#http_port,
                 ),
                 to_pulumi_object_field(
-                    "https_port",
+                    "httpsPort",
                     &self.r#https_port,
                 ),
                 to_pulumi_object_field(
-                    "pac_file",
+                    "pacFile",
                     &self.r#pac_file,
                 ),
                 to_pulumi_object_field(
-                    "pac_file_port",
+                    "pacFilePort",
                     &self.r#pac_file_port,
                 ),
             ];

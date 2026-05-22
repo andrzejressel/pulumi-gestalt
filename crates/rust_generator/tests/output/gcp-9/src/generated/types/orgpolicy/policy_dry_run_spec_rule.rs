@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_all",
+                    "allowAll",
                     &self.r#allow_all,
                 ),
                 to_pulumi_object_field(
@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#condition,
                 ),
                 to_pulumi_object_field(
-                    "deny_all",
+                    "denyAll",
                     &self.r#deny_all,
                 ),
                 to_pulumi_object_field(

@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tru
                     &self.r#channel,
                 ),
                 to_pulumi_object_field(
-                    "configured_by",
+                    "configuredBy",
                     &self.r#configured_by,
                 ),
                 to_pulumi_object_field(

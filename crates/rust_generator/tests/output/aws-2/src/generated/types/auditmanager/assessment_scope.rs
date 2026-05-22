@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_accounts",
+                    "awsAccounts",
                     &self.r#aws_accounts,
                 ),
                 to_pulumi_object_field(
-                    "aws_services",
+                    "awsServices",
                     &self.r#aws_services,
                 ),
             ];

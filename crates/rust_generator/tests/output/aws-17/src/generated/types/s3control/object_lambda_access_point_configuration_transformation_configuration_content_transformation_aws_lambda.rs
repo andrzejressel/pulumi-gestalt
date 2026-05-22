@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Obj
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "function_arn",
+                    "functionArn",
                     &self.r#function_arn,
                 ),
                 to_pulumi_object_field(
-                    "function_payload",
+                    "functionPayload",
                     &self.r#function_payload,
                 ),
             ];

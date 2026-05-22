@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
                     &self.r#classification,
                 ),
                 to_pulumi_object_field(
-                    "row_tag",
+                    "rowTag",
                     &self.r#row_tag,
                 ),
             ];

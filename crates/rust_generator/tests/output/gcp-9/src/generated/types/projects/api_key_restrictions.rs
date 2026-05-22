@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "android_key_restrictions",
+                    "androidKeyRestrictions",
                     &self.r#android_key_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "api_targets",
+                    "apiTargets",
                     &self.r#api_targets,
                 ),
                 to_pulumi_object_field(
-                    "browser_key_restrictions",
+                    "browserKeyRestrictions",
                     &self.r#browser_key_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "ios_key_restrictions",
+                    "iosKeyRestrictions",
                     &self.r#ios_key_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "server_key_restrictions",
+                    "serverKeyRestrictions",
                     &self.r#server_key_restrictions,
                 ),
             ];

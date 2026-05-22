@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aggregation_window_length",
+                    "aggregationWindowLength",
                     &self.r#aggregation_window_length,
                 ),
                 to_pulumi_object_field(
-                    "target_utilization",
+                    "targetUtilization",
                     &self.r#target_utilization,
                 ),
             ];

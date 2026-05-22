@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "return_access_token_from_authorization_endpoint",
+                    "returnAccessTokenFromAuthorizationEndpoint",
                     &self.r#return_access_token_from_authorization_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "return_id_token_from_authorization_endpoint",
+                    "returnIdTokenFromAuthorizationEndpoint",
                     &self.r#return_id_token_from_authorization_endpoint,
                 ),
             ];

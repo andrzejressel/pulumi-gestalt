@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attribute_data_type",
+                    "attributeDataType",
                     &self.r#attribute_data_type,
                 ),
                 to_pulumi_object_field(
-                    "developer_only_attribute",
+                    "developerOnlyAttribute",
                     &self.r#developer_only_attribute,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "number_attribute_constraints",
+                    "numberAttributeConstraints",
                     &self.r#number_attribute_constraints,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
                     &self.r#required,
                 ),
                 to_pulumi_object_field(
-                    "string_attribute_constraints",
+                    "stringAttributeConstraints",
                     &self.r#string_attribute_constraints,
                 ),
             ];

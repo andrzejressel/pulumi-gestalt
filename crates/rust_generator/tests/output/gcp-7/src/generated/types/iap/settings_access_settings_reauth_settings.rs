@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_age",
+                    "maxAge",
                     &self.r#max_age,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
                     &self.r#method,
                 ),
                 to_pulumi_object_field(
-                    "policy_type",
+                    "policyType",
                     &self.r#policy_type,
                 ),
             ];

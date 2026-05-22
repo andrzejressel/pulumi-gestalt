@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "main_page_suffix",
+                    "mainPageSuffix",
                     &self.r#main_page_suffix,
                 ),
                 to_pulumi_object_field(
-                    "not_found_page",
+                    "notFoundPage",
                     &self.r#not_found_page,
                 ),
             ];

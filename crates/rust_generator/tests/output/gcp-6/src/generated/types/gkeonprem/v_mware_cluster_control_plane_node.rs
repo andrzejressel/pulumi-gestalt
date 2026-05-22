@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_resize_config",
+                    "autoResizeConfig",
                     &self.r#auto_resize_config,
                 ),
                 to_pulumi_object_field(
@@ -61,7 +61,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#replicas,
                 ),
                 to_pulumi_object_field(
-                    "vsphere_configs",
+                    "vsphereConfigs",
                     &self.r#vsphere_configs,
                 ),
             ];

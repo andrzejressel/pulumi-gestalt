@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "effective_from",
+                    "effectiveFrom",
                     &self.r#effective_from,
                 ),
                 to_pulumi_object_field(
-                    "effective_until",
+                    "effectiveUntil",
                     &self.r#effective_until,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#recurrence,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];

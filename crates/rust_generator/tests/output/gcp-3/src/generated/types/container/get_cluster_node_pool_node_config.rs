@@ -187,55 +187,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_machine_features",
+                    "advancedMachineFeatures",
                     &self.r#advanced_machine_features,
                 ),
                 to_pulumi_object_field(
-                    "boot_disk_kms_key",
+                    "bootDiskKmsKey",
                     &self.r#boot_disk_kms_key,
                 ),
                 to_pulumi_object_field(
-                    "confidential_nodes",
+                    "confidentialNodes",
                     &self.r#confidential_nodes,
                 ),
                 to_pulumi_object_field(
-                    "containerd_configs",
+                    "containerdConfigs",
                     &self.r#containerd_configs,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
-                    "effective_taints",
+                    "effectiveTaints",
                     &self.r#effective_taints,
                 ),
                 to_pulumi_object_field(
-                    "enable_confidential_storage",
+                    "enableConfidentialStorage",
                     &self.r#enable_confidential_storage,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_storage_configs",
+                    "ephemeralStorageConfigs",
                     &self.r#ephemeral_storage_configs,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_storage_local_ssd_configs",
+                    "ephemeralStorageLocalSsdConfigs",
                     &self.r#ephemeral_storage_local_ssd_configs,
                 ),
                 to_pulumi_object_field(
-                    "fast_sockets",
+                    "fastSockets",
                     &self.r#fast_sockets,
                 ),
                 to_pulumi_object_field(
-                    "gcfs_configs",
+                    "gcfsConfigs",
                     &self.r#gcfs_configs,
                 ),
                 to_pulumi_object_field(
-                    "guest_accelerators",
+                    "guestAccelerators",
                     &self.r#guest_accelerators,
                 ),
                 to_pulumi_object_field(
@@ -243,15 +243,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#gvnics,
                 ),
                 to_pulumi_object_field(
-                    "host_maintenance_policies",
+                    "hostMaintenancePolicies",
                     &self.r#host_maintenance_policies,
                 ),
                 to_pulumi_object_field(
-                    "image_type",
+                    "imageType",
                     &self.r#image_type,
                 ),
                 to_pulumi_object_field(
-                    "kubelet_configs",
+                    "kubeletConfigs",
                     &self.r#kubelet_configs,
                 ),
                 to_pulumi_object_field(
@@ -259,27 +259,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "linux_node_configs",
+                    "linuxNodeConfigs",
                     &self.r#linux_node_configs,
                 ),
                 to_pulumi_object_field(
-                    "local_nvme_ssd_block_configs",
+                    "localNvmeSsdBlockConfigs",
                     &self.r#local_nvme_ssd_block_configs,
                 ),
                 to_pulumi_object_field(
-                    "local_ssd_count",
+                    "localSsdCount",
                     &self.r#local_ssd_count,
                 ),
                 to_pulumi_object_field(
-                    "local_ssd_encryption_mode",
+                    "localSsdEncryptionMode",
                     &self.r#local_ssd_encryption_mode,
                 ),
                 to_pulumi_object_field(
-                    "logging_variant",
+                    "loggingVariant",
                     &self.r#logging_variant,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
@@ -287,15 +287,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#metadata,
                 ),
                 to_pulumi_object_field(
-                    "min_cpu_platform",
+                    "minCpuPlatform",
                     &self.r#min_cpu_platform,
                 ),
                 to_pulumi_object_field(
-                    "node_group",
+                    "nodeGroup",
                     &self.r#node_group,
                 ),
                 to_pulumi_object_field(
-                    "oauth_scopes",
+                    "oauthScopes",
                     &self.r#oauth_scopes,
                 ),
                 to_pulumi_object_field(
@@ -303,35 +303,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#preemptible,
                 ),
                 to_pulumi_object_field(
-                    "reservation_affinities",
+                    "reservationAffinities",
                     &self.r#reservation_affinities,
                 ),
                 to_pulumi_object_field(
-                    "resource_labels",
+                    "resourceLabels",
                     &self.r#resource_labels,
                 ),
                 to_pulumi_object_field(
-                    "resource_manager_tags",
+                    "resourceManagerTags",
                     &self.r#resource_manager_tags,
                 ),
                 to_pulumi_object_field(
-                    "sandbox_configs",
+                    "sandboxConfigs",
                     &self.r#sandbox_configs,
                 ),
                 to_pulumi_object_field(
-                    "secondary_boot_disks",
+                    "secondaryBootDisks",
                     &self.r#secondary_boot_disks,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "shielded_instance_configs",
+                    "shieldedInstanceConfigs",
                     &self.r#shielded_instance_configs,
                 ),
                 to_pulumi_object_field(
-                    "sole_tenant_configs",
+                    "soleTenantConfigs",
                     &self.r#sole_tenant_configs,
                 ),
                 to_pulumi_object_field(
@@ -339,7 +339,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#spot,
                 ),
                 to_pulumi_object_field(
-                    "storage_pools",
+                    "storagePools",
                     &self.r#storage_pools,
                 ),
                 to_pulumi_object_field(
@@ -351,7 +351,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#taints,
                 ),
                 to_pulumi_object_field(
-                    "workload_metadata_configs",
+                    "workloadMetadataConfigs",
                     &self.r#workload_metadata_configs,
                 ),
             ];

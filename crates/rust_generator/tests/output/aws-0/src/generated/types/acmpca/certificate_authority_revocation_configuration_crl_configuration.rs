@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_cname",
+                    "customCname",
                     &self.r#custom_cname,
                 ),
                 to_pulumi_object_field(
@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "expiration_in_days",
+                    "expirationInDays",
                     &self.r#expiration_in_days,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket_name",
+                    "s3BucketName",
                     &self.r#s_3_bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "s_3_object_acl",
+                    "s3ObjectAcl",
                     &self.r#s_3_object_acl,
                 ),
             ];

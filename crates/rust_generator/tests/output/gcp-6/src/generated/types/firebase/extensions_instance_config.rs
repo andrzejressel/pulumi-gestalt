@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ext
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_event_types",
+                    "allowedEventTypes",
                     &self.r#allowed_event_types,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
-                    "eventarc_channel",
+                    "eventarcChannel",
                     &self.r#eventarc_channel,
                 ),
                 to_pulumi_object_field(
-                    "extension_ref",
+                    "extensionRef",
                     &self.r#extension_ref,
                 ),
                 to_pulumi_object_field(
-                    "extension_version",
+                    "extensionVersion",
                     &self.r#extension_version,
                 ),
                 to_pulumi_object_field(
@@ -96,11 +96,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ext
                     &self.r#params,
                 ),
                 to_pulumi_object_field(
-                    "populated_postinstall_content",
+                    "populatedPostinstallContent",
                     &self.r#populated_postinstall_content,
                 ),
                 to_pulumi_object_field(
-                    "system_params",
+                    "systemParams",
                     &self.r#system_params,
                 ),
             ];

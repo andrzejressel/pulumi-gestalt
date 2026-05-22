@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "bucket_account_id",
+                    "bucketAccountId",
                     &self.r#bucket_account_id,
                 ),
                 to_pulumi_object_field(

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "validate_certificate_chain",
+                    "validateCertificateChain",
                     &self.r#validate_certificate_chain,
                 ),
                 to_pulumi_object_field(
-                    "validate_certificate_name",
+                    "validateCertificateName",
                     &self.r#validate_certificate_name,
                 ),
             ];

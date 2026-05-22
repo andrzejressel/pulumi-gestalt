@@ -164,11 +164,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_jagged_rows",
+                    "allowJaggedRows",
                     &self.r#allow_jagged_rows,
                 ),
                 to_pulumi_object_field(
-                    "allow_quoted_newlines",
+                    "allowQuotedNewlines",
                     &self.r#allow_quoted_newlines,
                 ),
                 to_pulumi_object_field(
@@ -176,15 +176,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#autodetect,
                 ),
                 to_pulumi_object_field(
-                    "create_disposition",
+                    "createDisposition",
                     &self.r#create_disposition,
                 ),
                 to_pulumi_object_field(
-                    "destination_encryption_configuration",
+                    "destinationEncryptionConfiguration",
                     &self.r#destination_encryption_configuration,
                 ),
                 to_pulumi_object_field(
-                    "destination_table",
+                    "destinationTable",
                     &self.r#destination_table,
                 ),
                 to_pulumi_object_field(
@@ -192,31 +192,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "field_delimiter",
+                    "fieldDelimiter",
                     &self.r#field_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "ignore_unknown_values",
+                    "ignoreUnknownValues",
                     &self.r#ignore_unknown_values,
                 ),
                 to_pulumi_object_field(
-                    "json_extension",
+                    "jsonExtension",
                     &self.r#json_extension,
                 ),
                 to_pulumi_object_field(
-                    "max_bad_records",
+                    "maxBadRecords",
                     &self.r#max_bad_records,
                 ),
                 to_pulumi_object_field(
-                    "null_marker",
+                    "nullMarker",
                     &self.r#null_marker,
                 ),
                 to_pulumi_object_field(
-                    "parquet_options",
+                    "parquetOptions",
                     &self.r#parquet_options,
                 ),
                 to_pulumi_object_field(
-                    "projection_fields",
+                    "projectionFields",
                     &self.r#projection_fields,
                 ),
                 to_pulumi_object_field(
@@ -224,27 +224,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#quote,
                 ),
                 to_pulumi_object_field(
-                    "schema_update_options",
+                    "schemaUpdateOptions",
                     &self.r#schema_update_options,
                 ),
                 to_pulumi_object_field(
-                    "skip_leading_rows",
+                    "skipLeadingRows",
                     &self.r#skip_leading_rows,
                 ),
                 to_pulumi_object_field(
-                    "source_format",
+                    "sourceFormat",
                     &self.r#source_format,
                 ),
                 to_pulumi_object_field(
-                    "source_uris",
+                    "sourceUris",
                     &self.r#source_uris,
                 ),
                 to_pulumi_object_field(
-                    "time_partitioning",
+                    "timePartitioning",
                     &self.r#time_partitioning,
                 ),
                 to_pulumi_object_field(
-                    "write_disposition",
+                    "writeDisposition",
                     &self.r#write_disposition,
                 ),
             ];

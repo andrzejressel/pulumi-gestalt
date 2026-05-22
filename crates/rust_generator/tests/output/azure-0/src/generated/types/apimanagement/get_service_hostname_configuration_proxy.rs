@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_ssl_binding",
+                    "defaultSslBinding",
                     &self.r#default_ssl_binding,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_id",
+                    "keyVaultId",
                     &self.r#key_vault_id,
                 ),
                 to_pulumi_object_field(
-                    "negotiate_client_certificate",
+                    "negotiateClientCertificate",
                     &self.r#negotiate_client_certificate,
                 ),
             ];

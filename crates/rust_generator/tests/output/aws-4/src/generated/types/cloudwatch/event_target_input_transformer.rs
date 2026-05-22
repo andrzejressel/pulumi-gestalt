@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "input_paths",
+                    "inputPaths",
                     &self.r#input_paths,
                 ),
                 to_pulumi_object_field(
-                    "input_template",
+                    "inputTemplate",
                     &self.r#input_template,
                 ),
             ];

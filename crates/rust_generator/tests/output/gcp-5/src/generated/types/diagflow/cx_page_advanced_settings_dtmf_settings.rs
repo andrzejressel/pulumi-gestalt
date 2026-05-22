@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxP
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "finish_digit",
+                    "finishDigit",
                     &self.r#finish_digit,
                 ),
                 to_pulumi_object_field(
-                    "max_digits",
+                    "maxDigits",
                     &self.r#max_digits,
                 ),
             ];

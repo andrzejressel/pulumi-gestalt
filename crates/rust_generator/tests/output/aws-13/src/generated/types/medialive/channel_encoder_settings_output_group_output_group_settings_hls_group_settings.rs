@@ -147,43 +147,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ad_markers",
+                    "adMarkers",
                     &self.r#ad_markers,
                 ),
                 to_pulumi_object_field(
-                    "base_url_content",
+                    "baseUrlContent",
                     &self.r#base_url_content,
                 ),
                 to_pulumi_object_field(
-                    "base_url_content_1",
+                    "baseUrlContent1",
                     &self.r#base_url_content_1,
                 ),
                 to_pulumi_object_field(
-                    "base_url_manifest",
+                    "baseUrlManifest",
                     &self.r#base_url_manifest,
                 ),
                 to_pulumi_object_field(
-                    "base_url_manifest_1",
+                    "baseUrlManifest1",
                     &self.r#base_url_manifest_1,
                 ),
                 to_pulumi_object_field(
-                    "caption_language_mappings",
+                    "captionLanguageMappings",
                     &self.r#caption_language_mappings,
                 ),
                 to_pulumi_object_field(
-                    "caption_language_setting",
+                    "captionLanguageSetting",
                     &self.r#caption_language_setting,
                 ),
                 to_pulumi_object_field(
-                    "client_cache",
+                    "clientCache",
                     &self.r#client_cache,
                 ),
                 to_pulumi_object_field(
-                    "codec_specification",
+                    "codecSpecification",
                     &self.r#codec_specification,
                 ),
                 to_pulumi_object_field(
-                    "constant_iv",
+                    "constantIv",
                     &self.r#constant_iv,
                 ),
                 to_pulumi_object_field(
@@ -191,75 +191,75 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "directory_structure",
+                    "directoryStructure",
                     &self.r#directory_structure,
                 ),
                 to_pulumi_object_field(
-                    "discontinuity_tags",
+                    "discontinuityTags",
                     &self.r#discontinuity_tags,
                 ),
                 to_pulumi_object_field(
-                    "encryption_type",
+                    "encryptionType",
                     &self.r#encryption_type,
                 ),
                 to_pulumi_object_field(
-                    "hls_cdn_settings",
+                    "hlsCdnSettings",
                     &self.r#hls_cdn_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_id_3_segment_tagging",
+                    "hlsId3SegmentTagging",
                     &self.r#hls_id_3_segment_tagging,
                 ),
                 to_pulumi_object_field(
-                    "iframe_only_playlists",
+                    "iframeOnlyPlaylists",
                     &self.r#iframe_only_playlists,
                 ),
                 to_pulumi_object_field(
-                    "incomplete_segment_behavior",
+                    "incompleteSegmentBehavior",
                     &self.r#incomplete_segment_behavior,
                 ),
                 to_pulumi_object_field(
-                    "index_n_segments",
+                    "indexNSegments",
                     &self.r#index_n_segments,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_action",
+                    "inputLossAction",
                     &self.r#input_loss_action,
                 ),
                 to_pulumi_object_field(
-                    "iv_in_manifest",
+                    "ivInManifest",
                     &self.r#iv_in_manifest,
                 ),
                 to_pulumi_object_field(
-                    "iv_source",
+                    "ivSource",
                     &self.r#iv_source,
                 ),
                 to_pulumi_object_field(
-                    "keep_segments",
+                    "keepSegments",
                     &self.r#keep_segments,
                 ),
                 to_pulumi_object_field(
-                    "key_format",
+                    "keyFormat",
                     &self.r#key_format,
                 ),
                 to_pulumi_object_field(
-                    "key_format_versions",
+                    "keyFormatVersions",
                     &self.r#key_format_versions,
                 ),
                 to_pulumi_object_field(
-                    "key_provider_settings",
+                    "keyProviderSettings",
                     &self.r#key_provider_settings,
                 ),
                 to_pulumi_object_field(
-                    "manifest_compression",
+                    "manifestCompression",
                     &self.r#manifest_compression,
                 ),
                 to_pulumi_object_field(
-                    "manifest_duration_format",
+                    "manifestDurationFormat",
                     &self.r#manifest_duration_format,
                 ),
                 to_pulumi_object_field(
-                    "min_segment_length",
+                    "minSegmentLength",
                     &self.r#min_segment_length,
                 ),
                 to_pulumi_object_field(
@@ -267,51 +267,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "output_selection",
+                    "outputSelection",
                     &self.r#output_selection,
                 ),
                 to_pulumi_object_field(
-                    "program_date_time",
+                    "programDateTime",
                     &self.r#program_date_time,
                 ),
                 to_pulumi_object_field(
-                    "program_date_time_clock",
+                    "programDateTimeClock",
                     &self.r#program_date_time_clock,
                 ),
                 to_pulumi_object_field(
-                    "program_date_time_period",
+                    "programDateTimePeriod",
                     &self.r#program_date_time_period,
                 ),
                 to_pulumi_object_field(
-                    "redundant_manifest",
+                    "redundantManifest",
                     &self.r#redundant_manifest,
                 ),
                 to_pulumi_object_field(
-                    "segment_length",
+                    "segmentLength",
                     &self.r#segment_length,
                 ),
                 to_pulumi_object_field(
-                    "segments_per_subdirectory",
+                    "segmentsPerSubdirectory",
                     &self.r#segments_per_subdirectory,
                 ),
                 to_pulumi_object_field(
-                    "stream_inf_resolution",
+                    "streamInfResolution",
                     &self.r#stream_inf_resolution,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_id_3_frame",
+                    "timedMetadataId3Frame",
                     &self.r#timed_metadata_id_3_frame,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_id_3_period",
+                    "timedMetadataId3Period",
                     &self.r#timed_metadata_id_3_period,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_delta_milliseconds",
+                    "timestampDeltaMilliseconds",
                     &self.r#timestamp_delta_milliseconds,
                 ),
                 to_pulumi_object_field(
-                    "ts_file_mode",
+                    "tsFileMode",
                     &self.r#ts_file_mode,
                 ),
             ];

@@ -47,23 +47,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#complexity,
                 ),
                 to_pulumi_object_field(
-                    "disallow_username_substring",
+                    "disallowUsernameSubstring",
                     &self.r#disallow_username_substring,
                 ),
                 to_pulumi_object_field(
-                    "enable_password_policy",
+                    "enablePasswordPolicy",
                     &self.r#enable_password_policy,
                 ),
                 to_pulumi_object_field(
-                    "min_length",
+                    "minLength",
                     &self.r#min_length,
                 ),
                 to_pulumi_object_field(
-                    "password_change_interval",
+                    "passwordChangeInterval",
                     &self.r#password_change_interval,
                 ),
                 to_pulumi_object_field(
-                    "reuse_interval",
+                    "reuseInterval",
                     &self.r#reuse_interval,
                 ),
             ];

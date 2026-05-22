@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directory_id",
+                    "activeDirectoryId",
                     &self.r#active_directory_id,
                 ),
                 to_pulumi_object_field(
-                    "root_certificate_chain_arn",
+                    "rootCertificateChainArn",
                     &self.r#root_certificate_chain_arn,
                 ),
                 to_pulumi_object_field(
-                    "saml_provider_arn",
+                    "samlProviderArn",
                     &self.r#saml_provider_arn,
                 ),
                 to_pulumi_object_field(
-                    "self_service_saml_provider_arn",
+                    "selfServiceSamlProviderArn",
                     &self.r#self_service_saml_provider_arn,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

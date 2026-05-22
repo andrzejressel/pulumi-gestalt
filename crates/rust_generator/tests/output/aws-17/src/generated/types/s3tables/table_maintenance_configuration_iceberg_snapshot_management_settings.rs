@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_snapshot_age_hours",
+                    "maxSnapshotAgeHours",
                     &self.r#max_snapshot_age_hours,
                 ),
                 to_pulumi_object_field(
-                    "min_snapshots_to_keep",
+                    "minSnapshotsToKeep",
                     &self.r#min_snapshots_to_keep,
                 ),
             ];

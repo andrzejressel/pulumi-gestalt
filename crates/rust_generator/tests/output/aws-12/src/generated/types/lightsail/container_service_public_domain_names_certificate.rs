@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_name",
+                    "certificateName",
                     &self.r#certificate_name,
                 ),
                 to_pulumi_object_field(
-                    "domain_names",
+                    "domainNames",
                     &self.r#domain_names,
                 ),
             ];

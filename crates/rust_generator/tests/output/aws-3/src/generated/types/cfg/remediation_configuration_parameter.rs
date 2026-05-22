@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "resource_value",
+                    "resourceValue",
                     &self.r#resource_value,
                 ),
                 to_pulumi_object_field(
-                    "static_value",
+                    "staticValue",
                     &self.r#static_value,
                 ),
                 to_pulumi_object_field(
-                    "static_values",
+                    "staticValues",
                     &self.r#static_values,
                 ),
             ];

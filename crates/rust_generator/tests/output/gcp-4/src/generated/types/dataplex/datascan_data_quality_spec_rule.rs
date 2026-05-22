@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#dimension,
                 ),
                 to_pulumi_object_field(
-                    "ignore_null",
+                    "ignoreNull",
                     &self.r#ignore_null,
                 ),
                 to_pulumi_object_field(
@@ -111,35 +111,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "non_null_expectation",
+                    "nonNullExpectation",
                     &self.r#non_null_expectation,
                 ),
                 to_pulumi_object_field(
-                    "range_expectation",
+                    "rangeExpectation",
                     &self.r#range_expectation,
                 ),
                 to_pulumi_object_field(
-                    "regex_expectation",
+                    "regexExpectation",
                     &self.r#regex_expectation,
                 ),
                 to_pulumi_object_field(
-                    "row_condition_expectation",
+                    "rowConditionExpectation",
                     &self.r#row_condition_expectation,
                 ),
                 to_pulumi_object_field(
-                    "set_expectation",
+                    "setExpectation",
                     &self.r#set_expectation,
                 ),
                 to_pulumi_object_field(
-                    "sql_assertion",
+                    "sqlAssertion",
                     &self.r#sql_assertion,
                 ),
                 to_pulumi_object_field(
-                    "statistic_range_expectation",
+                    "statisticRangeExpectation",
                     &self.r#statistic_range_expectation,
                 ),
                 to_pulumi_object_field(
-                    "table_condition_expectation",
+                    "tableConditionExpectation",
                     &self.r#table_condition_expectation,
                 ),
                 to_pulumi_object_field(
@@ -147,7 +147,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#threshold,
                 ),
                 to_pulumi_object_field(
-                    "uniqueness_expectation",
+                    "uniquenessExpectation",
                     &self.r#uniqueness_expectation,
                 ),
             ];

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "efs_file_system_configs",
+                    "efsFileSystemConfigs",
                     &self.r#efs_file_system_configs,
                 ),
             ];

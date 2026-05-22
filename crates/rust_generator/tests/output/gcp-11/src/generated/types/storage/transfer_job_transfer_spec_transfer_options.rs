@@ -36,19 +36,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_objects_from_source_after_transfer",
+                    "deleteObjectsFromSourceAfterTransfer",
                     &self.r#delete_objects_from_source_after_transfer,
                 ),
                 to_pulumi_object_field(
-                    "delete_objects_unique_in_sink",
+                    "deleteObjectsUniqueInSink",
                     &self.r#delete_objects_unique_in_sink,
                 ),
                 to_pulumi_object_field(
-                    "overwrite_objects_already_existing_in_sink",
+                    "overwriteObjectsAlreadyExistingInSink",
                     &self.r#overwrite_objects_already_existing_in_sink,
                 ),
                 to_pulumi_object_field(
-                    "overwrite_when",
+                    "overwriteWhen",
                     &self.r#overwrite_when,
                 ),
             ];

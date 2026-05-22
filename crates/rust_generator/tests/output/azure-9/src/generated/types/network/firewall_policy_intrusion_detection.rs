@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "private_ranges",
+                    "privateRanges",
                     &self.r#private_ranges,
                 ),
                 to_pulumi_object_field(
-                    "signature_overrides",
+                    "signatureOverrides",
                     &self.r#signature_overrides,
                 ),
                 to_pulumi_object_field(
-                    "traffic_bypasses",
+                    "trafficBypasses",
                     &self.r#traffic_bypasses,
                 ),
             ];

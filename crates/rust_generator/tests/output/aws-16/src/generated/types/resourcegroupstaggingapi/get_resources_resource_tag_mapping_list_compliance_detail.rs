@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compliance_status",
+                    "complianceStatus",
                     &self.r#compliance_status,
                 ),
                 to_pulumi_object_field(
-                    "keys_with_noncompliant_values",
+                    "keysWithNoncompliantValues",
                     &self.r#keys_with_noncompliant_values,
                 ),
                 to_pulumi_object_field(
-                    "non_compliant_keys",
+                    "nonCompliantKeys",
                     &self.r#non_compliant_keys,
                 ),
             ];

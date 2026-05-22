@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_developer_user_count",
+                    "additionalDeveloperUserCount",
                     &self.r#additional_developer_user_count,
                 ),
                 to_pulumi_object_field(
-                    "additional_standard_user_count",
+                    "additionalStandardUserCount",
                     &self.r#additional_standard_user_count,
                 ),
                 to_pulumi_object_field(
-                    "additional_viewer_user_count",
+                    "additionalViewerUserCount",
                     &self.r#additional_viewer_user_count,
                 ),
             ];

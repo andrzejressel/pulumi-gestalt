@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "media_package_settings",
+                    "mediaPackageSettings",
                     &self.r#media_package_settings,
                 ),
                 to_pulumi_object_field(
-                    "multiplex_settings",
+                    "multiplexSettings",
                     &self.r#multiplex_settings,
                 ),
                 to_pulumi_object_field(

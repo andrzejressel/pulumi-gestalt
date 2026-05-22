@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "start_times",
+                    "startTimes",
                     &self.r#start_times,
                 ),
             ];

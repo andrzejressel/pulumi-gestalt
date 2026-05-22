@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_key",
+                    "apiKey",
                     &self.r#api_key,
                 ),
                 to_pulumi_object_field(
-                    "application_key",
+                    "applicationKey",
                     &self.r#application_key,
                 ),
                 to_pulumi_object_field(
-                    "enterprise_app_id",
+                    "enterpriseAppId",
                     &self.r#enterprise_app_id,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "linking_auth_code",
+                    "linkingAuthCode",
                     &self.r#linking_auth_code,
                 ),
                 to_pulumi_object_field(
-                    "linking_client_id",
+                    "linkingClientId",
                     &self.r#linking_client_id,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "redirect_uri",
+                    "redirectUri",
                     &self.r#redirect_uri,
                 ),
             ];

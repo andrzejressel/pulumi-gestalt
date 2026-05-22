@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ris
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "html_body",
+                    "htmlBody",
                     &self.r#html_body,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ris
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "text_body",
+                    "textBody",
                     &self.r#text_body,
                 ),
             ];

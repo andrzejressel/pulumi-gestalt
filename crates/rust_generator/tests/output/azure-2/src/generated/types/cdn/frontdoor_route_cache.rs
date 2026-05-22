@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compression_enabled",
+                    "compressionEnabled",
                     &self.r#compression_enabled,
                 ),
                 to_pulumi_object_field(
-                    "content_types_to_compresses",
+                    "contentTypesToCompresses",
                     &self.r#content_types_to_compresses,
                 ),
                 to_pulumi_object_field(
-                    "query_string_caching_behavior",
+                    "queryStringCachingBehavior",
                     &self.r#query_string_caching_behavior,
                 ),
                 to_pulumi_object_field(
-                    "query_strings",
+                    "queryStrings",
                     &self.r#query_strings,
                 ),
             ];

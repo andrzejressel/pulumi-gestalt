@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cidr_block",
+                    "cidrBlock",
                     &self.r#cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "icmp_type_code",
+                    "icmpTypeCode",
                     &self.r#icmp_type_code,
                 ),
                 to_pulumi_object_field(
-                    "port_range",
+                    "portRange",
                     &self.r#port_range,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxE
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "rule_action",
+                    "ruleAction",
                     &self.r#rule_action,
                 ),
                 to_pulumi_object_field(
-                    "rule_number",
+                    "ruleNumber",
                     &self.r#rule_number,
                 ),
             ];

@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_ttl",
+                    "authTtl",
                     &self.r#auth_ttl,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "iat_ttl",
+                    "iatTtl",
                     &self.r#iat_ttl,
                 ),
                 to_pulumi_object_field(

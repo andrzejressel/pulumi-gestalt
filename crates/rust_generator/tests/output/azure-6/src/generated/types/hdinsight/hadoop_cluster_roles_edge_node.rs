@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Had
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "https_endpoints",
+                    "httpsEndpoints",
                     &self.r#https_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "install_script_actions",
+                    "installScriptActions",
                     &self.r#install_script_actions,
                 ),
                 to_pulumi_object_field(
-                    "target_instance_count",
+                    "targetInstanceCount",
                     &self.r#target_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "uninstall_script_actions",
+                    "uninstallScriptActions",
                     &self.r#uninstall_script_actions,
                 ),
                 to_pulumi_object_field(
-                    "vm_size",
+                    "vmSize",
                     &self.r#vm_size,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_destination",
+                    "logDestination",
                     &self.r#log_destination,
                 ),
                 to_pulumi_object_field(
-                    "redacted_fields",
+                    "redactedFields",
                     &self.r#redacted_fields,
                 ),
             ];

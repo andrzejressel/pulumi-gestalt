@@ -45,15 +45,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_version",
+                    "imageVersion",
                     &self.r#image_version,
                 ),
                 to_pulumi_object_field(
-                    "optional_components",
+                    "optionalComponents",
                     &self.r#optional_components,
                 ),
                 to_pulumi_object_field(
-                    "override_properties",
+                    "overrideProperties",
                     &self.r#override_properties,
                 ),
                 to_pulumi_object_field(

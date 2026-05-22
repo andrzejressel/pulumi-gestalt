@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
                     &self.r#deployment,
                 ),
                 to_pulumi_object_field(
-                    "disable_pod_overprovisioning",
+                    "disablePodOverprovisioning",
                     &self.r#disable_pod_overprovisioning,
                 ),
                 to_pulumi_object_field(
-                    "pod_selector_label",
+                    "podSelectorLabel",
                     &self.r#pod_selector_label,
                 ),
                 to_pulumi_object_field(

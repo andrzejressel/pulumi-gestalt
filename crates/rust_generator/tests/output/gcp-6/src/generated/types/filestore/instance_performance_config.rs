@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fixed_iops",
+                    "fixedIops",
                     &self.r#fixed_iops,
                 ),
                 to_pulumi_object_field(
-                    "iops_per_tb",
+                    "iopsPerTb",
                     &self.r#iops_per_tb,
                 ),
             ];

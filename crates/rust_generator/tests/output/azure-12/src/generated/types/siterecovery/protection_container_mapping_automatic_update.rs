@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_type",
+                    "authenticationType",
                     &self.r#authentication_type,
                 ),
                 to_pulumi_object_field(
-                    "automation_account_id",
+                    "automationAccountId",
                     &self.r#automation_account_id,
                 ),
                 to_pulumi_object_field(

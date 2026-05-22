@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_prefix",
+                    "addressPrefix",
                     &self.r#address_prefix,
                 ),
                 to_pulumi_object_field(
-                    "ip_allocation_method",
+                    "ipAllocationMethod",
                     &self.r#ip_allocation_method,
                 ),
                 to_pulumi_object_field(
-                    "ip_pools",
+                    "ipPools",
                     &self.r#ip_pools,
                 ),
                 to_pulumi_object_field(
@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#routes,
                 ),
                 to_pulumi_object_field(
-                    "vlan_id",
+                    "vlanId",
                     &self.r#vlan_id,
                 ),
             ];

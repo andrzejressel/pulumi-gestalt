@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "guest_accelerator_count",
+                    "guestAcceleratorCount",
                     &self.r#guest_accelerator_count,
                 ),
                 to_pulumi_object_field(
-                    "guest_accelerator_type",
+                    "guestAcceleratorType",
                     &self.r#guest_accelerator_type,
                 ),
             ];

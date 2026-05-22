@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "policy_name",
+                    "policyName",
                     &self.r#policy_name,
                 ),
                 to_pulumi_object_field(
-                    "tpu_topology",
+                    "tpuTopology",
                     &self.r#tpu_topology,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

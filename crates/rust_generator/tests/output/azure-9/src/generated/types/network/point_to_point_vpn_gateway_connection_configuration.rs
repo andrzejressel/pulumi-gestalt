@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "internet_security_enabled",
+                    "internetSecurityEnabled",
                     &self.r#internet_security_enabled,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poi
                     &self.r#route,
                 ),
                 to_pulumi_object_field(
-                    "vpn_client_address_pool",
+                    "vpnClientAddressPool",
                     &self.r#vpn_client_address_pool,
                 ),
             ];

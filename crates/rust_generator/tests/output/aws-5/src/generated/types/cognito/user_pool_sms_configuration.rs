@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "external_id",
+                    "externalId",
                     &self.r#external_id,
                 ),
                 to_pulumi_object_field(
-                    "sns_caller_arn",
+                    "snsCallerArn",
                     &self.r#sns_caller_arn,
                 ),
                 to_pulumi_object_field(
-                    "sns_region",
+                    "snsRegion",
                     &self.r#sns_region,
                 ),
             ];

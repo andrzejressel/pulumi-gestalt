@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "avro_file_format",
+                    "avroFileFormat",
                     &self.r#avro_file_format,
                 ),
                 to_pulumi_object_field(
-                    "file_rotation_interval",
+                    "fileRotationInterval",
                     &self.r#file_rotation_interval,
                 ),
                 to_pulumi_object_field(
-                    "file_rotation_mb",
+                    "fileRotationMb",
                     &self.r#file_rotation_mb,
                 ),
                 to_pulumi_object_field(
-                    "json_file_format",
+                    "jsonFileFormat",
                     &self.r#json_file_format,
                 ),
                 to_pulumi_object_field(

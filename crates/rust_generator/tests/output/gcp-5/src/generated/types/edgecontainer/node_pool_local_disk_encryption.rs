@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kms_key",
+                    "kmsKey",
                     &self.r#kms_key,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_active_version",
+                    "kmsKeyActiveVersion",
                     &self.r#kms_key_active_version,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_state",
+                    "kmsKeyState",
                     &self.r#kms_key_state,
                 ),
             ];

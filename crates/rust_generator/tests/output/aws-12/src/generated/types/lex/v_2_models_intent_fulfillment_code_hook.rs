@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "fulfillment_updates_specification",
+                    "fulfillmentUpdatesSpecification",
                     &self.r#fulfillment_updates_specification,
                 ),
                 to_pulumi_object_field(
-                    "post_fulfillment_status_specification",
+                    "postFulfillmentStatusSpecification",
                     &self.r#post_fulfillment_status_specification,
                 ),
             ];

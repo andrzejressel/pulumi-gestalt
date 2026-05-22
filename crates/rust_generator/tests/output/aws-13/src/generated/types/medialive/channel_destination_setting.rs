@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "password_param",
+                    "passwordParam",
                     &self.r#password_param,
                 ),
                 to_pulumi_object_field(
-                    "stream_name",
+                    "streamName",
                     &self.r#stream_name,
                 ),
                 to_pulumi_object_field(

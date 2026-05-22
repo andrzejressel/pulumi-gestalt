@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_phase",
+                    "destinationPhase",
                     &self.r#destination_phase,
                 ),
                 to_pulumi_object_field(
-                    "destination_target_id",
+                    "destinationTargetId",
                     &self.r#destination_target_id,
                 ),
                 to_pulumi_object_field(

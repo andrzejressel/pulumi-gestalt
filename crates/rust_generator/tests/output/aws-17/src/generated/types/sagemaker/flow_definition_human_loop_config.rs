@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "human_task_ui_arn",
+                    "humanTaskUiArn",
                     &self.r#human_task_ui_arn,
                 ),
                 to_pulumi_object_field(
-                    "public_workforce_task_price",
+                    "publicWorkforceTaskPrice",
                     &self.r#public_workforce_task_price,
                 ),
                 to_pulumi_object_field(
-                    "task_availability_lifetime_in_seconds",
+                    "taskAvailabilityLifetimeInSeconds",
                     &self.r#task_availability_lifetime_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "task_count",
+                    "taskCount",
                     &self.r#task_count,
                 ),
                 to_pulumi_object_field(
-                    "task_description",
+                    "taskDescription",
                     &self.r#task_description,
                 ),
                 to_pulumi_object_field(
-                    "task_keywords",
+                    "taskKeywords",
                     &self.r#task_keywords,
                 ),
                 to_pulumi_object_field(
-                    "task_time_limit_in_seconds",
+                    "taskTimeLimitInSeconds",
                     &self.r#task_time_limit_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "task_title",
+                    "taskTitle",
                     &self.r#task_title,
                 ),
                 to_pulumi_object_field(
-                    "workteam_arn",
+                    "workteamArn",
                     &self.r#workteam_arn,
                 ),
             ];

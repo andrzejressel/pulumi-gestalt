@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lvp_node_mounts_config",
+                    "lvpNodeMountsConfig",
                     &self.r#lvp_node_mounts_config,
                 ),
                 to_pulumi_object_field(
-                    "lvp_share_config",
+                    "lvpShareConfig",
                     &self.r#lvp_share_config,
                 ),
             ];

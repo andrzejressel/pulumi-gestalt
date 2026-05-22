@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_error_page_url",
+                    "customErrorPageUrl",
                     &self.r#custom_error_page_url,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "status_code",
+                    "statusCode",
                     &self.r#status_code,
                 ),
             ];

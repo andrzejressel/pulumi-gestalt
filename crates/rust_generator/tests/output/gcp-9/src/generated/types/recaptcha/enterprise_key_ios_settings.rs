@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_all_bundle_ids",
+                    "allowAllBundleIds",
                     &self.r#allow_all_bundle_ids,
                 ),
                 to_pulumi_object_field(
-                    "allowed_bundle_ids",
+                    "allowedBundleIds",
                     &self.r#allowed_bundle_ids,
                 ),
             ];

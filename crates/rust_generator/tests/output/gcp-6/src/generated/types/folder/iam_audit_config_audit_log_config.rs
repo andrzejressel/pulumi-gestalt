@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Iam
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exempted_members",
+                    "exemptedMembers",
                     &self.r#exempted_members,
                 ),
                 to_pulumi_object_field(
-                    "log_type",
+                    "logType",
                     &self.r#log_type,
                 ),
             ];

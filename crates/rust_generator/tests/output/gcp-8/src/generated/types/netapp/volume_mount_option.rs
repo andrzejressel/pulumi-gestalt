@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
                     &self.r#export,
                 ),
                 to_pulumi_object_field(
-                    "export_full",
+                    "exportFull",
                     &self.r#export_full,
                 ),
                 to_pulumi_object_field(

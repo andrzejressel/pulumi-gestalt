@@ -38,15 +38,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_zone_name",
+                    "availabilityZoneName",
                     &self.r#availability_zone_name,
                 ),
                 to_pulumi_object_field(
-                    "file_system_id",
+                    "fileSystemId",
                     &self.r#file_system_id,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_id",
+                    "kmsKeyId",
                     &self.r#kms_key_id,
                 ),
                 to_pulumi_object_field(

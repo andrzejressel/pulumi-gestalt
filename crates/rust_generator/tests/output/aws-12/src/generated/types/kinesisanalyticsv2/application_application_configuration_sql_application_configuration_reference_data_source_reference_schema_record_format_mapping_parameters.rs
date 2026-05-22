@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "csv_mapping_parameters",
+                    "csvMappingParameters",
                     &self.r#csv_mapping_parameters,
                 ),
                 to_pulumi_object_field(
-                    "json_mapping_parameters",
+                    "jsonMappingParameters",
                     &self.r#json_mapping_parameters,
                 ),
             ];

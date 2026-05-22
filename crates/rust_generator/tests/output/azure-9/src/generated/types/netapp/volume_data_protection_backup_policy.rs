@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_policy_id",
+                    "backupPolicyId",
                     &self.r#backup_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "backup_vault_id",
+                    "backupVaultId",
                     &self.r#backup_vault_id,
                 ),
                 to_pulumi_object_field(
-                    "policy_enabled",
+                    "policyEnabled",
                     &self.r#policy_enabled,
                 ),
             ];

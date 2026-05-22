@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#environment,
                 ),
                 to_pulumi_object_field(
-                    "job_name",
+                    "jobName",
                     &self.r#job_name,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "transform_name_mapping",
+                    "transformNameMapping",
                     &self.r#transform_name_mapping,
                 ),
                 to_pulumi_object_field(

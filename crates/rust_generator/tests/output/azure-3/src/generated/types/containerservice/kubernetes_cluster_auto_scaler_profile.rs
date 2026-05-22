@@ -99,19 +99,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "balance_similar_node_groups",
+                    "balanceSimilarNodeGroups",
                     &self.r#balance_similar_node_groups,
                 ),
                 to_pulumi_object_field(
-                    "daemonset_eviction_for_empty_nodes_enabled",
+                    "daemonsetEvictionForEmptyNodesEnabled",
                     &self.r#daemonset_eviction_for_empty_nodes_enabled,
                 ),
                 to_pulumi_object_field(
-                    "daemonset_eviction_for_occupied_nodes_enabled",
+                    "daemonsetEvictionForOccupiedNodesEnabled",
                     &self.r#daemonset_eviction_for_occupied_nodes_enabled,
                 ),
                 to_pulumi_object_field(
-                    "empty_bulk_delete_max",
+                    "emptyBulkDeleteMax",
                     &self.r#empty_bulk_delete_max,
                 ),
                 to_pulumi_object_field(
@@ -119,63 +119,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
                     &self.r#expander,
                 ),
                 to_pulumi_object_field(
-                    "ignore_daemonsets_utilization_enabled",
+                    "ignoreDaemonsetsUtilizationEnabled",
                     &self.r#ignore_daemonsets_utilization_enabled,
                 ),
                 to_pulumi_object_field(
-                    "max_graceful_termination_sec",
+                    "maxGracefulTerminationSec",
                     &self.r#max_graceful_termination_sec,
                 ),
                 to_pulumi_object_field(
-                    "max_node_provisioning_time",
+                    "maxNodeProvisioningTime",
                     &self.r#max_node_provisioning_time,
                 ),
                 to_pulumi_object_field(
-                    "max_unready_nodes",
+                    "maxUnreadyNodes",
                     &self.r#max_unready_nodes,
                 ),
                 to_pulumi_object_field(
-                    "max_unready_percentage",
+                    "maxUnreadyPercentage",
                     &self.r#max_unready_percentage,
                 ),
                 to_pulumi_object_field(
-                    "new_pod_scale_up_delay",
+                    "newPodScaleUpDelay",
                     &self.r#new_pod_scale_up_delay,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_delay_after_add",
+                    "scaleDownDelayAfterAdd",
                     &self.r#scale_down_delay_after_add,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_delay_after_delete",
+                    "scaleDownDelayAfterDelete",
                     &self.r#scale_down_delay_after_delete,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_delay_after_failure",
+                    "scaleDownDelayAfterFailure",
                     &self.r#scale_down_delay_after_failure,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_unneeded",
+                    "scaleDownUnneeded",
                     &self.r#scale_down_unneeded,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_unready",
+                    "scaleDownUnready",
                     &self.r#scale_down_unready,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_utilization_threshold",
+                    "scaleDownUtilizationThreshold",
                     &self.r#scale_down_utilization_threshold,
                 ),
                 to_pulumi_object_field(
-                    "scan_interval",
+                    "scanInterval",
                     &self.r#scan_interval,
                 ),
                 to_pulumi_object_field(
-                    "skip_nodes_with_local_storage",
+                    "skipNodesWithLocalStorage",
                     &self.r#skip_nodes_with_local_storage,
                 ),
                 to_pulumi_object_field(
-                    "skip_nodes_with_system_pods",
+                    "skipNodesWithSystemPods",
                     &self.r#skip_nodes_with_system_pods,
                 ),
             ];

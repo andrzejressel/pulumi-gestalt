@@ -26,7 +26,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxA
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "synthesize_speech_configs",
+                    "synthesizeSpeechConfigs",
                     &self.r#synthesize_speech_configs,
                 ),
             ];

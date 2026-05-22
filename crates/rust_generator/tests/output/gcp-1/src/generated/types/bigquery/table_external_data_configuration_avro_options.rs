@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "use_avro_logical_types",
+                    "useAvroLogicalTypes",
                     &self.r#use_avro_logical_types,
                 ),
             ];

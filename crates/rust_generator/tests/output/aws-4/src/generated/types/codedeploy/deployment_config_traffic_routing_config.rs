@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "time_based_canary",
+                    "timeBasedCanary",
                     &self.r#time_based_canary,
                 ),
                 to_pulumi_object_field(
-                    "time_based_linear",
+                    "timeBasedLinear",
                     &self.r#time_based_linear,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "target_replica_count",
+                    "targetReplicaCount",
                     &self.r#target_replica_count,
                 ),
                 to_pulumi_object_field(
-                    "target_shard_count",
+                    "targetShardCount",
                     &self.r#target_shard_count,
                 ),
             ];

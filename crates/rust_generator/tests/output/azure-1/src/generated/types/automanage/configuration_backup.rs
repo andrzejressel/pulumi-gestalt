@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instant_rp_retention_range_in_days",
+                    "instantRpRetentionRangeInDays",
                     &self.r#instant_rp_retention_range_in_days,
                 ),
                 to_pulumi_object_field(
-                    "policy_name",
+                    "policyName",
                     &self.r#policy_name,
                 ),
                 to_pulumi_object_field(
-                    "retention_policy",
+                    "retentionPolicy",
                     &self.r#retention_policy,
                 ),
                 to_pulumi_object_field(
-                    "schedule_policy",
+                    "schedulePolicy",
                     &self.r#schedule_policy,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];

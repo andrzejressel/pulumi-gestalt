@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "crawl_state",
+                    "crawlState",
                     &self.r#crawl_state,
                 ),
                 to_pulumi_object_field(
-                    "crawler_name",
+                    "crawlerName",
                     &self.r#crawler_name,
                 ),
                 to_pulumi_object_field(
-                    "job_name",
+                    "jobName",
                     &self.r#job_name,
                 ),
                 to_pulumi_object_field(
-                    "logical_operator",
+                    "logicalOperator",
                     &self.r#logical_operator,
                 ),
                 to_pulumi_object_field(

@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "conflict_resolution_path",
+                    "conflictResolutionPath",
                     &self.r#conflict_resolution_path,
                 ),
                 to_pulumi_object_field(
-                    "conflict_resolution_procedure",
+                    "conflictResolutionProcedure",
                     &self.r#conflict_resolution_procedure,
                 ),
                 to_pulumi_object_field(

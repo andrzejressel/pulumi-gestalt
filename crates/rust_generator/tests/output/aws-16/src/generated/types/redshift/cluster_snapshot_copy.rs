@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_region",
+                    "destinationRegion",
                     &self.r#destination_region,
                 ),
                 to_pulumi_object_field(
-                    "grant_name",
+                    "grantName",
                     &self.r#grant_name,
                 ),
                 to_pulumi_object_field(
-                    "retention_period",
+                    "retentionPeriod",
                     &self.r#retention_period,
                 ),
             ];

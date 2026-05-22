@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_ip_address",
+                    "groupIpAddress",
                     &self.r#group_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_id",
+                    "networkInterfaceId",
                     &self.r#network_interface_id,
                 ),
             ];

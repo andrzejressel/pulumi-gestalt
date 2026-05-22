@@ -64,15 +64,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_audiences",
+                    "allowedAudiences",
                     &self.r#allowed_audiences,
                 ),
                 to_pulumi_object_field(
-                    "issuer_uri",
+                    "issuerUri",
                     &self.r#issuer_uri,
                 ),
                 to_pulumi_object_field(
-                    "jwks_json",
+                    "jwksJson",
                     &self.r#jwks_json,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "classifications_to_includes",
+                    "classificationsToIncludes",
                     &self.r#classifications_to_includes,
                 ),
                 to_pulumi_object_field(
-                    "package_names_mask_to_excludes",
+                    "packageNamesMaskToExcludes",
                     &self.r#package_names_mask_to_excludes,
                 ),
                 to_pulumi_object_field(
-                    "package_names_mask_to_includes",
+                    "packageNamesMaskToIncludes",
                     &self.r#package_names_mask_to_includes,
                 ),
             ];

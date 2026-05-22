@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "logic_app_id",
+                    "logicAppId",
                     &self.r#logic_app_id,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#order,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

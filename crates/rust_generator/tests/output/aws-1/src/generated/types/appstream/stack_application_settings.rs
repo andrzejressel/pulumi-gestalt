@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "settings_group",
+                    "settingsGroup",
                     &self.r#settings_group,
                 ),
             ];

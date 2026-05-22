@@ -44,23 +44,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Den
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "denial_condition",
+                    "denialCondition",
                     &self.r#denial_condition,
                 ),
                 to_pulumi_object_field(
-                    "denied_permissions",
+                    "deniedPermissions",
                     &self.r#denied_permissions,
                 ),
                 to_pulumi_object_field(
-                    "denied_principals",
+                    "deniedPrincipals",
                     &self.r#denied_principals,
                 ),
                 to_pulumi_object_field(
-                    "exception_permissions",
+                    "exceptionPermissions",
                     &self.r#exception_permissions,
                 ),
                 to_pulumi_object_field(
-                    "exception_principals",
+                    "exceptionPrincipals",
                     &self.r#exception_principals,
                 ),
             ];

@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_queries",
+                    "dataQueries",
                     &self.r#data_queries,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "destination_configurations",
+                    "destinationConfigurations",
                     &self.r#destination_configurations,
                 ),
                 to_pulumi_object_field(
-                    "export_arn",
+                    "exportArn",
                     &self.r#export_arn,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "refresh_cadences",
+                    "refreshCadences",
                     &self.r#refresh_cadences,
                 ),
             ];

@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_types",
+                    "authenticationTypes",
                     &self.r#authentication_types,
                 ),
                 to_pulumi_object_field(
-                    "channel_encryption_types",
+                    "channelEncryptionTypes",
                     &self.r#channel_encryption_types,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_ticket_encryption_types",
+                    "kerberosTicketEncryptionTypes",
                     &self.r#kerberos_ticket_encryption_types,
                 ),
                 to_pulumi_object_field(
-                    "multichannel_enabled",
+                    "multichannelEnabled",
                     &self.r#multichannel_enabled,
                 ),
                 to_pulumi_object_field(

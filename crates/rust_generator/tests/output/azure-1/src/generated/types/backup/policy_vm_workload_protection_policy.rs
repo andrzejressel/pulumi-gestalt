@@ -51,27 +51,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#backup,
                 ),
                 to_pulumi_object_field(
-                    "policy_type",
+                    "policyType",
                     &self.r#policy_type,
                 ),
                 to_pulumi_object_field(
-                    "retention_daily",
+                    "retentionDaily",
                     &self.r#retention_daily,
                 ),
                 to_pulumi_object_field(
-                    "retention_monthly",
+                    "retentionMonthly",
                     &self.r#retention_monthly,
                 ),
                 to_pulumi_object_field(
-                    "retention_weekly",
+                    "retentionWeekly",
                     &self.r#retention_weekly,
                 ),
                 to_pulumi_object_field(
-                    "retention_yearly",
+                    "retentionYearly",
                     &self.r#retention_yearly,
                 ),
                 to_pulumi_object_field(
-                    "simple_retention",
+                    "simpleRetention",
                     &self.r#simple_retention,
                 ),
             ];

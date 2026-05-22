@@ -48,11 +48,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_sql_instance",
+                    "cloudSqlInstance",
                     &self.r#cloud_sql_instance,
                 ),
                 to_pulumi_object_field(
-                    "empty_dir",
+                    "emptyDir",
                     &self.r#empty_dir,
                 ),
                 to_pulumi_object_field(

@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "last_used_date",
+                    "lastUsedDate",
                     &self.r#last_used_date,
                 ),
                 to_pulumi_object_field(

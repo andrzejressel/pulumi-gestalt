@@ -59,43 +59,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_data_encrypted",
+                    "cacheDataEncrypted",
                     &self.r#cache_data_encrypted,
                 ),
                 to_pulumi_object_field(
-                    "cache_ttl_in_seconds",
+                    "cacheTtlInSeconds",
                     &self.r#cache_ttl_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "caching_enabled",
+                    "cachingEnabled",
                     &self.r#caching_enabled,
                 ),
                 to_pulumi_object_field(
-                    "data_trace_enabled",
+                    "dataTraceEnabled",
                     &self.r#data_trace_enabled,
                 ),
                 to_pulumi_object_field(
-                    "logging_level",
+                    "loggingLevel",
                     &self.r#logging_level,
                 ),
                 to_pulumi_object_field(
-                    "metrics_enabled",
+                    "metricsEnabled",
                     &self.r#metrics_enabled,
                 ),
                 to_pulumi_object_field(
-                    "require_authorization_for_cache_control",
+                    "requireAuthorizationForCacheControl",
                     &self.r#require_authorization_for_cache_control,
                 ),
                 to_pulumi_object_field(
-                    "throttling_burst_limit",
+                    "throttlingBurstLimit",
                     &self.r#throttling_burst_limit,
                 ),
                 to_pulumi_object_field(
-                    "throttling_rate_limit",
+                    "throttlingRateLimit",
                     &self.r#throttling_rate_limit,
                 ),
                 to_pulumi_object_field(
-                    "unauthorized_cache_control_header_strategy",
+                    "unauthorizedCacheControlHeaderStrategy",
                     &self.r#unauthorized_cache_control_header_strategy,
                 ),
             ];

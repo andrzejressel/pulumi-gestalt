@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "routing_type",
+                    "routingType",
                     &self.r#routing_type,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Inv
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "large_data_delivery_s_3_config",
+                    "largeDataDeliveryS3Config",
                     &self.r#large_data_delivery_s_3_config,
                 ),
                 to_pulumi_object_field(
-                    "log_group_name",
+                    "logGroupName",
                     &self.r#log_group_name,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];

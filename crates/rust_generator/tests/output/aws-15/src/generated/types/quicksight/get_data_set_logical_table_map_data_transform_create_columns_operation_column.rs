@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_id",
+                    "columnId",
                     &self.r#column_id,
                 ),
                 to_pulumi_object_field(
-                    "column_name",
+                    "columnName",
                     &self.r#column_name,
                 ),
                 to_pulumi_object_field(

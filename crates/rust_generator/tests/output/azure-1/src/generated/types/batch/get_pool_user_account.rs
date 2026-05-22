@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "elevation_level",
+                    "elevationLevel",
                     &self.r#elevation_level,
                 ),
                 to_pulumi_object_field(
-                    "linux_user_configurations",
+                    "linuxUserConfigurations",
                     &self.r#linux_user_configurations,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "windows_user_configurations",
+                    "windowsUserConfigurations",
                     &self.r#windows_user_configurations,
                 ),
             ];

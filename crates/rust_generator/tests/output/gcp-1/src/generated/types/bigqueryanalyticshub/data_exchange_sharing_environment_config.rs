@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dcr_exchange_config",
+                    "dcrExchangeConfig",
                     &self.r#dcr_exchange_config,
                 ),
                 to_pulumi_object_field(
-                    "default_exchange_config",
+                    "defaultExchangeConfig",
                     &self.r#default_exchange_config,
                 ),
             ];

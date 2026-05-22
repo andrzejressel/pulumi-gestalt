@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_window",
+                    "backupWindow",
                     &self.r#backup_window,
                 ),
                 to_pulumi_object_field(
@@ -65,7 +65,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "encryption_config",
+                    "encryptionConfig",
                     &self.r#encryption_config,
                 ),
                 to_pulumi_object_field(
@@ -77,15 +77,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "quantity_based_retention",
+                    "quantityBasedRetention",
                     &self.r#quantity_based_retention,
                 ),
                 to_pulumi_object_field(
-                    "time_based_retention",
+                    "timeBasedRetention",
                     &self.r#time_based_retention,
                 ),
                 to_pulumi_object_field(
-                    "weekly_schedule",
+                    "weeklySchedule",
                     &self.r#weekly_schedule,
                 ),
             ];

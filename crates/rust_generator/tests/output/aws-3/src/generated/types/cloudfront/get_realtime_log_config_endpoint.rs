@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kinesis_stream_configs",
+                    "kinesisStreamConfigs",
                     &self.r#kinesis_stream_configs,
                 ),
                 to_pulumi_object_field(
-                    "stream_type",
+                    "streamType",
                     &self.r#stream_type,
                 ),
             ];

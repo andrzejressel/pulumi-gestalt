@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#iops,
                 ),
                 to_pulumi_object_field(
-                    "mount_point",
+                    "mountPoint",
                     &self.r#mount_point,
                 ),
                 to_pulumi_object_field(
-                    "number_of_disks",
+                    "numberOfDisks",
                     &self.r#number_of_disks,
                 ),
                 to_pulumi_object_field(
-                    "raid_level",
+                    "raidLevel",
                     &self.r#raid_level,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#size,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#ip,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6",
+                    "ipv6",
                     &self.r#ipv_6,
                 ),
                 to_pulumi_object_field(

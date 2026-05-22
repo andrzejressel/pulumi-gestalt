@@ -104,51 +104,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_namespaces",
+                    "allNamespaces",
                     &self.r#all_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "cluster_resource_conflict_policy",
+                    "clusterResourceConflictPolicy",
                     &self.r#cluster_resource_conflict_policy,
                 ),
                 to_pulumi_object_field(
-                    "cluster_resource_restore_scope",
+                    "clusterResourceRestoreScope",
                     &self.r#cluster_resource_restore_scope,
                 ),
                 to_pulumi_object_field(
-                    "excluded_namespaces",
+                    "excludedNamespaces",
                     &self.r#excluded_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "namespaced_resource_restore_mode",
+                    "namespacedResourceRestoreMode",
                     &self.r#namespaced_resource_restore_mode,
                 ),
                 to_pulumi_object_field(
-                    "no_namespaces",
+                    "noNamespaces",
                     &self.r#no_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "restore_order",
+                    "restoreOrder",
                     &self.r#restore_order,
                 ),
                 to_pulumi_object_field(
-                    "selected_applications",
+                    "selectedApplications",
                     &self.r#selected_applications,
                 ),
                 to_pulumi_object_field(
-                    "selected_namespaces",
+                    "selectedNamespaces",
                     &self.r#selected_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "transformation_rules",
+                    "transformationRules",
                     &self.r#transformation_rules,
                 ),
                 to_pulumi_object_field(
-                    "volume_data_restore_policy",
+                    "volumeDataRestorePolicy",
                     &self.r#volume_data_restore_policy,
                 ),
                 to_pulumi_object_field(
-                    "volume_data_restore_policy_bindings",
+                    "volumeDataRestorePolicyBindings",
                     &self.r#volume_data_restore_policy_bindings,
                 ),
             ];

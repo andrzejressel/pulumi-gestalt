@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "invalid_fallback_behavior",
+                    "invalidFallbackBehavior",
                     &self.r#invalid_fallback_behavior,
                 ),
                 to_pulumi_object_field(
-                    "match_pattern",
+                    "matchPattern",
                     &self.r#match_pattern,
                 ),
                 to_pulumi_object_field(
-                    "match_scope",
+                    "matchScope",
                     &self.r#match_scope,
                 ),
                 to_pulumi_object_field(
-                    "oversize_handling",
+                    "oversizeHandling",
                     &self.r#oversize_handling,
                 ),
             ];

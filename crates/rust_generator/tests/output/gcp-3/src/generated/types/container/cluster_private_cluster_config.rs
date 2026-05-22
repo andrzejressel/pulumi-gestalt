@@ -69,35 +69,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_private_endpoint",
+                    "enablePrivateEndpoint",
                     &self.r#enable_private_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "enable_private_nodes",
+                    "enablePrivateNodes",
                     &self.r#enable_private_nodes,
                 ),
                 to_pulumi_object_field(
-                    "master_global_access_config",
+                    "masterGlobalAccessConfig",
                     &self.r#master_global_access_config,
                 ),
                 to_pulumi_object_field(
-                    "master_ipv_4_cidr_block",
+                    "masterIpv4CidrBlock",
                     &self.r#master_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "peering_name",
+                    "peeringName",
                     &self.r#peering_name,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint",
+                    "privateEndpoint",
                     &self.r#private_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_subnetwork",
+                    "privateEndpointSubnetwork",
                     &self.r#private_endpoint_subnetwork,
                 ),
                 to_pulumi_object_field(
-                    "public_endpoint",
+                    "publicEndpoint",
                     &self.r#public_endpoint,
                 ),
             ];

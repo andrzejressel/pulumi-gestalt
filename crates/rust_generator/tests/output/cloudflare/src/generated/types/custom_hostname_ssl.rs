@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bundle_method",
+                    "bundleMethod",
                     &self.r#bundle_method,
                 ),
                 to_pulumi_object_field(
-                    "certificate_authority",
+                    "certificateAuthority",
                     &self.r#certificate_authority,
                 ),
                 to_pulumi_object_field(
-                    "custom_certificate",
+                    "customCertificate",
                     &self.r#custom_certificate,
                 ),
                 to_pulumi_object_field(
-                    "custom_key",
+                    "customKey",
                     &self.r#custom_key,
                 ),
                 to_pulumi_object_field(
@@ -87,15 +87,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "validation_errors",
+                    "validationErrors",
                     &self.r#validation_errors,
                 ),
                 to_pulumi_object_field(
-                    "validation_records",
+                    "validationRecords",
                     &self.r#validation_records,
                 ),
                 to_pulumi_object_field(

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_concurrency",
+                    "maxConcurrency",
                     &self.r#max_concurrency,
                 ),
                 to_pulumi_object_field(
-                    "memory_size_in_mb",
+                    "memorySizeInMb",
                     &self.r#memory_size_in_mb,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_concurrency",
+                    "provisionedConcurrency",
                     &self.r#provisioned_concurrency,
                 ),
             ];

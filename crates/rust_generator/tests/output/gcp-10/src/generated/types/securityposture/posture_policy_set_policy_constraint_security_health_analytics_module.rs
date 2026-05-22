@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "module_enablement_state",
+                    "moduleEnablementState",
                     &self.r#module_enablement_state,
                 ),
                 to_pulumi_object_field(
-                    "module_name",
+                    "moduleName",
                     &self.r#module_name,
                 ),
             ];

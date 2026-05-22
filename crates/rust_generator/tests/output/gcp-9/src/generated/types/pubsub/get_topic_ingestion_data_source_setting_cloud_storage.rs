@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "avro_formats",
+                    "avroFormats",
                     &self.r#avro_formats,
                 ),
                 to_pulumi_object_field(
@@ -63,19 +63,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "match_glob",
+                    "matchGlob",
                     &self.r#match_glob,
                 ),
                 to_pulumi_object_field(
-                    "minimum_object_create_time",
+                    "minimumObjectCreateTime",
                     &self.r#minimum_object_create_time,
                 ),
                 to_pulumi_object_field(
-                    "pubsub_avro_formats",
+                    "pubsubAvroFormats",
                     &self.r#pubsub_avro_formats,
                 ),
                 to_pulumi_object_field(
-                    "text_formats",
+                    "textFormats",
                     &self.r#text_formats,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ava
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_stage",
+                    "availabilityStage",
                     &self.r#availability_stage,
                 ),
                 to_pulumi_object_field(
-                    "disabled_reason",
+                    "disabledReason",
                     &self.r#disabled_reason,
                 ),
                 to_pulumi_object_field(
-                    "disabled_reason_message",
+                    "disabledReasonMessage",
                     &self.r#disabled_reason_message,
                 ),
             ];

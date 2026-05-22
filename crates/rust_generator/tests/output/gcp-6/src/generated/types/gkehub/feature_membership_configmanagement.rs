@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#binauthz,
                 ),
                 to_pulumi_object_field(
-                    "config_sync",
+                    "configSync",
                     &self.r#config_sync,
                 ),
                 to_pulumi_object_field(
-                    "hierarchy_controller",
+                    "hierarchyController",
                     &self.r#hierarchy_controller,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#management,
                 ),
                 to_pulumi_object_field(
-                    "policy_controller",
+                    "policyController",
                     &self.r#policy_controller,
                 ),
                 to_pulumi_object_field(

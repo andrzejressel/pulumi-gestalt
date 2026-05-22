@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_unhealthy_connection_termination",
+                    "enableUnhealthyConnectionTermination",
                     &self.r#enable_unhealthy_connection_termination,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_draining_interval",
+                    "unhealthyDrainingInterval",
                     &self.r#unhealthy_draining_interval,
                 ),
             ];

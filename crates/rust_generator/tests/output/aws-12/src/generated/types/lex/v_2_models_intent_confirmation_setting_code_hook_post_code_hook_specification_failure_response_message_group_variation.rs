@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_payload",
+                    "customPayload",
                     &self.r#custom_payload,
                 ),
                 to_pulumi_object_field(
-                    "image_response_card",
+                    "imageResponseCard",
                     &self.r#image_response_card,
                 ),
                 to_pulumi_object_field(
-                    "plain_text_message",
+                    "plainTextMessage",
                     &self.r#plain_text_message,
                 ),
                 to_pulumi_object_field(
-                    "ssml_message",
+                    "ssmlMessage",
                     &self.r#ssml_message,
                 ),
             ];

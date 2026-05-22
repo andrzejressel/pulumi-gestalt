@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_source_arn",
+                    "copySourceArn",
                     &self.r#copy_source_arn,
                 ),
                 to_pulumi_object_field(
-                    "credential_pair",
+                    "credentialPair",
                     &self.r#credential_pair,
                 ),
                 to_pulumi_object_field(
-                    "secret_arn",
+                    "secretArn",
                     &self.r#secret_arn,
                 ),
             ];

@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_type",
+                    "accessType",
                     &self.r#access_type,
                 ),
                 to_pulumi_object_field(
-                    "proxy_uri",
+                    "proxyUri",
                     &self.r#proxy_uri,
                 ),
                 to_pulumi_object_field(
-                    "runtime_owner",
+                    "runtimeOwner",
                     &self.r#runtime_owner,
                 ),
             ];

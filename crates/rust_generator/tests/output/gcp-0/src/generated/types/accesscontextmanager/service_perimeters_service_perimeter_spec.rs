@@ -67,15 +67,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_levels",
+                    "accessLevels",
                     &self.r#access_levels,
                 ),
                 to_pulumi_object_field(
-                    "egress_policies",
+                    "egressPolicies",
                     &self.r#egress_policies,
                 ),
                 to_pulumi_object_field(
-                    "ingress_policies",
+                    "ingressPolicies",
                     &self.r#ingress_policies,
                 ),
                 to_pulumi_object_field(
@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#resources,
                 ),
                 to_pulumi_object_field(
-                    "restricted_services",
+                    "restrictedServices",
                     &self.r#restricted_services,
                 ),
                 to_pulumi_object_field(
-                    "vpc_accessible_services",
+                    "vpcAccessibleServices",
                     &self.r#vpc_accessible_services,
                 ),
             ];

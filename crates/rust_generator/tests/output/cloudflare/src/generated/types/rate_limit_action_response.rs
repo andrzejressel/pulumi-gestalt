@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rat
                     &self.r#body,
                 ),
                 to_pulumi_object_field(
-                    "content_type",
+                    "contentType",
                     &self.r#content_type,
                 ),
             ];

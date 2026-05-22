@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kms_key_name",
+                    "kmsKeyName",
                     &self.r#kms_key_name,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_version_name",
+                    "kmsKeyVersionName",
                     &self.r#kms_key_version_name,
                 ),
                 to_pulumi_object_field(
@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "service_account_id",
+                    "serviceAccountId",
                     &self.r#service_account_id,
                 ),
             ];

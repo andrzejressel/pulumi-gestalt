@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "trusted_host_keys",
+                    "trustedHostKeys",
                     &self.r#trusted_host_keys,
                 ),
                 to_pulumi_object_field(
-                    "user_secret_id",
+                    "userSecretId",
                     &self.r#user_secret_id,
                 ),
             ];

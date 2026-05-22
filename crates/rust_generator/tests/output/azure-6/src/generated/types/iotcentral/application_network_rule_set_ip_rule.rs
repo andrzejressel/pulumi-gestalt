@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_mask",
+                    "ipMask",
                     &self.r#ip_mask,
                 ),
                 to_pulumi_object_field(

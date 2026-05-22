@@ -55,35 +55,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_monitor_metrics",
+                    "azureMonitorMetrics",
                     &self.r#azure_monitor_metrics,
                 ),
                 to_pulumi_object_field(
-                    "event_hub",
+                    "eventHub",
                     &self.r#event_hub,
                 ),
                 to_pulumi_object_field(
-                    "event_hub_direct",
+                    "eventHubDirect",
                     &self.r#event_hub_direct,
                 ),
                 to_pulumi_object_field(
-                    "log_analytics",
+                    "logAnalytics",
                     &self.r#log_analytics,
                 ),
                 to_pulumi_object_field(
-                    "monitor_accounts",
+                    "monitorAccounts",
                     &self.r#monitor_accounts,
                 ),
                 to_pulumi_object_field(
-                    "storage_blob_directs",
+                    "storageBlobDirects",
                     &self.r#storage_blob_directs,
                 ),
                 to_pulumi_object_field(
-                    "storage_blobs",
+                    "storageBlobs",
                     &self.r#storage_blobs,
                 ),
                 to_pulumi_object_field(
-                    "storage_table_directs",
+                    "storageTableDirects",
                     &self.r#storage_table_directs,
                 ),
             ];

@@ -44,19 +44,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_installation_id",
+                    "appInstallationId",
                     &self.r#app_installation_id,
                 ),
                 to_pulumi_object_field(
-                    "authorizer_credential",
+                    "authorizerCredential",
                     &self.r#authorizer_credential,
                 ),
                 to_pulumi_object_field(
-                    "github_app",
+                    "githubApp",
                     &self.r#github_app,
                 ),
                 to_pulumi_object_field(
-                    "installation_uri",
+                    "installationUri",
                     &self.r#installation_uri,
                 ),
             ];

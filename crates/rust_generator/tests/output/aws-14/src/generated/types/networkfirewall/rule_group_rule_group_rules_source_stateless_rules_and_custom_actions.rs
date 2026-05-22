@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_actions",
+                    "customActions",
                     &self.r#custom_actions,
                 ),
                 to_pulumi_object_field(
-                    "stateless_rules",
+                    "statelessRules",
                     &self.r#stateless_rules,
                 ),
             ];

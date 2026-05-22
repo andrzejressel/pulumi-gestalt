@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dag_processing_logs",
+                    "dagProcessingLogs",
                     &self.r#dag_processing_logs,
                 ),
                 to_pulumi_object_field(
-                    "scheduler_logs",
+                    "schedulerLogs",
                     &self.r#scheduler_logs,
                 ),
                 to_pulumi_object_field(
-                    "task_logs",
+                    "taskLogs",
                     &self.r#task_logs,
                 ),
                 to_pulumi_object_field(
-                    "webserver_logs",
+                    "webserverLogs",
                     &self.r#webserver_logs,
                 ),
                 to_pulumi_object_field(
-                    "worker_logs",
+                    "workerLogs",
                     &self.r#worker_logs,
                 ),
             ];

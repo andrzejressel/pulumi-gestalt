@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#paths,
                 ),
                 to_pulumi_object_field(
-                    "route_action",
+                    "routeAction",
                     &self.r#route_action,
                 ),
                 to_pulumi_object_field(
@@ -65,7 +65,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "url_redirect",
+                    "urlRedirect",
                     &self.r#url_redirect,
                 ),
             ];

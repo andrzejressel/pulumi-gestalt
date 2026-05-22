@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_role_arn",
+                    "accessRoleArn",
                     &self.r#access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "connection_arn",
+                    "connectionArn",
                     &self.r#connection_arn,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "asn_ranges",
+                    "asnRanges",
                     &self.r#asn_ranges,
                 ),
                 to_pulumi_object_field(
-                    "edge_locations",
+                    "edgeLocations",
                     &self.r#edge_locations,
                 ),
                 to_pulumi_object_field(
-                    "inside_cidr_blocks",
+                    "insideCidrBlocks",
                     &self.r#inside_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "vpn_ecmp_support",
+                    "vpnEcmpSupport",
                     &self.r#vpn_ecmp_support,
                 ),
             ];

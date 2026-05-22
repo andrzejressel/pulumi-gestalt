@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "output_group_settings",
+                    "outputGroupSettings",
                     &self.r#output_group_settings,
                 ),
                 to_pulumi_object_field(

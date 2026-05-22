@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_interval_in_hours",
+                    "backupIntervalInHours",
                     &self.r#backup_interval_in_hours,
                 ),
                 to_pulumi_object_field(
-                    "retention_days",
+                    "retentionDays",
                     &self.r#retention_days,
                 ),
             ];

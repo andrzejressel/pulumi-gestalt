@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_authority",
+                    "certificateAuthority",
                     &self.r#certificate_authority,
                 ),
                 to_pulumi_object_field(
-                    "external_ingress_gateway_enabled",
+                    "externalIngressGatewayEnabled",
                     &self.r#external_ingress_gateway_enabled,
                 ),
                 to_pulumi_object_field(
-                    "internal_ingress_gateway_enabled",
+                    "internalIngressGatewayEnabled",
                     &self.r#internal_ingress_gateway_enabled,
                 ),
                 to_pulumi_object_field(

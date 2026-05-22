@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "recording_mode",
+                    "recordingMode",
                     &self.r#recording_mode,
                 ),
                 to_pulumi_object_field(
-                    "target_interval_seconds",
+                    "targetIntervalSeconds",
                     &self.r#target_interval_seconds,
                 ),
             ];

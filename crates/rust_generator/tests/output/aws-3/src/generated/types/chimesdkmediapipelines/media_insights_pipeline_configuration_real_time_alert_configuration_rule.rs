@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "issue_detection_configuration",
+                    "issueDetectionConfiguration",
                     &self.r#issue_detection_configuration,
                 ),
                 to_pulumi_object_field(
-                    "keyword_match_configuration",
+                    "keywordMatchConfiguration",
                     &self.r#keyword_match_configuration,
                 ),
                 to_pulumi_object_field(
-                    "sentiment_configuration",
+                    "sentimentConfiguration",
                     &self.r#sentiment_configuration,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

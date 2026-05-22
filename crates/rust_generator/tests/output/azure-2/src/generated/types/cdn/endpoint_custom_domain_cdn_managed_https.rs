@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_type",
+                    "certificateType",
                     &self.r#certificate_type,
                 ),
                 to_pulumi_object_field(
-                    "protocol_type",
+                    "protocolType",
                     &self.r#protocol_type,
                 ),
                 to_pulumi_object_field(
-                    "tls_version",
+                    "tlsVersion",
                     &self.r#tls_version,
                 ),
             ];

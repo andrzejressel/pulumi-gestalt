@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
-                    "model_arn",
+                    "modelArn",
                     &self.r#model_arn,
                 ),
                 to_pulumi_object_field(
-                    "model_name",
+                    "modelName",
                     &self.r#model_name,
                 ),
             ];

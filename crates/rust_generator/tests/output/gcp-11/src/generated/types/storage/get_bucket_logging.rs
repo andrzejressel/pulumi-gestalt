@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_bucket",
+                    "logBucket",
                     &self.r#log_bucket,
                 ),
                 to_pulumi_object_field(
-                    "log_object_prefix",
+                    "logObjectPrefix",
                     &self.r#log_object_prefix,
                 ),
             ];

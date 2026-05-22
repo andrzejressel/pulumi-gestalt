@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorization_configs",
+                    "authorizationConfigs",
                     &self.r#authorization_configs,
                 ),
                 to_pulumi_object_field(
-                    "file_system_id",
+                    "fileSystemId",
                     &self.r#file_system_id,
                 ),
                 to_pulumi_object_field(
-                    "root_directory",
+                    "rootDirectory",
                     &self.r#root_directory,
                 ),
                 to_pulumi_object_field(
-                    "transit_encryption",
+                    "transitEncryption",
                     &self.r#transit_encryption,
                 ),
                 to_pulumi_object_field(
-                    "transit_encryption_port",
+                    "transitEncryptionPort",
                     &self.r#transit_encryption_port,
                 ),
             ];

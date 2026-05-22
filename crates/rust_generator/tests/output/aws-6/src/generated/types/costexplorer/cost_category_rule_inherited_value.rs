@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dimension_key",
+                    "dimensionKey",
                     &self.r#dimension_key,
                 ),
                 to_pulumi_object_field(
-                    "dimension_name",
+                    "dimensionName",
                     &self.r#dimension_name,
                 ),
             ];

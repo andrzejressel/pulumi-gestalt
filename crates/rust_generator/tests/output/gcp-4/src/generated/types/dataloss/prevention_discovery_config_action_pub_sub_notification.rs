@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "detail_of_message",
+                    "detailOfMessage",
                     &self.r#detail_of_message,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#event,
                 ),
                 to_pulumi_object_field(
-                    "pubsub_condition",
+                    "pubsubCondition",
                     &self.r#pubsub_condition,
                 ),
                 to_pulumi_object_field(

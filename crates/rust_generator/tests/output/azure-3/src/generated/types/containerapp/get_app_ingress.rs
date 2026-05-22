@@ -55,19 +55,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_insecure_connections",
+                    "allowInsecureConnections",
                     &self.r#allow_insecure_connections,
                 ),
                 to_pulumi_object_field(
-                    "custom_domains",
+                    "customDomains",
                     &self.r#custom_domains,
                 ),
                 to_pulumi_object_field(
-                    "exposed_port",
+                    "exposedPort",
                     &self.r#exposed_port,
                 ),
                 to_pulumi_object_field(
-                    "external_enabled",
+                    "externalEnabled",
                     &self.r#external_enabled,
                 ),
                 to_pulumi_object_field(
@@ -75,15 +75,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#fqdn,
                 ),
                 to_pulumi_object_field(
-                    "ip_security_restrictions",
+                    "ipSecurityRestrictions",
                     &self.r#ip_security_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "target_port",
+                    "targetPort",
                     &self.r#target_port,
                 ),
                 to_pulumi_object_field(
-                    "traffic_weights",
+                    "trafficWeights",
                     &self.r#traffic_weights,
                 ),
                 to_pulumi_object_field(

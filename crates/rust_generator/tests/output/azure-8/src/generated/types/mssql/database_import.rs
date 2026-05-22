@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "administrator_login",
+                    "administratorLogin",
                     &self.r#administrator_login,
                 ),
                 to_pulumi_object_field(
-                    "administrator_login_password",
+                    "administratorLoginPassword",
                     &self.r#administrator_login_password,
                 ),
                 to_pulumi_object_field(
-                    "authentication_type",
+                    "authenticationType",
                     &self.r#authentication_type,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_id",
+                    "storageAccountId",
                     &self.r#storage_account_id,
                 ),
                 to_pulumi_object_field(
-                    "storage_key",
+                    "storageKey",
                     &self.r#storage_key,
                 ),
                 to_pulumi_object_field(
-                    "storage_key_type",
+                    "storageKeyType",
                     &self.r#storage_key_type,
                 ),
                 to_pulumi_object_field(
-                    "storage_uri",
+                    "storageUri",
                     &self.r#storage_uri,
                 ),
             ];

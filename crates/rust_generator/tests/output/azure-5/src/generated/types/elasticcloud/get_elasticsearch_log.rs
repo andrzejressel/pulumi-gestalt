@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "filtering_tags",
+                    "filteringTags",
                     &self.r#filtering_tags,
                 ),
                 to_pulumi_object_field(
-                    "send_activity_logs",
+                    "sendActivityLogs",
                     &self.r#send_activity_logs,
                 ),
                 to_pulumi_object_field(
-                    "send_azuread_logs",
+                    "sendAzureadLogs",
                     &self.r#send_azuread_logs,
                 ),
                 to_pulumi_object_field(
-                    "send_subscription_logs",
+                    "sendSubscriptionLogs",
                     &self.r#send_subscription_logs,
                 ),
             ];

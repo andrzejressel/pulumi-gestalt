@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_domain_count",
+                    "availabilityDomainCount",
                     &self.r#availability_domain_count,
                 ),
                 to_pulumi_object_field(
@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#collocation,
                 ),
                 to_pulumi_object_field(
-                    "max_distance",
+                    "maxDistance",
                     &self.r#max_distance,
                 ),
                 to_pulumi_object_field(
-                    "vm_count",
+                    "vmCount",
                     &self.r#vm_count,
                 ),
             ];

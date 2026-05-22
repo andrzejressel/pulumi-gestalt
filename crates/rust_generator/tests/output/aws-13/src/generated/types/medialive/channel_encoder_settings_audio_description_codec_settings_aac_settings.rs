@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "coding_mode",
+                    "codingMode",
                     &self.r#coding_mode,
                 ),
                 to_pulumi_object_field(
-                    "input_type",
+                    "inputType",
                     &self.r#input_type,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#profile,
                 ),
                 to_pulumi_object_field(
-                    "rate_control_mode",
+                    "rateControlMode",
                     &self.r#rate_control_mode,
                 ),
                 to_pulumi_object_field(
-                    "raw_format",
+                    "rawFormat",
                     &self.r#raw_format,
                 ),
                 to_pulumi_object_field(
-                    "sample_rate",
+                    "sampleRate",
                     &self.r#sample_rate,
                 ),
                 to_pulumi_object_field(
@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#spec,
                 ),
                 to_pulumi_object_field(
-                    "vbr_quality",
+                    "vbrQuality",
                     &self.r#vbr_quality,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_ip",
+                    "sourceIp",
                     &self.r#source_ip,
                 ),
                 to_pulumi_object_field(
-                    "vpc_source_ip",
+                    "vpcSourceIp",
                     &self.r#vpc_source_ip,
                 ),
             ];

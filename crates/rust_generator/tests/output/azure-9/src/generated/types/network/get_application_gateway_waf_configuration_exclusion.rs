@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "match_variable",
+                    "matchVariable",
                     &self.r#match_variable,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#selector,
                 ),
                 to_pulumi_object_field(
-                    "selector_match_operator",
+                    "selectorMatchOperator",
                     &self.r#selector_match_operator,
                 ),
             ];

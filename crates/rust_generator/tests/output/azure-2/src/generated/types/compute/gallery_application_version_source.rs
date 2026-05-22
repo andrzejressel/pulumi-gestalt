@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gal
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_configuration_link",
+                    "defaultConfigurationLink",
                     &self.r#default_configuration_link,
                 ),
                 to_pulumi_object_field(
-                    "media_link",
+                    "mediaLink",
                     &self.r#media_link,
                 ),
             ];

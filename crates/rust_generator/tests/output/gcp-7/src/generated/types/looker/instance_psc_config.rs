@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_vpcs",
+                    "allowedVpcs",
                     &self.r#allowed_vpcs,
                 ),
                 to_pulumi_object_field(
-                    "looker_service_attachment_uri",
+                    "lookerServiceAttachmentUri",
                     &self.r#looker_service_attachment_uri,
                 ),
                 to_pulumi_object_field(
-                    "service_attachments",
+                    "serviceAttachments",
                     &self.r#service_attachments,
                 ),
             ];

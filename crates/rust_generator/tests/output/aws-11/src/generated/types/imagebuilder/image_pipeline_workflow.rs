@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "on_failure",
+                    "onFailure",
                     &self.r#on_failure,
                 ),
                 to_pulumi_object_field(
-                    "parallel_group",
+                    "parallelGroup",
                     &self.r#parallel_group,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "workflow_arn",
+                    "workflowArn",
                     &self.r#workflow_arn,
                 ),
             ];

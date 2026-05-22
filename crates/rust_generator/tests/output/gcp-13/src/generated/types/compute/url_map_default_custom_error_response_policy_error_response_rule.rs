@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "match_response_codes",
+                    "matchResponseCodes",
                     &self.r#match_response_codes,
                 ),
                 to_pulumi_object_field(
-                    "override_response_code",
+                    "overrideResponseCode",
                     &self.r#override_response_code,
                 ),
                 to_pulumi_object_field(

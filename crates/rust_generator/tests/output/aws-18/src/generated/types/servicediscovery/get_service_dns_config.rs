@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_records",
+                    "dnsRecords",
                     &self.r#dns_records,
                 ),
                 to_pulumi_object_field(
-                    "namespace_id",
+                    "namespaceId",
                     &self.r#namespace_id,
                 ),
                 to_pulumi_object_field(
-                    "routing_policy",
+                    "routingPolicy",
                     &self.r#routing_policy,
                 ),
             ];

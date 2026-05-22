@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_type",
+                    "metricType",
                     &self.r#metric_type,
                 ),
                 to_pulumi_object_field(
-                    "target_value",
+                    "targetValue",
                     &self.r#target_value,
                 ),
             ];

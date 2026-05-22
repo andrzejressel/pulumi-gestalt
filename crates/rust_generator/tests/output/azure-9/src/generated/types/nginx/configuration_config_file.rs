@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "virtual_path",
+                    "virtualPath",
                     &self.r#virtual_path,
                 ),
             ];

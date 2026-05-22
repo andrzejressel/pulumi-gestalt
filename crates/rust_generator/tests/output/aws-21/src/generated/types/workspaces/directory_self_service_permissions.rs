@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "change_compute_type",
+                    "changeComputeType",
                     &self.r#change_compute_type,
                 ),
                 to_pulumi_object_field(
-                    "increase_volume_size",
+                    "increaseVolumeSize",
                     &self.r#increase_volume_size,
                 ),
                 to_pulumi_object_field(
-                    "rebuild_workspace",
+                    "rebuildWorkspace",
                     &self.r#rebuild_workspace,
                 ),
                 to_pulumi_object_field(
-                    "restart_workspace",
+                    "restartWorkspace",
                     &self.r#restart_workspace,
                 ),
                 to_pulumi_object_field(
-                    "switch_running_mode",
+                    "switchRunningMode",
                     &self.r#switch_running_mode,
                 ),
             ];

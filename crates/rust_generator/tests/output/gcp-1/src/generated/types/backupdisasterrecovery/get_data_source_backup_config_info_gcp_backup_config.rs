@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_plan",
+                    "backupPlan",
                     &self.r#backup_plan,
                 ),
                 to_pulumi_object_field(
-                    "backup_plan_association",
+                    "backupPlanAssociation",
                     &self.r#backup_plan_association,
                 ),
                 to_pulumi_object_field(
-                    "backup_plan_description",
+                    "backupPlanDescription",
                     &self.r#backup_plan_description,
                 ),
                 to_pulumi_object_field(
-                    "backup_plan_rules",
+                    "backupPlanRules",
                     &self.r#backup_plan_rules,
                 ),
             ];

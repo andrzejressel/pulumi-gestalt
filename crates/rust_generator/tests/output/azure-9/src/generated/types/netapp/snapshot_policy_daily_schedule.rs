@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sna
                     &self.r#minute,
                 ),
                 to_pulumi_object_field(
-                    "snapshots_to_keep",
+                    "snapshotsToKeep",
                     &self.r#snapshots_to_keep,
                 ),
             ];

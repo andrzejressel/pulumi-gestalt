@@ -55,35 +55,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_configuration",
+                    "authenticationConfiguration",
                     &self.r#authentication_configuration,
                 ),
                 to_pulumi_object_field(
-                    "crawl_depth",
+                    "crawlDepth",
                     &self.r#crawl_depth,
                 ),
                 to_pulumi_object_field(
-                    "max_content_size_per_page_in_mega_bytes",
+                    "maxContentSizePerPageInMegaBytes",
                     &self.r#max_content_size_per_page_in_mega_bytes,
                 ),
                 to_pulumi_object_field(
-                    "max_links_per_page",
+                    "maxLinksPerPage",
                     &self.r#max_links_per_page,
                 ),
                 to_pulumi_object_field(
-                    "max_urls_per_minute_crawl_rate",
+                    "maxUrlsPerMinuteCrawlRate",
                     &self.r#max_urls_per_minute_crawl_rate,
                 ),
                 to_pulumi_object_field(
-                    "proxy_configuration",
+                    "proxyConfiguration",
                     &self.r#proxy_configuration,
                 ),
                 to_pulumi_object_field(
-                    "url_exclusion_patterns",
+                    "urlExclusionPatterns",
                     &self.r#url_exclusion_patterns,
                 ),
                 to_pulumi_object_field(
-                    "url_inclusion_patterns",
+                    "urlInclusionPatterns",
                     &self.r#url_inclusion_patterns,
                 ),
                 to_pulumi_object_field(

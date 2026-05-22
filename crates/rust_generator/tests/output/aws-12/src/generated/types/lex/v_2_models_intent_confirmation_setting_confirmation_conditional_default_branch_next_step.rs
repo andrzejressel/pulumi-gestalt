@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dialog_action",
+                    "dialogAction",
                     &self.r#dialog_action,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#intent,
                 ),
                 to_pulumi_object_field(
-                    "session_attributes",
+                    "sessionAttributes",
                     &self.r#session_attributes,
                 ),
             ];

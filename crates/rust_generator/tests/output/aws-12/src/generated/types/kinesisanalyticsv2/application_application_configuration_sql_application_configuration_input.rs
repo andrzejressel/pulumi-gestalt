@@ -54,39 +54,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "in_app_stream_names",
+                    "inAppStreamNames",
                     &self.r#in_app_stream_names,
                 ),
                 to_pulumi_object_field(
-                    "input_id",
+                    "inputId",
                     &self.r#input_id,
                 ),
                 to_pulumi_object_field(
-                    "input_parallelism",
+                    "inputParallelism",
                     &self.r#input_parallelism,
                 ),
                 to_pulumi_object_field(
-                    "input_processing_configuration",
+                    "inputProcessingConfiguration",
                     &self.r#input_processing_configuration,
                 ),
                 to_pulumi_object_field(
-                    "input_schema",
+                    "inputSchema",
                     &self.r#input_schema,
                 ),
                 to_pulumi_object_field(
-                    "input_starting_position_configurations",
+                    "inputStartingPositionConfigurations",
                     &self.r#input_starting_position_configurations,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_firehose_input",
+                    "kinesisFirehoseInput",
                     &self.r#kinesis_firehose_input,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_streams_input",
+                    "kinesisStreamsInput",
                     &self.r#kinesis_streams_input,
                 ),
                 to_pulumi_object_field(
-                    "name_prefix",
+                    "namePrefix",
                     &self.r#name_prefix,
                 ),
             ];

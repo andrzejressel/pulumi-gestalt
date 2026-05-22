@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#gid,
                 ),
                 to_pulumi_object_field(
-                    "ssh_private_key",
+                    "sshPrivateKey",
                     &self.r#ssh_private_key,
                 ),
                 to_pulumi_object_field(

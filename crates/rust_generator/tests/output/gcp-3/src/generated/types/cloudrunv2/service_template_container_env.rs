@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#value,
                 ),
                 to_pulumi_object_field(
-                    "value_source",
+                    "valueSource",
                     &self.r#value_source,
                 ),
             ];

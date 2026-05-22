@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_settings",
+                    "autoscalingSettings",
                     &self.r#autoscaling_settings,
                 ),
                 to_pulumi_object_field(
-                    "cluster_id",
+                    "clusterId",
                     &self.r#cluster_id,
                 ),
                 to_pulumi_object_field(
-                    "node_type_configs",
+                    "nodeTypeConfigs",
                     &self.r#node_type_configs,
                 ),
                 to_pulumi_object_field(
-                    "stretched_cluster_config",
+                    "stretchedClusterConfig",
                     &self.r#stretched_cluster_config,
                 ),
             ];

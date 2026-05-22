@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "m_2_ts_settings",
+                    "m2tsSettings",
                     &self.r#m_2_ts_settings,
                 ),
                 to_pulumi_object_field(
-                    "raw_settings",
+                    "rawSettings",
                     &self.r#raw_settings,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_key_usages",
+                    "baseKeyUsages",
                     &self.r#base_key_usages,
                 ),
                 to_pulumi_object_field(
-                    "extended_key_usages",
+                    "extendedKeyUsages",
                     &self.r#extended_key_usages,
                 ),
                 to_pulumi_object_field(
-                    "unknown_extended_key_usages",
+                    "unknownExtendedKeyUsages",
                     &self.r#unknown_extended_key_usages,
                 ),
             ];

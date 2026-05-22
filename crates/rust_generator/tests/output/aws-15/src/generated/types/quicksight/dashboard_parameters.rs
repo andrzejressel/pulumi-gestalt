@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Das
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "date_time_parameters",
+                    "dateTimeParameters",
                     &self.r#date_time_parameters,
                 ),
                 to_pulumi_object_field(
-                    "decimal_parameters",
+                    "decimalParameters",
                     &self.r#decimal_parameters,
                 ),
                 to_pulumi_object_field(
-                    "integer_parameters",
+                    "integerParameters",
                     &self.r#integer_parameters,
                 ),
                 to_pulumi_object_field(
-                    "string_parameters",
+                    "stringParameters",
                     &self.r#string_parameters,
                 ),
             ];

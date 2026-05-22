@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_packing_mode",
+                    "audioPackingMode",
                     &self.r#audio_packing_mode,
                 ),
                 to_pulumi_object_field(
-                    "bit_rate",
+                    "bitRate",
                     &self.r#bit_rate,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#codec,
                 ),
                 to_pulumi_object_field(
-                    "sample_rate",
+                    "sampleRate",
                     &self.r#sample_rate,
                 ),
             ];

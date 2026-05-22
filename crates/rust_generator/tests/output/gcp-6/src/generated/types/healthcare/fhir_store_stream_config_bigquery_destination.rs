@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fhi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dataset_uri",
+                    "datasetUri",
                     &self.r#dataset_uri,
                 ),
                 to_pulumi_object_field(
-                    "schema_config",
+                    "schemaConfig",
                     &self.r#schema_config,
                 ),
             ];

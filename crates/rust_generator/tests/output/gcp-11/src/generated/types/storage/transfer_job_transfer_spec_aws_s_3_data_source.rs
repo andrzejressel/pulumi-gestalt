@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_access_key",
+                    "awsAccessKey",
                     &self.r#aws_access_key,
                 ),
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];

@@ -42,27 +42,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_zones",
+                    "availabilityZones",
                     &self.r#availability_zones,
                 ),
                 to_pulumi_object_field(
-                    "connect_ips",
+                    "connectIps",
                     &self.r#connect_ips,
                 ),
                 to_pulumi_object_field(
-                    "customer_dns_ips",
+                    "customerDnsIps",
                     &self.r#customer_dns_ips,
                 ),
                 to_pulumi_object_field(
-                    "customer_username",
+                    "customerUsername",
                     &self.r#customer_username,
                 ),
                 to_pulumi_object_field(
-                    "subnet_ids",
+                    "subnetIds",
                     &self.r#subnet_ids,
                 ),
                 to_pulumi_object_field(
-                    "vpc_id",
+                    "vpcId",
                     &self.r#vpc_id,
                 ),
             ];

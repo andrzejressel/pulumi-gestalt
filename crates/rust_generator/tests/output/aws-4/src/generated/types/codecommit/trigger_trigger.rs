@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#branches,
                 ),
                 to_pulumi_object_field(
-                    "custom_data",
+                    "customData",
                     &self.r#custom_data,
                 ),
                 to_pulumi_object_field(
-                    "destination_arn",
+                    "destinationArn",
                     &self.r#destination_arn,
                 ),
                 to_pulumi_object_field(

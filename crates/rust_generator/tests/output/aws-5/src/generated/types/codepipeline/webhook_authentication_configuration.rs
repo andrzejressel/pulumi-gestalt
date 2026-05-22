@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_ip_range",
+                    "allowedIpRange",
                     &self.r#allowed_ip_range,
                 ),
                 to_pulumi_object_field(
-                    "secret_token",
+                    "secretToken",
                     &self.r#secret_token,
                 ),
             ];

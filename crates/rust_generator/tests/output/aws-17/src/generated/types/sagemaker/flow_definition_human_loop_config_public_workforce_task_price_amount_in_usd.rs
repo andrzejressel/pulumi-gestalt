@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#dollars,
                 ),
                 to_pulumi_object_field(
-                    "tenth_fractions_of_a_cent",
+                    "tenthFractionsOfACent",
                     &self.r#tenth_fractions_of_a_cent,
                 ),
             ];

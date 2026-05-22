@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "profiling_enabled",
+                    "profilingEnabled",
                     &self.r#profiling_enabled,
                 ),
             ];

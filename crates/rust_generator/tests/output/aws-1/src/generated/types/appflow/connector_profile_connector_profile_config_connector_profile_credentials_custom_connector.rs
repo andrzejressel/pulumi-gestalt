@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_key",
+                    "apiKey",
                     &self.r#api_key,
                 ),
                 to_pulumi_object_field(
-                    "authentication_type",
+                    "authenticationType",
                     &self.r#authentication_type,
                 ),
                 to_pulumi_object_field(
@@ -54,7 +54,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#custom,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2",
+                    "oauth2",
                     &self.r#oauth_2,
                 ),
             ];

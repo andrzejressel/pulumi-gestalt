@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vmw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_id",
+                    "diskId",
                     &self.r#disk_id,
                 ),
                 to_pulumi_object_field(
-                    "log_storage_account_id",
+                    "logStorageAccountId",
                     &self.r#log_storage_account_id,
                 ),
                 to_pulumi_object_field(
-                    "target_disk_encryption_set_id",
+                    "targetDiskEncryptionSetId",
                     &self.r#target_disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "target_disk_type",
+                    "targetDiskType",
                     &self.r#target_disk_type,
                 ),
             ];

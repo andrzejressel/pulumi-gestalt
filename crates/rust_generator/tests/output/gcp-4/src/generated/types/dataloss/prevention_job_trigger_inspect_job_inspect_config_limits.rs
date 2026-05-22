@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_findings_per_info_types",
+                    "maxFindingsPerInfoTypes",
                     &self.r#max_findings_per_info_types,
                 ),
                 to_pulumi_object_field(
-                    "max_findings_per_item",
+                    "maxFindingsPerItem",
                     &self.r#max_findings_per_item,
                 ),
                 to_pulumi_object_field(
-                    "max_findings_per_request",
+                    "maxFindingsPerRequest",
                     &self.r#max_findings_per_request,
                 ),
             ];

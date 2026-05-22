@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mount_path",
+                    "mountPath",
                     &self.r#mount_path,
                 ),
                 to_pulumi_object_field(
-                    "size_in_gb",
+                    "sizeInGb",
                     &self.r#size_in_gb,
                 ),
             ];

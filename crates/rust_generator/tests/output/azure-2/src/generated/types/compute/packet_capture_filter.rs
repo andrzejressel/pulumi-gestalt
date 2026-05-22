@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "local_ip_address",
+                    "localIpAddress",
                     &self.r#local_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "local_port",
+                    "localPort",
                     &self.r#local_port,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pac
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "remote_ip_address",
+                    "remoteIpAddress",
                     &self.r#remote_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "remote_port",
+                    "remotePort",
                     &self.r#remote_port,
                 ),
             ];

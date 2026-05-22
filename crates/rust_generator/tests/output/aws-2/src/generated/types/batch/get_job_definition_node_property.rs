@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "main_node",
+                    "mainNode",
                     &self.r#main_node,
                 ),
                 to_pulumi_object_field(
-                    "node_range_properties",
+                    "nodeRangeProperties",
                     &self.r#node_range_properties,
                 ),
                 to_pulumi_object_field(
-                    "num_nodes",
+                    "numNodes",
                     &self.r#num_nodes,
                 ),
             ];

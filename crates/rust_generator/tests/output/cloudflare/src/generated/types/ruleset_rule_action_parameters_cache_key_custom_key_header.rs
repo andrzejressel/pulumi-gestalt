@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "check_presences",
+                    "checkPresences",
                     &self.r#check_presences,
                 ),
                 to_pulumi_object_field(
@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#contains,
                 ),
                 to_pulumi_object_field(
-                    "exclude_origin",
+                    "excludeOrigin",
                     &self.r#exclude_origin,
                 ),
                 to_pulumi_object_field(

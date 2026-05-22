@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ing
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "firehose_stream",
+                    "firehoseStream",
                     &self.r#firehose_stream,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket",
+                    "s3Bucket",
                     &self.r#s_3_bucket,
                 ),
             ];

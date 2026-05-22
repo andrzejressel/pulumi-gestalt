@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "whistle_config_source",
+                    "whistleConfigSource",
                     &self.r#whistle_config_source,
                 ),
             ];

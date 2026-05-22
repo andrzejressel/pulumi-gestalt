@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "email_address",
+                    "emailAddress",
                     &self.r#email_address,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "use_common_alert_schema",
+                    "useCommonAlertSchema",
                     &self.r#use_common_alert_schema,
                 ),
             ];

@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "db_node_storage_size_gb",
+                    "dbNodeStorageSizeGb",
                     &self.r#db_node_storage_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "db_server_ocid",
+                    "dbServerOcid",
                     &self.r#db_server_ocid,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#hostname,
                 ),
                 to_pulumi_object_field(
-                    "memory_size_gb",
+                    "memorySizeGb",
                     &self.r#memory_size_gb,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#ocid,
                 ),
                 to_pulumi_object_field(
-                    "ocpu_count",
+                    "ocpuCount",
                     &self.r#ocpu_count,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "total_cpu_core_count",
+                    "totalCpuCoreCount",
                     &self.r#total_cpu_core_count,
                 ),
             ];

@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_1",
+                    "address1",
                     &self.r#address_1,
                 ),
                 to_pulumi_object_field(
-                    "address_2",
+                    "address2",
                     &self.r#address_2,
                 ),
                 to_pulumi_object_field(
-                    "address_3",
+                    "address3",
                     &self.r#address_3,
                 ),
                 to_pulumi_object_field(
-                    "address_4",
+                    "address4",
                     &self.r#address_4,
                 ),
                 to_pulumi_object_field(
@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#county,
                 ),
                 to_pulumi_object_field(
-                    "postal_code",
+                    "postalCode",
                     &self.r#postal_code,
                 ),
                 to_pulumi_object_field(

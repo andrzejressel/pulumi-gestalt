@@ -166,15 +166,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "adaptive_quantization",
+                    "adaptiveQuantization",
                     &self.r#adaptive_quantization,
                 ),
                 to_pulumi_object_field(
-                    "afd_signaling",
+                    "afdSignaling",
                     &self.r#afd_signaling,
                 ),
                 to_pulumi_object_field(
-                    "alternative_transfer_function",
+                    "alternativeTransferFunction",
                     &self.r#alternative_transfer_function,
                 ),
                 to_pulumi_object_field(
@@ -182,47 +182,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "buf_size",
+                    "bufSize",
                     &self.r#buf_size,
                 ),
                 to_pulumi_object_field(
-                    "color_metadata",
+                    "colorMetadata",
                     &self.r#color_metadata,
                 ),
                 to_pulumi_object_field(
-                    "color_space_settings",
+                    "colorSpaceSettings",
                     &self.r#color_space_settings,
                 ),
                 to_pulumi_object_field(
-                    "filter_settings",
+                    "filterSettings",
                     &self.r#filter_settings,
                 ),
                 to_pulumi_object_field(
-                    "fixed_afd",
+                    "fixedAfd",
                     &self.r#fixed_afd,
                 ),
                 to_pulumi_object_field(
-                    "flicker_aq",
+                    "flickerAq",
                     &self.r#flicker_aq,
                 ),
                 to_pulumi_object_field(
-                    "framerate_denominator",
+                    "framerateDenominator",
                     &self.r#framerate_denominator,
                 ),
                 to_pulumi_object_field(
-                    "framerate_numerator",
+                    "framerateNumerator",
                     &self.r#framerate_numerator,
                 ),
                 to_pulumi_object_field(
-                    "gop_closed_cadence",
+                    "gopClosedCadence",
                     &self.r#gop_closed_cadence,
                 ),
                 to_pulumi_object_field(
-                    "gop_size",
+                    "gopSize",
                     &self.r#gop_size,
                 ),
                 to_pulumi_object_field(
-                    "gop_size_units",
+                    "gopSizeUnits",
                     &self.r#gop_size_units,
                 ),
                 to_pulumi_object_field(
@@ -230,35 +230,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#level,
                 ),
                 to_pulumi_object_field(
-                    "look_ahead_rate_control",
+                    "lookAheadRateControl",
                     &self.r#look_ahead_rate_control,
                 ),
                 to_pulumi_object_field(
-                    "max_bitrate",
+                    "maxBitrate",
                     &self.r#max_bitrate,
                 ),
                 to_pulumi_object_field(
-                    "min_i_interval",
+                    "minIInterval",
                     &self.r#min_i_interval,
                 ),
                 to_pulumi_object_field(
-                    "min_qp",
+                    "minQp",
                     &self.r#min_qp,
                 ),
                 to_pulumi_object_field(
-                    "mv_over_picture_boundaries",
+                    "mvOverPictureBoundaries",
                     &self.r#mv_over_picture_boundaries,
                 ),
                 to_pulumi_object_field(
-                    "mv_temporal_predictor",
+                    "mvTemporalPredictor",
                     &self.r#mv_temporal_predictor,
                 ),
                 to_pulumi_object_field(
-                    "par_denominator",
+                    "parDenominator",
                     &self.r#par_denominator,
                 ),
                 to_pulumi_object_field(
-                    "par_numerator",
+                    "parNumerator",
                     &self.r#par_numerator,
                 ),
                 to_pulumi_object_field(
@@ -266,19 +266,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#profile,
                 ),
                 to_pulumi_object_field(
-                    "qvbr_quality_level",
+                    "qvbrQualityLevel",
                     &self.r#qvbr_quality_level,
                 ),
                 to_pulumi_object_field(
-                    "rate_control_mode",
+                    "rateControlMode",
                     &self.r#rate_control_mode,
                 ),
                 to_pulumi_object_field(
-                    "scan_type",
+                    "scanType",
                     &self.r#scan_type,
                 ),
                 to_pulumi_object_field(
-                    "scene_change_detect",
+                    "sceneChangeDetect",
                     &self.r#scene_change_detect,
                 ),
                 to_pulumi_object_field(
@@ -290,27 +290,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#tier,
                 ),
                 to_pulumi_object_field(
-                    "tile_height",
+                    "tileHeight",
                     &self.r#tile_height,
                 ),
                 to_pulumi_object_field(
-                    "tile_padding",
+                    "tilePadding",
                     &self.r#tile_padding,
                 ),
                 to_pulumi_object_field(
-                    "tile_width",
+                    "tileWidth",
                     &self.r#tile_width,
                 ),
                 to_pulumi_object_field(
-                    "timecode_burnin_settings",
+                    "timecodeBurninSettings",
                     &self.r#timecode_burnin_settings,
                 ),
                 to_pulumi_object_field(
-                    "timecode_insertion",
+                    "timecodeInsertion",
                     &self.r#timecode_insertion,
                 ),
                 to_pulumi_object_field(
-                    "treeblock_size",
+                    "treeblockSize",
                     &self.r#treeblock_size,
                 ),
             ];

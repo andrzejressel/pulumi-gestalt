@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_lake_principal_identifier",
+                    "dataLakePrincipalIdentifier",
                     &self.r#data_lake_principal_identifier,
                 ),
             ];

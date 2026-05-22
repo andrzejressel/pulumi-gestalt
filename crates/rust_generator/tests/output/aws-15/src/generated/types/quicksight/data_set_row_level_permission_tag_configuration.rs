@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "tag_rules",
+                    "tagRules",
                     &self.r#tag_rules,
                 ),
             ];

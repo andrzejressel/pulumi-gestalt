@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "update_trigger_endpoint",
+                    "updateTriggerEndpoint",
                     &self.r#update_trigger_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "update_trigger_payload_type",
+                    "updateTriggerPayloadType",
                     &self.r#update_trigger_payload_type,
                 ),
             ];

@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "codec_settings",
+                    "codecSettings",
                     &self.r#codec_settings,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "respond_to_afd",
+                    "respondToAfd",
                     &self.r#respond_to_afd,
                 ),
                 to_pulumi_object_field(
-                    "scaling_behavior",
+                    "scalingBehavior",
                     &self.r#scaling_behavior,
                 ),
                 to_pulumi_object_field(

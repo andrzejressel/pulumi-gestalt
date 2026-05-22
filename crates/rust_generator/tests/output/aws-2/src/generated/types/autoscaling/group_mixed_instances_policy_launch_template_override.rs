@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_requirements",
+                    "instanceRequirements",
                     &self.r#instance_requirements,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "launch_template_specification",
+                    "launchTemplateSpecification",
                     &self.r#launch_template_specification,
                 ),
                 to_pulumi_object_field(
-                    "weighted_capacity",
+                    "weightedCapacity",
                     &self.r#weighted_capacity,
                 ),
             ];

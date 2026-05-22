@@ -115,7 +115,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#deleted,
                 ),
                 to_pulumi_object_field(
-                    "device_type",
+                    "deviceType",
                     &self.r#device_type,
                 ),
                 to_pulumi_object_field(
@@ -131,11 +131,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "last_seen",
+                    "lastSeen",
                     &self.r#last_seen,
                 ),
                 to_pulumi_object_field(
-                    "mac_address",
+                    "macAddress",
                     &self.r#mac_address,
                 ),
                 to_pulumi_object_field(
@@ -151,27 +151,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "os_distro_name",
+                    "osDistroName",
                     &self.r#os_distro_name,
                 ),
                 to_pulumi_object_field(
-                    "os_distro_revision",
+                    "osDistroRevision",
                     &self.r#os_distro_revision,
                 ),
                 to_pulumi_object_field(
-                    "os_version",
+                    "osVersion",
                     &self.r#os_version,
                 ),
                 to_pulumi_object_field(
-                    "os_version_extra",
+                    "osVersionExtra",
                     &self.r#os_version_extra,
                 ),
                 to_pulumi_object_field(
-                    "revoked_at",
+                    "revokedAt",
                     &self.r#revoked_at,
                 ),
                 to_pulumi_object_field(
-                    "serial_number",
+                    "serialNumber",
                     &self.r#serial_number,
                 ),
                 to_pulumi_object_field(
@@ -179,15 +179,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#updated,
                 ),
                 to_pulumi_object_field(
-                    "user_email",
+                    "userEmail",
                     &self.r#user_email,
                 ),
                 to_pulumi_object_field(
-                    "user_id",
+                    "userId",
                     &self.r#user_id,
                 ),
                 to_pulumi_object_field(
-                    "user_name",
+                    "userName",
                     &self.r#user_name,
                 ),
                 to_pulumi_object_field(

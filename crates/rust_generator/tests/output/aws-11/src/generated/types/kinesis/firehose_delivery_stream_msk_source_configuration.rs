@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_configuration",
+                    "authenticationConfiguration",
                     &self.r#authentication_configuration,
                 ),
                 to_pulumi_object_field(
-                    "msk_cluster_arn",
+                    "mskClusterArn",
                     &self.r#msk_cluster_arn,
                 ),
                 to_pulumi_object_field(
-                    "topic_name",
+                    "topicName",
                     &self.r#topic_name,
                 ),
             ];

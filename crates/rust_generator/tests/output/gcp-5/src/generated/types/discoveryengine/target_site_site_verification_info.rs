@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "site_verification_state",
+                    "siteVerificationState",
                     &self.r#site_verification_state,
                 ),
                 to_pulumi_object_field(
-                    "verify_time",
+                    "verifyTime",
                     &self.r#verify_time,
                 ),
             ];

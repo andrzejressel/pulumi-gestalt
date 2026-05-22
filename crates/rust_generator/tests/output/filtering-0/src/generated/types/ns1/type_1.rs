@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Typ
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "property_1",
+                    "property1",
                     &self.r#property_1,
                 ),
             ];

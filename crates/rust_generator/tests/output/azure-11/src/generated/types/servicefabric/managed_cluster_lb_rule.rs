@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_port",
+                    "backendPort",
                     &self.r#backend_port,
                 ),
                 to_pulumi_object_field(
-                    "frontend_port",
+                    "frontendPort",
                     &self.r#frontend_port,
                 ),
                 to_pulumi_object_field(
-                    "probe_protocol",
+                    "probeProtocol",
                     &self.r#probe_protocol,
                 ),
                 to_pulumi_object_field(
-                    "probe_request_path",
+                    "probeRequestPath",
                     &self.r#probe_request_path,
                 ),
                 to_pulumi_object_field(

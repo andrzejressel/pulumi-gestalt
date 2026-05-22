@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_addresses",
+                    "destinationAddresses",
                     &self.r#destination_addresses,
                 ),
                 to_pulumi_object_field(
-                    "destination_port_ranges",
+                    "destinationPortRanges",
                     &self.r#destination_port_ranges,
                 ),
                 to_pulumi_object_field(
@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "source_addresses",
+                    "sourceAddresses",
                     &self.r#source_addresses,
                 ),
                 to_pulumi_object_field(
-                    "source_port_ranges",
+                    "sourcePortRanges",
                     &self.r#source_port_ranges,
                 ),
             ];

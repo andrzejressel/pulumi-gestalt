@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "not_mandatory",
+                    "notMandatory",
                     &self.r#not_mandatory,
                 ),
                 to_pulumi_object_field(

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ingest_delay",
+                    "ingestDelay",
                     &self.r#ingest_delay,
                 ),
                 to_pulumi_object_field(
-                    "sample_period",
+                    "samplePeriod",
                     &self.r#sample_period,
                 ),
             ];

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "object_id_paths",
+                    "objectIdPaths",
                     &self.r#object_id_paths,
                 ),
             ];

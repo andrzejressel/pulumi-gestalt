@@ -175,19 +175,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_threats",
+                    "activeThreats",
                     &self.r#active_threats,
                 ),
                 to_pulumi_object_field(
-                    "certificate_id",
+                    "certificateId",
                     &self.r#certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "check_disks",
+                    "checkDisks",
                     &self.r#check_disks,
                 ),
                 to_pulumi_object_field(
-                    "check_private_key",
+                    "checkPrivateKey",
                     &self.r#check_private_key,
                 ),
                 to_pulumi_object_field(
@@ -195,15 +195,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#cn,
                 ),
                 to_pulumi_object_field(
-                    "compliance_status",
+                    "complianceStatus",
                     &self.r#compliance_status,
                 ),
                 to_pulumi_object_field(
-                    "connection_id",
+                    "connectionId",
                     &self.r#connection_id,
                 ),
                 to_pulumi_object_field(
-                    "count_operator",
+                    "countOperator",
                     &self.r#count_operator,
                 ),
                 to_pulumi_object_field(
@@ -211,7 +211,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#domain,
                 ),
                 to_pulumi_object_field(
-                    "eid_last_seen",
+                    "eidLastSeen",
                     &self.r#eid_last_seen,
                 ),
                 to_pulumi_object_field(
@@ -223,7 +223,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#exists,
                 ),
                 to_pulumi_object_field(
-                    "extended_key_usages",
+                    "extendedKeyUsages",
                     &self.r#extended_key_usages,
                 ),
                 to_pulumi_object_field(
@@ -235,15 +235,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#infected,
                 ),
                 to_pulumi_object_field(
-                    "is_active",
+                    "isActive",
                     &self.r#is_active,
                 ),
                 to_pulumi_object_field(
-                    "issue_count",
+                    "issueCount",
                     &self.r#issue_count,
                 ),
                 to_pulumi_object_field(
-                    "last_seen",
+                    "lastSeen",
                     &self.r#last_seen,
                 ),
                 to_pulumi_object_field(
@@ -251,11 +251,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#locations,
                 ),
                 to_pulumi_object_field(
-                    "network_status",
+                    "networkStatus",
                     &self.r#network_status,
                 ),
                 to_pulumi_object_field(
-                    "operational_state",
+                    "operationalState",
                     &self.r#operational_state,
                 ),
                 to_pulumi_object_field(
@@ -267,15 +267,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#os,
                 ),
                 to_pulumi_object_field(
-                    "os_distro_name",
+                    "osDistroName",
                     &self.r#os_distro_name,
                 ),
                 to_pulumi_object_field(
-                    "os_distro_revision",
+                    "osDistroRevision",
                     &self.r#os_distro_revision,
                 ),
                 to_pulumi_object_field(
-                    "os_version_extra",
+                    "osVersionExtra",
                     &self.r#os_version_extra,
                 ),
                 to_pulumi_object_field(
@@ -287,11 +287,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "require_all",
+                    "requireAll",
                     &self.r#require_all,
                 ),
                 to_pulumi_object_field(
-                    "risk_level",
+                    "riskLevel",
                     &self.r#risk_level,
                 ),
                 to_pulumi_object_field(
@@ -303,11 +303,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#score,
                 ),
                 to_pulumi_object_field(
-                    "sensor_config",
+                    "sensorConfig",
                     &self.r#sensor_config,
                 ),
                 to_pulumi_object_field(
-                    "sha_256",
+                    "sha256",
                     &self.r#sha_256,
                 ),
                 to_pulumi_object_field(
@@ -319,7 +319,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#thumbprint,
                 ),
                 to_pulumi_object_field(
-                    "total_score",
+                    "totalScore",
                     &self.r#total_score,
                 ),
                 to_pulumi_object_field(
@@ -327,7 +327,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#version,
                 ),
                 to_pulumi_object_field(
-                    "version_operator",
+                    "versionOperator",
                     &self.r#version_operator,
                 ),
             ];

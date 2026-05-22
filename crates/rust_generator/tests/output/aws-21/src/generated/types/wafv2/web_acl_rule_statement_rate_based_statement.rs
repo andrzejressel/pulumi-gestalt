@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aggregate_key_type",
+                    "aggregateKeyType",
                     &self.r#aggregate_key_type,
                 ),
                 to_pulumi_object_field(
-                    "custom_keys",
+                    "customKeys",
                     &self.r#custom_keys,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_window_sec",
+                    "evaluationWindowSec",
                     &self.r#evaluation_window_sec,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_ip_config",
+                    "forwardedIpConfig",
                     &self.r#forwarded_ip_config,
                 ),
                 to_pulumi_object_field(
@@ -65,7 +65,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#limit,
                 ),
                 to_pulumi_object_field(
-                    "scope_down_statement",
+                    "scopeDownStatement",
                     &self.r#scope_down_statement,
                 ),
             ];

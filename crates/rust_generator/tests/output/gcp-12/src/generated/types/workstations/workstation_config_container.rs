@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "run_as_user",
+                    "runAsUser",
                     &self.r#run_as_user,
                 ),
                 to_pulumi_object_field(
-                    "working_dir",
+                    "workingDir",
                     &self.r#working_dir,
                 ),
             ];

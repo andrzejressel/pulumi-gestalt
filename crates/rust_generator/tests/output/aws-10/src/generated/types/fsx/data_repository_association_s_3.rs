@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_export_policy",
+                    "autoExportPolicy",
                     &self.r#auto_export_policy,
                 ),
                 to_pulumi_object_field(
-                    "auto_import_policy",
+                    "autoImportPolicy",
                     &self.r#auto_import_policy,
                 ),
             ];

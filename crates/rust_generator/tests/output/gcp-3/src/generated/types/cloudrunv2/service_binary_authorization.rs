@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "breakglass_justification",
+                    "breakglassJustification",
                     &self.r#breakglass_justification,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#policy,
                 ),
                 to_pulumi_object_field(
-                    "use_default",
+                    "useDefault",
                     &self.r#use_default,
                 ),
             ];

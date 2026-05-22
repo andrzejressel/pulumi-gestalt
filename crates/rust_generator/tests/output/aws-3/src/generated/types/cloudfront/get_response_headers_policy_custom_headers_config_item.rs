@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#header,
                 ),
                 to_pulumi_object_field(
-                    "override_",
+                    "override",
                     &self.r#override_,
                 ),
                 to_pulumi_object_field(

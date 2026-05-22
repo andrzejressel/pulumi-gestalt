@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_error_code_returned_equals",
+                    "httpErrorCodeReturnedEquals",
                     &self.r#http_error_code_returned_equals,
                 ),
                 to_pulumi_object_field(
-                    "key_prefix_equals",
+                    "keyPrefixEquals",
                     &self.r#key_prefix_equals,
                 ),
             ];

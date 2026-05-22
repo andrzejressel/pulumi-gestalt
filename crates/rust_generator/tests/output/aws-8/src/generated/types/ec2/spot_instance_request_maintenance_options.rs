@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_recovery",
+                    "autoRecovery",
                     &self.r#auto_recovery,
                 ),
             ];

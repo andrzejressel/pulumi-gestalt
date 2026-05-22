@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "last_period_amount",
+                    "lastPeriodAmount",
                     &self.r#last_period_amount,
                 ),
                 to_pulumi_object_field(
-                    "specified_amount",
+                    "specifiedAmount",
                     &self.r#specified_amount,
                 ),
             ];

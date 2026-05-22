@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_cookies",
+                    "httpCookies",
                     &self.r#http_cookies,
                 ),
                 to_pulumi_object_field(
-                    "http_header_name",
+                    "httpHeaderName",
                     &self.r#http_header_name,
                 ),
                 to_pulumi_object_field(
-                    "minimum_ring_size",
+                    "minimumRingSize",
                     &self.r#minimum_ring_size,
                 ),
             ];

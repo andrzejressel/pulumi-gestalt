@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "iam_role_arn",
+                    "iamRoleArn",
                     &self.r#iam_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_arn",
+                    "kmsKeyArn",
                     &self.r#kms_key_arn,
                 ),
                 to_pulumi_object_field(
-                    "object_key_prefix",
+                    "objectKeyPrefix",
                     &self.r#object_key_prefix,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#position,
                 ),
                 to_pulumi_object_field(
-                    "topic_arn",
+                    "topicArn",
                     &self.r#topic_arn,
                 ),
             ];

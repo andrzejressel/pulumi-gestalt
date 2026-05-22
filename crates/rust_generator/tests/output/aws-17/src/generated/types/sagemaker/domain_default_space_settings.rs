@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_file_system_configs",
+                    "customFileSystemConfigs",
                     &self.r#custom_file_system_configs,
                 ),
                 to_pulumi_object_field(
-                    "custom_posix_user_config",
+                    "customPosixUserConfig",
                     &self.r#custom_posix_user_config,
                 ),
                 to_pulumi_object_field(
-                    "execution_role",
+                    "executionRole",
                     &self.r#execution_role,
                 ),
                 to_pulumi_object_field(
-                    "jupyter_lab_app_settings",
+                    "jupyterLabAppSettings",
                     &self.r#jupyter_lab_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "jupyter_server_app_settings",
+                    "jupyterServerAppSettings",
                     &self.r#jupyter_server_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "kernel_gateway_app_settings",
+                    "kernelGatewayAppSettings",
                     &self.r#kernel_gateway_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "security_groups",
+                    "securityGroups",
                     &self.r#security_groups,
                 ),
                 to_pulumi_object_field(
-                    "space_storage_settings",
+                    "spaceStorageSettings",
                     &self.r#space_storage_settings,
                 ),
             ];

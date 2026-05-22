@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "initial_audio_gain",
+                    "initialAudioGain",
                     &self.r#initial_audio_gain,
                 ),
                 to_pulumi_object_field(
-                    "input_end_action",
+                    "inputEndAction",
                     &self.r#input_end_action,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_behavior",
+                    "inputLossBehavior",
                     &self.r#input_loss_behavior,
                 ),
                 to_pulumi_object_field(
-                    "output_locking_mode",
+                    "outputLockingMode",
                     &self.r#output_locking_mode,
                 ),
                 to_pulumi_object_field(
-                    "output_timing_source",
+                    "outputTimingSource",
                     &self.r#output_timing_source,
                 ),
                 to_pulumi_object_field(
-                    "support_low_framerate_inputs",
+                    "supportLowFramerateInputs",
                     &self.r#support_low_framerate_inputs,
                 ),
             ];

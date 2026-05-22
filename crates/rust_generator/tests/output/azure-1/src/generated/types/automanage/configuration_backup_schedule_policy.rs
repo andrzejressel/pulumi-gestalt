@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "schedule_policy_type",
+                    "schedulePolicyType",
                     &self.r#schedule_policy_type,
                 ),
                 to_pulumi_object_field(
-                    "schedule_run_days",
+                    "scheduleRunDays",
                     &self.r#schedule_run_days,
                 ),
                 to_pulumi_object_field(
-                    "schedule_run_frequency",
+                    "scheduleRunFrequency",
                     &self.r#schedule_run_frequency,
                 ),
                 to_pulumi_object_field(
-                    "schedule_run_times",
+                    "scheduleRunTimes",
                     &self.r#schedule_run_times,
                 ),
             ];

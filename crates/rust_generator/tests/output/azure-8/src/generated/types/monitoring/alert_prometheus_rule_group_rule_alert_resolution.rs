@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_resolved",
+                    "autoResolved",
                     &self.r#auto_resolved,
                 ),
                 to_pulumi_object_field(
-                    "time_to_resolve",
+                    "timeToResolve",
                     &self.r#time_to_resolve,
                 ),
             ];

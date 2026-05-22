@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bool_value",
+                    "boolValue",
                     &self.r#bool_value,
                 ),
                 to_pulumi_object_field(
-                    "double_value",
+                    "doubleValue",
                     &self.r#double_value,
                 ),
                 to_pulumi_object_field(
-                    "long_value",
+                    "longValue",
                     &self.r#long_value,
                 ),
                 to_pulumi_object_field(
-                    "string_value",
+                    "stringValue",
                     &self.r#string_value,
                 ),
             ];

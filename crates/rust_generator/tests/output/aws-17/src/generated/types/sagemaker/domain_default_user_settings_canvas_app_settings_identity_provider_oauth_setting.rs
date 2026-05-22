@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_source_name",
+                    "dataSourceName",
                     &self.r#data_source_name,
                 ),
                 to_pulumi_object_field(
-                    "secret_arn",
+                    "secretArn",
                     &self.r#secret_arn,
                 ),
                 to_pulumi_object_field(

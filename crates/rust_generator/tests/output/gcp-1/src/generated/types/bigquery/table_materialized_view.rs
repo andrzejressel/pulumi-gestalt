@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_non_incremental_definition",
+                    "allowNonIncrementalDefinition",
                     &self.r#allow_non_incremental_definition,
                 ),
                 to_pulumi_object_field(
-                    "enable_refresh",
+                    "enableRefresh",
                     &self.r#enable_refresh,
                 ),
                 to_pulumi_object_field(
@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#query,
                 ),
                 to_pulumi_object_field(
-                    "refresh_interval_ms",
+                    "refreshIntervalMs",
                     &self.r#refresh_interval_ms,
                 ),
             ];

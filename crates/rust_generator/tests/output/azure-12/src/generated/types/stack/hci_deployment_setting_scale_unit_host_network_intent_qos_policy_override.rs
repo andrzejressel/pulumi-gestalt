@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bandwidth_percentage_smb",
+                    "bandwidthPercentageSmb",
                     &self.r#bandwidth_percentage_smb,
                 ),
                 to_pulumi_object_field(
-                    "priority_value_8021_action_cluster",
+                    "priorityValue8021ActionCluster",
                     &self.r#priority_value_8021_action_cluster,
                 ),
                 to_pulumi_object_field(
-                    "priority_value_8021_action_smb",
+                    "priorityValue8021ActionSmb",
                     &self.r#priority_value_8021_action_smb,
                 ),
             ];

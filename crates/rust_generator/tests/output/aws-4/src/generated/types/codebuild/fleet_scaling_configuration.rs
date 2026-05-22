@@ -34,19 +34,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "desired_capacity",
+                    "desiredCapacity",
                     &self.r#desired_capacity,
                 ),
                 to_pulumi_object_field(
-                    "max_capacity",
+                    "maxCapacity",
                     &self.r#max_capacity,
                 ),
                 to_pulumi_object_field(
-                    "scaling_type",
+                    "scalingType",
                     &self.r#scaling_type,
                 ),
                 to_pulumi_object_field(
-                    "target_tracking_scaling_configs",
+                    "targetTrackingScalingConfigs",
                     &self.r#target_tracking_scaling_configs,
                 ),
             ];

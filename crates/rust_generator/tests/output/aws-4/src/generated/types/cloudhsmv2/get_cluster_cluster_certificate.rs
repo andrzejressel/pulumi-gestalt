@@ -40,23 +40,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_hardware_certificate",
+                    "awsHardwareCertificate",
                     &self.r#aws_hardware_certificate,
                 ),
                 to_pulumi_object_field(
-                    "cluster_certificate",
+                    "clusterCertificate",
                     &self.r#cluster_certificate,
                 ),
                 to_pulumi_object_field(
-                    "cluster_csr",
+                    "clusterCsr",
                     &self.r#cluster_csr,
                 ),
                 to_pulumi_object_field(
-                    "hsm_certificate",
+                    "hsmCertificate",
                     &self.r#hsm_certificate,
                 ),
                 to_pulumi_object_field(
-                    "manufacturer_hardware_certificate",
+                    "manufacturerHardwareCertificate",
                     &self.r#manufacturer_hardware_certificate,
                 ),
             ];

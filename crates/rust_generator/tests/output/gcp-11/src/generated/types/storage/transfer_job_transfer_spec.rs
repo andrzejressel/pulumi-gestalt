@@ -67,51 +67,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_s_3_data_source",
+                    "awsS3DataSource",
                     &self.r#aws_s_3_data_source,
                 ),
                 to_pulumi_object_field(
-                    "azure_blob_storage_data_source",
+                    "azureBlobStorageDataSource",
                     &self.r#azure_blob_storage_data_source,
                 ),
                 to_pulumi_object_field(
-                    "gcs_data_sink",
+                    "gcsDataSink",
                     &self.r#gcs_data_sink,
                 ),
                 to_pulumi_object_field(
-                    "gcs_data_source",
+                    "gcsDataSource",
                     &self.r#gcs_data_source,
                 ),
                 to_pulumi_object_field(
-                    "hdfs_data_source",
+                    "hdfsDataSource",
                     &self.r#hdfs_data_source,
                 ),
                 to_pulumi_object_field(
-                    "http_data_source",
+                    "httpDataSource",
                     &self.r#http_data_source,
                 ),
                 to_pulumi_object_field(
-                    "object_conditions",
+                    "objectConditions",
                     &self.r#object_conditions,
                 ),
                 to_pulumi_object_field(
-                    "posix_data_sink",
+                    "posixDataSink",
                     &self.r#posix_data_sink,
                 ),
                 to_pulumi_object_field(
-                    "posix_data_source",
+                    "posixDataSource",
                     &self.r#posix_data_source,
                 ),
                 to_pulumi_object_field(
-                    "sink_agent_pool_name",
+                    "sinkAgentPoolName",
                     &self.r#sink_agent_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "source_agent_pool_name",
+                    "sourceAgentPoolName",
                     &self.r#source_agent_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "transfer_options",
+                    "transferOptions",
                     &self.r#transfer_options,
                 ),
             ];

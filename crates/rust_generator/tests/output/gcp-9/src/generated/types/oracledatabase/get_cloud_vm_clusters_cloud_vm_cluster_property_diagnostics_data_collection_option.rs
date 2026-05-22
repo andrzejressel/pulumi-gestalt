@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "diagnostics_events_enabled",
+                    "diagnosticsEventsEnabled",
                     &self.r#diagnostics_events_enabled,
                 ),
                 to_pulumi_object_field(
-                    "health_monitoring_enabled",
+                    "healthMonitoringEnabled",
                     &self.r#health_monitoring_enabled,
                 ),
                 to_pulumi_object_field(
-                    "incident_logs_enabled",
+                    "incidentLogsEnabled",
                     &self.r#incident_logs_enabled,
                 ),
             ];

@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "conditional_cases",
+                    "conditionalCases",
                     &self.r#conditional_cases,
                 ),
                 to_pulumi_object_field(
@@ -54,11 +54,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
                     &self.r#messages,
                 ),
                 to_pulumi_object_field(
-                    "return_partial_responses",
+                    "returnPartialResponses",
                     &self.r#return_partial_responses,
                 ),
                 to_pulumi_object_field(
-                    "set_parameter_actions",
+                    "setParameterActions",
                     &self.r#set_parameter_actions,
                 ),
                 to_pulumi_object_field(

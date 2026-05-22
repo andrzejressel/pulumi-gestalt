@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "device_name",
+                    "deviceName",
                     &self.r#device_name,
                 ),
                 to_pulumi_object_field(
-                    "iot_thing_name",
+                    "iotThingName",
                     &self.r#iot_thing_name,
                 ),
             ];

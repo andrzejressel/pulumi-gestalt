@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_manual_connection",
+                    "isManualConnection",
                     &self.r#is_manual_connection,
                 ),
                 to_pulumi_object_field(
@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "private_connection_resource_alias",
+                    "privateConnectionResourceAlias",
                     &self.r#private_connection_resource_alias,
                 ),
                 to_pulumi_object_field(
-                    "private_connection_resource_id",
+                    "privateConnectionResourceId",
                     &self.r#private_connection_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "request_message",
+                    "requestMessage",
                     &self.r#request_message,
                 ),
                 to_pulumi_object_field(
-                    "subresource_names",
+                    "subresourceNames",
                     &self.r#subresource_names,
                 ),
             ];

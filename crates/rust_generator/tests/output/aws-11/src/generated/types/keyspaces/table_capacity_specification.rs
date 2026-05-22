@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "read_capacity_units",
+                    "readCapacityUnits",
                     &self.r#read_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "throughput_mode",
+                    "throughputMode",
                     &self.r#throughput_mode,
                 ),
                 to_pulumi_object_field(
-                    "write_capacity_units",
+                    "writeCapacityUnits",
                     &self.r#write_capacity_units,
                 ),
             ];

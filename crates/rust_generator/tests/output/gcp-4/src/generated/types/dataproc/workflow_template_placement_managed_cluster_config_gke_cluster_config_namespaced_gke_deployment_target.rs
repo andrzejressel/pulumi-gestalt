@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_namespace",
+                    "clusterNamespace",
                     &self.r#cluster_namespace,
                 ),
                 to_pulumi_object_field(
-                    "target_gke_cluster",
+                    "targetGkeCluster",
                     &self.r#target_gke_cluster,
                 ),
             ];

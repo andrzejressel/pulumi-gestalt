@@ -43,23 +43,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directory_app_id_or_uri",
+                    "activeDirectoryAppIdOrUri",
                     &self.r#active_directory_app_id_or_uri,
                 ),
                 to_pulumi_object_field(
-                    "active_directory_tenant_id",
+                    "activeDirectoryTenantId",
                     &self.r#active_directory_tenant_id,
                 ),
                 to_pulumi_object_field(
-                    "base_url",
+                    "baseUrl",
                     &self.r#base_url,
                 ),
                 to_pulumi_object_field(
-                    "max_events_per_batch",
+                    "maxEventsPerBatch",
                     &self.r#max_events_per_batch,
                 ),
                 to_pulumi_object_field(
-                    "preferred_batch_size_in_kilobytes",
+                    "preferredBatchSizeInKilobytes",
                     &self.r#preferred_batch_size_in_kilobytes,
                 ),
                 to_pulumi_object_field(

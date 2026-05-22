@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "grace_period",
+                    "gracePeriod",
                     &self.r#grace_period,
                 ),
             ];

@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attribute_name",
+                    "attributeName",
                     &self.r#attribute_name,
                 ),
                 to_pulumi_object_field(

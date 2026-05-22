@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "configuration_blob_uri",
+                    "configurationBlobUri",
                     &self.r#configuration_blob_uri,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
                     &self.r#tag,
                 ),
                 to_pulumi_object_field(
-                    "version_id",
+                    "versionId",
                     &self.r#version_id,
                 ),
             ];

@@ -86,31 +86,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_configs",
+                    "acceleratorConfigs",
                     &self.r#accelerator_configs,
                 ),
                 to_pulumi_object_field(
-                    "boot_disk",
+                    "bootDisk",
                     &self.r#boot_disk,
                 ),
                 to_pulumi_object_field(
-                    "container_image",
+                    "containerImage",
                     &self.r#container_image,
                 ),
                 to_pulumi_object_field(
-                    "data_disks",
+                    "dataDisks",
                     &self.r#data_disks,
                 ),
                 to_pulumi_object_field(
-                    "disable_public_ip",
+                    "disablePublicIp",
                     &self.r#disable_public_ip,
                 ),
                 to_pulumi_object_field(
-                    "enable_ip_forwarding",
+                    "enableIpForwarding",
                     &self.r#enable_ip_forwarding,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
@@ -118,15 +118,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#metadata,
                 ),
                 to_pulumi_object_field(
-                    "network_interfaces",
+                    "networkInterfaces",
                     &self.r#network_interfaces,
                 ),
                 to_pulumi_object_field(
-                    "service_accounts",
+                    "serviceAccounts",
                     &self.r#service_accounts,
                 ),
                 to_pulumi_object_field(
-                    "shielded_instance_config",
+                    "shieldedInstanceConfig",
                     &self.r#shielded_instance_config,
                 ),
                 to_pulumi_object_field(
@@ -134,7 +134,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "vm_image",
+                    "vmImage",
                     &self.r#vm_image,
                 ),
             ];

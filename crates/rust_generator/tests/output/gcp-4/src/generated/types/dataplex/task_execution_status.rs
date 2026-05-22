@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "latest_jobs",
+                    "latestJobs",
                     &self.r#latest_jobs,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
             ];

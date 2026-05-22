@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "role_id",
+                    "roleId",
                     &self.r#role_id,
                 ),
                 to_pulumi_object_field(
-                    "use_common_alert_schema",
+                    "useCommonAlertSchema",
                     &self.r#use_common_alert_schema,
                 ),
             ];

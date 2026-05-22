@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "window_duration",
+                    "windowDuration",
                     &self.r#window_duration,
                 ),
             ];

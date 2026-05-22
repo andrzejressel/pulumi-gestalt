@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "project_maps",
+                    "projectMaps",
                     &self.r#project_maps,
                 ),
                 to_pulumi_object_field(
-                    "share_type",
+                    "shareType",
                     &self.r#share_type,
                 ),
             ];

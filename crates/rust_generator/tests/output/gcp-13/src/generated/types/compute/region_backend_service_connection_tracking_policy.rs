@@ -58,19 +58,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_persistence_on_unhealthy_backends",
+                    "connectionPersistenceOnUnhealthyBackends",
                     &self.r#connection_persistence_on_unhealthy_backends,
                 ),
                 to_pulumi_object_field(
-                    "enable_strong_affinity",
+                    "enableStrongAffinity",
                     &self.r#enable_strong_affinity,
                 ),
                 to_pulumi_object_field(
-                    "idle_timeout_sec",
+                    "idleTimeoutSec",
                     &self.r#idle_timeout_sec,
                 ),
                 to_pulumi_object_field(
-                    "tracking_mode",
+                    "trackingMode",
                     &self.r#tracking_mode,
                 ),
             ];

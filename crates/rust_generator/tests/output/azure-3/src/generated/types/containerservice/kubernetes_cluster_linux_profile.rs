@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_username",
+                    "adminUsername",
                     &self.r#admin_username,
                 ),
                 to_pulumi_object_field(
-                    "ssh_key",
+                    "sshKey",
                     &self.r#ssh_key,
                 ),
             ];

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#all,
                 ),
                 to_pulumi_object_field(
-                    "excluded_headers",
+                    "excludedHeaders",
                     &self.r#excluded_headers,
                 ),
                 to_pulumi_object_field(
-                    "included_headers",
+                    "includedHeaders",
                     &self.r#included_headers,
                 ),
             ];

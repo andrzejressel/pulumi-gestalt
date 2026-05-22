@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "cloud_kms_key_version",
+                    "cloudKmsKeyVersion",
                     &self.r#cloud_kms_key_version,
                 ),
             ];

@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_week",
+                    "dayOfWeek",
                     &self.r#day_of_week,
                 ),
                 to_pulumi_object_field(
-                    "monthly_occurrence",
+                    "monthlyOccurrence",
                     &self.r#monthly_occurrence,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "weekly_interval",
+                    "weeklyInterval",
                     &self.r#weekly_interval,
                 ),
             ];

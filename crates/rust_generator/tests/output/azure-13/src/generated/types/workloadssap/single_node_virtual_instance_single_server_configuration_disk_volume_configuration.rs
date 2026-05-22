@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "number_of_disks",
+                    "numberOfDisks",
                     &self.r#number_of_disks,
                 ),
                 to_pulumi_object_field(
-                    "size_in_gb",
+                    "sizeInGb",
                     &self.r#size_in_gb,
                 ),
                 to_pulumi_object_field(
-                    "sku_name",
+                    "skuName",
                     &self.r#sku_name,
                 ),
                 to_pulumi_object_field(
-                    "volume_name",
+                    "volumeName",
                     &self.r#volume_name,
                 ),
             ];

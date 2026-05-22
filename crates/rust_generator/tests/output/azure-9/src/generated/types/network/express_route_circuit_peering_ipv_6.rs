@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "microsoft_peering",
+                    "microsoftPeering",
                     &self.r#microsoft_peering,
                 ),
                 to_pulumi_object_field(
-                    "primary_peer_address_prefix",
+                    "primaryPeerAddressPrefix",
                     &self.r#primary_peer_address_prefix,
                 ),
                 to_pulumi_object_field(
-                    "route_filter_id",
+                    "routeFilterId",
                     &self.r#route_filter_id,
                 ),
                 to_pulumi_object_field(
-                    "secondary_peer_address_prefix",
+                    "secondaryPeerAddressPrefix",
                     &self.r#secondary_peer_address_prefix,
                 ),
             ];

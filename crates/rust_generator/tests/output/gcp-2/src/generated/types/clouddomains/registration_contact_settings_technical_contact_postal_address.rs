@@ -62,11 +62,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_lines",
+                    "addressLines",
                     &self.r#address_lines,
                 ),
                 to_pulumi_object_field(
-                    "administrative_area",
+                    "administrativeArea",
                     &self.r#administrative_area,
                 ),
                 to_pulumi_object_field(
@@ -78,7 +78,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#organization,
                 ),
                 to_pulumi_object_field(
-                    "postal_code",
+                    "postalCode",
                     &self.r#postal_code,
                 ),
                 to_pulumi_object_field(
@@ -86,7 +86,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#recipients,
                 ),
                 to_pulumi_object_field(
-                    "region_code",
+                    "regionCode",
                     &self.r#region_code,
                 ),
             ];

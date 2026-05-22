@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capacity_usage_summaries",
+                    "capacityUsageSummaries",
                     &self.r#capacity_usage_summaries,
                 ),
                 to_pulumi_object_field(
-                    "configuration_sync_state_summary",
+                    "configurationSyncStateSummary",
                     &self.r#configuration_sync_state_summary,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "sync_states",
+                    "syncStates",
                     &self.r#sync_states,
                 ),
             ];

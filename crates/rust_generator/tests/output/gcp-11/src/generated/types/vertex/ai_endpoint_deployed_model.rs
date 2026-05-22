@@ -81,27 +81,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_resources",
+                    "automaticResources",
                     &self.r#automatic_resources,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
-                    "dedicated_resources",
+                    "dedicatedResources",
                     &self.r#dedicated_resources,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "enable_access_logging",
+                    "enableAccessLogging",
                     &self.r#enable_access_logging,
                 ),
                 to_pulumi_object_field(
-                    "enable_container_logging",
+                    "enableContainerLogging",
                     &self.r#enable_container_logging,
                 ),
                 to_pulumi_object_field(
@@ -113,19 +113,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiE
                     &self.r#model,
                 ),
                 to_pulumi_object_field(
-                    "model_version_id",
+                    "modelVersionId",
                     &self.r#model_version_id,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoints",
+                    "privateEndpoints",
                     &self.r#private_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "shared_resources",
+                    "sharedResources",
                     &self.r#shared_resources,
                 ),
             ];

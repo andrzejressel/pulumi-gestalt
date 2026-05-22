@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#stickiness,
                 ),
                 to_pulumi_object_field(
-                    "target_groups",
+                    "targetGroups",
                     &self.r#target_groups,
                 ),
             ];

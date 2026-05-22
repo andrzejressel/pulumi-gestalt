@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_configuration",
+                    "imageConfiguration",
                     &self.r#image_configuration,
                 ),
                 to_pulumi_object_field(
-                    "image_identifier",
+                    "imageIdentifier",
                     &self.r#image_identifier,
                 ),
                 to_pulumi_object_field(
-                    "image_repository_type",
+                    "imageRepositoryType",
                     &self.r#image_repository_type,
                 ),
             ];

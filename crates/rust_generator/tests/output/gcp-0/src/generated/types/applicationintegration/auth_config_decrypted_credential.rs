@@ -58,11 +58,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_token",
+                    "authToken",
                     &self.r#auth_token,
                 ),
                 to_pulumi_object_field(
-                    "credential_type",
+                    "credentialType",
                     &self.r#credential_type,
                 ),
                 to_pulumi_object_field(
@@ -70,23 +70,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#jwt,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_authorization_code",
+                    "oauth2AuthorizationCode",
                     &self.r#oauth_2_authorization_code,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_client_credentials",
+                    "oauth2ClientCredentials",
                     &self.r#oauth_2_client_credentials,
                 ),
                 to_pulumi_object_field(
-                    "oidc_token",
+                    "oidcToken",
                     &self.r#oidc_token,
                 ),
                 to_pulumi_object_field(
-                    "service_account_credentials",
+                    "serviceAccountCredentials",
                     &self.r#service_account_credentials,
                 ),
                 to_pulumi_object_field(
-                    "username_and_password",
+                    "usernameAndPassword",
                     &self.r#username_and_password,
                 ),
             ];

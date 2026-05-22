@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "prefix_format",
+                    "prefixFormat",
                     &self.r#prefix_format,
                 ),
                 to_pulumi_object_field(
-                    "prefix_hierarchies",
+                    "prefixHierarchies",
                     &self.r#prefix_hierarchies,
                 ),
                 to_pulumi_object_field(
-                    "prefix_type",
+                    "prefixType",
                     &self.r#prefix_type,
                 ),
             ];

@@ -44,19 +44,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_name",
+                    "accountName",
                     &self.r#account_name,
                 ),
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "bucket_prefix",
+                    "bucketPrefix",
                     &self.r#bucket_prefix,
                 ),
                 to_pulumi_object_field(
-                    "private_link_service_name",
+                    "privateLinkServiceName",
                     &self.r#private_link_service_name,
                 ),
                 to_pulumi_object_field(

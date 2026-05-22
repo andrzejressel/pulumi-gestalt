@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "share_name",
+                    "shareName",
                     &self.r#share_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_pool",
+                    "storagePool",
                     &self.r#storage_pool,
                 ),
                 to_pulumi_object_field(
-                    "volume_id",
+                    "volumeId",
                     &self.r#volume_id,
                 ),
             ];

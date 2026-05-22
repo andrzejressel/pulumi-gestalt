@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "object_type_name",
+                    "objectTypeName",
                     &self.r#object_type_name,
                 ),
             ];

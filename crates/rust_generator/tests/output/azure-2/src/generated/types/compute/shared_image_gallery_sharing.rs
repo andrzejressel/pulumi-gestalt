@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "community_gallery",
+                    "communityGallery",
                     &self.r#community_gallery,
                 ),
                 to_pulumi_object_field(

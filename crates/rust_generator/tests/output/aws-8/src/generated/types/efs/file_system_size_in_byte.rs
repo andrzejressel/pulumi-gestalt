@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
                     &self.r#value,
                 ),
                 to_pulumi_object_field(
-                    "value_in_ia",
+                    "valueInIa",
                     &self.r#value_in_ia,
                 ),
                 to_pulumi_object_field(
-                    "value_in_standard",
+                    "valueInStandard",
                     &self.r#value_in_standard,
                 ),
             ];

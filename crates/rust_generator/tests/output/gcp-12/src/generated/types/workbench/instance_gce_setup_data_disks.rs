@@ -42,19 +42,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_encryption",
+                    "diskEncryption",
                     &self.r#disk_encryption,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
-                    "kms_key",
+                    "kmsKey",
                     &self.r#kms_key,
                 ),
             ];

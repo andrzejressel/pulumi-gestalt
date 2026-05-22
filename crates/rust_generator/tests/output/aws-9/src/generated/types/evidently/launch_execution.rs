@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ended_time",
+                    "endedTime",
                     &self.r#ended_time,
                 ),
                 to_pulumi_object_field(
-                    "started_time",
+                    "startedTime",
                     &self.r#started_time,
                 ),
             ];

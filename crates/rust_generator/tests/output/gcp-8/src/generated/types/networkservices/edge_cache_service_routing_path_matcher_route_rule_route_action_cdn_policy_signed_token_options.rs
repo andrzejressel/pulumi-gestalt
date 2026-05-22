@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_signature_algorithms",
+                    "allowedSignatureAlgorithms",
                     &self.r#allowed_signature_algorithms,
                 ),
                 to_pulumi_object_field(
-                    "token_query_parameter",
+                    "tokenQueryParameter",
                     &self.r#token_query_parameter,
                 ),
             ];

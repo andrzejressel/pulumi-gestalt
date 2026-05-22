@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_pools_send_receive_timeout_seconds",
+                    "backendPoolsSendReceiveTimeoutSeconds",
                     &self.r#backend_pools_send_receive_timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "enforce_backend_pools_certificate_name_check",
+                    "enforceBackendPoolsCertificateNameCheck",
                     &self.r#enforce_backend_pools_certificate_name_check,
                 ),
             ];

@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Had
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_default",
+                    "isDefault",
                     &self.r#is_default,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_key",
+                    "storageAccountKey",
                     &self.r#storage_account_key,
                 ),
                 to_pulumi_object_field(
-                    "storage_container_id",
+                    "storageContainerId",
                     &self.r#storage_container_id,
                 ),
                 to_pulumi_object_field(
-                    "storage_resource_id",
+                    "storageResourceId",
                     &self.r#storage_resource_id,
                 ),
             ];

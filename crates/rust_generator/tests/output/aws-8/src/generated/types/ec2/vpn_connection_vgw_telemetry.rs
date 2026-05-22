@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accepted_route_count",
+                    "acceptedRouteCount",
                     &self.r#accepted_route_count,
                 ),
                 to_pulumi_object_field(
-                    "certificate_arn",
+                    "certificateArn",
                     &self.r#certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "last_status_change",
+                    "lastStatusChange",
                     &self.r#last_status_change,
                 ),
                 to_pulumi_object_field(
-                    "outside_ip_address",
+                    "outsideIpAddress",
                     &self.r#outside_ip_address,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "status_message",
+                    "statusMessage",
                     &self.r#status_message,
                 ),
             ];

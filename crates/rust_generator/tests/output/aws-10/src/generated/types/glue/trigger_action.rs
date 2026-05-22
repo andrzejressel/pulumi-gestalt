@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#arguments,
                 ),
                 to_pulumi_object_field(
-                    "crawler_name",
+                    "crawlerName",
                     &self.r#crawler_name,
                 ),
                 to_pulumi_object_field(
-                    "job_name",
+                    "jobName",
                     &self.r#job_name,
                 ),
                 to_pulumi_object_field(
-                    "notification_property",
+                    "notificationProperty",
                     &self.r#notification_property,
                 ),
                 to_pulumi_object_field(
-                    "security_configuration",
+                    "securityConfiguration",
                     &self.r#security_configuration,
                 ),
                 to_pulumi_object_field(

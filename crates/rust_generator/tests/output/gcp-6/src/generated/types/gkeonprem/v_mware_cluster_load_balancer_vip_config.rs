@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "control_plane_vip",
+                    "controlPlaneVip",
                     &self.r#control_plane_vip,
                 ),
                 to_pulumi_object_field(
-                    "ingress_vip",
+                    "ingressVip",
                     &self.r#ingress_vip,
                 ),
             ];

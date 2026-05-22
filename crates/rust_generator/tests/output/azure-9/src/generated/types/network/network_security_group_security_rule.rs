@@ -91,23 +91,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "destination_address_prefix",
+                    "destinationAddressPrefix",
                     &self.r#destination_address_prefix,
                 ),
                 to_pulumi_object_field(
-                    "destination_address_prefixes",
+                    "destinationAddressPrefixes",
                     &self.r#destination_address_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "destination_application_security_group_ids",
+                    "destinationApplicationSecurityGroupIds",
                     &self.r#destination_application_security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "destination_port_range",
+                    "destinationPortRange",
                     &self.r#destination_port_range,
                 ),
                 to_pulumi_object_field(
-                    "destination_port_ranges",
+                    "destinationPortRanges",
                     &self.r#destination_port_ranges,
                 ),
                 to_pulumi_object_field(
@@ -127,23 +127,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "source_address_prefix",
+                    "sourceAddressPrefix",
                     &self.r#source_address_prefix,
                 ),
                 to_pulumi_object_field(
-                    "source_address_prefixes",
+                    "sourceAddressPrefixes",
                     &self.r#source_address_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "source_application_security_group_ids",
+                    "sourceApplicationSecurityGroupIds",
                     &self.r#source_application_security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "source_port_range",
+                    "sourcePortRange",
                     &self.r#source_port_range,
                 ),
                 to_pulumi_object_field(
-                    "source_port_ranges",
+                    "sourcePortRanges",
                     &self.r#source_port_ranges,
                 ),
             ];

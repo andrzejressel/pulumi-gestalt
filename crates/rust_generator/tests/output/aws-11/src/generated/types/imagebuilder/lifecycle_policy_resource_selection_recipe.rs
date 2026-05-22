@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "semantic_version",
+                    "semanticVersion",
                     &self.r#semantic_version,
                 ),
             ];

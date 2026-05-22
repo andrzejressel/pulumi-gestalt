@@ -60,39 +60,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_zone",
+                    "availabilityZone",
                     &self.r#availability_zone,
                 ),
                 to_pulumi_object_field(
-                    "dns_name_servers",
+                    "dnsNameServers",
                     &self.r#dns_name_servers,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_id",
+                    "kmsKeyId",
                     &self.r#kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "max_capacity_units",
+                    "maxCapacityUnits",
                     &self.r#max_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "min_capacity_units",
+                    "minCapacityUnits",
                     &self.r#min_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "multi_az",
+                    "multiAz",
                     &self.r#multi_az,
                 ),
                 to_pulumi_object_field(
-                    "preferred_maintenance_window",
+                    "preferredMaintenanceWindow",
                     &self.r#preferred_maintenance_window,
                 ),
                 to_pulumi_object_field(
-                    "replication_subnet_group_id",
+                    "replicationSubnetGroupId",
                     &self.r#replication_subnet_group_id,
                 ),
                 to_pulumi_object_field(
-                    "vpc_security_group_ids",
+                    "vpcSecurityGroupIds",
                     &self.r#vpc_security_group_ids,
                 ),
             ];

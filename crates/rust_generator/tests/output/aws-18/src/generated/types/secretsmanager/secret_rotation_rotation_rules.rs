@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatically_after_days",
+                    "automaticallyAfterDays",
                     &self.r#automatically_after_days,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "schedule_expression",
+                    "scheduleExpression",
                     &self.r#schedule_expression,
                 ),
             ];

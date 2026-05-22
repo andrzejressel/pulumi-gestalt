@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_line_1",
+                    "addressLine1",
                     &self.r#address_line_1,
                 ),
                 to_pulumi_object_field(
-                    "address_line_2",
+                    "addressLine2",
                     &self.r#address_line_2,
                 ),
                 to_pulumi_object_field(
@@ -87,11 +87,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#city,
                 ),
                 to_pulumi_object_field(
-                    "contact_type",
+                    "contactType",
                     &self.r#contact_type,
                 ),
                 to_pulumi_object_field(
-                    "country_code",
+                    "countryCode",
                     &self.r#country_code,
                 ),
                 to_pulumi_object_field(
@@ -99,7 +99,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#email,
                 ),
                 to_pulumi_object_field(
-                    "extra_params",
+                    "extraParams",
                     &self.r#extra_params,
                 ),
                 to_pulumi_object_field(
@@ -107,19 +107,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#fax,
                 ),
                 to_pulumi_object_field(
-                    "first_name",
+                    "firstName",
                     &self.r#first_name,
                 ),
                 to_pulumi_object_field(
-                    "last_name",
+                    "lastName",
                     &self.r#last_name,
                 ),
                 to_pulumi_object_field(
-                    "organization_name",
+                    "organizationName",
                     &self.r#organization_name,
                 ),
                 to_pulumi_object_field(
-                    "phone_number",
+                    "phoneNumber",
                     &self.r#phone_number,
                 ),
                 to_pulumi_object_field(
@@ -127,7 +127,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "zip_code",
+                    "zipCode",
                     &self.r#zip_code,
                 ),
             ];

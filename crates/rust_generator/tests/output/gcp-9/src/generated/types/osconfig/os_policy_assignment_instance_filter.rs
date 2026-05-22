@@ -48,11 +48,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
                     &self.r#all,
                 ),
                 to_pulumi_object_field(
-                    "exclusion_labels",
+                    "exclusionLabels",
                     &self.r#exclusion_labels,
                 ),
                 to_pulumi_object_field(
-                    "inclusion_labels",
+                    "inclusionLabels",
                     &self.r#inclusion_labels,
                 ),
                 to_pulumi_object_field(

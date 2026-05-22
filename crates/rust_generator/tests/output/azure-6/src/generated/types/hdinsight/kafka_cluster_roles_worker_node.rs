@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kaf
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "number_of_disks_per_node",
+                    "numberOfDisksPerNode",
                     &self.r#number_of_disks_per_node,
                 ),
                 to_pulumi_object_field(
@@ -67,19 +67,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kaf
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "script_actions",
+                    "scriptActions",
                     &self.r#script_actions,
                 ),
                 to_pulumi_object_field(
-                    "ssh_keys",
+                    "sshKeys",
                     &self.r#ssh_keys,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "target_instance_count",
+                    "targetInstanceCount",
                     &self.r#target_instance_count,
                 ),
                 to_pulumi_object_field(
@@ -87,11 +87,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kaf
                     &self.r#username,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_id",
+                    "virtualNetworkId",
                     &self.r#virtual_network_id,
                 ),
                 to_pulumi_object_field(
-                    "vm_size",
+                    "vmSize",
                     &self.r#vm_size,
                 ),
             ];

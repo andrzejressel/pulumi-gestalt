@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Qui
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "contact_flow_id",
+                    "contactFlowId",
                     &self.r#contact_flow_id,
                 ),
                 to_pulumi_object_field(
-                    "queue_id",
+                    "queueId",
                     &self.r#queue_id,
                 ),
             ];

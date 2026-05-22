@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "header_parameters",
+                    "headerParameters",
                     &self.r#header_parameters,
                 ),
                 to_pulumi_object_field(
-                    "path_parameter_values",
+                    "pathParameterValues",
                     &self.r#path_parameter_values,
                 ),
                 to_pulumi_object_field(
-                    "query_string_parameters",
+                    "queryStringParameters",
                     &self.r#query_string_parameters,
                 ),
             ];

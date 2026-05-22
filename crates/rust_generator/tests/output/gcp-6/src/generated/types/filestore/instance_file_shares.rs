@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capacity_gb",
+                    "capacityGb",
                     &self.r#capacity_gb,
                 ),
                 to_pulumi_object_field(
@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "nfs_export_options",
+                    "nfsExportOptions",
                     &self.r#nfs_export_options,
                 ),
                 to_pulumi_object_field(
-                    "source_backup",
+                    "sourceBackup",
                     &self.r#source_backup,
                 ),
             ];

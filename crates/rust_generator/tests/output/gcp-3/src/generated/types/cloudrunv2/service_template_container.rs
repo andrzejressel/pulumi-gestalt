@@ -82,7 +82,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#commands,
                 ),
                 to_pulumi_object_field(
-                    "depends_ons",
+                    "dependsOns",
                     &self.r#depends_ons,
                 ),
                 to_pulumi_object_field(
@@ -94,7 +94,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "liveness_probe",
+                    "livenessProbe",
                     &self.r#liveness_probe,
                 ),
                 to_pulumi_object_field(
@@ -110,15 +110,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#resources,
                 ),
                 to_pulumi_object_field(
-                    "startup_probe",
+                    "startupProbe",
                     &self.r#startup_probe,
                 ),
                 to_pulumi_object_field(
-                    "volume_mounts",
+                    "volumeMounts",
                     &self.r#volume_mounts,
                 ),
                 to_pulumi_object_field(
-                    "working_dir",
+                    "workingDir",
                     &self.r#working_dir,
                 ),
             ];

@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "build_caching",
+                    "buildCaching",
                     &self.r#build_caching,
                 ),
                 to_pulumi_object_field(
-                    "build_command",
+                    "buildCommand",
                     &self.r#build_command,
                 ),
                 to_pulumi_object_field(
-                    "destination_dir",
+                    "destinationDir",
                     &self.r#destination_dir,
                 ),
                 to_pulumi_object_field(
-                    "root_dir",
+                    "rootDir",
                     &self.r#root_dir,
                 ),
                 to_pulumi_object_field(
-                    "web_analytics_tag",
+                    "webAnalyticsTag",
                     &self.r#web_analytics_tag,
                 ),
                 to_pulumi_object_field(
-                    "web_analytics_token",
+                    "webAnalyticsToken",
                     &self.r#web_analytics_token,
                 ),
             ];

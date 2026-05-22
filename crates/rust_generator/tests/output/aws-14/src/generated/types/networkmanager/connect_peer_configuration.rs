@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bgp_configurations",
+                    "bgpConfigurations",
                     &self.r#bgp_configurations,
                 ),
                 to_pulumi_object_field(
-                    "core_network_address",
+                    "coreNetworkAddress",
                     &self.r#core_network_address,
                 ),
                 to_pulumi_object_field(
-                    "inside_cidr_blocks",
+                    "insideCidrBlocks",
                     &self.r#inside_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "peer_address",
+                    "peerAddress",
                     &self.r#peer_address,
                 ),
                 to_pulumi_object_field(

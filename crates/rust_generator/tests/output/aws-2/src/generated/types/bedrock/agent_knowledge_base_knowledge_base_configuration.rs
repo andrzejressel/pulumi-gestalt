@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "vector_knowledge_base_configuration",
+                    "vectorKnowledgeBaseConfiguration",
                     &self.r#vector_knowledge_base_configuration,
                 ),
             ];

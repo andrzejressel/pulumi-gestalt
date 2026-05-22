@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "array_config",
+                    "arrayConfig",
                     &self.r#array_config,
                 ),
                 to_pulumi_object_field(
-                    "field_path",
+                    "fieldPath",
                     &self.r#field_path,
                 ),
                 to_pulumi_object_field(
@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
                     &self.r#order,
                 ),
                 to_pulumi_object_field(
-                    "vector_config",
+                    "vectorConfig",
                     &self.r#vector_config,
                 ),
             ];

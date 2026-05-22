@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_value",
+                    "maxValue",
                     &self.r#max_value,
                 ),
                 to_pulumi_object_field(
-                    "min_value",
+                    "minValue",
                     &self.r#min_value,
                 ),
                 to_pulumi_object_field(
@@ -56,11 +56,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#statistic,
                 ),
                 to_pulumi_object_field(
-                    "strict_max_enabled",
+                    "strictMaxEnabled",
                     &self.r#strict_max_enabled,
                 ),
                 to_pulumi_object_field(
-                    "strict_min_enabled",
+                    "strictMinEnabled",
                     &self.r#strict_min_enabled,
                 ),
             ];

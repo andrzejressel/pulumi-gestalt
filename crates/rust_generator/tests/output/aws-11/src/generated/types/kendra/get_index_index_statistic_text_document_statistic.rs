@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "indexed_text_bytes",
+                    "indexedTextBytes",
                     &self.r#indexed_text_bytes,
                 ),
                 to_pulumi_object_field(
-                    "indexed_text_documents_count",
+                    "indexedTextDocumentsCount",
                     &self.r#indexed_text_documents_count,
                 ),
             ];

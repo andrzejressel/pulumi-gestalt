@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_hub_name",
+                    "eventHubName",
                     &self.r#event_hub_name,
                 ),
                 to_pulumi_object_field(
-                    "event_hub_namespace",
+                    "eventHubNamespace",
                     &self.r#event_hub_namespace,
                 ),
                 to_pulumi_object_field(
@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "subscription_id",
+                    "subscriptionId",
                     &self.r#subscription_id,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
                 to_pulumi_object_field(
-                    "use_common_alert_schema",
+                    "useCommonAlertSchema",
                     &self.r#use_common_alert_schema,
                 ),
             ];

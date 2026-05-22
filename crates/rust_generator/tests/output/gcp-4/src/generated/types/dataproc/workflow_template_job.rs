@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hadoop_job",
+                    "hadoopJob",
                     &self.r#hadoop_job,
                 ),
                 to_pulumi_object_field(
-                    "hive_job",
+                    "hiveJob",
                     &self.r#hive_job,
                 ),
                 to_pulumi_object_field(
@@ -79,19 +79,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "pig_job",
+                    "pigJob",
                     &self.r#pig_job,
                 ),
                 to_pulumi_object_field(
-                    "prerequisite_step_ids",
+                    "prerequisiteStepIds",
                     &self.r#prerequisite_step_ids,
                 ),
                 to_pulumi_object_field(
-                    "presto_job",
+                    "prestoJob",
                     &self.r#presto_job,
                 ),
                 to_pulumi_object_field(
-                    "pyspark_job",
+                    "pysparkJob",
                     &self.r#pyspark_job,
                 ),
                 to_pulumi_object_field(
@@ -99,19 +99,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#scheduling,
                 ),
                 to_pulumi_object_field(
-                    "spark_job",
+                    "sparkJob",
                     &self.r#spark_job,
                 ),
                 to_pulumi_object_field(
-                    "spark_r_job",
+                    "sparkRJob",
                     &self.r#spark_r_job,
                 ),
                 to_pulumi_object_field(
-                    "spark_sql_job",
+                    "sparkSqlJob",
                     &self.r#spark_sql_job,
                 ),
                 to_pulumi_object_field(
-                    "step_id",
+                    "stepId",
                     &self.r#step_id,
                 ),
             ];

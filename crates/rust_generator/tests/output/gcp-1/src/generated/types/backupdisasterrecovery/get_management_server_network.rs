@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "peering_mode",
+                    "peeringMode",
                     &self.r#peering_mode,
                 ),
             ];

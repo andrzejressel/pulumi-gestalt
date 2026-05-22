@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "document_name",
+                    "documentName",
                     &self.r#document_name,
                 ),
                 to_pulumi_object_field(
-                    "document_version",
+                    "documentVersion",
                     &self.r#document_version,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_parameters",
+                    "dynamicParameters",
                     &self.r#dynamic_parameters,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "target_account",
+                    "targetAccount",
                     &self.r#target_account,
                 ),
             ];

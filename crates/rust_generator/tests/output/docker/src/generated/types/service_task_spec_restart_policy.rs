@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#delay,
                 ),
                 to_pulumi_object_field(
-                    "max_attempts",
+                    "maxAttempts",
                     &self.r#max_attempts,
                 ),
                 to_pulumi_object_field(

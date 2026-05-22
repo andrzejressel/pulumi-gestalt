@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_public_ip",
+                    "allowPublicIp",
                     &self.r#allow_public_ip,
                 ),
                 to_pulumi_object_field(
-                    "lab_subnet_name",
+                    "labSubnetName",
                     &self.r#lab_subnet_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_id",
+                    "resourceId",
                     &self.r#resource_id,
                 ),
             ];

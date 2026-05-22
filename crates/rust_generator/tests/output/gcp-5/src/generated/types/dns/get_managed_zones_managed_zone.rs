@@ -48,7 +48,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "dns_name",
+                    "dnsName",
                     &self.r#dns_name,
                 ),
                 to_pulumi_object_field(
@@ -56,7 +56,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "managed_zone_id",
+                    "managedZoneId",
                     &self.r#managed_zone_id,
                 ),
                 to_pulumi_object_field(
@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "name_servers",
+                    "nameServers",
                     &self.r#name_servers,
                 ),
                 to_pulumi_object_field(

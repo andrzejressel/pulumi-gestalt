@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "build_status_config",
+                    "buildStatusConfig",
                     &self.r#build_status_config,
                 ),
                 to_pulumi_object_field(
@@ -59,15 +59,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#buildspec,
                 ),
                 to_pulumi_object_field(
-                    "git_clone_depth",
+                    "gitCloneDepth",
                     &self.r#git_clone_depth,
                 ),
                 to_pulumi_object_field(
-                    "git_submodules_config",
+                    "gitSubmodulesConfig",
                     &self.r#git_submodules_config,
                 ),
                 to_pulumi_object_field(
-                    "insecure_ssl",
+                    "insecureSsl",
                     &self.r#insecure_ssl,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "report_build_status",
+                    "reportBuildStatus",
                     &self.r#report_build_status,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

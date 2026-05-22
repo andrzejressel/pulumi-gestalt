@@ -38,23 +38,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "immutable_backups_enabled",
+                    "immutableBackupsEnabled",
                     &self.r#immutable_backups_enabled,
                 ),
                 to_pulumi_object_field(
-                    "monthly_retention",
+                    "monthlyRetention",
                     &self.r#monthly_retention,
                 ),
                 to_pulumi_object_field(
-                    "week_of_year",
+                    "weekOfYear",
                     &self.r#week_of_year,
                 ),
                 to_pulumi_object_field(
-                    "weekly_retention",
+                    "weeklyRetention",
                     &self.r#weekly_retention,
                 ),
                 to_pulumi_object_field(
-                    "yearly_retention",
+                    "yearlyRetention",
                     &self.r#yearly_retention,
                 ),
             ];

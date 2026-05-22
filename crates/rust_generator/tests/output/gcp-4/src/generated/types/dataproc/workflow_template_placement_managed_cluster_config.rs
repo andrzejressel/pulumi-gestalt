@@ -81,63 +81,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_config",
+                    "autoscalingConfig",
                     &self.r#autoscaling_config,
                 ),
                 to_pulumi_object_field(
-                    "encryption_config",
+                    "encryptionConfig",
                     &self.r#encryption_config,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_config",
+                    "endpointConfig",
                     &self.r#endpoint_config,
                 ),
                 to_pulumi_object_field(
-                    "gce_cluster_config",
+                    "gceClusterConfig",
                     &self.r#gce_cluster_config,
                 ),
                 to_pulumi_object_field(
-                    "gke_cluster_config",
+                    "gkeClusterConfig",
                     &self.r#gke_cluster_config,
                 ),
                 to_pulumi_object_field(
-                    "initialization_actions",
+                    "initializationActions",
                     &self.r#initialization_actions,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_config",
+                    "lifecycleConfig",
                     &self.r#lifecycle_config,
                 ),
                 to_pulumi_object_field(
-                    "master_config",
+                    "masterConfig",
                     &self.r#master_config,
                 ),
                 to_pulumi_object_field(
-                    "metastore_config",
+                    "metastoreConfig",
                     &self.r#metastore_config,
                 ),
                 to_pulumi_object_field(
-                    "secondary_worker_config",
+                    "secondaryWorkerConfig",
                     &self.r#secondary_worker_config,
                 ),
                 to_pulumi_object_field(
-                    "security_config",
+                    "securityConfig",
                     &self.r#security_config,
                 ),
                 to_pulumi_object_field(
-                    "software_config",
+                    "softwareConfig",
                     &self.r#software_config,
                 ),
                 to_pulumi_object_field(
-                    "staging_bucket",
+                    "stagingBucket",
                     &self.r#staging_bucket,
                 ),
                 to_pulumi_object_field(
-                    "temp_bucket",
+                    "tempBucket",
                     &self.r#temp_bucket,
                 ),
                 to_pulumi_object_field(
-                    "worker_config",
+                    "workerConfig",
                     &self.r#worker_config,
                 ),
             ];

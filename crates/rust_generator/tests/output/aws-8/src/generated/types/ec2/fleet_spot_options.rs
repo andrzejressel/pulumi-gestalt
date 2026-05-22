@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_strategy",
+                    "allocationStrategy",
                     &self.r#allocation_strategy,
                 ),
                 to_pulumi_object_field(
-                    "instance_interruption_behavior",
+                    "instanceInterruptionBehavior",
                     &self.r#instance_interruption_behavior,
                 ),
                 to_pulumi_object_field(
-                    "instance_pools_to_use_count",
+                    "instancePoolsToUseCount",
                     &self.r#instance_pools_to_use_count,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_strategies",
+                    "maintenanceStrategies",
                     &self.r#maintenance_strategies,
                 ),
             ];

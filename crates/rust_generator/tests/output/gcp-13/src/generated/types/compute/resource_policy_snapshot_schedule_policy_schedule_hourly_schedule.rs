@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hours_in_cycle",
+                    "hoursInCycle",
                     &self.r#hours_in_cycle,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
             ];

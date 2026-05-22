@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
                     &self.r#database,
                 ),
                 to_pulumi_object_field(
-                    "db_user",
+                    "dbUser",
                     &self.r#db_user,
                 ),
                 to_pulumi_object_field(
-                    "secrets_manager_arn",
+                    "secretsManagerArn",
                     &self.r#secrets_manager_arn,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
                     &self.r#sql,
                 ),
                 to_pulumi_object_field(
-                    "statement_name",
+                    "statementName",
                     &self.r#statement_name,
                 ),
                 to_pulumi_object_field(
-                    "with_event",
+                    "withEvent",
                     &self.r#with_event,
                 ),
             ];

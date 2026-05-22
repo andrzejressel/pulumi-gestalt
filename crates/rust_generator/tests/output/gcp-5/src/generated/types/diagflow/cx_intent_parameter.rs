@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxI
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entity_type",
+                    "entityType",
                     &self.r#entity_type,
                 ),
                 to_pulumi_object_field(
@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxI
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "is_list",
+                    "isList",
                     &self.r#is_list,
                 ),
                 to_pulumi_object_field(

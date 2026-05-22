@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#keytabs,
                 ),
                 to_pulumi_object_field(
-                    "krb_5_config_gcs_uri",
+                    "krb5ConfigGcsUri",
                     &self.r#krb_5_config_gcs_uri,
                 ),
                 to_pulumi_object_field(

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bot
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "intent_name",
+                    "intentName",
                     &self.r#intent_name,
                 ),
                 to_pulumi_object_field(
-                    "intent_version",
+                    "intentVersion",
                     &self.r#intent_version,
                 ),
             ];

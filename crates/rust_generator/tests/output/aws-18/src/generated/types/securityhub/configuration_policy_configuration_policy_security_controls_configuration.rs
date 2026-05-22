@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disabled_control_identifiers",
+                    "disabledControlIdentifiers",
                     &self.r#disabled_control_identifiers,
                 ),
                 to_pulumi_object_field(
-                    "enabled_control_identifiers",
+                    "enabledControlIdentifiers",
                     &self.r#enabled_control_identifiers,
                 ),
                 to_pulumi_object_field(
-                    "security_control_custom_parameters",
+                    "securityControlCustomParameters",
                     &self.r#security_control_custom_parameters,
                 ),
             ];

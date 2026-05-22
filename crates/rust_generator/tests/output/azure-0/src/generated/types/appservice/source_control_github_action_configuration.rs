@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "code_configuration",
+                    "codeConfiguration",
                     &self.r#code_configuration,
                 ),
                 to_pulumi_object_field(
-                    "container_configuration",
+                    "containerConfiguration",
                     &self.r#container_configuration,
                 ),
                 to_pulumi_object_field(
-                    "generate_workflow_file",
+                    "generateWorkflowFile",
                     &self.r#generate_workflow_file,
                 ),
                 to_pulumi_object_field(
-                    "linux_action",
+                    "linuxAction",
                     &self.r#linux_action,
                 ),
             ];

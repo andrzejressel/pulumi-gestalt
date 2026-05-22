@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
                     &self.r#hosts,
                 ),
                 to_pulumi_object_field(
-                    "path_matcher",
+                    "pathMatcher",
                     &self.r#path_matcher,
                 ),
             ];

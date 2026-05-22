@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "policy_template_id",
+                    "policyTemplateId",
                     &self.r#policy_template_id,
                 ),
                 to_pulumi_object_field(

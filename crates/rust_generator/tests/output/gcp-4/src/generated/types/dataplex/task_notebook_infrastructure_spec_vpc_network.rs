@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "network_tags",
+                    "networkTags",
                     &self.r#network_tags,
                 ),
                 to_pulumi_object_field(
-                    "sub_network",
+                    "subNetwork",
                     &self.r#sub_network,
                 ),
             ];

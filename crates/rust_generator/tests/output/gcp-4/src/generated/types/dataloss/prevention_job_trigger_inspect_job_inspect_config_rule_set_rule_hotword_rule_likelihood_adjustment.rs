@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fixed_likelihood",
+                    "fixedLikelihood",
                     &self.r#fixed_likelihood,
                 ),
                 to_pulumi_object_field(
-                    "relative_likelihood",
+                    "relativeLikelihood",
                     &self.r#relative_likelihood,
                 ),
             ];

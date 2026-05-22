@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#direction,
                 ),
                 to_pulumi_object_field(
-                    "port_ranges",
+                    "portRanges",
                     &self.r#port_ranges,
                 ),
                 to_pulumi_object_field(
-                    "prefix_list_id",
+                    "prefixListId",
                     &self.r#prefix_list_id,
                 ),
                 to_pulumi_object_field(
@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "security_group_id",
+                    "securityGroupId",
                     &self.r#security_group_id,
                 ),
             ];

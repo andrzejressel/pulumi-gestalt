@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "preserve_query_string",
+                    "preserveQueryString",
                     &self.r#preserve_query_string,
                 ),
                 to_pulumi_object_field(
-                    "status_code",
+                    "statusCode",
                     &self.r#status_code,
                 ),
                 to_pulumi_object_field(
-                    "target_url",
+                    "targetUrl",
                     &self.r#target_url,
                 ),
             ];

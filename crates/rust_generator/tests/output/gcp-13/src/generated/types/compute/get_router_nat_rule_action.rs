@@ -44,19 +44,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_nat_active_ips",
+                    "sourceNatActiveIps",
                     &self.r#source_nat_active_ips,
                 ),
                 to_pulumi_object_field(
-                    "source_nat_active_ranges",
+                    "sourceNatActiveRanges",
                     &self.r#source_nat_active_ranges,
                 ),
                 to_pulumi_object_field(
-                    "source_nat_drain_ips",
+                    "sourceNatDrainIps",
                     &self.r#source_nat_drain_ips,
                 ),
                 to_pulumi_object_field(
-                    "source_nat_drain_ranges",
+                    "sourceNatDrainRanges",
                     &self.r#source_nat_drain_ranges,
                 ),
             ];

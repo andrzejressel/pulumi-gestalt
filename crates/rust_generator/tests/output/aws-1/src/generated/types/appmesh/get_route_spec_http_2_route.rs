@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#matches,
                 ),
                 to_pulumi_object_field(
-                    "retry_policies",
+                    "retryPolicies",
                     &self.r#retry_policies,
                 ),
                 to_pulumi_object_field(

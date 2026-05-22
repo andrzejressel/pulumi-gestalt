@@ -65,15 +65,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#conditions,
                 ),
                 to_pulumi_object_field(
-                    "latest_created_revision_name",
+                    "latestCreatedRevisionName",
                     &self.r#latest_created_revision_name,
                 ),
                 to_pulumi_object_field(
-                    "latest_ready_revision_name",
+                    "latestReadyRevisionName",
                     &self.r#latest_ready_revision_name,
                 ),
                 to_pulumi_object_field(
-                    "observed_generation",
+                    "observedGeneration",
                     &self.r#observed_generation,
                 ),
                 to_pulumi_object_field(

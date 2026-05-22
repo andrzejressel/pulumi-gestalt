@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
                     &self.r#expiration,
                 ),
                 to_pulumi_object_field(
-                    "start_date_time",
+                    "startDateTime",
                     &self.r#start_date_time,
                 ),
             ];

@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "config_id",
+                    "configId",
                     &self.r#config_id,
                 ),
                 to_pulumi_object_field(
-                    "config_name",
+                    "configName",
                     &self.r#config_name,
                 ),
                 to_pulumi_object_field(
-                    "file_gid",
+                    "fileGid",
                     &self.r#file_gid,
                 ),
                 to_pulumi_object_field(
-                    "file_mode",
+                    "fileMode",
                     &self.r#file_mode,
                 ),
                 to_pulumi_object_field(
-                    "file_name",
+                    "fileName",
                     &self.r#file_name,
                 ),
                 to_pulumi_object_field(
-                    "file_uid",
+                    "fileUid",
                     &self.r#file_uid,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_watch_monitoring_configuration",
+                    "cloudWatchMonitoringConfiguration",
                     &self.r#cloud_watch_monitoring_configuration,
                 ),
                 to_pulumi_object_field(
-                    "persistent_app_ui",
+                    "persistentAppUi",
                     &self.r#persistent_app_ui,
                 ),
                 to_pulumi_object_field(
-                    "s_3_monitoring_configuration",
+                    "s3MonitoringConfiguration",
                     &self.r#s_3_monitoring_configuration,
                 ),
             ];

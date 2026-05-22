@@ -36,11 +36,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "content_type",
+                    "contentType",
                     &self.r#content_type,
                 ),
                 to_pulumi_object_field(
-                    "group_number",
+                    "groupNumber",
                     &self.r#group_number,
                 ),
             ];

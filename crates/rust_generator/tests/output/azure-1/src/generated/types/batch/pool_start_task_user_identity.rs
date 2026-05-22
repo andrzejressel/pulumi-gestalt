@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_user",
+                    "autoUser",
                     &self.r#auto_user,
                 ),
                 to_pulumi_object_field(
-                    "user_name",
+                    "userName",
                     &self.r#user_name,
                 ),
             ];

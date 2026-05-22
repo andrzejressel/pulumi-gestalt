@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_key_id",
+                    "accessKeyId",
                     &self.r#access_key_id,
                 ),
                 to_pulumi_object_field(
-                    "origin_region",
+                    "originRegion",
                     &self.r#origin_region,
                 ),
                 to_pulumi_object_field(
-                    "secret_access_key_version",
+                    "secretAccessKeyVersion",
                     &self.r#secret_access_key_version,
                 ),
             ];

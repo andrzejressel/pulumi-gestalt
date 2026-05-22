@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "local_address_ranges",
+                    "localAddressRanges",
                     &self.r#local_address_ranges,
                 ),
                 to_pulumi_object_field(
-                    "remote_address_ranges",
+                    "remoteAddressRanges",
                     &self.r#remote_address_ranges,
                 ),
             ];

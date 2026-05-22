@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "console_access",
+                    "consoleAccess",
                     &self.r#console_access,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#groups,
                 ),
                 to_pulumi_object_field(
-                    "replication_user",
+                    "replicationUser",
                     &self.r#replication_user,
                 ),
                 to_pulumi_object_field(

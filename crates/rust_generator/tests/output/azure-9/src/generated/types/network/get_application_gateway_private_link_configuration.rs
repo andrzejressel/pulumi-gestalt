@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "ip_configurations",
+                    "ipConfigurations",
                     &self.r#ip_configurations,
                 ),
                 to_pulumi_object_field(

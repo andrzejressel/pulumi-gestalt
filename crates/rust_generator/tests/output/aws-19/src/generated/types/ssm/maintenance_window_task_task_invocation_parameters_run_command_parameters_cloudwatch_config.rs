@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mai
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_log_group_name",
+                    "cloudwatchLogGroupName",
                     &self.r#cloudwatch_log_group_name,
                 ),
                 to_pulumi_object_field(
-                    "cloudwatch_output_enabled",
+                    "cloudwatchOutputEnabled",
                     &self.r#cloudwatch_output_enabled,
                 ),
             ];

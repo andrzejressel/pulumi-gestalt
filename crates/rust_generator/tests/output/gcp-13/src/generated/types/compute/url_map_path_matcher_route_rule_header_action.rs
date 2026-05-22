@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "request_headers_to_adds",
+                    "requestHeadersToAdds",
                     &self.r#request_headers_to_adds,
                 ),
                 to_pulumi_object_field(
-                    "request_headers_to_removes",
+                    "requestHeadersToRemoves",
                     &self.r#request_headers_to_removes,
                 ),
                 to_pulumi_object_field(
-                    "response_headers_to_adds",
+                    "responseHeadersToAdds",
                     &self.r#response_headers_to_adds,
                 ),
                 to_pulumi_object_field(
-                    "response_headers_to_removes",
+                    "responseHeadersToRemoves",
                     &self.r#response_headers_to_removes,
                 ),
             ];

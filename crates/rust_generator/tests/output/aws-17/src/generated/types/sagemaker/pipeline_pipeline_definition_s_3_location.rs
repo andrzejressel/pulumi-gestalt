@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "object_key",
+                    "objectKey",
                     &self.r#object_key,
                 ),
                 to_pulumi_object_field(
-                    "version_id",
+                    "versionId",
                     &self.r#version_id,
                 ),
             ];

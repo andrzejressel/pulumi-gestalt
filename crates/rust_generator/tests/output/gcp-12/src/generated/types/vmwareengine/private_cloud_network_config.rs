@@ -50,23 +50,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_server_ip",
+                    "dnsServerIp",
                     &self.r#dns_server_ip,
                 ),
                 to_pulumi_object_field(
-                    "management_cidr",
+                    "managementCidr",
                     &self.r#management_cidr,
                 ),
                 to_pulumi_object_field(
-                    "management_ip_address_layout_version",
+                    "managementIpAddressLayoutVersion",
                     &self.r#management_ip_address_layout_version,
                 ),
                 to_pulumi_object_field(
-                    "vmware_engine_network",
+                    "vmwareEngineNetwork",
                     &self.r#vmware_engine_network,
                 ),
                 to_pulumi_object_field(
-                    "vmware_engine_network_canonical",
+                    "vmwareEngineNetworkCanonical",
                     &self.r#vmware_engine_network_canonical,
                 ),
             ];

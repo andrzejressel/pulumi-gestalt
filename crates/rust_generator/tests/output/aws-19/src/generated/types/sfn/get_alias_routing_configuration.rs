@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "state_machine_version_arn",
+                    "stateMachineVersionArn",
                     &self.r#state_machine_version_arn,
                 ),
                 to_pulumi_object_field(

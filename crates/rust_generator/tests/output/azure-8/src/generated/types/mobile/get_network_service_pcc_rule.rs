@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#precedence,
                 ),
                 to_pulumi_object_field(
-                    "qos_policies",
+                    "qosPolicies",
                     &self.r#qos_policies,
                 ),
                 to_pulumi_object_field(
-                    "service_data_flow_templates",
+                    "serviceDataFlowTemplates",
                     &self.r#service_data_flow_templates,
                 ),
                 to_pulumi_object_field(
-                    "traffic_control_enabled",
+                    "trafficControlEnabled",
                     &self.r#traffic_control_enabled,
                 ),
             ];

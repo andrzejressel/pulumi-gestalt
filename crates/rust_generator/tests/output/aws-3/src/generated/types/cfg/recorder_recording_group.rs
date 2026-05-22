@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_supported",
+                    "allSupported",
                     &self.r#all_supported,
                 ),
                 to_pulumi_object_field(
-                    "exclusion_by_resource_types",
+                    "exclusionByResourceTypes",
                     &self.r#exclusion_by_resource_types,
                 ),
                 to_pulumi_object_field(
-                    "include_global_resource_types",
+                    "includeGlobalResourceTypes",
                     &self.r#include_global_resource_types,
                 ),
                 to_pulumi_object_field(
-                    "recording_strategies",
+                    "recordingStrategies",
                     &self.r#recording_strategies,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
             ];

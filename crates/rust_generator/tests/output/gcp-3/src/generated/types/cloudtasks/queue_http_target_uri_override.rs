@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
                     &self.r#host,
                 ),
                 to_pulumi_object_field(
-                    "path_override",
+                    "pathOverride",
                     &self.r#path_override,
                 ),
                 to_pulumi_object_field(
@@ -72,7 +72,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "query_override",
+                    "queryOverride",
                     &self.r#query_override,
                 ),
                 to_pulumi_object_field(
@@ -80,7 +80,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
                     &self.r#scheme,
                 ),
                 to_pulumi_object_field(
-                    "uri_override_enforce_mode",
+                    "uriOverrideEnforceMode",
                     &self.r#uri_override_enforce_mode,
                 ),
             ];

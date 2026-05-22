@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_encryption_set_id",
+                    "diskEncryptionSetId",
                     &self.r#disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "encryption_at_host_enabled",
+                    "encryptionAtHostEnabled",
                     &self.r#encryption_at_host_enabled,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "vm_size",
+                    "vmSize",
                     &self.r#vm_size,
                 ),
             ];

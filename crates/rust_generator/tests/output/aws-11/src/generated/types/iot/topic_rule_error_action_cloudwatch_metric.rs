@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_name",
+                    "metricName",
                     &self.r#metric_name,
                 ),
                 to_pulumi_object_field(
-                    "metric_namespace",
+                    "metricNamespace",
                     &self.r#metric_namespace,
                 ),
                 to_pulumi_object_field(
-                    "metric_timestamp",
+                    "metricTimestamp",
                     &self.r#metric_timestamp,
                 ),
                 to_pulumi_object_field(
-                    "metric_unit",
+                    "metricUnit",
                     &self.r#metric_unit,
                 ),
                 to_pulumi_object_field(
-                    "metric_value",
+                    "metricValue",
                     &self.r#metric_value,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];

@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_external_traffic",
+                    "allowExternalTraffic",
                     &self.r#allow_external_traffic,
                 ),
                 to_pulumi_object_field(

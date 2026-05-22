@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "egress_from",
+                    "egressFrom",
                     &self.r#egress_from,
                 ),
                 to_pulumi_object_field(
-                    "egress_to",
+                    "egressTo",
                     &self.r#egress_to,
                 ),
             ];

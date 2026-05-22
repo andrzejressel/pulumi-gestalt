@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "expiration_ms",
+                    "expirationMs",
                     &self.r#expiration_ms,
                 ),
                 to_pulumi_object_field(
@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#field,
                 ),
                 to_pulumi_object_field(
-                    "require_partition_filter",
+                    "requirePartitionFilter",
                     &self.r#require_partition_filter,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cidr_blocks",
+                    "cidrBlocks",
                     &self.r#cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "gcp_public_cidrs_access_enabled",
+                    "gcpPublicCidrsAccessEnabled",
                     &self.r#gcp_public_cidrs_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_enforcement_enabled",
+                    "privateEndpointEnforcementEnabled",
                     &self.r#private_endpoint_enforcement_enabled,
                 ),
             ];

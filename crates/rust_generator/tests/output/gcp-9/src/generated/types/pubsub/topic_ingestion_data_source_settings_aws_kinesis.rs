@@ -42,19 +42,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_role_arn",
+                    "awsRoleArn",
                     &self.r#aws_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "consumer_arn",
+                    "consumerArn",
                     &self.r#consumer_arn,
                 ),
                 to_pulumi_object_field(
-                    "gcp_service_account",
+                    "gcpServiceAccount",
                     &self.r#gcp_service_account,
                 ),
                 to_pulumi_object_field(
-                    "stream_arn",
+                    "streamArn",
                     &self.r#stream_arn,
                 ),
             ];

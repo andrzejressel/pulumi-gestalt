@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#atime,
                 ),
                 to_pulumi_object_field(
-                    "bytes_per_second",
+                    "bytesPerSecond",
                     &self.r#bytes_per_second,
                 ),
                 to_pulumi_object_field(
@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#gid,
                 ),
                 to_pulumi_object_field(
-                    "log_level",
+                    "logLevel",
                     &self.r#log_level,
                 ),
                 to_pulumi_object_field(
@@ -99,35 +99,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#mtime,
                 ),
                 to_pulumi_object_field(
-                    "object_tags",
+                    "objectTags",
                     &self.r#object_tags,
                 ),
                 to_pulumi_object_field(
-                    "overwrite_mode",
+                    "overwriteMode",
                     &self.r#overwrite_mode,
                 ),
                 to_pulumi_object_field(
-                    "posix_permissions",
+                    "posixPermissions",
                     &self.r#posix_permissions,
                 ),
                 to_pulumi_object_field(
-                    "preserve_deleted_files",
+                    "preserveDeletedFiles",
                     &self.r#preserve_deleted_files,
                 ),
                 to_pulumi_object_field(
-                    "preserve_devices",
+                    "preserveDevices",
                     &self.r#preserve_devices,
                 ),
                 to_pulumi_object_field(
-                    "security_descriptor_copy_flags",
+                    "securityDescriptorCopyFlags",
                     &self.r#security_descriptor_copy_flags,
                 ),
                 to_pulumi_object_field(
-                    "task_queueing",
+                    "taskQueueing",
                     &self.r#task_queueing,
                 ),
                 to_pulumi_object_field(
-                    "transfer_mode",
+                    "transferMode",
                     &self.r#transfer_mode,
                 ),
                 to_pulumi_object_field(
@@ -135,7 +135,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#uid,
                 ),
                 to_pulumi_object_field(
-                    "verify_mode",
+                    "verifyMode",
                     &self.r#verify_mode,
                 ),
             ];

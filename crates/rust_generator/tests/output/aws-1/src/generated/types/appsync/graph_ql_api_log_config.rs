@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_logs_role_arn",
+                    "cloudwatchLogsRoleArn",
                     &self.r#cloudwatch_logs_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "exclude_verbose_content",
+                    "excludeVerboseContent",
                     &self.r#exclude_verbose_content,
                 ),
                 to_pulumi_object_field(
-                    "field_log_level",
+                    "fieldLogLevel",
                     &self.r#field_log_level,
                 ),
             ];

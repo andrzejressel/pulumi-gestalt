@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
@@ -61,7 +61,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "metric_kind",
+                    "metricKind",
                     &self.r#metric_kind,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
                     &self.r#unit,
                 ),
                 to_pulumi_object_field(
-                    "value_type",
+                    "valueType",
                     &self.r#value_type,
                 ),
             ];

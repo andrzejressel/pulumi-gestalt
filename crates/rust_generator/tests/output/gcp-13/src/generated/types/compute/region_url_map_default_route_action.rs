@@ -66,19 +66,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cors_policy",
+                    "corsPolicy",
                     &self.r#cors_policy,
                 ),
                 to_pulumi_object_field(
-                    "fault_injection_policy",
+                    "faultInjectionPolicy",
                     &self.r#fault_injection_policy,
                 ),
                 to_pulumi_object_field(
-                    "request_mirror_policy",
+                    "requestMirrorPolicy",
                     &self.r#request_mirror_policy,
                 ),
                 to_pulumi_object_field(
-                    "retry_policy",
+                    "retryPolicy",
                     &self.r#retry_policy,
                 ),
                 to_pulumi_object_field(
@@ -86,11 +86,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#timeout,
                 ),
                 to_pulumi_object_field(
-                    "url_rewrite",
+                    "urlRewrite",
                     &self.r#url_rewrite,
                 ),
                 to_pulumi_object_field(
-                    "weighted_backend_services",
+                    "weightedBackendServices",
                     &self.r#weighted_backend_services,
                 ),
             ];

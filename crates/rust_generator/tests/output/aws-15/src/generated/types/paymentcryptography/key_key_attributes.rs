@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_algorithm",
+                    "keyAlgorithm",
                     &self.r#key_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "key_class",
+                    "keyClass",
                     &self.r#key_class,
                 ),
                 to_pulumi_object_field(
-                    "key_modes_of_use",
+                    "keyModesOfUse",
                     &self.r#key_modes_of_use,
                 ),
                 to_pulumi_object_field(
-                    "key_usage",
+                    "keyUsage",
                     &self.r#key_usage,
                 ),
             ];

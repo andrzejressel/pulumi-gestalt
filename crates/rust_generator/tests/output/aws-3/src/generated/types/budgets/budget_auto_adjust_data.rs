@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_adjust_type",
+                    "autoAdjustType",
                     &self.r#auto_adjust_type,
                 ),
                 to_pulumi_object_field(
-                    "historical_options",
+                    "historicalOptions",
                     &self.r#historical_options,
                 ),
                 to_pulumi_object_field(
-                    "last_auto_adjust_time",
+                    "lastAutoAdjustTime",
                     &self.r#last_auto_adjust_time,
                 ),
             ];

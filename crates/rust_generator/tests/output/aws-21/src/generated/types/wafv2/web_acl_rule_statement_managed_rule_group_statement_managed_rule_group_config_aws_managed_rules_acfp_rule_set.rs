@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "creation_path",
+                    "creationPath",
                     &self.r#creation_path,
                 ),
                 to_pulumi_object_field(
-                    "enable_regex_in_path",
+                    "enableRegexInPath",
                     &self.r#enable_regex_in_path,
                 ),
                 to_pulumi_object_field(
-                    "registration_page_path",
+                    "registrationPagePath",
                     &self.r#registration_page_path,
                 ),
                 to_pulumi_object_field(
-                    "request_inspection",
+                    "requestInspection",
                     &self.r#request_inspection,
                 ),
                 to_pulumi_object_field(
-                    "response_inspection",
+                    "responseInspection",
                     &self.r#response_inspection,
                 ),
             ];

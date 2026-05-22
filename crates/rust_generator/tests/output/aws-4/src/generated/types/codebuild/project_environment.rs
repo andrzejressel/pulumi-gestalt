@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#certificate,
                 ),
                 to_pulumi_object_field(
-                    "compute_type",
+                    "computeType",
                     &self.r#compute_type,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
@@ -75,19 +75,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "image_pull_credentials_type",
+                    "imagePullCredentialsType",
                     &self.r#image_pull_credentials_type,
                 ),
                 to_pulumi_object_field(
-                    "privileged_mode",
+                    "privilegedMode",
                     &self.r#privileged_mode,
                 ),
                 to_pulumi_object_field(
-                    "registry_credential",
+                    "registryCredential",
                     &self.r#registry_credential,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

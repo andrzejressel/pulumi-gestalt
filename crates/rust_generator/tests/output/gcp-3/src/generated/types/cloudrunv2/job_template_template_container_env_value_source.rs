@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "secret_key_ref",
+                    "secretKeyRef",
                     &self.r#secret_key_ref,
                 ),
             ];

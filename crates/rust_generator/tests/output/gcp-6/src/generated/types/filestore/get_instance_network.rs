@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connect_mode",
+                    "connectMode",
                     &self.r#connect_mode,
                 ),
                 to_pulumi_object_field(
-                    "ip_addresses",
+                    "ipAddresses",
                     &self.r#ip_addresses,
                 ),
                 to_pulumi_object_field(
@@ -60,7 +60,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "reserved_ip_range",
+                    "reservedIpRange",
                     &self.r#reserved_ip_range,
                 ),
             ];

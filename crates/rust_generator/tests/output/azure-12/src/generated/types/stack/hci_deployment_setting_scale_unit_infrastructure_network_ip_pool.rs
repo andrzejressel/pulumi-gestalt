@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ending_address",
+                    "endingAddress",
                     &self.r#ending_address,
                 ),
                 to_pulumi_object_field(
-                    "starting_address",
+                    "startingAddress",
                     &self.r#starting_address,
                 ),
             ];

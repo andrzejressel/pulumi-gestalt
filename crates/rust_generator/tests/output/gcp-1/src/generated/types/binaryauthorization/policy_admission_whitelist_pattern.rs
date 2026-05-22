@@ -26,7 +26,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "name_pattern",
+                    "namePattern",
                     &self.r#name_pattern,
                 ),
             ];

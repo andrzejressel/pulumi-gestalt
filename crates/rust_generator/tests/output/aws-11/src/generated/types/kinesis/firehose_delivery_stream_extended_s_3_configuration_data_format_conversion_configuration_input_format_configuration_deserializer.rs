@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hive_json_ser_de",
+                    "hiveJsonSerDe",
                     &self.r#hive_json_ser_de,
                 ),
                 to_pulumi_object_field(
-                    "open_x_json_ser_de",
+                    "openXJsonSerDe",
                     &self.r#open_x_json_ser_de,
                 ),
             ];

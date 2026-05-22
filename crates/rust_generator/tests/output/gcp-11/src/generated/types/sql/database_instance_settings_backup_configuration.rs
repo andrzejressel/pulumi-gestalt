@@ -49,11 +49,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_retention_settings",
+                    "backupRetentionSettings",
                     &self.r#backup_retention_settings,
                 ),
                 to_pulumi_object_field(
-                    "binary_log_enabled",
+                    "binaryLogEnabled",
                     &self.r#binary_log_enabled,
                 ),
                 to_pulumi_object_field(
@@ -65,15 +65,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "point_in_time_recovery_enabled",
+                    "pointInTimeRecoveryEnabled",
                     &self.r#point_in_time_recovery_enabled,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "transaction_log_retention_days",
+                    "transactionLogRetentionDays",
                     &self.r#transaction_log_retention_days,
                 ),
             ];

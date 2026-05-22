@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ad_domain_join_password",
+                    "adDomainJoinPassword",
                     &self.r#ad_domain_join_password,
                 ),
                 to_pulumi_object_field(
-                    "ad_domain_join_user",
+                    "adDomainJoinUser",
                     &self.r#ad_domain_join_user,
                 ),
                 to_pulumi_object_field(
-                    "cross_realm_trust_principal_password",
+                    "crossRealmTrustPrincipalPassword",
                     &self.r#cross_realm_trust_principal_password,
                 ),
                 to_pulumi_object_field(
-                    "kdc_admin_password",
+                    "kdcAdminPassword",
                     &self.r#kdc_admin_password,
                 ),
                 to_pulumi_object_field(

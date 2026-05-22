@@ -50,23 +50,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#database,
                 ),
                 to_pulumi_object_field(
-                    "database_role",
+                    "databaseRole",
                     &self.r#database_role,
                 ),
                 to_pulumi_object_field(
-                    "max_parallelism",
+                    "maxParallelism",
                     &self.r#max_parallelism,
                 ),
                 to_pulumi_object_field(
-                    "use_data_boost",
+                    "useDataBoost",
                     &self.r#use_data_boost,
                 ),
                 to_pulumi_object_field(
-                    "use_parallelism",
+                    "useParallelism",
                     &self.r#use_parallelism,
                 ),
                 to_pulumi_object_field(
-                    "use_serverless_analytics",
+                    "useServerlessAnalytics",
                     &self.r#use_serverless_analytics,
                 ),
             ];

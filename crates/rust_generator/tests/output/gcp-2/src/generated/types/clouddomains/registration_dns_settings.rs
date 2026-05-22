@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_dns",
+                    "customDns",
                     &self.r#custom_dns,
                 ),
                 to_pulumi_object_field(
-                    "glue_records",
+                    "glueRecords",
                     &self.r#glue_records,
                 ),
             ];

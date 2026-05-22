@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "netbios_name",
+                    "netbiosName",
                     &self.r#netbios_name,
                 ),
                 to_pulumi_object_field(
-                    "self_managed_active_directory_configurations",
+                    "selfManagedActiveDirectoryConfigurations",
                     &self.r#self_managed_active_directory_configurations,
                 ),
             ];

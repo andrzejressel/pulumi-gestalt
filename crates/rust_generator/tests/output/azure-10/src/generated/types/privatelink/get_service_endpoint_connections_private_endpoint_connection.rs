@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_required",
+                    "actionRequired",
                     &self.r#action_required,
                 ),
                 to_pulumi_object_field(
-                    "connection_id",
+                    "connectionId",
                     &self.r#connection_id,
                 ),
                 to_pulumi_object_field(
-                    "connection_name",
+                    "connectionName",
                     &self.r#connection_name,
                 ),
                 to_pulumi_object_field(
@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_id",
+                    "privateEndpointId",
                     &self.r#private_endpoint_id,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_name",
+                    "privateEndpointName",
                     &self.r#private_endpoint_name,
                 ),
                 to_pulumi_object_field(

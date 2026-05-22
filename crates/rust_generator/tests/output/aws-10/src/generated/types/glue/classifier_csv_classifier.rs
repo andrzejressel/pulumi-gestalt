@@ -55,19 +55,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_single_column",
+                    "allowSingleColumn",
                     &self.r#allow_single_column,
                 ),
                 to_pulumi_object_field(
-                    "contains_header",
+                    "containsHeader",
                     &self.r#contains_header,
                 ),
                 to_pulumi_object_field(
-                    "custom_datatype_configured",
+                    "customDatatypeConfigured",
                     &self.r#custom_datatype_configured,
                 ),
                 to_pulumi_object_field(
-                    "custom_datatypes",
+                    "customDatatypes",
                     &self.r#custom_datatypes,
                 ),
                 to_pulumi_object_field(
@@ -75,7 +75,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
                     &self.r#delimiter,
                 ),
                 to_pulumi_object_field(
-                    "disable_value_trimming",
+                    "disableValueTrimming",
                     &self.r#disable_value_trimming,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "quote_symbol",
+                    "quoteSymbol",
                     &self.r#quote_symbol,
                 ),
                 to_pulumi_object_field(

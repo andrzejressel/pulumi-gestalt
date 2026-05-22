@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delta_sync_config",
+                    "deltaSyncConfig",
                     &self.r#delta_sync_config,
                 ),
                 to_pulumi_object_field(
@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "table_name",
+                    "tableName",
                     &self.r#table_name,
                 ),
                 to_pulumi_object_field(
-                    "use_caller_credentials",
+                    "useCallerCredentials",
                     &self.r#use_caller_credentials,
                 ),
                 to_pulumi_object_field(

@@ -59,31 +59,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Azu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "database_encryption",
+                    "databaseEncryption",
                     &self.r#database_encryption,
                 ),
                 to_pulumi_object_field(
-                    "main_volume",
+                    "mainVolume",
                     &self.r#main_volume,
                 ),
                 to_pulumi_object_field(
-                    "proxy_config",
+                    "proxyConfig",
                     &self.r#proxy_config,
                 ),
                 to_pulumi_object_field(
-                    "replica_placements",
+                    "replicaPlacements",
                     &self.r#replica_placements,
                 ),
                 to_pulumi_object_field(
-                    "root_volume",
+                    "rootVolume",
                     &self.r#root_volume,
                 ),
                 to_pulumi_object_field(
-                    "ssh_config",
+                    "sshConfig",
                     &self.r#ssh_config,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Azu
                     &self.r#version,
                 ),
                 to_pulumi_object_field(
-                    "vm_size",
+                    "vmSize",
                     &self.r#vm_size,
                 ),
             ];

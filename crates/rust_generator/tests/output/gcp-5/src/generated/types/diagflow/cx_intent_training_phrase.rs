@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxI
                     &self.r#parts,
                 ),
                 to_pulumi_object_field(
-                    "repeat_count",
+                    "repeatCount",
                     &self.r#repeat_count,
                 ),
             ];

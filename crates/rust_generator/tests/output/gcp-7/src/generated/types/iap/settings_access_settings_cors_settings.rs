@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_http_options",
+                    "allowHttpOptions",
                     &self.r#allow_http_options,
                 ),
             ];

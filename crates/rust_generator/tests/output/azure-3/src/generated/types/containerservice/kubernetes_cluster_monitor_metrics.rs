@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "annotations_allowed",
+                    "annotationsAllowed",
                     &self.r#annotations_allowed,
                 ),
                 to_pulumi_object_field(
-                    "labels_allowed",
+                    "labelsAllowed",
                     &self.r#labels_allowed,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_ca",
+                    "isCa",
                     &self.r#is_ca,
                 ),
                 to_pulumi_object_field(
-                    "max_issuer_path_length",
+                    "maxIssuerPathLength",
                     &self.r#max_issuer_path_length,
                 ),
             ];

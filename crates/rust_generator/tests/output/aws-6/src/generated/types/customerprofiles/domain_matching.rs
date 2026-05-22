@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_merging",
+                    "autoMerging",
                     &self.r#auto_merging,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "exporting_config",
+                    "exportingConfig",
                     &self.r#exporting_config,
                 ),
                 to_pulumi_object_field(
-                    "job_schedule",
+                    "jobSchedule",
                     &self.r#job_schedule,
                 ),
             ];

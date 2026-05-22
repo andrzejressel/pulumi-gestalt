@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_disks",
+                    "dataDisks",
                     &self.r#data_disks,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "os_disks",
+                    "osDisks",
                     &self.r#os_disks,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "zone_resilient",
+                    "zoneResilient",
                     &self.r#zone_resilient,
                 ),
             ];

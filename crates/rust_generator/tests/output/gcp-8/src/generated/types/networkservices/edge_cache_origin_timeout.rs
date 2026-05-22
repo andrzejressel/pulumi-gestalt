@@ -48,19 +48,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connect_timeout",
+                    "connectTimeout",
                     &self.r#connect_timeout,
                 ),
                 to_pulumi_object_field(
-                    "max_attempts_timeout",
+                    "maxAttemptsTimeout",
                     &self.r#max_attempts_timeout,
                 ),
                 to_pulumi_object_field(
-                    "read_timeout",
+                    "readTimeout",
                     &self.r#read_timeout,
                 ),
                 to_pulumi_object_field(
-                    "response_timeout",
+                    "responseTimeout",
                     &self.r#response_timeout,
                 ),
             ];

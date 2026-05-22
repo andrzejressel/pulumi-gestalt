@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_secret_store_arn",
+                    "awsSecretStoreArn",
                     &self.r#aws_secret_store_arn,
                 ),
                 to_pulumi_object_field(
-                    "database_name",
+                    "databaseName",
                     &self.r#database_name,
                 ),
                 to_pulumi_object_field(
-                    "db_cluster_identifier",
+                    "dbClusterIdentifier",
                     &self.r#db_cluster_identifier,
                 ),
                 to_pulumi_object_field(

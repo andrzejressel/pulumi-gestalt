@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "crl_configuration",
+                    "crlConfiguration",
                     &self.r#crl_configuration,
                 ),
                 to_pulumi_object_field(
-                    "ocsp_configuration",
+                    "ocspConfiguration",
                     &self.r#ocsp_configuration,
                 ),
             ];

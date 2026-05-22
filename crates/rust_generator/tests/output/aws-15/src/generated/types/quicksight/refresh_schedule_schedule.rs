@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ref
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "refresh_type",
+                    "refreshType",
                     &self.r#refresh_type,
                 ),
                 to_pulumi_object_field(
-                    "schedule_frequency",
+                    "scheduleFrequency",
                     &self.r#schedule_frequency,
                 ),
                 to_pulumi_object_field(
-                    "start_after_date_time",
+                    "startAfterDateTime",
                     &self.r#start_after_date_time,
                 ),
             ];

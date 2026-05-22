@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "json_custom_config",
+                    "jsonCustomConfig",
                     &self.r#json_custom_config,
                 ),
                 to_pulumi_object_field(
-                    "json_parsing",
+                    "jsonParsing",
                     &self.r#json_parsing,
                 ),
                 to_pulumi_object_field(
-                    "log_level",
+                    "logLevel",
                     &self.r#log_level,
                 ),
                 to_pulumi_object_field(
-                    "user_ip_request_headers",
+                    "userIpRequestHeaders",
                     &self.r#user_ip_request_headers,
                 ),
             ];

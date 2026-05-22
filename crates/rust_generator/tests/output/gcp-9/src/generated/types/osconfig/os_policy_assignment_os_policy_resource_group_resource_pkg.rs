@@ -68,7 +68,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
                     &self.r#deb,
                 ),
                 to_pulumi_object_field(
-                    "desired_state",
+                    "desiredState",
                     &self.r#desired_state,
                 ),
                 to_pulumi_object_field(

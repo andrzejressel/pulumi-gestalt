@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "subject_configs",
+                    "subjectConfigs",
                     &self.r#subject_configs,
                 ),
                 to_pulumi_object_field(
-                    "subject_key_ids",
+                    "subjectKeyIds",
                     &self.r#subject_key_ids,
                 ),
                 to_pulumi_object_field(
-                    "x_509_configs",
+                    "x509Configs",
                     &self.r#x_509_configs,
                 ),
             ];

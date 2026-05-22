@@ -59,15 +59,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "http_method",
+                    "httpMethod",
                     &self.r#http_method,
                 ),
                 to_pulumi_object_field(
-                    "oauth_token",
+                    "oauthToken",
                     &self.r#oauth_token,
                 ),
                 to_pulumi_object_field(
-                    "oidc_token",
+                    "oidcToken",
                     &self.r#oidc_token,
                 ),
                 to_pulumi_object_field(

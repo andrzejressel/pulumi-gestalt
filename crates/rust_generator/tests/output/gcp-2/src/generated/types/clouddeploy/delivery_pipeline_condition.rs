@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pipeline_ready_conditions",
+                    "pipelineReadyConditions",
                     &self.r#pipeline_ready_conditions,
                 ),
                 to_pulumi_object_field(
-                    "targets_present_conditions",
+                    "targetsPresentConditions",
                     &self.r#targets_present_conditions,
                 ),
                 to_pulumi_object_field(
-                    "targets_type_conditions",
+                    "targetsTypeConditions",
                     &self.r#targets_type_conditions,
                 ),
             ];

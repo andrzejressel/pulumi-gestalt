@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_id",
+                    "storageAccountId",
                     &self.r#storage_account_id,
                 ),
                 to_pulumi_object_field(
-                    "table_name",
+                    "tableName",
                     &self.r#table_name,
                 ),
             ];

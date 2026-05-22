@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxV
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_name",
+                    "clusterName",
                     &self.r#cluster_name,
                 ),
                 to_pulumi_object_field(
-                    "cluster_status",
+                    "clusterStatus",
                     &self.r#cluster_status,
                 ),
                 to_pulumi_object_field(
-                    "cluster_type",
+                    "clusterType",
                     &self.r#cluster_type,
                 ),
             ];

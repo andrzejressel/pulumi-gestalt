@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cdn_policy",
+                    "cdnPolicy",
                     &self.r#cdn_policy,
                 ),
                 to_pulumi_object_field(
-                    "cors_policy",
+                    "corsPolicy",
                     &self.r#cors_policy,
                 ),
                 to_pulumi_object_field(
-                    "url_rewrite",
+                    "urlRewrite",
                     &self.r#url_rewrite,
                 ),
             ];

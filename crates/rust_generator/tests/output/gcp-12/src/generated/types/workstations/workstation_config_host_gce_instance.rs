@@ -88,47 +88,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#accelerators,
                 ),
                 to_pulumi_object_field(
-                    "boost_configs",
+                    "boostConfigs",
                     &self.r#boost_configs,
                 ),
                 to_pulumi_object_field(
-                    "boot_disk_size_gb",
+                    "bootDiskSizeGb",
                     &self.r#boot_disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "confidential_instance_config",
+                    "confidentialInstanceConfig",
                     &self.r#confidential_instance_config,
                 ),
                 to_pulumi_object_field(
-                    "disable_public_ip_addresses",
+                    "disablePublicIpAddresses",
                     &self.r#disable_public_ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "disable_ssh",
+                    "disableSsh",
                     &self.r#disable_ssh,
                 ),
                 to_pulumi_object_field(
-                    "enable_nested_virtualization",
+                    "enableNestedVirtualization",
                     &self.r#enable_nested_virtualization,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "pool_size",
+                    "poolSize",
                     &self.r#pool_size,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "service_account_scopes",
+                    "serviceAccountScopes",
                     &self.r#service_account_scopes,
                 ),
                 to_pulumi_object_field(
-                    "shielded_instance_config",
+                    "shieldedInstanceConfig",
                     &self.r#shielded_instance_config,
                 ),
                 to_pulumi_object_field(
@@ -136,7 +136,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "vm_tags",
+                    "vmTags",
                     &self.r#vm_tags,
                 ),
             ];

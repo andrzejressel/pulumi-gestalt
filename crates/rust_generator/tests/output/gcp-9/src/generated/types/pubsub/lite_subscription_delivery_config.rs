@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lit
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delivery_requirement",
+                    "deliveryRequirement",
                     &self.r#delivery_requirement,
                 ),
             ];

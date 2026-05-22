@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_access",
+                    "accountAccess",
                     &self.r#account_access,
                 ),
                 to_pulumi_object_field(
-                    "node_management_access",
+                    "nodeManagementAccess",
                     &self.r#node_management_access,
                 ),
             ];

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_ipv_4_cidr_block",
+                    "clusterIpv4CidrBlock",
                     &self.r#cluster_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "cluster_secondary_range_name",
+                    "clusterSecondaryRangeName",
                     &self.r#cluster_secondary_range_name,
                 ),
                 to_pulumi_object_field(
-                    "services_ipv_4_cidr_block",
+                    "servicesIpv4CidrBlock",
                     &self.r#services_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "services_secondary_range_name",
+                    "servicesSecondaryRangeName",
                     &self.r#services_secondary_range_name,
                 ),
                 to_pulumi_object_field(
-                    "use_ip_aliases",
+                    "useIpAliases",
                     &self.r#use_ip_aliases,
                 ),
             ];

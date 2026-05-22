@@ -79,63 +79,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudrun_configs",
+                    "cloudrunConfigs",
                     &self.r#cloudrun_configs,
                 ),
                 to_pulumi_object_field(
-                    "config_connector_configs",
+                    "configConnectorConfigs",
                     &self.r#config_connector_configs,
                 ),
                 to_pulumi_object_field(
-                    "dns_cache_configs",
+                    "dnsCacheConfigs",
                     &self.r#dns_cache_configs,
                 ),
                 to_pulumi_object_field(
-                    "gce_persistent_disk_csi_driver_configs",
+                    "gcePersistentDiskCsiDriverConfigs",
                     &self.r#gce_persistent_disk_csi_driver_configs,
                 ),
                 to_pulumi_object_field(
-                    "gcp_filestore_csi_driver_configs",
+                    "gcpFilestoreCsiDriverConfigs",
                     &self.r#gcp_filestore_csi_driver_configs,
                 ),
                 to_pulumi_object_field(
-                    "gcs_fuse_csi_driver_configs",
+                    "gcsFuseCsiDriverConfigs",
                     &self.r#gcs_fuse_csi_driver_configs,
                 ),
                 to_pulumi_object_field(
-                    "gke_backup_agent_configs",
+                    "gkeBackupAgentConfigs",
                     &self.r#gke_backup_agent_configs,
                 ),
                 to_pulumi_object_field(
-                    "horizontal_pod_autoscalings",
+                    "horizontalPodAutoscalings",
                     &self.r#horizontal_pod_autoscalings,
                 ),
                 to_pulumi_object_field(
-                    "http_load_balancings",
+                    "httpLoadBalancings",
                     &self.r#http_load_balancings,
                 ),
                 to_pulumi_object_field(
-                    "istio_configs",
+                    "istioConfigs",
                     &self.r#istio_configs,
                 ),
                 to_pulumi_object_field(
-                    "kalm_configs",
+                    "kalmConfigs",
                     &self.r#kalm_configs,
                 ),
                 to_pulumi_object_field(
-                    "network_policy_configs",
+                    "networkPolicyConfigs",
                     &self.r#network_policy_configs,
                 ),
                 to_pulumi_object_field(
-                    "parallelstore_csi_driver_configs",
+                    "parallelstoreCsiDriverConfigs",
                     &self.r#parallelstore_csi_driver_configs,
                 ),
                 to_pulumi_object_field(
-                    "ray_operator_configs",
+                    "rayOperatorConfigs",
                     &self.r#ray_operator_configs,
                 ),
                 to_pulumi_object_field(
-                    "stateful_ha_configs",
+                    "statefulHaConfigs",
                     &self.r#stateful_ha_configs,
                 ),
             ];

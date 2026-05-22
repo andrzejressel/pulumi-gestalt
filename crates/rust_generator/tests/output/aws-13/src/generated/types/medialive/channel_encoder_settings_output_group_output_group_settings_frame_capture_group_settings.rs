@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "frame_capture_cdn_settings",
+                    "frameCaptureCdnSettings",
                     &self.r#frame_capture_cdn_settings,
                 ),
             ];

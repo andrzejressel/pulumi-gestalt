@@ -44,23 +44,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "big_query_options",
+                    "bigQueryOptions",
                     &self.r#big_query_options,
                 ),
                 to_pulumi_object_field(
-                    "cloud_storage_options",
+                    "cloudStorageOptions",
                     &self.r#cloud_storage_options,
                 ),
                 to_pulumi_object_field(
-                    "datastore_options",
+                    "datastoreOptions",
                     &self.r#datastore_options,
                 ),
                 to_pulumi_object_field(
-                    "hybrid_options",
+                    "hybridOptions",
                     &self.r#hybrid_options,
                 ),
                 to_pulumi_object_field(
-                    "timespan_config",
+                    "timespanConfig",
                     &self.r#timespan_config,
                 ),
             ];

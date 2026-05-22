@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_rules",
+                    "hostRules",
                     &self.r#host_rules,
                 ),
                 to_pulumi_object_field(
-                    "path_matchers",
+                    "pathMatchers",
                     &self.r#path_matchers,
                 ),
             ];

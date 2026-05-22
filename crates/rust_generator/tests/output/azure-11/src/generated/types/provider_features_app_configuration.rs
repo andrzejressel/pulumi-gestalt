@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "purge_soft_delete_on_destroy",
+                    "purgeSoftDeleteOnDestroy",
                     &self.r#purge_soft_delete_on_destroy,
                 ),
                 to_pulumi_object_field(
-                    "recover_soft_deleted",
+                    "recoverSoftDeleted",
                     &self.r#recover_soft_deleted,
                 ),
             ];

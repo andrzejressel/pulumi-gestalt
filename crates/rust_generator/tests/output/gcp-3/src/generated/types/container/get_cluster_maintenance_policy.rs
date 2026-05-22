@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "daily_maintenance_windows",
+                    "dailyMaintenanceWindows",
                     &self.r#daily_maintenance_windows,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_exclusions",
+                    "maintenanceExclusions",
                     &self.r#maintenance_exclusions,
                 ),
                 to_pulumi_object_field(
-                    "recurring_windows",
+                    "recurringWindows",
                     &self.r#recurring_windows,
                 ),
             ];

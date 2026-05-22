@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_topic",
+                    "errorTopic",
                     &self.r#error_topic,
                 ),
                 to_pulumi_object_field(
-                    "include_inference_response_ins",
+                    "includeInferenceResponseIns",
                     &self.r#include_inference_response_ins,
                 ),
                 to_pulumi_object_field(
-                    "success_topic",
+                    "successTopic",
                     &self.r#success_topic,
                 ),
             ];

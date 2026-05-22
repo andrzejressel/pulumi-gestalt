@@ -78,7 +78,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#configuration,
                 ),
                 to_pulumi_object_field(
-                    "input_artifacts",
+                    "inputArtifacts",
                     &self.r#input_artifacts,
                 ),
                 to_pulumi_object_field(
@@ -90,7 +90,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#namespace,
                 ),
                 to_pulumi_object_field(
-                    "output_artifacts",
+                    "outputArtifacts",
                     &self.r#output_artifacts,
                 ),
                 to_pulumi_object_field(
@@ -106,15 +106,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "run_order",
+                    "runOrder",
                     &self.r#run_order,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_minutes",
+                    "timeoutInMinutes",
                     &self.r#timeout_in_minutes,
                 ),
                 to_pulumi_object_field(

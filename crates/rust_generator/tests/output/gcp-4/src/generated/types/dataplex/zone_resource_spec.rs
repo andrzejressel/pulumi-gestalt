@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "location_type",
+                    "locationType",
                     &self.r#location_type,
                 ),
             ];

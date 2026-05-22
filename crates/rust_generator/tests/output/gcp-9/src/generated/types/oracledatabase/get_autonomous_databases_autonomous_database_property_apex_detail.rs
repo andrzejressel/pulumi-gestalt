@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "apex_version",
+                    "apexVersion",
                     &self.r#apex_version,
                 ),
                 to_pulumi_object_field(
-                    "ords_version",
+                    "ordsVersion",
                     &self.r#ords_version,
                 ),
             ];

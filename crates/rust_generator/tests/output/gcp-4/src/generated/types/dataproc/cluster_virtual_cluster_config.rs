@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auxiliary_services_config",
+                    "auxiliaryServicesConfig",
                     &self.r#auxiliary_services_config,
                 ),
                 to_pulumi_object_field(
-                    "kubernetes_cluster_config",
+                    "kubernetesClusterConfig",
                     &self.r#kubernetes_cluster_config,
                 ),
                 to_pulumi_object_field(
-                    "staging_bucket",
+                    "stagingBucket",
                     &self.r#staging_bucket,
                 ),
             ];

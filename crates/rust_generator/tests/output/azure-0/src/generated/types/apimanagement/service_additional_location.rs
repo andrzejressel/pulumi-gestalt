@@ -61,11 +61,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#capacity,
                 ),
                 to_pulumi_object_field(
-                    "gateway_disabled",
+                    "gatewayDisabled",
                     &self.r#gateway_disabled,
                 ),
                 to_pulumi_object_field(
-                    "gateway_regional_url",
+                    "gatewayRegionalUrl",
                     &self.r#gateway_regional_url,
                 ),
                 to_pulumi_object_field(
@@ -73,19 +73,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_addresses",
+                    "privateIpAddresses",
                     &self.r#private_ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_address_id",
+                    "publicIpAddressId",
                     &self.r#public_ip_address_id,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_addresses",
+                    "publicIpAddresses",
                     &self.r#public_ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_configuration",
+                    "virtualNetworkConfiguration",
                     &self.r#virtual_network_configuration,
                 ),
                 to_pulumi_object_field(

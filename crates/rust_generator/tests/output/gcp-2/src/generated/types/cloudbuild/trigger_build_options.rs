@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_substitutions",
+                    "dynamicSubstitutions",
                     &self.r#dynamic_substitutions,
                 ),
                 to_pulumi_object_field(
@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#envs,
                 ),
                 to_pulumi_object_field(
-                    "log_streaming_option",
+                    "logStreamingOption",
                     &self.r#log_streaming_option,
                 ),
                 to_pulumi_object_field(
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#logging,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "requested_verify_option",
+                    "requestedVerifyOption",
                     &self.r#requested_verify_option,
                 ),
                 to_pulumi_object_field(
-                    "secret_envs",
+                    "secretEnvs",
                     &self.r#secret_envs,
                 ),
                 to_pulumi_object_field(
-                    "source_provenance_hashes",
+                    "sourceProvenanceHashes",
                     &self.r#source_provenance_hashes,
                 ),
                 to_pulumi_object_field(
-                    "substitution_option",
+                    "substitutionOption",
                     &self.r#substitution_option,
                 ),
                 to_pulumi_object_field(
@@ -135,7 +135,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#volumes,
                 ),
                 to_pulumi_object_field(
-                    "worker_pool",
+                    "workerPool",
                     &self.r#worker_pool,
                 ),
             ];

@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tls
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_ports",
+                    "destinationPorts",
                     &self.r#destination_ports,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tls
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "source_ports",
+                    "sourcePorts",
                     &self.r#source_ports,
                 ),
                 to_pulumi_object_field(

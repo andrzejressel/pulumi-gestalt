@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_auth",
+                    "basicAuth",
                     &self.r#basic_auth,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_tls_auth",
+                    "clientCertificateTlsAuth",
                     &self.r#client_certificate_tls_auth,
                 ),
                 to_pulumi_object_field(
-                    "sasl_scram_256_auth",
+                    "saslScram256Auth",
                     &self.r#sasl_scram_256_auth,
                 ),
                 to_pulumi_object_field(
-                    "sasl_scram_512_auth",
+                    "saslScram512Auth",
                     &self.r#sasl_scram_512_auth,
                 ),
             ];

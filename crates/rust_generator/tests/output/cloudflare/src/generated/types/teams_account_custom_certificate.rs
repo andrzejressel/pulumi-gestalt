@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tea
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "updated_at",
+                    "updatedAt",
                     &self.r#updated_at,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "challenge_required_on_new_device",
+                    "challengeRequiredOnNewDevice",
                     &self.r#challenge_required_on_new_device,
                 ),
                 to_pulumi_object_field(
-                    "device_only_remembered_on_user_prompt",
+                    "deviceOnlyRememberedOnUserPrompt",
                     &self.r#device_only_remembered_on_user_prompt,
                 ),
             ];

@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rol
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "data_actions",
+                    "dataActions",
                     &self.r#data_actions,
                 ),
                 to_pulumi_object_field(
-                    "not_actions",
+                    "notActions",
                     &self.r#not_actions,
                 ),
                 to_pulumi_object_field(
-                    "not_data_actions",
+                    "notDataActions",
                     &self.r#not_data_actions,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_hub_namespace_id",
+                    "eventHubNamespaceId",
                     &self.r#event_hub_namespace_id,
                 ),
                 to_pulumi_object_field(
-                    "resource_group_id",
+                    "resourceGroupId",
                     &self.r#resource_group_id,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_id",
+                    "storageAccountId",
                     &self.r#storage_account_id,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_id",
+                    "resourceId",
                     &self.r#resource_id,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
             ];

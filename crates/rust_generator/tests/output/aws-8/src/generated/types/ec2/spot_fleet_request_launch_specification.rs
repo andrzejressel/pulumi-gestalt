@@ -89,39 +89,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
                     &self.r#ami,
                 ),
                 to_pulumi_object_field(
-                    "associate_public_ip_address",
+                    "associatePublicIpAddress",
                     &self.r#associate_public_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "availability_zone",
+                    "availabilityZone",
                     &self.r#availability_zone,
                 ),
                 to_pulumi_object_field(
-                    "ebs_block_devices",
+                    "ebsBlockDevices",
                     &self.r#ebs_block_devices,
                 ),
                 to_pulumi_object_field(
-                    "ebs_optimized",
+                    "ebsOptimized",
                     &self.r#ebs_optimized,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_block_devices",
+                    "ephemeralBlockDevices",
                     &self.r#ephemeral_block_devices,
                 ),
                 to_pulumi_object_field(
-                    "iam_instance_profile",
+                    "iamInstanceProfile",
                     &self.r#iam_instance_profile,
                 ),
                 to_pulumi_object_field(
-                    "iam_instance_profile_arn",
+                    "iamInstanceProfileArn",
                     &self.r#iam_instance_profile_arn,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "key_name",
+                    "keyName",
                     &self.r#key_name,
                 ),
                 to_pulumi_object_field(
@@ -129,23 +129,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
                     &self.r#monitoring,
                 ),
                 to_pulumi_object_field(
-                    "placement_group",
+                    "placementGroup",
                     &self.r#placement_group,
                 ),
                 to_pulumi_object_field(
-                    "placement_tenancy",
+                    "placementTenancy",
                     &self.r#placement_tenancy,
                 ),
                 to_pulumi_object_field(
-                    "root_block_devices",
+                    "rootBlockDevices",
                     &self.r#root_block_devices,
                 ),
                 to_pulumi_object_field(
-                    "spot_price",
+                    "spotPrice",
                     &self.r#spot_price,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(
@@ -153,15 +153,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "user_data",
+                    "userData",
                     &self.r#user_data,
                 ),
                 to_pulumi_object_field(
-                    "vpc_security_group_ids",
+                    "vpcSecurityGroupIds",
                     &self.r#vpc_security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "weighted_capacity",
+                    "weightedCapacity",
                     &self.r#weighted_capacity,
                 ),
             ];

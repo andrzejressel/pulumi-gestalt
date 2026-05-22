@@ -93,7 +93,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_scaling_enabled",
+                    "autoScalingEnabled",
                     &self.r#auto_scaling_enabled,
                 ),
                 to_pulumi_object_field(
@@ -101,15 +101,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#count,
                 ),
                 to_pulumi_object_field(
-                    "max_count",
+                    "maxCount",
                     &self.r#max_count,
                 ),
                 to_pulumi_object_field(
-                    "max_pods",
+                    "maxPods",
                     &self.r#max_pods,
                 ),
                 to_pulumi_object_field(
-                    "min_count",
+                    "minCount",
                     &self.r#min_count,
                 ),
                 to_pulumi_object_field(
@@ -117,31 +117,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "node_labels",
+                    "nodeLabels",
                     &self.r#node_labels,
                 ),
                 to_pulumi_object_field(
-                    "node_public_ip_enabled",
+                    "nodePublicIpEnabled",
                     &self.r#node_public_ip_enabled,
                 ),
                 to_pulumi_object_field(
-                    "node_public_ip_prefix_id",
+                    "nodePublicIpPrefixId",
                     &self.r#node_public_ip_prefix_id,
                 ),
                 to_pulumi_object_field(
-                    "node_taints",
+                    "nodeTaints",
                     &self.r#node_taints,
                 ),
                 to_pulumi_object_field(
-                    "orchestrator_version",
+                    "orchestratorVersion",
                     &self.r#orchestrator_version,
                 ),
                 to_pulumi_object_field(
-                    "os_disk_size_gb",
+                    "osDiskSizeGb",
                     &self.r#os_disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "os_type",
+                    "osType",
                     &self.r#os_type,
                 ),
                 to_pulumi_object_field(
@@ -149,19 +149,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "upgrade_settings",
+                    "upgradeSettings",
                     &self.r#upgrade_settings,
                 ),
                 to_pulumi_object_field(
-                    "vm_size",
+                    "vmSize",
                     &self.r#vm_size,
                 ),
                 to_pulumi_object_field(
-                    "vnet_subnet_id",
+                    "vnetSubnetId",
                     &self.r#vnet_subnet_id,
                 ),
                 to_pulumi_object_field(

@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#range,
                 ),
                 to_pulumi_object_field(
-                    "skip_leading_rows",
+                    "skipLeadingRows",
                     &self.r#skip_leading_rows,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "anonymous_auth_enabled",
+                    "anonymousAuthEnabled",
                     &self.r#anonymous_auth_enabled,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "internal_user_database_enabled",
+                    "internalUserDatabaseEnabled",
                     &self.r#internal_user_database_enabled,
                 ),
                 to_pulumi_object_field(
-                    "master_user_options",
+                    "masterUserOptions",
                     &self.r#master_user_options,
                 ),
             ];

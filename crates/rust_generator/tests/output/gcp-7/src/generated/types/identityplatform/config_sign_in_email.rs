@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "password_required",
+                    "passwordRequired",
                     &self.r#password_required,
                 ),
             ];

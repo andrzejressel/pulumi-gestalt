@@ -112,51 +112,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "add_signatures",
+                    "addSignatures",
                     &self.r#add_signatures,
                 ),
                 to_pulumi_object_field(
-                    "cache_key_policy",
+                    "cacheKeyPolicy",
                     &self.r#cache_key_policy,
                 ),
                 to_pulumi_object_field(
-                    "cache_mode",
+                    "cacheMode",
                     &self.r#cache_mode,
                 ),
                 to_pulumi_object_field(
-                    "client_ttl",
+                    "clientTtl",
                     &self.r#client_ttl,
                 ),
                 to_pulumi_object_field(
-                    "default_ttl",
+                    "defaultTtl",
                     &self.r#default_ttl,
                 ),
                 to_pulumi_object_field(
-                    "max_ttl",
+                    "maxTtl",
                     &self.r#max_ttl,
                 ),
                 to_pulumi_object_field(
-                    "negative_caching",
+                    "negativeCaching",
                     &self.r#negative_caching,
                 ),
                 to_pulumi_object_field(
-                    "negative_caching_policy",
+                    "negativeCachingPolicy",
                     &self.r#negative_caching_policy,
                 ),
                 to_pulumi_object_field(
-                    "signed_request_keyset",
+                    "signedRequestKeyset",
                     &self.r#signed_request_keyset,
                 ),
                 to_pulumi_object_field(
-                    "signed_request_maximum_expiration_ttl",
+                    "signedRequestMaximumExpirationTtl",
                     &self.r#signed_request_maximum_expiration_ttl,
                 ),
                 to_pulumi_object_field(
-                    "signed_request_mode",
+                    "signedRequestMode",
                     &self.r#signed_request_mode,
                 ),
                 to_pulumi_object_field(
-                    "signed_token_options",
+                    "signedTokenOptions",
                     &self.r#signed_token_options,
                 ),
             ];

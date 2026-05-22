@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_rollout_percentage",
+                    "defaultRolloutPercentage",
                     &self.r#default_rollout_percentage,
                 ),
                 to_pulumi_object_field(

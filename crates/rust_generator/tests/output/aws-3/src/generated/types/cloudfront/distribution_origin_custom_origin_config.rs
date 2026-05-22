@@ -41,27 +41,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_port",
+                    "httpPort",
                     &self.r#http_port,
                 ),
                 to_pulumi_object_field(
-                    "https_port",
+                    "httpsPort",
                     &self.r#https_port,
                 ),
                 to_pulumi_object_field(
-                    "origin_keepalive_timeout",
+                    "originKeepaliveTimeout",
                     &self.r#origin_keepalive_timeout,
                 ),
                 to_pulumi_object_field(
-                    "origin_protocol_policy",
+                    "originProtocolPolicy",
                     &self.r#origin_protocol_policy,
                 ),
                 to_pulumi_object_field(
-                    "origin_read_timeout",
+                    "originReadTimeout",
                     &self.r#origin_read_timeout,
                 ),
                 to_pulumi_object_field(
-                    "origin_ssl_protocols",
+                    "originSslProtocols",
                     &self.r#origin_ssl_protocols,
                 ),
             ];

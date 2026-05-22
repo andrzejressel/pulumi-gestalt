@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lay
                     &self.r#other,
                 ),
                 to_pulumi_object_field(
-                    "plain_other",
+                    "plainOther",
                     &self.r#plain_other,
                 ),
                 to_pulumi_object_field(

@@ -36,19 +36,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "replication_interval_ms",
+                    "replicationIntervalMs",
                     &self.r#replication_interval_ms,
                 ),
                 to_pulumi_object_field(
-                    "source_dataset_id",
+                    "sourceDatasetId",
                     &self.r#source_dataset_id,
                 ),
                 to_pulumi_object_field(
-                    "source_project_id",
+                    "sourceProjectId",
                     &self.r#source_project_id,
                 ),
                 to_pulumi_object_field(
-                    "source_table_id",
+                    "sourceTableId",
                     &self.r#source_table_id,
                 ),
             ];

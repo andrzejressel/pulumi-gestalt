@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_pool",
+                    "connectionPool",
                     &self.r#connection_pool,
                 ),
                 to_pulumi_object_field(
-                    "health_check",
+                    "healthCheck",
                     &self.r#health_check,
                 ),
                 to_pulumi_object_field(
-                    "outlier_detection",
+                    "outlierDetection",
                     &self.r#outlier_detection,
                 ),
                 to_pulumi_object_field(
-                    "port_mapping",
+                    "portMapping",
                     &self.r#port_mapping,
                 ),
                 to_pulumi_object_field(

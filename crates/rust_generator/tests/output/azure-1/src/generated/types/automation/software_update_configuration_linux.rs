@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "classifications_includeds",
+                    "classificationsIncludeds",
                     &self.r#classifications_includeds,
                 ),
                 to_pulumi_object_field(
-                    "excluded_packages",
+                    "excludedPackages",
                     &self.r#excluded_packages,
                 ),
                 to_pulumi_object_field(
-                    "included_packages",
+                    "includedPackages",
                     &self.r#included_packages,
                 ),
                 to_pulumi_object_field(

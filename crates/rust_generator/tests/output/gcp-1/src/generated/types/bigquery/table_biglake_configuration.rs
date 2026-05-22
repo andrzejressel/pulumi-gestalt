@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_id",
+                    "connectionId",
                     &self.r#connection_id,
                 ),
                 to_pulumi_object_field(
-                    "file_format",
+                    "fileFormat",
                     &self.r#file_format,
                 ),
                 to_pulumi_object_field(
-                    "storage_uri",
+                    "storageUri",
                     &self.r#storage_uri,
                 ),
                 to_pulumi_object_field(
-                    "table_format",
+                    "tableFormat",
                     &self.r#table_format,
                 ),
             ];

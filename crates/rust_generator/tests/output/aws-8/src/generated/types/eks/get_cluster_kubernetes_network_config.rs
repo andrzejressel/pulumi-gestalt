@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "elastic_load_balancings",
+                    "elasticLoadBalancings",
                     &self.r#elastic_load_balancings,
                 ),
                 to_pulumi_object_field(
-                    "ip_family",
+                    "ipFamily",
                     &self.r#ip_family,
                 ),
                 to_pulumi_object_field(
-                    "service_ipv_4_cidr",
+                    "serviceIpv4Cidr",
                     &self.r#service_ipv_4_cidr,
                 ),
                 to_pulumi_object_field(
-                    "service_ipv_6_cidr",
+                    "serviceIpv6Cidr",
                     &self.r#service_ipv_6_cidr,
                 ),
             ];

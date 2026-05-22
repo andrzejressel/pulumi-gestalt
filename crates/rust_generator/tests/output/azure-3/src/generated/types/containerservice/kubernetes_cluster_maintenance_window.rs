@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
                     &self.r#alloweds,
                 ),
                 to_pulumi_object_field(
-                    "not_alloweds",
+                    "notAlloweds",
                     &self.r#not_alloweds,
                 ),
             ];

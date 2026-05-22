@@ -68,7 +68,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#prefix,
                 ),
                 to_pulumi_object_field(
-                    "query_parameters",
+                    "queryParameters",
                     &self.r#query_parameters,
                 ),
                 to_pulumi_object_field(

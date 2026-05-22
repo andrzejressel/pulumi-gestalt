@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#environment,
                 ),
                 to_pulumi_object_field(
-                    "image_uri",
+                    "imageUri",
                     &self.r#image_uri,
                 ),
                 to_pulumi_object_field(
-                    "post_analytics_processor_source_uri",
+                    "postAnalyticsProcessorSourceUri",
                     &self.r#post_analytics_processor_source_uri,
                 ),
                 to_pulumi_object_field(
-                    "record_preprocessor_source_uri",
+                    "recordPreprocessorSourceUri",
                     &self.r#record_preprocessor_source_uri,
                 ),
             ];

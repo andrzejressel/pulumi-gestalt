@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#gain,
                 ),
                 to_pulumi_object_field(
-                    "input_channel",
+                    "inputChannel",
                     &self.r#input_channel,
                 ),
             ];

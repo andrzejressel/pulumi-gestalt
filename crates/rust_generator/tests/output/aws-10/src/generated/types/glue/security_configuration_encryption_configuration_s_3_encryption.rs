@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kms_key_arn",
+                    "kmsKeyArn",
                     &self.r#kms_key_arn,
                 ),
                 to_pulumi_object_field(
-                    "s_3_encryption_mode",
+                    "s3EncryptionMode",
                     &self.r#s_3_encryption_mode,
                 ),
             ];

@@ -38,15 +38,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "effective_unreachable_cidr_block",
+                    "effectiveUnreachableCidrBlock",
                     &self.r#effective_unreachable_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "network_attachment",
+                    "networkAttachment",
                     &self.r#network_attachment,
                 ),
                 to_pulumi_object_field(
-                    "unreachable_cidr_block",
+                    "unreachableCidrBlock",
                     &self.r#unreachable_cidr_block,
                 ),
             ];

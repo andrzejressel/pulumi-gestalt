@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entity_type",
+                    "entityType",
                     &self.r#entity_type,
                 ),
                 to_pulumi_object_field(
-                    "field_mappings",
+                    "fieldMappings",
                     &self.r#field_mappings,
                 ),
             ];

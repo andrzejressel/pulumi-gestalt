@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "common_alphabet",
+                    "commonAlphabet",
                     &self.r#common_alphabet,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#context,
                 ),
                 to_pulumi_object_field(
-                    "crypto_key",
+                    "cryptoKey",
                     &self.r#crypto_key,
                 ),
                 to_pulumi_object_field(
-                    "custom_alphabet",
+                    "customAlphabet",
                     &self.r#custom_alphabet,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#radix,
                 ),
                 to_pulumi_object_field(
-                    "surrogate_info_type",
+                    "surrogateInfoType",
                     &self.r#surrogate_info_type,
                 ),
             ];

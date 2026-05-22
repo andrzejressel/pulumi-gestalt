@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "elb_infos",
+                    "elbInfos",
                     &self.r#elb_infos,
                 ),
                 to_pulumi_object_field(
-                    "target_group_infos",
+                    "targetGroupInfos",
                     &self.r#target_group_infos,
                 ),
                 to_pulumi_object_field(
-                    "target_group_pair_info",
+                    "targetGroupPairInfo",
                     &self.r#target_group_pair_info,
                 ),
             ];

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "current_versioned_key_expiration_timestamp",
+                    "currentVersionedKeyExpirationTimestamp",
                     &self.r#current_versioned_key_expiration_timestamp,
                 ),
                 to_pulumi_object_field(
-                    "current_versioned_key_id",
+                    "currentVersionedKeyId",
                     &self.r#current_versioned_key_id,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_key_id",
+                    "keyVaultKeyId",
                     &self.r#key_vault_key_id,
                 ),
                 to_pulumi_object_field(
-                    "last_key_rotation_timestamp",
+                    "lastKeyRotationTimestamp",
                     &self.r#last_key_rotation_timestamp,
                 ),
                 to_pulumi_object_field(
-                    "user_assigned_identity_id",
+                    "userAssignedIdentityId",
                     &self.r#user_assigned_identity_id,
                 ),
             ];

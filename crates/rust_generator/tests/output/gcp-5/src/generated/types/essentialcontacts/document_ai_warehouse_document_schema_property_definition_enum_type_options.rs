@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "possible_values",
+                    "possibleValues",
                     &self.r#possible_values,
                 ),
                 to_pulumi_object_field(
-                    "validation_check_disabled",
+                    "validationCheckDisabled",
                     &self.r#validation_check_disabled,
                 ),
             ];

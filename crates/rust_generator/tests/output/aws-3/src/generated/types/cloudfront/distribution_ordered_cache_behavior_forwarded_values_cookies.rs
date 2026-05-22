@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#forward,
                 ),
                 to_pulumi_object_field(
-                    "whitelisted_names",
+                    "whitelistedNames",
                     &self.r#whitelisted_names,
                 ),
             ];

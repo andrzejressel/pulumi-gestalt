@@ -48,23 +48,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_backoff_duration",
+                    "maxBackoffDuration",
                     &self.r#max_backoff_duration,
                 ),
                 to_pulumi_object_field(
-                    "max_doublings",
+                    "maxDoublings",
                     &self.r#max_doublings,
                 ),
                 to_pulumi_object_field(
-                    "max_retry_duration",
+                    "maxRetryDuration",
                     &self.r#max_retry_duration,
                 ),
                 to_pulumi_object_field(
-                    "min_backoff_duration",
+                    "minBackoffDuration",
                     &self.r#min_backoff_duration,
                 ),
                 to_pulumi_object_field(
-                    "retry_count",
+                    "retryCount",
                     &self.r#retry_count,
                 ),
             ];

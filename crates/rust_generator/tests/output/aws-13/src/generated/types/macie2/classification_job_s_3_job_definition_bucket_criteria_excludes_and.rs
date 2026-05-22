@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "simple_criterion",
+                    "simpleCriterion",
                     &self.r#simple_criterion,
                 ),
                 to_pulumi_object_field(
-                    "tag_criterion",
+                    "tagCriterion",
                     &self.r#tag_criterion,
                 ),
             ];

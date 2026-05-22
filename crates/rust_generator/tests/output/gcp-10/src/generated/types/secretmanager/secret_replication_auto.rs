@@ -26,7 +26,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customer_managed_encryption",
+                    "customerManagedEncryption",
                     &self.r#customer_managed_encryption,
                 ),
             ];

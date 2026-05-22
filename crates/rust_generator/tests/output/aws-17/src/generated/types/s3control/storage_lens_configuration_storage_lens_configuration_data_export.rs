@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_watch_metrics",
+                    "cloudWatchMetrics",
                     &self.r#cloud_watch_metrics,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket_destination",
+                    "s3BucketDestination",
                     &self.r#s_3_bucket_destination,
                 ),
             ];

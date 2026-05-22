@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#commands,
                 ),
                 to_pulumi_object_field(
-                    "entry_points",
+                    "entryPoints",
                     &self.r#entry_points,
                 ),
                 to_pulumi_object_field(
-                    "working_directory",
+                    "workingDirectory",
                     &self.r#working_directory,
                 ),
             ];

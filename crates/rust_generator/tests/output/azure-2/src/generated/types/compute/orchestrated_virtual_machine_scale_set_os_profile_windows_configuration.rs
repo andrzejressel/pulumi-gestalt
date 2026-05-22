@@ -73,39 +73,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_unattend_contents",
+                    "additionalUnattendContents",
                     &self.r#additional_unattend_contents,
                 ),
                 to_pulumi_object_field(
-                    "admin_password",
+                    "adminPassword",
                     &self.r#admin_password,
                 ),
                 to_pulumi_object_field(
-                    "admin_username",
+                    "adminUsername",
                     &self.r#admin_username,
                 ),
                 to_pulumi_object_field(
-                    "computer_name_prefix",
+                    "computerNamePrefix",
                     &self.r#computer_name_prefix,
                 ),
                 to_pulumi_object_field(
-                    "enable_automatic_updates",
+                    "enableAutomaticUpdates",
                     &self.r#enable_automatic_updates,
                 ),
                 to_pulumi_object_field(
-                    "hotpatching_enabled",
+                    "hotpatchingEnabled",
                     &self.r#hotpatching_enabled,
                 ),
                 to_pulumi_object_field(
-                    "patch_assessment_mode",
+                    "patchAssessmentMode",
                     &self.r#patch_assessment_mode,
                 ),
                 to_pulumi_object_field(
-                    "patch_mode",
+                    "patchMode",
                     &self.r#patch_mode,
                 ),
                 to_pulumi_object_field(
-                    "provision_vm_agent",
+                    "provisionVmAgent",
                     &self.r#provision_vm_agent,
                 ),
                 to_pulumi_object_field(
@@ -117,7 +117,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
                     &self.r#timezone,
                 ),
                 to_pulumi_object_field(
-                    "winrm_listeners",
+                    "winrmListeners",
                     &self.r#winrm_listeners,
                 ),
             ];

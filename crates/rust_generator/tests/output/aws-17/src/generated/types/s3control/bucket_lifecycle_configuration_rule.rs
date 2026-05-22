@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "abort_incomplete_multipart_upload",
+                    "abortIncompleteMultipartUpload",
                     &self.r#abort_incomplete_multipart_upload,
                 ),
                 to_pulumi_object_field(

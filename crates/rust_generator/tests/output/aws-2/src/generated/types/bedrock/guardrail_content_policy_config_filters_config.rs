@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gua
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "input_strength",
+                    "inputStrength",
                     &self.r#input_strength,
                 ),
                 to_pulumi_object_field(
-                    "output_strength",
+                    "outputStrength",
                     &self.r#output_strength,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "artifact_storage",
+                    "artifactStorage",
                     &self.r#artifact_storage,
                 ),
                 to_pulumi_object_field(
-                    "execution_timeout",
+                    "executionTimeout",
                     &self.r#execution_timeout,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#verbose,
                 ),
                 to_pulumi_object_field(
-                    "worker_pool",
+                    "workerPool",
                     &self.r#worker_pool,
                 ),
             ];

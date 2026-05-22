@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#frequency,
                 ),
                 to_pulumi_object_field(
-                    "hour_duration",
+                    "hourDuration",
                     &self.r#hour_duration,
                 ),
                 to_pulumi_object_field(
-                    "hour_interval",
+                    "hourInterval",
                     &self.r#hour_interval,
                 ),
                 to_pulumi_object_field(

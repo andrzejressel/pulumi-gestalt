@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "borrow_configurations",
+                    "borrowConfigurations",
                     &self.r#borrow_configurations,
                 ),
                 to_pulumi_object_field(
-                    "provisional_configurations",
+                    "provisionalConfigurations",
                     &self.r#provisional_configurations,
                 ),
                 to_pulumi_object_field(
-                    "renew_type",
+                    "renewType",
                     &self.r#renew_type,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "workspace_resource_id",
+                    "workspaceResourceId",
                     &self.r#workspace_resource_id,
                 ),
             ];

@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "exclude_vaults",
+                    "excludeVaults",
                     &self.r#exclude_vaults,
                 ),
                 to_pulumi_object_field(
-                    "include_vaults",
+                    "includeVaults",
                     &self.r#include_vaults,
                 ),
                 to_pulumi_object_field(
-                    "recovery_point_types",
+                    "recoveryPointTypes",
                     &self.r#recovery_point_types,
                 ),
                 to_pulumi_object_field(
-                    "selection_window_days",
+                    "selectionWindowDays",
                     &self.r#selection_window_days,
                 ),
             ];

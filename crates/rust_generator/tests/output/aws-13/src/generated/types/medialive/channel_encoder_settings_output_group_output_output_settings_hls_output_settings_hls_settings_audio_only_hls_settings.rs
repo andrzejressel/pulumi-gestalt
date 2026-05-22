@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_group_id",
+                    "audioGroupId",
                     &self.r#audio_group_id,
                 ),
                 to_pulumi_object_field(
-                    "audio_only_image",
+                    "audioOnlyImage",
                     &self.r#audio_only_image,
                 ),
                 to_pulumi_object_field(
-                    "audio_track_type",
+                    "audioTrackType",
                     &self.r#audio_track_type,
                 ),
                 to_pulumi_object_field(
-                    "segment_type",
+                    "segmentType",
                     &self.r#segment_type,
                 ),
             ];

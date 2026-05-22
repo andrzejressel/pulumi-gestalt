@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "boot_disk_size_gb",
+                    "bootDiskSizeGb",
                     &self.r#boot_disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "boot_disk_type",
+                    "bootDiskType",
                     &self.r#boot_disk_type,
                 ),
                 to_pulumi_object_field(
-                    "local_ssd_interface",
+                    "localSsdInterface",
                     &self.r#local_ssd_interface,
                 ),
                 to_pulumi_object_field(
-                    "num_local_ssds",
+                    "numLocalSsds",
                     &self.r#num_local_ssds,
                 ),
             ];

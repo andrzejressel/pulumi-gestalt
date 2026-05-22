@@ -57,19 +57,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "encryption_key",
+                    "encryptionKey",
                     &self.r#encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "execution_environment",
+                    "executionEnvironment",
                     &self.r#execution_environment,
                 ),
                 to_pulumi_object_field(
-                    "max_retries",
+                    "maxRetries",
                     &self.r#max_retries,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
@@ -81,7 +81,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#volumes,
                 ),
                 to_pulumi_object_field(
-                    "vpc_accesses",
+                    "vpcAccesses",
                     &self.r#vpc_accesses,
                 ),
             ];

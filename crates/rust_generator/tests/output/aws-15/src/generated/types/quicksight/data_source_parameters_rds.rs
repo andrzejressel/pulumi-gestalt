@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#database,
                 ),
                 to_pulumi_object_field(
-                    "instance_id",
+                    "instanceId",
                     &self.r#instance_id,
                 ),
             ];

@@ -176,51 +176,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_scaling_enabled",
+                    "autoScalingEnabled",
                     &self.r#auto_scaling_enabled,
                 ),
                 to_pulumi_object_field(
-                    "capacity_reservation_group_id",
+                    "capacityReservationGroupId",
                     &self.r#capacity_reservation_group_id,
                 ),
                 to_pulumi_object_field(
-                    "fips_enabled",
+                    "fipsEnabled",
                     &self.r#fips_enabled,
                 ),
                 to_pulumi_object_field(
-                    "gpu_instance",
+                    "gpuInstance",
                     &self.r#gpu_instance,
                 ),
                 to_pulumi_object_field(
-                    "host_encryption_enabled",
+                    "hostEncryptionEnabled",
                     &self.r#host_encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "host_group_id",
+                    "hostGroupId",
                     &self.r#host_group_id,
                 ),
                 to_pulumi_object_field(
-                    "kubelet_config",
+                    "kubeletConfig",
                     &self.r#kubelet_config,
                 ),
                 to_pulumi_object_field(
-                    "kubelet_disk_type",
+                    "kubeletDiskType",
                     &self.r#kubelet_disk_type,
                 ),
                 to_pulumi_object_field(
-                    "linux_os_config",
+                    "linuxOsConfig",
                     &self.r#linux_os_config,
                 ),
                 to_pulumi_object_field(
-                    "max_count",
+                    "maxCount",
                     &self.r#max_count,
                 ),
                 to_pulumi_object_field(
-                    "max_pods",
+                    "maxPods",
                     &self.r#max_pods,
                 ),
                 to_pulumi_object_field(
-                    "min_count",
+                    "minCount",
                     &self.r#min_count,
                 ),
                 to_pulumi_object_field(
@@ -228,59 +228,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "node_count",
+                    "nodeCount",
                     &self.r#node_count,
                 ),
                 to_pulumi_object_field(
-                    "node_labels",
+                    "nodeLabels",
                     &self.r#node_labels,
                 ),
                 to_pulumi_object_field(
-                    "node_network_profile",
+                    "nodeNetworkProfile",
                     &self.r#node_network_profile,
                 ),
                 to_pulumi_object_field(
-                    "node_public_ip_enabled",
+                    "nodePublicIpEnabled",
                     &self.r#node_public_ip_enabled,
                 ),
                 to_pulumi_object_field(
-                    "node_public_ip_prefix_id",
+                    "nodePublicIpPrefixId",
                     &self.r#node_public_ip_prefix_id,
                 ),
                 to_pulumi_object_field(
-                    "only_critical_addons_enabled",
+                    "onlyCriticalAddonsEnabled",
                     &self.r#only_critical_addons_enabled,
                 ),
                 to_pulumi_object_field(
-                    "orchestrator_version",
+                    "orchestratorVersion",
                     &self.r#orchestrator_version,
                 ),
                 to_pulumi_object_field(
-                    "os_disk_size_gb",
+                    "osDiskSizeGb",
                     &self.r#os_disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "os_disk_type",
+                    "osDiskType",
                     &self.r#os_disk_type,
                 ),
                 to_pulumi_object_field(
-                    "os_sku",
+                    "osSku",
                     &self.r#os_sku,
                 ),
                 to_pulumi_object_field(
-                    "pod_subnet_id",
+                    "podSubnetId",
                     &self.r#pod_subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "proximity_placement_group_id",
+                    "proximityPlacementGroupId",
                     &self.r#proximity_placement_group_id,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_mode",
+                    "scaleDownMode",
                     &self.r#scale_down_mode,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_id",
+                    "snapshotId",
                     &self.r#snapshot_id,
                 ),
                 to_pulumi_object_field(
@@ -288,31 +288,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "temporary_name_for_rotation",
+                    "temporaryNameForRotation",
                     &self.r#temporary_name_for_rotation,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "ultra_ssd_enabled",
+                    "ultraSsdEnabled",
                     &self.r#ultra_ssd_enabled,
                 ),
                 to_pulumi_object_field(
-                    "upgrade_settings",
+                    "upgradeSettings",
                     &self.r#upgrade_settings,
                 ),
                 to_pulumi_object_field(
-                    "vm_size",
+                    "vmSize",
                     &self.r#vm_size,
                 ),
                 to_pulumi_object_field(
-                    "vnet_subnet_id",
+                    "vnetSubnetId",
                     &self.r#vnet_subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "workload_runtime",
+                    "workloadRuntime",
                     &self.r#workload_runtime,
                 ),
                 to_pulumi_object_field(

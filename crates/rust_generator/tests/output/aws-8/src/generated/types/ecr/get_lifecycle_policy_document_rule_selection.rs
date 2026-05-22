@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "count_number",
+                    "countNumber",
                     &self.r#count_number,
                 ),
                 to_pulumi_object_field(
-                    "count_type",
+                    "countType",
                     &self.r#count_type,
                 ),
                 to_pulumi_object_field(
-                    "count_unit",
+                    "countUnit",
                     &self.r#count_unit,
                 ),
                 to_pulumi_object_field(
-                    "tag_pattern_lists",
+                    "tagPatternLists",
                     &self.r#tag_pattern_lists,
                 ),
                 to_pulumi_object_field(
-                    "tag_prefix_lists",
+                    "tagPrefixLists",
                     &self.r#tag_prefix_lists,
                 ),
                 to_pulumi_object_field(
-                    "tag_status",
+                    "tagStatus",
                     &self.r#tag_status,
                 ),
             ];

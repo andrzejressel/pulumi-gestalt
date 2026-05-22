@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "recording_frequency",
+                    "recordingFrequency",
                     &self.r#recording_frequency,
                 ),
                 to_pulumi_object_field(
-                    "recording_mode_override",
+                    "recordingModeOverride",
                     &self.r#recording_mode_override,
                 ),
             ];

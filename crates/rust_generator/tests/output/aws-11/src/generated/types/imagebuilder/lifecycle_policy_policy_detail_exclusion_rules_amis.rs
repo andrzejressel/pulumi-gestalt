@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_public",
+                    "isPublic",
                     &self.r#is_public,
                 ),
                 to_pulumi_object_field(
-                    "last_launched",
+                    "lastLaunched",
                     &self.r#last_launched,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#regions,
                 ),
                 to_pulumi_object_field(
-                    "shared_accounts",
+                    "sharedAccounts",
                     &self.r#shared_accounts,
                 ),
                 to_pulumi_object_field(
-                    "tag_map",
+                    "tagMap",
                     &self.r#tag_map,
                 ),
             ];

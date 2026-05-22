@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Inf
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_from",
+                    "copyFrom",
                     &self.r#copy_from,
                 ),
             ];

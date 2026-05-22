@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_labels",
+                    "groupLabels",
                     &self.r#group_labels,
                 ),
                 to_pulumi_object_field(
-                    "instance_name_prefixes",
+                    "instanceNamePrefixes",
                     &self.r#instance_name_prefixes,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
                     &self.r#instances,
                 ),
                 to_pulumi_object_field(
-                    "os_types",
+                    "osTypes",
                     &self.r#os_types,
                 ),
                 to_pulumi_object_field(

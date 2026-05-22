@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
                     &self.r#groups,
                 ),
                 to_pulumi_object_field(
-                    "policy_arn",
+                    "policyArn",
                     &self.r#policy_arn,
                 ),
                 to_pulumi_object_field(

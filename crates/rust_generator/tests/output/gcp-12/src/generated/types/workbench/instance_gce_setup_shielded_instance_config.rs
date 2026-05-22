@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_integrity_monitoring",
+                    "enableIntegrityMonitoring",
                     &self.r#enable_integrity_monitoring,
                 ),
                 to_pulumi_object_field(
-                    "enable_secure_boot",
+                    "enableSecureBoot",
                     &self.r#enable_secure_boot,
                 ),
                 to_pulumi_object_field(
-                    "enable_vtpm",
+                    "enableVtpm",
                     &self.r#enable_vtpm,
                 ),
             ];

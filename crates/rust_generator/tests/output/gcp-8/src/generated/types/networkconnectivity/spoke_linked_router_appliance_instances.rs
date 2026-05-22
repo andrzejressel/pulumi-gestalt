@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "include_import_ranges",
+                    "includeImportRanges",
                     &self.r#include_import_ranges,
                 ),
                 to_pulumi_object_field(
@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
                     &self.r#instances,
                 ),
                 to_pulumi_object_field(
-                    "site_to_site_data_transfer",
+                    "siteToSiteDataTransfer",
                     &self.r#site_to_site_data_transfer,
                 ),
             ];

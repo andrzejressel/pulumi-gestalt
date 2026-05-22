@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "insights_enabled",
+                    "insightsEnabled",
                     &self.r#insights_enabled,
                 ),
                 to_pulumi_object_field(
-                    "notifications_enabled",
+                    "notificationsEnabled",
                     &self.r#notifications_enabled,
                 ),
             ];

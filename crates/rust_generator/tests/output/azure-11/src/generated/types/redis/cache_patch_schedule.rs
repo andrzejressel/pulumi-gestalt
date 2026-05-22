@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_week",
+                    "dayOfWeek",
                     &self.r#day_of_week,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_window",
+                    "maintenanceWindow",
                     &self.r#maintenance_window,
                 ),
                 to_pulumi_object_field(
-                    "start_hour_utc",
+                    "startHourUtc",
                     &self.r#start_hour_utc,
                 ),
             ];

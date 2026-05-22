@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "failure_threshold",
+                    "failureThreshold",
                     &self.r#failure_threshold,
                 ),
                 to_pulumi_object_field(
-                    "resource_path",
+                    "resourcePath",
                     &self.r#resource_path,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

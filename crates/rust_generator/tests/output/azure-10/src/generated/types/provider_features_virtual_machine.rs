@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_os_disk_on_deletion",
+                    "deleteOsDiskOnDeletion",
                     &self.r#delete_os_disk_on_deletion,
                 ),
                 to_pulumi_object_field(
-                    "detach_implicit_data_disk_on_deletion",
+                    "detachImplicitDataDiskOnDeletion",
                     &self.r#detach_implicit_data_disk_on_deletion,
                 ),
                 to_pulumi_object_field(
-                    "graceful_shutdown",
+                    "gracefulShutdown",
                     &self.r#graceful_shutdown,
                 ),
                 to_pulumi_object_field(
-                    "skip_shutdown_and_force_delete",
+                    "skipShutdownAndForceDelete",
                     &self.r#skip_shutdown_and_force_delete,
                 ),
             ];

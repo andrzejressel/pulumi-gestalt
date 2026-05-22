@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fhi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "last_updated_partition_config",
+                    "lastUpdatedPartitionConfig",
                     &self.r#last_updated_partition_config,
                 ),
                 to_pulumi_object_field(
-                    "recursive_structure_depth",
+                    "recursiveStructureDepth",
                     &self.r#recursive_structure_depth,
                 ),
                 to_pulumi_object_field(
-                    "schema_type",
+                    "schemaType",
                     &self.r#schema_type,
                 ),
             ];

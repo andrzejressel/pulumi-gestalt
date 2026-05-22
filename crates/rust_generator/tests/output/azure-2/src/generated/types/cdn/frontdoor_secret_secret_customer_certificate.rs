@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_vault_certificate_id",
+                    "keyVaultCertificateId",
                     &self.r#key_vault_certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "subject_alternative_names",
+                    "subjectAlternativeNames",
                     &self.r#subject_alternative_names,
                 ),
             ];

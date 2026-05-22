@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "analysis_scheme",
+                    "analysisScheme",
                     &self.r#analysis_scheme,
                 ),
                 to_pulumi_object_field(
-                    "default_value",
+                    "defaultValue",
                     &self.r#default_value,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "return_",
+                    "return",
                     &self.r#return_,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#sort,
                 ),
                 to_pulumi_object_field(
-                    "source_fields",
+                    "sourceFields",
                     &self.r#source_fields,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

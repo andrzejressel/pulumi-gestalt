@@ -36,19 +36,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ten
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "idp_certificates",
+                    "idpCertificates",
                     &self.r#idp_certificates,
                 ),
                 to_pulumi_object_field(
-                    "idp_entity_id",
+                    "idpEntityId",
                     &self.r#idp_entity_id,
                 ),
                 to_pulumi_object_field(
-                    "sign_request",
+                    "signRequest",
                     &self.r#sign_request,
                 ),
                 to_pulumi_object_field(
-                    "sso_url",
+                    "ssoUrl",
                     &self.r#sso_url,
                 ),
             ];

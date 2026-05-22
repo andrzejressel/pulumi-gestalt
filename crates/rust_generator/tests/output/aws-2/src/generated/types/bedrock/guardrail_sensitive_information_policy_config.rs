@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gua
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pii_entities_configs",
+                    "piiEntitiesConfigs",
                     &self.r#pii_entities_configs,
                 ),
                 to_pulumi_object_field(
-                    "regexes_configs",
+                    "regexesConfigs",
                     &self.r#regexes_configs,
                 ),
             ];

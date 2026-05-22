@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_cloud_map",
+                    "awsCloudMap",
                     &self.r#aws_cloud_map,
                 ),
                 to_pulumi_object_field(

@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_level",
+                    "accessLevel",
                     &self.r#access_level,
                 ),
                 to_pulumi_object_field(

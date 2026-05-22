@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_specification",
+                    "audioSpecification",
                     &self.r#audio_specification,
                 ),
                 to_pulumi_object_field(
-                    "dtmf_specification",
+                    "dtmfSpecification",
                     &self.r#dtmf_specification,
                 ),
                 to_pulumi_object_field(
-                    "start_timeout_ms",
+                    "startTimeoutMs",
                     &self.r#start_timeout_ms,
                 ),
             ];

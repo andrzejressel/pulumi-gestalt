@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_close",
+                    "autoClose",
                     &self.r#auto_close,
                 ),
                 to_pulumi_object_field(
-                    "notification_channel_strategies",
+                    "notificationChannelStrategies",
                     &self.r#notification_channel_strategies,
                 ),
                 to_pulumi_object_field(
-                    "notification_prompts",
+                    "notificationPrompts",
                     &self.r#notification_prompts,
                 ),
                 to_pulumi_object_field(
-                    "notification_rate_limit",
+                    "notificationRateLimit",
                     &self.r#notification_rate_limit,
                 ),
             ];

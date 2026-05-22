@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "bucket_prefix",
+                    "bucketPrefix",
                     &self.r#bucket_prefix,
                 ),
                 to_pulumi_object_field(
-                    "fail_on_first_destination_error",
+                    "failOnFirstDestinationError",
                     &self.r#fail_on_first_destination_error,
                 ),
             ];

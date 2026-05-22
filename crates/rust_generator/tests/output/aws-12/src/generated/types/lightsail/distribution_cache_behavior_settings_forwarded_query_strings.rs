@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#option,
                 ),
                 to_pulumi_object_field(
-                    "query_strings_allowed_lists",
+                    "queryStringsAllowedLists",
                     &self.r#query_strings_allowed_lists,
                 ),
             ];

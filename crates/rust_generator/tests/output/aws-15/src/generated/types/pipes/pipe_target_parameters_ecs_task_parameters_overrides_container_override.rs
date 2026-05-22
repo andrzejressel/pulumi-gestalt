@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#cpu,
                 ),
                 to_pulumi_object_field(
-                    "environment_files",
+                    "environmentFiles",
                     &self.r#environment_files,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#memory,
                 ),
                 to_pulumi_object_field(
-                    "memory_reservation",
+                    "memoryReservation",
                     &self.r#memory_reservation,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "resource_requirements",
+                    "resourceRequirements",
                     &self.r#resource_requirements,
                 ),
             ];

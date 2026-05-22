@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_length",
+                    "maxLength",
                     &self.r#max_length,
                 ),
                 to_pulumi_object_field(
-                    "stop_sequences",
+                    "stopSequences",
                     &self.r#stop_sequences,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
                     &self.r#temperature,
                 ),
                 to_pulumi_object_field(
-                    "top_k",
+                    "topK",
                     &self.r#top_k,
                 ),
                 to_pulumi_object_field(
-                    "top_p",
+                    "topP",
                     &self.r#top_p,
                 ),
             ];

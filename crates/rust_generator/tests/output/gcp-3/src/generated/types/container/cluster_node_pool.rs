@@ -109,15 +109,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#autoscaling,
                 ),
                 to_pulumi_object_field(
-                    "initial_node_count",
+                    "initialNodeCount",
                     &self.r#initial_node_count,
                 ),
                 to_pulumi_object_field(
-                    "instance_group_urls",
+                    "instanceGroupUrls",
                     &self.r#instance_group_urls,
                 ),
                 to_pulumi_object_field(
-                    "managed_instance_group_urls",
+                    "managedInstanceGroupUrls",
                     &self.r#managed_instance_group_urls,
                 ),
                 to_pulumi_object_field(
@@ -125,7 +125,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#management,
                 ),
                 to_pulumi_object_field(
-                    "max_pods_per_node",
+                    "maxPodsPerNode",
                     &self.r#max_pods_per_node,
                 ),
                 to_pulumi_object_field(
@@ -133,35 +133,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "name_prefix",
+                    "namePrefix",
                     &self.r#name_prefix,
                 ),
                 to_pulumi_object_field(
-                    "network_config",
+                    "networkConfig",
                     &self.r#network_config,
                 ),
                 to_pulumi_object_field(
-                    "node_config",
+                    "nodeConfig",
                     &self.r#node_config,
                 ),
                 to_pulumi_object_field(
-                    "node_count",
+                    "nodeCount",
                     &self.r#node_count,
                 ),
                 to_pulumi_object_field(
-                    "node_locations",
+                    "nodeLocations",
                     &self.r#node_locations,
                 ),
                 to_pulumi_object_field(
-                    "placement_policy",
+                    "placementPolicy",
                     &self.r#placement_policy,
                 ),
                 to_pulumi_object_field(
-                    "queued_provisioning",
+                    "queuedProvisioning",
                     &self.r#queued_provisioning,
                 ),
                 to_pulumi_object_field(
-                    "upgrade_settings",
+                    "upgradeSettings",
                     &self.r#upgrade_settings,
                 ),
                 to_pulumi_object_field(

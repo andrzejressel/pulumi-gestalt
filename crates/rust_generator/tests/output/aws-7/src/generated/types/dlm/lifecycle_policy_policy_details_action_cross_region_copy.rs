@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "encryption_configuration",
+                    "encryptionConfiguration",
                     &self.r#encryption_configuration,
                 ),
                 to_pulumi_object_field(
-                    "retain_rule",
+                    "retainRule",
                     &self.r#retain_rule,
                 ),
                 to_pulumi_object_field(

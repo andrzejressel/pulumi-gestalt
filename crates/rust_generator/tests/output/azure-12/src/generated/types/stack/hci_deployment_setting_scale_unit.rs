@@ -111,15 +111,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directory_organizational_unit_path",
+                    "activeDirectoryOrganizationalUnitPath",
                     &self.r#active_directory_organizational_unit_path,
                 ),
                 to_pulumi_object_field(
-                    "bitlocker_boot_volume_enabled",
+                    "bitlockerBootVolumeEnabled",
                     &self.r#bitlocker_boot_volume_enabled,
                 ),
                 to_pulumi_object_field(
-                    "bitlocker_data_volume_enabled",
+                    "bitlockerDataVolumeEnabled",
                     &self.r#bitlocker_data_volume_enabled,
                 ),
                 to_pulumi_object_field(
@@ -127,67 +127,67 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#cluster,
                 ),
                 to_pulumi_object_field(
-                    "credential_guard_enabled",
+                    "credentialGuardEnabled",
                     &self.r#credential_guard_enabled,
                 ),
                 to_pulumi_object_field(
-                    "domain_fqdn",
+                    "domainFqdn",
                     &self.r#domain_fqdn,
                 ),
                 to_pulumi_object_field(
-                    "drift_control_enabled",
+                    "driftControlEnabled",
                     &self.r#drift_control_enabled,
                 ),
                 to_pulumi_object_field(
-                    "drtm_protection_enabled",
+                    "drtmProtectionEnabled",
                     &self.r#drtm_protection_enabled,
                 ),
                 to_pulumi_object_field(
-                    "episodic_data_upload_enabled",
+                    "episodicDataUploadEnabled",
                     &self.r#episodic_data_upload_enabled,
                 ),
                 to_pulumi_object_field(
-                    "eu_location_enabled",
+                    "euLocationEnabled",
                     &self.r#eu_location_enabled,
                 ),
                 to_pulumi_object_field(
-                    "host_network",
+                    "hostNetwork",
                     &self.r#host_network,
                 ),
                 to_pulumi_object_field(
-                    "hvci_protection_enabled",
+                    "hvciProtectionEnabled",
                     &self.r#hvci_protection_enabled,
                 ),
                 to_pulumi_object_field(
-                    "infrastructure_networks",
+                    "infrastructureNetworks",
                     &self.r#infrastructure_networks,
                 ),
                 to_pulumi_object_field(
-                    "name_prefix",
+                    "namePrefix",
                     &self.r#name_prefix,
                 ),
                 to_pulumi_object_field(
-                    "optional_service",
+                    "optionalService",
                     &self.r#optional_service,
                 ),
                 to_pulumi_object_field(
-                    "physical_nodes",
+                    "physicalNodes",
                     &self.r#physical_nodes,
                 ),
                 to_pulumi_object_field(
-                    "secrets_location",
+                    "secretsLocation",
                     &self.r#secrets_location,
                 ),
                 to_pulumi_object_field(
-                    "side_channel_mitigation_enabled",
+                    "sideChannelMitigationEnabled",
                     &self.r#side_channel_mitigation_enabled,
                 ),
                 to_pulumi_object_field(
-                    "smb_cluster_encryption_enabled",
+                    "smbClusterEncryptionEnabled",
                     &self.r#smb_cluster_encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "smb_signing_enabled",
+                    "smbSigningEnabled",
                     &self.r#smb_signing_enabled,
                 ),
                 to_pulumi_object_field(
@@ -195,11 +195,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#storage,
                 ),
                 to_pulumi_object_field(
-                    "streaming_data_client_enabled",
+                    "streamingDataClientEnabled",
                     &self.r#streaming_data_client_enabled,
                 ),
                 to_pulumi_object_field(
-                    "wdac_enabled",
+                    "wdacEnabled",
                     &self.r#wdac_enabled,
                 ),
             ];

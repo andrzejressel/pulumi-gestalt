@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_level",
+                    "accountLevel",
                     &self.r#account_level,
                 ),
                 to_pulumi_object_field(
-                    "aws_org",
+                    "awsOrg",
                     &self.r#aws_org,
                 ),
                 to_pulumi_object_field(
-                    "data_export",
+                    "dataExport",
                     &self.r#data_export,
                 ),
                 to_pulumi_object_field(

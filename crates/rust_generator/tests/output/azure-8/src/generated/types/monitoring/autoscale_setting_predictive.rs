@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "look_ahead_time",
+                    "lookAheadTime",
                     &self.r#look_ahead_time,
                 ),
                 to_pulumi_object_field(
-                    "scale_mode",
+                    "scaleMode",
                     &self.r#scale_mode,
                 ),
             ];

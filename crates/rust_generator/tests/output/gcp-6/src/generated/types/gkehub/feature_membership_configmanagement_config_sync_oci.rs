@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gcp_service_account_email",
+                    "gcpServiceAccountEmail",
                     &self.r#gcp_service_account_email,
                 ),
                 to_pulumi_object_field(
-                    "policy_dir",
+                    "policyDir",
                     &self.r#policy_dir,
                 ),
                 to_pulumi_object_field(
-                    "secret_type",
+                    "secretType",
                     &self.r#secret_type,
                 ),
                 to_pulumi_object_field(
-                    "sync_repo",
+                    "syncRepo",
                     &self.r#sync_repo,
                 ),
                 to_pulumi_object_field(
-                    "sync_wait_secs",
+                    "syncWaitSecs",
                     &self.r#sync_wait_secs,
                 ),
             ];

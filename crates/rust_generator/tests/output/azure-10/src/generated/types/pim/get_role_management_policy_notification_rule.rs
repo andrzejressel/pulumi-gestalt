@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_assignments",
+                    "activeAssignments",
                     &self.r#active_assignments,
                 ),
                 to_pulumi_object_field(
-                    "eligible_activations",
+                    "eligibleActivations",
                     &self.r#eligible_activations,
                 ),
                 to_pulumi_object_field(
-                    "eligible_assignments",
+                    "eligibleAssignments",
                     &self.r#eligible_assignments,
                 ),
             ];

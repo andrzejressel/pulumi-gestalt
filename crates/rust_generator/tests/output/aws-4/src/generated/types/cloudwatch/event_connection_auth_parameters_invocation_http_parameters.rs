@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "query_strings",
+                    "queryStrings",
                     &self.r#query_strings,
                 ),
             ];

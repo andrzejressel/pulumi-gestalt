@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
                     &self.r#alarm,
                 ),
                 to_pulumi_object_field(
-                    "extension_period",
+                    "extensionPeriod",
                     &self.r#extension_period,
                 ),
                 to_pulumi_object_field(
-                    "wait_period",
+                    "waitPeriod",
                     &self.r#wait_period,
                 ),
             ];

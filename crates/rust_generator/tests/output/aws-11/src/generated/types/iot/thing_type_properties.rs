@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thi
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "searchable_attributes",
+                    "searchableAttributes",
                     &self.r#searchable_attributes,
                 ),
             ];

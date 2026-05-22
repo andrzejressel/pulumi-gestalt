@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudformation_stack_arn",
+                    "cloudformationStackArn",
                     &self.r#cloudformation_stack_arn,
                 ),
                 to_pulumi_object_field(
-                    "tag_filters",
+                    "tagFilters",
                     &self.r#tag_filters,
                 ),
             ];

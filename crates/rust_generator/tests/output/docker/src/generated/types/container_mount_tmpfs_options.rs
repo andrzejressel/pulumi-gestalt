@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "size_bytes",
+                    "sizeBytes",
                     &self.r#size_bytes,
                 ),
             ];

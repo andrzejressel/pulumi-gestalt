@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "cidr_block",
+                    "cidrBlock",
                     &self.r#cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "from_port",
+                    "fromPort",
                     &self.r#from_port,
                 ),
                 to_pulumi_object_field(
-                    "icmp_code",
+                    "icmpCode",
                     &self.r#icmp_code,
                 ),
                 to_pulumi_object_field(
-                    "icmp_type",
+                    "icmpType",
                     &self.r#icmp_type,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_cidr_block",
+                    "ipv6CidrBlock",
                     &self.r#ipv_6_cidr_block,
                 ),
                 to_pulumi_object_field(
@@ -87,11 +87,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "rule_no",
+                    "ruleNo",
                     &self.r#rule_no,
                 ),
                 to_pulumi_object_field(
-                    "to_port",
+                    "toPort",
                     &self.r#to_port,
                 ),
             ];

@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#env,
                 ),
                 to_pulumi_object_field(
-                    "version_name",
+                    "versionName",
                     &self.r#version_name,
                 ),
             ];

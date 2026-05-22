@@ -106,19 +106,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alignment_period",
+                    "alignmentPeriod",
                     &self.r#alignment_period,
                 ),
                 to_pulumi_object_field(
-                    "cross_series_reducer",
+                    "crossSeriesReducer",
                     &self.r#cross_series_reducer,
                 ),
                 to_pulumi_object_field(
-                    "group_by_fields",
+                    "groupByFields",
                     &self.r#group_by_fields,
                 ),
                 to_pulumi_object_field(
-                    "per_series_aligner",
+                    "perSeriesAligner",
                     &self.r#per_series_aligner,
                 ),
             ];

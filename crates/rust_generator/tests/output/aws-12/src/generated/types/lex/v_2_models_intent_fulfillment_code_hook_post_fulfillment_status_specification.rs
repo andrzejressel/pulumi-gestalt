@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "failure_conditional",
+                    "failureConditional",
                     &self.r#failure_conditional,
                 ),
                 to_pulumi_object_field(
-                    "failure_next_step",
+                    "failureNextStep",
                     &self.r#failure_next_step,
                 ),
                 to_pulumi_object_field(
-                    "failure_response",
+                    "failureResponse",
                     &self.r#failure_response,
                 ),
                 to_pulumi_object_field(
-                    "success_conditional",
+                    "successConditional",
                     &self.r#success_conditional,
                 ),
                 to_pulumi_object_field(
-                    "success_next_step",
+                    "successNextStep",
                     &self.r#success_next_step,
                 ),
                 to_pulumi_object_field(
-                    "success_response",
+                    "successResponse",
                     &self.r#success_response,
                 ),
                 to_pulumi_object_field(
-                    "timeout_conditional",
+                    "timeoutConditional",
                     &self.r#timeout_conditional,
                 ),
                 to_pulumi_object_field(
-                    "timeout_next_step",
+                    "timeoutNextStep",
                     &self.r#timeout_next_step,
                 ),
                 to_pulumi_object_field(
-                    "timeout_response",
+                    "timeoutResponse",
                     &self.r#timeout_response,
                 ),
             ];

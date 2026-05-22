@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lit
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "per_partition_bytes",
+                    "perPartitionBytes",
                     &self.r#per_partition_bytes,
                 ),
                 to_pulumi_object_field(

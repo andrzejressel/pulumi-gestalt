@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "field_to_match",
+                    "fieldToMatch",
                     &self.r#field_to_match,
                 ),
                 to_pulumi_object_field(
-                    "regex_pattern_set_id",
+                    "regexPatternSetId",
                     &self.r#regex_pattern_set_id,
                 ),
                 to_pulumi_object_field(
-                    "text_transformation",
+                    "textTransformation",
                     &self.r#text_transformation,
                 ),
             ];

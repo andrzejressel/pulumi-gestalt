@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "local_object_reference",
+                    "localObjectReference",
                     &self.r#local_object_reference,
                 ),
                 to_pulumi_object_field(

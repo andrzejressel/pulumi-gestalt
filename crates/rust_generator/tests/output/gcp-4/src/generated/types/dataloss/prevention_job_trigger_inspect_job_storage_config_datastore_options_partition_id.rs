@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "namespace_id",
+                    "namespaceId",
                     &self.r#namespace_id,
                 ),
                 to_pulumi_object_field(
-                    "project_id",
+                    "projectId",
                     &self.r#project_id,
                 ),
             ];

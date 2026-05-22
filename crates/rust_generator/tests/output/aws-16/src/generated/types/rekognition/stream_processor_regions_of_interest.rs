@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bounding_box",
+                    "boundingBox",
                     &self.r#bounding_box,
                 ),
                 to_pulumi_object_field(

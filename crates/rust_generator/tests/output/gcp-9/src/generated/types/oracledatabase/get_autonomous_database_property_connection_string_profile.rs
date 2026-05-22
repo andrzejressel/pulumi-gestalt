@@ -84,19 +84,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_group",
+                    "consumerGroup",
                     &self.r#consumer_group,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "host_format",
+                    "hostFormat",
                     &self.r#host_format,
                 ),
                 to_pulumi_object_field(
-                    "is_regional",
+                    "isRegional",
                     &self.r#is_regional,
                 ),
                 to_pulumi_object_field(
@@ -104,15 +104,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "session_mode",
+                    "sessionMode",
                     &self.r#session_mode,
                 ),
                 to_pulumi_object_field(
-                    "syntax_format",
+                    "syntaxFormat",
                     &self.r#syntax_format,
                 ),
                 to_pulumi_object_field(
-                    "tls_authentication",
+                    "tlsAuthentication",
                     &self.r#tls_authentication,
                 ),
                 to_pulumi_object_field(

@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_type",
+                    "archiveType",
                     &self.r#archive_type,
                 ),
                 to_pulumi_object_field(
@@ -54,7 +54,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
                     &self.r#distribution,
                 ),
                 to_pulumi_object_field(
-                    "gpg_key",
+                    "gpgKey",
                     &self.r#gpg_key,
                 ),
                 to_pulumi_object_field(

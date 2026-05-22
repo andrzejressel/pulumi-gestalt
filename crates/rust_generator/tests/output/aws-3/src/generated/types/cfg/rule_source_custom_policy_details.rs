@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_debug_log_delivery",
+                    "enableDebugLogDelivery",
                     &self.r#enable_debug_log_delivery,
                 ),
                 to_pulumi_object_field(
-                    "policy_runtime",
+                    "policyRuntime",
                     &self.r#policy_runtime,
                 ),
                 to_pulumi_object_field(
-                    "policy_text",
+                    "policyText",
                     &self.r#policy_text,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_set_arn",
+                    "dataSetArn",
                     &self.r#data_set_arn,
                 ),
                 to_pulumi_object_field(
-                    "data_set_placeholder",
+                    "dataSetPlaceholder",
                     &self.r#data_set_placeholder,
                 ),
             ];

@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dh_group",
+                    "dhGroup",
                     &self.r#dh_group,
                 ),
                 to_pulumi_object_field(
-                    "encryption_algorithm",
+                    "encryptionAlgorithm",
                     &self.r#encryption_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "ike_encryption_algorithm",
+                    "ikeEncryptionAlgorithm",
                     &self.r#ike_encryption_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "ike_integrity_algorithm",
+                    "ikeIntegrityAlgorithm",
                     &self.r#ike_integrity_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "integrity_algorithm",
+                    "integrityAlgorithm",
                     &self.r#integrity_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "pfs_group",
+                    "pfsGroup",
                     &self.r#pfs_group,
                 ),
                 to_pulumi_object_field(
-                    "sa_data_size_kb",
+                    "saDataSizeKb",
                     &self.r#sa_data_size_kb,
                 ),
                 to_pulumi_object_field(
-                    "sa_lifetime_sec",
+                    "saLifetimeSec",
                     &self.r#sa_lifetime_sec,
                 ),
             ];

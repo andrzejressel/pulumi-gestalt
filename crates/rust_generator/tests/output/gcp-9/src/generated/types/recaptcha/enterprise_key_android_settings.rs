@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_all_package_names",
+                    "allowAllPackageNames",
                     &self.r#allow_all_package_names,
                 ),
                 to_pulumi_object_field(
-                    "allowed_package_names",
+                    "allowedPackageNames",
                     &self.r#allowed_package_names,
                 ),
             ];

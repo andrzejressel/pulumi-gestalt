@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#amount,
                 ),
                 to_pulumi_object_field(
-                    "cores_per_license",
+                    "coresPerLicense",
                     &self.r#cores_per_license,
                 ),
                 to_pulumi_object_field(

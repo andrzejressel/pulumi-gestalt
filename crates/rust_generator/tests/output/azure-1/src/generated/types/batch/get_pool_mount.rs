@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_blob_file_systems",
+                    "azureBlobFileSystems",
                     &self.r#azure_blob_file_systems,
                 ),
                 to_pulumi_object_field(
-                    "azure_file_shares",
+                    "azureFileShares",
                     &self.r#azure_file_shares,
                 ),
                 to_pulumi_object_field(
-                    "cifs_mounts",
+                    "cifsMounts",
                     &self.r#cifs_mounts,
                 ),
                 to_pulumi_object_field(
-                    "nfs_mounts",
+                    "nfsMounts",
                     &self.r#nfs_mounts,
                 ),
             ];

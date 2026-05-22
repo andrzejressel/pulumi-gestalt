@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "slot_to_elicit",
+                    "slotToElicit",
                     &self.r#slot_to_elicit,
                 ),
                 to_pulumi_object_field(
-                    "suppress_next_message",
+                    "suppressNextMessage",
                     &self.r#suppress_next_message,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

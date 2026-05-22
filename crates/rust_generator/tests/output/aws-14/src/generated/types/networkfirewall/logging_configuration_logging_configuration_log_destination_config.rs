@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Log
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_destination",
+                    "logDestination",
                     &self.r#log_destination,
                 ),
                 to_pulumi_object_field(
-                    "log_destination_type",
+                    "logDestinationType",
                     &self.r#log_destination_type,
                 ),
                 to_pulumi_object_field(
-                    "log_type",
+                    "logType",
                     &self.r#log_type,
                 ),
             ];

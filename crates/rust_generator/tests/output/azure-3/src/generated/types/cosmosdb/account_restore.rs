@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#databases,
                 ),
                 to_pulumi_object_field(
-                    "gremlin_databases",
+                    "gremlinDatabases",
                     &self.r#gremlin_databases,
                 ),
                 to_pulumi_object_field(
-                    "restore_timestamp_in_utc",
+                    "restoreTimestampInUtc",
                     &self.r#restore_timestamp_in_utc,
                 ),
                 to_pulumi_object_field(
-                    "source_cosmosdb_account_id",
+                    "sourceCosmosdbAccountId",
                     &self.r#source_cosmosdb_account_id,
                 ),
                 to_pulumi_object_field(
-                    "tables_to_restores",
+                    "tablesToRestores",
                     &self.r#tables_to_restores,
                 ),
             ];

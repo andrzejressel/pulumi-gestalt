@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "configuration_set",
+                    "configurationSet",
                     &self.r#configuration_set,
                 ),
                 to_pulumi_object_field(
-                    "email_sending_account",
+                    "emailSendingAccount",
                     &self.r#email_sending_account,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#from,
                 ),
                 to_pulumi_object_field(
-                    "reply_to_email_address",
+                    "replyToEmailAddress",
                     &self.r#reply_to_email_address,
                 ),
                 to_pulumi_object_field(
-                    "source_arn",
+                    "sourceArn",
                     &self.r#source_arn,
                 ),
             ];

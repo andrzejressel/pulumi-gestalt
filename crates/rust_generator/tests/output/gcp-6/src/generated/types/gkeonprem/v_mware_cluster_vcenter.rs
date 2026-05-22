@@ -56,7 +56,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "ca_cert_data",
+                    "caCertData",
                     &self.r#ca_cert_data,
                 ),
                 to_pulumi_object_field(
@@ -76,11 +76,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#folder,
                 ),
                 to_pulumi_object_field(
-                    "resource_pool",
+                    "resourcePool",
                     &self.r#resource_pool,
                 ),
                 to_pulumi_object_field(
-                    "storage_policy_name",
+                    "storagePolicyName",
                     &self.r#storage_policy_name,
                 ),
             ];

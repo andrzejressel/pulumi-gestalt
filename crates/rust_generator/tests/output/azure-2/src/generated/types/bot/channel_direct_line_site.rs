@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_parameters_enabled",
+                    "endpointParametersEnabled",
                     &self.r#endpoint_parameters_enabled,
                 ),
                 to_pulumi_object_field(
-                    "enhanced_authentication_enabled",
+                    "enhancedAuthenticationEnabled",
                     &self.r#enhanced_authentication_enabled,
                 ),
                 to_pulumi_object_field(
@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "key_2",
+                    "key2",
                     &self.r#key_2,
                 ),
                 to_pulumi_object_field(
@@ -95,23 +95,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "storage_enabled",
+                    "storageEnabled",
                     &self.r#storage_enabled,
                 ),
                 to_pulumi_object_field(
-                    "trusted_origins",
+                    "trustedOrigins",
                     &self.r#trusted_origins,
                 ),
                 to_pulumi_object_field(
-                    "user_upload_enabled",
+                    "userUploadEnabled",
                     &self.r#user_upload_enabled,
                 ),
                 to_pulumi_object_field(
-                    "v_1_allowed",
+                    "v1Allowed",
                     &self.r#v_1_allowed,
                 ),
                 to_pulumi_object_field(
-                    "v_3_allowed",
+                    "v3Allowed",
                     &self.r#v_3_allowed,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#roles,
                 ),
                 to_pulumi_object_field(
-                    "user_id",
+                    "userId",
                     &self.r#user_id,
                 ),
             ];

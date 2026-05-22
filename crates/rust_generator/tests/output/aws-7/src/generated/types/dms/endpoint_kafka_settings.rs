@@ -95,67 +95,67 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#broker,
                 ),
                 to_pulumi_object_field(
-                    "include_control_details",
+                    "includeControlDetails",
                     &self.r#include_control_details,
                 ),
                 to_pulumi_object_field(
-                    "include_null_and_empty",
+                    "includeNullAndEmpty",
                     &self.r#include_null_and_empty,
                 ),
                 to_pulumi_object_field(
-                    "include_partition_value",
+                    "includePartitionValue",
                     &self.r#include_partition_value,
                 ),
                 to_pulumi_object_field(
-                    "include_table_alter_operations",
+                    "includeTableAlterOperations",
                     &self.r#include_table_alter_operations,
                 ),
                 to_pulumi_object_field(
-                    "include_transaction_details",
+                    "includeTransactionDetails",
                     &self.r#include_transaction_details,
                 ),
                 to_pulumi_object_field(
-                    "message_format",
+                    "messageFormat",
                     &self.r#message_format,
                 ),
                 to_pulumi_object_field(
-                    "message_max_bytes",
+                    "messageMaxBytes",
                     &self.r#message_max_bytes,
                 ),
                 to_pulumi_object_field(
-                    "no_hex_prefix",
+                    "noHexPrefix",
                     &self.r#no_hex_prefix,
                 ),
                 to_pulumi_object_field(
-                    "partition_include_schema_table",
+                    "partitionIncludeSchemaTable",
                     &self.r#partition_include_schema_table,
                 ),
                 to_pulumi_object_field(
-                    "sasl_password",
+                    "saslPassword",
                     &self.r#sasl_password,
                 ),
                 to_pulumi_object_field(
-                    "sasl_username",
+                    "saslUsername",
                     &self.r#sasl_username,
                 ),
                 to_pulumi_object_field(
-                    "security_protocol",
+                    "securityProtocol",
                     &self.r#security_protocol,
                 ),
                 to_pulumi_object_field(
-                    "ssl_ca_certificate_arn",
+                    "sslCaCertificateArn",
                     &self.r#ssl_ca_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "ssl_client_certificate_arn",
+                    "sslClientCertificateArn",
                     &self.r#ssl_client_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "ssl_client_key_arn",
+                    "sslClientKeyArn",
                     &self.r#ssl_client_key_arn,
                 ),
                 to_pulumi_object_field(
-                    "ssl_client_key_password",
+                    "sslClientKeyPassword",
                     &self.r#ssl_client_key_password,
                 ),
                 to_pulumi_object_field(

@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_batching",
+                    "enableBatching",
                     &self.r#enable_batching,
                 ),
                 to_pulumi_object_field(
-                    "send_after",
+                    "sendAfter",
                     &self.r#send_after,
                 ),
             ];

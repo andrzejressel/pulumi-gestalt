@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_size",
+                    "batchSize",
                     &self.r#batch_size,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#credentials,
                 ),
                 to_pulumi_object_field(
-                    "maximum_batching_window_in_seconds",
+                    "maximumBatchingWindowInSeconds",
                     &self.r#maximum_batching_window_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "queue_name",
+                    "queueName",
                     &self.r#queue_name,
                 ),
             ];

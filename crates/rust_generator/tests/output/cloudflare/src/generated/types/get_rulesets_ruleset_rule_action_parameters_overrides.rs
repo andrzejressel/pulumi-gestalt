@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#rules,
                 ),
                 to_pulumi_object_field(
-                    "sensitivity_level",
+                    "sensitivityLevel",
                     &self.r#sensitivity_level,
                 ),
                 to_pulumi_object_field(

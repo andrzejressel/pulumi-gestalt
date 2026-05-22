@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#database,
                 ),
                 to_pulumi_object_field(
-                    "database_resource",
+                    "databaseResource",
                     &self.r#database_resource,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#instance,
                 ),
                 to_pulumi_object_field(
-                    "project_id",
+                    "projectId",
                     &self.r#project_id,
                 ),
             ];

@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_selector_name",
+                    "audioSelectorName",
                     &self.r#audio_selector_name,
                 ),
                 to_pulumi_object_field(
-                    "audio_silence_threshold_msec",
+                    "audioSilenceThresholdMsec",
                     &self.r#audio_silence_threshold_msec,
                 ),
             ];

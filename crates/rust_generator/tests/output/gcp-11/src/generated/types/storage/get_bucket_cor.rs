@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_age_seconds",
+                    "maxAgeSeconds",
                     &self.r#max_age_seconds,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#origins,
                 ),
                 to_pulumi_object_field(
-                    "response_headers",
+                    "responseHeaders",
                     &self.r#response_headers,
                 ),
             ];

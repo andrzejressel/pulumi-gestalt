@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "conversation_turns",
+                    "conversationTurns",
                     &self.r#conversation_turns,
                 ),
                 to_pulumi_object_field(
@@ -56,11 +56,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "test_result",
+                    "testResult",
                     &self.r#test_result,
                 ),
                 to_pulumi_object_field(
-                    "test_time",
+                    "testTime",
                     &self.r#test_time,
                 ),
             ];

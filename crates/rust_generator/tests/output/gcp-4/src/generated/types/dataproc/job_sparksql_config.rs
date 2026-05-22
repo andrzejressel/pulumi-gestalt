@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "jar_file_uris",
+                    "jarFileUris",
                     &self.r#jar_file_uris,
                 ),
                 to_pulumi_object_field(
-                    "logging_config",
+                    "loggingConfig",
                     &self.r#logging_config,
                 ),
                 to_pulumi_object_field(
@@ -59,15 +59,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "query_file_uri",
+                    "queryFileUri",
                     &self.r#query_file_uri,
                 ),
                 to_pulumi_object_field(
-                    "query_lists",
+                    "queryLists",
                     &self.r#query_lists,
                 ),
                 to_pulumi_object_field(
-                    "script_variables",
+                    "scriptVariables",
                     &self.r#script_variables,
                 ),
             ];

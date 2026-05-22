@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "threat_id",
+                    "threatId",
                     &self.r#threat_id,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

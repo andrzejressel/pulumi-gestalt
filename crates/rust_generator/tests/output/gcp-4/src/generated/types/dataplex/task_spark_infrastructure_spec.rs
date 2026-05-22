@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#batch,
                 ),
                 to_pulumi_object_field(
-                    "container_image",
+                    "containerImage",
                     &self.r#container_image,
                 ),
                 to_pulumi_object_field(
-                    "vpc_network",
+                    "vpcNetwork",
                     &self.r#vpc_network,
                 ),
             ];

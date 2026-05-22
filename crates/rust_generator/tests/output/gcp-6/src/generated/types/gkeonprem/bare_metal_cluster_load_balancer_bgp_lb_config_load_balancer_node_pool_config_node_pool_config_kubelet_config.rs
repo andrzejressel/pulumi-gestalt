@@ -44,15 +44,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "registry_burst",
+                    "registryBurst",
                     &self.r#registry_burst,
                 ),
                 to_pulumi_object_field(
-                    "registry_pull_qps",
+                    "registryPullQps",
                     &self.r#registry_pull_qps,
                 ),
                 to_pulumi_object_field(
-                    "serialize_image_pulls_disabled",
+                    "serializeImagePullsDisabled",
                     &self.r#serialize_image_pulls_disabled,
                 ),
             ];

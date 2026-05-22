@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#active,
                 ),
                 to_pulumi_object_field(
-                    "start_response",
+                    "startResponse",
                     &self.r#start_response,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_seconds",
+                    "timeoutInSeconds",
                     &self.r#timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "update_response",
+                    "updateResponse",
                     &self.r#update_response,
                 ),
             ];

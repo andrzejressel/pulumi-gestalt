@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_blob_storage",
+                    "azureBlobStorage",
                     &self.r#azure_blob_storage,
                 ),
                 to_pulumi_object_field(
-                    "file_system",
+                    "fileSystem",
                     &self.r#file_system,
                 ),
             ];

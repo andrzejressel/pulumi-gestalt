@@ -43,23 +43,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attributes_type",
+                    "attributesType",
                     &self.r#attributes_type,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
-                    "issuer_uri",
+                    "issuerUri",
                     &self.r#issuer_uri,
                 ),
                 to_pulumi_object_field(
-                    "query_parameters",
+                    "queryParameters",
                     &self.r#query_parameters,
                 ),
             ];

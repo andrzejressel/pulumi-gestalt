@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "export_data",
+                    "exportData",
                     &self.r#export_data,
                 ),
                 to_pulumi_object_field(
-                    "pub_sub_notification",
+                    "pubSubNotification",
                     &self.r#pub_sub_notification,
                 ),
                 to_pulumi_object_field(
-                    "tag_resources",
+                    "tagResources",
                     &self.r#tag_resources,
                 ),
             ];

@@ -48,7 +48,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_type",
+                    "actionType",
                     &self.r#action_type,
                 ),
                 to_pulumi_object_field(
@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "method_types",
+                    "methodTypes",
                     &self.r#method_types,
                 ),
                 to_pulumi_object_field(
@@ -72,7 +72,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
             ];

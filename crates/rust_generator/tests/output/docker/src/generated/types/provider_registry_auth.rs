@@ -46,15 +46,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "auth_disabled",
+                    "authDisabled",
                     &self.r#auth_disabled,
                 ),
                 to_pulumi_object_field(
-                    "config_file",
+                    "configFile",
                     &self.r#config_file,
                 ),
                 to_pulumi_object_field(
-                    "config_file_content",
+                    "configFileContent",
                     &self.r#config_file_content,
                 ),
                 to_pulumi_object_field(

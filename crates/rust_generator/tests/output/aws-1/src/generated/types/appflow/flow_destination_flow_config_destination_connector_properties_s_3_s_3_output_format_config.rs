@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aggregation_config",
+                    "aggregationConfig",
                     &self.r#aggregation_config,
                 ),
                 to_pulumi_object_field(
-                    "file_type",
+                    "fileType",
                     &self.r#file_type,
                 ),
                 to_pulumi_object_field(
-                    "prefix_config",
+                    "prefixConfig",
                     &self.r#prefix_config,
                 ),
                 to_pulumi_object_field(
-                    "preserve_source_data_typing",
+                    "preserveSourceDataTyping",
                     &self.r#preserve_source_data_typing,
                 ),
             ];

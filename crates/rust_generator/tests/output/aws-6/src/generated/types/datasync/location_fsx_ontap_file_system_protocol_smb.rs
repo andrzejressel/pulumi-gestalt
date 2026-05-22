@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loc
                     &self.r#domain,
                 ),
                 to_pulumi_object_field(
-                    "mount_options",
+                    "mountOptions",
                     &self.r#mount_options,
                 ),
                 to_pulumi_object_field(

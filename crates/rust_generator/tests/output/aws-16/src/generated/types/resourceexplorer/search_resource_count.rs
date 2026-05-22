@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sea
                     &self.r#complete,
                 ),
                 to_pulumi_object_field(
-                    "total_resources",
+                    "totalResources",
                     &self.r#total_resources,
                 ),
             ];

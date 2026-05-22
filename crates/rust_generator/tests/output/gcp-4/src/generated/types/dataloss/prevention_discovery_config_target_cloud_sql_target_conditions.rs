@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "database_engines",
+                    "databaseEngines",
                     &self.r#database_engines,
                 ),
                 to_pulumi_object_field(

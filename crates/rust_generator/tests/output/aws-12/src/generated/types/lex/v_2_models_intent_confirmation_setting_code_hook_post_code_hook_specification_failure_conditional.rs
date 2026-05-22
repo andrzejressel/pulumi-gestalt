@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#active,
                 ),
                 to_pulumi_object_field(
-                    "conditional_branches",
+                    "conditionalBranches",
                     &self.r#conditional_branches,
                 ),
                 to_pulumi_object_field(
-                    "default_branch",
+                    "defaultBranch",
                     &self.r#default_branch,
                 ),
             ];

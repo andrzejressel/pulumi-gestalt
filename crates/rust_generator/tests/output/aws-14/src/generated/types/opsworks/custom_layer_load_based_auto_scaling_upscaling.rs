@@ -51,27 +51,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#alarms,
                 ),
                 to_pulumi_object_field(
-                    "cpu_threshold",
+                    "cpuThreshold",
                     &self.r#cpu_threshold,
                 ),
                 to_pulumi_object_field(
-                    "ignore_metrics_time",
+                    "ignoreMetricsTime",
                     &self.r#ignore_metrics_time,
                 ),
                 to_pulumi_object_field(
-                    "instance_count",
+                    "instanceCount",
                     &self.r#instance_count,
                 ),
                 to_pulumi_object_field(
-                    "load_threshold",
+                    "loadThreshold",
                     &self.r#load_threshold,
                 ),
                 to_pulumi_object_field(
-                    "memory_threshold",
+                    "memoryThreshold",
                     &self.r#memory_threshold,
                 ),
                 to_pulumi_object_field(
-                    "thresholds_wait_time",
+                    "thresholdsWaitTime",
                     &self.r#thresholds_wait_time,
                 ),
             ];

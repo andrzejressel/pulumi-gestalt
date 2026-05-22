@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_node_network_configs",
+                    "additionalNodeNetworkConfigs",
                     &self.r#additional_node_network_configs,
                 ),
                 to_pulumi_object_field(
-                    "additional_pod_network_configs",
+                    "additionalPodNetworkConfigs",
                     &self.r#additional_pod_network_configs,
                 ),
                 to_pulumi_object_field(
-                    "create_pod_range",
+                    "createPodRange",
                     &self.r#create_pod_range,
                 ),
                 to_pulumi_object_field(
-                    "enable_private_nodes",
+                    "enablePrivateNodes",
                     &self.r#enable_private_nodes,
                 ),
                 to_pulumi_object_field(
-                    "network_performance_config",
+                    "networkPerformanceConfig",
                     &self.r#network_performance_config,
                 ),
                 to_pulumi_object_field(
-                    "pod_cidr_overprovision_config",
+                    "podCidrOverprovisionConfig",
                     &self.r#pod_cidr_overprovision_config,
                 ),
                 to_pulumi_object_field(
-                    "pod_ipv_4_cidr_block",
+                    "podIpv4CidrBlock",
                     &self.r#pod_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "pod_range",
+                    "podRange",
                     &self.r#pod_range,
                 ),
             ];

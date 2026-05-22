@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "domain_controller_ip_addresses",
+                    "domainControllerIpAddresses",
                     &self.r#domain_controller_ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "external_access_ip_address",
+                    "externalAccessIpAddress",
                     &self.r#external_access_ip_address,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "service_status",
+                    "serviceStatus",
                     &self.r#service_status,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

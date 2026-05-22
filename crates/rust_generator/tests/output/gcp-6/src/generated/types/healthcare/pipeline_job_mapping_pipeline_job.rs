@@ -48,19 +48,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fhir_store_destination",
+                    "fhirStoreDestination",
                     &self.r#fhir_store_destination,
                 ),
                 to_pulumi_object_field(
-                    "fhir_streaming_source",
+                    "fhirStreamingSource",
                     &self.r#fhir_streaming_source,
                 ),
                 to_pulumi_object_field(
-                    "mapping_config",
+                    "mappingConfig",
                     &self.r#mapping_config,
                 ),
                 to_pulumi_object_field(
-                    "reconciliation_destination",
+                    "reconciliationDestination",
                     &self.r#reconciliation_destination,
                 ),
             ];

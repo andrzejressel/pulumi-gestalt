@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
                     &self.r#database,
                 ),
                 to_pulumi_object_field(
-                    "mysql_tables",
+                    "mysqlTables",
                     &self.r#mysql_tables,
                 ),
             ];

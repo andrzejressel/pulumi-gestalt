@@ -48,11 +48,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "append_only",
+                    "appendOnly",
                     &self.r#append_only,
                 ),
                 to_pulumi_object_field(
-                    "data_freshness",
+                    "dataFreshness",
                     &self.r#data_freshness,
                 ),
                 to_pulumi_object_field(
@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
                     &self.r#merge,
                 ),
                 to_pulumi_object_field(
-                    "single_target_dataset",
+                    "singleTargetDataset",
                     &self.r#single_target_dataset,
                 ),
                 to_pulumi_object_field(
-                    "source_hierarchy_datasets",
+                    "sourceHierarchyDatasets",
                     &self.r#source_hierarchy_datasets,
                 ),
             ];

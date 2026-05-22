@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "built_in_transform",
+                    "builtInTransform",
                     &self.r#built_in_transform,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#destinations,
                 ),
                 to_pulumi_object_field(
-                    "output_stream",
+                    "outputStream",
                     &self.r#output_stream,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#streams,
                 ),
                 to_pulumi_object_field(
-                    "transform_kql",
+                    "transformKql",
                     &self.r#transform_kql,
                 ),
             ];

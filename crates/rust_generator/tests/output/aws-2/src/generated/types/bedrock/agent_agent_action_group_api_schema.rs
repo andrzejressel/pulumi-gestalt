@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
                     &self.r#payload,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
             ];

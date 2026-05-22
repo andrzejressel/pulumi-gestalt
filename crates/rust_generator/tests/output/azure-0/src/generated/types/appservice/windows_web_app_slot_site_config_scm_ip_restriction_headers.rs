@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "x_azure_fdids",
+                    "xAzureFdids",
                     &self.r#x_azure_fdids,
                 ),
                 to_pulumi_object_field(
-                    "x_fd_health_probe",
+                    "xFdHealthProbe",
                     &self.r#x_fd_health_probe,
                 ),
                 to_pulumi_object_field(
-                    "x_forwarded_fors",
+                    "xForwardedFors",
                     &self.r#x_forwarded_fors,
                 ),
                 to_pulumi_object_field(
-                    "x_forwarded_hosts",
+                    "xForwardedHosts",
                     &self.r#x_forwarded_hosts,
                 ),
             ];

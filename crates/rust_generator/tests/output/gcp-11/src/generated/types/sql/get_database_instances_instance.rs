@@ -114,7 +114,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "available_maintenance_versions",
+                    "availableMaintenanceVersions",
                     &self.r#available_maintenance_versions,
                 ),
                 to_pulumi_object_field(
@@ -122,43 +122,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#clones,
                 ),
                 to_pulumi_object_field(
-                    "connection_name",
+                    "connectionName",
                     &self.r#connection_name,
                 ),
                 to_pulumi_object_field(
-                    "database_version",
+                    "databaseVersion",
                     &self.r#database_version,
                 ),
                 to_pulumi_object_field(
-                    "deletion_protection",
+                    "deletionProtection",
                     &self.r#deletion_protection,
                 ),
                 to_pulumi_object_field(
-                    "dns_name",
+                    "dnsName",
                     &self.r#dns_name,
                 ),
                 to_pulumi_object_field(
-                    "encryption_key_name",
+                    "encryptionKeyName",
                     &self.r#encryption_key_name,
                 ),
                 to_pulumi_object_field(
-                    "first_ip_address",
+                    "firstIpAddress",
                     &self.r#first_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "ip_addresses",
+                    "ipAddresses",
                     &self.r#ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_version",
+                    "maintenanceVersion",
                     &self.r#maintenance_version,
                 ),
                 to_pulumi_object_field(
-                    "master_instance_name",
+                    "masterInstanceName",
                     &self.r#master_instance_name,
                 ),
                 to_pulumi_object_field(
@@ -166,7 +166,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
@@ -174,11 +174,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#project,
                 ),
                 to_pulumi_object_field(
-                    "psc_service_attachment_link",
+                    "pscServiceAttachmentLink",
                     &self.r#psc_service_attachment_link,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_address",
+                    "publicIpAddress",
                     &self.r#public_ip_address,
                 ),
                 to_pulumi_object_field(
@@ -186,31 +186,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "replica_configurations",
+                    "replicaConfigurations",
                     &self.r#replica_configurations,
                 ),
                 to_pulumi_object_field(
-                    "replica_names",
+                    "replicaNames",
                     &self.r#replica_names,
                 ),
                 to_pulumi_object_field(
-                    "restore_backup_contexts",
+                    "restoreBackupContexts",
                     &self.r#restore_backup_contexts,
                 ),
                 to_pulumi_object_field(
-                    "root_password",
+                    "rootPassword",
                     &self.r#root_password,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
                 to_pulumi_object_field(
-                    "server_ca_certs",
+                    "serverCaCerts",
                     &self.r#server_ca_certs,
                 ),
                 to_pulumi_object_field(
-                    "service_account_email_address",
+                    "serviceAccountEmailAddress",
                     &self.r#service_account_email_address,
                 ),
                 to_pulumi_object_field(

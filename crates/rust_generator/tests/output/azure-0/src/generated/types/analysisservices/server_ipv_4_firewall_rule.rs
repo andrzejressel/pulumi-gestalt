@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "range_end",
+                    "rangeEnd",
                     &self.r#range_end,
                 ),
                 to_pulumi_object_field(
-                    "range_start",
+                    "rangeStart",
                     &self.r#range_start,
                 ),
             ];

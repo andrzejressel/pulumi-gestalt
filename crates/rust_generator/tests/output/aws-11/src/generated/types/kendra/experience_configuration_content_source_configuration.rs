@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_source_ids",
+                    "dataSourceIds",
                     &self.r#data_source_ids,
                 ),
                 to_pulumi_object_field(
-                    "direct_put_content",
+                    "directPutContent",
                     &self.r#direct_put_content,
                 ),
                 to_pulumi_object_field(
-                    "faq_ids",
+                    "faqIds",
                     &self.r#faq_ids,
                 ),
             ];

@@ -38,23 +38,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_id",
+                    "allocationId",
                     &self.r#allocation_id,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_address",
+                    "ipv6Address",
                     &self.r#ipv_6_address,
                 ),
                 to_pulumi_object_field(
-                    "outpost_id",
+                    "outpostId",
                     &self.r#outpost_id,
                 ),
                 to_pulumi_object_field(
-                    "private_ipv_4_address",
+                    "privateIpv4Address",
                     &self.r#private_ipv_4_address,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

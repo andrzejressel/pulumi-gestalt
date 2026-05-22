@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#ciphers,
                 ),
                 to_pulumi_object_field(
-                    "client_auth_enabled",
+                    "clientAuthEnabled",
                     &self.r#client_auth_enabled,
                 ),
                 to_pulumi_object_field(
-                    "common_name",
+                    "commonName",
                     &self.r#common_name,
                 ),
                 to_pulumi_object_field(
@@ -72,15 +72,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "ignore_validation_errors",
+                    "ignoreValidationErrors",
                     &self.r#ignore_validation_errors,
                 ),
                 to_pulumi_object_field(
-                    "key_alias",
+                    "keyAlias",
                     &self.r#key_alias,
                 ),
                 to_pulumi_object_field(
-                    "key_store",
+                    "keyStore",
                     &self.r#key_store,
                 ),
                 to_pulumi_object_field(
@@ -88,7 +88,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "trust_store",
+                    "trustStore",
                     &self.r#trust_store,
                 ),
             ];

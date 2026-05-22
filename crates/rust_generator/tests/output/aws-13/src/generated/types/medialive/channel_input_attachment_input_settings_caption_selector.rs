@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "language_code",
+                    "languageCode",
                     &self.r#language_code,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "selector_settings",
+                    "selectorSettings",
                     &self.r#selector_settings,
                 ),
             ];

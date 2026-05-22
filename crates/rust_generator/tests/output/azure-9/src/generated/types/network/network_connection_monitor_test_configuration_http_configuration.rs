@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "prefer_https",
+                    "preferHttps",
                     &self.r#prefer_https,
                 ),
                 to_pulumi_object_field(
-                    "request_headers",
+                    "requestHeaders",
                     &self.r#request_headers,
                 ),
                 to_pulumi_object_field(
-                    "valid_status_code_ranges",
+                    "validStatusCodeRanges",
                     &self.r#valid_status_code_ranges,
                 ),
             ];

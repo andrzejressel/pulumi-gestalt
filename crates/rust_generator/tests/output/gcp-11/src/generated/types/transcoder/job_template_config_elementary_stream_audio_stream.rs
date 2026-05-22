@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bitrate_bps",
+                    "bitrateBps",
                     &self.r#bitrate_bps,
                 ),
                 to_pulumi_object_field(
-                    "channel_count",
+                    "channelCount",
                     &self.r#channel_count,
                 ),
                 to_pulumi_object_field(
-                    "channel_layouts",
+                    "channelLayouts",
                     &self.r#channel_layouts,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#codec,
                 ),
                 to_pulumi_object_field(
-                    "sample_rate_hertz",
+                    "sampleRateHertz",
                     &self.r#sample_rate_hertz,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_setting_names",
+                    "appSettingNames",
                     &self.r#app_setting_names,
                 ),
                 to_pulumi_object_field(
-                    "connection_string_names",
+                    "connectionStringNames",
                     &self.r#connection_string_names,
                 ),
             ];

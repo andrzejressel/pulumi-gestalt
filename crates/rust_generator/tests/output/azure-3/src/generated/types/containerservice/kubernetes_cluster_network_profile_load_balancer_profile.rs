@@ -57,35 +57,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_pool_type",
+                    "backendPoolType",
                     &self.r#backend_pool_type,
                 ),
                 to_pulumi_object_field(
-                    "effective_outbound_ips",
+                    "effectiveOutboundIps",
                     &self.r#effective_outbound_ips,
                 ),
                 to_pulumi_object_field(
-                    "idle_timeout_in_minutes",
+                    "idleTimeoutInMinutes",
                     &self.r#idle_timeout_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "managed_outbound_ip_count",
+                    "managedOutboundIpCount",
                     &self.r#managed_outbound_ip_count,
                 ),
                 to_pulumi_object_field(
-                    "managed_outbound_ipv_6_count",
+                    "managedOutboundIpv6Count",
                     &self.r#managed_outbound_ipv_6_count,
                 ),
                 to_pulumi_object_field(
-                    "outbound_ip_address_ids",
+                    "outboundIpAddressIds",
                     &self.r#outbound_ip_address_ids,
                 ),
                 to_pulumi_object_field(
-                    "outbound_ip_prefix_ids",
+                    "outboundIpPrefixIds",
                     &self.r#outbound_ip_prefix_ids,
                 ),
                 to_pulumi_object_field(
-                    "outbound_ports_allocated",
+                    "outboundPortsAllocated",
                     &self.r#outbound_ports_allocated,
                 ),
             ];

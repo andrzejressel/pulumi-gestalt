@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_name",
+                    "connectionName",
                     &self.r#connection_name,
                 ),
                 to_pulumi_object_field(
-                    "create_native_delta_table",
+                    "createNativeDeltaTable",
                     &self.r#create_native_delta_table,
                 ),
                 to_pulumi_object_field(
-                    "delta_tables",
+                    "deltaTables",
                     &self.r#delta_tables,
                 ),
                 to_pulumi_object_field(
-                    "write_manifest",
+                    "writeManifest",
                     &self.r#write_manifest,
                 ),
             ];

@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_endpoint",
+                    "httpEndpoint",
                     &self.r#http_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "http_protocol_ipv_6",
+                    "httpProtocolIpv6",
                     &self.r#http_protocol_ipv_6,
                 ),
                 to_pulumi_object_field(
-                    "http_put_response_hop_limit",
+                    "httpPutResponseHopLimit",
                     &self.r#http_put_response_hop_limit,
                 ),
                 to_pulumi_object_field(
-                    "http_tokens",
+                    "httpTokens",
                     &self.r#http_tokens,
                 ),
                 to_pulumi_object_field(
-                    "instance_metadata_tags",
+                    "instanceMetadataTags",
                     &self.r#instance_metadata_tags,
                 ),
             ];

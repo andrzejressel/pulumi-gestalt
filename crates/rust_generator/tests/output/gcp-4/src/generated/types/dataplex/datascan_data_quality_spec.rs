@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "post_scan_actions",
+                    "postScanActions",
                     &self.r#post_scan_actions,
                 ),
                 to_pulumi_object_field(
-                    "row_filter",
+                    "rowFilter",
                     &self.r#row_filter,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#rules,
                 ),
                 to_pulumi_object_field(
-                    "sampling_percent",
+                    "samplingPercent",
                     &self.r#sampling_percent,
                 ),
             ];

@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "json_matcher",
+                    "jsonMatcher",
                     &self.r#json_matcher,
                 ),
                 to_pulumi_object_field(
-                    "json_path",
+                    "jsonPath",
                     &self.r#json_path,
                 ),
             ];

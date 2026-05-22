@@ -32,19 +32,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "h_265_packaging_type",
+                    "h265PackagingType",
                     &self.r#h_265_packaging_type,
                 ),
                 to_pulumi_object_field(
-                    "hls_settings",
+                    "hlsSettings",
                     &self.r#hls_settings,
                 ),
                 to_pulumi_object_field(
-                    "name_modifier",
+                    "nameModifier",
                     &self.r#name_modifier,
                 ),
                 to_pulumi_object_field(
-                    "segment_modifier",
+                    "segmentModifier",
                     &self.r#segment_modifier,
                 ),
             ];

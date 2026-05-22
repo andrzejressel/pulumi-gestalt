@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
                     &self.r#aggregation,
                 ),
                 to_pulumi_object_field(
-                    "alert_sensitivity",
+                    "alertSensitivity",
                     &self.r#alert_sensitivity,
                 ),
                 to_pulumi_object_field(
@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_failure_count",
+                    "evaluationFailureCount",
                     &self.r#evaluation_failure_count,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_total_count",
+                    "evaluationTotalCount",
                     &self.r#evaluation_total_count,
                 ),
                 to_pulumi_object_field(
-                    "ignore_data_before",
+                    "ignoreDataBefore",
                     &self.r#ignore_data_before,
                 ),
                 to_pulumi_object_field(
-                    "metric_name",
+                    "metricName",
                     &self.r#metric_name,
                 ),
                 to_pulumi_object_field(
-                    "metric_namespace",
+                    "metricNamespace",
                     &self.r#metric_namespace,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
                     &self.r#operator,
                 ),
                 to_pulumi_object_field(
-                    "skip_metric_validation",
+                    "skipMetricValidation",
                     &self.r#skip_metric_validation,
                 ),
             ];

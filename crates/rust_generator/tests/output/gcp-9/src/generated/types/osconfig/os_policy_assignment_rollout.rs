@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disruption_budget",
+                    "disruptionBudget",
                     &self.r#disruption_budget,
                 ),
                 to_pulumi_object_field(
-                    "min_wait_duration",
+                    "minWaitDuration",
                     &self.r#min_wait_duration,
                 ),
             ];

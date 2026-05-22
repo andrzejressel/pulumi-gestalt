@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "first_execution_from",
+                    "firstExecutionFrom",
                     &self.r#first_execution_from,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#object,
                 ),
                 to_pulumi_object_field(
-                    "schedule_expression",
+                    "scheduleExpression",
                     &self.r#schedule_expression,
                 ),
             ];

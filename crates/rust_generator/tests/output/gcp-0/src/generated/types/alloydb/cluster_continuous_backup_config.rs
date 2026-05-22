@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "encryption_config",
+                    "encryptionConfig",
                     &self.r#encryption_config,
                 ),
                 to_pulumi_object_field(
-                    "recovery_window_days",
+                    "recoveryWindowDays",
                     &self.r#recovery_window_days,
                 ),
             ];

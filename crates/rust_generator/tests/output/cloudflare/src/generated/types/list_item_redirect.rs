@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "include_subdomains",
+                    "includeSubdomains",
                     &self.r#include_subdomains,
                 ),
                 to_pulumi_object_field(
-                    "preserve_path_suffix",
+                    "preservePathSuffix",
                     &self.r#preserve_path_suffix,
                 ),
                 to_pulumi_object_field(
-                    "preserve_query_string",
+                    "preserveQueryString",
                     &self.r#preserve_query_string,
                 ),
                 to_pulumi_object_field(
-                    "source_url",
+                    "sourceUrl",
                     &self.r#source_url,
                 ),
                 to_pulumi_object_field(
-                    "status_code",
+                    "statusCode",
                     &self.r#status_code,
                 ),
                 to_pulumi_object_field(
-                    "subpath_matching",
+                    "subpathMatching",
                     &self.r#subpath_matching,
                 ),
                 to_pulumi_object_field(
-                    "target_url",
+                    "targetUrl",
                     &self.r#target_url,
                 ),
             ];

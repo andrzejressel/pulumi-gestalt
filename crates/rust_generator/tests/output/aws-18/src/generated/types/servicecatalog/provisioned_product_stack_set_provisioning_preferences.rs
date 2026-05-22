@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#accounts,
                 ),
                 to_pulumi_object_field(
-                    "failure_tolerance_count",
+                    "failureToleranceCount",
                     &self.r#failure_tolerance_count,
                 ),
                 to_pulumi_object_field(
-                    "failure_tolerance_percentage",
+                    "failureTolerancePercentage",
                     &self.r#failure_tolerance_percentage,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrency_count",
+                    "maxConcurrencyCount",
                     &self.r#max_concurrency_count,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrency_percentage",
+                    "maxConcurrencyPercentage",
                     &self.r#max_concurrency_percentage,
                 ),
                 to_pulumi_object_field(

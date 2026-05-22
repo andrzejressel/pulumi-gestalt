@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "beacon_api_endpoint",
+                    "beaconApiEndpoint",
                     &self.r#beacon_api_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "beacon_prometheus_metrics_api_endpoint",
+                    "beaconPrometheusMetricsApiEndpoint",
                     &self.r#beacon_prometheus_metrics_api_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "execution_client_prometheus_metrics_api_endpoint",
+                    "executionClientPrometheusMetricsApiEndpoint",
                     &self.r#execution_client_prometheus_metrics_api_endpoint,
                 ),
             ];

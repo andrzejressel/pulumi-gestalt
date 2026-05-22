@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enforce_https",
+                    "enforceHttps",
                     &self.r#enforce_https,
                 ),
                 to_pulumi_object_field(
-                    "tls_security_policy",
+                    "tlsSecurityPolicy",
                     &self.r#tls_security_policy,
                 ),
             ];

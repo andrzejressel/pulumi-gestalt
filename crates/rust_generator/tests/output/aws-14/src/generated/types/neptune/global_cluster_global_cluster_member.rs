@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Glo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "db_cluster_arn",
+                    "dbClusterArn",
                     &self.r#db_cluster_arn,
                 ),
                 to_pulumi_object_field(
-                    "is_writer",
+                    "isWriter",
                     &self.r#is_writer,
                 ),
             ];

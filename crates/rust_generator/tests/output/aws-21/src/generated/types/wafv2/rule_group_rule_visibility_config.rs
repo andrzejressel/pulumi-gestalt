@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_metrics_enabled",
+                    "cloudwatchMetricsEnabled",
                     &self.r#cloudwatch_metrics_enabled,
                 ),
                 to_pulumi_object_field(
-                    "metric_name",
+                    "metricName",
                     &self.r#metric_name,
                 ),
                 to_pulumi_object_field(
-                    "sampled_requests_enabled",
+                    "sampledRequestsEnabled",
                     &self.r#sampled_requests_enabled,
                 ),
             ];

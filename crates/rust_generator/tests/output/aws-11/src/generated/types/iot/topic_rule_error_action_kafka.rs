@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_properties",
+                    "clientProperties",
                     &self.r#client_properties,
                 ),
                 to_pulumi_object_field(
-                    "destination_arn",
+                    "destinationArn",
                     &self.r#destination_arn,
                 ),
                 to_pulumi_object_field(

@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_creation_schedule",
+                    "snapshotCreationSchedule",
                     &self.r#snapshot_creation_schedule,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_location",
+                    "snapshotLocation",
                     &self.r#snapshot_location,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];

@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ami
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_on_termination",
+                    "deleteOnTermination",
                     &self.r#delete_on_termination,
                 ),
                 to_pulumi_object_field(
-                    "device_name",
+                    "deviceName",
                     &self.r#device_name,
                 ),
                 to_pulumi_object_field(
@@ -79,11 +79,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ami
                     &self.r#iops,
                 ),
                 to_pulumi_object_field(
-                    "outpost_arn",
+                    "outpostArn",
                     &self.r#outpost_arn,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_id",
+                    "snapshotId",
                     &self.r#snapshot_id,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ami
                     &self.r#throughput,
                 ),
                 to_pulumi_object_field(
-                    "volume_size",
+                    "volumeSize",
                     &self.r#volume_size,
                 ),
                 to_pulumi_object_field(
-                    "volume_type",
+                    "volumeType",
                     &self.r#volume_type,
                 ),
             ];

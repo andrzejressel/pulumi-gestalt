@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "sha_256_checksum",
+                    "sha256Checksum",
                     &self.r#sha_256_checksum,
                 ),
                 to_pulumi_object_field(

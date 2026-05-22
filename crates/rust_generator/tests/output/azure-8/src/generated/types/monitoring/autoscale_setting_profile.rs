@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#capacity,
                 ),
                 to_pulumi_object_field(
-                    "fixed_date",
+                    "fixedDate",
                     &self.r#fixed_date,
                 ),
                 to_pulumi_object_field(

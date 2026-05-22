@@ -91,75 +91,75 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_mount_home_efs",
+                    "autoMountHomeEfs",
                     &self.r#auto_mount_home_efs,
                 ),
                 to_pulumi_object_field(
-                    "canvas_app_settings",
+                    "canvasAppSettings",
                     &self.r#canvas_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "code_editor_app_settings",
+                    "codeEditorAppSettings",
                     &self.r#code_editor_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "custom_file_system_configs",
+                    "customFileSystemConfigs",
                     &self.r#custom_file_system_configs,
                 ),
                 to_pulumi_object_field(
-                    "custom_posix_user_config",
+                    "customPosixUserConfig",
                     &self.r#custom_posix_user_config,
                 ),
                 to_pulumi_object_field(
-                    "default_landing_uri",
+                    "defaultLandingUri",
                     &self.r#default_landing_uri,
                 ),
                 to_pulumi_object_field(
-                    "execution_role",
+                    "executionRole",
                     &self.r#execution_role,
                 ),
                 to_pulumi_object_field(
-                    "jupyter_lab_app_settings",
+                    "jupyterLabAppSettings",
                     &self.r#jupyter_lab_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "jupyter_server_app_settings",
+                    "jupyterServerAppSettings",
                     &self.r#jupyter_server_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "kernel_gateway_app_settings",
+                    "kernelGatewayAppSettings",
                     &self.r#kernel_gateway_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "r_session_app_settings",
+                    "rSessionAppSettings",
                     &self.r#r_session_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "r_studio_server_pro_app_settings",
+                    "rStudioServerProAppSettings",
                     &self.r#r_studio_server_pro_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "security_groups",
+                    "securityGroups",
                     &self.r#security_groups,
                 ),
                 to_pulumi_object_field(
-                    "sharing_settings",
+                    "sharingSettings",
                     &self.r#sharing_settings,
                 ),
                 to_pulumi_object_field(
-                    "space_storage_settings",
+                    "spaceStorageSettings",
                     &self.r#space_storage_settings,
                 ),
                 to_pulumi_object_field(
-                    "studio_web_portal",
+                    "studioWebPortal",
                     &self.r#studio_web_portal,
                 ),
                 to_pulumi_object_field(
-                    "studio_web_portal_settings",
+                    "studioWebPortalSettings",
                     &self.r#studio_web_portal_settings,
                 ),
                 to_pulumi_object_field(
-                    "tensor_board_app_settings",
+                    "tensorBoardAppSettings",
                     &self.r#tensor_board_app_settings,
                 ),
             ];

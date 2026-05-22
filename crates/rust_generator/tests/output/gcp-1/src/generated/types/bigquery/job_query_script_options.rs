@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_result_statement",
+                    "keyResultStatement",
                     &self.r#key_result_statement,
                 ),
                 to_pulumi_object_field(
-                    "statement_byte_budget",
+                    "statementByteBudget",
                     &self.r#statement_byte_budget,
                 ),
                 to_pulumi_object_field(
-                    "statement_timeout_ms",
+                    "statementTimeoutMs",
                     &self.r#statement_timeout_ms,
                 ),
             ];

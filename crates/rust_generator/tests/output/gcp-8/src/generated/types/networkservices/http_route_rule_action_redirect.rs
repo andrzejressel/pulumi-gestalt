@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Htt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_redirect",
+                    "hostRedirect",
                     &self.r#host_redirect,
                 ),
                 to_pulumi_object_field(
-                    "https_redirect",
+                    "httpsRedirect",
                     &self.r#https_redirect,
                 ),
                 to_pulumi_object_field(
-                    "path_redirect",
+                    "pathRedirect",
                     &self.r#path_redirect,
                 ),
                 to_pulumi_object_field(
-                    "port_redirect",
+                    "portRedirect",
                     &self.r#port_redirect,
                 ),
                 to_pulumi_object_field(
-                    "prefix_rewrite",
+                    "prefixRewrite",
                     &self.r#prefix_rewrite,
                 ),
                 to_pulumi_object_field(
-                    "response_code",
+                    "responseCode",
                     &self.r#response_code,
                 ),
                 to_pulumi_object_field(
-                    "strip_query",
+                    "stripQuery",
                     &self.r#strip_query,
                 ),
             ];

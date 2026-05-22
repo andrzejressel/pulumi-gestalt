@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cmk_arn",
+                    "cmkArn",
                     &self.r#cmk_arn,
                 ),
                 to_pulumi_object_field(
-                    "copy_tags",
+                    "copyTags",
                     &self.r#copy_tags,
                 ),
                 to_pulumi_object_field(
-                    "deprecate_rule",
+                    "deprecateRule",
                     &self.r#deprecate_rule,
                 ),
                 to_pulumi_object_field(
@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#encrypted,
                 ),
                 to_pulumi_object_field(
-                    "retain_rule",
+                    "retainRule",
                     &self.r#retain_rule,
                 ),
                 to_pulumi_object_field(

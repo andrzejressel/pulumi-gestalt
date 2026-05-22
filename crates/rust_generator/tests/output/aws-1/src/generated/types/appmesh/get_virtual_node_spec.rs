@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_defaults",
+                    "backendDefaults",
                     &self.r#backend_defaults,
                 ),
                 to_pulumi_object_field(
@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#loggings,
                 ),
                 to_pulumi_object_field(
-                    "service_discoveries",
+                    "serviceDiscoveries",
                     &self.r#service_discoveries,
                 ),
             ];

@@ -84,47 +84,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucketing_config",
+                    "bucketingConfig",
                     &self.r#bucketing_config,
                 ),
                 to_pulumi_object_field(
-                    "character_mask_config",
+                    "characterMaskConfig",
                     &self.r#character_mask_config,
                 ),
                 to_pulumi_object_field(
-                    "crypto_deterministic_config",
+                    "cryptoDeterministicConfig",
                     &self.r#crypto_deterministic_config,
                 ),
                 to_pulumi_object_field(
-                    "crypto_hash_config",
+                    "cryptoHashConfig",
                     &self.r#crypto_hash_config,
                 ),
                 to_pulumi_object_field(
-                    "crypto_replace_ffx_fpe_config",
+                    "cryptoReplaceFfxFpeConfig",
                     &self.r#crypto_replace_ffx_fpe_config,
                 ),
                 to_pulumi_object_field(
-                    "date_shift_config",
+                    "dateShiftConfig",
                     &self.r#date_shift_config,
                 ),
                 to_pulumi_object_field(
-                    "fixed_size_bucketing_config",
+                    "fixedSizeBucketingConfig",
                     &self.r#fixed_size_bucketing_config,
                 ),
                 to_pulumi_object_field(
-                    "redact_config",
+                    "redactConfig",
                     &self.r#redact_config,
                 ),
                 to_pulumi_object_field(
-                    "replace_config",
+                    "replaceConfig",
                     &self.r#replace_config,
                 ),
                 to_pulumi_object_field(
-                    "replace_dictionary_config",
+                    "replaceDictionaryConfig",
                     &self.r#replace_dictionary_config,
                 ),
                 to_pulumi_object_field(
-                    "time_part_config",
+                    "timePartConfig",
                     &self.r#time_part_config,
                 ),
             ];

@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#driver,
                 ),
                 to_pulumi_object_field(
-                    "read_only",
+                    "readOnly",
                     &self.r#read_only,
                 ),
                 to_pulumi_object_field(
-                    "volume_attributes",
+                    "volumeAttributes",
                     &self.r#volume_attributes,
                 ),
             ];

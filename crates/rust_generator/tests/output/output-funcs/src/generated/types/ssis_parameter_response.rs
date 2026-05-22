@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_type",
+                    "dataType",
                     &self.r#data_type,
                 ),
                 to_pulumi_object_field(
-                    "default_value",
+                    "defaultValue",
                     &self.r#default_value,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "design_default_value",
+                    "designDefaultValue",
                     &self.r#design_default_value,
                 ),
                 to_pulumi_object_field(
@@ -99,15 +99,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
                     &self.r#sensitive,
                 ),
                 to_pulumi_object_field(
-                    "sensitive_default_value",
+                    "sensitiveDefaultValue",
                     &self.r#sensitive_default_value,
                 ),
                 to_pulumi_object_field(
-                    "value_set",
+                    "valueSet",
                     &self.r#value_set,
                 ),
                 to_pulumi_object_field(
-                    "value_type",
+                    "valueType",
                     &self.r#value_type,
                 ),
                 to_pulumi_object_field(

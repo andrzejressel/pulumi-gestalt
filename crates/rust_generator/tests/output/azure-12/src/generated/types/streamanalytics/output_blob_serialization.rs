@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Out
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "field_delimiter",
+                    "fieldDelimiter",
                     &self.r#field_delimiter,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Out
                     &self.r#format,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

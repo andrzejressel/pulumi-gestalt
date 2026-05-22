@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_mode",
+                    "certificateMode",
                     &self.r#certificate_mode,
                 ),
                 to_pulumi_object_field(
-                    "force_override",
+                    "forceOverride",
                     &self.r#force_override,
                 ),
                 to_pulumi_object_field(
-                    "route_name",
+                    "routeName",
                     &self.r#route_name,
                 ),
             ];

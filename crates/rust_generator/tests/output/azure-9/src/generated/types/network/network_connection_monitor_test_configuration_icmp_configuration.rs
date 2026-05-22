@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "trace_route_enabled",
+                    "traceRouteEnabled",
                     &self.r#trace_route_enabled,
                 ),
             ];

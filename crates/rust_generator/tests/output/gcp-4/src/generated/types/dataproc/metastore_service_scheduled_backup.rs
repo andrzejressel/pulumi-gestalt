@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_location",
+                    "backupLocation",
                     &self.r#backup_location,
                 ),
                 to_pulumi_object_field(
-                    "cron_schedule",
+                    "cronSchedule",
                     &self.r#cron_schedule,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];

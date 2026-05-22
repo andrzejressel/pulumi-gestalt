@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mysql_excluded_objects",
+                    "mysqlExcludedObjects",
                     &self.r#mysql_excluded_objects,
                 ),
                 to_pulumi_object_field(
-                    "oracle_excluded_objects",
+                    "oracleExcludedObjects",
                     &self.r#oracle_excluded_objects,
                 ),
                 to_pulumi_object_field(
-                    "postgresql_excluded_objects",
+                    "postgresqlExcludedObjects",
                     &self.r#postgresql_excluded_objects,
                 ),
                 to_pulumi_object_field(
-                    "sql_server_excluded_objects",
+                    "sqlServerExcludedObjects",
                     &self.r#sql_server_excluded_objects,
                 ),
             ];

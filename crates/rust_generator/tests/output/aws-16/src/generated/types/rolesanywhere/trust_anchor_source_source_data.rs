@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tru
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acm_pca_arn",
+                    "acmPcaArn",
                     &self.r#acm_pca_arn,
                 ),
                 to_pulumi_object_field(
-                    "x_509_certificate_data",
+                    "x509CertificateData",
                     &self.r#x_509_certificate_data,
                 ),
             ];

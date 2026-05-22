@@ -52,7 +52,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_readable",
+                    "applicationReadable",
                     &self.r#application_readable,
                 ),
                 to_pulumi_object_field(
@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#expiration,
                 ),
                 to_pulumi_object_field(
-                    "http_headers",
+                    "httpHeaders",
                     &self.r#http_headers,
                 ),
                 to_pulumi_object_field(
-                    "mime_type",
+                    "mimeType",
                     &self.r#mime_type,
                 ),
                 to_pulumi_object_field(
@@ -72,11 +72,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "require_matching_file",
+                    "requireMatchingFile",
                     &self.r#require_matching_file,
                 ),
                 to_pulumi_object_field(
-                    "upload_path_regex",
+                    "uploadPathRegex",
                     &self.r#upload_path_regex,
                 ),
             ];

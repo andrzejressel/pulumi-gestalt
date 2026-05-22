@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ekm
                     &self.r#issuer,
                 ),
                 to_pulumi_object_field(
-                    "not_after_time",
+                    "notAfterTime",
                     &self.r#not_after_time,
                 ),
                 to_pulumi_object_field(
-                    "not_before_time",
+                    "notBeforeTime",
                     &self.r#not_before_time,
                 ),
                 to_pulumi_object_field(
@@ -83,15 +83,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ekm
                     &self.r#parsed,
                 ),
                 to_pulumi_object_field(
-                    "raw_der",
+                    "rawDer",
                     &self.r#raw_der,
                 ),
                 to_pulumi_object_field(
-                    "serial_number",
+                    "serialNumber",
                     &self.r#serial_number,
                 ),
                 to_pulumi_object_field(
-                    "sha_256_fingerprint",
+                    "sha256Fingerprint",
                     &self.r#sha_256_fingerprint,
                 ),
                 to_pulumi_object_field(
@@ -99,7 +99,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ekm
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "subject_alternative_dns_names",
+                    "subjectAlternativeDnsNames",
                     &self.r#subject_alternative_dns_names,
                 ),
             ];

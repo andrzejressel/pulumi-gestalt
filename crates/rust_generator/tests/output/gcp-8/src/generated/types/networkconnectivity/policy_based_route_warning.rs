@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#data,
                 ),
                 to_pulumi_object_field(
-                    "warning_message",
+                    "warningMessage",
                     &self.r#warning_message,
                 ),
             ];

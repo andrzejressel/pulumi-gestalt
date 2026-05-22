@@ -44,27 +44,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fully_refresh_incremental_tables_enabled",
+                    "fullyRefreshIncrementalTablesEnabled",
                     &self.r#fully_refresh_incremental_tables_enabled,
                 ),
                 to_pulumi_object_field(
-                    "included_tags",
+                    "includedTags",
                     &self.r#included_tags,
                 ),
                 to_pulumi_object_field(
-                    "included_targets",
+                    "includedTargets",
                     &self.r#included_targets,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "transitive_dependencies_included",
+                    "transitiveDependenciesIncluded",
                     &self.r#transitive_dependencies_included,
                 ),
                 to_pulumi_object_field(
-                    "transitive_dependents_included",
+                    "transitiveDependentsIncluded",
                     &self.r#transitive_dependents_included,
                 ),
             ];

@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#caching,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#lun,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_type",
+                    "storageAccountType",
                     &self.r#storage_account_type,
                 ),
             ];

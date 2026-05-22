@@ -61,31 +61,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "destination_format",
+                    "destinationFormat",
                     &self.r#destination_format,
                 ),
                 to_pulumi_object_field(
-                    "destination_uris",
+                    "destinationUris",
                     &self.r#destination_uris,
                 ),
                 to_pulumi_object_field(
-                    "field_delimiter",
+                    "fieldDelimiter",
                     &self.r#field_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "print_header",
+                    "printHeader",
                     &self.r#print_header,
                 ),
                 to_pulumi_object_field(
-                    "source_model",
+                    "sourceModel",
                     &self.r#source_model,
                 ),
                 to_pulumi_object_field(
-                    "source_table",
+                    "sourceTable",
                     &self.r#source_table,
                 ),
                 to_pulumi_object_field(
-                    "use_avro_logical_types",
+                    "useAvroLogicalTypes",
                     &self.r#use_avro_logical_types,
                 ),
             ];

@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#destinations,
                 ),
                 to_pulumi_object_field(
-                    "destinations_type",
+                    "destinationsType",
                     &self.r#destinations_type,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "next_hop",
+                    "nextHop",
                     &self.r#next_hop,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_type",
+                    "nextHopType",
                     &self.r#next_hop_type,
                 ),
             ];

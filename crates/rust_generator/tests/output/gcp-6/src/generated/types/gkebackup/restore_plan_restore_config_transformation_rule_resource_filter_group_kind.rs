@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "resource_group",
+                    "resourceGroup",
                     &self.r#resource_group,
                 ),
                 to_pulumi_object_field(
-                    "resource_kind",
+                    "resourceKind",
                     &self.r#resource_kind,
                 ),
             ];

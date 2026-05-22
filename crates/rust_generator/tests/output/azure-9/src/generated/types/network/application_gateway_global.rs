@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "request_buffering_enabled",
+                    "requestBufferingEnabled",
                     &self.r#request_buffering_enabled,
                 ),
                 to_pulumi_object_field(
-                    "response_buffering_enabled",
+                    "responseBufferingEnabled",
                     &self.r#response_buffering_enabled,
                 ),
             ];

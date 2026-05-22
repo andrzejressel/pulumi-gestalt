@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_images",
+                    "customImages",
                     &self.r#custom_images,
                 ),
                 to_pulumi_object_field(
-                    "default_resource_spec",
+                    "defaultResourceSpec",
                     &self.r#default_resource_spec,
                 ),
             ];

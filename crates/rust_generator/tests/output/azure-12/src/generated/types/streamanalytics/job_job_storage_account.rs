@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_key",
+                    "accountKey",
                     &self.r#account_key,
                 ),
                 to_pulumi_object_field(
-                    "account_name",
+                    "accountName",
                     &self.r#account_name,
                 ),
                 to_pulumi_object_field(
-                    "authentication_mode",
+                    "authenticationMode",
                     &self.r#authentication_mode,
                 ),
             ];

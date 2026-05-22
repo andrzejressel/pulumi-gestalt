@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "target_document_attribute_key",
+                    "targetDocumentAttributeKey",
                     &self.r#target_document_attribute_key,
                 ),
                 to_pulumi_object_field(
-                    "target_document_attribute_value",
+                    "targetDocumentAttributeValue",
                     &self.r#target_document_attribute_value,
                 ),
                 to_pulumi_object_field(
-                    "target_document_attribute_value_deletion",
+                    "targetDocumentAttributeValueDeletion",
                     &self.r#target_document_attribute_value_deletion,
                 ),
             ];

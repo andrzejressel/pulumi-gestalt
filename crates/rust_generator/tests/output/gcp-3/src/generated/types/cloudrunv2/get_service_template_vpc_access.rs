@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#egress,
                 ),
                 to_pulumi_object_field(
-                    "network_interfaces",
+                    "networkInterfaces",
                     &self.r#network_interfaces,
                 ),
             ];

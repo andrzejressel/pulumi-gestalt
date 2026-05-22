@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_dimension_value",
+                    "defaultDimensionValue",
                     &self.r#default_dimension_value,
                 ),
                 to_pulumi_object_field(
-                    "dimension_name",
+                    "dimensionName",
                     &self.r#dimension_name,
                 ),
                 to_pulumi_object_field(
-                    "dimension_value_source",
+                    "dimensionValueSource",
                     &self.r#dimension_value_source,
                 ),
             ];

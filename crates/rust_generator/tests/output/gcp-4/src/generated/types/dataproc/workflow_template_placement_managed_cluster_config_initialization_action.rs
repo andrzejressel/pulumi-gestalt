@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "executable_file",
+                    "executableFile",
                     &self.r#executable_file,
                 ),
                 to_pulumi_object_field(
-                    "execution_timeout",
+                    "executionTimeout",
                     &self.r#execution_timeout,
                 ),
             ];

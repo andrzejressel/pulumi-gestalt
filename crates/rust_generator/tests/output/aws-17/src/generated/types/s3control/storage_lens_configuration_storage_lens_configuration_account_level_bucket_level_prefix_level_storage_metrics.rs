@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "selection_criteria",
+                    "selectionCriteria",
                     &self.r#selection_criteria,
                 ),
             ];

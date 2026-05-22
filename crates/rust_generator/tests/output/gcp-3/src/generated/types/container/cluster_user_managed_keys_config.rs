@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aggregation_ca",
+                    "aggregationCa",
                     &self.r#aggregation_ca,
                 ),
                 to_pulumi_object_field(
-                    "cluster_ca",
+                    "clusterCa",
                     &self.r#cluster_ca,
                 ),
                 to_pulumi_object_field(
-                    "control_plane_disk_encryption_key",
+                    "controlPlaneDiskEncryptionKey",
                     &self.r#control_plane_disk_encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "etcd_api_ca",
+                    "etcdApiCa",
                     &self.r#etcd_api_ca,
                 ),
                 to_pulumi_object_field(
-                    "etcd_peer_ca",
+                    "etcdPeerCa",
                     &self.r#etcd_peer_ca,
                 ),
                 to_pulumi_object_field(
-                    "gkeops_etcd_backup_encryption_key",
+                    "gkeopsEtcdBackupEncryptionKey",
                     &self.r#gkeops_etcd_backup_encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "service_account_signing_keys",
+                    "serviceAccountSigningKeys",
                     &self.r#service_account_signing_keys,
                 ),
                 to_pulumi_object_field(
-                    "service_account_verification_keys",
+                    "serviceAccountVerificationKeys",
                     &self.r#service_account_verification_keys,
                 ),
             ];

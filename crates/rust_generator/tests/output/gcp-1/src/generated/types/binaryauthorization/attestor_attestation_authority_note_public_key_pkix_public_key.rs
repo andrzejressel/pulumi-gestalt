@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Att
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "public_key_pem",
+                    "publicKeyPem",
                     &self.r#public_key_pem,
                 ),
                 to_pulumi_object_field(
-                    "signature_algorithm",
+                    "signatureAlgorithm",
                     &self.r#signature_algorithm,
                 ),
             ];

@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accepted_protocols",
+                    "acceptedProtocols",
                     &self.r#accepted_protocols,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "forwarding_configuration",
+                    "forwardingConfiguration",
                     &self.r#forwarding_configuration,
                 ),
                 to_pulumi_object_field(
-                    "frontend_endpoints",
+                    "frontendEndpoints",
                     &self.r#frontend_endpoints,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "patterns_to_matches",
+                    "patternsToMatches",
                     &self.r#patterns_to_matches,
                 ),
                 to_pulumi_object_field(
-                    "redirect_configuration",
+                    "redirectConfiguration",
                     &self.r#redirect_configuration,
                 ),
             ];

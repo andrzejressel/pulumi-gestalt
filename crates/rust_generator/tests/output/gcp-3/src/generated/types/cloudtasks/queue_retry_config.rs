@@ -57,23 +57,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_attempts",
+                    "maxAttempts",
                     &self.r#max_attempts,
                 ),
                 to_pulumi_object_field(
-                    "max_backoff",
+                    "maxBackoff",
                     &self.r#max_backoff,
                 ),
                 to_pulumi_object_field(
-                    "max_doublings",
+                    "maxDoublings",
                     &self.r#max_doublings,
                 ),
                 to_pulumi_object_field(
-                    "max_retry_duration",
+                    "maxRetryDuration",
                     &self.r#max_retry_duration,
                 ),
                 to_pulumi_object_field(
-                    "min_backoff",
+                    "minBackoff",
                     &self.r#min_backoff,
                 ),
             ];

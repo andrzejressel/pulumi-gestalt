@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "abort_incomplete_multipart_upload",
+                    "abortIncompleteMultipartUpload",
                     &self.r#abort_incomplete_multipart_upload,
                 ),
                 to_pulumi_object_field(
@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "noncurrent_version_expiration",
+                    "noncurrentVersionExpiration",
                     &self.r#noncurrent_version_expiration,
                 ),
                 to_pulumi_object_field(
-                    "noncurrent_version_transitions",
+                    "noncurrentVersionTransitions",
                     &self.r#noncurrent_version_transitions,
                 ),
                 to_pulumi_object_field(

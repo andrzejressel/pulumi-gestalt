@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "baseline_description",
+                    "baselineDescription",
                     &self.r#baseline_description,
                 ),
                 to_pulumi_object_field(
-                    "baseline_id",
+                    "baselineId",
                     &self.r#baseline_id,
                 ),
                 to_pulumi_object_field(
-                    "baseline_name",
+                    "baselineName",
                     &self.r#baseline_name,
                 ),
                 to_pulumi_object_field(
-                    "default_baseline",
+                    "defaultBaseline",
                     &self.r#default_baseline,
                 ),
                 to_pulumi_object_field(
-                    "operating_system",
+                    "operatingSystem",
                     &self.r#operating_system,
                 ),
             ];

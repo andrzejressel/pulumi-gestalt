@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hl7
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pubsub_topic",
+                    "pubsubTopic",
                     &self.r#pubsub_topic,
                 ),
             ];

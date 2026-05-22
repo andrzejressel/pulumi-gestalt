@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_handling_config",
+                    "errorHandlingConfig",
                     &self.r#error_handling_config,
                 ),
                 to_pulumi_object_field(

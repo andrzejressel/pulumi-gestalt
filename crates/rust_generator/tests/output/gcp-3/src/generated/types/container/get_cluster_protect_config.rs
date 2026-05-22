@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "workload_configs",
+                    "workloadConfigs",
                     &self.r#workload_configs,
                 ),
                 to_pulumi_object_field(
-                    "workload_vulnerability_mode",
+                    "workloadVulnerabilityMode",
                     &self.r#workload_vulnerability_mode,
                 ),
             ];

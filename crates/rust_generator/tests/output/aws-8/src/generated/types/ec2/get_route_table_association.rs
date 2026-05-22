@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gateway_id",
+                    "gatewayId",
                     &self.r#gateway_id,
                 ),
                 to_pulumi_object_field(
@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#main,
                 ),
                 to_pulumi_object_field(
-                    "route_table_association_id",
+                    "routeTableAssociationId",
                     &self.r#route_table_association_id,
                 ),
                 to_pulumi_object_field(
-                    "route_table_id",
+                    "routeTableId",
                     &self.r#route_table_id,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Att
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ascii_armored_pgp_public_key",
+                    "asciiArmoredPgpPublicKey",
                     &self.r#ascii_armored_pgp_public_key,
                 ),
                 to_pulumi_object_field(
@@ -65,7 +65,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Att
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "pkix_public_key",
+                    "pkixPublicKey",
                     &self.r#pkix_public_key,
                 ),
             ];

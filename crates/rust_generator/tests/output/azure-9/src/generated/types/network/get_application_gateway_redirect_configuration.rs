@@ -54,11 +54,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "include_path",
+                    "includePath",
                     &self.r#include_path,
                 ),
                 to_pulumi_object_field(
-                    "include_query_string",
+                    "includeQueryString",
                     &self.r#include_query_string,
                 ),
                 to_pulumi_object_field(
@@ -66,19 +66,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "redirect_type",
+                    "redirectType",
                     &self.r#redirect_type,
                 ),
                 to_pulumi_object_field(
-                    "target_listener_id",
+                    "targetListenerId",
                     &self.r#target_listener_id,
                 ),
                 to_pulumi_object_field(
-                    "target_listener_name",
+                    "targetListenerName",
                     &self.r#target_listener_name,
                 ),
                 to_pulumi_object_field(
-                    "target_url",
+                    "targetUrl",
                     &self.r#target_url,
                 ),
             ];

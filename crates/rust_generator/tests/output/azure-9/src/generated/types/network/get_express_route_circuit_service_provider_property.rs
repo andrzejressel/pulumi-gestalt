@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bandwidth_in_mbps",
+                    "bandwidthInMbps",
                     &self.r#bandwidth_in_mbps,
                 ),
                 to_pulumi_object_field(
-                    "peering_location",
+                    "peeringLocation",
                     &self.r#peering_location,
                 ),
                 to_pulumi_object_field(
-                    "service_provider_name",
+                    "serviceProviderName",
                     &self.r#service_provider_name,
                 ),
             ];

@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kaf
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "head_node",
+                    "headNode",
                     &self.r#head_node,
                 ),
                 to_pulumi_object_field(
-                    "kafka_management_node",
+                    "kafkaManagementNode",
                     &self.r#kafka_management_node,
                 ),
                 to_pulumi_object_field(
-                    "worker_node",
+                    "workerNode",
                     &self.r#worker_node,
                 ),
                 to_pulumi_object_field(
-                    "zookeeper_node",
+                    "zookeeperNode",
                     &self.r#zookeeper_node,
                 ),
             ];

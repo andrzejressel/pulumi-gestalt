@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#gateway,
                 ),
                 to_pulumi_object_field(
-                    "prefix_length",
+                    "prefixLength",
                     &self.r#prefix_length,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

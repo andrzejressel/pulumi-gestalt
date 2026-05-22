@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_record_ip_type",
+                    "dnsRecordIpType",
                     &self.r#dns_record_ip_type,
                 ),
                 to_pulumi_object_field(
-                    "private_dns_only_for_inbound_resolver_endpoint",
+                    "privateDnsOnlyForInboundResolverEndpoint",
                     &self.r#private_dns_only_for_inbound_resolver_endpoint,
                 ),
             ];

@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "button_color",
+                    "buttonColor",
                     &self.r#button_color,
                 ),
                 to_pulumi_object_field(
-                    "button_text_color",
+                    "buttonTextColor",
                     &self.r#button_text_color,
                 ),
                 to_pulumi_object_field(
-                    "image_url",
+                    "imageUrl",
                     &self.r#image_url,
                 ),
                 to_pulumi_object_field(

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "replica_modifications",
+                    "replicaModifications",
                     &self.r#replica_modifications,
                 ),
                 to_pulumi_object_field(
-                    "sse_kms_encrypted_objects",
+                    "sseKmsEncryptedObjects",
                     &self.r#sse_kms_encrypted_objects,
                 ),
             ];

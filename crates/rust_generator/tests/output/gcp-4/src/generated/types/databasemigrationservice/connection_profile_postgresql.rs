@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alloydb_cluster_id",
+                    "alloydbClusterId",
                     &self.r#alloydb_cluster_id,
                 ),
                 to_pulumi_object_field(
-                    "cloud_sql_id",
+                    "cloudSqlId",
                     &self.r#cloud_sql_id,
                 ),
                 to_pulumi_object_field(
@@ -72,7 +72,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#host,
                 ),
                 to_pulumi_object_field(
-                    "network_architecture",
+                    "networkArchitecture",
                     &self.r#network_architecture,
                 ),
                 to_pulumi_object_field(
@@ -80,7 +80,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "password_set",
+                    "passwordSet",
                     &self.r#password_set,
                 ),
                 to_pulumi_object_field(

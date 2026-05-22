@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "origin_shield_region",
+                    "originShieldRegion",
                     &self.r#origin_shield_region,
                 ),
             ];

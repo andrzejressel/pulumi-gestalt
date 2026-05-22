@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_iov",
+                    "enableIov",
                     &self.r#enable_iov,
                 ),
                 to_pulumi_object_field(
-                    "load_balancing_algorithm",
+                    "loadBalancingAlgorithm",
                     &self.r#load_balancing_algorithm,
                 ),
             ];

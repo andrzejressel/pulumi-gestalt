@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "query_string",
+                    "queryString",
                     &self.r#query_string,
                 ),
                 to_pulumi_object_field(
-                    "redirect_type",
+                    "redirectType",
                     &self.r#redirect_type,
                 ),
             ];

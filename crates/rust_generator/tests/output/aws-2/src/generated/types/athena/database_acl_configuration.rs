@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "s_3_acl_option",
+                    "s3AclOption",
                     &self.r#s_3_acl_option,
                 ),
             ];

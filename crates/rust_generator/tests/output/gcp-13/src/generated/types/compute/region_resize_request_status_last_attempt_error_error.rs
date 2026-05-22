@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#code,
                 ),
                 to_pulumi_object_field(
-                    "error_details",
+                    "errorDetails",
                     &self.r#error_details,
                 ),
                 to_pulumi_object_field(

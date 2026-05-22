@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_type",
+                    "authenticationType",
                     &self.r#authentication_type,
                 ),
                 to_pulumi_object_field(
-                    "https_server_certificate_url",
+                    "httpsServerCertificateUrl",
                     &self.r#https_server_certificate_url,
                 ),
             ];

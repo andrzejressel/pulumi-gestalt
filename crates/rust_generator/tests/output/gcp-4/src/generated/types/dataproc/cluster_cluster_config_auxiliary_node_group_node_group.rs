@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "node_group_config",
+                    "nodeGroupConfig",
                     &self.r#node_group_config,
                 ),
                 to_pulumi_object_field(

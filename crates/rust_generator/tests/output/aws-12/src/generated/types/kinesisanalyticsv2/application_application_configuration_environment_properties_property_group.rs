@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "property_group_id",
+                    "propertyGroupId",
                     &self.r#property_group_id,
                 ),
                 to_pulumi_object_field(
-                    "property_map",
+                    "propertyMap",
                     &self.r#property_map,
                 ),
             ];

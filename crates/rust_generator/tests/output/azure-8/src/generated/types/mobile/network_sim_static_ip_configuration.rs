@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attached_data_network_id",
+                    "attachedDataNetworkId",
                     &self.r#attached_data_network_id,
                 ),
                 to_pulumi_object_field(
-                    "slice_id",
+                    "sliceId",
                     &self.r#slice_id,
                 ),
                 to_pulumi_object_field(
-                    "static_ipv_4_address",
+                    "staticIpv4Address",
                     &self.r#static_ipv_4_address,
                 ),
             ];

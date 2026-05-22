@@ -91,19 +91,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#annotations,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
-                    "effective_annotations",
+                    "effectiveAnnotations",
                     &self.r#effective_annotations,
                 ),
                 to_pulumi_object_field(
-                    "effective_labels",
+                    "effectiveLabels",
                     &self.r#effective_labels,
                 ),
                 to_pulumi_object_field(
-                    "expire_time",
+                    "expireTime",
                     &self.r#expire_time,
                 ),
                 to_pulumi_object_field(
@@ -119,7 +119,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#project,
                 ),
                 to_pulumi_object_field(
-                    "pulumi_labels",
+                    "pulumiLabels",
                     &self.r#pulumi_labels,
                 ),
                 to_pulumi_object_field(
@@ -131,7 +131,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#rotations,
                 ),
                 to_pulumi_object_field(
-                    "secret_id",
+                    "secretId",
                     &self.r#secret_id,
                 ),
                 to_pulumi_object_field(
@@ -143,11 +143,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#ttl,
                 ),
                 to_pulumi_object_field(
-                    "version_aliases",
+                    "versionAliases",
                     &self.r#version_aliases,
                 ),
                 to_pulumi_object_field(
-                    "version_destroy_ttl",
+                    "versionDestroyTtl",
                     &self.r#version_destroy_ttl,
                 ),
             ];

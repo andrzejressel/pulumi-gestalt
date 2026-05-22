@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "self_hosted_integration_runtime_name",
+                    "selfHostedIntegrationRuntimeName",
                     &self.r#self_hosted_integration_runtime_name,
                 ),
                 to_pulumi_object_field(
-                    "staging_storage_linked_service_name",
+                    "stagingStorageLinkedServiceName",
                     &self.r#staging_storage_linked_service_name,
                 ),
             ];

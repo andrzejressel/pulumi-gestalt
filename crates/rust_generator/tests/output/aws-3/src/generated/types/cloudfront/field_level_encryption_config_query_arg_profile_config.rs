@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fie
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "forward_when_query_arg_profile_is_unknown",
+                    "forwardWhenQueryArgProfileIsUnknown",
                     &self.r#forward_when_query_arg_profile_is_unknown,
                 ),
                 to_pulumi_object_field(
-                    "query_arg_profiles",
+                    "queryArgProfiles",
                     &self.r#query_arg_profiles,
                 ),
             ];

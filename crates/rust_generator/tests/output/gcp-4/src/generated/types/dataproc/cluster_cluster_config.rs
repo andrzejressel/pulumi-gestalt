@@ -116,11 +116,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_config",
+                    "autoscalingConfig",
                     &self.r#autoscaling_config,
                 ),
                 to_pulumi_object_field(
-                    "auxiliary_node_groups",
+                    "auxiliaryNodeGroups",
                     &self.r#auxiliary_node_groups,
                 ),
                 to_pulumi_object_field(
@@ -128,59 +128,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "dataproc_metric_config",
+                    "dataprocMetricConfig",
                     &self.r#dataproc_metric_config,
                 ),
                 to_pulumi_object_field(
-                    "encryption_config",
+                    "encryptionConfig",
                     &self.r#encryption_config,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_config",
+                    "endpointConfig",
                     &self.r#endpoint_config,
                 ),
                 to_pulumi_object_field(
-                    "gce_cluster_config",
+                    "gceClusterConfig",
                     &self.r#gce_cluster_config,
                 ),
                 to_pulumi_object_field(
-                    "initialization_actions",
+                    "initializationActions",
                     &self.r#initialization_actions,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_config",
+                    "lifecycleConfig",
                     &self.r#lifecycle_config,
                 ),
                 to_pulumi_object_field(
-                    "master_config",
+                    "masterConfig",
                     &self.r#master_config,
                 ),
                 to_pulumi_object_field(
-                    "metastore_config",
+                    "metastoreConfig",
                     &self.r#metastore_config,
                 ),
                 to_pulumi_object_field(
-                    "preemptible_worker_config",
+                    "preemptibleWorkerConfig",
                     &self.r#preemptible_worker_config,
                 ),
                 to_pulumi_object_field(
-                    "security_config",
+                    "securityConfig",
                     &self.r#security_config,
                 ),
                 to_pulumi_object_field(
-                    "software_config",
+                    "softwareConfig",
                     &self.r#software_config,
                 ),
                 to_pulumi_object_field(
-                    "staging_bucket",
+                    "stagingBucket",
                     &self.r#staging_bucket,
                 ),
                 to_pulumi_object_field(
-                    "temp_bucket",
+                    "tempBucket",
                     &self.r#temp_bucket,
                 ),
                 to_pulumi_object_field(
-                    "worker_config",
+                    "workerConfig",
                     &self.r#worker_config,
                 ),
             ];

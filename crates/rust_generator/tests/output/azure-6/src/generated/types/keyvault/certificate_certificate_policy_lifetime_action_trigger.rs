@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "days_before_expiry",
+                    "daysBeforeExpiry",
                     &self.r#days_before_expiry,
                 ),
                 to_pulumi_object_field(
-                    "lifetime_percentage",
+                    "lifetimePercentage",
                     &self.r#lifetime_percentage,
                 ),
             ];

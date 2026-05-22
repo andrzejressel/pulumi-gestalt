@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cron_expression_for_recurrence",
+                    "cronExpressionForRecurrence",
                     &self.r#cron_expression_for_recurrence,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "start_at",
+                    "startAt",
                     &self.r#start_at,
                 ),
             ];

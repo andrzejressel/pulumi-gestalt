@@ -107,15 +107,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#environments,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_storages",
+                    "ephemeralStorages",
                     &self.r#ephemeral_storages,
                 ),
                 to_pulumi_object_field(
-                    "execution_role_arn",
+                    "executionRoleArn",
                     &self.r#execution_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "fargate_platform_configurations",
+                    "fargatePlatformConfigurations",
                     &self.r#fargate_platform_configurations,
                 ),
                 to_pulumi_object_field(
@@ -123,27 +123,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "job_role_arn",
+                    "jobRoleArn",
                     &self.r#job_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "linux_parameters",
+                    "linuxParameters",
                     &self.r#linux_parameters,
                 ),
                 to_pulumi_object_field(
-                    "log_configurations",
+                    "logConfigurations",
                     &self.r#log_configurations,
                 ),
                 to_pulumi_object_field(
-                    "mount_points",
+                    "mountPoints",
                     &self.r#mount_points,
                 ),
                 to_pulumi_object_field(
-                    "network_configurations",
+                    "networkConfigurations",
                     &self.r#network_configurations,
                 ),
                 to_pulumi_object_field(
@@ -151,15 +151,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#privileged,
                 ),
                 to_pulumi_object_field(
-                    "readonly_root_filesystem",
+                    "readonlyRootFilesystem",
                     &self.r#readonly_root_filesystem,
                 ),
                 to_pulumi_object_field(
-                    "resource_requirements",
+                    "resourceRequirements",
                     &self.r#resource_requirements,
                 ),
                 to_pulumi_object_field(
-                    "runtime_platforms",
+                    "runtimePlatforms",
                     &self.r#runtime_platforms,
                 ),
                 to_pulumi_object_field(

@@ -59,31 +59,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_auth_credentials",
+                    "basicAuthCredentials",
                     &self.r#basic_auth_credentials,
                 ),
                 to_pulumi_object_field(
-                    "build_spec",
+                    "buildSpec",
                     &self.r#build_spec,
                 ),
                 to_pulumi_object_field(
-                    "enable_auto_build",
+                    "enableAutoBuild",
                     &self.r#enable_auto_build,
                 ),
                 to_pulumi_object_field(
-                    "enable_basic_auth",
+                    "enableBasicAuth",
                     &self.r#enable_basic_auth,
                 ),
                 to_pulumi_object_field(
-                    "enable_performance_mode",
+                    "enablePerformanceMode",
                     &self.r#enable_performance_mode,
                 ),
                 to_pulumi_object_field(
-                    "enable_pull_request_preview",
+                    "enablePullRequestPreview",
                     &self.r#enable_pull_request_preview,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#framework,
                 ),
                 to_pulumi_object_field(
-                    "pull_request_environment_name",
+                    "pullRequestEnvironmentName",
                     &self.r#pull_request_environment_name,
                 ),
                 to_pulumi_object_field(

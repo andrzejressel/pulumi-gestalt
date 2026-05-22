@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_name",
+                    "clusterName",
                     &self.r#cluster_name,
                 ),
                 to_pulumi_object_field(
-                    "service_name",
+                    "serviceName",
                     &self.r#service_name,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "clustering_keys",
+                    "clusteringKeys",
                     &self.r#clustering_keys,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#columns,
                 ),
                 to_pulumi_object_field(
-                    "partition_keys",
+                    "partitionKeys",
                     &self.r#partition_keys,
                 ),
                 to_pulumi_object_field(
-                    "static_columns",
+                    "staticColumns",
                     &self.r#static_columns,
                 ),
             ];

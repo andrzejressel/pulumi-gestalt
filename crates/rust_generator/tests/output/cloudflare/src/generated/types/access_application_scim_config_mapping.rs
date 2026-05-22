@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#schema,
                 ),
                 to_pulumi_object_field(
-                    "transform_jsonata",
+                    "transformJsonata",
                     &self.r#transform_jsonata,
                 ),
             ];

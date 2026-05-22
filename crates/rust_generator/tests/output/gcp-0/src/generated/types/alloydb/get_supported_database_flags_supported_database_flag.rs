@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accepts_multiple_values",
+                    "acceptsMultipleValues",
                     &self.r#accepts_multiple_values,
                 ),
                 to_pulumi_object_field(
-                    "flag_name",
+                    "flagName",
                     &self.r#flag_name,
                 ),
                 to_pulumi_object_field(
-                    "integer_restrictions",
+                    "integerRestrictions",
                     &self.r#integer_restrictions,
                 ),
                 to_pulumi_object_field(
@@ -67,19 +67,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "requires_db_restart",
+                    "requiresDbRestart",
                     &self.r#requires_db_restart,
                 ),
                 to_pulumi_object_field(
-                    "string_restrictions",
+                    "stringRestrictions",
                     &self.r#string_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "supported_db_versions",
+                    "supportedDbVersions",
                     &self.r#supported_db_versions,
                 ),
                 to_pulumi_object_field(
-                    "value_type",
+                    "valueType",
                     &self.r#value_type,
                 ),
             ];

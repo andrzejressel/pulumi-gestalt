@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "initial_user",
+                    "initialUser",
                     &self.r#initial_user,
                 ),
                 to_pulumi_object_field(
@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "primary_instance_settings",
+                    "primaryInstanceSettings",
                     &self.r#primary_instance_settings,
                 ),
                 to_pulumi_object_field(
-                    "vpc_network",
+                    "vpcNetwork",
                     &self.r#vpc_network,
                 ),
             ];

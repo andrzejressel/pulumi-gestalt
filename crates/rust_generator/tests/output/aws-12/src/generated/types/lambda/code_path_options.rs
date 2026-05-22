@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "extra_exclude_packages",
+                    "extraExcludePackages",
                     &self.r#extra_exclude_packages,
                 ),
                 to_pulumi_object_field(
-                    "extra_include_packages",
+                    "extraIncludePackages",
                     &self.r#extra_include_packages,
                 ),
                 to_pulumi_object_field(
-                    "extra_include_paths",
+                    "extraIncludePaths",
                     &self.r#extra_include_paths,
                 ),
             ];

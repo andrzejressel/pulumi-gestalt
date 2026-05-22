@@ -55,23 +55,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
                     &self.r#field,
                 ),
                 to_pulumi_object_field(
-                    "greater_than",
+                    "greaterThan",
                     &self.r#greater_than,
                 ),
                 to_pulumi_object_field(
-                    "greater_than_or_equal",
+                    "greaterThanOrEqual",
                     &self.r#greater_than_or_equal,
                 ),
                 to_pulumi_object_field(
-                    "less_than",
+                    "lessThan",
                     &self.r#less_than,
                 ),
                 to_pulumi_object_field(
-                    "less_than_or_equal",
+                    "lessThanOrEqual",
                     &self.r#less_than_or_equal,
                 ),
                 to_pulumi_object_field(
-                    "not_equals",
+                    "notEquals",
                     &self.r#not_equals,
                 ),
             ];

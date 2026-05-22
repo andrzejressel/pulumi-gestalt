@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "user_token_secret_version",
+                    "userTokenSecretVersion",
                     &self.r#user_token_secret_version,
                 ),
                 to_pulumi_object_field(

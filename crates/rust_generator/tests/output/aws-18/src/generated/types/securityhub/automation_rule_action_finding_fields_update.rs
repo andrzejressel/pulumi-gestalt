@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#note,
                 ),
                 to_pulumi_object_field(
-                    "related_findings",
+                    "relatedFindings",
                     &self.r#related_findings,
                 ),
                 to_pulumi_object_field(
@@ -79,11 +79,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#types,
                 ),
                 to_pulumi_object_field(
-                    "user_defined_fields",
+                    "userDefinedFields",
                     &self.r#user_defined_fields,
                 ),
                 to_pulumi_object_field(
-                    "verification_state",
+                    "verificationState",
                     &self.r#verification_state,
                 ),
                 to_pulumi_object_field(

@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
                     &self.r#scopes,
                 ),
                 to_pulumi_object_field(
-                    "tag_filter",
+                    "tagFilter",
                     &self.r#tag_filter,
                 ),
                 to_pulumi_object_field(

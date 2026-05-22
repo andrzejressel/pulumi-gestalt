@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bandwidth,
                 ),
                 to_pulumi_object_field(
-                    "buffer_segments",
+                    "bufferSegments",
                     &self.r#buffer_segments,
                 ),
                 to_pulumi_object_field(
@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#retries,
                 ),
                 to_pulumi_object_field(
-                    "retry_interval",
+                    "retryInterval",
                     &self.r#retry_interval,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_source",
+                    "scte35Source",
                     &self.r#scte_35_source,
                 ),
             ];

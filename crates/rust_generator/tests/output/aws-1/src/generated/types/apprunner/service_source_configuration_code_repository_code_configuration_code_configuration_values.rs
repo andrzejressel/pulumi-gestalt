@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "build_command",
+                    "buildCommand",
                     &self.r#build_command,
                 ),
                 to_pulumi_object_field(
@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#runtime,
                 ),
                 to_pulumi_object_field(
-                    "runtime_environment_secrets",
+                    "runtimeEnvironmentSecrets",
                     &self.r#runtime_environment_secrets,
                 ),
                 to_pulumi_object_field(
-                    "runtime_environment_variables",
+                    "runtimeEnvironmentVariables",
                     &self.r#runtime_environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "start_command",
+                    "startCommand",
                     &self.r#start_command,
                 ),
             ];

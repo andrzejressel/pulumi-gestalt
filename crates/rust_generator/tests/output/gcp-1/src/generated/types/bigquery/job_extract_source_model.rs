@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dataset_id",
+                    "datasetId",
                     &self.r#dataset_id,
                 ),
                 to_pulumi_object_field(
-                    "model_id",
+                    "modelId",
                     &self.r#model_id,
                 ),
                 to_pulumi_object_field(
-                    "project_id",
+                    "projectId",
                     &self.r#project_id,
                 ),
             ];

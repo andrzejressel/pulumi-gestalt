@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#colors,
                 ),
                 to_pulumi_object_field(
-                    "empty_fill_color",
+                    "emptyFillColor",
                     &self.r#empty_fill_color,
                 ),
                 to_pulumi_object_field(
-                    "min_max_gradients",
+                    "minMaxGradients",
                     &self.r#min_max_gradients,
                 ),
             ];

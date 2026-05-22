@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cast_column_type_operation",
+                    "castColumnTypeOperation",
                     &self.r#cast_column_type_operation,
                 ),
                 to_pulumi_object_field(
-                    "create_columns_operation",
+                    "createColumnsOperation",
                     &self.r#create_columns_operation,
                 ),
                 to_pulumi_object_field(
-                    "filter_operation",
+                    "filterOperation",
                     &self.r#filter_operation,
                 ),
                 to_pulumi_object_field(
-                    "project_operation",
+                    "projectOperation",
                     &self.r#project_operation,
                 ),
                 to_pulumi_object_field(
-                    "rename_column_operation",
+                    "renameColumnOperation",
                     &self.r#rename_column_operation,
                 ),
                 to_pulumi_object_field(
-                    "tag_column_operation",
+                    "tagColumnOperation",
                     &self.r#tag_column_operation,
                 ),
                 to_pulumi_object_field(
-                    "untag_column_operation",
+                    "untagColumnOperation",
                     &self.r#untag_column_operation,
                 ),
             ];

@@ -36,19 +36,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "commitment_plan",
+                    "commitmentPlan",
                     &self.r#commitment_plan,
                 ),
                 to_pulumi_object_field(
-                    "cpu_overcommit_ratio",
+                    "cpuOvercommitRatio",
                     &self.r#cpu_overcommit_ratio,
                 ),
                 to_pulumi_object_field(
-                    "host_maintenance_policy",
+                    "hostMaintenancePolicy",
                     &self.r#host_maintenance_policy,
                 ),
                 to_pulumi_object_field(
-                    "node_types",
+                    "nodeTypes",
                     &self.r#node_types,
                 ),
             ];

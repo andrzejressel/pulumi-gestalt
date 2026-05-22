@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "comparison_operator",
+                    "comparisonOperator",
                     &self.r#comparison_operator,
                 ),
                 to_pulumi_object_field(
-                    "field_to_match",
+                    "fieldToMatch",
                     &self.r#field_to_match,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#size,
                 ),
                 to_pulumi_object_field(
-                    "text_transformations",
+                    "textTransformations",
                     &self.r#text_transformations,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lambda_function_name",
+                    "lambdaFunctionName",
                     &self.r#lambda_function_name,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "web_url",
+                    "webUrl",
                     &self.r#web_url,
                 ),
             ];

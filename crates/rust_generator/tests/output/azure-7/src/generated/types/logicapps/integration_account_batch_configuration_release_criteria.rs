@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_size",
+                    "batchSize",
                     &self.r#batch_size,
                 ),
                 to_pulumi_object_field(
-                    "message_count",
+                    "messageCount",
                     &self.r#message_count,
                 ),
                 to_pulumi_object_field(

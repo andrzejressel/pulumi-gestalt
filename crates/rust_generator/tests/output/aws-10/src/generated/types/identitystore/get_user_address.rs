@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#locality,
                 ),
                 to_pulumi_object_field(
-                    "postal_code",
+                    "postalCode",
                     &self.r#postal_code,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "street_address",
+                    "streetAddress",
                     &self.r#street_address,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

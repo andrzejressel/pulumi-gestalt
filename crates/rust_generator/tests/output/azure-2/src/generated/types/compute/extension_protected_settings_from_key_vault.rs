@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ext
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "secret_url",
+                    "secretUrl",
                     &self.r#secret_url,
                 ),
                 to_pulumi_object_field(
-                    "source_vault_id",
+                    "sourceVaultId",
                     &self.r#source_vault_id,
                 ),
             ];

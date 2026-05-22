@@ -58,27 +58,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kms_key",
+                    "kmsKey",
                     &self.r#kms_key,
                 ),
                 to_pulumi_object_field(
-                    "network_tags",
+                    "networkTags",
                     &self.r#network_tags,
                 ),
                 to_pulumi_object_field(
-                    "network_uri",
+                    "networkUri",
                     &self.r#network_uri,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "staging_bucket",
+                    "stagingBucket",
                     &self.r#staging_bucket,
                 ),
                 to_pulumi_object_field(
-                    "subnetwork_uri",
+                    "subnetworkUri",
                     &self.r#subnetwork_uri,
                 ),
                 to_pulumi_object_field(

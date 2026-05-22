@@ -89,35 +89,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_experiments",
+                    "additionalExperiments",
                     &self.r#additional_experiments,
                 ),
                 to_pulumi_object_field(
-                    "additional_user_labels",
+                    "additionalUserLabels",
                     &self.r#additional_user_labels,
                 ),
                 to_pulumi_object_field(
-                    "enable_streaming_engine",
+                    "enableStreamingEngine",
                     &self.r#enable_streaming_engine,
                 ),
                 to_pulumi_object_field(
-                    "flexrs_goal",
+                    "flexrsGoal",
                     &self.r#flexrs_goal,
                 ),
                 to_pulumi_object_field(
-                    "ip_configuration",
+                    "ipConfiguration",
                     &self.r#ip_configuration,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_name",
+                    "kmsKeyName",
                     &self.r#kms_key_name,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "max_workers",
+                    "maxWorkers",
                     &self.r#max_workers,
                 ),
                 to_pulumi_object_field(
@@ -125,11 +125,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "num_workers",
+                    "numWorkers",
                     &self.r#num_workers,
                 ),
                 to_pulumi_object_field(
-                    "service_account_email",
+                    "serviceAccountEmail",
                     &self.r#service_account_email,
                 ),
                 to_pulumi_object_field(
@@ -137,15 +137,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#subnetwork,
                 ),
                 to_pulumi_object_field(
-                    "temp_location",
+                    "tempLocation",
                     &self.r#temp_location,
                 ),
                 to_pulumi_object_field(
-                    "worker_region",
+                    "workerRegion",
                     &self.r#worker_region,
                 ),
                 to_pulumi_object_field(
-                    "worker_zone",
+                    "workerZone",
                     &self.r#worker_zone,
                 ),
                 to_pulumi_object_field(

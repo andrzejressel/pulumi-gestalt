@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "failover_test_public_ip_address_id",
+                    "failoverTestPublicIpAddressId",
                     &self.r#failover_test_public_ip_address_id,
                 ),
                 to_pulumi_object_field(
-                    "failover_test_static_ip",
+                    "failoverTestStaticIp",
                     &self.r#failover_test_static_ip,
                 ),
                 to_pulumi_object_field(
-                    "failover_test_subnet_name",
+                    "failoverTestSubnetName",
                     &self.r#failover_test_subnet_name,
                 ),
                 to_pulumi_object_field(
-                    "recovery_public_ip_address_id",
+                    "recoveryPublicIpAddressId",
                     &self.r#recovery_public_ip_address_id,
                 ),
                 to_pulumi_object_field(
-                    "source_network_interface_id",
+                    "sourceNetworkInterfaceId",
                     &self.r#source_network_interface_id,
                 ),
                 to_pulumi_object_field(
-                    "target_static_ip",
+                    "targetStaticIp",
                     &self.r#target_static_ip,
                 ),
                 to_pulumi_object_field(
-                    "target_subnet_name",
+                    "targetSubnetName",
                     &self.r#target_subnet_name,
                 ),
             ];

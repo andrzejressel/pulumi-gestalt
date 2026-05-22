@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#columns,
                 ),
                 to_pulumi_object_field(
-                    "country_code",
+                    "countryCode",
                     &self.r#country_code,
                 ),
                 to_pulumi_object_field(

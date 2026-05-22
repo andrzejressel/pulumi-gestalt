@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "node_pool",
+                    "nodePool",
                     &self.r#node_pool,
                 ),
                 to_pulumi_object_field(
-                    "node_pool_config",
+                    "nodePoolConfig",
                     &self.r#node_pool_config,
                 ),
                 to_pulumi_object_field(

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "change_tier_to_archive_after_days_since_creation",
+                    "changeTierToArchiveAfterDaysSinceCreation",
                     &self.r#change_tier_to_archive_after_days_since_creation,
                 ),
                 to_pulumi_object_field(
-                    "change_tier_to_cool_after_days_since_creation",
+                    "changeTierToCoolAfterDaysSinceCreation",
                     &self.r#change_tier_to_cool_after_days_since_creation,
                 ),
                 to_pulumi_object_field(
-                    "delete_after_days_since_creation_greater_than",
+                    "deleteAfterDaysSinceCreationGreaterThan",
                     &self.r#delete_after_days_since_creation_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_archive_after_days_since_last_tier_change_greater_than",
+                    "tierToArchiveAfterDaysSinceLastTierChangeGreaterThan",
                     &self.r#tier_to_archive_after_days_since_last_tier_change_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_cold_after_days_since_creation_greater_than",
+                    "tierToColdAfterDaysSinceCreationGreaterThan",
                     &self.r#tier_to_cold_after_days_since_creation_greater_than,
                 ),
             ];

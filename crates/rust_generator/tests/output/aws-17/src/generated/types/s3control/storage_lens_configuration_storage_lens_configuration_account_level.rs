@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "activity_metrics",
+                    "activityMetrics",
                     &self.r#activity_metrics,
                 ),
                 to_pulumi_object_field(
-                    "advanced_cost_optimization_metrics",
+                    "advancedCostOptimizationMetrics",
                     &self.r#advanced_cost_optimization_metrics,
                 ),
                 to_pulumi_object_field(
-                    "advanced_data_protection_metrics",
+                    "advancedDataProtectionMetrics",
                     &self.r#advanced_data_protection_metrics,
                 ),
                 to_pulumi_object_field(
-                    "bucket_level",
+                    "bucketLevel",
                     &self.r#bucket_level,
                 ),
                 to_pulumi_object_field(
-                    "detailed_status_code_metrics",
+                    "detailedStatusCodeMetrics",
                     &self.r#detailed_status_code_metrics,
                 ),
             ];

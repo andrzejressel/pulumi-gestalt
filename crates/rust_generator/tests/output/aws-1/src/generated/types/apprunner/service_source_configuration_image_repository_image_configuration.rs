@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "runtime_environment_secrets",
+                    "runtimeEnvironmentSecrets",
                     &self.r#runtime_environment_secrets,
                 ),
                 to_pulumi_object_field(
-                    "runtime_environment_variables",
+                    "runtimeEnvironmentVariables",
                     &self.r#runtime_environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "start_command",
+                    "startCommand",
                     &self.r#start_command,
                 ),
             ];

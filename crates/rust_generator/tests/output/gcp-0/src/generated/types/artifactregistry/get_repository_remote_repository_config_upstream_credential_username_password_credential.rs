@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "password_secret_version",
+                    "passwordSecretVersion",
                     &self.r#password_secret_version,
                 ),
                 to_pulumi_object_field(

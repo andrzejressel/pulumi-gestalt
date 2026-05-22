@@ -74,11 +74,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "device_policy",
+                    "devicePolicy",
                     &self.r#device_policy,
                 ),
                 to_pulumi_object_field(
-                    "ip_subnetworks",
+                    "ipSubnetworks",
                     &self.r#ip_subnetworks,
                 ),
                 to_pulumi_object_field(
@@ -94,11 +94,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#regions,
                 ),
                 to_pulumi_object_field(
-                    "required_access_levels",
+                    "requiredAccessLevels",
                     &self.r#required_access_levels,
                 ),
                 to_pulumi_object_field(
-                    "vpc_network_sources",
+                    "vpcNetworkSources",
                     &self.r#vpc_network_sources,
                 ),
             ];

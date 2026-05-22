@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "conflict_resolving_model",
+                    "conflictResolvingModel",
                     &self.r#conflict_resolving_model,
                 ),
                 to_pulumi_object_field(
-                    "source_name",
+                    "sourceName",
                     &self.r#source_name,
                 ),
             ];

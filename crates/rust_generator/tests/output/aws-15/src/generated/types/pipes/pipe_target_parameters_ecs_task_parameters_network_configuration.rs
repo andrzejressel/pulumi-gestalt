@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_vpc_configuration",
+                    "awsVpcConfiguration",
                     &self.r#aws_vpc_configuration,
                 ),
             ];

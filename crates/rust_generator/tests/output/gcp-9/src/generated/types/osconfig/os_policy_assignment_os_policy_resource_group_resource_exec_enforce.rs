@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
                     &self.r#interpreter,
                 ),
                 to_pulumi_object_field(
-                    "output_file_path",
+                    "outputFilePath",
                     &self.r#output_file_path,
                 ),
                 to_pulumi_object_field(

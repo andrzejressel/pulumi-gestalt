@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "user_group_resolution_mode",
+                    "userGroupResolutionMode",
                     &self.r#user_group_resolution_mode,
                 ),
             ];

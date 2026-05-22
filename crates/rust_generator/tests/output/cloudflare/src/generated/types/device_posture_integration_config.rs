@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dev
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_client_id",
+                    "accessClientId",
                     &self.r#access_client_id,
                 ),
                 to_pulumi_object_field(
-                    "access_client_secret",
+                    "accessClientSecret",
                     &self.r#access_client_secret,
                 ),
                 to_pulumi_object_field(
-                    "api_url",
+                    "apiUrl",
                     &self.r#api_url,
                 ),
                 to_pulumi_object_field(
-                    "auth_url",
+                    "authUrl",
                     &self.r#auth_url,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_key",
+                    "clientKey",
                     &self.r#client_key,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
-                    "customer_id",
+                    "customerId",
                     &self.r#customer_id,
                 ),
             ];

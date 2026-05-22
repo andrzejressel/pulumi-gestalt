@@ -80,19 +80,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acquisition_point_id",
+                    "acquisitionPointId",
                     &self.r#acquisition_point_id,
                 ),
                 to_pulumi_object_field(
-                    "audio_only_timecode_control",
+                    "audioOnlyTimecodeControl",
                     &self.r#audio_only_timecode_control,
                 ),
                 to_pulumi_object_field(
-                    "certificate_mode",
+                    "certificateMode",
                     &self.r#certificate_mode,
                 ),
                 to_pulumi_object_field(
-                    "connection_retry_interval",
+                    "connectionRetryInterval",
                     &self.r#connection_retry_interval,
                 ),
                 to_pulumi_object_field(
@@ -100,59 +100,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "event_id",
+                    "eventId",
                     &self.r#event_id,
                 ),
                 to_pulumi_object_field(
-                    "event_id_mode",
+                    "eventIdMode",
                     &self.r#event_id_mode,
                 ),
                 to_pulumi_object_field(
-                    "event_stop_behavior",
+                    "eventStopBehavior",
                     &self.r#event_stop_behavior,
                 ),
                 to_pulumi_object_field(
-                    "filecache_duration",
+                    "filecacheDuration",
                     &self.r#filecache_duration,
                 ),
                 to_pulumi_object_field(
-                    "fragment_length",
+                    "fragmentLength",
                     &self.r#fragment_length,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_action",
+                    "inputLossAction",
                     &self.r#input_loss_action,
                 ),
                 to_pulumi_object_field(
-                    "num_retries",
+                    "numRetries",
                     &self.r#num_retries,
                 ),
                 to_pulumi_object_field(
-                    "restart_delay",
+                    "restartDelay",
                     &self.r#restart_delay,
                 ),
                 to_pulumi_object_field(
-                    "segmentation_mode",
+                    "segmentationMode",
                     &self.r#segmentation_mode,
                 ),
                 to_pulumi_object_field(
-                    "send_delay_ms",
+                    "sendDelayMs",
                     &self.r#send_delay_ms,
                 ),
                 to_pulumi_object_field(
-                    "sparse_track_type",
+                    "sparseTrackType",
                     &self.r#sparse_track_type,
                 ),
                 to_pulumi_object_field(
-                    "stream_manifest_behavior",
+                    "streamManifestBehavior",
                     &self.r#stream_manifest_behavior,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_offset",
+                    "timestampOffset",
                     &self.r#timestamp_offset,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_offset_mode",
+                    "timestampOffsetMode",
                     &self.r#timestamp_offset_mode,
                 ),
             ];

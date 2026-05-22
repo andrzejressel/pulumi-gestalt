@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "add_to_network_function_group",
+                    "addToNetworkFunctionGroup",
                     &self.r#add_to_network_function_group,
                 ),
                 to_pulumi_object_field(
-                    "association_method",
+                    "associationMethod",
                     &self.r#association_method,
                 ),
                 to_pulumi_object_field(
-                    "require_acceptance",
+                    "requireAcceptance",
                     &self.r#require_acceptance,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#segment,
                 ),
                 to_pulumi_object_field(
-                    "tag_value_of_key",
+                    "tagValueOfKey",
                     &self.r#tag_value_of_key,
                 ),
             ];

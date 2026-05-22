@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_surge_fixed",
+                    "maxSurgeFixed",
                     &self.r#max_surge_fixed,
                 ),
                 to_pulumi_object_field(
-                    "max_surge_percent",
+                    "maxSurgePercent",
                     &self.r#max_surge_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unavailable_fixed",
+                    "maxUnavailableFixed",
                     &self.r#max_unavailable_fixed,
                 ),
                 to_pulumi_object_field(
-                    "max_unavailable_percent",
+                    "maxUnavailablePercent",
                     &self.r#max_unavailable_percent,
                 ),
                 to_pulumi_object_field(
-                    "min_ready_sec",
+                    "minReadySec",
                     &self.r#min_ready_sec,
                 ),
                 to_pulumi_object_field(
-                    "minimal_action",
+                    "minimalAction",
                     &self.r#minimal_action,
                 ),
                 to_pulumi_object_field(
-                    "most_disruptive_allowed_action",
+                    "mostDisruptiveAllowedAction",
                     &self.r#most_disruptive_allowed_action,
                 ),
                 to_pulumi_object_field(
-                    "replacement_method",
+                    "replacementMethod",
                     &self.r#replacement_method,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

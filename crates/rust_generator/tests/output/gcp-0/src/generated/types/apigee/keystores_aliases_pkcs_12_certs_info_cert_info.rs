@@ -75,15 +75,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_constraints",
+                    "basicConstraints",
                     &self.r#basic_constraints,
                 ),
                 to_pulumi_object_field(
-                    "expiry_date",
+                    "expiryDate",
                     &self.r#expiry_date,
                 ),
                 to_pulumi_object_field(
-                    "is_valid",
+                    "isValid",
                     &self.r#is_valid,
                 ),
                 to_pulumi_object_field(
@@ -91,15 +91,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
                     &self.r#issuer,
                 ),
                 to_pulumi_object_field(
-                    "public_key",
+                    "publicKey",
                     &self.r#public_key,
                 ),
                 to_pulumi_object_field(
-                    "serial_number",
+                    "serialNumber",
                     &self.r#serial_number,
                 ),
                 to_pulumi_object_field(
-                    "sig_alg_name",
+                    "sigAlgName",
                     &self.r#sig_alg_name,
                 ),
                 to_pulumi_object_field(
@@ -107,11 +107,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "subject_alternative_names",
+                    "subjectAlternativeNames",
                     &self.r#subject_alternative_names,
                 ),
                 to_pulumi_object_field(
-                    "valid_from",
+                    "validFrom",
                     &self.r#valid_from,
                 ),
                 to_pulumi_object_field(

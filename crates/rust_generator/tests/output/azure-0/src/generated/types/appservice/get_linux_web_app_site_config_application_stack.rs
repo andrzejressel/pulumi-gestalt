@@ -70,55 +70,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "docker_image_name",
+                    "dockerImageName",
                     &self.r#docker_image_name,
                 ),
                 to_pulumi_object_field(
-                    "docker_registry_password",
+                    "dockerRegistryPassword",
                     &self.r#docker_registry_password,
                 ),
                 to_pulumi_object_field(
-                    "docker_registry_url",
+                    "dockerRegistryUrl",
                     &self.r#docker_registry_url,
                 ),
                 to_pulumi_object_field(
-                    "docker_registry_username",
+                    "dockerRegistryUsername",
                     &self.r#docker_registry_username,
                 ),
                 to_pulumi_object_field(
-                    "dotnet_version",
+                    "dotnetVersion",
                     &self.r#dotnet_version,
                 ),
                 to_pulumi_object_field(
-                    "go_version",
+                    "goVersion",
                     &self.r#go_version,
                 ),
                 to_pulumi_object_field(
-                    "java_server",
+                    "javaServer",
                     &self.r#java_server,
                 ),
                 to_pulumi_object_field(
-                    "java_server_version",
+                    "javaServerVersion",
                     &self.r#java_server_version,
                 ),
                 to_pulumi_object_field(
-                    "java_version",
+                    "javaVersion",
                     &self.r#java_version,
                 ),
                 to_pulumi_object_field(
-                    "node_version",
+                    "nodeVersion",
                     &self.r#node_version,
                 ),
                 to_pulumi_object_field(
-                    "php_version",
+                    "phpVersion",
                     &self.r#php_version,
                 ),
                 to_pulumi_object_field(
-                    "python_version",
+                    "pythonVersion",
                     &self.r#python_version,
                 ),
                 to_pulumi_object_field(
-                    "ruby_version",
+                    "rubyVersion",
                     &self.r#ruby_version,
                 ),
             ];

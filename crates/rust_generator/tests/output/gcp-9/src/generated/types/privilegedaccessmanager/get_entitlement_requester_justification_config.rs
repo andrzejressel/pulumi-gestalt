@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "not_mandatories",
+                    "notMandatories",
                     &self.r#not_mandatories,
                 ),
                 to_pulumi_object_field(

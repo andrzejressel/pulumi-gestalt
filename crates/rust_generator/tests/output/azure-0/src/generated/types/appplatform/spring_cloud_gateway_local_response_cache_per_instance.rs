@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#size,
                 ),
                 to_pulumi_object_field(
-                    "time_to_live",
+                    "timeToLive",
                     &self.r#time_to_live,
                 ),
             ];

@@ -55,27 +55,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ca_certificate",
+                    "caCertificate",
                     &self.r#ca_certificate,
                 ),
                 to_pulumi_object_field(
-                    "ca_certificate_set",
+                    "caCertificateSet",
                     &self.r#ca_certificate_set,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate",
+                    "clientCertificate",
                     &self.r#client_certificate,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_set",
+                    "clientCertificateSet",
                     &self.r#client_certificate_set,
                 ),
                 to_pulumi_object_field(
-                    "client_key",
+                    "clientKey",
                     &self.r#client_key,
                 ),
                 to_pulumi_object_field(
-                    "client_key_set",
+                    "clientKeySet",
                     &self.r#client_key_set,
                 ),
             ];

@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "project_number",
+                    "projectNumber",
                     &self.r#project_number,
                 ),
                 to_pulumi_object_field(

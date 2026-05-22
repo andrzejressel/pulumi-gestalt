@@ -88,23 +88,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_family",
+                    "addressFamily",
                     &self.r#address_family,
                 ),
                 to_pulumi_object_field(
-                    "allocation_default_netmask_length",
+                    "allocationDefaultNetmaskLength",
                     &self.r#allocation_default_netmask_length,
                 ),
                 to_pulumi_object_field(
-                    "allocation_max_netmask_length",
+                    "allocationMaxNetmaskLength",
                     &self.r#allocation_max_netmask_length,
                 ),
                 to_pulumi_object_field(
-                    "allocation_min_netmask_length",
+                    "allocationMinNetmaskLength",
                     &self.r#allocation_min_netmask_length,
                 ),
                 to_pulumi_object_field(
-                    "allocation_resource_tags",
+                    "allocationResourceTags",
                     &self.r#allocation_resource_tags,
                 ),
                 to_pulumi_object_field(
@@ -112,11 +112,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "auto_import",
+                    "autoImport",
                     &self.r#auto_import,
                 ),
                 to_pulumi_object_field(
-                    "aws_service",
+                    "awsService",
                     &self.r#aws_service,
                 ),
                 to_pulumi_object_field(
@@ -128,11 +128,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "ipam_scope_id",
+                    "ipamScopeId",
                     &self.r#ipam_scope_id,
                 ),
                 to_pulumi_object_field(
-                    "ipam_scope_type",
+                    "ipamScopeType",
                     &self.r#ipam_scope_type,
                 ),
                 to_pulumi_object_field(
@@ -140,15 +140,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#locale,
                 ),
                 to_pulumi_object_field(
-                    "pool_depth",
+                    "poolDepth",
                     &self.r#pool_depth,
                 ),
                 to_pulumi_object_field(
-                    "publicly_advertisable",
+                    "publiclyAdvertisable",
                     &self.r#publicly_advertisable,
                 ),
                 to_pulumi_object_field(
-                    "source_ipam_pool_id",
+                    "sourceIpamPoolId",
                     &self.r#source_ipam_pool_id,
                 ),
                 to_pulumi_object_field(

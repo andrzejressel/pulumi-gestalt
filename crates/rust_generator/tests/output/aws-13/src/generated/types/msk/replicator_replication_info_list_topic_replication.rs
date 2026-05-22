@@ -46,31 +46,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_access_control_lists_for_topics",
+                    "copyAccessControlListsForTopics",
                     &self.r#copy_access_control_lists_for_topics,
                 ),
                 to_pulumi_object_field(
-                    "copy_topic_configurations",
+                    "copyTopicConfigurations",
                     &self.r#copy_topic_configurations,
                 ),
                 to_pulumi_object_field(
-                    "detect_and_copy_new_topics",
+                    "detectAndCopyNewTopics",
                     &self.r#detect_and_copy_new_topics,
                 ),
                 to_pulumi_object_field(
-                    "starting_position",
+                    "startingPosition",
                     &self.r#starting_position,
                 ),
                 to_pulumi_object_field(
-                    "topic_name_configuration",
+                    "topicNameConfiguration",
                     &self.r#topic_name_configuration,
                 ),
                 to_pulumi_object_field(
-                    "topics_to_excludes",
+                    "topicsToExcludes",
                     &self.r#topics_to_excludes,
                 ),
                 to_pulumi_object_field(
-                    "topics_to_replicates",
+                    "topicsToReplicates",
                     &self.r#topics_to_replicates,
                 ),
             ];

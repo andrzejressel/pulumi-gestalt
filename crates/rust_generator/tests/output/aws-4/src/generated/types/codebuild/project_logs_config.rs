@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_logs",
+                    "cloudwatchLogs",
                     &self.r#cloudwatch_logs,
                 ),
                 to_pulumi_object_field(
-                    "s_3_logs",
+                    "s3Logs",
                     &self.r#s_3_logs,
                 ),
             ];

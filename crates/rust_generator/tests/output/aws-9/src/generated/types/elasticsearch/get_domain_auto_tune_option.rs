@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "desired_state",
+                    "desiredState",
                     &self.r#desired_state,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_schedules",
+                    "maintenanceSchedules",
                     &self.r#maintenance_schedules,
                 ),
                 to_pulumi_object_field(
-                    "rollback_on_disable",
+                    "rollbackOnDisable",
                     &self.r#rollback_on_disable,
                 ),
             ];

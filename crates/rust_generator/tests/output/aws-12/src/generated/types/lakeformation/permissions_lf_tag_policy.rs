@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Per
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "catalog_id",
+                    "catalogId",
                     &self.r#catalog_id,
                 ),
                 to_pulumi_object_field(
@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Per
                     &self.r#expressions,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
             ];

@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "force_deletion_enabled",
+                    "forceDeletionEnabled",
                     &self.r#force_deletion_enabled,
                 ),
                 to_pulumi_object_field(

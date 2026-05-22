@@ -67,51 +67,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_applications",
+                    "allowedApplications",
                     &self.r#allowed_applications,
                 ),
                 to_pulumi_object_field(
-                    "allowed_audiences",
+                    "allowedAudiences",
                     &self.r#allowed_audiences,
                 ),
                 to_pulumi_object_field(
-                    "allowed_groups",
+                    "allowedGroups",
                     &self.r#allowed_groups,
                 ),
                 to_pulumi_object_field(
-                    "allowed_identities",
+                    "allowedIdentities",
                     &self.r#allowed_identities,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret_certificate_thumbprint",
+                    "clientSecretCertificateThumbprint",
                     &self.r#client_secret_certificate_thumbprint,
                 ),
                 to_pulumi_object_field(
-                    "client_secret_setting_name",
+                    "clientSecretSettingName",
                     &self.r#client_secret_setting_name,
                 ),
                 to_pulumi_object_field(
-                    "jwt_allowed_client_applications",
+                    "jwtAllowedClientApplications",
                     &self.r#jwt_allowed_client_applications,
                 ),
                 to_pulumi_object_field(
-                    "jwt_allowed_groups",
+                    "jwtAllowedGroups",
                     &self.r#jwt_allowed_groups,
                 ),
                 to_pulumi_object_field(
-                    "login_parameters",
+                    "loginParameters",
                     &self.r#login_parameters,
                 ),
                 to_pulumi_object_field(
-                    "tenant_auth_endpoint",
+                    "tenantAuthEndpoint",
                     &self.r#tenant_auth_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "www_authentication_disabled",
+                    "wwwAuthenticationDisabled",
                     &self.r#www_authentication_disabled,
                 ),
             ];

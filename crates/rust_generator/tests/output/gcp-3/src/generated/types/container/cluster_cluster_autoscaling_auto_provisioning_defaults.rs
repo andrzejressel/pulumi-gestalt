@@ -63,19 +63,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "boot_disk_kms_key",
+                    "bootDiskKmsKey",
                     &self.r#boot_disk_kms_key,
                 ),
                 to_pulumi_object_field(
-                    "disk_size",
+                    "diskSize",
                     &self.r#disk_size,
                 ),
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
-                    "image_type",
+                    "imageType",
                     &self.r#image_type,
                 ),
                 to_pulumi_object_field(
@@ -83,23 +83,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#management,
                 ),
                 to_pulumi_object_field(
-                    "min_cpu_platform",
+                    "minCpuPlatform",
                     &self.r#min_cpu_platform,
                 ),
                 to_pulumi_object_field(
-                    "oauth_scopes",
+                    "oauthScopes",
                     &self.r#oauth_scopes,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "shielded_instance_config",
+                    "shieldedInstanceConfig",
                     &self.r#shielded_instance_config,
                 ),
                 to_pulumi_object_field(
-                    "upgrade_settings",
+                    "upgradeSettings",
                     &self.r#upgrade_settings,
                 ),
             ];

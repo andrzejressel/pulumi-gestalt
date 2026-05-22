@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "interval_unit",
+                    "intervalUnit",
                     &self.r#interval_unit,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "credentials_map",
+                    "credentialsMap",
                     &self.r#credentials_map,
                 ),
                 to_pulumi_object_field(
-                    "custom_authentication_type",
+                    "customAuthenticationType",
                     &self.r#custom_authentication_type,
                 ),
             ];

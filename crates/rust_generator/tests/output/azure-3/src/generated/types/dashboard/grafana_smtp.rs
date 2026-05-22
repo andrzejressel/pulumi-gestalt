@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "from_address",
+                    "fromAddress",
                     &self.r#from_address,
                 ),
                 to_pulumi_object_field(
-                    "from_name",
+                    "fromName",
                     &self.r#from_name,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "start_tls_policy",
+                    "startTlsPolicy",
                     &self.r#start_tls_policy,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
                     &self.r#user,
                 ),
                 to_pulumi_object_field(
-                    "verification_skip_enabled",
+                    "verificationSkipEnabled",
                     &self.r#verification_skip_enabled,
                 ),
             ];

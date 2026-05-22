@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#accounts,
                 ),
                 to_pulumi_object_field(
-                    "framework_arns",
+                    "frameworkArns",
                     &self.r#framework_arns,
                 ),
                 to_pulumi_object_field(
-                    "number_of_frameworks",
+                    "numberOfFrameworks",
                     &self.r#number_of_frameworks,
                 ),
                 to_pulumi_object_field(
-                    "organization_units",
+                    "organizationUnits",
                     &self.r#organization_units,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#regions,
                 ),
                 to_pulumi_object_field(
-                    "report_template",
+                    "reportTemplate",
                     &self.r#report_template,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "body_contains",
+                    "bodyContains",
                     &self.r#body_contains,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#json,
                 ),
                 to_pulumi_object_field(
-                    "status_code",
+                    "statusCode",
                     &self.r#status_code,
                 ),
             ];

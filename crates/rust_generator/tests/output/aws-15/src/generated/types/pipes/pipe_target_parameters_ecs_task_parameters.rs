@@ -79,15 +79,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capacity_provider_strategies",
+                    "capacityProviderStrategies",
                     &self.r#capacity_provider_strategies,
                 ),
                 to_pulumi_object_field(
-                    "enable_ecs_managed_tags",
+                    "enableEcsManagedTags",
                     &self.r#enable_ecs_managed_tags,
                 ),
                 to_pulumi_object_field(
-                    "enable_execute_command",
+                    "enableExecuteCommand",
                     &self.r#enable_execute_command,
                 ),
                 to_pulumi_object_field(
@@ -95,11 +95,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#group,
                 ),
                 to_pulumi_object_field(
-                    "launch_type",
+                    "launchType",
                     &self.r#launch_type,
                 ),
                 to_pulumi_object_field(
-                    "network_configuration",
+                    "networkConfiguration",
                     &self.r#network_configuration,
                 ),
                 to_pulumi_object_field(
@@ -107,23 +107,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#overrides,
                 ),
                 to_pulumi_object_field(
-                    "placement_constraints",
+                    "placementConstraints",
                     &self.r#placement_constraints,
                 ),
                 to_pulumi_object_field(
-                    "placement_strategies",
+                    "placementStrategies",
                     &self.r#placement_strategies,
                 ),
                 to_pulumi_object_field(
-                    "platform_version",
+                    "platformVersion",
                     &self.r#platform_version,
                 ),
                 to_pulumi_object_field(
-                    "propagate_tags",
+                    "propagateTags",
                     &self.r#propagate_tags,
                 ),
                 to_pulumi_object_field(
-                    "reference_id",
+                    "referenceId",
                     &self.r#reference_id,
                 ),
                 to_pulumi_object_field(
@@ -131,11 +131,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "task_count",
+                    "taskCount",
                     &self.r#task_count,
                 ),
                 to_pulumi_object_field(
-                    "task_definition_arn",
+                    "taskDefinitionArn",
                     &self.r#task_definition_arn,
                 ),
             ];

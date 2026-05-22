@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_code_hook_invocation",
+                    "enableCodeHookInvocation",
                     &self.r#enable_code_hook_invocation,
                 ),
                 to_pulumi_object_field(
-                    "invocation_label",
+                    "invocationLabel",
                     &self.r#invocation_label,
                 ),
             ];

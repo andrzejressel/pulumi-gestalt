@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "outbound_type",
+                    "outboundType",
                     &self.r#outbound_type,
                 ),
                 to_pulumi_object_field(
-                    "pod_cidr",
+                    "podCidr",
                     &self.r#pod_cidr,
                 ),
                 to_pulumi_object_field(
-                    "preconfigured_network_security_group_enabled",
+                    "preconfiguredNetworkSecurityGroupEnabled",
                     &self.r#preconfigured_network_security_group_enabled,
                 ),
                 to_pulumi_object_field(
-                    "service_cidr",
+                    "serviceCidr",
                     &self.r#service_cidr,
                 ),
             ];

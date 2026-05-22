@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cooldown_period",
+                    "cooldownPeriod",
                     &self.r#cooldown_period,
                 ),
                 to_pulumi_object_field(
-                    "yarn_config",
+                    "yarnConfig",
                     &self.r#yarn_config,
                 ),
             ];

@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
                     &self.r#deployment,
                 ),
                 to_pulumi_object_field(
-                    "http_route",
+                    "httpRoute",
                     &self.r#http_route,
                 ),
                 to_pulumi_object_field(
-                    "pod_selector_label",
+                    "podSelectorLabel",
                     &self.r#pod_selector_label,
                 ),
                 to_pulumi_object_field(
-                    "route_destinations",
+                    "routeDestinations",
                     &self.r#route_destinations,
                 ),
                 to_pulumi_object_field(
-                    "route_update_wait_time",
+                    "routeUpdateWaitTime",
                     &self.r#route_update_wait_time,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "stable_cutback_duration",
+                    "stableCutbackDuration",
                     &self.r#stable_cutback_duration,
                 ),
             ];

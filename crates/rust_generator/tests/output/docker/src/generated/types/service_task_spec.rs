@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_spec",
+                    "containerSpec",
                     &self.r#container_spec,
                 ),
                 to_pulumi_object_field(
-                    "force_update",
+                    "forceUpdate",
                     &self.r#force_update,
                 ),
                 to_pulumi_object_field(
-                    "log_driver",
+                    "logDriver",
                     &self.r#log_driver,
                 ),
                 to_pulumi_object_field(
-                    "networks_advanceds",
+                    "networksAdvanceds",
                     &self.r#networks_advanceds,
                 ),
                 to_pulumi_object_field(
@@ -75,7 +75,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#resources,
                 ),
                 to_pulumi_object_field(
-                    "restart_policy",
+                    "restartPolicy",
                     &self.r#restart_policy,
                 ),
                 to_pulumi_object_field(

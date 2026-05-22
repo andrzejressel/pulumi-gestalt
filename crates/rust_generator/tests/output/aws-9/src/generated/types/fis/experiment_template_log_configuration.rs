@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_logs_configuration",
+                    "cloudwatchLogsConfiguration",
                     &self.r#cloudwatch_logs_configuration,
                 ),
                 to_pulumi_object_field(
-                    "log_schema_version",
+                    "logSchemaVersion",
                     &self.r#log_schema_version,
                 ),
                 to_pulumi_object_field(
-                    "s_3_configuration",
+                    "s3Configuration",
                     &self.r#s_3_configuration,
                 ),
             ];

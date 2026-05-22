@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "continue_on_failure",
+                    "continueOnFailure",
                     &self.r#continue_on_failure,
                 ),
                 to_pulumi_object_field(
-                    "jar_file_uris",
+                    "jarFileUris",
                     &self.r#jar_file_uris,
                 ),
                 to_pulumi_object_field(
-                    "logging_config",
+                    "loggingConfig",
                     &self.r#logging_config,
                 ),
                 to_pulumi_object_field(
@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "query_file_uri",
+                    "queryFileUri",
                     &self.r#query_file_uri,
                 ),
                 to_pulumi_object_field(
-                    "query_list",
+                    "queryList",
                     &self.r#query_list,
                 ),
                 to_pulumi_object_field(
-                    "script_variables",
+                    "scriptVariables",
                     &self.r#script_variables,
                 ),
             ];

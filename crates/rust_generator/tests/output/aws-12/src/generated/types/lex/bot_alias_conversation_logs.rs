@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bot
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "iam_role_arn",
+                    "iamRoleArn",
                     &self.r#iam_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "log_settings",
+                    "logSettings",
                     &self.r#log_settings,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "checkpoint_configuration",
+                    "checkpointConfiguration",
                     &self.r#checkpoint_configuration,
                 ),
                 to_pulumi_object_field(
-                    "monitoring_configuration",
+                    "monitoringConfiguration",
                     &self.r#monitoring_configuration,
                 ),
                 to_pulumi_object_field(
-                    "parallelism_configuration",
+                    "parallelismConfiguration",
                     &self.r#parallelism_configuration,
                 ),
             ];

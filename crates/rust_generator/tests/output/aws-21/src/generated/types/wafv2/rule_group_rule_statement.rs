@@ -71,55 +71,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "and_statement",
+                    "andStatement",
                     &self.r#and_statement,
                 ),
                 to_pulumi_object_field(
-                    "byte_match_statement",
+                    "byteMatchStatement",
                     &self.r#byte_match_statement,
                 ),
                 to_pulumi_object_field(
-                    "geo_match_statement",
+                    "geoMatchStatement",
                     &self.r#geo_match_statement,
                 ),
                 to_pulumi_object_field(
-                    "ip_set_reference_statement",
+                    "ipSetReferenceStatement",
                     &self.r#ip_set_reference_statement,
                 ),
                 to_pulumi_object_field(
-                    "label_match_statement",
+                    "labelMatchStatement",
                     &self.r#label_match_statement,
                 ),
                 to_pulumi_object_field(
-                    "not_statement",
+                    "notStatement",
                     &self.r#not_statement,
                 ),
                 to_pulumi_object_field(
-                    "or_statement",
+                    "orStatement",
                     &self.r#or_statement,
                 ),
                 to_pulumi_object_field(
-                    "rate_based_statement",
+                    "rateBasedStatement",
                     &self.r#rate_based_statement,
                 ),
                 to_pulumi_object_field(
-                    "regex_match_statement",
+                    "regexMatchStatement",
                     &self.r#regex_match_statement,
                 ),
                 to_pulumi_object_field(
-                    "regex_pattern_set_reference_statement",
+                    "regexPatternSetReferenceStatement",
                     &self.r#regex_pattern_set_reference_statement,
                 ),
                 to_pulumi_object_field(
-                    "size_constraint_statement",
+                    "sizeConstraintStatement",
                     &self.r#size_constraint_statement,
                 ),
                 to_pulumi_object_field(
-                    "sqli_match_statement",
+                    "sqliMatchStatement",
                     &self.r#sqli_match_statement,
                 ),
                 to_pulumi_object_field(
-                    "xss_match_statement",
+                    "xssMatchStatement",
                     &self.r#xss_match_statement,
                 ),
             ];

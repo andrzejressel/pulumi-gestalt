@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "country_codes",
+                    "countryCodes",
                     &self.r#country_codes,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_ip_config",
+                    "forwardedIpConfig",
                     &self.r#forwarded_ip_config,
                 ),
             ];

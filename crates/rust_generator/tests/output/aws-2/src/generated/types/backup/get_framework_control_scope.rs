@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compliance_resource_ids",
+                    "complianceResourceIds",
                     &self.r#compliance_resource_ids,
                 ),
                 to_pulumi_object_field(
-                    "compliance_resource_types",
+                    "complianceResourceTypes",
                     &self.r#compliance_resource_types,
                 ),
                 to_pulumi_object_field(

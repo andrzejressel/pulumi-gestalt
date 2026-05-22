@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
                     &self.r#digits,
                 ),
                 to_pulumi_object_field(
-                    "finish_digit",
+                    "finishDigit",
                     &self.r#finish_digit,
                 ),
             ];

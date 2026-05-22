@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "eventhub_name",
+                    "eventhubName",
                     &self.r#eventhub_name,
                 ),
                 to_pulumi_object_field(
-                    "eventhub_namespace_name",
+                    "eventhubNamespaceName",
                     &self.r#eventhub_namespace_name,
                 ),
                 to_pulumi_object_field(
-                    "system_event_name_filters",
+                    "systemEventNameFilters",
                     &self.r#system_event_name_filters,
                 ),
                 to_pulumi_object_field(
-                    "user_event_name_filters",
+                    "userEventNameFilters",
                     &self.r#user_event_name_filters,
                 ),
             ];

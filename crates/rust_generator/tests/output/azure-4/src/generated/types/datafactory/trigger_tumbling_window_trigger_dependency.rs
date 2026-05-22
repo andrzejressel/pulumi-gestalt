@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#size,
                 ),
                 to_pulumi_object_field(
-                    "trigger_name",
+                    "triggerName",
                     &self.r#trigger_name,
                 ),
             ];

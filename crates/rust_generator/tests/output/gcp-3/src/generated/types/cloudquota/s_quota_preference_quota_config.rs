@@ -54,23 +54,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for SQu
                     &self.r#annotations,
                 ),
                 to_pulumi_object_field(
-                    "granted_value",
+                    "grantedValue",
                     &self.r#granted_value,
                 ),
                 to_pulumi_object_field(
-                    "preferred_value",
+                    "preferredValue",
                     &self.r#preferred_value,
                 ),
                 to_pulumi_object_field(
-                    "request_origin",
+                    "requestOrigin",
                     &self.r#request_origin,
                 ),
                 to_pulumi_object_field(
-                    "state_detail",
+                    "stateDetail",
                     &self.r#state_detail,
                 ),
                 to_pulumi_object_field(
-                    "trace_id",
+                    "traceId",
                     &self.r#trace_id,
                 ),
             ];

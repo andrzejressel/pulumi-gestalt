@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "growth_factor",
+                    "growthFactor",
                     &self.r#growth_factor,
                 ),
                 to_pulumi_object_field(
-                    "num_finite_buckets",
+                    "numFiniteBuckets",
                     &self.r#num_finite_buckets,
                 ),
                 to_pulumi_object_field(

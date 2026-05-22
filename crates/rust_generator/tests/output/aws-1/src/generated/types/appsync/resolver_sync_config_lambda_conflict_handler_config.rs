@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lambda_conflict_handler_arn",
+                    "lambdaConflictHandlerArn",
                     &self.r#lambda_conflict_handler_arn,
                 ),
             ];

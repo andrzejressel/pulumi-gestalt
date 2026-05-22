@@ -54,23 +54,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "create_disposition",
+                    "createDisposition",
                     &self.r#create_disposition,
                 ),
                 to_pulumi_object_field(
-                    "destination_encryption_configuration",
+                    "destinationEncryptionConfiguration",
                     &self.r#destination_encryption_configuration,
                 ),
                 to_pulumi_object_field(
-                    "destination_table",
+                    "destinationTable",
                     &self.r#destination_table,
                 ),
                 to_pulumi_object_field(
-                    "source_tables",
+                    "sourceTables",
                     &self.r#source_tables,
                 ),
                 to_pulumi_object_field(
-                    "write_disposition",
+                    "writeDisposition",
                     &self.r#write_disposition,
                 ),
             ];

@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_size",
+                    "batchSize",
                     &self.r#batch_size,
                 ),
                 to_pulumi_object_field(
-                    "dead_letter_config",
+                    "deadLetterConfig",
                     &self.r#dead_letter_config,
                 ),
                 to_pulumi_object_field(
-                    "maximum_batching_window_in_seconds",
+                    "maximumBatchingWindowInSeconds",
                     &self.r#maximum_batching_window_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "maximum_record_age_in_seconds",
+                    "maximumRecordAgeInSeconds",
                     &self.r#maximum_record_age_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "maximum_retry_attempts",
+                    "maximumRetryAttempts",
                     &self.r#maximum_retry_attempts,
                 ),
                 to_pulumi_object_field(
-                    "on_partial_batch_item_failure",
+                    "onPartialBatchItemFailure",
                     &self.r#on_partial_batch_item_failure,
                 ),
                 to_pulumi_object_field(
-                    "parallelization_factor",
+                    "parallelizationFactor",
                     &self.r#parallelization_factor,
                 ),
                 to_pulumi_object_field(
-                    "starting_position",
+                    "startingPosition",
                     &self.r#starting_position,
                 ),
                 to_pulumi_object_field(
-                    "starting_position_timestamp",
+                    "startingPositionTimestamp",
                     &self.r#starting_position_timestamp,
                 ),
             ];

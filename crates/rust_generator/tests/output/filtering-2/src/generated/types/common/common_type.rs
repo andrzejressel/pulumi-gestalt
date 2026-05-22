@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "common_property",
+                    "commonProperty",
                     &self.r#common_property,
                 ),
             ];

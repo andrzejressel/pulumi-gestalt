@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_depth",
+                    "columnDepth",
                     &self.r#column_depth,
                 ),
                 to_pulumi_object_field(
-                    "include_fec",
+                    "includeFec",
                     &self.r#include_fec,
                 ),
                 to_pulumi_object_field(
-                    "row_length",
+                    "rowLength",
                     &self.r#row_length,
                 ),
             ];

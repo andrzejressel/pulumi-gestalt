@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "case_insensitive",
+                    "caseInsensitive",
                     &self.r#case_insensitive,
                 ),
                 to_pulumi_object_field(
-                    "column_to_json_key_mappings",
+                    "columnToJsonKeyMappings",
                     &self.r#column_to_json_key_mappings,
                 ),
                 to_pulumi_object_field(
-                    "convert_dots_in_json_keys_to_underscores",
+                    "convertDotsInJsonKeysToUnderscores",
                     &self.r#convert_dots_in_json_keys_to_underscores,
                 ),
             ];

@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#intents,
                 ),
                 to_pulumi_object_field(
-                    "storage_auto_ip_enabled",
+                    "storageAutoIpEnabled",
                     &self.r#storage_auto_ip_enabled,
                 ),
                 to_pulumi_object_field(
-                    "storage_connectivity_switchless_enabled",
+                    "storageConnectivitySwitchlessEnabled",
                     &self.r#storage_connectivity_switchless_enabled,
                 ),
                 to_pulumi_object_field(
-                    "storage_networks",
+                    "storageNetworks",
                     &self.r#storage_networks,
                 ),
             ];

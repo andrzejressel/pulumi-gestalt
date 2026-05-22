@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hash_key",
+                    "hashKey",
                     &self.r#hash_key,
                 ),
                 to_pulumi_object_field(
@@ -49,23 +49,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "non_key_attributes",
+                    "nonKeyAttributes",
                     &self.r#non_key_attributes,
                 ),
                 to_pulumi_object_field(
-                    "projection_type",
+                    "projectionType",
                     &self.r#projection_type,
                 ),
                 to_pulumi_object_field(
-                    "range_key",
+                    "rangeKey",
                     &self.r#range_key,
                 ),
                 to_pulumi_object_field(
-                    "read_capacity",
+                    "readCapacity",
                     &self.r#read_capacity,
                 ),
                 to_pulumi_object_field(
-                    "write_capacity",
+                    "writeCapacity",
                     &self.r#write_capacity,
                 ),
             ];

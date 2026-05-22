@@ -56,35 +56,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocated_ip_range",
+                    "allocatedIpRange",
                     &self.r#allocated_ip_range,
                 ),
                 to_pulumi_object_field(
-                    "authorized_networks",
+                    "authorizedNetworks",
                     &self.r#authorized_networks,
                 ),
                 to_pulumi_object_field(
-                    "enable_private_path_for_google_cloud_services",
+                    "enablePrivatePathForGoogleCloudServices",
                     &self.r#enable_private_path_for_google_cloud_services,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_enabled",
+                    "ipv4Enabled",
                     &self.r#ipv_4_enabled,
                 ),
                 to_pulumi_object_field(
-                    "private_network",
+                    "privateNetwork",
                     &self.r#private_network,
                 ),
                 to_pulumi_object_field(
-                    "psc_configs",
+                    "pscConfigs",
                     &self.r#psc_configs,
                 ),
                 to_pulumi_object_field(
-                    "server_ca_mode",
+                    "serverCaMode",
                     &self.r#server_ca_mode,
                 ),
                 to_pulumi_object_field(
-                    "ssl_mode",
+                    "sslMode",
                     &self.r#ssl_mode,
                 ),
             ];

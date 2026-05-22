@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hour_of_day",
+                    "hourOfDay",
                     &self.r#hour_of_day,
                 ),
                 to_pulumi_object_field(
-                    "minute_of_hour",
+                    "minuteOfHour",
                     &self.r#minute_of_hour,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_type",
+                    "endpointType",
                     &self.r#endpoint_type,
                 ),
                 to_pulumi_object_field(
-                    "remote_volume_location",
+                    "remoteVolumeLocation",
                     &self.r#remote_volume_location,
                 ),
                 to_pulumi_object_field(
-                    "remote_volume_resource_id",
+                    "remoteVolumeResourceId",
                     &self.r#remote_volume_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "replication_frequency",
+                    "replicationFrequency",
                     &self.r#replication_frequency,
                 ),
             ];

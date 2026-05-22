@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "airflow_config_overrides",
+                    "airflowConfigOverrides",
                     &self.r#airflow_config_overrides,
                 ),
                 to_pulumi_object_field(
-                    "cloud_data_lineage_integration",
+                    "cloudDataLineageIntegration",
                     &self.r#cloud_data_lineage_integration,
                 ),
                 to_pulumi_object_field(
-                    "env_variables",
+                    "envVariables",
                     &self.r#env_variables,
                 ),
                 to_pulumi_object_field(
-                    "image_version",
+                    "imageVersion",
                     &self.r#image_version,
                 ),
                 to_pulumi_object_field(
-                    "pypi_packages",
+                    "pypiPackages",
                     &self.r#pypi_packages,
                 ),
                 to_pulumi_object_field(
-                    "python_version",
+                    "pythonVersion",
                     &self.r#python_version,
                 ),
                 to_pulumi_object_field(
-                    "scheduler_count",
+                    "schedulerCount",
                     &self.r#scheduler_count,
                 ),
                 to_pulumi_object_field(
-                    "web_server_plugins_mode",
+                    "webServerPluginsMode",
                     &self.r#web_server_plugins_mode,
                 ),
             ];

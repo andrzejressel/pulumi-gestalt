@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_clients",
+                    "allowedClients",
                     &self.r#allowed_clients,
                 ),
                 to_pulumi_object_field(
-                    "nfsv_3_enabled",
+                    "nfsv3Enabled",
                     &self.r#nfsv_3_enabled,
                 ),
                 to_pulumi_object_field(
-                    "nfsv_41_enabled",
+                    "nfsv41Enabled",
                     &self.r#nfsv_41_enabled,
                 ),
                 to_pulumi_object_field(
-                    "root_access_enabled",
+                    "rootAccessEnabled",
                     &self.r#root_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "rule_index",
+                    "ruleIndex",
                     &self.r#rule_index,
                 ),
                 to_pulumi_object_field(
-                    "unix_read_only",
+                    "unixReadOnly",
                     &self.r#unix_read_only,
                 ),
                 to_pulumi_object_field(
-                    "unix_read_write",
+                    "unixReadWrite",
                     &self.r#unix_read_write,
                 ),
             ];

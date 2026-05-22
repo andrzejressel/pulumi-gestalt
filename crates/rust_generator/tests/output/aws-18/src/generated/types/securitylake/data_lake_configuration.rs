@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "encryption_configurations",
+                    "encryptionConfigurations",
                     &self.r#encryption_configurations,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_configuration",
+                    "lifecycleConfiguration",
                     &self.r#lifecycle_configuration,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "replication_configuration",
+                    "replicationConfiguration",
                     &self.r#replication_configuration,
                 ),
             ];

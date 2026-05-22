@@ -49,11 +49,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "check_interval",
+                    "checkInterval",
                     &self.r#check_interval,
                 ),
                 to_pulumi_object_field(
-                    "failure_threshold",
+                    "failureThreshold",
                     &self.r#failure_threshold,
                 ),
                 to_pulumi_object_field(
@@ -61,7 +61,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#host,
                 ),
                 to_pulumi_object_field(
-                    "initial_delay",
+                    "initialDelay",
                     &self.r#initial_delay,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "success_threshold",
+                    "successThreshold",
                     &self.r#success_threshold,
                 ),
                 to_pulumi_object_field(

@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_bootstrap_servers",
+                    "additionalBootstrapServers",
                     &self.r#additional_bootstrap_servers,
                 ),
                 to_pulumi_object_field(
-                    "batch_size",
+                    "batchSize",
                     &self.r#batch_size,
                 ),
                 to_pulumi_object_field(
-                    "consumer_group_id",
+                    "consumerGroupId",
                     &self.r#consumer_group_id,
                 ),
                 to_pulumi_object_field(
@@ -71,19 +71,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#credentials,
                 ),
                 to_pulumi_object_field(
-                    "maximum_batching_window_in_seconds",
+                    "maximumBatchingWindowInSeconds",
                     &self.r#maximum_batching_window_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "server_root_ca_certificate",
+                    "serverRootCaCertificate",
                     &self.r#server_root_ca_certificate,
                 ),
                 to_pulumi_object_field(
-                    "starting_position",
+                    "startingPosition",
                     &self.r#starting_position,
                 ),
                 to_pulumi_object_field(
-                    "topic_name",
+                    "topicName",
                     &self.r#topic_name,
                 ),
                 to_pulumi_object_field(

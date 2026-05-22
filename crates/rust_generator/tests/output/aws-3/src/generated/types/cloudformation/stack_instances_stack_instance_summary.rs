@@ -55,19 +55,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_id",
+                    "accountId",
                     &self.r#account_id,
                 ),
                 to_pulumi_object_field(
-                    "detailed_status",
+                    "detailedStatus",
                     &self.r#detailed_status,
                 ),
                 to_pulumi_object_field(
-                    "drift_status",
+                    "driftStatus",
                     &self.r#drift_status,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit_id",
+                    "organizationalUnitId",
                     &self.r#organizational_unit_id,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "stack_id",
+                    "stackId",
                     &self.r#stack_id,
                 ),
                 to_pulumi_object_field(
-                    "stack_set_id",
+                    "stackSetId",
                     &self.r#stack_set_id,
                 ),
                 to_pulumi_object_field(
@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "status_reason",
+                    "statusReason",
                     &self.r#status_reason,
                 ),
             ];

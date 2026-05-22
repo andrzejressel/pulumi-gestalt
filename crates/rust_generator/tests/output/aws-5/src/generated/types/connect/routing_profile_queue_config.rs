@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "queue_arn",
+                    "queueArn",
                     &self.r#queue_arn,
                 ),
                 to_pulumi_object_field(
-                    "queue_id",
+                    "queueId",
                     &self.r#queue_id,
                 ),
                 to_pulumi_object_field(
-                    "queue_name",
+                    "queueName",
                     &self.r#queue_name,
                 ),
             ];

@@ -69,19 +69,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "divide_by_instance_count",
+                    "divideByInstanceCount",
                     &self.r#divide_by_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "metric_name",
+                    "metricName",
                     &self.r#metric_name,
                 ),
                 to_pulumi_object_field(
-                    "metric_namespace",
+                    "metricNamespace",
                     &self.r#metric_namespace,
                 ),
                 to_pulumi_object_field(
-                    "metric_resource_id",
+                    "metricResourceId",
                     &self.r#metric_resource_id,
                 ),
                 to_pulumi_object_field(
@@ -97,15 +97,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#threshold,
                 ),
                 to_pulumi_object_field(
-                    "time_aggregation",
+                    "timeAggregation",
                     &self.r#time_aggregation,
                 ),
                 to_pulumi_object_field(
-                    "time_grain",
+                    "timeGrain",
                     &self.r#time_grain,
                 ),
                 to_pulumi_object_field(
-                    "time_window",
+                    "timeWindow",
                     &self.r#time_window,
                 ),
             ];

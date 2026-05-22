@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "destination_port",
+                    "destinationPort",
                     &self.r#destination_port,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#source,
                 ),
                 to_pulumi_object_field(
-                    "source_port",
+                    "sourcePort",
                     &self.r#source_port,
                 ),
             ];

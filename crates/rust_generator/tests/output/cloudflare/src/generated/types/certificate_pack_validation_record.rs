@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cname_name",
+                    "cnameName",
                     &self.r#cname_name,
                 ),
                 to_pulumi_object_field(
-                    "cname_target",
+                    "cnameTarget",
                     &self.r#cname_target,
                 ),
                 to_pulumi_object_field(
@@ -52,19 +52,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#emails,
                 ),
                 to_pulumi_object_field(
-                    "http_body",
+                    "httpBody",
                     &self.r#http_body,
                 ),
                 to_pulumi_object_field(
-                    "http_url",
+                    "httpUrl",
                     &self.r#http_url,
                 ),
                 to_pulumi_object_field(
-                    "txt_name",
+                    "txtName",
                     &self.r#txt_name,
                 ),
                 to_pulumi_object_field(
-                    "txt_value",
+                    "txtValue",
                     &self.r#txt_value,
                 ),
             ];

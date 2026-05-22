@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "bucket_prefix",
+                    "bucketPrefix",
                     &self.r#bucket_prefix,
                 ),
                 to_pulumi_object_field(
-                    "ingestion_role",
+                    "ingestionRole",
                     &self.r#ingestion_role,
                 ),
                 to_pulumi_object_field(
-                    "source_engine",
+                    "sourceEngine",
                     &self.r#source_engine,
                 ),
                 to_pulumi_object_field(
-                    "source_engine_version",
+                    "sourceEngineVersion",
                     &self.r#source_engine_version,
                 ),
             ];

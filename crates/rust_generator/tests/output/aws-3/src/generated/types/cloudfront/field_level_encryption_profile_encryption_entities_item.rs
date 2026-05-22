@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fie
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "field_patterns",
+                    "fieldPatterns",
                     &self.r#field_patterns,
                 ),
                 to_pulumi_object_field(
-                    "provider_id",
+                    "providerId",
                     &self.r#provider_id,
                 ),
                 to_pulumi_object_field(
-                    "public_key_id",
+                    "publicKeyId",
                     &self.r#public_key_id,
                 ),
             ];

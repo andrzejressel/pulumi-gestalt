@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_headers",
+                    "customHeaders",
                     &self.r#custom_headers,
                 ),
                 to_pulumi_object_field(
-                    "expected_status_code_ranges",
+                    "expectedStatusCodeRanges",
                     &self.r#expected_status_code_ranges,
                 ),
                 to_pulumi_object_field(
-                    "interval_in_seconds",
+                    "intervalInSeconds",
                     &self.r#interval_in_seconds,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_seconds",
+                    "timeoutInSeconds",
                     &self.r#timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "tolerated_number_of_failures",
+                    "toleratedNumberOfFailures",
                     &self.r#tolerated_number_of_failures,
                 ),
             ];

@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ont
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audit_log_volume",
+                    "auditLogVolume",
                     &self.r#audit_log_volume,
                 ),
                 to_pulumi_object_field(
-                    "autocommit_period",
+                    "autocommitPeriod",
                     &self.r#autocommit_period,
                 ),
                 to_pulumi_object_field(
-                    "privileged_delete",
+                    "privilegedDelete",
                     &self.r#privileged_delete,
                 ),
                 to_pulumi_object_field(
-                    "retention_period",
+                    "retentionPeriod",
                     &self.r#retention_period,
                 ),
                 to_pulumi_object_field(
-                    "snaplock_type",
+                    "snaplockType",
                     &self.r#snaplock_type,
                 ),
                 to_pulumi_object_field(
-                    "volume_append_mode_enabled",
+                    "volumeAppendModeEnabled",
                     &self.r#volume_append_mode_enabled,
                 ),
             ];

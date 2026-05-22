@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Slo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "distribution_filter",
+                    "distributionFilter",
                     &self.r#distribution_filter,
                 ),
                 to_pulumi_object_field(

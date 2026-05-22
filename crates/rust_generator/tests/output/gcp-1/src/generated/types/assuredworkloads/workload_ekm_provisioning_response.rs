@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ekm_provisioning_error_domain",
+                    "ekmProvisioningErrorDomain",
                     &self.r#ekm_provisioning_error_domain,
                 ),
                 to_pulumi_object_field(
-                    "ekm_provisioning_error_mapping",
+                    "ekmProvisioningErrorMapping",
                     &self.r#ekm_provisioning_error_mapping,
                 ),
                 to_pulumi_object_field(
-                    "ekm_provisioning_state",
+                    "ekmProvisioningState",
                     &self.r#ekm_provisioning_state,
                 ),
             ];

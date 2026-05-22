@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Obj
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_features",
+                    "allowedFeatures",
                     &self.r#allowed_features,
                 ),
                 to_pulumi_object_field(
-                    "cloud_watch_metrics_enabled",
+                    "cloudWatchMetricsEnabled",
                     &self.r#cloud_watch_metrics_enabled,
                 ),
                 to_pulumi_object_field(
-                    "supporting_access_point",
+                    "supportingAccessPoint",
                     &self.r#supporting_access_point,
                 ),
                 to_pulumi_object_field(
-                    "transformation_configurations",
+                    "transformationConfigurations",
                     &self.r#transformation_configurations,
                 ),
             ];

@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#kind,
                 ),
                 to_pulumi_object_field(
-                    "partition_id",
+                    "partitionId",
                     &self.r#partition_id,
                 ),
             ];

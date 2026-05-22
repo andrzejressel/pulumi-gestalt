@@ -159,27 +159,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_configs",
+                    "authConfigs",
                     &self.r#auth_configs,
                 ),
                 to_pulumi_object_field(
-                    "build_arg",
+                    "buildArg",
                     &self.r#build_arg,
                 ),
                 to_pulumi_object_field(
-                    "build_args",
+                    "buildArgs",
                     &self.r#build_args,
                 ),
                 to_pulumi_object_field(
-                    "build_id",
+                    "buildId",
                     &self.r#build_id,
                 ),
                 to_pulumi_object_field(
-                    "cache_froms",
+                    "cacheFroms",
                     &self.r#cache_froms,
                 ),
                 to_pulumi_object_field(
-                    "cgroup_parent",
+                    "cgroupParent",
                     &self.r#cgroup_parent,
                 ),
                 to_pulumi_object_field(
@@ -187,23 +187,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#context,
                 ),
                 to_pulumi_object_field(
-                    "cpu_period",
+                    "cpuPeriod",
                     &self.r#cpu_period,
                 ),
                 to_pulumi_object_field(
-                    "cpu_quota",
+                    "cpuQuota",
                     &self.r#cpu_quota,
                 ),
                 to_pulumi_object_field(
-                    "cpu_set_cpus",
+                    "cpuSetCpus",
                     &self.r#cpu_set_cpus,
                 ),
                 to_pulumi_object_field(
-                    "cpu_set_mems",
+                    "cpuSetMems",
                     &self.r#cpu_set_mems,
                 ),
                 to_pulumi_object_field(
-                    "cpu_shares",
+                    "cpuShares",
                     &self.r#cpu_shares,
                 ),
                 to_pulumi_object_field(
@@ -211,11 +211,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#dockerfile,
                 ),
                 to_pulumi_object_field(
-                    "extra_hosts",
+                    "extraHosts",
                     &self.r#extra_hosts,
                 ),
                 to_pulumi_object_field(
-                    "force_remove",
+                    "forceRemove",
                     &self.r#force_remove,
                 ),
                 to_pulumi_object_field(
@@ -235,15 +235,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#memory,
                 ),
                 to_pulumi_object_field(
-                    "memory_swap",
+                    "memorySwap",
                     &self.r#memory_swap,
                 ),
                 to_pulumi_object_field(
-                    "network_mode",
+                    "networkMode",
                     &self.r#network_mode,
                 ),
                 to_pulumi_object_field(
-                    "no_cache",
+                    "noCache",
                     &self.r#no_cache,
                 ),
                 to_pulumi_object_field(
@@ -251,11 +251,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#platform,
                 ),
                 to_pulumi_object_field(
-                    "pull_parent",
+                    "pullParent",
                     &self.r#pull_parent,
                 ),
                 to_pulumi_object_field(
-                    "remote_context",
+                    "remoteContext",
                     &self.r#remote_context,
                 ),
                 to_pulumi_object_field(
@@ -263,15 +263,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#remove,
                 ),
                 to_pulumi_object_field(
-                    "security_opts",
+                    "securityOpts",
                     &self.r#security_opts,
                 ),
                 to_pulumi_object_field(
-                    "session_id",
+                    "sessionId",
                     &self.r#session_id,
                 ),
                 to_pulumi_object_field(
-                    "shm_size",
+                    "shmSize",
                     &self.r#shm_size,
                 ),
                 to_pulumi_object_field(
@@ -279,7 +279,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#squash,
                 ),
                 to_pulumi_object_field(
-                    "suppress_output",
+                    "suppressOutput",
                     &self.r#suppress_output,
                 ),
                 to_pulumi_object_field(

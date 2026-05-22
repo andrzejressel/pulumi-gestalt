@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "is_client_scoped_subscription_durable",
+                    "isClientScopedSubscriptionDurable",
                     &self.r#is_client_scoped_subscription_durable,
                 ),
                 to_pulumi_object_field(
-                    "is_client_scoped_subscription_shareable",
+                    "isClientScopedSubscriptionShareable",
                     &self.r#is_client_scoped_subscription_shareable,
                 ),
             ];

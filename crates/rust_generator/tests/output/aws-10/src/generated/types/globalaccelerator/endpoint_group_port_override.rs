@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_port",
+                    "endpointPort",
                     &self.r#endpoint_port,
                 ),
                 to_pulumi_object_field(
-                    "listener_port",
+                    "listenerPort",
                     &self.r#listener_port,
                 ),
             ];

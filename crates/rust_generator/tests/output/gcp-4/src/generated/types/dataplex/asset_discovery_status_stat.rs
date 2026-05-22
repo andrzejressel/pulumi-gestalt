@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_items",
+                    "dataItems",
                     &self.r#data_items,
                 ),
                 to_pulumi_object_field(
-                    "data_size",
+                    "dataSize",
                     &self.r#data_size,
                 ),
                 to_pulumi_object_field(

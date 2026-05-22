@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_control",
+                    "customControl",
                     &self.r#custom_control,
                 ),
                 to_pulumi_object_field(

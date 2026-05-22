@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_rows_wildcard",
+                    "allRowsWildcard",
                     &self.r#all_rows_wildcard,
                 ),
                 to_pulumi_object_field(
-                    "filter_expression",
+                    "filterExpression",
                     &self.r#filter_expression,
                 ),
             ];

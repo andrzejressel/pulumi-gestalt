@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acy
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "foo_6",
+                    "foo6",
                     &self.r#foo_6,
                 ),
             ];

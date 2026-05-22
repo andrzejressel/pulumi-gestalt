@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_condition",
+                    "actionCondition",
                     &self.r#action_condition,
                 ),
                 to_pulumi_object_field(
-                    "label_name_condition",
+                    "labelNameCondition",
                     &self.r#label_name_condition,
                 ),
             ];

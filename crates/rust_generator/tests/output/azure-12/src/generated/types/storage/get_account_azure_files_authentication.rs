@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directories",
+                    "activeDirectories",
                     &self.r#active_directories,
                 ),
                 to_pulumi_object_field(
-                    "default_share_level_permission",
+                    "defaultShareLevelPermission",
                     &self.r#default_share_level_permission,
                 ),
                 to_pulumi_object_field(
-                    "directory_type",
+                    "directoryType",
                     &self.r#directory_type,
                 ),
             ];

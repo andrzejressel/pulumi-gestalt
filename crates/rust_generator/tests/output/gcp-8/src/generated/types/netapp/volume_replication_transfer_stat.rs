@@ -61,35 +61,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lag_duration",
+                    "lagDuration",
                     &self.r#lag_duration,
                 ),
                 to_pulumi_object_field(
-                    "last_transfer_bytes",
+                    "lastTransferBytes",
                     &self.r#last_transfer_bytes,
                 ),
                 to_pulumi_object_field(
-                    "last_transfer_duration",
+                    "lastTransferDuration",
                     &self.r#last_transfer_duration,
                 ),
                 to_pulumi_object_field(
-                    "last_transfer_end_time",
+                    "lastTransferEndTime",
                     &self.r#last_transfer_end_time,
                 ),
                 to_pulumi_object_field(
-                    "last_transfer_error",
+                    "lastTransferError",
                     &self.r#last_transfer_error,
                 ),
                 to_pulumi_object_field(
-                    "total_transfer_duration",
+                    "totalTransferDuration",
                     &self.r#total_transfer_duration,
                 ),
                 to_pulumi_object_field(
-                    "transfer_bytes",
+                    "transferBytes",
                     &self.r#transfer_bytes,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
             ];

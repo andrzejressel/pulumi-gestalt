@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "coding_mode",
+                    "codingMode",
                     &self.r#coding_mode,
                 ),
                 to_pulumi_object_field(
-                    "sample_rate",
+                    "sampleRate",
                     &self.r#sample_rate,
                 ),
             ];

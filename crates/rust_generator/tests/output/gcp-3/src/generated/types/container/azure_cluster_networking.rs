@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Azu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pod_address_cidr_blocks",
+                    "podAddressCidrBlocks",
                     &self.r#pod_address_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "service_address_cidr_blocks",
+                    "serviceAddressCidrBlocks",
                     &self.r#service_address_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_id",
+                    "virtualNetworkId",
                     &self.r#virtual_network_id,
                 ),
             ];

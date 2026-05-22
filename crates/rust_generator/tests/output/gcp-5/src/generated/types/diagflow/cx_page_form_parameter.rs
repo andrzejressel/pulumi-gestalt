@@ -57,27 +57,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_settings",
+                    "advancedSettings",
                     &self.r#advanced_settings,
                 ),
                 to_pulumi_object_field(
-                    "default_value",
+                    "defaultValue",
                     &self.r#default_value,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "entity_type",
+                    "entityType",
                     &self.r#entity_type,
                 ),
                 to_pulumi_object_field(
-                    "fill_behavior",
+                    "fillBehavior",
                     &self.r#fill_behavior,
                 ),
                 to_pulumi_object_field(
-                    "is_list",
+                    "isList",
                     &self.r#is_list,
                 ),
                 to_pulumi_object_field(

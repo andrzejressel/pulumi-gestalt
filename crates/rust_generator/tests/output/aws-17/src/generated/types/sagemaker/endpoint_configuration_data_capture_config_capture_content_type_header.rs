@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "csv_content_types",
+                    "csvContentTypes",
                     &self.r#csv_content_types,
                 ),
                 to_pulumi_object_field(
-                    "json_content_types",
+                    "jsonContentTypes",
                     &self.r#json_content_types,
                 ),
             ];

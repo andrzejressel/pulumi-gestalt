@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_definition",
+                    "actionDefinition",
                     &self.r#action_definition,
                 ),
                 to_pulumi_object_field(
-                    "action_name",
+                    "actionName",
                     &self.r#action_name,
                 ),
             ];

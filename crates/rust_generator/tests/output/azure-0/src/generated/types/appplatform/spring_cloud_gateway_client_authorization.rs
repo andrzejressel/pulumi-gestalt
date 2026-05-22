@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_ids",
+                    "certificateIds",
                     &self.r#certificate_ids,
                 ),
                 to_pulumi_object_field(
-                    "verification_enabled",
+                    "verificationEnabled",
                     &self.r#verification_enabled,
                 ),
             ];

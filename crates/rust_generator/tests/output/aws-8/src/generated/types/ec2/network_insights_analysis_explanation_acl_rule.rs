@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#egress,
                 ),
                 to_pulumi_object_field(
-                    "port_ranges",
+                    "portRanges",
                     &self.r#port_ranges,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "rule_action",
+                    "ruleAction",
                     &self.r#rule_action,
                 ),
                 to_pulumi_object_field(
-                    "rule_number",
+                    "ruleNumber",
                     &self.r#rule_number,
                 ),
             ];

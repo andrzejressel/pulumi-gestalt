@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pull_deps",
+                    "pullDeps",
                     &self.r#pull_deps,
                 ),
                 to_pulumi_object_field(

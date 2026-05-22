@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_connection_drain_on_failover",
+                    "disableConnectionDrainOnFailover",
                     &self.r#disable_connection_drain_on_failover,
                 ),
                 to_pulumi_object_field(
-                    "drop_traffic_if_unhealthy",
+                    "dropTrafficIfUnhealthy",
                     &self.r#drop_traffic_if_unhealthy,
                 ),
                 to_pulumi_object_field(
-                    "failover_ratio",
+                    "failoverRatio",
                     &self.r#failover_ratio,
                 ),
             ];

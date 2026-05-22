@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_instance_count",
+                    "maxInstanceCount",
                     &self.r#max_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "min_instance_count",
+                    "minInstanceCount",
                     &self.r#min_instance_count,
                 ),
             ];

@@ -55,23 +55,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_delete",
+                    "autoDelete",
                     &self.r#auto_delete,
                 ),
                 to_pulumi_object_field(
-                    "device_name",
+                    "deviceName",
                     &self.r#device_name,
                 ),
                 to_pulumi_object_field(
-                    "disk_encryption_key_raw",
+                    "diskEncryptionKeyRaw",
                     &self.r#disk_encryption_key_raw,
                 ),
                 to_pulumi_object_field(
-                    "disk_encryption_key_sha_256",
+                    "diskEncryptionKeySha256",
                     &self.r#disk_encryption_key_sha_256,
                 ),
                 to_pulumi_object_field(
-                    "initialize_params",
+                    "initializeParams",
                     &self.r#initialize_params,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#interface,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_self_link",
+                    "kmsKeySelfLink",
                     &self.r#kms_key_self_link,
                 ),
                 to_pulumi_object_field(

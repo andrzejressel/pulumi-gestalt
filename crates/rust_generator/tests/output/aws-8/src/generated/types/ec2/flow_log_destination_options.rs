@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "file_format",
+                    "fileFormat",
                     &self.r#file_format,
                 ),
                 to_pulumi_object_field(
-                    "hive_compatible_partitions",
+                    "hiveCompatiblePartitions",
                     &self.r#hive_compatible_partitions,
                 ),
                 to_pulumi_object_field(
-                    "per_hour_partition",
+                    "perHourPartition",
                     &self.r#per_hour_partition,
                 ),
             ];

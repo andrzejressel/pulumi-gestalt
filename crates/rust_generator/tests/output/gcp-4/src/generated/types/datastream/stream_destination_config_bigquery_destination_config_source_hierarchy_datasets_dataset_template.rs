@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dataset_id_prefix",
+                    "datasetIdPrefix",
                     &self.r#dataset_id_prefix,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_name",
+                    "kmsKeyName",
                     &self.r#kms_key_name,
                 ),
                 to_pulumi_object_field(

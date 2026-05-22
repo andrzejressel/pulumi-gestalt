@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "generation_cadence",
+                    "generationCadence",
                     &self.r#generation_cadence,
                 ),
             ];

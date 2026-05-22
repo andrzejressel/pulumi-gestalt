@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "weighted_targets",
+                    "weightedTargets",
                     &self.r#weighted_targets,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "on_demand_specifications",
+                    "onDemandSpecifications",
                     &self.r#on_demand_specifications,
                 ),
                 to_pulumi_object_field(
-                    "spot_specifications",
+                    "spotSpecifications",
                     &self.r#spot_specifications,
                 ),
             ];

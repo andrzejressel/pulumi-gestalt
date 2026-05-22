@@ -58,19 +58,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_window",
+                    "backupWindow",
                     &self.r#backup_window,
                 ),
                 to_pulumi_object_field(
-                    "days_of_months",
+                    "daysOfMonths",
                     &self.r#days_of_months,
                 ),
                 to_pulumi_object_field(
-                    "days_of_weeks",
+                    "daysOfWeeks",
                     &self.r#days_of_weeks,
                 ),
                 to_pulumi_object_field(
-                    "hourly_frequency",
+                    "hourlyFrequency",
                     &self.r#hourly_frequency,
                 ),
                 to_pulumi_object_field(
@@ -78,15 +78,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
                     &self.r#months,
                 ),
                 to_pulumi_object_field(
-                    "recurrence_type",
+                    "recurrenceType",
                     &self.r#recurrence_type,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
                 to_pulumi_object_field(
-                    "week_day_of_month",
+                    "weekDayOfMonth",
                     &self.r#week_day_of_month,
                 ),
             ];

@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#extension,
                 ),
                 to_pulumi_object_field(
-                    "script_processor_path",
+                    "scriptProcessorPath",
                     &self.r#script_processor_path,
                 ),
             ];

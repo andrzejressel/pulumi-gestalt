@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "rewrite_rules",
+                    "rewriteRules",
                     &self.r#rewrite_rules,
                 ),
             ];

@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "excluded_rules",
+                    "excludedRules",
                     &self.r#excluded_rules,
                 ),
                 to_pulumi_object_field(
-                    "rule_group_name",
+                    "ruleGroupName",
                     &self.r#rule_group_name,
                 ),
             ];

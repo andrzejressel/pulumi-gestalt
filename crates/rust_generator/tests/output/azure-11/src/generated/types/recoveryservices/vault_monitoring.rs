@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alerts_for_all_job_failures_enabled",
+                    "alertsForAllJobFailuresEnabled",
                     &self.r#alerts_for_all_job_failures_enabled,
                 ),
                 to_pulumi_object_field(
-                    "alerts_for_critical_operation_failures_enabled",
+                    "alertsForCriticalOperationFailuresEnabled",
                     &self.r#alerts_for_critical_operation_failures_enabled,
                 ),
             ];

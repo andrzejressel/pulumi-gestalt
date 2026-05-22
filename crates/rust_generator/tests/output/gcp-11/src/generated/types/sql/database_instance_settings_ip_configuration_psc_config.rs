@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_consumer_projects",
+                    "allowedConsumerProjects",
                     &self.r#allowed_consumer_projects,
                 ),
                 to_pulumi_object_field(
-                    "psc_auto_connections",
+                    "pscAutoConnections",
                     &self.r#psc_auto_connections,
                 ),
                 to_pulumi_object_field(
-                    "psc_enabled",
+                    "pscEnabled",
                     &self.r#psc_enabled,
                 ),
             ];

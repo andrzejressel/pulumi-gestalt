@@ -48,19 +48,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bitbucket_server_config",
+                    "bitbucketServerConfig",
                     &self.r#bitbucket_server_config,
                 ),
                 to_pulumi_object_field(
-                    "github_enterprise_config",
+                    "githubEnterpriseConfig",
                     &self.r#github_enterprise_config,
                 ),
                 to_pulumi_object_field(
-                    "ref_",
+                    "ref",
                     &self.r#ref_,
                 ),
                 to_pulumi_object_field(
-                    "repo_type",
+                    "repoType",
                     &self.r#repo_type,
                 ),
                 to_pulumi_object_field(

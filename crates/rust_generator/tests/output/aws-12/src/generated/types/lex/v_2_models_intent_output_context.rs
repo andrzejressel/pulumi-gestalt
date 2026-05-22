@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "time_to_live_in_seconds",
+                    "timeToLiveInSeconds",
                     &self.r#time_to_live_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "turns_to_live",
+                    "turnsToLive",
                     &self.r#turns_to_live,
                 ),
             ];

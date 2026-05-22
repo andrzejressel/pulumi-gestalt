@@ -79,63 +79,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_type",
+                    "acceleratorType",
                     &self.r#accelerator_type,
                 ),
                 to_pulumi_object_field(
-                    "container_startup_health_check_timeout_in_seconds",
+                    "containerStartupHealthCheckTimeoutInSeconds",
                     &self.r#container_startup_health_check_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "core_dump_config",
+                    "coreDumpConfig",
                     &self.r#core_dump_config,
                 ),
                 to_pulumi_object_field(
-                    "enable_ssm_access",
+                    "enableSsmAccess",
                     &self.r#enable_ssm_access,
                 ),
                 to_pulumi_object_field(
-                    "inference_ami_version",
+                    "inferenceAmiVersion",
                     &self.r#inference_ami_version,
                 ),
                 to_pulumi_object_field(
-                    "initial_instance_count",
+                    "initialInstanceCount",
                     &self.r#initial_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "initial_variant_weight",
+                    "initialVariantWeight",
                     &self.r#initial_variant_weight,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "managed_instance_scaling",
+                    "managedInstanceScaling",
                     &self.r#managed_instance_scaling,
                 ),
                 to_pulumi_object_field(
-                    "model_data_download_timeout_in_seconds",
+                    "modelDataDownloadTimeoutInSeconds",
                     &self.r#model_data_download_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "model_name",
+                    "modelName",
                     &self.r#model_name,
                 ),
                 to_pulumi_object_field(
-                    "routing_configs",
+                    "routingConfigs",
                     &self.r#routing_configs,
                 ),
                 to_pulumi_object_field(
-                    "serverless_config",
+                    "serverlessConfig",
                     &self.r#serverless_config,
                 ),
                 to_pulumi_object_field(
-                    "variant_name",
+                    "variantName",
                     &self.r#variant_name,
                 ),
                 to_pulumi_object_field(
-                    "volume_size_in_gb",
+                    "volumeSizeInGb",
                     &self.r#volume_size_in_gb,
                 ),
             ];

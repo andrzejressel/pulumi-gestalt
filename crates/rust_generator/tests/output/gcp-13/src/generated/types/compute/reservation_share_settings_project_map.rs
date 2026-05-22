@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "project_id",
+                    "projectId",
                     &self.r#project_id,
                 ),
             ];

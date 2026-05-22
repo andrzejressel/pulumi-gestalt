@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
                     &self.r#column,
                 ),
                 to_pulumi_object_field(
-                    "data_type",
+                    "dataType",
                     &self.r#data_type,
                 ),
                 to_pulumi_object_field(
@@ -69,11 +69,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
                     &self.r#nullable,
                 ),
                 to_pulumi_object_field(
-                    "ordinal_position",
+                    "ordinalPosition",
                     &self.r#ordinal_position,
                 ),
                 to_pulumi_object_field(
-                    "primary_key",
+                    "primaryKey",
                     &self.r#primary_key,
                 ),
             ];

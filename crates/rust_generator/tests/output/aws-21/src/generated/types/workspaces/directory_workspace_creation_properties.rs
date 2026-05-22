@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_security_group_id",
+                    "customSecurityGroupId",
                     &self.r#custom_security_group_id,
                 ),
                 to_pulumi_object_field(
-                    "default_ou",
+                    "defaultOu",
                     &self.r#default_ou,
                 ),
                 to_pulumi_object_field(
-                    "enable_internet_access",
+                    "enableInternetAccess",
                     &self.r#enable_internet_access,
                 ),
                 to_pulumi_object_field(
-                    "enable_maintenance_mode",
+                    "enableMaintenanceMode",
                     &self.r#enable_maintenance_mode,
                 ),
                 to_pulumi_object_field(
-                    "user_enabled_as_local_administrator",
+                    "userEnabledAsLocalAdministrator",
                     &self.r#user_enabled_as_local_administrator,
                 ),
             ];

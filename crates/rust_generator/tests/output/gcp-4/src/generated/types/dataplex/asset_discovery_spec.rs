@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "csv_options",
+                    "csvOptions",
                     &self.r#csv_options,
                 ),
                 to_pulumi_object_field(
@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "exclude_patterns",
+                    "excludePatterns",
                     &self.r#exclude_patterns,
                 ),
                 to_pulumi_object_field(
-                    "include_patterns",
+                    "includePatterns",
                     &self.r#include_patterns,
                 ),
                 to_pulumi_object_field(
-                    "json_options",
+                    "jsonOptions",
                     &self.r#json_options,
                 ),
                 to_pulumi_object_field(

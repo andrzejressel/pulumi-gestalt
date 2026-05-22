@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_access_role_arn",
+                    "bucketAccessRoleArn",
                     &self.r#bucket_access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket_arn",
+                    "s3BucketArn",
                     &self.r#s_3_bucket_arn,
                 ),
                 to_pulumi_object_field(

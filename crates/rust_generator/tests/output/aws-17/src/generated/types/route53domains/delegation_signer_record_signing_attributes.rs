@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
                     &self.r#flags,
                 ),
                 to_pulumi_object_field(
-                    "public_key",
+                    "publicKey",
                     &self.r#public_key,
                 ),
             ];

@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sha
                     &self.r#prefix,
                 ),
                 to_pulumi_object_field(
-                    "publisher_email",
+                    "publisherEmail",
                     &self.r#publisher_email,
                 ),
                 to_pulumi_object_field(
-                    "publisher_uri",
+                    "publisherUri",
                     &self.r#publisher_uri,
                 ),
             ];

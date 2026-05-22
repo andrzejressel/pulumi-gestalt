@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "network_adapter_name",
+                    "networkAdapterName",
                     &self.r#network_adapter_name,
                 ),
                 to_pulumi_object_field(
-                    "vlan_id",
+                    "vlanId",
                     &self.r#vlan_id,
                 ),
             ];

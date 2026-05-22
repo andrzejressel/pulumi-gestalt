@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "dns_policy",
+                    "dnsPolicy",
                     &self.r#dns_policy,
                 ),
                 to_pulumi_object_field(
-                    "host_network",
+                    "hostNetwork",
                     &self.r#host_network,
                 ),
                 to_pulumi_object_field(
-                    "image_pull_secrets",
+                    "imagePullSecrets",
                     &self.r#image_pull_secrets,
                 ),
                 to_pulumi_object_field(
-                    "init_containers",
+                    "initContainers",
                     &self.r#init_containers,
                 ),
                 to_pulumi_object_field(
@@ -79,11 +79,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#metadata,
                 ),
                 to_pulumi_object_field(
-                    "service_account_name",
+                    "serviceAccountName",
                     &self.r#service_account_name,
                 ),
                 to_pulumi_object_field(
-                    "share_process_namespace",
+                    "shareProcessNamespace",
                     &self.r#share_process_namespace,
                 ),
                 to_pulumi_object_field(

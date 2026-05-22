@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "grpc_routes",
+                    "grpcRoutes",
                     &self.r#grpc_routes,
                 ),
                 to_pulumi_object_field(
-                    "http_2_routes",
+                    "http2Routes",
                     &self.r#http_2_routes,
                 ),
                 to_pulumi_object_field(
-                    "http_routes",
+                    "httpRoutes",
                     &self.r#http_routes,
                 ),
                 to_pulumi_object_field(

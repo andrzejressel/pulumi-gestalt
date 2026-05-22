@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_zone",
+                    "availabilityZone",
                     &self.r#availability_zone,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_id",
+                    "networkInterfaceId",
                     &self.r#network_interface_id,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

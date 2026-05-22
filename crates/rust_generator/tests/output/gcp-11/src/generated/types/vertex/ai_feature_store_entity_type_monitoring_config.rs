@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "categorical_threshold_config",
+                    "categoricalThresholdConfig",
                     &self.r#categorical_threshold_config,
                 ),
                 to_pulumi_object_field(
-                    "import_features_analysis",
+                    "importFeaturesAnalysis",
                     &self.r#import_features_analysis,
                 ),
                 to_pulumi_object_field(
-                    "numerical_threshold_config",
+                    "numericalThresholdConfig",
                     &self.r#numerical_threshold_config,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_analysis",
+                    "snapshotAnalysis",
                     &self.r#snapshot_analysis,
                 ),
             ];

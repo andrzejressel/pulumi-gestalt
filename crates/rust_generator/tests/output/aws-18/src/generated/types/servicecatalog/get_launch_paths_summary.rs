@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "constraint_summaries",
+                    "constraintSummaries",
                     &self.r#constraint_summaries,
                 ),
                 to_pulumi_object_field(
@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "path_id",
+                    "pathId",
                     &self.r#path_id,
                 ),
                 to_pulumi_object_field(

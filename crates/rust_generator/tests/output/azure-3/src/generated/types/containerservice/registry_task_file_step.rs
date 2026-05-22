@@ -43,23 +43,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "context_access_token",
+                    "contextAccessToken",
                     &self.r#context_access_token,
                 ),
                 to_pulumi_object_field(
-                    "context_path",
+                    "contextPath",
                     &self.r#context_path,
                 ),
                 to_pulumi_object_field(
-                    "secret_values",
+                    "secretValues",
                     &self.r#secret_values,
                 ),
                 to_pulumi_object_field(
-                    "task_file_path",
+                    "taskFilePath",
                     &self.r#task_file_path,
                 ),
                 to_pulumi_object_field(
-                    "value_file_path",
+                    "valueFilePath",
                     &self.r#value_file_path,
                 ),
                 to_pulumi_object_field(

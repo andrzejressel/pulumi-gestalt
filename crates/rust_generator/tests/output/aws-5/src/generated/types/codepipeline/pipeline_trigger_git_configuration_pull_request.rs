@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#events,
                 ),
                 to_pulumi_object_field(
-                    "file_paths",
+                    "filePaths",
                     &self.r#file_paths,
                 ),
             ];

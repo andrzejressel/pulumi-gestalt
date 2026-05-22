@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bil
                     &self.r#frequency,
                 ),
                 to_pulumi_object_field(
-                    "meter_details",
+                    "meterDetails",
                     &self.r#meter_details,
                 ),
                 to_pulumi_object_field(
-                    "metering_type",
+                    "meteringType",
                     &self.r#metering_type,
                 ),
                 to_pulumi_object_field(

@@ -34,19 +34,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "reference_id",
+                    "referenceId",
                     &self.r#reference_id,
                 ),
                 to_pulumi_object_field(
-                    "reference_schema",
+                    "referenceSchema",
                     &self.r#reference_schema,
                 ),
                 to_pulumi_object_field(
-                    "s_3_reference_data_source",
+                    "s3ReferenceDataSource",
                     &self.r#s_3_reference_data_source,
                 ),
                 to_pulumi_object_field(
-                    "table_name",
+                    "tableName",
                     &self.r#table_name,
                 ),
             ];

@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Htt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "full_path_match",
+                    "fullPathMatch",
                     &self.r#full_path_match,
                 ),
                 to_pulumi_object_field(
@@ -53,19 +53,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Htt
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "ignore_case",
+                    "ignoreCase",
                     &self.r#ignore_case,
                 ),
                 to_pulumi_object_field(
-                    "prefix_match",
+                    "prefixMatch",
                     &self.r#prefix_match,
                 ),
                 to_pulumi_object_field(
-                    "query_parameters",
+                    "queryParameters",
                     &self.r#query_parameters,
                 ),
                 to_pulumi_object_field(
-                    "regex_match",
+                    "regexMatch",
                     &self.r#regex_match,
                 ),
             ];

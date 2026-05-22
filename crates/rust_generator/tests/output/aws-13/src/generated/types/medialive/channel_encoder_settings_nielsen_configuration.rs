@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "distributor_id",
+                    "distributorId",
                     &self.r#distributor_id,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_pcm_to_id_3_tagging",
+                    "nielsenPcmToId3Tagging",
                     &self.r#nielsen_pcm_to_id_3_tagging,
                 ),
             ];

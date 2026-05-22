@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_watch_destination",
+                    "cloudWatchDestination",
                     &self.r#cloud_watch_destination,
                 ),
                 to_pulumi_object_field(
@@ -54,23 +54,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "event_bridge_destination",
+                    "eventBridgeDestination",
                     &self.r#event_bridge_destination,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_firehose_destination",
+                    "kinesisFirehoseDestination",
                     &self.r#kinesis_firehose_destination,
                 ),
                 to_pulumi_object_field(
-                    "matching_event_types",
+                    "matchingEventTypes",
                     &self.r#matching_event_types,
                 ),
                 to_pulumi_object_field(
-                    "pinpoint_destination",
+                    "pinpointDestination",
                     &self.r#pinpoint_destination,
                 ),
                 to_pulumi_object_field(
-                    "sns_destination",
+                    "snsDestination",
                     &self.r#sns_destination,
                 ),
             ];

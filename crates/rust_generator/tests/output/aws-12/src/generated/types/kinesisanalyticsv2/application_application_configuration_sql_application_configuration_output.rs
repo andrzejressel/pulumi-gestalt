@@ -42,19 +42,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_schema",
+                    "destinationSchema",
                     &self.r#destination_schema,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_firehose_output",
+                    "kinesisFirehoseOutput",
                     &self.r#kinesis_firehose_output,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_streams_output",
+                    "kinesisStreamsOutput",
                     &self.r#kinesis_streams_output,
                 ),
                 to_pulumi_object_field(
-                    "lambda_output",
+                    "lambdaOutput",
                     &self.r#lambda_output,
                 ),
                 to_pulumi_object_field(
@@ -62,7 +62,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "output_id",
+                    "outputId",
                     &self.r#output_id,
                 ),
             ];

@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "private_dns_zone_id",
+                    "privateDnsZoneId",
                     &self.r#private_dns_zone_id,
                 ),
                 to_pulumi_object_field(
-                    "record_sets",
+                    "recordSets",
                     &self.r#record_sets,
                 ),
             ];

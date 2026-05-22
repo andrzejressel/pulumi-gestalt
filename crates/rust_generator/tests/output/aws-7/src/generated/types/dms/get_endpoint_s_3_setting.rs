@@ -136,159 +136,159 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "add_column_name",
+                    "addColumnName",
                     &self.r#add_column_name,
                 ),
                 to_pulumi_object_field(
-                    "bucket_folder",
+                    "bucketFolder",
                     &self.r#bucket_folder,
                 ),
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "canned_acl_for_objects",
+                    "cannedAclForObjects",
                     &self.r#canned_acl_for_objects,
                 ),
                 to_pulumi_object_field(
-                    "cdc_inserts_and_updates",
+                    "cdcInsertsAndUpdates",
                     &self.r#cdc_inserts_and_updates,
                 ),
                 to_pulumi_object_field(
-                    "cdc_inserts_only",
+                    "cdcInsertsOnly",
                     &self.r#cdc_inserts_only,
                 ),
                 to_pulumi_object_field(
-                    "cdc_max_batch_interval",
+                    "cdcMaxBatchInterval",
                     &self.r#cdc_max_batch_interval,
                 ),
                 to_pulumi_object_field(
-                    "cdc_min_file_size",
+                    "cdcMinFileSize",
                     &self.r#cdc_min_file_size,
                 ),
                 to_pulumi_object_field(
-                    "cdc_path",
+                    "cdcPath",
                     &self.r#cdc_path,
                 ),
                 to_pulumi_object_field(
-                    "compression_type",
+                    "compressionType",
                     &self.r#compression_type,
                 ),
                 to_pulumi_object_field(
-                    "csv_delimiter",
+                    "csvDelimiter",
                     &self.r#csv_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "csv_no_sup_value",
+                    "csvNoSupValue",
                     &self.r#csv_no_sup_value,
                 ),
                 to_pulumi_object_field(
-                    "csv_null_value",
+                    "csvNullValue",
                     &self.r#csv_null_value,
                 ),
                 to_pulumi_object_field(
-                    "csv_row_delimiter",
+                    "csvRowDelimiter",
                     &self.r#csv_row_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "data_format",
+                    "dataFormat",
                     &self.r#data_format,
                 ),
                 to_pulumi_object_field(
-                    "data_page_size",
+                    "dataPageSize",
                     &self.r#data_page_size,
                 ),
                 to_pulumi_object_field(
-                    "date_partition_delimiter",
+                    "datePartitionDelimiter",
                     &self.r#date_partition_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "date_partition_enabled",
+                    "datePartitionEnabled",
                     &self.r#date_partition_enabled,
                 ),
                 to_pulumi_object_field(
-                    "date_partition_sequence",
+                    "datePartitionSequence",
                     &self.r#date_partition_sequence,
                 ),
                 to_pulumi_object_field(
-                    "dict_page_size_limit",
+                    "dictPageSizeLimit",
                     &self.r#dict_page_size_limit,
                 ),
                 to_pulumi_object_field(
-                    "enable_statistics",
+                    "enableStatistics",
                     &self.r#enable_statistics,
                 ),
                 to_pulumi_object_field(
-                    "encoding_type",
+                    "encodingType",
                     &self.r#encoding_type,
                 ),
                 to_pulumi_object_field(
-                    "encryption_mode",
+                    "encryptionMode",
                     &self.r#encryption_mode,
                 ),
                 to_pulumi_object_field(
-                    "external_table_definition",
+                    "externalTableDefinition",
                     &self.r#external_table_definition,
                 ),
                 to_pulumi_object_field(
-                    "glue_catalog_generation",
+                    "glueCatalogGeneration",
                     &self.r#glue_catalog_generation,
                 ),
                 to_pulumi_object_field(
-                    "ignore_header_rows",
+                    "ignoreHeaderRows",
                     &self.r#ignore_header_rows,
                 ),
                 to_pulumi_object_field(
-                    "ignore_headers_row",
+                    "ignoreHeadersRow",
                     &self.r#ignore_headers_row,
                 ),
                 to_pulumi_object_field(
-                    "include_op_for_full_load",
+                    "includeOpForFullLoad",
                     &self.r#include_op_for_full_load,
                 ),
                 to_pulumi_object_field(
-                    "max_file_size",
+                    "maxFileSize",
                     &self.r#max_file_size,
                 ),
                 to_pulumi_object_field(
-                    "parquet_timestamp_in_millisecond",
+                    "parquetTimestampInMillisecond",
                     &self.r#parquet_timestamp_in_millisecond,
                 ),
                 to_pulumi_object_field(
-                    "parquet_version",
+                    "parquetVersion",
                     &self.r#parquet_version,
                 ),
                 to_pulumi_object_field(
-                    "preserve_transactions",
+                    "preserveTransactions",
                     &self.r#preserve_transactions,
                 ),
                 to_pulumi_object_field(
-                    "rfc_4180",
+                    "rfc4180",
                     &self.r#rfc_4180,
                 ),
                 to_pulumi_object_field(
-                    "row_group_length",
+                    "rowGroupLength",
                     &self.r#row_group_length,
                 ),
                 to_pulumi_object_field(
-                    "server_side_encryption_kms_key_id",
+                    "serverSideEncryptionKmsKeyId",
                     &self.r#server_side_encryption_kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "service_access_role_arn",
+                    "serviceAccessRoleArn",
                     &self.r#service_access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_column_name",
+                    "timestampColumnName",
                     &self.r#timestamp_column_name,
                 ),
                 to_pulumi_object_field(
-                    "use_csv_no_sup_value",
+                    "useCsvNoSupValue",
                     &self.r#use_csv_no_sup_value,
                 ),
                 to_pulumi_object_field(
-                    "use_task_start_time_for_full_load_timestamp",
+                    "useTaskStartTimeForFullLoadTimestamp",
                     &self.r#use_task_start_time_for_full_load_timestamp,
                 ),
             ];

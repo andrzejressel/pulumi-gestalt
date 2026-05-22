@@ -73,51 +73,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "machine_learning_workspace_id",
+                    "machineLearningWorkspaceId",
                     &self.r#machine_learning_workspace_id,
                 ),
                 to_pulumi_object_field(
-                    "nat_gateway_name",
+                    "natGatewayName",
                     &self.r#nat_gateway_name,
                 ),
                 to_pulumi_object_field(
-                    "no_public_ip",
+                    "noPublicIp",
                     &self.r#no_public_ip,
                 ),
                 to_pulumi_object_field(
-                    "private_subnet_name",
+                    "privateSubnetName",
                     &self.r#private_subnet_name,
                 ),
                 to_pulumi_object_field(
-                    "private_subnet_network_security_group_association_id",
+                    "privateSubnetNetworkSecurityGroupAssociationId",
                     &self.r#private_subnet_network_security_group_association_id,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_name",
+                    "publicIpName",
                     &self.r#public_ip_name,
                 ),
                 to_pulumi_object_field(
-                    "public_subnet_name",
+                    "publicSubnetName",
                     &self.r#public_subnet_name,
                 ),
                 to_pulumi_object_field(
-                    "public_subnet_network_security_group_association_id",
+                    "publicSubnetNetworkSecurityGroupAssociationId",
                     &self.r#public_subnet_network_security_group_association_id,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_name",
+                    "storageAccountName",
                     &self.r#storage_account_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_sku_name",
+                    "storageAccountSkuName",
                     &self.r#storage_account_sku_name,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_id",
+                    "virtualNetworkId",
                     &self.r#virtual_network_id,
                 ),
                 to_pulumi_object_field(
-                    "vnet_address_prefix",
+                    "vnetAddressPrefix",
                     &self.r#vnet_address_prefix,
                 ),
             ];

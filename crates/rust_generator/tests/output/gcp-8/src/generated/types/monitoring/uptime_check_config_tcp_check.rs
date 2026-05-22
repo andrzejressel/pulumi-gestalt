@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ping_config",
+                    "pingConfig",
                     &self.r#ping_config,
                 ),
                 to_pulumi_object_field(

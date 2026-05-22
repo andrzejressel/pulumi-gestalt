@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pur
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "billing_type",
+                    "billingType",
                     &self.r#billing_type,
                 ),
                 to_pulumi_object_field(
-                    "charging_type",
+                    "chargingType",
                     &self.r#charging_type,
                 ),
                 to_pulumi_object_field(
@@ -56,15 +56,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pur
                     &self.r#multiplier,
                 ),
                 to_pulumi_object_field(
-                    "product_id",
+                    "productId",
                     &self.r#product_id,
                 ),
                 to_pulumi_object_field(
-                    "sku_id",
+                    "skuId",
                     &self.r#sku_id,
                 ),
                 to_pulumi_object_field(
-                    "term_id",
+                    "termId",
                     &self.r#term_id,
                 ),
             ];

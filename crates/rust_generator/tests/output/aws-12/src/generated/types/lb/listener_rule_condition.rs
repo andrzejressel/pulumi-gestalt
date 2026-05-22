@@ -45,27 +45,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_header",
+                    "hostHeader",
                     &self.r#host_header,
                 ),
                 to_pulumi_object_field(
-                    "http_header",
+                    "httpHeader",
                     &self.r#http_header,
                 ),
                 to_pulumi_object_field(
-                    "http_request_method",
+                    "httpRequestMethod",
                     &self.r#http_request_method,
                 ),
                 to_pulumi_object_field(
-                    "path_pattern",
+                    "pathPattern",
                     &self.r#path_pattern,
                 ),
                 to_pulumi_object_field(
-                    "query_strings",
+                    "queryStrings",
                     &self.r#query_strings,
                 ),
                 to_pulumi_object_field(
-                    "source_ip",
+                    "sourceIp",
                     &self.r#source_ip,
                 ),
             ];

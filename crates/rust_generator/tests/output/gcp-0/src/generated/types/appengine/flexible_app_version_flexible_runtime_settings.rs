@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "operating_system",
+                    "operatingSystem",
                     &self.r#operating_system,
                 ),
                 to_pulumi_object_field(
-                    "runtime_version",
+                    "runtimeVersion",
                     &self.r#runtime_version,
                 ),
             ];

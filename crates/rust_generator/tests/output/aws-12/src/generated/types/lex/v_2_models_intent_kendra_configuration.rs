@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kendra_index",
+                    "kendraIndex",
                     &self.r#kendra_index,
                 ),
                 to_pulumi_object_field(
-                    "query_filter_string",
+                    "queryFilterString",
                     &self.r#query_filter_string,
                 ),
                 to_pulumi_object_field(
-                    "query_filter_string_enabled",
+                    "queryFilterStringEnabled",
                     &self.r#query_filter_string_enabled,
                 ),
             ];

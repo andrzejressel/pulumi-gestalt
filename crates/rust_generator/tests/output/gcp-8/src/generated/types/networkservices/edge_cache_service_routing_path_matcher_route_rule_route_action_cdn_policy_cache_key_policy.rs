@@ -65,31 +65,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_host",
+                    "excludeHost",
                     &self.r#exclude_host,
                 ),
                 to_pulumi_object_field(
-                    "exclude_query_string",
+                    "excludeQueryString",
                     &self.r#exclude_query_string,
                 ),
                 to_pulumi_object_field(
-                    "excluded_query_parameters",
+                    "excludedQueryParameters",
                     &self.r#excluded_query_parameters,
                 ),
                 to_pulumi_object_field(
-                    "include_protocol",
+                    "includeProtocol",
                     &self.r#include_protocol,
                 ),
                 to_pulumi_object_field(
-                    "included_cookie_names",
+                    "includedCookieNames",
                     &self.r#included_cookie_names,
                 ),
                 to_pulumi_object_field(
-                    "included_header_names",
+                    "includedHeaderNames",
                     &self.r#included_header_names,
                 ),
                 to_pulumi_object_field(
-                    "included_query_parameters",
+                    "includedQueryParameters",
                     &self.r#included_query_parameters,
                 ),
             ];

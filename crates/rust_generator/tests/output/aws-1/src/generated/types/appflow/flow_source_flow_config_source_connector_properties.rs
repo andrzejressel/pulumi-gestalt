@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#amplitude,
                 ),
                 to_pulumi_object_field(
-                    "custom_connector",
+                    "customConnector",
                     &self.r#custom_connector,
                 ),
                 to_pulumi_object_field(
@@ -99,11 +99,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#dynatrace,
                 ),
                 to_pulumi_object_field(
-                    "google_analytics",
+                    "googleAnalytics",
                     &self.r#google_analytics,
                 ),
                 to_pulumi_object_field(
-                    "infor_nexus",
+                    "inforNexus",
                     &self.r#infor_nexus,
                 ),
                 to_pulumi_object_field(
@@ -111,7 +111,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#marketo,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
                 to_pulumi_object_field(
@@ -119,11 +119,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#salesforce,
                 ),
                 to_pulumi_object_field(
-                    "sapo_data",
+                    "sapoData",
                     &self.r#sapo_data,
                 ),
                 to_pulumi_object_field(
-                    "service_now",
+                    "serviceNow",
                     &self.r#service_now,
                 ),
                 to_pulumi_object_field(

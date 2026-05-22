@@ -29,15 +29,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_encryption",
+                    "cloudwatchEncryption",
                     &self.r#cloudwatch_encryption,
                 ),
                 to_pulumi_object_field(
-                    "job_bookmarks_encryption",
+                    "jobBookmarksEncryption",
                     &self.r#job_bookmarks_encryption,
                 ),
                 to_pulumi_object_field(
-                    "s_3_encryption",
+                    "s3Encryption",
                     &self.r#s_3_encryption,
                 ),
             ];

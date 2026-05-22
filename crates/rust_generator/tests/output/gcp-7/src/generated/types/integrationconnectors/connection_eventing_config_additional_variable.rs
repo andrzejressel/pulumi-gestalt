@@ -45,15 +45,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "boolean_value",
+                    "booleanValue",
                     &self.r#boolean_value,
                 ),
                 to_pulumi_object_field(
-                    "encryption_key_value",
+                    "encryptionKeyValue",
                     &self.r#encryption_key_value,
                 ),
                 to_pulumi_object_field(
-                    "integer_value",
+                    "integerValue",
                     &self.r#integer_value,
                 ),
                 to_pulumi_object_field(
@@ -61,11 +61,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "secret_value",
+                    "secretValue",
                     &self.r#secret_value,
                 ),
                 to_pulumi_object_field(
-                    "string_value",
+                    "stringValue",
                     &self.r#string_value,
                 ),
             ];

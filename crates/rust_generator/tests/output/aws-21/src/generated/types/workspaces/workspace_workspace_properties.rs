@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compute_type_name",
+                    "computeTypeName",
                     &self.r#compute_type_name,
                 ),
                 to_pulumi_object_field(
-                    "root_volume_size_gib",
+                    "rootVolumeSizeGib",
                     &self.r#root_volume_size_gib,
                 ),
                 to_pulumi_object_field(
-                    "running_mode",
+                    "runningMode",
                     &self.r#running_mode,
                 ),
                 to_pulumi_object_field(
-                    "running_mode_auto_stop_timeout_in_minutes",
+                    "runningModeAutoStopTimeoutInMinutes",
                     &self.r#running_mode_auto_stop_timeout_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "user_volume_size_gib",
+                    "userVolumeSizeGib",
                     &self.r#user_volume_size_gib,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_config_based_issuance",
+                    "allowConfigBasedIssuance",
                     &self.r#allow_config_based_issuance,
                 ),
                 to_pulumi_object_field(
-                    "allow_csr_based_issuance",
+                    "allowCsrBasedIssuance",
                     &self.r#allow_csr_based_issuance,
                 ),
             ];

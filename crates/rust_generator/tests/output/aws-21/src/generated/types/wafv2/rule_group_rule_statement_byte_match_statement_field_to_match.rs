@@ -66,7 +66,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_query_arguments",
+                    "allQueryArguments",
                     &self.r#all_query_arguments,
                 ),
                 to_pulumi_object_field(
@@ -78,7 +78,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#cookies,
                 ),
                 to_pulumi_object_field(
-                    "header_orders",
+                    "headerOrders",
                     &self.r#header_orders,
                 ),
                 to_pulumi_object_field(
@@ -86,11 +86,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "ja_3_fingerprint",
+                    "ja3Fingerprint",
                     &self.r#ja_3_fingerprint,
                 ),
                 to_pulumi_object_field(
-                    "json_body",
+                    "jsonBody",
                     &self.r#json_body,
                 ),
                 to_pulumi_object_field(
@@ -98,19 +98,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#method,
                 ),
                 to_pulumi_object_field(
-                    "query_string",
+                    "queryString",
                     &self.r#query_string,
                 ),
                 to_pulumi_object_field(
-                    "single_header",
+                    "singleHeader",
                     &self.r#single_header,
                 ),
                 to_pulumi_object_field(
-                    "single_query_argument",
+                    "singleQueryArgument",
                     &self.r#single_query_argument,
                 ),
                 to_pulumi_object_field(
-                    "uri_path",
+                    "uriPath",
                     &self.r#uri_path,
                 ),
             ];

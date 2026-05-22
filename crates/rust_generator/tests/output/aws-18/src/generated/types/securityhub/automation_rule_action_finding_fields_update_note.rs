@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#text,
                 ),
                 to_pulumi_object_field(
-                    "updated_by",
+                    "updatedBy",
                     &self.r#updated_by,
                 ),
             ];

@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_rendition_sets",
+                    "audioRenditionSets",
                     &self.r#audio_rendition_sets,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_id_3_behavior",
+                    "nielsenId3Behavior",
                     &self.r#nielsen_id_3_behavior,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_behavior",
+                    "timedMetadataBehavior",
                     &self.r#timed_metadata_behavior,
                 ),
             ];

@@ -87,27 +87,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_address_pool_id",
+                    "backendAddressPoolId",
                     &self.r#backend_address_pool_id,
                 ),
                 to_pulumi_object_field(
-                    "backend_address_pool_name",
+                    "backendAddressPoolName",
                     &self.r#backend_address_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "backend_http_settings_id",
+                    "backendHttpSettingsId",
                     &self.r#backend_http_settings_id,
                 ),
                 to_pulumi_object_field(
-                    "backend_http_settings_name",
+                    "backendHttpSettingsName",
                     &self.r#backend_http_settings_name,
                 ),
                 to_pulumi_object_field(
-                    "http_listener_id",
+                    "httpListenerId",
                     &self.r#http_listener_id,
                 ),
                 to_pulumi_object_field(
-                    "http_listener_name",
+                    "httpListenerName",
                     &self.r#http_listener_name,
                 ),
                 to_pulumi_object_field(
@@ -123,31 +123,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "redirect_configuration_id",
+                    "redirectConfigurationId",
                     &self.r#redirect_configuration_id,
                 ),
                 to_pulumi_object_field(
-                    "redirect_configuration_name",
+                    "redirectConfigurationName",
                     &self.r#redirect_configuration_name,
                 ),
                 to_pulumi_object_field(
-                    "rewrite_rule_set_id",
+                    "rewriteRuleSetId",
                     &self.r#rewrite_rule_set_id,
                 ),
                 to_pulumi_object_field(
-                    "rewrite_rule_set_name",
+                    "rewriteRuleSetName",
                     &self.r#rewrite_rule_set_name,
                 ),
                 to_pulumi_object_field(
-                    "rule_type",
+                    "ruleType",
                     &self.r#rule_type,
                 ),
                 to_pulumi_object_field(
-                    "url_path_map_id",
+                    "urlPathMapId",
                     &self.r#url_path_map_id,
                 ),
                 to_pulumi_object_field(
-                    "url_path_map_name",
+                    "urlPathMapName",
                     &self.r#url_path_map_name,
                 ),
             ];

@@ -67,51 +67,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_identification_type",
+                    "contentIdentificationType",
                     &self.r#content_identification_type,
                 ),
                 to_pulumi_object_field(
-                    "content_redaction_type",
+                    "contentRedactionType",
                     &self.r#content_redaction_type,
                 ),
                 to_pulumi_object_field(
-                    "enable_partial_results_stabilization",
+                    "enablePartialResultsStabilization",
                     &self.r#enable_partial_results_stabilization,
                 ),
                 to_pulumi_object_field(
-                    "filter_partial_results",
+                    "filterPartialResults",
                     &self.r#filter_partial_results,
                 ),
                 to_pulumi_object_field(
-                    "language_code",
+                    "languageCode",
                     &self.r#language_code,
                 ),
                 to_pulumi_object_field(
-                    "language_model_name",
+                    "languageModelName",
                     &self.r#language_model_name,
                 ),
                 to_pulumi_object_field(
-                    "partial_results_stability",
+                    "partialResultsStability",
                     &self.r#partial_results_stability,
                 ),
                 to_pulumi_object_field(
-                    "pii_entity_types",
+                    "piiEntityTypes",
                     &self.r#pii_entity_types,
                 ),
                 to_pulumi_object_field(
-                    "show_speaker_label",
+                    "showSpeakerLabel",
                     &self.r#show_speaker_label,
                 ),
                 to_pulumi_object_field(
-                    "vocabulary_filter_method",
+                    "vocabularyFilterMethod",
                     &self.r#vocabulary_filter_method,
                 ),
                 to_pulumi_object_field(
-                    "vocabulary_filter_name",
+                    "vocabularyFilterName",
                     &self.r#vocabulary_filter_name,
                 ),
                 to_pulumi_object_field(
-                    "vocabulary_name",
+                    "vocabularyName",
                     &self.r#vocabulary_name,
                 ),
             ];

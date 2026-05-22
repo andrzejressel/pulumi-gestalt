@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#primary,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address_allocation",
+                    "privateIpAddressAllocation",
                     &self.r#private_ip_address_allocation,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

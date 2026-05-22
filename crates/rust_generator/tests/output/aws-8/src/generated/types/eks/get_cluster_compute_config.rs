@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "node_pools",
+                    "nodePools",
                     &self.r#node_pools,
                 ),
                 to_pulumi_object_field(
-                    "node_role_arn",
+                    "nodeRoleArn",
                     &self.r#node_role_arn,
                 ),
             ];

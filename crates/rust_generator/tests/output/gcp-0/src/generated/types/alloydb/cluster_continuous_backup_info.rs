@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "earliest_restorable_time",
+                    "earliestRestorableTime",
                     &self.r#earliest_restorable_time,
                 ),
                 to_pulumi_object_field(
-                    "enabled_time",
+                    "enabledTime",
                     &self.r#enabled_time,
                 ),
                 to_pulumi_object_field(
-                    "encryption_infos",
+                    "encryptionInfos",
                     &self.r#encryption_infos,
                 ),
                 to_pulumi_object_field(

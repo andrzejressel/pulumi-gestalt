@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_consent_based_redaction",
+                    "enableConsentBasedRedaction",
                     &self.r#enable_consent_based_redaction,
                 ),
                 to_pulumi_object_field(
-                    "enable_interaction_logging",
+                    "enableInteractionLogging",
                     &self.r#enable_interaction_logging,
                 ),
                 to_pulumi_object_field(
-                    "enable_stackdriver_logging",
+                    "enableStackdriverLogging",
                     &self.r#enable_stackdriver_logging,
                 ),
             ];

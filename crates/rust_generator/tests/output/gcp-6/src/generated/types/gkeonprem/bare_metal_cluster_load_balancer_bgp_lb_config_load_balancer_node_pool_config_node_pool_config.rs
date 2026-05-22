@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kubelet_config",
+                    "kubeletConfig",
                     &self.r#kubelet_config,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "node_configs",
+                    "nodeConfigs",
                     &self.r#node_configs,
                 ),
                 to_pulumi_object_field(
-                    "operating_system",
+                    "operatingSystem",
                     &self.r#operating_system,
                 ),
                 to_pulumi_object_field(

@@ -59,31 +59,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_type",
+                    "authenticationType",
                     &self.r#authentication_type,
                 ),
                 to_pulumi_object_field(
-                    "connection_string",
+                    "connectionString",
                     &self.r#connection_string,
                 ),
                 to_pulumi_object_field(
-                    "container_name",
+                    "containerName",
                     &self.r#container_name,
                 ),
                 to_pulumi_object_field(
-                    "default_ttl",
+                    "defaultTtl",
                     &self.r#default_ttl,
                 ),
                 to_pulumi_object_field(
-                    "identity_id",
+                    "identityId",
                     &self.r#identity_id,
                 ),
                 to_pulumi_object_field(
-                    "lock_duration",
+                    "lockDuration",
                     &self.r#lock_duration,
                 ),
                 to_pulumi_object_field(
-                    "max_delivery_count",
+                    "maxDeliveryCount",
                     &self.r#max_delivery_count,
                 ),
                 to_pulumi_object_field(
@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
                     &self.r#notifications,
                 ),
                 to_pulumi_object_field(
-                    "sas_ttl",
+                    "sasTtl",
                     &self.r#sas_ttl,
                 ),
             ];

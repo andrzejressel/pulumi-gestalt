@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_security_group_id",
+                    "clusterSecurityGroupId",
                     &self.r#cluster_security_group_id,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_private_access",
+                    "endpointPrivateAccess",
                     &self.r#endpoint_private_access,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_public_access",
+                    "endpointPublicAccess",
                     &self.r#endpoint_public_access,
                 ),
                 to_pulumi_object_field(
-                    "public_access_cidrs",
+                    "publicAccessCidrs",
                     &self.r#public_access_cidrs,
                 ),
                 to_pulumi_object_field(
-                    "security_group_ids",
+                    "securityGroupIds",
                     &self.r#security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "subnet_ids",
+                    "subnetIds",
                     &self.r#subnet_ids,
                 ),
                 to_pulumi_object_field(
-                    "vpc_id",
+                    "vpcId",
                     &self.r#vpc_id,
                 ),
             ];

@@ -61,11 +61,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
                     &self.r#artifacts,
                 ),
                 to_pulumi_object_field(
-                    "desired_state",
+                    "desiredState",
                     &self.r#desired_state,
                 ),
                 to_pulumi_object_field(
-                    "install_steps",
+                    "installSteps",
                     &self.r#install_steps,
                 ),
                 to_pulumi_object_field(
@@ -73,7 +73,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "update_steps",
+                    "updateSteps",
                     &self.r#update_steps,
                 ),
                 to_pulumi_object_field(

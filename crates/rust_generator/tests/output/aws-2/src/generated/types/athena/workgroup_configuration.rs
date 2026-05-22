@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bytes_scanned_cutoff_per_query",
+                    "bytesScannedCutoffPerQuery",
                     &self.r#bytes_scanned_cutoff_per_query,
                 ),
                 to_pulumi_object_field(
-                    "enforce_workgroup_configuration",
+                    "enforceWorkgroupConfiguration",
                     &self.r#enforce_workgroup_configuration,
                 ),
                 to_pulumi_object_field(
-                    "engine_version",
+                    "engineVersion",
                     &self.r#engine_version,
                 ),
                 to_pulumi_object_field(
-                    "execution_role",
+                    "executionRole",
                     &self.r#execution_role,
                 ),
                 to_pulumi_object_field(
-                    "publish_cloudwatch_metrics_enabled",
+                    "publishCloudwatchMetricsEnabled",
                     &self.r#publish_cloudwatch_metrics_enabled,
                 ),
                 to_pulumi_object_field(
-                    "requester_pays_enabled",
+                    "requesterPaysEnabled",
                     &self.r#requester_pays_enabled,
                 ),
                 to_pulumi_object_field(
-                    "result_configuration",
+                    "resultConfiguration",
                     &self.r#result_configuration,
                 ),
             ];

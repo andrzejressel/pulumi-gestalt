@@ -72,43 +72,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_restart",
+                    "automaticRestart",
                     &self.r#automatic_restart,
                 ),
                 to_pulumi_object_field(
-                    "host_error_timeout_seconds",
+                    "hostErrorTimeoutSeconds",
                     &self.r#host_error_timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "instance_termination_action",
+                    "instanceTerminationAction",
                     &self.r#instance_termination_action,
                 ),
                 to_pulumi_object_field(
-                    "local_ssd_recovery_timeouts",
+                    "localSsdRecoveryTimeouts",
                     &self.r#local_ssd_recovery_timeouts,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_interval",
+                    "maintenanceInterval",
                     &self.r#maintenance_interval,
                 ),
                 to_pulumi_object_field(
-                    "max_run_durations",
+                    "maxRunDurations",
                     &self.r#max_run_durations,
                 ),
                 to_pulumi_object_field(
-                    "min_node_cpus",
+                    "minNodeCpus",
                     &self.r#min_node_cpus,
                 ),
                 to_pulumi_object_field(
-                    "node_affinities",
+                    "nodeAffinities",
                     &self.r#node_affinities,
                 ),
                 to_pulumi_object_field(
-                    "on_host_maintenance",
+                    "onHostMaintenance",
                     &self.r#on_host_maintenance,
                 ),
                 to_pulumi_object_field(
-                    "on_instance_stop_actions",
+                    "onInstanceStopActions",
                     &self.r#on_instance_stop_actions,
                 ),
                 to_pulumi_object_field(
@@ -116,7 +116,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#preemptible,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_model",
+                    "provisioningModel",
                     &self.r#provisioning_model,
                 ),
             ];

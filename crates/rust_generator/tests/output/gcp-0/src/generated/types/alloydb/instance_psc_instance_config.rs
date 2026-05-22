@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_consumer_projects",
+                    "allowedConsumerProjects",
                     &self.r#allowed_consumer_projects,
                 ),
                 to_pulumi_object_field(
-                    "psc_dns_name",
+                    "pscDnsName",
                     &self.r#psc_dns_name,
                 ),
                 to_pulumi_object_field(
-                    "service_attachment_link",
+                    "serviceAttachmentLink",
                     &self.r#service_attachment_link,
                 ),
             ];

@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "member_name",
+                    "memberName",
                     &self.r#member_name,
                 ),
                 to_pulumi_object_field(
@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "subresource_name",
+                    "subresourceName",
                     &self.r#subresource_name,
                 ),
             ];

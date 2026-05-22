@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_status",
+                    "connectionStatus",
                     &self.r#connection_status,
                 ),
                 to_pulumi_object_field(
-                    "local_fqdn",
+                    "localFqdn",
                     &self.r#local_fqdn,
                 ),
                 to_pulumi_object_field(
-                    "target_service_attachment_uri",
+                    "targetServiceAttachmentUri",
                     &self.r#target_service_attachment_uri,
                 ),
             ];

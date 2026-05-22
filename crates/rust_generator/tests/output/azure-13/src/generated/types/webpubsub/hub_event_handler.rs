@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hub
                     &self.r#auth,
                 ),
                 to_pulumi_object_field(
-                    "system_events",
+                    "systemEvents",
                     &self.r#system_events,
                 ),
                 to_pulumi_object_field(
-                    "url_template",
+                    "urlTemplate",
                     &self.r#url_template,
                 ),
                 to_pulumi_object_field(
-                    "user_event_pattern",
+                    "userEventPattern",
                     &self.r#user_event_pattern,
                 ),
             ];

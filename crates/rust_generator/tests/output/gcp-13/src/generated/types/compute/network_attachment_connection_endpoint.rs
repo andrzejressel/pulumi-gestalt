@@ -44,15 +44,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
                 to_pulumi_object_field(
-                    "project_id_or_num",
+                    "projectIdOrNum",
                     &self.r#project_id_or_num,
                 ),
                 to_pulumi_object_field(
-                    "secondary_ip_cidr_ranges",
+                    "secondaryIpCidrRanges",
                     &self.r#secondary_ip_cidr_ranges,
                 ),
                 to_pulumi_object_field(

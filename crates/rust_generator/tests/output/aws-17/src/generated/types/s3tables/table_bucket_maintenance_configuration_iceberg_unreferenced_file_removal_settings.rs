@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "non_current_days",
+                    "nonCurrentDays",
                     &self.r#non_current_days,
                 ),
                 to_pulumi_object_field(
-                    "unreferenced_days",
+                    "unreferencedDays",
                     &self.r#unreferenced_days,
                 ),
             ];

@@ -42,27 +42,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_step_details",
+                    "copyStepDetails",
                     &self.r#copy_step_details,
                 ),
                 to_pulumi_object_field(
-                    "custom_step_details",
+                    "customStepDetails",
                     &self.r#custom_step_details,
                 ),
                 to_pulumi_object_field(
-                    "decrypt_step_details",
+                    "decryptStepDetails",
                     &self.r#decrypt_step_details,
                 ),
                 to_pulumi_object_field(
-                    "delete_step_details",
+                    "deleteStepDetails",
                     &self.r#delete_step_details,
                 ),
                 to_pulumi_object_field(
-                    "tag_step_details",
+                    "tagStepDetails",
                     &self.r#tag_step_details,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_key",
+                    "accountKey",
                     &self.r#account_key,
                 ),
                 to_pulumi_object_field(
-                    "account_name",
+                    "accountName",
                     &self.r#account_name,
                 ),
                 to_pulumi_object_field(
-                    "blobfuse_options",
+                    "blobfuseOptions",
                     &self.r#blobfuse_options,
                 ),
                 to_pulumi_object_field(
-                    "container_name",
+                    "containerName",
                     &self.r#container_name,
                 ),
                 to_pulumi_object_field(
-                    "identity_id",
+                    "identityId",
                     &self.r#identity_id,
                 ),
                 to_pulumi_object_field(
-                    "relative_mount_path",
+                    "relativeMountPath",
                     &self.r#relative_mount_path,
                 ),
                 to_pulumi_object_field(
-                    "sas_key",
+                    "sasKey",
                     &self.r#sas_key,
                 ),
             ];

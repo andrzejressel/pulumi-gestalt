@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_token_only",
+                    "accessTokenOnly",
                     &self.r#access_token_only,
                 ),
                 to_pulumi_object_field(
-                    "identity_token_only",
+                    "identityTokenOnly",
                     &self.r#identity_token_only,
                 ),
             ];

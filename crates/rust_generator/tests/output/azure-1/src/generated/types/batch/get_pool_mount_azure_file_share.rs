@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_key",
+                    "accountKey",
                     &self.r#account_key,
                 ),
                 to_pulumi_object_field(
-                    "account_name",
+                    "accountName",
                     &self.r#account_name,
                 ),
                 to_pulumi_object_field(
-                    "azure_file_url",
+                    "azureFileUrl",
                     &self.r#azure_file_url,
                 ),
                 to_pulumi_object_field(
-                    "mount_options",
+                    "mountOptions",
                     &self.r#mount_options,
                 ),
                 to_pulumi_object_field(
-                    "relative_mount_path",
+                    "relativeMountPath",
                     &self.r#relative_mount_path,
                 ),
             ];

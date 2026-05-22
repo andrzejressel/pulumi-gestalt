@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "local_address_cidrs",
+                    "localAddressCidrs",
                     &self.r#local_address_cidrs,
                 ),
                 to_pulumi_object_field(
-                    "remote_address_cidrs",
+                    "remoteAddressCidrs",
                     &self.r#remote_address_cidrs,
                 ),
             ];

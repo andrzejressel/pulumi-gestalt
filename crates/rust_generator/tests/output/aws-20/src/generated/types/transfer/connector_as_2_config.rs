@@ -55,31 +55,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "encryption_algorithm",
+                    "encryptionAlgorithm",
                     &self.r#encryption_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "local_profile_id",
+                    "localProfileId",
                     &self.r#local_profile_id,
                 ),
                 to_pulumi_object_field(
-                    "mdn_response",
+                    "mdnResponse",
                     &self.r#mdn_response,
                 ),
                 to_pulumi_object_field(
-                    "mdn_signing_algorithm",
+                    "mdnSigningAlgorithm",
                     &self.r#mdn_signing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "message_subject",
+                    "messageSubject",
                     &self.r#message_subject,
                 ),
                 to_pulumi_object_field(
-                    "partner_profile_id",
+                    "partnerProfileId",
                     &self.r#partner_profile_id,
                 ),
                 to_pulumi_object_field(
-                    "signing_algorithm",
+                    "signingAlgorithm",
                     &self.r#signing_algorithm,
                 ),
             ];

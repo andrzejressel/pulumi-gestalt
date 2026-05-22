@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_string",
+                    "connectionString",
                     &self.r#connection_string,
                 ),
                 to_pulumi_object_field(
-                    "resource_id",
+                    "resourceId",
                     &self.r#resource_id,
                 ),
                 to_pulumi_object_field(
-                    "trigger_url",
+                    "triggerUrl",
                     &self.r#trigger_url,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "after_stage_wait_in_seconds",
+                    "afterStageWaitInSeconds",
                     &self.r#after_stage_wait_in_seconds,
                 ),
                 to_pulumi_object_field(

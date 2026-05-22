@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ledger_role_name",
+                    "ledgerRoleName",
                     &self.r#ledger_role_name,
                 ),
                 to_pulumi_object_field(
-                    "principal_id",
+                    "principalId",
                     &self.r#principal_id,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

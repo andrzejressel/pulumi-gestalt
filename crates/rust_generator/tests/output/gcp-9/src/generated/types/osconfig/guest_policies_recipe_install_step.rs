@@ -54,31 +54,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_extraction",
+                    "archiveExtraction",
                     &self.r#archive_extraction,
                 ),
                 to_pulumi_object_field(
-                    "dpkg_installation",
+                    "dpkgInstallation",
                     &self.r#dpkg_installation,
                 ),
                 to_pulumi_object_field(
-                    "file_copy",
+                    "fileCopy",
                     &self.r#file_copy,
                 ),
                 to_pulumi_object_field(
-                    "file_exec",
+                    "fileExec",
                     &self.r#file_exec,
                 ),
                 to_pulumi_object_field(
-                    "msi_installation",
+                    "msiInstallation",
                     &self.r#msi_installation,
                 ),
                 to_pulumi_object_field(
-                    "rpm_installation",
+                    "rpmInstallation",
                     &self.r#rpm_installation,
                 ),
                 to_pulumi_object_field(
-                    "script_run",
+                    "scriptRun",
                     &self.r#script_run,
                 ),
             ];

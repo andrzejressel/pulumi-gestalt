@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cognito_user_pool_configuration",
+                    "cognitoUserPoolConfiguration",
                     &self.r#cognito_user_pool_configuration,
                 ),
                 to_pulumi_object_field(
-                    "open_id_connect_configuration",
+                    "openIdConnectConfiguration",
                     &self.r#open_id_connect_configuration,
                 ),
             ];

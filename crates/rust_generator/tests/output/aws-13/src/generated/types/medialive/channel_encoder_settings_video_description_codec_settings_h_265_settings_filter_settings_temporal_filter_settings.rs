@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "post_filter_sharpening",
+                    "postFilterSharpening",
                     &self.r#post_filter_sharpening,
                 ),
                 to_pulumi_object_field(

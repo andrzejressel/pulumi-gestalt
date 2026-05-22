@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "destination_cidr_blocks",
+                    "destinationCidrBlocks",
                     &self.r#destination_cidr_blocks,
                 ),
                 to_pulumi_object_field(
@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#segment,
                 ),
                 to_pulumi_object_field(
-                    "share_with_excepts",
+                    "shareWithExcepts",
                     &self.r#share_with_excepts,
                 ),
                 to_pulumi_object_field(
-                    "share_withs",
+                    "shareWiths",
                     &self.r#share_withs,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#via,
                 ),
                 to_pulumi_object_field(
-                    "when_sent_to",
+                    "whenSentTo",
                     &self.r#when_sent_to,
                 ),
             ];

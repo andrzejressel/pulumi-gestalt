@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_disabled",
+                    "apiDisabled",
                     &self.r#api_disabled,
                 ),
                 to_pulumi_object_field(
-                    "custom_support_level",
+                    "customSupportLevel",
                     &self.r#custom_support_level,
                 ),
                 to_pulumi_object_field(

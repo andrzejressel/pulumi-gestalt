@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "propagate_at_launch",
+                    "propagateAtLaunch",
                     &self.r#propagate_at_launch,
                 ),
                 to_pulumi_object_field(

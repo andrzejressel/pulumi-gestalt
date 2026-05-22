@@ -26,7 +26,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cross_region_copies",
+                    "crossRegionCopies",
                     &self.r#cross_region_copies,
                 ),
                 to_pulumi_object_field(

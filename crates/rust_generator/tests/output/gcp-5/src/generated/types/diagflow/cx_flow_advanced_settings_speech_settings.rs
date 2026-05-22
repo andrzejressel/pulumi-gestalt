@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpointer_sensitivity",
+                    "endpointerSensitivity",
                     &self.r#endpointer_sensitivity,
                 ),
                 to_pulumi_object_field(
@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
                     &self.r#models,
                 ),
                 to_pulumi_object_field(
-                    "no_speech_timeout",
+                    "noSpeechTimeout",
                     &self.r#no_speech_timeout,
                 ),
                 to_pulumi_object_field(
-                    "use_timeout_based_endpointing",
+                    "useTimeoutBasedEndpointing",
                     &self.r#use_timeout_based_endpointing,
                 ),
             ];

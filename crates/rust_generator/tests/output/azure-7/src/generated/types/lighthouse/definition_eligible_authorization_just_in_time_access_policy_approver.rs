@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "principal_display_name",
+                    "principalDisplayName",
                     &self.r#principal_display_name,
                 ),
                 to_pulumi_object_field(
-                    "principal_id",
+                    "principalId",
                     &self.r#principal_id,
                 ),
             ];

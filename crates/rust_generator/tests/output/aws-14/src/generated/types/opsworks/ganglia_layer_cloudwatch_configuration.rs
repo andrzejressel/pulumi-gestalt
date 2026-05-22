@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gan
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "log_streams",
+                    "logStreams",
                     &self.r#log_streams,
                 ),
             ];

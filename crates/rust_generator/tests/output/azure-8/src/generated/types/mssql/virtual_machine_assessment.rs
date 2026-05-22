@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "run_immediately",
+                    "runImmediately",
                     &self.r#run_immediately,
                 ),
                 to_pulumi_object_field(

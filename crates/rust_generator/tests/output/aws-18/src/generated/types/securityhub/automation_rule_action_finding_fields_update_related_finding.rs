@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "product_arn",
+                    "productArn",
                     &self.r#product_arn,
                 ),
             ];

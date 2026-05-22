@@ -60,35 +60,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_normalization_settings",
+                    "audioNormalizationSettings",
                     &self.r#audio_normalization_settings,
                 ),
                 to_pulumi_object_field(
-                    "audio_selector_name",
+                    "audioSelectorName",
                     &self.r#audio_selector_name,
                 ),
                 to_pulumi_object_field(
-                    "audio_type",
+                    "audioType",
                     &self.r#audio_type,
                 ),
                 to_pulumi_object_field(
-                    "audio_type_control",
+                    "audioTypeControl",
                     &self.r#audio_type_control,
                 ),
                 to_pulumi_object_field(
-                    "audio_watermark_settings",
+                    "audioWatermarkSettings",
                     &self.r#audio_watermark_settings,
                 ),
                 to_pulumi_object_field(
-                    "codec_settings",
+                    "codecSettings",
                     &self.r#codec_settings,
                 ),
                 to_pulumi_object_field(
-                    "language_code",
+                    "languageCode",
                     &self.r#language_code,
                 ),
                 to_pulumi_object_field(
-                    "language_code_control",
+                    "languageCodeControl",
                     &self.r#language_code_control,
                 ),
                 to_pulumi_object_field(
@@ -96,11 +96,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "remix_settings",
+                    "remixSettings",
                     &self.r#remix_settings,
                 ),
                 to_pulumi_object_field(
-                    "stream_name",
+                    "streamName",
                     &self.r#stream_name,
                 ),
             ];

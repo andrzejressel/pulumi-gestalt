@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instances_distributions",
+                    "instancesDistributions",
                     &self.r#instances_distributions,
                 ),
                 to_pulumi_object_field(
-                    "launch_templates",
+                    "launchTemplates",
                     &self.r#launch_templates,
                 ),
             ];

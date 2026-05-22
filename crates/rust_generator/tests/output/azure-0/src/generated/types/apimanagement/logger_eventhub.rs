@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Log
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_string",
+                    "connectionString",
                     &self.r#connection_string,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_uri",
+                    "endpointUri",
                     &self.r#endpoint_uri,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Log
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "user_assigned_identity_client_id",
+                    "userAssignedIdentityClientId",
                     &self.r#user_assigned_identity_client_id,
                 ),
             ];

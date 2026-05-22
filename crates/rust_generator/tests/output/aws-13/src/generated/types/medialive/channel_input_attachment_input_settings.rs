@@ -62,47 +62,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_selectors",
+                    "audioSelectors",
                     &self.r#audio_selectors,
                 ),
                 to_pulumi_object_field(
-                    "caption_selectors",
+                    "captionSelectors",
                     &self.r#caption_selectors,
                 ),
                 to_pulumi_object_field(
-                    "deblock_filter",
+                    "deblockFilter",
                     &self.r#deblock_filter,
                 ),
                 to_pulumi_object_field(
-                    "denoise_filter",
+                    "denoiseFilter",
                     &self.r#denoise_filter,
                 ),
                 to_pulumi_object_field(
-                    "filter_strength",
+                    "filterStrength",
                     &self.r#filter_strength,
                 ),
                 to_pulumi_object_field(
-                    "input_filter",
+                    "inputFilter",
                     &self.r#input_filter,
                 ),
                 to_pulumi_object_field(
-                    "network_input_settings",
+                    "networkInputSettings",
                     &self.r#network_input_settings,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_pid",
+                    "scte35Pid",
                     &self.r#scte_35_pid,
                 ),
                 to_pulumi_object_field(
-                    "smpte_2038_data_preference",
+                    "smpte2038DataPreference",
                     &self.r#smpte_2038_data_preference,
                 ),
                 to_pulumi_object_field(
-                    "source_end_behavior",
+                    "sourceEndBehavior",
                     &self.r#source_end_behavior,
                 ),
                 to_pulumi_object_field(
-                    "video_selector",
+                    "videoSelector",
                     &self.r#video_selector,
                 ),
             ];

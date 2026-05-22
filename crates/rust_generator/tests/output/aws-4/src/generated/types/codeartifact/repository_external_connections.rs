@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "external_connection_name",
+                    "externalConnectionName",
                     &self.r#external_connection_name,
                 ),
                 to_pulumi_object_field(
-                    "package_format",
+                    "packageFormat",
                     &self.r#package_format,
                 ),
                 to_pulumi_object_field(

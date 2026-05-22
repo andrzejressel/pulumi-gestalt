@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_host_ports",
+                    "allowedHostPorts",
                     &self.r#allowed_host_ports,
                 ),
                 to_pulumi_object_field(
-                    "application_security_group_ids",
+                    "applicationSecurityGroupIds",
                     &self.r#application_security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "node_public_ip_tags",
+                    "nodePublicIpTags",
                     &self.r#node_public_ip_tags,
                 ),
             ];

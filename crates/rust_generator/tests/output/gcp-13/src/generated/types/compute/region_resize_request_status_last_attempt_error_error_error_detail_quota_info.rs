@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "future_limit",
+                    "futureLimit",
                     &self.r#future_limit,
                 ),
                 to_pulumi_object_field(
@@ -61,15 +61,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#limit,
                 ),
                 to_pulumi_object_field(
-                    "limit_name",
+                    "limitName",
                     &self.r#limit_name,
                 ),
                 to_pulumi_object_field(
-                    "metric_name",
+                    "metricName",
                     &self.r#metric_name,
                 ),
                 to_pulumi_object_field(
-                    "rollout_status",
+                    "rolloutStatus",
                     &self.r#rollout_status,
                 ),
             ];

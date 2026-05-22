@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_tier",
+                    "clusterTier",
                     &self.r#cluster_tier,
                 ),
                 to_pulumi_object_field(
-                    "desired_tier",
+                    "desiredTier",
                     &self.r#desired_tier,
                 ),
             ];

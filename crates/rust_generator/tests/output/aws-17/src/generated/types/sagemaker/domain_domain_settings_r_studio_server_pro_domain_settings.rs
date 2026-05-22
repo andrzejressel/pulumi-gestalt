@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_resource_spec",
+                    "defaultResourceSpec",
                     &self.r#default_resource_spec,
                 ),
                 to_pulumi_object_field(
-                    "domain_execution_role_arn",
+                    "domainExecutionRoleArn",
                     &self.r#domain_execution_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "r_studio_connect_url",
+                    "rStudioConnectUrl",
                     &self.r#r_studio_connect_url,
                 ),
                 to_pulumi_object_field(
-                    "r_studio_package_manager_url",
+                    "rStudioPackageManagerUrl",
                     &self.r#r_studio_package_manager_url,
                 ),
             ];

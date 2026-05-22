@@ -89,27 +89,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_ejection_times",
+                    "baseEjectionTimes",
                     &self.r#base_ejection_times,
                 ),
                 to_pulumi_object_field(
-                    "consecutive_errors",
+                    "consecutiveErrors",
                     &self.r#consecutive_errors,
                 ),
                 to_pulumi_object_field(
-                    "consecutive_gateway_failure",
+                    "consecutiveGatewayFailure",
                     &self.r#consecutive_gateway_failure,
                 ),
                 to_pulumi_object_field(
-                    "enforcing_consecutive_errors",
+                    "enforcingConsecutiveErrors",
                     &self.r#enforcing_consecutive_errors,
                 ),
                 to_pulumi_object_field(
-                    "enforcing_consecutive_gateway_failure",
+                    "enforcingConsecutiveGatewayFailure",
                     &self.r#enforcing_consecutive_gateway_failure,
                 ),
                 to_pulumi_object_field(
-                    "enforcing_success_rate",
+                    "enforcingSuccessRate",
                     &self.r#enforcing_success_rate,
                 ),
                 to_pulumi_object_field(
@@ -117,19 +117,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#intervals,
                 ),
                 to_pulumi_object_field(
-                    "max_ejection_percent",
+                    "maxEjectionPercent",
                     &self.r#max_ejection_percent,
                 ),
                 to_pulumi_object_field(
-                    "success_rate_minimum_hosts",
+                    "successRateMinimumHosts",
                     &self.r#success_rate_minimum_hosts,
                 ),
                 to_pulumi_object_field(
-                    "success_rate_request_volume",
+                    "successRateRequestVolume",
                     &self.r#success_rate_request_volume,
                 ),
                 to_pulumi_object_field(
-                    "success_rate_stdev_factor",
+                    "successRateStdevFactor",
                     &self.r#success_rate_stdev_factor,
                 ),
             ];

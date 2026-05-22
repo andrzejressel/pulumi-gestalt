@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gdc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_properties",
+                    "defaultProperties",
                     &self.r#default_properties,
                 ),
                 to_pulumi_object_field(
-                    "default_version",
+                    "defaultVersion",
                     &self.r#default_version,
                 ),
             ];

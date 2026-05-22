@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "efs_volume_configurations",
+                    "efsVolumeConfigurations",
                     &self.r#efs_volume_configurations,
                 ),
                 to_pulumi_object_field(

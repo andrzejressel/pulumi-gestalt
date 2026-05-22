@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_log_destination",
+                    "cloudwatchLogDestination",
                     &self.r#cloudwatch_log_destination,
                 ),
                 to_pulumi_object_field(
-                    "is_logging_enabled",
+                    "isLoggingEnabled",
                     &self.r#is_logging_enabled,
                 ),
             ];

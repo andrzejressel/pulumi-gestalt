@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "header_action",
+                    "headerAction",
                     &self.r#header_action,
                 ),
                 to_pulumi_object_field(
-                    "url_rewrite",
+                    "urlRewrite",
                     &self.r#url_rewrite,
                 ),
             ];

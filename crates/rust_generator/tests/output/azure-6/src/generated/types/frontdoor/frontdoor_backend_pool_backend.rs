@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "host_header",
+                    "hostHeader",
                     &self.r#host_header,
                 ),
                 to_pulumi_object_field(
-                    "http_port",
+                    "httpPort",
                     &self.r#http_port,
                 ),
                 to_pulumi_object_field(
-                    "https_port",
+                    "httpsPort",
                     &self.r#https_port,
                 ),
                 to_pulumi_object_field(

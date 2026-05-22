@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "execution_config",
+                    "executionConfig",
                     &self.r#execution_config,
                 ),
                 to_pulumi_object_field(
-                    "peripherals_config",
+                    "peripheralsConfig",
                     &self.r#peripherals_config,
                 ),
             ];

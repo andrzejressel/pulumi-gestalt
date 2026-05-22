@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bearer_token_sending_methods",
+                    "bearerTokenSendingMethods",
                     &self.r#bearer_token_sending_methods,
                 ),
                 to_pulumi_object_field(
-                    "openid_provider_name",
+                    "openidProviderName",
                     &self.r#openid_provider_name,
                 ),
             ];

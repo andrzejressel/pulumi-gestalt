@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "conflict_detection",
+                    "conflictDetection",
                     &self.r#conflict_detection,
                 ),
                 to_pulumi_object_field(
-                    "conflict_handler",
+                    "conflictHandler",
                     &self.r#conflict_handler,
                 ),
                 to_pulumi_object_field(
-                    "lambda_conflict_handler_config",
+                    "lambdaConflictHandlerConfig",
                     &self.r#lambda_conflict_handler_config,
                 ),
             ];

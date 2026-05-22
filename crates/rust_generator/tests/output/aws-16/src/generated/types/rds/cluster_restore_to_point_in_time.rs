@@ -40,23 +40,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "restore_to_time",
+                    "restoreToTime",
                     &self.r#restore_to_time,
                 ),
                 to_pulumi_object_field(
-                    "restore_type",
+                    "restoreType",
                     &self.r#restore_type,
                 ),
                 to_pulumi_object_field(
-                    "source_cluster_identifier",
+                    "sourceClusterIdentifier",
                     &self.r#source_cluster_identifier,
                 ),
                 to_pulumi_object_field(
-                    "source_cluster_resource_id",
+                    "sourceClusterResourceId",
                     &self.r#source_cluster_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "use_latest_restorable_time",
+                    "useLatestRestorableTime",
                     &self.r#use_latest_restorable_time,
                 ),
             ];

@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "external_ids",
+                    "externalIds",
                     &self.r#external_ids,
                 ),
                 to_pulumi_object_field(
-                    "group_id",
+                    "groupId",
                     &self.r#group_id,
                 ),
                 to_pulumi_object_field(
-                    "identity_store_id",
+                    "identityStoreId",
                     &self.r#identity_store_id,
                 ),
             ];

@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kms_key_arn",
+                    "kmsKeyArn",
                     &self.r#kms_key_arn,
                 ),
                 to_pulumi_object_field(
@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "status_message",
+                    "statusMessage",
                     &self.r#status_message,
                 ),
             ];

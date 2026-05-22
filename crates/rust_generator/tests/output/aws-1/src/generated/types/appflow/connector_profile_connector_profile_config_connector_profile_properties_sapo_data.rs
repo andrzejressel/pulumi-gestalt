@@ -46,31 +46,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_host_url",
+                    "applicationHostUrl",
                     &self.r#application_host_url,
                 ),
                 to_pulumi_object_field(
-                    "application_service_path",
+                    "applicationServicePath",
                     &self.r#application_service_path,
                 ),
                 to_pulumi_object_field(
-                    "client_number",
+                    "clientNumber",
                     &self.r#client_number,
                 ),
                 to_pulumi_object_field(
-                    "logon_language",
+                    "logonLanguage",
                     &self.r#logon_language,
                 ),
                 to_pulumi_object_field(
-                    "oauth_properties",
+                    "oauthProperties",
                     &self.r#oauth_properties,
                 ),
                 to_pulumi_object_field(
-                    "port_number",
+                    "portNumber",
                     &self.r#port_number,
                 ),
                 to_pulumi_object_field(
-                    "private_link_service_name",
+                    "privateLinkServiceName",
                     &self.r#private_link_service_name,
                 ),
             ];

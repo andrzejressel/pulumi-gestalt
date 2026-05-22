@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "build_pack_ids",
+                    "buildPackIds",
                     &self.r#build_pack_ids,
                 ),
                 to_pulumi_object_field(

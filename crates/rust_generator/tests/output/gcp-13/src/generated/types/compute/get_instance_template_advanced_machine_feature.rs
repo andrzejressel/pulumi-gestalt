@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_nested_virtualization",
+                    "enableNestedVirtualization",
                     &self.r#enable_nested_virtualization,
                 ),
                 to_pulumi_object_field(
-                    "enable_uefi_networking",
+                    "enableUefiNetworking",
                     &self.r#enable_uefi_networking,
                 ),
                 to_pulumi_object_field(
-                    "performance_monitoring_unit",
+                    "performanceMonitoringUnit",
                     &self.r#performance_monitoring_unit,
                 ),
                 to_pulumi_object_field(
-                    "threads_per_core",
+                    "threadsPerCore",
                     &self.r#threads_per_core,
                 ),
                 to_pulumi_object_field(
-                    "turbo_mode",
+                    "turboMode",
                     &self.r#turbo_mode,
                 ),
                 to_pulumi_object_field(
-                    "visible_core_count",
+                    "visibleCoreCount",
                     &self.r#visible_core_count,
                 ),
             ];

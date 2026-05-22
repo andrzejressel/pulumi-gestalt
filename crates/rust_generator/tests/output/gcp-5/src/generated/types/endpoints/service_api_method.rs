@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "request_type",
+                    "requestType",
                     &self.r#request_type,
                 ),
                 to_pulumi_object_field(
-                    "response_type",
+                    "responseType",
                     &self.r#response_type,
                 ),
                 to_pulumi_object_field(

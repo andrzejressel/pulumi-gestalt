@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_audiences",
+                    "allowedAudiences",
                     &self.r#allowed_audiences,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
-                    "client_secret_setting_name",
+                    "clientSecretSettingName",
                     &self.r#client_secret_setting_name,
                 ),
             ];

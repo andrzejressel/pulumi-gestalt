@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "command_id",
+                    "commandId",
                     &self.r#command_id,
                 ),
                 to_pulumi_object_field(
@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#script,
                 ),
                 to_pulumi_object_field(
-                    "script_uri",
+                    "scriptUri",
                     &self.r#script_uri,
                 ),
                 to_pulumi_object_field(
-                    "script_uri_managed_identity",
+                    "scriptUriManagedIdentity",
                     &self.r#script_uri_managed_identity,
                 ),
             ];

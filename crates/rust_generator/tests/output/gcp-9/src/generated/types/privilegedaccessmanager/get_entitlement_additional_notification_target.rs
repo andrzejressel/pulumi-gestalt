@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_email_recipients",
+                    "adminEmailRecipients",
                     &self.r#admin_email_recipients,
                 ),
                 to_pulumi_object_field(
-                    "requester_email_recipients",
+                    "requesterEmailRecipients",
                     &self.r#requester_email_recipients,
                 ),
             ];

@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#grantee,
                 ),
                 to_pulumi_object_field(
-                    "grantee_type",
+                    "granteeType",
                     &self.r#grantee_type,
                 ),
             ];

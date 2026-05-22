@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loc
                     &self.r#feeds,
                 ),
                 to_pulumi_object_field(
-                    "local_rulestack_prefix_list_ids",
+                    "localRulestackPrefixListIds",
                     &self.r#local_rulestack_prefix_list_ids,
                 ),
             ];

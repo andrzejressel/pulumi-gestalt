@@ -133,7 +133,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_delete",
+                    "autoDelete",
                     &self.r#auto_delete,
                 ),
                 to_pulumi_object_field(
@@ -141,23 +141,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#boot,
                 ),
                 to_pulumi_object_field(
-                    "device_name",
+                    "deviceName",
                     &self.r#device_name,
                 ),
                 to_pulumi_object_field(
-                    "disk_encryption_keys",
+                    "diskEncryptionKeys",
                     &self.r#disk_encryption_keys,
                 ),
                 to_pulumi_object_field(
-                    "disk_name",
+                    "diskName",
                     &self.r#disk_name,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
@@ -173,19 +173,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_iops",
+                    "provisionedIops",
                     &self.r#provisioned_iops,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_throughput",
+                    "provisionedThroughput",
                     &self.r#provisioned_throughput,
                 ),
                 to_pulumi_object_field(
-                    "resource_manager_tags",
+                    "resourceManagerTags",
                     &self.r#resource_manager_tags,
                 ),
                 to_pulumi_object_field(
-                    "resource_policies",
+                    "resourcePolicies",
                     &self.r#resource_policies,
                 ),
                 to_pulumi_object_field(
@@ -193,23 +193,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#source,
                 ),
                 to_pulumi_object_field(
-                    "source_image",
+                    "sourceImage",
                     &self.r#source_image,
                 ),
                 to_pulumi_object_field(
-                    "source_image_encryption_keys",
+                    "sourceImageEncryptionKeys",
                     &self.r#source_image_encryption_keys,
                 ),
                 to_pulumi_object_field(
-                    "source_snapshot",
+                    "sourceSnapshot",
                     &self.r#source_snapshot,
                 ),
                 to_pulumi_object_field(
-                    "source_snapshot_encryption_keys",
+                    "sourceSnapshotEncryptionKeys",
                     &self.r#source_snapshot_encryption_keys,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

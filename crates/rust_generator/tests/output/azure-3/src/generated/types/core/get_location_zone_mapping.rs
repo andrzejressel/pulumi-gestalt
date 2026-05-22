@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "logical_zone",
+                    "logicalZone",
                     &self.r#logical_zone,
                 ),
                 to_pulumi_object_field(
-                    "physical_zone",
+                    "physicalZone",
                     &self.r#physical_zone,
                 ),
             ];

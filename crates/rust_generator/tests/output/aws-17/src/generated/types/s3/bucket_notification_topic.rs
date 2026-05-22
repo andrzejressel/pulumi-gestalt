@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#events,
                 ),
                 to_pulumi_object_field(
-                    "filter_prefix",
+                    "filterPrefix",
                     &self.r#filter_prefix,
                 ),
                 to_pulumi_object_field(
-                    "filter_suffix",
+                    "filterSuffix",
                     &self.r#filter_suffix,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "topic_arn",
+                    "topicArn",
                     &self.r#topic_arn,
                 ),
             ];

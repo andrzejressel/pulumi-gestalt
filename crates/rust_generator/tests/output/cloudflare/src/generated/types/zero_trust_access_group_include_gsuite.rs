@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#emails,
                 ),
                 to_pulumi_object_field(
-                    "identity_provider_id",
+                    "identityProviderId",
                     &self.r#identity_provider_id,
                 ),
             ];

@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "documentation_url",
+                    "documentationUrl",
                     &self.r#documentation_url,
                 ),
                 to_pulumi_object_field(
-                    "server_url",
+                    "serverUrl",
                     &self.r#server_url,
                 ),
                 to_pulumi_object_field(

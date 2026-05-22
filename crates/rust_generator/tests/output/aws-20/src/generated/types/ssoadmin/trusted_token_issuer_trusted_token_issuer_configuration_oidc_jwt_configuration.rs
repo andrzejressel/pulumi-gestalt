@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tru
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "claim_attribute_path",
+                    "claimAttributePath",
                     &self.r#claim_attribute_path,
                 ),
                 to_pulumi_object_field(
-                    "identity_store_attribute_path",
+                    "identityStoreAttributePath",
                     &self.r#identity_store_attribute_path,
                 ),
                 to_pulumi_object_field(
-                    "issuer_url",
+                    "issuerUrl",
                     &self.r#issuer_url,
                 ),
                 to_pulumi_object_field(
-                    "jwks_retrieval_option",
+                    "jwksRetrievalOption",
                     &self.r#jwks_retrieval_option,
                 ),
             ];

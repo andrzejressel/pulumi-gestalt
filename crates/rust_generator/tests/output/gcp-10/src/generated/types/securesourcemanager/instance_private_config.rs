@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ca_pool",
+                    "caPool",
                     &self.r#ca_pool,
                 ),
                 to_pulumi_object_field(
-                    "http_service_attachment",
+                    "httpServiceAttachment",
                     &self.r#http_service_attachment,
                 ),
                 to_pulumi_object_field(
-                    "is_private",
+                    "isPrivate",
                     &self.r#is_private,
                 ),
                 to_pulumi_object_field(
-                    "ssh_service_attachment",
+                    "sshServiceAttachment",
                     &self.r#ssh_service_attachment,
                 ),
             ];

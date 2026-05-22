@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Inf
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "leaf_domain_label",
+                    "leafDomainLabel",
                     &self.r#leaf_domain_label,
                 ),
                 to_pulumi_object_field(
-                    "overwrite_existing_domain",
+                    "overwriteExistingDomain",
                     &self.r#overwrite_existing_domain,
                 ),
             ];

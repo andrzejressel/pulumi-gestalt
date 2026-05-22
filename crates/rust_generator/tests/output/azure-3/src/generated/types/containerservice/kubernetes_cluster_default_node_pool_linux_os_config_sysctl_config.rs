@@ -135,119 +135,119 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fs_aio_max_nr",
+                    "fsAioMaxNr",
                     &self.r#fs_aio_max_nr,
                 ),
                 to_pulumi_object_field(
-                    "fs_file_max",
+                    "fsFileMax",
                     &self.r#fs_file_max,
                 ),
                 to_pulumi_object_field(
-                    "fs_inotify_max_user_watches",
+                    "fsInotifyMaxUserWatches",
                     &self.r#fs_inotify_max_user_watches,
                 ),
                 to_pulumi_object_field(
-                    "fs_nr_open",
+                    "fsNrOpen",
                     &self.r#fs_nr_open,
                 ),
                 to_pulumi_object_field(
-                    "kernel_threads_max",
+                    "kernelThreadsMax",
                     &self.r#kernel_threads_max,
                 ),
                 to_pulumi_object_field(
-                    "net_core_netdev_max_backlog",
+                    "netCoreNetdevMaxBacklog",
                     &self.r#net_core_netdev_max_backlog,
                 ),
                 to_pulumi_object_field(
-                    "net_core_optmem_max",
+                    "netCoreOptmemMax",
                     &self.r#net_core_optmem_max,
                 ),
                 to_pulumi_object_field(
-                    "net_core_rmem_default",
+                    "netCoreRmemDefault",
                     &self.r#net_core_rmem_default,
                 ),
                 to_pulumi_object_field(
-                    "net_core_rmem_max",
+                    "netCoreRmemMax",
                     &self.r#net_core_rmem_max,
                 ),
                 to_pulumi_object_field(
-                    "net_core_somaxconn",
+                    "netCoreSomaxconn",
                     &self.r#net_core_somaxconn,
                 ),
                 to_pulumi_object_field(
-                    "net_core_wmem_default",
+                    "netCoreWmemDefault",
                     &self.r#net_core_wmem_default,
                 ),
                 to_pulumi_object_field(
-                    "net_core_wmem_max",
+                    "netCoreWmemMax",
                     &self.r#net_core_wmem_max,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_ip_local_port_range_max",
+                    "netIpv4IpLocalPortRangeMax",
                     &self.r#net_ipv_4_ip_local_port_range_max,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_ip_local_port_range_min",
+                    "netIpv4IpLocalPortRangeMin",
                     &self.r#net_ipv_4_ip_local_port_range_min,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_neigh_default_gc_thresh_1",
+                    "netIpv4NeighDefaultGcThresh1",
                     &self.r#net_ipv_4_neigh_default_gc_thresh_1,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_neigh_default_gc_thresh_2",
+                    "netIpv4NeighDefaultGcThresh2",
                     &self.r#net_ipv_4_neigh_default_gc_thresh_2,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_neigh_default_gc_thresh_3",
+                    "netIpv4NeighDefaultGcThresh3",
                     &self.r#net_ipv_4_neigh_default_gc_thresh_3,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_tcp_fin_timeout",
+                    "netIpv4TcpFinTimeout",
                     &self.r#net_ipv_4_tcp_fin_timeout,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_tcp_keepalive_intvl",
+                    "netIpv4TcpKeepaliveIntvl",
                     &self.r#net_ipv_4_tcp_keepalive_intvl,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_tcp_keepalive_probes",
+                    "netIpv4TcpKeepaliveProbes",
                     &self.r#net_ipv_4_tcp_keepalive_probes,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_tcp_keepalive_time",
+                    "netIpv4TcpKeepaliveTime",
                     &self.r#net_ipv_4_tcp_keepalive_time,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_tcp_max_syn_backlog",
+                    "netIpv4TcpMaxSynBacklog",
                     &self.r#net_ipv_4_tcp_max_syn_backlog,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_tcp_max_tw_buckets",
+                    "netIpv4TcpMaxTwBuckets",
                     &self.r#net_ipv_4_tcp_max_tw_buckets,
                 ),
                 to_pulumi_object_field(
-                    "net_ipv_4_tcp_tw_reuse",
+                    "netIpv4TcpTwReuse",
                     &self.r#net_ipv_4_tcp_tw_reuse,
                 ),
                 to_pulumi_object_field(
-                    "net_netfilter_nf_conntrack_buckets",
+                    "netNetfilterNfConntrackBuckets",
                     &self.r#net_netfilter_nf_conntrack_buckets,
                 ),
                 to_pulumi_object_field(
-                    "net_netfilter_nf_conntrack_max",
+                    "netNetfilterNfConntrackMax",
                     &self.r#net_netfilter_nf_conntrack_max,
                 ),
                 to_pulumi_object_field(
-                    "vm_max_map_count",
+                    "vmMaxMapCount",
                     &self.r#vm_max_map_count,
                 ),
                 to_pulumi_object_field(
-                    "vm_swappiness",
+                    "vmSwappiness",
                     &self.r#vm_swappiness,
                 ),
                 to_pulumi_object_field(
-                    "vm_vfs_cache_pressure",
+                    "vmVfsCachePressure",
                     &self.r#vm_vfs_cache_pressure,
                 ),
             ];

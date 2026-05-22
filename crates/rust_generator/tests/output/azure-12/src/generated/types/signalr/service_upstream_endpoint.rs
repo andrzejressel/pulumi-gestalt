@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "category_patterns",
+                    "categoryPatterns",
                     &self.r#category_patterns,
                 ),
                 to_pulumi_object_field(
-                    "event_patterns",
+                    "eventPatterns",
                     &self.r#event_patterns,
                 ),
                 to_pulumi_object_field(
-                    "hub_patterns",
+                    "hubPatterns",
                     &self.r#hub_patterns,
                 ),
                 to_pulumi_object_field(
-                    "url_template",
+                    "urlTemplate",
                     &self.r#url_template,
                 ),
                 to_pulumi_object_field(
-                    "user_assigned_identity_id",
+                    "userAssignedIdentityId",
                     &self.r#user_assigned_identity_id,
                 ),
             ];

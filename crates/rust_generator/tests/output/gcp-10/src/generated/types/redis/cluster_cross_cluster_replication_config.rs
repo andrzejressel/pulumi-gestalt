@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_role",
+                    "clusterRole",
                     &self.r#cluster_role,
                 ),
                 to_pulumi_object_field(
@@ -57,15 +57,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#memberships,
                 ),
                 to_pulumi_object_field(
-                    "primary_cluster",
+                    "primaryCluster",
                     &self.r#primary_cluster,
                 ),
                 to_pulumi_object_field(
-                    "secondary_clusters",
+                    "secondaryClusters",
                     &self.r#secondary_clusters,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
             ];

@@ -36,11 +36,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "restrict_direct_table_access",
+                    "restrictDirectTableAccess",
                     &self.r#restrict_direct_table_access,
                 ),
                 to_pulumi_object_field(
-                    "restrict_query_result",
+                    "restrictQueryResult",
                     &self.r#restrict_query_result,
                 ),
             ];

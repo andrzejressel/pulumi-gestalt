@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_id",
+                    "appId",
                     &self.r#app_id,
                 ),
                 to_pulumi_object_field(
-                    "app_secret_setting_name",
+                    "appSecretSettingName",
                     &self.r#app_secret_setting_name,
                 ),
                 to_pulumi_object_field(
-                    "graph_api_version",
+                    "graphApiVersion",
                     &self.r#graph_api_version,
                 ),
                 to_pulumi_object_field(
-                    "login_scopes",
+                    "loginScopes",
                     &self.r#login_scopes,
                 ),
             ];

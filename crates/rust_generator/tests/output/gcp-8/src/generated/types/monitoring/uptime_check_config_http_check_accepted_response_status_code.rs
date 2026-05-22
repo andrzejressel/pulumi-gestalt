@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "status_class",
+                    "statusClass",
                     &self.r#status_class,
                 ),
                 to_pulumi_object_field(
-                    "status_value",
+                    "statusValue",
                     &self.r#status_value,
                 ),
             ];

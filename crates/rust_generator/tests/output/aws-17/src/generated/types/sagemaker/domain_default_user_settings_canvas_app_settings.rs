@@ -50,35 +50,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "direct_deploy_settings",
+                    "directDeploySettings",
                     &self.r#direct_deploy_settings,
                 ),
                 to_pulumi_object_field(
-                    "emr_serverless_settings",
+                    "emrServerlessSettings",
                     &self.r#emr_serverless_settings,
                 ),
                 to_pulumi_object_field(
-                    "generative_ai_settings",
+                    "generativeAiSettings",
                     &self.r#generative_ai_settings,
                 ),
                 to_pulumi_object_field(
-                    "identity_provider_oauth_settings",
+                    "identityProviderOauthSettings",
                     &self.r#identity_provider_oauth_settings,
                 ),
                 to_pulumi_object_field(
-                    "kendra_settings",
+                    "kendraSettings",
                     &self.r#kendra_settings,
                 ),
                 to_pulumi_object_field(
-                    "model_register_settings",
+                    "modelRegisterSettings",
                     &self.r#model_register_settings,
                 ),
                 to_pulumi_object_field(
-                    "time_series_forecasting_settings",
+                    "timeSeriesForecastingSettings",
                     &self.r#time_series_forecasting_settings,
                 ),
                 to_pulumi_object_field(
-                    "workspace_settings",
+                    "workspaceSettings",
                     &self.r#workspace_settings,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_name",
+                    "columnName",
                     &self.r#column_name,
                 ),
                 to_pulumi_object_field(
-                    "match_all_value",
+                    "matchAllValue",
                     &self.r#match_all_value,
                 ),
                 to_pulumi_object_field(
-                    "tag_key",
+                    "tagKey",
                     &self.r#tag_key,
                 ),
                 to_pulumi_object_field(
-                    "tag_multi_value_delimiter",
+                    "tagMultiValueDelimiter",
                     &self.r#tag_multi_value_delimiter,
                 ),
             ];

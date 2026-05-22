@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "realtime_metrics_subscription_config",
+                    "realtimeMetricsSubscriptionConfig",
                     &self.r#realtime_metrics_subscription_config,
                 ),
             ];

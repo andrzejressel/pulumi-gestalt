@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_variables",
+                    "additionalVariables",
                     &self.r#additional_variables,
                 ),
                 to_pulumi_object_field(
-                    "auth_key",
+                    "authKey",
                     &self.r#auth_key,
                 ),
                 to_pulumi_object_field(
-                    "auth_type",
+                    "authType",
                     &self.r#auth_type,
                 ),
                 to_pulumi_object_field(
-                    "user_password",
+                    "userPassword",
                     &self.r#user_password,
                 ),
             ];

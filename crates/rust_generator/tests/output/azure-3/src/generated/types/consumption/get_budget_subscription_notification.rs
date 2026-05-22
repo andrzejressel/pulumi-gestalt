@@ -46,15 +46,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "contact_emails",
+                    "contactEmails",
                     &self.r#contact_emails,
                 ),
                 to_pulumi_object_field(
-                    "contact_groups",
+                    "contactGroups",
                     &self.r#contact_groups,
                 ),
                 to_pulumi_object_field(
-                    "contact_roles",
+                    "contactRoles",
                     &self.r#contact_roles,
                 ),
                 to_pulumi_object_field(
@@ -70,7 +70,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#threshold,
                 ),
                 to_pulumi_object_field(
-                    "threshold_type",
+                    "thresholdType",
                     &self.r#threshold_type,
                 ),
             ];

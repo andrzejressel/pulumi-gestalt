@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tag
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "field_id",
+                    "fieldId",
                     &self.r#field_id,
                 ),
                 to_pulumi_object_field(
-                    "is_required",
+                    "isRequired",
                     &self.r#is_required,
                 ),
                 to_pulumi_object_field(
@@ -75,7 +75,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tag
                     &self.r#order,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

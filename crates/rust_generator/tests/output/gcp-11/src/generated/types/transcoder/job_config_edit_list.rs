@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "start_time_offset",
+                    "startTimeOffset",
                     &self.r#start_time_offset,
                 ),
             ];

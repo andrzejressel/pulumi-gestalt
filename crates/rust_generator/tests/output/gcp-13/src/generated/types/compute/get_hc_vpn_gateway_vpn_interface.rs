@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "interconnect_attachment",
+                    "interconnectAttachment",
                     &self.r#interconnect_attachment,
                 ),
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
             ];

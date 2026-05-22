@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Usa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "burst_limit",
+                    "burstLimit",
                     &self.r#burst_limit,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Usa
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit",
+                    "rateLimit",
                     &self.r#rate_limit,
                 ),
             ];

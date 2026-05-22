@@ -128,63 +128,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudrun_config",
+                    "cloudrunConfig",
                     &self.r#cloudrun_config,
                 ),
                 to_pulumi_object_field(
-                    "config_connector_config",
+                    "configConnectorConfig",
                     &self.r#config_connector_config,
                 ),
                 to_pulumi_object_field(
-                    "dns_cache_config",
+                    "dnsCacheConfig",
                     &self.r#dns_cache_config,
                 ),
                 to_pulumi_object_field(
-                    "gce_persistent_disk_csi_driver_config",
+                    "gcePersistentDiskCsiDriverConfig",
                     &self.r#gce_persistent_disk_csi_driver_config,
                 ),
                 to_pulumi_object_field(
-                    "gcp_filestore_csi_driver_config",
+                    "gcpFilestoreCsiDriverConfig",
                     &self.r#gcp_filestore_csi_driver_config,
                 ),
                 to_pulumi_object_field(
-                    "gcs_fuse_csi_driver_config",
+                    "gcsFuseCsiDriverConfig",
                     &self.r#gcs_fuse_csi_driver_config,
                 ),
                 to_pulumi_object_field(
-                    "gke_backup_agent_config",
+                    "gkeBackupAgentConfig",
                     &self.r#gke_backup_agent_config,
                 ),
                 to_pulumi_object_field(
-                    "horizontal_pod_autoscaling",
+                    "horizontalPodAutoscaling",
                     &self.r#horizontal_pod_autoscaling,
                 ),
                 to_pulumi_object_field(
-                    "http_load_balancing",
+                    "httpLoadBalancing",
                     &self.r#http_load_balancing,
                 ),
                 to_pulumi_object_field(
-                    "istio_config",
+                    "istioConfig",
                     &self.r#istio_config,
                 ),
                 to_pulumi_object_field(
-                    "kalm_config",
+                    "kalmConfig",
                     &self.r#kalm_config,
                 ),
                 to_pulumi_object_field(
-                    "network_policy_config",
+                    "networkPolicyConfig",
                     &self.r#network_policy_config,
                 ),
                 to_pulumi_object_field(
-                    "parallelstore_csi_driver_config",
+                    "parallelstoreCsiDriverConfig",
                     &self.r#parallelstore_csi_driver_config,
                 ),
                 to_pulumi_object_field(
-                    "ray_operator_configs",
+                    "rayOperatorConfigs",
                     &self.r#ray_operator_configs,
                 ),
                 to_pulumi_object_field(
-                    "stateful_ha_config",
+                    "statefulHaConfig",
                     &self.r#stateful_ha_config,
                 ),
             ];

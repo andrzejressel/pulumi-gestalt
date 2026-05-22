@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#etag,
                 ),
                 to_pulumi_object_field(
-                    "inherit_from_parent",
+                    "inheritFromParent",
                     &self.r#inherit_from_parent,
                 ),
                 to_pulumi_object_field(
@@ -58,7 +58,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#rules,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
             ];

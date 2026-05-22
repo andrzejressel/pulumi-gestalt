@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_id",
+                    "applicationId",
                     &self.r#application_id,
                 ),
                 to_pulumi_object_field(
-                    "certificate_permissions",
+                    "certificatePermissions",
                     &self.r#certificate_permissions,
                 ),
                 to_pulumi_object_field(
-                    "key_permissions",
+                    "keyPermissions",
                     &self.r#key_permissions,
                 ),
                 to_pulumi_object_field(
-                    "object_id",
+                    "objectId",
                     &self.r#object_id,
                 ),
                 to_pulumi_object_field(
-                    "secret_permissions",
+                    "secretPermissions",
                     &self.r#secret_permissions,
                 ),
                 to_pulumi_object_field(
-                    "storage_permissions",
+                    "storagePermissions",
                     &self.r#storage_permissions,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

@@ -51,31 +51,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_key",
+                    "accessKey",
                     &self.r#access_key,
                 ),
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "local_auth_reference",
+                    "localAuthReference",
                     &self.r#local_auth_reference,
                 ),
                 to_pulumi_object_field(
-                    "secret_key_base_64",
+                    "secretKeyBase64",
                     &self.r#secret_key_base_64,
                 ),
                 to_pulumi_object_field(
-                    "sync_interval_in_seconds",
+                    "syncIntervalInSeconds",
                     &self.r#sync_interval_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_seconds",
+                    "timeoutInSeconds",
                     &self.r#timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "tls_enabled",
+                    "tlsEnabled",
                     &self.r#tls_enabled,
                 ),
                 to_pulumi_object_field(

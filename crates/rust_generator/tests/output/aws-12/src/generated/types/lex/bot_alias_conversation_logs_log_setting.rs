@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bot
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_arn",
+                    "kmsKeyArn",
                     &self.r#kms_key_arn,
                 ),
                 to_pulumi_object_field(
-                    "log_type",
+                    "logType",
                     &self.r#log_type,
                 ),
                 to_pulumi_object_field(
-                    "resource_arn",
+                    "resourceArn",
                     &self.r#resource_arn,
                 ),
                 to_pulumi_object_field(
-                    "resource_prefix",
+                    "resourcePrefix",
                     &self.r#resource_prefix,
                 ),
             ];

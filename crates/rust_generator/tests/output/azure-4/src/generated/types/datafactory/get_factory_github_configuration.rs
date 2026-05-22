@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_name",
+                    "accountName",
                     &self.r#account_name,
                 ),
                 to_pulumi_object_field(
-                    "branch_name",
+                    "branchName",
                     &self.r#branch_name,
                 ),
                 to_pulumi_object_field(
-                    "git_url",
+                    "gitUrl",
                     &self.r#git_url,
                 ),
                 to_pulumi_object_field(
-                    "repository_name",
+                    "repositoryName",
                     &self.r#repository_name,
                 ),
                 to_pulumi_object_field(
-                    "root_folder",
+                    "rootFolder",
                     &self.r#root_folder,
                 ),
             ];

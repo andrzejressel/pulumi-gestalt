@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#jar,
                 ),
                 to_pulumi_object_field(
-                    "main_class",
+                    "mainClass",
                     &self.r#main_class,
                 ),
                 to_pulumi_object_field(

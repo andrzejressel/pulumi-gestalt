@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_backups_on_backup_vault_destroy",
+                    "deleteBackupsOnBackupVaultDestroy",
                     &self.r#delete_backups_on_backup_vault_destroy,
                 ),
                 to_pulumi_object_field(
-                    "prevent_volume_destruction",
+                    "preventVolumeDestruction",
                     &self.r#prevent_volume_destruction,
                 ),
             ];

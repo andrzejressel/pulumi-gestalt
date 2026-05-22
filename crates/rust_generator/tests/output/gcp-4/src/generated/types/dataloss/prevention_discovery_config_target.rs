@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "big_query_target",
+                    "bigQueryTarget",
                     &self.r#big_query_target,
                 ),
                 to_pulumi_object_field(
-                    "cloud_sql_target",
+                    "cloudSqlTarget",
                     &self.r#cloud_sql_target,
                 ),
                 to_pulumi_object_field(
-                    "cloud_storage_target",
+                    "cloudStorageTarget",
                     &self.r#cloud_storage_target,
                 ),
                 to_pulumi_object_field(
-                    "secrets_target",
+                    "secretsTarget",
                     &self.r#secrets_target,
                 ),
             ];

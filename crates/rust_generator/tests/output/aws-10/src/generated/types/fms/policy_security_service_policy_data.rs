@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "managed_service_data",
+                    "managedServiceData",
                     &self.r#managed_service_data,
                 ),
                 to_pulumi_object_field(
-                    "policy_option",
+                    "policyOption",
                     &self.r#policy_option,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

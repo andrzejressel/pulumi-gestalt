@@ -161,11 +161,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#comparison,
                 ),
                 to_pulumi_object_field(
-                    "denominator_aggregations",
+                    "denominatorAggregations",
                     &self.r#denominator_aggregations,
                 ),
                 to_pulumi_object_field(
-                    "denominator_filter",
+                    "denominatorFilter",
                     &self.r#denominator_filter,
                 ),
                 to_pulumi_object_field(
@@ -173,7 +173,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_missing_data",
+                    "evaluationMissingData",
                     &self.r#evaluation_missing_data,
                 ),
                 to_pulumi_object_field(
@@ -181,11 +181,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "forecast_options",
+                    "forecastOptions",
                     &self.r#forecast_options,
                 ),
                 to_pulumi_object_field(
-                    "threshold_value",
+                    "thresholdValue",
                     &self.r#threshold_value,
                 ),
                 to_pulumi_object_field(

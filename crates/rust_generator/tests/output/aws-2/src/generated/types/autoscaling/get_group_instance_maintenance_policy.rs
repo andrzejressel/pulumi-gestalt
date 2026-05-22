@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_healthy_percentage",
+                    "maxHealthyPercentage",
                     &self.r#max_healthy_percentage,
                 ),
                 to_pulumi_object_field(
-                    "min_healthy_percentage",
+                    "minHealthyPercentage",
                     &self.r#min_healthy_percentage,
                 ),
             ];

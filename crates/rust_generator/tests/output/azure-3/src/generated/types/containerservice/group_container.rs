@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#cpu,
                 ),
                 to_pulumi_object_field(
-                    "cpu_limit",
+                    "cpuLimit",
                     &self.r#cpu_limit,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "liveness_probe",
+                    "livenessProbe",
                     &self.r#liveness_probe,
                 ),
                 to_pulumi_object_field(
@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#memory,
                 ),
                 to_pulumi_object_field(
-                    "memory_limit",
+                    "memoryLimit",
                     &self.r#memory_limit,
                 ),
                 to_pulumi_object_field(
@@ -115,11 +115,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#ports,
                 ),
                 to_pulumi_object_field(
-                    "readiness_probe",
+                    "readinessProbe",
                     &self.r#readiness_probe,
                 ),
                 to_pulumi_object_field(
-                    "secure_environment_variables",
+                    "secureEnvironmentVariables",
                     &self.r#secure_environment_variables,
                 ),
                 to_pulumi_object_field(

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ecr_configurations",
+                    "ecrConfigurations",
                     &self.r#ecr_configurations,
                 ),
                 to_pulumi_object_field(
-                    "image_scanning_enabled",
+                    "imageScanningEnabled",
                     &self.r#image_scanning_enabled,
                 ),
             ];

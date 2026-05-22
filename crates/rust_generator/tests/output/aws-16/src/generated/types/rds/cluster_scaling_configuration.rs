@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_pause",
+                    "autoPause",
                     &self.r#auto_pause,
                 ),
                 to_pulumi_object_field(
-                    "max_capacity",
+                    "maxCapacity",
                     &self.r#max_capacity,
                 ),
                 to_pulumi_object_field(
-                    "min_capacity",
+                    "minCapacity",
                     &self.r#min_capacity,
                 ),
                 to_pulumi_object_field(
-                    "seconds_before_timeout",
+                    "secondsBeforeTimeout",
                     &self.r#seconds_before_timeout,
                 ),
                 to_pulumi_object_field(
-                    "seconds_until_auto_pause",
+                    "secondsUntilAutoPause",
                     &self.r#seconds_until_auto_pause,
                 ),
                 to_pulumi_object_field(
-                    "timeout_action",
+                    "timeoutAction",
                     &self.r#timeout_action,
                 ),
             ];

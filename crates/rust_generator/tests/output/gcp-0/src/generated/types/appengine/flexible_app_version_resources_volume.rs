@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "size_gb",
+                    "sizeGb",
                     &self.r#size_gb,
                 ),
                 to_pulumi_object_field(
-                    "volume_type",
+                    "volumeType",
                     &self.r#volume_type,
                 ),
             ];

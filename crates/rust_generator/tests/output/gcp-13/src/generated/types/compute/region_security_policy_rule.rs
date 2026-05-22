@@ -79,15 +79,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "match_",
+                    "match",
                     &self.r#match_,
                 ),
                 to_pulumi_object_field(
-                    "network_match",
+                    "networkMatch",
                     &self.r#network_match,
                 ),
                 to_pulumi_object_field(
-                    "preconfigured_waf_config",
+                    "preconfiguredWafConfig",
                     &self.r#preconfigured_waf_config,
                 ),
                 to_pulumi_object_field(
@@ -99,7 +99,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_options",
+                    "rateLimitOptions",
                     &self.r#rate_limit_options,
                 ),
             ];

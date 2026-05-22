@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "input_format",
+                    "inputFormat",
                     &self.r#input_format,
                 ),
                 to_pulumi_object_field(
-                    "location_uri",
+                    "locationUri",
                     &self.r#location_uri,
                 ),
                 to_pulumi_object_field(
-                    "output_format",
+                    "outputFormat",
                     &self.r#output_format,
                 ),
             ];

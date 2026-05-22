@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "psc_config",
+                    "pscConfig",
                     &self.r#psc_config,
                 ),
             ];

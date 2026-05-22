@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "phone_configs",
+                    "phoneConfigs",
                     &self.r#phone_configs,
                 ),
                 to_pulumi_object_field(
-                    "queue_configs",
+                    "queueConfigs",
                     &self.r#queue_configs,
                 ),
                 to_pulumi_object_field(
-                    "quick_connect_type",
+                    "quickConnectType",
                     &self.r#quick_connect_type,
                 ),
                 to_pulumi_object_field(
-                    "user_configs",
+                    "userConfigs",
                     &self.r#user_configs,
                 ),
             ];

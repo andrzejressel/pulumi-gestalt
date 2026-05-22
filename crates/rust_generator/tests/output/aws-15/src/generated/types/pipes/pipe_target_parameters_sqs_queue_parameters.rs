@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "message_deduplication_id",
+                    "messageDeduplicationId",
                     &self.r#message_deduplication_id,
                 ),
                 to_pulumi_object_field(
-                    "message_group_id",
+                    "messageGroupId",
                     &self.r#message_group_id,
                 ),
             ];

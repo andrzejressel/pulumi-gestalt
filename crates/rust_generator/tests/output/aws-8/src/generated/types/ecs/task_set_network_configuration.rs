@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "assign_public_ip",
+                    "assignPublicIp",
                     &self.r#assign_public_ip,
                 ),
                 to_pulumi_object_field(
-                    "security_groups",
+                    "securityGroups",
                     &self.r#security_groups,
                 ),
                 to_pulumi_object_field(

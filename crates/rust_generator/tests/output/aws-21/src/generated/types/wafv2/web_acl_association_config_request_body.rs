@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_gateways",
+                    "apiGateways",
                     &self.r#api_gateways,
                 ),
                 to_pulumi_object_field(
-                    "app_runner_services",
+                    "appRunnerServices",
                     &self.r#app_runner_services,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#cloudfronts,
                 ),
                 to_pulumi_object_field(
-                    "cognito_user_pools",
+                    "cognitoUserPools",
                     &self.r#cognito_user_pools,
                 ),
                 to_pulumi_object_field(
-                    "verified_access_instances",
+                    "verifiedAccessInstances",
                     &self.r#verified_access_instances,
                 ),
             ];

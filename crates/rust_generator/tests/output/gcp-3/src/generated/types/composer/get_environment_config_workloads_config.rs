@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dag_processors",
+                    "dagProcessors",
                     &self.r#dag_processors,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#triggerers,
                 ),
                 to_pulumi_object_field(
-                    "web_servers",
+                    "webServers",
                     &self.r#web_servers,
                 ),
                 to_pulumi_object_field(

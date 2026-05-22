@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deployed_url",
+                    "deployedUrl",
                     &self.r#deployed_url,
                 ),
                 to_pulumi_object_field(

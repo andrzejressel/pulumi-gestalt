@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_dns_servers",
+                    "azureDnsServers",
                     &self.r#azure_dns_servers,
                 ),
                 to_pulumi_object_field(
-                    "dns_servers",
+                    "dnsServers",
                     &self.r#dns_servers,
                 ),
                 to_pulumi_object_field(
-                    "use_azure_dns",
+                    "useAzureDns",
                     &self.r#use_azure_dns,
                 ),
             ];

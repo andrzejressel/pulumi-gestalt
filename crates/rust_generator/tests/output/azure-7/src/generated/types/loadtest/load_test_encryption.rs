@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#identity,
                 ),
                 to_pulumi_object_field(
-                    "key_url",
+                    "keyUrl",
                     &self.r#key_url,
                 ),
             ];

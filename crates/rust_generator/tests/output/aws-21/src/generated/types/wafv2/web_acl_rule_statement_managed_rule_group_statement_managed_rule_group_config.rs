@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_managed_rules_acfp_rule_set",
+                    "awsManagedRulesAcfpRuleSet",
                     &self.r#aws_managed_rules_acfp_rule_set,
                 ),
                 to_pulumi_object_field(
-                    "aws_managed_rules_atp_rule_set",
+                    "awsManagedRulesAtpRuleSet",
                     &self.r#aws_managed_rules_atp_rule_set,
                 ),
                 to_pulumi_object_field(
-                    "aws_managed_rules_bot_control_rule_set",
+                    "awsManagedRulesBotControlRuleSet",
                     &self.r#aws_managed_rules_bot_control_rule_set,
                 ),
                 to_pulumi_object_field(
-                    "login_path",
+                    "loginPath",
                     &self.r#login_path,
                 ),
                 to_pulumi_object_field(
-                    "password_field",
+                    "passwordField",
                     &self.r#password_field,
                 ),
                 to_pulumi_object_field(
-                    "payload_type",
+                    "payloadType",
                     &self.r#payload_type,
                 ),
                 to_pulumi_object_field(
-                    "username_field",
+                    "usernameField",
                     &self.r#username_field,
                 ),
             ];

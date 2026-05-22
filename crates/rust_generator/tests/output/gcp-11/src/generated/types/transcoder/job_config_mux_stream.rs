@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#container,
                 ),
                 to_pulumi_object_field(
-                    "elementary_streams",
+                    "elementaryStreams",
                     &self.r#elementary_streams,
                 ),
                 to_pulumi_object_field(
-                    "encryption_id",
+                    "encryptionId",
                     &self.r#encryption_id,
                 ),
                 to_pulumi_object_field(
-                    "file_name",
+                    "fileName",
                     &self.r#file_name,
                 ),
                 to_pulumi_object_field(
@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "segment_settings",
+                    "segmentSettings",
                     &self.r#segment_settings,
                 ),
             ];

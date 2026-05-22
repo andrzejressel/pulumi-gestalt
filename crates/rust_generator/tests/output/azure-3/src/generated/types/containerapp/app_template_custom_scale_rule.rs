@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#authentications,
                 ),
                 to_pulumi_object_field(
-                    "custom_rule_type",
+                    "customRuleType",
                     &self.r#custom_rule_type,
                 ),
                 to_pulumi_object_field(

@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "last_run_duration",
+                    "lastRunDuration",
                     &self.r#last_run_duration,
                 ),
                 to_pulumi_object_field(
-                    "last_run_time",
+                    "lastRunTime",
                     &self.r#last_run_time,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
                     &self.r#stats,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
             ];

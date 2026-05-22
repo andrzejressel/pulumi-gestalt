@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pause_cluster",
+                    "pauseCluster",
                     &self.r#pause_cluster,
                 ),
                 to_pulumi_object_field(
-                    "resize_cluster",
+                    "resizeCluster",
                     &self.r#resize_cluster,
                 ),
                 to_pulumi_object_field(
-                    "resume_cluster",
+                    "resumeCluster",
                     &self.r#resume_cluster,
                 ),
             ];

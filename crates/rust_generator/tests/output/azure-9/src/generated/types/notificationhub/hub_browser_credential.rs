@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hub
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "vapid_private_key",
+                    "vapidPrivateKey",
                     &self.r#vapid_private_key,
                 ),
                 to_pulumi_object_field(
-                    "vapid_public_key",
+                    "vapidPublicKey",
                     &self.r#vapid_public_key,
                 ),
             ];

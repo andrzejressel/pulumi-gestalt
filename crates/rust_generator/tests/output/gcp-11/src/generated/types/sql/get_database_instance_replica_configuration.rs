@@ -67,35 +67,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ca_certificate",
+                    "caCertificate",
                     &self.r#ca_certificate,
                 ),
                 to_pulumi_object_field(
-                    "cascadable_replica",
+                    "cascadableReplica",
                     &self.r#cascadable_replica,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate",
+                    "clientCertificate",
                     &self.r#client_certificate,
                 ),
                 to_pulumi_object_field(
-                    "client_key",
+                    "clientKey",
                     &self.r#client_key,
                 ),
                 to_pulumi_object_field(
-                    "connect_retry_interval",
+                    "connectRetryInterval",
                     &self.r#connect_retry_interval,
                 ),
                 to_pulumi_object_field(
-                    "dump_file_path",
+                    "dumpFilePath",
                     &self.r#dump_file_path,
                 ),
                 to_pulumi_object_field(
-                    "failover_target",
+                    "failoverTarget",
                     &self.r#failover_target,
                 ),
                 to_pulumi_object_field(
-                    "master_heartbeat_period",
+                    "masterHeartbeatPeriod",
                     &self.r#master_heartbeat_period,
                 ),
                 to_pulumi_object_field(
@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "ssl_cipher",
+                    "sslCipher",
                     &self.r#ssl_cipher,
                 ),
                 to_pulumi_object_field(
@@ -111,7 +111,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#username,
                 ),
                 to_pulumi_object_field(
-                    "verify_server_certificate",
+                    "verifyServerCertificate",
                     &self.r#verify_server_certificate,
                 ),
             ];

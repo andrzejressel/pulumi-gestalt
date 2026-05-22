@@ -67,51 +67,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "buffering_interval",
+                    "bufferingInterval",
                     &self.r#buffering_interval,
                 ),
                 to_pulumi_object_field(
-                    "buffering_size",
+                    "bufferingSize",
                     &self.r#buffering_size,
                 ),
                 to_pulumi_object_field(
-                    "cloudwatch_logging_options",
+                    "cloudwatchLoggingOptions",
                     &self.r#cloudwatch_logging_options,
                 ),
                 to_pulumi_object_field(
-                    "hec_acknowledgment_timeout",
+                    "hecAcknowledgmentTimeout",
                     &self.r#hec_acknowledgment_timeout,
                 ),
                 to_pulumi_object_field(
-                    "hec_endpoint",
+                    "hecEndpoint",
                     &self.r#hec_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "hec_endpoint_type",
+                    "hecEndpointType",
                     &self.r#hec_endpoint_type,
                 ),
                 to_pulumi_object_field(
-                    "hec_token",
+                    "hecToken",
                     &self.r#hec_token,
                 ),
                 to_pulumi_object_field(
-                    "processing_configuration",
+                    "processingConfiguration",
                     &self.r#processing_configuration,
                 ),
                 to_pulumi_object_field(
-                    "retry_duration",
+                    "retryDuration",
                     &self.r#retry_duration,
                 ),
                 to_pulumi_object_field(
-                    "s_3_backup_mode",
+                    "s3BackupMode",
                     &self.r#s_3_backup_mode,
                 ),
                 to_pulumi_object_field(
-                    "s_3_configuration",
+                    "s3Configuration",
                     &self.r#s_3_configuration,
                 ),
                 to_pulumi_object_field(
-                    "secrets_manager_configuration",
+                    "secretsManagerConfiguration",
                     &self.r#secrets_manager_configuration,
                 ),
             ];

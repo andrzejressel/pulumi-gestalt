@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "depends_ons",
+                    "dependsOns",
                     &self.r#depends_ons,
                 ),
                 to_pulumi_object_field(
-                    "garbage_collection_enabled",
+                    "garbageCollectionEnabled",
                     &self.r#garbage_collection_enabled,
                 ),
                 to_pulumi_object_field(
@@ -67,19 +67,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flu
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "recreating_enabled",
+                    "recreatingEnabled",
                     &self.r#recreating_enabled,
                 ),
                 to_pulumi_object_field(
-                    "retry_interval_in_seconds",
+                    "retryIntervalInSeconds",
                     &self.r#retry_interval_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "sync_interval_in_seconds",
+                    "syncIntervalInSeconds",
                     &self.r#sync_interval_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_seconds",
+                    "timeoutInSeconds",
                     &self.r#timeout_in_seconds,
                 ),
             ];

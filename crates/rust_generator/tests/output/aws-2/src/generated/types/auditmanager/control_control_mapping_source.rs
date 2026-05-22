@@ -52,35 +52,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_description",
+                    "sourceDescription",
                     &self.r#source_description,
                 ),
                 to_pulumi_object_field(
-                    "source_frequency",
+                    "sourceFrequency",
                     &self.r#source_frequency,
                 ),
                 to_pulumi_object_field(
-                    "source_id",
+                    "sourceId",
                     &self.r#source_id,
                 ),
                 to_pulumi_object_field(
-                    "source_keyword",
+                    "sourceKeyword",
                     &self.r#source_keyword,
                 ),
                 to_pulumi_object_field(
-                    "source_name",
+                    "sourceName",
                     &self.r#source_name,
                 ),
                 to_pulumi_object_field(
-                    "source_set_up_option",
+                    "sourceSetUpOption",
                     &self.r#source_set_up_option,
                 ),
                 to_pulumi_object_field(
-                    "source_type",
+                    "sourceType",
                     &self.r#source_type,
                 ),
                 to_pulumi_object_field(
-                    "troubleshooting_text",
+                    "troubleshootingText",
                     &self.r#troubleshooting_text,
                 ),
             ];

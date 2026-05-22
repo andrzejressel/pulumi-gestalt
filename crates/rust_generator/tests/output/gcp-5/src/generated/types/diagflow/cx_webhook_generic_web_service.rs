@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxW
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_ca_certs",
+                    "allowedCaCerts",
                     &self.r#allowed_ca_certs,
                 ),
                 to_pulumi_object_field(
-                    "request_headers",
+                    "requestHeaders",
                     &self.r#request_headers,
                 ),
                 to_pulumi_object_field(

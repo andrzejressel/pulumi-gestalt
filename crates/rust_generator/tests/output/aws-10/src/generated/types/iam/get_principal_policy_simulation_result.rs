@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_name",
+                    "actionName",
                     &self.r#action_name,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#decision,
                 ),
                 to_pulumi_object_field(
-                    "decision_details",
+                    "decisionDetails",
                     &self.r#decision_details,
                 ),
                 to_pulumi_object_field(
-                    "matched_statements",
+                    "matchedStatements",
                     &self.r#matched_statements,
                 ),
                 to_pulumi_object_field(
-                    "missing_context_keys",
+                    "missingContextKeys",
                     &self.r#missing_context_keys,
                 ),
                 to_pulumi_object_field(
-                    "resource_arn",
+                    "resourceArn",
                     &self.r#resource_arn,
                 ),
             ];

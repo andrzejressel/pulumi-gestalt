@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#body,
                 ),
                 to_pulumi_object_field(
-                    "follow_redirects_enabled",
+                    "followRedirectsEnabled",
                     &self.r#follow_redirects_enabled,
                 ),
                 to_pulumi_object_field(
@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "http_verb",
+                    "httpVerb",
                     &self.r#http_verb,
                 ),
                 to_pulumi_object_field(
-                    "parse_dependent_requests_enabled",
+                    "parseDependentRequestsEnabled",
                     &self.r#parse_dependent_requests_enabled,
                 ),
                 to_pulumi_object_field(

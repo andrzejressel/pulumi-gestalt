@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#grpc,
                 ),
                 to_pulumi_object_field(
-                    "http_2_s",
+                    "http2s",
                     &self.r#http_2_s,
                 ),
                 to_pulumi_object_field(

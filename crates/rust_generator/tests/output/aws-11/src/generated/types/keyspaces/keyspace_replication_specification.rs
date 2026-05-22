@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "region_lists",
+                    "regionLists",
                     &self.r#region_lists,
                 ),
                 to_pulumi_object_field(
-                    "replication_strategy",
+                    "replicationStrategy",
                     &self.r#replication_strategy,
                 ),
             ];

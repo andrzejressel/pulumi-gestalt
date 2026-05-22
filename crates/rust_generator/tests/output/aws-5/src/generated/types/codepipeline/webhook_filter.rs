@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "json_path",
+                    "jsonPath",
                     &self.r#json_path,
                 ),
                 to_pulumi_object_field(
-                    "match_equals",
+                    "matchEquals",
                     &self.r#match_equals,
                 ),
             ];

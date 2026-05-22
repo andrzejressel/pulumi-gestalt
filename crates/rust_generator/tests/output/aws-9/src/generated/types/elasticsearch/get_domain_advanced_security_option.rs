@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "internal_user_database_enabled",
+                    "internalUserDatabaseEnabled",
                     &self.r#internal_user_database_enabled,
                 ),
             ];

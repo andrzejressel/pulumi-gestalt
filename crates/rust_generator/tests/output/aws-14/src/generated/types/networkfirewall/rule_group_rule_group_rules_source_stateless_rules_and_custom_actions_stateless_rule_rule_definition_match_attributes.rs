@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_ports",
+                    "destinationPorts",
                     &self.r#destination_ports,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "source_ports",
+                    "sourcePorts",
                     &self.r#source_ports,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#sources,
                 ),
                 to_pulumi_object_field(
-                    "tcp_flags",
+                    "tcpFlags",
                     &self.r#tcp_flags,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "has_stateful_config",
+                    "hasStatefulConfig",
                     &self.r#has_stateful_config,
                 ),
                 to_pulumi_object_field(
-                    "per_instance_configs",
+                    "perInstanceConfigs",
                     &self.r#per_instance_configs,
                 ),
             ];

@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "newer_than",
+                    "newerThan",
                     &self.r#newer_than,
                 ),
                 to_pulumi_object_field(
-                    "older_than",
+                    "olderThan",
                     &self.r#older_than,
                 ),
                 to_pulumi_object_field(
-                    "package_name_prefixes",
+                    "packageNamePrefixes",
                     &self.r#package_name_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "tag_prefixes",
+                    "tagPrefixes",
                     &self.r#tag_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "tag_state",
+                    "tagState",
                     &self.r#tag_state,
                 ),
                 to_pulumi_object_field(
-                    "version_name_prefixes",
+                    "versionNamePrefixes",
                     &self.r#version_name_prefixes,
                 ),
             ];

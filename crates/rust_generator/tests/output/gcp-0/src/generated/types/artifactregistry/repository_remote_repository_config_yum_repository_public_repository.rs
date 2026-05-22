@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "repository_base",
+                    "repositoryBase",
                     &self.r#repository_base,
                 ),
                 to_pulumi_object_field(
-                    "repository_path",
+                    "repositoryPath",
                     &self.r#repository_path,
                 ),
             ];

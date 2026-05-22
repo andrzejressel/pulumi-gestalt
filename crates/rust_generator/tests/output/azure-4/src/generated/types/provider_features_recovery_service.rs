@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "purge_protected_items_from_vault_on_destroy",
+                    "purgeProtectedItemsFromVaultOnDestroy",
                     &self.r#purge_protected_items_from_vault_on_destroy,
                 ),
                 to_pulumi_object_field(
-                    "vm_backup_stop_protection_and_retain_data_on_destroy",
+                    "vmBackupStopProtectionAndRetainDataOnDestroy",
                     &self.r#vm_backup_stop_protection_and_retain_data_on_destroy,
                 ),
             ];

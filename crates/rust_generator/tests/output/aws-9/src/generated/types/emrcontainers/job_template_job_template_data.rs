@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "configuration_overrides",
+                    "configurationOverrides",
                     &self.r#configuration_overrides,
                 ),
                 to_pulumi_object_field(
-                    "execution_role_arn",
+                    "executionRoleArn",
                     &self.r#execution_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "job_driver",
+                    "jobDriver",
                     &self.r#job_driver,
                 ),
                 to_pulumi_object_field(
-                    "job_tags",
+                    "jobTags",
                     &self.r#job_tags,
                 ),
                 to_pulumi_object_field(
-                    "release_label",
+                    "releaseLabel",
                     &self.r#release_label,
                 ),
             ];

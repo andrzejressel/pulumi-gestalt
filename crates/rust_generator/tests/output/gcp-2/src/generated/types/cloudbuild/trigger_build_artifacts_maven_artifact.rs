@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "artifact_id",
+                    "artifactId",
                     &self.r#artifact_id,
                 ),
                 to_pulumi_object_field(
-                    "group_id",
+                    "groupId",
                     &self.r#group_id,
                 ),
                 to_pulumi_object_field(

@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cert_type",
+                    "certType",
                     &self.r#cert_type,
                 ),
                 to_pulumi_object_field(
-                    "ssh_client_cert",
+                    "sshClientCert",
                     &self.r#ssh_client_cert,
                 ),
                 to_pulumi_object_field(
-                    "ssh_client_cert_pass",
+                    "sshClientCertPass",
                     &self.r#ssh_client_cert_pass,
                 ),
                 to_pulumi_object_field(

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enable,
                 ),
                 to_pulumi_object_field(
-                    "rule_visibility",
+                    "ruleVisibility",
                     &self.r#rule_visibility,
                 ),
                 to_pulumi_object_field(
-                    "threshold_configs",
+                    "thresholdConfigs",
                     &self.r#threshold_configs,
                 ),
             ];

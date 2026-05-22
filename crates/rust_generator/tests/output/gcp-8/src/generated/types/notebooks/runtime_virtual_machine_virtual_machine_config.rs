@@ -128,27 +128,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_config",
+                    "acceleratorConfig",
                     &self.r#accelerator_config,
                 ),
                 to_pulumi_object_field(
-                    "container_images",
+                    "containerImages",
                     &self.r#container_images,
                 ),
                 to_pulumi_object_field(
-                    "data_disk",
+                    "dataDisk",
                     &self.r#data_disk,
                 ),
                 to_pulumi_object_field(
-                    "encryption_config",
+                    "encryptionConfig",
                     &self.r#encryption_config,
                 ),
                 to_pulumi_object_field(
-                    "guest_attributes",
+                    "guestAttributes",
                     &self.r#guest_attributes,
                 ),
                 to_pulumi_object_field(
-                    "internal_ip_only",
+                    "internalIpOnly",
                     &self.r#internal_ip_only,
                 ),
                 to_pulumi_object_field(
@@ -156,7 +156,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
@@ -168,15 +168,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "nic_type",
+                    "nicType",
                     &self.r#nic_type,
                 ),
                 to_pulumi_object_field(
-                    "reserved_ip_range",
+                    "reservedIpRange",
                     &self.r#reserved_ip_range,
                 ),
                 to_pulumi_object_field(
-                    "shielded_instance_config",
+                    "shieldedInstanceConfig",
                     &self.r#shielded_instance_config,
                 ),
                 to_pulumi_object_field(

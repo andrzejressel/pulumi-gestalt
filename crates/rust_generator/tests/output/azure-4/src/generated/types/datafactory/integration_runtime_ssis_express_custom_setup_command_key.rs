@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_vault_password",
+                    "keyVaultPassword",
                     &self.r#key_vault_password,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "target_name",
+                    "targetName",
                     &self.r#target_name,
                 ),
                 to_pulumi_object_field(
-                    "user_name",
+                    "userName",
                     &self.r#user_name,
                 ),
             ];

@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#alias,
                 ),
                 to_pulumi_object_field(
-                    "data_transforms",
+                    "dataTransforms",
                     &self.r#data_transforms,
                 ),
                 to_pulumi_object_field(
-                    "logical_table_map_id",
+                    "logicalTableMapId",
                     &self.r#logical_table_map_id,
                 ),
                 to_pulumi_object_field(

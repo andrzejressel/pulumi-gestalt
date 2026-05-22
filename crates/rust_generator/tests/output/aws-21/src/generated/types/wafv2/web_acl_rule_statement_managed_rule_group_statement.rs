@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "managed_rule_group_configs",
+                    "managedRuleGroupConfigs",
                     &self.r#managed_rule_group_configs,
                 ),
                 to_pulumi_object_field(
@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "rule_action_overrides",
+                    "ruleActionOverrides",
                     &self.r#rule_action_overrides,
                 ),
                 to_pulumi_object_field(
-                    "scope_down_statement",
+                    "scopeDownStatement",
                     &self.r#scope_down_statement,
                 ),
                 to_pulumi_object_field(
-                    "vendor_name",
+                    "vendorName",
                     &self.r#vendor_name,
                 ),
                 to_pulumi_object_field(

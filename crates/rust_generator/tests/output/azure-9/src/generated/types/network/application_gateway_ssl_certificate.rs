@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_secret_id",
+                    "keyVaultSecretId",
                     &self.r#key_vault_secret_id,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "public_cert_data",
+                    "publicCertData",
                     &self.r#public_cert_data,
                 ),
             ];

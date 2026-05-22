@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#daily,
                 ),
                 to_pulumi_object_field(
-                    "maximum_duration",
+                    "maximumDuration",
                     &self.r#maximum_duration,
                 ),
                 to_pulumi_object_field(
-                    "messages_per_second",
+                    "messagesPerSecond",
                     &self.r#messages_per_second,
                 ),
                 to_pulumi_object_field(

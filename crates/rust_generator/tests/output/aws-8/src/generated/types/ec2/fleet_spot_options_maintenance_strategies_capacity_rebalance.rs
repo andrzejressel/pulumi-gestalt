@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "replacement_strategy",
+                    "replacementStrategy",
                     &self.r#replacement_strategy,
                 ),
                 to_pulumi_object_field(
-                    "termination_delay",
+                    "terminationDelay",
                     &self.r#termination_delay,
                 ),
             ];

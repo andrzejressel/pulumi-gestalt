@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cdn_frontdoor_secret_id",
+                    "cdnFrontdoorSecretId",
                     &self.r#cdn_frontdoor_secret_id,
                 ),
                 to_pulumi_object_field(
-                    "certificate_type",
+                    "certificateType",
                     &self.r#certificate_type,
                 ),
                 to_pulumi_object_field(
-                    "minimum_tls_version",
+                    "minimumTlsVersion",
                     &self.r#minimum_tls_version,
                 ),
             ];

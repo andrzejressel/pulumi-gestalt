@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "idle_timeout_in_minutes",
+                    "idleTimeoutInMinutes",
                     &self.r#idle_timeout_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_management",
+                    "lifecycleManagement",
                     &self.r#lifecycle_management,
                 ),
                 to_pulumi_object_field(
-                    "max_idle_timeout_in_minutes",
+                    "maxIdleTimeoutInMinutes",
                     &self.r#max_idle_timeout_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "min_idle_timeout_in_minutes",
+                    "minIdleTimeoutInMinutes",
                     &self.r#min_idle_timeout_in_minutes,
                 ),
             ];

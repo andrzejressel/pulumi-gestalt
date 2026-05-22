@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_endpoints",
+                    "destinationEndpoints",
                     &self.r#destination_endpoints,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "source_endpoints",
+                    "sourceEndpoints",
                     &self.r#source_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "test_configuration_names",
+                    "testConfigurationNames",
                     &self.r#test_configuration_names,
                 ),
             ];

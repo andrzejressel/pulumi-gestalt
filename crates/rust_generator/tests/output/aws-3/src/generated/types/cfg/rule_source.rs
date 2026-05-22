@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_policy_details",
+                    "customPolicyDetails",
                     &self.r#custom_policy_details,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#owner,
                 ),
                 to_pulumi_object_field(
-                    "source_details",
+                    "sourceDetails",
                     &self.r#source_details,
                 ),
                 to_pulumi_object_field(
-                    "source_identifier",
+                    "sourceIdentifier",
                     &self.r#source_identifier,
                 ),
             ];

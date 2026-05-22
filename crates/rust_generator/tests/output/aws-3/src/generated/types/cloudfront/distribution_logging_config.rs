@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "include_cookies",
+                    "includeCookies",
                     &self.r#include_cookies,
                 ),
                 to_pulumi_object_field(

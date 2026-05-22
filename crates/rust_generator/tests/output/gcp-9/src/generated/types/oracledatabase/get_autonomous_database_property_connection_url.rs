@@ -53,35 +53,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "apex_uri",
+                    "apexUri",
                     &self.r#apex_uri,
                 ),
                 to_pulumi_object_field(
-                    "database_transforms_uri",
+                    "databaseTransformsUri",
                     &self.r#database_transforms_uri,
                 ),
                 to_pulumi_object_field(
-                    "graph_studio_uri",
+                    "graphStudioUri",
                     &self.r#graph_studio_uri,
                 ),
                 to_pulumi_object_field(
-                    "machine_learning_notebook_uri",
+                    "machineLearningNotebookUri",
                     &self.r#machine_learning_notebook_uri,
                 ),
                 to_pulumi_object_field(
-                    "machine_learning_user_management_uri",
+                    "machineLearningUserManagementUri",
                     &self.r#machine_learning_user_management_uri,
                 ),
                 to_pulumi_object_field(
-                    "mongo_db_uri",
+                    "mongoDbUri",
                     &self.r#mongo_db_uri,
                 ),
                 to_pulumi_object_field(
-                    "ords_uri",
+                    "ordsUri",
                     &self.r#ords_uri,
                 ),
                 to_pulumi_object_field(
-                    "sql_dev_web_uri",
+                    "sqlDevWebUri",
                     &self.r#sql_dev_web_uri,
                 ),
             ];

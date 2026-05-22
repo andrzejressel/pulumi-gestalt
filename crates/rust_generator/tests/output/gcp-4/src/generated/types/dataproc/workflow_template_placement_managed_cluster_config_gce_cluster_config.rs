@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "internal_ip_only",
+                    "internalIpOnly",
                     &self.r#internal_ip_only,
                 ),
                 to_pulumi_object_field(
@@ -79,27 +79,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "node_group_affinity",
+                    "nodeGroupAffinity",
                     &self.r#node_group_affinity,
                 ),
                 to_pulumi_object_field(
-                    "private_ipv_6_google_access",
+                    "privateIpv6GoogleAccess",
                     &self.r#private_ipv_6_google_access,
                 ),
                 to_pulumi_object_field(
-                    "reservation_affinity",
+                    "reservationAffinity",
                     &self.r#reservation_affinity,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "service_account_scopes",
+                    "serviceAccountScopes",
                     &self.r#service_account_scopes,
                 ),
                 to_pulumi_object_field(
-                    "shielded_instance_config",
+                    "shieldedInstanceConfig",
                     &self.r#shielded_instance_config,
                 ),
                 to_pulumi_object_field(

@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#accent,
                 ),
                 to_pulumi_object_field(
-                    "accent_foreground",
+                    "accentForeground",
                     &self.r#accent_foreground,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#danger,
                 ),
                 to_pulumi_object_field(
-                    "danger_foreground",
+                    "dangerForeground",
                     &self.r#danger_foreground,
                 ),
                 to_pulumi_object_field(
@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#dimension,
                 ),
                 to_pulumi_object_field(
-                    "dimension_foreground",
+                    "dimensionForeground",
                     &self.r#dimension_foreground,
                 ),
                 to_pulumi_object_field(
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#measure,
                 ),
                 to_pulumi_object_field(
-                    "measure_foreground",
+                    "measureForeground",
                     &self.r#measure_foreground,
                 ),
                 to_pulumi_object_field(
-                    "primary_background",
+                    "primaryBackground",
                     &self.r#primary_background,
                 ),
                 to_pulumi_object_field(
-                    "primary_foreground",
+                    "primaryForeground",
                     &self.r#primary_foreground,
                 ),
                 to_pulumi_object_field(
-                    "secondary_background",
+                    "secondaryBackground",
                     &self.r#secondary_background,
                 ),
                 to_pulumi_object_field(
-                    "secondary_foreground",
+                    "secondaryForeground",
                     &self.r#secondary_foreground,
                 ),
                 to_pulumi_object_field(
@@ -135,7 +135,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#success,
                 ),
                 to_pulumi_object_field(
-                    "success_foreground",
+                    "successForeground",
                     &self.r#success_foreground,
                 ),
                 to_pulumi_object_field(
@@ -143,7 +143,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#warning,
                 ),
                 to_pulumi_object_field(
-                    "warning_foreground",
+                    "warningForeground",
                     &self.r#warning_foreground,
                 ),
             ];

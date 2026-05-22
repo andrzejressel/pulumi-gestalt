@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "sha_256_hash",
+                    "sha256Hash",
                     &self.r#sha_256_hash,
                 ),
             ];

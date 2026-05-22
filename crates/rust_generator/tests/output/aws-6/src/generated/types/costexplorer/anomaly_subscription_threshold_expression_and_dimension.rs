@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ano
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "match_options",
+                    "matchOptions",
                     &self.r#match_options,
                 ),
                 to_pulumi_object_field(

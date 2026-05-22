@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "disable_template_validation",
+                    "disableTemplateValidation",
                     &self.r#disable_template_validation,
                 ),
                 to_pulumi_object_field(
@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "template_physical_id",
+                    "templatePhysicalId",
                     &self.r#template_physical_id,
                 ),
                 to_pulumi_object_field(
-                    "template_url",
+                    "templateUrl",
                     &self.r#template_url,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

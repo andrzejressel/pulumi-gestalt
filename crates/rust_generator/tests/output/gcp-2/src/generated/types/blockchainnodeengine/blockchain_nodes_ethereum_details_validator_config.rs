@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mev_relay_urls",
+                    "mevRelayUrls",
                     &self.r#mev_relay_urls,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "target_concurrent_requests",
+                    "targetConcurrentRequests",
                     &self.r#target_concurrent_requests,
                 ),
                 to_pulumi_object_field(
-                    "target_request_count_per_second",
+                    "targetRequestCountPerSecond",
                     &self.r#target_request_count_per_second,
                 ),
             ];

@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#days,
                 ),
                 to_pulumi_object_field(
-                    "include_last_days",
+                    "includeLastDays",
                     &self.r#include_last_days,
                 ),
                 to_pulumi_object_field(

@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enforce_on_key_name",
+                    "enforceOnKeyName",
                     &self.r#enforce_on_key_name,
                 ),
                 to_pulumi_object_field(
-                    "enforce_on_key_type",
+                    "enforceOnKeyType",
                     &self.r#enforce_on_key_type,
                 ),
             ];

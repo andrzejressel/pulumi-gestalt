@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "schema_id",
+                    "schemaId",
                     &self.r#schema_id,
                 ),
                 to_pulumi_object_field(
-                    "schema_version_id",
+                    "schemaVersionId",
                     &self.r#schema_version_id,
                 ),
                 to_pulumi_object_field(
-                    "schema_version_number",
+                    "schemaVersionNumber",
                     &self.r#schema_version_number,
                 ),
             ];

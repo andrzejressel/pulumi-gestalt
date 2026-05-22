@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_name",
+                    "containerName",
                     &self.r#container_name,
                 ),
                 to_pulumi_object_field(
-                    "container_port",
+                    "containerPort",
                     &self.r#container_port,
                 ),
                 to_pulumi_object_field(
-                    "health_check",
+                    "healthCheck",
                     &self.r#health_check,
                 ),
             ];

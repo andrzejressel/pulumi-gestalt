@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dynamic_filename_enabled",
+                    "dynamicFilenameEnabled",
                     &self.r#dynamic_filename_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_path_enabled",
+                    "dynamicPathEnabled",
                     &self.r#dynamic_path_enabled,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "relative_url",
+                    "relativeUrl",
                     &self.r#relative_url,
                 ),
             ];

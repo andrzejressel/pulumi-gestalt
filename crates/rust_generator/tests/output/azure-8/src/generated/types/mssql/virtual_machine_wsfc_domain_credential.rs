@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_bootstrap_account_password",
+                    "clusterBootstrapAccountPassword",
                     &self.r#cluster_bootstrap_account_password,
                 ),
                 to_pulumi_object_field(
-                    "cluster_operator_account_password",
+                    "clusterOperatorAccountPassword",
                     &self.r#cluster_operator_account_password,
                 ),
                 to_pulumi_object_field(
-                    "sql_service_account_password",
+                    "sqlServiceAccountPassword",
                     &self.r#sql_service_account_password,
                 ),
             ];

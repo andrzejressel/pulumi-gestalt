@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_share_arn",
+                    "dataShareArn",
                     &self.r#data_share_arn,
                 ),
                 to_pulumi_object_field(
-                    "managed_by",
+                    "managedBy",
                     &self.r#managed_by,
                 ),
                 to_pulumi_object_field(
-                    "producer_arn",
+                    "producerArn",
                     &self.r#producer_arn,
                 ),
             ];

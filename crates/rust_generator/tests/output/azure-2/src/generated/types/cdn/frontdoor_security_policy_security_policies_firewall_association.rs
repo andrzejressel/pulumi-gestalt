@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#domains,
                 ),
                 to_pulumi_object_field(
-                    "patterns_to_match",
+                    "patternsToMatch",
                     &self.r#patterns_to_match,
                 ),
             ];

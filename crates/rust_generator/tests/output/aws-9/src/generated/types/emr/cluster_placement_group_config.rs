@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_role",
+                    "instanceRole",
                     &self.r#instance_role,
                 ),
                 to_pulumi_object_field(
-                    "placement_strategy",
+                    "placementStrategy",
                     &self.r#placement_strategy,
                 ),
             ];

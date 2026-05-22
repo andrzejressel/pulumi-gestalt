@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#identity,
                 ),
                 to_pulumi_object_field(
-                    "password_secret_name",
+                    "passwordSecretName",
                     &self.r#password_secret_name,
                 ),
                 to_pulumi_object_field(

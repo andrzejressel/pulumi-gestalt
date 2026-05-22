@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_geos",
+                    "backupGeos",
                     &self.r#backup_geos,
                 ),
                 to_pulumi_object_field(
-                    "enable_geo_fencing_for_backups",
+                    "enableGeoFencingForBackups",
                     &self.r#enable_geo_fencing_for_backups,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#primary,
                 ),
                 to_pulumi_object_field(
-                    "trickle_ratio",
+                    "trickleRatio",
                     &self.r#trickle_ratio,
                 ),
             ];

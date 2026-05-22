@@ -83,19 +83,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cooldown_period",
+                    "cooldownPeriod",
                     &self.r#cooldown_period,
                 ),
                 to_pulumi_object_field(
-                    "cpu_utilization",
+                    "cpuUtilization",
                     &self.r#cpu_utilization,
                 ),
                 to_pulumi_object_field(
-                    "load_balancing_utilization",
+                    "loadBalancingUtilization",
                     &self.r#load_balancing_utilization,
                 ),
                 to_pulumi_object_field(
-                    "max_replicas",
+                    "maxReplicas",
                     &self.r#max_replicas,
                 ),
                 to_pulumi_object_field(
@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#metrics,
                 ),
                 to_pulumi_object_field(
-                    "min_replicas",
+                    "minReplicas",
                     &self.r#min_replicas,
                 ),
                 to_pulumi_object_field(
@@ -111,15 +111,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_control",
+                    "scaleDownControl",
                     &self.r#scale_down_control,
                 ),
                 to_pulumi_object_field(
-                    "scale_in_control",
+                    "scaleInControl",
                     &self.r#scale_in_control,
                 ),
                 to_pulumi_object_field(
-                    "scaling_schedules",
+                    "scalingSchedules",
                     &self.r#scaling_schedules,
                 ),
             ];

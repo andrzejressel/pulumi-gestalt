@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_arguments",
+                    "containerArguments",
                     &self.r#container_arguments,
                 ),
                 to_pulumi_object_field(
-                    "container_entrypoints",
+                    "containerEntrypoints",
                     &self.r#container_entrypoints,
                 ),
                 to_pulumi_object_field(
-                    "container_environment_variables",
+                    "containerEnvironmentVariables",
                     &self.r#container_environment_variables,
                 ),
             ];

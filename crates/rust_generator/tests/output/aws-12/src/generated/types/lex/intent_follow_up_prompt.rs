@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#prompt,
                 ),
                 to_pulumi_object_field(
-                    "rejection_statement",
+                    "rejectionStatement",
                     &self.r#rejection_statement,
                 ),
             ];

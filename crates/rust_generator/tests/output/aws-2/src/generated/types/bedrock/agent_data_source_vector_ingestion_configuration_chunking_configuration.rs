@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "chunking_strategy",
+                    "chunkingStrategy",
                     &self.r#chunking_strategy,
                 ),
                 to_pulumi_object_field(
-                    "fixed_size_chunking_configuration",
+                    "fixedSizeChunkingConfiguration",
                     &self.r#fixed_size_chunking_configuration,
                 ),
                 to_pulumi_object_field(
-                    "hierarchical_chunking_configuration",
+                    "hierarchicalChunkingConfiguration",
                     &self.r#hierarchical_chunking_configuration,
                 ),
                 to_pulumi_object_field(
-                    "semantic_chunking_configuration",
+                    "semanticChunkingConfiguration",
                     &self.r#semantic_chunking_configuration,
                 ),
             ];

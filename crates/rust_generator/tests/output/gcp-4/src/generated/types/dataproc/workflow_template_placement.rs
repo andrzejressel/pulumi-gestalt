@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_selector",
+                    "clusterSelector",
                     &self.r#cluster_selector,
                 ),
                 to_pulumi_object_field(
-                    "managed_cluster",
+                    "managedCluster",
                     &self.r#managed_cluster,
                 ),
             ];

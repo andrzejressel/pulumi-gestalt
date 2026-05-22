@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "provisioned_throughput",
+                    "provisionedThroughput",
                     &self.r#provisioned_throughput,
                 ),
                 to_pulumi_object_field(
-                    "volume_size",
+                    "volumeSize",
                     &self.r#volume_size,
                 ),
             ];

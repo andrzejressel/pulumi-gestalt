@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#commands,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "secure_environment_variables",
+                    "secureEnvironmentVariables",
                     &self.r#secure_environment_variables,
                 ),
                 to_pulumi_object_field(

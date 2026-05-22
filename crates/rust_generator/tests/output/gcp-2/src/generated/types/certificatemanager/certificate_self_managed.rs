@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_pem",
+                    "certificatePem",
                     &self.r#certificate_pem,
                 ),
                 to_pulumi_object_field(
-                    "pem_certificate",
+                    "pemCertificate",
                     &self.r#pem_certificate,
                 ),
                 to_pulumi_object_field(
-                    "pem_private_key",
+                    "pemPrivateKey",
                     &self.r#pem_private_key,
                 ),
                 to_pulumi_object_field(
-                    "private_key_pem",
+                    "privateKeyPem",
                     &self.r#private_key_pem,
                 ),
             ];

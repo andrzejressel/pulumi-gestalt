@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "monitoring_job_definition_name",
+                    "monitoringJobDefinitionName",
                     &self.r#monitoring_job_definition_name,
                 ),
                 to_pulumi_object_field(
-                    "monitoring_type",
+                    "monitoringType",
                     &self.r#monitoring_type,
                 ),
                 to_pulumi_object_field(
-                    "schedule_config",
+                    "scheduleConfig",
                     &self.r#schedule_config,
                 ),
             ];

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
-                    "key_name",
+                    "keyName",
                     &self.r#key_name,
                 ),
                 to_pulumi_object_field(

@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_type",
+                    "eventType",
                     &self.r#event_type,
                 ),
                 to_pulumi_object_field(
-                    "function_uri",
+                    "functionUri",
                     &self.r#function_uri,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
             ];

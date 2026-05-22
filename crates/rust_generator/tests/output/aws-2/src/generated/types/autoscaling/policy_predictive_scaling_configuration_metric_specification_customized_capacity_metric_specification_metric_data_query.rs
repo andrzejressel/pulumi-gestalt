@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#label,
                 ),
                 to_pulumi_object_field(
-                    "metric_stat",
+                    "metricStat",
                     &self.r#metric_stat,
                 ),
                 to_pulumi_object_field(
-                    "return_data",
+                    "returnData",
                     &self.r#return_data,
                 ),
             ];

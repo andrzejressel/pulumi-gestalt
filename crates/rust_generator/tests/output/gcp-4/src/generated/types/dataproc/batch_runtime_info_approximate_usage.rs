@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_type",
+                    "acceleratorType",
                     &self.r#accelerator_type,
                 ),
                 to_pulumi_object_field(
-                    "milli_accelerator_seconds",
+                    "milliAcceleratorSeconds",
                     &self.r#milli_accelerator_seconds,
                 ),
                 to_pulumi_object_field(
-                    "milli_dcu_seconds",
+                    "milliDcuSeconds",
                     &self.r#milli_dcu_seconds,
                 ),
                 to_pulumi_object_field(
-                    "shuffle_storage_gb_seconds",
+                    "shuffleStorageGbSeconds",
                     &self.r#shuffle_storage_gb_seconds,
                 ),
             ];

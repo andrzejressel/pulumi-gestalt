@@ -42,15 +42,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_auto_scheduling",
+                    "disableAutoScheduling",
                     &self.r#disable_auto_scheduling,
                 ),
                 to_pulumi_object_field(
-                    "end_time",
+                    "endTime",
                     &self.r#end_time,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
             ];

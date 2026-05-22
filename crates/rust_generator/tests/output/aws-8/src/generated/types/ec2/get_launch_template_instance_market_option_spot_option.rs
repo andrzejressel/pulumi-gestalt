@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "block_duration_minutes",
+                    "blockDurationMinutes",
                     &self.r#block_duration_minutes,
                 ),
                 to_pulumi_object_field(
-                    "instance_interruption_behavior",
+                    "instanceInterruptionBehavior",
                     &self.r#instance_interruption_behavior,
                 ),
                 to_pulumi_object_field(
-                    "max_price",
+                    "maxPrice",
                     &self.r#max_price,
                 ),
                 to_pulumi_object_field(
-                    "spot_instance_type",
+                    "spotInstanceType",
                     &self.r#spot_instance_type,
                 ),
                 to_pulumi_object_field(
-                    "valid_until",
+                    "validUntil",
                     &self.r#valid_until,
                 ),
             ];

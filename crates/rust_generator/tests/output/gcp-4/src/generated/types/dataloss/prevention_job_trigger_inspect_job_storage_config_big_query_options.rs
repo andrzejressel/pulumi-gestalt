@@ -61,31 +61,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "excluded_fields",
+                    "excludedFields",
                     &self.r#excluded_fields,
                 ),
                 to_pulumi_object_field(
-                    "identifying_fields",
+                    "identifyingFields",
                     &self.r#identifying_fields,
                 ),
                 to_pulumi_object_field(
-                    "included_fields",
+                    "includedFields",
                     &self.r#included_fields,
                 ),
                 to_pulumi_object_field(
-                    "rows_limit",
+                    "rowsLimit",
                     &self.r#rows_limit,
                 ),
                 to_pulumi_object_field(
-                    "rows_limit_percent",
+                    "rowsLimitPercent",
                     &self.r#rows_limit_percent,
                 ),
                 to_pulumi_object_field(
-                    "sample_method",
+                    "sampleMethod",
                     &self.r#sample_method,
                 ),
                 to_pulumi_object_field(
-                    "table_reference",
+                    "tableReference",
                     &self.r#table_reference,
                 ),
             ];

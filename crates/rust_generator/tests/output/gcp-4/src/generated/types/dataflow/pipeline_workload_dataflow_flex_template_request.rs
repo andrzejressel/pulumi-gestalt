@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "launch_parameter",
+                    "launchParameter",
                     &self.r#launch_parameter,
                 ),
                 to_pulumi_object_field(
@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "project_id",
+                    "projectId",
                     &self.r#project_id,
                 ),
                 to_pulumi_object_field(
-                    "validate_only",
+                    "validateOnly",
                     &self.r#validate_only,
                 ),
             ];

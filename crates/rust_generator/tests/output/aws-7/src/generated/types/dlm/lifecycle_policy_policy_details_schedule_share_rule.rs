@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "target_accounts",
+                    "targetAccounts",
                     &self.r#target_accounts,
                 ),
                 to_pulumi_object_field(
-                    "unshare_interval",
+                    "unshareInterval",
                     &self.r#unshare_interval,
                 ),
                 to_pulumi_object_field(
-                    "unshare_interval_unit",
+                    "unshareIntervalUnit",
                     &self.r#unshare_interval_unit,
                 ),
             ];

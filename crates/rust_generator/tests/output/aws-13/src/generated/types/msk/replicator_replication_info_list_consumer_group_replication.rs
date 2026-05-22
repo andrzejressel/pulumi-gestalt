@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_groups_to_excludes",
+                    "consumerGroupsToExcludes",
                     &self.r#consumer_groups_to_excludes,
                 ),
                 to_pulumi_object_field(
-                    "consumer_groups_to_replicates",
+                    "consumerGroupsToReplicates",
                     &self.r#consumer_groups_to_replicates,
                 ),
                 to_pulumi_object_field(
-                    "detect_and_copy_new_consumer_groups",
+                    "detectAndCopyNewConsumerGroups",
                     &self.r#detect_and_copy_new_consumer_groups,
                 ),
                 to_pulumi_object_field(
-                    "synchronise_consumer_group_offsets",
+                    "synchroniseConsumerGroupOffsets",
                     &self.r#synchronise_consumer_group_offsets,
                 ),
             ];

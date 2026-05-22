@@ -44,15 +44,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fhi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pubsub_topic",
+                    "pubsubTopic",
                     &self.r#pubsub_topic,
                 ),
                 to_pulumi_object_field(
-                    "send_full_resource",
+                    "sendFullResource",
                     &self.r#send_full_resource,
                 ),
                 to_pulumi_object_field(
-                    "send_previous_resource_on_delete",
+                    "sendPreviousResourceOnDelete",
                     &self.r#send_previous_resource_on_delete,
                 ),
             ];

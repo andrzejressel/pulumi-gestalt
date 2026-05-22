@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "reuse_on_scale_in",
+                    "reuseOnScaleIn",
                     &self.r#reuse_on_scale_in,
                 ),
             ];

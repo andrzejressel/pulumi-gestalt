@@ -55,31 +55,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_namespaces",
+                    "allNamespaces",
                     &self.r#all_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "encryption_key",
+                    "encryptionKey",
                     &self.r#encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "include_secrets",
+                    "includeSecrets",
                     &self.r#include_secrets,
                 ),
                 to_pulumi_object_field(
-                    "include_volume_data",
+                    "includeVolumeData",
                     &self.r#include_volume_data,
                 ),
                 to_pulumi_object_field(
-                    "permissive_mode",
+                    "permissiveMode",
                     &self.r#permissive_mode,
                 ),
                 to_pulumi_object_field(
-                    "selected_applications",
+                    "selectedApplications",
                     &self.r#selected_applications,
                 ),
                 to_pulumi_object_field(
-                    "selected_namespaces",
+                    "selectedNamespaces",
                     &self.r#selected_namespaces,
                 ),
             ];

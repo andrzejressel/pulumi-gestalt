@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_scheme",
+                    "authScheme",
                     &self.r#auth_scheme,
                 ),
                 to_pulumi_object_field(
-                    "client_password_auth_type",
+                    "clientPasswordAuthType",
                     &self.r#client_password_auth_type,
                 ),
                 to_pulumi_object_field(
@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "iam_auth",
+                    "iamAuth",
                     &self.r#iam_auth,
                 ),
                 to_pulumi_object_field(
-                    "secret_arn",
+                    "secretArn",
                     &self.r#secret_arn,
                 ),
                 to_pulumi_object_field(

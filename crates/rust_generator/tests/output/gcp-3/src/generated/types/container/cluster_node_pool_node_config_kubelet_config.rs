@@ -47,23 +47,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cpu_cfs_quota",
+                    "cpuCfsQuota",
                     &self.r#cpu_cfs_quota,
                 ),
                 to_pulumi_object_field(
-                    "cpu_cfs_quota_period",
+                    "cpuCfsQuotaPeriod",
                     &self.r#cpu_cfs_quota_period,
                 ),
                 to_pulumi_object_field(
-                    "cpu_manager_policy",
+                    "cpuManagerPolicy",
                     &self.r#cpu_manager_policy,
                 ),
                 to_pulumi_object_field(
-                    "insecure_kubelet_readonly_port_enabled",
+                    "insecureKubeletReadonlyPortEnabled",
                     &self.r#insecure_kubelet_readonly_port_enabled,
                 ),
                 to_pulumi_object_field(
-                    "pod_pids_limit",
+                    "podPidsLimit",
                     &self.r#pod_pids_limit,
                 ),
             ];

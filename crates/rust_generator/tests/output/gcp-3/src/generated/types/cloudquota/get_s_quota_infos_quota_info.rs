@@ -82,7 +82,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_type",
+                    "containerType",
                     &self.r#container_type,
                 ),
                 to_pulumi_object_field(
@@ -90,19 +90,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "dimensions_infos",
+                    "dimensionsInfos",
                     &self.r#dimensions_infos,
                 ),
                 to_pulumi_object_field(
-                    "is_concurrent",
+                    "isConcurrent",
                     &self.r#is_concurrent,
                 ),
                 to_pulumi_object_field(
-                    "is_fixed",
+                    "isFixed",
                     &self.r#is_fixed,
                 ),
                 to_pulumi_object_field(
-                    "is_precise",
+                    "isPrecise",
                     &self.r#is_precise,
                 ),
                 to_pulumi_object_field(
@@ -110,11 +110,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#metric,
                 ),
                 to_pulumi_object_field(
-                    "metric_display_name",
+                    "metricDisplayName",
                     &self.r#metric_display_name,
                 ),
                 to_pulumi_object_field(
-                    "metric_unit",
+                    "metricUnit",
                     &self.r#metric_unit,
                 ),
                 to_pulumi_object_field(
@@ -122,19 +122,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "quota_display_name",
+                    "quotaDisplayName",
                     &self.r#quota_display_name,
                 ),
                 to_pulumi_object_field(
-                    "quota_id",
+                    "quotaId",
                     &self.r#quota_id,
                 ),
                 to_pulumi_object_field(
-                    "quota_increase_eligibilities",
+                    "quotaIncreaseEligibilities",
                     &self.r#quota_increase_eligibilities,
                 ),
                 to_pulumi_object_field(
-                    "refresh_interval",
+                    "refreshInterval",
                     &self.r#refresh_interval,
                 ),
                 to_pulumi_object_field(
@@ -142,7 +142,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "service_request_quota_uri",
+                    "serviceRequestQuotaUri",
                     &self.r#service_request_quota_uri,
                 ),
             ];

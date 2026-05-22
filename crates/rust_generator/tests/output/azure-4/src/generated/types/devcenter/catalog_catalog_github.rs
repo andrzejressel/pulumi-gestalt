@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
                     &self.r#branch,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_key_url",
+                    "keyVaultKeyUrl",
                     &self.r#key_vault_key_url,
                 ),
                 to_pulumi_object_field(

@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "status_code_range",
+                    "statusCodeRange",
                     &self.r#status_code_range,
                 ),
                 to_pulumi_object_field(
-                    "sub_status",
+                    "subStatus",
                     &self.r#sub_status,
                 ),
                 to_pulumi_object_field(
-                    "win_32_status_code",
+                    "win32StatusCode",
                     &self.r#win_32_status_code,
                 ),
             ];

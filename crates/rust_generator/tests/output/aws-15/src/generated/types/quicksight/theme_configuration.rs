@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for The
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_color_palette",
+                    "dataColorPalette",
                     &self.r#data_color_palette,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for The
                     &self.r#typography,
                 ),
                 to_pulumi_object_field(
-                    "ui_color_palette",
+                    "uiColorPalette",
                     &self.r#ui_color_palette,
                 ),
             ];

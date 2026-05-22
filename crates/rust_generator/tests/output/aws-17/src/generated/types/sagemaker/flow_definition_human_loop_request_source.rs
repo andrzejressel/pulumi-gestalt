@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_managed_human_loop_request_source",
+                    "awsManagedHumanLoopRequestSource",
                     &self.r#aws_managed_human_loop_request_source,
                 ),
             ];

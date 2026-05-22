@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#overrides,
                 ),
                 to_pulumi_object_field(
-                    "replica_selection",
+                    "replicaSelection",
                     &self.r#replica_selection,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#locations,
                 ),
                 to_pulumi_object_field(
-                    "restriction_type",
+                    "restrictionType",
                     &self.r#restriction_type,
                 ),
             ];

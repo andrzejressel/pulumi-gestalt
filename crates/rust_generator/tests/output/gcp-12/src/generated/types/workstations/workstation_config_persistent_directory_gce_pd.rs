@@ -44,23 +44,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
-                    "fs_type",
+                    "fsType",
                     &self.r#fs_type,
                 ),
                 to_pulumi_object_field(
-                    "reclaim_policy",
+                    "reclaimPolicy",
                     &self.r#reclaim_policy,
                 ),
                 to_pulumi_object_field(
-                    "size_gb",
+                    "sizeGb",
                     &self.r#size_gb,
                 ),
                 to_pulumi_object_field(
-                    "source_snapshot",
+                    "sourceSnapshot",
                     &self.r#source_snapshot,
                 ),
             ];

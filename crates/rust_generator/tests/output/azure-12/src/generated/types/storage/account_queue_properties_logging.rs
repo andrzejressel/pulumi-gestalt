@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#read,
                 ),
                 to_pulumi_object_field(
-                    "retention_policy_days",
+                    "retentionPolicyDays",
                     &self.r#retention_policy_days,
                 ),
                 to_pulumi_object_field(

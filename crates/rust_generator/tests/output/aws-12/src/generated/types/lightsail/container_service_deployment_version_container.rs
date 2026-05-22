@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#commands,
                 ),
                 to_pulumi_object_field(
-                    "container_name",
+                    "containerName",
                     &self.r#container_name,
                 ),
                 to_pulumi_object_field(

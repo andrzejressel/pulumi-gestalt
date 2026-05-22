@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "computer_spark_runtime_version",
+                    "computerSparkRuntimeVersion",
                     &self.r#computer_spark_runtime_version,
                 ),
                 to_pulumi_object_field(
-                    "offline_connection_name",
+                    "offlineConnectionName",
                     &self.r#offline_connection_name,
                 ),
                 to_pulumi_object_field(
-                    "online_connection_name",
+                    "onlineConnectionName",
                     &self.r#online_connection_name,
                 ),
             ];

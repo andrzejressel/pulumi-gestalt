@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#ip,
                 ),
                 to_pulumi_object_field(
-                    "warmup_percentage",
+                    "warmupPercentage",
                     &self.r#warmup_percentage,
                 ),
                 to_pulumi_object_field(
-                    "warmup_status",
+                    "warmupStatus",
                     &self.r#warmup_status,
                 ),
             ];

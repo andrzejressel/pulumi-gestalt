@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "duration_type",
+                    "durationType",
                     &self.r#duration_type,
                 ),
                 to_pulumi_object_field(

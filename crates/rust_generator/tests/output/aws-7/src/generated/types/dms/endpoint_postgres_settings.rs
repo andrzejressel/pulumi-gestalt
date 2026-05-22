@@ -83,67 +83,67 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "after_connect_script",
+                    "afterConnectScript",
                     &self.r#after_connect_script,
                 ),
                 to_pulumi_object_field(
-                    "babelfish_database_name",
+                    "babelfishDatabaseName",
                     &self.r#babelfish_database_name,
                 ),
                 to_pulumi_object_field(
-                    "capture_ddls",
+                    "captureDdls",
                     &self.r#capture_ddls,
                 ),
                 to_pulumi_object_field(
-                    "database_mode",
+                    "databaseMode",
                     &self.r#database_mode,
                 ),
                 to_pulumi_object_field(
-                    "ddl_artifacts_schema",
+                    "ddlArtifactsSchema",
                     &self.r#ddl_artifacts_schema,
                 ),
                 to_pulumi_object_field(
-                    "execute_timeout",
+                    "executeTimeout",
                     &self.r#execute_timeout,
                 ),
                 to_pulumi_object_field(
-                    "fail_tasks_on_lob_truncation",
+                    "failTasksOnLobTruncation",
                     &self.r#fail_tasks_on_lob_truncation,
                 ),
                 to_pulumi_object_field(
-                    "heartbeat_enable",
+                    "heartbeatEnable",
                     &self.r#heartbeat_enable,
                 ),
                 to_pulumi_object_field(
-                    "heartbeat_frequency",
+                    "heartbeatFrequency",
                     &self.r#heartbeat_frequency,
                 ),
                 to_pulumi_object_field(
-                    "heartbeat_schema",
+                    "heartbeatSchema",
                     &self.r#heartbeat_schema,
                 ),
                 to_pulumi_object_field(
-                    "map_boolean_as_boolean",
+                    "mapBooleanAsBoolean",
                     &self.r#map_boolean_as_boolean,
                 ),
                 to_pulumi_object_field(
-                    "map_jsonb_as_clob",
+                    "mapJsonbAsClob",
                     &self.r#map_jsonb_as_clob,
                 ),
                 to_pulumi_object_field(
-                    "map_long_varchar_as",
+                    "mapLongVarcharAs",
                     &self.r#map_long_varchar_as,
                 ),
                 to_pulumi_object_field(
-                    "max_file_size",
+                    "maxFileSize",
                     &self.r#max_file_size,
                 ),
                 to_pulumi_object_field(
-                    "plugin_name",
+                    "pluginName",
                     &self.r#plugin_name,
                 ),
                 to_pulumi_object_field(
-                    "slot_name",
+                    "slotName",
                     &self.r#slot_name,
                 ),
             ];

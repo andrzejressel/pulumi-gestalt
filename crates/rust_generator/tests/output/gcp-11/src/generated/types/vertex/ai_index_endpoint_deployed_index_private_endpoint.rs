@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "match_grpc_address",
+                    "matchGrpcAddress",
                     &self.r#match_grpc_address,
                 ),
                 to_pulumi_object_field(
-                    "psc_automated_endpoints",
+                    "pscAutomatedEndpoints",
                     &self.r#psc_automated_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "service_attachment",
+                    "serviceAttachment",
                     &self.r#service_attachment,
                 ),
             ];

@@ -69,19 +69,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_upgrade_minor_version_enabled",
+                    "autoUpgradeMinorVersionEnabled",
                     &self.r#auto_upgrade_minor_version_enabled,
                 ),
                 to_pulumi_object_field(
-                    "extensions_to_provision_after_vm_creations",
+                    "extensionsToProvisionAfterVmCreations",
                     &self.r#extensions_to_provision_after_vm_creations,
                 ),
                 to_pulumi_object_field(
-                    "failure_suppression_enabled",
+                    "failureSuppressionEnabled",
                     &self.r#failure_suppression_enabled,
                 ),
                 to_pulumi_object_field(
-                    "force_extension_execution_on_change",
+                    "forceExtensionExecutionOnChange",
                     &self.r#force_extension_execution_on_change,
                 ),
                 to_pulumi_object_field(
@@ -89,11 +89,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "protected_settings",
+                    "protectedSettings",
                     &self.r#protected_settings,
                 ),
                 to_pulumi_object_field(
-                    "protected_settings_from_key_vault",
+                    "protectedSettingsFromKeyVault",
                     &self.r#protected_settings_from_key_vault,
                 ),
                 to_pulumi_object_field(
@@ -105,11 +105,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
                     &self.r#settings,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "type_handler_version",
+                    "typeHandlerVersion",
                     &self.r#type_handler_version,
                 ),
             ];

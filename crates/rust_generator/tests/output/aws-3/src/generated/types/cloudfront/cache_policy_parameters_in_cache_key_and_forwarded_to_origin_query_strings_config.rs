@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "query_string_behavior",
+                    "queryStringBehavior",
                     &self.r#query_string_behavior,
                 ),
                 to_pulumi_object_field(
-                    "query_strings",
+                    "queryStrings",
                     &self.r#query_strings,
                 ),
             ];

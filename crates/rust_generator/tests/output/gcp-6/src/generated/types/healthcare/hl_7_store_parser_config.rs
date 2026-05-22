@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hl7
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_null_header",
+                    "allowNullHeader",
                     &self.r#allow_null_header,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hl7
                     &self.r#schema,
                 ),
                 to_pulumi_object_field(
-                    "segment_terminator",
+                    "segmentTerminator",
                     &self.r#segment_terminator,
                 ),
                 to_pulumi_object_field(

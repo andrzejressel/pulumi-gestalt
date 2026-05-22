@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "s_3_artifact_path",
+                    "s3ArtifactPath",
                     &self.r#s_3_artifact_path,
                 ),
                 to_pulumi_object_field(
-                    "s_3_kms_key_id",
+                    "s3KmsKeyId",
                     &self.r#s_3_kms_key_id,
                 ),
             ];

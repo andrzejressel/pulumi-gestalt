@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gen
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "service_labels",
+                    "serviceLabels",
                     &self.r#service_labels,
                 ),
                 to_pulumi_object_field(
-                    "service_type",
+                    "serviceType",
                     &self.r#service_type,
                 ),
             ];

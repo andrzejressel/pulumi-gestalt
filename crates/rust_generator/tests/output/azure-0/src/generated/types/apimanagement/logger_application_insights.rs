@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Log
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_string",
+                    "connectionString",
                     &self.r#connection_string,
                 ),
                 to_pulumi_object_field(
-                    "instrumentation_key",
+                    "instrumentationKey",
                     &self.r#instrumentation_key,
                 ),
             ];

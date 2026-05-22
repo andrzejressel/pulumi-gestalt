@@ -137,59 +137,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
                     &self.r#levels,
                 ),
                 to_pulumi_object_field(
-                    "operation_name",
+                    "operationName",
                     &self.r#operation_name,
                 ),
                 to_pulumi_object_field(
-                    "recommendation_category",
+                    "recommendationCategory",
                     &self.r#recommendation_category,
                 ),
                 to_pulumi_object_field(
-                    "recommendation_impact",
+                    "recommendationImpact",
                     &self.r#recommendation_impact,
                 ),
                 to_pulumi_object_field(
-                    "recommendation_type",
+                    "recommendationType",
                     &self.r#recommendation_type,
                 ),
                 to_pulumi_object_field(
-                    "resource_group",
+                    "resourceGroup",
                     &self.r#resource_group,
                 ),
                 to_pulumi_object_field(
-                    "resource_groups",
+                    "resourceGroups",
                     &self.r#resource_groups,
                 ),
                 to_pulumi_object_field(
-                    "resource_health",
+                    "resourceHealth",
                     &self.r#resource_health,
                 ),
                 to_pulumi_object_field(
-                    "resource_id",
+                    "resourceId",
                     &self.r#resource_id,
                 ),
                 to_pulumi_object_field(
-                    "resource_ids",
+                    "resourceIds",
                     &self.r#resource_ids,
                 ),
                 to_pulumi_object_field(
-                    "resource_provider",
+                    "resourceProvider",
                     &self.r#resource_provider,
                 ),
                 to_pulumi_object_field(
-                    "resource_providers",
+                    "resourceProviders",
                     &self.r#resource_providers,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
                 to_pulumi_object_field(
-                    "service_health",
+                    "serviceHealth",
                     &self.r#service_health,
                 ),
                 to_pulumi_object_field(
@@ -201,11 +201,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
                     &self.r#statuses,
                 ),
                 to_pulumi_object_field(
-                    "sub_status",
+                    "subStatus",
                     &self.r#sub_status,
                 ),
                 to_pulumi_object_field(
-                    "sub_statuses",
+                    "subStatuses",
                     &self.r#sub_statuses,
                 ),
             ];

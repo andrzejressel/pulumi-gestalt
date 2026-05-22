@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_range",
+                    "maxRange",
                     &self.r#max_range,
                 ),
                 to_pulumi_object_field(
-                    "min_range",
+                    "minRange",
                     &self.r#min_range,
                 ),
             ];

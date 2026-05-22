@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_validation_cas",
+                    "clientValidationCas",
                     &self.r#client_validation_cas,
                 ),
                 to_pulumi_object_field(
-                    "client_validation_mode",
+                    "clientValidationMode",
                     &self.r#client_validation_mode,
                 ),
                 to_pulumi_object_field(
-                    "client_validation_trust_config",
+                    "clientValidationTrustConfig",
                     &self.r#client_validation_trust_config,
                 ),
             ];

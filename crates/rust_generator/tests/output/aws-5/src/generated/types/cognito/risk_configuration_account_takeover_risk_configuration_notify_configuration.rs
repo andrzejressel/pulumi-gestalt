@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ris
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "block_email",
+                    "blockEmail",
                     &self.r#block_email,
                 ),
                 to_pulumi_object_field(
@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ris
                     &self.r#from,
                 ),
                 to_pulumi_object_field(
-                    "mfa_email",
+                    "mfaEmail",
                     &self.r#mfa_email,
                 ),
                 to_pulumi_object_field(
-                    "no_action_email",
+                    "noActionEmail",
                     &self.r#no_action_email,
                 ),
                 to_pulumi_object_field(
-                    "reply_to",
+                    "replyTo",
                     &self.r#reply_to,
                 ),
                 to_pulumi_object_field(
-                    "source_arn",
+                    "sourceArn",
                     &self.r#source_arn,
                 ),
             ];

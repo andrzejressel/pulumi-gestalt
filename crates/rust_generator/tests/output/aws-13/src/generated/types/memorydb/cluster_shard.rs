@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#nodes,
                 ),
                 to_pulumi_object_field(
-                    "num_nodes",
+                    "numNodes",
                     &self.r#num_nodes,
                 ),
                 to_pulumi_object_field(

@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#bundles,
                 ),
                 to_pulumi_object_field(
-                    "template_library",
+                    "templateLibrary",
                     &self.r#template_library,
                 ),
             ];

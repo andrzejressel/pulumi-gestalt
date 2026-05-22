@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
                     &self.r#enable,
                 ),
                 to_pulumi_object_field(
-                    "sample_rate",
+                    "sampleRate",
                     &self.r#sample_rate,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "min_confidence",
+                    "minConfidence",
                     &self.r#min_confidence,
                 ),
             ];

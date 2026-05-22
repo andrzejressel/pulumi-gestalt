@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#branch,
                 ),
                 to_pulumi_object_field(
-                    "manual_integration",
+                    "manualIntegration",
                     &self.r#manual_integration,
                 ),
                 to_pulumi_object_field(
-                    "repo_url",
+                    "repoUrl",
                     &self.r#repo_url,
                 ),
                 to_pulumi_object_field(
-                    "rollback_enabled",
+                    "rollbackEnabled",
                     &self.r#rollback_enabled,
                 ),
                 to_pulumi_object_field(
-                    "use_mercurial",
+                    "useMercurial",
                     &self.r#use_mercurial,
                 ),
             ];

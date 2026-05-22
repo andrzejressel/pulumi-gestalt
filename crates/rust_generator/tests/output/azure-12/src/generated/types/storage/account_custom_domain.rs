@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "use_subdomain",
+                    "useSubdomain",
                     &self.r#use_subdomain,
                 ),
             ];

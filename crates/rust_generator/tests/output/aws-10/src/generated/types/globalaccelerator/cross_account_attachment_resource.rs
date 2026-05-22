@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cidr_block",
+                    "cidrBlock",
                     &self.r#cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_id",
+                    "endpointId",
                     &self.r#endpoint_id,
                 ),
                 to_pulumi_object_field(

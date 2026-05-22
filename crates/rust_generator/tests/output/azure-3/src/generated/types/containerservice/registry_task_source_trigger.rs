@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "repository_url",
+                    "repositoryUrl",
                     &self.r#repository_url,
                 ),
                 to_pulumi_object_field(
-                    "source_type",
+                    "sourceType",
                     &self.r#source_type,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "post_actions",
+                    "postActions",
                     &self.r#post_actions,
                 ),
                 to_pulumi_object_field(
-                    "pre_actions",
+                    "preActions",
                     &self.r#pre_actions,
                 ),
                 to_pulumi_object_field(
-                    "replicated_protected_items",
+                    "replicatedProtectedItems",
                     &self.r#replicated_protected_items,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

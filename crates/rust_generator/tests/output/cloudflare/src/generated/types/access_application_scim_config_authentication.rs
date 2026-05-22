@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorization_url",
+                    "authorizationUrl",
                     &self.r#authorization_url,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#token,
                 ),
                 to_pulumi_object_field(
-                    "token_url",
+                    "tokenUrl",
                     &self.r#token_url,
                 ),
                 to_pulumi_object_field(

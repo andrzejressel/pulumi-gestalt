@@ -55,35 +55,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_cookies",
+                    "allowCookies",
                     &self.r#allow_cookies,
                 ),
                 to_pulumi_object_field(
-                    "enable_xray",
+                    "enableXray",
                     &self.r#enable_xray,
                 ),
                 to_pulumi_object_field(
-                    "excluded_pages",
+                    "excludedPages",
                     &self.r#excluded_pages,
                 ),
                 to_pulumi_object_field(
-                    "favorite_pages",
+                    "favoritePages",
                     &self.r#favorite_pages,
                 ),
                 to_pulumi_object_field(
-                    "guest_role_arn",
+                    "guestRoleArn",
                     &self.r#guest_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "identity_pool_id",
+                    "identityPoolId",
                     &self.r#identity_pool_id,
                 ),
                 to_pulumi_object_field(
-                    "included_pages",
+                    "includedPages",
                     &self.r#included_pages,
                 ),
                 to_pulumi_object_field(
-                    "session_sample_rate",
+                    "sessionSampleRate",
                     &self.r#session_sample_rate,
                 ),
                 to_pulumi_object_field(

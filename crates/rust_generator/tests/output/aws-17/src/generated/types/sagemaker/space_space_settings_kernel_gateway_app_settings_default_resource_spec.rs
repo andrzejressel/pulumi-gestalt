@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_config_arn",
+                    "lifecycleConfigArn",
                     &self.r#lifecycle_config_arn,
                 ),
                 to_pulumi_object_field(
-                    "sagemaker_image_arn",
+                    "sagemakerImageArn",
                     &self.r#sagemaker_image_arn,
                 ),
                 to_pulumi_object_field(
-                    "sagemaker_image_version_alias",
+                    "sagemakerImageVersionAlias",
                     &self.r#sagemaker_image_version_alias,
                 ),
                 to_pulumi_object_field(
-                    "sagemaker_image_version_arn",
+                    "sagemakerImageVersionArn",
                     &self.r#sagemaker_image_version_arn,
                 ),
             ];

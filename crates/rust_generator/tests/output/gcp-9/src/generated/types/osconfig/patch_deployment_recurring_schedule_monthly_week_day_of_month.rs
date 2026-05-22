@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_week",
+                    "dayOfWeek",
                     &self.r#day_of_week,
                 ),
                 to_pulumi_object_field(
-                    "day_offset",
+                    "dayOffset",
                     &self.r#day_offset,
                 ),
                 to_pulumi_object_field(
-                    "week_ordinal",
+                    "weekOrdinal",
                     &self.r#week_ordinal,
                 ),
             ];

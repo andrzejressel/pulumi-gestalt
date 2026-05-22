@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kms_master_key_id",
+                    "kmsMasterKeyId",
                     &self.r#kms_master_key_id,
                 ),
                 to_pulumi_object_field(
-                    "sse_algorithm",
+                    "sseAlgorithm",
                     &self.r#sse_algorithm,
                 ),
             ];

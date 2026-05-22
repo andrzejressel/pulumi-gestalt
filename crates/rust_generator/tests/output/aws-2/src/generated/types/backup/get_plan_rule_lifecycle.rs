@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cold_storage_after",
+                    "coldStorageAfter",
                     &self.r#cold_storage_after,
                 ),
                 to_pulumi_object_field(
-                    "delete_after",
+                    "deleteAfter",
                     &self.r#delete_after,
                 ),
                 to_pulumi_object_field(
-                    "opt_in_to_archive_for_supported_resources",
+                    "optInToArchiveForSupportedResources",
                     &self.r#opt_in_to_archive_for_supported_resources,
                 ),
             ];

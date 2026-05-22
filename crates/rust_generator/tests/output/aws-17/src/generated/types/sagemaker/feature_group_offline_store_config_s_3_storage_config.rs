@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kms_key_id",
+                    "kmsKeyId",
                     &self.r#kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "resolved_output_s_3_uri",
+                    "resolvedOutputS3Uri",
                     &self.r#resolved_output_s_3_uri,
                 ),
                 to_pulumi_object_field(
-                    "s_3_uri",
+                    "s3Uri",
                     &self.r#s_3_uri,
                 ),
             ];

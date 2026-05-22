@@ -74,11 +74,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
-                    "end_time",
+                    "endTime",
                     &self.r#end_time,
                 ),
                 to_pulumi_object_field(
@@ -90,7 +90,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#schedule,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
@@ -98,15 +98,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "target_version",
+                    "targetVersion",
                     &self.r#target_version,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
                 to_pulumi_object_field(

@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_mechanism",
+                    "authMechanism",
                     &self.r#auth_mechanism,
                 ),
                 to_pulumi_object_field(
-                    "auth_source",
+                    "authSource",
                     &self.r#auth_source,
                 ),
                 to_pulumi_object_field(
-                    "auth_type",
+                    "authType",
                     &self.r#auth_type,
                 ),
                 to_pulumi_object_field(
-                    "docs_to_investigate",
+                    "docsToInvestigate",
                     &self.r#docs_to_investigate,
                 ),
                 to_pulumi_object_field(
-                    "extract_doc_id",
+                    "extractDocId",
                     &self.r#extract_doc_id,
                 ),
                 to_pulumi_object_field(
-                    "nesting_level",
+                    "nestingLevel",
                     &self.r#nesting_level,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_recipients",
+                    "additionalRecipients",
                     &self.r#additional_recipients,
                 ),
                 to_pulumi_object_field(
-                    "notify_dc_admins",
+                    "notifyDcAdmins",
                     &self.r#notify_dc_admins,
                 ),
                 to_pulumi_object_field(
-                    "notify_global_admins",
+                    "notifyGlobalAdmins",
                     &self.r#notify_global_admins,
                 ),
             ];

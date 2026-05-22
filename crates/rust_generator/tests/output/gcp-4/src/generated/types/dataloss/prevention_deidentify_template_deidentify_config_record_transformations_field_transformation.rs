@@ -54,11 +54,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#fields,
                 ),
                 to_pulumi_object_field(
-                    "info_type_transformations",
+                    "infoTypeTransformations",
                     &self.r#info_type_transformations,
                 ),
                 to_pulumi_object_field(
-                    "primitive_transformation",
+                    "primitiveTransformation",
                     &self.r#primitive_transformation,
                 ),
             ];

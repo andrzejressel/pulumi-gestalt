@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Org
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ec_2",
+                    "ec2",
                     &self.r#ec_2,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Org
                     &self.r#lambda,
                 ),
                 to_pulumi_object_field(
-                    "lambda_code",
+                    "lambdaCode",
                     &self.r#lambda_code,
                 ),
             ];

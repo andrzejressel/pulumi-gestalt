@@ -59,43 +59,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_allowed_session_types",
+                    "additionalAllowedSessionTypes",
                     &self.r#additional_allowed_session_types,
                 ),
                 to_pulumi_object_field(
-                    "allocation_and_retention_priority_level",
+                    "allocationAndRetentionPriorityLevel",
                     &self.r#allocation_and_retention_priority_level,
                 ),
                 to_pulumi_object_field(
-                    "allowed_services_ids",
+                    "allowedServicesIds",
                     &self.r#allowed_services_ids,
                 ),
                 to_pulumi_object_field(
-                    "data_network_id",
+                    "dataNetworkId",
                     &self.r#data_network_id,
                 ),
                 to_pulumi_object_field(
-                    "default_session_type",
+                    "defaultSessionType",
                     &self.r#default_session_type,
                 ),
                 to_pulumi_object_field(
-                    "max_buffered_packets",
+                    "maxBufferedPackets",
                     &self.r#max_buffered_packets,
                 ),
                 to_pulumi_object_field(
-                    "preemption_capability",
+                    "preemptionCapability",
                     &self.r#preemption_capability,
                 ),
                 to_pulumi_object_field(
-                    "preemption_vulnerability",
+                    "preemptionVulnerability",
                     &self.r#preemption_vulnerability,
                 ),
                 to_pulumi_object_field(
-                    "qos_indicator",
+                    "qosIndicator",
                     &self.r#qos_indicator,
                 ),
                 to_pulumi_object_field(
-                    "session_aggregate_maximum_bit_rates",
+                    "sessionAggregateMaximumBitRates",
                     &self.r#session_aggregate_maximum_bit_rates,
                 ),
             ];

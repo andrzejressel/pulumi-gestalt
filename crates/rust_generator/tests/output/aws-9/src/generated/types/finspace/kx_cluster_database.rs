@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxC
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_configurations",
+                    "cacheConfigurations",
                     &self.r#cache_configurations,
                 ),
                 to_pulumi_object_field(
-                    "changeset_id",
+                    "changesetId",
                     &self.r#changeset_id,
                 ),
                 to_pulumi_object_field(
-                    "database_name",
+                    "databaseName",
                     &self.r#database_name,
                 ),
                 to_pulumi_object_field(
-                    "dataview_name",
+                    "dataviewName",
                     &self.r#dataview_name,
                 ),
             ];

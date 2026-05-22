@@ -45,31 +45,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_group_replications",
+                    "consumerGroupReplications",
                     &self.r#consumer_group_replications,
                 ),
                 to_pulumi_object_field(
-                    "source_kafka_cluster_alias",
+                    "sourceKafkaClusterAlias",
                     &self.r#source_kafka_cluster_alias,
                 ),
                 to_pulumi_object_field(
-                    "source_kafka_cluster_arn",
+                    "sourceKafkaClusterArn",
                     &self.r#source_kafka_cluster_arn,
                 ),
                 to_pulumi_object_field(
-                    "target_compression_type",
+                    "targetCompressionType",
                     &self.r#target_compression_type,
                 ),
                 to_pulumi_object_field(
-                    "target_kafka_cluster_alias",
+                    "targetKafkaClusterAlias",
                     &self.r#target_kafka_cluster_alias,
                 ),
                 to_pulumi_object_field(
-                    "target_kafka_cluster_arn",
+                    "targetKafkaClusterArn",
                     &self.r#target_kafka_cluster_arn,
                 ),
                 to_pulumi_object_field(
-                    "topic_replications",
+                    "topicReplications",
                     &self.r#topic_replications,
                 ),
             ];

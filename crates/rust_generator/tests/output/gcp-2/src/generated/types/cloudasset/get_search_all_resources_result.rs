@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "asset_type",
+                    "assetType",
                     &self.r#asset_type,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#folders,
                 ),
                 to_pulumi_object_field(
-                    "kms_keys",
+                    "kmsKeys",
                     &self.r#kms_keys,
                 ),
                 to_pulumi_object_field(
@@ -119,7 +119,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "network_tags",
+                    "networkTags",
                     &self.r#network_tags,
                 ),
                 to_pulumi_object_field(
@@ -127,11 +127,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#organization,
                 ),
                 to_pulumi_object_field(
-                    "parent_asset_type",
+                    "parentAssetType",
                     &self.r#parent_asset_type,
                 ),
                 to_pulumi_object_field(
-                    "parent_full_resource_name",
+                    "parentFullResourceName",
                     &self.r#parent_full_resource_name,
                 ),
                 to_pulumi_object_field(
@@ -143,7 +143,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
             ];

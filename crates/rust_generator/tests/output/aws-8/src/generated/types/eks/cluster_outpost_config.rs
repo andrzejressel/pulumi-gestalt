@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "control_plane_instance_type",
+                    "controlPlaneInstanceType",
                     &self.r#control_plane_instance_type,
                 ),
                 to_pulumi_object_field(
-                    "control_plane_placement",
+                    "controlPlanePlacement",
                     &self.r#control_plane_placement,
                 ),
                 to_pulumi_object_field(
-                    "outpost_arns",
+                    "outpostArns",
                     &self.r#outpost_arns,
                 ),
             ];

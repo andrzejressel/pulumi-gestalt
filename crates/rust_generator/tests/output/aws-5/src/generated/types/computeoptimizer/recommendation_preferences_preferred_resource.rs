@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_lists",
+                    "excludeLists",
                     &self.r#exclude_lists,
                 ),
                 to_pulumi_object_field(
-                    "include_lists",
+                    "includeLists",
                     &self.r#include_lists,
                 ),
                 to_pulumi_object_field(

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#time,
                 ),
                 to_pulumi_object_field(
-                    "week_days",
+                    "weekDays",
                     &self.r#week_days,
                 ),
             ];

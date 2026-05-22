@@ -161,7 +161,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "absent_input_audio_behavior",
+                    "absentInputAudioBehavior",
                     &self.r#absent_input_audio_behavior,
                 ),
                 to_pulumi_object_field(
@@ -169,27 +169,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#arib,
                 ),
                 to_pulumi_object_field(
-                    "arib_captions_pid",
+                    "aribCaptionsPid",
                     &self.r#arib_captions_pid,
                 ),
                 to_pulumi_object_field(
-                    "arib_captions_pid_control",
+                    "aribCaptionsPidControl",
                     &self.r#arib_captions_pid_control,
                 ),
                 to_pulumi_object_field(
-                    "audio_buffer_model",
+                    "audioBufferModel",
                     &self.r#audio_buffer_model,
                 ),
                 to_pulumi_object_field(
-                    "audio_frames_per_pes",
+                    "audioFramesPerPes",
                     &self.r#audio_frames_per_pes,
                 ),
                 to_pulumi_object_field(
-                    "audio_pids",
+                    "audioPids",
                     &self.r#audio_pids,
                 ),
                 to_pulumi_object_field(
-                    "audio_stream_type",
+                    "audioStreamType",
                     &self.r#audio_stream_type,
                 ),
                 to_pulumi_object_field(
@@ -197,31 +197,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "buffer_model",
+                    "bufferModel",
                     &self.r#buffer_model,
                 ),
                 to_pulumi_object_field(
-                    "cc_descriptor",
+                    "ccDescriptor",
                     &self.r#cc_descriptor,
                 ),
                 to_pulumi_object_field(
-                    "dvb_nit_settings",
+                    "dvbNitSettings",
                     &self.r#dvb_nit_settings,
                 ),
                 to_pulumi_object_field(
-                    "dvb_sdt_settings",
+                    "dvbSdtSettings",
                     &self.r#dvb_sdt_settings,
                 ),
                 to_pulumi_object_field(
-                    "dvb_sub_pids",
+                    "dvbSubPids",
                     &self.r#dvb_sub_pids,
                 ),
                 to_pulumi_object_field(
-                    "dvb_tdt_settings",
+                    "dvbTdtSettings",
                     &self.r#dvb_tdt_settings,
                 ),
                 to_pulumi_object_field(
-                    "dvb_teletext_pid",
+                    "dvbTeletextPid",
                     &self.r#dvb_teletext_pid,
                 ),
                 to_pulumi_object_field(
@@ -229,35 +229,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#ebif,
                 ),
                 to_pulumi_object_field(
-                    "ebp_audio_interval",
+                    "ebpAudioInterval",
                     &self.r#ebp_audio_interval,
                 ),
                 to_pulumi_object_field(
-                    "ebp_lookahead_ms",
+                    "ebpLookaheadMs",
                     &self.r#ebp_lookahead_ms,
                 ),
                 to_pulumi_object_field(
-                    "ebp_placement",
+                    "ebpPlacement",
                     &self.r#ebp_placement,
                 ),
                 to_pulumi_object_field(
-                    "ecm_pid",
+                    "ecmPid",
                     &self.r#ecm_pid,
                 ),
                 to_pulumi_object_field(
-                    "es_rate_in_pes",
+                    "esRateInPes",
                     &self.r#es_rate_in_pes,
                 ),
                 to_pulumi_object_field(
-                    "etv_platform_pid",
+                    "etvPlatformPid",
                     &self.r#etv_platform_pid,
                 ),
                 to_pulumi_object_field(
-                    "etv_signal_pid",
+                    "etvSignalPid",
                     &self.r#etv_signal_pid,
                 ),
                 to_pulumi_object_field(
-                    "fragment_time",
+                    "fragmentTime",
                     &self.r#fragment_time,
                 ),
                 to_pulumi_object_field(
@@ -265,87 +265,87 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#klv,
                 ),
                 to_pulumi_object_field(
-                    "klv_data_pids",
+                    "klvDataPids",
                     &self.r#klv_data_pids,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_id_3_behavior",
+                    "nielsenId3Behavior",
                     &self.r#nielsen_id_3_behavior,
                 ),
                 to_pulumi_object_field(
-                    "null_packet_bitrate",
+                    "nullPacketBitrate",
                     &self.r#null_packet_bitrate,
                 ),
                 to_pulumi_object_field(
-                    "pat_interval",
+                    "patInterval",
                     &self.r#pat_interval,
                 ),
                 to_pulumi_object_field(
-                    "pcr_control",
+                    "pcrControl",
                     &self.r#pcr_control,
                 ),
                 to_pulumi_object_field(
-                    "pcr_period",
+                    "pcrPeriod",
                     &self.r#pcr_period,
                 ),
                 to_pulumi_object_field(
-                    "pcr_pid",
+                    "pcrPid",
                     &self.r#pcr_pid,
                 ),
                 to_pulumi_object_field(
-                    "pmt_interval",
+                    "pmtInterval",
                     &self.r#pmt_interval,
                 ),
                 to_pulumi_object_field(
-                    "pmt_pid",
+                    "pmtPid",
                     &self.r#pmt_pid,
                 ),
                 to_pulumi_object_field(
-                    "program_num",
+                    "programNum",
                     &self.r#program_num,
                 ),
                 to_pulumi_object_field(
-                    "rate_mode",
+                    "rateMode",
                     &self.r#rate_mode,
                 ),
                 to_pulumi_object_field(
-                    "scte_27_pids",
+                    "scte27Pids",
                     &self.r#scte_27_pids,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_control",
+                    "scte35Control",
                     &self.r#scte_35_control,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_pid",
+                    "scte35Pid",
                     &self.r#scte_35_pid,
                 ),
                 to_pulumi_object_field(
-                    "segmentation_markers",
+                    "segmentationMarkers",
                     &self.r#segmentation_markers,
                 ),
                 to_pulumi_object_field(
-                    "segmentation_style",
+                    "segmentationStyle",
                     &self.r#segmentation_style,
                 ),
                 to_pulumi_object_field(
-                    "segmentation_time",
+                    "segmentationTime",
                     &self.r#segmentation_time,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_behavior",
+                    "timedMetadataBehavior",
                     &self.r#timed_metadata_behavior,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_pid",
+                    "timedMetadataPid",
                     &self.r#timed_metadata_pid,
                 ),
                 to_pulumi_object_field(
-                    "transport_stream_id",
+                    "transportStreamId",
                     &self.r#transport_stream_id,
                 ),
                 to_pulumi_object_field(
-                    "video_pid",
+                    "videoPid",
                     &self.r#video_pid,
                 ),
             ];

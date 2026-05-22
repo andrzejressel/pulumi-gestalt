@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "document_type",
+                    "documentType",
                     &self.r#document_type,
                 ),
                 to_pulumi_object_field(
-                    "include_all_versions",
+                    "includeAllVersions",
                     &self.r#include_all_versions,
                 ),
                 to_pulumi_object_field(
-                    "include_renditions",
+                    "includeRenditions",
                     &self.r#include_renditions,
                 ),
                 to_pulumi_object_field(
-                    "include_source_files",
+                    "includeSourceFiles",
                     &self.r#include_source_files,
                 ),
                 to_pulumi_object_field(

@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_denied_page_settings",
+                    "accessDeniedPageSettings",
                     &self.r#access_denied_page_settings,
                 ),
                 to_pulumi_object_field(
-                    "attribute_propagation_settings",
+                    "attributePropagationSettings",
                     &self.r#attribute_propagation_settings,
                 ),
                 to_pulumi_object_field(
-                    "cookie_domain",
+                    "cookieDomain",
                     &self.r#cookie_domain,
                 ),
                 to_pulumi_object_field(
-                    "csm_settings",
+                    "csmSettings",
                     &self.r#csm_settings,
                 ),
             ];

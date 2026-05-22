@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorization_config",
+                    "authorizationConfig",
                     &self.r#authorization_config,
                 ),
                 to_pulumi_object_field(
-                    "file_system_id",
+                    "fileSystemId",
                     &self.r#file_system_id,
                 ),
                 to_pulumi_object_field(
-                    "root_directory",
+                    "rootDirectory",
                     &self.r#root_directory,
                 ),
             ];

@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_expiry",
+                    "certificateExpiry",
                     &self.r#certificate_expiry,
                 ),
                 to_pulumi_object_field(
-                    "certificate_thumbprint",
+                    "certificateThumbprint",
                     &self.r#certificate_thumbprint,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "external_access_enabled",
+                    "externalAccessEnabled",
                     &self.r#external_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "pfx_certificate",
+                    "pfxCertificate",
                     &self.r#pfx_certificate,
                 ),
                 to_pulumi_object_field(
-                    "pfx_certificate_password",
+                    "pfxCertificatePassword",
                     &self.r#pfx_certificate_password,
                 ),
                 to_pulumi_object_field(
-                    "public_certificate",
+                    "publicCertificate",
                     &self.r#public_certificate,
                 ),
             ];

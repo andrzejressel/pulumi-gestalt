@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Glo
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "time_in_minutes",
+                    "timeInMinutes",
                     &self.r#time_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "webhook_url",
+                    "webhookUrl",
                     &self.r#webhook_url,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_filter_type",
+                    "accountFilterType",
                     &self.r#account_filter_type,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#accounts,
                 ),
                 to_pulumi_object_field(
-                    "accounts_url",
+                    "accountsUrl",
                     &self.r#accounts_url,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit_ids",
+                    "organizationalUnitIds",
                     &self.r#organizational_unit_ids,
                 ),
             ];

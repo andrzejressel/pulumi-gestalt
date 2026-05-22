@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_routers",
+                    "cloudRouters",
                     &self.r#cloud_routers,
                 ),
                 to_pulumi_object_field(
-                    "cloud_vpns",
+                    "cloudVpns",
                     &self.r#cloud_vpns,
                 ),
                 to_pulumi_object_field(

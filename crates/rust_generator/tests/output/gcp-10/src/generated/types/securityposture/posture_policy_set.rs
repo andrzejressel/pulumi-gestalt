@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
                     &self.r#policies,
                 ),
                 to_pulumi_object_field(
-                    "policy_set_id",
+                    "policySetId",
                     &self.r#policy_set_id,
                 ),
             ];

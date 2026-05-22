@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "checkpoint_interval",
+                    "checkpointInterval",
                     &self.r#checkpoint_interval,
                 ),
                 to_pulumi_object_field(
-                    "checkpointing_enabled",
+                    "checkpointingEnabled",
                     &self.r#checkpointing_enabled,
                 ),
                 to_pulumi_object_field(
-                    "configuration_type",
+                    "configurationType",
                     &self.r#configuration_type,
                 ),
                 to_pulumi_object_field(
-                    "min_pause_between_checkpoints",
+                    "minPauseBetweenCheckpoints",
                     &self.r#min_pause_between_checkpoints,
                 ),
             ];

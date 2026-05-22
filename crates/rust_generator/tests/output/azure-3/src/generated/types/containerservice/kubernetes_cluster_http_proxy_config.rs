@@ -34,19 +34,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_proxy",
+                    "httpProxy",
                     &self.r#http_proxy,
                 ),
                 to_pulumi_object_field(
-                    "https_proxy",
+                    "httpsProxy",
                     &self.r#https_proxy,
                 ),
                 to_pulumi_object_field(
-                    "no_proxies",
+                    "noProxies",
                     &self.r#no_proxies,
                 ),
                 to_pulumi_object_field(
-                    "trusted_ca",
+                    "trustedCa",
                     &self.r#trusted_ca,
                 ),
             ];

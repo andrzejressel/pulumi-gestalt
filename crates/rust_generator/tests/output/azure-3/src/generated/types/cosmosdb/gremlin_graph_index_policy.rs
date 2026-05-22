@@ -47,23 +47,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gre
                     &self.r#automatic,
                 ),
                 to_pulumi_object_field(
-                    "composite_indices",
+                    "compositeIndices",
                     &self.r#composite_indices,
                 ),
                 to_pulumi_object_field(
-                    "excluded_paths",
+                    "excludedPaths",
                     &self.r#excluded_paths,
                 ),
                 to_pulumi_object_field(
-                    "included_paths",
+                    "includedPaths",
                     &self.r#included_paths,
                 ),
                 to_pulumi_object_field(
-                    "indexing_mode",
+                    "indexingMode",
                     &self.r#indexing_mode,
                 ),
                 to_pulumi_object_field(
-                    "spatial_indices",
+                    "spatialIndices",
                     &self.r#spatial_indices,
                 ),
             ];

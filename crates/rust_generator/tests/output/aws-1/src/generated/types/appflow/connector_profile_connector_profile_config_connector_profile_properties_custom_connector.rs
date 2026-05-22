@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "oauth_2_properties",
+                    "oauth2Properties",
                     &self.r#oauth_2_properties,
                 ),
                 to_pulumi_object_field(
-                    "profile_properties",
+                    "profileProperties",
                     &self.r#profile_properties,
                 ),
             ];

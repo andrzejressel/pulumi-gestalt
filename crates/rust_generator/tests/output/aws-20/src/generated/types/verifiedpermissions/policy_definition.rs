@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "static_",
+                    "static",
                     &self.r#static_,
                 ),
                 to_pulumi_object_field(
-                    "template_linked",
+                    "templateLinked",
                     &self.r#template_linked,
                 ),
             ];

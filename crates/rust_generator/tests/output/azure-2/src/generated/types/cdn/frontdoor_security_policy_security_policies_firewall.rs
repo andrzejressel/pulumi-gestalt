@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#association,
                 ),
                 to_pulumi_object_field(
-                    "cdn_frontdoor_firewall_policy_id",
+                    "cdnFrontdoorFirewallPolicyId",
                     &self.r#cdn_frontdoor_firewall_policy_id,
                 ),
             ];

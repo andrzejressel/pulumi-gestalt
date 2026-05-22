@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "duration_days",
+                    "durationDays",
                     &self.r#duration_days,
                 ),
                 to_pulumi_object_field(
-                    "duration_hours",
+                    "durationHours",
                     &self.r#duration_hours,
                 ),
                 to_pulumi_object_field(
-                    "end_date_time",
+                    "endDateTime",
                     &self.r#end_date_time,
                 ),
             ];

@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#all,
                 ),
                 to_pulumi_object_field(
-                    "included_paths",
+                    "includedPaths",
                     &self.r#included_paths,
                 ),
             ];

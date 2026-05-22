@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#grpcs,
                 ),
                 to_pulumi_object_field(
-                    "http_2_s",
+                    "http2s",
                     &self.r#http_2_s,
                 ),
                 to_pulumi_object_field(

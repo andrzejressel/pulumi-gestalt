@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "management_groups",
+                    "managementGroups",
                     &self.r#management_groups,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#subscriptions,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

@@ -67,51 +67,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_clients",
+                    "allowedClients",
                     &self.r#allowed_clients,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_read_only_enabled",
+                    "kerberos5ReadOnlyEnabled",
                     &self.r#kerberos_5_read_only_enabled,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_read_write_enabled",
+                    "kerberos5ReadWriteEnabled",
                     &self.r#kerberos_5_read_write_enabled,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_i_read_only_enabled",
+                    "kerberos5iReadOnlyEnabled",
                     &self.r#kerberos_5_i_read_only_enabled,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_i_read_write_enabled",
+                    "kerberos5iReadWriteEnabled",
                     &self.r#kerberos_5_i_read_write_enabled,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_p_read_only_enabled",
+                    "kerberos5pReadOnlyEnabled",
                     &self.r#kerberos_5_p_read_only_enabled,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_p_read_write_enabled",
+                    "kerberos5pReadWriteEnabled",
                     &self.r#kerberos_5_p_read_write_enabled,
                 ),
                 to_pulumi_object_field(
-                    "protocols_enabled",
+                    "protocolsEnabled",
                     &self.r#protocols_enabled,
                 ),
                 to_pulumi_object_field(
-                    "root_access_enabled",
+                    "rootAccessEnabled",
                     &self.r#root_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "rule_index",
+                    "ruleIndex",
                     &self.r#rule_index,
                 ),
                 to_pulumi_object_field(
-                    "unix_read_only",
+                    "unixReadOnly",
                     &self.r#unix_read_only,
                 ),
                 to_pulumi_object_field(
-                    "unix_read_write",
+                    "unixReadWrite",
                     &self.r#unix_read_write,
                 ),
             ];

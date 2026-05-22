@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#exportable,
                 ),
                 to_pulumi_object_field(
-                    "key_size",
+                    "keySize",
                     &self.r#key_size,
                 ),
                 to_pulumi_object_field(
-                    "key_type",
+                    "keyType",
                     &self.r#key_type,
                 ),
                 to_pulumi_object_field(
-                    "reuse_key",
+                    "reuseKey",
                     &self.r#reuse_key,
                 ),
             ];

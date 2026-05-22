@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorization_type",
+                    "authorizationType",
                     &self.r#authorization_type,
                 ),
                 to_pulumi_object_field(
-                    "aws_iam_config",
+                    "awsIamConfig",
                     &self.r#aws_iam_config,
                 ),
             ];

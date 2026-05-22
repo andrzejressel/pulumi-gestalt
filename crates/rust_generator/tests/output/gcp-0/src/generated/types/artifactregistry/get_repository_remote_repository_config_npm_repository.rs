@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_repositories",
+                    "customRepositories",
                     &self.r#custom_repositories,
                 ),
                 to_pulumi_object_field(
-                    "public_repository",
+                    "publicRepository",
                     &self.r#public_repository,
                 ),
             ];

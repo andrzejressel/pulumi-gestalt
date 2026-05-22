@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hl7
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "pubsub_topic",
+                    "pubsubTopic",
                     &self.r#pubsub_topic,
                 ),
             ];

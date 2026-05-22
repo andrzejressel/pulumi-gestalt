@@ -70,15 +70,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_connector",
+                    "customConnector",
                     &self.r#custom_connector,
                 ),
                 to_pulumi_object_field(
-                    "customer_profiles",
+                    "customerProfiles",
                     &self.r#customer_profiles,
                 ),
                 to_pulumi_object_field(
-                    "event_bridge",
+                    "eventBridge",
                     &self.r#event_bridge,
                 ),
                 to_pulumi_object_field(
@@ -86,7 +86,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#honeycode,
                 ),
                 to_pulumi_object_field(
-                    "lookout_metrics",
+                    "lookoutMetrics",
                     &self.r#lookout_metrics,
                 ),
                 to_pulumi_object_field(
@@ -98,7 +98,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#redshift,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
                 to_pulumi_object_field(
@@ -106,7 +106,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
                     &self.r#salesforce,
                 ),
                 to_pulumi_object_field(
-                    "sapo_data",
+                    "sapoData",
                     &self.r#sapo_data,
                 ),
                 to_pulumi_object_field(

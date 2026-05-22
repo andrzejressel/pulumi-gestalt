@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "iam_service_account",
+                    "iamServiceAccount",
                     &self.r#iam_service_account,
                 ),
                 to_pulumi_object_field(
-                    "tag_value_id_set",
+                    "tagValueIdSet",
                     &self.r#tag_value_id_set,
                 ),
             ];

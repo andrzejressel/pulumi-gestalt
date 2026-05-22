@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "registry_server",
+                    "registryServer",
                     &self.r#registry_server,
                 ),
                 to_pulumi_object_field(
-                    "user_assigned_identity_id",
+                    "userAssignedIdentityId",
                     &self.r#user_assigned_identity_id,
                 ),
                 to_pulumi_object_field(
-                    "user_name",
+                    "userName",
                     &self.r#user_name,
                 ),
             ];

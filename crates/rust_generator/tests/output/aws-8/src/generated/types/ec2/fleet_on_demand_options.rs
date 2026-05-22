@@ -44,27 +44,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_strategy",
+                    "allocationStrategy",
                     &self.r#allocation_strategy,
                 ),
                 to_pulumi_object_field(
-                    "capacity_reservation_options",
+                    "capacityReservationOptions",
                     &self.r#capacity_reservation_options,
                 ),
                 to_pulumi_object_field(
-                    "max_total_price",
+                    "maxTotalPrice",
                     &self.r#max_total_price,
                 ),
                 to_pulumi_object_field(
-                    "min_target_capacity",
+                    "minTargetCapacity",
                     &self.r#min_target_capacity,
                 ),
                 to_pulumi_object_field(
-                    "single_availability_zone",
+                    "singleAvailabilityZone",
                     &self.r#single_availability_zone,
                 ),
                 to_pulumi_object_field(
-                    "single_instance_type",
+                    "singleInstanceType",
                     &self.r#single_instance_type,
                 ),
             ];

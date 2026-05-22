@@ -58,11 +58,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
                     &self.r#annotations,
                 ),
                 to_pulumi_object_field(
-                    "augmented_manifests",
+                    "augmentedManifests",
                     &self.r#augmented_manifests,
                 ),
                 to_pulumi_object_field(
-                    "data_format",
+                    "dataFormat",
                     &self.r#data_format,
                 ),
                 to_pulumi_object_field(
@@ -70,11 +70,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
                     &self.r#documents,
                 ),
                 to_pulumi_object_field(
-                    "entity_list",
+                    "entityList",
                     &self.r#entity_list,
                 ),
                 to_pulumi_object_field(
-                    "entity_types",
+                    "entityTypes",
                     &self.r#entity_types,
                 ),
             ];

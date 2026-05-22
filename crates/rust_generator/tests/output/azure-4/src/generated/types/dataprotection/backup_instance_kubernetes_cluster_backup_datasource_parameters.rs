@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_scoped_resources_enabled",
+                    "clusterScopedResourcesEnabled",
                     &self.r#cluster_scoped_resources_enabled,
                 ),
                 to_pulumi_object_field(
-                    "excluded_namespaces",
+                    "excludedNamespaces",
                     &self.r#excluded_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "excluded_resource_types",
+                    "excludedResourceTypes",
                     &self.r#excluded_resource_types,
                 ),
                 to_pulumi_object_field(
-                    "included_namespaces",
+                    "includedNamespaces",
                     &self.r#included_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "included_resource_types",
+                    "includedResourceTypes",
                     &self.r#included_resource_types,
                 ),
                 to_pulumi_object_field(
-                    "label_selectors",
+                    "labelSelectors",
                     &self.r#label_selectors,
                 ),
                 to_pulumi_object_field(
-                    "volume_snapshot_enabled",
+                    "volumeSnapshotEnabled",
                     &self.r#volume_snapshot_enabled,
                 ),
             ];

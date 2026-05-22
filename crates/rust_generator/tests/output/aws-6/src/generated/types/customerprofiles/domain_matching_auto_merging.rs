@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "conflict_resolution",
+                    "conflictResolution",
                     &self.r#conflict_resolution,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "min_allowed_confidence_score_for_merging",
+                    "minAllowedConfidenceScoreForMerging",
                     &self.r#min_allowed_confidence_score_for_merging,
                 ),
             ];

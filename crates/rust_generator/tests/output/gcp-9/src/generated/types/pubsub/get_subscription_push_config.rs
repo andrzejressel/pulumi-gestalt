@@ -65,15 +65,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#attributes,
                 ),
                 to_pulumi_object_field(
-                    "no_wrappers",
+                    "noWrappers",
                     &self.r#no_wrappers,
                 ),
                 to_pulumi_object_field(
-                    "oidc_tokens",
+                    "oidcTokens",
                     &self.r#oidc_tokens,
                 ),
                 to_pulumi_object_field(
-                    "push_endpoint",
+                    "pushEndpoint",
                     &self.r#push_endpoint,
                 ),
             ];

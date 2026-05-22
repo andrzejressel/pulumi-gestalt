@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audit_interval_seconds",
+                    "auditIntervalSeconds",
                     &self.r#audit_interval_seconds,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "exemptable_namespaces",
+                    "exemptableNamespaces",
                     &self.r#exemptable_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "log_denies_enabled",
+                    "logDeniesEnabled",
                     &self.r#log_denies_enabled,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#monitoring,
                 ),
                 to_pulumi_object_field(
-                    "mutation_enabled",
+                    "mutationEnabled",
                     &self.r#mutation_enabled,
                 ),
                 to_pulumi_object_field(
-                    "referential_rules_enabled",
+                    "referentialRulesEnabled",
                     &self.r#referential_rules_enabled,
                 ),
                 to_pulumi_object_field(
-                    "template_library_installed",
+                    "templateLibraryInstalled",
                     &self.r#template_library_installed,
                 ),
             ];

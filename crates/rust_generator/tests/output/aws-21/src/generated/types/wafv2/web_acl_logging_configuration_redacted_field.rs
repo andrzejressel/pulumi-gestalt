@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#method,
                 ),
                 to_pulumi_object_field(
-                    "query_string",
+                    "queryString",
                     &self.r#query_string,
                 ),
                 to_pulumi_object_field(
-                    "single_header",
+                    "singleHeader",
                     &self.r#single_header,
                 ),
                 to_pulumi_object_field(
-                    "uri_path",
+                    "uriPath",
                     &self.r#uri_path,
                 ),
             ];

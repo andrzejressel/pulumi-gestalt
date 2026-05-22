@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Had
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_modes",
+                    "accessModes",
                     &self.r#access_modes,
                 ),
                 to_pulumi_object_field(
-                    "destination_port",
+                    "destinationPort",
                     &self.r#destination_port,
                 ),
                 to_pulumi_object_field(
-                    "disable_gateway_auth",
+                    "disableGatewayAuth",
                     &self.r#disable_gateway_auth,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "sub_domain_suffix",
+                    "subDomainSuffix",
                     &self.r#sub_domain_suffix,
                 ),
             ];

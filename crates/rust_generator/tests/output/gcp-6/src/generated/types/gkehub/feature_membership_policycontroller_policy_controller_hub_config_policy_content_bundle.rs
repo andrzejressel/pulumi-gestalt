@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bundle_name",
+                    "bundleName",
                     &self.r#bundle_name,
                 ),
                 to_pulumi_object_field(
-                    "exempted_namespaces",
+                    "exemptedNamespaces",
                     &self.r#exempted_namespaces,
                 ),
             ];

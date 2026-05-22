@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_username",
+                    "adminUsername",
                     &self.r#admin_username,
                 ),
                 to_pulumi_object_field(
-                    "ssh_private_key",
+                    "sshPrivateKey",
                     &self.r#ssh_private_key,
                 ),
                 to_pulumi_object_field(
-                    "ssh_public_key",
+                    "sshPublicKey",
                     &self.r#ssh_public_key,
                 ),
             ];

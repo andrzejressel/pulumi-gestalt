@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cry
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ekm_connection_key_path",
+                    "ekmConnectionKeyPath",
                     &self.r#ekm_connection_key_path,
                 ),
                 to_pulumi_object_field(
-                    "external_key_uri",
+                    "externalKeyUri",
                     &self.r#external_key_uri,
                 ),
             ];

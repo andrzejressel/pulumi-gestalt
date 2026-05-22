@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_source_level_metrics_behavior",
+                    "dataSourceLevelMetricsBehavior",
                     &self.r#data_source_level_metrics_behavior,
                 ),
                 to_pulumi_object_field(
-                    "operation_level_metrics_config",
+                    "operationLevelMetricsConfig",
                     &self.r#operation_level_metrics_config,
                 ),
                 to_pulumi_object_field(
-                    "resolver_level_metrics_behavior",
+                    "resolverLevelMetricsBehavior",
                     &self.r#resolver_level_metrics_behavior,
                 ),
             ];

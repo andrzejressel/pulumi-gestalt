@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_v_4_authentication",
+                    "awsV4Authentication",
                     &self.r#aws_v_4_authentication,
                 ),
                 to_pulumi_object_field(
-                    "client_tls_policy",
+                    "clientTlsPolicy",
                     &self.r#client_tls_policy,
                 ),
                 to_pulumi_object_field(
-                    "subject_alt_names",
+                    "subjectAltNames",
                     &self.r#subject_alt_names,
                 ),
             ];

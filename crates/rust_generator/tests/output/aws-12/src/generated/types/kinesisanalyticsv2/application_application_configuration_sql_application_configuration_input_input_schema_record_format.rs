@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mapping_parameters",
+                    "mappingParameters",
                     &self.r#mapping_parameters,
                 ),
                 to_pulumi_object_field(
-                    "record_format_type",
+                    "recordFormatType",
                     &self.r#record_format_type,
                 ),
             ];

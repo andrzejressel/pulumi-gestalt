@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cod
                     &self.r#branch,
                 ),
                 to_pulumi_object_field(
-                    "repository_url",
+                    "repositoryUrl",
                     &self.r#repository_url,
                 ),
                 to_pulumi_object_field(
-                    "secret_arn",
+                    "secretArn",
                     &self.r#secret_arn,
                 ),
             ];

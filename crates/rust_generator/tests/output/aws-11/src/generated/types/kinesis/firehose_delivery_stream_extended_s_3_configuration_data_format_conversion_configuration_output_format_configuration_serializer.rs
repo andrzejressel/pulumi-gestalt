@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "orc_ser_de",
+                    "orcSerDe",
                     &self.r#orc_ser_de,
                 ),
                 to_pulumi_object_field(
-                    "parquet_ser_de",
+                    "parquetSerDe",
                     &self.r#parquet_ser_de,
                 ),
             ];

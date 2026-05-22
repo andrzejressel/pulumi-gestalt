@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_404_document",
+                    "error404Document",
                     &self.r#error_404_document,
                 ),
                 to_pulumi_object_field(
-                    "index_document",
+                    "indexDocument",
                     &self.r#index_document,
                 ),
             ];

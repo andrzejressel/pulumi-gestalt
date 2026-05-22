@@ -63,47 +63,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "purge_soft_delete_on_destroy",
+                    "purgeSoftDeleteOnDestroy",
                     &self.r#purge_soft_delete_on_destroy,
                 ),
                 to_pulumi_object_field(
-                    "purge_soft_deleted_certificates_on_destroy",
+                    "purgeSoftDeletedCertificatesOnDestroy",
                     &self.r#purge_soft_deleted_certificates_on_destroy,
                 ),
                 to_pulumi_object_field(
-                    "purge_soft_deleted_hardware_security_module_keys_on_destroy",
+                    "purgeSoftDeletedHardwareSecurityModuleKeysOnDestroy",
                     &self.r#purge_soft_deleted_hardware_security_module_keys_on_destroy,
                 ),
                 to_pulumi_object_field(
-                    "purge_soft_deleted_hardware_security_modules_on_destroy",
+                    "purgeSoftDeletedHardwareSecurityModulesOnDestroy",
                     &self.r#purge_soft_deleted_hardware_security_modules_on_destroy,
                 ),
                 to_pulumi_object_field(
-                    "purge_soft_deleted_keys_on_destroy",
+                    "purgeSoftDeletedKeysOnDestroy",
                     &self.r#purge_soft_deleted_keys_on_destroy,
                 ),
                 to_pulumi_object_field(
-                    "purge_soft_deleted_secrets_on_destroy",
+                    "purgeSoftDeletedSecretsOnDestroy",
                     &self.r#purge_soft_deleted_secrets_on_destroy,
                 ),
                 to_pulumi_object_field(
-                    "recover_soft_deleted_certificates",
+                    "recoverSoftDeletedCertificates",
                     &self.r#recover_soft_deleted_certificates,
                 ),
                 to_pulumi_object_field(
-                    "recover_soft_deleted_hardware_security_module_keys",
+                    "recoverSoftDeletedHardwareSecurityModuleKeys",
                     &self.r#recover_soft_deleted_hardware_security_module_keys,
                 ),
                 to_pulumi_object_field(
-                    "recover_soft_deleted_key_vaults",
+                    "recoverSoftDeletedKeyVaults",
                     &self.r#recover_soft_deleted_key_vaults,
                 ),
                 to_pulumi_object_field(
-                    "recover_soft_deleted_keys",
+                    "recoverSoftDeletedKeys",
                     &self.r#recover_soft_deleted_keys,
                 ),
                 to_pulumi_object_field(
-                    "recover_soft_deleted_secrets",
+                    "recoverSoftDeletedSecrets",
                     &self.r#recover_soft_deleted_secrets,
                 ),
             ];

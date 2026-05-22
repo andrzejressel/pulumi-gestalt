@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#http,
                 ),
                 to_pulumi_object_field(
-                    "http_2",
+                    "http2",
                     &self.r#http_2,
                 ),
                 to_pulumi_object_field(

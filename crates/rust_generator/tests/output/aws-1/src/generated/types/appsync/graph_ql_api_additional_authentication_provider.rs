@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_type",
+                    "authenticationType",
                     &self.r#authentication_type,
                 ),
                 to_pulumi_object_field(
-                    "lambda_authorizer_config",
+                    "lambdaAuthorizerConfig",
                     &self.r#lambda_authorizer_config,
                 ),
                 to_pulumi_object_field(
-                    "openid_connect_config",
+                    "openidConnectConfig",
                     &self.r#openid_connect_config,
                 ),
                 to_pulumi_object_field(
-                    "user_pool_config",
+                    "userPoolConfig",
                     &self.r#user_pool_config,
                 ),
             ];

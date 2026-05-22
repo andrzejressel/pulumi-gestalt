@@ -86,47 +86,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "date_time_type_options",
+                    "dateTimeTypeOptions",
                     &self.r#date_time_type_options,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "enum_type_options",
+                    "enumTypeOptions",
                     &self.r#enum_type_options,
                 ),
                 to_pulumi_object_field(
-                    "float_type_options",
+                    "floatTypeOptions",
                     &self.r#float_type_options,
                 ),
                 to_pulumi_object_field(
-                    "integer_type_options",
+                    "integerTypeOptions",
                     &self.r#integer_type_options,
                 ),
                 to_pulumi_object_field(
-                    "is_filterable",
+                    "isFilterable",
                     &self.r#is_filterable,
                 ),
                 to_pulumi_object_field(
-                    "is_metadata",
+                    "isMetadata",
                     &self.r#is_metadata,
                 ),
                 to_pulumi_object_field(
-                    "is_repeatable",
+                    "isRepeatable",
                     &self.r#is_repeatable,
                 ),
                 to_pulumi_object_field(
-                    "is_required",
+                    "isRequired",
                     &self.r#is_required,
                 ),
                 to_pulumi_object_field(
-                    "is_searchable",
+                    "isSearchable",
                     &self.r#is_searchable,
                 ),
                 to_pulumi_object_field(
-                    "map_type_options",
+                    "mapTypeOptions",
                     &self.r#map_type_options,
                 ),
                 to_pulumi_object_field(
@@ -134,19 +134,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "retrieval_importance",
+                    "retrievalImportance",
                     &self.r#retrieval_importance,
                 ),
                 to_pulumi_object_field(
-                    "schema_sources",
+                    "schemaSources",
                     &self.r#schema_sources,
                 ),
                 to_pulumi_object_field(
-                    "text_type_options",
+                    "textTypeOptions",
                     &self.r#text_type_options,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_type_options",
+                    "timestampTypeOptions",
                     &self.r#timestamp_type_options,
                 ),
             ];

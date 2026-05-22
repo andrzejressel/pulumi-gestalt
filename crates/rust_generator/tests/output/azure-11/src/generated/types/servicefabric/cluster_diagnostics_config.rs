@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_endpoint",
+                    "blobEndpoint",
                     &self.r#blob_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "protected_account_key_name",
+                    "protectedAccountKeyName",
                     &self.r#protected_account_key_name,
                 ),
                 to_pulumi_object_field(
-                    "queue_endpoint",
+                    "queueEndpoint",
                     &self.r#queue_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_name",
+                    "storageAccountName",
                     &self.r#storage_account_name,
                 ),
                 to_pulumi_object_field(
-                    "table_endpoint",
+                    "tableEndpoint",
                     &self.r#table_endpoint,
                 ),
             ];

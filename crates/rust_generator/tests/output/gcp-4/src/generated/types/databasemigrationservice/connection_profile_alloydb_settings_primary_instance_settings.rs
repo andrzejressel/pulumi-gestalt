@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "database_flags",
+                    "databaseFlags",
                     &self.r#database_flags,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "machine_config",
+                    "machineConfig",
                     &self.r#machine_config,
                 ),
                 to_pulumi_object_field(
-                    "private_ip",
+                    "privateIp",
                     &self.r#private_ip,
                 ),
             ];

@@ -54,11 +54,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_jagged_rows",
+                    "allowJaggedRows",
                     &self.r#allow_jagged_rows,
                 ),
                 to_pulumi_object_field(
-                    "allow_quoted_newlines",
+                    "allowQuotedNewlines",
                     &self.r#allow_quoted_newlines,
                 ),
                 to_pulumi_object_field(
@@ -66,7 +66,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "field_delimiter",
+                    "fieldDelimiter",
                     &self.r#field_delimiter,
                 ),
                 to_pulumi_object_field(
@@ -74,7 +74,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#quote,
                 ),
                 to_pulumi_object_field(
-                    "skip_leading_rows",
+                    "skipLeadingRows",
                     &self.r#skip_leading_rows,
                 ),
             ];

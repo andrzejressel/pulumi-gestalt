@@ -64,15 +64,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acl_rules",
+                    "aclRules",
                     &self.r#acl_rules,
                 ),
                 to_pulumi_object_field(
-                    "additional_details",
+                    "additionalDetails",
                     &self.r#additional_details,
                 ),
                 to_pulumi_object_field(
-                    "attached_tos",
+                    "attachedTos",
                     &self.r#attached_tos,
                 ),
                 to_pulumi_object_field(
@@ -80,31 +80,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#components,
                 ),
                 to_pulumi_object_field(
-                    "destination_vpcs",
+                    "destinationVpcs",
                     &self.r#destination_vpcs,
                 ),
                 to_pulumi_object_field(
-                    "inbound_headers",
+                    "inboundHeaders",
                     &self.r#inbound_headers,
                 ),
                 to_pulumi_object_field(
-                    "outbound_headers",
+                    "outboundHeaders",
                     &self.r#outbound_headers,
                 ),
                 to_pulumi_object_field(
-                    "route_table_routes",
+                    "routeTableRoutes",
                     &self.r#route_table_routes,
                 ),
                 to_pulumi_object_field(
-                    "security_group_rules",
+                    "securityGroupRules",
                     &self.r#security_group_rules,
                 ),
                 to_pulumi_object_field(
-                    "sequence_number",
+                    "sequenceNumber",
                     &self.r#sequence_number,
                 ),
                 to_pulumi_object_field(
-                    "source_vpcs",
+                    "sourceVpcs",
                     &self.r#source_vpcs,
                 ),
                 to_pulumi_object_field(
@@ -112,11 +112,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#subnets,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_route_table_routes",
+                    "transitGatewayRouteTableRoutes",
                     &self.r#transit_gateway_route_table_routes,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateways",
+                    "transitGateways",
                     &self.r#transit_gateways,
                 ),
                 to_pulumi_object_field(

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advertised_communities",
+                    "advertisedCommunities",
                     &self.r#advertised_communities,
                 ),
                 to_pulumi_object_field(
-                    "advertised_public_prefixes",
+                    "advertisedPublicPrefixes",
                     &self.r#advertised_public_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "customer_asn",
+                    "customerAsn",
                     &self.r#customer_asn,
                 ),
                 to_pulumi_object_field(
-                    "routing_registry_name",
+                    "routingRegistryName",
                     &self.r#routing_registry_name,
                 ),
             ];

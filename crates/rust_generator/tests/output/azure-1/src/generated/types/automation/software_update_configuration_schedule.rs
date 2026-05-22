@@ -77,15 +77,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_month_days",
+                    "advancedMonthDays",
                     &self.r#advanced_month_days,
                 ),
                 to_pulumi_object_field(
-                    "advanced_week_days",
+                    "advancedWeekDays",
                     &self.r#advanced_week_days,
                 ),
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
@@ -93,11 +93,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "expiry_time",
+                    "expiryTime",
                     &self.r#expiry_time,
                 ),
                 to_pulumi_object_field(
-                    "expiry_time_offset_minutes",
+                    "expiryTimeOffsetMinutes",
                     &self.r#expiry_time_offset_minutes,
                 ),
                 to_pulumi_object_field(
@@ -109,35 +109,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "is_enabled",
+                    "isEnabled",
                     &self.r#is_enabled,
                 ),
                 to_pulumi_object_field(
-                    "last_modified_time",
+                    "lastModifiedTime",
                     &self.r#last_modified_time,
                 ),
                 to_pulumi_object_field(
-                    "monthly_occurrence",
+                    "monthlyOccurrence",
                     &self.r#monthly_occurrence,
                 ),
                 to_pulumi_object_field(
-                    "next_run",
+                    "nextRun",
                     &self.r#next_run,
                 ),
                 to_pulumi_object_field(
-                    "next_run_offset_minutes",
+                    "nextRunOffsetMinutes",
                     &self.r#next_run_offset_minutes,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "start_time_offset_minutes",
+                    "startTimeOffsetMinutes",
                     &self.r#start_time_offset_minutes,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];

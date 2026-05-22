@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cpu_count",
+                    "cpuCount",
                     &self.r#cpu_count,
                 ),
                 to_pulumi_object_field(
-                    "memory_size_mb",
+                    "memorySizeMb",
                     &self.r#memory_size_mb,
                 ),
             ];

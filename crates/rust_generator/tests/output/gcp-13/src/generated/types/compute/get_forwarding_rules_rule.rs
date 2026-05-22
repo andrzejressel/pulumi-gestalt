@@ -360,27 +360,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_ports",
+                    "allPorts",
                     &self.r#all_ports,
                 ),
                 to_pulumi_object_field(
-                    "allow_global_access",
+                    "allowGlobalAccess",
                     &self.r#allow_global_access,
                 ),
                 to_pulumi_object_field(
-                    "allow_psc_global_access",
+                    "allowPscGlobalAccess",
                     &self.r#allow_psc_global_access,
                 ),
                 to_pulumi_object_field(
-                    "backend_service",
+                    "backendService",
                     &self.r#backend_service,
                 ),
                 to_pulumi_object_field(
-                    "base_forwarding_rule",
+                    "baseForwardingRule",
                     &self.r#base_forwarding_rule,
                 ),
                 to_pulumi_object_field(
-                    "creation_timestamp",
+                    "creationTimestamp",
                     &self.r#creation_timestamp,
                 ),
                 to_pulumi_object_field(
@@ -388,31 +388,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "effective_labels",
+                    "effectiveLabels",
                     &self.r#effective_labels,
                 ),
                 to_pulumi_object_field(
-                    "forwarding_rule_id",
+                    "forwardingRuleId",
                     &self.r#forwarding_rule_id,
                 ),
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
                 to_pulumi_object_field(
-                    "ip_protocol",
+                    "ipProtocol",
                     &self.r#ip_protocol,
                 ),
                 to_pulumi_object_field(
-                    "ip_version",
+                    "ipVersion",
                     &self.r#ip_version,
                 ),
                 to_pulumi_object_field(
-                    "is_mirroring_collector",
+                    "isMirroringCollector",
                     &self.r#is_mirroring_collector,
                 ),
                 to_pulumi_object_field(
-                    "label_fingerprint",
+                    "labelFingerprint",
                     &self.r#label_fingerprint,
                 ),
                 to_pulumi_object_field(
@@ -420,7 +420,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "load_balancing_scheme",
+                    "loadBalancingScheme",
                     &self.r#load_balancing_scheme,
                 ),
                 to_pulumi_object_field(
@@ -432,15 +432,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "network_tier",
+                    "networkTier",
                     &self.r#network_tier,
                 ),
                 to_pulumi_object_field(
-                    "no_automate_dns_zone",
+                    "noAutomateDnsZone",
                     &self.r#no_automate_dns_zone,
                 ),
                 to_pulumi_object_field(
-                    "port_range",
+                    "portRange",
                     &self.r#port_range,
                 ),
                 to_pulumi_object_field(
@@ -452,19 +452,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#project,
                 ),
                 to_pulumi_object_field(
-                    "psc_connection_id",
+                    "pscConnectionId",
                     &self.r#psc_connection_id,
                 ),
                 to_pulumi_object_field(
-                    "psc_connection_status",
+                    "pscConnectionStatus",
                     &self.r#psc_connection_status,
                 ),
                 to_pulumi_object_field(
-                    "pulumi_labels",
+                    "pulumiLabels",
                     &self.r#pulumi_labels,
                 ),
                 to_pulumi_object_field(
-                    "recreate_closed_psc",
+                    "recreateClosedPsc",
                     &self.r#recreate_closed_psc,
                 ),
                 to_pulumi_object_field(
@@ -472,23 +472,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
                 to_pulumi_object_field(
-                    "service_directory_registrations",
+                    "serviceDirectoryRegistrations",
                     &self.r#service_directory_registrations,
                 ),
                 to_pulumi_object_field(
-                    "service_label",
+                    "serviceLabel",
                     &self.r#service_label,
                 ),
                 to_pulumi_object_field(
-                    "service_name",
+                    "serviceName",
                     &self.r#service_name,
                 ),
                 to_pulumi_object_field(
-                    "source_ip_ranges",
+                    "sourceIpRanges",
                     &self.r#source_ip_ranges,
                 ),
                 to_pulumi_object_field(

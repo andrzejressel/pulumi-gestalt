@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxC
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_type",
+                    "cacheType",
                     &self.r#cache_type,
                 ),
                 to_pulumi_object_field(
-                    "db_paths",
+                    "dbPaths",
                     &self.r#db_paths,
                 ),
             ];

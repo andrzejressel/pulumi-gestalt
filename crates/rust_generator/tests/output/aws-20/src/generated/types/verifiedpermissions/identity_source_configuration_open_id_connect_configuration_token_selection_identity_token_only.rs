@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_ids",
+                    "clientIds",
                     &self.r#client_ids,
                 ),
                 to_pulumi_object_field(
-                    "principal_id_claim",
+                    "principalIdClaim",
                     &self.r#principal_id_claim,
                 ),
             ];

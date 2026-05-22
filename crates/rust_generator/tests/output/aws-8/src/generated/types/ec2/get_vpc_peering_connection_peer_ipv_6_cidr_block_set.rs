@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ipv_6_cidr_block",
+                    "ipv6CidrBlock",
                     &self.r#ipv_6_cidr_block,
                 ),
             ];

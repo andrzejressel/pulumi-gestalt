@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ext
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "detail_message",
+                    "detailMessage",
                     &self.r#detail_message,
                 ),
                 to_pulumi_object_field(

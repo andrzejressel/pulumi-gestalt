@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ful
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "request_headers",
+                    "requestHeaders",
                     &self.r#request_headers,
                 ),
                 to_pulumi_object_field(

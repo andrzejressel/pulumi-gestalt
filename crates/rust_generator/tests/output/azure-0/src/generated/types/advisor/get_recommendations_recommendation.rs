@@ -67,27 +67,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#impact,
                 ),
                 to_pulumi_object_field(
-                    "recommendation_name",
+                    "recommendationName",
                     &self.r#recommendation_name,
                 ),
                 to_pulumi_object_field(
-                    "recommendation_type_id",
+                    "recommendationTypeId",
                     &self.r#recommendation_type_id,
                 ),
                 to_pulumi_object_field(
-                    "resource_name",
+                    "resourceName",
                     &self.r#resource_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
                 to_pulumi_object_field(
-                    "suppression_names",
+                    "suppressionNames",
                     &self.r#suppression_names,
                 ),
                 to_pulumi_object_field(
-                    "updated_time",
+                    "updatedTime",
                     &self.r#updated_time,
                 ),
             ];

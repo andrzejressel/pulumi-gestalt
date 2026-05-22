@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#base,
                 ),
                 to_pulumi_object_field(
-                    "capacity_provider",
+                    "capacityProvider",
                     &self.r#capacity_provider,
                 ),
                 to_pulumi_object_field(

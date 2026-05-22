@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_types",
+                    "blobTypes",
                     &self.r#blob_types,
                 ),
                 to_pulumi_object_field(
-                    "match_blob_index_tags",
+                    "matchBlobIndexTags",
                     &self.r#match_blob_index_tags,
                 ),
                 to_pulumi_object_field(
-                    "prefix_matches",
+                    "prefixMatches",
                     &self.r#prefix_matches,
                 ),
             ];

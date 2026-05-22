@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_cidr_block",
+                    "destinationCidrBlock",
                     &self.r#destination_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "prefix_list_id",
+                    "prefixListId",
                     &self.r#prefix_list_id,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_route_table_announcement_id",
+                    "transitGatewayRouteTableAnnouncementId",
                     &self.r#transit_gateway_route_table_announcement_id,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

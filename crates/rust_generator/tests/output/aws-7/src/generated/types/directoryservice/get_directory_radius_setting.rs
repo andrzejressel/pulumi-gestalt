@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_protocol",
+                    "authenticationProtocol",
                     &self.r#authentication_protocol,
                 ),
                 to_pulumi_object_field(
-                    "display_label",
+                    "displayLabel",
                     &self.r#display_label,
                 ),
                 to_pulumi_object_field(
-                    "radius_port",
+                    "radiusPort",
                     &self.r#radius_port,
                 ),
                 to_pulumi_object_field(
-                    "radius_retries",
+                    "radiusRetries",
                     &self.r#radius_retries,
                 ),
                 to_pulumi_object_field(
-                    "radius_servers",
+                    "radiusServers",
                     &self.r#radius_servers,
                 ),
                 to_pulumi_object_field(
-                    "radius_timeout",
+                    "radiusTimeout",
                     &self.r#radius_timeout,
                 ),
                 to_pulumi_object_field(
-                    "use_same_username",
+                    "useSameUsername",
                     &self.r#use_same_username,
                 ),
             ];

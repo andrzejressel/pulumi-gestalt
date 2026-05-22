@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "non_key_attributes",
+                    "nonKeyAttributes",
                     &self.r#non_key_attributes,
                 ),
                 to_pulumi_object_field(
-                    "projection_type",
+                    "projectionType",
                     &self.r#projection_type,
                 ),
                 to_pulumi_object_field(
-                    "range_key",
+                    "rangeKey",
                     &self.r#range_key,
                 ),
             ];

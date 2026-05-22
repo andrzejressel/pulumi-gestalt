@@ -99,83 +99,83 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "available_core_count",
+                    "availableCoreCount",
                     &self.r#available_core_count,
                 ),
                 to_pulumi_object_field(
-                    "available_core_count_per_node",
+                    "availableCoreCountPerNode",
                     &self.r#available_core_count_per_node,
                 ),
                 to_pulumi_object_field(
-                    "available_data_storage_in_tbs",
+                    "availableDataStorageInTbs",
                     &self.r#available_data_storage_in_tbs,
                 ),
                 to_pulumi_object_field(
-                    "available_data_storage_per_server_in_tbs",
+                    "availableDataStoragePerServerInTbs",
                     &self.r#available_data_storage_per_server_in_tbs,
                 ),
                 to_pulumi_object_field(
-                    "available_db_node_per_node_in_gbs",
+                    "availableDbNodePerNodeInGbs",
                     &self.r#available_db_node_per_node_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "available_db_node_storage_in_gbs",
+                    "availableDbNodeStorageInGbs",
                     &self.r#available_db_node_storage_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "available_memory_in_gbs",
+                    "availableMemoryInGbs",
                     &self.r#available_memory_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "available_memory_per_node_in_gbs",
+                    "availableMemoryPerNodeInGbs",
                     &self.r#available_memory_per_node_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "core_count_increment",
+                    "coreCountIncrement",
                     &self.r#core_count_increment,
                 ),
                 to_pulumi_object_field(
-                    "maximum_node_count",
+                    "maximumNodeCount",
                     &self.r#maximum_node_count,
                 ),
                 to_pulumi_object_field(
-                    "maximum_storage_count",
+                    "maximumStorageCount",
                     &self.r#maximum_storage_count,
                 ),
                 to_pulumi_object_field(
-                    "minimum_core_count",
+                    "minimumCoreCount",
                     &self.r#minimum_core_count,
                 ),
                 to_pulumi_object_field(
-                    "minimum_core_count_per_node",
+                    "minimumCoreCountPerNode",
                     &self.r#minimum_core_count_per_node,
                 ),
                 to_pulumi_object_field(
-                    "minimum_data_storage_in_tbs",
+                    "minimumDataStorageInTbs",
                     &self.r#minimum_data_storage_in_tbs,
                 ),
                 to_pulumi_object_field(
-                    "minimum_db_node_storage_per_node_in_gbs",
+                    "minimumDbNodeStoragePerNodeInGbs",
                     &self.r#minimum_db_node_storage_per_node_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "minimum_memory_per_node_in_gbs",
+                    "minimumMemoryPerNodeInGbs",
                     &self.r#minimum_memory_per_node_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "minimum_node_count",
+                    "minimumNodeCount",
                     &self.r#minimum_node_count,
                 ),
                 to_pulumi_object_field(
-                    "minimum_storage_count",
+                    "minimumStorageCount",
                     &self.r#minimum_storage_count,
                 ),
                 to_pulumi_object_field(
-                    "runtime_minimum_core_count",
+                    "runtimeMinimumCoreCount",
                     &self.r#runtime_minimum_core_count,
                 ),
                 to_pulumi_object_field(
-                    "shape_family",
+                    "shapeFamily",
                     &self.r#shape_family,
                 ),
             ];

@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "other_tables",
+                    "otherTables",
                     &self.r#other_tables,
                 ),
                 to_pulumi_object_field(
-                    "table_reference",
+                    "tableReference",
                     &self.r#table_reference,
                 ),
                 to_pulumi_object_field(

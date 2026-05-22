@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_concurrency",
+                    "containerConcurrency",
                     &self.r#container_concurrency,
                 ),
                 to_pulumi_object_field(
@@ -65,19 +65,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "node_selector",
+                    "nodeSelector",
                     &self.r#node_selector,
                 ),
                 to_pulumi_object_field(
-                    "service_account_name",
+                    "serviceAccountName",
                     &self.r#service_account_name,
                 ),
                 to_pulumi_object_field(
-                    "serving_state",
+                    "servingState",
                     &self.r#serving_state,
                 ),
                 to_pulumi_object_field(
-                    "timeout_seconds",
+                    "timeoutSeconds",
                     &self.r#timeout_seconds,
                 ),
                 to_pulumi_object_field(

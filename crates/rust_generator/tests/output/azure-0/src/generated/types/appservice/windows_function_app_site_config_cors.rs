@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_origins",
+                    "allowedOrigins",
                     &self.r#allowed_origins,
                 ),
                 to_pulumi_object_field(
-                    "support_credentials",
+                    "supportCredentials",
                     &self.r#support_credentials,
                 ),
             ];

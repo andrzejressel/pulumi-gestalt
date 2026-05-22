@@ -67,51 +67,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_job_parameters",
+                    "batchJobParameters",
                     &self.r#batch_job_parameters,
                 ),
                 to_pulumi_object_field(
-                    "cloudwatch_logs_parameters",
+                    "cloudwatchLogsParameters",
                     &self.r#cloudwatch_logs_parameters,
                 ),
                 to_pulumi_object_field(
-                    "ecs_task_parameters",
+                    "ecsTaskParameters",
                     &self.r#ecs_task_parameters,
                 ),
                 to_pulumi_object_field(
-                    "eventbridge_event_bus_parameters",
+                    "eventbridgeEventBusParameters",
                     &self.r#eventbridge_event_bus_parameters,
                 ),
                 to_pulumi_object_field(
-                    "http_parameters",
+                    "httpParameters",
                     &self.r#http_parameters,
                 ),
                 to_pulumi_object_field(
-                    "input_template",
+                    "inputTemplate",
                     &self.r#input_template,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_stream_parameters",
+                    "kinesisStreamParameters",
                     &self.r#kinesis_stream_parameters,
                 ),
                 to_pulumi_object_field(
-                    "lambda_function_parameters",
+                    "lambdaFunctionParameters",
                     &self.r#lambda_function_parameters,
                 ),
                 to_pulumi_object_field(
-                    "redshift_data_parameters",
+                    "redshiftDataParameters",
                     &self.r#redshift_data_parameters,
                 ),
                 to_pulumi_object_field(
-                    "sagemaker_pipeline_parameters",
+                    "sagemakerPipelineParameters",
                     &self.r#sagemaker_pipeline_parameters,
                 ),
                 to_pulumi_object_field(
-                    "sqs_queue_parameters",
+                    "sqsQueueParameters",
                     &self.r#sqs_queue_parameters,
                 ),
                 to_pulumi_object_field(
-                    "step_function_state_machine_parameters",
+                    "stepFunctionStateMachineParameters",
                     &self.r#step_function_state_machine_parameters,
                 ),
             ];

@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Slo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "distribution_cut",
+                    "distributionCut",
                     &self.r#distribution_cut,
                 ),
                 to_pulumi_object_field(
-                    "good_total_ratio",
+                    "goodTotalRatio",
                     &self.r#good_total_ratio,
                 ),
             ];

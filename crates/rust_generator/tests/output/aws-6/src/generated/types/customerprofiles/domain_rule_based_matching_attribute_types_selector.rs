@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#addresses,
                 ),
                 to_pulumi_object_field(
-                    "attribute_matching_model",
+                    "attributeMatchingModel",
                     &self.r#attribute_matching_model,
                 ),
                 to_pulumi_object_field(
-                    "email_addresses",
+                    "emailAddresses",
                     &self.r#email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "phone_numbers",
+                    "phoneNumbers",
                     &self.r#phone_numbers,
                 ),
             ];

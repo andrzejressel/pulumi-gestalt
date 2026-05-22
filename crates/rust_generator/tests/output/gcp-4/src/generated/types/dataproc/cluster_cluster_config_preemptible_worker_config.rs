@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_config",
+                    "diskConfig",
                     &self.r#disk_config,
                 ),
                 to_pulumi_object_field(
-                    "instance_flexibility_policy",
+                    "instanceFlexibilityPolicy",
                     &self.r#instance_flexibility_policy,
                 ),
                 to_pulumi_object_field(
-                    "instance_names",
+                    "instanceNames",
                     &self.r#instance_names,
                 ),
                 to_pulumi_object_field(
-                    "num_instances",
+                    "numInstances",
                     &self.r#num_instances,
                 ),
                 to_pulumi_object_field(

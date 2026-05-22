@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_application_id",
+                    "clientApplicationId",
                     &self.r#client_application_id,
                 ),
                 to_pulumi_object_field(
-                    "cluster_application_id",
+                    "clusterApplicationId",
                     &self.r#cluster_application_id,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

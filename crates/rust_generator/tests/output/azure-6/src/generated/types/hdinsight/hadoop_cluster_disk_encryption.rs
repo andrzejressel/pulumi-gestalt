@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Had
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "encryption_algorithm",
+                    "encryptionAlgorithm",
                     &self.r#encryption_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "encryption_at_host_enabled",
+                    "encryptionAtHostEnabled",
                     &self.r#encryption_at_host_enabled,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_key_id",
+                    "keyVaultKeyId",
                     &self.r#key_vault_key_id,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_managed_identity_id",
+                    "keyVaultManagedIdentityId",
                     &self.r#key_vault_managed_identity_id,
                 ),
             ];

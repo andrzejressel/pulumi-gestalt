@@ -65,19 +65,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_guard_role_changed_time",
+                    "dataGuardRoleChangedTime",
                     &self.r#data_guard_role_changed_time,
                 ),
                 to_pulumi_object_field(
-                    "disaster_recovery_role_changed_time",
+                    "disasterRecoveryRoleChangedTime",
                     &self.r#disaster_recovery_role_changed_time,
                 ),
                 to_pulumi_object_field(
-                    "lag_time_duration",
+                    "lagTimeDuration",
                     &self.r#lag_time_duration,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_details",
+                    "lifecycleDetails",
                     &self.r#lifecycle_details,
                 ),
                 to_pulumi_object_field(

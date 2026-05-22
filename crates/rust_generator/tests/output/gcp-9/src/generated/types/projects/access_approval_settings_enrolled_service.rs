@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_product",
+                    "cloudProduct",
                     &self.r#cloud_product,
                 ),
                 to_pulumi_object_field(
-                    "enrollment_level",
+                    "enrollmentLevel",
                     &self.r#enrollment_level,
                 ),
             ];

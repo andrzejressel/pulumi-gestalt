@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
                     &self.r#locked,
                 ),
                 to_pulumi_object_field(
-                    "password_expiration_time",
+                    "passwordExpirationTime",
                     &self.r#password_expiration_time,
                 ),
             ];

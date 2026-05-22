@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "newer_noncurrent_versions",
+                    "newerNoncurrentVersions",
                     &self.r#newer_noncurrent_versions,
                 ),
                 to_pulumi_object_field(
-                    "noncurrent_days",
+                    "noncurrentDays",
                     &self.r#noncurrent_days,
                 ),
                 to_pulumi_object_field(
-                    "storage_class",
+                    "storageClass",
                     &self.r#storage_class,
                 ),
             ];

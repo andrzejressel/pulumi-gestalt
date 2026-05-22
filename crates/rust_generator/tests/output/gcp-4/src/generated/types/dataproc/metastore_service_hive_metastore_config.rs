@@ -48,19 +48,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auxiliary_versions",
+                    "auxiliaryVersions",
                     &self.r#auxiliary_versions,
                 ),
                 to_pulumi_object_field(
-                    "config_overrides",
+                    "configOverrides",
                     &self.r#config_overrides,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_protocol",
+                    "endpointProtocol",
                     &self.r#endpoint_protocol,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_config",
+                    "kerberosConfig",
                     &self.r#kerberos_config,
                 ),
                 to_pulumi_object_field(

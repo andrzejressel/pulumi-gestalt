@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_ids",
+                    "destinationIds",
                     &self.r#destination_ids,
                 ),
                 to_pulumi_object_field(
-                    "propagate_service",
+                    "propagateService",
                     &self.r#propagate_service,
                 ),
             ];

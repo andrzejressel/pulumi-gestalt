@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "record_column_delimiter",
+                    "recordColumnDelimiter",
                     &self.r#record_column_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "record_row_delimiter",
+                    "recordRowDelimiter",
                     &self.r#record_row_delimiter,
                 ),
             ];

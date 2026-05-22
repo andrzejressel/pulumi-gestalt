@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_run_id",
+                    "backupRunId",
                     &self.r#backup_run_id,
                 ),
                 to_pulumi_object_field(
-                    "instance_id",
+                    "instanceId",
                     &self.r#instance_id,
                 ),
                 to_pulumi_object_field(

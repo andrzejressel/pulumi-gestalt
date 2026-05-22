@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Att
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "external_tables_to_excludes",
+                    "externalTablesToExcludes",
                     &self.r#external_tables_to_excludes,
                 ),
                 to_pulumi_object_field(
-                    "external_tables_to_includes",
+                    "externalTablesToIncludes",
                     &self.r#external_tables_to_includes,
                 ),
                 to_pulumi_object_field(
-                    "materialized_views_to_excludes",
+                    "materializedViewsToExcludes",
                     &self.r#materialized_views_to_excludes,
                 ),
                 to_pulumi_object_field(
-                    "materialized_views_to_includes",
+                    "materializedViewsToIncludes",
                     &self.r#materialized_views_to_includes,
                 ),
                 to_pulumi_object_field(
-                    "tables_to_excludes",
+                    "tablesToExcludes",
                     &self.r#tables_to_excludes,
                 ),
                 to_pulumi_object_field(
-                    "tables_to_includes",
+                    "tablesToIncludes",
                     &self.r#tables_to_includes,
                 ),
             ];

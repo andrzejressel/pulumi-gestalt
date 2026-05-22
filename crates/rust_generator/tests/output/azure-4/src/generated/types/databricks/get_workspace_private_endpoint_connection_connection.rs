@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_required",
+                    "actionRequired",
                     &self.r#action_required,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "workspace_private_endpoint_id",
+                    "workspacePrivateEndpointId",
                     &self.r#workspace_private_endpoint_id,
                 ),
             ];

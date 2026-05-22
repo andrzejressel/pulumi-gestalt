@@ -36,11 +36,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#attributes,
                 ),
                 to_pulumi_object_field(
-                    "namespace_name",
+                    "namespaceName",
                     &self.r#namespace_name,
                 ),
                 to_pulumi_object_field(
-                    "service_name",
+                    "serviceName",
                     &self.r#service_name,
                 ),
             ];

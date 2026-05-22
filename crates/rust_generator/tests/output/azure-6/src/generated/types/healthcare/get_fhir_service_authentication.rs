@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#authority,
                 ),
                 to_pulumi_object_field(
-                    "smart_proxy_enabled",
+                    "smartProxyEnabled",
                     &self.r#smart_proxy_enabled,
                 ),
             ];

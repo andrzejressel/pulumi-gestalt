@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#and,
                 ),
                 to_pulumi_object_field(
-                    "object_size_greater_than",
+                    "objectSizeGreaterThan",
                     &self.r#object_size_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "object_size_less_than",
+                    "objectSizeLessThan",
                     &self.r#object_size_less_than,
                 ),
                 to_pulumi_object_field(

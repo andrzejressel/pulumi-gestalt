@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maintenance_day",
+                    "maintenanceDay",
                     &self.r#maintenance_day,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_start_time",
+                    "maintenanceStartTime",
                     &self.r#maintenance_start_time,
                 ),
             ];

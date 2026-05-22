@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "device_type_android",
+                    "deviceTypeAndroid",
                     &self.r#device_type_android,
                 ),
                 to_pulumi_object_field(
-                    "device_type_chromeos",
+                    "deviceTypeChromeos",
                     &self.r#device_type_chromeos,
                 ),
                 to_pulumi_object_field(
-                    "device_type_ios",
+                    "deviceTypeIos",
                     &self.r#device_type_ios,
                 ),
                 to_pulumi_object_field(
-                    "device_type_linux",
+                    "deviceTypeLinux",
                     &self.r#device_type_linux,
                 ),
                 to_pulumi_object_field(
-                    "device_type_osx",
+                    "deviceTypeOsx",
                     &self.r#device_type_osx,
                 ),
                 to_pulumi_object_field(
-                    "device_type_web",
+                    "deviceTypeWeb",
                     &self.r#device_type_web,
                 ),
                 to_pulumi_object_field(
-                    "device_type_windows",
+                    "deviceTypeWindows",
                     &self.r#device_type_windows,
                 ),
                 to_pulumi_object_field(
-                    "device_type_zeroclient",
+                    "deviceTypeZeroclient",
                     &self.r#device_type_zeroclient,
                 ),
             ];

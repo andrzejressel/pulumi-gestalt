@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "route_rules",
+                    "routeRules",
                     &self.r#route_rules,
                 ),
             ];

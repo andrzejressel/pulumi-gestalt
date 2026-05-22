@@ -91,59 +91,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autonomous_virtual_machine_ds",
+                    "autonomousVirtualMachineDs",
                     &self.r#autonomous_virtual_machine_ds,
                 ),
                 to_pulumi_object_field(
-                    "autonomous_vm_cluster_ids",
+                    "autonomousVmClusterIds",
                     &self.r#autonomous_vm_cluster_ids,
                 ),
                 to_pulumi_object_field(
-                    "compartment_id",
+                    "compartmentId",
                     &self.r#compartment_id,
                 ),
                 to_pulumi_object_field(
-                    "cpu_core_count",
+                    "cpuCoreCount",
                     &self.r#cpu_core_count,
                 ),
                 to_pulumi_object_field(
-                    "db_node_ids",
+                    "dbNodeIds",
                     &self.r#db_node_ids,
                 ),
                 to_pulumi_object_field(
-                    "db_node_storage_size_in_gbs",
+                    "dbNodeStorageSizeInGbs",
                     &self.r#db_node_storage_size_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "exadata_infrastructure_id",
+                    "exadataInfrastructureId",
                     &self.r#exadata_infrastructure_id,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_details",
+                    "lifecycleDetails",
                     &self.r#lifecycle_details,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_state",
+                    "lifecycleState",
                     &self.r#lifecycle_state,
                 ),
                 to_pulumi_object_field(
-                    "max_cpu_count",
+                    "maxCpuCount",
                     &self.r#max_cpu_count,
                 ),
                 to_pulumi_object_field(
-                    "max_db_node_storage_in_gbs",
+                    "maxDbNodeStorageInGbs",
                     &self.r#max_db_node_storage_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "max_memory_in_gbs",
+                    "maxMemoryInGbs",
                     &self.r#max_memory_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "memory_size_in_gbs",
+                    "memorySizeInGbs",
                     &self.r#memory_size_in_gbs,
                 ),
                 to_pulumi_object_field(
@@ -155,11 +155,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#shape,
                 ),
                 to_pulumi_object_field(
-                    "time_created",
+                    "timeCreated",
                     &self.r#time_created,
                 ),
                 to_pulumi_object_field(
-                    "vm_cluster_ids",
+                    "vmClusterIds",
                     &self.r#vm_cluster_ids,
                 ),
             ];

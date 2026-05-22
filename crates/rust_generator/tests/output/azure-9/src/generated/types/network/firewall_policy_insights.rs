@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_log_analytics_workspace_id",
+                    "defaultLogAnalyticsWorkspaceId",
                     &self.r#default_log_analytics_workspace_id,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "log_analytics_workspaces",
+                    "logAnalyticsWorkspaces",
                     &self.r#log_analytics_workspaces,
                 ),
                 to_pulumi_object_field(
-                    "retention_in_days",
+                    "retentionInDays",
                     &self.r#retention_in_days,
                 ),
             ];

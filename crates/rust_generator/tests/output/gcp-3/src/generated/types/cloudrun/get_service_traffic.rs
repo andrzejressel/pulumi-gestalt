@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "latest_revision",
+                    "latestRevision",
                     &self.r#latest_revision,
                 ),
                 to_pulumi_object_field(
@@ -52,7 +52,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#percent,
                 ),
                 to_pulumi_object_field(
-                    "revision_name",
+                    "revisionName",
                     &self.r#revision_name,
                 ),
                 to_pulumi_object_field(

@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "association_id",
+                    "associationId",
                     &self.r#association_id,
                 ),
                 to_pulumi_object_field(
-                    "cidr_block",
+                    "cidrBlock",
                     &self.r#cidr_block,
                 ),
                 to_pulumi_object_field(

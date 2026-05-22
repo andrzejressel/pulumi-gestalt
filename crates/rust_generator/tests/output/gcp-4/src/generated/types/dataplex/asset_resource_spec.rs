@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "read_access_mode",
+                    "readAccessMode",
                     &self.r#read_access_mode,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

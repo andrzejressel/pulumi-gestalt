@@ -108,7 +108,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_delete",
+                    "autoDelete",
                     &self.r#auto_delete,
                 ),
                 to_pulumi_object_field(
@@ -116,11 +116,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#boot,
                 ),
                 to_pulumi_object_field(
-                    "device_name",
+                    "deviceName",
                     &self.r#device_name,
                 ),
                 to_pulumi_object_field(
-                    "guest_os_features",
+                    "guestOsFeatures",
                     &self.r#guest_os_features,
                 ),
                 to_pulumi_object_field(
@@ -128,7 +128,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#index,
                 ),
                 to_pulumi_object_field(
-                    "initialize_params",
+                    "initializeParams",
                     &self.r#initialize_params,
                 ),
                 to_pulumi_object_field(
@@ -152,7 +152,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#source,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

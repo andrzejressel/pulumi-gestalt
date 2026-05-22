@@ -42,23 +42,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "expiration_time",
+                    "expirationTime",
                     &self.r#expiration_time,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
                 to_pulumi_object_field(
-                    "vm_start_schedule",
+                    "vmStartSchedule",
                     &self.r#vm_start_schedule,
                 ),
                 to_pulumi_object_field(
-                    "vm_stop_schedule",
+                    "vmStopSchedule",
                     &self.r#vm_stop_schedule,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "storage_account_id",
+                    "storageAccountId",
                     &self.r#storage_account_id,
                 ),
                 to_pulumi_object_field(
-                    "storage_blob_container_name",
+                    "storageBlobContainerName",
                     &self.r#storage_blob_container_name,
                 ),
             ];

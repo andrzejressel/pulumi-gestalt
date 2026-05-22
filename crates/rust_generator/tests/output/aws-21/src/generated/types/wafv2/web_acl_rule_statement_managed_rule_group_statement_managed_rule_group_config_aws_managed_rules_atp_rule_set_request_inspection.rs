@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "password_field",
+                    "passwordField",
                     &self.r#password_field,
                 ),
                 to_pulumi_object_field(
-                    "payload_type",
+                    "payloadType",
                     &self.r#payload_type,
                 ),
                 to_pulumi_object_field(
-                    "username_field",
+                    "usernameField",
                     &self.r#username_field,
                 ),
             ];

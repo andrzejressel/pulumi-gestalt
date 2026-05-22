@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_chain",
+                    "certificateChain",
                     &self.r#certificate_chain,
                 ),
                 to_pulumi_object_field(
-                    "private_key",
+                    "privateKey",
                     &self.r#private_key,
                 ),
             ];

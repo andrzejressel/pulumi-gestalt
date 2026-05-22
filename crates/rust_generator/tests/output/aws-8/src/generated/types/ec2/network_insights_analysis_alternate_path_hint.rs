@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "component_arn",
+                    "componentArn",
                     &self.r#component_arn,
                 ),
                 to_pulumi_object_field(
-                    "component_id",
+                    "componentId",
                     &self.r#component_id,
                 ),
             ];

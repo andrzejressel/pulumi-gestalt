@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "output_sdt",
+                    "outputSdt",
                     &self.r#output_sdt,
                 ),
                 to_pulumi_object_field(
-                    "rep_interval",
+                    "repInterval",
                     &self.r#rep_interval,
                 ),
                 to_pulumi_object_field(
-                    "service_name",
+                    "serviceName",
                     &self.r#service_name,
                 ),
                 to_pulumi_object_field(
-                    "service_provider_name",
+                    "serviceProviderName",
                     &self.r#service_provider_name,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_zone_ids",
+                    "dnsZoneIds",
                     &self.r#dns_zone_ids,
                 ),
                 to_pulumi_object_field(
-                    "web_app_routing_identities",
+                    "webAppRoutingIdentities",
                     &self.r#web_app_routing_identities,
                 ),
             ];

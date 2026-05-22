@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#quota,
                 ),
                 to_pulumi_object_field(
-                    "quota_duration",
+                    "quotaDuration",
                     &self.r#quota_duration,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
             ];

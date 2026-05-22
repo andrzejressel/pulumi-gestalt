@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "notification_channel_names",
+                    "notificationChannelNames",
                     &self.r#notification_channel_names,
                 ),
                 to_pulumi_object_field(
-                    "renotify_interval",
+                    "renotifyInterval",
                     &self.r#renotify_interval,
                 ),
             ];

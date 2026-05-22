@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#caching,
                 ),
                 to_pulumi_object_field(
-                    "create_option",
+                    "createOption",
                     &self.r#create_option,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
@@ -79,11 +79,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#lun,
                 ),
                 to_pulumi_object_field(
-                    "managed_disk_id",
+                    "managedDiskId",
                     &self.r#managed_disk_id,
                 ),
                 to_pulumi_object_field(
-                    "managed_disk_type",
+                    "managedDiskType",
                     &self.r#managed_disk_type,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "vhd_uri",
+                    "vhdUri",
                     &self.r#vhd_uri,
                 ),
                 to_pulumi_object_field(
-                    "write_accelerator_enabled",
+                    "writeAcceleratorEnabled",
                     &self.r#write_accelerator_enabled,
                 ),
             ];

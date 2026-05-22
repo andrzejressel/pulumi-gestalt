@@ -167,91 +167,91 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "always_use_https",
+                    "alwaysUseHttps",
                     &self.r#always_use_https,
                 ),
                 to_pulumi_object_field(
-                    "automatic_https_rewrites",
+                    "automaticHttpsRewrites",
                     &self.r#automatic_https_rewrites,
                 ),
                 to_pulumi_object_field(
-                    "browser_cache_ttl",
+                    "browserCacheTtl",
                     &self.r#browser_cache_ttl,
                 ),
                 to_pulumi_object_field(
-                    "browser_check",
+                    "browserCheck",
                     &self.r#browser_check,
                 ),
                 to_pulumi_object_field(
-                    "bypass_cache_on_cookie",
+                    "bypassCacheOnCookie",
                     &self.r#bypass_cache_on_cookie,
                 ),
                 to_pulumi_object_field(
-                    "cache_by_device_type",
+                    "cacheByDeviceType",
                     &self.r#cache_by_device_type,
                 ),
                 to_pulumi_object_field(
-                    "cache_deception_armor",
+                    "cacheDeceptionArmor",
                     &self.r#cache_deception_armor,
                 ),
                 to_pulumi_object_field(
-                    "cache_key_fields",
+                    "cacheKeyFields",
                     &self.r#cache_key_fields,
                 ),
                 to_pulumi_object_field(
-                    "cache_level",
+                    "cacheLevel",
                     &self.r#cache_level,
                 ),
                 to_pulumi_object_field(
-                    "cache_on_cookie",
+                    "cacheOnCookie",
                     &self.r#cache_on_cookie,
                 ),
                 to_pulumi_object_field(
-                    "cache_ttl_by_statuses",
+                    "cacheTtlByStatuses",
                     &self.r#cache_ttl_by_statuses,
                 ),
                 to_pulumi_object_field(
-                    "disable_apps",
+                    "disableApps",
                     &self.r#disable_apps,
                 ),
                 to_pulumi_object_field(
-                    "disable_performance",
+                    "disablePerformance",
                     &self.r#disable_performance,
                 ),
                 to_pulumi_object_field(
-                    "disable_railgun",
+                    "disableRailgun",
                     &self.r#disable_railgun,
                 ),
                 to_pulumi_object_field(
-                    "disable_security",
+                    "disableSecurity",
                     &self.r#disable_security,
                 ),
                 to_pulumi_object_field(
-                    "disable_zaraz",
+                    "disableZaraz",
                     &self.r#disable_zaraz,
                 ),
                 to_pulumi_object_field(
-                    "edge_cache_ttl",
+                    "edgeCacheTtl",
                     &self.r#edge_cache_ttl,
                 ),
                 to_pulumi_object_field(
-                    "email_obfuscation",
+                    "emailObfuscation",
                     &self.r#email_obfuscation,
                 ),
                 to_pulumi_object_field(
-                    "explicit_cache_control",
+                    "explicitCacheControl",
                     &self.r#explicit_cache_control,
                 ),
                 to_pulumi_object_field(
-                    "forwarding_url",
+                    "forwardingUrl",
                     &self.r#forwarding_url,
                 ),
                 to_pulumi_object_field(
-                    "host_header_override",
+                    "hostHeaderOverride",
                     &self.r#host_header_override,
                 ),
                 to_pulumi_object_field(
-                    "ip_geolocation",
+                    "ipGeolocation",
                     &self.r#ip_geolocation,
                 ),
                 to_pulumi_object_field(
@@ -263,11 +263,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
                     &self.r#mirage,
                 ),
                 to_pulumi_object_field(
-                    "opportunistic_encryption",
+                    "opportunisticEncryption",
                     &self.r#opportunistic_encryption,
                 ),
                 to_pulumi_object_field(
-                    "origin_error_page_pass_thru",
+                    "originErrorPagePassThru",
                     &self.r#origin_error_page_pass_thru,
                 ),
                 to_pulumi_object_field(
@@ -275,31 +275,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
                     &self.r#polish,
                 ),
                 to_pulumi_object_field(
-                    "resolve_override",
+                    "resolveOverride",
                     &self.r#resolve_override,
                 ),
                 to_pulumi_object_field(
-                    "respect_strong_etag",
+                    "respectStrongEtag",
                     &self.r#respect_strong_etag,
                 ),
                 to_pulumi_object_field(
-                    "response_buffering",
+                    "responseBuffering",
                     &self.r#response_buffering,
                 ),
                 to_pulumi_object_field(
-                    "rocket_loader",
+                    "rocketLoader",
                     &self.r#rocket_loader,
                 ),
                 to_pulumi_object_field(
-                    "security_level",
+                    "securityLevel",
                     &self.r#security_level,
                 ),
                 to_pulumi_object_field(
-                    "server_side_exclude",
+                    "serverSideExclude",
                     &self.r#server_side_exclude,
                 ),
                 to_pulumi_object_field(
-                    "sort_query_string_for_cache",
+                    "sortQueryStringForCache",
                     &self.r#sort_query_string_for_cache,
                 ),
                 to_pulumi_object_field(
@@ -307,7 +307,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
                     &self.r#ssl,
                 ),
                 to_pulumi_object_field(
-                    "true_client_ip_header",
+                    "trueClientIpHeader",
                     &self.r#true_client_ip_header,
                 ),
                 to_pulumi_object_field(

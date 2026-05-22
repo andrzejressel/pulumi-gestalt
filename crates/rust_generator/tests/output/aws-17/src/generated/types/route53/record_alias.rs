@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "evaluate_target_health",
+                    "evaluateTargetHealth",
                     &self.r#evaluate_target_health,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "zone_id",
+                    "zoneId",
                     &self.r#zone_id,
                 ),
             ];

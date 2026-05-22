@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_credentials",
+                    "azureCredentials",
                     &self.r#azure_credentials,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
                     &self.r#container,
                 ),
                 to_pulumi_object_field(
-                    "credentials_secret",
+                    "credentialsSecret",
                     &self.r#credentials_secret,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "storage_account",
+                    "storageAccount",
                     &self.r#storage_account,
                 ),
             ];

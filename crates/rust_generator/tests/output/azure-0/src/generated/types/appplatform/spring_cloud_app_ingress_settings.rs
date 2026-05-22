@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_protocol",
+                    "backendProtocol",
                     &self.r#backend_protocol,
                 ),
                 to_pulumi_object_field(
-                    "read_timeout_in_seconds",
+                    "readTimeoutInSeconds",
                     &self.r#read_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "send_timeout_in_seconds",
+                    "sendTimeoutInSeconds",
                     &self.r#send_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "session_affinity",
+                    "sessionAffinity",
                     &self.r#session_affinity,
                 ),
                 to_pulumi_object_field(
-                    "session_cookie_max_age",
+                    "sessionCookieMaxAge",
                     &self.r#session_cookie_max_age,
                 ),
             ];

@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_policies",
+                    "autoscalingPolicies",
                     &self.r#autoscaling_policies,
                 ),
                 to_pulumi_object_field(
-                    "cool_down_period",
+                    "coolDownPeriod",
                     &self.r#cool_down_period,
                 ),
                 to_pulumi_object_field(
-                    "max_cluster_node_count",
+                    "maxClusterNodeCount",
                     &self.r#max_cluster_node_count,
                 ),
                 to_pulumi_object_field(
-                    "min_cluster_node_count",
+                    "minClusterNodeCount",
                     &self.r#min_cluster_node_count,
                 ),
             ];

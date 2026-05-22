@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_fragment",
+                    "destinationFragment",
                     &self.r#destination_fragment,
                 ),
                 to_pulumi_object_field(
-                    "destination_hostname",
+                    "destinationHostname",
                     &self.r#destination_hostname,
                 ),
                 to_pulumi_object_field(
-                    "destination_path",
+                    "destinationPath",
                     &self.r#destination_path,
                 ),
                 to_pulumi_object_field(
-                    "query_string",
+                    "queryString",
                     &self.r#query_string,
                 ),
                 to_pulumi_object_field(
-                    "redirect_protocol",
+                    "redirectProtocol",
                     &self.r#redirect_protocol,
                 ),
                 to_pulumi_object_field(
-                    "redirect_type",
+                    "redirectType",
                     &self.r#redirect_type,
                 ),
             ];

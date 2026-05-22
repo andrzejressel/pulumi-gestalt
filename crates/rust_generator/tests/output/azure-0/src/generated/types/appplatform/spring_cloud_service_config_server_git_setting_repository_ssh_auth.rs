@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_key",
+                    "hostKey",
                     &self.r#host_key,
                 ),
                 to_pulumi_object_field(
-                    "host_key_algorithm",
+                    "hostKeyAlgorithm",
                     &self.r#host_key_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "private_key",
+                    "privateKey",
                     &self.r#private_key,
                 ),
                 to_pulumi_object_field(
-                    "strict_host_key_checking_enabled",
+                    "strictHostKeyCheckingEnabled",
                     &self.r#strict_host_key_checking_enabled,
                 ),
             ];

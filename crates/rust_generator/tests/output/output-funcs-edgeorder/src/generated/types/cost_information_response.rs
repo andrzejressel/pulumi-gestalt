@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "billing_info_url",
+                    "billingInfoUrl",
                     &self.r#billing_info_url,
                 ),
                 to_pulumi_object_field(
-                    "billing_meter_details",
+                    "billingMeterDetails",
                     &self.r#billing_meter_details,
                 ),
             ];

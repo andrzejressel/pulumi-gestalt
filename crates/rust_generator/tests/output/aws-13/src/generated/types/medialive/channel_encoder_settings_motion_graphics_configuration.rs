@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "motion_graphics_insertion",
+                    "motionGraphicsInsertion",
                     &self.r#motion_graphics_insertion,
                 ),
                 to_pulumi_object_field(
-                    "motion_graphics_settings",
+                    "motionGraphicsSettings",
                     &self.r#motion_graphics_settings,
                 ),
             ];

@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "json_path_matcher",
+                    "jsonPathMatcher",
                     &self.r#json_path_matcher,
                 ),
                 to_pulumi_object_field(

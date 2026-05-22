@@ -45,19 +45,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Byt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "field_to_match",
+                    "fieldToMatch",
                     &self.r#field_to_match,
                 ),
                 to_pulumi_object_field(
-                    "positional_constraint",
+                    "positionalConstraint",
                     &self.r#positional_constraint,
                 ),
                 to_pulumi_object_field(
-                    "target_string",
+                    "targetString",
                     &self.r#target_string,
                 ),
                 to_pulumi_object_field(
-                    "text_transformation",
+                    "textTransformation",
                     &self.r#text_transformation,
                 ),
             ];

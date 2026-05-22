@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_image_config_name",
+                    "appImageConfigName",
                     &self.r#app_image_config_name,
                 ),
                 to_pulumi_object_field(
-                    "image_name",
+                    "imageName",
                     &self.r#image_name,
                 ),
                 to_pulumi_object_field(
-                    "image_version_number",
+                    "imageVersionNumber",
                     &self.r#image_version_number,
                 ),
             ];

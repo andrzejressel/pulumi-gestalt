@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
-                    "request_type",
+                    "requestType",
                     &self.r#request_type,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#scope,
                 ),
                 to_pulumi_object_field(
-                    "token_endpoint",
+                    "tokenEndpoint",
                     &self.r#token_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "token_params",
+                    "tokenParams",
                     &self.r#token_params,
                 ),
             ];

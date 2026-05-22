@@ -50,15 +50,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#context,
                 ),
                 to_pulumi_object_field(
-                    "encryption_algorithm",
+                    "encryptionAlgorithm",
                     &self.r#encryption_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "grant_tokens",
+                    "grantTokens",
                     &self.r#grant_tokens,
                 ),
                 to_pulumi_object_field(
-                    "key_id",
+                    "keyId",
                     &self.r#key_id,
                 ),
                 to_pulumi_object_field(

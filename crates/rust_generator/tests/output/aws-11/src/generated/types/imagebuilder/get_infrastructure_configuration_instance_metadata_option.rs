@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_put_response_hop_limit",
+                    "httpPutResponseHopLimit",
                     &self.r#http_put_response_hop_limit,
                 ),
                 to_pulumi_object_field(
-                    "http_tokens",
+                    "httpTokens",
                     &self.r#http_tokens,
                 ),
             ];

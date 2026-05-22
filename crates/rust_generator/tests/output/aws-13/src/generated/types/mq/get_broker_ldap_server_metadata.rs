@@ -56,43 +56,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#hosts,
                 ),
                 to_pulumi_object_field(
-                    "role_base",
+                    "roleBase",
                     &self.r#role_base,
                 ),
                 to_pulumi_object_field(
-                    "role_name",
+                    "roleName",
                     &self.r#role_name,
                 ),
                 to_pulumi_object_field(
-                    "role_search_matching",
+                    "roleSearchMatching",
                     &self.r#role_search_matching,
                 ),
                 to_pulumi_object_field(
-                    "role_search_subtree",
+                    "roleSearchSubtree",
                     &self.r#role_search_subtree,
                 ),
                 to_pulumi_object_field(
-                    "service_account_password",
+                    "serviceAccountPassword",
                     &self.r#service_account_password,
                 ),
                 to_pulumi_object_field(
-                    "service_account_username",
+                    "serviceAccountUsername",
                     &self.r#service_account_username,
                 ),
                 to_pulumi_object_field(
-                    "user_base",
+                    "userBase",
                     &self.r#user_base,
                 ),
                 to_pulumi_object_field(
-                    "user_role_name",
+                    "userRoleName",
                     &self.r#user_role_name,
                 ),
                 to_pulumi_object_field(
-                    "user_search_matching",
+                    "userSearchMatching",
                     &self.r#user_search_matching,
                 ),
                 to_pulumi_object_field(
-                    "user_search_subtree",
+                    "userSearchSubtree",
                     &self.r#user_search_subtree,
                 ),
             ];

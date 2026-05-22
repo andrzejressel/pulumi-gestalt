@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "branch_pattern",
+                    "branchPattern",
                     &self.r#branch_pattern,
                 ),
                 to_pulumi_object_field(

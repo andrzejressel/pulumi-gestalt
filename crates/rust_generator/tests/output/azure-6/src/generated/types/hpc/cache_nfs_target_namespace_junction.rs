@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_policy_name",
+                    "accessPolicyName",
                     &self.r#access_policy_name,
                 ),
                 to_pulumi_object_field(
-                    "namespace_path",
+                    "namespacePath",
                     &self.r#namespace_path,
                 ),
                 to_pulumi_object_field(
-                    "nfs_export",
+                    "nfsExport",
                     &self.r#nfs_export,
                 ),
                 to_pulumi_object_field(
-                    "target_path",
+                    "targetPath",
                     &self.r#target_path,
                 ),
             ];

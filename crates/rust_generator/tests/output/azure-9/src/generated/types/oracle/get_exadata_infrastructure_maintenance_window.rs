@@ -58,27 +58,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_action_timeout_enabled",
+                    "customActionTimeoutEnabled",
                     &self.r#custom_action_timeout_enabled,
                 ),
                 to_pulumi_object_field(
-                    "custom_action_timeout_in_mins",
+                    "customActionTimeoutInMins",
                     &self.r#custom_action_timeout_in_mins,
                 ),
                 to_pulumi_object_field(
-                    "days_of_weeks",
+                    "daysOfWeeks",
                     &self.r#days_of_weeks,
                 ),
                 to_pulumi_object_field(
-                    "hours_of_days",
+                    "hoursOfDays",
                     &self.r#hours_of_days,
                 ),
                 to_pulumi_object_field(
-                    "lead_time_in_weeks",
+                    "leadTimeInWeeks",
                     &self.r#lead_time_in_weeks,
                 ),
                 to_pulumi_object_field(
-                    "monthly_patching_enabled",
+                    "monthlyPatchingEnabled",
                     &self.r#monthly_patching_enabled,
                 ),
                 to_pulumi_object_field(
@@ -86,7 +86,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#months,
                 ),
                 to_pulumi_object_field(
-                    "patching_mode",
+                    "patchingMode",
                     &self.r#patching_mode,
                 ),
                 to_pulumi_object_field(
@@ -94,7 +94,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#preference,
                 ),
                 to_pulumi_object_field(
-                    "weeks_of_months",
+                    "weeksOfMonths",
                     &self.r#weeks_of_months,
                 ),
             ];

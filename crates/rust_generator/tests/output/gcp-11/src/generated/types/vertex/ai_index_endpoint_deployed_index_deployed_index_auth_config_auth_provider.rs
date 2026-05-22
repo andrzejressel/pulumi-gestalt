@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_issuers",
+                    "allowedIssuers",
                     &self.r#allowed_issuers,
                 ),
                 to_pulumi_object_field(

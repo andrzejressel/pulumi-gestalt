@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "number_of_external_nodes",
+                    "numberOfExternalNodes",
                     &self.r#number_of_external_nodes,
                 ),
                 to_pulumi_object_field(
-                    "number_of_pipeline_nodes",
+                    "numberOfPipelineNodes",
                     &self.r#number_of_pipeline_nodes,
                 ),
                 to_pulumi_object_field(
-                    "time_to_live",
+                    "timeToLive",
                     &self.r#time_to_live,
                 ),
             ];

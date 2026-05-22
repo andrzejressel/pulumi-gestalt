@@ -83,35 +83,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#critical,
                 ),
                 to_pulumi_object_field(
-                    "excluded_dns_names",
+                    "excludedDnsNames",
                     &self.r#excluded_dns_names,
                 ),
                 to_pulumi_object_field(
-                    "excluded_email_addresses",
+                    "excludedEmailAddresses",
                     &self.r#excluded_email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "excluded_ip_ranges",
+                    "excludedIpRanges",
                     &self.r#excluded_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "excluded_uris",
+                    "excludedUris",
                     &self.r#excluded_uris,
                 ),
                 to_pulumi_object_field(
-                    "permitted_dns_names",
+                    "permittedDnsNames",
                     &self.r#permitted_dns_names,
                 ),
                 to_pulumi_object_field(
-                    "permitted_email_addresses",
+                    "permittedEmailAddresses",
                     &self.r#permitted_email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "permitted_ip_ranges",
+                    "permittedIpRanges",
                     &self.r#permitted_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "permitted_uris",
+                    "permittedUris",
                     &self.r#permitted_uris,
                 ),
             ];

@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_contact",
+                    "adminContact",
                     &self.r#admin_contact,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#privacy,
                 ),
                 to_pulumi_object_field(
-                    "registrant_contact",
+                    "registrantContact",
                     &self.r#registrant_contact,
                 ),
                 to_pulumi_object_field(
-                    "technical_contact",
+                    "technicalContact",
                     &self.r#technical_contact,
                 ),
             ];

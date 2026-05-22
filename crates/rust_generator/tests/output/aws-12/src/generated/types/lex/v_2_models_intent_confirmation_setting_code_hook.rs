@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#active,
                 ),
                 to_pulumi_object_field(
-                    "enable_code_hook_invocation",
+                    "enableCodeHookInvocation",
                     &self.r#enable_code_hook_invocation,
                 ),
                 to_pulumi_object_field(
-                    "invocation_label",
+                    "invocationLabel",
                     &self.r#invocation_label,
                 ),
                 to_pulumi_object_field(
-                    "post_code_hook_specification",
+                    "postCodeHookSpecification",
                     &self.r#post_code_hook_specification,
                 ),
             ];

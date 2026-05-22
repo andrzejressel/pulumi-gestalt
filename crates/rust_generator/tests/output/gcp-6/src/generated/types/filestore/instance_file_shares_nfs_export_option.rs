@@ -51,23 +51,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_mode",
+                    "accessMode",
                     &self.r#access_mode,
                 ),
                 to_pulumi_object_field(
-                    "anon_gid",
+                    "anonGid",
                     &self.r#anon_gid,
                 ),
                 to_pulumi_object_field(
-                    "anon_uid",
+                    "anonUid",
                     &self.r#anon_uid,
                 ),
                 to_pulumi_object_field(
-                    "ip_ranges",
+                    "ipRanges",
                     &self.r#ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "squash_mode",
+                    "squashMode",
                     &self.r#squash_mode,
                 ),
             ];

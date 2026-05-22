@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#email,
                 ),
                 to_pulumi_object_field(
-                    "expire_time",
+                    "expireTime",
                     &self.r#expire_time,
                 ),
                 to_pulumi_object_field(
@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#fqdn,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "minimum_ttl",
+                    "minimumTtl",
                     &self.r#minimum_ttl,
                 ),
                 to_pulumi_object_field(
-                    "refresh_time",
+                    "refreshTime",
                     &self.r#refresh_time,
                 ),
                 to_pulumi_object_field(
-                    "retry_time",
+                    "retryTime",
                     &self.r#retry_time,
                 ),
                 to_pulumi_object_field(
-                    "serial_number",
+                    "serialNumber",
                     &self.r#serial_number,
                 ),
                 to_pulumi_object_field(

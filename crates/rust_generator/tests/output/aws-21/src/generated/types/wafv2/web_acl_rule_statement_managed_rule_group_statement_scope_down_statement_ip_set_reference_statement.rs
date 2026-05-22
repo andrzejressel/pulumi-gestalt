@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "ip_set_forwarded_ip_config",
+                    "ipSetForwardedIpConfig",
                     &self.r#ip_set_forwarded_ip_config,
                 ),
             ];

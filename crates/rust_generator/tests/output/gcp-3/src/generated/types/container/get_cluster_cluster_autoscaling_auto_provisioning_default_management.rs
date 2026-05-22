@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_repair",
+                    "autoRepair",
                     &self.r#auto_repair,
                 ),
                 to_pulumi_object_field(
-                    "auto_upgrade",
+                    "autoUpgrade",
                     &self.r#auto_upgrade,
                 ),
                 to_pulumi_object_field(
-                    "upgrade_options",
+                    "upgradeOptions",
                     &self.r#upgrade_options,
                 ),
             ];

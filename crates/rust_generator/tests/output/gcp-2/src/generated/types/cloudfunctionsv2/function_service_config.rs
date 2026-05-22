@@ -100,47 +100,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_traffic_on_latest_revision",
+                    "allTrafficOnLatestRevision",
                     &self.r#all_traffic_on_latest_revision,
                 ),
                 to_pulumi_object_field(
-                    "available_cpu",
+                    "availableCpu",
                     &self.r#available_cpu,
                 ),
                 to_pulumi_object_field(
-                    "available_memory",
+                    "availableMemory",
                     &self.r#available_memory,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "gcf_uri",
+                    "gcfUri",
                     &self.r#gcf_uri,
                 ),
                 to_pulumi_object_field(
-                    "ingress_settings",
+                    "ingressSettings",
                     &self.r#ingress_settings,
                 ),
                 to_pulumi_object_field(
-                    "max_instance_count",
+                    "maxInstanceCount",
                     &self.r#max_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "max_instance_request_concurrency",
+                    "maxInstanceRequestConcurrency",
                     &self.r#max_instance_request_concurrency,
                 ),
                 to_pulumi_object_field(
-                    "min_instance_count",
+                    "minInstanceCount",
                     &self.r#min_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "secret_environment_variables",
+                    "secretEnvironmentVariables",
                     &self.r#secret_environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "secret_volumes",
+                    "secretVolumes",
                     &self.r#secret_volumes,
                 ),
                 to_pulumi_object_field(
@@ -148,11 +148,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "service_account_email",
+                    "serviceAccountEmail",
                     &self.r#service_account_email,
                 ),
                 to_pulumi_object_field(
-                    "timeout_seconds",
+                    "timeoutSeconds",
                     &self.r#timeout_seconds,
                 ),
                 to_pulumi_object_field(
@@ -160,11 +160,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#uri,
                 ),
                 to_pulumi_object_field(
-                    "vpc_connector",
+                    "vpcConnector",
                     &self.r#vpc_connector,
                 ),
                 to_pulumi_object_field(
-                    "vpc_connector_egress_settings",
+                    "vpcConnectorEgressSettings",
                     &self.r#vpc_connector_egress_settings,
                 ),
             ];

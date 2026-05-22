@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "component_name",
+                    "componentName",
                     &self.r#component_name,
                 ),
                 to_pulumi_object_field(
-                    "container_resources",
+                    "containerResources",
                     &self.r#container_resources,
                 ),
                 to_pulumi_object_field(
-                    "pod_affinity",
+                    "podAffinity",
                     &self.r#pod_affinity,
                 ),
                 to_pulumi_object_field(
-                    "pod_tolerations",
+                    "podTolerations",
                     &self.r#pod_tolerations,
                 ),
                 to_pulumi_object_field(
-                    "replica_count",
+                    "replicaCount",
                     &self.r#replica_count,
                 ),
             ];

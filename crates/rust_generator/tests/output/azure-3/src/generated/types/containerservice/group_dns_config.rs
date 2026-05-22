@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#options,
                 ),
                 to_pulumi_object_field(
-                    "search_domains",
+                    "searchDomains",
                     &self.r#search_domains,
                 ),
             ];

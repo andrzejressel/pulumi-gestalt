@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "end_point_name",
+                    "endPointName",
                     &self.r#end_point_name,
                 ),
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
                 to_pulumi_object_field(

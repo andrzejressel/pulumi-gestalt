@@ -44,15 +44,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#membership,
                 ),
                 to_pulumi_object_field(
-                    "membership_id",
+                    "membershipId",
                     &self.r#membership_id,
                 ),
                 to_pulumi_object_field(
-                    "membership_location",
+                    "membershipLocation",
                     &self.r#membership_location,
                 ),
                 to_pulumi_object_field(
-                    "pre_registered",
+                    "preRegistered",
                     &self.r#pre_registered,
                 ),
                 to_pulumi_object_field(

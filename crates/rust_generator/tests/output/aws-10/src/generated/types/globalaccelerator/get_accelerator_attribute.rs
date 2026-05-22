@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "flow_logs_enabled",
+                    "flowLogsEnabled",
                     &self.r#flow_logs_enabled,
                 ),
                 to_pulumi_object_field(
-                    "flow_logs_s_3_bucket",
+                    "flowLogsS3Bucket",
                     &self.r#flow_logs_s_3_bucket,
                 ),
                 to_pulumi_object_field(
-                    "flow_logs_s_3_prefix",
+                    "flowLogsS3Prefix",
                     &self.r#flow_logs_s_3_prefix,
                 ),
             ];

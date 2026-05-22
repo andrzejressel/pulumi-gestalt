@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#branch,
                 ),
                 to_pulumi_object_field(
-                    "invert_regex",
+                    "invertRegex",
                     &self.r#invert_regex,
                 ),
                 to_pulumi_object_field(

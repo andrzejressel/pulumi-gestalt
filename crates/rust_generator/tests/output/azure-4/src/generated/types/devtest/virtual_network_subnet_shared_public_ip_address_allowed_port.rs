@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_port",
+                    "backendPort",
                     &self.r#backend_port,
                 ),
                 to_pulumi_object_field(
-                    "transport_protocol",
+                    "transportProtocol",
                     &self.r#transport_protocol,
                 ),
             ];

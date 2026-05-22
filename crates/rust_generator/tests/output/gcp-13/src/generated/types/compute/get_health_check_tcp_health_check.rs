@@ -68,15 +68,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "port_name",
+                    "portName",
                     &self.r#port_name,
                 ),
                 to_pulumi_object_field(
-                    "port_specification",
+                    "portSpecification",
                     &self.r#port_specification,
                 ),
                 to_pulumi_object_field(
-                    "proxy_header",
+                    "proxyHeader",
                     &self.r#proxy_header,
                 ),
                 to_pulumi_object_field(

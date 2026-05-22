@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hls_akamai_settings",
+                    "hlsAkamaiSettings",
                     &self.r#hls_akamai_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_basic_put_settings",
+                    "hlsBasicPutSettings",
                     &self.r#hls_basic_put_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_media_store_settings",
+                    "hlsMediaStoreSettings",
                     &self.r#hls_media_store_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_s_3_settings",
+                    "hlsS3Settings",
                     &self.r#hls_s_3_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_webdav_settings",
+                    "hlsWebdavSettings",
                     &self.r#hls_webdav_settings,
                 ),
             ];

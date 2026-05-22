@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_vault_url",
+                    "keyVaultUrl",
                     &self.r#key_vault_url,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "service_principal_name",
+                    "servicePrincipalName",
                     &self.r#service_principal_name,
                 ),
                 to_pulumi_object_field(
-                    "service_principal_secret",
+                    "servicePrincipalSecret",
                     &self.r#service_principal_secret,
                 ),
             ];

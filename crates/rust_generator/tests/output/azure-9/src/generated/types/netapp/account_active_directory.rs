@@ -77,11 +77,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aes_encryption_enabled",
+                    "aesEncryptionEnabled",
                     &self.r#aes_encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dns_servers",
+                    "dnsServers",
                     &self.r#dns_servers,
                 ),
                 to_pulumi_object_field(
@@ -89,27 +89,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#domain,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_ad_name",
+                    "kerberosAdName",
                     &self.r#kerberos_ad_name,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_kdc_ip",
+                    "kerberosKdcIp",
                     &self.r#kerberos_kdc_ip,
                 ),
                 to_pulumi_object_field(
-                    "ldap_over_tls_enabled",
+                    "ldapOverTlsEnabled",
                     &self.r#ldap_over_tls_enabled,
                 ),
                 to_pulumi_object_field(
-                    "ldap_signing_enabled",
+                    "ldapSigningEnabled",
                     &self.r#ldap_signing_enabled,
                 ),
                 to_pulumi_object_field(
-                    "local_nfs_users_with_ldap_allowed",
+                    "localNfsUsersWithLdapAllowed",
                     &self.r#local_nfs_users_with_ldap_allowed,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit",
+                    "organizationalUnit",
                     &self.r#organizational_unit,
                 ),
                 to_pulumi_object_field(
@@ -117,15 +117,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "server_root_ca_certificate",
+                    "serverRootCaCertificate",
                     &self.r#server_root_ca_certificate,
                 ),
                 to_pulumi_object_field(
-                    "site_name",
+                    "siteName",
                     &self.r#site_name,
                 ),
                 to_pulumi_object_field(
-                    "smb_server_name",
+                    "smbServerName",
                     &self.r#smb_server_name,
                 ),
                 to_pulumi_object_field(

@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
                     &self.r#criteria,
                 ),
                 to_pulumi_object_field(
-                    "life_cycles",
+                    "lifeCycles",
                     &self.r#life_cycles,
                 ),
                 to_pulumi_object_field(

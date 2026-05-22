@@ -36,11 +36,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "filter_labels",
+                    "filterLabels",
                     &self.r#filter_labels,
                 ),
                 to_pulumi_object_field(
-                    "filter_match_criteria",
+                    "filterMatchCriteria",
                     &self.r#filter_match_criteria,
                 ),
             ];

@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cpu_idle",
+                    "cpuIdle",
                     &self.r#cpu_idle,
                 ),
                 to_pulumi_object_field(
@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#limits,
                 ),
                 to_pulumi_object_field(
-                    "startup_cpu_boost",
+                    "startupCpuBoost",
                     &self.r#startup_cpu_boost,
                 ),
             ];

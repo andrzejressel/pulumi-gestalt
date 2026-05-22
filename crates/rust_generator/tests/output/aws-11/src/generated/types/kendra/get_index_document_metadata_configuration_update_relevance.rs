@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#importance,
                 ),
                 to_pulumi_object_field(
-                    "rank_order",
+                    "rankOrder",
                     &self.r#rank_order,
                 ),
                 to_pulumi_object_field(
-                    "values_importance_map",
+                    "valuesImportanceMap",
                     &self.r#values_importance_map,
                 ),
             ];

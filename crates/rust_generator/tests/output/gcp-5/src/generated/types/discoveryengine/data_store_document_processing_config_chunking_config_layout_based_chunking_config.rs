@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "chunk_size",
+                    "chunkSize",
                     &self.r#chunk_size,
                 ),
                 to_pulumi_object_field(
-                    "include_ancestor_headings",
+                    "includeAncestorHeadings",
                     &self.r#include_ancestor_headings,
                 ),
             ];

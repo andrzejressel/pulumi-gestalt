@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#principal,
                 ),
                 to_pulumi_object_field(
-                    "principal_type",
+                    "principalType",
                     &self.r#principal_type,
                 ),
             ];

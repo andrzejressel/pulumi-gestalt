@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "match_target_labels",
+                    "matchTargetLabels",
                     &self.r#match_target_labels,
                 ),
                 to_pulumi_object_field(

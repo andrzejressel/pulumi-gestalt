@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "concurrency_mode",
+                    "concurrencyMode",
                     &self.r#concurrency_mode,
                 ),
                 to_pulumi_object_field(
-                    "failure_tolerance_count",
+                    "failureToleranceCount",
                     &self.r#failure_tolerance_count,
                 ),
                 to_pulumi_object_field(
-                    "failure_tolerance_percentage",
+                    "failureTolerancePercentage",
                     &self.r#failure_tolerance_percentage,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_count",
+                    "maxConcurrentCount",
                     &self.r#max_concurrent_count,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_percentage",
+                    "maxConcurrentPercentage",
                     &self.r#max_concurrent_percentage,
                 ),
                 to_pulumi_object_field(
-                    "region_concurrency_type",
+                    "regionConcurrencyType",
                     &self.r#region_concurrency_type,
                 ),
                 to_pulumi_object_field(
-                    "region_orders",
+                    "regionOrders",
                     &self.r#region_orders,
                 ),
             ];

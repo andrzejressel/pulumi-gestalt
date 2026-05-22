@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_week",
+                    "dayOfWeek",
                     &self.r#day_of_week,
                 ),
                 to_pulumi_object_field(
-                    "start_times",
+                    "startTimes",
                     &self.r#start_times,
                 ),
                 to_pulumi_object_field(
-                    "stop_times",
+                    "stopTimes",
                     &self.r#stop_times,
                 ),
             ];

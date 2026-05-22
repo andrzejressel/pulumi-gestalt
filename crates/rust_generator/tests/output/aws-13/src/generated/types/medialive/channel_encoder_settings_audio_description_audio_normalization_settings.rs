@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "algorithm_control",
+                    "algorithmControl",
                     &self.r#algorithm_control,
                 ),
                 to_pulumi_object_field(
-                    "target_lkfs",
+                    "targetLkfs",
                     &self.r#target_lkfs,
                 ),
             ];

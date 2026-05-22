@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_authority",
+                    "certificateAuthority",
                     &self.r#certificate_authority,
                 ),
                 to_pulumi_object_field(
-                    "pem_issuer_chains",
+                    "pemIssuerChains",
                     &self.r#pem_issuer_chains,
                 ),
             ];

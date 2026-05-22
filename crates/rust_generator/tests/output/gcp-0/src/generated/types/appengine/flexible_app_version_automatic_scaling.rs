@@ -74,51 +74,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cool_down_period",
+                    "coolDownPeriod",
                     &self.r#cool_down_period,
                 ),
                 to_pulumi_object_field(
-                    "cpu_utilization",
+                    "cpuUtilization",
                     &self.r#cpu_utilization,
                 ),
                 to_pulumi_object_field(
-                    "disk_utilization",
+                    "diskUtilization",
                     &self.r#disk_utilization,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_requests",
+                    "maxConcurrentRequests",
                     &self.r#max_concurrent_requests,
                 ),
                 to_pulumi_object_field(
-                    "max_idle_instances",
+                    "maxIdleInstances",
                     &self.r#max_idle_instances,
                 ),
                 to_pulumi_object_field(
-                    "max_pending_latency",
+                    "maxPendingLatency",
                     &self.r#max_pending_latency,
                 ),
                 to_pulumi_object_field(
-                    "max_total_instances",
+                    "maxTotalInstances",
                     &self.r#max_total_instances,
                 ),
                 to_pulumi_object_field(
-                    "min_idle_instances",
+                    "minIdleInstances",
                     &self.r#min_idle_instances,
                 ),
                 to_pulumi_object_field(
-                    "min_pending_latency",
+                    "minPendingLatency",
                     &self.r#min_pending_latency,
                 ),
                 to_pulumi_object_field(
-                    "min_total_instances",
+                    "minTotalInstances",
                     &self.r#min_total_instances,
                 ),
                 to_pulumi_object_field(
-                    "network_utilization",
+                    "networkUtilization",
                     &self.r#network_utilization,
                 ),
                 to_pulumi_object_field(
-                    "request_utilization",
+                    "requestUtilization",
                     &self.r#request_utilization,
                 ),
             ];

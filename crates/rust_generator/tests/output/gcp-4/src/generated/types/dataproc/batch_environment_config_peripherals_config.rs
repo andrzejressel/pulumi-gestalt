@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metastore_service",
+                    "metastoreService",
                     &self.r#metastore_service,
                 ),
                 to_pulumi_object_field(
-                    "spark_history_server_config",
+                    "sparkHistoryServerConfig",
                     &self.r#spark_history_server_config,
                 ),
             ];

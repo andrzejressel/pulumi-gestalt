@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_prefixes",
+                    "addressPrefixes",
                     &self.r#address_prefixes,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_ip_address",
+                    "nextHopIpAddress",
                     &self.r#next_hop_ip_address,
                 ),
             ];

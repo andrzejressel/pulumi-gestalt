@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deployed_index_id",
+                    "deployedIndexId",
                     &self.r#deployed_index_id,
                 ),
                 to_pulumi_object_field(
-                    "index_endpoint",
+                    "indexEndpoint",
                     &self.r#index_endpoint,
                 ),
             ];

@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "groups_claim",
+                    "groupsClaim",
                     &self.r#groups_claim,
                 ),
                 to_pulumi_object_field(
-                    "groups_prefix",
+                    "groupsPrefix",
                     &self.r#groups_prefix,
                 ),
                 to_pulumi_object_field(
-                    "identity_provider_config_name",
+                    "identityProviderConfigName",
                     &self.r#identity_provider_config_name,
                 ),
                 to_pulumi_object_field(
-                    "issuer_url",
+                    "issuerUrl",
                     &self.r#issuer_url,
                 ),
                 to_pulumi_object_field(
-                    "required_claims",
+                    "requiredClaims",
                     &self.r#required_claims,
                 ),
                 to_pulumi_object_field(
-                    "username_claim",
+                    "usernameClaim",
                     &self.r#username_claim,
                 ),
                 to_pulumi_object_field(
-                    "username_prefix",
+                    "usernamePrefix",
                     &self.r#username_prefix,
                 ),
             ];

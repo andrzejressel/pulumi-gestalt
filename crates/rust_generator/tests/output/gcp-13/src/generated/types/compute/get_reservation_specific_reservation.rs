@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#count,
                 ),
                 to_pulumi_object_field(
-                    "in_use_count",
+                    "inUseCount",
                     &self.r#in_use_count,
                 ),
                 to_pulumi_object_field(
-                    "instance_properties",
+                    "instanceProperties",
                     &self.r#instance_properties,
                 ),
             ];

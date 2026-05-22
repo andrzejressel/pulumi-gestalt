@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_tenants",
+                    "allowTenants",
                     &self.r#allow_tenants,
                 ),
                 to_pulumi_object_field(
-                    "default_tenant_location",
+                    "defaultTenantLocation",
                     &self.r#default_tenant_location,
                 ),
             ];

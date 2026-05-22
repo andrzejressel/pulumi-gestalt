@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_upgrade_enabled",
+                    "automaticUpgradeEnabled",
                     &self.r#automatic_upgrade_enabled,
                 ),
                 to_pulumi_object_field(
-                    "configuration_blob_uri",
+                    "configurationBlobUri",
                     &self.r#configuration_blob_uri,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#tag,
                 ),
                 to_pulumi_object_field(
-                    "treat_failure_as_deployment_failure_enabled",
+                    "treatFailureAsDeploymentFailureEnabled",
                     &self.r#treat_failure_as_deployment_failure_enabled,
                 ),
                 to_pulumi_object_field(
-                    "version_id",
+                    "versionId",
                     &self.r#version_id,
                 ),
             ];

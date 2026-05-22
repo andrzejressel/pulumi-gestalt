@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_key",
+                    "consumerKey",
                     &self.r#consumer_key,
                 ),
                 to_pulumi_object_field(
-                    "consumer_secret_setting_name",
+                    "consumerSecretSettingName",
                     &self.r#consumer_secret_setting_name,
                 ),
             ];

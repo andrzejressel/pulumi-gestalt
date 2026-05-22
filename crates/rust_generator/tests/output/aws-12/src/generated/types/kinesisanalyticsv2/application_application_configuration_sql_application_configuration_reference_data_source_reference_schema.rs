@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "record_columns",
+                    "recordColumns",
                     &self.r#record_columns,
                 ),
                 to_pulumi_object_field(
-                    "record_encoding",
+                    "recordEncoding",
                     &self.r#record_encoding,
                 ),
                 to_pulumi_object_field(
-                    "record_format",
+                    "recordFormat",
                     &self.r#record_format,
                 ),
             ];

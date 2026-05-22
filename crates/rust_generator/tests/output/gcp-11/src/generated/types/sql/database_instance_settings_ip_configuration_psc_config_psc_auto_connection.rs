@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_network",
+                    "consumerNetwork",
                     &self.r#consumer_network,
                 ),
                 to_pulumi_object_field(
-                    "consumer_service_project_id",
+                    "consumerServiceProjectId",
                     &self.r#consumer_service_project_id,
                 ),
             ];

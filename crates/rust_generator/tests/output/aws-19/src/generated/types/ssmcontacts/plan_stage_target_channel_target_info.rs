@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "contact_channel_id",
+                    "contactChannelId",
                     &self.r#contact_channel_id,
                 ),
                 to_pulumi_object_field(
-                    "retry_interval_in_minutes",
+                    "retryIntervalInMinutes",
                     &self.r#retry_interval_in_minutes,
                 ),
             ];

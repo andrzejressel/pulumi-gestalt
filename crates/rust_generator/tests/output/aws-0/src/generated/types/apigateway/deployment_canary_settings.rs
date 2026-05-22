@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "percent_traffic",
+                    "percentTraffic",
                     &self.r#percent_traffic,
                 ),
                 to_pulumi_object_field(
-                    "stage_variable_overrides",
+                    "stageVariableOverrides",
                     &self.r#stage_variable_overrides,
                 ),
                 to_pulumi_object_field(
-                    "use_stage_cache",
+                    "useStageCache",
                     &self.r#use_stage_cache,
                 ),
             ];

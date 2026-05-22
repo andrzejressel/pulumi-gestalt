@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "request_header_configurations",
+                    "requestHeaderConfigurations",
                     &self.r#request_header_configurations,
                 ),
                 to_pulumi_object_field(
-                    "response_header_configurations",
+                    "responseHeaderConfigurations",
                     &self.r#response_header_configurations,
                 ),
                 to_pulumi_object_field(
-                    "rule_sequence",
+                    "ruleSequence",
                     &self.r#rule_sequence,
                 ),
                 to_pulumi_object_field(

@@ -61,11 +61,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "container_image",
+                    "containerImage",
                     &self.r#container_image,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
@@ -81,7 +81,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "target_version",
+                    "targetVersion",
                     &self.r#target_version,
                 ),
                 to_pulumi_object_field(
@@ -89,7 +89,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#version,
                 ),
                 to_pulumi_object_field(
-                    "vm_image",
+                    "vmImage",
                     &self.r#vm_image,
                 ),
             ];

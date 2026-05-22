@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sys
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "function_id",
+                    "functionId",
                     &self.r#function_id,
                 ),
                 to_pulumi_object_field(
-                    "max_events_per_batch",
+                    "maxEventsPerBatch",
                     &self.r#max_events_per_batch,
                 ),
                 to_pulumi_object_field(
-                    "preferred_batch_size_in_kilobytes",
+                    "preferredBatchSizeInKilobytes",
                     &self.r#preferred_batch_size_in_kilobytes,
                 ),
             ];

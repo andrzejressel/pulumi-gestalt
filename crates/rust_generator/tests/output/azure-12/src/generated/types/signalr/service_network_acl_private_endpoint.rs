@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_request_types",
+                    "allowedRequestTypes",
                     &self.r#allowed_request_types,
                 ),
                 to_pulumi_object_field(
-                    "denied_request_types",
+                    "deniedRequestTypes",
                     &self.r#denied_request_types,
                 ),
                 to_pulumi_object_field(

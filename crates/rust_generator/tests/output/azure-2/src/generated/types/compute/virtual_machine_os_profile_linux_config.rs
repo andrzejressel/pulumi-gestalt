@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_password_authentication",
+                    "disablePasswordAuthentication",
                     &self.r#disable_password_authentication,
                 ),
                 to_pulumi_object_field(
-                    "ssh_keys",
+                    "sshKeys",
                     &self.r#ssh_keys,
                 ),
             ];

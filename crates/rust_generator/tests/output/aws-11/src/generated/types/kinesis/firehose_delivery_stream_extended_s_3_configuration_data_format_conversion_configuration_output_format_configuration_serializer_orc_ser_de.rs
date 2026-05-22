@@ -59,15 +59,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "block_size_bytes",
+                    "blockSizeBytes",
                     &self.r#block_size_bytes,
                 ),
                 to_pulumi_object_field(
-                    "bloom_filter_columns",
+                    "bloomFilterColumns",
                     &self.r#bloom_filter_columns,
                 ),
                 to_pulumi_object_field(
-                    "bloom_filter_false_positive_probability",
+                    "bloomFilterFalsePositiveProbability",
                     &self.r#bloom_filter_false_positive_probability,
                 ),
                 to_pulumi_object_field(
@@ -75,27 +75,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "dictionary_key_threshold",
+                    "dictionaryKeyThreshold",
                     &self.r#dictionary_key_threshold,
                 ),
                 to_pulumi_object_field(
-                    "enable_padding",
+                    "enablePadding",
                     &self.r#enable_padding,
                 ),
                 to_pulumi_object_field(
-                    "format_version",
+                    "formatVersion",
                     &self.r#format_version,
                 ),
                 to_pulumi_object_field(
-                    "padding_tolerance",
+                    "paddingTolerance",
                     &self.r#padding_tolerance,
                 ),
                 to_pulumi_object_field(
-                    "row_index_stride",
+                    "rowIndexStride",
                     &self.r#row_index_stride,
                 ),
                 to_pulumi_object_field(
-                    "stripe_size_bytes",
+                    "stripeSizeBytes",
                     &self.r#stripe_size_bytes,
                 ),
             ];

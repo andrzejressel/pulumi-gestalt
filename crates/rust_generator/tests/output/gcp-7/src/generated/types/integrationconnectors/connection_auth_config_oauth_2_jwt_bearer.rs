@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_key",
+                    "clientKey",
                     &self.r#client_key,
                 ),
                 to_pulumi_object_field(
-                    "jwt_claims",
+                    "jwtClaims",
                     &self.r#jwt_claims,
                 ),
             ];

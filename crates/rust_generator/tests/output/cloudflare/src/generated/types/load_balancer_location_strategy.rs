@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "prefer_ecs",
+                    "preferEcs",
                     &self.r#prefer_ecs,
                 ),
             ];

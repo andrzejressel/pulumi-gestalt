@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ema
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_substitutions",
+                    "defaultSubstitutions",
                     &self.r#default_substitutions,
                 ),
                 to_pulumi_object_field(
@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ema
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "html_part",
+                    "htmlPart",
                     &self.r#html_part,
                 ),
                 to_pulumi_object_field(
-                    "recommender_id",
+                    "recommenderId",
                     &self.r#recommender_id,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ema
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "text_part",
+                    "textPart",
                     &self.r#text_part,
                 ),
             ];

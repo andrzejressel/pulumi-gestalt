@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_concurrent_invocations_per_instance",
+                    "maxConcurrentInvocationsPerInstance",
                     &self.r#max_concurrent_invocations_per_instance,
                 ),
             ];

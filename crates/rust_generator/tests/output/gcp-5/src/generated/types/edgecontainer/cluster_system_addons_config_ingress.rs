@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_vip",
+                    "ipv4Vip",
                     &self.r#ipv_4_vip,
                 ),
             ];

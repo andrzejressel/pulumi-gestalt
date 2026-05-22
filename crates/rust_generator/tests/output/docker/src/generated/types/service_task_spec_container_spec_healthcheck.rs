@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#retries,
                 ),
                 to_pulumi_object_field(
-                    "start_period",
+                    "startPeriod",
                     &self.r#start_period,
                 ),
                 to_pulumi_object_field(

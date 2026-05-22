@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_id_client_regex",
+                    "appIdClientRegex",
                     &self.r#app_id_client_regex,
                 ),
                 to_pulumi_object_field(
-                    "aws_region",
+                    "awsRegion",
                     &self.r#aws_region,
                 ),
                 to_pulumi_object_field(
-                    "user_pool_id",
+                    "userPoolId",
                     &self.r#user_pool_id,
                 ),
             ];

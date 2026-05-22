@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "publish_mode",
+                    "publishMode",
                     &self.r#publish_mode,
                 ),
                 to_pulumi_object_field(
-                    "published_port",
+                    "publishedPort",
                     &self.r#published_port,
                 ),
                 to_pulumi_object_field(
-                    "target_port",
+                    "targetPort",
                     &self.r#target_port,
                 ),
             ];

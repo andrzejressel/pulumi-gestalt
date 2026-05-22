@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "multi_region_key_type",
+                    "multiRegionKeyType",
                     &self.r#multi_region_key_type,
                 ),
                 to_pulumi_object_field(
-                    "primary_keys",
+                    "primaryKeys",
                     &self.r#primary_keys,
                 ),
                 to_pulumi_object_field(
-                    "replica_keys",
+                    "replicaKeys",
                     &self.r#replica_keys,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "as_2_transports",
+                    "as2Transports",
                     &self.r#as_2_transports,
                 ),
                 to_pulumi_object_field(
-                    "passive_ip",
+                    "passiveIp",
                     &self.r#passive_ip,
                 ),
                 to_pulumi_object_field(
-                    "set_stat_option",
+                    "setStatOption",
                     &self.r#set_stat_option,
                 ),
                 to_pulumi_object_field(
-                    "tls_session_resumption_mode",
+                    "tlsSessionResumptionMode",
                     &self.r#tls_session_resumption_mode,
                 ),
             ];

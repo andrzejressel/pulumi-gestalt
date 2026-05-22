@@ -53,19 +53,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cli
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "key_version",
+                    "keyVersion",
                     &self.r#key_version,
                 ),
                 to_pulumi_object_field(
-                    "kms_location",
+                    "kmsLocation",
                     &self.r#kms_location,
                 ),
                 to_pulumi_object_field(
-                    "kms_project_id",
+                    "kmsProjectId",
                     &self.r#kms_project_id,
                 ),
                 to_pulumi_object_field(
-                    "kms_ring",
+                    "kmsRing",
                     &self.r#kms_ring,
                 ),
             ];

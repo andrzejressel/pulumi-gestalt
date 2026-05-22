@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_dns_server_ip",
+                    "customDnsServerIp",
                     &self.r#custom_dns_server_ip,
                 ),
                 to_pulumi_object_field(
-                    "custom_dns_server_name",
+                    "customDnsServerName",
                     &self.r#custom_dns_server_name,
                 ),
             ];

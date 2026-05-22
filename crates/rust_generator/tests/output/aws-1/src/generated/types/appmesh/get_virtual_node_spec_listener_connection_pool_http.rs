@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_connections",
+                    "maxConnections",
                     &self.r#max_connections,
                 ),
                 to_pulumi_object_field(
-                    "max_pending_requests",
+                    "maxPendingRequests",
                     &self.r#max_pending_requests,
                 ),
             ];

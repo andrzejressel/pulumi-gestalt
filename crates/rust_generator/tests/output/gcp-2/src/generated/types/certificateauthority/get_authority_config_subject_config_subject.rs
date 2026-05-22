@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "common_name",
+                    "commonName",
                     &self.r#common_name,
                 ),
                 to_pulumi_object_field(
-                    "country_code",
+                    "countryCode",
                     &self.r#country_code,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#organization,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit",
+                    "organizationalUnit",
                     &self.r#organizational_unit,
                 ),
                 to_pulumi_object_field(
-                    "postal_code",
+                    "postalCode",
                     &self.r#postal_code,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#province,
                 ),
                 to_pulumi_object_field(
-                    "street_address",
+                    "streetAddress",
                     &self.r#street_address,
                 ),
             ];

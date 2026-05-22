@@ -353,151 +353,151 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "actual_used_data_storage_size_tb",
+                    "actualUsedDataStorageSizeTb",
                     &self.r#actual_used_data_storage_size_tb,
                 ),
                 to_pulumi_object_field(
-                    "allocated_storage_size_tb",
+                    "allocatedStorageSizeTb",
                     &self.r#allocated_storage_size_tb,
                 ),
                 to_pulumi_object_field(
-                    "apex_details",
+                    "apexDetails",
                     &self.r#apex_details,
                 ),
                 to_pulumi_object_field(
-                    "are_primary_allowlisted_ips_used",
+                    "arePrimaryAllowlistedIpsUsed",
                     &self.r#are_primary_allowlisted_ips_used,
                 ),
                 to_pulumi_object_field(
-                    "autonomous_container_database_id",
+                    "autonomousContainerDatabaseId",
                     &self.r#autonomous_container_database_id,
                 ),
                 to_pulumi_object_field(
-                    "available_upgrade_versions",
+                    "availableUpgradeVersions",
                     &self.r#available_upgrade_versions,
                 ),
                 to_pulumi_object_field(
-                    "backup_retention_period_days",
+                    "backupRetentionPeriodDays",
                     &self.r#backup_retention_period_days,
                 ),
                 to_pulumi_object_field(
-                    "character_set",
+                    "characterSet",
                     &self.r#character_set,
                 ),
                 to_pulumi_object_field(
-                    "compute_count",
+                    "computeCount",
                     &self.r#compute_count,
                 ),
                 to_pulumi_object_field(
-                    "connection_strings",
+                    "connectionStrings",
                     &self.r#connection_strings,
                 ),
                 to_pulumi_object_field(
-                    "connection_urls",
+                    "connectionUrls",
                     &self.r#connection_urls,
                 ),
                 to_pulumi_object_field(
-                    "customer_contacts",
+                    "customerContacts",
                     &self.r#customer_contacts,
                 ),
                 to_pulumi_object_field(
-                    "data_safe_state",
+                    "dataSafeState",
                     &self.r#data_safe_state,
                 ),
                 to_pulumi_object_field(
-                    "data_storage_size_gb",
+                    "dataStorageSizeGb",
                     &self.r#data_storage_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "data_storage_size_tb",
+                    "dataStorageSizeTb",
                     &self.r#data_storage_size_tb,
                 ),
                 to_pulumi_object_field(
-                    "database_management_state",
+                    "databaseManagementState",
                     &self.r#database_management_state,
                 ),
                 to_pulumi_object_field(
-                    "db_edition",
+                    "dbEdition",
                     &self.r#db_edition,
                 ),
                 to_pulumi_object_field(
-                    "db_version",
+                    "dbVersion",
                     &self.r#db_version,
                 ),
                 to_pulumi_object_field(
-                    "db_workload",
+                    "dbWorkload",
                     &self.r#db_workload,
                 ),
                 to_pulumi_object_field(
-                    "failed_data_recovery_duration",
+                    "failedDataRecoveryDuration",
                     &self.r#failed_data_recovery_duration,
                 ),
                 to_pulumi_object_field(
-                    "is_auto_scaling_enabled",
+                    "isAutoScalingEnabled",
                     &self.r#is_auto_scaling_enabled,
                 ),
                 to_pulumi_object_field(
-                    "is_local_data_guard_enabled",
+                    "isLocalDataGuardEnabled",
                     &self.r#is_local_data_guard_enabled,
                 ),
                 to_pulumi_object_field(
-                    "is_storage_auto_scaling_enabled",
+                    "isStorageAutoScalingEnabled",
                     &self.r#is_storage_auto_scaling_enabled,
                 ),
                 to_pulumi_object_field(
-                    "license_type",
+                    "licenseType",
                     &self.r#license_type,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_details",
+                    "lifecycleDetails",
                     &self.r#lifecycle_details,
                 ),
                 to_pulumi_object_field(
-                    "local_adg_auto_failover_max_data_loss_limit",
+                    "localAdgAutoFailoverMaxDataLossLimit",
                     &self.r#local_adg_auto_failover_max_data_loss_limit,
                 ),
                 to_pulumi_object_field(
-                    "local_disaster_recovery_type",
+                    "localDisasterRecoveryType",
                     &self.r#local_disaster_recovery_type,
                 ),
                 to_pulumi_object_field(
-                    "local_standby_dbs",
+                    "localStandbyDbs",
                     &self.r#local_standby_dbs,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_begin_time",
+                    "maintenanceBeginTime",
                     &self.r#maintenance_begin_time,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_end_time",
+                    "maintenanceEndTime",
                     &self.r#maintenance_end_time,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_schedule_type",
+                    "maintenanceScheduleType",
                     &self.r#maintenance_schedule_type,
                 ),
                 to_pulumi_object_field(
-                    "memory_per_oracle_compute_unit_gbs",
+                    "memoryPerOracleComputeUnitGbs",
                     &self.r#memory_per_oracle_compute_unit_gbs,
                 ),
                 to_pulumi_object_field(
-                    "memory_table_gbs",
+                    "memoryTableGbs",
                     &self.r#memory_table_gbs,
                 ),
                 to_pulumi_object_field(
-                    "mtls_connection_required",
+                    "mtlsConnectionRequired",
                     &self.r#mtls_connection_required,
                 ),
                 to_pulumi_object_field(
-                    "n_character_set",
+                    "nCharacterSet",
                     &self.r#n_character_set,
                 ),
                 to_pulumi_object_field(
-                    "next_long_term_backup_time",
+                    "nextLongTermBackupTime",
                     &self.r#next_long_term_backup_time,
                 ),
                 to_pulumi_object_field(
-                    "oci_url",
+                    "ociUrl",
                     &self.r#oci_url,
                 ),
                 to_pulumi_object_field(
@@ -505,39 +505,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#ocid,
                 ),
                 to_pulumi_object_field(
-                    "open_mode",
+                    "openMode",
                     &self.r#open_mode,
                 ),
                 to_pulumi_object_field(
-                    "operations_insights_state",
+                    "operationsInsightsState",
                     &self.r#operations_insights_state,
                 ),
                 to_pulumi_object_field(
-                    "peer_db_ids",
+                    "peerDbIds",
                     &self.r#peer_db_ids,
                 ),
                 to_pulumi_object_field(
-                    "permission_level",
+                    "permissionLevel",
                     &self.r#permission_level,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint",
+                    "privateEndpoint",
                     &self.r#private_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_ip",
+                    "privateEndpointIp",
                     &self.r#private_endpoint_ip,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_label",
+                    "privateEndpointLabel",
                     &self.r#private_endpoint_label,
                 ),
                 to_pulumi_object_field(
-                    "refreshable_mode",
+                    "refreshableMode",
                     &self.r#refreshable_mode,
                 ),
                 to_pulumi_object_field(
-                    "refreshable_state",
+                    "refreshableState",
                     &self.r#refreshable_state,
                 ),
                 to_pulumi_object_field(
@@ -545,11 +545,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#role,
                 ),
                 to_pulumi_object_field(
-                    "scheduled_operation_details",
+                    "scheduledOperationDetails",
                     &self.r#scheduled_operation_details,
                 ),
                 to_pulumi_object_field(
-                    "sql_web_developer_url",
+                    "sqlWebDeveloperUrl",
                     &self.r#sql_web_developer_url,
                 ),
                 to_pulumi_object_field(
@@ -557,15 +557,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "supported_clone_regions",
+                    "supportedCloneRegions",
                     &self.r#supported_clone_regions,
                 ),
                 to_pulumi_object_field(
-                    "total_auto_backup_storage_size_gbs",
+                    "totalAutoBackupStorageSizeGbs",
                     &self.r#total_auto_backup_storage_size_gbs,
                 ),
                 to_pulumi_object_field(
-                    "used_data_storage_size_tbs",
+                    "usedDataStorageSizeTbs",
                     &self.r#used_data_storage_size_tbs,
                 ),
             ];

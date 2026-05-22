@@ -67,15 +67,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#effect,
                 ),
                 to_pulumi_object_field(
-                    "not_actions",
+                    "notActions",
                     &self.r#not_actions,
                 ),
                 to_pulumi_object_field(
-                    "not_principals",
+                    "notPrincipals",
                     &self.r#not_principals,
                 ),
                 to_pulumi_object_field(
-                    "not_resources",
+                    "notResources",
                     &self.r#not_resources,
                 ),
                 to_pulumi_object_field(

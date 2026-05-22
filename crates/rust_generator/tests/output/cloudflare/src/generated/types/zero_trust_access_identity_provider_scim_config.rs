@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "group_member_deprovision",
+                    "groupMemberDeprovision",
                     &self.r#group_member_deprovision,
                 ),
                 to_pulumi_object_field(
-                    "seat_deprovision",
+                    "seatDeprovision",
                     &self.r#seat_deprovision,
                 ),
                 to_pulumi_object_field(
@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#secret,
                 ),
                 to_pulumi_object_field(
-                    "user_deprovision",
+                    "userDeprovision",
                     &self.r#user_deprovision,
                 ),
             ];

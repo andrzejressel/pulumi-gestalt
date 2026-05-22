@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "family_id",
+                    "familyId",
                     &self.r#family_id,
                 ),
                 to_pulumi_object_field(
-                    "only_read_latest",
+                    "onlyReadLatest",
                     &self.r#only_read_latest,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

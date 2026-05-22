@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "keda_enabled",
+                    "kedaEnabled",
                     &self.r#keda_enabled,
                 ),
                 to_pulumi_object_field(
-                    "vertical_pod_autoscaler_enabled",
+                    "verticalPodAutoscalerEnabled",
                     &self.r#vertical_pod_autoscaler_enabled,
                 ),
             ];

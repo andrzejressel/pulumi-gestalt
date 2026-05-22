@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_data",
+                    "customData",
                     &self.r#custom_data,
                 ),
                 to_pulumi_object_field(
-                    "linux_configuration",
+                    "linuxConfiguration",
                     &self.r#linux_configuration,
                 ),
                 to_pulumi_object_field(
-                    "windows_configuration",
+                    "windowsConfiguration",
                     &self.r#windows_configuration,
                 ),
             ];

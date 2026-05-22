@@ -65,27 +65,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorisation_endpoint",
+                    "authorisationEndpoint",
                     &self.r#authorisation_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "certification_uri",
+                    "certificationUri",
                     &self.r#certification_uri,
                 ),
                 to_pulumi_object_field(
-                    "client_credential_method",
+                    "clientCredentialMethod",
                     &self.r#client_credential_method,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret_setting_name",
+                    "clientSecretSettingName",
                     &self.r#client_secret_setting_name,
                 ),
                 to_pulumi_object_field(
-                    "issuer_endpoint",
+                    "issuerEndpoint",
                     &self.r#issuer_endpoint,
                 ),
                 to_pulumi_object_field(
@@ -93,11 +93,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "name_claim_type",
+                    "nameClaimType",
                     &self.r#name_claim_type,
                 ),
                 to_pulumi_object_field(
-                    "openid_configuration_endpoint",
+                    "openidConfigurationEndpoint",
                     &self.r#openid_configuration_endpoint,
                 ),
                 to_pulumi_object_field(
@@ -105,7 +105,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#scopes,
                 ),
                 to_pulumi_object_field(
-                    "token_endpoint",
+                    "tokenEndpoint",
                     &self.r#token_endpoint,
                 ),
             ];

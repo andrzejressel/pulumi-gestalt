@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_dimensions",
+                    "metricDimensions",
                     &self.r#metric_dimensions,
                 ),
                 to_pulumi_object_field(
-                    "metric_name",
+                    "metricName",
                     &self.r#metric_name,
                 ),
                 to_pulumi_object_field(
-                    "metric_namespace",
+                    "metricNamespace",
                     &self.r#metric_namespace,
                 ),
                 to_pulumi_object_field(
-                    "metric_statistic_recommendation",
+                    "metricStatisticRecommendation",
                     &self.r#metric_statistic_recommendation,
                 ),
             ];

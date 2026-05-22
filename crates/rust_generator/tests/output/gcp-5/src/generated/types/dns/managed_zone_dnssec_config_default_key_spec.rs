@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "key_length",
+                    "keyLength",
                     &self.r#key_length,
                 ),
                 to_pulumi_object_field(
-                    "key_type",
+                    "keyType",
                     &self.r#key_type,
                 ),
                 to_pulumi_object_field(

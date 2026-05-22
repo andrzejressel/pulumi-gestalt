@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "initial_capacity_config",
+                    "initialCapacityConfig",
                     &self.r#initial_capacity_config,
                 ),
                 to_pulumi_object_field(
-                    "initial_capacity_type",
+                    "initialCapacityType",
                     &self.r#initial_capacity_type,
                 ),
             ];

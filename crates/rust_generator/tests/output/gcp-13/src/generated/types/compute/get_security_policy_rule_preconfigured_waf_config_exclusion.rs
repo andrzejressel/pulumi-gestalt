@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "request_cookies",
+                    "requestCookies",
                     &self.r#request_cookies,
                 ),
                 to_pulumi_object_field(
-                    "request_headers",
+                    "requestHeaders",
                     &self.r#request_headers,
                 ),
                 to_pulumi_object_field(
-                    "request_query_params",
+                    "requestQueryParams",
                     &self.r#request_query_params,
                 ),
                 to_pulumi_object_field(
-                    "request_uris",
+                    "requestUris",
                     &self.r#request_uris,
                 ),
                 to_pulumi_object_field(
-                    "target_rule_ids",
+                    "targetRuleIds",
                     &self.r#target_rule_ids,
                 ),
                 to_pulumi_object_field(
-                    "target_rule_set",
+                    "targetRuleSet",
                     &self.r#target_rule_set,
                 ),
             ];

@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tag
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enum_type",
+                    "enumType",
                     &self.r#enum_type,
                 ),
                 to_pulumi_object_field(
-                    "primitive_type",
+                    "primitiveType",
                     &self.r#primitive_type,
                 ),
             ];

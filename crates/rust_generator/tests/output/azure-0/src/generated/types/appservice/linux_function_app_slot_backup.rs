@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
                     &self.r#schedule,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_url",
+                    "storageAccountUrl",
                     &self.r#storage_account_url,
                 ),
             ];

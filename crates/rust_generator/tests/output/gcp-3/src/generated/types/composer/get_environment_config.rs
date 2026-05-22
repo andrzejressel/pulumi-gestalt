@@ -100,83 +100,83 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "airflow_uri",
+                    "airflowUri",
                     &self.r#airflow_uri,
                 ),
                 to_pulumi_object_field(
-                    "dag_gcs_prefix",
+                    "dagGcsPrefix",
                     &self.r#dag_gcs_prefix,
                 ),
                 to_pulumi_object_field(
-                    "data_retention_configs",
+                    "dataRetentionConfigs",
                     &self.r#data_retention_configs,
                 ),
                 to_pulumi_object_field(
-                    "database_configs",
+                    "databaseConfigs",
                     &self.r#database_configs,
                 ),
                 to_pulumi_object_field(
-                    "enable_private_builds_only",
+                    "enablePrivateBuildsOnly",
                     &self.r#enable_private_builds_only,
                 ),
                 to_pulumi_object_field(
-                    "enable_private_environment",
+                    "enablePrivateEnvironment",
                     &self.r#enable_private_environment,
                 ),
                 to_pulumi_object_field(
-                    "encryption_configs",
+                    "encryptionConfigs",
                     &self.r#encryption_configs,
                 ),
                 to_pulumi_object_field(
-                    "environment_size",
+                    "environmentSize",
                     &self.r#environment_size,
                 ),
                 to_pulumi_object_field(
-                    "gke_cluster",
+                    "gkeCluster",
                     &self.r#gke_cluster,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_windows",
+                    "maintenanceWindows",
                     &self.r#maintenance_windows,
                 ),
                 to_pulumi_object_field(
-                    "master_authorized_networks_configs",
+                    "masterAuthorizedNetworksConfigs",
                     &self.r#master_authorized_networks_configs,
                 ),
                 to_pulumi_object_field(
-                    "node_configs",
+                    "nodeConfigs",
                     &self.r#node_configs,
                 ),
                 to_pulumi_object_field(
-                    "node_count",
+                    "nodeCount",
                     &self.r#node_count,
                 ),
                 to_pulumi_object_field(
-                    "private_environment_configs",
+                    "privateEnvironmentConfigs",
                     &self.r#private_environment_configs,
                 ),
                 to_pulumi_object_field(
-                    "recovery_configs",
+                    "recoveryConfigs",
                     &self.r#recovery_configs,
                 ),
                 to_pulumi_object_field(
-                    "resilience_mode",
+                    "resilienceMode",
                     &self.r#resilience_mode,
                 ),
                 to_pulumi_object_field(
-                    "software_configs",
+                    "softwareConfigs",
                     &self.r#software_configs,
                 ),
                 to_pulumi_object_field(
-                    "web_server_configs",
+                    "webServerConfigs",
                     &self.r#web_server_configs,
                 ),
                 to_pulumi_object_field(
-                    "web_server_network_access_controls",
+                    "webServerNetworkAccessControls",
                     &self.r#web_server_network_access_controls,
                 ),
                 to_pulumi_object_field(
-                    "workloads_configs",
+                    "workloadsConfigs",
                     &self.r#workloads_configs,
                 ),
             ];

@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#collection,
                 ),
                 to_pulumi_object_field(
-                    "database_resource_reference",
+                    "databaseResourceReference",
                     &self.r#database_resource_reference,
                 ),
                 to_pulumi_object_field(

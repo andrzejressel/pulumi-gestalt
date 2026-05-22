@@ -65,7 +65,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
                 to_pulumi_object_field(
@@ -77,11 +77,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "service_tag",
+                    "serviceTag",
                     &self.r#service_tag,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_subnet_id",
+                    "virtualNetworkSubnetId",
                     &self.r#virtual_network_subnet_id,
                 ),
             ];

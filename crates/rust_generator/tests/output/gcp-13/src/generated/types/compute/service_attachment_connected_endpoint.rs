@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_network",
+                    "consumerNetwork",
                     &self.r#consumer_network,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#endpoint,
                 ),
                 to_pulumi_object_field(
-                    "propagated_connection_count",
+                    "propagatedConnectionCount",
                     &self.r#propagated_connection_count,
                 ),
                 to_pulumi_object_field(
-                    "psc_connection_id",
+                    "pscConnectionId",
                     &self.r#psc_connection_id,
                 ),
                 to_pulumi_object_field(

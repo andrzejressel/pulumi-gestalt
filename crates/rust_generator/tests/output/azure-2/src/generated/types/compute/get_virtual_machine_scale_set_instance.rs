@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "computer_name",
+                    "computerName",
                     &self.r#computer_name,
                 ),
                 to_pulumi_object_field(
-                    "instance_id",
+                    "instanceId",
                     &self.r#instance_id,
                 ),
                 to_pulumi_object_field(
-                    "latest_model_applied",
+                    "latestModelApplied",
                     &self.r#latest_model_applied,
                 ),
                 to_pulumi_object_field(
@@ -79,27 +79,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "power_state",
+                    "powerState",
                     &self.r#power_state,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_addresses",
+                    "privateIpAddresses",
                     &self.r#private_ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_address",
+                    "publicIpAddress",
                     &self.r#public_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_addresses",
+                    "publicIpAddresses",
                     &self.r#public_ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine_id",
+                    "virtualMachineId",
                     &self.r#virtual_machine_id,
                 ),
                 to_pulumi_object_field(

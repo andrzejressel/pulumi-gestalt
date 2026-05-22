@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_response_body_key",
+                    "customResponseBodyKey",
                     &self.r#custom_response_body_key,
                 ),
                 to_pulumi_object_field(
-                    "response_code",
+                    "responseCode",
                     &self.r#response_code,
                 ),
                 to_pulumi_object_field(
-                    "response_headers",
+                    "responseHeaders",
                     &self.r#response_headers,
                 ),
             ];

@@ -73,7 +73,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gateway_load_balancer_frontend_ip_configuration_id",
+                    "gatewayLoadBalancerFrontendIpConfigurationId",
                     &self.r#gateway_load_balancer_frontend_ip_configuration_id,
                 ),
                 to_pulumi_object_field(
@@ -81,11 +81,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "inbound_nat_rules",
+                    "inboundNatRules",
                     &self.r#inbound_nat_rules,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_rules",
+                    "loadBalancerRules",
                     &self.r#load_balancer_rules,
                 ),
                 to_pulumi_object_field(
@@ -93,31 +93,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "outbound_rules",
+                    "outboundRules",
                     &self.r#outbound_rules,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address_allocation",
+                    "privateIpAddressAllocation",
                     &self.r#private_ip_address_allocation,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address_version",
+                    "privateIpAddressVersion",
                     &self.r#private_ip_address_version,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_address_id",
+                    "publicIpAddressId",
                     &self.r#public_ip_address_id,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_prefix_id",
+                    "publicIpPrefixId",
                     &self.r#public_ip_prefix_id,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(

@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_type",
+                    "endpointType",
                     &self.r#endpoint_type,
                 ),
                 to_pulumi_object_field(
-                    "vpce_id",
+                    "vpceId",
                     &self.r#vpce_id,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nam
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "identity_id",
+                    "identityId",
                     &self.r#identity_id,
                 ),
                 to_pulumi_object_field(
-                    "infrastructure_encryption_enabled",
+                    "infrastructureEncryptionEnabled",
                     &self.r#infrastructure_encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_key_id",
+                    "keyVaultKeyId",
                     &self.r#key_vault_key_id,
                 ),
             ];

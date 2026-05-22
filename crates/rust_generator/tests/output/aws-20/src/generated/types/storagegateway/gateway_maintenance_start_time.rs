@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_month",
+                    "dayOfMonth",
                     &self.r#day_of_month,
                 ),
                 to_pulumi_object_field(
-                    "day_of_week",
+                    "dayOfWeek",
                     &self.r#day_of_week,
                 ),
                 to_pulumi_object_field(
-                    "hour_of_day",
+                    "hourOfDay",
                     &self.r#hour_of_day,
                 ),
                 to_pulumi_object_field(
-                    "minute_of_hour",
+                    "minuteOfHour",
                     &self.r#minute_of_hour,
                 ),
             ];

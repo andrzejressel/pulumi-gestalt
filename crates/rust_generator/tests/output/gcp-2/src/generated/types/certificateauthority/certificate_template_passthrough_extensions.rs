@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_extensions",
+                    "additionalExtensions",
                     &self.r#additional_extensions,
                 ),
                 to_pulumi_object_field(
-                    "known_extensions",
+                    "knownExtensions",
                     &self.r#known_extensions,
                 ),
             ];

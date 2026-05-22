@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerated_networking_enabled",
+                    "acceleratedNetworkingEnabled",
                     &self.r#accelerated_networking_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dns_servers",
+                    "dnsServers",
                     &self.r#dns_servers,
                 ),
                 to_pulumi_object_field(
-                    "ip_configurations",
+                    "ipConfigurations",
                     &self.r#ip_configurations,
                 ),
                 to_pulumi_object_field(
-                    "ip_forwarding_enabled",
+                    "ipForwardingEnabled",
                     &self.r#ip_forwarding_enabled,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "network_security_group_id",
+                    "networkSecurityGroupId",
                     &self.r#network_security_group_id,
                 ),
                 to_pulumi_object_field(

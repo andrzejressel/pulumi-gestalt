@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "apt_repositories",
+                    "aptRepositories",
                     &self.r#apt_repositories,
                 ),
                 to_pulumi_object_field(
-                    "common_repositories",
+                    "commonRepositories",
                     &self.r#common_repositories,
                 ),
                 to_pulumi_object_field(
@@ -72,31 +72,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "disable_upstream_validation",
+                    "disableUpstreamValidation",
                     &self.r#disable_upstream_validation,
                 ),
                 to_pulumi_object_field(
-                    "docker_repositories",
+                    "dockerRepositories",
                     &self.r#docker_repositories,
                 ),
                 to_pulumi_object_field(
-                    "maven_repositories",
+                    "mavenRepositories",
                     &self.r#maven_repositories,
                 ),
                 to_pulumi_object_field(
-                    "npm_repositories",
+                    "npmRepositories",
                     &self.r#npm_repositories,
                 ),
                 to_pulumi_object_field(
-                    "python_repositories",
+                    "pythonRepositories",
                     &self.r#python_repositories,
                 ),
                 to_pulumi_object_field(
-                    "upstream_credentials",
+                    "upstreamCredentials",
                     &self.r#upstream_credentials,
                 ),
                 to_pulumi_object_field(
-                    "yum_repositories",
+                    "yumRepositories",
                     &self.r#yum_repositories,
                 ),
             ];

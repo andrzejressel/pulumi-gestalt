@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
                     &self.r#daily,
                 ),
                 to_pulumi_object_field(
-                    "days_of_week",
+                    "daysOfWeek",
                     &self.r#days_of_week,
                 ),
                 to_pulumi_object_field(
@@ -65,11 +65,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "single_occurrence_date",
+                    "singleOccurrenceDate",
                     &self.r#single_occurrence_date,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
             ];

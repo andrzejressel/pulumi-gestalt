@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#schema,
                 ),
                 to_pulumi_object_field(
-                    "table_name",
+                    "tableName",
                     &self.r#table_name,
                 ),
             ];

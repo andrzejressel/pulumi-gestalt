@@ -90,7 +90,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
@@ -102,7 +102,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "perimeter_type",
+                    "perimeterType",
                     &self.r#perimeter_type,
                 ),
                 to_pulumi_object_field(
@@ -118,11 +118,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#title,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
                 to_pulumi_object_field(
-                    "use_explicit_dry_run_spec",
+                    "useExplicitDryRunSpec",
                     &self.r#use_explicit_dry_run_spec,
                 ),
             ];

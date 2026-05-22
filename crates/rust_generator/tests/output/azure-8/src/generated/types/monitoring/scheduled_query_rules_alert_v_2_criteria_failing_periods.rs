@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "minimum_failing_periods_to_trigger_alert",
+                    "minimumFailingPeriodsToTriggerAlert",
                     &self.r#minimum_failing_periods_to_trigger_alert,
                 ),
                 to_pulumi_object_field(
-                    "number_of_evaluation_periods",
+                    "numberOfEvaluationPeriods",
                     &self.r#number_of_evaluation_periods,
                 ),
             ];

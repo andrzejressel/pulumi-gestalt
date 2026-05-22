@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_rendition_sets",
+                    "audioRenditionSets",
                     &self.r#audio_rendition_sets,
                 ),
                 to_pulumi_object_field(
-                    "m_3_u_8_settings",
+                    "m3u8Settings",
                     &self.r#m_3_u_8_settings,
                 ),
             ];

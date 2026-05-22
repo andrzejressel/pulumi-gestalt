@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_auth",
+                    "clientAuth",
                     &self.r#client_auth,
                 ),
                 to_pulumi_object_field(
-                    "code_signing",
+                    "codeSigning",
                     &self.r#code_signing,
                 ),
                 to_pulumi_object_field(
-                    "email_protection",
+                    "emailProtection",
                     &self.r#email_protection,
                 ),
                 to_pulumi_object_field(
-                    "ocsp_signing",
+                    "ocspSigning",
                     &self.r#ocsp_signing,
                 ),
                 to_pulumi_object_field(
-                    "server_auth",
+                    "serverAuth",
                     &self.r#server_auth,
                 ),
                 to_pulumi_object_field(
-                    "time_stamping",
+                    "timeStamping",
                     &self.r#time_stamping,
                 ),
             ];

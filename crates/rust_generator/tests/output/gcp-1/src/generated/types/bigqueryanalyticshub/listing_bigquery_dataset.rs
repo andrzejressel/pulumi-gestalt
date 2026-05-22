@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#dataset,
                 ),
                 to_pulumi_object_field(
-                    "selected_resources",
+                    "selectedResources",
                     &self.r#selected_resources,
                 ),
             ];

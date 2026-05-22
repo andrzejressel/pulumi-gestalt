@@ -59,43 +59,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_unsafe_sysctls",
+                    "allowedUnsafeSysctls",
                     &self.r#allowed_unsafe_sysctls,
                 ),
                 to_pulumi_object_field(
-                    "container_log_max_line",
+                    "containerLogMaxLine",
                     &self.r#container_log_max_line,
                 ),
                 to_pulumi_object_field(
-                    "container_log_max_size_mb",
+                    "containerLogMaxSizeMb",
                     &self.r#container_log_max_size_mb,
                 ),
                 to_pulumi_object_field(
-                    "cpu_cfs_quota_enabled",
+                    "cpuCfsQuotaEnabled",
                     &self.r#cpu_cfs_quota_enabled,
                 ),
                 to_pulumi_object_field(
-                    "cpu_cfs_quota_period",
+                    "cpuCfsQuotaPeriod",
                     &self.r#cpu_cfs_quota_period,
                 ),
                 to_pulumi_object_field(
-                    "cpu_manager_policy",
+                    "cpuManagerPolicy",
                     &self.r#cpu_manager_policy,
                 ),
                 to_pulumi_object_field(
-                    "image_gc_high_threshold",
+                    "imageGcHighThreshold",
                     &self.r#image_gc_high_threshold,
                 ),
                 to_pulumi_object_field(
-                    "image_gc_low_threshold",
+                    "imageGcLowThreshold",
                     &self.r#image_gc_low_threshold,
                 ),
                 to_pulumi_object_field(
-                    "pod_max_pid",
+                    "podMaxPid",
                     &self.r#pod_max_pid,
                 ),
                 to_pulumi_object_field(
-                    "topology_manager_policy",
+                    "topologyManagerPolicy",
                     &self.r#topology_manager_policy,
                 ),
             ];

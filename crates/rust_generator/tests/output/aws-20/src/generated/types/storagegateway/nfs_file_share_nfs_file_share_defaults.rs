@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nfs
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "directory_mode",
+                    "directoryMode",
                     &self.r#directory_mode,
                 ),
                 to_pulumi_object_field(
-                    "file_mode",
+                    "fileMode",
                     &self.r#file_mode,
                 ),
                 to_pulumi_object_field(
-                    "group_id",
+                    "groupId",
                     &self.r#group_id,
                 ),
                 to_pulumi_object_field(
-                    "owner_id",
+                    "ownerId",
                     &self.r#owner_id,
                 ),
             ];

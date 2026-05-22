@@ -52,7 +52,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#excludes,
                 ),
                 to_pulumi_object_field(
-                    "exclusive_patches",
+                    "exclusivePatches",
                     &self.r#exclusive_patches,
                 ),
                 to_pulumi_object_field(
@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#severities,
                 ),
                 to_pulumi_object_field(
-                    "with_optional",
+                    "withOptional",
                     &self.r#with_optional,
                 ),
                 to_pulumi_object_field(
-                    "with_update",
+                    "withUpdate",
                     &self.r#with_update,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "failure_strings",
+                    "failureStrings",
                     &self.r#failure_strings,
                 ),
                 to_pulumi_object_field(
-                    "success_strings",
+                    "successStrings",
                     &self.r#success_strings,
                 ),
             ];

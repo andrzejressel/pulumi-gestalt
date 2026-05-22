@@ -56,7 +56,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "event_source",
+                    "eventSource",
                     &self.r#event_source,
                 ),
                 to_pulumi_object_field(
@@ -64,15 +64,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "policy_type",
+                    "policyType",
                     &self.r#policy_type,
                 ),
                 to_pulumi_object_field(
-                    "resource_locations",
+                    "resourceLocations",
                     &self.r#resource_locations,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
                 to_pulumi_object_field(
@@ -80,7 +80,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#schedules,
                 ),
                 to_pulumi_object_field(
-                    "target_tags",
+                    "targetTags",
                     &self.r#target_tags,
                 ),
             ];

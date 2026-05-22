@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "case_sensitive",
+                    "caseSensitive",
                     &self.r#case_sensitive,
                 ),
                 to_pulumi_object_field(
-                    "match_",
+                    "match",
                     &self.r#match_,
                 ),
                 to_pulumi_object_field(

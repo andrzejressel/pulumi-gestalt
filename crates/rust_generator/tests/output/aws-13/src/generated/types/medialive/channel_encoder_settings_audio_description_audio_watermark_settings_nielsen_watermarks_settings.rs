@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "nielsen_cbet_settings",
+                    "nielsenCbetSettings",
                     &self.r#nielsen_cbet_settings,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_distribution_type",
+                    "nielsenDistributionType",
                     &self.r#nielsen_distribution_type,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_naes_ii_nw_settings",
+                    "nielsenNaesIiNwSettings",
                     &self.r#nielsen_naes_ii_nw_settings,
                 ),
             ];

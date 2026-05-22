@@ -29,15 +29,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bit_depth",
+                    "bitDepth",
                     &self.r#bit_depth,
                 ),
                 to_pulumi_object_field(
-                    "coding_mode",
+                    "codingMode",
                     &self.r#coding_mode,
                 ),
                 to_pulumi_object_field(
-                    "sample_rate",
+                    "sampleRate",
                     &self.r#sample_rate,
                 ),
             ];

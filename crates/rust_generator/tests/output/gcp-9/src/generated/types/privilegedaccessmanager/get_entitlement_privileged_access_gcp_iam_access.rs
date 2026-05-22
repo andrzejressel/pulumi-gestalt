@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#resource,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
                 to_pulumi_object_field(
-                    "role_bindings",
+                    "roleBindings",
                     &self.r#role_bindings,
                 ),
             ];

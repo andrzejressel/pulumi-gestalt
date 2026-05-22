@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_uri",
+                    "blobUri",
                     &self.r#blob_uri,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
                     &self.r#caching,
                 ),
                 to_pulumi_object_field(
-                    "disk_encryption_set_id",
+                    "diskEncryptionSetId",
                     &self.r#disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
                     &self.r#lun,
                 ),
                 to_pulumi_object_field(
-                    "managed_disk_id",
+                    "managedDiskId",
                     &self.r#managed_disk_id,
                 ),
                 to_pulumi_object_field(
-                    "size_gb",
+                    "sizeGb",
                     &self.r#size_gb,
                 ),
                 to_pulumi_object_field(
-                    "storage_type",
+                    "storageType",
                     &self.r#storage_type,
                 ),
             ];

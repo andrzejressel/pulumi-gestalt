@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "crawler_arn",
+                    "crawlerArn",
                     &self.r#crawler_arn,
                 ),
                 to_pulumi_object_field(
-                    "database_arn",
+                    "databaseArn",
                     &self.r#database_arn,
                 ),
                 to_pulumi_object_field(
-                    "table_arn",
+                    "tableArn",
                     &self.r#table_arn,
                 ),
             ];

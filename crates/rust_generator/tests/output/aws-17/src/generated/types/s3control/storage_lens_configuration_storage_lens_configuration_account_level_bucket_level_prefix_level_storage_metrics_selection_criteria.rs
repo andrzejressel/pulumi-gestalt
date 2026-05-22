@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
                     &self.r#delimiter,
                 ),
                 to_pulumi_object_field(
-                    "max_depth",
+                    "maxDepth",
                     &self.r#max_depth,
                 ),
                 to_pulumi_object_field(
-                    "min_storage_bytes_percentage",
+                    "minStorageBytesPercentage",
                     &self.r#min_storage_bytes_percentage,
                 ),
             ];

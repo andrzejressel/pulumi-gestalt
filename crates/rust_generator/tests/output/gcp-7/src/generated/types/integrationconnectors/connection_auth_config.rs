@@ -58,35 +58,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_variables",
+                    "additionalVariables",
                     &self.r#additional_variables,
                 ),
                 to_pulumi_object_field(
-                    "auth_key",
+                    "authKey",
                     &self.r#auth_key,
                 ),
                 to_pulumi_object_field(
-                    "auth_type",
+                    "authType",
                     &self.r#auth_type,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_auth_code_flow",
+                    "oauth2AuthCodeFlow",
                     &self.r#oauth_2_auth_code_flow,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_client_credentials",
+                    "oauth2ClientCredentials",
                     &self.r#oauth_2_client_credentials,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_jwt_bearer",
+                    "oauth2JwtBearer",
                     &self.r#oauth_2_jwt_bearer,
                 ),
                 to_pulumi_object_field(
-                    "ssh_public_key",
+                    "sshPublicKey",
                     &self.r#ssh_public_key,
                 ),
                 to_pulumi_object_field(
-                    "user_password",
+                    "userPassword",
                     &self.r#user_password,
                 ),
             ];

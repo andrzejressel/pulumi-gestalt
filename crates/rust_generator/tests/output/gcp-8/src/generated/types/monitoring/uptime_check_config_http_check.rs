@@ -82,11 +82,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accepted_response_status_codes",
+                    "acceptedResponseStatusCodes",
                     &self.r#accepted_response_status_codes,
                 ),
                 to_pulumi_object_field(
-                    "auth_info",
+                    "authInfo",
                     &self.r#auth_info,
                 ),
                 to_pulumi_object_field(
@@ -94,11 +94,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
                     &self.r#body,
                 ),
                 to_pulumi_object_field(
-                    "content_type",
+                    "contentType",
                     &self.r#content_type,
                 ),
                 to_pulumi_object_field(
-                    "custom_content_type",
+                    "customContentType",
                     &self.r#custom_content_type,
                 ),
                 to_pulumi_object_field(
@@ -106,7 +106,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "mask_headers",
+                    "maskHeaders",
                     &self.r#mask_headers,
                 ),
                 to_pulumi_object_field(
@@ -114,7 +114,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "ping_config",
+                    "pingConfig",
                     &self.r#ping_config,
                 ),
                 to_pulumi_object_field(
@@ -122,19 +122,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Upt
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "request_method",
+                    "requestMethod",
                     &self.r#request_method,
                 ),
                 to_pulumi_object_field(
-                    "service_agent_authentication",
+                    "serviceAgentAuthentication",
                     &self.r#service_agent_authentication,
                 ),
                 to_pulumi_object_field(
-                    "use_ssl",
+                    "useSsl",
                     &self.r#use_ssl,
                 ),
                 to_pulumi_object_field(
-                    "validate_ssl",
+                    "validateSsl",
                     &self.r#validate_ssl,
                 ),
             ];

@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "primary_edge_zone",
+                    "primaryEdgeZone",
                     &self.r#primary_edge_zone,
                 ),
                 to_pulumi_object_field(
-                    "primary_zone",
+                    "primaryZone",
                     &self.r#primary_zone,
                 ),
                 to_pulumi_object_field(
-                    "recovery_edge_zone",
+                    "recoveryEdgeZone",
                     &self.r#recovery_edge_zone,
                 ),
                 to_pulumi_object_field(
-                    "recovery_zone",
+                    "recoveryZone",
                     &self.r#recovery_zone,
                 ),
             ];

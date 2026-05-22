@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gpu_sharing_strategy",
+                    "gpuSharingStrategy",
                     &self.r#gpu_sharing_strategy,
                 ),
                 to_pulumi_object_field(
-                    "max_shared_clients_per_gpu",
+                    "maxSharedClientsPerGpu",
                     &self.r#max_shared_clients_per_gpu,
                 ),
             ];

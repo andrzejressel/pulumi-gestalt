@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_from_latest",
+                    "excludeFromLatest",
                     &self.r#exclude_from_latest,
                 ),
                 to_pulumi_object_field(
@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "managed_image_id",
+                    "managedImageId",
                     &self.r#managed_image_id,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "target_regions",
+                    "targetRegions",
                     &self.r#target_regions,
                 ),
             ];

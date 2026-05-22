@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alias_id",
+                    "aliasId",
                     &self.r#alias_id,
                 ),
                 to_pulumi_object_field(
-                    "alias_name",
+                    "aliasName",
                     &self.r#alias_name,
                 ),
                 to_pulumi_object_field(

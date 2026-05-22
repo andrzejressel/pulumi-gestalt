@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_storage_container_name",
+                    "autoStorageContainerName",
                     &self.r#auto_storage_container_name,
                 ),
                 to_pulumi_object_field(
-                    "blob_prefix",
+                    "blobPrefix",
                     &self.r#blob_prefix,
                 ),
                 to_pulumi_object_field(
-                    "file_mode",
+                    "fileMode",
                     &self.r#file_mode,
                 ),
                 to_pulumi_object_field(
-                    "file_path",
+                    "filePath",
                     &self.r#file_path,
                 ),
                 to_pulumi_object_field(
-                    "http_url",
+                    "httpUrl",
                     &self.r#http_url,
                 ),
                 to_pulumi_object_field(
-                    "storage_container_url",
+                    "storageContainerUrl",
                     &self.r#storage_container_url,
                 ),
                 to_pulumi_object_field(
-                    "user_assigned_identity_id",
+                    "userAssignedIdentityId",
                     &self.r#user_assigned_identity_id,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "canary_deployment",
+                    "canaryDeployment",
                     &self.r#canary_deployment,
                 ),
                 to_pulumi_object_field(
-                    "custom_canary_deployment",
+                    "customCanaryDeployment",
                     &self.r#custom_canary_deployment,
                 ),
                 to_pulumi_object_field(
-                    "runtime_config",
+                    "runtimeConfig",
                     &self.r#runtime_config,
                 ),
             ];

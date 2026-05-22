@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "target_nodes",
+                    "targetNodes",
                     &self.r#target_nodes,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_image_format",
+                    "diskImageFormat",
                     &self.r#disk_image_format,
                 ),
                 to_pulumi_object_field(
-                    "role_name",
+                    "roleName",
                     &self.r#role_name,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket",
+                    "s3Bucket",
                     &self.r#s_3_bucket,
                 ),
                 to_pulumi_object_field(
-                    "s_3_prefix",
+                    "s3Prefix",
                     &self.r#s_3_prefix,
                 ),
             ];

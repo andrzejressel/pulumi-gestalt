@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "chunking_configuration",
+                    "chunkingConfiguration",
                     &self.r#chunking_configuration,
                 ),
                 to_pulumi_object_field(
-                    "custom_transformation_configuration",
+                    "customTransformationConfiguration",
                     &self.r#custom_transformation_configuration,
                 ),
                 to_pulumi_object_field(
-                    "parsing_configuration",
+                    "parsingConfiguration",
                     &self.r#parsing_configuration,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "node_deallocation_method",
+                    "nodeDeallocationMethod",
                     &self.r#node_deallocation_method,
                 ),
                 to_pulumi_object_field(
-                    "resize_timeout",
+                    "resizeTimeout",
                     &self.r#resize_timeout,
                 ),
                 to_pulumi_object_field(
-                    "target_dedicated_nodes",
+                    "targetDedicatedNodes",
                     &self.r#target_dedicated_nodes,
                 ),
                 to_pulumi_object_field(
-                    "target_low_priority_nodes",
+                    "targetLowPriorityNodes",
                     &self.r#target_low_priority_nodes,
                 ),
             ];

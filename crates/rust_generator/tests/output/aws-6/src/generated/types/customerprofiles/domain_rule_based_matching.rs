@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attribute_types_selector",
+                    "attributeTypesSelector",
                     &self.r#attribute_types_selector,
                 ),
                 to_pulumi_object_field(
-                    "conflict_resolution",
+                    "conflictResolution",
                     &self.r#conflict_resolution,
                 ),
                 to_pulumi_object_field(
@@ -62,19 +62,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "exporting_config",
+                    "exportingConfig",
                     &self.r#exporting_config,
                 ),
                 to_pulumi_object_field(
-                    "matching_rules",
+                    "matchingRules",
                     &self.r#matching_rules,
                 ),
                 to_pulumi_object_field(
-                    "max_allowed_rule_level_for_matching",
+                    "maxAllowedRuleLevelForMatching",
                     &self.r#max_allowed_rule_level_for_matching,
                 ),
                 to_pulumi_object_field(
-                    "max_allowed_rule_level_for_merging",
+                    "maxAllowedRuleLevelForMerging",
                     &self.r#max_allowed_rule_level_for_merging,
                 ),
                 to_pulumi_object_field(

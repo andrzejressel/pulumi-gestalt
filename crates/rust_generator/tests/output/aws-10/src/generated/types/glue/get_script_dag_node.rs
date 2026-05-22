@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "line_number",
+                    "lineNumber",
                     &self.r#line_number,
                 ),
                 to_pulumi_object_field(
-                    "node_type",
+                    "nodeType",
                     &self.r#node_type,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gal
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_from_latest",
+                    "excludeFromLatest",
                     &self.r#exclude_from_latest,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gal
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "regional_replica_count",
+                    "regionalReplicaCount",
                     &self.r#regional_replica_count,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_type",
+                    "storageAccountType",
                     &self.r#storage_account_type,
                 ),
             ];

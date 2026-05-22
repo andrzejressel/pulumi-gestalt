@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "iceberg_compaction",
+                    "icebergCompaction",
                     &self.r#iceberg_compaction,
                 ),
                 to_pulumi_object_field(
-                    "iceberg_snapshot_management",
+                    "icebergSnapshotManagement",
                     &self.r#iceberg_snapshot_management,
                 ),
             ];

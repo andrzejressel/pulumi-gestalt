@@ -40,23 +40,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cipher_suites",
+                    "cipherSuites",
                     &self.r#cipher_suites,
                 ),
                 to_pulumi_object_field(
-                    "disabled_protocols",
+                    "disabledProtocols",
                     &self.r#disabled_protocols,
                 ),
                 to_pulumi_object_field(
-                    "min_protocol_version",
+                    "minProtocolVersion",
                     &self.r#min_protocol_version,
                 ),
                 to_pulumi_object_field(
-                    "policy_name",
+                    "policyName",
                     &self.r#policy_name,
                 ),
                 to_pulumi_object_field(
-                    "policy_type",
+                    "policyType",
                     &self.r#policy_type,
                 ),
             ];

@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "feature_groups",
+                    "featureGroups",
                     &self.r#feature_groups,
                 ),
                 to_pulumi_object_field(
-                    "project_number",
+                    "projectNumber",
                     &self.r#project_number,
                 ),
             ];

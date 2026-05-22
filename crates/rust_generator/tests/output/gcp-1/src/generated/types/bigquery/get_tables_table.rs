@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "table_id",
+                    "tableId",
                     &self.r#table_id,
                 ),
             ];

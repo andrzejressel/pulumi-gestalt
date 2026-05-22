@@ -42,19 +42,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#privileged,
                 ),
                 to_pulumi_object_field(
-                    "read_only_root_file_system",
+                    "readOnlyRootFileSystem",
                     &self.r#read_only_root_file_system,
                 ),
                 to_pulumi_object_field(
-                    "run_as_group",
+                    "runAsGroup",
                     &self.r#run_as_group,
                 ),
                 to_pulumi_object_field(
-                    "run_as_non_root",
+                    "runAsNonRoot",
                     &self.r#run_as_non_root,
                 ),
                 to_pulumi_object_field(
-                    "run_as_user",
+                    "runAsUser",
                     &self.r#run_as_user,
                 ),
             ];

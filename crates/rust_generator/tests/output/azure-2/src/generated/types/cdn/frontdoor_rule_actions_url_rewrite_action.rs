@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "preserve_unmatched_path",
+                    "preserveUnmatchedPath",
                     &self.r#preserve_unmatched_path,
                 ),
                 to_pulumi_object_field(
-                    "source_pattern",
+                    "sourcePattern",
                     &self.r#source_pattern,
                 ),
             ];

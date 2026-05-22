@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "brute_force_config",
+                    "bruteForceConfig",
                     &self.r#brute_force_config,
                 ),
                 to_pulumi_object_field(
-                    "tree_ah_config",
+                    "treeAhConfig",
                     &self.r#tree_ah_config,
                 ),
             ];

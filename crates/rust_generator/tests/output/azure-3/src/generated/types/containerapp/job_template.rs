@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "init_containers",
+                    "initContainers",
                     &self.r#init_containers,
                 ),
                 to_pulumi_object_field(

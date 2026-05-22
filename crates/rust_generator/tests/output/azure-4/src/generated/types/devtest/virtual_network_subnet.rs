@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "shared_public_ip_address",
+                    "sharedPublicIpAddress",
                     &self.r#shared_public_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "use_in_virtual_machine_creation",
+                    "useInVirtualMachineCreation",
                     &self.r#use_in_virtual_machine_creation,
                 ),
                 to_pulumi_object_field(
-                    "use_public_ip_address",
+                    "usePublicIpAddress",
                     &self.r#use_public_ip_address,
                 ),
             ];

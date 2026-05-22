@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_expiration_action",
+                    "cacheExpirationAction",
                     &self.r#cache_expiration_action,
                 ),
                 to_pulumi_object_field(
-                    "cache_key_query_string_action",
+                    "cacheKeyQueryStringAction",
                     &self.r#cache_key_query_string_action,
                 ),
                 to_pulumi_object_field(
-                    "modify_request_header_actions",
+                    "modifyRequestHeaderActions",
                     &self.r#modify_request_header_actions,
                 ),
                 to_pulumi_object_field(
-                    "modify_response_header_actions",
+                    "modifyResponseHeaderActions",
                     &self.r#modify_response_header_actions,
                 ),
                 to_pulumi_object_field(
-                    "url_redirect_action",
+                    "urlRedirectAction",
                     &self.r#url_redirect_action,
                 ),
                 to_pulumi_object_field(
-                    "url_rewrite_action",
+                    "urlRewriteAction",
                     &self.r#url_rewrite_action,
                 ),
             ];

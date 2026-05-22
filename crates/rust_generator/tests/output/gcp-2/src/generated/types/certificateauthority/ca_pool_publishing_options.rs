@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "encoding_format",
+                    "encodingFormat",
                     &self.r#encoding_format,
                 ),
                 to_pulumi_object_field(
-                    "publish_ca_cert",
+                    "publishCaCert",
                     &self.r#publish_ca_cert,
                 ),
                 to_pulumi_object_field(
-                    "publish_crl",
+                    "publishCrl",
                     &self.r#publish_crl,
                 ),
             ];

@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#scope,
                 ),
                 to_pulumi_object_field(
-                    "service_account_email",
+                    "serviceAccountEmail",
                     &self.r#service_account_email,
                 ),
             ];

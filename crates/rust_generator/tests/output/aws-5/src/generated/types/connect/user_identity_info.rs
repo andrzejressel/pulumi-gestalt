@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
                     &self.r#email,
                 ),
                 to_pulumi_object_field(
-                    "first_name",
+                    "firstName",
                     &self.r#first_name,
                 ),
                 to_pulumi_object_field(
-                    "last_name",
+                    "lastName",
                     &self.r#last_name,
                 ),
             ];

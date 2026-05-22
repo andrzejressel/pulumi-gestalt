@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#city,
                 ),
                 to_pulumi_object_field(
-                    "country_or_region",
+                    "countryOrRegion",
                     &self.r#country_or_region,
                 ),
                 to_pulumi_object_field(

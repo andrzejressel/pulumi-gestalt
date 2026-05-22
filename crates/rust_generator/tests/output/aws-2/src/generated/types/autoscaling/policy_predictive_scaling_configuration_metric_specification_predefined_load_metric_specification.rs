@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "predefined_metric_type",
+                    "predefinedMetricType",
                     &self.r#predefined_metric_type,
                 ),
                 to_pulumi_object_field(
-                    "resource_label",
+                    "resourceLabel",
                     &self.r#resource_label,
                 ),
             ];

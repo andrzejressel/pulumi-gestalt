@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "black_frame_msec",
+                    "blackFrameMsec",
                     &self.r#black_frame_msec,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_image_color",
+                    "inputLossImageColor",
                     &self.r#input_loss_image_color,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_image_slate",
+                    "inputLossImageSlate",
                     &self.r#input_loss_image_slate,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_image_type",
+                    "inputLossImageType",
                     &self.r#input_loss_image_type,
                 ),
                 to_pulumi_object_field(
-                    "repeat_frame_msec",
+                    "repeatFrameMsec",
                     &self.r#repeat_frame_msec,
                 ),
             ];

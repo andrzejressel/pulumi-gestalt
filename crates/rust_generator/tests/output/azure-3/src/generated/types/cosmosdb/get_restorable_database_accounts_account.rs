@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_type",
+                    "apiType",
                     &self.r#api_type,
                 ),
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
-                    "deletion_time",
+                    "deletionTime",
                     &self.r#deletion_time,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "restorable_locations",
+                    "restorableLocations",
                     &self.r#restorable_locations,
                 ),
             ];

@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "retention_duration",
+                    "retentionDuration",
                     &self.r#retention_duration,
                 ),
                 to_pulumi_object_field(
-                    "rule_id",
+                    "ruleId",
                     &self.r#rule_id,
                 ),
                 to_pulumi_object_field(

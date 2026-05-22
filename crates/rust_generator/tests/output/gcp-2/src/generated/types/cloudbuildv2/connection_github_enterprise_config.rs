@@ -52,35 +52,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_id",
+                    "appId",
                     &self.r#app_id,
                 ),
                 to_pulumi_object_field(
-                    "app_installation_id",
+                    "appInstallationId",
                     &self.r#app_installation_id,
                 ),
                 to_pulumi_object_field(
-                    "app_slug",
+                    "appSlug",
                     &self.r#app_slug,
                 ),
                 to_pulumi_object_field(
-                    "host_uri",
+                    "hostUri",
                     &self.r#host_uri,
                 ),
                 to_pulumi_object_field(
-                    "private_key_secret_version",
+                    "privateKeySecretVersion",
                     &self.r#private_key_secret_version,
                 ),
                 to_pulumi_object_field(
-                    "service_directory_config",
+                    "serviceDirectoryConfig",
                     &self.r#service_directory_config,
                 ),
                 to_pulumi_object_field(
-                    "ssl_ca",
+                    "sslCa",
                     &self.r#ssl_ca,
                 ),
                 to_pulumi_object_field(
-                    "webhook_secret_secret_version",
+                    "webhookSecretSecretVersion",
                     &self.r#webhook_secret_secret_version,
                 ),
             ];

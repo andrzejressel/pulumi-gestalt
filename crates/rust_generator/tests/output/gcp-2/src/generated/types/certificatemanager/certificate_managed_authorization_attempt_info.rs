@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#domain,
                 ),
                 to_pulumi_object_field(
-                    "failure_reason",
+                    "failureReason",
                     &self.r#failure_reason,
                 ),
                 to_pulumi_object_field(

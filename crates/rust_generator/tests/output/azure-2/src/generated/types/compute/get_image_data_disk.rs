@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_uri",
+                    "blobUri",
                     &self.r#blob_uri,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#lun,
                 ),
                 to_pulumi_object_field(
-                    "managed_disk_id",
+                    "managedDiskId",
                     &self.r#managed_disk_id,
                 ),
                 to_pulumi_object_field(
-                    "size_gb",
+                    "sizeGb",
                     &self.r#size_gb,
                 ),
             ];

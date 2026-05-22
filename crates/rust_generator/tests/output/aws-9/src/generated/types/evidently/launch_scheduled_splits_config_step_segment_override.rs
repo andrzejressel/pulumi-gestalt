@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "evaluation_order",
+                    "evaluationOrder",
                     &self.r#evaluation_order,
                 ),
                 to_pulumi_object_field(

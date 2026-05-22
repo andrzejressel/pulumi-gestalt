@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "ssl_config",
+                    "sslConfig",
                     &self.r#ssl_config,
                 ),
                 to_pulumi_object_field(

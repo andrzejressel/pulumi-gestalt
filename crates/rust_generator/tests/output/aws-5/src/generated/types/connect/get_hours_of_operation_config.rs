@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#day,
                 ),
                 to_pulumi_object_field(
-                    "end_times",
+                    "endTimes",
                     &self.r#end_times,
                 ),
                 to_pulumi_object_field(
-                    "start_times",
+                    "startTimes",
                     &self.r#start_times,
                 ),
             ];

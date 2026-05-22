@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "header_name",
+                    "headerName",
                     &self.r#header_name,
                 ),
                 to_pulumi_object_field(
-                    "match_values",
+                    "matchValues",
                     &self.r#match_values,
                 ),
                 to_pulumi_object_field(
-                    "negate_condition",
+                    "negateCondition",
                     &self.r#negate_condition,
                 ),
                 to_pulumi_object_field(

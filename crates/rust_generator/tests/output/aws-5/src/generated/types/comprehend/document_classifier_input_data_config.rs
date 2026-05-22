@@ -44,23 +44,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "augmented_manifests",
+                    "augmentedManifests",
                     &self.r#augmented_manifests,
                 ),
                 to_pulumi_object_field(
-                    "data_format",
+                    "dataFormat",
                     &self.r#data_format,
                 ),
                 to_pulumi_object_field(
-                    "label_delimiter",
+                    "labelDelimiter",
                     &self.r#label_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "s_3_uri",
+                    "s3Uri",
                     &self.r#s_3_uri,
                 ),
                 to_pulumi_object_field(
-                    "test_s_3_uri",
+                    "testS3Uri",
                     &self.r#test_s_3_uri,
                 ),
             ];

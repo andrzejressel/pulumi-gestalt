@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cross_account_model_register_role_arn",
+                    "crossAccountModelRegisterRoleArn",
                     &self.r#cross_account_model_register_role_arn,
                 ),
                 to_pulumi_object_field(

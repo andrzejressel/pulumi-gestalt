@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "spend_basis",
+                    "spendBasis",
                     &self.r#spend_basis,
                 ),
                 to_pulumi_object_field(
-                    "threshold_percent",
+                    "thresholdPercent",
                     &self.r#threshold_percent,
                 ),
             ];

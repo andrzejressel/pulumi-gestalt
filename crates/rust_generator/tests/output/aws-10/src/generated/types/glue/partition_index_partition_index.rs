@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Par
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "index_name",
+                    "indexName",
                     &self.r#index_name,
                 ),
                 to_pulumi_object_field(
-                    "index_status",
+                    "indexStatus",
                     &self.r#index_status,
                 ),
                 to_pulumi_object_field(

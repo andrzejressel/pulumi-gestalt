@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#thumbprint,
                 ),
                 to_pulumi_object_field(
-                    "thumbprint_secondary",
+                    "thumbprintSecondary",
                     &self.r#thumbprint_secondary,
                 ),
                 to_pulumi_object_field(
-                    "x_509_store_name",
+                    "x509StoreName",
                     &self.r#x_509_store_name,
                 ),
             ];

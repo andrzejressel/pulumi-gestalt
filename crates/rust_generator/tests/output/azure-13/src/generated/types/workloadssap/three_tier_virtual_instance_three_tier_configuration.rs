@@ -54,35 +54,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_resource_group_name",
+                    "appResourceGroupName",
                     &self.r#app_resource_group_name,
                 ),
                 to_pulumi_object_field(
-                    "application_server_configuration",
+                    "applicationServerConfiguration",
                     &self.r#application_server_configuration,
                 ),
                 to_pulumi_object_field(
-                    "central_server_configuration",
+                    "centralServerConfiguration",
                     &self.r#central_server_configuration,
                 ),
                 to_pulumi_object_field(
-                    "database_server_configuration",
+                    "databaseServerConfiguration",
                     &self.r#database_server_configuration,
                 ),
                 to_pulumi_object_field(
-                    "high_availability_type",
+                    "highAvailabilityType",
                     &self.r#high_availability_type,
                 ),
                 to_pulumi_object_field(
-                    "resource_names",
+                    "resourceNames",
                     &self.r#resource_names,
                 ),
                 to_pulumi_object_field(
-                    "secondary_ip_enabled",
+                    "secondaryIpEnabled",
                     &self.r#secondary_ip_enabled,
                 ),
                 to_pulumi_object_field(
-                    "transport_create_and_mount",
+                    "transportCreateAndMount",
                     &self.r#transport_create_and_mount,
                 ),
             ];

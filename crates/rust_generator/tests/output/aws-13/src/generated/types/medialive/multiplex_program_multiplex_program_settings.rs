@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "preferred_channel_pipeline",
+                    "preferredChannelPipeline",
                     &self.r#preferred_channel_pipeline,
                 ),
                 to_pulumi_object_field(
-                    "program_number",
+                    "programNumber",
                     &self.r#program_number,
                 ),
                 to_pulumi_object_field(
-                    "service_descriptor",
+                    "serviceDescriptor",
                     &self.r#service_descriptor,
                 ),
                 to_pulumi_object_field(
-                    "video_settings",
+                    "videoSettings",
                     &self.r#video_settings,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "trigger_properties",
+                    "triggerProperties",
                     &self.r#trigger_properties,
                 ),
                 to_pulumi_object_field(
-                    "trigger_type",
+                    "triggerType",
                     &self.r#trigger_type,
                 ),
             ];

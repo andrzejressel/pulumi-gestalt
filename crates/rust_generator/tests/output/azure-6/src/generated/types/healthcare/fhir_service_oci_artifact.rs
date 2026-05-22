@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fhi
                     &self.r#digest,
                 ),
                 to_pulumi_object_field(
-                    "image_name",
+                    "imageName",
                     &self.r#image_name,
                 ),
                 to_pulumi_object_field(
-                    "login_server",
+                    "loginServer",
                     &self.r#login_server,
                 ),
             ];

@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cry
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cert_chains",
+                    "certChains",
                     &self.r#cert_chains,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cry
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "external_protection_level_options",
+                    "externalProtectionLevelOptions",
                     &self.r#external_protection_level_options,
                 ),
                 to_pulumi_object_field(

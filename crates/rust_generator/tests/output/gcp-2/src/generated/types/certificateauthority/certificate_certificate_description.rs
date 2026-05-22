@@ -65,35 +65,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aia_issuing_certificate_urls",
+                    "aiaIssuingCertificateUrls",
                     &self.r#aia_issuing_certificate_urls,
                 ),
                 to_pulumi_object_field(
-                    "authority_key_ids",
+                    "authorityKeyIds",
                     &self.r#authority_key_ids,
                 ),
                 to_pulumi_object_field(
-                    "cert_fingerprints",
+                    "certFingerprints",
                     &self.r#cert_fingerprints,
                 ),
                 to_pulumi_object_field(
-                    "crl_distribution_points",
+                    "crlDistributionPoints",
                     &self.r#crl_distribution_points,
                 ),
                 to_pulumi_object_field(
-                    "public_keys",
+                    "publicKeys",
                     &self.r#public_keys,
                 ),
                 to_pulumi_object_field(
-                    "subject_descriptions",
+                    "subjectDescriptions",
                     &self.r#subject_descriptions,
                 ),
                 to_pulumi_object_field(
-                    "subject_key_ids",
+                    "subjectKeyIds",
                     &self.r#subject_key_ids,
                 ),
                 to_pulumi_object_field(
-                    "x_509_descriptions",
+                    "x509Descriptions",
                     &self.r#x_509_descriptions,
                 ),
             ];

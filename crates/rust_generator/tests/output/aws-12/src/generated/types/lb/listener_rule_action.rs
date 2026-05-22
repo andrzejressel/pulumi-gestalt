@@ -59,15 +59,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authenticate_cognito",
+                    "authenticateCognito",
                     &self.r#authenticate_cognito,
                 ),
                 to_pulumi_object_field(
-                    "authenticate_oidc",
+                    "authenticateOidc",
                     &self.r#authenticate_oidc,
                 ),
                 to_pulumi_object_field(
-                    "fixed_response",
+                    "fixedResponse",
                     &self.r#fixed_response,
                 ),
                 to_pulumi_object_field(
@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#redirect,
                 ),
                 to_pulumi_object_field(
-                    "target_group_arn",
+                    "targetGroupArn",
                     &self.r#target_group_arn,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

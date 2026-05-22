@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#columns,
                 ),
                 to_pulumi_object_field(
-                    "stream_name",
+                    "streamName",
                     &self.r#stream_name,
                 ),
             ];

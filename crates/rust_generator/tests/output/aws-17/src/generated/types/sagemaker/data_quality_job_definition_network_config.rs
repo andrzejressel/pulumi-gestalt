@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_inter_container_traffic_encryption",
+                    "enableInterContainerTrafficEncryption",
                     &self.r#enable_inter_container_traffic_encryption,
                 ),
                 to_pulumi_object_field(
-                    "enable_network_isolation",
+                    "enableNetworkIsolation",
                     &self.r#enable_network_isolation,
                 ),
                 to_pulumi_object_field(
-                    "vpc_config",
+                    "vpcConfig",
                     &self.r#vpc_config,
                 ),
             ];

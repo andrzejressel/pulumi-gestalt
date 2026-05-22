@@ -49,23 +49,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_issuance_modes",
+                    "allowedIssuanceModes",
                     &self.r#allowed_issuance_modes,
                 ),
                 to_pulumi_object_field(
-                    "allowed_key_types",
+                    "allowedKeyTypes",
                     &self.r#allowed_key_types,
                 ),
                 to_pulumi_object_field(
-                    "baseline_values",
+                    "baselineValues",
                     &self.r#baseline_values,
                 ),
                 to_pulumi_object_field(
-                    "identity_constraints",
+                    "identityConstraints",
                     &self.r#identity_constraints,
                 ),
                 to_pulumi_object_field(
-                    "maximum_lifetime",
+                    "maximumLifetime",
                     &self.r#maximum_lifetime,
                 ),
             ];

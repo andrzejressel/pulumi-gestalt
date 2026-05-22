@@ -54,23 +54,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#accelerators,
                 ),
                 to_pulumi_object_field(
-                    "disk_config",
+                    "diskConfig",
                     &self.r#disk_config,
                 ),
                 to_pulumi_object_field(
-                    "instance_names",
+                    "instanceNames",
                     &self.r#instance_names,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "min_cpu_platform",
+                    "minCpuPlatform",
                     &self.r#min_cpu_platform,
                 ),
                 to_pulumi_object_field(
-                    "num_instances",
+                    "numInstances",
                     &self.r#num_instances,
                 ),
             ];

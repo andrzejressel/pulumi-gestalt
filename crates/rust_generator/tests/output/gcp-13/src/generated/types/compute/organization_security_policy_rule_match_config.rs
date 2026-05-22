@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Org
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dest_ip_ranges",
+                    "destIpRanges",
                     &self.r#dest_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "layer_4_configs",
+                    "layer4Configs",
                     &self.r#layer_4_configs,
                 ),
                 to_pulumi_object_field(
-                    "src_ip_ranges",
+                    "srcIpRanges",
                     &self.r#src_ip_ranges,
                 ),
             ];

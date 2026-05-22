@@ -79,19 +79,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directories",
+                    "activeDirectories",
                     &self.r#active_directories,
                 ),
                 to_pulumi_object_field(
-                    "additional_login_parameters",
+                    "additionalLoginParameters",
                     &self.r#additional_login_parameters,
                 ),
                 to_pulumi_object_field(
-                    "allowed_external_redirect_urls",
+                    "allowedExternalRedirectUrls",
                     &self.r#allowed_external_redirect_urls,
                 ),
                 to_pulumi_object_field(
-                    "default_provider",
+                    "defaultProvider",
                     &self.r#default_provider,
                 ),
                 to_pulumi_object_field(
@@ -119,15 +119,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#microsofts,
                 ),
                 to_pulumi_object_field(
-                    "runtime_version",
+                    "runtimeVersion",
                     &self.r#runtime_version,
                 ),
                 to_pulumi_object_field(
-                    "token_refresh_extension_hours",
+                    "tokenRefreshExtensionHours",
                     &self.r#token_refresh_extension_hours,
                 ),
                 to_pulumi_object_field(
-                    "token_store_enabled",
+                    "tokenStoreEnabled",
                     &self.r#token_store_enabled,
                 ),
                 to_pulumi_object_field(
@@ -135,7 +135,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#twitters,
                 ),
                 to_pulumi_object_field(
-                    "unauthenticated_client_action",
+                    "unauthenticatedClientAction",
                     &self.r#unauthenticated_client_action,
                 ),
             ];

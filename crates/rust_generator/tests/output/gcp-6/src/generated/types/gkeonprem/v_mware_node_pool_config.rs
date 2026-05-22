@@ -68,7 +68,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "boot_disk_size_gb",
+                    "bootDiskSizeGb",
                     &self.r#boot_disk_size_gb,
                 ),
                 to_pulumi_object_field(
@@ -76,7 +76,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#cpus,
                 ),
                 to_pulumi_object_field(
-                    "enable_load_balancer",
+                    "enableLoadBalancer",
                     &self.r#enable_load_balancer,
                 ),
                 to_pulumi_object_field(
@@ -84,7 +84,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "image_type",
+                    "imageType",
                     &self.r#image_type,
                 ),
                 to_pulumi_object_field(
@@ -92,7 +92,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "memory_mb",
+                    "memoryMb",
                     &self.r#memory_mb,
                 ),
                 to_pulumi_object_field(
@@ -104,7 +104,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#taints,
                 ),
                 to_pulumi_object_field(
-                    "vsphere_config",
+                    "vsphereConfig",
                     &self.r#vsphere_config,
                 ),
             ];

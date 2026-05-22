@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_burst_size",
+                    "maxBurstSize",
                     &self.r#max_burst_size,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_dispatches",
+                    "maxConcurrentDispatches",
                     &self.r#max_concurrent_dispatches,
                 ),
                 to_pulumi_object_field(
-                    "max_dispatches_per_second",
+                    "maxDispatchesPerSecond",
                     &self.r#max_dispatches_per_second,
                 ),
             ];

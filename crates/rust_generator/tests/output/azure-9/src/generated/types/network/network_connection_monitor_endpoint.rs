@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "coverage_level",
+                    "coverageLevel",
                     &self.r#coverage_level,
                 ),
                 to_pulumi_object_field(
-                    "excluded_ip_addresses",
+                    "excludedIpAddresses",
                     &self.r#excluded_ip_addresses,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "included_ip_addresses",
+                    "includedIpAddresses",
                     &self.r#included_ip_addresses,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "target_resource_id",
+                    "targetResourceId",
                     &self.r#target_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "target_resource_type",
+                    "targetResourceType",
                     &self.r#target_resource_type,
                 ),
             ];

@@ -101,63 +101,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_service_ip",
+                    "dnsServiceIp",
                     &self.r#dns_service_ip,
                 ),
                 to_pulumi_object_field(
-                    "ip_versions",
+                    "ipVersions",
                     &self.r#ip_versions,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_profile",
+                    "loadBalancerProfile",
                     &self.r#load_balancer_profile,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_sku",
+                    "loadBalancerSku",
                     &self.r#load_balancer_sku,
                 ),
                 to_pulumi_object_field(
-                    "nat_gateway_profile",
+                    "natGatewayProfile",
                     &self.r#nat_gateway_profile,
                 ),
                 to_pulumi_object_field(
-                    "network_data_plane",
+                    "networkDataPlane",
                     &self.r#network_data_plane,
                 ),
                 to_pulumi_object_field(
-                    "network_mode",
+                    "networkMode",
                     &self.r#network_mode,
                 ),
                 to_pulumi_object_field(
-                    "network_plugin",
+                    "networkPlugin",
                     &self.r#network_plugin,
                 ),
                 to_pulumi_object_field(
-                    "network_plugin_mode",
+                    "networkPluginMode",
                     &self.r#network_plugin_mode,
                 ),
                 to_pulumi_object_field(
-                    "network_policy",
+                    "networkPolicy",
                     &self.r#network_policy,
                 ),
                 to_pulumi_object_field(
-                    "outbound_type",
+                    "outboundType",
                     &self.r#outbound_type,
                 ),
                 to_pulumi_object_field(
-                    "pod_cidr",
+                    "podCidr",
                     &self.r#pod_cidr,
                 ),
                 to_pulumi_object_field(
-                    "pod_cidrs",
+                    "podCidrs",
                     &self.r#pod_cidrs,
                 ),
                 to_pulumi_object_field(
-                    "service_cidr",
+                    "serviceCidr",
                     &self.r#service_cidr,
                 ),
                 to_pulumi_object_field(
-                    "service_cidrs",
+                    "serviceCidrs",
                     &self.r#service_cidrs,
                 ),
             ];

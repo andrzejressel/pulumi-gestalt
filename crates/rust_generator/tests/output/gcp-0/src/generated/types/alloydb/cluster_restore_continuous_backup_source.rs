@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#cluster,
                 ),
                 to_pulumi_object_field(
-                    "point_in_time",
+                    "pointInTime",
                     &self.r#point_in_time,
                 ),
             ];

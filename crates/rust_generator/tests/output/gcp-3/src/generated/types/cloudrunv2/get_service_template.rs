@@ -99,11 +99,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "encryption_key",
+                    "encryptionKey",
                     &self.r#encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "execution_environment",
+                    "executionEnvironment",
                     &self.r#execution_environment,
                 ),
                 to_pulumi_object_field(
@@ -111,11 +111,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "max_instance_request_concurrency",
+                    "maxInstanceRequestConcurrency",
                     &self.r#max_instance_request_concurrency,
                 ),
                 to_pulumi_object_field(
-                    "node_selectors",
+                    "nodeSelectors",
                     &self.r#node_selectors,
                 ),
                 to_pulumi_object_field(
@@ -127,15 +127,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#scalings,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "service_meshes",
+                    "serviceMeshes",
                     &self.r#service_meshes,
                 ),
                 to_pulumi_object_field(
-                    "session_affinity",
+                    "sessionAffinity",
                     &self.r#session_affinity,
                 ),
                 to_pulumi_object_field(
@@ -147,7 +147,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#volumes,
                 ),
                 to_pulumi_object_field(
-                    "vpc_accesses",
+                    "vpcAccesses",
                     &self.r#vpc_accesses,
                 ),
             ];

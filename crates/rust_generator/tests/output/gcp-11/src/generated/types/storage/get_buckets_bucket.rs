@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
                 to_pulumi_object_field(
-                    "storage_class",
+                    "storageClass",
                     &self.r#storage_class,
                 ),
             ];

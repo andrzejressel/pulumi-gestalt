@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_arn",
+                    "applicationArn",
                     &self.r#application_arn,
                 ),
                 to_pulumi_object_field(
-                    "application_id",
+                    "applicationId",
                     &self.r#application_id,
                 ),
                 to_pulumi_object_field(
-                    "external_id",
+                    "externalId",
                     &self.r#external_id,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "user_data_shared",
+                    "userDataShared",
                     &self.r#user_data_shared,
                 ),
             ];

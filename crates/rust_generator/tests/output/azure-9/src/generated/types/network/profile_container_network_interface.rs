@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_configurations",
+                    "ipConfigurations",
                     &self.r#ip_configurations,
                 ),
                 to_pulumi_object_field(

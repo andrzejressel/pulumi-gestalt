@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_exit_codes",
+                    "allowedExitCodes",
                     &self.r#allowed_exit_codes,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
                     &self.r#args,
                 ),
                 to_pulumi_object_field(
-                    "artifact_id",
+                    "artifactId",
                     &self.r#artifact_id,
                 ),
                 to_pulumi_object_field(
-                    "local_path",
+                    "localPath",
                     &self.r#local_path,
                 ),
             ];

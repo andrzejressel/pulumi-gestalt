@@ -48,19 +48,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#cert,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
-                    "expire_time",
+                    "expireTime",
                     &self.r#expire_time,
                 ),
                 to_pulumi_object_field(
-                    "serial_number",
+                    "serialNumber",
                     &self.r#serial_number,
                 ),
                 to_pulumi_object_field(
-                    "sha_1_fingerprint",
+                    "sha1Fingerprint",
                     &self.r#sha_1_fingerprint,
                 ),
             ];

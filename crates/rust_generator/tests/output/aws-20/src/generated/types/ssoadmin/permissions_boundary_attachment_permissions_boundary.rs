@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Per
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customer_managed_policy_reference",
+                    "customerManagedPolicyReference",
                     &self.r#customer_managed_policy_reference,
                 ),
                 to_pulumi_object_field(
-                    "managed_policy_arn",
+                    "managedPolicyArn",
                     &self.r#managed_policy_arn,
                 ),
             ];

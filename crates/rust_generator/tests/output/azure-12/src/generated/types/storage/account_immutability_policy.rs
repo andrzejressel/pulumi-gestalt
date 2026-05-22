@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_protected_append_writes",
+                    "allowProtectedAppendWrites",
                     &self.r#allow_protected_append_writes,
                 ),
                 to_pulumi_object_field(
-                    "period_since_creation_in_days",
+                    "periodSinceCreationInDays",
                     &self.r#period_since_creation_in_days,
                 ),
                 to_pulumi_object_field(

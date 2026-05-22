@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "instance_type_configs",
+                    "instanceTypeConfigs",
                     &self.r#instance_type_configs,
                 ),
                 to_pulumi_object_field(
-                    "launch_specifications",
+                    "launchSpecifications",
                     &self.r#launch_specifications,
                 ),
                 to_pulumi_object_field(
@@ -65,19 +65,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_on_demand_capacity",
+                    "provisionedOnDemandCapacity",
                     &self.r#provisioned_on_demand_capacity,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_spot_capacity",
+                    "provisionedSpotCapacity",
                     &self.r#provisioned_spot_capacity,
                 ),
                 to_pulumi_object_field(
-                    "target_on_demand_capacity",
+                    "targetOnDemandCapacity",
                     &self.r#target_on_demand_capacity,
                 ),
                 to_pulumi_object_field(
-                    "target_spot_capacity",
+                    "targetSpotCapacity",
                     &self.r#target_spot_capacity,
                 ),
             ];

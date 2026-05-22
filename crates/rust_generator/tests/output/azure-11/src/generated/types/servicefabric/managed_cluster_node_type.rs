@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_port_range",
+                    "applicationPortRange",
                     &self.r#application_port_range,
                 ),
                 to_pulumi_object_field(
@@ -99,15 +99,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#capacities,
                 ),
                 to_pulumi_object_field(
-                    "data_disk_size_gb",
+                    "dataDiskSizeGb",
                     &self.r#data_disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "data_disk_type",
+                    "dataDiskType",
                     &self.r#data_disk_type,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_port_range",
+                    "ephemeralPortRange",
                     &self.r#ephemeral_port_range,
                 ),
                 to_pulumi_object_field(
@@ -115,7 +115,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "multiple_placement_groups_enabled",
+                    "multiplePlacementGroupsEnabled",
                     &self.r#multiple_placement_groups_enabled,
                 ),
                 to_pulumi_object_field(
@@ -123,7 +123,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "placement_properties",
+                    "placementProperties",
                     &self.r#placement_properties,
                 ),
                 to_pulumi_object_field(
@@ -135,31 +135,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#stateless,
                 ),
                 to_pulumi_object_field(
-                    "vm_image_offer",
+                    "vmImageOffer",
                     &self.r#vm_image_offer,
                 ),
                 to_pulumi_object_field(
-                    "vm_image_publisher",
+                    "vmImagePublisher",
                     &self.r#vm_image_publisher,
                 ),
                 to_pulumi_object_field(
-                    "vm_image_sku",
+                    "vmImageSku",
                     &self.r#vm_image_sku,
                 ),
                 to_pulumi_object_field(
-                    "vm_image_version",
+                    "vmImageVersion",
                     &self.r#vm_image_version,
                 ),
                 to_pulumi_object_field(
-                    "vm_instance_count",
+                    "vmInstanceCount",
                     &self.r#vm_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "vm_secrets",
+                    "vmSecrets",
                     &self.r#vm_secrets,
                 ),
                 to_pulumi_object_field(
-                    "vm_size",
+                    "vmSize",
                     &self.r#vm_size,
                 ),
             ];

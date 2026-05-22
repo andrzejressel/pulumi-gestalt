@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_table_ttl",
+                    "baseTableTtl",
                     &self.r#base_table_ttl,
                 ),
                 to_pulumi_object_field(
-                    "delta_sync_table_name",
+                    "deltaSyncTableName",
                     &self.r#delta_sync_table_name,
                 ),
                 to_pulumi_object_field(
-                    "delta_sync_table_ttl",
+                    "deltaSyncTableTtl",
                     &self.r#delta_sync_table_ttl,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "rule_action_overrides",
+                    "ruleActionOverrides",
                     &self.r#rule_action_overrides,
                 ),
             ];

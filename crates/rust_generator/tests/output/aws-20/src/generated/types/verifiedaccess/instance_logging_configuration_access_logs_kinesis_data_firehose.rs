@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delivery_stream",
+                    "deliveryStream",
                     &self.r#delivery_stream,
                 ),
                 to_pulumi_object_field(

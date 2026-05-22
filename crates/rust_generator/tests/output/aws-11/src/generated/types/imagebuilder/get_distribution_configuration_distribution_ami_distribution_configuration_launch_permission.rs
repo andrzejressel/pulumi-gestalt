@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "organization_arns",
+                    "organizationArns",
                     &self.r#organization_arns,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit_arns",
+                    "organizationalUnitArns",
                     &self.r#organizational_unit_arns,
                 ),
                 to_pulumi_object_field(
-                    "user_groups",
+                    "userGroups",
                     &self.r#user_groups,
                 ),
                 to_pulumi_object_field(
-                    "user_ids",
+                    "userIds",
                     &self.r#user_ids,
                 ),
             ];

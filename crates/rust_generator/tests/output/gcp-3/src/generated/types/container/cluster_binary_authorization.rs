@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_mode",
+                    "evaluationMode",
                     &self.r#evaluation_mode,
                 ),
             ];

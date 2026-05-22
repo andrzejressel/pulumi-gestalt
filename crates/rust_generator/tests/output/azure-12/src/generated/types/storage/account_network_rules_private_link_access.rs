@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_resource_id",
+                    "endpointResourceId",
                     &self.r#endpoint_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_tenant_id",
+                    "endpointTenantId",
                     &self.r#endpoint_tenant_id,
                 ),
             ];

@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aad_log_enabled",
+                    "aadLogEnabled",
                     &self.r#aad_log_enabled,
                 ),
                 to_pulumi_object_field(
@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
                     &self.r#filters,
                 ),
                 to_pulumi_object_field(
-                    "resource_log_enabled",
+                    "resourceLogEnabled",
                     &self.r#resource_log_enabled,
                 ),
                 to_pulumi_object_field(
-                    "subscription_log_enabled",
+                    "subscriptionLogEnabled",
                     &self.r#subscription_log_enabled,
                 ),
             ];

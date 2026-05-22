@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "expiration_required",
+                    "expirationRequired",
                     &self.r#expiration_required,
                 ),
                 to_pulumi_object_field(
-                    "expire_after",
+                    "expireAfter",
                     &self.r#expire_after,
                 ),
                 to_pulumi_object_field(
-                    "require_justification",
+                    "requireJustification",
                     &self.r#require_justification,
                 ),
                 to_pulumi_object_field(
-                    "require_multifactor_authentication",
+                    "requireMultifactorAuthentication",
                     &self.r#require_multifactor_authentication,
                 ),
                 to_pulumi_object_field(
-                    "require_ticket_info",
+                    "requireTicketInfo",
                     &self.r#require_ticket_info,
                 ),
             ];

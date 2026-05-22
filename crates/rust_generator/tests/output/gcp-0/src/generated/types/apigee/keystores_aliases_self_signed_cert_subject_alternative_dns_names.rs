@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "subject_alternative_name",
+                    "subjectAlternativeName",
                     &self.r#subject_alternative_name,
                 ),
             ];

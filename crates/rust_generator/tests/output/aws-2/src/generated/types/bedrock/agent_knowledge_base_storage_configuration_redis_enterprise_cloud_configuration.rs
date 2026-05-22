@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "credentials_secret_arn",
+                    "credentialsSecretArn",
                     &self.r#credentials_secret_arn,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
                     &self.r#endpoint,
                 ),
                 to_pulumi_object_field(
-                    "field_mapping",
+                    "fieldMapping",
                     &self.r#field_mapping,
                 ),
                 to_pulumi_object_field(
-                    "vector_index_name",
+                    "vectorIndexName",
                     &self.r#vector_index_name,
                 ),
             ];

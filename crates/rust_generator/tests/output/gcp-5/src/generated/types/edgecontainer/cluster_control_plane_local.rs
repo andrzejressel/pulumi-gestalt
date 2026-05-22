@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "machine_filter",
+                    "machineFilter",
                     &self.r#machine_filter,
                 ),
                 to_pulumi_object_field(
-                    "node_count",
+                    "nodeCount",
                     &self.r#node_count,
                 ),
                 to_pulumi_object_field(
-                    "node_location",
+                    "nodeLocation",
                     &self.r#node_location,
                 ),
                 to_pulumi_object_field(
-                    "shared_deployment_policy",
+                    "sharedDeploymentPolicy",
                     &self.r#shared_deployment_policy,
                 ),
             ];

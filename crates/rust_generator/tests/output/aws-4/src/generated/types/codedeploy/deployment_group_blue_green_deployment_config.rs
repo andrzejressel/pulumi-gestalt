@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deployment_ready_option",
+                    "deploymentReadyOption",
                     &self.r#deployment_ready_option,
                 ),
                 to_pulumi_object_field(
-                    "green_fleet_provisioning_option",
+                    "greenFleetProvisioningOption",
                     &self.r#green_fleet_provisioning_option,
                 ),
                 to_pulumi_object_field(
-                    "terminate_blue_instances_on_deployment_success",
+                    "terminateBlueInstancesOnDeploymentSuccess",
                     &self.r#terminate_blue_instances_on_deployment_success,
                 ),
             ];

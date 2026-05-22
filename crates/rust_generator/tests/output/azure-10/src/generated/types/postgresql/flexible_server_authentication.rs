@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directory_auth_enabled",
+                    "activeDirectoryAuthEnabled",
                     &self.r#active_directory_auth_enabled,
                 ),
                 to_pulumi_object_field(
-                    "password_auth_enabled",
+                    "passwordAuthEnabled",
                     &self.r#password_auth_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

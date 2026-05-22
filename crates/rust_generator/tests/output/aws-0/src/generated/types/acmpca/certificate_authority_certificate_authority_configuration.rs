@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_algorithm",
+                    "keyAlgorithm",
                     &self.r#key_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "signing_algorithm",
+                    "signingAlgorithm",
                     &self.r#signing_algorithm,
                 ),
                 to_pulumi_object_field(

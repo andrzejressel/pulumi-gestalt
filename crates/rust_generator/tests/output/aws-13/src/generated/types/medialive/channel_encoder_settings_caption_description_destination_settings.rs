@@ -71,55 +71,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "arib_destination_settings",
+                    "aribDestinationSettings",
                     &self.r#arib_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "burn_in_destination_settings",
+                    "burnInDestinationSettings",
                     &self.r#burn_in_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "dvb_sub_destination_settings",
+                    "dvbSubDestinationSettings",
                     &self.r#dvb_sub_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "ebu_tt_d_destination_settings",
+                    "ebuTtDDestinationSettings",
                     &self.r#ebu_tt_d_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "embedded_destination_settings",
+                    "embeddedDestinationSettings",
                     &self.r#embedded_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "embedded_plus_scte_20_destination_settings",
+                    "embeddedPlusScte20DestinationSettings",
                     &self.r#embedded_plus_scte_20_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "rtmp_caption_info_destination_settings",
+                    "rtmpCaptionInfoDestinationSettings",
                     &self.r#rtmp_caption_info_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "scte_20_plus_embedded_destination_settings",
+                    "scte20PlusEmbeddedDestinationSettings",
                     &self.r#scte_20_plus_embedded_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "scte_27_destination_settings",
+                    "scte27DestinationSettings",
                     &self.r#scte_27_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "smpte_tt_destination_settings",
+                    "smpteTtDestinationSettings",
                     &self.r#smpte_tt_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "teletext_destination_settings",
+                    "teletextDestinationSettings",
                     &self.r#teletext_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "ttml_destination_settings",
+                    "ttmlDestinationSettings",
                     &self.r#ttml_destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "webvtt_destination_settings",
+                    "webvttDestinationSettings",
                     &self.r#webvtt_destination_settings,
                 ),
             ];

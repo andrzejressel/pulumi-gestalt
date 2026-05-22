@@ -110,11 +110,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "enable_logging",
+                    "enableLogging",
                     &self.r#enable_logging,
                 ),
                 to_pulumi_object_field(
-                    "match_",
+                    "match",
                     &self.r#match_,
                 ),
                 to_pulumi_object_field(
@@ -122,23 +122,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rule_name",
+                    "ruleName",
                     &self.r#rule_name,
                 ),
                 to_pulumi_object_field(
-                    "security_profile_group",
+                    "securityProfileGroup",
                     &self.r#security_profile_group,
                 ),
                 to_pulumi_object_field(
-                    "target_secure_tags",
+                    "targetSecureTags",
                     &self.r#target_secure_tags,
                 ),
                 to_pulumi_object_field(
-                    "target_service_accounts",
+                    "targetServiceAccounts",
                     &self.r#target_service_accounts,
                 ),
                 to_pulumi_object_field(
-                    "tls_inspect",
+                    "tlsInspect",
                     &self.r#tls_inspect,
                 ),
             ];

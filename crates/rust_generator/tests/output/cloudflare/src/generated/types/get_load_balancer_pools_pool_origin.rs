@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_id",
+                    "virtualNetworkId",
                     &self.r#virtual_network_id,
                 ),
                 to_pulumi_object_field(

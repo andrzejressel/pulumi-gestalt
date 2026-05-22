@@ -95,71 +95,71 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#access,
                 ),
                 to_pulumi_object_field(
-                    "bastion_mode",
+                    "bastionMode",
                     &self.r#bastion_mode,
                 ),
                 to_pulumi_object_field(
-                    "ca_pool",
+                    "caPool",
                     &self.r#ca_pool,
                 ),
                 to_pulumi_object_field(
-                    "connect_timeout",
+                    "connectTimeout",
                     &self.r#connect_timeout,
                 ),
                 to_pulumi_object_field(
-                    "disable_chunked_encoding",
+                    "disableChunkedEncoding",
                     &self.r#disable_chunked_encoding,
                 ),
                 to_pulumi_object_field(
-                    "http_2_origin",
+                    "http2Origin",
                     &self.r#http_2_origin,
                 ),
                 to_pulumi_object_field(
-                    "http_host_header",
+                    "httpHostHeader",
                     &self.r#http_host_header,
                 ),
                 to_pulumi_object_field(
-                    "ip_rules",
+                    "ipRules",
                     &self.r#ip_rules,
                 ),
                 to_pulumi_object_field(
-                    "keep_alive_connections",
+                    "keepAliveConnections",
                     &self.r#keep_alive_connections,
                 ),
                 to_pulumi_object_field(
-                    "keep_alive_timeout",
+                    "keepAliveTimeout",
                     &self.r#keep_alive_timeout,
                 ),
                 to_pulumi_object_field(
-                    "no_happy_eyeballs",
+                    "noHappyEyeballs",
                     &self.r#no_happy_eyeballs,
                 ),
                 to_pulumi_object_field(
-                    "no_tls_verify",
+                    "noTlsVerify",
                     &self.r#no_tls_verify,
                 ),
                 to_pulumi_object_field(
-                    "origin_server_name",
+                    "originServerName",
                     &self.r#origin_server_name,
                 ),
                 to_pulumi_object_field(
-                    "proxy_address",
+                    "proxyAddress",
                     &self.r#proxy_address,
                 ),
                 to_pulumi_object_field(
-                    "proxy_port",
+                    "proxyPort",
                     &self.r#proxy_port,
                 ),
                 to_pulumi_object_field(
-                    "proxy_type",
+                    "proxyType",
                     &self.r#proxy_type,
                 ),
                 to_pulumi_object_field(
-                    "tcp_keep_alive",
+                    "tcpKeepAlive",
                     &self.r#tcp_keep_alive,
                 ),
                 to_pulumi_object_field(
-                    "tls_timeout",
+                    "tlsTimeout",
                     &self.r#tls_timeout,
                 ),
             ];

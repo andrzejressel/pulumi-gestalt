@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "interval_in_seconds",
+                    "intervalInSeconds",
                     &self.r#interval_in_seconds,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "request_type",
+                    "requestType",
                     &self.r#request_type,
                 ),
             ];

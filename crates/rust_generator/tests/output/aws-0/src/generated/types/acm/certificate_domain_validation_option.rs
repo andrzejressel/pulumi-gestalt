@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_record_name",
+                    "resourceRecordName",
                     &self.r#resource_record_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_record_type",
+                    "resourceRecordType",
                     &self.r#resource_record_type,
                 ),
                 to_pulumi_object_field(
-                    "resource_record_value",
+                    "resourceRecordValue",
                     &self.r#resource_record_value,
                 ),
             ];

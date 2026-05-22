@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#cpu,
                 ),
                 to_pulumi_object_field(
-                    "disk_gb",
+                    "diskGb",
                     &self.r#disk_gb,
                 ),
                 to_pulumi_object_field(
-                    "memory_gb",
+                    "memoryGb",
                     &self.r#memory_gb,
                 ),
                 to_pulumi_object_field(

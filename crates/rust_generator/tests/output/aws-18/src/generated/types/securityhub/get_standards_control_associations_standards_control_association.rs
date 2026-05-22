@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "association_status",
+                    "associationStatus",
                     &self.r#association_status,
                 ),
                 to_pulumi_object_field(
-                    "related_requirements",
+                    "relatedRequirements",
                     &self.r#related_requirements,
                 ),
                 to_pulumi_object_field(
-                    "security_control_arn",
+                    "securityControlArn",
                     &self.r#security_control_arn,
                 ),
                 to_pulumi_object_field(
-                    "security_control_id",
+                    "securityControlId",
                     &self.r#security_control_id,
                 ),
                 to_pulumi_object_field(
-                    "standards_arn",
+                    "standardsArn",
                     &self.r#standards_arn,
                 ),
                 to_pulumi_object_field(
-                    "standards_control_description",
+                    "standardsControlDescription",
                     &self.r#standards_control_description,
                 ),
                 to_pulumi_object_field(
-                    "standards_control_title",
+                    "standardsControlTitle",
                     &self.r#standards_control_title,
                 ),
                 to_pulumi_object_field(
-                    "updated_at",
+                    "updatedAt",
                     &self.r#updated_at,
                 ),
                 to_pulumi_object_field(
-                    "updated_reason",
+                    "updatedReason",
                     &self.r#updated_reason,
                 ),
             ];

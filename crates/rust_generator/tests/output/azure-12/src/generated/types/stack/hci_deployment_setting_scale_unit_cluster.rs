@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_service_endpoint",
+                    "azureServiceEndpoint",
                     &self.r#azure_service_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "cloud_account_name",
+                    "cloudAccountName",
                     &self.r#cloud_account_name,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "witness_path",
+                    "witnessPath",
                     &self.r#witness_path,
                 ),
                 to_pulumi_object_field(
-                    "witness_type",
+                    "witnessType",
                     &self.r#witness_type,
                 ),
             ];

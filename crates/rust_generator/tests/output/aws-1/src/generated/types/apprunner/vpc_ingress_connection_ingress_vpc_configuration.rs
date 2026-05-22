@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "vpc_endpoint_id",
+                    "vpcEndpointId",
                     &self.r#vpc_endpoint_id,
                 ),
                 to_pulumi_object_field(
-                    "vpc_id",
+                    "vpcId",
                     &self.r#vpc_id,
                 ),
             ];

@@ -71,35 +71,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "always_use_latest_compatibility_date",
+                    "alwaysUseLatestCompatibilityDate",
                     &self.r#always_use_latest_compatibility_date,
                 ),
                 to_pulumi_object_field(
-                    "compatibility_date",
+                    "compatibilityDate",
                     &self.r#compatibility_date,
                 ),
                 to_pulumi_object_field(
-                    "compatibility_flags",
+                    "compatibilityFlags",
                     &self.r#compatibility_flags,
                 ),
                 to_pulumi_object_field(
-                    "d_1_databases",
+                    "d1Databases",
                     &self.r#d_1_databases,
                 ),
                 to_pulumi_object_field(
-                    "durable_object_namespaces",
+                    "durableObjectNamespaces",
                     &self.r#durable_object_namespaces,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "fail_open",
+                    "failOpen",
                     &self.r#fail_open,
                 ),
                 to_pulumi_object_field(
-                    "kv_namespaces",
+                    "kvNamespaces",
                     &self.r#kv_namespaces,
                 ),
                 to_pulumi_object_field(
@@ -107,7 +107,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
                     &self.r#placement,
                 ),
                 to_pulumi_object_field(
-                    "r_2_buckets",
+                    "r2Buckets",
                     &self.r#r_2_buckets,
                 ),
                 to_pulumi_object_field(
@@ -115,11 +115,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
                     &self.r#secrets,
                 ),
                 to_pulumi_object_field(
-                    "service_bindings",
+                    "serviceBindings",
                     &self.r#service_bindings,
                 ),
                 to_pulumi_object_field(
-                    "usage_model",
+                    "usageModel",
                     &self.r#usage_model,
                 ),
             ];

@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "device_name",
+                    "deviceName",
                     &self.r#device_name,
                 ),
                 to_pulumi_object_field(
-                    "no_device",
+                    "noDevice",
                     &self.r#no_device,
                 ),
                 to_pulumi_object_field(
-                    "virtual_name",
+                    "virtualName",
                     &self.r#virtual_name,
                 ),
             ];

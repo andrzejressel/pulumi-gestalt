@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ope
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_strategy",
+                    "copyStrategy",
                     &self.r#copy_strategy,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_arn",
+                    "snapshotArn",
                     &self.r#snapshot_arn,
                 ),
             ];

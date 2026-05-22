@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_fields",
+                    "customFields",
                     &self.r#custom_fields,
                 ),
                 to_pulumi_object_field(
-                    "device_defender_indexing_mode",
+                    "deviceDefenderIndexingMode",
                     &self.r#device_defender_indexing_mode,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "managed_fields",
+                    "managedFields",
                     &self.r#managed_fields,
                 ),
                 to_pulumi_object_field(
-                    "named_shadow_indexing_mode",
+                    "namedShadowIndexingMode",
                     &self.r#named_shadow_indexing_mode,
                 ),
                 to_pulumi_object_field(
-                    "thing_connectivity_indexing_mode",
+                    "thingConnectivityIndexingMode",
                     &self.r#thing_connectivity_indexing_mode,
                 ),
                 to_pulumi_object_field(
-                    "thing_indexing_mode",
+                    "thingIndexingMode",
                     &self.r#thing_indexing_mode,
                 ),
             ];

@@ -254,55 +254,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_machine_features",
+                    "advancedMachineFeatures",
                     &self.r#advanced_machine_features,
                 ),
                 to_pulumi_object_field(
-                    "boot_disk_kms_key",
+                    "bootDiskKmsKey",
                     &self.r#boot_disk_kms_key,
                 ),
                 to_pulumi_object_field(
-                    "confidential_nodes",
+                    "confidentialNodes",
                     &self.r#confidential_nodes,
                 ),
                 to_pulumi_object_field(
-                    "containerd_config",
+                    "containerdConfig",
                     &self.r#containerd_config,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
-                    "effective_taints",
+                    "effectiveTaints",
                     &self.r#effective_taints,
                 ),
                 to_pulumi_object_field(
-                    "enable_confidential_storage",
+                    "enableConfidentialStorage",
                     &self.r#enable_confidential_storage,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_storage_config",
+                    "ephemeralStorageConfig",
                     &self.r#ephemeral_storage_config,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_storage_local_ssd_config",
+                    "ephemeralStorageLocalSsdConfig",
                     &self.r#ephemeral_storage_local_ssd_config,
                 ),
                 to_pulumi_object_field(
-                    "fast_socket",
+                    "fastSocket",
                     &self.r#fast_socket,
                 ),
                 to_pulumi_object_field(
-                    "gcfs_config",
+                    "gcfsConfig",
                     &self.r#gcfs_config,
                 ),
                 to_pulumi_object_field(
-                    "guest_accelerators",
+                    "guestAccelerators",
                     &self.r#guest_accelerators,
                 ),
                 to_pulumi_object_field(
@@ -310,15 +310,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#gvnic,
                 ),
                 to_pulumi_object_field(
-                    "host_maintenance_policy",
+                    "hostMaintenancePolicy",
                     &self.r#host_maintenance_policy,
                 ),
                 to_pulumi_object_field(
-                    "image_type",
+                    "imageType",
                     &self.r#image_type,
                 ),
                 to_pulumi_object_field(
-                    "kubelet_config",
+                    "kubeletConfig",
                     &self.r#kubelet_config,
                 ),
                 to_pulumi_object_field(
@@ -326,27 +326,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "linux_node_config",
+                    "linuxNodeConfig",
                     &self.r#linux_node_config,
                 ),
                 to_pulumi_object_field(
-                    "local_nvme_ssd_block_config",
+                    "localNvmeSsdBlockConfig",
                     &self.r#local_nvme_ssd_block_config,
                 ),
                 to_pulumi_object_field(
-                    "local_ssd_count",
+                    "localSsdCount",
                     &self.r#local_ssd_count,
                 ),
                 to_pulumi_object_field(
-                    "local_ssd_encryption_mode",
+                    "localSsdEncryptionMode",
                     &self.r#local_ssd_encryption_mode,
                 ),
                 to_pulumi_object_field(
-                    "logging_variant",
+                    "loggingVariant",
                     &self.r#logging_variant,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
@@ -354,15 +354,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#metadata,
                 ),
                 to_pulumi_object_field(
-                    "min_cpu_platform",
+                    "minCpuPlatform",
                     &self.r#min_cpu_platform,
                 ),
                 to_pulumi_object_field(
-                    "node_group",
+                    "nodeGroup",
                     &self.r#node_group,
                 ),
                 to_pulumi_object_field(
-                    "oauth_scopes",
+                    "oauthScopes",
                     &self.r#oauth_scopes,
                 ),
                 to_pulumi_object_field(
@@ -370,35 +370,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#preemptible,
                 ),
                 to_pulumi_object_field(
-                    "reservation_affinity",
+                    "reservationAffinity",
                     &self.r#reservation_affinity,
                 ),
                 to_pulumi_object_field(
-                    "resource_labels",
+                    "resourceLabels",
                     &self.r#resource_labels,
                 ),
                 to_pulumi_object_field(
-                    "resource_manager_tags",
+                    "resourceManagerTags",
                     &self.r#resource_manager_tags,
                 ),
                 to_pulumi_object_field(
-                    "sandbox_config",
+                    "sandboxConfig",
                     &self.r#sandbox_config,
                 ),
                 to_pulumi_object_field(
-                    "secondary_boot_disks",
+                    "secondaryBootDisks",
                     &self.r#secondary_boot_disks,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "shielded_instance_config",
+                    "shieldedInstanceConfig",
                     &self.r#shielded_instance_config,
                 ),
                 to_pulumi_object_field(
-                    "sole_tenant_config",
+                    "soleTenantConfig",
                     &self.r#sole_tenant_config,
                 ),
                 to_pulumi_object_field(
@@ -406,7 +406,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#spot,
                 ),
                 to_pulumi_object_field(
-                    "storage_pools",
+                    "storagePools",
                     &self.r#storage_pools,
                 ),
                 to_pulumi_object_field(
@@ -418,7 +418,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#taints,
                 ),
                 to_pulumi_object_field(
-                    "workload_metadata_config",
+                    "workloadMetadataConfig",
                     &self.r#workload_metadata_config,
                 ),
             ];

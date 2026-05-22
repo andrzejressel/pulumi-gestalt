@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_provider_instance",
+                    "certificateProviderInstance",
                     &self.r#certificate_provider_instance,
                 ),
                 to_pulumi_object_field(
-                    "grpc_endpoint",
+                    "grpcEndpoint",
                     &self.r#grpc_endpoint,
                 ),
             ];

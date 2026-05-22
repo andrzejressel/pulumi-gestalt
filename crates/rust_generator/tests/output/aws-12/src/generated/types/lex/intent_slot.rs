@@ -76,27 +76,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "response_card",
+                    "responseCard",
                     &self.r#response_card,
                 ),
                 to_pulumi_object_field(
-                    "sample_utterances",
+                    "sampleUtterances",
                     &self.r#sample_utterances,
                 ),
                 to_pulumi_object_field(
-                    "slot_constraint",
+                    "slotConstraint",
                     &self.r#slot_constraint,
                 ),
                 to_pulumi_object_field(
-                    "slot_type",
+                    "slotType",
                     &self.r#slot_type,
                 ),
                 to_pulumi_object_field(
-                    "slot_type_version",
+                    "slotTypeVersion",
                     &self.r#slot_type_version,
                 ),
                 to_pulumi_object_field(
-                    "value_elicitation_prompt",
+                    "valueElicitationPrompt",
                     &self.r#value_elicitation_prompt,
                 ),
             ];

@@ -69,15 +69,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ad_breaks",
+                    "adBreaks",
                     &self.r#ad_breaks,
                 ),
                 to_pulumi_object_field(
-                    "edit_lists",
+                    "editLists",
                     &self.r#edit_lists,
                 ),
                 to_pulumi_object_field(
-                    "elementary_streams",
+                    "elementaryStreams",
                     &self.r#elementary_streams,
                 ),
                 to_pulumi_object_field(
@@ -93,7 +93,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#manifests,
                 ),
                 to_pulumi_object_field(
-                    "mux_streams",
+                    "muxStreams",
                     &self.r#mux_streams,
                 ),
                 to_pulumi_object_field(
@@ -105,7 +105,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#overlays,
                 ),
                 to_pulumi_object_field(
-                    "pubsub_destination",
+                    "pubsubDestination",
                     &self.r#pubsub_destination,
                 ),
             ];

@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "package_name",
+                    "packageName",
                     &self.r#package_name,
                 ),
                 to_pulumi_object_field(
-                    "sha_1_fingerprint",
+                    "sha1Fingerprint",
                     &self.r#sha_1_fingerprint,
                 ),
             ];

@@ -158,15 +158,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Not
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "affected_components",
+                    "affectedComponents",
                     &self.r#affected_components,
                 ),
                 to_pulumi_object_field(
-                    "airport_codes",
+                    "airportCodes",
                     &self.r#airport_codes,
                 ),
                 to_pulumi_object_field(
-                    "alert_trigger_preferences",
+                    "alertTriggerPreferences",
                     &self.r#alert_trigger_preferences,
                 ),
                 to_pulumi_object_field(
@@ -178,11 +178,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Not
                     &self.r#environments,
                 ),
                 to_pulumi_object_field(
-                    "event_sources",
+                    "eventSources",
                     &self.r#event_sources,
                 ),
                 to_pulumi_object_field(
-                    "event_types",
+                    "eventTypes",
                     &self.r#event_types,
                 ),
                 to_pulumi_object_field(
@@ -190,19 +190,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Not
                     &self.r#events,
                 ),
                 to_pulumi_object_field(
-                    "group_bies",
+                    "groupBies",
                     &self.r#group_bies,
                 ),
                 to_pulumi_object_field(
-                    "health_check_ids",
+                    "healthCheckIds",
                     &self.r#health_check_ids,
                 ),
                 to_pulumi_object_field(
-                    "incident_impacts",
+                    "incidentImpacts",
                     &self.r#incident_impacts,
                 ),
                 to_pulumi_object_field(
-                    "input_ids",
+                    "inputIds",
                     &self.r#input_ids,
                 ),
                 to_pulumi_object_field(
@@ -210,23 +210,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Not
                     &self.r#limits,
                 ),
                 to_pulumi_object_field(
-                    "megabits_per_seconds",
+                    "megabitsPerSeconds",
                     &self.r#megabits_per_seconds,
                 ),
                 to_pulumi_object_field(
-                    "new_healths",
+                    "newHealths",
                     &self.r#new_healths,
                 ),
                 to_pulumi_object_field(
-                    "new_statuses",
+                    "newStatuses",
                     &self.r#new_statuses,
                 ),
                 to_pulumi_object_field(
-                    "packets_per_seconds",
+                    "packetsPerSeconds",
                     &self.r#packets_per_seconds,
                 ),
                 to_pulumi_object_field(
-                    "pool_ids",
+                    "poolIds",
                     &self.r#pool_ids,
                 ),
                 to_pulumi_object_field(
@@ -234,7 +234,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Not
                     &self.r#products,
                 ),
                 to_pulumi_object_field(
-                    "project_ids",
+                    "projectIds",
                     &self.r#project_ids,
                 ),
                 to_pulumi_object_field(
@@ -242,7 +242,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Not
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "requests_per_seconds",
+                    "requestsPerSeconds",
                     &self.r#requests_per_seconds,
                 ),
                 to_pulumi_object_field(
@@ -262,23 +262,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Not
                     &self.r#statuses,
                 ),
                 to_pulumi_object_field(
-                    "target_hostnames",
+                    "targetHostnames",
                     &self.r#target_hostnames,
                 ),
                 to_pulumi_object_field(
-                    "target_ips",
+                    "targetIps",
                     &self.r#target_ips,
                 ),
                 to_pulumi_object_field(
-                    "target_zone_names",
+                    "targetZoneNames",
                     &self.r#target_zone_names,
                 ),
                 to_pulumi_object_field(
-                    "tunnel_ids",
+                    "tunnelIds",
                     &self.r#tunnel_ids,
                 ),
                 to_pulumi_object_field(
-                    "tunnel_names",
+                    "tunnelNames",
                     &self.r#tunnel_names,
                 ),
                 to_pulumi_object_field(

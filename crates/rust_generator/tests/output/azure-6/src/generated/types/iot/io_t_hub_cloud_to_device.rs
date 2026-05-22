@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_ttl",
+                    "defaultTtl",
                     &self.r#default_ttl,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
                     &self.r#feedbacks,
                 ),
                 to_pulumi_object_field(
-                    "max_delivery_count",
+                    "maxDeliveryCount",
                     &self.r#max_delivery_count,
                 ),
             ];

@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#fqdns,
                 ),
                 to_pulumi_object_field(
-                    "ip_addresses",
+                    "ipAddresses",
                     &self.r#ip_addresses,
                 ),
                 to_pulumi_object_field(

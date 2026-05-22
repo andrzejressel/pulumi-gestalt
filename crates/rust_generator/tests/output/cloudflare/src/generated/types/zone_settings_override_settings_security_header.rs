@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "include_subdomains",
+                    "includeSubdomains",
                     &self.r#include_subdomains,
                 ),
                 to_pulumi_object_field(
-                    "max_age",
+                    "maxAge",
                     &self.r#max_age,
                 ),
                 to_pulumi_object_field(

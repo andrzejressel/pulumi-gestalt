@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_id_override",
+                    "imageIdOverride",
                     &self.r#image_id_override,
                 ),
                 to_pulumi_object_field(
-                    "image_type",
+                    "imageType",
                     &self.r#image_type,
                 ),
             ];

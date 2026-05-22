@@ -98,11 +98,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#annotations,
                 ),
                 to_pulumi_object_field(
-                    "effective_annotations",
+                    "effectiveAnnotations",
                     &self.r#effective_annotations,
                 ),
                 to_pulumi_object_field(
-                    "effective_labels",
+                    "effectiveLabels",
                     &self.r#effective_labels,
                 ),
                 to_pulumi_object_field(
@@ -118,15 +118,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#namespace,
                 ),
                 to_pulumi_object_field(
-                    "pulumi_labels",
+                    "pulumiLabels",
                     &self.r#pulumi_labels,
                 ),
                 to_pulumi_object_field(
-                    "resource_version",
+                    "resourceVersion",
                     &self.r#resource_version,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
                 to_pulumi_object_field(

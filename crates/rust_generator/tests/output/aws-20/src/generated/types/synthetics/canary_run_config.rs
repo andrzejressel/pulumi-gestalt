@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Can
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_tracing",
+                    "activeTracing",
                     &self.r#active_tracing,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "memory_in_mb",
+                    "memoryInMb",
                     &self.r#memory_in_mb,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_seconds",
+                    "timeoutInSeconds",
                     &self.r#timeout_in_seconds,
                 ),
             ];

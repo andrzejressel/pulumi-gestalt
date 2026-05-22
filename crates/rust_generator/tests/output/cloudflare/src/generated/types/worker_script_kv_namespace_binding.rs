@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "namespace_id",
+                    "namespaceId",
                     &self.r#namespace_id,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "source_file_location",
+                    "sourceFileLocation",
                     &self.r#source_file_location,
                 ),
                 to_pulumi_object_field(

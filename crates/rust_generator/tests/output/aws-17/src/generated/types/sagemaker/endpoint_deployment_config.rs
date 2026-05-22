@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_rollback_configuration",
+                    "autoRollbackConfiguration",
                     &self.r#auto_rollback_configuration,
                 ),
                 to_pulumi_object_field(
-                    "blue_green_update_policy",
+                    "blueGreenUpdatePolicy",
                     &self.r#blue_green_update_policy,
                 ),
                 to_pulumi_object_field(
-                    "rolling_update_policy",
+                    "rollingUpdatePolicy",
                     &self.r#rolling_update_policy,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "service_uri",
+                    "serviceUri",
                     &self.r#service_uri,
                 ),
             ];

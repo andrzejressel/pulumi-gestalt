@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acm_certificate_arn",
+                    "acmCertificateArn",
                     &self.r#acm_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "cloudfront_default_certificate",
+                    "cloudfrontDefaultCertificate",
                     &self.r#cloudfront_default_certificate,
                 ),
                 to_pulumi_object_field(
-                    "iam_certificate_id",
+                    "iamCertificateId",
                     &self.r#iam_certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "minimum_protocol_version",
+                    "minimumProtocolVersion",
                     &self.r#minimum_protocol_version,
                 ),
                 to_pulumi_object_field(
-                    "ssl_support_method",
+                    "sslSupportMethod",
                     &self.r#ssl_support_method,
                 ),
             ];

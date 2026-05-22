@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "keep_count",
+                    "keepCount",
                     &self.r#keep_count,
                 ),
                 to_pulumi_object_field(
-                    "package_name_prefixes",
+                    "packageNamePrefixes",
                     &self.r#package_name_prefixes,
                 ),
             ];

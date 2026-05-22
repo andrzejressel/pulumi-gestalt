@@ -50,23 +50,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_ipv_4_cidr_blocks",
+                    "clusterIpv4CidrBlocks",
                     &self.r#cluster_ipv_4_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "cluster_ipv_6_cidr_blocks",
+                    "clusterIpv6CidrBlocks",
                     &self.r#cluster_ipv_6_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "network_type",
+                    "networkType",
                     &self.r#network_type,
                 ),
                 to_pulumi_object_field(
-                    "services_ipv_4_cidr_blocks",
+                    "servicesIpv4CidrBlocks",
                     &self.r#services_ipv_4_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "services_ipv_6_cidr_blocks",
+                    "servicesIpv6CidrBlocks",
                     &self.r#services_ipv_6_cidr_blocks,
                 ),
             ];

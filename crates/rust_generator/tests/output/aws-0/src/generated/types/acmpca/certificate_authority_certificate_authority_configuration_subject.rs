@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "common_name",
+                    "commonName",
                     &self.r#common_name,
                 ),
                 to_pulumi_object_field(
@@ -79,15 +79,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#country,
                 ),
                 to_pulumi_object_field(
-                    "distinguished_name_qualifier",
+                    "distinguishedNameQualifier",
                     &self.r#distinguished_name_qualifier,
                 ),
                 to_pulumi_object_field(
-                    "generation_qualifier",
+                    "generationQualifier",
                     &self.r#generation_qualifier,
                 ),
                 to_pulumi_object_field(
-                    "given_name",
+                    "givenName",
                     &self.r#given_name,
                 ),
                 to_pulumi_object_field(
@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#organization,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit",
+                    "organizationalUnit",
                     &self.r#organizational_unit,
                 ),
                 to_pulumi_object_field(

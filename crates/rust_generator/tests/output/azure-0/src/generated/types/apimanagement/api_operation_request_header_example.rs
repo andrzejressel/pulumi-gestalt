@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "external_value",
+                    "externalValue",
                     &self.r#external_value,
                 ),
                 to_pulumi_object_field(

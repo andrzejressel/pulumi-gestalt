@@ -65,23 +65,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "destination_addresses",
+                    "destinationAddresses",
                     &self.r#destination_addresses,
                 ),
                 to_pulumi_object_field(
-                    "destination_fqdn_tags",
+                    "destinationFqdnTags",
                     &self.r#destination_fqdn_tags,
                 ),
                 to_pulumi_object_field(
-                    "destination_fqdns",
+                    "destinationFqdns",
                     &self.r#destination_fqdns,
                 ),
                 to_pulumi_object_field(
-                    "destination_urls",
+                    "destinationUrls",
                     &self.r#destination_urls,
                 ),
                 to_pulumi_object_field(
-                    "http_headers",
+                    "httpHeaders",
                     &self.r#http_headers,
                 ),
                 to_pulumi_object_field(
@@ -93,19 +93,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "source_addresses",
+                    "sourceAddresses",
                     &self.r#source_addresses,
                 ),
                 to_pulumi_object_field(
-                    "source_ip_groups",
+                    "sourceIpGroups",
                     &self.r#source_ip_groups,
                 ),
                 to_pulumi_object_field(
-                    "terminate_tls",
+                    "terminateTls",
                     &self.r#terminate_tls,
                 ),
                 to_pulumi_object_field(
-                    "web_categories",
+                    "webCategories",
                     &self.r#web_categories,
                 ),
             ];

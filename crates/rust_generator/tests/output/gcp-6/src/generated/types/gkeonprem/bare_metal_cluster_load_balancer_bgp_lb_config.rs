@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_pools",
+                    "addressPools",
                     &self.r#address_pools,
                 ),
                 to_pulumi_object_field(
@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "bgp_peer_configs",
+                    "bgpPeerConfigs",
                     &self.r#bgp_peer_configs,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_node_pool_config",
+                    "loadBalancerNodePoolConfig",
                     &self.r#load_balancer_node_pool_config,
                 ),
             ];

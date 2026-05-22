@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#identities,
                 ),
                 to_pulumi_object_field(
-                    "identity_type",
+                    "identityType",
                     &self.r#identity_type,
                 ),
                 to_pulumi_object_field(
-                    "source_restriction",
+                    "sourceRestriction",
                     &self.r#source_restriction,
                 ),
                 to_pulumi_object_field(

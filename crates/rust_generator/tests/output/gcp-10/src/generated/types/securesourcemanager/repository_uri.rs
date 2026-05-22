@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#api,
                 ),
                 to_pulumi_object_field(
-                    "git_https",
+                    "gitHttps",
                     &self.r#git_https,
                 ),
                 to_pulumi_object_field(

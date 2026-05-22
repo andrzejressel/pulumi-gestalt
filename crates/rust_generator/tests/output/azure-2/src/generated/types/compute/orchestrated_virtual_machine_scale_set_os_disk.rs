@@ -49,23 +49,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
                     &self.r#caching,
                 ),
                 to_pulumi_object_field(
-                    "diff_disk_settings",
+                    "diffDiskSettings",
                     &self.r#diff_disk_settings,
                 ),
                 to_pulumi_object_field(
-                    "disk_encryption_set_id",
+                    "diskEncryptionSetId",
                     &self.r#disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_type",
+                    "storageAccountType",
                     &self.r#storage_account_type,
                 ),
                 to_pulumi_object_field(
-                    "write_accelerator_enabled",
+                    "writeAcceleratorEnabled",
                     &self.r#write_accelerator_enabled,
                 ),
             ];

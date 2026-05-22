@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_zones",
+                    "availabilityZones",
                     &self.r#availability_zones,
                 ),
                 to_pulumi_object_field(
-                    "engine_type",
+                    "engineType",
                     &self.r#engine_type,
                 ),
                 to_pulumi_object_field(
-                    "host_instance_type",
+                    "hostInstanceType",
                     &self.r#host_instance_type,
                 ),
                 to_pulumi_object_field(
-                    "storage_type",
+                    "storageType",
                     &self.r#storage_type,
                 ),
                 to_pulumi_object_field(
-                    "supported_deployment_modes",
+                    "supportedDeploymentModes",
                     &self.r#supported_deployment_modes,
                 ),
                 to_pulumi_object_field(
-                    "supported_engine_versions",
+                    "supportedEngineVersions",
                     &self.r#supported_engine_versions,
                 ),
             ];

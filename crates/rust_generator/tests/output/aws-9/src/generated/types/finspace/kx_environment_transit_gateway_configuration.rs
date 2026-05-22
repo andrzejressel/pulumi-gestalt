@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attachment_network_acl_configurations",
+                    "attachmentNetworkAclConfigurations",
                     &self.r#attachment_network_acl_configurations,
                 ),
                 to_pulumi_object_field(
-                    "routable_cidr_space",
+                    "routableCidrSpace",
                     &self.r#routable_cidr_space,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_id",
+                    "transitGatewayId",
                     &self.r#transit_gateway_id,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_type",
+                    "eventType",
                     &self.r#event_type,
                 ),
                 to_pulumi_object_field(
-                    "function_arn",
+                    "functionArn",
                     &self.r#function_arn,
                 ),
             ];

@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_all",
+                    "logAll",
                     &self.r#log_all,
                 ),
                 to_pulumi_object_field(
-                    "log_blocks",
+                    "logBlocks",
                     &self.r#log_blocks,
                 ),
             ];

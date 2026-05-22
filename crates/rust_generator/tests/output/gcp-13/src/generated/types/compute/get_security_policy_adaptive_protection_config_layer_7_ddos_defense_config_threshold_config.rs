@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_deploy_confidence_threshold",
+                    "autoDeployConfidenceThreshold",
                     &self.r#auto_deploy_confidence_threshold,
                 ),
                 to_pulumi_object_field(
-                    "auto_deploy_expiration_sec",
+                    "autoDeployExpirationSec",
                     &self.r#auto_deploy_expiration_sec,
                 ),
                 to_pulumi_object_field(
-                    "auto_deploy_impacted_baseline_threshold",
+                    "autoDeployImpactedBaselineThreshold",
                     &self.r#auto_deploy_impacted_baseline_threshold,
                 ),
                 to_pulumi_object_field(
-                    "auto_deploy_load_threshold",
+                    "autoDeployLoadThreshold",
                     &self.r#auto_deploy_load_threshold,
                 ),
                 to_pulumi_object_field(
-                    "detection_absolute_qps",
+                    "detectionAbsoluteQps",
                     &self.r#detection_absolute_qps,
                 ),
                 to_pulumi_object_field(
-                    "detection_load_threshold",
+                    "detectionLoadThreshold",
                     &self.r#detection_load_threshold,
                 ),
                 to_pulumi_object_field(
-                    "detection_relative_to_baseline_qps",
+                    "detectionRelativeToBaselineQps",
                     &self.r#detection_relative_to_baseline_qps,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "traffic_granularity_configs",
+                    "trafficGranularityConfigs",
                     &self.r#traffic_granularity_configs,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "last_fresh_start",
+                    "lastFreshStart",
                     &self.r#last_fresh_start,
                 ),
                 to_pulumi_object_field(
-                    "reputation_metrics_enabled",
+                    "reputationMetricsEnabled",
                     &self.r#reputation_metrics_enabled,
                 ),
             ];

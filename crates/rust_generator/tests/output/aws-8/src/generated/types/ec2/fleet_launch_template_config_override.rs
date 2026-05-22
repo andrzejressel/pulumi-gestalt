@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_zone",
+                    "availabilityZone",
                     &self.r#availability_zone,
                 ),
                 to_pulumi_object_field(
-                    "instance_requirements",
+                    "instanceRequirements",
                     &self.r#instance_requirements,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "max_price",
+                    "maxPrice",
                     &self.r#max_price,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "weighted_capacity",
+                    "weightedCapacity",
                     &self.r#weighted_capacity,
                 ),
             ];

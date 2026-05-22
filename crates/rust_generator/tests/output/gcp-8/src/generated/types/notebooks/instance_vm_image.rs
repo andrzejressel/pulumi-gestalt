@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_family",
+                    "imageFamily",
                     &self.r#image_family,
                 ),
                 to_pulumi_object_field(
-                    "image_name",
+                    "imageName",
                     &self.r#image_name,
                 ),
                 to_pulumi_object_field(

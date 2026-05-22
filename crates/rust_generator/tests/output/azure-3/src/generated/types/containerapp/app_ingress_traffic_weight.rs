@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#label,
                 ),
                 to_pulumi_object_field(
-                    "latest_revision",
+                    "latestRevision",
                     &self.r#latest_revision,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#percentage,
                 ),
                 to_pulumi_object_field(
-                    "revision_suffix",
+                    "revisionSuffix",
                     &self.r#revision_suffix,
                 ),
             ];

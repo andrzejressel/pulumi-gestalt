@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_certificate_base_64",
+                    "clientCertificateBase64",
                     &self.r#client_certificate_base_64,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_password",
+                    "clientCertificatePassword",
                     &self.r#client_certificate_password,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_send_chain",
+                    "clientCertificateSendChain",
                     &self.r#client_certificate_send_chain,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

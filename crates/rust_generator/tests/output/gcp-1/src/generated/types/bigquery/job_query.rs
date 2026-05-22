@@ -124,39 +124,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_large_results",
+                    "allowLargeResults",
                     &self.r#allow_large_results,
                 ),
                 to_pulumi_object_field(
-                    "create_disposition",
+                    "createDisposition",
                     &self.r#create_disposition,
                 ),
                 to_pulumi_object_field(
-                    "default_dataset",
+                    "defaultDataset",
                     &self.r#default_dataset,
                 ),
                 to_pulumi_object_field(
-                    "destination_encryption_configuration",
+                    "destinationEncryptionConfiguration",
                     &self.r#destination_encryption_configuration,
                 ),
                 to_pulumi_object_field(
-                    "destination_table",
+                    "destinationTable",
                     &self.r#destination_table,
                 ),
                 to_pulumi_object_field(
-                    "flatten_results",
+                    "flattenResults",
                     &self.r#flatten_results,
                 ),
                 to_pulumi_object_field(
-                    "maximum_billing_tier",
+                    "maximumBillingTier",
                     &self.r#maximum_billing_tier,
                 ),
                 to_pulumi_object_field(
-                    "maximum_bytes_billed",
+                    "maximumBytesBilled",
                     &self.r#maximum_bytes_billed,
                 ),
                 to_pulumi_object_field(
-                    "parameter_mode",
+                    "parameterMode",
                     &self.r#parameter_mode,
                 ),
                 to_pulumi_object_field(
@@ -168,27 +168,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#query,
                 ),
                 to_pulumi_object_field(
-                    "schema_update_options",
+                    "schemaUpdateOptions",
                     &self.r#schema_update_options,
                 ),
                 to_pulumi_object_field(
-                    "script_options",
+                    "scriptOptions",
                     &self.r#script_options,
                 ),
                 to_pulumi_object_field(
-                    "use_legacy_sql",
+                    "useLegacySql",
                     &self.r#use_legacy_sql,
                 ),
                 to_pulumi_object_field(
-                    "use_query_cache",
+                    "useQueryCache",
                     &self.r#use_query_cache,
                 ),
                 to_pulumi_object_field(
-                    "user_defined_function_resources",
+                    "userDefinedFunctionResources",
                     &self.r#user_defined_function_resources,
                 ),
                 to_pulumi_object_field(
-                    "write_disposition",
+                    "writeDisposition",
                     &self.r#write_disposition,
                 ),
             ];

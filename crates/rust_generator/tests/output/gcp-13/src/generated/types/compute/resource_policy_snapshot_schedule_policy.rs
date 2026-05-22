@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "retention_policy",
+                    "retentionPolicy",
                     &self.r#retention_policy,
                 ),
                 to_pulumi_object_field(
@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#schedule,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_properties",
+                    "snapshotProperties",
                     &self.r#snapshot_properties,
                 ),
             ];

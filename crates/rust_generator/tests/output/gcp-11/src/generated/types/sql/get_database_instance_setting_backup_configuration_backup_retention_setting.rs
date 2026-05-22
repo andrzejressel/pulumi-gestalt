@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "retained_backups",
+                    "retainedBackups",
                     &self.r#retained_backups,
                 ),
                 to_pulumi_object_field(
-                    "retention_unit",
+                    "retentionUnit",
                     &self.r#retention_unit,
                 ),
             ];

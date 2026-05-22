@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sig
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "revocation_effective_from",
+                    "revocationEffectiveFrom",
                     &self.r#revocation_effective_from,
                 ),
                 to_pulumi_object_field(
-                    "revoked_at",
+                    "revokedAt",
                     &self.r#revoked_at,
                 ),
                 to_pulumi_object_field(
-                    "revoked_by",
+                    "revokedBy",
                     &self.r#revoked_by,
                 ),
             ];

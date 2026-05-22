@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#condition,
                 ),
                 to_pulumi_object_field(
-                    "document_content_deletion",
+                    "documentContentDeletion",
                     &self.r#document_content_deletion,
                 ),
                 to_pulumi_object_field(

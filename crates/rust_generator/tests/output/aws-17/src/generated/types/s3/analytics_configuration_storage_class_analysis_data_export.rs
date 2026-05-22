@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "output_schema_version",
+                    "outputSchemaVersion",
                     &self.r#output_schema_version,
                 ),
             ];

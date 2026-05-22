@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_information",
+                    "availabilityInformation",
                     &self.r#availability_information,
                 ),
                 to_pulumi_object_field(
@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#configurations,
                 ),
                 to_pulumi_object_field(
-                    "cost_information",
+                    "costInformation",
                     &self.r#cost_information,
                 ),
                 to_pulumi_object_field(
@@ -67,19 +67,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "filterable_properties",
+                    "filterableProperties",
                     &self.r#filterable_properties,
                 ),
                 to_pulumi_object_field(
-                    "hierarchy_information",
+                    "hierarchyInformation",
                     &self.r#hierarchy_information,
                 ),
                 to_pulumi_object_field(
-                    "image_information",
+                    "imageInformation",
                     &self.r#image_information,
                 ),
             ];

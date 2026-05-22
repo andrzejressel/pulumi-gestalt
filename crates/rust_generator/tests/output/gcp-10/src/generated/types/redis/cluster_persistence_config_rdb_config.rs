@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "rdb_snapshot_period",
+                    "rdbSnapshotPeriod",
                     &self.r#rdb_snapshot_period,
                 ),
                 to_pulumi_object_field(
-                    "rdb_snapshot_start_time",
+                    "rdbSnapshotStartTime",
                     &self.r#rdb_snapshot_start_time,
                 ),
             ];

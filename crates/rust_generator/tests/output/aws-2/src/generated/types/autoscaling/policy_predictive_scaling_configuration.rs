@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_capacity_breach_behavior",
+                    "maxCapacityBreachBehavior",
                     &self.r#max_capacity_breach_behavior,
                 ),
                 to_pulumi_object_field(
-                    "max_capacity_buffer",
+                    "maxCapacityBuffer",
                     &self.r#max_capacity_buffer,
                 ),
                 to_pulumi_object_field(
-                    "metric_specification",
+                    "metricSpecification",
                     &self.r#metric_specification,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "scheduling_buffer_time",
+                    "schedulingBufferTime",
                     &self.r#scheduling_buffer_time,
                 ),
             ];

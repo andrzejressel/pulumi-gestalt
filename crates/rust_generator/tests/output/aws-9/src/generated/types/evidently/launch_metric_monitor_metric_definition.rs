@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entity_id_key",
+                    "entityIdKey",
                     &self.r#entity_id_key,
                 ),
                 to_pulumi_object_field(
-                    "event_pattern",
+                    "eventPattern",
                     &self.r#event_pattern,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "unit_label",
+                    "unitLabel",
                     &self.r#unit_label,
                 ),
                 to_pulumi_object_field(
-                    "value_key",
+                    "valueKey",
                     &self.r#value_key,
                 ),
             ];

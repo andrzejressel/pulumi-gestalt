@@ -42,11 +42,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
                     &self.r#config,
                 ),
                 to_pulumi_object_field(
-                    "contents_delta_uri",
+                    "contentsDeltaUri",
                     &self.r#contents_delta_uri,
                 ),
                 to_pulumi_object_field(
-                    "is_complete_overwrite",
+                    "isCompleteOverwrite",
                     &self.r#is_complete_overwrite,
                 ),
             ];

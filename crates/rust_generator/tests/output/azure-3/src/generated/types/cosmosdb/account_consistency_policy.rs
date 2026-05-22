@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consistency_level",
+                    "consistencyLevel",
                     &self.r#consistency_level,
                 ),
                 to_pulumi_object_field(
-                    "max_interval_in_seconds",
+                    "maxIntervalInSeconds",
                     &self.r#max_interval_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "max_staleness_prefix",
+                    "maxStalenessPrefix",
                     &self.r#max_staleness_prefix,
                 ),
             ];

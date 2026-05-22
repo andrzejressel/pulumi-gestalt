@@ -103,27 +103,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_url",
+                    "accountUrl",
                     &self.r#account_url,
                 ),
                 to_pulumi_object_field(
-                    "buffering_interval",
+                    "bufferingInterval",
                     &self.r#buffering_interval,
                 ),
                 to_pulumi_object_field(
-                    "buffering_size",
+                    "bufferingSize",
                     &self.r#buffering_size,
                 ),
                 to_pulumi_object_field(
-                    "cloudwatch_logging_options",
+                    "cloudwatchLoggingOptions",
                     &self.r#cloudwatch_logging_options,
                 ),
                 to_pulumi_object_field(
-                    "content_column_name",
+                    "contentColumnName",
                     &self.r#content_column_name,
                 ),
                 to_pulumi_object_field(
-                    "data_loading_option",
+                    "dataLoadingOption",
                     &self.r#data_loading_option,
                 ),
                 to_pulumi_object_field(
@@ -131,35 +131,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#database,
                 ),
                 to_pulumi_object_field(
-                    "key_passphrase",
+                    "keyPassphrase",
                     &self.r#key_passphrase,
                 ),
                 to_pulumi_object_field(
-                    "metadata_column_name",
+                    "metadataColumnName",
                     &self.r#metadata_column_name,
                 ),
                 to_pulumi_object_field(
-                    "private_key",
+                    "privateKey",
                     &self.r#private_key,
                 ),
                 to_pulumi_object_field(
-                    "processing_configuration",
+                    "processingConfiguration",
                     &self.r#processing_configuration,
                 ),
                 to_pulumi_object_field(
-                    "retry_duration",
+                    "retryDuration",
                     &self.r#retry_duration,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "s_3_backup_mode",
+                    "s3BackupMode",
                     &self.r#s_3_backup_mode,
                 ),
                 to_pulumi_object_field(
-                    "s_3_configuration",
+                    "s3Configuration",
                     &self.r#s_3_configuration,
                 ),
                 to_pulumi_object_field(
@@ -167,15 +167,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#schema,
                 ),
                 to_pulumi_object_field(
-                    "secrets_manager_configuration",
+                    "secretsManagerConfiguration",
                     &self.r#secrets_manager_configuration,
                 ),
                 to_pulumi_object_field(
-                    "snowflake_role_configuration",
+                    "snowflakeRoleConfiguration",
                     &self.r#snowflake_role_configuration,
                 ),
                 to_pulumi_object_field(
-                    "snowflake_vpc_configuration",
+                    "snowflakeVpcConfiguration",
                     &self.r#snowflake_vpc_configuration,
                 ),
                 to_pulumi_object_field(

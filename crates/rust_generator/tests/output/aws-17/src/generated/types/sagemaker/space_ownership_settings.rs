@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "owner_user_profile_name",
+                    "ownerUserProfileName",
                     &self.r#owner_user_profile_name,
                 ),
             ];

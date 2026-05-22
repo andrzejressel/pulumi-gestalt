@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "outbound_caller_id_name",
+                    "outboundCallerIdName",
                     &self.r#outbound_caller_id_name,
                 ),
                 to_pulumi_object_field(
-                    "outbound_caller_id_number_id",
+                    "outboundCallerIdNumberId",
                     &self.r#outbound_caller_id_number_id,
                 ),
                 to_pulumi_object_field(
-                    "outbound_flow_id",
+                    "outboundFlowId",
                     &self.r#outbound_flow_id,
                 ),
             ];

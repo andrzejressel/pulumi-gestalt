@@ -47,27 +47,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_file_count",
+                    "dataFileCount",
                     &self.r#data_file_count,
                 ),
                 to_pulumi_object_field(
-                    "data_file_growth_in_mb",
+                    "dataFileGrowthInMb",
                     &self.r#data_file_growth_in_mb,
                 ),
                 to_pulumi_object_field(
-                    "data_file_size_mb",
+                    "dataFileSizeMb",
                     &self.r#data_file_size_mb,
                 ),
                 to_pulumi_object_field(
-                    "default_file_path",
+                    "defaultFilePath",
                     &self.r#default_file_path,
                 ),
                 to_pulumi_object_field(
-                    "log_file_growth_mb",
+                    "logFileGrowthMb",
                     &self.r#log_file_growth_mb,
                 ),
                 to_pulumi_object_field(
-                    "log_file_size_mb",
+                    "logFileSizeMb",
                     &self.r#log_file_size_mb,
                 ),
                 to_pulumi_object_field(

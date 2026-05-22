@@ -71,71 +71,71 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_frames_per_pes",
+                    "audioFramesPerPes",
                     &self.r#audio_frames_per_pes,
                 ),
                 to_pulumi_object_field(
-                    "audio_pids",
+                    "audioPids",
                     &self.r#audio_pids,
                 ),
                 to_pulumi_object_field(
-                    "ecm_pid",
+                    "ecmPid",
                     &self.r#ecm_pid,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_id_3_behavior",
+                    "nielsenId3Behavior",
                     &self.r#nielsen_id_3_behavior,
                 ),
                 to_pulumi_object_field(
-                    "pat_interval",
+                    "patInterval",
                     &self.r#pat_interval,
                 ),
                 to_pulumi_object_field(
-                    "pcr_control",
+                    "pcrControl",
                     &self.r#pcr_control,
                 ),
                 to_pulumi_object_field(
-                    "pcr_period",
+                    "pcrPeriod",
                     &self.r#pcr_period,
                 ),
                 to_pulumi_object_field(
-                    "pcr_pid",
+                    "pcrPid",
                     &self.r#pcr_pid,
                 ),
                 to_pulumi_object_field(
-                    "pmt_interval",
+                    "pmtInterval",
                     &self.r#pmt_interval,
                 ),
                 to_pulumi_object_field(
-                    "pmt_pid",
+                    "pmtPid",
                     &self.r#pmt_pid,
                 ),
                 to_pulumi_object_field(
-                    "program_num",
+                    "programNum",
                     &self.r#program_num,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_behavior",
+                    "scte35Behavior",
                     &self.r#scte_35_behavior,
                 ),
                 to_pulumi_object_field(
-                    "scte_35_pid",
+                    "scte35Pid",
                     &self.r#scte_35_pid,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_behavior",
+                    "timedMetadataBehavior",
                     &self.r#timed_metadata_behavior,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_pid",
+                    "timedMetadataPid",
                     &self.r#timed_metadata_pid,
                 ),
                 to_pulumi_object_field(
-                    "transport_stream_id",
+                    "transportStreamId",
                     &self.r#transport_stream_id,
                 ),
                 to_pulumi_object_field(
-                    "video_pid",
+                    "videoPid",
                     &self.r#video_pid,
                 ),
             ];

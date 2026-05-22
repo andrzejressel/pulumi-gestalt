@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "issuer_cert_authority",
+                    "issuerCertAuthority",
                     &self.r#issuer_cert_authority,
                 ),
                 to_pulumi_object_field(
-                    "kms_key",
+                    "kmsKey",
                     &self.r#kms_key,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];

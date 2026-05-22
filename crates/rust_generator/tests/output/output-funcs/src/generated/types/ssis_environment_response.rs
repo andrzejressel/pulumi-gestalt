@@ -48,7 +48,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "folder_id",
+                    "folderId",
                     &self.r#folder_id,
                 ),
                 to_pulumi_object_field(
@@ -60,7 +60,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(

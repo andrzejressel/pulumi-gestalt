@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "month_day",
+                    "monthDay",
                     &self.r#month_day,
                 ),
                 to_pulumi_object_field(
-                    "week_day_of_month",
+                    "weekDayOfMonth",
                     &self.r#week_day_of_month,
                 ),
             ];

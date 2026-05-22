@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fhi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bigquery_destination",
+                    "bigqueryDestination",
                     &self.r#bigquery_destination,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
             ];

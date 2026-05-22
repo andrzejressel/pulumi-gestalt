@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
                 to_pulumi_object_field(
@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "provider_name",
+                    "providerName",
                     &self.r#provider_name,
                 ),
                 to_pulumi_object_field(
-                    "speed_in_mbps",
+                    "speedInMbps",
                     &self.r#speed_in_mbps,
                 ),
             ];

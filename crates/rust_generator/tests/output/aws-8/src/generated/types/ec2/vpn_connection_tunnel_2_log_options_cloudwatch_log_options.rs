@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_enabled",
+                    "logEnabled",
                     &self.r#log_enabled,
                 ),
                 to_pulumi_object_field(
-                    "log_group_arn",
+                    "logGroupArn",
                     &self.r#log_group_arn,
                 ),
                 to_pulumi_object_field(
-                    "log_output_format",
+                    "logOutputFormat",
                     &self.r#log_output_format,
                 ),
             ];

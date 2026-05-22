@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cor
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "edge_location",
+                    "edgeLocation",
                     &self.r#edge_location,
                 ),
                 to_pulumi_object_field(
-                    "inside_cidr_blocks",
+                    "insideCidrBlocks",
                     &self.r#inside_cidr_blocks,
                 ),
             ];

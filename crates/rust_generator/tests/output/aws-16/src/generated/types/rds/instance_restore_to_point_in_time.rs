@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "restore_time",
+                    "restoreTime",
                     &self.r#restore_time,
                 ),
                 to_pulumi_object_field(
-                    "source_db_instance_automated_backups_arn",
+                    "sourceDbInstanceAutomatedBackupsArn",
                     &self.r#source_db_instance_automated_backups_arn,
                 ),
                 to_pulumi_object_field(
-                    "source_db_instance_identifier",
+                    "sourceDbInstanceIdentifier",
                     &self.r#source_db_instance_identifier,
                 ),
                 to_pulumi_object_field(
-                    "source_dbi_resource_id",
+                    "sourceDbiResourceId",
                     &self.r#source_dbi_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "use_latest_restorable_time",
+                    "useLatestRestorableTime",
                     &self.r#use_latest_restorable_time,
                 ),
             ];

@@ -64,47 +64,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_type",
+                    "accessType",
                     &self.r#access_type,
                 ),
                 to_pulumi_object_field(
-                    "allowed_clients",
+                    "allowedClients",
                     &self.r#allowed_clients,
                 ),
                 to_pulumi_object_field(
-                    "has_root_access",
+                    "hasRootAccess",
                     &self.r#has_root_access,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_read_only",
+                    "kerberos5ReadOnly",
                     &self.r#kerberos_5_read_only,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_read_write",
+                    "kerberos5ReadWrite",
                     &self.r#kerberos_5_read_write,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_i_read_only",
+                    "kerberos5iReadOnly",
                     &self.r#kerberos_5_i_read_only,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_i_read_write",
+                    "kerberos5iReadWrite",
                     &self.r#kerberos_5_i_read_write,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_p_read_only",
+                    "kerberos5pReadOnly",
                     &self.r#kerberos_5_p_read_only,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_5_p_read_write",
+                    "kerberos5pReadWrite",
                     &self.r#kerberos_5_p_read_write,
                 ),
                 to_pulumi_object_field(
-                    "nfsv_3",
+                    "nfsv3",
                     &self.r#nfsv_3,
                 ),
                 to_pulumi_object_field(
-                    "nfsv_4",
+                    "nfsv4",
                     &self.r#nfsv_4,
                 ),
             ];

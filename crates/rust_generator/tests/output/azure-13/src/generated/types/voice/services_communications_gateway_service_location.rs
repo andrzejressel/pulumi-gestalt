@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_media_source_address_prefixes",
+                    "allowedMediaSourceAddressPrefixes",
                     &self.r#allowed_media_source_address_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "allowed_signaling_source_address_prefixes",
+                    "allowedSignalingSourceAddressPrefixes",
                     &self.r#allowed_signaling_source_address_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "esrp_addresses",
+                    "esrpAddresses",
                     &self.r#esrp_addresses,
                 ),
                 to_pulumi_object_field(
@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "operator_addresses",
+                    "operatorAddresses",
                     &self.r#operator_addresses,
                 ),
             ];

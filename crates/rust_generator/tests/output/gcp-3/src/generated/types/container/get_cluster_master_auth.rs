@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_certificate",
+                    "clientCertificate",
                     &self.r#client_certificate,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_configs",
+                    "clientCertificateConfigs",
                     &self.r#client_certificate_configs,
                 ),
                 to_pulumi_object_field(
-                    "client_key",
+                    "clientKey",
                     &self.r#client_key,
                 ),
                 to_pulumi_object_field(
-                    "cluster_ca_certificate",
+                    "clusterCaCertificate",
                     &self.r#cluster_ca_certificate,
                 ),
             ];

@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_active",
+                    "isActive",
                     &self.r#is_active,
                 ),
                 to_pulumi_object_field(
-                    "principal_arn",
+                    "principalArn",
                     &self.r#principal_arn,
                 ),
             ];

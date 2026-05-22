@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ext
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_address",
+                    "ipv6Address",
                     &self.r#ipv_6_address,
                 ),
             ];

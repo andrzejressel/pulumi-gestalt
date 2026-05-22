@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_endpoint_enabled",
+                    "allowEndpointEnabled",
                     &self.r#allow_endpoint_enabled,
                 ),
                 to_pulumi_object_field(
-                    "default_endpoint_enabled",
+                    "defaultEndpointEnabled",
                     &self.r#default_endpoint_enabled,
                 ),
                 to_pulumi_object_field(
-                    "optimize_endpoint_enabled",
+                    "optimizeEndpointEnabled",
                     &self.r#optimize_endpoint_enabled,
                 ),
             ];

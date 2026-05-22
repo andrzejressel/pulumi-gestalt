@@ -75,27 +75,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aws
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_metrics_collection",
+                    "autoscalingMetricsCollection",
                     &self.r#autoscaling_metrics_collection,
                 ),
                 to_pulumi_object_field(
-                    "config_encryption",
+                    "configEncryption",
                     &self.r#config_encryption,
                 ),
                 to_pulumi_object_field(
-                    "iam_instance_profile",
+                    "iamInstanceProfile",
                     &self.r#iam_instance_profile,
                 ),
                 to_pulumi_object_field(
-                    "image_type",
+                    "imageType",
                     &self.r#image_type,
                 ),
                 to_pulumi_object_field(
-                    "instance_placement",
+                    "instancePlacement",
                     &self.r#instance_placement,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
@@ -103,23 +103,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aws
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "proxy_config",
+                    "proxyConfig",
                     &self.r#proxy_config,
                 ),
                 to_pulumi_object_field(
-                    "root_volume",
+                    "rootVolume",
                     &self.r#root_volume,
                 ),
                 to_pulumi_object_field(
-                    "security_group_ids",
+                    "securityGroupIds",
                     &self.r#security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "spot_config",
+                    "spotConfig",
                     &self.r#spot_config,
                 ),
                 to_pulumi_object_field(
-                    "ssh_config",
+                    "sshConfig",
                     &self.r#ssh_config,
                 ),
                 to_pulumi_object_field(

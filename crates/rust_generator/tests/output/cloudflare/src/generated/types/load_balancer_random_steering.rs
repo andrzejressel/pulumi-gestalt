@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_weight",
+                    "defaultWeight",
                     &self.r#default_weight,
                 ),
                 to_pulumi_object_field(
-                    "pool_weights",
+                    "poolWeights",
                     &self.r#pool_weights,
                 ),
             ];

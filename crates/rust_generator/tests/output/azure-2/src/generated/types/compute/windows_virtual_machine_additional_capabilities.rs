@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hibernation_enabled",
+                    "hibernationEnabled",
                     &self.r#hibernation_enabled,
                 ),
                 to_pulumi_object_field(
-                    "ultra_ssd_enabled",
+                    "ultraSsdEnabled",
                     &self.r#ultra_ssd_enabled,
                 ),
             ];

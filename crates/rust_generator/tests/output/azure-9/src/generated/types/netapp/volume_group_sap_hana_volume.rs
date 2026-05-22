@@ -90,19 +90,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capacity_pool_id",
+                    "capacityPoolId",
                     &self.r#capacity_pool_id,
                 ),
                 to_pulumi_object_field(
-                    "data_protection_replication",
+                    "dataProtectionReplication",
                     &self.r#data_protection_replication,
                 ),
                 to_pulumi_object_field(
-                    "data_protection_snapshot_policy",
+                    "dataProtectionSnapshotPolicy",
                     &self.r#data_protection_snapshot_policy,
                 ),
                 to_pulumi_object_field(
-                    "export_policy_rules",
+                    "exportPolicyRules",
                     &self.r#export_policy_rules,
                 ),
                 to_pulumi_object_field(
@@ -110,7 +110,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "mount_ip_addresses",
+                    "mountIpAddresses",
                     &self.r#mount_ip_addresses,
                 ),
                 to_pulumi_object_field(
@@ -122,27 +122,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "proximity_placement_group_id",
+                    "proximityPlacementGroupId",
                     &self.r#proximity_placement_group_id,
                 ),
                 to_pulumi_object_field(
-                    "security_style",
+                    "securityStyle",
                     &self.r#security_style,
                 ),
                 to_pulumi_object_field(
-                    "service_level",
+                    "serviceLevel",
                     &self.r#service_level,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_directory_visible",
+                    "snapshotDirectoryVisible",
                     &self.r#snapshot_directory_visible,
                 ),
                 to_pulumi_object_field(
-                    "storage_quota_in_gb",
+                    "storageQuotaInGb",
                     &self.r#storage_quota_in_gb,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(
@@ -150,15 +150,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "throughput_in_mibps",
+                    "throughputInMibps",
                     &self.r#throughput_in_mibps,
                 ),
                 to_pulumi_object_field(
-                    "volume_path",
+                    "volumePath",
                     &self.r#volume_path,
                 ),
                 to_pulumi_object_field(
-                    "volume_spec_name",
+                    "volumeSpecName",
                     &self.r#volume_spec_name,
                 ),
             ];

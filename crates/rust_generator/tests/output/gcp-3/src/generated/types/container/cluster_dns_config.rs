@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additive_vpc_scope_dns_domain",
+                    "additiveVpcScopeDnsDomain",
                     &self.r#additive_vpc_scope_dns_domain,
                 ),
                 to_pulumi_object_field(
-                    "cluster_dns",
+                    "clusterDns",
                     &self.r#cluster_dns,
                 ),
                 to_pulumi_object_field(
-                    "cluster_dns_domain",
+                    "clusterDnsDomain",
                     &self.r#cluster_dns_domain,
                 ),
                 to_pulumi_object_field(
-                    "cluster_dns_scope",
+                    "clusterDnsScope",
                     &self.r#cluster_dns_scope,
                 ),
             ];

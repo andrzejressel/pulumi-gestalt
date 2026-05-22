@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aes_128",
+                    "aes128",
                     &self.r#aes_128,
                 ),
                 to_pulumi_object_field(
-                    "drm_systems",
+                    "drmSystems",
                     &self.r#drm_systems,
                 ),
                 to_pulumi_object_field(
@@ -58,15 +58,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "mpeg_cenc",
+                    "mpegCenc",
                     &self.r#mpeg_cenc,
                 ),
                 to_pulumi_object_field(
-                    "sample_aes",
+                    "sampleAes",
                     &self.r#sample_aes,
                 ),
                 to_pulumi_object_field(
-                    "secret_manager_key_source",
+                    "secretManagerKeySource",
                     &self.r#secret_manager_key_source,
                 ),
             ];

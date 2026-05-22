@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#flowlet,
                 ),
                 to_pulumi_object_field(
-                    "linked_service",
+                    "linkedService",
                     &self.r#linked_service,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "rejected_linked_service",
+                    "rejectedLinkedService",
                     &self.r#rejected_linked_service,
                 ),
                 to_pulumi_object_field(
-                    "schema_linked_service",
+                    "schemaLinkedService",
                     &self.r#schema_linked_service,
                 ),
             ];

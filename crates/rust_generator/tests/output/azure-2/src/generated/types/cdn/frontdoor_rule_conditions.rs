@@ -95,79 +95,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_port_conditions",
+                    "clientPortConditions",
                     &self.r#client_port_conditions,
                 ),
                 to_pulumi_object_field(
-                    "cookies_conditions",
+                    "cookiesConditions",
                     &self.r#cookies_conditions,
                 ),
                 to_pulumi_object_field(
-                    "host_name_conditions",
+                    "hostNameConditions",
                     &self.r#host_name_conditions,
                 ),
                 to_pulumi_object_field(
-                    "http_version_conditions",
+                    "httpVersionConditions",
                     &self.r#http_version_conditions,
                 ),
                 to_pulumi_object_field(
-                    "is_device_conditions",
+                    "isDeviceConditions",
                     &self.r#is_device_conditions,
                 ),
                 to_pulumi_object_field(
-                    "post_args_conditions",
+                    "postArgsConditions",
                     &self.r#post_args_conditions,
                 ),
                 to_pulumi_object_field(
-                    "query_string_conditions",
+                    "queryStringConditions",
                     &self.r#query_string_conditions,
                 ),
                 to_pulumi_object_field(
-                    "remote_address_conditions",
+                    "remoteAddressConditions",
                     &self.r#remote_address_conditions,
                 ),
                 to_pulumi_object_field(
-                    "request_body_conditions",
+                    "requestBodyConditions",
                     &self.r#request_body_conditions,
                 ),
                 to_pulumi_object_field(
-                    "request_header_conditions",
+                    "requestHeaderConditions",
                     &self.r#request_header_conditions,
                 ),
                 to_pulumi_object_field(
-                    "request_method_conditions",
+                    "requestMethodConditions",
                     &self.r#request_method_conditions,
                 ),
                 to_pulumi_object_field(
-                    "request_scheme_conditions",
+                    "requestSchemeConditions",
                     &self.r#request_scheme_conditions,
                 ),
                 to_pulumi_object_field(
-                    "request_uri_conditions",
+                    "requestUriConditions",
                     &self.r#request_uri_conditions,
                 ),
                 to_pulumi_object_field(
-                    "server_port_conditions",
+                    "serverPortConditions",
                     &self.r#server_port_conditions,
                 ),
                 to_pulumi_object_field(
-                    "socket_address_conditions",
+                    "socketAddressConditions",
                     &self.r#socket_address_conditions,
                 ),
                 to_pulumi_object_field(
-                    "ssl_protocol_conditions",
+                    "sslProtocolConditions",
                     &self.r#ssl_protocol_conditions,
                 ),
                 to_pulumi_object_field(
-                    "url_file_extension_conditions",
+                    "urlFileExtensionConditions",
                     &self.r#url_file_extension_conditions,
                 ),
                 to_pulumi_object_field(
-                    "url_filename_conditions",
+                    "urlFilenameConditions",
                     &self.r#url_filename_conditions,
                 ),
                 to_pulumi_object_field(
-                    "url_path_conditions",
+                    "urlPathConditions",
                     &self.r#url_path_conditions,
                 ),
             ];

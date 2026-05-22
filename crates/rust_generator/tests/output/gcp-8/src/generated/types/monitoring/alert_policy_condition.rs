@@ -68,27 +68,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "condition_absent",
+                    "conditionAbsent",
                     &self.r#condition_absent,
                 ),
                 to_pulumi_object_field(
-                    "condition_matched_log",
+                    "conditionMatchedLog",
                     &self.r#condition_matched_log,
                 ),
                 to_pulumi_object_field(
-                    "condition_monitoring_query_language",
+                    "conditionMonitoringQueryLanguage",
                     &self.r#condition_monitoring_query_language,
                 ),
                 to_pulumi_object_field(
-                    "condition_prometheus_query_language",
+                    "conditionPrometheusQueryLanguage",
                     &self.r#condition_prometheus_query_language,
                 ),
                 to_pulumi_object_field(
-                    "condition_threshold",
+                    "conditionThreshold",
                     &self.r#condition_threshold,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(

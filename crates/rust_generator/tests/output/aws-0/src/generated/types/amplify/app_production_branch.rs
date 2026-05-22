@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "branch_name",
+                    "branchName",
                     &self.r#branch_name,
                 ),
                 to_pulumi_object_field(
-                    "last_deploy_time",
+                    "lastDeployTime",
                     &self.r#last_deploy_time,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "thumbnail_url",
+                    "thumbnailUrl",
                     &self.r#thumbnail_url,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_mode",
+                    "authenticationMode",
                     &self.r#authentication_mode,
                 ),
                 to_pulumi_object_field(
-                    "bootstrap_cluster_creator_admin_permissions",
+                    "bootstrapClusterCreatorAdminPermissions",
                     &self.r#bootstrap_cluster_creator_admin_permissions,
                 ),
             ];

@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#email,
                 ),
                 to_pulumi_object_field(
-                    "fax_number",
+                    "faxNumber",
                     &self.r#fax_number,
                 ),
                 to_pulumi_object_field(
-                    "phone_number",
+                    "phoneNumber",
                     &self.r#phone_number,
                 ),
                 to_pulumi_object_field(
-                    "postal_address",
+                    "postalAddress",
                     &self.r#postal_address,
                 ),
             ];

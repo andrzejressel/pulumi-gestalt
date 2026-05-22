@@ -40,23 +40,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "end_time",
+                    "endTime",
                     &self.r#end_time,
                 ),
                 to_pulumi_object_field(
-                    "error_message",
+                    "errorMessage",
                     &self.r#error_message,
                 ),
                 to_pulumi_object_field(
-                    "execution_message",
+                    "executionMessage",
                     &self.r#execution_message,
                 ),
                 to_pulumi_object_field(
-                    "execution_state",
+                    "executionState",
                     &self.r#execution_state,
                 ),
                 to_pulumi_object_field(
-                    "exit_code",
+                    "exitCode",
                     &self.r#exit_code,
                 ),
                 to_pulumi_object_field(
@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#output,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
             ];

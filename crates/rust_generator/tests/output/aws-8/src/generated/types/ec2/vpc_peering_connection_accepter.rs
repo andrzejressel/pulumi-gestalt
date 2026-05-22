@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_remote_vpc_dns_resolution",
+                    "allowRemoteVpcDnsResolution",
                     &self.r#allow_remote_vpc_dns_resolution,
                 ),
             ];

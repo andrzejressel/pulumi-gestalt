@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "format_version",
+                    "formatVersion",
                     &self.r#format_version,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#namespace,
                 ),
                 to_pulumi_object_field(
-                    "permission_policy",
+                    "permissionPolicy",
                     &self.r#permission_policy,
                 ),
                 to_pulumi_object_field(

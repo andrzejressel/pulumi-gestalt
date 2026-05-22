@@ -60,23 +60,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "graceful_decommission_timeout",
+                    "gracefulDecommissionTimeout",
                     &self.r#graceful_decommission_timeout,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_factor",
+                    "scaleDownFactor",
                     &self.r#scale_down_factor,
                 ),
                 to_pulumi_object_field(
-                    "scale_down_min_worker_fraction",
+                    "scaleDownMinWorkerFraction",
                     &self.r#scale_down_min_worker_fraction,
                 ),
                 to_pulumi_object_field(
-                    "scale_up_factor",
+                    "scaleUpFactor",
                     &self.r#scale_up_factor,
                 ),
                 to_pulumi_object_field(
-                    "scale_up_min_worker_fraction",
+                    "scaleUpMinWorkerFraction",
                     &self.r#scale_up_min_worker_fraction,
                 ),
             ];

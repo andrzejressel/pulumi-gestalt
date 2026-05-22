@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "linux_node_configs",
+                    "linuxNodeConfigs",
                     &self.r#linux_node_configs,
                 ),
                 to_pulumi_object_field(
-                    "network_tags",
+                    "networkTags",
                     &self.r#network_tags,
                 ),
                 to_pulumi_object_field(
-                    "node_kubelet_configs",
+                    "nodeKubeletConfigs",
                     &self.r#node_kubelet_configs,
                 ),
                 to_pulumi_object_field(
-                    "resource_manager_tags",
+                    "resourceManagerTags",
                     &self.r#resource_manager_tags,
                 ),
             ];

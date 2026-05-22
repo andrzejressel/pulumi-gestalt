@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disabled_alerts",
+                    "disabledAlerts",
                     &self.r#disabled_alerts,
                 ),
                 to_pulumi_object_field(
-                    "email_account_admins",
+                    "emailAccountAdmins",
                     &self.r#email_account_admins,
                 ),
                 to_pulumi_object_field(
-                    "email_addresses",
+                    "emailAddresses",
                     &self.r#email_addresses,
                 ),
                 to_pulumi_object_field(
@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "retention_days",
+                    "retentionDays",
                     &self.r#retention_days,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_access_key",
+                    "storageAccountAccessKey",
                     &self.r#storage_account_access_key,
                 ),
                 to_pulumi_object_field(
-                    "storage_endpoint",
+                    "storageEndpoint",
                     &self.r#storage_endpoint,
                 ),
             ];

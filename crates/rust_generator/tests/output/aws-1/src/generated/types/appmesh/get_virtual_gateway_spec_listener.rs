@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_pools",
+                    "connectionPools",
                     &self.r#connection_pools,
                 ),
                 to_pulumi_object_field(
-                    "health_checks",
+                    "healthChecks",
                     &self.r#health_checks,
                 ),
                 to_pulumi_object_field(
-                    "port_mappings",
+                    "portMappings",
                     &self.r#port_mappings,
                 ),
                 to_pulumi_object_field(

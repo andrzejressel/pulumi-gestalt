@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_automatic_updates",
+                    "enableAutomaticUpdates",
                     &self.r#enable_automatic_updates,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "single_header_config",
+                    "singleHeaderConfig",
                     &self.r#single_header_config,
                 ),
                 to_pulumi_object_field(
-                    "single_weight_config",
+                    "singleWeightConfig",
                     &self.r#single_weight_config,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

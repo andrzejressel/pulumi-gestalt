@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxC
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "tickerplant_log_volumes",
+                    "tickerplantLogVolumes",
                     &self.r#tickerplant_log_volumes,
                 ),
             ];

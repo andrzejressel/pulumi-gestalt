@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nam
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alternative_authentication_name_sources",
+                    "alternativeAuthenticationNameSources",
                     &self.r#alternative_authentication_name_sources,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_routing_enrichments",
+                    "dynamicRoutingEnrichments",
                     &self.r#dynamic_routing_enrichments,
                 ),
                 to_pulumi_object_field(
-                    "maximum_client_sessions_per_authentication_name",
+                    "maximumClientSessionsPerAuthenticationName",
                     &self.r#maximum_client_sessions_per_authentication_name,
                 ),
                 to_pulumi_object_field(
-                    "maximum_session_expiry_in_hours",
+                    "maximumSessionExpiryInHours",
                     &self.r#maximum_session_expiry_in_hours,
                 ),
                 to_pulumi_object_field(
-                    "route_topic_id",
+                    "routeTopicId",
                     &self.r#route_topic_id,
                 ),
                 to_pulumi_object_field(
-                    "static_routing_enrichments",
+                    "staticRoutingEnrichments",
                     &self.r#static_routing_enrichments,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gam
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maximum_individual_player_latency_milliseconds",
+                    "maximumIndividualPlayerLatencyMilliseconds",
                     &self.r#maximum_individual_player_latency_milliseconds,
                 ),
                 to_pulumi_object_field(
-                    "policy_duration_seconds",
+                    "policyDurationSeconds",
                     &self.r#policy_duration_seconds,
                 ),
             ];

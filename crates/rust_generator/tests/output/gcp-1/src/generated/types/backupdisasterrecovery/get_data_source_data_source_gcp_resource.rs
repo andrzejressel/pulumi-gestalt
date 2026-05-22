@@ -36,11 +36,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compute_instance_data_source_properties",
+                    "computeInstanceDataSourceProperties",
                     &self.r#compute_instance_data_source_properties,
                 ),
                 to_pulumi_object_field(
-                    "gcp_resourcename",
+                    "gcpResourcename",
                     &self.r#gcp_resourcename,
                 ),
                 to_pulumi_object_field(
@@ -48,7 +48,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cookies_allow_lists",
+                    "cookiesAllowLists",
                     &self.r#cookies_allow_lists,
                 ),
                 to_pulumi_object_field(

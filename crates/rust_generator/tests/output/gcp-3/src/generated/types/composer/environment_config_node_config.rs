@@ -71,31 +71,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "composer_internal_ipv_4_cidr_block",
+                    "composerInternalIpv4CidrBlock",
                     &self.r#composer_internal_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "composer_network_attachment",
+                    "composerNetworkAttachment",
                     &self.r#composer_network_attachment,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "enable_ip_masq_agent",
+                    "enableIpMasqAgent",
                     &self.r#enable_ip_masq_agent,
                 ),
                 to_pulumi_object_field(
-                    "ip_allocation_policy",
+                    "ipAllocationPolicy",
                     &self.r#ip_allocation_policy,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "max_pods_per_node",
+                    "maxPodsPerNode",
                     &self.r#max_pods_per_node,
                 ),
                 to_pulumi_object_field(
@@ -103,11 +103,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "oauth_scopes",
+                    "oauthScopes",
                     &self.r#oauth_scopes,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(

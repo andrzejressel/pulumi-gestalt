@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#digest,
                 ),
                 to_pulumi_object_field(
-                    "digest_type",
+                    "digestType",
                     &self.r#digest_type,
                 ),
                 to_pulumi_object_field(
-                    "key_tag",
+                    "keyTag",
                     &self.r#key_tag,
                 ),
             ];

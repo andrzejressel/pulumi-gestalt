@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "global_quota",
+                    "globalQuota",
                     &self.r#global_quota,
                 ),
                 to_pulumi_object_field(
-                    "quota_code",
+                    "quotaCode",
                     &self.r#quota_code,
                 ),
                 to_pulumi_object_field(
-                    "quota_name",
+                    "quotaName",
                     &self.r#quota_name,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "service_code",
+                    "serviceCode",
                     &self.r#service_code,
                 ),
                 to_pulumi_object_field(
-                    "service_name",
+                    "serviceName",
                     &self.r#service_name,
                 ),
                 to_pulumi_object_field(

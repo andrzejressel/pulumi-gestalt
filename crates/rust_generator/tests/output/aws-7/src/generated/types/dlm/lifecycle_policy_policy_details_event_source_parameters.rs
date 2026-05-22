@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "description_regex",
+                    "descriptionRegex",
                     &self.r#description_regex,
                 ),
                 to_pulumi_object_field(
-                    "event_type",
+                    "eventType",
                     &self.r#event_type,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_owners",
+                    "snapshotOwners",
                     &self.r#snapshot_owners,
                 ),
             ];

@@ -40,27 +40,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attachment_id",
+                    "attachmentId",
                     &self.r#attachment_id,
                 ),
                 to_pulumi_object_field(
-                    "destination_cidr",
+                    "destinationCidr",
                     &self.r#destination_cidr,
                 ),
                 to_pulumi_object_field(
-                    "prefix_list_id",
+                    "prefixListId",
                     &self.r#prefix_list_id,
                 ),
                 to_pulumi_object_field(
-                    "resource_id",
+                    "resourceId",
                     &self.r#resource_id,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
                 to_pulumi_object_field(
-                    "route_origin",
+                    "routeOrigin",
                     &self.r#route_origin,
                 ),
                 to_pulumi_object_field(

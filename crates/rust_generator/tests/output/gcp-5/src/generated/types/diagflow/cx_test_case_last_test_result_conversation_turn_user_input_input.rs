@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
                     &self.r#event,
                 ),
                 to_pulumi_object_field(
-                    "language_code",
+                    "languageCode",
                     &self.r#language_code,
                 ),
                 to_pulumi_object_field(

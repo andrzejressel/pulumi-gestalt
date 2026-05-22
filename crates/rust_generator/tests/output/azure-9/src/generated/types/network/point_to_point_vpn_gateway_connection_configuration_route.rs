@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "associated_route_table_id",
+                    "associatedRouteTableId",
                     &self.r#associated_route_table_id,
                 ),
                 to_pulumi_object_field(
-                    "inbound_route_map_id",
+                    "inboundRouteMapId",
                     &self.r#inbound_route_map_id,
                 ),
                 to_pulumi_object_field(
-                    "outbound_route_map_id",
+                    "outboundRouteMapId",
                     &self.r#outbound_route_map_id,
                 ),
                 to_pulumi_object_field(
-                    "propagated_route_table",
+                    "propagatedRouteTable",
                     &self.r#propagated_route_table,
                 ),
             ];

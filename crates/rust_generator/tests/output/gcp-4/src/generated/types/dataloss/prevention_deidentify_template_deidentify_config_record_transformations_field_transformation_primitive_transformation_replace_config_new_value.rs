@@ -55,35 +55,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "boolean_value",
+                    "booleanValue",
                     &self.r#boolean_value,
                 ),
                 to_pulumi_object_field(
-                    "date_value",
+                    "dateValue",
                     &self.r#date_value,
                 ),
                 to_pulumi_object_field(
-                    "day_of_week_value",
+                    "dayOfWeekValue",
                     &self.r#day_of_week_value,
                 ),
                 to_pulumi_object_field(
-                    "float_value",
+                    "floatValue",
                     &self.r#float_value,
                 ),
                 to_pulumi_object_field(
-                    "integer_value",
+                    "integerValue",
                     &self.r#integer_value,
                 ),
                 to_pulumi_object_field(
-                    "string_value",
+                    "stringValue",
                     &self.r#string_value,
                 ),
                 to_pulumi_object_field(
-                    "time_value",
+                    "timeValue",
                     &self.r#time_value,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_value",
+                    "timestampValue",
                     &self.r#timestamp_value,
                 ),
             ];

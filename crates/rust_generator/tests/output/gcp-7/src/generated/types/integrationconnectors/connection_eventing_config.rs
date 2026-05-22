@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_variables",
+                    "additionalVariables",
                     &self.r#additional_variables,
                 ),
                 to_pulumi_object_field(
-                    "auth_config",
+                    "authConfig",
                     &self.r#auth_config,
                 ),
                 to_pulumi_object_field(
-                    "enrichment_enabled",
+                    "enrichmentEnabled",
                     &self.r#enrichment_enabled,
                 ),
                 to_pulumi_object_field(
-                    "registration_destination_config",
+                    "registrationDestinationConfig",
                     &self.r#registration_destination_config,
                 ),
             ];

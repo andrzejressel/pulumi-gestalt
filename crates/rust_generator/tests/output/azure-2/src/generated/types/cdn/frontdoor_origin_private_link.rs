@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "private_link_target_id",
+                    "privateLinkTargetId",
                     &self.r#private_link_target_id,
                 ),
                 to_pulumi_object_field(
-                    "request_message",
+                    "requestMessage",
                     &self.r#request_message,
                 ),
                 to_pulumi_object_field(
-                    "target_type",
+                    "targetType",
                     &self.r#target_type,
                 ),
             ];

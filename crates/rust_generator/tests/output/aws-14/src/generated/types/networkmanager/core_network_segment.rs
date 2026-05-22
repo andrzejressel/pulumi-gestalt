@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "edge_locations",
+                    "edgeLocations",
                     &self.r#edge_locations,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cor
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "shared_segments",
+                    "sharedSegments",
                     &self.r#shared_segments,
                 ),
             ];

@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compilation_result",
+                    "compilationResult",
                     &self.r#compilation_result,
                 ),
                 to_pulumi_object_field(
-                    "error_statuses",
+                    "errorStatuses",
                     &self.r#error_statuses,
                 ),
                 to_pulumi_object_field(
-                    "release_time",
+                    "releaseTime",
                     &self.r#release_time,
                 ),
             ];

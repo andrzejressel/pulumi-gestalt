@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "name_by_idp",
+                    "nameByIdp",
                     &self.r#name_by_idp,
                 ),
             ];

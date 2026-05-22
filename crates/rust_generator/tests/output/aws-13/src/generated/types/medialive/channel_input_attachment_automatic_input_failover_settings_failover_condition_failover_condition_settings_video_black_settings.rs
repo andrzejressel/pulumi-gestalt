@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "black_detect_threshold",
+                    "blackDetectThreshold",
                     &self.r#black_detect_threshold,
                 ),
                 to_pulumi_object_field(
-                    "video_black_threshold_msec",
+                    "videoBlackThresholdMsec",
                     &self.r#video_black_threshold_msec,
                 ),
             ];

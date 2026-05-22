@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "header_actions",
+                    "headerActions",
                     &self.r#header_actions,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#matches,
                 ),
                 to_pulumi_object_field(
-                    "preconfigured_waf_configs",
+                    "preconfiguredWafConfigs",
                     &self.r#preconfigured_waf_configs,
                 ),
                 to_pulumi_object_field(
@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_options",
+                    "rateLimitOptions",
                     &self.r#rate_limit_options,
                 ),
                 to_pulumi_object_field(
-                    "redirect_options",
+                    "redirectOptions",
                     &self.r#redirect_options,
                 ),
             ];

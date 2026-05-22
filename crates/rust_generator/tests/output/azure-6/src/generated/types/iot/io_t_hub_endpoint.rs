@@ -75,19 +75,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_type",
+                    "authenticationType",
                     &self.r#authentication_type,
                 ),
                 to_pulumi_object_field(
-                    "batch_frequency_in_seconds",
+                    "batchFrequencyInSeconds",
                     &self.r#batch_frequency_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "connection_string",
+                    "connectionString",
                     &self.r#connection_string,
                 ),
                 to_pulumi_object_field(
-                    "container_name",
+                    "containerName",
                     &self.r#container_name,
                 ),
                 to_pulumi_object_field(
@@ -95,23 +95,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_uri",
+                    "endpointUri",
                     &self.r#endpoint_uri,
                 ),
                 to_pulumi_object_field(
-                    "entity_path",
+                    "entityPath",
                     &self.r#entity_path,
                 ),
                 to_pulumi_object_field(
-                    "file_name_format",
+                    "fileNameFormat",
                     &self.r#file_name_format,
                 ),
                 to_pulumi_object_field(
-                    "identity_id",
+                    "identityId",
                     &self.r#identity_id,
                 ),
                 to_pulumi_object_field(
-                    "max_chunk_size_in_bytes",
+                    "maxChunkSizeInBytes",
                     &self.r#max_chunk_size_in_bytes,
                 ),
                 to_pulumi_object_field(
@@ -119,11 +119,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "resource_group_name",
+                    "resourceGroupName",
                     &self.r#resource_group_name,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

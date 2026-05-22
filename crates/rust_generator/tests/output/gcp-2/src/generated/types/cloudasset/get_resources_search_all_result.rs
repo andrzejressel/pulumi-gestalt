@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_attributes",
+                    "additionalAttributes",
                     &self.r#additional_attributes,
                 ),
                 to_pulumi_object_field(
-                    "asset_type",
+                    "assetType",
                     &self.r#asset_type,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "network_tags",
+                    "networkTags",
                     &self.r#network_tags,
                 ),
                 to_pulumi_object_field(

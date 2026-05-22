@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_file_path",
+                    "defaultFilePath",
                     &self.r#default_file_path,
                 ),
                 to_pulumi_object_field(

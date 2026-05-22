@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_http_methods",
+                    "allowedHttpMethods",
                     &self.r#allowed_http_methods,
                 ),
                 to_pulumi_object_field(
-                    "cached_http_methods",
+                    "cachedHttpMethods",
                     &self.r#cached_http_methods,
                 ),
                 to_pulumi_object_field(
-                    "default_ttl",
+                    "defaultTtl",
                     &self.r#default_ttl,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_cookies",
+                    "forwardedCookies",
                     &self.r#forwarded_cookies,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_headers",
+                    "forwardedHeaders",
                     &self.r#forwarded_headers,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_query_strings",
+                    "forwardedQueryStrings",
                     &self.r#forwarded_query_strings,
                 ),
                 to_pulumi_object_field(
-                    "maximum_ttl",
+                    "maximumTtl",
                     &self.r#maximum_ttl,
                 ),
                 to_pulumi_object_field(
-                    "minimum_ttl",
+                    "minimumTtl",
                     &self.r#minimum_ttl,
                 ),
             ];

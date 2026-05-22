@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "https_notification_configuration",
+                    "httpsNotificationConfiguration",
                     &self.r#https_notification_configuration,
                 ),
                 to_pulumi_object_field(
-                    "sqs_notification_configuration",
+                    "sqsNotificationConfiguration",
                     &self.r#sqs_notification_configuration,
                 ),
             ];

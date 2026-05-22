@@ -97,11 +97,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_password",
+                    "adminPassword",
                     &self.r#admin_password,
                 ),
                 to_pulumi_object_field(
-                    "autonomous_database_id",
+                    "autonomousDatabaseId",
                     &self.r#autonomous_database_id,
                 ),
                 to_pulumi_object_field(
@@ -109,7 +109,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#cidr,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
@@ -117,19 +117,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#database,
                 ),
                 to_pulumi_object_field(
-                    "deletion_protection",
+                    "deletionProtection",
                     &self.r#deletion_protection,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "effective_labels",
+                    "effectiveLabels",
                     &self.r#effective_labels,
                 ),
                 to_pulumi_object_field(
-                    "entitlement_id",
+                    "entitlementId",
                     &self.r#entitlement_id,
                 ),
                 to_pulumi_object_field(
@@ -157,7 +157,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "pulumi_labels",
+                    "pulumiLabels",
                     &self.r#pulumi_labels,
                 ),
             ];

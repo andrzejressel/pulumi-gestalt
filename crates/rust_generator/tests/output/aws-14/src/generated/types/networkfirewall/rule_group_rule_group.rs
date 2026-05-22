@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "reference_sets",
+                    "referenceSets",
                     &self.r#reference_sets,
                 ),
                 to_pulumi_object_field(
-                    "rule_variables",
+                    "ruleVariables",
                     &self.r#rule_variables,
                 ),
                 to_pulumi_object_field(
-                    "rules_source",
+                    "rulesSource",
                     &self.r#rules_source,
                 ),
                 to_pulumi_object_field(
-                    "stateful_rule_options",
+                    "statefulRuleOptions",
                     &self.r#stateful_rule_options,
                 ),
             ];

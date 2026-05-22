@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "use_previous_value",
+                    "usePreviousValue",
                     &self.r#use_previous_value,
                 ),
                 to_pulumi_object_field(

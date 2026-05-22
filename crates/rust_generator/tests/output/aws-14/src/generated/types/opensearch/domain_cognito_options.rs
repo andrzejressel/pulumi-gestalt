@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "identity_pool_id",
+                    "identityPoolId",
                     &self.r#identity_pool_id,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "user_pool_id",
+                    "userPoolId",
                     &self.r#user_pool_id,
                 ),
             ];

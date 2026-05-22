@@ -71,39 +71,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "block_override_dns_type",
+                    "blockOverrideDnsType",
                     &self.r#block_override_dns_type,
                 ),
                 to_pulumi_object_field(
-                    "block_override_domain",
+                    "blockOverrideDomain",
                     &self.r#block_override_domain,
                 ),
                 to_pulumi_object_field(
-                    "block_override_ttl",
+                    "blockOverrideTtl",
                     &self.r#block_override_ttl,
                 ),
                 to_pulumi_object_field(
-                    "block_response",
+                    "blockResponse",
                     &self.r#block_response,
                 ),
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
-                    "creator_request_id",
+                    "creatorRequestId",
                     &self.r#creator_request_id,
                 ),
                 to_pulumi_object_field(
-                    "firewall_domain_list_id",
+                    "firewallDomainListId",
                     &self.r#firewall_domain_list_id,
                 ),
                 to_pulumi_object_field(
-                    "firewall_rule_group_id",
+                    "firewallRuleGroupId",
                     &self.r#firewall_rule_group_id,
                 ),
                 to_pulumi_object_field(
-                    "modification_time",
+                    "modificationTime",
                     &self.r#modification_time,
                 ),
                 to_pulumi_object_field(

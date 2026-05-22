@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_mode",
+                    "certificateMode",
                     &self.r#certificate_mode,
                 ),
                 to_pulumi_object_field(
-                    "connection_retry_interval",
+                    "connectionRetryInterval",
                     &self.r#connection_retry_interval,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "num_retries",
+                    "numRetries",
                     &self.r#num_retries,
                 ),
             ];

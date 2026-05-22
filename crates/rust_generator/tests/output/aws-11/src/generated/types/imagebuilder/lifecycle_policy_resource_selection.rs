@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#recipes,
                 ),
                 to_pulumi_object_field(
-                    "tag_map",
+                    "tagMap",
                     &self.r#tag_map,
                 ),
             ];

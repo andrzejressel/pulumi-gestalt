@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vmw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_primary",
+                    "isPrimary",
                     &self.r#is_primary,
                 ),
                 to_pulumi_object_field(
-                    "source_mac_address",
+                    "sourceMacAddress",
                     &self.r#source_mac_address,
                 ),
                 to_pulumi_object_field(
-                    "target_static_ip",
+                    "targetStaticIp",
                     &self.r#target_static_ip,
                 ),
                 to_pulumi_object_field(
-                    "target_subnet_name",
+                    "targetSubnetName",
                     &self.r#target_subnet_name,
                 ),
                 to_pulumi_object_field(
-                    "test_subnet_name",
+                    "testSubnetName",
                     &self.r#test_subnet_name,
                 ),
             ];

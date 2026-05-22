@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_policy",
+                    "autoscalingPolicy",
                     &self.r#autoscaling_policy,
                 ),
                 to_pulumi_object_field(
-                    "bid_price",
+                    "bidPrice",
                     &self.r#bid_price,
                 ),
                 to_pulumi_object_field(
-                    "ebs_configs",
+                    "ebsConfigs",
                     &self.r#ebs_configs,
                 ),
                 to_pulumi_object_field(
@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "instance_count",
+                    "instanceCount",
                     &self.r#instance_count,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(

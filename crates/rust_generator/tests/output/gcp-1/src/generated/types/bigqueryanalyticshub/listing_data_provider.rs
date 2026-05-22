@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "primary_contact",
+                    "primaryContact",
                     &self.r#primary_contact,
                 ),
             ];

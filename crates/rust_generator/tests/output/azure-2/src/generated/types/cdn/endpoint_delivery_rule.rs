@@ -107,31 +107,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_expiration_action",
+                    "cacheExpirationAction",
                     &self.r#cache_expiration_action,
                 ),
                 to_pulumi_object_field(
-                    "cache_key_query_string_action",
+                    "cacheKeyQueryStringAction",
                     &self.r#cache_key_query_string_action,
                 ),
                 to_pulumi_object_field(
-                    "cookies_conditions",
+                    "cookiesConditions",
                     &self.r#cookies_conditions,
                 ),
                 to_pulumi_object_field(
-                    "device_condition",
+                    "deviceCondition",
                     &self.r#device_condition,
                 ),
                 to_pulumi_object_field(
-                    "http_version_conditions",
+                    "httpVersionConditions",
                     &self.r#http_version_conditions,
                 ),
                 to_pulumi_object_field(
-                    "modify_request_header_actions",
+                    "modifyRequestHeaderActions",
                     &self.r#modify_request_header_actions,
                 ),
                 to_pulumi_object_field(
-                    "modify_response_header_actions",
+                    "modifyResponseHeaderActions",
                     &self.r#modify_response_header_actions,
                 ),
                 to_pulumi_object_field(
@@ -143,55 +143,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#order,
                 ),
                 to_pulumi_object_field(
-                    "post_arg_conditions",
+                    "postArgConditions",
                     &self.r#post_arg_conditions,
                 ),
                 to_pulumi_object_field(
-                    "query_string_conditions",
+                    "queryStringConditions",
                     &self.r#query_string_conditions,
                 ),
                 to_pulumi_object_field(
-                    "remote_address_conditions",
+                    "remoteAddressConditions",
                     &self.r#remote_address_conditions,
                 ),
                 to_pulumi_object_field(
-                    "request_body_conditions",
+                    "requestBodyConditions",
                     &self.r#request_body_conditions,
                 ),
                 to_pulumi_object_field(
-                    "request_header_conditions",
+                    "requestHeaderConditions",
                     &self.r#request_header_conditions,
                 ),
                 to_pulumi_object_field(
-                    "request_method_condition",
+                    "requestMethodCondition",
                     &self.r#request_method_condition,
                 ),
                 to_pulumi_object_field(
-                    "request_scheme_condition",
+                    "requestSchemeCondition",
                     &self.r#request_scheme_condition,
                 ),
                 to_pulumi_object_field(
-                    "request_uri_conditions",
+                    "requestUriConditions",
                     &self.r#request_uri_conditions,
                 ),
                 to_pulumi_object_field(
-                    "url_file_extension_conditions",
+                    "urlFileExtensionConditions",
                     &self.r#url_file_extension_conditions,
                 ),
                 to_pulumi_object_field(
-                    "url_file_name_conditions",
+                    "urlFileNameConditions",
                     &self.r#url_file_name_conditions,
                 ),
                 to_pulumi_object_field(
-                    "url_path_conditions",
+                    "urlPathConditions",
                     &self.r#url_path_conditions,
                 ),
                 to_pulumi_object_field(
-                    "url_redirect_action",
+                    "urlRedirectAction",
                     &self.r#url_redirect_action,
                 ),
                 to_pulumi_object_field(
-                    "url_rewrite_action",
+                    "urlRewriteAction",
                     &self.r#url_rewrite_action,
                 ),
             ];

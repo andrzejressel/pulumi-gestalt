@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "log_configuration",
+                    "logConfiguration",
                     &self.r#log_configuration,
                 ),
                 to_pulumi_object_field(

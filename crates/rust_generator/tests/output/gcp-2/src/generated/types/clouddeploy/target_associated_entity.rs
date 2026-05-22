@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "anthos_clusters",
+                    "anthosClusters",
                     &self.r#anthos_clusters,
                 ),
                 to_pulumi_object_field(
-                    "entity_id",
+                    "entityId",
                     &self.r#entity_id,
                 ),
                 to_pulumi_object_field(
-                    "gke_clusters",
+                    "gkeClusters",
                     &self.r#gke_clusters,
                 ),
             ];

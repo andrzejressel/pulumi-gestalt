@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_uri",
+                    "endpointUri",
                     &self.r#endpoint_uri,
                 ),
                 to_pulumi_object_field(
-                    "error_retry_duration",
+                    "errorRetryDuration",
                     &self.r#error_retry_duration,
                 ),
                 to_pulumi_object_field(
-                    "full_load_error_percentage",
+                    "fullLoadErrorPercentage",
                     &self.r#full_load_error_percentage,
                 ),
                 to_pulumi_object_field(
-                    "service_access_role_arn",
+                    "serviceAccessRoleArn",
                     &self.r#service_access_role_arn,
                 ),
             ];

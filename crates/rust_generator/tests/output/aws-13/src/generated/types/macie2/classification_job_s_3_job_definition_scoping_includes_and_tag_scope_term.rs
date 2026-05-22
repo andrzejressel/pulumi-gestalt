@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "tag_values",
+                    "tagValues",
                     &self.r#tag_values,
                 ),
                 to_pulumi_object_field(

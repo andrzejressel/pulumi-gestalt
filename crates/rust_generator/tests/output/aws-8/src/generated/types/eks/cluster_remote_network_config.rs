@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "remote_node_networks",
+                    "remoteNodeNetworks",
                     &self.r#remote_node_networks,
                 ),
                 to_pulumi_object_field(
-                    "remote_pod_networks",
+                    "remotePodNetworks",
                     &self.r#remote_pod_networks,
                 ),
             ];

@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#classification,
                 ),
                 to_pulumi_object_field(
-                    "classification_comment",
+                    "classificationComment",
                     &self.r#classification_comment,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#order,
                 ),
                 to_pulumi_object_field(
-                    "owner_id",
+                    "ownerId",
                     &self.r#owner_id,
                 ),
                 to_pulumi_object_field(

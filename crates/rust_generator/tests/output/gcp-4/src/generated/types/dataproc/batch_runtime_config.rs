@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autotuning_config",
+                    "autotuningConfig",
                     &self.r#autotuning_config,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
                     &self.r#cohort,
                 ),
                 to_pulumi_object_field(
-                    "container_image",
+                    "containerImage",
                     &self.r#container_image,
                 ),
                 to_pulumi_object_field(
-                    "effective_properties",
+                    "effectiveProperties",
                     &self.r#effective_properties,
                 ),
                 to_pulumi_object_field(

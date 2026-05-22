@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "failure_threshold",
+                    "failureThreshold",
                     &self.r#failure_threshold,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#grpc,
                 ),
                 to_pulumi_object_field(
-                    "http_get",
+                    "httpGet",
                     &self.r#http_get,
                 ),
                 to_pulumi_object_field(
-                    "initial_delay_seconds",
+                    "initialDelaySeconds",
                     &self.r#initial_delay_seconds,
                 ),
                 to_pulumi_object_field(
-                    "period_seconds",
+                    "periodSeconds",
                     &self.r#period_seconds,
                 ),
                 to_pulumi_object_field(
-                    "timeout_seconds",
+                    "timeoutSeconds",
                     &self.r#timeout_seconds,
                 ),
             ];

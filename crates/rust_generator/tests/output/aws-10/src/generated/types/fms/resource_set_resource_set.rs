@@ -54,7 +54,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "last_update_time",
+                    "lastUpdateTime",
                     &self.r#last_update_time,
                 ),
                 to_pulumi_object_field(
@@ -62,15 +62,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "resource_set_status",
+                    "resourceSetStatus",
                     &self.r#resource_set_status,
                 ),
                 to_pulumi_object_field(
-                    "resource_type_lists",
+                    "resourceTypeLists",
                     &self.r#resource_type_lists,
                 ),
                 to_pulumi_object_field(
-                    "update_token",
+                    "updateToken",
                     &self.r#update_token,
                 ),
             ];

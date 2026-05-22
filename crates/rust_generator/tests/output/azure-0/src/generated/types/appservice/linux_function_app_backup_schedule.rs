@@ -45,27 +45,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "frequency_interval",
+                    "frequencyInterval",
                     &self.r#frequency_interval,
                 ),
                 to_pulumi_object_field(
-                    "frequency_unit",
+                    "frequencyUnit",
                     &self.r#frequency_unit,
                 ),
                 to_pulumi_object_field(
-                    "keep_at_least_one_backup",
+                    "keepAtLeastOneBackup",
                     &self.r#keep_at_least_one_backup,
                 ),
                 to_pulumi_object_field(
-                    "last_execution_time",
+                    "lastExecutionTime",
                     &self.r#last_execution_time,
                 ),
                 to_pulumi_object_field(
-                    "retention_period_days",
+                    "retentionPeriodDays",
                     &self.r#retention_period_days,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_fields",
+                    "customFields",
                     &self.r#custom_fields,
                 ),
                 to_pulumi_object_field(
-                    "managed_fields",
+                    "managedFields",
                     &self.r#managed_fields,
                 ),
                 to_pulumi_object_field(
-                    "thing_group_indexing_mode",
+                    "thingGroupIndexingMode",
                     &self.r#thing_group_indexing_mode,
                 ),
             ];

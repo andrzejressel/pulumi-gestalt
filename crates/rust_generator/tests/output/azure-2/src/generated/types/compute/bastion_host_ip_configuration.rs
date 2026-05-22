@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bas
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_address_id",
+                    "publicIpAddressId",
                     &self.r#public_ip_address_id,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

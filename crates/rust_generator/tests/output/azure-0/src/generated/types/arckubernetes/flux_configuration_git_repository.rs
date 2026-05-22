@@ -63,43 +63,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "https_ca_cert_base_64",
+                    "httpsCaCertBase64",
                     &self.r#https_ca_cert_base_64,
                 ),
                 to_pulumi_object_field(
-                    "https_key_base_64",
+                    "httpsKeyBase64",
                     &self.r#https_key_base_64,
                 ),
                 to_pulumi_object_field(
-                    "https_user",
+                    "httpsUser",
                     &self.r#https_user,
                 ),
                 to_pulumi_object_field(
-                    "local_auth_reference",
+                    "localAuthReference",
                     &self.r#local_auth_reference,
                 ),
                 to_pulumi_object_field(
-                    "reference_type",
+                    "referenceType",
                     &self.r#reference_type,
                 ),
                 to_pulumi_object_field(
-                    "reference_value",
+                    "referenceValue",
                     &self.r#reference_value,
                 ),
                 to_pulumi_object_field(
-                    "ssh_known_hosts_base_64",
+                    "sshKnownHostsBase64",
                     &self.r#ssh_known_hosts_base_64,
                 ),
                 to_pulumi_object_field(
-                    "ssh_private_key_base_64",
+                    "sshPrivateKeyBase64",
                     &self.r#ssh_private_key_base_64,
                 ),
                 to_pulumi_object_field(
-                    "sync_interval_in_seconds",
+                    "syncIntervalInSeconds",
                     &self.r#sync_interval_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_seconds",
+                    "timeoutInSeconds",
                     &self.r#timeout_in_seconds,
                 ),
                 to_pulumi_object_field(

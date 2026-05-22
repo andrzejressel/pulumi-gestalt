@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_service",
+                    "defaultService",
                     &self.r#default_service,
                 ),
                 to_pulumi_object_field(
-                    "default_url_redirect",
+                    "defaultUrlRedirect",
                     &self.r#default_url_redirect,
                 ),
                 to_pulumi_object_field(
@@ -76,11 +76,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "path_rules",
+                    "pathRules",
                     &self.r#path_rules,
                 ),
                 to_pulumi_object_field(
-                    "route_rules",
+                    "routeRules",
                     &self.r#route_rules,
                 ),
             ];

@@ -95,15 +95,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_methods",
+                    "allowedMethods",
                     &self.r#allowed_methods,
                 ),
                 to_pulumi_object_field(
-                    "cache_policy_id",
+                    "cachePolicyId",
                     &self.r#cache_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "cached_methods",
+                    "cachedMethods",
                     &self.r#cached_methods,
                 ),
                 to_pulumi_object_field(
@@ -111,63 +111,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#compress,
                 ),
                 to_pulumi_object_field(
-                    "default_ttl",
+                    "defaultTtl",
                     &self.r#default_ttl,
                 ),
                 to_pulumi_object_field(
-                    "field_level_encryption_id",
+                    "fieldLevelEncryptionId",
                     &self.r#field_level_encryption_id,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_values",
+                    "forwardedValues",
                     &self.r#forwarded_values,
                 ),
                 to_pulumi_object_field(
-                    "function_associations",
+                    "functionAssociations",
                     &self.r#function_associations,
                 ),
                 to_pulumi_object_field(
-                    "lambda_function_associations",
+                    "lambdaFunctionAssociations",
                     &self.r#lambda_function_associations,
                 ),
                 to_pulumi_object_field(
-                    "max_ttl",
+                    "maxTtl",
                     &self.r#max_ttl,
                 ),
                 to_pulumi_object_field(
-                    "min_ttl",
+                    "minTtl",
                     &self.r#min_ttl,
                 ),
                 to_pulumi_object_field(
-                    "origin_request_policy_id",
+                    "originRequestPolicyId",
                     &self.r#origin_request_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "realtime_log_config_arn",
+                    "realtimeLogConfigArn",
                     &self.r#realtime_log_config_arn,
                 ),
                 to_pulumi_object_field(
-                    "response_headers_policy_id",
+                    "responseHeadersPolicyId",
                     &self.r#response_headers_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "smooth_streaming",
+                    "smoothStreaming",
                     &self.r#smooth_streaming,
                 ),
                 to_pulumi_object_field(
-                    "target_origin_id",
+                    "targetOriginId",
                     &self.r#target_origin_id,
                 ),
                 to_pulumi_object_field(
-                    "trusted_key_groups",
+                    "trustedKeyGroups",
                     &self.r#trusted_key_groups,
                 ),
                 to_pulumi_object_field(
-                    "trusted_signers",
+                    "trustedSigners",
                     &self.r#trusted_signers,
                 ),
                 to_pulumi_object_field(
-                    "viewer_protocol_policy",
+                    "viewerProtocolPolicy",
                     &self.r#viewer_protocol_policy,
                 ),
             ];

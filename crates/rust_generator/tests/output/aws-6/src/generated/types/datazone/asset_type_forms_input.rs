@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "map_block_key",
+                    "mapBlockKey",
                     &self.r#map_block_key,
                 ),
                 to_pulumi_object_field(
@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
                     &self.r#required,
                 ),
                 to_pulumi_object_field(
-                    "type_identifier",
+                    "typeIdentifier",
                     &self.r#type_identifier,
                 ),
                 to_pulumi_object_field(
-                    "type_revision",
+                    "typeRevision",
                     &self.r#type_revision,
                 ),
             ];

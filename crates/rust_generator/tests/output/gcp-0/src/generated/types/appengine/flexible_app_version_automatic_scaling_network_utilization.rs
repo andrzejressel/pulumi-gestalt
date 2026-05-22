@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "target_received_bytes_per_second",
+                    "targetReceivedBytesPerSecond",
                     &self.r#target_received_bytes_per_second,
                 ),
                 to_pulumi_object_field(
-                    "target_received_packets_per_second",
+                    "targetReceivedPacketsPerSecond",
                     &self.r#target_received_packets_per_second,
                 ),
                 to_pulumi_object_field(
-                    "target_sent_bytes_per_second",
+                    "targetSentBytesPerSecond",
                     &self.r#target_sent_bytes_per_second,
                 ),
                 to_pulumi_object_field(
-                    "target_sent_packets_per_second",
+                    "targetSentPacketsPerSecond",
                     &self.r#target_sent_packets_per_second,
                 ),
             ];

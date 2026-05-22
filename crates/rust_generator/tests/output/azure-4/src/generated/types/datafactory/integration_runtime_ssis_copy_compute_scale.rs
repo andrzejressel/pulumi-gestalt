@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_integration_unit",
+                    "dataIntegrationUnit",
                     &self.r#data_integration_unit,
                 ),
                 to_pulumi_object_field(
-                    "time_to_live",
+                    "timeToLive",
                     &self.r#time_to_live,
                 ),
             ];

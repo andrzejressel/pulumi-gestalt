@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cap
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_scaling_group_arn",
+                    "autoScalingGroupArn",
                     &self.r#auto_scaling_group_arn,
                 ),
                 to_pulumi_object_field(
-                    "managed_draining",
+                    "managedDraining",
                     &self.r#managed_draining,
                 ),
                 to_pulumi_object_field(
-                    "managed_scaling",
+                    "managedScaling",
                     &self.r#managed_scaling,
                 ),
                 to_pulumi_object_field(
-                    "managed_termination_protection",
+                    "managedTerminationProtection",
                     &self.r#managed_termination_protection,
                 ),
             ];

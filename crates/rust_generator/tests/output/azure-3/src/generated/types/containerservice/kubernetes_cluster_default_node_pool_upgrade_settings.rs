@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "drain_timeout_in_minutes",
+                    "drainTimeoutInMinutes",
                     &self.r#drain_timeout_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "max_surge",
+                    "maxSurge",
                     &self.r#max_surge,
                 ),
                 to_pulumi_object_field(
-                    "node_soak_duration_in_minutes",
+                    "nodeSoakDurationInMinutes",
                     &self.r#node_soak_duration_in_minutes,
                 ),
             ];

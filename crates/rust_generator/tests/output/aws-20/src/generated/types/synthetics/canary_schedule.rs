@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Can
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "duration_in_seconds",
+                    "durationInSeconds",
                     &self.r#duration_in_seconds,
                 ),
                 to_pulumi_object_field(

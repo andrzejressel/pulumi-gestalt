@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "policy_definition_reference_id",
+                    "policyDefinitionReferenceId",
                     &self.r#policy_definition_reference_id,
                 ),
             ];

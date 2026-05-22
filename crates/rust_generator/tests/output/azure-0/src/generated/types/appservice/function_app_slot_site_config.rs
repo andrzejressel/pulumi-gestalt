@@ -110,15 +110,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "always_on",
+                    "alwaysOn",
                     &self.r#always_on,
                 ),
                 to_pulumi_object_field(
-                    "app_scale_limit",
+                    "appScaleLimit",
                     &self.r#app_scale_limit,
                 ),
                 to_pulumi_object_field(
-                    "auto_swap_slot_name",
+                    "autoSwapSlotName",
                     &self.r#auto_swap_slot_name,
                 ),
                 to_pulumi_object_field(
@@ -126,71 +126,71 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#cors,
                 ),
                 to_pulumi_object_field(
-                    "dotnet_framework_version",
+                    "dotnetFrameworkVersion",
                     &self.r#dotnet_framework_version,
                 ),
                 to_pulumi_object_field(
-                    "elastic_instance_minimum",
+                    "elasticInstanceMinimum",
                     &self.r#elastic_instance_minimum,
                 ),
                 to_pulumi_object_field(
-                    "ftps_state",
+                    "ftpsState",
                     &self.r#ftps_state,
                 ),
                 to_pulumi_object_field(
-                    "health_check_path",
+                    "healthCheckPath",
                     &self.r#health_check_path,
                 ),
                 to_pulumi_object_field(
-                    "http_2_enabled",
+                    "http2Enabled",
                     &self.r#http_2_enabled,
                 ),
                 to_pulumi_object_field(
-                    "ip_restrictions",
+                    "ipRestrictions",
                     &self.r#ip_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "java_version",
+                    "javaVersion",
                     &self.r#java_version,
                 ),
                 to_pulumi_object_field(
-                    "linux_fx_version",
+                    "linuxFxVersion",
                     &self.r#linux_fx_version,
                 ),
                 to_pulumi_object_field(
-                    "min_tls_version",
+                    "minTlsVersion",
                     &self.r#min_tls_version,
                 ),
                 to_pulumi_object_field(
-                    "pre_warmed_instance_count",
+                    "preWarmedInstanceCount",
                     &self.r#pre_warmed_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "runtime_scale_monitoring_enabled",
+                    "runtimeScaleMonitoringEnabled",
                     &self.r#runtime_scale_monitoring_enabled,
                 ),
                 to_pulumi_object_field(
-                    "scm_ip_restrictions",
+                    "scmIpRestrictions",
                     &self.r#scm_ip_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "scm_type",
+                    "scmType",
                     &self.r#scm_type,
                 ),
                 to_pulumi_object_field(
-                    "scm_use_main_ip_restriction",
+                    "scmUseMainIpRestriction",
                     &self.r#scm_use_main_ip_restriction,
                 ),
                 to_pulumi_object_field(
-                    "use_32_bit_worker_process",
+                    "use32BitWorkerProcess",
                     &self.r#use_32_bit_worker_process,
                 ),
                 to_pulumi_object_field(
-                    "vnet_route_all_enabled",
+                    "vnetRouteAllEnabled",
                     &self.r#vnet_route_all_enabled,
                 ),
                 to_pulumi_object_field(
-                    "websockets_enabled",
+                    "websocketsEnabled",
                     &self.r#websockets_enabled,
                 ),
             ];

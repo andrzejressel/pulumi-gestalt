@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_criteria",
+                    "bucketCriteria",
                     &self.r#bucket_criteria,
                 ),
                 to_pulumi_object_field(
-                    "bucket_definitions",
+                    "bucketDefinitions",
                     &self.r#bucket_definitions,
                 ),
                 to_pulumi_object_field(

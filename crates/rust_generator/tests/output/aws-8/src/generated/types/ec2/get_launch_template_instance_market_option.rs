@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "market_type",
+                    "marketType",
                     &self.r#market_type,
                 ),
                 to_pulumi_object_field(
-                    "spot_options",
+                    "spotOptions",
                     &self.r#spot_options,
                 ),
             ];

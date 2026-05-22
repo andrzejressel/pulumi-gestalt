@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_status",
+                    "accessStatus",
                     &self.r#access_status,
                 ),
                 to_pulumi_object_field(
-                    "user_group",
+                    "userGroup",
                     &self.r#user_group,
                 ),
             ];

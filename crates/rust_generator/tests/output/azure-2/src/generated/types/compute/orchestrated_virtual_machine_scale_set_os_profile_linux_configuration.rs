@@ -61,35 +61,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_password",
+                    "adminPassword",
                     &self.r#admin_password,
                 ),
                 to_pulumi_object_field(
-                    "admin_ssh_keys",
+                    "adminSshKeys",
                     &self.r#admin_ssh_keys,
                 ),
                 to_pulumi_object_field(
-                    "admin_username",
+                    "adminUsername",
                     &self.r#admin_username,
                 ),
                 to_pulumi_object_field(
-                    "computer_name_prefix",
+                    "computerNamePrefix",
                     &self.r#computer_name_prefix,
                 ),
                 to_pulumi_object_field(
-                    "disable_password_authentication",
+                    "disablePasswordAuthentication",
                     &self.r#disable_password_authentication,
                 ),
                 to_pulumi_object_field(
-                    "patch_assessment_mode",
+                    "patchAssessmentMode",
                     &self.r#patch_assessment_mode,
                 ),
                 to_pulumi_object_field(
-                    "patch_mode",
+                    "patchMode",
                     &self.r#patch_mode,
                 ),
                 to_pulumi_object_field(
-                    "provision_vm_agent",
+                    "provisionVmAgent",
                     &self.r#provision_vm_agent,
                 ),
                 to_pulumi_object_field(

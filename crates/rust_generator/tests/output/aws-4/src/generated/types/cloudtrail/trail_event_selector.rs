@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_resources",
+                    "dataResources",
                     &self.r#data_resources,
                 ),
                 to_pulumi_object_field(
-                    "exclude_management_event_sources",
+                    "excludeManagementEventSources",
                     &self.r#exclude_management_event_sources,
                 ),
                 to_pulumi_object_field(
-                    "include_management_events",
+                    "includeManagementEvents",
                     &self.r#include_management_events,
                 ),
                 to_pulumi_object_field(
-                    "read_write_type",
+                    "readWriteType",
                     &self.r#read_write_type,
                 ),
             ];

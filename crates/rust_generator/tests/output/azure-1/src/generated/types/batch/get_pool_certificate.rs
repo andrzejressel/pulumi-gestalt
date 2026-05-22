@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "store_location",
+                    "storeLocation",
                     &self.r#store_location,
                 ),
                 to_pulumi_object_field(
-                    "store_name",
+                    "storeName",
                     &self.r#store_name,
                 ),
                 to_pulumi_object_field(

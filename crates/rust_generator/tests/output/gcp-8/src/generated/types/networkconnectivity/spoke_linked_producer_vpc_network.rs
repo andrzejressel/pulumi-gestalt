@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_export_ranges",
+                    "excludeExportRanges",
                     &self.r#exclude_export_ranges,
                 ),
                 to_pulumi_object_field(
-                    "include_export_ranges",
+                    "includeExportRanges",
                     &self.r#include_export_ranges,
                 ),
                 to_pulumi_object_field(
@@ -56,7 +56,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
                     &self.r#peering,
                 ),
                 to_pulumi_object_field(
-                    "producer_network",
+                    "producerNetwork",
                     &self.r#producer_network,
                 ),
             ];

@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "memory_cost",
+                    "memoryCost",
                     &self.r#memory_cost,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#rounds,
                 ),
                 to_pulumi_object_field(
-                    "salt_separator",
+                    "saltSeparator",
                     &self.r#salt_separator,
                 ),
                 to_pulumi_object_field(
-                    "signer_key",
+                    "signerKey",
                     &self.r#signer_key,
                 ),
             ];

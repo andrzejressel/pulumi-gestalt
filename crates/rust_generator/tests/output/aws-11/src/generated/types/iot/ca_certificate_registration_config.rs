@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaC
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "template_body",
+                    "templateBody",
                     &self.r#template_body,
                 ),
                 to_pulumi_object_field(
-                    "template_name",
+                    "templateName",
                     &self.r#template_name,
                 ),
             ];

@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "expire_in_seconds",
+                    "expireInSeconds",
                     &self.r#expire_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "refresh_token",
+                    "refreshToken",
                     &self.r#refresh_token,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#token,
                 ),
                 to_pulumi_object_field(
-                    "token_type",
+                    "tokenType",
                     &self.r#token_type,
                 ),
             ];

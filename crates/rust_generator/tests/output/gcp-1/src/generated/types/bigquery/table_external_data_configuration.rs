@@ -148,11 +148,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#autodetect,
                 ),
                 to_pulumi_object_field(
-                    "avro_options",
+                    "avroOptions",
                     &self.r#avro_options,
                 ),
                 to_pulumi_object_field(
-                    "bigtable_options",
+                    "bigtableOptions",
                     &self.r#bigtable_options,
                 ),
                 to_pulumi_object_field(
@@ -160,55 +160,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "connection_id",
+                    "connectionId",
                     &self.r#connection_id,
                 ),
                 to_pulumi_object_field(
-                    "csv_options",
+                    "csvOptions",
                     &self.r#csv_options,
                 ),
                 to_pulumi_object_field(
-                    "file_set_spec_type",
+                    "fileSetSpecType",
                     &self.r#file_set_spec_type,
                 ),
                 to_pulumi_object_field(
-                    "google_sheets_options",
+                    "googleSheetsOptions",
                     &self.r#google_sheets_options,
                 ),
                 to_pulumi_object_field(
-                    "hive_partitioning_options",
+                    "hivePartitioningOptions",
                     &self.r#hive_partitioning_options,
                 ),
                 to_pulumi_object_field(
-                    "ignore_unknown_values",
+                    "ignoreUnknownValues",
                     &self.r#ignore_unknown_values,
                 ),
                 to_pulumi_object_field(
-                    "json_extension",
+                    "jsonExtension",
                     &self.r#json_extension,
                 ),
                 to_pulumi_object_field(
-                    "json_options",
+                    "jsonOptions",
                     &self.r#json_options,
                 ),
                 to_pulumi_object_field(
-                    "max_bad_records",
+                    "maxBadRecords",
                     &self.r#max_bad_records,
                 ),
                 to_pulumi_object_field(
-                    "metadata_cache_mode",
+                    "metadataCacheMode",
                     &self.r#metadata_cache_mode,
                 ),
                 to_pulumi_object_field(
-                    "object_metadata",
+                    "objectMetadata",
                     &self.r#object_metadata,
                 ),
                 to_pulumi_object_field(
-                    "parquet_options",
+                    "parquetOptions",
                     &self.r#parquet_options,
                 ),
                 to_pulumi_object_field(
-                    "reference_file_schema_uri",
+                    "referenceFileSchemaUri",
                     &self.r#reference_file_schema_uri,
                 ),
                 to_pulumi_object_field(
@@ -216,11 +216,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#schema,
                 ),
                 to_pulumi_object_field(
-                    "source_format",
+                    "sourceFormat",
                     &self.r#source_format,
                 ),
                 to_pulumi_object_field(
-                    "source_uris",
+                    "sourceUris",
                     &self.r#source_uris,
                 ),
             ];

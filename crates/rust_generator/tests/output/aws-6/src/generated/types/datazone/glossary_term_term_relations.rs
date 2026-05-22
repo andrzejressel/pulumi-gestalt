@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Glo
                     &self.r#classifies,
                 ),
                 to_pulumi_object_field(
-                    "is_as",
+                    "isAs",
                     &self.r#is_as,
                 ),
             ];

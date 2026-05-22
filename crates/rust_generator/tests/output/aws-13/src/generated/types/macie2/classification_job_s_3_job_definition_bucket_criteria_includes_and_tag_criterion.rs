@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
                     &self.r#comparator,
                 ),
                 to_pulumi_object_field(
-                    "tag_values",
+                    "tagValues",
                     &self.r#tag_values,
                 ),
             ];

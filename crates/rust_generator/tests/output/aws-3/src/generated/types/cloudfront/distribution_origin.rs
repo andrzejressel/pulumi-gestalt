@@ -62,47 +62,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_attempts",
+                    "connectionAttempts",
                     &self.r#connection_attempts,
                 ),
                 to_pulumi_object_field(
-                    "connection_timeout",
+                    "connectionTimeout",
                     &self.r#connection_timeout,
                 ),
                 to_pulumi_object_field(
-                    "custom_headers",
+                    "customHeaders",
                     &self.r#custom_headers,
                 ),
                 to_pulumi_object_field(
-                    "custom_origin_config",
+                    "customOriginConfig",
                     &self.r#custom_origin_config,
                 ),
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "origin_access_control_id",
+                    "originAccessControlId",
                     &self.r#origin_access_control_id,
                 ),
                 to_pulumi_object_field(
-                    "origin_id",
+                    "originId",
                     &self.r#origin_id,
                 ),
                 to_pulumi_object_field(
-                    "origin_path",
+                    "originPath",
                     &self.r#origin_path,
                 ),
                 to_pulumi_object_field(
-                    "origin_shield",
+                    "originShield",
                     &self.r#origin_shield,
                 ),
                 to_pulumi_object_field(
-                    "s_3_origin_config",
+                    "s3OriginConfig",
                     &self.r#s_3_origin_config,
                 ),
                 to_pulumi_object_field(
-                    "vpc_origin_config",
+                    "vpcOriginConfig",
                     &self.r#vpc_origin_config,
                 ),
             ];

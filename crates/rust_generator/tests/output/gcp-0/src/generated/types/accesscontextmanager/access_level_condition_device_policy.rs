@@ -50,27 +50,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_device_management_levels",
+                    "allowedDeviceManagementLevels",
                     &self.r#allowed_device_management_levels,
                 ),
                 to_pulumi_object_field(
-                    "allowed_encryption_statuses",
+                    "allowedEncryptionStatuses",
                     &self.r#allowed_encryption_statuses,
                 ),
                 to_pulumi_object_field(
-                    "os_constraints",
+                    "osConstraints",
                     &self.r#os_constraints,
                 ),
                 to_pulumi_object_field(
-                    "require_admin_approval",
+                    "requireAdminApproval",
                     &self.r#require_admin_approval,
                 ),
                 to_pulumi_object_field(
-                    "require_corp_owned",
+                    "requireCorpOwned",
                     &self.r#require_corp_owned,
                 ),
                 to_pulumi_object_field(
-                    "require_screen_lock",
+                    "requireScreenLock",
                     &self.r#require_screen_lock,
                 ),
             ];

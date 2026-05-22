@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_configuration",
+                    "authenticationConfiguration",
                     &self.r#authentication_configuration,
                 ),
                 to_pulumi_object_field(
-                    "auto_deployments_enabled",
+                    "autoDeploymentsEnabled",
                     &self.r#auto_deployments_enabled,
                 ),
                 to_pulumi_object_field(
-                    "code_repository",
+                    "codeRepository",
                     &self.r#code_repository,
                 ),
                 to_pulumi_object_field(
-                    "image_repository",
+                    "imageRepository",
                     &self.r#image_repository,
                 ),
             ];

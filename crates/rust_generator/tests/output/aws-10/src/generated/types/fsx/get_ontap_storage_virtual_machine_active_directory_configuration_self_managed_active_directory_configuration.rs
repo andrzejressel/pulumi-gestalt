@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_ips",
+                    "dnsIps",
                     &self.r#dns_ips,
                 ),
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "file_system_administrators_group",
+                    "fileSystemAdministratorsGroup",
                     &self.r#file_system_administrators_group,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit_distinguished_name",
+                    "organizationalUnitDistinguishedName",
                     &self.r#organizational_unit_distinguished_name,
                 ),
                 to_pulumi_object_field(

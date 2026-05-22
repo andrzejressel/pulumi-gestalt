@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "max_time_seconds",
+                    "maxTimeSeconds",
                     &self.r#max_time_seconds,
                 ),
                 to_pulumi_object_field(

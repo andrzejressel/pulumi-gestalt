@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pattern_type_key",
+                    "patternTypeKey",
                     &self.r#pattern_type_key,
                 ),
                 to_pulumi_object_field(
-                    "pattern_type_values",
+                    "patternTypeValues",
                     &self.r#pattern_type_values,
                 ),
             ];

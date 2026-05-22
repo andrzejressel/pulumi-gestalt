@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "latest_agent_orchestrated_at",
+                    "latestAgentOrchestratedAt",
                     &self.r#latest_agent_orchestrated_at,
                 ),
                 to_pulumi_object_field(
-                    "latest_agent_profile_reported_at",
+                    "latestAgentProfileReportedAt",
                     &self.r#latest_agent_profile_reported_at,
                 ),
                 to_pulumi_object_field(
-                    "latest_aggregated_profiles",
+                    "latestAggregatedProfiles",
                     &self.r#latest_aggregated_profiles,
                 ),
             ];

@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#context,
                 ),
                 to_pulumi_object_field(
-                    "crypto_key",
+                    "cryptoKey",
                     &self.r#crypto_key,
                 ),
                 to_pulumi_object_field(
-                    "surrogate_info_type",
+                    "surrogateInfoType",
                     &self.r#surrogate_info_type,
                 ),
             ];

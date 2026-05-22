@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Att
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "vulnerability_mode",
+                    "vulnerabilityMode",
                     &self.r#vulnerability_mode,
                 ),
             ];

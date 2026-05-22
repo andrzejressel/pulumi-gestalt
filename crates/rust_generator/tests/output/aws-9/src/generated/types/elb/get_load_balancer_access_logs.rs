@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "bucket_prefix",
+                    "bucketPrefix",
                     &self.r#bucket_prefix,
                 ),
                 to_pulumi_object_field(

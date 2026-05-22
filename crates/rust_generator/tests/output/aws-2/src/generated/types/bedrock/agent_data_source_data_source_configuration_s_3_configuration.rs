@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_arn",
+                    "bucketArn",
                     &self.r#bucket_arn,
                 ),
                 to_pulumi_object_field(
-                    "bucket_owner_account_id",
+                    "bucketOwnerAccountId",
                     &self.r#bucket_owner_account_id,
                 ),
                 to_pulumi_object_field(
-                    "inclusion_prefixes",
+                    "inclusionPrefixes",
                     &self.r#inclusion_prefixes,
                 ),
             ];

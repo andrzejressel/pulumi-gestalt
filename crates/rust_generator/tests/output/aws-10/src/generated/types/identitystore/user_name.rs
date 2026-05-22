@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "family_name",
+                    "familyName",
                     &self.r#family_name,
                 ),
                 to_pulumi_object_field(
@@ -53,19 +53,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
                     &self.r#formatted,
                 ),
                 to_pulumi_object_field(
-                    "given_name",
+                    "givenName",
                     &self.r#given_name,
                 ),
                 to_pulumi_object_field(
-                    "honorific_prefix",
+                    "honorificPrefix",
                     &self.r#honorific_prefix,
                 ),
                 to_pulumi_object_field(
-                    "honorific_suffix",
+                    "honorificSuffix",
                     &self.r#honorific_suffix,
                 ),
                 to_pulumi_object_field(
-                    "middle_name",
+                    "middleName",
                     &self.r#middle_name,
                 ),
             ];

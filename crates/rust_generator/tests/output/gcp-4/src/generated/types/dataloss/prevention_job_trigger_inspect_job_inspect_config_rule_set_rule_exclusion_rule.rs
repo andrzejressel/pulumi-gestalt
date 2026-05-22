@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#dictionary,
                 ),
                 to_pulumi_object_field(
-                    "exclude_by_hotword",
+                    "excludeByHotword",
                     &self.r#exclude_by_hotword,
                 ),
                 to_pulumi_object_field(
-                    "exclude_info_types",
+                    "excludeInfoTypes",
                     &self.r#exclude_info_types,
                 ),
                 to_pulumi_object_field(
-                    "matching_type",
+                    "matchingType",
                     &self.r#matching_type,
                 ),
                 to_pulumi_object_field(

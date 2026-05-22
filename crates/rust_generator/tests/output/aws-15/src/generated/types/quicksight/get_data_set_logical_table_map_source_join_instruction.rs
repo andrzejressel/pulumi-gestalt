@@ -37,27 +37,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "left_join_key_properties",
+                    "leftJoinKeyProperties",
                     &self.r#left_join_key_properties,
                 ),
                 to_pulumi_object_field(
-                    "left_operand",
+                    "leftOperand",
                     &self.r#left_operand,
                 ),
                 to_pulumi_object_field(
-                    "on_clause",
+                    "onClause",
                     &self.r#on_clause,
                 ),
                 to_pulumi_object_field(
-                    "right_join_key_properties",
+                    "rightJoinKeyProperties",
                     &self.r#right_join_key_properties,
                 ),
                 to_pulumi_object_field(
-                    "right_operand",
+                    "rightOperand",
                     &self.r#right_operand,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

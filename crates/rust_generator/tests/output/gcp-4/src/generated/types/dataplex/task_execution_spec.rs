@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#args,
                 ),
                 to_pulumi_object_field(
-                    "kms_key",
+                    "kmsKey",
                     &self.r#kms_key,
                 ),
                 to_pulumi_object_field(
-                    "max_job_execution_lifetime",
+                    "maxJobExecutionLifetime",
                     &self.r#max_job_execution_lifetime,
                 ),
                 to_pulumi_object_field(
@@ -58,7 +58,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#project,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
             ];

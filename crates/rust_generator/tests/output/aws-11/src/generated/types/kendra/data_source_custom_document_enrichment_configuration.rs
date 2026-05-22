@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "inline_configurations",
+                    "inlineConfigurations",
                     &self.r#inline_configurations,
                 ),
                 to_pulumi_object_field(
-                    "post_extraction_hook_configuration",
+                    "postExtractionHookConfiguration",
                     &self.r#post_extraction_hook_configuration,
                 ),
                 to_pulumi_object_field(
-                    "pre_extraction_hook_configuration",
+                    "preExtractionHookConfiguration",
                     &self.r#pre_extraction_hook_configuration,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];

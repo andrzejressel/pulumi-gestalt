@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_logs",
+                    "applicationLogs",
                     &self.r#application_logs,
                 ),
                 to_pulumi_object_field(
-                    "detailed_error_messages",
+                    "detailedErrorMessages",
                     &self.r#detailed_error_messages,
                 ),
                 to_pulumi_object_field(
-                    "failed_request_tracing",
+                    "failedRequestTracing",
                     &self.r#failed_request_tracing,
                 ),
                 to_pulumi_object_field(
-                    "http_logs",
+                    "httpLogs",
                     &self.r#http_logs,
                 ),
             ];

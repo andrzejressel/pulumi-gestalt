@@ -163,7 +163,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acl_rules",
+                    "aclRules",
                     &self.r#acl_rules,
                 ),
                 to_pulumi_object_field(
@@ -179,11 +179,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#addresses,
                 ),
                 to_pulumi_object_field(
-                    "attached_tos",
+                    "attachedTos",
                     &self.r#attached_tos,
                 ),
                 to_pulumi_object_field(
-                    "availability_zones",
+                    "availabilityZones",
                     &self.r#availability_zones,
                 ),
                 to_pulumi_object_field(
@@ -191,7 +191,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#cidrs,
                 ),
                 to_pulumi_object_field(
-                    "classic_load_balancer_listeners",
+                    "classicLoadBalancerListeners",
                     &self.r#classic_load_balancer_listeners,
                 ),
                 to_pulumi_object_field(
@@ -199,11 +199,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#components,
                 ),
                 to_pulumi_object_field(
-                    "customer_gateways",
+                    "customerGateways",
                     &self.r#customer_gateways,
                 ),
                 to_pulumi_object_field(
-                    "destination_vpcs",
+                    "destinationVpcs",
                     &self.r#destination_vpcs,
                 ),
                 to_pulumi_object_field(
@@ -215,55 +215,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#direction,
                 ),
                 to_pulumi_object_field(
-                    "elastic_load_balancer_listeners",
+                    "elasticLoadBalancerListeners",
                     &self.r#elastic_load_balancer_listeners,
                 ),
                 to_pulumi_object_field(
-                    "explanation_code",
+                    "explanationCode",
                     &self.r#explanation_code,
                 ),
                 to_pulumi_object_field(
-                    "ingress_route_tables",
+                    "ingressRouteTables",
                     &self.r#ingress_route_tables,
                 ),
                 to_pulumi_object_field(
-                    "internet_gateways",
+                    "internetGateways",
                     &self.r#internet_gateways,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_arn",
+                    "loadBalancerArn",
                     &self.r#load_balancer_arn,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_listener_port",
+                    "loadBalancerListenerPort",
                     &self.r#load_balancer_listener_port,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_target_group",
+                    "loadBalancerTargetGroup",
                     &self.r#load_balancer_target_group,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_target_groups",
+                    "loadBalancerTargetGroups",
                     &self.r#load_balancer_target_groups,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_target_port",
+                    "loadBalancerTargetPort",
                     &self.r#load_balancer_target_port,
                 ),
                 to_pulumi_object_field(
-                    "missing_component",
+                    "missingComponent",
                     &self.r#missing_component,
                 ),
                 to_pulumi_object_field(
-                    "nat_gateways",
+                    "natGateways",
                     &self.r#nat_gateways,
                 ),
                 to_pulumi_object_field(
-                    "network_interfaces",
+                    "networkInterfaces",
                     &self.r#network_interfaces,
                 ),
                 to_pulumi_object_field(
-                    "packet_field",
+                    "packetField",
                     &self.r#packet_field,
                 ),
                 to_pulumi_object_field(
@@ -271,11 +271,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "port_ranges",
+                    "portRanges",
                     &self.r#port_ranges,
                 ),
                 to_pulumi_object_field(
-                    "prefix_lists",
+                    "prefixLists",
                     &self.r#prefix_lists,
                 ),
                 to_pulumi_object_field(
@@ -283,27 +283,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "route_table_routes",
+                    "routeTableRoutes",
                     &self.r#route_table_routes,
                 ),
                 to_pulumi_object_field(
-                    "route_tables",
+                    "routeTables",
                     &self.r#route_tables,
                 ),
                 to_pulumi_object_field(
-                    "security_group",
+                    "securityGroup",
                     &self.r#security_group,
                 ),
                 to_pulumi_object_field(
-                    "security_group_rules",
+                    "securityGroupRules",
                     &self.r#security_group_rules,
                 ),
                 to_pulumi_object_field(
-                    "security_groups",
+                    "securityGroups",
                     &self.r#security_groups,
                 ),
                 to_pulumi_object_field(
-                    "source_vpcs",
+                    "sourceVpcs",
                     &self.r#source_vpcs,
                 ),
                 to_pulumi_object_field(
@@ -311,7 +311,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "subnet_route_tables",
+                    "subnetRouteTables",
                     &self.r#subnet_route_tables,
                 ),
                 to_pulumi_object_field(
@@ -319,27 +319,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#subnets,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_attachments",
+                    "transitGatewayAttachments",
                     &self.r#transit_gateway_attachments,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_route_table_routes",
+                    "transitGatewayRouteTableRoutes",
                     &self.r#transit_gateway_route_table_routes,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_route_tables",
+                    "transitGatewayRouteTables",
                     &self.r#transit_gateway_route_tables,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateways",
+                    "transitGateways",
                     &self.r#transit_gateways,
                 ),
                 to_pulumi_object_field(
-                    "vpc_endpoints",
+                    "vpcEndpoints",
                     &self.r#vpc_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "vpc_peering_connections",
+                    "vpcPeeringConnections",
                     &self.r#vpc_peering_connections,
                 ),
                 to_pulumi_object_field(
@@ -347,11 +347,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#vpcs,
                 ),
                 to_pulumi_object_field(
-                    "vpn_connections",
+                    "vpnConnections",
                     &self.r#vpn_connections,
                 ),
                 to_pulumi_object_field(
-                    "vpn_gateways",
+                    "vpnGateways",
                     &self.r#vpn_gateways,
                 ),
             ];

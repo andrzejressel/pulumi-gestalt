@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Per
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "database_name",
+                    "databaseName",
                     &self.r#database_name,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Per
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "table_catalog_id",
+                    "tableCatalogId",
                     &self.r#table_catalog_id,
                 ),
                 to_pulumi_object_field(
-                    "table_name",
+                    "tableName",
                     &self.r#table_name,
                 ),
             ];

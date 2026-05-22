@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_keys",
+                    "clusterKeys",
                     &self.r#cluster_keys,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cas
                     &self.r#columns,
                 ),
                 to_pulumi_object_field(
-                    "partition_keys",
+                    "partitionKeys",
                     &self.r#partition_keys,
                 ),
             ];

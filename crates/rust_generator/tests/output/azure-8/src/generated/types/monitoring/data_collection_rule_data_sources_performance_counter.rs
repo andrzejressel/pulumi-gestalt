@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "counter_specifiers",
+                    "counterSpecifiers",
                     &self.r#counter_specifiers,
                 ),
                 to_pulumi_object_field(
@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "sampling_frequency_in_seconds",
+                    "samplingFrequencyInSeconds",
                     &self.r#sampling_frequency_in_seconds,
                 ),
                 to_pulumi_object_field(

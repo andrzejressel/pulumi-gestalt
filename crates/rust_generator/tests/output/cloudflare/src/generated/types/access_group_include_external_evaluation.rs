@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "evaluate_url",
+                    "evaluateUrl",
                     &self.r#evaluate_url,
                 ),
                 to_pulumi_object_field(
-                    "keys_url",
+                    "keysUrl",
                     &self.r#keys_url,
                 ),
             ];

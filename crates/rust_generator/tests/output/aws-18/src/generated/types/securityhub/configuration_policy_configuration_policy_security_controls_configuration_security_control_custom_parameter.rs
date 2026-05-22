@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "security_control_id",
+                    "securityControlId",
                     &self.r#security_control_id,
                 ),
             ];

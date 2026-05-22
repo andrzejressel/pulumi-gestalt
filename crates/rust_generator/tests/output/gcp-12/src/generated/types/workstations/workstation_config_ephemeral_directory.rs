@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gce_pd",
+                    "gcePd",
                     &self.r#gce_pd,
                 ),
                 to_pulumi_object_field(
-                    "mount_path",
+                    "mountPath",
                     &self.r#mount_path,
                 ),
             ];

@@ -65,7 +65,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_uris",
+                    "archiveUris",
                     &self.r#archive_uris,
                 ),
                 to_pulumi_object_field(
@@ -73,23 +73,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#connection,
                 ),
                 to_pulumi_object_field(
-                    "container_image",
+                    "containerImage",
                     &self.r#container_image,
                 ),
                 to_pulumi_object_field(
-                    "file_uris",
+                    "fileUris",
                     &self.r#file_uris,
                 ),
                 to_pulumi_object_field(
-                    "jar_uris",
+                    "jarUris",
                     &self.r#jar_uris,
                 ),
                 to_pulumi_object_field(
-                    "main_class",
+                    "mainClass",
                     &self.r#main_class,
                 ),
                 to_pulumi_object_field(
-                    "main_file_uri",
+                    "mainFileUri",
                     &self.r#main_file_uri,
                 ),
                 to_pulumi_object_field(
@@ -97,11 +97,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "py_file_uris",
+                    "pyFileUris",
                     &self.r#py_file_uris,
                 ),
                 to_pulumi_object_field(
-                    "runtime_version",
+                    "runtimeVersion",
                     &self.r#runtime_version,
                 ),
             ];

@@ -56,11 +56,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "algorithm_configs",
+                    "algorithmConfigs",
                     &self.r#algorithm_configs,
                 ),
                 to_pulumi_object_field(
-                    "approximate_neighbors_count",
+                    "approximateNeighborsCount",
                     &self.r#approximate_neighbors_count,
                 ),
                 to_pulumi_object_field(
@@ -68,15 +68,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "distance_measure_type",
+                    "distanceMeasureType",
                     &self.r#distance_measure_type,
                 ),
                 to_pulumi_object_field(
-                    "feature_norm_type",
+                    "featureNormType",
                     &self.r#feature_norm_type,
                 ),
                 to_pulumi_object_field(
-                    "shard_size",
+                    "shardSize",
                     &self.r#shard_size,
                 ),
             ];

@@ -53,31 +53,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_behavior",
+                    "cacheBehavior",
                     &self.r#cache_behavior,
                 ),
                 to_pulumi_object_field(
-                    "cache_duration",
+                    "cacheDuration",
                     &self.r#cache_duration,
                 ),
                 to_pulumi_object_field(
-                    "cdn_frontdoor_origin_group_id",
+                    "cdnFrontdoorOriginGroupId",
                     &self.r#cdn_frontdoor_origin_group_id,
                 ),
                 to_pulumi_object_field(
-                    "compression_enabled",
+                    "compressionEnabled",
                     &self.r#compression_enabled,
                 ),
                 to_pulumi_object_field(
-                    "forwarding_protocol",
+                    "forwardingProtocol",
                     &self.r#forwarding_protocol,
                 ),
                 to_pulumi_object_field(
-                    "query_string_caching_behavior",
+                    "queryStringCachingBehavior",
                     &self.r#query_string_caching_behavior,
                 ),
                 to_pulumi_object_field(
-                    "query_string_parameters",
+                    "queryStringParameters",
                     &self.r#query_string_parameters,
                 ),
             ];

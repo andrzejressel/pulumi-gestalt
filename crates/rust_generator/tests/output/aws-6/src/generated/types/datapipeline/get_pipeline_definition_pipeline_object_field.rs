@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "ref_value",
+                    "refValue",
                     &self.r#ref_value,
                 ),
                 to_pulumi_object_field(
-                    "string_value",
+                    "stringValue",
                     &self.r#string_value,
                 ),
             ];

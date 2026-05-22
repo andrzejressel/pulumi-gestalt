@@ -76,15 +76,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_alarm",
+                    "cloudwatchAlarm",
                     &self.r#cloudwatch_alarm,
                 ),
                 to_pulumi_object_field(
-                    "cloudwatch_logs",
+                    "cloudwatchLogs",
                     &self.r#cloudwatch_logs,
                 ),
                 to_pulumi_object_field(
-                    "cloudwatch_metric",
+                    "cloudwatchMetric",
                     &self.r#cloudwatch_metric,
                 ),
                 to_pulumi_object_field(
@@ -92,7 +92,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
                     &self.r#dynamodb,
                 ),
                 to_pulumi_object_field(
-                    "dynamodbv_2",
+                    "dynamodbv2",
                     &self.r#dynamodbv_2,
                 ),
                 to_pulumi_object_field(
@@ -108,11 +108,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
                     &self.r#http,
                 ),
                 to_pulumi_object_field(
-                    "iot_analytics",
+                    "iotAnalytics",
                     &self.r#iot_analytics,
                 ),
                 to_pulumi_object_field(
-                    "iot_events",
+                    "iotEvents",
                     &self.r#iot_events,
                 ),
                 to_pulumi_object_field(
@@ -132,7 +132,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
                     &self.r#republish,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
                 to_pulumi_object_field(
@@ -144,7 +144,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
                     &self.r#sqs,
                 ),
                 to_pulumi_object_field(
-                    "step_functions",
+                    "stepFunctions",
                     &self.r#step_functions,
                 ),
                 to_pulumi_object_field(

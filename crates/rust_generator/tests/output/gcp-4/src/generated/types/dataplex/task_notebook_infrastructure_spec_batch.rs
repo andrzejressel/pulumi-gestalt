@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "executors_count",
+                    "executorsCount",
                     &self.r#executors_count,
                 ),
                 to_pulumi_object_field(
-                    "max_executors_count",
+                    "maxExecutorsCount",
                     &self.r#max_executors_count,
                 ),
             ];

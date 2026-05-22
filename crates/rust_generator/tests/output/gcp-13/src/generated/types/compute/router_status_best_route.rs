@@ -130,7 +130,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "dest_range",
+                    "destRange",
                     &self.r#dest_range,
                 ),
                 to_pulumi_object_field(
@@ -142,43 +142,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_gateway",
+                    "nextHopGateway",
                     &self.r#next_hop_gateway,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_ilb",
+                    "nextHopIlb",
                     &self.r#next_hop_ilb,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_instance",
+                    "nextHopInstance",
                     &self.r#next_hop_instance,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_instance_zone",
+                    "nextHopInstanceZone",
                     &self.r#next_hop_instance_zone,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_inter_region_cost",
+                    "nextHopInterRegionCost",
                     &self.r#next_hop_inter_region_cost,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_ip",
+                    "nextHopIp",
                     &self.r#next_hop_ip,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_med",
+                    "nextHopMed",
                     &self.r#next_hop_med,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_network",
+                    "nextHopNetwork",
                     &self.r#next_hop_network,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_origin",
+                    "nextHopOrigin",
                     &self.r#next_hop_origin,
                 ),
                 to_pulumi_object_field(
-                    "next_hop_vpn_tunnel",
+                    "nextHopVpnTunnel",
                     &self.r#next_hop_vpn_tunnel,
                 ),
                 to_pulumi_object_field(
@@ -190,7 +190,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#project,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
                 to_pulumi_object_field(

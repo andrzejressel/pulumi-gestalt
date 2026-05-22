@@ -62,35 +62,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_backend_address_pool_id",
+                    "defaultBackendAddressPoolId",
                     &self.r#default_backend_address_pool_id,
                 ),
                 to_pulumi_object_field(
-                    "default_backend_address_pool_name",
+                    "defaultBackendAddressPoolName",
                     &self.r#default_backend_address_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "default_backend_http_settings_id",
+                    "defaultBackendHttpSettingsId",
                     &self.r#default_backend_http_settings_id,
                 ),
                 to_pulumi_object_field(
-                    "default_backend_http_settings_name",
+                    "defaultBackendHttpSettingsName",
                     &self.r#default_backend_http_settings_name,
                 ),
                 to_pulumi_object_field(
-                    "default_redirect_configuration_id",
+                    "defaultRedirectConfigurationId",
                     &self.r#default_redirect_configuration_id,
                 ),
                 to_pulumi_object_field(
-                    "default_redirect_configuration_name",
+                    "defaultRedirectConfigurationName",
                     &self.r#default_redirect_configuration_name,
                 ),
                 to_pulumi_object_field(
-                    "default_rewrite_rule_set_id",
+                    "defaultRewriteRuleSetId",
                     &self.r#default_rewrite_rule_set_id,
                 ),
                 to_pulumi_object_field(
-                    "default_rewrite_rule_set_name",
+                    "defaultRewriteRuleSetName",
                     &self.r#default_rewrite_rule_set_name,
                 ),
                 to_pulumi_object_field(
@@ -102,7 +102,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "path_rules",
+                    "pathRules",
                     &self.r#path_rules,
                 ),
             ];

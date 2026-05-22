@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_all_domains",
+                    "allowAllDomains",
                     &self.r#allow_all_domains,
                 ),
                 to_pulumi_object_field(
-                    "allow_amp_traffic",
+                    "allowAmpTraffic",
                     &self.r#allow_amp_traffic,
                 ),
                 to_pulumi_object_field(
-                    "allowed_domains",
+                    "allowedDomains",
                     &self.r#allowed_domains,
                 ),
                 to_pulumi_object_field(
-                    "challenge_security_preference",
+                    "challengeSecurityPreference",
                     &self.r#challenge_security_preference,
                 ),
                 to_pulumi_object_field(
-                    "integration_type",
+                    "integrationType",
                     &self.r#integration_type,
                 ),
             ];

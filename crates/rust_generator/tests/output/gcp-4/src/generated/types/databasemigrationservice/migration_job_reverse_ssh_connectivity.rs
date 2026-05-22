@@ -42,11 +42,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mig
                     &self.r#vm,
                 ),
                 to_pulumi_object_field(
-                    "vm_ip",
+                    "vmIp",
                     &self.r#vm_ip,
                 ),
                 to_pulumi_object_field(
-                    "vm_port",
+                    "vmPort",
                     &self.r#vm_port,
                 ),
                 to_pulumi_object_field(

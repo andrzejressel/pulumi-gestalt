@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capture_content_type_header",
+                    "captureContentTypeHeader",
                     &self.r#capture_content_type_header,
                 ),
                 to_pulumi_object_field(
-                    "capture_options",
+                    "captureOptions",
                     &self.r#capture_options,
                 ),
                 to_pulumi_object_field(
-                    "destination_s_3_uri",
+                    "destinationS3Uri",
                     &self.r#destination_s_3_uri,
                 ),
                 to_pulumi_object_field(
-                    "enable_capture",
+                    "enableCapture",
                     &self.r#enable_capture,
                 ),
                 to_pulumi_object_field(
-                    "initial_sampling_percentage",
+                    "initialSamplingPercentage",
                     &self.r#initial_sampling_percentage,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_id",
+                    "kmsKeyId",
                     &self.r#kms_key_id,
                 ),
             ];

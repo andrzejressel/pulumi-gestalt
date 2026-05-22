@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_fail_action",
+                    "authFailAction",
                     &self.r#auth_fail_action,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#login,
                 ),
                 to_pulumi_object_field(
-                    "redirect_http_response_code",
+                    "redirectHttpResponseCode",
                     &self.r#redirect_http_response_code,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#script,
                 ),
                 to_pulumi_object_field(
-                    "security_level",
+                    "securityLevel",
                     &self.r#security_level,
                 ),
                 to_pulumi_object_field(
-                    "static_files",
+                    "staticFiles",
                     &self.r#static_files,
                 ),
                 to_pulumi_object_field(
-                    "url_regex",
+                    "urlRegex",
                     &self.r#url_regex,
                 ),
             ];

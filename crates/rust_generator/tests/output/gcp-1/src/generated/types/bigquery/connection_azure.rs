@@ -56,15 +56,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#application,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "customer_tenant_id",
+                    "customerTenantId",
                     &self.r#customer_tenant_id,
                 ),
                 to_pulumi_object_field(
-                    "federated_application_client_id",
+                    "federatedApplicationClientId",
                     &self.r#federated_application_client_id,
                 ),
                 to_pulumi_object_field(
@@ -72,11 +72,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#identity,
                 ),
                 to_pulumi_object_field(
-                    "object_id",
+                    "objectId",
                     &self.r#object_id,
                 ),
                 to_pulumi_object_field(
-                    "redirect_uri",
+                    "redirectUri",
                     &self.r#redirect_uri,
                 ),
             ];

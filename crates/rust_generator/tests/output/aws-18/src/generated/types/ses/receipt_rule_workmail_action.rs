@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "organization_arn",
+                    "organizationArn",
                     &self.r#organization_arn,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#position,
                 ),
                 to_pulumi_object_field(
-                    "topic_arn",
+                    "topicArn",
                     &self.r#topic_arn,
                 ),
             ];

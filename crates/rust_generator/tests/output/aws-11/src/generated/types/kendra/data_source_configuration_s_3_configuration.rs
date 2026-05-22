@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_control_list_configuration",
+                    "accessControlListConfiguration",
                     &self.r#access_control_list_configuration,
                 ),
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "documents_metadata_configuration",
+                    "documentsMetadataConfiguration",
                     &self.r#documents_metadata_configuration,
                 ),
                 to_pulumi_object_field(
-                    "exclusion_patterns",
+                    "exclusionPatterns",
                     &self.r#exclusion_patterns,
                 ),
                 to_pulumi_object_field(
-                    "inclusion_patterns",
+                    "inclusionPatterns",
                     &self.r#inclusion_patterns,
                 ),
                 to_pulumi_object_field(
-                    "inclusion_prefixes",
+                    "inclusionPrefixes",
                     &self.r#inclusion_prefixes,
                 ),
             ];

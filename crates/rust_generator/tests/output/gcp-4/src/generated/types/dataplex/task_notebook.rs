@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_uris",
+                    "archiveUris",
                     &self.r#archive_uris,
                 ),
                 to_pulumi_object_field(
-                    "file_uris",
+                    "fileUris",
                     &self.r#file_uris,
                 ),
                 to_pulumi_object_field(
-                    "infrastructure_spec",
+                    "infrastructureSpec",
                     &self.r#infrastructure_spec,
                 ),
                 to_pulumi_object_field(

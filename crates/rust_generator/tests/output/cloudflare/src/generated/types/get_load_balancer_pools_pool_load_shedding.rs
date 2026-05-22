@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_percent",
+                    "defaultPercent",
                     &self.r#default_percent,
                 ),
                 to_pulumi_object_field(
-                    "default_policy",
+                    "defaultPolicy",
                     &self.r#default_policy,
                 ),
                 to_pulumi_object_field(
-                    "session_percent",
+                    "sessionPercent",
                     &self.r#session_percent,
                 ),
                 to_pulumi_object_field(
-                    "session_policy",
+                    "sessionPolicy",
                     &self.r#session_policy,
                 ),
             ];

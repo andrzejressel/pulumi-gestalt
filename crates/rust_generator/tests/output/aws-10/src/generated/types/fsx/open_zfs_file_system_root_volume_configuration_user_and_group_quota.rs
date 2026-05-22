@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ope
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "storage_capacity_quota_gib",
+                    "storageCapacityQuotaGib",
                     &self.r#storage_capacity_quota_gib,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

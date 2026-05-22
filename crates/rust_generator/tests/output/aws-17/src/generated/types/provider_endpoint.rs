@@ -1235,7 +1235,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#apigateway,
                 ),
                 to_pulumi_object_field(
-                    "apigatewayv_2",
+                    "apigatewayv2",
                     &self.r#apigatewayv_2,
                 ),
                 to_pulumi_object_field(
@@ -1363,7 +1363,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#cleanrooms,
                 ),
                 to_pulumi_object_field(
-                    "cloud_9",
+                    "cloud9",
                     &self.r#cloud_9,
                 ),
                 to_pulumi_object_field(
@@ -1391,7 +1391,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#cloudhsm,
                 ),
                 to_pulumi_object_field(
-                    "cloudhsmv_2",
+                    "cloudhsmv2",
                     &self.r#cloudhsmv_2,
                 ),
                 to_pulumi_object_field(
@@ -1619,7 +1619,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#dynamodb,
                 ),
                 to_pulumi_object_field(
-                    "ec_2",
+                    "ec2",
                     &self.r#ec_2,
                 ),
                 to_pulumi_object_field(
@@ -1655,7 +1655,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#elasticloadbalancing,
                 ),
                 to_pulumi_object_field(
-                    "elasticloadbalancingv_2",
+                    "elasticloadbalancingv2",
                     &self.r#elasticloadbalancingv_2,
                 ),
                 to_pulumi_object_field(
@@ -1675,7 +1675,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#elb,
                 ),
                 to_pulumi_object_field(
-                    "elbv_2",
+                    "elbv2",
                     &self.r#elbv_2,
                 ),
                 to_pulumi_object_field(
@@ -1783,11 +1783,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#inspector,
                 ),
                 to_pulumi_object_field(
-                    "inspector_2",
+                    "inspector2",
                     &self.r#inspector_2,
                 ),
                 to_pulumi_object_field(
-                    "inspectorv_2",
+                    "inspectorv2",
                     &self.r#inspectorv_2,
                 ),
                 to_pulumi_object_field(
@@ -1839,7 +1839,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#kinesisanalytics,
                 ),
                 to_pulumi_object_field(
-                    "kinesisanalyticsv_2",
+                    "kinesisanalyticsv2",
                     &self.r#kinesisanalyticsv_2,
                 ),
                 to_pulumi_object_field(
@@ -1879,11 +1879,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#lexmodels,
                 ),
                 to_pulumi_object_field(
-                    "lexmodelsv_2",
+                    "lexmodelsv2",
                     &self.r#lexmodelsv_2,
                 ),
                 to_pulumi_object_field(
-                    "lexv_2_models",
+                    "lexv2models",
                     &self.r#lexv_2_models,
                 ),
                 to_pulumi_object_field(
@@ -1911,11 +1911,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#lookoutmetrics,
                 ),
                 to_pulumi_object_field(
-                    "m_2",
+                    "m2",
                     &self.r#m_2,
                 ),
                 to_pulumi_object_field(
-                    "macie_2",
+                    "macie2",
                     &self.r#macie_2,
                 ),
                 to_pulumi_object_field(
@@ -1939,7 +1939,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#mediapackage,
                 ),
                 to_pulumi_object_field(
-                    "mediapackagev_2",
+                    "mediapackagev2",
                     &self.r#mediapackagev_2,
                 ),
                 to_pulumi_object_field(
@@ -2039,7 +2039,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#pinpoint,
                 ),
                 to_pulumi_object_field(
-                    "pinpointsmsvoicev_2",
+                    "pinpointsmsvoicev2",
                     &self.r#pinpointsmsvoicev_2,
                 ),
                 to_pulumi_object_field(
@@ -2115,7 +2115,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#resiliencehub,
                 ),
                 to_pulumi_object_field(
-                    "resourceexplorer_2",
+                    "resourceexplorer2",
                     &self.r#resourceexplorer_2,
                 ),
                 to_pulumi_object_field(
@@ -2135,27 +2135,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#rolesanywhere,
                 ),
                 to_pulumi_object_field(
-                    "route_53",
+                    "route53",
                     &self.r#route_53,
                 ),
                 to_pulumi_object_field(
-                    "route_53_domains",
+                    "route53domains",
                     &self.r#route_53_domains,
                 ),
                 to_pulumi_object_field(
-                    "route_53_profiles",
+                    "route53profiles",
                     &self.r#route_53_profiles,
                 ),
                 to_pulumi_object_field(
-                    "route_53_recoverycontrolconfig",
+                    "route53recoverycontrolconfig",
                     &self.r#route_53_recoverycontrolconfig,
                 ),
                 to_pulumi_object_field(
-                    "route_53_recoveryreadiness",
+                    "route53recoveryreadiness",
                     &self.r#route_53_recoveryreadiness,
                 ),
                 to_pulumi_object_field(
-                    "route_53_resolver",
+                    "route53resolver",
                     &self.r#route_53_resolver,
                 ),
                 to_pulumi_object_field(
@@ -2163,23 +2163,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#rum,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
                 to_pulumi_object_field(
-                    "s_3_api",
+                    "s3api",
                     &self.r#s_3_api,
                 ),
                 to_pulumi_object_field(
-                    "s_3_control",
+                    "s3control",
                     &self.r#s_3_control,
                 ),
                 to_pulumi_object_field(
-                    "s_3_outposts",
+                    "s3outposts",
                     &self.r#s_3_outposts,
                 ),
                 to_pulumi_object_field(
-                    "s_3_tables",
+                    "s3tables",
                     &self.r#s_3_tables,
                 ),
                 to_pulumi_object_field(
@@ -2243,7 +2243,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#ses,
                 ),
                 to_pulumi_object_field(
-                    "sesv_2",
+                    "sesv2",
                     &self.r#sesv_2,
                 ),
                 to_pulumi_object_field(
@@ -2363,7 +2363,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#wafregional,
                 ),
                 to_pulumi_object_field(
-                    "wafv_2",
+                    "wafv2",
                     &self.r#wafv_2,
                 ),
                 to_pulumi_object_field(

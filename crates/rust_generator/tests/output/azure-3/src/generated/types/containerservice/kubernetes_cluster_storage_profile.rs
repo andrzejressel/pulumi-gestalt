@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_driver_enabled",
+                    "blobDriverEnabled",
                     &self.r#blob_driver_enabled,
                 ),
                 to_pulumi_object_field(
-                    "disk_driver_enabled",
+                    "diskDriverEnabled",
                     &self.r#disk_driver_enabled,
                 ),
                 to_pulumi_object_field(
-                    "file_driver_enabled",
+                    "fileDriverEnabled",
                     &self.r#file_driver_enabled,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_controller_enabled",
+                    "snapshotControllerEnabled",
                     &self.r#snapshot_controller_enabled,
                 ),
             ];

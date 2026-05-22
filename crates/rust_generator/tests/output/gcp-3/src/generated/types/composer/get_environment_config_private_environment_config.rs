@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_composer_connection_subnetwork",
+                    "cloudComposerConnectionSubnetwork",
                     &self.r#cloud_composer_connection_subnetwork,
                 ),
                 to_pulumi_object_field(
-                    "cloud_composer_network_ipv_4_cidr_block",
+                    "cloudComposerNetworkIpv4CidrBlock",
                     &self.r#cloud_composer_network_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "cloud_sql_ipv_4_cidr_block",
+                    "cloudSqlIpv4CidrBlock",
                     &self.r#cloud_sql_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "connection_type",
+                    "connectionType",
                     &self.r#connection_type,
                 ),
                 to_pulumi_object_field(
-                    "enable_private_endpoint",
+                    "enablePrivateEndpoint",
                     &self.r#enable_private_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "enable_privately_used_public_ips",
+                    "enablePrivatelyUsedPublicIps",
                     &self.r#enable_privately_used_public_ips,
                 ),
                 to_pulumi_object_field(
-                    "master_ipv_4_cidr_block",
+                    "masterIpv4CidrBlock",
                     &self.r#master_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "web_server_ipv_4_cidr_block",
+                    "webServerIpv4CidrBlock",
                     &self.r#web_server_ipv_4_cidr_block,
                 ),
             ];

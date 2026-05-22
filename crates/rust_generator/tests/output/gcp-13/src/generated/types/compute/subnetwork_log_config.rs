@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aggregation_interval",
+                    "aggregationInterval",
                     &self.r#aggregation_interval,
                 ),
                 to_pulumi_object_field(
-                    "filter_expr",
+                    "filterExpr",
                     &self.r#filter_expr,
                 ),
                 to_pulumi_object_field(
-                    "flow_sampling",
+                    "flowSampling",
                     &self.r#flow_sampling,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
                     &self.r#metadata,
                 ),
                 to_pulumi_object_field(
-                    "metadata_fields",
+                    "metadataFields",
                     &self.r#metadata_fields,
                 ),
             ];

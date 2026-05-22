@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "end_timeout_ms",
+                    "endTimeoutMs",
                     &self.r#end_timeout_ms,
                 ),
                 to_pulumi_object_field(
-                    "max_length_ms",
+                    "maxLengthMs",
                     &self.r#max_length_ms,
                 ),
             ];

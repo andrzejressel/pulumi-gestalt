@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hyp
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "max_age",
+                    "maxAge",
                     &self.r#max_age,
                 ),
                 to_pulumi_object_field(
-                    "stale_while_revalidate",
+                    "staleWhileRevalidate",
                     &self.r#stale_while_revalidate,
                 ),
             ];

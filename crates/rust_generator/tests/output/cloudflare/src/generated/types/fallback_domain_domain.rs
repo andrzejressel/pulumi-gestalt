@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fal
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "dns_servers",
+                    "dnsServers",
                     &self.r#dns_servers,
                 ),
                 to_pulumi_object_field(

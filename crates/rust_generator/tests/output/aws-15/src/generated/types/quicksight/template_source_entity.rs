@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tem
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_analysis",
+                    "sourceAnalysis",
                     &self.r#source_analysis,
                 ),
                 to_pulumi_object_field(
-                    "source_template",
+                    "sourceTemplate",
                     &self.r#source_template,
                 ),
             ];

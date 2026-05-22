@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_assets",
+                    "activeAssets",
                     &self.r#active_assets,
                 ),
                 to_pulumi_object_field(
-                    "security_policy_applying_assets",
+                    "securityPolicyApplyingAssets",
                     &self.r#security_policy_applying_assets,
                 ),
                 to_pulumi_object_field(
-                    "update_time",
+                    "updateTime",
                     &self.r#update_time,
                 ),
             ];

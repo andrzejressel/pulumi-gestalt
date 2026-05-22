@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
                     &self.r#schedule,
                 ),
                 to_pulumi_object_field(
-                    "schema_fields",
+                    "schemaFields",
                     &self.r#schema_fields,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
                     &self.r#scope,
                 ),
                 to_pulumi_object_field(
-                    "storage_container_name",
+                    "storageContainerName",
                     &self.r#storage_container_name,
                 ),
             ];

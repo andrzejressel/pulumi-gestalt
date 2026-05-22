@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "build_artifacts_object_key",
+                    "buildArtifactsObjectKey",
                     &self.r#build_artifacts_object_key,
                 ),
                 to_pulumi_object_field(
-                    "source_code_artifacts_object_key",
+                    "sourceCodeArtifactsObjectKey",
                     &self.r#source_code_artifacts_object_key,
                 ),
             ];

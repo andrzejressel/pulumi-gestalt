@@ -85,11 +85,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#resources,
                 ),
                 to_pulumi_object_field(
-                    "volume_mounts",
+                    "volumeMounts",
                     &self.r#volume_mounts,
                 ),
                 to_pulumi_object_field(
-                    "working_dir",
+                    "workingDir",
                     &self.r#working_dir,
                 ),
             ];

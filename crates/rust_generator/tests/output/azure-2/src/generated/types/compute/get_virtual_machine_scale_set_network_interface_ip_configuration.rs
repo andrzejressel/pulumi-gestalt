@@ -55,19 +55,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_gateway_backend_address_pool_ids",
+                    "applicationGatewayBackendAddressPoolIds",
                     &self.r#application_gateway_backend_address_pool_ids,
                 ),
                 to_pulumi_object_field(
-                    "application_security_group_ids",
+                    "applicationSecurityGroupIds",
                     &self.r#application_security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_backend_address_pool_ids",
+                    "loadBalancerBackendAddressPoolIds",
                     &self.r#load_balancer_backend_address_pool_ids,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_inbound_nat_rules_ids",
+                    "loadBalancerInboundNatRulesIds",
                     &self.r#load_balancer_inbound_nat_rules_ids,
                 ),
                 to_pulumi_object_field(
@@ -79,11 +79,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#primary,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_addresses",
+                    "publicIpAddresses",
                     &self.r#public_ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(

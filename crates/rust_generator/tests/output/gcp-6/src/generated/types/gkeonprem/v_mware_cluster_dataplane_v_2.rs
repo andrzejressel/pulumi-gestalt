@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_networking",
+                    "advancedNetworking",
                     &self.r#advanced_networking,
                 ),
                 to_pulumi_object_field(
-                    "dataplane_v_2_enabled",
+                    "dataplaneV2Enabled",
                     &self.r#dataplane_v_2_enabled,
                 ),
                 to_pulumi_object_field(
-                    "windows_dataplane_v_2_enabled",
+                    "windowsDataplaneV2Enabled",
                     &self.r#windows_dataplane_v_2_enabled,
                 ),
             ];

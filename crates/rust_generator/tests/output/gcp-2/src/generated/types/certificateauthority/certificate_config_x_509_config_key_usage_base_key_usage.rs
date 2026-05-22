@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cert_sign",
+                    "certSign",
                     &self.r#cert_sign,
                 ),
                 to_pulumi_object_field(
-                    "content_commitment",
+                    "contentCommitment",
                     &self.r#content_commitment,
                 ),
                 to_pulumi_object_field(
-                    "crl_sign",
+                    "crlSign",
                     &self.r#crl_sign,
                 ),
                 to_pulumi_object_field(
-                    "data_encipherment",
+                    "dataEncipherment",
                     &self.r#data_encipherment,
                 ),
                 to_pulumi_object_field(
-                    "decipher_only",
+                    "decipherOnly",
                     &self.r#decipher_only,
                 ),
                 to_pulumi_object_field(
-                    "digital_signature",
+                    "digitalSignature",
                     &self.r#digital_signature,
                 ),
                 to_pulumi_object_field(
-                    "encipher_only",
+                    "encipherOnly",
                     &self.r#encipher_only,
                 ),
                 to_pulumi_object_field(
-                    "key_agreement",
+                    "keyAgreement",
                     &self.r#key_agreement,
                 ),
                 to_pulumi_object_field(
-                    "key_encipherment",
+                    "keyEncipherment",
                     &self.r#key_encipherment,
                 ),
             ];

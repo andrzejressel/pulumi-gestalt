@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "external_id",
+                    "externalId",
                     &self.r#external_id,
                 ),
                 to_pulumi_object_field(
-                    "unique_attribute",
+                    "uniqueAttribute",
                     &self.r#unique_attribute,
                 ),
             ];

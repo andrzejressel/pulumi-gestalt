@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#idles,
                 ),
                 to_pulumi_object_field(
-                    "per_requests",
+                    "perRequests",
                     &self.r#per_requests,
                 ),
             ];

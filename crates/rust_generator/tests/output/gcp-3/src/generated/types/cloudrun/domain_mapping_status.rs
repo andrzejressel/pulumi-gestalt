@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#conditions,
                 ),
                 to_pulumi_object_field(
-                    "mapped_route_name",
+                    "mappedRouteName",
                     &self.r#mapped_route_name,
                 ),
                 to_pulumi_object_field(
-                    "observed_generation",
+                    "observedGeneration",
                     &self.r#observed_generation,
                 ),
                 to_pulumi_object_field(
-                    "resource_records",
+                    "resourceRecords",
                     &self.r#resource_records,
                 ),
             ];

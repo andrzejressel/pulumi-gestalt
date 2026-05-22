@@ -104,83 +104,83 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "airflow_uri",
+                    "airflowUri",
                     &self.r#airflow_uri,
                 ),
                 to_pulumi_object_field(
-                    "dag_gcs_prefix",
+                    "dagGcsPrefix",
                     &self.r#dag_gcs_prefix,
                 ),
                 to_pulumi_object_field(
-                    "data_retention_config",
+                    "dataRetentionConfig",
                     &self.r#data_retention_config,
                 ),
                 to_pulumi_object_field(
-                    "database_config",
+                    "databaseConfig",
                     &self.r#database_config,
                 ),
                 to_pulumi_object_field(
-                    "enable_private_builds_only",
+                    "enablePrivateBuildsOnly",
                     &self.r#enable_private_builds_only,
                 ),
                 to_pulumi_object_field(
-                    "enable_private_environment",
+                    "enablePrivateEnvironment",
                     &self.r#enable_private_environment,
                 ),
                 to_pulumi_object_field(
-                    "encryption_config",
+                    "encryptionConfig",
                     &self.r#encryption_config,
                 ),
                 to_pulumi_object_field(
-                    "environment_size",
+                    "environmentSize",
                     &self.r#environment_size,
                 ),
                 to_pulumi_object_field(
-                    "gke_cluster",
+                    "gkeCluster",
                     &self.r#gke_cluster,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_window",
+                    "maintenanceWindow",
                     &self.r#maintenance_window,
                 ),
                 to_pulumi_object_field(
-                    "master_authorized_networks_config",
+                    "masterAuthorizedNetworksConfig",
                     &self.r#master_authorized_networks_config,
                 ),
                 to_pulumi_object_field(
-                    "node_config",
+                    "nodeConfig",
                     &self.r#node_config,
                 ),
                 to_pulumi_object_field(
-                    "node_count",
+                    "nodeCount",
                     &self.r#node_count,
                 ),
                 to_pulumi_object_field(
-                    "private_environment_config",
+                    "privateEnvironmentConfig",
                     &self.r#private_environment_config,
                 ),
                 to_pulumi_object_field(
-                    "recovery_config",
+                    "recoveryConfig",
                     &self.r#recovery_config,
                 ),
                 to_pulumi_object_field(
-                    "resilience_mode",
+                    "resilienceMode",
                     &self.r#resilience_mode,
                 ),
                 to_pulumi_object_field(
-                    "software_config",
+                    "softwareConfig",
                     &self.r#software_config,
                 ),
                 to_pulumi_object_field(
-                    "web_server_config",
+                    "webServerConfig",
                     &self.r#web_server_config,
                 ),
                 to_pulumi_object_field(
-                    "web_server_network_access_control",
+                    "webServerNetworkAccessControl",
                     &self.r#web_server_network_access_control,
                 ),
                 to_pulumi_object_field(
-                    "workloads_config",
+                    "workloadsConfig",
                     &self.r#workloads_config,
                 ),
             ];

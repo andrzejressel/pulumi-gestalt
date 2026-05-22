@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hos
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "service_id",
+                    "serviceId",
                     &self.r#service_id,
                 ),
             ];

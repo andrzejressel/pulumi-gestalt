@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fie
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_type_profiles",
+                    "contentTypeProfiles",
                     &self.r#content_type_profiles,
                 ),
                 to_pulumi_object_field(
-                    "forward_when_content_type_is_unknown",
+                    "forwardWhenContentTypeIsUnknown",
                     &self.r#forward_when_content_type_is_unknown,
                 ),
             ];

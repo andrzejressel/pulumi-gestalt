@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorization_attempt_infos",
+                    "authorizationAttemptInfos",
                     &self.r#authorization_attempt_infos,
                 ),
                 to_pulumi_object_field(
-                    "dns_authorizations",
+                    "dnsAuthorizations",
                     &self.r#dns_authorizations,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#domains,
                 ),
                 to_pulumi_object_field(
-                    "issuance_config",
+                    "issuanceConfig",
                     &self.r#issuance_config,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_issues",
+                    "provisioningIssues",
                     &self.r#provisioning_issues,
                 ),
                 to_pulumi_object_field(

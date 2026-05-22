@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LbT
                     &self.r#extensions,
                 ),
                 to_pulumi_object_field(
-                    "match_condition",
+                    "matchCondition",
                     &self.r#match_condition,
                 ),
                 to_pulumi_object_field(

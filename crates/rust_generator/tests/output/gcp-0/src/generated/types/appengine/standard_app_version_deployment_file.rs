@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "sha_1_sum",
+                    "sha1Sum",
                     &self.r#sha_1_sum,
                 ),
                 to_pulumi_object_field(
-                    "source_url",
+                    "sourceUrl",
                     &self.r#source_url,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lambda_arn",
+                    "lambdaArn",
                     &self.r#lambda_arn,
                 ),
                 to_pulumi_object_field(
-                    "lambda_version",
+                    "lambdaVersion",
                     &self.r#lambda_version,
                 ),
             ];

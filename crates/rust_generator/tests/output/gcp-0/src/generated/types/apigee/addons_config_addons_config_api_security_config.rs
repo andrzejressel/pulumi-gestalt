@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Add
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "expires_at",
+                    "expiresAt",
                     &self.r#expires_at,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "read_only",
+                    "readOnly",
                     &self.r#read_only,
                 ),
                 to_pulumi_object_field(

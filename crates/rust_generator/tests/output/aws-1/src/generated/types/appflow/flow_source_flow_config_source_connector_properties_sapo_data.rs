@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "object_path",
+                    "objectPath",
                     &self.r#object_path,
                 ),
                 to_pulumi_object_field(
-                    "pagination_config",
+                    "paginationConfig",
                     &self.r#pagination_config,
                 ),
                 to_pulumi_object_field(
-                    "parallelism_config",
+                    "parallelismConfig",
                     &self.r#parallelism_config,
                 ),
             ];

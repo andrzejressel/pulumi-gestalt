@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "query_insights_enabled",
+                    "queryInsightsEnabled",
                     &self.r#query_insights_enabled,
                 ),
                 to_pulumi_object_field(
-                    "query_plans_per_minute",
+                    "queryPlansPerMinute",
                     &self.r#query_plans_per_minute,
                 ),
                 to_pulumi_object_field(
-                    "query_string_length",
+                    "queryStringLength",
                     &self.r#query_string_length,
                 ),
                 to_pulumi_object_field(
-                    "record_application_tags",
+                    "recordApplicationTags",
                     &self.r#record_application_tags,
                 ),
                 to_pulumi_object_field(
-                    "record_client_address",
+                    "recordClientAddress",
                     &self.r#record_client_address,
                 ),
             ];

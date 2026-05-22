@@ -42,11 +42,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#disks,
                 ),
                 to_pulumi_object_field(
-                    "external_ips",
+                    "externalIps",
                     &self.r#external_ips,
                 ),
                 to_pulumi_object_field(
-                    "internal_ips",
+                    "internalIps",
                     &self.r#internal_ips,
                 ),
                 to_pulumi_object_field(

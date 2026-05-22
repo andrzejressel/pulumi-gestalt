@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#api,
                 ),
                 to_pulumi_object_field(
-                    "web_ui",
+                    "webUi",
                     &self.r#web_ui,
                 ),
             ];

@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "characters_to_ignores",
+                    "charactersToIgnores",
                     &self.r#characters_to_ignores,
                 ),
                 to_pulumi_object_field(
-                    "masking_character",
+                    "maskingCharacter",
                     &self.r#masking_character,
                 ),
                 to_pulumi_object_field(
-                    "number_to_mask",
+                    "numberToMask",
                     &self.r#number_to_mask,
                 ),
                 to_pulumi_object_field(
-                    "reverse_order",
+                    "reverseOrder",
                     &self.r#reverse_order,
                 ),
             ];

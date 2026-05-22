@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cert_chain_object_name",
+                    "certChainObjectName",
                     &self.r#cert_chain_object_name,
                 ),
                 to_pulumi_object_field(
-                    "cert_object_name",
+                    "certObjectName",
                     &self.r#cert_object_name,
                 ),
                 to_pulumi_object_field(
-                    "key_object_name",
+                    "keyObjectName",
                     &self.r#key_object_name,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_id",
+                    "keyVaultId",
                     &self.r#key_vault_id,
                 ),
                 to_pulumi_object_field(
-                    "root_cert_object_name",
+                    "rootCertObjectName",
                     &self.r#root_cert_object_name,
                 ),
             ];

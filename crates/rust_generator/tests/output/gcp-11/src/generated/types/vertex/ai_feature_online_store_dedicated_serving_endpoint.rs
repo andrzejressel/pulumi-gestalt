@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "private_service_connect_config",
+                    "privateServiceConnectConfig",
                     &self.r#private_service_connect_config,
                 ),
                 to_pulumi_object_field(
-                    "public_endpoint_domain_name",
+                    "publicEndpointDomainName",
                     &self.r#public_endpoint_domain_name,
                 ),
                 to_pulumi_object_field(
-                    "service_attachment",
+                    "serviceAttachment",
                     &self.r#service_attachment,
                 ),
             ];

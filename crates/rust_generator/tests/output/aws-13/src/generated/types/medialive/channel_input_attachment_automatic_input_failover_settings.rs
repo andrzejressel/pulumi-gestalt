@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_clear_time_msec",
+                    "errorClearTimeMsec",
                     &self.r#error_clear_time_msec,
                 ),
                 to_pulumi_object_field(
-                    "failover_conditions",
+                    "failoverConditions",
                     &self.r#failover_conditions,
                 ),
                 to_pulumi_object_field(
-                    "input_preference",
+                    "inputPreference",
                     &self.r#input_preference,
                 ),
                 to_pulumi_object_field(
-                    "secondary_input_id",
+                    "secondaryInputId",
                     &self.r#secondary_input_id,
                 ),
             ];

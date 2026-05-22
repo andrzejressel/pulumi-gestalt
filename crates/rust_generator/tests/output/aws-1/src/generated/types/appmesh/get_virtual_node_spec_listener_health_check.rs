@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "healthy_threshold",
+                    "healthyThreshold",
                     &self.r#healthy_threshold,
                 ),
                 to_pulumi_object_field(
-                    "interval_millis",
+                    "intervalMillis",
                     &self.r#interval_millis,
                 ),
                 to_pulumi_object_field(
@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "timeout_millis",
+                    "timeoutMillis",
                     &self.r#timeout_millis,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_threshold",
+                    "unhealthyThreshold",
                     &self.r#unhealthy_threshold,
                 ),
             ];

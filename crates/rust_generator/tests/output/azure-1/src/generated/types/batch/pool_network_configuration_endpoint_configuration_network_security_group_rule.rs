@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "source_address_prefix",
+                    "sourceAddressPrefix",
                     &self.r#source_address_prefix,
                 ),
                 to_pulumi_object_field(
-                    "source_port_ranges",
+                    "sourcePortRanges",
                     &self.r#source_port_ranges,
                 ),
             ];

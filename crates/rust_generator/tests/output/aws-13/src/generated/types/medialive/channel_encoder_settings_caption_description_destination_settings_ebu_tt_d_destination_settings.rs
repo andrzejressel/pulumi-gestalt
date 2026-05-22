@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copyright_holder",
+                    "copyrightHolder",
                     &self.r#copyright_holder,
                 ),
                 to_pulumi_object_field(
-                    "fill_line_gap",
+                    "fillLineGap",
                     &self.r#fill_line_gap,
                 ),
                 to_pulumi_object_field(
-                    "font_family",
+                    "fontFamily",
                     &self.r#font_family,
                 ),
                 to_pulumi_object_field(
-                    "style_control",
+                    "styleControl",
                     &self.r#style_control,
                 ),
             ];

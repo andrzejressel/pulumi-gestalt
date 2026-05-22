@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#member,
                 ),
                 to_pulumi_object_field(
-                    "preferred_member_keys",
+                    "preferredMemberKeys",
                     &self.r#preferred_member_keys,
                 ),
                 to_pulumi_object_field(
-                    "relation_type",
+                    "relationType",
                     &self.r#relation_type,
                 ),
                 to_pulumi_object_field(

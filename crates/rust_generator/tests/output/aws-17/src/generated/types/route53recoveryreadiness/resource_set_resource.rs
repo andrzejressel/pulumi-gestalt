@@ -34,19 +34,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "component_id",
+                    "componentId",
                     &self.r#component_id,
                 ),
                 to_pulumi_object_field(
-                    "dns_target_resource",
+                    "dnsTargetResource",
                     &self.r#dns_target_resource,
                 ),
                 to_pulumi_object_field(
-                    "readiness_scopes",
+                    "readinessScopes",
                     &self.r#readiness_scopes,
                 ),
                 to_pulumi_object_field(
-                    "resource_arn",
+                    "resourceArn",
                     &self.r#resource_arn,
                 ),
             ];

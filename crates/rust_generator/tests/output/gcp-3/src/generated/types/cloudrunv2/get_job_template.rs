@@ -61,7 +61,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#parallelism,
                 ),
                 to_pulumi_object_field(
-                    "task_count",
+                    "taskCount",
                     &self.r#task_count,
                 ),
                 to_pulumi_object_field(

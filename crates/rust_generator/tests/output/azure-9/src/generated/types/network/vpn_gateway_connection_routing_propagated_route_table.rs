@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "route_table_ids",
+                    "routeTableIds",
                     &self.r#route_table_ids,
                 ),
             ];

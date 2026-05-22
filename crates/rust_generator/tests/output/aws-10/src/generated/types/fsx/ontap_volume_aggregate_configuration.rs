@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ont
                     &self.r#aggregates,
                 ),
                 to_pulumi_object_field(
-                    "constituents_per_aggregate",
+                    "constituentsPerAggregate",
                     &self.r#constituents_per_aggregate,
                 ),
                 to_pulumi_object_field(
-                    "total_constituents",
+                    "totalConstituents",
                     &self.r#total_constituents,
                 ),
             ];

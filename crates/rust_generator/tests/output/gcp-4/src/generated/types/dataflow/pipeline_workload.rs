@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dataflow_flex_template_request",
+                    "dataflowFlexTemplateRequest",
                     &self.r#dataflow_flex_template_request,
                 ),
                 to_pulumi_object_field(
-                    "dataflow_launch_template_request",
+                    "dataflowLaunchTemplateRequest",
                     &self.r#dataflow_launch_template_request,
                 ),
             ];

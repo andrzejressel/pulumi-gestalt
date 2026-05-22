@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "local_path",
+                    "localPath",
                     &self.r#local_path,
                 ),
                 to_pulumi_object_field(
-                    "s_3_upload_mode",
+                    "s3UploadMode",
                     &self.r#s_3_upload_mode,
                 ),
                 to_pulumi_object_field(
-                    "s_3_uri",
+                    "s3Uri",
                     &self.r#s_3_uri,
                 ),
             ];

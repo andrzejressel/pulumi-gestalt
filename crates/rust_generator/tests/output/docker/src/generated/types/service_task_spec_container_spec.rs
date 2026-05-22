@@ -119,7 +119,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#dir,
                 ),
                 to_pulumi_object_field(
-                    "dns_config",
+                    "dnsConfig",
                     &self.r#dns_config,
                 ),
                 to_pulumi_object_field(
@@ -163,7 +163,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#privileges,
                 ),
                 to_pulumi_object_field(
-                    "read_only",
+                    "readOnly",
                     &self.r#read_only,
                 ),
                 to_pulumi_object_field(
@@ -171,11 +171,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#secrets,
                 ),
                 to_pulumi_object_field(
-                    "stop_grace_period",
+                    "stopGracePeriod",
                     &self.r#stop_grace_period,
                 ),
                 to_pulumi_object_field(
-                    "stop_signal",
+                    "stopSignal",
                     &self.r#stop_signal,
                 ),
                 to_pulumi_object_field(

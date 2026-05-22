@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Que
                     &self.r#commitment,
                 ),
                 to_pulumi_object_field(
-                    "renewal_type",
+                    "renewalType",
                     &self.r#renewal_type,
                 ),
                 to_pulumi_object_field(
-                    "reserved_slots",
+                    "reservedSlots",
                     &self.r#reserved_slots,
                 ),
             ];

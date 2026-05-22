@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "amazon_msk_cluster",
+                    "amazonMskCluster",
                     &self.r#amazon_msk_cluster,
                 ),
                 to_pulumi_object_field(
-                    "vpc_config",
+                    "vpcConfig",
                     &self.r#vpc_config,
                 ),
             ];

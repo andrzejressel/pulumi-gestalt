@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "geo_backup_key_vault_key_id",
+                    "geoBackupKeyVaultKeyId",
                     &self.r#geo_backup_key_vault_key_id,
                 ),
                 to_pulumi_object_field(
-                    "geo_backup_user_assigned_identity_id",
+                    "geoBackupUserAssignedIdentityId",
                     &self.r#geo_backup_user_assigned_identity_id,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_key_id",
+                    "keyVaultKeyId",
                     &self.r#key_vault_key_id,
                 ),
                 to_pulumi_object_field(
-                    "primary_user_assigned_identity_id",
+                    "primaryUserAssignedIdentityId",
                     &self.r#primary_user_assigned_identity_id,
                 ),
             ];

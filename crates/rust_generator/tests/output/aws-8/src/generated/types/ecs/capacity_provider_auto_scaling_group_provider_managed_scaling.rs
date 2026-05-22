@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cap
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_warmup_period",
+                    "instanceWarmupPeriod",
                     &self.r#instance_warmup_period,
                 ),
                 to_pulumi_object_field(
-                    "maximum_scaling_step_size",
+                    "maximumScalingStepSize",
                     &self.r#maximum_scaling_step_size,
                 ),
                 to_pulumi_object_field(
-                    "minimum_scaling_step_size",
+                    "minimumScalingStepSize",
                     &self.r#minimum_scaling_step_size,
                 ),
                 to_pulumi_object_field(
@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cap
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "target_capacity",
+                    "targetCapacity",
                     &self.r#target_capacity,
                 ),
             ];

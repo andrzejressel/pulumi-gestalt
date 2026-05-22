@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "preferred_location",
+                    "preferredLocation",
                     &self.r#preferred_location,
                 ),
                 to_pulumi_object_field(
-                    "secondary_location",
+                    "secondaryLocation",
                     &self.r#secondary_location,
                 ),
             ];

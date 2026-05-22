@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_settings",
+                    "dataSettings",
                     &self.r#data_settings,
                 ),
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
-                    "log_settings",
+                    "logSettings",
                     &self.r#log_settings,
                 ),
                 to_pulumi_object_field(
-                    "storage_workload_type",
+                    "storageWorkloadType",
                     &self.r#storage_workload_type,
                 ),
                 to_pulumi_object_field(
-                    "system_db_on_data_disk_enabled",
+                    "systemDbOnDataDiskEnabled",
                     &self.r#system_db_on_data_disk_enabled,
                 ),
                 to_pulumi_object_field(
-                    "temp_db_settings",
+                    "tempDbSettings",
                     &self.r#temp_db_settings,
                 ),
             ];

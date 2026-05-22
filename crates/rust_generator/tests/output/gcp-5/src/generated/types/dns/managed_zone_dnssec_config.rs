@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_key_specs",
+                    "defaultKeySpecs",
                     &self.r#default_key_specs,
                 ),
                 to_pulumi_object_field(
@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#kind,
                 ),
                 to_pulumi_object_field(
-                    "non_existence",
+                    "nonExistence",
                     &self.r#non_existence,
                 ),
                 to_pulumi_object_field(

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "output_rectangle",
+                    "outputRectangle",
                     &self.r#output_rectangle,
                 ),
                 to_pulumi_object_field(
-                    "page_number",
+                    "pageNumber",
                     &self.r#page_number,
                 ),
             ];

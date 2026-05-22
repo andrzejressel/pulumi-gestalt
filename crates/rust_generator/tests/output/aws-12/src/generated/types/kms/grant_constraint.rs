@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "encryption_context_equals",
+                    "encryptionContextEquals",
                     &self.r#encryption_context_equals,
                 ),
                 to_pulumi_object_field(
-                    "encryption_context_subset",
+                    "encryptionContextSubset",
                     &self.r#encryption_context_subset,
                 ),
             ];

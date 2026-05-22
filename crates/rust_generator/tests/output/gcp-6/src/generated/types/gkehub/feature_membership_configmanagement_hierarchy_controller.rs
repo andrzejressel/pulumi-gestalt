@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_hierarchical_resource_quota",
+                    "enableHierarchicalResourceQuota",
                     &self.r#enable_hierarchical_resource_quota,
                 ),
                 to_pulumi_object_field(
-                    "enable_pod_tree_labels",
+                    "enablePodTreeLabels",
                     &self.r#enable_pod_tree_labels,
                 ),
                 to_pulumi_object_field(

@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxC
                     &self.r#cpu,
                 ),
                 to_pulumi_object_field(
-                    "memory_limit",
+                    "memoryLimit",
                     &self.r#memory_limit,
                 ),
                 to_pulumi_object_field(
-                    "memory_reservation",
+                    "memoryReservation",
                     &self.r#memory_reservation,
                 ),
                 to_pulumi_object_field(
-                    "node_count",
+                    "nodeCount",
                     &self.r#node_count,
                 ),
                 to_pulumi_object_field(
-                    "scaling_group_name",
+                    "scalingGroupName",
                     &self.r#scaling_group_name,
                 ),
             ];

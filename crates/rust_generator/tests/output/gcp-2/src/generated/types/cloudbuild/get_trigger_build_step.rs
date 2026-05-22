@@ -140,11 +140,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_exit_codes",
+                    "allowExitCodes",
                     &self.r#allow_exit_codes,
                 ),
                 to_pulumi_object_field(
-                    "allow_failure",
+                    "allowFailure",
                     &self.r#allow_failure,
                 ),
                 to_pulumi_object_field(
@@ -176,7 +176,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#script,
                 ),
                 to_pulumi_object_field(
-                    "secret_envs",
+                    "secretEnvs",
                     &self.r#secret_envs,
                 ),
                 to_pulumi_object_field(
@@ -192,7 +192,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#volumes,
                 ),
                 to_pulumi_object_field(
-                    "wait_fors",
+                    "waitFors",
                     &self.r#wait_fors,
                 ),
             ];

@@ -177,11 +177,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "adaptive_quantization",
+                    "adaptiveQuantization",
                     &self.r#adaptive_quantization,
                 ),
                 to_pulumi_object_field(
-                    "afd_signaling",
+                    "afdSignaling",
                     &self.r#afd_signaling,
                 ),
                 to_pulumi_object_field(
@@ -189,67 +189,67 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "buf_fill_pct",
+                    "bufFillPct",
                     &self.r#buf_fill_pct,
                 ),
                 to_pulumi_object_field(
-                    "buf_size",
+                    "bufSize",
                     &self.r#buf_size,
                 ),
                 to_pulumi_object_field(
-                    "color_metadata",
+                    "colorMetadata",
                     &self.r#color_metadata,
                 ),
                 to_pulumi_object_field(
-                    "entropy_encoding",
+                    "entropyEncoding",
                     &self.r#entropy_encoding,
                 ),
                 to_pulumi_object_field(
-                    "filter_settings",
+                    "filterSettings",
                     &self.r#filter_settings,
                 ),
                 to_pulumi_object_field(
-                    "fixed_afd",
+                    "fixedAfd",
                     &self.r#fixed_afd,
                 ),
                 to_pulumi_object_field(
-                    "flicker_aq",
+                    "flickerAq",
                     &self.r#flicker_aq,
                 ),
                 to_pulumi_object_field(
-                    "force_field_pictures",
+                    "forceFieldPictures",
                     &self.r#force_field_pictures,
                 ),
                 to_pulumi_object_field(
-                    "framerate_control",
+                    "framerateControl",
                     &self.r#framerate_control,
                 ),
                 to_pulumi_object_field(
-                    "framerate_denominator",
+                    "framerateDenominator",
                     &self.r#framerate_denominator,
                 ),
                 to_pulumi_object_field(
-                    "framerate_numerator",
+                    "framerateNumerator",
                     &self.r#framerate_numerator,
                 ),
                 to_pulumi_object_field(
-                    "gop_b_reference",
+                    "gopBReference",
                     &self.r#gop_b_reference,
                 ),
                 to_pulumi_object_field(
-                    "gop_closed_cadence",
+                    "gopClosedCadence",
                     &self.r#gop_closed_cadence,
                 ),
                 to_pulumi_object_field(
-                    "gop_num_b_frames",
+                    "gopNumBFrames",
                     &self.r#gop_num_b_frames,
                 ),
                 to_pulumi_object_field(
-                    "gop_size",
+                    "gopSize",
                     &self.r#gop_size,
                 ),
                 to_pulumi_object_field(
-                    "gop_size_units",
+                    "gopSizeUnits",
                     &self.r#gop_size_units,
                 ),
                 to_pulumi_object_field(
@@ -257,31 +257,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#level,
                 ),
                 to_pulumi_object_field(
-                    "look_ahead_rate_control",
+                    "lookAheadRateControl",
                     &self.r#look_ahead_rate_control,
                 ),
                 to_pulumi_object_field(
-                    "max_bitrate",
+                    "maxBitrate",
                     &self.r#max_bitrate,
                 ),
                 to_pulumi_object_field(
-                    "min_i_interval",
+                    "minIInterval",
                     &self.r#min_i_interval,
                 ),
                 to_pulumi_object_field(
-                    "num_ref_frames",
+                    "numRefFrames",
                     &self.r#num_ref_frames,
                 ),
                 to_pulumi_object_field(
-                    "par_control",
+                    "parControl",
                     &self.r#par_control,
                 ),
                 to_pulumi_object_field(
-                    "par_denominator",
+                    "parDenominator",
                     &self.r#par_denominator,
                 ),
                 to_pulumi_object_field(
-                    "par_numerator",
+                    "parNumerator",
                     &self.r#par_numerator,
                 ),
                 to_pulumi_object_field(
@@ -289,23 +289,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#profile,
                 ),
                 to_pulumi_object_field(
-                    "quality_level",
+                    "qualityLevel",
                     &self.r#quality_level,
                 ),
                 to_pulumi_object_field(
-                    "qvbr_quality_level",
+                    "qvbrQualityLevel",
                     &self.r#qvbr_quality_level,
                 ),
                 to_pulumi_object_field(
-                    "rate_control_mode",
+                    "rateControlMode",
                     &self.r#rate_control_mode,
                 ),
                 to_pulumi_object_field(
-                    "scan_type",
+                    "scanType",
                     &self.r#scan_type,
                 ),
                 to_pulumi_object_field(
-                    "scene_change_detect",
+                    "sceneChangeDetect",
                     &self.r#scene_change_detect,
                 ),
                 to_pulumi_object_field(
@@ -317,11 +317,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#softness,
                 ),
                 to_pulumi_object_field(
-                    "spatial_aq",
+                    "spatialAq",
                     &self.r#spatial_aq,
                 ),
                 to_pulumi_object_field(
-                    "subgop_length",
+                    "subgopLength",
                     &self.r#subgop_length,
                 ),
                 to_pulumi_object_field(
@@ -329,11 +329,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#syntax,
                 ),
                 to_pulumi_object_field(
-                    "temporal_aq",
+                    "temporalAq",
                     &self.r#temporal_aq,
                 ),
                 to_pulumi_object_field(
-                    "timecode_insertion",
+                    "timecodeInsertion",
                     &self.r#timecode_insertion,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "jmx_exporter",
+                    "jmxExporter",
                     &self.r#jmx_exporter,
                 ),
                 to_pulumi_object_field(
-                    "node_exporter",
+                    "nodeExporter",
                     &self.r#node_exporter,
                 ),
             ];

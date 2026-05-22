@@ -38,11 +38,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "storage_descriptor",
+                    "storageDescriptor",
                     &self.r#storage_descriptor,
                 ),
                 to_pulumi_object_field(
-                    "table_type",
+                    "tableType",
                     &self.r#table_type,
                 ),
             ];

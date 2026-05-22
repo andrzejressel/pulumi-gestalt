@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loc
                     &self.r#permissions,
                 ),
                 to_pulumi_object_field(
-                    "resource_name",
+                    "resourceName",
                     &self.r#resource_name,
                 ),
                 to_pulumi_object_field(

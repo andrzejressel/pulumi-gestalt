@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disabled_rule_groups",
+                    "disabledRuleGroups",
                     &self.r#disabled_rule_groups,
                 ),
                 to_pulumi_object_field(
@@ -67,27 +67,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#exclusions,
                 ),
                 to_pulumi_object_field(
-                    "file_upload_limit_mb",
+                    "fileUploadLimitMb",
                     &self.r#file_upload_limit_mb,
                 ),
                 to_pulumi_object_field(
-                    "firewall_mode",
+                    "firewallMode",
                     &self.r#firewall_mode,
                 ),
                 to_pulumi_object_field(
-                    "max_request_body_size_kb",
+                    "maxRequestBodySizeKb",
                     &self.r#max_request_body_size_kb,
                 ),
                 to_pulumi_object_field(
-                    "request_body_check",
+                    "requestBodyCheck",
                     &self.r#request_body_check,
                 ),
                 to_pulumi_object_field(
-                    "rule_set_type",
+                    "ruleSetType",
                     &self.r#rule_set_type,
                 ),
                 to_pulumi_object_field(
-                    "rule_set_version",
+                    "ruleSetVersion",
                     &self.r#rule_set_version,
                 ),
             ];

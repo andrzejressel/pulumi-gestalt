@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "drain_duration",
+                    "drainDuration",
                     &self.r#drain_duration,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "require_all_headers",
+                    "requireAllHeaders",
                     &self.r#require_all_headers,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#secure,
                 ),
                 to_pulumi_object_field(
-                    "zero_downtime_failover",
+                    "zeroDowntimeFailover",
                     &self.r#zero_downtime_failover,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "first_zone_monitor_duration_in_seconds",
+                    "firstZoneMonitorDurationInSeconds",
                     &self.r#first_zone_monitor_duration_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "minimum_healthy_hosts_per_zone",
+                    "minimumHealthyHostsPerZone",
                     &self.r#minimum_healthy_hosts_per_zone,
                 ),
                 to_pulumi_object_field(
-                    "monitor_duration_in_seconds",
+                    "monitorDurationInSeconds",
                     &self.r#monitor_duration_in_seconds,
                 ),
             ];

@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "agent_name",
+                    "agentName",
                     &self.r#agent_name,
                 ),
                 to_pulumi_object_field(
-                    "agent_status",
+                    "agentStatus",
                     &self.r#agent_status,
                 ),
                 to_pulumi_object_field(
-                    "agent_version",
+                    "agentVersion",
                     &self.r#agent_version,
                 ),
                 to_pulumi_object_field(
-                    "created_at",
+                    "createdAt",
                     &self.r#created_at,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "guardrail_configurations",
+                    "guardrailConfigurations",
                     &self.r#guardrail_configurations,
                 ),
                 to_pulumi_object_field(
-                    "updated_at",
+                    "updatedAt",
                     &self.r#updated_at,
                 ),
             ];

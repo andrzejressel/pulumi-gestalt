@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "subscriptions_enabled",
+                    "subscriptionsEnabled",
                     &self.r#subscriptions_enabled,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#url,
                 ),
                 to_pulumi_object_field(
-                    "user_registration_enabled",
+                    "userRegistrationEnabled",
                     &self.r#user_registration_enabled,
                 ),
                 to_pulumi_object_field(
-                    "validation_key",
+                    "validationKey",
                     &self.r#validation_key,
                 ),
             ];

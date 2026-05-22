@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sys
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "case_sensitive",
+                    "caseSensitive",
                     &self.r#case_sensitive,
                 ),
                 to_pulumi_object_field(
-                    "subject_begins_with",
+                    "subjectBeginsWith",
                     &self.r#subject_begins_with,
                 ),
                 to_pulumi_object_field(
-                    "subject_ends_with",
+                    "subjectEndsWith",
                     &self.r#subject_ends_with,
                 ),
             ];

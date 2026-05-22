@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Slo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_sli_performance",
+                    "basicSliPerformance",
                     &self.r#basic_sli_performance,
                 ),
                 to_pulumi_object_field(

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acknowledged_violation_counts",
+                    "acknowledgedViolationCounts",
                     &self.r#acknowledged_violation_counts,
                 ),
                 to_pulumi_object_field(
-                    "active_violation_counts",
+                    "activeViolationCounts",
                     &self.r#active_violation_counts,
                 ),
             ];

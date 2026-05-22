@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connector_profile_credentials",
+                    "connectorProfileCredentials",
                     &self.r#connector_profile_credentials,
                 ),
                 to_pulumi_object_field(
-                    "connector_profile_properties",
+                    "connectorProfileProperties",
                     &self.r#connector_profile_properties,
                 ),
             ];

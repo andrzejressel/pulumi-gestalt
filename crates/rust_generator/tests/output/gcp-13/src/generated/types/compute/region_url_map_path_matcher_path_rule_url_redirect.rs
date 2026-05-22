@@ -68,27 +68,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_redirect",
+                    "hostRedirect",
                     &self.r#host_redirect,
                 ),
                 to_pulumi_object_field(
-                    "https_redirect",
+                    "httpsRedirect",
                     &self.r#https_redirect,
                 ),
                 to_pulumi_object_field(
-                    "path_redirect",
+                    "pathRedirect",
                     &self.r#path_redirect,
                 ),
                 to_pulumi_object_field(
-                    "prefix_redirect",
+                    "prefixRedirect",
                     &self.r#prefix_redirect,
                 ),
                 to_pulumi_object_field(
-                    "redirect_response_code",
+                    "redirectResponseCode",
                     &self.r#redirect_response_code,
                 ),
                 to_pulumi_object_field(
-                    "strip_query",
+                    "stripQuery",
                     &self.r#strip_query,
                 ),
             ];

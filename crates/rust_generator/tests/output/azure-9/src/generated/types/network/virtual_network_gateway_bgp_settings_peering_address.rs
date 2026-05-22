@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "apipa_addresses",
+                    "apipaAddresses",
                     &self.r#apipa_addresses,
                 ),
                 to_pulumi_object_field(
-                    "default_addresses",
+                    "defaultAddresses",
                     &self.r#default_addresses,
                 ),
                 to_pulumi_object_field(
-                    "ip_configuration_name",
+                    "ipConfigurationName",
                     &self.r#ip_configuration_name,
                 ),
                 to_pulumi_object_field(
-                    "tunnel_ip_addresses",
+                    "tunnelIpAddresses",
                     &self.r#tunnel_ip_addresses,
                 ),
             ];

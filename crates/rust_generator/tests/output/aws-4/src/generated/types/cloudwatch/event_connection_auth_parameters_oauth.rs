@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorization_endpoint",
+                    "authorizationEndpoint",
                     &self.r#authorization_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "client_parameters",
+                    "clientParameters",
                     &self.r#client_parameters,
                 ),
                 to_pulumi_object_field(
-                    "http_method",
+                    "httpMethod",
                     &self.r#http_method,
                 ),
                 to_pulumi_object_field(
-                    "oauth_http_parameters",
+                    "oauthHttpParameters",
                     &self.r#oauth_http_parameters,
                 ),
             ];

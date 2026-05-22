@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ineligibility_reason",
+                    "ineligibilityReason",
                     &self.r#ineligibility_reason,
                 ),
                 to_pulumi_object_field(
-                    "is_eligible",
+                    "isEligible",
                     &self.r#is_eligible,
                 ),
             ];

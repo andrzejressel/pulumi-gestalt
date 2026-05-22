@@ -49,11 +49,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "branch_name",
+                    "branchName",
                     &self.r#branch_name,
                 ),
                 to_pulumi_object_field(
-                    "commit_sha",
+                    "commitSha",
                     &self.r#commit_sha,
                 ),
                 to_pulumi_object_field(
@@ -61,19 +61,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#dir,
                 ),
                 to_pulumi_object_field(
-                    "invert_regex",
+                    "invertRegex",
                     &self.r#invert_regex,
                 ),
                 to_pulumi_object_field(
-                    "project_id",
+                    "projectId",
                     &self.r#project_id,
                 ),
                 to_pulumi_object_field(
-                    "repo_name",
+                    "repoName",
                     &self.r#repo_name,
                 ),
                 to_pulumi_object_field(
-                    "tag_name",
+                    "tagName",
                     &self.r#tag_name,
                 ),
             ];

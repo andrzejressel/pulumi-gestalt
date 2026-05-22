@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "assignment_type",
+                    "assignmentType",
                     &self.r#assignment_type,
                 ),
                 to_pulumi_object_field(
-                    "content_hash",
+                    "contentHash",
                     &self.r#content_hash,
                 ),
                 to_pulumi_object_field(
-                    "content_uri",
+                    "contentUri",
                     &self.r#content_uri,
                 ),
                 to_pulumi_object_field(

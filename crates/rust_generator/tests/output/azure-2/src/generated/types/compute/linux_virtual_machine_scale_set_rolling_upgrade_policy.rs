@@ -49,31 +49,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cross_zone_upgrades_enabled",
+                    "crossZoneUpgradesEnabled",
                     &self.r#cross_zone_upgrades_enabled,
                 ),
                 to_pulumi_object_field(
-                    "max_batch_instance_percent",
+                    "maxBatchInstancePercent",
                     &self.r#max_batch_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unhealthy_instance_percent",
+                    "maxUnhealthyInstancePercent",
                     &self.r#max_unhealthy_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unhealthy_upgraded_instance_percent",
+                    "maxUnhealthyUpgradedInstancePercent",
                     &self.r#max_unhealthy_upgraded_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "maximum_surge_instances_enabled",
+                    "maximumSurgeInstancesEnabled",
                     &self.r#maximum_surge_instances_enabled,
                 ),
                 to_pulumi_object_field(
-                    "pause_time_between_batches",
+                    "pauseTimeBetweenBatches",
                     &self.r#pause_time_between_batches,
                 ),
                 to_pulumi_object_field(
-                    "prioritize_unhealthy_instances_enabled",
+                    "prioritizeUnhealthyInstancesEnabled",
                     &self.r#prioritize_unhealthy_instances_enabled,
                 ),
             ];

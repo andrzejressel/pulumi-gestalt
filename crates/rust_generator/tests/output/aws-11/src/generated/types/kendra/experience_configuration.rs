@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_source_configuration",
+                    "contentSourceConfiguration",
                     &self.r#content_source_configuration,
                 ),
                 to_pulumi_object_field(
-                    "user_identity_configuration",
+                    "userIdentityConfiguration",
                     &self.r#user_identity_configuration,
                 ),
             ];

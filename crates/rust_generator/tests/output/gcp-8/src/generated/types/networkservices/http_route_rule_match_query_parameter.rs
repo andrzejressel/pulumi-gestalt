@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Htt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exact_match",
+                    "exactMatch",
                     &self.r#exact_match,
                 ),
                 to_pulumi_object_field(
-                    "present_match",
+                    "presentMatch",
                     &self.r#present_match,
                 ),
                 to_pulumi_object_field(
-                    "query_parameter",
+                    "queryParameter",
                     &self.r#query_parameter,
                 ),
                 to_pulumi_object_field(
-                    "regex_match",
+                    "regexMatch",
                     &self.r#regex_match,
                 ),
             ];

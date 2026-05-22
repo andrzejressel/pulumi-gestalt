@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_queue_scale_rules",
+                    "azureQueueScaleRules",
                     &self.r#azure_queue_scale_rules,
                 ),
                 to_pulumi_object_field(
@@ -67,31 +67,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "custom_scale_rules",
+                    "customScaleRules",
                     &self.r#custom_scale_rules,
                 ),
                 to_pulumi_object_field(
-                    "http_scale_rules",
+                    "httpScaleRules",
                     &self.r#http_scale_rules,
                 ),
                 to_pulumi_object_field(
-                    "init_containers",
+                    "initContainers",
                     &self.r#init_containers,
                 ),
                 to_pulumi_object_field(
-                    "max_replicas",
+                    "maxReplicas",
                     &self.r#max_replicas,
                 ),
                 to_pulumi_object_field(
-                    "min_replicas",
+                    "minReplicas",
                     &self.r#min_replicas,
                 ),
                 to_pulumi_object_field(
-                    "revision_suffix",
+                    "revisionSuffix",
                     &self.r#revision_suffix,
                 ),
                 to_pulumi_object_field(
-                    "tcp_scale_rules",
+                    "tcpScaleRules",
                     &self.r#tcp_scale_rules,
                 ),
                 to_pulumi_object_field(

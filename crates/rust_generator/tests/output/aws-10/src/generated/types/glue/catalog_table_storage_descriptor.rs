@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_locations",
+                    "additionalLocations",
                     &self.r#additional_locations,
                 ),
                 to_pulumi_object_field(
-                    "bucket_columns",
+                    "bucketColumns",
                     &self.r#bucket_columns,
                 ),
                 to_pulumi_object_field(
@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
                     &self.r#compressed,
                 ),
                 to_pulumi_object_field(
-                    "input_format",
+                    "inputFormat",
                     &self.r#input_format,
                 ),
                 to_pulumi_object_field(
@@ -99,11 +99,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "number_of_buckets",
+                    "numberOfBuckets",
                     &self.r#number_of_buckets,
                 ),
                 to_pulumi_object_field(
-                    "output_format",
+                    "outputFormat",
                     &self.r#output_format,
                 ),
                 to_pulumi_object_field(
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "schema_reference",
+                    "schemaReference",
                     &self.r#schema_reference,
                 ),
                 to_pulumi_object_field(
-                    "ser_de_info",
+                    "serDeInfo",
                     &self.r#ser_de_info,
                 ),
                 to_pulumi_object_field(
-                    "skewed_info",
+                    "skewedInfo",
                     &self.r#skewed_info,
                 ),
                 to_pulumi_object_field(
-                    "sort_columns",
+                    "sortColumns",
                     &self.r#sort_columns,
                 ),
                 to_pulumi_object_field(
-                    "stored_as_sub_directories",
+                    "storedAsSubDirectories",
                     &self.r#stored_as_sub_directories,
                 ),
             ];

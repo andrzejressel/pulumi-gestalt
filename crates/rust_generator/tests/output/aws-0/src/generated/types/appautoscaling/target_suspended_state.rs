@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dynamic_scaling_in_suspended",
+                    "dynamicScalingInSuspended",
                     &self.r#dynamic_scaling_in_suspended,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_scaling_out_suspended",
+                    "dynamicScalingOutSuspended",
                     &self.r#dynamic_scaling_out_suspended,
                 ),
                 to_pulumi_object_field(
-                    "scheduled_scaling_suspended",
+                    "scheduledScalingSuspended",
                     &self.r#scheduled_scaling_suspended,
                 ),
             ];

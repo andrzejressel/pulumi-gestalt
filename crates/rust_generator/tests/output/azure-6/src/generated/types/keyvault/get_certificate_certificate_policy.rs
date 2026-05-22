@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "issuer_parameters",
+                    "issuerParameters",
                     &self.r#issuer_parameters,
                 ),
                 to_pulumi_object_field(
-                    "key_properties",
+                    "keyProperties",
                     &self.r#key_properties,
                 ),
                 to_pulumi_object_field(
-                    "lifetime_actions",
+                    "lifetimeActions",
                     &self.r#lifetime_actions,
                 ),
                 to_pulumi_object_field(
-                    "secret_properties",
+                    "secretProperties",
                     &self.r#secret_properties,
                 ),
                 to_pulumi_object_field(
-                    "x_509_certificate_properties",
+                    "x509CertificateProperties",
                     &self.r#x_509_certificate_properties,
                 ),
             ];

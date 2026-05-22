@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "inside_cidr_blocks",
+                    "insideCidrBlocks",
                     &self.r#inside_cidr_blocks,
                 ),
                 to_pulumi_object_field(

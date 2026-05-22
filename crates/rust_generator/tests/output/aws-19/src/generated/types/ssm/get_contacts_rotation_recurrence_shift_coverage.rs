@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "coverage_times",
+                    "coverageTimes",
                     &self.r#coverage_times,
                 ),
                 to_pulumi_object_field(
-                    "map_block_key",
+                    "mapBlockKey",
                     &self.r#map_block_key,
                 ),
             ];

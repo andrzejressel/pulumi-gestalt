@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "skewed_column_names",
+                    "skewedColumnNames",
                     &self.r#skewed_column_names,
                 ),
                 to_pulumi_object_field(
-                    "skewed_column_value_location_maps",
+                    "skewedColumnValueLocationMaps",
                     &self.r#skewed_column_value_location_maps,
                 ),
                 to_pulumi_object_field(
-                    "skewed_column_values",
+                    "skewedColumnValues",
                     &self.r#skewed_column_values,
                 ),
             ];

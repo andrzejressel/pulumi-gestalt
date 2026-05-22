@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "on_exit_code",
+                    "onExitCode",
                     &self.r#on_exit_code,
                 ),
                 to_pulumi_object_field(
-                    "on_reason",
+                    "onReason",
                     &self.r#on_reason,
                 ),
                 to_pulumi_object_field(
-                    "on_status_reason",
+                    "onStatusReason",
                     &self.r#on_status_reason,
                 ),
             ];

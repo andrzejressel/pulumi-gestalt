@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "header_action",
+                    "headerAction",
                     &self.r#header_action,
                 ),
                 to_pulumi_object_field(
-                    "match_rules",
+                    "matchRules",
                     &self.r#match_rules,
                 ),
                 to_pulumi_object_field(
@@ -76,11 +76,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "route_action",
+                    "routeAction",
                     &self.r#route_action,
                 ),
                 to_pulumi_object_field(
-                    "url_redirect",
+                    "urlRedirect",
                     &self.r#url_redirect,
                 ),
             ];

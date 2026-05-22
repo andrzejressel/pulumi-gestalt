@@ -44,15 +44,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#active,
                 ),
                 to_pulumi_object_field(
-                    "continue_responses",
+                    "continueResponses",
                     &self.r#continue_responses,
                 ),
                 to_pulumi_object_field(
-                    "still_waiting_responses",
+                    "stillWaitingResponses",
                     &self.r#still_waiting_responses,
                 ),
                 to_pulumi_object_field(
-                    "waiting_responses",
+                    "waitingResponses",
                     &self.r#waiting_responses,
                 ),
             ];

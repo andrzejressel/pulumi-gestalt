@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_score_threshold",
+                    "availabilityScoreThreshold",
                     &self.r#availability_score_threshold,
                 ),
                 to_pulumi_object_field(
-                    "performance_score_threshold",
+                    "performanceScoreThreshold",
                     &self.r#performance_score_threshold,
                 ),
             ];

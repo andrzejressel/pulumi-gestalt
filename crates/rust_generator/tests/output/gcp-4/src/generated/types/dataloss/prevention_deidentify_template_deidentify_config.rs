@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_transformations",
+                    "imageTransformations",
                     &self.r#image_transformations,
                 ),
                 to_pulumi_object_field(
-                    "info_type_transformations",
+                    "infoTypeTransformations",
                     &self.r#info_type_transformations,
                 ),
                 to_pulumi_object_field(
-                    "record_transformations",
+                    "recordTransformations",
                     &self.r#record_transformations,
                 ),
             ];

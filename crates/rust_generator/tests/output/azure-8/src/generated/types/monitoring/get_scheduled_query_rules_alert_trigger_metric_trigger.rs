@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_column",
+                    "metricColumn",
                     &self.r#metric_column,
                 ),
                 to_pulumi_object_field(
-                    "metric_trigger_type",
+                    "metricTriggerType",
                     &self.r#metric_trigger_type,
                 ),
                 to_pulumi_object_field(

@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_zones",
+                    "availabilityZones",
                     &self.r#availability_zones,
                 ),
                 to_pulumi_object_field(
@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "interval_unit",
+                    "intervalUnit",
                     &self.r#interval_unit,
                 ),
             ];

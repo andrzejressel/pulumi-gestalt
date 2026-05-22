@@ -121,71 +121,71 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_backend_ssl_30",
+                    "enableBackendSsl30",
                     &self.r#enable_backend_ssl_30,
                 ),
                 to_pulumi_object_field(
-                    "enable_backend_tls_10",
+                    "enableBackendTls10",
                     &self.r#enable_backend_tls_10,
                 ),
                 to_pulumi_object_field(
-                    "enable_backend_tls_11",
+                    "enableBackendTls11",
                     &self.r#enable_backend_tls_11,
                 ),
                 to_pulumi_object_field(
-                    "enable_frontend_ssl_30",
+                    "enableFrontendSsl30",
                     &self.r#enable_frontend_ssl_30,
                 ),
                 to_pulumi_object_field(
-                    "enable_frontend_tls_10",
+                    "enableFrontendTls10",
                     &self.r#enable_frontend_tls_10,
                 ),
                 to_pulumi_object_field(
-                    "enable_frontend_tls_11",
+                    "enableFrontendTls11",
                     &self.r#enable_frontend_tls_11,
                 ),
                 to_pulumi_object_field(
-                    "tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled",
+                    "tlsEcdheEcdsaWithAes128CbcShaCiphersEnabled",
                     &self.r#tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled",
+                    "tlsEcdheEcdsaWithAes256CbcShaCiphersEnabled",
                     &self.r#tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled",
+                    "tlsEcdheRsaWithAes128CbcShaCiphersEnabled",
                     &self.r#tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled",
+                    "tlsEcdheRsaWithAes256CbcShaCiphersEnabled",
                     &self.r#tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled",
+                    "tlsRsaWithAes128CbcSha256CiphersEnabled",
                     &self.r#tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tls_rsa_with_aes_128_cbc_sha_ciphers_enabled",
+                    "tlsRsaWithAes128CbcShaCiphersEnabled",
                     &self.r#tls_rsa_with_aes_128_cbc_sha_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled",
+                    "tlsRsaWithAes128GcmSha256CiphersEnabled",
                     &self.r#tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled",
+                    "tlsRsaWithAes256CbcSha256CiphersEnabled",
                     &self.r#tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tls_rsa_with_aes_256_cbc_sha_ciphers_enabled",
+                    "tlsRsaWithAes256CbcShaCiphersEnabled",
                     &self.r#tls_rsa_with_aes_256_cbc_sha_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled",
+                    "tlsRsaWithAes256GcmSha384CiphersEnabled",
                     &self.r#tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled,
                 ),
                 to_pulumi_object_field(
-                    "triple_des_ciphers_enabled",
+                    "tripleDesCiphersEnabled",
                     &self.r#triple_des_ciphers_enabled,
                 ),
             ];

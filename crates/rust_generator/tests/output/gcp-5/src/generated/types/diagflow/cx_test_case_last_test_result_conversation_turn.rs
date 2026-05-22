@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "user_input",
+                    "userInput",
                     &self.r#user_input,
                 ),
                 to_pulumi_object_field(
-                    "virtual_agent_output",
+                    "virtualAgentOutput",
                     &self.r#virtual_agent_output,
                 ),
             ];

@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_stream",
+                    "audioStream",
                     &self.r#audio_stream,
                 ),
                 to_pulumi_object_field(
@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "video_stream",
+                    "videoStream",
                     &self.r#video_stream,
                 ),
             ];

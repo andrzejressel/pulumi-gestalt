@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Grp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "case_sensitive",
+                    "caseSensitive",
                     &self.r#case_sensitive,
                 ),
                 to_pulumi_object_field(
-                    "grpc_method",
+                    "grpcMethod",
                     &self.r#grpc_method,
                 ),
                 to_pulumi_object_field(
-                    "grpc_service",
+                    "grpcService",
                     &self.r#grpc_service,
                 ),
             ];

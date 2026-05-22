@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_type",
+                    "actionType",
                     &self.r#action_type,
                 ),
                 to_pulumi_object_field(
-                    "minimum_process_execution_time",
+                    "minimumProcessExecutionTime",
                     &self.r#minimum_process_execution_time,
                 ),
             ];

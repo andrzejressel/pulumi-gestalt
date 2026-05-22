@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ref
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "refresh_on_day",
+                    "refreshOnDay",
                     &self.r#refresh_on_day,
                 ),
                 to_pulumi_object_field(
-                    "time_of_the_day",
+                    "timeOfTheDay",
                     &self.r#time_of_the_day,
                 ),
                 to_pulumi_object_field(

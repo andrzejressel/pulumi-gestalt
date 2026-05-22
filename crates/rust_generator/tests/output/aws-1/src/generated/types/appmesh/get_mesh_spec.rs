@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "egress_filters",
+                    "egressFilters",
                     &self.r#egress_filters,
                 ),
                 to_pulumi_object_field(
-                    "service_discoveries",
+                    "serviceDiscoveries",
                     &self.r#service_discoveries,
                 ),
             ];

@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "extended_key_usages",
+                    "extendedKeyUsages",
                     &self.r#extended_key_usages,
                 ),
                 to_pulumi_object_field(
-                    "key_usages",
+                    "keyUsages",
                     &self.r#key_usages,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "subject_alternative_names",
+                    "subjectAlternativeNames",
                     &self.r#subject_alternative_names,
                 ),
                 to_pulumi_object_field(
-                    "validity_in_months",
+                    "validityInMonths",
                     &self.r#validity_in_months,
                 ),
             ];

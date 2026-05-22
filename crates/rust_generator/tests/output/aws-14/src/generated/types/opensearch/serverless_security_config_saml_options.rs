@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_attribute",
+                    "groupAttribute",
                     &self.r#group_attribute,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#metadata,
                 ),
                 to_pulumi_object_field(
-                    "session_timeout",
+                    "sessionTimeout",
                     &self.r#session_timeout,
                 ),
                 to_pulumi_object_field(
-                    "user_attribute",
+                    "userAttribute",
                     &self.r#user_attribute,
                 ),
             ];

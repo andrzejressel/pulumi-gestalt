@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_vault_secret_id",
+                    "keyVaultSecretId",
                     &self.r#key_vault_secret_id,
                 ),
                 to_pulumi_object_field(
-                    "tls_version",
+                    "tlsVersion",
                     &self.r#tls_version,
                 ),
             ];

@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "forwarding_rule",
+                    "forwardingRule",
                     &self.r#forwarding_rule,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "project_id",
+                    "projectId",
                     &self.r#project_id,
                 ),
                 to_pulumi_object_field(
-                    "psc_connection_id",
+                    "pscConnectionId",
                     &self.r#psc_connection_id,
                 ),
             ];

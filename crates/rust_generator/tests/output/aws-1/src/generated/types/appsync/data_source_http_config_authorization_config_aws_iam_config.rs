@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "signing_region",
+                    "signingRegion",
                     &self.r#signing_region,
                 ),
                 to_pulumi_object_field(
-                    "signing_service_name",
+                    "signingServiceName",
                     &self.r#signing_service_name,
                 ),
             ];

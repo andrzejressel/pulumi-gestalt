@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#kind,
                 ),
                 to_pulumi_object_field(
-                    "not_ins",
+                    "notIns",
                     &self.r#not_ins,
                 ),
             ];

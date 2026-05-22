@@ -61,15 +61,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "daily_maintenance_window",
+                    "dailyMaintenanceWindow",
                     &self.r#daily_maintenance_window,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_exclusions",
+                    "maintenanceExclusions",
                     &self.r#maintenance_exclusions,
                 ),
                 to_pulumi_object_field(
-                    "recurring_window",
+                    "recurringWindow",
                     &self.r#recurring_window,
                 ),
             ];

@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_upgrade_minor_version",
+                    "autoUpgradeMinorVersion",
                     &self.r#auto_upgrade_minor_version,
                 ),
                 to_pulumi_object_field(
-                    "automatic_upgrade_enabled",
+                    "automaticUpgradeEnabled",
                     &self.r#automatic_upgrade_enabled,
                 ),
                 to_pulumi_object_field(
@@ -69,11 +69,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "protected_settings",
+                    "protectedSettings",
                     &self.r#protected_settings,
                 ),
                 to_pulumi_object_field(
-                    "provision_after_extensions",
+                    "provisionAfterExtensions",
                     &self.r#provision_after_extensions,
                 ),
                 to_pulumi_object_field(
@@ -81,15 +81,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
                     &self.r#publisher,
                 ),
                 to_pulumi_object_field(
-                    "settings_json",
+                    "settingsJson",
                     &self.r#settings_json,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "type_handler_version",
+                    "typeHandlerVersion",
                     &self.r#type_handler_version,
                 ),
             ];

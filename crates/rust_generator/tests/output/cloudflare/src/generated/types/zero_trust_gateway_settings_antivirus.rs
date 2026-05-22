@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enabled_download_phase",
+                    "enabledDownloadPhase",
                     &self.r#enabled_download_phase,
                 ),
                 to_pulumi_object_field(
-                    "enabled_upload_phase",
+                    "enabledUploadPhase",
                     &self.r#enabled_upload_phase,
                 ),
                 to_pulumi_object_field(
-                    "fail_closed",
+                    "failClosed",
                     &self.r#fail_closed,
                 ),
                 to_pulumi_object_field(
-                    "notification_settings",
+                    "notificationSettings",
                     &self.r#notification_settings,
                 ),
             ];

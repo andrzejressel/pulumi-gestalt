@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#position,
                 ),
                 to_pulumi_object_field(
-                    "topic_arn",
+                    "topicArn",
                     &self.r#topic_arn,
                 ),
             ];

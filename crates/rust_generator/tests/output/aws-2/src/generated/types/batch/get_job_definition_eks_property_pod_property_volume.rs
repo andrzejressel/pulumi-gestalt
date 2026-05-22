@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "empty_dirs",
+                    "emptyDirs",
                     &self.r#empty_dirs,
                 ),
                 to_pulumi_object_field(
-                    "host_paths",
+                    "hostPaths",
                     &self.r#host_paths,
                 ),
                 to_pulumi_object_field(

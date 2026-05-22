@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "days_of_months",
+                    "daysOfMonths",
                     &self.r#days_of_months,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#minute,
                 ),
                 to_pulumi_object_field(
-                    "snapshots_to_keep",
+                    "snapshotsToKeep",
                     &self.r#snapshots_to_keep,
                 ),
             ];

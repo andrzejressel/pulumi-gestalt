@@ -60,7 +60,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_hostname",
+                    "containerHostname",
                     &self.r#container_hostname,
                 ),
                 to_pulumi_object_field(
@@ -72,11 +72,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mod
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "image_config",
+                    "imageConfig",
                     &self.r#image_config,
                 ),
                 to_pulumi_object_field(
-                    "inference_specification_name",
+                    "inferenceSpecificationName",
                     &self.r#inference_specification_name,
                 ),
                 to_pulumi_object_field(
@@ -84,19 +84,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mod
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "model_data_source",
+                    "modelDataSource",
                     &self.r#model_data_source,
                 ),
                 to_pulumi_object_field(
-                    "model_data_url",
+                    "modelDataUrl",
                     &self.r#model_data_url,
                 ),
                 to_pulumi_object_field(
-                    "model_package_name",
+                    "modelPackageName",
                     &self.r#model_package_name,
                 ),
                 to_pulumi_object_field(
-                    "multi_model_config",
+                    "multiModelConfig",
                     &self.r#multi_model_config,
                 ),
             ];

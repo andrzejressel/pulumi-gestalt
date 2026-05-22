@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_caller_ip_address_ranges",
+                    "allowedCallerIpAddressRanges",
                     &self.r#allowed_caller_ip_address_ranges,
                 ),
                 to_pulumi_object_field(
-                    "open_authentication_policies",
+                    "openAuthenticationPolicies",
                     &self.r#open_authentication_policies,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_id",
+                    "appId",
                     &self.r#app_id,
                 ),
                 to_pulumi_object_field(
-                    "app_port",
+                    "appPort",
                     &self.r#app_port,
                 ),
                 to_pulumi_object_field(
-                    "app_protocol",
+                    "appProtocol",
                     &self.r#app_protocol,
                 ),
             ];

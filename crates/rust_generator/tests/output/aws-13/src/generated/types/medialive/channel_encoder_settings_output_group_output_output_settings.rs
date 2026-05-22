@@ -48,35 +48,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_output_settings",
+                    "archiveOutputSettings",
                     &self.r#archive_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "frame_capture_output_settings",
+                    "frameCaptureOutputSettings",
                     &self.r#frame_capture_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "hls_output_settings",
+                    "hlsOutputSettings",
                     &self.r#hls_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "media_package_output_settings",
+                    "mediaPackageOutputSettings",
                     &self.r#media_package_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "ms_smooth_output_settings",
+                    "msSmoothOutputSettings",
                     &self.r#ms_smooth_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "multiplex_output_settings",
+                    "multiplexOutputSettings",
                     &self.r#multiplex_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "rtmp_output_settings",
+                    "rtmpOutputSettings",
                     &self.r#rtmp_output_settings,
                 ),
                 to_pulumi_object_field(
-                    "udp_output_settings",
+                    "udpOutputSettings",
                     &self.r#udp_output_settings,
                 ),
             ];

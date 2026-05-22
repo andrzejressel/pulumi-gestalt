@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customizations_supporteds",
+                    "customizationsSupporteds",
                     &self.r#customizations_supporteds,
                 ),
                 to_pulumi_object_field(
-                    "inference_types_supporteds",
+                    "inferenceTypesSupporteds",
                     &self.r#inference_types_supporteds,
                 ),
                 to_pulumi_object_field(
-                    "input_modalities",
+                    "inputModalities",
                     &self.r#input_modalities,
                 ),
                 to_pulumi_object_field(
-                    "model_arn",
+                    "modelArn",
                     &self.r#model_arn,
                 ),
                 to_pulumi_object_field(
-                    "model_id",
+                    "modelId",
                     &self.r#model_id,
                 ),
                 to_pulumi_object_field(
-                    "model_name",
+                    "modelName",
                     &self.r#model_name,
                 ),
                 to_pulumi_object_field(
-                    "output_modalities",
+                    "outputModalities",
                     &self.r#output_modalities,
                 ),
                 to_pulumi_object_field(
-                    "provider_name",
+                    "providerName",
                     &self.r#provider_name,
                 ),
                 to_pulumi_object_field(
-                    "response_streaming_supported",
+                    "responseStreamingSupported",
                     &self.r#response_streaming_supported,
                 ),
             ];

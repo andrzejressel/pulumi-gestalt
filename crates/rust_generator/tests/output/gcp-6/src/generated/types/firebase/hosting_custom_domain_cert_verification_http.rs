@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hos
                     &self.r#discovered,
                 ),
                 to_pulumi_object_field(
-                    "last_check_time",
+                    "lastCheckTime",
                     &self.r#last_check_time,
                 ),
                 to_pulumi_object_field(

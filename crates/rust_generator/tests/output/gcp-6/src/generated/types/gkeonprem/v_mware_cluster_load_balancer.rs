@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "f_5_config",
+                    "f5Config",
                     &self.r#f_5_config,
                 ),
                 to_pulumi_object_field(
-                    "manual_lb_config",
+                    "manualLbConfig",
                     &self.r#manual_lb_config,
                 ),
                 to_pulumi_object_field(
-                    "metal_lb_config",
+                    "metalLbConfig",
                     &self.r#metal_lb_config,
                 ),
                 to_pulumi_object_field(
-                    "vip_config",
+                    "vipConfig",
                     &self.r#vip_config,
                 ),
             ];

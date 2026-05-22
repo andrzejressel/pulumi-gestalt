@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cpu_utilization_percentage",
+                    "cpuUtilizationPercentage",
                     &self.r#cpu_utilization_percentage,
                 ),
             ];

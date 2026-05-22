@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_pool_health_probe_ids",
+                    "backendPoolHealthProbeIds",
                     &self.r#backend_pool_health_probe_ids,
                 ),
                 to_pulumi_object_field(
-                    "backend_pool_ids",
+                    "backendPoolIds",
                     &self.r#backend_pool_ids,
                 ),
                 to_pulumi_object_field(
-                    "backend_pool_load_balancing_ids",
+                    "backendPoolLoadBalancingIds",
                     &self.r#backend_pool_load_balancing_ids,
                 ),
                 to_pulumi_object_field(
-                    "frontend_endpoint_ids",
+                    "frontendEndpointIds",
                     &self.r#frontend_endpoint_ids,
                 ),
                 to_pulumi_object_field(
-                    "routing_rule_ids",
+                    "routingRuleIds",
                     &self.r#routing_rule_ids,
                 ),
             ];

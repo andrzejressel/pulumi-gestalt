@@ -85,11 +85,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#domain,
                 ),
                 to_pulumi_object_field(
-                    "group_by_email",
+                    "groupByEmail",
                     &self.r#group_by_email,
                 ),
                 to_pulumi_object_field(
-                    "iam_member",
+                    "iamMember",
                     &self.r#iam_member,
                 ),
                 to_pulumi_object_field(
@@ -101,11 +101,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#routine,
                 ),
                 to_pulumi_object_field(
-                    "special_group",
+                    "specialGroup",
                     &self.r#special_group,
                 ),
                 to_pulumi_object_field(
-                    "user_by_email",
+                    "userByEmail",
                     &self.r#user_by_email,
                 ),
                 to_pulumi_object_field(

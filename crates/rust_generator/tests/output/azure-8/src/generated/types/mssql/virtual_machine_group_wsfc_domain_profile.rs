@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_bootstrap_account_name",
+                    "clusterBootstrapAccountName",
                     &self.r#cluster_bootstrap_account_name,
                 ),
                 to_pulumi_object_field(
-                    "cluster_operator_account_name",
+                    "clusterOperatorAccountName",
                     &self.r#cluster_operator_account_name,
                 ),
                 to_pulumi_object_field(
-                    "cluster_subnet_type",
+                    "clusterSubnetType",
                     &self.r#cluster_subnet_type,
                 ),
                 to_pulumi_object_field(
@@ -67,19 +67,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#fqdn,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit_path",
+                    "organizationalUnitPath",
                     &self.r#organizational_unit_path,
                 ),
                 to_pulumi_object_field(
-                    "sql_service_account_name",
+                    "sqlServiceAccountName",
                     &self.r#sql_service_account_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_primary_key",
+                    "storageAccountPrimaryKey",
                     &self.r#storage_account_primary_key,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_url",
+                    "storageAccountUrl",
                     &self.r#storage_account_url,
                 ),
             ];

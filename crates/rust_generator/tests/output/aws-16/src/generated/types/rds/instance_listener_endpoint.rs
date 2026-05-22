@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "hosted_zone_id",
+                    "hostedZoneId",
                     &self.r#hosted_zone_id,
                 ),
                 to_pulumi_object_field(

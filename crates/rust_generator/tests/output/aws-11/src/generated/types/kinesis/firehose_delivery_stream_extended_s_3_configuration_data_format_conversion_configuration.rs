@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "input_format_configuration",
+                    "inputFormatConfiguration",
                     &self.r#input_format_configuration,
                 ),
                 to_pulumi_object_field(
-                    "output_format_configuration",
+                    "outputFormatConfiguration",
                     &self.r#output_format_configuration,
                 ),
                 to_pulumi_object_field(
-                    "schema_configuration",
+                    "schemaConfiguration",
                     &self.r#schema_configuration,
                 ),
             ];

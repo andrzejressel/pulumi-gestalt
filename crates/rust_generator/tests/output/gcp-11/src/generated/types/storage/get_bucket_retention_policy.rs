@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "is_locked",
+                    "isLocked",
                     &self.r#is_locked,
                 ),
                 to_pulumi_object_field(
-                    "retention_period",
+                    "retentionPeriod",
                     &self.r#retention_period,
                 ),
             ];

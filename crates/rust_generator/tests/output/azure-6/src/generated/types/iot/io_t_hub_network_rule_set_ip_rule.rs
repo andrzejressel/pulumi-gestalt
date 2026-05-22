@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for IoT
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "ip_mask",
+                    "ipMask",
                     &self.r#ip_mask,
                 ),
                 to_pulumi_object_field(

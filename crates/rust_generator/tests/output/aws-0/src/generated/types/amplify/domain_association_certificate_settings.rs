@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_verification_dns_record",
+                    "certificateVerificationDnsRecord",
                     &self.r#certificate_verification_dns_record,
                 ),
                 to_pulumi_object_field(
-                    "custom_certificate_arn",
+                    "customCertificateArn",
                     &self.r#custom_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

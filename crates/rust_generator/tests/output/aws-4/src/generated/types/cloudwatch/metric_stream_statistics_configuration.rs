@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_statistics",
+                    "additionalStatistics",
                     &self.r#additional_statistics,
                 ),
                 to_pulumi_object_field(
-                    "include_metrics",
+                    "includeMetrics",
                     &self.r#include_metrics,
                 ),
             ];

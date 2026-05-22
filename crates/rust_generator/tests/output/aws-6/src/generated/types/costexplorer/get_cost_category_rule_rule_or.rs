@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#ands,
                 ),
                 to_pulumi_object_field(
-                    "cost_categories",
+                    "costCategories",
                     &self.r#cost_categories,
                 ),
                 to_pulumi_object_field(

@@ -37,23 +37,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_retry_interval",
+                    "connectionRetryInterval",
                     &self.r#connection_retry_interval,
                 ),
                 to_pulumi_object_field(
-                    "filecache_duration",
+                    "filecacheDuration",
                     &self.r#filecache_duration,
                 ),
                 to_pulumi_object_field(
-                    "http_transfer_mode",
+                    "httpTransferMode",
                     &self.r#http_transfer_mode,
                 ),
                 to_pulumi_object_field(
-                    "num_retries",
+                    "numRetries",
                     &self.r#num_retries,
                 ),
                 to_pulumi_object_field(
-                    "restart_delay",
+                    "restartDelay",
                     &self.r#restart_delay,
                 ),
             ];

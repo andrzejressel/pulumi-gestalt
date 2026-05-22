@@ -99,39 +99,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "add_headers",
+                    "addHeaders",
                     &self.r#add_headers,
                 ),
                 to_pulumi_object_field(
-                    "allow_child_bypass",
+                    "allowChildBypass",
                     &self.r#allow_child_bypass,
                 ),
                 to_pulumi_object_field(
-                    "audit_ssh",
+                    "auditSsh",
                     &self.r#audit_ssh,
                 ),
                 to_pulumi_object_field(
-                    "biso_admin_controls",
+                    "bisoAdminControls",
                     &self.r#biso_admin_controls,
                 ),
                 to_pulumi_object_field(
-                    "block_page_enabled",
+                    "blockPageEnabled",
                     &self.r#block_page_enabled,
                 ),
                 to_pulumi_object_field(
-                    "block_page_reason",
+                    "blockPageReason",
                     &self.r#block_page_reason,
                 ),
                 to_pulumi_object_field(
-                    "bypass_parent_rule",
+                    "bypassParentRule",
                     &self.r#bypass_parent_rule,
                 ),
                 to_pulumi_object_field(
-                    "check_session",
+                    "checkSession",
                     &self.r#check_session,
                 ),
                 to_pulumi_object_field(
-                    "dns_resolvers",
+                    "dnsResolvers",
                     &self.r#dns_resolvers,
                 ),
                 to_pulumi_object_field(
@@ -139,43 +139,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#egress,
                 ),
                 to_pulumi_object_field(
-                    "ignore_cname_category_matches",
+                    "ignoreCnameCategoryMatches",
                     &self.r#ignore_cname_category_matches,
                 ),
                 to_pulumi_object_field(
-                    "insecure_disable_dnssec_validation",
+                    "insecureDisableDnssecValidation",
                     &self.r#insecure_disable_dnssec_validation,
                 ),
                 to_pulumi_object_field(
-                    "ip_categories",
+                    "ipCategories",
                     &self.r#ip_categories,
                 ),
                 to_pulumi_object_field(
-                    "l_4_override",
+                    "l4override",
                     &self.r#l_4_override,
                 ),
                 to_pulumi_object_field(
-                    "notification_settings",
+                    "notificationSettings",
                     &self.r#notification_settings,
                 ),
                 to_pulumi_object_field(
-                    "override_host",
+                    "overrideHost",
                     &self.r#override_host,
                 ),
                 to_pulumi_object_field(
-                    "override_ips",
+                    "overrideIps",
                     &self.r#override_ips,
                 ),
                 to_pulumi_object_field(
-                    "payload_log",
+                    "payloadLog",
                     &self.r#payload_log,
                 ),
                 to_pulumi_object_field(
-                    "resolve_dns_through_cloudflare",
+                    "resolveDnsThroughCloudflare",
                     &self.r#resolve_dns_through_cloudflare,
                 ),
                 to_pulumi_object_field(
-                    "untrusted_cert",
+                    "untrustedCert",
                     &self.r#untrusted_cert,
                 ),
             ];

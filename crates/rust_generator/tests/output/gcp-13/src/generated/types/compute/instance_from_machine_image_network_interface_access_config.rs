@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "nat_ip",
+                    "natIp",
                     &self.r#nat_ip,
                 ),
                 to_pulumi_object_field(
-                    "network_tier",
+                    "networkTier",
                     &self.r#network_tier,
                 ),
                 to_pulumi_object_field(
-                    "public_ptr_domain_name",
+                    "publicPtrDomainName",
                     &self.r#public_ptr_domain_name,
                 ),
                 to_pulumi_object_field(
-                    "security_policy",
+                    "securityPolicy",
                     &self.r#security_policy,
                 ),
             ];

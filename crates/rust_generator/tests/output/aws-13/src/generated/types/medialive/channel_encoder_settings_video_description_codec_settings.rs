@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "frame_capture_settings",
+                    "frameCaptureSettings",
                     &self.r#frame_capture_settings,
                 ),
                 to_pulumi_object_field(
-                    "h_264_settings",
+                    "h264Settings",
                     &self.r#h_264_settings,
                 ),
                 to_pulumi_object_field(
-                    "h_265_settings",
+                    "h265Settings",
                     &self.r#h_265_settings,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for HBa
                     &self.r#days,
                 ),
                 to_pulumi_object_field(
-                    "target_instance_count",
+                    "targetInstanceCount",
                     &self.r#target_instance_count,
                 ),
                 to_pulumi_object_field(

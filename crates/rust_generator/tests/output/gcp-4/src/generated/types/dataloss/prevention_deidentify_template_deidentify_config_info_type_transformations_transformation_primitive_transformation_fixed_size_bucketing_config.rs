@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_size",
+                    "bucketSize",
                     &self.r#bucket_size,
                 ),
                 to_pulumi_object_field(
-                    "lower_bound",
+                    "lowerBound",
                     &self.r#lower_bound,
                 ),
                 to_pulumi_object_field(
-                    "upper_bound",
+                    "upperBound",
                     &self.r#upper_bound,
                 ),
             ];

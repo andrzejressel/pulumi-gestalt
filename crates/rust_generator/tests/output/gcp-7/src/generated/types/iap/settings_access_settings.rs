@@ -58,31 +58,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_domains_settings",
+                    "allowedDomainsSettings",
                     &self.r#allowed_domains_settings,
                 ),
                 to_pulumi_object_field(
-                    "cors_settings",
+                    "corsSettings",
                     &self.r#cors_settings,
                 ),
                 to_pulumi_object_field(
-                    "gcip_settings",
+                    "gcipSettings",
                     &self.r#gcip_settings,
                 ),
                 to_pulumi_object_field(
-                    "identity_sources",
+                    "identitySources",
                     &self.r#identity_sources,
                 ),
                 to_pulumi_object_field(
-                    "oauth_settings",
+                    "oauthSettings",
                     &self.r#oauth_settings,
                 ),
                 to_pulumi_object_field(
-                    "reauth_settings",
+                    "reauthSettings",
                     &self.r#reauth_settings,
                 ),
                 to_pulumi_object_field(
-                    "workforce_identity_settings",
+                    "workforceIdentitySettings",
                     &self.r#workforce_identity_settings,
                 ),
             ];

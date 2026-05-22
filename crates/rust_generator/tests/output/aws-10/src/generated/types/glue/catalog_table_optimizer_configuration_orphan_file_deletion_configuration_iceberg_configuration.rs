@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "orphan_file_retention_period_in_days",
+                    "orphanFileRetentionPeriodInDays",
                     &self.r#orphan_file_retention_period_in_days,
                 ),
             ];

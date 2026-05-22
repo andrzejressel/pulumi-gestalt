@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "file_system_config",
+                    "fileSystemConfig",
                     &self.r#file_system_config,
                 ),
                 to_pulumi_object_field(
-                    "kernel_spec",
+                    "kernelSpec",
                     &self.r#kernel_spec,
                 ),
             ];

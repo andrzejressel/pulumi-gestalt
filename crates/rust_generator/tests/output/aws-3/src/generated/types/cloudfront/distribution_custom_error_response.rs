@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_caching_min_ttl",
+                    "errorCachingMinTtl",
                     &self.r#error_caching_min_ttl,
                 ),
                 to_pulumi_object_field(
-                    "error_code",
+                    "errorCode",
                     &self.r#error_code,
                 ),
                 to_pulumi_object_field(
-                    "response_code",
+                    "responseCode",
                     &self.r#response_code,
                 ),
                 to_pulumi_object_field(
-                    "response_page_path",
+                    "responsePagePath",
                     &self.r#response_page_path,
                 ),
             ];

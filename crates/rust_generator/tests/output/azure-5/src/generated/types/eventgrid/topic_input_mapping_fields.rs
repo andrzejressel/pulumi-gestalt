@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_version",
+                    "dataVersion",
                     &self.r#data_version,
                 ),
                 to_pulumi_object_field(
-                    "event_time",
+                    "eventTime",
                     &self.r#event_time,
                 ),
                 to_pulumi_object_field(
-                    "event_type",
+                    "eventType",
                     &self.r#event_type,
                 ),
                 to_pulumi_object_field(

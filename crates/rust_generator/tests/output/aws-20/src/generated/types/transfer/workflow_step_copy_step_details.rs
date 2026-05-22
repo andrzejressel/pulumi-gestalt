@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_file_location",
+                    "destinationFileLocation",
                     &self.r#destination_file_location,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "overwrite_existing",
+                    "overwriteExisting",
                     &self.r#overwrite_existing,
                 ),
                 to_pulumi_object_field(
-                    "source_file_location",
+                    "sourceFileLocation",
                     &self.r#source_file_location,
                 ),
             ];

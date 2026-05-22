@@ -79,31 +79,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cross_realm_trust_admin_server",
+                    "crossRealmTrustAdminServer",
                     &self.r#cross_realm_trust_admin_server,
                 ),
                 to_pulumi_object_field(
-                    "cross_realm_trust_kdc",
+                    "crossRealmTrustKdc",
                     &self.r#cross_realm_trust_kdc,
                 ),
                 to_pulumi_object_field(
-                    "cross_realm_trust_realm",
+                    "crossRealmTrustRealm",
                     &self.r#cross_realm_trust_realm,
                 ),
                 to_pulumi_object_field(
-                    "cross_realm_trust_shared_password",
+                    "crossRealmTrustSharedPassword",
                     &self.r#cross_realm_trust_shared_password,
                 ),
                 to_pulumi_object_field(
-                    "enable_kerberos",
+                    "enableKerberos",
                     &self.r#enable_kerberos,
                 ),
                 to_pulumi_object_field(
-                    "kdc_db_key",
+                    "kdcDbKey",
                     &self.r#kdc_db_key,
                 ),
                 to_pulumi_object_field(
-                    "key_password",
+                    "keyPassword",
                     &self.r#key_password,
                 ),
                 to_pulumi_object_field(
@@ -111,11 +111,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#keystore,
                 ),
                 to_pulumi_object_field(
-                    "keystore_password",
+                    "keystorePassword",
                     &self.r#keystore_password,
                 ),
                 to_pulumi_object_field(
-                    "kms_key",
+                    "kmsKey",
                     &self.r#kms_key,
                 ),
                 to_pulumi_object_field(
@@ -123,11 +123,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#realm,
                 ),
                 to_pulumi_object_field(
-                    "root_principal_password",
+                    "rootPrincipalPassword",
                     &self.r#root_principal_password,
                 ),
                 to_pulumi_object_field(
-                    "tgt_lifetime_hours",
+                    "tgtLifetimeHours",
                     &self.r#tgt_lifetime_hours,
                 ),
                 to_pulumi_object_field(
@@ -135,7 +135,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#truststore,
                 ),
                 to_pulumi_object_field(
-                    "truststore_password",
+                    "truststorePassword",
                     &self.r#truststore_password,
                 ),
             ];

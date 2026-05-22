@@ -84,59 +84,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#age,
                 ),
                 to_pulumi_object_field(
-                    "created_before",
+                    "createdBefore",
                     &self.r#created_before,
                 ),
                 to_pulumi_object_field(
-                    "custom_time_before",
+                    "customTimeBefore",
                     &self.r#custom_time_before,
                 ),
                 to_pulumi_object_field(
-                    "days_since_custom_time",
+                    "daysSinceCustomTime",
                     &self.r#days_since_custom_time,
                 ),
                 to_pulumi_object_field(
-                    "days_since_noncurrent_time",
+                    "daysSinceNoncurrentTime",
                     &self.r#days_since_noncurrent_time,
                 ),
                 to_pulumi_object_field(
-                    "matches_prefixes",
+                    "matchesPrefixes",
                     &self.r#matches_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "matches_storage_classes",
+                    "matchesStorageClasses",
                     &self.r#matches_storage_classes,
                 ),
                 to_pulumi_object_field(
-                    "matches_suffixes",
+                    "matchesSuffixes",
                     &self.r#matches_suffixes,
                 ),
                 to_pulumi_object_field(
-                    "noncurrent_time_before",
+                    "noncurrentTimeBefore",
                     &self.r#noncurrent_time_before,
                 ),
                 to_pulumi_object_field(
-                    "num_newer_versions",
+                    "numNewerVersions",
                     &self.r#num_newer_versions,
                 ),
                 to_pulumi_object_field(
-                    "send_age_if_zero",
+                    "sendAgeIfZero",
                     &self.r#send_age_if_zero,
                 ),
                 to_pulumi_object_field(
-                    "send_days_since_custom_time_if_zero",
+                    "sendDaysSinceCustomTimeIfZero",
                     &self.r#send_days_since_custom_time_if_zero,
                 ),
                 to_pulumi_object_field(
-                    "send_days_since_noncurrent_time_if_zero",
+                    "sendDaysSinceNoncurrentTimeIfZero",
                     &self.r#send_days_since_noncurrent_time_if_zero,
                 ),
                 to_pulumi_object_field(
-                    "send_num_newer_versions_if_zero",
+                    "sendNumNewerVersionsIfZero",
                     &self.r#send_num_newer_versions_if_zero,
                 ),
                 to_pulumi_object_field(
-                    "with_state",
+                    "withState",
                     &self.r#with_state,
                 ),
             ];

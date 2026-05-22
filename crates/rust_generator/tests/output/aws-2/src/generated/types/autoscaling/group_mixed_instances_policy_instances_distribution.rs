@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "on_demand_allocation_strategy",
+                    "onDemandAllocationStrategy",
                     &self.r#on_demand_allocation_strategy,
                 ),
                 to_pulumi_object_field(
-                    "on_demand_base_capacity",
+                    "onDemandBaseCapacity",
                     &self.r#on_demand_base_capacity,
                 ),
                 to_pulumi_object_field(
-                    "on_demand_percentage_above_base_capacity",
+                    "onDemandPercentageAboveBaseCapacity",
                     &self.r#on_demand_percentage_above_base_capacity,
                 ),
                 to_pulumi_object_field(
-                    "spot_allocation_strategy",
+                    "spotAllocationStrategy",
                     &self.r#spot_allocation_strategy,
                 ),
                 to_pulumi_object_field(
-                    "spot_instance_pools",
+                    "spotInstancePools",
                     &self.r#spot_instance_pools,
                 ),
                 to_pulumi_object_field(
-                    "spot_max_price",
+                    "spotMaxPrice",
                     &self.r#spot_max_price,
                 ),
             ];

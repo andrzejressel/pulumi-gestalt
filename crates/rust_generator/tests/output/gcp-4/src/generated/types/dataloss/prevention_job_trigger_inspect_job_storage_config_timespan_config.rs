@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_auto_population_of_timespan_config",
+                    "enableAutoPopulationOfTimespanConfig",
                     &self.r#enable_auto_population_of_timespan_config,
                 ),
                 to_pulumi_object_field(
-                    "end_time",
+                    "endTime",
                     &self.r#end_time,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_field",
+                    "timestampField",
                     &self.r#timestamp_field,
                 ),
             ];

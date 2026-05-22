@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tru
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_data",
+                    "sourceData",
                     &self.r#source_data,
                 ),
                 to_pulumi_object_field(
-                    "source_type",
+                    "sourceType",
                     &self.r#source_type,
                 ),
             ];

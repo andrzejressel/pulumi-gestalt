@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "provisioned_read_capacity_units",
+                    "provisionedReadCapacityUnits",
                     &self.r#provisioned_read_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_write_capacity_units",
+                    "provisionedWriteCapacityUnits",
                     &self.r#provisioned_write_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "throughput_mode",
+                    "throughputMode",
                     &self.r#throughput_mode,
                 ),
             ];

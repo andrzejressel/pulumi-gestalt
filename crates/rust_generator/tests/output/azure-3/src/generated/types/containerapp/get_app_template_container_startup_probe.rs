@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "failure_count_threshold",
+                    "failureCountThreshold",
                     &self.r#failure_count_threshold,
                 ),
                 to_pulumi_object_field(
@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#host,
                 ),
                 to_pulumi_object_field(
-                    "initial_delay",
+                    "initialDelay",
                     &self.r#initial_delay,
                 ),
                 to_pulumi_object_field(
-                    "interval_seconds",
+                    "intervalSeconds",
                     &self.r#interval_seconds,
                 ),
                 to_pulumi_object_field(
@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "termination_grace_period_seconds",
+                    "terminationGracePeriodSeconds",
                     &self.r#termination_grace_period_seconds,
                 ),
                 to_pulumi_object_field(

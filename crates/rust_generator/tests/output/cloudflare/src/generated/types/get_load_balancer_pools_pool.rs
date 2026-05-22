@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "check_regions",
+                    "checkRegions",
                     &self.r#check_regions,
                 ),
                 to_pulumi_object_field(
-                    "created_on",
+                    "createdOn",
                     &self.r#created_on,
                 ),
                 to_pulumi_object_field(
@@ -99,7 +99,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#latitude,
                 ),
                 to_pulumi_object_field(
-                    "load_sheddings",
+                    "loadSheddings",
                     &self.r#load_sheddings,
                 ),
                 to_pulumi_object_field(
@@ -107,11 +107,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#longitude,
                 ),
                 to_pulumi_object_field(
-                    "minimum_origins",
+                    "minimumOrigins",
                     &self.r#minimum_origins,
                 ),
                 to_pulumi_object_field(
-                    "modified_on",
+                    "modifiedOn",
                     &self.r#modified_on,
                 ),
                 to_pulumi_object_field(
@@ -123,7 +123,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "notification_email",
+                    "notificationEmail",
                     &self.r#notification_email,
                 ),
                 to_pulumi_object_field(

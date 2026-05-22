@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kinesis_firehose_config",
+                    "kinesisFirehoseConfig",
                     &self.r#kinesis_firehose_config,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_stream_config",
+                    "kinesisStreamConfig",
                     &self.r#kinesis_stream_config,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_video_stream_config",
+                    "kinesisVideoStreamConfig",
                     &self.r#kinesis_video_stream_config,
                 ),
                 to_pulumi_object_field(
-                    "s_3_config",
+                    "s3Config",
                     &self.r#s_3_config,
                 ),
                 to_pulumi_object_field(
-                    "storage_type",
+                    "storageType",
                     &self.r#storage_type,
                 ),
             ];

@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "crypto_key_name",
+                    "cryptoKeyName",
                     &self.r#crypto_key_name,
                 ),
                 to_pulumi_object_field(
-                    "wrapped_key",
+                    "wrappedKey",
                     &self.r#wrapped_key,
                 ),
             ];

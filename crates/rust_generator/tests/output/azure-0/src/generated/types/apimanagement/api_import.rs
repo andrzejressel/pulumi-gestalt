@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_format",
+                    "contentFormat",
                     &self.r#content_format,
                 ),
                 to_pulumi_object_field(
-                    "content_value",
+                    "contentValue",
                     &self.r#content_value,
                 ),
                 to_pulumi_object_field(
-                    "wsdl_selector",
+                    "wsdlSelector",
                     &self.r#wsdl_selector,
                 ),
             ];

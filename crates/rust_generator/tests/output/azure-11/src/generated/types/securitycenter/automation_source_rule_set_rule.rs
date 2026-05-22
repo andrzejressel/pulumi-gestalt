@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "expected_value",
+                    "expectedValue",
                     &self.r#expected_value,
                 ),
                 to_pulumi_object_field(
@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#operator,
                 ),
                 to_pulumi_object_field(
-                    "property_path",
+                    "propertyPath",
                     &self.r#property_path,
                 ),
                 to_pulumi_object_field(
-                    "property_type",
+                    "propertyType",
                     &self.r#property_type,
                 ),
             ];

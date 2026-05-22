@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#identity,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_secret_id",
+                    "keyVaultSecretId",
                     &self.r#key_vault_secret_id,
                 ),
                 to_pulumi_object_field(

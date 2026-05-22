@@ -79,27 +79,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bitrate_bps",
+                    "bitrateBps",
                     &self.r#bitrate_bps,
                 ),
                 to_pulumi_object_field(
-                    "crf_level",
+                    "crfLevel",
                     &self.r#crf_level,
                 ),
                 to_pulumi_object_field(
-                    "entropy_coder",
+                    "entropyCoder",
                     &self.r#entropy_coder,
                 ),
                 to_pulumi_object_field(
-                    "frame_rate",
+                    "frameRate",
                     &self.r#frame_rate,
                 ),
                 to_pulumi_object_field(
-                    "gop_duration",
+                    "gopDuration",
                     &self.r#gop_duration,
                 ),
                 to_pulumi_object_field(
-                    "height_pixels",
+                    "heightPixels",
                     &self.r#height_pixels,
                 ),
                 to_pulumi_object_field(
@@ -107,7 +107,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#hlg,
                 ),
                 to_pulumi_object_field(
-                    "pixel_format",
+                    "pixelFormat",
                     &self.r#pixel_format,
                 ),
                 to_pulumi_object_field(
@@ -119,7 +119,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#profile,
                 ),
                 to_pulumi_object_field(
-                    "rate_control_mode",
+                    "rateControlMode",
                     &self.r#rate_control_mode,
                 ),
                 to_pulumi_object_field(
@@ -127,15 +127,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#sdr,
                 ),
                 to_pulumi_object_field(
-                    "vbv_fullness_bits",
+                    "vbvFullnessBits",
                     &self.r#vbv_fullness_bits,
                 ),
                 to_pulumi_object_field(
-                    "vbv_size_bits",
+                    "vbvSizeBits",
                     &self.r#vbv_size_bits,
                 ),
                 to_pulumi_object_field(
-                    "width_pixels",
+                    "widthPixels",
                     &self.r#width_pixels,
                 ),
             ];

@@ -49,31 +49,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_key_vault_certificate_secret_name",
+                    "azureKeyVaultCertificateSecretName",
                     &self.r#azure_key_vault_certificate_secret_name,
                 ),
                 to_pulumi_object_field(
-                    "azure_key_vault_certificate_secret_version",
+                    "azureKeyVaultCertificateSecretVersion",
                     &self.r#azure_key_vault_certificate_secret_version,
                 ),
                 to_pulumi_object_field(
-                    "azure_key_vault_certificate_vault_id",
+                    "azureKeyVaultCertificateVaultId",
                     &self.r#azure_key_vault_certificate_vault_id,
                 ),
                 to_pulumi_object_field(
-                    "certificate_source",
+                    "certificateSource",
                     &self.r#certificate_source,
                 ),
                 to_pulumi_object_field(
-                    "minimum_tls_version",
+                    "minimumTlsVersion",
                     &self.r#minimum_tls_version,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_state",
+                    "provisioningState",
                     &self.r#provisioning_state,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_substate",
+                    "provisioningSubstate",
                     &self.r#provisioning_substate,
                 ),
             ];

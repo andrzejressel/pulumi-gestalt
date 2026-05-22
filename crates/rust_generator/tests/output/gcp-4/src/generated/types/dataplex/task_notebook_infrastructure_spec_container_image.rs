@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "java_jars",
+                    "javaJars",
                     &self.r#java_jars,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "python_packages",
+                    "pythonPackages",
                     &self.r#python_packages,
                 ),
             ];

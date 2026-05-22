@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "public_access",
+                    "publicAccess",
                     &self.r#public_access,
                 ),
                 to_pulumi_object_field(
-                    "vpc_connectivity",
+                    "vpcConnectivity",
                     &self.r#vpc_connectivity,
                 ),
             ];

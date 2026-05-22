@@ -55,23 +55,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#idp,
                 ),
                 to_pulumi_object_field(
-                    "master_backend_role",
+                    "masterBackendRole",
                     &self.r#master_backend_role,
                 ),
                 to_pulumi_object_field(
-                    "master_user_name",
+                    "masterUserName",
                     &self.r#master_user_name,
                 ),
                 to_pulumi_object_field(
-                    "roles_key",
+                    "rolesKey",
                     &self.r#roles_key,
                 ),
                 to_pulumi_object_field(
-                    "session_timeout_minutes",
+                    "sessionTimeoutMinutes",
                     &self.r#session_timeout_minutes,
                 ),
                 to_pulumi_object_field(
-                    "subject_key",
+                    "subjectKey",
                     &self.r#subject_key,
                 ),
             ];

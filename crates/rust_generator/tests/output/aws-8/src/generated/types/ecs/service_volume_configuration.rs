@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "managed_ebs_volume",
+                    "managedEbsVolume",
                     &self.r#managed_ebs_volume,
                 ),
                 to_pulumi_object_field(

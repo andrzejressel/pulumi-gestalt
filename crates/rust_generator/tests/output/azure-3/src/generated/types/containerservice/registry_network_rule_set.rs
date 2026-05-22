@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_action",
+                    "defaultAction",
                     &self.r#default_action,
                 ),
                 to_pulumi_object_field(
-                    "ip_rules",
+                    "ipRules",
                     &self.r#ip_rules,
                 ),
             ];

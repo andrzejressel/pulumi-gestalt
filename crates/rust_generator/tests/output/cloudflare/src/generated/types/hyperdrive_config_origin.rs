@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hyp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_client_id",
+                    "accessClientId",
                     &self.r#access_client_id,
                 ),
                 to_pulumi_object_field(
-                    "access_client_secret",
+                    "accessClientSecret",
                     &self.r#access_client_secret,
                 ),
                 to_pulumi_object_field(

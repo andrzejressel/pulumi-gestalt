@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#datastore,
                 ),
                 to_pulumi_object_field(
-                    "storage_policy_name",
+                    "storagePolicyName",
                     &self.r#storage_policy_name,
                 ),
             ];

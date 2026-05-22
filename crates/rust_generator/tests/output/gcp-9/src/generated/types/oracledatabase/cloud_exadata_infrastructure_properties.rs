@@ -170,87 +170,87 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "activated_storage_count",
+                    "activatedStorageCount",
                     &self.r#activated_storage_count,
                 ),
                 to_pulumi_object_field(
-                    "additional_storage_count",
+                    "additionalStorageCount",
                     &self.r#additional_storage_count,
                 ),
                 to_pulumi_object_field(
-                    "available_storage_size_gb",
+                    "availableStorageSizeGb",
                     &self.r#available_storage_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "compute_count",
+                    "computeCount",
                     &self.r#compute_count,
                 ),
                 to_pulumi_object_field(
-                    "cpu_count",
+                    "cpuCount",
                     &self.r#cpu_count,
                 ),
                 to_pulumi_object_field(
-                    "customer_contacts",
+                    "customerContacts",
                     &self.r#customer_contacts,
                 ),
                 to_pulumi_object_field(
-                    "data_storage_size_tb",
+                    "dataStorageSizeTb",
                     &self.r#data_storage_size_tb,
                 ),
                 to_pulumi_object_field(
-                    "db_node_storage_size_gb",
+                    "dbNodeStorageSizeGb",
                     &self.r#db_node_storage_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "db_server_version",
+                    "dbServerVersion",
                     &self.r#db_server_version,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_window",
+                    "maintenanceWindow",
                     &self.r#maintenance_window,
                 ),
                 to_pulumi_object_field(
-                    "max_cpu_count",
+                    "maxCpuCount",
                     &self.r#max_cpu_count,
                 ),
                 to_pulumi_object_field(
-                    "max_data_storage_tb",
+                    "maxDataStorageTb",
                     &self.r#max_data_storage_tb,
                 ),
                 to_pulumi_object_field(
-                    "max_db_node_storage_size_gb",
+                    "maxDbNodeStorageSizeGb",
                     &self.r#max_db_node_storage_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "max_memory_gb",
+                    "maxMemoryGb",
                     &self.r#max_memory_gb,
                 ),
                 to_pulumi_object_field(
-                    "memory_size_gb",
+                    "memorySizeGb",
                     &self.r#memory_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "monthly_db_server_version",
+                    "monthlyDbServerVersion",
                     &self.r#monthly_db_server_version,
                 ),
                 to_pulumi_object_field(
-                    "monthly_storage_server_version",
+                    "monthlyStorageServerVersion",
                     &self.r#monthly_storage_server_version,
                 ),
                 to_pulumi_object_field(
-                    "next_maintenance_run_id",
+                    "nextMaintenanceRunId",
                     &self.r#next_maintenance_run_id,
                 ),
                 to_pulumi_object_field(
-                    "next_maintenance_run_time",
+                    "nextMaintenanceRunTime",
                     &self.r#next_maintenance_run_time,
                 ),
                 to_pulumi_object_field(
-                    "next_security_maintenance_run_time",
+                    "nextSecurityMaintenanceRunTime",
                     &self.r#next_security_maintenance_run_time,
                 ),
                 to_pulumi_object_field(
-                    "oci_url",
+                    "ociUrl",
                     &self.r#oci_url,
                 ),
                 to_pulumi_object_field(
@@ -266,15 +266,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clo
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "storage_count",
+                    "storageCount",
                     &self.r#storage_count,
                 ),
                 to_pulumi_object_field(
-                    "storage_server_version",
+                    "storageServerVersion",
                     &self.r#storage_server_version,
                 ),
                 to_pulumi_object_field(
-                    "total_storage_size_gb",
+                    "totalStorageSizeGb",
                     &self.r#total_storage_size_gb,
                 ),
             ];

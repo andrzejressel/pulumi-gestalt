@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#database,
                 ),
                 to_pulumi_object_field(
-                    "db_user",
+                    "dbUser",
                     &self.r#db_user,
                 ),
                 to_pulumi_object_field(
-                    "secret_manager_arn",
+                    "secretManagerArn",
                     &self.r#secret_manager_arn,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#sqls,
                 ),
                 to_pulumi_object_field(
-                    "statement_name",
+                    "statementName",
                     &self.r#statement_name,
                 ),
                 to_pulumi_object_field(
-                    "with_event",
+                    "withEvent",
                     &self.r#with_event,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "efs_file_location",
+                    "efsFileLocation",
                     &self.r#efs_file_location,
                 ),
                 to_pulumi_object_field(
-                    "s_3_file_location",
+                    "s3FileLocation",
                     &self.r#s_3_file_location,
                 ),
             ];

@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
                     &self.r#percentage,
                 ),
                 to_pulumi_object_field(
-                    "phase_id",
+                    "phaseId",
                     &self.r#phase_id,
                 ),
                 to_pulumi_object_field(

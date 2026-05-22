@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "device_group_name",
+                    "deviceGroupName",
                     &self.r#device_group_name,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
@@ -52,19 +52,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "panorama_server_1",
+                    "panoramaServer1",
                     &self.r#panorama_server_1,
                 ),
                 to_pulumi_object_field(
-                    "panorama_server_2",
+                    "panoramaServer2",
                     &self.r#panorama_server_2,
                 ),
                 to_pulumi_object_field(
-                    "template_name",
+                    "templateName",
                     &self.r#template_name,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine_ssh_key",
+                    "virtualMachineSshKey",
                     &self.r#virtual_machine_ssh_key,
                 ),
             ];

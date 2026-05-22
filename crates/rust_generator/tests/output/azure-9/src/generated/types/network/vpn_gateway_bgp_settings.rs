@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "bgp_peering_address",
+                    "bgpPeeringAddress",
                     &self.r#bgp_peering_address,
                 ),
                 to_pulumi_object_field(
-                    "instance_0_bgp_peering_address",
+                    "instance0BgpPeeringAddress",
                     &self.r#instance_0_bgp_peering_address,
                 ),
                 to_pulumi_object_field(
-                    "instance_1_bgp_peering_address",
+                    "instance1BgpPeeringAddress",
                     &self.r#instance_1_bgp_peering_address,
                 ),
                 to_pulumi_object_field(
-                    "peer_weight",
+                    "peerWeight",
                     &self.r#peer_weight,
                 ),
             ];

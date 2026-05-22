@@ -49,15 +49,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "completion_window",
+                    "completionWindow",
                     &self.r#completion_window,
                 ),
                 to_pulumi_object_field(
-                    "copy_actions",
+                    "copyActions",
                     &self.r#copy_actions,
                 ),
                 to_pulumi_object_field(
-                    "enable_continuous_backup",
+                    "enableContinuousBackup",
                     &self.r#enable_continuous_backup,
                 ),
                 to_pulumi_object_field(
@@ -65,11 +65,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#lifecycles,
                 ),
                 to_pulumi_object_field(
-                    "recovery_point_tags",
+                    "recoveryPointTags",
                     &self.r#recovery_point_tags,
                 ),
                 to_pulumi_object_field(
-                    "rule_name",
+                    "ruleName",
                     &self.r#rule_name,
                 ),
                 to_pulumi_object_field(
@@ -77,15 +77,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#schedule,
                 ),
                 to_pulumi_object_field(
-                    "schedule_expression_timezone",
+                    "scheduleExpressionTimezone",
                     &self.r#schedule_expression_timezone,
                 ),
                 to_pulumi_object_field(
-                    "start_window",
+                    "startWindow",
                     &self.r#start_window,
                 ),
                 to_pulumi_object_field(
-                    "target_vault_name",
+                    "targetVaultName",
                     &self.r#target_vault_name,
                 ),
             ];

@@ -114,11 +114,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "balancing_mode",
+                    "balancingMode",
                     &self.r#balancing_mode,
                 ),
                 to_pulumi_object_field(
-                    "capacity_scaler",
+                    "capacityScaler",
                     &self.r#capacity_scaler,
                 ),
                 to_pulumi_object_field(
@@ -130,31 +130,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
                     &self.r#group,
                 ),
                 to_pulumi_object_field(
-                    "max_connections",
+                    "maxConnections",
                     &self.r#max_connections,
                 ),
                 to_pulumi_object_field(
-                    "max_connections_per_endpoint",
+                    "maxConnectionsPerEndpoint",
                     &self.r#max_connections_per_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "max_connections_per_instance",
+                    "maxConnectionsPerInstance",
                     &self.r#max_connections_per_instance,
                 ),
                 to_pulumi_object_field(
-                    "max_rate",
+                    "maxRate",
                     &self.r#max_rate,
                 ),
                 to_pulumi_object_field(
-                    "max_rate_per_endpoint",
+                    "maxRatePerEndpoint",
                     &self.r#max_rate_per_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "max_rate_per_instance",
+                    "maxRatePerInstance",
                     &self.r#max_rate_per_instance,
                 ),
                 to_pulumi_object_field(
-                    "max_utilization",
+                    "maxUtilization",
                     &self.r#max_utilization,
                 ),
             ];

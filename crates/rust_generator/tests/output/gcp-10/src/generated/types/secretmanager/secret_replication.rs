@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
                     &self.r#auto,
                 ),
                 to_pulumi_object_field(
-                    "user_managed",
+                    "userManaged",
                     &self.r#user_managed,
                 ),
             ];

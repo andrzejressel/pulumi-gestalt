@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_lifecycle_management",
+                    "appLifecycleManagement",
                     &self.r#app_lifecycle_management,
                 ),
                 to_pulumi_object_field(
-                    "default_resource_spec",
+                    "defaultResourceSpec",
                     &self.r#default_resource_spec,
                 ),
             ];

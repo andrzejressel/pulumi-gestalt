@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_basic_auth",
+                    "httpBasicAuth",
                     &self.r#http_basic_auth,
                 ),
                 to_pulumi_object_field(
@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#repositories,
                 ),
                 to_pulumi_object_field(
-                    "search_paths",
+                    "searchPaths",
                     &self.r#search_paths,
                 ),
                 to_pulumi_object_field(
-                    "ssh_auth",
+                    "sshAuth",
                     &self.r#ssh_auth,
                 ),
                 to_pulumi_object_field(

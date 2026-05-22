@@ -87,19 +87,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "calendar_period",
+                    "calendarPeriod",
                     &self.r#calendar_period,
                 ),
                 to_pulumi_object_field(
-                    "credit_types",
+                    "creditTypes",
                     &self.r#credit_types,
                 ),
                 to_pulumi_object_field(
-                    "credit_types_treatment",
+                    "creditTypesTreatment",
                     &self.r#credit_types_treatment,
                 ),
                 to_pulumi_object_field(
-                    "custom_period",
+                    "customPeriod",
                     &self.r#custom_period,
                 ),
                 to_pulumi_object_field(
@@ -111,7 +111,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
                     &self.r#projects,
                 ),
                 to_pulumi_object_field(
-                    "resource_ancestors",
+                    "resourceAncestors",
                     &self.r#resource_ancestors,
                 ),
                 to_pulumi_object_field(

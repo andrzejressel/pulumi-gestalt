@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#trigger,
                 ),
                 to_pulumi_object_field(
-                    "workflow_management",
+                    "workflowManagement",
                     &self.r#workflow_management,
                 ),
             ];

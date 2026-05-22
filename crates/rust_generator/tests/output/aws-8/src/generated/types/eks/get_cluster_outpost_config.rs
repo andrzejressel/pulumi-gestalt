@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "control_plane_instance_type",
+                    "controlPlaneInstanceType",
                     &self.r#control_plane_instance_type,
                 ),
                 to_pulumi_object_field(
-                    "control_plane_placements",
+                    "controlPlanePlacements",
                     &self.r#control_plane_placements,
                 ),
                 to_pulumi_object_field(
-                    "outpost_arns",
+                    "outpostArns",
                     &self.r#outpost_arns,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_config",
+                    "clientConfig",
                     &self.r#client_config,
                 ),
                 to_pulumi_object_field(
-                    "output_config",
+                    "outputConfig",
                     &self.r#output_config,
                 ),
             ];

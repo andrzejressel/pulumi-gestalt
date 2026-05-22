@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#context,
                 ),
                 to_pulumi_object_field(
-                    "crypto_key",
+                    "cryptoKey",
                     &self.r#crypto_key,
                 ),
                 to_pulumi_object_field(
-                    "lower_bound_days",
+                    "lowerBoundDays",
                     &self.r#lower_bound_days,
                 ),
                 to_pulumi_object_field(
-                    "upper_bound_days",
+                    "upperBoundDays",
                     &self.r#upper_bound_days,
                 ),
             ];

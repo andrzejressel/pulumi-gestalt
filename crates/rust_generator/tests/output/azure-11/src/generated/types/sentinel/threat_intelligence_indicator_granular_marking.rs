@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
                     &self.r#language,
                 ),
                 to_pulumi_object_field(
-                    "marking_ref",
+                    "markingRef",
                     &self.r#marking_ref,
                 ),
                 to_pulumi_object_field(

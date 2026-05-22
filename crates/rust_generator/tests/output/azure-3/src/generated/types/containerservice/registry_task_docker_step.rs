@@ -59,31 +59,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#arguments,
                 ),
                 to_pulumi_object_field(
-                    "cache_enabled",
+                    "cacheEnabled",
                     &self.r#cache_enabled,
                 ),
                 to_pulumi_object_field(
-                    "context_access_token",
+                    "contextAccessToken",
                     &self.r#context_access_token,
                 ),
                 to_pulumi_object_field(
-                    "context_path",
+                    "contextPath",
                     &self.r#context_path,
                 ),
                 to_pulumi_object_field(
-                    "dockerfile_path",
+                    "dockerfilePath",
                     &self.r#dockerfile_path,
                 ),
                 to_pulumi_object_field(
-                    "image_names",
+                    "imageNames",
                     &self.r#image_names,
                 ),
                 to_pulumi_object_field(
-                    "push_enabled",
+                    "pushEnabled",
                     &self.r#push_enabled,
                 ),
                 to_pulumi_object_field(
-                    "secret_arguments",
+                    "secretArguments",
                     &self.r#secret_arguments,
                 ),
                 to_pulumi_object_field(

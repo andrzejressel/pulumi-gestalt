@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "load_balancer_arn",
+                    "loadBalancerArn",
                     &self.r#load_balancer_arn,
                 ),
                 to_pulumi_object_field(
@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "subnet_ids",
+                    "subnetIds",
                     &self.r#subnet_ids,
                 ),
             ];

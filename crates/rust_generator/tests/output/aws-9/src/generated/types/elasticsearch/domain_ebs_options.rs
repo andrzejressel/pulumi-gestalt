@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ebs_enabled",
+                    "ebsEnabled",
                     &self.r#ebs_enabled,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
                     &self.r#throughput,
                 ),
                 to_pulumi_object_field(
-                    "volume_size",
+                    "volumeSize",
                     &self.r#volume_size,
                 ),
                 to_pulumi_object_field(
-                    "volume_type",
+                    "volumeType",
                     &self.r#volume_type,
                 ),
             ];

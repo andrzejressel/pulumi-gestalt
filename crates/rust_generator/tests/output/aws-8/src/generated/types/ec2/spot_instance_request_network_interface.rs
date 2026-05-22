@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_on_termination",
+                    "deleteOnTermination",
                     &self.r#delete_on_termination,
                 ),
                 to_pulumi_object_field(
-                    "device_index",
+                    "deviceIndex",
                     &self.r#device_index,
                 ),
                 to_pulumi_object_field(
-                    "network_card_index",
+                    "networkCardIndex",
                     &self.r#network_card_index,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_id",
+                    "networkInterfaceId",
                     &self.r#network_interface_id,
                 ),
             ];

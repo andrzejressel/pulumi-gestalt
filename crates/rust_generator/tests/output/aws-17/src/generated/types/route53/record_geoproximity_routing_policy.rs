@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_region",
+                    "awsRegion",
                     &self.r#aws_region,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#coordinates,
                 ),
                 to_pulumi_object_field(
-                    "local_zone_group",
+                    "localZoneGroup",
                     &self.r#local_zone_group,
                 ),
             ];

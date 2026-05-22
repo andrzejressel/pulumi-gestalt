@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "slice_differentiator",
+                    "sliceDifferentiator",
                     &self.r#slice_differentiator,
                 ),
                 to_pulumi_object_field(
-                    "slice_service_type",
+                    "sliceServiceType",
                     &self.r#slice_service_type,
                 ),
             ];

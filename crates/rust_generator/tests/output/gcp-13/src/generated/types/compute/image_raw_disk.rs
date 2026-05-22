@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_type",
+                    "containerType",
                     &self.r#container_type,
                 ),
                 to_pulumi_object_field(
-                    "sha_1",
+                    "sha1",
                     &self.r#sha_1,
                 ),
                 to_pulumi_object_field(

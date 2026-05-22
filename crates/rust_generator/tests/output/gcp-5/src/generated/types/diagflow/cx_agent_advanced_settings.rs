@@ -50,19 +50,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxA
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_export_gcs_destination",
+                    "audioExportGcsDestination",
                     &self.r#audio_export_gcs_destination,
                 ),
                 to_pulumi_object_field(
-                    "dtmf_settings",
+                    "dtmfSettings",
                     &self.r#dtmf_settings,
                 ),
                 to_pulumi_object_field(
-                    "logging_settings",
+                    "loggingSettings",
                     &self.r#logging_settings,
                 ),
                 to_pulumi_object_field(
-                    "speech_settings",
+                    "speechSettings",
                     &self.r#speech_settings,
                 ),
             ];

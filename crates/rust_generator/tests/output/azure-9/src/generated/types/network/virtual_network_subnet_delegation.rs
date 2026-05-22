@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "service_delegation",
+                    "serviceDelegation",
                     &self.r#service_delegation,
                 ),
             ];

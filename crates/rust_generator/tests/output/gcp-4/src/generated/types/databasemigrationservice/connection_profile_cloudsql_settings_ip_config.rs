@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorized_networks",
+                    "authorizedNetworks",
                     &self.r#authorized_networks,
                 ),
                 to_pulumi_object_field(
-                    "enable_ipv_4",
+                    "enableIpv4",
                     &self.r#enable_ipv_4,
                 ),
                 to_pulumi_object_field(
-                    "private_network",
+                    "privateNetwork",
                     &self.r#private_network,
                 ),
                 to_pulumi_object_field(
-                    "require_ssl",
+                    "requireSsl",
                     &self.r#require_ssl,
                 ),
             ];

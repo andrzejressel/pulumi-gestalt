@@ -38,15 +38,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "classification_threshold",
+                    "classificationThreshold",
                     &self.r#classification_threshold,
                 ),
                 to_pulumi_object_field(
-                    "model_training_mode",
+                    "modelTrainingMode",
                     &self.r#model_training_mode,
                 ),
                 to_pulumi_object_field(
-                    "model_type",
+                    "modelType",
                     &self.r#model_type,
                 ),
             ];

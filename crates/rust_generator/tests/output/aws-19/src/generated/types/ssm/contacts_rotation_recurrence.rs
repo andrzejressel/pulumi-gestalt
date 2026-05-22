@@ -42,27 +42,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "daily_settings",
+                    "dailySettings",
                     &self.r#daily_settings,
                 ),
                 to_pulumi_object_field(
-                    "monthly_settings",
+                    "monthlySettings",
                     &self.r#monthly_settings,
                 ),
                 to_pulumi_object_field(
-                    "number_of_on_calls",
+                    "numberOfOnCalls",
                     &self.r#number_of_on_calls,
                 ),
                 to_pulumi_object_field(
-                    "recurrence_multiplier",
+                    "recurrenceMultiplier",
                     &self.r#recurrence_multiplier,
                 ),
                 to_pulumi_object_field(
-                    "shift_coverages",
+                    "shiftCoverages",
                     &self.r#shift_coverages,
                 ),
                 to_pulumi_object_field(
-                    "weekly_settings",
+                    "weeklySettings",
                     &self.r#weekly_settings,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "processor_type",
+                    "processorType",
                     &self.r#processor_type,
                 ),
             ];

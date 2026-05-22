@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_client_id",
+                    "oauth2ClientId",
                     &self.r#oauth_2_client_id,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_client_secret",
+                    "oauth2ClientSecret",
                     &self.r#oauth_2_client_secret,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_client_secret_sha_256",
+                    "oauth2ClientSecretSha256",
                     &self.r#oauth_2_client_secret_sha_256,
                 ),
             ];

@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "current_page",
+                    "currentPage",
                     &self.r#current_page,
                 ),
                 to_pulumi_object_field(
-                    "session_parameters",
+                    "sessionParameters",
                     &self.r#session_parameters,
                 ),
                 to_pulumi_object_field(
-                    "text_responses",
+                    "textResponses",
                     &self.r#text_responses,
                 ),
                 to_pulumi_object_field(
-                    "triggered_intent",
+                    "triggeredIntent",
                     &self.r#triggered_intent,
                 ),
             ];

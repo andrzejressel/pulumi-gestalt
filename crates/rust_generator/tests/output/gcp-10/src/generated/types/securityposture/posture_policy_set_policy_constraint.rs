@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "org_policy_constraint",
+                    "orgPolicyConstraint",
                     &self.r#org_policy_constraint,
                 ),
                 to_pulumi_object_field(
-                    "org_policy_constraint_custom",
+                    "orgPolicyConstraintCustom",
                     &self.r#org_policy_constraint_custom,
                 ),
                 to_pulumi_object_field(
-                    "security_health_analytics_custom_module",
+                    "securityHealthAnalyticsCustomModule",
                     &self.r#security_health_analytics_custom_module,
                 ),
                 to_pulumi_object_field(
-                    "security_health_analytics_module",
+                    "securityHealthAnalyticsModule",
                     &self.r#security_health_analytics_module,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_arn",
+                    "applicationArn",
                     &self.r#application_arn,
                 ),
                 to_pulumi_object_field(
-                    "principal_id",
+                    "principalId",
                     &self.r#principal_id,
                 ),
                 to_pulumi_object_field(
-                    "principal_type",
+                    "principalType",
                     &self.r#principal_type,
                 ),
             ];

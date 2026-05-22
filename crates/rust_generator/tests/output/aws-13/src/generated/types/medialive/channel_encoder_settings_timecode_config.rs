@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#source,
                 ),
                 to_pulumi_object_field(
-                    "sync_threshold",
+                    "syncThreshold",
                     &self.r#sync_threshold,
                 ),
             ];

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
                     &self.r#automatic,
                 ),
                 to_pulumi_object_field(
-                    "expire_after",
+                    "expireAfter",
                     &self.r#expire_after,
                 ),
                 to_pulumi_object_field(
-                    "notify_before_expiry",
+                    "notifyBeforeExpiry",
                     &self.r#notify_before_expiry,
                 ),
             ];

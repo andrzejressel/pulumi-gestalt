@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#certificates,
                 ),
                 to_pulumi_object_field(
-                    "vault_id",
+                    "vaultId",
                     &self.r#vault_id,
                 ),
             ];

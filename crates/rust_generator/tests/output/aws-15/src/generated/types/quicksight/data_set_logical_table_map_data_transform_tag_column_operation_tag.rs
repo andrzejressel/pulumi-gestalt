@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_description",
+                    "columnDescription",
                     &self.r#column_description,
                 ),
                 to_pulumi_object_field(
-                    "column_geographic_role",
+                    "columnGeographicRole",
                     &self.r#column_geographic_role,
                 ),
             ];

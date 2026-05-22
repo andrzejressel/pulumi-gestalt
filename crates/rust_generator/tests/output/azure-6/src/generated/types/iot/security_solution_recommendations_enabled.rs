@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acr_authentication",
+                    "acrAuthentication",
                     &self.r#acr_authentication,
                 ),
                 to_pulumi_object_field(
-                    "agent_send_unutilized_msg",
+                    "agentSendUnutilizedMsg",
                     &self.r#agent_send_unutilized_msg,
                 ),
                 to_pulumi_object_field(
@@ -95,55 +95,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
                     &self.r#baseline,
                 ),
                 to_pulumi_object_field(
-                    "edge_hub_mem_optimize",
+                    "edgeHubMemOptimize",
                     &self.r#edge_hub_mem_optimize,
                 ),
                 to_pulumi_object_field(
-                    "edge_logging_option",
+                    "edgeLoggingOption",
                     &self.r#edge_logging_option,
                 ),
                 to_pulumi_object_field(
-                    "inconsistent_module_settings",
+                    "inconsistentModuleSettings",
                     &self.r#inconsistent_module_settings,
                 ),
                 to_pulumi_object_field(
-                    "install_agent",
+                    "installAgent",
                     &self.r#install_agent,
                 ),
                 to_pulumi_object_field(
-                    "ip_filter_deny_all",
+                    "ipFilterDenyAll",
                     &self.r#ip_filter_deny_all,
                 ),
                 to_pulumi_object_field(
-                    "ip_filter_permissive_rule",
+                    "ipFilterPermissiveRule",
                     &self.r#ip_filter_permissive_rule,
                 ),
                 to_pulumi_object_field(
-                    "open_ports",
+                    "openPorts",
                     &self.r#open_ports,
                 ),
                 to_pulumi_object_field(
-                    "permissive_firewall_policy",
+                    "permissiveFirewallPolicy",
                     &self.r#permissive_firewall_policy,
                 ),
                 to_pulumi_object_field(
-                    "permissive_input_firewall_rules",
+                    "permissiveInputFirewallRules",
                     &self.r#permissive_input_firewall_rules,
                 ),
                 to_pulumi_object_field(
-                    "permissive_output_firewall_rules",
+                    "permissiveOutputFirewallRules",
                     &self.r#permissive_output_firewall_rules,
                 ),
                 to_pulumi_object_field(
-                    "privileged_docker_options",
+                    "privilegedDockerOptions",
                     &self.r#privileged_docker_options,
                 ),
                 to_pulumi_object_field(
-                    "shared_credentials",
+                    "sharedCredentials",
                     &self.r#shared_credentials,
                 ),
                 to_pulumi_object_field(
-                    "vulnerable_tls_cipher_suite",
+                    "vulnerableTlsCipherSuite",
                     &self.r#vulnerable_tls_cipher_suite,
                 ),
             ];

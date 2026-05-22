@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "retry_duration",
+                    "retryDuration",
                     &self.r#retry_duration,
                 ),
             ];

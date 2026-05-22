@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#query,
                 ),
                 to_pulumi_object_field(
-                    "use_legacy_sql",
+                    "useLegacySql",
                     &self.r#use_legacy_sql,
                 ),
             ];

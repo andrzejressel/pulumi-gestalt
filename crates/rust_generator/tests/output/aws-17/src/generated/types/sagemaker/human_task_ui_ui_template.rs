@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hum
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "content_sha_256",
+                    "contentSha256",
                     &self.r#content_sha_256,
                 ),
                 to_pulumi_object_field(

@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#data,
                 ),
                 to_pulumi_object_field(
-                    "topic_name",
+                    "topicName",
                     &self.r#topic_name,
                 ),
             ];

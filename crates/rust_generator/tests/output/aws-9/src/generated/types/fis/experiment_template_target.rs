@@ -61,19 +61,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "resource_arns",
+                    "resourceArns",
                     &self.r#resource_arns,
                 ),
                 to_pulumi_object_field(
-                    "resource_tags",
+                    "resourceTags",
                     &self.r#resource_tags,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
                 to_pulumi_object_field(
-                    "selection_mode",
+                    "selectionMode",
                     &self.r#selection_mode,
                 ),
             ];

@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_config",
+                    "backendConfig",
                     &self.r#backend_config,
                 ),
                 to_pulumi_object_field(
-                    "frontend_config",
+                    "frontendConfig",
                     &self.r#frontend_config,
                 ),
                 to_pulumi_object_field(

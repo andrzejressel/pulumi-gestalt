@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bundle_method",
+                    "bundleMethod",
                     &self.r#bundle_method,
                 ),
                 to_pulumi_object_field(
@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#certificate,
                 ),
                 to_pulumi_object_field(
-                    "geo_restrictions",
+                    "geoRestrictions",
                     &self.r#geo_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "private_key",
+                    "privateKey",
                     &self.r#private_key,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiS
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_action",
+                    "defaultAction",
                     &self.r#default_action,
                 ),
                 to_pulumi_object_field(
-                    "ip_rules",
+                    "ipRules",
                     &self.r#ip_rules,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_rules",
+                    "virtualNetworkRules",
                     &self.r#virtual_network_rules,
                 ),
             ];

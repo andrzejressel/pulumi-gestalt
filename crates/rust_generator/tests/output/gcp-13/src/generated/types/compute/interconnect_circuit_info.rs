@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customer_demarc_id",
+                    "customerDemarcId",
                     &self.r#customer_demarc_id,
                 ),
                 to_pulumi_object_field(
-                    "google_circuit_id",
+                    "googleCircuitId",
                     &self.r#google_circuit_id,
                 ),
                 to_pulumi_object_field(
-                    "google_demarc_id",
+                    "googleDemarcId",
                     &self.r#google_demarc_id,
                 ),
             ];

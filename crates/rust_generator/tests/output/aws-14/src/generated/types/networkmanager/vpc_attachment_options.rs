@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "appliance_mode_support",
+                    "applianceModeSupport",
                     &self.r#appliance_mode_support,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_support",
+                    "ipv6Support",
                     &self.r#ipv_6_support,
                 ),
             ];

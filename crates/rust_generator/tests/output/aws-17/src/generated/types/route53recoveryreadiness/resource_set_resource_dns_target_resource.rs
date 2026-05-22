@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "hosted_zone_arn",
+                    "hostedZoneArn",
                     &self.r#hosted_zone_arn,
                 ),
                 to_pulumi_object_field(
-                    "record_set_id",
+                    "recordSetId",
                     &self.r#record_set_id,
                 ),
                 to_pulumi_object_field(
-                    "record_type",
+                    "recordType",
                     &self.r#record_type,
                 ),
                 to_pulumi_object_field(
-                    "target_resource",
+                    "targetResource",
                     &self.r#target_resource,
                 ),
             ];

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cra
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "scan_all",
+                    "scanAll",
                     &self.r#scan_all,
                 ),
                 to_pulumi_object_field(
-                    "scan_rate",
+                    "scanRate",
                     &self.r#scan_rate,
                 ),
             ];

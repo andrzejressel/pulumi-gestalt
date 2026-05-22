@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "proxy_enabled",
+                    "proxyEnabled",
                     &self.r#proxy_enabled,
                 ),
                 to_pulumi_object_field(

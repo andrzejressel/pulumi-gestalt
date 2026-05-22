@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "link_type",
+                    "linkType",
                     &self.r#link_type,
                 ),
                 to_pulumi_object_field(
-                    "link_url",
+                    "linkUrl",
                     &self.r#link_url,
                 ),
             ];

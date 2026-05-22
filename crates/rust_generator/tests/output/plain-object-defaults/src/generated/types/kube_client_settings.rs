@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
                     &self.r#qps,
                 ),
                 to_pulumi_object_field(
-                    "rec_test",
+                    "recTest",
                     &self.r#rec_test,
                 ),
             ];

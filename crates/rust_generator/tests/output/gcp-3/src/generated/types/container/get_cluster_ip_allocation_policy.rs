@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_pod_ranges_configs",
+                    "additionalPodRangesConfigs",
                     &self.r#additional_pod_ranges_configs,
                 ),
                 to_pulumi_object_field(
-                    "cluster_ipv_4_cidr_block",
+                    "clusterIpv4CidrBlock",
                     &self.r#cluster_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "cluster_secondary_range_name",
+                    "clusterSecondaryRangeName",
                     &self.r#cluster_secondary_range_name,
                 ),
                 to_pulumi_object_field(
-                    "pod_cidr_overprovision_configs",
+                    "podCidrOverprovisionConfigs",
                     &self.r#pod_cidr_overprovision_configs,
                 ),
                 to_pulumi_object_field(
-                    "services_ipv_4_cidr_block",
+                    "servicesIpv4CidrBlock",
                     &self.r#services_ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "services_secondary_range_name",
+                    "servicesSecondaryRangeName",
                     &self.r#services_secondary_range_name,
                 ),
                 to_pulumi_object_field(
-                    "stack_type",
+                    "stackType",
                     &self.r#stack_type,
                 ),
             ];

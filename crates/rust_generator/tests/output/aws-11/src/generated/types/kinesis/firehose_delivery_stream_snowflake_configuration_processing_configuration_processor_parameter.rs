@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "parameter_name",
+                    "parameterName",
                     &self.r#parameter_name,
                 ),
                 to_pulumi_object_field(
-                    "parameter_value",
+                    "parameterValue",
                     &self.r#parameter_value,
                 ),
             ];

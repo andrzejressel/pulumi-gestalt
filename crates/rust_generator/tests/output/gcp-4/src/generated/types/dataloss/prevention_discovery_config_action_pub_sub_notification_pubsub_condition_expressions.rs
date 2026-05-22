@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#conditions,
                 ),
                 to_pulumi_object_field(
-                    "logical_operator",
+                    "logicalOperator",
                     &self.r#logical_operator,
                 ),
             ];

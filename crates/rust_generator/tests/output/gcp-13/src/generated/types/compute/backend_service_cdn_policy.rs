@@ -75,43 +75,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bypass_cache_on_request_headers",
+                    "bypassCacheOnRequestHeaders",
                     &self.r#bypass_cache_on_request_headers,
                 ),
                 to_pulumi_object_field(
-                    "cache_key_policy",
+                    "cacheKeyPolicy",
                     &self.r#cache_key_policy,
                 ),
                 to_pulumi_object_field(
-                    "cache_mode",
+                    "cacheMode",
                     &self.r#cache_mode,
                 ),
                 to_pulumi_object_field(
-                    "client_ttl",
+                    "clientTtl",
                     &self.r#client_ttl,
                 ),
                 to_pulumi_object_field(
-                    "default_ttl",
+                    "defaultTtl",
                     &self.r#default_ttl,
                 ),
                 to_pulumi_object_field(
-                    "max_ttl",
+                    "maxTtl",
                     &self.r#max_ttl,
                 ),
                 to_pulumi_object_field(
-                    "negative_caching",
+                    "negativeCaching",
                     &self.r#negative_caching,
                 ),
                 to_pulumi_object_field(
-                    "negative_caching_policies",
+                    "negativeCachingPolicies",
                     &self.r#negative_caching_policies,
                 ),
                 to_pulumi_object_field(
-                    "serve_while_stale",
+                    "serveWhileStale",
                     &self.r#serve_while_stale,
                 ),
                 to_pulumi_object_field(
-                    "signed_url_cache_max_age_sec",
+                    "signedUrlCacheMaxAgeSec",
                     &self.r#signed_url_cache_max_age_sec,
                 ),
             ];

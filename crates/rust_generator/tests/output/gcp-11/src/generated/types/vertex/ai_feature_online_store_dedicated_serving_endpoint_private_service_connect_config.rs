@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_private_service_connect",
+                    "enablePrivateServiceConnect",
                     &self.r#enable_private_service_connect,
                 ),
                 to_pulumi_object_field(
-                    "project_allowlists",
+                    "projectAllowlists",
                     &self.r#project_allowlists,
                 ),
             ];

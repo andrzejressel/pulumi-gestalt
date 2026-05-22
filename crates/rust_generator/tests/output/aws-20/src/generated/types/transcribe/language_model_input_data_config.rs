@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lan
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_access_role_arn",
+                    "dataAccessRoleArn",
                     &self.r#data_access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "s_3_uri",
+                    "s3Uri",
                     &self.r#s_3_uri,
                 ),
                 to_pulumi_object_field(
-                    "tuning_data_s_3_uri",
+                    "tuningDataS3Uri",
                     &self.r#tuning_data_s_3_uri,
                 ),
             ];

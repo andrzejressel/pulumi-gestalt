@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "bgp_peering_address",
+                    "bgpPeeringAddress",
                     &self.r#bgp_peering_address,
                 ),
                 to_pulumi_object_field(
-                    "peer_weight",
+                    "peerWeight",
                     &self.r#peer_weight,
                 ),
             ];

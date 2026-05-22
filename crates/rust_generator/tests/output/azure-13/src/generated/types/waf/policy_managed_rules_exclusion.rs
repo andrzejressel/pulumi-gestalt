@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "excluded_rule_set",
+                    "excludedRuleSet",
                     &self.r#excluded_rule_set,
                 ),
                 to_pulumi_object_field(
-                    "match_variable",
+                    "matchVariable",
                     &self.r#match_variable,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#selector,
                 ),
                 to_pulumi_object_field(
-                    "selector_match_operator",
+                    "selectorMatchOperator",
                     &self.r#selector_match_operator,
                 ),
             ];

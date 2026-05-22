@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customized_capacity_metric_specification",
+                    "customizedCapacityMetricSpecification",
                     &self.r#customized_capacity_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "customized_load_metric_specification",
+                    "customizedLoadMetricSpecification",
                     &self.r#customized_load_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "customized_scaling_metric_specification",
+                    "customizedScalingMetricSpecification",
                     &self.r#customized_scaling_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "predefined_load_metric_specification",
+                    "predefinedLoadMetricSpecification",
                     &self.r#predefined_load_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "predefined_metric_pair_specification",
+                    "predefinedMetricPairSpecification",
                     &self.r#predefined_metric_pair_specification,
                 ),
                 to_pulumi_object_field(
-                    "predefined_scaling_metric_specification",
+                    "predefinedScalingMetricSpecification",
                     &self.r#predefined_scaling_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "target_value",
+                    "targetValue",
                     &self.r#target_value,
                 ),
             ];

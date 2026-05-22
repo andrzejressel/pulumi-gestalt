@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "forward_inbound_credentials",
+                    "forwardInboundCredentials",
                     &self.r#forward_inbound_credentials,
                 ),
                 to_pulumi_object_field(

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "iam_action_definition",
+                    "iamActionDefinition",
                     &self.r#iam_action_definition,
                 ),
                 to_pulumi_object_field(
-                    "scp_action_definition",
+                    "scpActionDefinition",
                     &self.r#scp_action_definition,
                 ),
                 to_pulumi_object_field(
-                    "ssm_action_definition",
+                    "ssmActionDefinition",
                     &self.r#ssm_action_definition,
                 ),
             ];

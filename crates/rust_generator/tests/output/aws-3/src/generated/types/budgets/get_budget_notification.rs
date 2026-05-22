@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "comparison_operator",
+                    "comparisonOperator",
                     &self.r#comparison_operator,
                 ),
                 to_pulumi_object_field(
-                    "notification_type",
+                    "notificationType",
                     &self.r#notification_type,
                 ),
                 to_pulumi_object_field(
-                    "subscriber_email_addresses",
+                    "subscriberEmailAddresses",
                     &self.r#subscriber_email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "subscriber_sns_topic_arns",
+                    "subscriberSnsTopicArns",
                     &self.r#subscriber_sns_topic_arns,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#threshold,
                 ),
                 to_pulumi_object_field(
-                    "threshold_type",
+                    "thresholdType",
                     &self.r#threshold_type,
                 ),
             ];

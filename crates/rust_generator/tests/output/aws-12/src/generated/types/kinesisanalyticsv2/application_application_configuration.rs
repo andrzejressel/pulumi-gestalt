@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_code_configuration",
+                    "applicationCodeConfiguration",
                     &self.r#application_code_configuration,
                 ),
                 to_pulumi_object_field(
-                    "application_snapshot_configuration",
+                    "applicationSnapshotConfiguration",
                     &self.r#application_snapshot_configuration,
                 ),
                 to_pulumi_object_field(
-                    "environment_properties",
+                    "environmentProperties",
                     &self.r#environment_properties,
                 ),
                 to_pulumi_object_field(
-                    "flink_application_configuration",
+                    "flinkApplicationConfiguration",
                     &self.r#flink_application_configuration,
                 ),
                 to_pulumi_object_field(
-                    "run_configuration",
+                    "runConfiguration",
                     &self.r#run_configuration,
                 ),
                 to_pulumi_object_field(
-                    "sql_application_configuration",
+                    "sqlApplicationConfiguration",
                     &self.r#sql_application_configuration,
                 ),
                 to_pulumi_object_field(
-                    "vpc_configuration",
+                    "vpcConfiguration",
                     &self.r#vpc_configuration,
                 ),
             ];

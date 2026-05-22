@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dhcp_enabled",
+                    "dhcpEnabled",
                     &self.r#dhcp_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dns_servers",
+                    "dnsServers",
                     &self.r#dns_servers,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#gateway,
                 ),
                 to_pulumi_object_field(
-                    "ip_pools",
+                    "ipPools",
                     &self.r#ip_pools,
                 ),
                 to_pulumi_object_field(
-                    "subnet_mask",
+                    "subnetMask",
                     &self.r#subnet_mask,
                 ),
             ];

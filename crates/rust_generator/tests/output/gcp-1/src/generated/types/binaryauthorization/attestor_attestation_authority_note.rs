@@ -53,15 +53,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Att
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delegation_service_account_email",
+                    "delegationServiceAccountEmail",
                     &self.r#delegation_service_account_email,
                 ),
                 to_pulumi_object_field(
-                    "note_reference",
+                    "noteReference",
                     &self.r#note_reference,
                 ),
                 to_pulumi_object_field(
-                    "public_keys",
+                    "publicKeys",
                     &self.r#public_keys,
                 ),
             ];

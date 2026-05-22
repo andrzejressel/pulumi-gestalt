@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_machine_learning",
+                    "enableMachineLearning",
                     &self.r#enable_machine_learning,
                 ),
                 to_pulumi_object_field(
-                    "inspection_level",
+                    "inspectionLevel",
                     &self.r#inspection_level,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "canary_size",
+                    "canarySize",
                     &self.r#canary_size,
                 ),
                 to_pulumi_object_field(
-                    "linear_step_size",
+                    "linearStepSize",
                     &self.r#linear_step_size,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "wait_interval_in_seconds",
+                    "waitIntervalInSeconds",
                     &self.r#wait_interval_in_seconds,
                 ),
             ];

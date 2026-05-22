@@ -89,7 +89,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#artifacts,
                 ),
                 to_pulumi_object_field(
-                    "available_secrets",
+                    "availableSecrets",
                     &self.r#available_secrets,
                 ),
                 to_pulumi_object_field(
@@ -97,7 +97,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#images,
                 ),
                 to_pulumi_object_field(
-                    "logs_bucket",
+                    "logsBucket",
                     &self.r#logs_bucket,
                 ),
                 to_pulumi_object_field(
@@ -105,7 +105,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#options,
                 ),
                 to_pulumi_object_field(
-                    "queue_ttl",
+                    "queueTtl",
                     &self.r#queue_ttl,
                 ),
                 to_pulumi_object_field(

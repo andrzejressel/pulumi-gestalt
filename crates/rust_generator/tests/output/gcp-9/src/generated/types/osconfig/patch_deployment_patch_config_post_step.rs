@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "linux_exec_step_config",
+                    "linuxExecStepConfig",
                     &self.r#linux_exec_step_config,
                 ),
                 to_pulumi_object_field(
-                    "windows_exec_step_config",
+                    "windowsExecStepConfig",
                     &self.r#windows_exec_step_config,
                 ),
             ];

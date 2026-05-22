@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_docker_access",
+                    "enableDockerAccess",
                     &self.r#enable_docker_access,
                 ),
                 to_pulumi_object_field(
-                    "vpc_only_trusted_accounts",
+                    "vpcOnlyTrustedAccounts",
                     &self.r#vpc_only_trusted_accounts,
                 ),
             ];

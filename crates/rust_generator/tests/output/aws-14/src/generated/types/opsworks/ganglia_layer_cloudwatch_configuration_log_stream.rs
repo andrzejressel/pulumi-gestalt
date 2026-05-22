@@ -52,19 +52,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gan
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_count",
+                    "batchCount",
                     &self.r#batch_count,
                 ),
                 to_pulumi_object_field(
-                    "batch_size",
+                    "batchSize",
                     &self.r#batch_size,
                 ),
                 to_pulumi_object_field(
-                    "buffer_duration",
+                    "bufferDuration",
                     &self.r#buffer_duration,
                 ),
                 to_pulumi_object_field(
-                    "datetime_format",
+                    "datetimeFormat",
                     &self.r#datetime_format,
                 ),
                 to_pulumi_object_field(
@@ -76,23 +76,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gan
                     &self.r#file,
                 ),
                 to_pulumi_object_field(
-                    "file_fingerprint_lines",
+                    "fileFingerprintLines",
                     &self.r#file_fingerprint_lines,
                 ),
                 to_pulumi_object_field(
-                    "initial_position",
+                    "initialPosition",
                     &self.r#initial_position,
                 ),
                 to_pulumi_object_field(
-                    "log_group_name",
+                    "logGroupName",
                     &self.r#log_group_name,
                 ),
                 to_pulumi_object_field(
-                    "multiline_start_pattern",
+                    "multilineStartPattern",
                     &self.r#multiline_start_pattern,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "confidence_threshold",
+                    "confidenceThreshold",
                     &self.r#confidence_threshold,
                 ),
                 to_pulumi_object_field(
-                    "expiration_sec",
+                    "expirationSec",
                     &self.r#expiration_sec,
                 ),
                 to_pulumi_object_field(
-                    "impacted_baseline_threshold",
+                    "impactedBaselineThreshold",
                     &self.r#impacted_baseline_threshold,
                 ),
                 to_pulumi_object_field(
-                    "load_threshold",
+                    "loadThreshold",
                     &self.r#load_threshold,
                 ),
             ];

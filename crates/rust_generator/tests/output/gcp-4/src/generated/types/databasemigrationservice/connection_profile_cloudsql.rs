@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_sql_id",
+                    "cloudSqlId",
                     &self.r#cloud_sql_id,
                 ),
                 to_pulumi_object_field(
-                    "private_ip",
+                    "privateIp",
                     &self.r#private_ip,
                 ),
                 to_pulumi_object_field(
-                    "public_ip",
+                    "publicIp",
                     &self.r#public_ip,
                 ),
                 to_pulumi_object_field(

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "peering_address",
+                    "peeringAddress",
                     &self.r#peering_address,
                 ),
             ];

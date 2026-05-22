@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entity_id",
+                    "entityId",
                     &self.r#entity_id,
                 ),
                 to_pulumi_object_field(
-                    "entity_type",
+                    "entityType",
                     &self.r#entity_type,
                 ),
             ];

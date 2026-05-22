@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "horizontal_align",
+                    "horizontalAlign",
                     &self.r#horizontal_align,
                 ),
                 to_pulumi_object_field(
-                    "horizontal_offset",
+                    "horizontalOffset",
                     &self.r#horizontal_offset,
                 ),
                 to_pulumi_object_field(
@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "max_height",
+                    "maxHeight",
                     &self.r#max_height,
                 ),
                 to_pulumi_object_field(
-                    "max_width",
+                    "maxWidth",
                     &self.r#max_width,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#opacity,
                 ),
                 to_pulumi_object_field(
-                    "sizing_policy",
+                    "sizingPolicy",
                     &self.r#sizing_policy,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#target,
                 ),
                 to_pulumi_object_field(
-                    "vertical_align",
+                    "verticalAlign",
                     &self.r#vertical_align,
                 ),
                 to_pulumi_object_field(
-                    "vertical_offset",
+                    "verticalOffset",
                     &self.r#vertical_offset,
                 ),
             ];

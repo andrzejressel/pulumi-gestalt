@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connectivity_logs_enabled",
+                    "connectivityLogsEnabled",
                     &self.r#connectivity_logs_enabled,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "http_request_logs_enabled",
+                    "httpRequestLogsEnabled",
                     &self.r#http_request_logs_enabled,
                 ),
                 to_pulumi_object_field(
-                    "messaging_logs_enabled",
+                    "messagingLogsEnabled",
                     &self.r#messaging_logs_enabled,
                 ),
             ];

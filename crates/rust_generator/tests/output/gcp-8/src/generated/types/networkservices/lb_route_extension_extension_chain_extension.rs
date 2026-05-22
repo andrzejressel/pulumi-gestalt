@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LbR
                     &self.r#authority,
                 ),
                 to_pulumi_object_field(
-                    "fail_open",
+                    "failOpen",
                     &self.r#fail_open,
                 ),
                 to_pulumi_object_field(
-                    "forward_headers",
+                    "forwardHeaders",
                     &self.r#forward_headers,
                 ),
                 to_pulumi_object_field(

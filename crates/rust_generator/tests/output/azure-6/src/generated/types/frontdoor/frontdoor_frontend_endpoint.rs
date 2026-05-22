@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "session_affinity_enabled",
+                    "sessionAffinityEnabled",
                     &self.r#session_affinity_enabled,
                 ),
                 to_pulumi_object_field(
-                    "session_affinity_ttl_seconds",
+                    "sessionAffinityTtlSeconds",
                     &self.r#session_affinity_ttl_seconds,
                 ),
                 to_pulumi_object_field(
-                    "web_application_firewall_policy_link_id",
+                    "webApplicationFirewallPolicyLinkId",
                     &self.r#web_application_firewall_policy_link_id,
                 ),
             ];

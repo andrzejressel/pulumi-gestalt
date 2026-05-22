@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "s_3_location",
+                    "s3Location",
                     &self.r#s_3_location,
                 ),
             ];

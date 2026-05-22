@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "eq_exact_matches",
+                    "eqExactMatches",
                     &self.r#eq_exact_matches,
                 ),
                 to_pulumi_object_field(

@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "internal_load_balancers",
+                    "internalLoadBalancers",
                     &self.r#internal_load_balancers,
                 ),
             ];

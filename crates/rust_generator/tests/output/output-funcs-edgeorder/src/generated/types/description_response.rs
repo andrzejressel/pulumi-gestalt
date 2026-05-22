@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Des
                     &self.r#attributes,
                 ),
                 to_pulumi_object_field(
-                    "description_type",
+                    "descriptionType",
                     &self.r#description_type,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Des
                     &self.r#links,
                 ),
                 to_pulumi_object_field(
-                    "long_description",
+                    "longDescription",
                     &self.r#long_description,
                 ),
                 to_pulumi_object_field(
-                    "short_description",
+                    "shortDescription",
                     &self.r#short_description,
                 ),
             ];

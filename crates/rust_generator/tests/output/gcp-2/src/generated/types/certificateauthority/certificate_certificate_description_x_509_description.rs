@@ -55,27 +55,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_extensions",
+                    "additionalExtensions",
                     &self.r#additional_extensions,
                 ),
                 to_pulumi_object_field(
-                    "aia_ocsp_servers",
+                    "aiaOcspServers",
                     &self.r#aia_ocsp_servers,
                 ),
                 to_pulumi_object_field(
-                    "ca_options",
+                    "caOptions",
                     &self.r#ca_options,
                 ),
                 to_pulumi_object_field(
-                    "key_usages",
+                    "keyUsages",
                     &self.r#key_usages,
                 ),
                 to_pulumi_object_field(
-                    "name_constraints",
+                    "nameConstraints",
                     &self.r#name_constraints,
                 ),
                 to_pulumi_object_field(
-                    "policy_ids",
+                    "policyIds",
                     &self.r#policy_ids,
                 ),
             ];

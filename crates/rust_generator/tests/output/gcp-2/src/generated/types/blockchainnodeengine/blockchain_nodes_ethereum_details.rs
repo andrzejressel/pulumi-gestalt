@@ -63,27 +63,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_endpoints",
+                    "additionalEndpoints",
                     &self.r#additional_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "api_enable_admin",
+                    "apiEnableAdmin",
                     &self.r#api_enable_admin,
                 ),
                 to_pulumi_object_field(
-                    "api_enable_debug",
+                    "apiEnableDebug",
                     &self.r#api_enable_debug,
                 ),
                 to_pulumi_object_field(
-                    "consensus_client",
+                    "consensusClient",
                     &self.r#consensus_client,
                 ),
                 to_pulumi_object_field(
-                    "execution_client",
+                    "executionClient",
                     &self.r#execution_client,
                 ),
                 to_pulumi_object_field(
-                    "geth_details",
+                    "gethDetails",
                     &self.r#geth_details,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "node_type",
+                    "nodeType",
                     &self.r#node_type,
                 ),
                 to_pulumi_object_field(
-                    "validator_config",
+                    "validatorConfig",
                     &self.r#validator_config,
                 ),
             ];

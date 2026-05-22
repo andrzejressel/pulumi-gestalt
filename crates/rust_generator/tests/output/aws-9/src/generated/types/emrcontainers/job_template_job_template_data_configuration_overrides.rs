@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_configurations",
+                    "applicationConfigurations",
                     &self.r#application_configurations,
                 ),
                 to_pulumi_object_field(
-                    "monitoring_configuration",
+                    "monitoringConfiguration",
                     &self.r#monitoring_configuration,
                 ),
             ];

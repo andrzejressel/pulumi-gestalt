@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "next_step",
+                    "nextStep",
                     &self.r#next_step,
                 ),
                 to_pulumi_object_field(

@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#characteristics,
                 ),
                 to_pulumi_object_field(
-                    "counting_expression",
+                    "countingExpression",
                     &self.r#counting_expression,
                 ),
                 to_pulumi_object_field(
-                    "mitigation_timeout",
+                    "mitigationTimeout",
                     &self.r#mitigation_timeout,
                 ),
                 to_pulumi_object_field(
@@ -67,19 +67,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#period,
                 ),
                 to_pulumi_object_field(
-                    "requests_per_period",
+                    "requestsPerPeriod",
                     &self.r#requests_per_period,
                 ),
                 to_pulumi_object_field(
-                    "requests_to_origin",
+                    "requestsToOrigin",
                     &self.r#requests_to_origin,
                 ),
                 to_pulumi_object_field(
-                    "score_per_period",
+                    "scorePerPeriod",
                     &self.r#score_per_period,
                 ),
                 to_pulumi_object_field(
-                    "score_response_header_name",
+                    "scoreResponseHeaderName",
                     &self.r#score_response_header_name,
                 ),
             ];

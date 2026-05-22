@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#min,
                 ),
                 to_pulumi_object_field(
-                    "replacement_value",
+                    "replacementValue",
                     &self.r#replacement_value,
                 ),
             ];

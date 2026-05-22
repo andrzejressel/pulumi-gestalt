@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "contact_id",
+                    "contactId",
                     &self.r#contact_id,
                 ),
                 to_pulumi_object_field(
-                    "is_essential",
+                    "isEssential",
                     &self.r#is_essential,
                 ),
             ];

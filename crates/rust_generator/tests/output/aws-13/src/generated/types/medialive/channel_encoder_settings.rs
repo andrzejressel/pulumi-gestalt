@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_descriptions",
+                    "audioDescriptions",
                     &self.r#audio_descriptions,
                 ),
                 to_pulumi_object_field(
-                    "avail_blanking",
+                    "availBlanking",
                     &self.r#avail_blanking,
                 ),
                 to_pulumi_object_field(
-                    "caption_descriptions",
+                    "captionDescriptions",
                     &self.r#caption_descriptions,
                 ),
                 to_pulumi_object_field(
-                    "global_configuration",
+                    "globalConfiguration",
                     &self.r#global_configuration,
                 ),
                 to_pulumi_object_field(
-                    "motion_graphics_configuration",
+                    "motionGraphicsConfiguration",
                     &self.r#motion_graphics_configuration,
                 ),
                 to_pulumi_object_field(
-                    "nielsen_configuration",
+                    "nielsenConfiguration",
                     &self.r#nielsen_configuration,
                 ),
                 to_pulumi_object_field(
-                    "output_groups",
+                    "outputGroups",
                     &self.r#output_groups,
                 ),
                 to_pulumi_object_field(
-                    "timecode_config",
+                    "timecodeConfig",
                     &self.r#timecode_config,
                 ),
                 to_pulumi_object_field(
-                    "video_descriptions",
+                    "videoDescriptions",
                     &self.r#video_descriptions,
                 ),
             ];

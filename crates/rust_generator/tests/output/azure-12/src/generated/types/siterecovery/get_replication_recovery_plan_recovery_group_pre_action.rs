@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fabric_location",
+                    "fabricLocation",
                     &self.r#fabric_location,
                 ),
                 to_pulumi_object_field(
-                    "fail_over_directions",
+                    "failOverDirections",
                     &self.r#fail_over_directions,
                 ),
                 to_pulumi_object_field(
-                    "fail_over_types",
+                    "failOverTypes",
                     &self.r#fail_over_types,
                 ),
                 to_pulumi_object_field(
-                    "manual_action_instruction",
+                    "manualActionInstruction",
                     &self.r#manual_action_instruction,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "runbook_id",
+                    "runbookId",
                     &self.r#runbook_id,
                 ),
                 to_pulumi_object_field(
-                    "script_path",
+                    "scriptPath",
                     &self.r#script_path,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

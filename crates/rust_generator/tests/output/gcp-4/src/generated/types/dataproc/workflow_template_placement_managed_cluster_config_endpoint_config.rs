@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_http_port_access",
+                    "enableHttpPortAccess",
                     &self.r#enable_http_port_access,
                 ),
                 to_pulumi_object_field(
-                    "http_ports",
+                    "httpPorts",
                     &self.r#http_ports,
                 ),
             ];

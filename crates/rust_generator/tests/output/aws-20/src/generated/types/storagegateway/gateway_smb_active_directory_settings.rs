@@ -48,19 +48,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directory_status",
+                    "activeDirectoryStatus",
                     &self.r#active_directory_status,
                 ),
                 to_pulumi_object_field(
-                    "domain_controllers",
+                    "domainControllers",
                     &self.r#domain_controllers,
                 ),
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "organizational_unit",
+                    "organizationalUnit",
                     &self.r#organizational_unit,
                 ),
                 to_pulumi_object_field(
@@ -68,7 +68,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gat
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_seconds",
+                    "timeoutInSeconds",
                     &self.r#timeout_in_seconds,
                 ),
                 to_pulumi_object_field(

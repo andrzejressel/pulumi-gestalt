@@ -29,15 +29,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "creation_date",
+                    "creationDate",
                     &self.r#creation_date,
                 ),
                 to_pulumi_object_field(
-                    "parent_group_name",
+                    "parentGroupName",
                     &self.r#parent_group_name,
                 ),
                 to_pulumi_object_field(
-                    "root_to_parent_groups",
+                    "rootToParentGroups",
                     &self.r#root_to_parent_groups,
                 ),
             ];

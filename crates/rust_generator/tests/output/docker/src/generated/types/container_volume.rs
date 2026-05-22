@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_path",
+                    "containerPath",
                     &self.r#container_path,
                 ),
                 to_pulumi_object_field(
-                    "from_container",
+                    "fromContainer",
                     &self.r#from_container,
                 ),
                 to_pulumi_object_field(
-                    "host_path",
+                    "hostPath",
                     &self.r#host_path,
                 ),
                 to_pulumi_object_field(
-                    "read_only",
+                    "readOnly",
                     &self.r#read_only,
                 ),
                 to_pulumi_object_field(
-                    "volume_name",
+                    "volumeName",
                     &self.r#volume_name,
                 ),
             ];

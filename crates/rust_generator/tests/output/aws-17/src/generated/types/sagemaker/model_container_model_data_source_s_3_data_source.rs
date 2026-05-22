@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compression_type",
+                    "compressionType",
                     &self.r#compression_type,
                 ),
                 to_pulumi_object_field(
-                    "model_access_config",
+                    "modelAccessConfig",
                     &self.r#model_access_config,
                 ),
                 to_pulumi_object_field(
-                    "s_3_data_type",
+                    "s3DataType",
                     &self.r#s_3_data_type,
                 ),
                 to_pulumi_object_field(
-                    "s_3_uri",
+                    "s3Uri",
                     &self.r#s_3_uri,
                 ),
             ];

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "os_profile",
+                    "osProfile",
                     &self.r#os_profile,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine_size",
+                    "virtualMachineSize",
                     &self.r#virtual_machine_size,
                 ),
             ];

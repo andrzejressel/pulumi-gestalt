@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_root_certificates",
+                    "clientRootCertificates",
                     &self.r#client_root_certificates,
                 ),
                 to_pulumi_object_field(
-                    "server_root_certificates",
+                    "serverRootCertificates",
                     &self.r#server_root_certificates,
                 ),
                 to_pulumi_object_field(

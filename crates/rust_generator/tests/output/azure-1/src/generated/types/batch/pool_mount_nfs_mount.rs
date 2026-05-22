@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mount_options",
+                    "mountOptions",
                     &self.r#mount_options,
                 ),
                 to_pulumi_object_field(
-                    "relative_mount_path",
+                    "relativeMountPath",
                     &self.r#relative_mount_path,
                 ),
                 to_pulumi_object_field(

@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "expected_status_code",
+                    "expectedStatusCode",
                     &self.r#expected_status_code,
                 ),
                 to_pulumi_object_field(
-                    "ssl_cert_remaining_lifetime",
+                    "sslCertRemainingLifetime",
                     &self.r#ssl_cert_remaining_lifetime,
                 ),
                 to_pulumi_object_field(
-                    "ssl_check_enabled",
+                    "sslCheckEnabled",
                     &self.r#ssl_check_enabled,
                 ),
             ];

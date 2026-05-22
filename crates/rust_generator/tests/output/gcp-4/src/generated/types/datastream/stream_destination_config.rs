@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bigquery_destination_config",
+                    "bigqueryDestinationConfig",
                     &self.r#bigquery_destination_config,
                 ),
                 to_pulumi_object_field(
-                    "destination_connection_profile",
+                    "destinationConnectionProfile",
                     &self.r#destination_connection_profile,
                 ),
                 to_pulumi_object_field(
-                    "gcs_destination_config",
+                    "gcsDestinationConfig",
                     &self.r#gcs_destination_config,
                 ),
             ];

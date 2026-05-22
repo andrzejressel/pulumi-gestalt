@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_admin_create_user_only",
+                    "allowAdminCreateUserOnly",
                     &self.r#allow_admin_create_user_only,
                 ),
                 to_pulumi_object_field(
-                    "invite_message_template",
+                    "inviteMessageTemplate",
                     &self.r#invite_message_template,
                 ),
             ];

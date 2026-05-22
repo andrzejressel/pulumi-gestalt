@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "level_fives",
+                    "levelFives",
                     &self.r#level_fives,
                 ),
                 to_pulumi_object_field(
-                    "level_fours",
+                    "levelFours",
                     &self.r#level_fours,
                 ),
                 to_pulumi_object_field(
-                    "level_ones",
+                    "levelOnes",
                     &self.r#level_ones,
                 ),
                 to_pulumi_object_field(
-                    "level_threes",
+                    "levelThrees",
                     &self.r#level_threes,
                 ),
                 to_pulumi_object_field(
-                    "level_twos",
+                    "levelTwos",
                     &self.r#level_twos,
                 ),
             ];

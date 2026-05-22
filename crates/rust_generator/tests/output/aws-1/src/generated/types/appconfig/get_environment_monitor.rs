@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alarm_arn",
+                    "alarmArn",
                     &self.r#alarm_arn,
                 ),
                 to_pulumi_object_field(
-                    "alarm_role_arn",
+                    "alarmRoleArn",
                     &self.r#alarm_role_arn,
                 ),
             ];

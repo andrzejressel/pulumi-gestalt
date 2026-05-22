@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_deploy_configs",
+                    "autoDeployConfigs",
                     &self.r#auto_deploy_configs,
                 ),
                 to_pulumi_object_field(
-                    "layer_7_ddos_defense_configs",
+                    "layer7DdosDefenseConfigs",
                     &self.r#layer_7_ddos_defense_configs,
                 ),
             ];

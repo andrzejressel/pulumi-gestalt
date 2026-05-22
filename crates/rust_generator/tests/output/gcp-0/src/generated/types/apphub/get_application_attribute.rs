@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "business_owners",
+                    "businessOwners",
                     &self.r#business_owners,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#criticalities,
                 ),
                 to_pulumi_object_field(
-                    "developer_owners",
+                    "developerOwners",
                     &self.r#developer_owners,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#environments,
                 ),
                 to_pulumi_object_field(
-                    "operator_owners",
+                    "operatorOwners",
                     &self.r#operator_owners,
                 ),
             ];

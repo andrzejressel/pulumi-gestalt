@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sdk
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_region",
+                    "awsRegion",
                     &self.r#aws_region,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sdk
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "sip_media_application_id",
+                    "sipMediaApplicationId",
                     &self.r#sip_media_application_id,
                 ),
             ];

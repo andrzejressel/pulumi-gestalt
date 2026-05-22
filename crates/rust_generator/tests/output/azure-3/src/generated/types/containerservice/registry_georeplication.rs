@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "regional_endpoint_enabled",
+                    "regionalEndpointEnabled",
                     &self.r#regional_endpoint_enabled,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "zone_redundancy_enabled",
+                    "zoneRedundancyEnabled",
                     &self.r#zone_redundancy_enabled,
                 ),
             ];

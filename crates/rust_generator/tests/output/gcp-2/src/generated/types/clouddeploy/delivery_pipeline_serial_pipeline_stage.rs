@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deploy_parameters",
+                    "deployParameters",
                     &self.r#deploy_parameters,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
                     &self.r#strategy,
                 ),
                 to_pulumi_object_field(
-                    "target_id",
+                    "targetId",
                     &self.r#target_id,
                 ),
             ];

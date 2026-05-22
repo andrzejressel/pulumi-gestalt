@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerator_count",
+                    "acceleratorCount",
                     &self.r#accelerator_count,
                 ),
                 to_pulumi_object_field(
-                    "accelerator_type",
+                    "acceleratorType",
                     &self.r#accelerator_type,
                 ),
             ];

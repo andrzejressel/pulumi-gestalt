@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tea
                     &self.r#http,
                 ),
                 to_pulumi_object_field(
-                    "l_4",
+                    "l4",
                     &self.r#l_4,
                 ),
             ];

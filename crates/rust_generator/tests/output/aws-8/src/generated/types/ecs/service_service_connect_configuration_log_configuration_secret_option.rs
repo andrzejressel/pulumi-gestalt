@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "value_from",
+                    "valueFrom",
                     &self.r#value_from,
                 ),
             ];

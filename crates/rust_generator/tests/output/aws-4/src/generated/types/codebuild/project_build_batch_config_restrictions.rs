@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compute_types_alloweds",
+                    "computeTypesAlloweds",
                     &self.r#compute_types_alloweds,
                 ),
                 to_pulumi_object_field(
-                    "maximum_builds_allowed",
+                    "maximumBuildsAllowed",
                     &self.r#maximum_builds_allowed,
                 ),
             ];

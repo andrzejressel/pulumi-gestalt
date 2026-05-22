@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_gpu_driver_path",
+                    "customGpuDriverPath",
                     &self.r#custom_gpu_driver_path,
                 ),
                 to_pulumi_object_field(
-                    "enable_health_monitoring",
+                    "enableHealthMonitoring",
                     &self.r#enable_health_monitoring,
                 ),
                 to_pulumi_object_field(
-                    "idle_shutdown",
+                    "idleShutdown",
                     &self.r#idle_shutdown,
                 ),
                 to_pulumi_object_field(
-                    "idle_shutdown_timeout",
+                    "idleShutdownTimeout",
                     &self.r#idle_shutdown_timeout,
                 ),
                 to_pulumi_object_field(
-                    "install_gpu_driver",
+                    "installGpuDriver",
                     &self.r#install_gpu_driver,
                 ),
                 to_pulumi_object_field(
@@ -92,15 +92,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#kernels,
                 ),
                 to_pulumi_object_field(
-                    "notebook_upgrade_schedule",
+                    "notebookUpgradeSchedule",
                     &self.r#notebook_upgrade_schedule,
                 ),
                 to_pulumi_object_field(
-                    "post_startup_script",
+                    "postStartupScript",
                     &self.r#post_startup_script,
                 ),
                 to_pulumi_object_field(
-                    "post_startup_script_behavior",
+                    "postStartupScriptBehavior",
                     &self.r#post_startup_script_behavior,
                 ),
                 to_pulumi_object_field(

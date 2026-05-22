@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "intermediate_cas",
+                    "intermediateCas",
                     &self.r#intermediate_cas,
                 ),
                 to_pulumi_object_field(
-                    "trust_anchors",
+                    "trustAnchors",
                     &self.r#trust_anchors,
                 ),
             ];

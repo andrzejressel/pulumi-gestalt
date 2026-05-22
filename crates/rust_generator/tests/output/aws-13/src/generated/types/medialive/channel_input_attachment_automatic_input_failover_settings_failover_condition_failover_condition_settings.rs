@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_silence_settings",
+                    "audioSilenceSettings",
                     &self.r#audio_silence_settings,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_settings",
+                    "inputLossSettings",
                     &self.r#input_loss_settings,
                 ),
                 to_pulumi_object_field(
-                    "video_black_settings",
+                    "videoBlackSettings",
                     &self.r#video_black_settings,
                 ),
             ];

@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "object_lock_enabled",
+                    "objectLockEnabled",
                     &self.r#object_lock_enabled,
                 ),
                 to_pulumi_object_field(

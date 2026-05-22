@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "virtual_nodes",
+                    "virtualNodes",
                     &self.r#virtual_nodes,
                 ),
                 to_pulumi_object_field(
-                    "virtual_routers",
+                    "virtualRouters",
                     &self.r#virtual_routers,
                 ),
             ];

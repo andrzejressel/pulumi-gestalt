@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_type",
+                    "logType",
                     &self.r#log_type,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#metadata,
                 ),
                 to_pulumi_object_field(
-                    "workspace_id",
+                    "workspaceId",
                     &self.r#workspace_id,
                 ),
                 to_pulumi_object_field(
-                    "workspace_key",
+                    "workspaceKey",
                     &self.r#workspace_key,
                 ),
             ];

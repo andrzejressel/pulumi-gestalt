@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
                     &self.r#count,
                 ),
                 to_pulumi_object_field(
-                    "gpu_driver_installation_config",
+                    "gpuDriverInstallationConfig",
                     &self.r#gpu_driver_installation_config,
                 ),
                 to_pulumi_object_field(
-                    "gpu_partition_size",
+                    "gpuPartitionSize",
                     &self.r#gpu_partition_size,
                 ),
                 to_pulumi_object_field(
-                    "gpu_sharing_config",
+                    "gpuSharingConfig",
                     &self.r#gpu_sharing_config,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

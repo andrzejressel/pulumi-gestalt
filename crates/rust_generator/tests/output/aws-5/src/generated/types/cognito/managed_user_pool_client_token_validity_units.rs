@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_token",
+                    "accessToken",
                     &self.r#access_token,
                 ),
                 to_pulumi_object_field(
-                    "id_token",
+                    "idToken",
                     &self.r#id_token,
                 ),
                 to_pulumi_object_field(
-                    "refresh_token",
+                    "refreshToken",
                     &self.r#refresh_token,
                 ),
             ];

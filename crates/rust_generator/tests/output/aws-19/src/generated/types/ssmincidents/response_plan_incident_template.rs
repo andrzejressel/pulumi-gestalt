@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dedupe_string",
+                    "dedupeString",
                     &self.r#dedupe_string,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#impact,
                 ),
                 to_pulumi_object_field(
-                    "incident_tags",
+                    "incidentTags",
                     &self.r#incident_tags,
                 ),
                 to_pulumi_object_field(
-                    "notification_targets",
+                    "notificationTargets",
                     &self.r#notification_targets,
                 ),
                 to_pulumi_object_field(

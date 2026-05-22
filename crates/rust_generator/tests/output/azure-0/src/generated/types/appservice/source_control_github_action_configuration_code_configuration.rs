@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "runtime_stack",
+                    "runtimeStack",
                     &self.r#runtime_stack,
                 ),
                 to_pulumi_object_field(
-                    "runtime_version",
+                    "runtimeVersion",
                     &self.r#runtime_version,
                 ),
             ];

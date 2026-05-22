@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#cpu,
                 ),
                 to_pulumi_object_field(
-                    "instance_role_arn",
+                    "instanceRoleArn",
                     &self.r#instance_role_arn,
                 ),
                 to_pulumi_object_field(

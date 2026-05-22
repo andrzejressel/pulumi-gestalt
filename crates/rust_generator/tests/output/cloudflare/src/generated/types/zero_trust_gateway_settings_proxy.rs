@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_for_time",
+                    "disableForTime",
                     &self.r#disable_for_time,
                 ),
                 to_pulumi_object_field(
-                    "root_ca",
+                    "rootCa",
                     &self.r#root_ca,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#udp,
                 ),
                 to_pulumi_object_field(
-                    "virtual_ip",
+                    "virtualIp",
                     &self.r#virtual_ip,
                 ),
             ];

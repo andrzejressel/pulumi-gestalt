@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authenticate_cognitos",
+                    "authenticateCognitos",
                     &self.r#authenticate_cognitos,
                 ),
                 to_pulumi_object_field(
-                    "authenticate_oidcs",
+                    "authenticateOidcs",
                     &self.r#authenticate_oidcs,
                 ),
                 to_pulumi_object_field(
-                    "fixed_responses",
+                    "fixedResponses",
                     &self.r#fixed_responses,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#redirects,
                 ),
                 to_pulumi_object_field(
-                    "target_group_arn",
+                    "targetGroupArn",
                     &self.r#target_group_arn,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

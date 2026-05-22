@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_template",
+                    "instanceTemplate",
                     &self.r#instance_template,
                 ),
                 to_pulumi_object_field(
@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "target_size",
+                    "targetSize",
                     &self.r#target_size,
                 ),
             ];

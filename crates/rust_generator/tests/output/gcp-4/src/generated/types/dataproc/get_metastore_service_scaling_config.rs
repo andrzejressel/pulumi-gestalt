@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_configs",
+                    "autoscalingConfigs",
                     &self.r#autoscaling_configs,
                 ),
                 to_pulumi_object_field(
-                    "instance_size",
+                    "instanceSize",
                     &self.r#instance_size,
                 ),
                 to_pulumi_object_field(
-                    "scaling_factor",
+                    "scalingFactor",
                     &self.r#scaling_factor,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "secure_value",
+                    "secureValue",
                     &self.r#secure_value,
                 ),
                 to_pulumi_object_field(

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "uninstall_after_build",
+                    "uninstallAfterBuild",
                     &self.r#uninstall_after_build,
                 ),
             ];

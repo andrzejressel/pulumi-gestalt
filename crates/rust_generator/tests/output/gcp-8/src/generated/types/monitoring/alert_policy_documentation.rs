@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#links,
                 ),
                 to_pulumi_object_field(
-                    "mime_type",
+                    "mimeType",
                     &self.r#mime_type,
                 ),
                 to_pulumi_object_field(

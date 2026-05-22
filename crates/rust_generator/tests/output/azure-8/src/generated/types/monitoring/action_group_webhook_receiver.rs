@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aad_auth",
+                    "aadAuth",
                     &self.r#aad_auth,
                 ),
                 to_pulumi_object_field(
@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "service_uri",
+                    "serviceUri",
                     &self.r#service_uri,
                 ),
                 to_pulumi_object_field(
-                    "use_common_alert_schema",
+                    "useCommonAlertSchema",
                     &self.r#use_common_alert_schema,
                 ),
             ];

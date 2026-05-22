@@ -38,15 +38,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "created_after",
+                    "createdAfter",
                     &self.r#created_after,
                 ),
                 to_pulumi_object_field(
-                    "or_conditions",
+                    "orConditions",
                     &self.r#or_conditions,
                 ),
                 to_pulumi_object_field(
-                    "type_collection",
+                    "typeCollection",
                     &self.r#type_collection,
                 ),
                 to_pulumi_object_field(

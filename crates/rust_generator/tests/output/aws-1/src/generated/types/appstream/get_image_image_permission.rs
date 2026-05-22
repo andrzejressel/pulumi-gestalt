@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_fleet",
+                    "allowFleet",
                     &self.r#allow_fleet,
                 ),
                 to_pulumi_object_field(
-                    "allow_image_builder",
+                    "allowImageBuilder",
                     &self.r#allow_image_builder,
                 ),
             ];

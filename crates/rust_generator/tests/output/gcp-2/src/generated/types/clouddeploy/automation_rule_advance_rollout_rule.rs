@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "source_phases",
+                    "sourcePhases",
                     &self.r#source_phases,
                 ),
                 to_pulumi_object_field(

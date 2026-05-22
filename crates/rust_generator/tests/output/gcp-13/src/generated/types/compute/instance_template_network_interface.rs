@@ -95,27 +95,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_configs",
+                    "accessConfigs",
                     &self.r#access_configs,
                 ),
                 to_pulumi_object_field(
-                    "alias_ip_ranges",
+                    "aliasIpRanges",
                     &self.r#alias_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "internal_ipv_6_prefix_length",
+                    "internalIpv6PrefixLength",
                     &self.r#internal_ipv_6_prefix_length,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_access_configs",
+                    "ipv6AccessConfigs",
                     &self.r#ipv_6_access_configs,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_access_type",
+                    "ipv6AccessType",
                     &self.r#ipv_6_access_type,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_address",
+                    "ipv6Address",
                     &self.r#ipv_6_address,
                 ),
                 to_pulumi_object_field(
@@ -127,23 +127,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "network_attachment",
+                    "networkAttachment",
                     &self.r#network_attachment,
                 ),
                 to_pulumi_object_field(
-                    "network_ip",
+                    "networkIp",
                     &self.r#network_ip,
                 ),
                 to_pulumi_object_field(
-                    "nic_type",
+                    "nicType",
                     &self.r#nic_type,
                 ),
                 to_pulumi_object_field(
-                    "queue_count",
+                    "queueCount",
                     &self.r#queue_count,
                 ),
                 to_pulumi_object_field(
-                    "stack_type",
+                    "stackType",
                     &self.r#stack_type,
                 ),
                 to_pulumi_object_field(
@@ -151,7 +151,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#subnetwork,
                 ),
                 to_pulumi_object_field(
-                    "subnetwork_project",
+                    "subnetworkProject",
                     &self.r#subnetwork_project,
                 ),
             ];

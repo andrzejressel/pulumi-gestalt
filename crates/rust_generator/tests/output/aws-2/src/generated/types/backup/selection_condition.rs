@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sel
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "string_equals",
+                    "stringEquals",
                     &self.r#string_equals,
                 ),
                 to_pulumi_object_field(
-                    "string_likes",
+                    "stringLikes",
                     &self.r#string_likes,
                 ),
                 to_pulumi_object_field(
-                    "string_not_equals",
+                    "stringNotEquals",
                     &self.r#string_not_equals,
                 ),
                 to_pulumi_object_field(
-                    "string_not_likes",
+                    "stringNotLikes",
                     &self.r#string_not_likes,
                 ),
             ];

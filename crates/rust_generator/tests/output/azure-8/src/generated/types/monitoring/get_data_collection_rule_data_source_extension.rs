@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "extension_json",
+                    "extensionJson",
                     &self.r#extension_json,
                 ),
                 to_pulumi_object_field(
-                    "extension_name",
+                    "extensionName",
                     &self.r#extension_name,
                 ),
                 to_pulumi_object_field(
-                    "input_data_sources",
+                    "inputDataSources",
                     &self.r#input_data_sources,
                 ),
                 to_pulumi_object_field(

@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backup_retention_days",
+                    "backupRetentionDays",
                     &self.r#backup_retention_days,
                 ),
                 to_pulumi_object_field(
-                    "rule_id",
+                    "ruleId",
                     &self.r#rule_id,
                 ),
                 to_pulumi_object_field(
-                    "standard_schedule",
+                    "standardSchedule",
                     &self.r#standard_schedule,
                 ),
             ];

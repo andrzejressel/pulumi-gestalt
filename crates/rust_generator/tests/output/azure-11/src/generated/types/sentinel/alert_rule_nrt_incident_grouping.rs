@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "by_alert_details",
+                    "byAlertDetails",
                     &self.r#by_alert_details,
                 ),
                 to_pulumi_object_field(
-                    "by_custom_details",
+                    "byCustomDetails",
                     &self.r#by_custom_details,
                 ),
                 to_pulumi_object_field(
-                    "by_entities",
+                    "byEntities",
                     &self.r#by_entities,
                 ),
                 to_pulumi_object_field(
@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "entity_matching_method",
+                    "entityMatchingMethod",
                     &self.r#entity_matching_method,
                 ),
                 to_pulumi_object_field(
-                    "lookback_duration",
+                    "lookbackDuration",
                     &self.r#lookback_duration,
                 ),
                 to_pulumi_object_field(
-                    "reopen_closed_incidents",
+                    "reopenClosedIncidents",
                     &self.r#reopen_closed_incidents,
                 ),
             ];

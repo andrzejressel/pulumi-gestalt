@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Qui
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "local_deployment_administration_role_arn",
+                    "localDeploymentAdministrationRoleArn",
                     &self.r#local_deployment_administration_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "local_deployment_execution_role_name",
+                    "localDeploymentExecutionRoleName",
                     &self.r#local_deployment_execution_role_name,
                 ),
                 to_pulumi_object_field(
@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Qui
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "type_version",
+                    "typeVersion",
                     &self.r#type_version,
                 ),
             ];

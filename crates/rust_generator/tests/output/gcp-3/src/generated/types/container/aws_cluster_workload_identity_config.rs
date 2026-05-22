@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aws
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "identity_provider",
+                    "identityProvider",
                     &self.r#identity_provider,
                 ),
                 to_pulumi_object_field(
-                    "issuer_uri",
+                    "issuerUri",
                     &self.r#issuer_uri,
                 ),
                 to_pulumi_object_field(
-                    "workload_pool",
+                    "workloadPool",
                     &self.r#workload_pool,
                 ),
             ];

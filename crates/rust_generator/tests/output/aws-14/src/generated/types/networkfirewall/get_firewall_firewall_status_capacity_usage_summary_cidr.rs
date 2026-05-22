@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "available_cidr_count",
+                    "availableCidrCount",
                     &self.r#available_cidr_count,
                 ),
                 to_pulumi_object_field(
-                    "ip_set_references",
+                    "ipSetReferences",
                     &self.r#ip_set_references,
                 ),
                 to_pulumi_object_field(
-                    "utilized_cidr_count",
+                    "utilizedCidrCount",
                     &self.r#utilized_cidr_count,
                 ),
             ];

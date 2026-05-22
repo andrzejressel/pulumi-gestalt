@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_log_source_resource",
+                    "awsLogSourceResource",
                     &self.r#aws_log_source_resource,
                 ),
                 to_pulumi_object_field(
-                    "custom_log_source_resource",
+                    "customLogSourceResource",
                     &self.r#custom_log_source_resource,
                 ),
             ];

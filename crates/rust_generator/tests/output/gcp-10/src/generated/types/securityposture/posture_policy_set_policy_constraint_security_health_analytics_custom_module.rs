@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
                     &self.r#config,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
@@ -52,7 +52,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "module_enablement_state",
+                    "moduleEnablementState",
                     &self.r#module_enablement_state,
                 ),
             ];

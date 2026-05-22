@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#connection,
                 ),
                 to_pulumi_object_field(
-                    "external_source",
+                    "externalSource",
                     &self.r#external_source,
                 ),
             ];

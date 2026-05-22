@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#classic,
                 ),
                 to_pulumi_object_field(
-                    "cluster_identifier",
+                    "clusterIdentifier",
                     &self.r#cluster_identifier,
                 ),
                 to_pulumi_object_field(
-                    "cluster_type",
+                    "clusterType",
                     &self.r#cluster_type,
                 ),
                 to_pulumi_object_field(
-                    "node_type",
+                    "nodeType",
                     &self.r#node_type,
                 ),
                 to_pulumi_object_field(
-                    "number_of_nodes",
+                    "numberOfNodes",
                     &self.r#number_of_nodes,
                 ),
             ];

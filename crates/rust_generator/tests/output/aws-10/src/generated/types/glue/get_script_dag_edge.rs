@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#target,
                 ),
                 to_pulumi_object_field(
-                    "target_parameter",
+                    "targetParameter",
                     &self.r#target_parameter,
                 ),
             ];

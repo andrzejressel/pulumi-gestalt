@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_dynamic_field_update",
+                    "enableDynamicFieldUpdate",
                     &self.r#enable_dynamic_field_update,
                 ),
                 to_pulumi_object_field(
-                    "include_deleted_records",
+                    "includeDeletedRecords",
                     &self.r#include_deleted_records,
                 ),
                 to_pulumi_object_field(

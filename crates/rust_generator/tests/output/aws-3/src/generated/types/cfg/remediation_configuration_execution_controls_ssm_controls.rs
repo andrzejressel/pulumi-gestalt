@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "concurrent_execution_rate_percentage",
+                    "concurrentExecutionRatePercentage",
                     &self.r#concurrent_execution_rate_percentage,
                 ),
                 to_pulumi_object_field(
-                    "error_percentage",
+                    "errorPercentage",
                     &self.r#error_percentage,
                 ),
             ];

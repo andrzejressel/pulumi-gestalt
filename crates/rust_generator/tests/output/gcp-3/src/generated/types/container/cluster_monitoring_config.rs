@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_datapath_observability_config",
+                    "advancedDatapathObservabilityConfig",
                     &self.r#advanced_datapath_observability_config,
                 ),
                 to_pulumi_object_field(
-                    "enable_components",
+                    "enableComponents",
                     &self.r#enable_components,
                 ),
                 to_pulumi_object_field(
-                    "managed_prometheus",
+                    "managedPrometheus",
                     &self.r#managed_prometheus,
                 ),
             ];

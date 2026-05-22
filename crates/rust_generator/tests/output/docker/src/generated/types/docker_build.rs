@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "add_hosts",
+                    "addHosts",
                     &self.r#add_hosts,
                 ),
                 to_pulumi_object_field(
@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
                     &self.r#args,
                 ),
                 to_pulumi_object_field(
-                    "builder_version",
+                    "builderVersion",
                     &self.r#builder_version,
                 ),
                 to_pulumi_object_field(
-                    "cache_from",
+                    "cacheFrom",
                     &self.r#cache_from,
                 ),
                 to_pulumi_object_field(

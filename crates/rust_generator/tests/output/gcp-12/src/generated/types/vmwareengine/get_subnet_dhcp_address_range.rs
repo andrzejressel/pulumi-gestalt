@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "first_address",
+                    "firstAddress",
                     &self.r#first_address,
                 ),
                 to_pulumi_object_field(
-                    "last_address",
+                    "lastAddress",
                     &self.r#last_address,
                 ),
             ];

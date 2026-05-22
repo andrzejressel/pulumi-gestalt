@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxS
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_export_pattern",
+                    "audioExportPattern",
                     &self.r#audio_export_pattern,
                 ),
                 to_pulumi_object_field(
-                    "audio_format",
+                    "audioFormat",
                     &self.r#audio_format,
                 ),
                 to_pulumi_object_field(
-                    "enable_audio_redaction",
+                    "enableAudioRedaction",
                     &self.r#enable_audio_redaction,
                 ),
                 to_pulumi_object_field(
-                    "gcs_bucket",
+                    "gcsBucket",
                     &self.r#gcs_bucket,
                 ),
             ];

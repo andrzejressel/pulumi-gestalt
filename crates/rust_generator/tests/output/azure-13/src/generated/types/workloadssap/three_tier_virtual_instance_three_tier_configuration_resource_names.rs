@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_server",
+                    "applicationServer",
                     &self.r#application_server,
                 ),
                 to_pulumi_object_field(
-                    "central_server",
+                    "centralServer",
                     &self.r#central_server,
                 ),
                 to_pulumi_object_field(
-                    "database_server",
+                    "databaseServer",
                     &self.r#database_server,
                 ),
                 to_pulumi_object_field(
-                    "shared_storage",
+                    "sharedStorage",
                     &self.r#shared_storage,
                 ),
             ];

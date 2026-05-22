@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#hosts,
                 ),
                 to_pulumi_object_field(
-                    "http_header_match",
+                    "httpHeaderMatch",
                     &self.r#http_header_match,
                 ),
                 to_pulumi_object_field(

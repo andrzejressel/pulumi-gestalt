@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entity_id_prefix",
+                    "entityIdPrefix",
                     &self.r#entity_id_prefix,
                 ),
                 to_pulumi_object_field(
-                    "group_configuration",
+                    "groupConfiguration",
                     &self.r#group_configuration,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
                     &self.r#issuer,
                 ),
                 to_pulumi_object_field(
-                    "token_selection",
+                    "tokenSelection",
                     &self.r#token_selection,
                 ),
             ];

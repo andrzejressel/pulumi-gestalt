@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "bitstream_mode",
+                    "bitstreamMode",
                     &self.r#bitstream_mode,
                 ),
                 to_pulumi_object_field(
-                    "coding_mode",
+                    "codingMode",
                     &self.r#coding_mode,
                 ),
                 to_pulumi_object_field(
@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#dialnorm,
                 ),
                 to_pulumi_object_field(
-                    "drc_profile",
+                    "drcProfile",
                     &self.r#drc_profile,
                 ),
                 to_pulumi_object_field(
-                    "lfe_filter",
+                    "lfeFilter",
                     &self.r#lfe_filter,
                 ),
                 to_pulumi_object_field(
-                    "metadata_control",
+                    "metadataControl",
                     &self.r#metadata_control,
                 ),
             ];

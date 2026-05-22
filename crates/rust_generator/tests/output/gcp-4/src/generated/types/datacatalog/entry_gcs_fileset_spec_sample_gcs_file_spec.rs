@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "file_path",
+                    "filePath",
                     &self.r#file_path,
                 ),
                 to_pulumi_object_field(
-                    "size_bytes",
+                    "sizeBytes",
                     &self.r#size_bytes,
                 ),
             ];

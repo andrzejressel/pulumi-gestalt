@@ -47,27 +47,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "effective_gateway_id",
+                    "effectiveGatewayId",
                     &self.r#effective_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "gateway_id",
+                    "gatewayId",
                     &self.r#gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "gateway_name",
+                    "gatewayName",
                     &self.r#gateway_name,
                 ),
                 to_pulumi_object_field(
-                    "ingress_application_gateway_identities",
+                    "ingressApplicationGatewayIdentities",
                     &self.r#ingress_application_gateway_identities,
                 ),
                 to_pulumi_object_field(
-                    "subnet_cidr",
+                    "subnetCidr",
                     &self.r#subnet_cidr,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
                     &self.r#effect,
                 ),
                 to_pulumi_object_field(
-                    "permission_groups",
+                    "permissionGroups",
                     &self.r#permission_groups,
                 ),
                 to_pulumi_object_field(

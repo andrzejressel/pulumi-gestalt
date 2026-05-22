@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "invocation_condition",
+                    "invocationCondition",
                     &self.r#invocation_condition,
                 ),
                 to_pulumi_object_field(
-                    "lambda_arn",
+                    "lambdaArn",
                     &self.r#lambda_arn,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket",
+                    "s3Bucket",
                     &self.r#s_3_bucket,
                 ),
             ];

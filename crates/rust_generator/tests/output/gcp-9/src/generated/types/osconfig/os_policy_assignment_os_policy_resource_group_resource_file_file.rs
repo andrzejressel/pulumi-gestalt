@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_insecure",
+                    "allowInsecure",
                     &self.r#allow_insecure,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for OsP
                     &self.r#gcs,
                 ),
                 to_pulumi_object_field(
-                    "local_path",
+                    "localPath",
                     &self.r#local_path,
                 ),
                 to_pulumi_object_field(

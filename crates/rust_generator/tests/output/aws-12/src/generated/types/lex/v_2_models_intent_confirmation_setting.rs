@@ -75,51 +75,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#active,
                 ),
                 to_pulumi_object_field(
-                    "code_hook",
+                    "codeHook",
                     &self.r#code_hook,
                 ),
                 to_pulumi_object_field(
-                    "confirmation_conditional",
+                    "confirmationConditional",
                     &self.r#confirmation_conditional,
                 ),
                 to_pulumi_object_field(
-                    "confirmation_next_step",
+                    "confirmationNextStep",
                     &self.r#confirmation_next_step,
                 ),
                 to_pulumi_object_field(
-                    "confirmation_response",
+                    "confirmationResponse",
                     &self.r#confirmation_response,
                 ),
                 to_pulumi_object_field(
-                    "declination_conditional",
+                    "declinationConditional",
                     &self.r#declination_conditional,
                 ),
                 to_pulumi_object_field(
-                    "declination_next_step",
+                    "declinationNextStep",
                     &self.r#declination_next_step,
                 ),
                 to_pulumi_object_field(
-                    "declination_response",
+                    "declinationResponse",
                     &self.r#declination_response,
                 ),
                 to_pulumi_object_field(
-                    "elicitation_code_hook",
+                    "elicitationCodeHook",
                     &self.r#elicitation_code_hook,
                 ),
                 to_pulumi_object_field(
-                    "failure_conditional",
+                    "failureConditional",
                     &self.r#failure_conditional,
                 ),
                 to_pulumi_object_field(
-                    "failure_next_step",
+                    "failureNextStep",
                     &self.r#failure_next_step,
                 ),
                 to_pulumi_object_field(
-                    "failure_response",
+                    "failureResponse",
                     &self.r#failure_response,
                 ),
                 to_pulumi_object_field(
-                    "prompt_specification",
+                    "promptSpecification",
                     &self.r#prompt_specification,
                 ),
             ];

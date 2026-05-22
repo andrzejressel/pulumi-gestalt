@@ -53,27 +53,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ema
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "current_signing_key_length",
+                    "currentSigningKeyLength",
                     &self.r#current_signing_key_length,
                 ),
                 to_pulumi_object_field(
-                    "domain_signing_private_key",
+                    "domainSigningPrivateKey",
                     &self.r#domain_signing_private_key,
                 ),
                 to_pulumi_object_field(
-                    "domain_signing_selector",
+                    "domainSigningSelector",
                     &self.r#domain_signing_selector,
                 ),
                 to_pulumi_object_field(
-                    "last_key_generation_timestamp",
+                    "lastKeyGenerationTimestamp",
                     &self.r#last_key_generation_timestamp,
                 ),
                 to_pulumi_object_field(
-                    "next_signing_key_length",
+                    "nextSigningKeyLength",
                     &self.r#next_signing_key_length,
                 ),
                 to_pulumi_object_field(
-                    "signing_attributes_origin",
+                    "signingAttributesOrigin",
                     &self.r#signing_attributes_origin,
                 ),
                 to_pulumi_object_field(

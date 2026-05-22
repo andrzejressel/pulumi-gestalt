@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_port_behavior",
+                    "destinationPortBehavior",
                     &self.r#destination_port_behavior,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "trace_route_enabled",
+                    "traceRouteEnabled",
                     &self.r#trace_route_enabled,
                 ),
             ];

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_cidr_block",
+                    "ipv4CidrBlock",
                     &self.r#ipv_4_cidr_block,
                 ),
                 to_pulumi_object_field(
-                    "use_service_networking",
+                    "useServiceNetworking",
                     &self.r#use_service_networking,
                 ),
             ];

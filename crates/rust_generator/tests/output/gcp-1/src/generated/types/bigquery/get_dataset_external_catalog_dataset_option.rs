@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_storage_location_uri",
+                    "defaultStorageLocationUri",
                     &self.r#default_storage_location_uri,
                 ),
                 to_pulumi_object_field(

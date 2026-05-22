@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "preferred_renewal_method",
+                    "preferredRenewalMethod",
                     &self.r#preferred_renewal_method,
                 ),
                 to_pulumi_object_field(
-                    "renewal_method",
+                    "renewalMethod",
                     &self.r#renewal_method,
                 ),
                 to_pulumi_object_field(
-                    "transfer_lock_state",
+                    "transferLockState",
                     &self.r#transfer_lock_state,
                 ),
             ];

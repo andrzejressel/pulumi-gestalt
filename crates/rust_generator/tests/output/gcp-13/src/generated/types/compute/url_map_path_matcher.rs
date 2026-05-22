@@ -87,19 +87,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_custom_error_response_policy",
+                    "defaultCustomErrorResponsePolicy",
                     &self.r#default_custom_error_response_policy,
                 ),
                 to_pulumi_object_field(
-                    "default_route_action",
+                    "defaultRouteAction",
                     &self.r#default_route_action,
                 ),
                 to_pulumi_object_field(
-                    "default_service",
+                    "defaultService",
                     &self.r#default_service,
                 ),
                 to_pulumi_object_field(
-                    "default_url_redirect",
+                    "defaultUrlRedirect",
                     &self.r#default_url_redirect,
                 ),
                 to_pulumi_object_field(
@@ -107,7 +107,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "header_action",
+                    "headerAction",
                     &self.r#header_action,
                 ),
                 to_pulumi_object_field(
@@ -115,11 +115,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "path_rules",
+                    "pathRules",
                     &self.r#path_rules,
                 ),
                 to_pulumi_object_field(
-                    "route_rules",
+                    "routeRules",
                     &self.r#route_rules,
                 ),
             ];

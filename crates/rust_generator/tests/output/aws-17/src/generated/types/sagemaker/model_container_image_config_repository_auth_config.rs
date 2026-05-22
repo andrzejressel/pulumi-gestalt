@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "repository_credentials_provider_arn",
+                    "repositoryCredentialsProviderArn",
                     &self.r#repository_credentials_provider_arn,
                 ),
             ];

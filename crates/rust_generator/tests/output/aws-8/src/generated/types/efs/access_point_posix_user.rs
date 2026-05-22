@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#gid,
                 ),
                 to_pulumi_object_field(
-                    "secondary_gids",
+                    "secondaryGids",
                     &self.r#secondary_gids,
                 ),
                 to_pulumi_object_field(

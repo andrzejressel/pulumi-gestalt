@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Inv
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_config",
+                    "cloudwatchConfig",
                     &self.r#cloudwatch_config,
                 ),
                 to_pulumi_object_field(
-                    "embedding_data_delivery_enabled",
+                    "embeddingDataDeliveryEnabled",
                     &self.r#embedding_data_delivery_enabled,
                 ),
                 to_pulumi_object_field(
-                    "image_data_delivery_enabled",
+                    "imageDataDeliveryEnabled",
                     &self.r#image_data_delivery_enabled,
                 ),
                 to_pulumi_object_field(
-                    "s_3_config",
+                    "s3Config",
                     &self.r#s_3_config,
                 ),
                 to_pulumi_object_field(
-                    "text_data_delivery_enabled",
+                    "textDataDeliveryEnabled",
                     &self.r#text_data_delivery_enabled,
                 ),
             ];

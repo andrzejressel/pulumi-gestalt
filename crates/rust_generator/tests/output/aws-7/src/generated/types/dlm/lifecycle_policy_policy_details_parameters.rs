@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_boot_volume",
+                    "excludeBootVolume",
                     &self.r#exclude_boot_volume,
                 ),
                 to_pulumi_object_field(
-                    "no_reboot",
+                    "noReboot",
                     &self.r#no_reboot,
                 ),
             ];

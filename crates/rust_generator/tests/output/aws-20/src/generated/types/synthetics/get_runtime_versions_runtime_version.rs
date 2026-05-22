@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deprecation_date",
+                    "deprecationDate",
                     &self.r#deprecation_date,
                 ),
                 to_pulumi_object_field(
@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "release_date",
+                    "releaseDate",
                     &self.r#release_date,
                 ),
                 to_pulumi_object_field(
-                    "version_name",
+                    "versionName",
                     &self.r#version_name,
                 ),
             ];

@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "control_plane_node_port",
+                    "controlPlaneNodePort",
                     &self.r#control_plane_node_port,
                 ),
                 to_pulumi_object_field(
-                    "ingress_http_node_port",
+                    "ingressHttpNodePort",
                     &self.r#ingress_http_node_port,
                 ),
                 to_pulumi_object_field(
-                    "ingress_https_node_port",
+                    "ingressHttpsNodePort",
                     &self.r#ingress_https_node_port,
                 ),
                 to_pulumi_object_field(
-                    "konnectivity_server_node_port",
+                    "konnectivityServerNodePort",
                     &self.r#konnectivity_server_node_port,
                 ),
             ];

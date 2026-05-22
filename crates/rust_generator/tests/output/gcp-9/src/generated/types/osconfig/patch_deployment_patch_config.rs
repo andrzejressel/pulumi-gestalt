@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#goo,
                 ),
                 to_pulumi_object_field(
-                    "mig_instances_allowed",
+                    "migInstancesAllowed",
                     &self.r#mig_instances_allowed,
                 ),
                 to_pulumi_object_field(
-                    "post_step",
+                    "postStep",
                     &self.r#post_step,
                 ),
                 to_pulumi_object_field(
-                    "pre_step",
+                    "preStep",
                     &self.r#pre_step,
                 ),
                 to_pulumi_object_field(
-                    "reboot_config",
+                    "rebootConfig",
                     &self.r#reboot_config,
                 ),
                 to_pulumi_object_field(
-                    "windows_update",
+                    "windowsUpdate",
                     &self.r#windows_update,
                 ),
                 to_pulumi_object_field(

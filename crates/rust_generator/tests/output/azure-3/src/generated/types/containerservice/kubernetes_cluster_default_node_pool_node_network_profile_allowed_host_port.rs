@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "port_end",
+                    "portEnd",
                     &self.r#port_end,
                 ),
                 to_pulumi_object_field(
-                    "port_start",
+                    "portStart",
                     &self.r#port_start,
                 ),
                 to_pulumi_object_field(

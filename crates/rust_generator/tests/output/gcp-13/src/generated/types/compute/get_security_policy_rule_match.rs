@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#configs,
                 ),
                 to_pulumi_object_field(
-                    "expr_options",
+                    "exprOptions",
                     &self.r#expr_options,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#exprs,
                 ),
                 to_pulumi_object_field(
-                    "versioned_expr",
+                    "versionedExpr",
                     &self.r#versioned_expr,
                 ),
             ];

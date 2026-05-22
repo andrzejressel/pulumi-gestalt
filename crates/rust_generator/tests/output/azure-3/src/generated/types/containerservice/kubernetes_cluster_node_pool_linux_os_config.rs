@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "swap_file_size_mb",
+                    "swapFileSizeMb",
                     &self.r#swap_file_size_mb,
                 ),
                 to_pulumi_object_field(
-                    "sysctl_config",
+                    "sysctlConfig",
                     &self.r#sysctl_config,
                 ),
                 to_pulumi_object_field(
-                    "transparent_huge_page_defrag",
+                    "transparentHugePageDefrag",
                     &self.r#transparent_huge_page_defrag,
                 ),
                 to_pulumi_object_field(
-                    "transparent_huge_page_enabled",
+                    "transparentHugePageEnabled",
                     &self.r#transparent_huge_page_enabled,
                 ),
             ];

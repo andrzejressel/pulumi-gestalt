@@ -49,31 +49,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_id",
+                    "diskId",
                     &self.r#disk_id,
                 ),
                 to_pulumi_object_field(
-                    "staging_storage_account_id",
+                    "stagingStorageAccountId",
                     &self.r#staging_storage_account_id,
                 ),
                 to_pulumi_object_field(
-                    "target_disk_encryption",
+                    "targetDiskEncryption",
                     &self.r#target_disk_encryption,
                 ),
                 to_pulumi_object_field(
-                    "target_disk_encryption_set_id",
+                    "targetDiskEncryptionSetId",
                     &self.r#target_disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "target_disk_type",
+                    "targetDiskType",
                     &self.r#target_disk_type,
                 ),
                 to_pulumi_object_field(
-                    "target_replica_disk_type",
+                    "targetReplicaDiskType",
                     &self.r#target_replica_disk_type,
                 ),
                 to_pulumi_object_field(
-                    "target_resource_group_id",
+                    "targetResourceGroupId",
                     &self.r#target_resource_group_id,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maximum_batch_size",
+                    "maximumBatchSize",
                     &self.r#maximum_batch_size,
                 ),
                 to_pulumi_object_field(
-                    "maximum_execution_timeout_in_seconds",
+                    "maximumExecutionTimeoutInSeconds",
                     &self.r#maximum_execution_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "rollback_maximum_batch_size",
+                    "rollbackMaximumBatchSize",
                     &self.r#rollback_maximum_batch_size,
                 ),
                 to_pulumi_object_field(
-                    "wait_interval_in_seconds",
+                    "waitIntervalInSeconds",
                     &self.r#wait_interval_in_seconds,
                 ),
             ];

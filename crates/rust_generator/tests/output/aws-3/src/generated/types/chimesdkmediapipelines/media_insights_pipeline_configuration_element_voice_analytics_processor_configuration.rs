@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "speaker_search_status",
+                    "speakerSearchStatus",
                     &self.r#speaker_search_status,
                 ),
                 to_pulumi_object_field(
-                    "voice_tone_analysis_status",
+                    "voiceToneAnalysisStatus",
                     &self.r#voice_tone_analysis_status,
                 ),
             ];

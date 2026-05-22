@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_ejection_durations",
+                    "baseEjectionDurations",
                     &self.r#base_ejection_durations,
                 ),
                 to_pulumi_object_field(
@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#intervals,
                 ),
                 to_pulumi_object_field(
-                    "max_ejection_percent",
+                    "maxEjectionPercent",
                     &self.r#max_ejection_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_server_errors",
+                    "maxServerErrors",
                     &self.r#max_server_errors,
                 ),
             ];

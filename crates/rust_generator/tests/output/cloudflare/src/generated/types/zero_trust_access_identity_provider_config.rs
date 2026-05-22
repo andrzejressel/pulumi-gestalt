@@ -100,11 +100,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_token",
+                    "apiToken",
                     &self.r#api_token,
                 ),
                 to_pulumi_object_field(
-                    "apps_domain",
+                    "appsDomain",
                     &self.r#apps_domain,
                 ),
                 to_pulumi_object_field(
@@ -112,23 +112,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#attributes,
                 ),
                 to_pulumi_object_field(
-                    "auth_url",
+                    "authUrl",
                     &self.r#auth_url,
                 ),
                 to_pulumi_object_field(
-                    "authorization_server_id",
+                    "authorizationServerId",
                     &self.r#authorization_server_id,
                 ),
                 to_pulumi_object_field(
-                    "centrify_account",
+                    "centrifyAccount",
                     &self.r#centrify_account,
                 ),
                 to_pulumi_object_field(
-                    "centrify_app_id",
+                    "centrifyAppId",
                     &self.r#centrify_app_id,
                 ),
                 to_pulumi_object_field(
-                    "certs_url",
+                    "certsUrl",
                     &self.r#certs_url,
                 ),
                 to_pulumi_object_field(
@@ -136,55 +136,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#claims,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
-                    "conditional_access_enabled",
+                    "conditionalAccessEnabled",
                     &self.r#conditional_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "directory_id",
+                    "directoryId",
                     &self.r#directory_id,
                 ),
                 to_pulumi_object_field(
-                    "email_attribute_name",
+                    "emailAttributeName",
                     &self.r#email_attribute_name,
                 ),
                 to_pulumi_object_field(
-                    "email_claim_name",
+                    "emailClaimName",
                     &self.r#email_claim_name,
                 ),
                 to_pulumi_object_field(
-                    "idp_public_cert",
+                    "idpPublicCert",
                     &self.r#idp_public_cert,
                 ),
                 to_pulumi_object_field(
-                    "issuer_url",
+                    "issuerUrl",
                     &self.r#issuer_url,
                 ),
                 to_pulumi_object_field(
-                    "okta_account",
+                    "oktaAccount",
                     &self.r#okta_account,
                 ),
                 to_pulumi_object_field(
-                    "onelogin_account",
+                    "oneloginAccount",
                     &self.r#onelogin_account,
                 ),
                 to_pulumi_object_field(
-                    "ping_env_id",
+                    "pingEnvId",
                     &self.r#ping_env_id,
                 ),
                 to_pulumi_object_field(
-                    "pkce_enabled",
+                    "pkceEnabled",
                     &self.r#pkce_enabled,
                 ),
                 to_pulumi_object_field(
-                    "redirect_url",
+                    "redirectUrl",
                     &self.r#redirect_url,
                 ),
                 to_pulumi_object_field(
@@ -192,19 +192,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#scopes,
                 ),
                 to_pulumi_object_field(
-                    "sign_request",
+                    "signRequest",
                     &self.r#sign_request,
                 ),
                 to_pulumi_object_field(
-                    "sso_target_url",
+                    "ssoTargetUrl",
                     &self.r#sso_target_url,
                 ),
                 to_pulumi_object_field(
-                    "support_groups",
+                    "supportGroups",
                     &self.r#support_groups,
                 ),
                 to_pulumi_object_field(
-                    "token_url",
+                    "tokenUrl",
                     &self.r#token_url,
                 ),
             ];

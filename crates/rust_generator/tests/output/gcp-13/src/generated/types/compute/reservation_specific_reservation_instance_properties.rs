@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "guest_accelerators",
+                    "guestAccelerators",
                     &self.r#guest_accelerators,
                 ),
                 to_pulumi_object_field(
-                    "local_ssds",
+                    "localSsds",
                     &self.r#local_ssds,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "min_cpu_platform",
+                    "minCpuPlatform",
                     &self.r#min_cpu_platform,
                 ),
             ];

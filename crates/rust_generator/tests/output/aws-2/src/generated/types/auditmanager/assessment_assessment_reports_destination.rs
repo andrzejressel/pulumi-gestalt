@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "destination_type",
+                    "destinationType",
                     &self.r#destination_type,
                 ),
             ];

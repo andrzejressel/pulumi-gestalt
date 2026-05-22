@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accelerated_networking_enabled",
+                    "acceleratedNetworkingEnabled",
                     &self.r#accelerated_networking_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_vnet_assignment_scope",
+                    "dynamicVnetAssignmentScope",
                     &self.r#dynamic_vnet_assignment_scope,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_configurations",
+                    "endpointConfigurations",
                     &self.r#endpoint_configurations,
                 ),
                 to_pulumi_object_field(
-                    "public_address_provisioning_type",
+                    "publicAddressProvisioningType",
                     &self.r#public_address_provisioning_type,
                 ),
                 to_pulumi_object_field(
-                    "public_ips",
+                    "publicIps",
                     &self.r#public_ips,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sea
                     &self.r#data,
                 ),
                 to_pulumi_object_field(
-                    "last_reported_at",
+                    "lastReportedAt",
                     &self.r#last_reported_at,
                 ),
                 to_pulumi_object_field(

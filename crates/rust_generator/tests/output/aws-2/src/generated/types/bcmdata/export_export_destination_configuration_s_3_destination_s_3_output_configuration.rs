@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#format,
                 ),
                 to_pulumi_object_field(
-                    "output_type",
+                    "outputType",
                     &self.r#output_type,
                 ),
                 to_pulumi_object_field(

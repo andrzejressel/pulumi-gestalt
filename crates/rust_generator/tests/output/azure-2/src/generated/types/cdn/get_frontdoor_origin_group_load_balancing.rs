@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_latency_in_milliseconds",
+                    "additionalLatencyInMilliseconds",
                     &self.r#additional_latency_in_milliseconds,
                 ),
                 to_pulumi_object_field(
-                    "sample_size",
+                    "sampleSize",
                     &self.r#sample_size,
                 ),
                 to_pulumi_object_field(
-                    "successful_samples_required",
+                    "successfulSamplesRequired",
                     &self.r#successful_samples_required,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "header_matches",
+                    "headerMatches",
                     &self.r#header_matches,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#method,
                 ),
                 to_pulumi_object_field(
-                    "path_match",
+                    "pathMatch",
                     &self.r#path_match,
                 ),
             ];

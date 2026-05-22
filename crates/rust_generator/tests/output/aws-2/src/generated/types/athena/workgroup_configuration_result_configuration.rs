@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acl_configuration",
+                    "aclConfiguration",
                     &self.r#acl_configuration,
                 ),
                 to_pulumi_object_field(
-                    "encryption_configuration",
+                    "encryptionConfiguration",
                     &self.r#encryption_configuration,
                 ),
                 to_pulumi_object_field(
-                    "expected_bucket_owner",
+                    "expectedBucketOwner",
                     &self.r#expected_bucket_owner,
                 ),
                 to_pulumi_object_field(
-                    "output_location",
+                    "outputLocation",
                     &self.r#output_location,
                 ),
             ];

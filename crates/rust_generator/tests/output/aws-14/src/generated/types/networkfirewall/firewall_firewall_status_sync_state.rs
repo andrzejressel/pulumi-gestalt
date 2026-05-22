@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#attachments,
                 ),
                 to_pulumi_object_field(
-                    "availability_zone",
+                    "availabilityZone",
                     &self.r#availability_zone,
                 ),
             ];

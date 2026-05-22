@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_geo_fencing",
+                    "enableGeoFencing",
                     &self.r#enable_geo_fencing,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#geos,
                 ),
                 to_pulumi_object_field(
-                    "primary_backup",
+                    "primaryBackup",
                     &self.r#primary_backup,
                 ),
                 to_pulumi_object_field(

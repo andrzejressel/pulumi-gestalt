@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "time_taken",
+                    "timeTaken",
                     &self.r#time_taken,
                 ),
             ];

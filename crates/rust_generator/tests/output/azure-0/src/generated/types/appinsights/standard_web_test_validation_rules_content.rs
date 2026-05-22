@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_match",
+                    "contentMatch",
                     &self.r#content_match,
                 ),
                 to_pulumi_object_field(
-                    "ignore_case",
+                    "ignoreCase",
                     &self.r#ignore_case,
                 ),
                 to_pulumi_object_field(
-                    "pass_if_text_found",
+                    "passIfTextFound",
                     &self.r#pass_if_text_found,
                 ),
             ];

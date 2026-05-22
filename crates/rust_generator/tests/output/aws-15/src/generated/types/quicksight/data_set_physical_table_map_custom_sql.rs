@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#columns,
                 ),
                 to_pulumi_object_field(
-                    "data_source_arn",
+                    "dataSourceArn",
                     &self.r#data_source_arn,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "sql_query",
+                    "sqlQuery",
                     &self.r#sql_query,
                 ),
             ];

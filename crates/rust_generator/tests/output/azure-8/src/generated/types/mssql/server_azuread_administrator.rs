@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azuread_authentication_only",
+                    "azureadAuthenticationOnly",
                     &self.r#azuread_authentication_only,
                 ),
                 to_pulumi_object_field(
-                    "login_username",
+                    "loginUsername",
                     &self.r#login_username,
                 ),
                 to_pulumi_object_field(
-                    "object_id",
+                    "objectId",
                     &self.r#object_id,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bigquery_destination",
+                    "bigqueryDestination",
                     &self.r#bigquery_destination,
                 ),
                 to_pulumi_object_field(
@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiE
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "sampling_rate",
+                    "samplingRate",
                     &self.r#sampling_rate,
                 ),
             ];

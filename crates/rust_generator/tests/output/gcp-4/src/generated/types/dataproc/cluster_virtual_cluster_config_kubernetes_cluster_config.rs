@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gke_cluster_config",
+                    "gkeClusterConfig",
                     &self.r#gke_cluster_config,
                 ),
                 to_pulumi_object_field(
-                    "kubernetes_namespace",
+                    "kubernetesNamespace",
                     &self.r#kubernetes_namespace,
                 ),
                 to_pulumi_object_field(
-                    "kubernetes_software_config",
+                    "kubernetesSoftwareConfig",
                     &self.r#kubernetes_software_config,
                 ),
             ];

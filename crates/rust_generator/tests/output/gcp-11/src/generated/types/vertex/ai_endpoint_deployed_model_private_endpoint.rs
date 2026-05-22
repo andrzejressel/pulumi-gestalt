@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiE
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "explain_http_uri",
+                    "explainHttpUri",
                     &self.r#explain_http_uri,
                 ),
                 to_pulumi_object_field(
-                    "health_http_uri",
+                    "healthHttpUri",
                     &self.r#health_http_uri,
                 ),
                 to_pulumi_object_field(
-                    "predict_http_uri",
+                    "predictHttpUri",
                     &self.r#predict_http_uri,
                 ),
                 to_pulumi_object_field(
-                    "service_attachment",
+                    "serviceAttachment",
                     &self.r#service_attachment,
                 ),
             ];

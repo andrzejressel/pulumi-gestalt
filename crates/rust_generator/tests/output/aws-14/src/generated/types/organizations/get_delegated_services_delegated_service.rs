@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delegation_enabled_date",
+                    "delegationEnabledDate",
                     &self.r#delegation_enabled_date,
                 ),
                 to_pulumi_object_field(
-                    "service_principal",
+                    "servicePrincipal",
                     &self.r#service_principal,
                 ),
             ];

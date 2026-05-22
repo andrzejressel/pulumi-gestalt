@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "empty_dir",
+                    "emptyDir",
                     &self.r#empty_dir,
                 ),
                 to_pulumi_object_field(
-                    "host_path",
+                    "hostPath",
                     &self.r#host_path,
                 ),
                 to_pulumi_object_field(

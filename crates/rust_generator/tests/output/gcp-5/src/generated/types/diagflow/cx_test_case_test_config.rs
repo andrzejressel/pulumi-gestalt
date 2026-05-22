@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
                     &self.r#page,
                 ),
                 to_pulumi_object_field(
-                    "tracking_parameters",
+                    "trackingParameters",
                     &self.r#tracking_parameters,
                 ),
             ];

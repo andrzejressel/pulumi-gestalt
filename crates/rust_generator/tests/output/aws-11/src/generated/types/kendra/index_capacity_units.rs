@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "query_capacity_units",
+                    "queryCapacityUnits",
                     &self.r#query_capacity_units,
                 ),
                 to_pulumi_object_field(
-                    "storage_capacity_units",
+                    "storageCapacityUnits",
                     &self.r#storage_capacity_units,
                 ),
             ];

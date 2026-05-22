@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "duration_sec",
+                    "durationSec",
                     &self.r#duration_sec,
                 ),
                 to_pulumi_object_field(
-                    "min_required_replicas",
+                    "minRequiredReplicas",
                     &self.r#min_required_replicas,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#schedule,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];

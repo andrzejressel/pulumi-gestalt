@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "login_page_uri",
+                    "loginPageUri",
                     &self.r#login_page_uri,
                 ),
                 to_pulumi_object_field(
-                    "tenant_ids",
+                    "tenantIds",
                     &self.r#tenant_ids,
                 ),
             ];

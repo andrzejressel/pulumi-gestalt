@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_settings",
+                    "containerSettings",
                     &self.r#container_settings,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#extension,
                 ),
                 to_pulumi_object_field(
-                    "name_modifier",
+                    "nameModifier",
                     &self.r#name_modifier,
                 ),
             ];

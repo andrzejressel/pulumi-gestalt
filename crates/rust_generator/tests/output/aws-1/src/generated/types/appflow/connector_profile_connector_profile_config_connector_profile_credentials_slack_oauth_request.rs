@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_code",
+                    "authCode",
                     &self.r#auth_code,
                 ),
                 to_pulumi_object_field(
-                    "redirect_uri",
+                    "redirectUri",
                     &self.r#redirect_uri,
                 ),
             ];

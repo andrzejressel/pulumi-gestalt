@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "resource_arn",
+                    "resourceArn",
                     &self.r#resource_arn,
                 ),
             ];

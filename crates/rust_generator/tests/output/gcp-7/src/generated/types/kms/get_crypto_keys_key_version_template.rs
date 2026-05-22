@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "protection_level",
+                    "protectionLevel",
                     &self.r#protection_level,
                 ),
             ];

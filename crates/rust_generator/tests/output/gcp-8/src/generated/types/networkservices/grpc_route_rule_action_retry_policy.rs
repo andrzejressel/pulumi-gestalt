@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Grp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "num_retries",
+                    "numRetries",
                     &self.r#num_retries,
                 ),
                 to_pulumi_object_field(
-                    "retry_conditions",
+                    "retryConditions",
                     &self.r#retry_conditions,
                 ),
             ];

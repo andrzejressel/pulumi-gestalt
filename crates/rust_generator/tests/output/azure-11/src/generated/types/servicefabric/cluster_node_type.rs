@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_ports",
+                    "applicationPorts",
                     &self.r#application_ports,
                 ),
                 to_pulumi_object_field(
@@ -79,35 +79,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#capacities,
                 ),
                 to_pulumi_object_field(
-                    "client_endpoint_port",
+                    "clientEndpointPort",
                     &self.r#client_endpoint_port,
                 ),
                 to_pulumi_object_field(
-                    "durability_level",
+                    "durabilityLevel",
                     &self.r#durability_level,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_ports",
+                    "ephemeralPorts",
                     &self.r#ephemeral_ports,
                 ),
                 to_pulumi_object_field(
-                    "http_endpoint_port",
+                    "httpEndpointPort",
                     &self.r#http_endpoint_port,
                 ),
                 to_pulumi_object_field(
-                    "instance_count",
+                    "instanceCount",
                     &self.r#instance_count,
                 ),
                 to_pulumi_object_field(
-                    "is_primary",
+                    "isPrimary",
                     &self.r#is_primary,
                 ),
                 to_pulumi_object_field(
-                    "is_stateless",
+                    "isStateless",
                     &self.r#is_stateless,
                 ),
                 to_pulumi_object_field(
-                    "multiple_availability_zones",
+                    "multipleAvailabilityZones",
                     &self.r#multiple_availability_zones,
                 ),
                 to_pulumi_object_field(
@@ -115,11 +115,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "placement_properties",
+                    "placementProperties",
                     &self.r#placement_properties,
                 ),
                 to_pulumi_object_field(
-                    "reverse_proxy_endpoint_port",
+                    "reverseProxyEndpointPort",
                     &self.r#reverse_proxy_endpoint_port,
                 ),
             ];

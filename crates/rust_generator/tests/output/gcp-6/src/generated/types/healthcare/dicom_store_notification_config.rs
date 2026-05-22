@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dic
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pubsub_topic",
+                    "pubsubTopic",
                     &self.r#pubsub_topic,
                 ),
                 to_pulumi_object_field(
-                    "send_for_bulk_import",
+                    "sendForBulkImport",
                     &self.r#send_for_bulk_import,
                 ),
             ];

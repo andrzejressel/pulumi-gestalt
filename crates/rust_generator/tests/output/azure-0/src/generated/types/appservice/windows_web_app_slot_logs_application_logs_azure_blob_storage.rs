@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#level,
                 ),
                 to_pulumi_object_field(
-                    "retention_in_days",
+                    "retentionInDays",
                     &self.r#retention_in_days,
                 ),
                 to_pulumi_object_field(
-                    "sas_url",
+                    "sasUrl",
                     &self.r#sas_url,
                 ),
             ];

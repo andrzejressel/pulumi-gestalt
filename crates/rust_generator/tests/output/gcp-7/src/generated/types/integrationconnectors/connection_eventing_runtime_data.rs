@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "events_listener_endpoint",
+                    "eventsListenerEndpoint",
                     &self.r#events_listener_endpoint,
                 ),
                 to_pulumi_object_field(

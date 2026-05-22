@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_password_encryption",
+                    "connectionPasswordEncryption",
                     &self.r#connection_password_encryption,
                 ),
                 to_pulumi_object_field(
-                    "encryption_at_rest",
+                    "encryptionAtRest",
                     &self.r#encryption_at_rest,
                 ),
             ];

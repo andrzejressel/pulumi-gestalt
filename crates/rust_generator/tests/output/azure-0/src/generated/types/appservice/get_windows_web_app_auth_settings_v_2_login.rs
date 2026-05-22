@@ -63,47 +63,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allowed_external_redirect_urls",
+                    "allowedExternalRedirectUrls",
                     &self.r#allowed_external_redirect_urls,
                 ),
                 to_pulumi_object_field(
-                    "cookie_expiration_convention",
+                    "cookieExpirationConvention",
                     &self.r#cookie_expiration_convention,
                 ),
                 to_pulumi_object_field(
-                    "cookie_expiration_time",
+                    "cookieExpirationTime",
                     &self.r#cookie_expiration_time,
                 ),
                 to_pulumi_object_field(
-                    "logout_endpoint",
+                    "logoutEndpoint",
                     &self.r#logout_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "nonce_expiration_time",
+                    "nonceExpirationTime",
                     &self.r#nonce_expiration_time,
                 ),
                 to_pulumi_object_field(
-                    "preserve_url_fragments_for_logins",
+                    "preserveUrlFragmentsForLogins",
                     &self.r#preserve_url_fragments_for_logins,
                 ),
                 to_pulumi_object_field(
-                    "token_refresh_extension_time",
+                    "tokenRefreshExtensionTime",
                     &self.r#token_refresh_extension_time,
                 ),
                 to_pulumi_object_field(
-                    "token_store_enabled",
+                    "tokenStoreEnabled",
                     &self.r#token_store_enabled,
                 ),
                 to_pulumi_object_field(
-                    "token_store_path",
+                    "tokenStorePath",
                     &self.r#token_store_path,
                 ),
                 to_pulumi_object_field(
-                    "token_store_sas_setting_name",
+                    "tokenStoreSasSettingName",
                     &self.r#token_store_sas_setting_name,
                 ),
                 to_pulumi_object_field(
-                    "validate_nonce",
+                    "validateNonce",
                     &self.r#validate_nonce,
                 ),
             ];

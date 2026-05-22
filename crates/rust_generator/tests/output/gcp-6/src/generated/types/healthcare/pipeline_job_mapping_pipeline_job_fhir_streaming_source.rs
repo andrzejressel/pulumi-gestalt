@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "fhir_store",
+                    "fhirStore",
                     &self.r#fhir_store,
                 ),
             ];

@@ -59,15 +59,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hash_key_field",
+                    "hashKeyField",
                     &self.r#hash_key_field,
                 ),
                 to_pulumi_object_field(
-                    "hash_key_type",
+                    "hashKeyType",
                     &self.r#hash_key_type,
                 ),
                 to_pulumi_object_field(
-                    "hash_key_value",
+                    "hashKeyValue",
                     &self.r#hash_key_value,
                 ),
                 to_pulumi_object_field(
@@ -75,27 +75,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
                     &self.r#operation,
                 ),
                 to_pulumi_object_field(
-                    "payload_field",
+                    "payloadField",
                     &self.r#payload_field,
                 ),
                 to_pulumi_object_field(
-                    "range_key_field",
+                    "rangeKeyField",
                     &self.r#range_key_field,
                 ),
                 to_pulumi_object_field(
-                    "range_key_type",
+                    "rangeKeyType",
                     &self.r#range_key_type,
                 ),
                 to_pulumi_object_field(
-                    "range_key_value",
+                    "rangeKeyValue",
                     &self.r#range_key_value,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "table_name",
+                    "tableName",
                     &self.r#table_name,
                 ),
             ];

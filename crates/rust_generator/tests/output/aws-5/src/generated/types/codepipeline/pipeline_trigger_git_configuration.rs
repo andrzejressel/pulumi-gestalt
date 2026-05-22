@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pull_requests",
+                    "pullRequests",
                     &self.r#pull_requests,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#pushes,
                 ),
                 to_pulumi_object_field(
-                    "source_action_name",
+                    "sourceActionName",
                     &self.r#source_action_name,
                 ),
             ];

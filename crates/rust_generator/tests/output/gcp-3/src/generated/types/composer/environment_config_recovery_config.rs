@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "scheduled_snapshots_config",
+                    "scheduledSnapshotsConfig",
                     &self.r#scheduled_snapshots_config,
                 ),
             ];

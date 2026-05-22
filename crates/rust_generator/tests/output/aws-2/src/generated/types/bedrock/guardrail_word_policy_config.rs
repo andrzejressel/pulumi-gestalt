@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gua
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "managed_word_lists_configs",
+                    "managedWordListsConfigs",
                     &self.r#managed_word_lists_configs,
                 ),
                 to_pulumi_object_field(
-                    "words_configs",
+                    "wordsConfigs",
                     &self.r#words_configs,
                 ),
             ];

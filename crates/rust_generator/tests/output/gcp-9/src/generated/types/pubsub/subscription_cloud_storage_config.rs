@@ -66,7 +66,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "avro_config",
+                    "avroConfig",
                     &self.r#avro_config,
                 ),
                 to_pulumi_object_field(
@@ -74,31 +74,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "filename_datetime_format",
+                    "filenameDatetimeFormat",
                     &self.r#filename_datetime_format,
                 ),
                 to_pulumi_object_field(
-                    "filename_prefix",
+                    "filenamePrefix",
                     &self.r#filename_prefix,
                 ),
                 to_pulumi_object_field(
-                    "filename_suffix",
+                    "filenameSuffix",
                     &self.r#filename_suffix,
                 ),
                 to_pulumi_object_field(
-                    "max_bytes",
+                    "maxBytes",
                     &self.r#max_bytes,
                 ),
                 to_pulumi_object_field(
-                    "max_duration",
+                    "maxDuration",
                     &self.r#max_duration,
                 ),
                 to_pulumi_object_field(
-                    "max_messages",
+                    "maxMessages",
                     &self.r#max_messages,
                 ),
                 to_pulumi_object_field(
-                    "service_account_email",
+                    "serviceAccountEmail",
                     &self.r#service_account_email,
                 ),
                 to_pulumi_object_field(

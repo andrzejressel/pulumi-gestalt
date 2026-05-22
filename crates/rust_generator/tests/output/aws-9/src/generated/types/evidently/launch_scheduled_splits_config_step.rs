@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_weights",
+                    "groupWeights",
                     &self.r#group_weights,
                 ),
                 to_pulumi_object_field(
-                    "segment_overrides",
+                    "segmentOverrides",
                     &self.r#segment_overrides,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_driver",
+                    "logDriver",
                     &self.r#log_driver,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#options,
                 ),
                 to_pulumi_object_field(
-                    "secret_options",
+                    "secretOptions",
                     &self.r#secret_options,
                 ),
             ];

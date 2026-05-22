@@ -71,51 +71,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "adaptive_routings",
+                    "adaptiveRoutings",
                     &self.r#adaptive_routings,
                 ),
                 to_pulumi_object_field(
-                    "country_pools",
+                    "countryPools",
                     &self.r#country_pools,
                 ),
                 to_pulumi_object_field(
-                    "default_pools",
+                    "defaultPools",
                     &self.r#default_pools,
                 ),
                 to_pulumi_object_field(
-                    "fallback_pool",
+                    "fallbackPool",
                     &self.r#fallback_pool,
                 ),
                 to_pulumi_object_field(
-                    "location_strategies",
+                    "locationStrategies",
                     &self.r#location_strategies,
                 ),
                 to_pulumi_object_field(
-                    "pop_pools",
+                    "popPools",
                     &self.r#pop_pools,
                 ),
                 to_pulumi_object_field(
-                    "random_steerings",
+                    "randomSteerings",
                     &self.r#random_steerings,
                 ),
                 to_pulumi_object_field(
-                    "region_pools",
+                    "regionPools",
                     &self.r#region_pools,
                 ),
                 to_pulumi_object_field(
-                    "session_affinity",
+                    "sessionAffinity",
                     &self.r#session_affinity,
                 ),
                 to_pulumi_object_field(
-                    "session_affinity_attributes",
+                    "sessionAffinityAttributes",
                     &self.r#session_affinity_attributes,
                 ),
                 to_pulumi_object_field(
-                    "session_affinity_ttl",
+                    "sessionAffinityTtl",
                     &self.r#session_affinity_ttl,
                 ),
                 to_pulumi_object_field(
-                    "steering_policy",
+                    "steeringPolicy",
                     &self.r#steering_policy,
                 ),
                 to_pulumi_object_field(

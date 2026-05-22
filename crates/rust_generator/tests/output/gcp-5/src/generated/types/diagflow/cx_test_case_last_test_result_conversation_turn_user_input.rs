@@ -36,11 +36,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_sentiment_analysis",
+                    "enableSentimentAnalysis",
                     &self.r#enable_sentiment_analysis,
                 ),
                 to_pulumi_object_field(
-                    "injected_parameters",
+                    "injectedParameters",
                     &self.r#injected_parameters,
                 ),
                 to_pulumi_object_field(
@@ -48,7 +48,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxT
                     &self.r#input,
                 ),
                 to_pulumi_object_field(
-                    "is_webhook_enabled",
+                    "isWebhookEnabled",
                     &self.r#is_webhook_enabled,
                 ),
             ];

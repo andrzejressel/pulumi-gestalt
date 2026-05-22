@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_log_group",
+                    "cloudwatchLogGroup",
                     &self.r#cloudwatch_log_group,
                 ),
                 to_pulumi_object_field(
-                    "cloudwatch_log_stream",
+                    "cloudwatchLogStream",
                     &self.r#cloudwatch_log_stream,
                 ),
                 to_pulumi_object_field(

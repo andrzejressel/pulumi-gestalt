@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_id",
+                    "containerId",
                     &self.r#container_id,
                 ),
                 to_pulumi_object_field(
-                    "root_folder_path",
+                    "rootFolderPath",
                     &self.r#root_folder_path,
                 ),
             ];

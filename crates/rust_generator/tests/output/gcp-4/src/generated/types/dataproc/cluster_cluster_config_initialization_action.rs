@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#script,
                 ),
                 to_pulumi_object_field(
-                    "timeout_sec",
+                    "timeoutSec",
                     &self.r#timeout_sec,
                 ),
             ];

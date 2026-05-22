@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "country_codes",
+                    "countryCodes",
                     &self.r#country_codes,
                 ),
                 to_pulumi_object_field(
-                    "relative_path",
+                    "relativePath",
                     &self.r#relative_path,
                 ),
             ];

@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authz_extension",
+                    "authzExtension",
                     &self.r#authz_extension,
                 ),
                 to_pulumi_object_field(
-                    "cloud_iap",
+                    "cloudIap",
                     &self.r#cloud_iap,
                 ),
             ];

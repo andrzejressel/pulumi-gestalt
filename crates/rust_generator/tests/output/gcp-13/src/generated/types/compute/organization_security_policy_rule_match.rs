@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Org
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "versioned_expr",
+                    "versionedExpr",
                     &self.r#versioned_expr,
                 ),
             ];

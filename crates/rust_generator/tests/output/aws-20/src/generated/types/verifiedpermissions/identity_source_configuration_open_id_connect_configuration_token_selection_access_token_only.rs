@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
                     &self.r#audiences,
                 ),
                 to_pulumi_object_field(
-                    "principal_id_claim",
+                    "principalIdClaim",
                     &self.r#principal_id_claim,
                 ),
             ];

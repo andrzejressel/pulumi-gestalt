@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "retention_period_unit",
+                    "retentionPeriodUnit",
                     &self.r#retention_period_unit,
                 ),
                 to_pulumi_object_field(
-                    "retention_period_value",
+                    "retentionPeriodValue",
                     &self.r#retention_period_value,
                 ),
             ];

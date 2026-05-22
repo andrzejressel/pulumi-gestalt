@@ -52,7 +52,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_spec_gcs_path",
+                    "containerSpecGcsPath",
                     &self.r#container_spec_gcs_path,
                 ),
                 to_pulumi_object_field(
@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#environment,
                 ),
                 to_pulumi_object_field(
-                    "job_name",
+                    "jobName",
                     &self.r#job_name,
                 ),
                 to_pulumi_object_field(
-                    "launch_options",
+                    "launchOptions",
                     &self.r#launch_options,
                 ),
                 to_pulumi_object_field(
@@ -72,7 +72,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "transform_name_mappings",
+                    "transformNameMappings",
                     &self.r#transform_name_mappings,
                 ),
                 to_pulumi_object_field(

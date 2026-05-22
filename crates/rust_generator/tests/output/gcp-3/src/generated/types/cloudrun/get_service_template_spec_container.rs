@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#commands,
                 ),
                 to_pulumi_object_field(
-                    "env_froms",
+                    "envFroms",
                     &self.r#env_froms,
                 ),
                 to_pulumi_object_field(
@@ -99,7 +99,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "liveness_probes",
+                    "livenessProbes",
                     &self.r#liveness_probes,
                 ),
                 to_pulumi_object_field(
@@ -115,15 +115,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#resources,
                 ),
                 to_pulumi_object_field(
-                    "startup_probes",
+                    "startupProbes",
                     &self.r#startup_probes,
                 ),
                 to_pulumi_object_field(
-                    "volume_mounts",
+                    "volumeMounts",
                     &self.r#volume_mounts,
                 ),
                 to_pulumi_object_field(
-                    "working_dir",
+                    "workingDir",
                     &self.r#working_dir,
                 ),
             ];

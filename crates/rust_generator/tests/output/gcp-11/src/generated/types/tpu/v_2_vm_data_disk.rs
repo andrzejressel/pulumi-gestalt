@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2V
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "source_disk",
+                    "sourceDisk",
                     &self.r#source_disk,
                 ),
             ];

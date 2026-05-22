@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_prefixes",
+                    "addressPrefixes",
                     &self.r#address_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "default_outbound_access_enabled",
+                    "defaultOutboundAccessEnabled",
                     &self.r#default_outbound_access_enabled,
                 ),
                 to_pulumi_object_field(
@@ -91,27 +91,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "private_endpoint_network_policies",
+                    "privateEndpointNetworkPolicies",
                     &self.r#private_endpoint_network_policies,
                 ),
                 to_pulumi_object_field(
-                    "private_link_service_network_policies_enabled",
+                    "privateLinkServiceNetworkPoliciesEnabled",
                     &self.r#private_link_service_network_policies_enabled,
                 ),
                 to_pulumi_object_field(
-                    "route_table_id",
+                    "routeTableId",
                     &self.r#route_table_id,
                 ),
                 to_pulumi_object_field(
-                    "security_group",
+                    "securityGroup",
                     &self.r#security_group,
                 ),
                 to_pulumi_object_field(
-                    "service_endpoint_policy_ids",
+                    "serviceEndpointPolicyIds",
                     &self.r#service_endpoint_policy_ids,
                 ),
                 to_pulumi_object_field(
-                    "service_endpoints",
+                    "serviceEndpoints",
                     &self.r#service_endpoints,
                 ),
             ];

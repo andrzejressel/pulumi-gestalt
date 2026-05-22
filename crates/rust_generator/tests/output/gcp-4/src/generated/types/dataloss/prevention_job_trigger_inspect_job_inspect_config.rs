@@ -57,19 +57,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_info_types",
+                    "customInfoTypes",
                     &self.r#custom_info_types,
                 ),
                 to_pulumi_object_field(
-                    "exclude_info_types",
+                    "excludeInfoTypes",
                     &self.r#exclude_info_types,
                 ),
                 to_pulumi_object_field(
-                    "include_quote",
+                    "includeQuote",
                     &self.r#include_quote,
                 ),
                 to_pulumi_object_field(
-                    "info_types",
+                    "infoTypes",
                     &self.r#info_types,
                 ),
                 to_pulumi_object_field(
@@ -77,11 +77,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#limits,
                 ),
                 to_pulumi_object_field(
-                    "min_likelihood",
+                    "minLikelihood",
                     &self.r#min_likelihood,
                 ),
                 to_pulumi_object_field(
-                    "rule_sets",
+                    "ruleSets",
                     &self.r#rule_sets,
                 ),
             ];

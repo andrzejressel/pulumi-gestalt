@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_and_retention_priority_level",
+                    "allocationAndRetentionPriorityLevel",
                     &self.r#allocation_and_retention_priority_level,
                 ),
                 to_pulumi_object_field(
-                    "guaranteed_bit_rates",
+                    "guaranteedBitRates",
                     &self.r#guaranteed_bit_rates,
                 ),
                 to_pulumi_object_field(
-                    "maximum_bit_rates",
+                    "maximumBitRates",
                     &self.r#maximum_bit_rates,
                 ),
                 to_pulumi_object_field(
-                    "preemption_capability",
+                    "preemptionCapability",
                     &self.r#preemption_capability,
                 ),
                 to_pulumi_object_field(
-                    "preemption_vulnerability",
+                    "preemptionVulnerability",
                     &self.r#preemption_vulnerability,
                 ),
                 to_pulumi_object_field(
-                    "qos_indicator",
+                    "qosIndicator",
                     &self.r#qos_indicator,
                 ),
             ];

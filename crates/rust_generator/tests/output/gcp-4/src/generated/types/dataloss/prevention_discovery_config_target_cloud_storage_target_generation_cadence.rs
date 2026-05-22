@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "inspect_template_modified_cadence",
+                    "inspectTemplateModifiedCadence",
                     &self.r#inspect_template_modified_cadence,
                 ),
                 to_pulumi_object_field(
-                    "refresh_frequency",
+                    "refreshFrequency",
                     &self.r#refresh_frequency,
                 ),
             ];

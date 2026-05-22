@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mai
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_config",
+                    "cloudwatchConfig",
                     &self.r#cloudwatch_config,
                 ),
                 to_pulumi_object_field(
@@ -71,27 +71,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mai
                     &self.r#comment,
                 ),
                 to_pulumi_object_field(
-                    "document_hash",
+                    "documentHash",
                     &self.r#document_hash,
                 ),
                 to_pulumi_object_field(
-                    "document_hash_type",
+                    "documentHashType",
                     &self.r#document_hash_type,
                 ),
                 to_pulumi_object_field(
-                    "document_version",
+                    "documentVersion",
                     &self.r#document_version,
                 ),
                 to_pulumi_object_field(
-                    "notification_config",
+                    "notificationConfig",
                     &self.r#notification_config,
                 ),
                 to_pulumi_object_field(
-                    "output_s_3_bucket",
+                    "outputS3Bucket",
                     &self.r#output_s_3_bucket,
                 ),
                 to_pulumi_object_field(
-                    "output_s_3_key_prefix",
+                    "outputS3KeyPrefix",
                     &self.r#output_s_3_key_prefix,
                 ),
                 to_pulumi_object_field(
@@ -99,11 +99,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mai
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "service_role_arn",
+                    "serviceRoleArn",
                     &self.r#service_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "timeout_seconds",
+                    "timeoutSeconds",
                     &self.r#timeout_seconds,
                 ),
             ];

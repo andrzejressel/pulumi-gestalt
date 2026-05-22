@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cookies_configs",
+                    "cookiesConfigs",
                     &self.r#cookies_configs,
                 ),
                 to_pulumi_object_field(
-                    "enable_accept_encoding_brotli",
+                    "enableAcceptEncodingBrotli",
                     &self.r#enable_accept_encoding_brotli,
                 ),
                 to_pulumi_object_field(
-                    "enable_accept_encoding_gzip",
+                    "enableAcceptEncodingGzip",
                     &self.r#enable_accept_encoding_gzip,
                 ),
                 to_pulumi_object_field(
-                    "headers_configs",
+                    "headersConfigs",
                     &self.r#headers_configs,
                 ),
                 to_pulumi_object_field(
-                    "query_strings_configs",
+                    "queryStringsConfigs",
                     &self.r#query_strings_configs,
                 ),
             ];

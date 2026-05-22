@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "estimated_db_server_patching_time",
+                    "estimatedDbServerPatchingTime",
                     &self.r#estimated_db_server_patching_time,
                 ),
                 to_pulumi_object_field(
-                    "estimated_network_switches_patching_time",
+                    "estimatedNetworkSwitchesPatchingTime",
                     &self.r#estimated_network_switches_patching_time,
                 ),
                 to_pulumi_object_field(
-                    "estimated_storage_server_patching_time",
+                    "estimatedStorageServerPatchingTime",
                     &self.r#estimated_storage_server_patching_time,
                 ),
                 to_pulumi_object_field(
-                    "total_estimated_patching_time",
+                    "totalEstimatedPatchingTime",
                     &self.r#total_estimated_patching_time,
                 ),
             ];

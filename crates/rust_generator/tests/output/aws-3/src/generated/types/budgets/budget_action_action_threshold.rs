@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_threshold_type",
+                    "actionThresholdType",
                     &self.r#action_threshold_type,
                 ),
                 to_pulumi_object_field(
-                    "action_threshold_value",
+                    "actionThresholdValue",
                     &self.r#action_threshold_value,
                 ),
             ];

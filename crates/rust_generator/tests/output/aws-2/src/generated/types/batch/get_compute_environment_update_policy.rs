@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "job_execution_timeout_minutes",
+                    "jobExecutionTimeoutMinutes",
                     &self.r#job_execution_timeout_minutes,
                 ),
                 to_pulumi_object_field(
-                    "terminate_jobs_on_update",
+                    "terminateJobsOnUpdate",
                     &self.r#terminate_jobs_on_update,
                 ),
             ];

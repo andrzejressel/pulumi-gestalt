@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "destination_type",
+                    "destinationType",
                     &self.r#destination_type,
                 ),
                 to_pulumi_object_field(
-                    "log_format",
+                    "logFormat",
                     &self.r#log_format,
                 ),
                 to_pulumi_object_field(
-                    "log_type",
+                    "logType",
                     &self.r#log_type,
                 ),
             ];

@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "confidential_instance_type",
+                    "confidentialInstanceType",
                     &self.r#confidential_instance_type,
                 ),
                 to_pulumi_object_field(
-                    "enable_confidential_compute",
+                    "enableConfidentialCompute",
                     &self.r#enable_confidential_compute,
                 ),
             ];

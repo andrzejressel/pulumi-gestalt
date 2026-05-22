@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "edge_sets",
+                    "edgeSets",
                     &self.r#edge_sets,
                 ),
                 to_pulumi_object_field(
-                    "use_edge",
+                    "useEdge",
                     &self.r#use_edge,
                 ),
                 to_pulumi_object_field(
-                    "use_edge_location",
+                    "useEdgeLocation",
                     &self.r#use_edge_location,
                 ),
             ];

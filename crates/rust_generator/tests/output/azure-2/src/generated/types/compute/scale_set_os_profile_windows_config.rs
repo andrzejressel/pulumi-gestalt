@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_unattend_configs",
+                    "additionalUnattendConfigs",
                     &self.r#additional_unattend_configs,
                 ),
                 to_pulumi_object_field(
-                    "enable_automatic_upgrades",
+                    "enableAutomaticUpgrades",
                     &self.r#enable_automatic_upgrades,
                 ),
                 to_pulumi_object_field(
-                    "provision_vm_agent",
+                    "provisionVmAgent",
                     &self.r#provision_vm_agent,
                 ),
                 to_pulumi_object_field(

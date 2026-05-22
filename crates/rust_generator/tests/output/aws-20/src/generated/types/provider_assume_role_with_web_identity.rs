@@ -53,23 +53,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#policy,
                 ),
                 to_pulumi_object_field(
-                    "policy_arns",
+                    "policyArns",
                     &self.r#policy_arns,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "session_name",
+                    "sessionName",
                     &self.r#session_name,
                 ),
                 to_pulumi_object_field(
-                    "web_identity_token",
+                    "webIdentityToken",
                     &self.r#web_identity_token,
                 ),
                 to_pulumi_object_field(
-                    "web_identity_token_file",
+                    "webIdentityTokenFile",
                     &self.r#web_identity_token_file,
                 ),
             ];

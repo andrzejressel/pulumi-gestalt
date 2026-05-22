@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_folder",
+                    "bucketFolder",
                     &self.r#bucket_folder,
                 ),
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "encryption_mode",
+                    "encryptionMode",
                     &self.r#encryption_mode,
                 ),
                 to_pulumi_object_field(
-                    "server_side_encryption_kms_key_id",
+                    "serverSideEncryptionKmsKeyId",
                     &self.r#server_side_encryption_kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "service_access_role_arn",
+                    "serviceAccessRoleArn",
                     &self.r#service_access_role_arn,
                 ),
             ];

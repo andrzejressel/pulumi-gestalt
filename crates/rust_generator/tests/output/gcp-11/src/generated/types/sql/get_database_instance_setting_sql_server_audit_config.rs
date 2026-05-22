@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "retention_interval",
+                    "retentionInterval",
                     &self.r#retention_interval,
                 ),
                 to_pulumi_object_field(
-                    "upload_interval",
+                    "uploadInterval",
                     &self.r#upload_interval,
                 ),
             ];

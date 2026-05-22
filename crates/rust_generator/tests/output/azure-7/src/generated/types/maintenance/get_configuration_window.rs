@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "expiration_date_time",
+                    "expirationDateTime",
                     &self.r#expiration_date_time,
                 ),
                 to_pulumi_object_field(
-                    "recur_every",
+                    "recurEvery",
                     &self.r#recur_every,
                 ),
                 to_pulumi_object_field(
-                    "start_date_time",
+                    "startDateTime",
                     &self.r#start_date_time,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
             ];

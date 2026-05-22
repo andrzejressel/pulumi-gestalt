@@ -51,15 +51,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxF
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "target_flow",
+                    "targetFlow",
                     &self.r#target_flow,
                 ),
                 to_pulumi_object_field(
-                    "target_page",
+                    "targetPage",
                     &self.r#target_page,
                 ),
                 to_pulumi_object_field(
-                    "trigger_fulfillment",
+                    "triggerFulfillment",
                     &self.r#trigger_fulfillment,
                 ),
             ];

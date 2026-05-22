@@ -51,27 +51,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blob_types",
+                    "blobTypes",
                     &self.r#blob_types,
                 ),
                 to_pulumi_object_field(
-                    "exclude_prefixes",
+                    "excludePrefixes",
                     &self.r#exclude_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "include_blob_versions",
+                    "includeBlobVersions",
                     &self.r#include_blob_versions,
                 ),
                 to_pulumi_object_field(
-                    "include_deleted",
+                    "includeDeleted",
                     &self.r#include_deleted,
                 ),
                 to_pulumi_object_field(
-                    "include_snapshots",
+                    "includeSnapshots",
                     &self.r#include_snapshots,
                 ),
                 to_pulumi_object_field(
-                    "prefix_matches",
+                    "prefixMatches",
                     &self.r#prefix_matches,
                 ),
             ];

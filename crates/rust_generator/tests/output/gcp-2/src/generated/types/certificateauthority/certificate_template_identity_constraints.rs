@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_subject_alt_names_passthrough",
+                    "allowSubjectAltNamesPassthrough",
                     &self.r#allow_subject_alt_names_passthrough,
                 ),
                 to_pulumi_object_field(
-                    "allow_subject_passthrough",
+                    "allowSubjectPassthrough",
                     &self.r#allow_subject_passthrough,
                 ),
                 to_pulumi_object_field(
-                    "cel_expression",
+                    "celExpression",
                     &self.r#cel_expression,
                 ),
             ];

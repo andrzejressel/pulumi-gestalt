@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vau
                     &self.r#events,
                 ),
                 to_pulumi_object_field(
-                    "sns_topic",
+                    "snsTopic",
                     &self.r#sns_topic,
                 ),
             ];

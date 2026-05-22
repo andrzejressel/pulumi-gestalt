@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_traffic_control",
+                    "automaticTrafficControl",
                     &self.r#automatic_traffic_control,
                 ),
                 to_pulumi_object_field(
-                    "canary_revision_tags",
+                    "canaryRevisionTags",
                     &self.r#canary_revision_tags,
                 ),
                 to_pulumi_object_field(
-                    "prior_revision_tags",
+                    "priorRevisionTags",
                     &self.r#prior_revision_tags,
                 ),
                 to_pulumi_object_field(
-                    "stable_revision_tags",
+                    "stableRevisionTags",
                     &self.r#stable_revision_tags,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "identity_client_id",
+                    "identityClientId",
                     &self.r#identity_client_id,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_key_id",
+                    "keyVaultKeyId",
                     &self.r#key_vault_key_id,
                 ),
             ];

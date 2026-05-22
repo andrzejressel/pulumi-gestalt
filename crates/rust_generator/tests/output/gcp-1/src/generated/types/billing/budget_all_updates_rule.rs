@@ -53,23 +53,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_default_iam_recipients",
+                    "disableDefaultIamRecipients",
                     &self.r#disable_default_iam_recipients,
                 ),
                 to_pulumi_object_field(
-                    "enable_project_level_recipients",
+                    "enableProjectLevelRecipients",
                     &self.r#enable_project_level_recipients,
                 ),
                 to_pulumi_object_field(
-                    "monitoring_notification_channels",
+                    "monitoringNotificationChannels",
                     &self.r#monitoring_notification_channels,
                 ),
                 to_pulumi_object_field(
-                    "pubsub_topic",
+                    "pubsubTopic",
                     &self.r#pubsub_topic,
                 ),
                 to_pulumi_object_field(
-                    "schema_version",
+                    "schemaVersion",
                     &self.r#schema_version,
                 ),
             ];

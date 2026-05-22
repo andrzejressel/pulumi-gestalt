@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "amazon_transcribe_call_analytics_processor_configuration",
+                    "amazonTranscribeCallAnalyticsProcessorConfiguration",
                     &self.r#amazon_transcribe_call_analytics_processor_configuration,
                 ),
                 to_pulumi_object_field(
-                    "amazon_transcribe_processor_configuration",
+                    "amazonTranscribeProcessorConfiguration",
                     &self.r#amazon_transcribe_processor_configuration,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_data_stream_sink_configuration",
+                    "kinesisDataStreamSinkConfiguration",
                     &self.r#kinesis_data_stream_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "lambda_function_sink_configuration",
+                    "lambdaFunctionSinkConfiguration",
                     &self.r#lambda_function_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "s_3_recording_sink_configuration",
+                    "s3RecordingSinkConfiguration",
                     &self.r#s_3_recording_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "sns_topic_sink_configuration",
+                    "snsTopicSinkConfiguration",
                     &self.r#sns_topic_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "sqs_queue_sink_configuration",
+                    "sqsQueueSinkConfiguration",
                     &self.r#sqs_queue_sink_configuration,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "voice_analytics_processor_configuration",
+                    "voiceAnalyticsProcessorConfiguration",
                     &self.r#voice_analytics_processor_configuration,
                 ),
             ];

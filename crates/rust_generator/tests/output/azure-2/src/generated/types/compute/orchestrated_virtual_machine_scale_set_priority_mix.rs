@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_regular_count",
+                    "baseRegularCount",
                     &self.r#base_regular_count,
                 ),
                 to_pulumi_object_field(
-                    "regular_percentage_above_base",
+                    "regularPercentageAboveBase",
                     &self.r#regular_percentage_above_base,
                 ),
             ];

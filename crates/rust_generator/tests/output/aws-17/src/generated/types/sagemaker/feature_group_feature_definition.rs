@@ -33,19 +33,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "collection_config",
+                    "collectionConfig",
                     &self.r#collection_config,
                 ),
                 to_pulumi_object_field(
-                    "collection_type",
+                    "collectionType",
                     &self.r#collection_type,
                 ),
                 to_pulumi_object_field(
-                    "feature_name",
+                    "featureName",
                     &self.r#feature_name,
                 ),
                 to_pulumi_object_field(
-                    "feature_type",
+                    "featureType",
                     &self.r#feature_type,
                 ),
             ];

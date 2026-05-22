@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "days_of_weeks",
+                    "daysOfWeeks",
                     &self.r#days_of_weeks,
                 ),
                 to_pulumi_object_field(
-                    "full_backup_frequency",
+                    "fullBackupFrequency",
                     &self.r#full_backup_frequency,
                 ),
                 to_pulumi_object_field(
-                    "full_backup_start_hour",
+                    "fullBackupStartHour",
                     &self.r#full_backup_start_hour,
                 ),
                 to_pulumi_object_field(
-                    "full_backup_window_in_hours",
+                    "fullBackupWindowInHours",
                     &self.r#full_backup_window_in_hours,
                 ),
                 to_pulumi_object_field(
-                    "log_backup_frequency_in_minutes",
+                    "logBackupFrequencyInMinutes",
                     &self.r#log_backup_frequency_in_minutes,
                 ),
             ];

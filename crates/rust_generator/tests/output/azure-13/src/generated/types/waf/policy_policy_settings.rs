@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "file_upload_enforcement",
+                    "fileUploadEnforcement",
                     &self.r#file_upload_enforcement,
                 ),
                 to_pulumi_object_field(
-                    "file_upload_limit_in_mb",
+                    "fileUploadLimitInMb",
                     &self.r#file_upload_limit_in_mb,
                 ),
                 to_pulumi_object_field(
-                    "js_challenge_cookie_expiration_in_minutes",
+                    "jsChallengeCookieExpirationInMinutes",
                     &self.r#js_challenge_cookie_expiration_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "log_scrubbing",
+                    "logScrubbing",
                     &self.r#log_scrubbing,
                 ),
                 to_pulumi_object_field(
-                    "max_request_body_size_in_kb",
+                    "maxRequestBodySizeInKb",
                     &self.r#max_request_body_size_in_kb,
                 ),
                 to_pulumi_object_field(
@@ -87,15 +87,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "request_body_check",
+                    "requestBodyCheck",
                     &self.r#request_body_check,
                 ),
                 to_pulumi_object_field(
-                    "request_body_enforcement",
+                    "requestBodyEnforcement",
                     &self.r#request_body_enforcement,
                 ),
                 to_pulumi_object_field(
-                    "request_body_inspect_limit_in_kb",
+                    "requestBodyInspectLimitInKb",
                     &self.r#request_body_inspect_limit_in_kb,
                 ),
             ];

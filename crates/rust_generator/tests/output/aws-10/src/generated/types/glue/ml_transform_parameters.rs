@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for MlT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "find_matches_parameters",
+                    "findMatchesParameters",
                     &self.r#find_matches_parameters,
                 ),
                 to_pulumi_object_field(
-                    "transform_type",
+                    "transformType",
                     &self.r#transform_type,
                 ),
             ];

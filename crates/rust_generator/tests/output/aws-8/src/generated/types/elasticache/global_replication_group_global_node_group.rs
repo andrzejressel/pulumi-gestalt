@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Glo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "global_node_group_id",
+                    "globalNodeGroupId",
                     &self.r#global_node_group_id,
                 ),
                 to_pulumi_object_field(

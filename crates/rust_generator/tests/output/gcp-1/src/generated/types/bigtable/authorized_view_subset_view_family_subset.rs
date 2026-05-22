@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "family_name",
+                    "familyName",
                     &self.r#family_name,
                 ),
                 to_pulumi_object_field(
-                    "qualifier_prefixes",
+                    "qualifierPrefixes",
                     &self.r#qualifier_prefixes,
                 ),
                 to_pulumi_object_field(

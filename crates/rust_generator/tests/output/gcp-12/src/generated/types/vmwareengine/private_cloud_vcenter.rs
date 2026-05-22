@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pri
                     &self.r#fqdn,
                 ),
                 to_pulumi_object_field(
-                    "internal_ip",
+                    "internalIp",
                     &self.r#internal_ip,
                 ),
                 to_pulumi_object_field(

@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gdc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_uris",
+                    "archiveUris",
                     &self.r#archive_uris,
                 ),
                 to_pulumi_object_field(
@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gdc
                     &self.r#args,
                 ),
                 to_pulumi_object_field(
-                    "file_uris",
+                    "fileUris",
                     &self.r#file_uris,
                 ),
                 to_pulumi_object_field(
-                    "jar_file_uris",
+                    "jarFileUris",
                     &self.r#jar_file_uris,
                 ),
                 to_pulumi_object_field(
-                    "main_class",
+                    "mainClass",
                     &self.r#main_class,
                 ),
                 to_pulumi_object_field(
-                    "main_jar_file_uri",
+                    "mainJarFileUri",
                     &self.r#main_jar_file_uri,
                 ),
             ];

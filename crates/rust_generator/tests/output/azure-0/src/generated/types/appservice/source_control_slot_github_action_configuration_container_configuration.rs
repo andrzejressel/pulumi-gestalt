@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_name",
+                    "imageName",
                     &self.r#image_name,
                 ),
                 to_pulumi_object_field(
-                    "registry_password",
+                    "registryPassword",
                     &self.r#registry_password,
                 ),
                 to_pulumi_object_field(
-                    "registry_url",
+                    "registryUrl",
                     &self.r#registry_url,
                 ),
                 to_pulumi_object_field(
-                    "registry_username",
+                    "registryUsername",
                     &self.r#registry_username,
                 ),
             ];

@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
                     &self.r#decrypt,
                 ),
                 to_pulumi_object_field(
-                    "derive_key",
+                    "deriveKey",
                     &self.r#derive_key,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Key
                     &self.r#generate,
                 ),
                 to_pulumi_object_field(
-                    "no_restrictions",
+                    "noRestrictions",
                     &self.r#no_restrictions,
                 ),
                 to_pulumi_object_field(

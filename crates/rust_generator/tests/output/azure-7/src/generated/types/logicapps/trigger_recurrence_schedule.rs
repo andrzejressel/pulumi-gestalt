@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "at_these_hours",
+                    "atTheseHours",
                     &self.r#at_these_hours,
                 ),
                 to_pulumi_object_field(
-                    "at_these_minutes",
+                    "atTheseMinutes",
                     &self.r#at_these_minutes,
                 ),
                 to_pulumi_object_field(
-                    "on_these_days",
+                    "onTheseDays",
                     &self.r#on_these_days,
                 ),
             ];

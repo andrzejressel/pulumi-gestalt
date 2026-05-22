@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_week",
+                    "dayOfWeek",
                     &self.r#day_of_week,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_window_duration_in_minutes",
+                    "maintenanceWindowDurationInMinutes",
                     &self.r#maintenance_window_duration_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_window_starting_hour",
+                    "maintenanceWindowStartingHour",
                     &self.r#maintenance_window_starting_hour,
                 ),
             ];

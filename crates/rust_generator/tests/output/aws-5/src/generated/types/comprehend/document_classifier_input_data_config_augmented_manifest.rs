@@ -45,23 +45,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Doc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "annotation_data_s_3_uri",
+                    "annotationDataS3Uri",
                     &self.r#annotation_data_s_3_uri,
                 ),
                 to_pulumi_object_field(
-                    "attribute_names",
+                    "attributeNames",
                     &self.r#attribute_names,
                 ),
                 to_pulumi_object_field(
-                    "document_type",
+                    "documentType",
                     &self.r#document_type,
                 ),
                 to_pulumi_object_field(
-                    "s_3_uri",
+                    "s3Uri",
                     &self.r#s_3_uri,
                 ),
                 to_pulumi_object_field(
-                    "source_documents_s_3_uri",
+                    "sourceDocumentsS3Uri",
                     &self.r#source_documents_s_3_uri,
                 ),
                 to_pulumi_object_field(

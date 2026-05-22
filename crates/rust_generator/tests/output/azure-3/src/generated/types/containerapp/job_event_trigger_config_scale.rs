@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_executions",
+                    "maxExecutions",
                     &self.r#max_executions,
                 ),
                 to_pulumi_object_field(
-                    "min_executions",
+                    "minExecutions",
                     &self.r#min_executions,
                 ),
                 to_pulumi_object_field(
-                    "polling_interval_in_seconds",
+                    "pollingIntervalInSeconds",
                     &self.r#polling_interval_in_seconds,
                 ),
                 to_pulumi_object_field(

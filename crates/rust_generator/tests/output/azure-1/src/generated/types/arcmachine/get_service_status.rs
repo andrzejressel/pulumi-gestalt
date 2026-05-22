@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "extension_services",
+                    "extensionServices",
                     &self.r#extension_services,
                 ),
                 to_pulumi_object_field(
-                    "guest_configuration_services",
+                    "guestConfigurationServices",
                     &self.r#guest_configuration_services,
                 ),
             ];

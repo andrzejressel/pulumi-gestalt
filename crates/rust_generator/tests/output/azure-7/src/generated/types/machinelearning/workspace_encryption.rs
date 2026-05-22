@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_id",
+                    "keyId",
                     &self.r#key_id,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_id",
+                    "keyVaultId",
                     &self.r#key_vault_id,
                 ),
                 to_pulumi_object_field(
-                    "user_assigned_identity_id",
+                    "userAssignedIdentityId",
                     &self.r#user_assigned_identity_id,
                 ),
             ];

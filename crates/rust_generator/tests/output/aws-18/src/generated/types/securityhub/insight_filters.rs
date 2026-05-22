@@ -371,15 +371,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_account_ids",
+                    "awsAccountIds",
                     &self.r#aws_account_ids,
                 ),
                 to_pulumi_object_field(
-                    "company_names",
+                    "companyNames",
                     &self.r#company_names,
                 ),
                 to_pulumi_object_field(
-                    "compliance_statuses",
+                    "complianceStatuses",
                     &self.r#compliance_statuses,
                 ),
                 to_pulumi_object_field(
@@ -387,7 +387,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#confidences,
                 ),
                 to_pulumi_object_field(
-                    "created_ats",
+                    "createdAts",
                     &self.r#created_ats,
                 ),
                 to_pulumi_object_field(
@@ -399,39 +399,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#descriptions,
                 ),
                 to_pulumi_object_field(
-                    "finding_provider_fields_confidences",
+                    "findingProviderFieldsConfidences",
                     &self.r#finding_provider_fields_confidences,
                 ),
                 to_pulumi_object_field(
-                    "finding_provider_fields_criticalities",
+                    "findingProviderFieldsCriticalities",
                     &self.r#finding_provider_fields_criticalities,
                 ),
                 to_pulumi_object_field(
-                    "finding_provider_fields_related_findings_ids",
+                    "findingProviderFieldsRelatedFindingsIds",
                     &self.r#finding_provider_fields_related_findings_ids,
                 ),
                 to_pulumi_object_field(
-                    "finding_provider_fields_related_findings_product_arns",
+                    "findingProviderFieldsRelatedFindingsProductArns",
                     &self.r#finding_provider_fields_related_findings_product_arns,
                 ),
                 to_pulumi_object_field(
-                    "finding_provider_fields_severity_labels",
+                    "findingProviderFieldsSeverityLabels",
                     &self.r#finding_provider_fields_severity_labels,
                 ),
                 to_pulumi_object_field(
-                    "finding_provider_fields_severity_originals",
+                    "findingProviderFieldsSeverityOriginals",
                     &self.r#finding_provider_fields_severity_originals,
                 ),
                 to_pulumi_object_field(
-                    "finding_provider_fields_types",
+                    "findingProviderFieldsTypes",
                     &self.r#finding_provider_fields_types,
                 ),
                 to_pulumi_object_field(
-                    "first_observed_ats",
+                    "firstObservedAts",
                     &self.r#first_observed_ats,
                 ),
                 to_pulumi_object_field(
-                    "generator_ids",
+                    "generatorIds",
                     &self.r#generator_ids,
                 ),
                 to_pulumi_object_field(
@@ -443,259 +443,259 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#keywords,
                 ),
                 to_pulumi_object_field(
-                    "last_observed_ats",
+                    "lastObservedAts",
                     &self.r#last_observed_ats,
                 ),
                 to_pulumi_object_field(
-                    "malware_names",
+                    "malwareNames",
                     &self.r#malware_names,
                 ),
                 to_pulumi_object_field(
-                    "malware_paths",
+                    "malwarePaths",
                     &self.r#malware_paths,
                 ),
                 to_pulumi_object_field(
-                    "malware_states",
+                    "malwareStates",
                     &self.r#malware_states,
                 ),
                 to_pulumi_object_field(
-                    "malware_types",
+                    "malwareTypes",
                     &self.r#malware_types,
                 ),
                 to_pulumi_object_field(
-                    "network_destination_domains",
+                    "networkDestinationDomains",
                     &self.r#network_destination_domains,
                 ),
                 to_pulumi_object_field(
-                    "network_destination_ipv_4_s",
+                    "networkDestinationIpv4s",
                     &self.r#network_destination_ipv_4_s,
                 ),
                 to_pulumi_object_field(
-                    "network_destination_ipv_6_s",
+                    "networkDestinationIpv6s",
                     &self.r#network_destination_ipv_6_s,
                 ),
                 to_pulumi_object_field(
-                    "network_destination_ports",
+                    "networkDestinationPorts",
                     &self.r#network_destination_ports,
                 ),
                 to_pulumi_object_field(
-                    "network_directions",
+                    "networkDirections",
                     &self.r#network_directions,
                 ),
                 to_pulumi_object_field(
-                    "network_protocols",
+                    "networkProtocols",
                     &self.r#network_protocols,
                 ),
                 to_pulumi_object_field(
-                    "network_source_domains",
+                    "networkSourceDomains",
                     &self.r#network_source_domains,
                 ),
                 to_pulumi_object_field(
-                    "network_source_ipv_4_s",
+                    "networkSourceIpv4s",
                     &self.r#network_source_ipv_4_s,
                 ),
                 to_pulumi_object_field(
-                    "network_source_ipv_6_s",
+                    "networkSourceIpv6s",
                     &self.r#network_source_ipv_6_s,
                 ),
                 to_pulumi_object_field(
-                    "network_source_macs",
+                    "networkSourceMacs",
                     &self.r#network_source_macs,
                 ),
                 to_pulumi_object_field(
-                    "network_source_ports",
+                    "networkSourcePorts",
                     &self.r#network_source_ports,
                 ),
                 to_pulumi_object_field(
-                    "note_texts",
+                    "noteTexts",
                     &self.r#note_texts,
                 ),
                 to_pulumi_object_field(
-                    "note_updated_ats",
+                    "noteUpdatedAts",
                     &self.r#note_updated_ats,
                 ),
                 to_pulumi_object_field(
-                    "note_updated_bies",
+                    "noteUpdatedBies",
                     &self.r#note_updated_bies,
                 ),
                 to_pulumi_object_field(
-                    "process_launched_ats",
+                    "processLaunchedAts",
                     &self.r#process_launched_ats,
                 ),
                 to_pulumi_object_field(
-                    "process_names",
+                    "processNames",
                     &self.r#process_names,
                 ),
                 to_pulumi_object_field(
-                    "process_parent_pids",
+                    "processParentPids",
                     &self.r#process_parent_pids,
                 ),
                 to_pulumi_object_field(
-                    "process_paths",
+                    "processPaths",
                     &self.r#process_paths,
                 ),
                 to_pulumi_object_field(
-                    "process_pids",
+                    "processPids",
                     &self.r#process_pids,
                 ),
                 to_pulumi_object_field(
-                    "process_terminated_ats",
+                    "processTerminatedAts",
                     &self.r#process_terminated_ats,
                 ),
                 to_pulumi_object_field(
-                    "product_arns",
+                    "productArns",
                     &self.r#product_arns,
                 ),
                 to_pulumi_object_field(
-                    "product_fields",
+                    "productFields",
                     &self.r#product_fields,
                 ),
                 to_pulumi_object_field(
-                    "product_names",
+                    "productNames",
                     &self.r#product_names,
                 ),
                 to_pulumi_object_field(
-                    "recommendation_texts",
+                    "recommendationTexts",
                     &self.r#recommendation_texts,
                 ),
                 to_pulumi_object_field(
-                    "record_states",
+                    "recordStates",
                     &self.r#record_states,
                 ),
                 to_pulumi_object_field(
-                    "related_findings_ids",
+                    "relatedFindingsIds",
                     &self.r#related_findings_ids,
                 ),
                 to_pulumi_object_field(
-                    "related_findings_product_arns",
+                    "relatedFindingsProductArns",
                     &self.r#related_findings_product_arns,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_ec_2_instance_iam_instance_profile_arns",
+                    "resourceAwsEc2InstanceIamInstanceProfileArns",
                     &self.r#resource_aws_ec_2_instance_iam_instance_profile_arns,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_ec_2_instance_image_ids",
+                    "resourceAwsEc2InstanceImageIds",
                     &self.r#resource_aws_ec_2_instance_image_ids,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_ec_2_instance_ipv_4_addresses",
+                    "resourceAwsEc2InstanceIpv4Addresses",
                     &self.r#resource_aws_ec_2_instance_ipv_4_addresses,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_ec_2_instance_ipv_6_addresses",
+                    "resourceAwsEc2InstanceIpv6Addresses",
                     &self.r#resource_aws_ec_2_instance_ipv_6_addresses,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_ec_2_instance_key_names",
+                    "resourceAwsEc2InstanceKeyNames",
                     &self.r#resource_aws_ec_2_instance_key_names,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_ec_2_instance_launched_ats",
+                    "resourceAwsEc2InstanceLaunchedAts",
                     &self.r#resource_aws_ec_2_instance_launched_ats,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_ec_2_instance_subnet_ids",
+                    "resourceAwsEc2InstanceSubnetIds",
                     &self.r#resource_aws_ec_2_instance_subnet_ids,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_ec_2_instance_types",
+                    "resourceAwsEc2InstanceTypes",
                     &self.r#resource_aws_ec_2_instance_types,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_ec_2_instance_vpc_ids",
+                    "resourceAwsEc2InstanceVpcIds",
                     &self.r#resource_aws_ec_2_instance_vpc_ids,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_iam_access_key_created_ats",
+                    "resourceAwsIamAccessKeyCreatedAts",
                     &self.r#resource_aws_iam_access_key_created_ats,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_iam_access_key_statuses",
+                    "resourceAwsIamAccessKeyStatuses",
                     &self.r#resource_aws_iam_access_key_statuses,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_iam_access_key_user_names",
+                    "resourceAwsIamAccessKeyUserNames",
                     &self.r#resource_aws_iam_access_key_user_names,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_s_3_bucket_owner_ids",
+                    "resourceAwsS3BucketOwnerIds",
                     &self.r#resource_aws_s_3_bucket_owner_ids,
                 ),
                 to_pulumi_object_field(
-                    "resource_aws_s_3_bucket_owner_names",
+                    "resourceAwsS3BucketOwnerNames",
                     &self.r#resource_aws_s_3_bucket_owner_names,
                 ),
                 to_pulumi_object_field(
-                    "resource_container_image_ids",
+                    "resourceContainerImageIds",
                     &self.r#resource_container_image_ids,
                 ),
                 to_pulumi_object_field(
-                    "resource_container_image_names",
+                    "resourceContainerImageNames",
                     &self.r#resource_container_image_names,
                 ),
                 to_pulumi_object_field(
-                    "resource_container_launched_ats",
+                    "resourceContainerLaunchedAts",
                     &self.r#resource_container_launched_ats,
                 ),
                 to_pulumi_object_field(
-                    "resource_container_names",
+                    "resourceContainerNames",
                     &self.r#resource_container_names,
                 ),
                 to_pulumi_object_field(
-                    "resource_details_others",
+                    "resourceDetailsOthers",
                     &self.r#resource_details_others,
                 ),
                 to_pulumi_object_field(
-                    "resource_ids",
+                    "resourceIds",
                     &self.r#resource_ids,
                 ),
                 to_pulumi_object_field(
-                    "resource_partitions",
+                    "resourcePartitions",
                     &self.r#resource_partitions,
                 ),
                 to_pulumi_object_field(
-                    "resource_regions",
+                    "resourceRegions",
                     &self.r#resource_regions,
                 ),
                 to_pulumi_object_field(
-                    "resource_tags",
+                    "resourceTags",
                     &self.r#resource_tags,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
                 to_pulumi_object_field(
-                    "severity_labels",
+                    "severityLabels",
                     &self.r#severity_labels,
                 ),
                 to_pulumi_object_field(
-                    "source_urls",
+                    "sourceUrls",
                     &self.r#source_urls,
                 ),
                 to_pulumi_object_field(
-                    "threat_intel_indicator_categories",
+                    "threatIntelIndicatorCategories",
                     &self.r#threat_intel_indicator_categories,
                 ),
                 to_pulumi_object_field(
-                    "threat_intel_indicator_last_observed_ats",
+                    "threatIntelIndicatorLastObservedAts",
                     &self.r#threat_intel_indicator_last_observed_ats,
                 ),
                 to_pulumi_object_field(
-                    "threat_intel_indicator_source_urls",
+                    "threatIntelIndicatorSourceUrls",
                     &self.r#threat_intel_indicator_source_urls,
                 ),
                 to_pulumi_object_field(
-                    "threat_intel_indicator_sources",
+                    "threatIntelIndicatorSources",
                     &self.r#threat_intel_indicator_sources,
                 ),
                 to_pulumi_object_field(
-                    "threat_intel_indicator_types",
+                    "threatIntelIndicatorTypes",
                     &self.r#threat_intel_indicator_types,
                 ),
                 to_pulumi_object_field(
-                    "threat_intel_indicator_values",
+                    "threatIntelIndicatorValues",
                     &self.r#threat_intel_indicator_values,
                 ),
                 to_pulumi_object_field(
@@ -707,19 +707,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#types,
                 ),
                 to_pulumi_object_field(
-                    "updated_ats",
+                    "updatedAts",
                     &self.r#updated_ats,
                 ),
                 to_pulumi_object_field(
-                    "user_defined_values",
+                    "userDefinedValues",
                     &self.r#user_defined_values,
                 ),
                 to_pulumi_object_field(
-                    "verification_states",
+                    "verificationStates",
                     &self.r#verification_states,
                 ),
                 to_pulumi_object_field(
-                    "workflow_statuses",
+                    "workflowStatuses",
                     &self.r#workflow_statuses,
                 ),
             ];

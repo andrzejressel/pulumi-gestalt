@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_reference",
+                    "endpointReference",
                     &self.r#endpoint_reference,
                 ),
                 to_pulumi_object_field(
-                    "health_check",
+                    "healthCheck",
                     &self.r#health_check,
                 ),
             ];

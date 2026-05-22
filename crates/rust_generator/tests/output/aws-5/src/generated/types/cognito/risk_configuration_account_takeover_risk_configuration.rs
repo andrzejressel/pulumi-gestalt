@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ris
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "notify_configuration",
+                    "notifyConfiguration",
                     &self.r#notify_configuration,
                 ),
             ];

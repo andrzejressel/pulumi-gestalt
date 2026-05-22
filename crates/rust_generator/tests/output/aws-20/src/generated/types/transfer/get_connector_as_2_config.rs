@@ -54,7 +54,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_auth_secret_id",
+                    "basicAuthSecretId",
                     &self.r#basic_auth_secret_id,
                 ),
                 to_pulumi_object_field(
@@ -62,31 +62,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "encryption_algorithm",
+                    "encryptionAlgorithm",
                     &self.r#encryption_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "local_profile_id",
+                    "localProfileId",
                     &self.r#local_profile_id,
                 ),
                 to_pulumi_object_field(
-                    "mdn_response",
+                    "mdnResponse",
                     &self.r#mdn_response,
                 ),
                 to_pulumi_object_field(
-                    "mdn_signing_algorithm",
+                    "mdnSigningAlgorithm",
                     &self.r#mdn_signing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "message_subject",
+                    "messageSubject",
                     &self.r#message_subject,
                 ),
                 to_pulumi_object_field(
-                    "partner_profile_id",
+                    "partnerProfileId",
                     &self.r#partner_profile_id,
                 ),
                 to_pulumi_object_field(
-                    "singing_algorithm",
+                    "singingAlgorithm",
                     &self.r#singing_algorithm,
                 ),
             ];

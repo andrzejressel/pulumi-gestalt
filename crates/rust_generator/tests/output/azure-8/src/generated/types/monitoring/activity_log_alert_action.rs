@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_group_id",
+                    "actionGroupId",
                     &self.r#action_group_id,
                 ),
                 to_pulumi_object_field(
-                    "webhook_properties",
+                    "webhookProperties",
                     &self.r#webhook_properties,
                 ),
             ];

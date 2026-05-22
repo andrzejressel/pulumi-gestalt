@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "schema_file_format",
+                    "schemaFileFormat",
                     &self.r#schema_file_format,
                 ),
             ];

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "arc_kubernetes_cluster_id",
+                    "arcKubernetesClusterId",
                     &self.r#arc_kubernetes_cluster_id,
                 ),
                 to_pulumi_object_field(
-                    "custom_location_id",
+                    "customLocationId",
                     &self.r#custom_location_id,
                 ),
                 to_pulumi_object_field(
-                    "edge_device_id",
+                    "edgeDeviceId",
                     &self.r#edge_device_id,
                 ),
                 to_pulumi_object_field(
-                    "stack_hci_cluster_id",
+                    "stackHciClusterId",
                     &self.r#stack_hci_cluster_id,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

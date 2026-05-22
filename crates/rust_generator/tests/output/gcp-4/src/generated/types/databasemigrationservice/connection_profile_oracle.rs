@@ -66,11 +66,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "database_service",
+                    "databaseService",
                     &self.r#database_service,
                 ),
                 to_pulumi_object_field(
-                    "forward_ssh_connectivity",
+                    "forwardSshConnectivity",
                     &self.r#forward_ssh_connectivity,
                 ),
                 to_pulumi_object_field(
@@ -82,7 +82,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "password_set",
+                    "passwordSet",
                     &self.r#password_set,
                 ),
                 to_pulumi_object_field(
@@ -90,7 +90,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "private_connectivity",
+                    "privateConnectivity",
                     &self.r#private_connectivity,
                 ),
                 to_pulumi_object_field(
@@ -98,7 +98,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#ssl,
                 ),
                 to_pulumi_object_field(
-                    "static_service_ip_connectivity",
+                    "staticServiceIpConnectivity",
                     &self.r#static_service_ip_connectivity,
                 ),
                 to_pulumi_object_field(

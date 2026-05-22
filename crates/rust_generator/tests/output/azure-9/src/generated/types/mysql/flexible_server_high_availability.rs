@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "standby_availability_zone",
+                    "standbyAvailabilityZone",
                     &self.r#standby_availability_zone,
                 ),
             ];

@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_catalog_config",
+                    "dataCatalogConfig",
                     &self.r#data_catalog_config,
                 ),
                 to_pulumi_object_field(
-                    "disable_glue_table_creation",
+                    "disableGlueTableCreation",
                     &self.r#disable_glue_table_creation,
                 ),
                 to_pulumi_object_field(
-                    "s_3_storage_config",
+                    "s3StorageConfig",
                     &self.r#s_3_storage_config,
                 ),
                 to_pulumi_object_field(
-                    "table_format",
+                    "tableFormat",
                     &self.r#table_format,
                 ),
             ];

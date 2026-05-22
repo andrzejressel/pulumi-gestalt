@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_endpoint",
+                    "customEndpoint",
                     &self.r#custom_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "custom_endpoint_certificate_arn",
+                    "customEndpointCertificateArn",
                     &self.r#custom_endpoint_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "custom_endpoint_enabled",
+                    "customEndpointEnabled",
                     &self.r#custom_endpoint_enabled,
                 ),
                 to_pulumi_object_field(
-                    "enforce_https",
+                    "enforceHttps",
                     &self.r#enforce_https,
                 ),
                 to_pulumi_object_field(
-                    "tls_security_policy",
+                    "tlsSecurityPolicy",
                     &self.r#tls_security_policy,
                 ),
             ];

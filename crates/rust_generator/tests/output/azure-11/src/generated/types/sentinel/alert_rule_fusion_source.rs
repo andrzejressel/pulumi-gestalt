@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "sub_types",
+                    "subTypes",
                     &self.r#sub_types,
                 ),
             ];

@@ -59,43 +59,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Das
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ad_hoc_filtering_option",
+                    "adHocFilteringOption",
                     &self.r#ad_hoc_filtering_option,
                 ),
                 to_pulumi_object_field(
-                    "data_point_drill_up_down_option",
+                    "dataPointDrillUpDownOption",
                     &self.r#data_point_drill_up_down_option,
                 ),
                 to_pulumi_object_field(
-                    "data_point_menu_label_option",
+                    "dataPointMenuLabelOption",
                     &self.r#data_point_menu_label_option,
                 ),
                 to_pulumi_object_field(
-                    "data_point_tooltip_option",
+                    "dataPointTooltipOption",
                     &self.r#data_point_tooltip_option,
                 ),
                 to_pulumi_object_field(
-                    "export_to_csv_option",
+                    "exportToCsvOption",
                     &self.r#export_to_csv_option,
                 ),
                 to_pulumi_object_field(
-                    "export_with_hidden_fields_option",
+                    "exportWithHiddenFieldsOption",
                     &self.r#export_with_hidden_fields_option,
                 ),
                 to_pulumi_object_field(
-                    "sheet_controls_option",
+                    "sheetControlsOption",
                     &self.r#sheet_controls_option,
                 ),
                 to_pulumi_object_field(
-                    "sheet_layout_element_maximization_option",
+                    "sheetLayoutElementMaximizationOption",
                     &self.r#sheet_layout_element_maximization_option,
                 ),
                 to_pulumi_object_field(
-                    "visual_axis_sort_option",
+                    "visualAxisSortOption",
                     &self.r#visual_axis_sort_option,
                 ),
                 to_pulumi_object_field(
-                    "visual_menu_option",
+                    "visualMenuOption",
                     &self.r#visual_menu_option,
                 ),
             ];

@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for HBa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aadds_resource_id",
+                    "aaddsResourceId",
                     &self.r#aadds_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "cluster_users_group_dns",
+                    "clusterUsersGroupDns",
                     &self.r#cluster_users_group_dns,
                 ),
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "domain_user_password",
+                    "domainUserPassword",
                     &self.r#domain_user_password,
                 ),
                 to_pulumi_object_field(
-                    "domain_username",
+                    "domainUsername",
                     &self.r#domain_username,
                 ),
                 to_pulumi_object_field(
-                    "ldaps_urls",
+                    "ldapsUrls",
                     &self.r#ldaps_urls,
                 ),
                 to_pulumi_object_field(
-                    "msi_resource_id",
+                    "msiResourceId",
                     &self.r#msi_resource_id,
                 ),
             ];

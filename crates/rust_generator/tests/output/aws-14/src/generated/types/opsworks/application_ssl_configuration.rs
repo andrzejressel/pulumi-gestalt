@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#chain,
                 ),
                 to_pulumi_object_field(
-                    "private_key",
+                    "privateKey",
                     &self.r#private_key,
                 ),
             ];

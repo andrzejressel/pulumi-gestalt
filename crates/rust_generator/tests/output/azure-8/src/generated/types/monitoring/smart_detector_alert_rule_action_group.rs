@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sma
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "email_subject",
+                    "emailSubject",
                     &self.r#email_subject,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sma
                     &self.r#ids,
                 ),
                 to_pulumi_object_field(
-                    "webhook_payload",
+                    "webhookPayload",
                     &self.r#webhook_payload,
                 ),
             ];

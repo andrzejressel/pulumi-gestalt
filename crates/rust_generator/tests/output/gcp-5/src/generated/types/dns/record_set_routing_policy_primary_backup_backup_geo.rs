@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "health_checked_targets",
+                    "healthCheckedTargets",
                     &self.r#health_checked_targets,
                 ),
                 to_pulumi_object_field(

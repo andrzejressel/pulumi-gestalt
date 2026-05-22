@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "new_game_sessions_per_creator",
+                    "newGameSessionsPerCreator",
                     &self.r#new_game_sessions_per_creator,
                 ),
                 to_pulumi_object_field(
-                    "policy_period_in_minutes",
+                    "policyPeriodInMinutes",
                     &self.r#policy_period_in_minutes,
                 ),
             ];

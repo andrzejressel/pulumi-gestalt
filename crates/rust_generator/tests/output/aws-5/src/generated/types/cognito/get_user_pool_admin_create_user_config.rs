@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_admin_create_user_only",
+                    "allowAdminCreateUserOnly",
                     &self.r#allow_admin_create_user_only,
                 ),
                 to_pulumi_object_field(
-                    "invite_message_templates",
+                    "inviteMessageTemplates",
                     &self.r#invite_message_templates,
                 ),
                 to_pulumi_object_field(
-                    "unused_account_validity_days",
+                    "unusedAccountValidityDays",
                     &self.r#unused_account_validity_days,
                 ),
             ];

@@ -55,31 +55,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#gateway,
                 ),
                 to_pulumi_object_field(
-                    "global_ipv_6_address",
+                    "globalIpv6Address",
                     &self.r#global_ipv_6_address,
                 ),
                 to_pulumi_object_field(
-                    "global_ipv_6_prefix_length",
+                    "globalIpv6PrefixLength",
                     &self.r#global_ipv_6_prefix_length,
                 ),
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
                 to_pulumi_object_field(
-                    "ip_prefix_length",
+                    "ipPrefixLength",
                     &self.r#ip_prefix_length,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_gateway",
+                    "ipv6Gateway",
                     &self.r#ipv_6_gateway,
                 ),
                 to_pulumi_object_field(
-                    "mac_address",
+                    "macAddress",
                     &self.r#mac_address,
                 ),
                 to_pulumi_object_field(
-                    "network_name",
+                    "networkName",
                     &self.r#network_name,
                 ),
             ];

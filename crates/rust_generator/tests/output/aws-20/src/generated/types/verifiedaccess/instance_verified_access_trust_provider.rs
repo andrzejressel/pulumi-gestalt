@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "device_trust_provider_type",
+                    "deviceTrustProviderType",
                     &self.r#device_trust_provider_type,
                 ),
                 to_pulumi_object_field(
-                    "trust_provider_type",
+                    "trustProviderType",
                     &self.r#trust_provider_type,
                 ),
                 to_pulumi_object_field(
-                    "user_trust_provider_type",
+                    "userTrustProviderType",
                     &self.r#user_trust_provider_type,
                 ),
                 to_pulumi_object_field(
-                    "verified_access_trust_provider_id",
+                    "verifiedAccessTrustProviderId",
                     &self.r#verified_access_trust_provider_id,
                 ),
             ];

@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "search_add_ons",
+                    "searchAddOns",
                     &self.r#search_add_ons,
                 ),
                 to_pulumi_object_field(
-                    "search_tier",
+                    "searchTier",
                     &self.r#search_tier,
                 ),
             ];

@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "capacity_reservation_preference",
+                    "capacityReservationPreference",
                     &self.r#capacity_reservation_preference,
                 ),
                 to_pulumi_object_field(
-                    "capacity_reservation_targets",
+                    "capacityReservationTargets",
                     &self.r#capacity_reservation_targets,
                 ),
             ];

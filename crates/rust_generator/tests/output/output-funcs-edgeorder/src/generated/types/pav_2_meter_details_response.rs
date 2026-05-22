@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pav
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "billing_type",
+                    "billingType",
                     &self.r#billing_type,
                 ),
                 to_pulumi_object_field(
-                    "charging_type",
+                    "chargingType",
                     &self.r#charging_type,
                 ),
                 to_pulumi_object_field(
-                    "meter_guid",
+                    "meterGuid",
                     &self.r#meter_guid,
                 ),
                 to_pulumi_object_field(

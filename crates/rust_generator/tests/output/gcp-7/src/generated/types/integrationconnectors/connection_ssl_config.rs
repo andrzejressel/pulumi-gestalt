@@ -68,43 +68,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_variables",
+                    "additionalVariables",
                     &self.r#additional_variables,
                 ),
                 to_pulumi_object_field(
-                    "client_cert_type",
+                    "clientCertType",
                     &self.r#client_cert_type,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate",
+                    "clientCertificate",
                     &self.r#client_certificate,
                 ),
                 to_pulumi_object_field(
-                    "client_private_key",
+                    "clientPrivateKey",
                     &self.r#client_private_key,
                 ),
                 to_pulumi_object_field(
-                    "client_private_key_pass",
+                    "clientPrivateKeyPass",
                     &self.r#client_private_key_pass,
                 ),
                 to_pulumi_object_field(
-                    "private_server_certificate",
+                    "privateServerCertificate",
                     &self.r#private_server_certificate,
                 ),
                 to_pulumi_object_field(
-                    "server_cert_type",
+                    "serverCertType",
                     &self.r#server_cert_type,
                 ),
                 to_pulumi_object_field(
-                    "trust_model",
+                    "trustModel",
                     &self.r#trust_model,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "use_ssl",
+                    "useSsl",
                     &self.r#use_ssl,
                 ),
             ];

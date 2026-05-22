@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_set_arn",
+                    "dataSetArn",
                     &self.r#data_set_arn,
                 ),
                 to_pulumi_object_field(
-                    "join_instructions",
+                    "joinInstructions",
                     &self.r#join_instructions,
                 ),
                 to_pulumi_object_field(
-                    "physical_table_id",
+                    "physicalTableId",
                     &self.r#physical_table_id,
                 ),
             ];

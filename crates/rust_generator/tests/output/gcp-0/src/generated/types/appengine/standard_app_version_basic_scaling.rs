@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "idle_timeout",
+                    "idleTimeout",
                     &self.r#idle_timeout,
                 ),
                 to_pulumi_object_field(
-                    "max_instances",
+                    "maxInstances",
                     &self.r#max_instances,
                 ),
             ];

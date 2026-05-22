@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "ip_address_range",
+                    "ipAddressRange",
                     &self.r#ip_address_range,
                 ),
                 to_pulumi_object_field(

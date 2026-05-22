@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nam
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_action",
+                    "defaultAction",
                     &self.r#default_action,
                 ),
                 to_pulumi_object_field(
-                    "ip_rules",
+                    "ipRules",
                     &self.r#ip_rules,
                 ),
                 to_pulumi_object_field(
-                    "network_rules",
+                    "networkRules",
                     &self.r#network_rules,
                 ),
                 to_pulumi_object_field(
-                    "public_network_access_enabled",
+                    "publicNetworkAccessEnabled",
                     &self.r#public_network_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "trusted_services_allowed",
+                    "trustedServicesAllowed",
                     &self.r#trusted_services_allowed,
                 ),
             ];

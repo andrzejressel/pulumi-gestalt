@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "encryption_disabled",
+                    "encryptionDisabled",
                     &self.r#encryption_disabled,
                 ),
                 to_pulumi_object_field(
-                    "encryption_key",
+                    "encryptionKey",
                     &self.r#encryption_key,
                 ),
                 to_pulumi_object_field(

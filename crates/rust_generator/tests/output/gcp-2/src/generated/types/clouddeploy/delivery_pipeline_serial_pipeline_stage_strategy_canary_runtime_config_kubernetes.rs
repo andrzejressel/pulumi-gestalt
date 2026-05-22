@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Del
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gateway_service_mesh",
+                    "gatewayServiceMesh",
                     &self.r#gateway_service_mesh,
                 ),
                 to_pulumi_object_field(
-                    "service_networking",
+                    "serviceNetworking",
                     &self.r#service_networking,
                 ),
             ];

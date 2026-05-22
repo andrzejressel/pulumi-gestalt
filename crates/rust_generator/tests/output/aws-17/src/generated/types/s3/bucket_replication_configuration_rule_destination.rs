@@ -48,11 +48,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_control_translation",
+                    "accessControlTranslation",
                     &self.r#access_control_translation,
                 ),
                 to_pulumi_object_field(
-                    "account_id",
+                    "accountId",
                     &self.r#account_id,
                 ),
                 to_pulumi_object_field(
@@ -64,15 +64,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#metrics,
                 ),
                 to_pulumi_object_field(
-                    "replica_kms_key_id",
+                    "replicaKmsKeyId",
                     &self.r#replica_kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "replication_time",
+                    "replicationTime",
                     &self.r#replication_time,
                 ),
                 to_pulumi_object_field(
-                    "storage_class",
+                    "storageClass",
                     &self.r#storage_class,
                 ),
             ];

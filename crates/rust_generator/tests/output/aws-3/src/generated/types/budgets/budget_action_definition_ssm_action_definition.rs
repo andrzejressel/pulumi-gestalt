@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_sub_type",
+                    "actionSubType",
                     &self.r#action_sub_type,
                 ),
                 to_pulumi_object_field(
-                    "instance_ids",
+                    "instanceIds",
                     &self.r#instance_ids,
                 ),
                 to_pulumi_object_field(

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_key_credentials",
+                    "apiKeyCredentials",
                     &self.r#api_key_credentials,
                 ),
                 to_pulumi_object_field(
-                    "oauth_2_credential",
+                    "oauth2Credential",
                     &self.r#oauth_2_credential,
                 ),
             ];

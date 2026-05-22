@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "approvals_needed",
+                    "approvalsNeeded",
                     &self.r#approvals_needed,
                 ),
                 to_pulumi_object_field(
-                    "email_addresses",
+                    "emailAddresses",
                     &self.r#email_addresses,
                 ),
                 to_pulumi_object_field(
-                    "email_list_uuid",
+                    "emailListUuid",
                     &self.r#email_list_uuid,
                 ),
             ];

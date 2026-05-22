@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_pool_names",
+                    "backendPoolNames",
                     &self.r#backend_pool_names,
                 ),
                 to_pulumi_object_field(
-                    "frontend_ip_configuration_names",
+                    "frontendIpConfigurationNames",
                     &self.r#frontend_ip_configuration_names,
                 ),
                 to_pulumi_object_field(
-                    "health_probe_names",
+                    "healthProbeNames",
                     &self.r#health_probe_names,
                 ),
                 to_pulumi_object_field(

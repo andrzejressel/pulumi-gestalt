@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mutate_time",
+                    "mutateTime",
                     &self.r#mutate_time,
                 ),
                 to_pulumi_object_field(
-                    "mutated_by",
+                    "mutatedBy",
                     &self.r#mutated_by,
                 ),
             ];

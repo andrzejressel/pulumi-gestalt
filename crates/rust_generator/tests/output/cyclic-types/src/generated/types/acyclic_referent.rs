@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acy
                     &self.r#baz,
                 ),
                 to_pulumi_object_field(
-                    "foo_4",
+                    "foo4",
                     &self.r#foo_4,
                 ),
             ];

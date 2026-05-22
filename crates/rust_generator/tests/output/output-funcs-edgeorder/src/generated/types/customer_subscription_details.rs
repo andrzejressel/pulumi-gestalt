@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "location_placement_id",
+                    "locationPlacementId",
                     &self.r#location_placement_id,
                 ),
                 to_pulumi_object_field(
-                    "quota_id",
+                    "quotaId",
                     &self.r#quota_id,
                 ),
                 to_pulumi_object_field(
-                    "registered_features",
+                    "registeredFeatures",
                     &self.r#registered_features,
                 ),
             ];

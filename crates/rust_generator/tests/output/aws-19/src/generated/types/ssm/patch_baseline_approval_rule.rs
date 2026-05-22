@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "approve_after_days",
+                    "approveAfterDays",
                     &self.r#approve_after_days,
                 ),
                 to_pulumi_object_field(
-                    "approve_until_date",
+                    "approveUntilDate",
                     &self.r#approve_until_date,
                 ),
                 to_pulumi_object_field(
-                    "compliance_level",
+                    "complianceLevel",
                     &self.r#compliance_level,
                 ),
                 to_pulumi_object_field(
-                    "enable_non_security",
+                    "enableNonSecurity",
                     &self.r#enable_non_security,
                 ),
                 to_pulumi_object_field(
-                    "patch_filters",
+                    "patchFilters",
                     &self.r#patch_filters,
                 ),
             ];

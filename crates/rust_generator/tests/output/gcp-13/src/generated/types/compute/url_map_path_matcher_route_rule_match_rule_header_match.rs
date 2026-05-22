@@ -74,35 +74,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exact_match",
+                    "exactMatch",
                     &self.r#exact_match,
                 ),
                 to_pulumi_object_field(
-                    "header_name",
+                    "headerName",
                     &self.r#header_name,
                 ),
                 to_pulumi_object_field(
-                    "invert_match",
+                    "invertMatch",
                     &self.r#invert_match,
                 ),
                 to_pulumi_object_field(
-                    "prefix_match",
+                    "prefixMatch",
                     &self.r#prefix_match,
                 ),
                 to_pulumi_object_field(
-                    "present_match",
+                    "presentMatch",
                     &self.r#present_match,
                 ),
                 to_pulumi_object_field(
-                    "range_match",
+                    "rangeMatch",
                     &self.r#range_match,
                 ),
                 to_pulumi_object_field(
-                    "regex_match",
+                    "regexMatch",
                     &self.r#regex_match,
                 ),
                 to_pulumi_object_field(
-                    "suffix_match",
+                    "suffixMatch",
                     &self.r#suffix_match,
                 ),
             ];

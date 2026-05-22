@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#bypass,
                 ),
                 to_pulumi_object_field(
-                    "default_action",
+                    "defaultAction",
                     &self.r#default_action,
                 ),
             ];

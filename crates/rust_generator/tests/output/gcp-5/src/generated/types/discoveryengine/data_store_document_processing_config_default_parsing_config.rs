@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "digital_parsing_config",
+                    "digitalParsingConfig",
                     &self.r#digital_parsing_config,
                 ),
                 to_pulumi_object_field(
-                    "layout_parsing_config",
+                    "layoutParsingConfig",
                     &self.r#layout_parsing_config,
                 ),
                 to_pulumi_object_field(
-                    "ocr_parsing_config",
+                    "ocrParsingConfig",
                     &self.r#ocr_parsing_config,
                 ),
             ];

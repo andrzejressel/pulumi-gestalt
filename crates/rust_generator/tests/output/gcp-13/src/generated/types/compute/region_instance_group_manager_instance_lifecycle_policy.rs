@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_action_on_failure",
+                    "defaultActionOnFailure",
                     &self.r#default_action_on_failure,
                 ),
                 to_pulumi_object_field(
-                    "force_update_on_repair",
+                    "forceUpdateOnRepair",
                     &self.r#force_update_on_repair,
                 ),
             ];

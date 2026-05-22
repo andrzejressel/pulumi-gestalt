@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_sets",
+                    "ipSets",
                     &self.r#ip_sets,
                 ),
                 to_pulumi_object_field(
-                    "port_sets",
+                    "portSets",
                     &self.r#port_sets,
                 ),
             ];

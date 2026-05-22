@@ -44,23 +44,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "configure_at_launch",
+                    "configureAtLaunch",
                     &self.r#configure_at_launch,
                 ),
                 to_pulumi_object_field(
-                    "docker_volume_configuration",
+                    "dockerVolumeConfiguration",
                     &self.r#docker_volume_configuration,
                 ),
                 to_pulumi_object_field(
-                    "efs_volume_configuration",
+                    "efsVolumeConfiguration",
                     &self.r#efs_volume_configuration,
                 ),
                 to_pulumi_object_field(
-                    "fsx_windows_file_server_volume_configuration",
+                    "fsxWindowsFileServerVolumeConfiguration",
                     &self.r#fsx_windows_file_server_volume_configuration,
                 ),
                 to_pulumi_object_field(
-                    "host_path",
+                    "hostPath",
                     &self.r#host_path,
                 ),
                 to_pulumi_object_field(

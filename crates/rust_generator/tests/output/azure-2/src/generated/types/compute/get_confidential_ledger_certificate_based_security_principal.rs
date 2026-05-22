@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ledger_role_name",
+                    "ledgerRoleName",
                     &self.r#ledger_role_name,
                 ),
                 to_pulumi_object_field(
-                    "pem_public_key",
+                    "pemPublicKey",
                     &self.r#pem_public_key,
                 ),
             ];

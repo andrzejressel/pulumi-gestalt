@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "execution_role",
+                    "executionRole",
                     &self.r#execution_role,
                 ),
                 to_pulumi_object_field(
-                    "workflow_id",
+                    "workflowId",
                     &self.r#workflow_id,
                 ),
             ];

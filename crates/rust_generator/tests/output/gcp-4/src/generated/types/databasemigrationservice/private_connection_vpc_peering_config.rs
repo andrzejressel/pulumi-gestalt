@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pri
                     &self.r#subnet,
                 ),
                 to_pulumi_object_field(
-                    "vpc_name",
+                    "vpcName",
                     &self.r#vpc_name,
                 ),
             ];

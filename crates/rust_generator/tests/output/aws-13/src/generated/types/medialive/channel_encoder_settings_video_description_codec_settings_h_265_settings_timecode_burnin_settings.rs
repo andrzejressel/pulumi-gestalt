@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#prefix,
                 ),
                 to_pulumi_object_field(
-                    "timecode_burnin_font_size",
+                    "timecodeBurninFontSize",
                     &self.r#timecode_burnin_font_size,
                 ),
                 to_pulumi_object_field(
-                    "timecode_burnin_position",
+                    "timecodeBurninPosition",
                     &self.r#timecode_burnin_position,
                 ),
             ];

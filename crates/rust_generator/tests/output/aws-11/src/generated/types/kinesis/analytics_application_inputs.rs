@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_firehose",
+                    "kinesisFirehose",
                     &self.r#kinesis_firehose,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_stream",
+                    "kinesisStream",
                     &self.r#kinesis_stream,
                 ),
                 to_pulumi_object_field(
-                    "name_prefix",
+                    "namePrefix",
                     &self.r#name_prefix,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#parallelism,
                 ),
                 to_pulumi_object_field(
-                    "processing_configuration",
+                    "processingConfiguration",
                     &self.r#processing_configuration,
                 ),
                 to_pulumi_object_field(
@@ -87,11 +87,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#schema,
                 ),
                 to_pulumi_object_field(
-                    "starting_position_configurations",
+                    "startingPositionConfigurations",
                     &self.r#starting_position_configurations,
                 ),
                 to_pulumi_object_field(
-                    "stream_names",
+                    "streamNames",
                     &self.r#stream_names,
                 ),
             ];

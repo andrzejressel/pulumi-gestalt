@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "contains_header",
+                    "containsHeader",
                     &self.r#contains_header,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#format,
                 ),
                 to_pulumi_object_field(
-                    "start_from_row",
+                    "startFromRow",
                     &self.r#start_from_row,
                 ),
                 to_pulumi_object_field(
-                    "text_qualifier",
+                    "textQualifier",
                     &self.r#text_qualifier,
                 ),
             ];

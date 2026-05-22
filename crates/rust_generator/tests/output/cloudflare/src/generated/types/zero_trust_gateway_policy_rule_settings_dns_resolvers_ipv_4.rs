@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "route_through_private_network",
+                    "routeThroughPrivateNetwork",
                     &self.r#route_through_private_network,
                 ),
                 to_pulumi_object_field(
-                    "vnet_id",
+                    "vnetId",
                     &self.r#vnet_id,
                 ),
             ];

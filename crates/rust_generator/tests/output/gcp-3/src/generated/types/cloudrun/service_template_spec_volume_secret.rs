@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_mode",
+                    "defaultMode",
                     &self.r#default_mode,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#items,
                 ),
                 to_pulumi_object_field(
-                    "secret_name",
+                    "secretName",
                     &self.r#secret_name,
                 ),
             ];

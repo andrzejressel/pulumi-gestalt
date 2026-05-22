@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "ignore_missing_vnet_service_endpoint",
+                    "ignoreMissingVnetServiceEndpoint",
                     &self.r#ignore_missing_vnet_service_endpoint,
                 ),
             ];

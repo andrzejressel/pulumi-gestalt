@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_batch_instance_percent",
+                    "maxBatchInstancePercent",
                     &self.r#max_batch_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unhealthy_instance_percent",
+                    "maxUnhealthyInstancePercent",
                     &self.r#max_unhealthy_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_unhealthy_upgraded_instance_percent",
+                    "maxUnhealthyUpgradedInstancePercent",
                     &self.r#max_unhealthy_upgraded_instance_percent,
                 ),
                 to_pulumi_object_field(
-                    "pause_time_between_batches",
+                    "pauseTimeBetweenBatches",
                     &self.r#pause_time_between_batches,
                 ),
             ];

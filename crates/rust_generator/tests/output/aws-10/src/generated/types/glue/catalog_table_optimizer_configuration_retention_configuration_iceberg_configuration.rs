@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "clean_expired_files",
+                    "cleanExpiredFiles",
                     &self.r#clean_expired_files,
                 ),
                 to_pulumi_object_field(
-                    "number_of_snapshots_to_retain",
+                    "numberOfSnapshotsToRetain",
                     &self.r#number_of_snapshots_to_retain,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_retention_period_in_days",
+                    "snapshotRetentionPeriodInDays",
                     &self.r#snapshot_retention_period_in_days,
                 ),
             ];

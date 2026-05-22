@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "description_format",
+                    "descriptionFormat",
                     &self.r#description_format,
                 ),
                 to_pulumi_object_field(
-                    "display_name_format",
+                    "displayNameFormat",
                     &self.r#display_name_format,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_properties",
+                    "dynamicProperties",
                     &self.r#dynamic_properties,
                 ),
                 to_pulumi_object_field(
-                    "severity_column_name",
+                    "severityColumnName",
                     &self.r#severity_column_name,
                 ),
                 to_pulumi_object_field(
-                    "tactics_column_name",
+                    "tacticsColumnName",
                     &self.r#tactics_column_name,
                 ),
             ];

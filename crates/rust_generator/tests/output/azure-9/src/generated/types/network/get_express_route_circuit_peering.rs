@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "azure_asn",
+                    "azureAsn",
                     &self.r#azure_asn,
                 ),
                 to_pulumi_object_field(
-                    "peer_asn",
+                    "peerAsn",
                     &self.r#peer_asn,
                 ),
                 to_pulumi_object_field(
-                    "peering_type",
+                    "peeringType",
                     &self.r#peering_type,
                 ),
                 to_pulumi_object_field(
-                    "primary_peer_address_prefix",
+                    "primaryPeerAddressPrefix",
                     &self.r#primary_peer_address_prefix,
                 ),
                 to_pulumi_object_field(
-                    "secondary_peer_address_prefix",
+                    "secondaryPeerAddressPrefix",
                     &self.r#secondary_peer_address_prefix,
                 ),
                 to_pulumi_object_field(
-                    "shared_key",
+                    "sharedKey",
                     &self.r#shared_key,
                 ),
                 to_pulumi_object_field(
-                    "vlan_id",
+                    "vlanId",
                     &self.r#vlan_id,
                 ),
             ];

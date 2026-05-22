@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dia
                     &self.r#category,
                 ),
                 to_pulumi_object_field(
-                    "category_group",
+                    "categoryGroup",
                     &self.r#category_group,
                 ),
                 to_pulumi_object_field(
-                    "retention_policy",
+                    "retentionPolicy",
                     &self.r#retention_policy,
                 ),
             ];

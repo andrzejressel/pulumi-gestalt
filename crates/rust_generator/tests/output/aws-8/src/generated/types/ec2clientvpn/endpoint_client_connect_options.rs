@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "lambda_function_arn",
+                    "lambdaFunctionArn",
                     &self.r#lambda_function_arn,
                 ),
             ];

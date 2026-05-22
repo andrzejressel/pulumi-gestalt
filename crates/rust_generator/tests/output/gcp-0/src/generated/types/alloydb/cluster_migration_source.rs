@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_port",
+                    "hostPort",
                     &self.r#host_port,
                 ),
                 to_pulumi_object_field(
-                    "reference_id",
+                    "referenceId",
                     &self.r#reference_id,
                 ),
                 to_pulumi_object_field(
-                    "source_type",
+                    "sourceType",
                     &self.r#source_type,
                 ),
             ];

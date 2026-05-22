@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dashboard_options",
+                    "dashboardOptions",
                     &self.r#dashboard_options,
                 ),
                 to_pulumi_object_field(
-                    "guardian_options",
+                    "guardianOptions",
                     &self.r#guardian_options,
                 ),
             ];

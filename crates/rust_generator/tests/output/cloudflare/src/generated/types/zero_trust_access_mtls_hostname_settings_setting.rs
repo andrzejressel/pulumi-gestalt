@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "china_network",
+                    "chinaNetwork",
                     &self.r#china_network,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_forwarding",
+                    "clientCertificateForwarding",
                     &self.r#client_certificate_forwarding,
                 ),
                 to_pulumi_object_field(

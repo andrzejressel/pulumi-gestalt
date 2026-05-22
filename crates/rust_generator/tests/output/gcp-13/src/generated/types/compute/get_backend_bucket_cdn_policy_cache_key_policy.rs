@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "include_http_headers",
+                    "includeHttpHeaders",
                     &self.r#include_http_headers,
                 ),
                 to_pulumi_object_field(
-                    "query_string_whitelists",
+                    "queryStringWhitelists",
                     &self.r#query_string_whitelists,
                 ),
             ];

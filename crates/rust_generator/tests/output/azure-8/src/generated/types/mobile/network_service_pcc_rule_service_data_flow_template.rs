@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "remote_ip_lists",
+                    "remoteIpLists",
                     &self.r#remote_ip_lists,
                 ),
             ];

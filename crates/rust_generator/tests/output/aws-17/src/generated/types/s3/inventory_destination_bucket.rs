@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Inv
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_id",
+                    "accountId",
                     &self.r#account_id,
                 ),
                 to_pulumi_object_field(
-                    "bucket_arn",
+                    "bucketArn",
                     &self.r#bucket_arn,
                 ),
                 to_pulumi_object_field(

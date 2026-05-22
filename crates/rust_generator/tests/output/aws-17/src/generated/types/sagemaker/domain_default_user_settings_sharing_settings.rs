@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "notebook_output_option",
+                    "notebookOutputOption",
                     &self.r#notebook_output_option,
                 ),
                 to_pulumi_object_field(
-                    "s_3_kms_key_id",
+                    "s3KmsKeyId",
                     &self.r#s_3_kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "s_3_output_path",
+                    "s3OutputPath",
                     &self.r#s_3_output_path,
                 ),
             ];

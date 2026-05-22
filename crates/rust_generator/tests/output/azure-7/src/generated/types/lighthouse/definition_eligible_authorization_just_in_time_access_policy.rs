@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
                     &self.r#approvers,
                 ),
                 to_pulumi_object_field(
-                    "maximum_activation_duration",
+                    "maximumActivationDuration",
                     &self.r#maximum_activation_duration,
                 ),
                 to_pulumi_object_field(
-                    "multi_factor_auth_provider",
+                    "multiFactorAuthProvider",
                     &self.r#multi_factor_auth_provider,
                 ),
             ];

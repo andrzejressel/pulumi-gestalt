@@ -44,31 +44,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aac_settings",
+                    "aacSettings",
                     &self.r#aac_settings,
                 ),
                 to_pulumi_object_field(
-                    "ac_3_settings",
+                    "ac3Settings",
                     &self.r#ac_3_settings,
                 ),
                 to_pulumi_object_field(
-                    "eac_3_atmos_settings",
+                    "eac3AtmosSettings",
                     &self.r#eac_3_atmos_settings,
                 ),
                 to_pulumi_object_field(
-                    "eac_3_settings",
+                    "eac3Settings",
                     &self.r#eac_3_settings,
                 ),
                 to_pulumi_object_field(
-                    "mp_2_settings",
+                    "mp2Settings",
                     &self.r#mp_2_settings,
                 ),
                 to_pulumi_object_field(
-                    "pass_through_settings",
+                    "passThroughSettings",
                     &self.r#pass_through_settings,
                 ),
                 to_pulumi_object_field(
-                    "wav_settings",
+                    "wavSettings",
                     &self.r#wav_settings,
                 ),
             ];

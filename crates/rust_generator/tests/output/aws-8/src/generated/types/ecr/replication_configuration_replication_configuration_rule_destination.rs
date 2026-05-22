@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "registry_id",
+                    "registryId",
                     &self.r#registry_id,
                 ),
             ];

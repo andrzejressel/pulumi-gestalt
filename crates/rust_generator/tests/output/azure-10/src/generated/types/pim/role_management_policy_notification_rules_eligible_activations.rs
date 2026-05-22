@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_notifications",
+                    "adminNotifications",
                     &self.r#admin_notifications,
                 ),
                 to_pulumi_object_field(
-                    "approver_notifications",
+                    "approverNotifications",
                     &self.r#approver_notifications,
                 ),
                 to_pulumi_object_field(
-                    "assignee_notifications",
+                    "assigneeNotifications",
                     &self.r#assignee_notifications,
                 ),
             ];

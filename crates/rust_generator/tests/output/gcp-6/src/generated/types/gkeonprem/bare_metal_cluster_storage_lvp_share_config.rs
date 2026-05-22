@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lvp_config",
+                    "lvpConfig",
                     &self.r#lvp_config,
                 ),
                 to_pulumi_object_field(
-                    "shared_path_pv_count",
+                    "sharedPathPvCount",
                     &self.r#shared_path_pv_count,
                 ),
             ];

@@ -37,27 +37,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "az_distribution",
+                    "azDistribution",
                     &self.r#az_distribution,
                 ),
                 to_pulumi_object_field(
-                    "client_subnets",
+                    "clientSubnets",
                     &self.r#client_subnets,
                 ),
                 to_pulumi_object_field(
-                    "connectivity_infos",
+                    "connectivityInfos",
                     &self.r#connectivity_infos,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "security_groups",
+                    "securityGroups",
                     &self.r#security_groups,
                 ),
                 to_pulumi_object_field(
-                    "storage_infos",
+                    "storageInfos",
                     &self.r#storage_infos,
                 ),
             ];

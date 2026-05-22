@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "recording_frequency",
+                    "recordingFrequency",
                     &self.r#recording_frequency,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
             ];

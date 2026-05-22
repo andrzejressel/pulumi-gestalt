@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "as_paths",
+                    "asPaths",
                     &self.r#as_paths,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#communities,
                 ),
                 to_pulumi_object_field(
-                    "match_condition",
+                    "matchCondition",
                     &self.r#match_condition,
                 ),
                 to_pulumi_object_field(
-                    "route_prefixes",
+                    "routePrefixes",
                     &self.r#route_prefixes,
                 ),
             ];

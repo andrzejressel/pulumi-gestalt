@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attribute_name",
+                    "attributeName",
                     &self.r#attribute_name,
                 ),
                 to_pulumi_object_field(
-                    "attribute_value",
+                    "attributeValue",
                     &self.r#attribute_value,
                 ),
                 to_pulumi_object_field(
-                    "identity_provider_id",
+                    "identityProviderId",
                     &self.r#identity_provider_id,
                 ),
             ];

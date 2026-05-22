@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dim
                     &self.r#length,
                 ),
                 to_pulumi_object_field(
-                    "length_height_unit",
+                    "lengthHeightUnit",
                     &self.r#length_height_unit,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dim
                     &self.r#weight,
                 ),
                 to_pulumi_object_field(
-                    "weight_unit",
+                    "weightUnit",
                     &self.r#weight_unit,
                 ),
                 to_pulumi_object_field(

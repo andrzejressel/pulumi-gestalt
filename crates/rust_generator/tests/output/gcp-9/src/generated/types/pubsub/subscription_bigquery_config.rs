@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "drop_unknown_fields",
+                    "dropUnknownFields",
                     &self.r#drop_unknown_fields,
                 ),
                 to_pulumi_object_field(
-                    "service_account_email",
+                    "serviceAccountEmail",
                     &self.r#service_account_email,
                 ),
                 to_pulumi_object_field(
@@ -62,15 +62,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
                     &self.r#table,
                 ),
                 to_pulumi_object_field(
-                    "use_table_schema",
+                    "useTableSchema",
                     &self.r#use_table_schema,
                 ),
                 to_pulumi_object_field(
-                    "use_topic_schema",
+                    "useTopicSchema",
                     &self.r#use_topic_schema,
                 ),
                 to_pulumi_object_field(
-                    "write_metadata",
+                    "writeMetadata",
                     &self.r#write_metadata,
                 ),
             ];

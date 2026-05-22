@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#credential,
                 ),
                 to_pulumi_object_field(
-                    "credential_provider",
+                    "credentialProvider",
                     &self.r#credential_provider,
                 ),
             ];

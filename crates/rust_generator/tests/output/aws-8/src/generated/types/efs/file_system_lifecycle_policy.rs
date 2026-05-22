@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "transition_to_archive",
+                    "transitionToArchive",
                     &self.r#transition_to_archive,
                 ),
                 to_pulumi_object_field(
-                    "transition_to_ia",
+                    "transitionToIa",
                     &self.r#transition_to_ia,
                 ),
                 to_pulumi_object_field(
-                    "transition_to_primary_storage_class",
+                    "transitionToPrimaryStorageClass",
                     &self.r#transition_to_primary_storage_class,
                 ),
             ];

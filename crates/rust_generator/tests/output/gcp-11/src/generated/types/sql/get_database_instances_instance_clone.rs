@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocated_ip_range",
+                    "allocatedIpRange",
                     &self.r#allocated_ip_range,
                 ),
                 to_pulumi_object_field(
-                    "database_names",
+                    "databaseNames",
                     &self.r#database_names,
                 ),
                 to_pulumi_object_field(
-                    "point_in_time",
+                    "pointInTime",
                     &self.r#point_in_time,
                 ),
                 to_pulumi_object_field(
-                    "preferred_zone",
+                    "preferredZone",
                     &self.r#preferred_zone,
                 ),
                 to_pulumi_object_field(
-                    "source_instance_name",
+                    "sourceInstanceName",
                     &self.r#source_instance_name,
                 ),
             ];

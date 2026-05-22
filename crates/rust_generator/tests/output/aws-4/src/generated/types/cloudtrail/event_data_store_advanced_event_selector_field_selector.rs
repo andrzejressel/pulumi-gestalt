@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ends_withs",
+                    "endsWiths",
                     &self.r#ends_withs,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
                     &self.r#field,
                 ),
                 to_pulumi_object_field(
-                    "not_ends_withs",
+                    "notEndsWiths",
                     &self.r#not_ends_withs,
                 ),
                 to_pulumi_object_field(
-                    "not_equals",
+                    "notEquals",
                     &self.r#not_equals,
                 ),
                 to_pulumi_object_field(
-                    "not_starts_withs",
+                    "notStartsWiths",
                     &self.r#not_starts_withs,
                 ),
                 to_pulumi_object_field(
-                    "starts_withs",
+                    "startsWiths",
                     &self.r#starts_withs,
                 ),
             ];

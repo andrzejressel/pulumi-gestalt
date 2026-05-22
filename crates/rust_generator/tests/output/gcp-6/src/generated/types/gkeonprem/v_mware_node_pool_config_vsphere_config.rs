@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#datastore,
                 ),
                 to_pulumi_object_field(
-                    "host_groups",
+                    "hostGroups",
                     &self.r#host_groups,
                 ),
                 to_pulumi_object_field(

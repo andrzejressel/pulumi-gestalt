@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ind
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "faq_statistics",
+                    "faqStatistics",
                     &self.r#faq_statistics,
                 ),
                 to_pulumi_object_field(
-                    "text_document_statistics",
+                    "textDocumentStatistics",
                     &self.r#text_document_statistics,
                 ),
             ];

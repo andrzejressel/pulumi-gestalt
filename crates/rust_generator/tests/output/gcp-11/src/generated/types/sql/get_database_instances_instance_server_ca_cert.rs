@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#cert,
                 ),
                 to_pulumi_object_field(
-                    "common_name",
+                    "commonName",
                     &self.r#common_name,
                 ),
                 to_pulumi_object_field(
-                    "create_time",
+                    "createTime",
                     &self.r#create_time,
                 ),
                 to_pulumi_object_field(
-                    "expiration_time",
+                    "expirationTime",
                     &self.r#expiration_time,
                 ),
                 to_pulumi_object_field(
-                    "sha_1_fingerprint",
+                    "sha1Fingerprint",
                     &self.r#sha_1_fingerprint,
                 ),
             ];

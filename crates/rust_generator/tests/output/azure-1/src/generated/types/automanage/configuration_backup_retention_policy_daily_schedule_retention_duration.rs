@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#count,
                 ),
                 to_pulumi_object_field(
-                    "duration_type",
+                    "durationType",
                     &self.r#duration_type,
                 ),
             ];

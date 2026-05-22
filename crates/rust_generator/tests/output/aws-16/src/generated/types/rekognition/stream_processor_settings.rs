@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connected_home",
+                    "connectedHome",
                     &self.r#connected_home,
                 ),
                 to_pulumi_object_field(
-                    "face_search",
+                    "faceSearch",
                     &self.r#face_search,
                 ),
             ];

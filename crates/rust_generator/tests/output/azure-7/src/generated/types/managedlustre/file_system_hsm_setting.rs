@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_id",
+                    "containerId",
                     &self.r#container_id,
                 ),
                 to_pulumi_object_field(
-                    "import_prefix",
+                    "importPrefix",
                     &self.r#import_prefix,
                 ),
                 to_pulumi_object_field(
-                    "logging_container_id",
+                    "loggingContainerId",
                     &self.r#logging_container_id,
                 ),
             ];

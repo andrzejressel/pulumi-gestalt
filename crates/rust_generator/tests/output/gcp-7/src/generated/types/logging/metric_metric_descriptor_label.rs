@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
                     &self.r#key,
                 ),
                 to_pulumi_object_field(
-                    "value_type",
+                    "valueType",
                     &self.r#value_type,
                 ),
             ];

@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#dictionary,
                 ),
                 to_pulumi_object_field(
-                    "exclusion_type",
+                    "exclusionType",
                     &self.r#exclusion_type,
                 ),
                 to_pulumi_object_field(
-                    "info_type",
+                    "infoType",
                     &self.r#info_type,
                 ),
                 to_pulumi_object_field(
@@ -83,15 +83,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#regex,
                 ),
                 to_pulumi_object_field(
-                    "sensitivity_score",
+                    "sensitivityScore",
                     &self.r#sensitivity_score,
                 ),
                 to_pulumi_object_field(
-                    "stored_type",
+                    "storedType",
                     &self.r#stored_type,
                 ),
                 to_pulumi_object_field(
-                    "surrogate_type",
+                    "surrogateType",
                     &self.r#surrogate_type,
                 ),
             ];

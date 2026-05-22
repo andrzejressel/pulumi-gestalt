@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mig
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dump_parallel_level",
+                    "dumpParallelLevel",
                     &self.r#dump_parallel_level,
                 ),
             ];

@@ -36,11 +36,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_response_rules",
+                    "errorResponseRules",
                     &self.r#error_response_rules,
                 ),
                 to_pulumi_object_field(
-                    "error_service",
+                    "errorService",
                     &self.r#error_service,
                 ),
             ];

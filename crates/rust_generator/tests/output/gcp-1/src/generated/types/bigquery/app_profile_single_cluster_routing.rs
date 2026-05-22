@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_transactional_writes",
+                    "allowTransactionalWrites",
                     &self.r#allow_transactional_writes,
                 ),
                 to_pulumi_object_field(
-                    "cluster_id",
+                    "clusterId",
                     &self.r#cluster_id,
                 ),
             ];

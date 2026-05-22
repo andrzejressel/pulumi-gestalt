@@ -91,7 +91,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "days_of_weeks",
+                    "daysOfWeeks",
                     &self.r#days_of_weeks,
                 ),
                 to_pulumi_object_field(
@@ -99,67 +99,67 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "off_peak_load_balancing_algorithm",
+                    "offPeakLoadBalancingAlgorithm",
                     &self.r#off_peak_load_balancing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "off_peak_start_time",
+                    "offPeakStartTime",
                     &self.r#off_peak_start_time,
                 ),
                 to_pulumi_object_field(
-                    "peak_load_balancing_algorithm",
+                    "peakLoadBalancingAlgorithm",
                     &self.r#peak_load_balancing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "peak_start_time",
+                    "peakStartTime",
                     &self.r#peak_start_time,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_capacity_threshold_percent",
+                    "rampDownCapacityThresholdPercent",
                     &self.r#ramp_down_capacity_threshold_percent,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_force_logoff_users",
+                    "rampDownForceLogoffUsers",
                     &self.r#ramp_down_force_logoff_users,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_load_balancing_algorithm",
+                    "rampDownLoadBalancingAlgorithm",
                     &self.r#ramp_down_load_balancing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_minimum_hosts_percent",
+                    "rampDownMinimumHostsPercent",
                     &self.r#ramp_down_minimum_hosts_percent,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_notification_message",
+                    "rampDownNotificationMessage",
                     &self.r#ramp_down_notification_message,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_start_time",
+                    "rampDownStartTime",
                     &self.r#ramp_down_start_time,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_stop_hosts_when",
+                    "rampDownStopHostsWhen",
                     &self.r#ramp_down_stop_hosts_when,
                 ),
                 to_pulumi_object_field(
-                    "ramp_down_wait_time_minutes",
+                    "rampDownWaitTimeMinutes",
                     &self.r#ramp_down_wait_time_minutes,
                 ),
                 to_pulumi_object_field(
-                    "ramp_up_capacity_threshold_percent",
+                    "rampUpCapacityThresholdPercent",
                     &self.r#ramp_up_capacity_threshold_percent,
                 ),
                 to_pulumi_object_field(
-                    "ramp_up_load_balancing_algorithm",
+                    "rampUpLoadBalancingAlgorithm",
                     &self.r#ramp_up_load_balancing_algorithm,
                 ),
                 to_pulumi_object_field(
-                    "ramp_up_minimum_hosts_percent",
+                    "rampUpMinimumHostsPercent",
                     &self.r#ramp_up_minimum_hosts_percent,
                 ),
                 to_pulumi_object_field(
-                    "ramp_up_start_time",
+                    "rampUpStartTime",
                     &self.r#ramp_up_start_time,
                 ),
             ];

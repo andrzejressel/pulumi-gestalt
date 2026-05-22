@@ -59,43 +59,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alarm_specification",
+                    "alarmSpecification",
                     &self.r#alarm_specification,
                 ),
                 to_pulumi_object_field(
-                    "auto_rollback",
+                    "autoRollback",
                     &self.r#auto_rollback,
                 ),
                 to_pulumi_object_field(
-                    "checkpoint_delay",
+                    "checkpointDelay",
                     &self.r#checkpoint_delay,
                 ),
                 to_pulumi_object_field(
-                    "checkpoint_percentages",
+                    "checkpointPercentages",
                     &self.r#checkpoint_percentages,
                 ),
                 to_pulumi_object_field(
-                    "instance_warmup",
+                    "instanceWarmup",
                     &self.r#instance_warmup,
                 ),
                 to_pulumi_object_field(
-                    "max_healthy_percentage",
+                    "maxHealthyPercentage",
                     &self.r#max_healthy_percentage,
                 ),
                 to_pulumi_object_field(
-                    "min_healthy_percentage",
+                    "minHealthyPercentage",
                     &self.r#min_healthy_percentage,
                 ),
                 to_pulumi_object_field(
-                    "scale_in_protected_instances",
+                    "scaleInProtectedInstances",
                     &self.r#scale_in_protected_instances,
                 ),
                 to_pulumi_object_field(
-                    "skip_matching",
+                    "skipMatching",
                     &self.r#skip_matching,
                 ),
                 to_pulumi_object_field(
-                    "standby_instances",
+                    "standbyInstances",
                     &self.r#standby_instances,
                 ),
             ];

@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#cookie,
                 ),
                 to_pulumi_object_field(
-                    "forwarded_ip",
+                    "forwardedIp",
                     &self.r#forwarded_ip,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#header,
                 ),
                 to_pulumi_object_field(
-                    "http_method",
+                    "httpMethod",
                     &self.r#http_method,
                 ),
                 to_pulumi_object_field(
@@ -75,19 +75,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#ip,
                 ),
                 to_pulumi_object_field(
-                    "label_namespace",
+                    "labelNamespace",
                     &self.r#label_namespace,
                 ),
                 to_pulumi_object_field(
-                    "query_argument",
+                    "queryArgument",
                     &self.r#query_argument,
                 ),
                 to_pulumi_object_field(
-                    "query_string",
+                    "queryString",
                     &self.r#query_string,
                 ),
                 to_pulumi_object_field(
-                    "uri_path",
+                    "uriPath",
                     &self.r#uri_path,
                 ),
             ];

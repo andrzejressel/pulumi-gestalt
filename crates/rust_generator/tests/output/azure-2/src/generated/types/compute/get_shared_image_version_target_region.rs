@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "regional_replica_count",
+                    "regionalReplicaCount",
                     &self.r#regional_replica_count,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_type",
+                    "storageAccountType",
                     &self.r#storage_account_type,
                 ),
             ];

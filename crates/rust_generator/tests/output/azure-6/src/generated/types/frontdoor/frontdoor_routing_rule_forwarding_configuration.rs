@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_pool_name",
+                    "backendPoolName",
                     &self.r#backend_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "cache_duration",
+                    "cacheDuration",
                     &self.r#cache_duration,
                 ),
                 to_pulumi_object_field(
-                    "cache_enabled",
+                    "cacheEnabled",
                     &self.r#cache_enabled,
                 ),
                 to_pulumi_object_field(
-                    "cache_query_parameter_strip_directive",
+                    "cacheQueryParameterStripDirective",
                     &self.r#cache_query_parameter_strip_directive,
                 ),
                 to_pulumi_object_field(
-                    "cache_query_parameters",
+                    "cacheQueryParameters",
                     &self.r#cache_query_parameters,
                 ),
                 to_pulumi_object_field(
-                    "cache_use_dynamic_compression",
+                    "cacheUseDynamicCompression",
                     &self.r#cache_use_dynamic_compression,
                 ),
                 to_pulumi_object_field(
-                    "custom_forwarding_path",
+                    "customForwardingPath",
                     &self.r#custom_forwarding_path,
                 ),
                 to_pulumi_object_field(
-                    "forwarding_protocol",
+                    "forwardingProtocol",
                     &self.r#forwarding_protocol,
                 ),
             ];

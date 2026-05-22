@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "domain_name_label",
+                    "domainNameLabel",
                     &self.r#domain_name_label,
                 ),
                 to_pulumi_object_field(
-                    "idle_timeout_in_minutes",
+                    "idleTimeoutInMinutes",
                     &self.r#idle_timeout_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "ip_tags",
+                    "ipTags",
                     &self.r#ip_tags,
                 ),
                 to_pulumi_object_field(
@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Orc
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_prefix_id",
+                    "publicIpPrefixId",
                     &self.r#public_ip_prefix_id,
                 ),
                 to_pulumi_object_field(
-                    "sku_name",
+                    "skuName",
                     &self.r#sku_name,
                 ),
                 to_pulumi_object_field(

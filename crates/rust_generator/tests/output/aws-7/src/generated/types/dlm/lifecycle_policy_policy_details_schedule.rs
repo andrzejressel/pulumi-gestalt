@@ -55,23 +55,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_tags",
+                    "copyTags",
                     &self.r#copy_tags,
                 ),
                 to_pulumi_object_field(
-                    "create_rule",
+                    "createRule",
                     &self.r#create_rule,
                 ),
                 to_pulumi_object_field(
-                    "cross_region_copy_rules",
+                    "crossRegionCopyRules",
                     &self.r#cross_region_copy_rules,
                 ),
                 to_pulumi_object_field(
-                    "deprecate_rule",
+                    "deprecateRule",
                     &self.r#deprecate_rule,
                 ),
                 to_pulumi_object_field(
-                    "fast_restore_rule",
+                    "fastRestoreRule",
                     &self.r#fast_restore_rule,
                 ),
                 to_pulumi_object_field(
@@ -79,19 +79,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "retain_rule",
+                    "retainRule",
                     &self.r#retain_rule,
                 ),
                 to_pulumi_object_field(
-                    "share_rule",
+                    "shareRule",
                     &self.r#share_rule,
                 ),
                 to_pulumi_object_field(
-                    "tags_to_add",
+                    "tagsToAdd",
                     &self.r#tags_to_add,
                 ),
                 to_pulumi_object_field(
-                    "variable_tags",
+                    "variableTags",
                     &self.r#variable_tags,
                 ),
             ];

@@ -59,23 +59,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#country,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_reference",
+                    "endpointReference",
                     &self.r#endpoint_reference,
                 ),
                 to_pulumi_object_field(
-                    "evaluate_target_health",
+                    "evaluateTargetHealth",
                     &self.r#evaluate_target_health,
                 ),
                 to_pulumi_object_field(
-                    "health_check",
+                    "healthCheck",
                     &self.r#health_check,
                 ),
                 to_pulumi_object_field(
-                    "is_default",
+                    "isDefault",
                     &self.r#is_default,
                 ),
                 to_pulumi_object_field(
-                    "rule_reference",
+                    "ruleReference",
                     &self.r#rule_reference,
                 ),
                 to_pulumi_object_field(

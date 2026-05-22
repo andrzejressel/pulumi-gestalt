@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#critical,
                 ),
                 to_pulumi_object_field(
-                    "object_id",
+                    "objectId",
                     &self.r#object_id,
                 ),
                 to_pulumi_object_field(

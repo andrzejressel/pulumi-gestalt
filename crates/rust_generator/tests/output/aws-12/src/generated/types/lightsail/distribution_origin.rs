@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "protocol_policy",
+                    "protocolPolicy",
                     &self.r#protocol_policy,
                 ),
                 to_pulumi_object_field(
-                    "region_name",
+                    "regionName",
                     &self.r#region_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
             ];

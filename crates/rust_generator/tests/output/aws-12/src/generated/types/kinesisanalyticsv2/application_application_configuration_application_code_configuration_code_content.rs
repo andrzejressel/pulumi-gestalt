@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "s_3_content_location",
+                    "s3ContentLocation",
                     &self.r#s_3_content_location,
                 ),
                 to_pulumi_object_field(
-                    "text_content",
+                    "textContent",
                     &self.r#text_content,
                 ),
             ];

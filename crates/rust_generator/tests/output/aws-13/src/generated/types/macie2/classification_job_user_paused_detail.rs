@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "job_expires_at",
+                    "jobExpiresAt",
                     &self.r#job_expires_at,
                 ),
                 to_pulumi_object_field(
-                    "job_imminent_expiration_health_event_arn",
+                    "jobImminentExpirationHealthEventArn",
                     &self.r#job_imminent_expiration_health_event_arn,
                 ),
                 to_pulumi_object_field(
-                    "job_paused_at",
+                    "jobPausedAt",
                     &self.r#job_paused_at,
                 ),
             ];

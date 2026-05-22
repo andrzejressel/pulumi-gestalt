@@ -96,15 +96,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "activation_policy",
+                    "activationPolicy",
                     &self.r#activation_policy,
                 ),
                 to_pulumi_object_field(
-                    "auto_storage_increase",
+                    "autoStorageIncrease",
                     &self.r#auto_storage_increase,
                 ),
                 to_pulumi_object_field(
-                    "cmek_key_name",
+                    "cmekKeyName",
                     &self.r#cmek_key_name,
                 ),
                 to_pulumi_object_field(
@@ -112,19 +112,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#collation,
                 ),
                 to_pulumi_object_field(
-                    "data_disk_size_gb",
+                    "dataDiskSizeGb",
                     &self.r#data_disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "data_disk_type",
+                    "dataDiskType",
                     &self.r#data_disk_type,
                 ),
                 to_pulumi_object_field(
-                    "database_flags",
+                    "databaseFlags",
                     &self.r#database_flags,
                 ),
                 to_pulumi_object_field(
-                    "database_version",
+                    "databaseVersion",
                     &self.r#database_version,
                 ),
                 to_pulumi_object_field(
@@ -132,23 +132,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#edition,
                 ),
                 to_pulumi_object_field(
-                    "ip_config",
+                    "ipConfig",
                     &self.r#ip_config,
                 ),
                 to_pulumi_object_field(
-                    "root_password",
+                    "rootPassword",
                     &self.r#root_password,
                 ),
                 to_pulumi_object_field(
-                    "root_password_set",
+                    "rootPasswordSet",
                     &self.r#root_password_set,
                 ),
                 to_pulumi_object_field(
-                    "source_id",
+                    "sourceId",
                     &self.r#source_id,
                 ),
                 to_pulumi_object_field(
-                    "storage_auto_resize_limit",
+                    "storageAutoResizeLimit",
                     &self.r#storage_auto_resize_limit,
                 ),
                 to_pulumi_object_field(
@@ -156,7 +156,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#tier,
                 ),
                 to_pulumi_object_field(
-                    "user_labels",
+                    "userLabels",
                     &self.r#user_labels,
                 ),
                 to_pulumi_object_field(

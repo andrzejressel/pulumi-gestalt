@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaP
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_modulus_size",
+                    "maxModulusSize",
                     &self.r#max_modulus_size,
                 ),
                 to_pulumi_object_field(
-                    "min_modulus_size",
+                    "minModulusSize",
                     &self.r#min_modulus_size,
                 ),
             ];

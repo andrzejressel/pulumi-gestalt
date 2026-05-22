@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ima
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "pipeline_execution_start_condition",
+                    "pipelineExecutionStartCondition",
                     &self.r#pipeline_execution_start_condition,
                 ),
                 to_pulumi_object_field(
-                    "schedule_expression",
+                    "scheduleExpression",
                     &self.r#schedule_expression,
                 ),
                 to_pulumi_object_field(

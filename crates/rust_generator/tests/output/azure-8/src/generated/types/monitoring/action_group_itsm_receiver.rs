@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_id",
+                    "connectionId",
                     &self.r#connection_id,
                 ),
                 to_pulumi_object_field(
@@ -53,11 +53,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Act
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "ticket_configuration",
+                    "ticketConfiguration",
                     &self.r#ticket_configuration,
                 ),
                 to_pulumi_object_field(
-                    "workspace_id",
+                    "workspaceId",
                     &self.r#workspace_id,
                 ),
             ];

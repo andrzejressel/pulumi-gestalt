@@ -54,27 +54,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#deidentify,
                 ),
                 to_pulumi_object_field(
-                    "job_notification_emails",
+                    "jobNotificationEmails",
                     &self.r#job_notification_emails,
                 ),
                 to_pulumi_object_field(
-                    "pub_sub",
+                    "pubSub",
                     &self.r#pub_sub,
                 ),
                 to_pulumi_object_field(
-                    "publish_findings_to_cloud_data_catalog",
+                    "publishFindingsToCloudDataCatalog",
                     &self.r#publish_findings_to_cloud_data_catalog,
                 ),
                 to_pulumi_object_field(
-                    "publish_summary_to_cscc",
+                    "publishSummaryToCscc",
                     &self.r#publish_summary_to_cscc,
                 ),
                 to_pulumi_object_field(
-                    "publish_to_stackdriver",
+                    "publishToStackdriver",
                     &self.r#publish_to_stackdriver,
                 ),
                 to_pulumi_object_field(
-                    "save_findings",
+                    "saveFindings",
                     &self.r#save_findings,
                 ),
             ];

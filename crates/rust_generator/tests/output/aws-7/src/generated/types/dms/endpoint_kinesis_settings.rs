@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "include_control_details",
+                    "includeControlDetails",
                     &self.r#include_control_details,
                 ),
                 to_pulumi_object_field(
-                    "include_null_and_empty",
+                    "includeNullAndEmpty",
                     &self.r#include_null_and_empty,
                 ),
                 to_pulumi_object_field(
-                    "include_partition_value",
+                    "includePartitionValue",
                     &self.r#include_partition_value,
                 ),
                 to_pulumi_object_field(
-                    "include_table_alter_operations",
+                    "includeTableAlterOperations",
                     &self.r#include_table_alter_operations,
                 ),
                 to_pulumi_object_field(
-                    "include_transaction_details",
+                    "includeTransactionDetails",
                     &self.r#include_transaction_details,
                 ),
                 to_pulumi_object_field(
-                    "message_format",
+                    "messageFormat",
                     &self.r#message_format,
                 ),
                 to_pulumi_object_field(
-                    "partition_include_schema_table",
+                    "partitionIncludeSchemaTable",
                     &self.r#partition_include_schema_table,
                 ),
                 to_pulumi_object_field(
-                    "service_access_role_arn",
+                    "serviceAccessRoleArn",
                     &self.r#service_access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "stream_arn",
+                    "streamArn",
                     &self.r#stream_arn,
                 ),
             ];

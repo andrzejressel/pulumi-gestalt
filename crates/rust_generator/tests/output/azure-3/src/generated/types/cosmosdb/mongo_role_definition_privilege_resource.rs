@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "collection_name",
+                    "collectionName",
                     &self.r#collection_name,
                 ),
                 to_pulumi_object_field(
-                    "db_name",
+                    "dbName",
                     &self.r#db_name,
                 ),
             ];

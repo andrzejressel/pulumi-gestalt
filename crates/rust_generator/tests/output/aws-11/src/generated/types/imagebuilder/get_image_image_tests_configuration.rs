@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_tests_enabled",
+                    "imageTestsEnabled",
                     &self.r#image_tests_enabled,
                 ),
                 to_pulumi_object_field(
-                    "timeout_minutes",
+                    "timeoutMinutes",
                     &self.r#timeout_minutes,
                 ),
             ];

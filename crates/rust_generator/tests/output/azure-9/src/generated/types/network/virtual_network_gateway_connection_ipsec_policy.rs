@@ -53,35 +53,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dh_group",
+                    "dhGroup",
                     &self.r#dh_group,
                 ),
                 to_pulumi_object_field(
-                    "ike_encryption",
+                    "ikeEncryption",
                     &self.r#ike_encryption,
                 ),
                 to_pulumi_object_field(
-                    "ike_integrity",
+                    "ikeIntegrity",
                     &self.r#ike_integrity,
                 ),
                 to_pulumi_object_field(
-                    "ipsec_encryption",
+                    "ipsecEncryption",
                     &self.r#ipsec_encryption,
                 ),
                 to_pulumi_object_field(
-                    "ipsec_integrity",
+                    "ipsecIntegrity",
                     &self.r#ipsec_integrity,
                 ),
                 to_pulumi_object_field(
-                    "pfs_group",
+                    "pfsGroup",
                     &self.r#pfs_group,
                 ),
                 to_pulumi_object_field(
-                    "sa_datasize",
+                    "saDatasize",
                     &self.r#sa_datasize,
                 ),
                 to_pulumi_object_field(
-                    "sa_lifetime",
+                    "saLifetime",
                     &self.r#sa_lifetime,
                 ),
             ];

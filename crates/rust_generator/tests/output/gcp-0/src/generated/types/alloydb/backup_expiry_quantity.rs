@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "retention_count",
+                    "retentionCount",
                     &self.r#retention_count,
                 ),
                 to_pulumi_object_field(
-                    "total_retention_count",
+                    "totalRetentionCount",
                     &self.r#total_retention_count,
                 ),
             ];

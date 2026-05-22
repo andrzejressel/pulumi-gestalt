@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "value_expression",
+                    "valueExpression",
                     &self.r#value_expression,
                 ),
             ];

@@ -49,11 +49,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#accelerators,
                 ),
                 to_pulumi_object_field(
-                    "boot_disk_size_gb",
+                    "bootDiskSizeGb",
                     &self.r#boot_disk_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "enable_nested_virtualization",
+                    "enableNestedVirtualization",
                     &self.r#enable_nested_virtualization,
                 ),
                 to_pulumi_object_field(
@@ -61,11 +61,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "pool_size",
+                    "poolSize",
                     &self.r#pool_size,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#consumers,
                 ),
                 to_pulumi_object_field(
-                    "custom_routes_enabled",
+                    "customRoutesEnabled",
                     &self.r#custom_routes_enabled,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "magnetic_store_retention_period_in_days",
+                    "magneticStoreRetentionPeriodInDays",
                     &self.r#magnetic_store_retention_period_in_days,
                 ),
                 to_pulumi_object_field(
-                    "memory_store_retention_period_in_hours",
+                    "memoryStoreRetentionPeriodInHours",
                     &self.r#memory_store_retention_period_in_hours,
                 ),
             ];

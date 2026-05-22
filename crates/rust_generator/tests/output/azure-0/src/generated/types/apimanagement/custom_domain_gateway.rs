@@ -68,19 +68,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#certificate,
                 ),
                 to_pulumi_object_field(
-                    "certificate_password",
+                    "certificatePassword",
                     &self.r#certificate_password,
                 ),
                 to_pulumi_object_field(
-                    "certificate_source",
+                    "certificateSource",
                     &self.r#certificate_source,
                 ),
                 to_pulumi_object_field(
-                    "certificate_status",
+                    "certificateStatus",
                     &self.r#certificate_status,
                 ),
                 to_pulumi_object_field(
-                    "default_ssl_binding",
+                    "defaultSslBinding",
                     &self.r#default_ssl_binding,
                 ),
                 to_pulumi_object_field(
@@ -88,19 +88,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#expiry,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_id",
+                    "keyVaultId",
                     &self.r#key_vault_id,
                 ),
                 to_pulumi_object_field(
-                    "negotiate_client_certificate",
+                    "negotiateClientCertificate",
                     &self.r#negotiate_client_certificate,
                 ),
                 to_pulumi_object_field(
-                    "ssl_keyvault_identity_client_id",
+                    "sslKeyvaultIdentityClientId",
                     &self.r#ssl_keyvault_identity_client_id,
                 ),
                 to_pulumi_object_field(

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "use_topic_schema",
+                    "useTopicSchema",
                     &self.r#use_topic_schema,
                 ),
                 to_pulumi_object_field(
-                    "write_metadata",
+                    "writeMetadata",
                     &self.r#write_metadata,
                 ),
             ];

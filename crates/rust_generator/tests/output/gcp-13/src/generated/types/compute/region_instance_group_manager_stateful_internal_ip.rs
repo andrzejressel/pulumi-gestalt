@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_rule",
+                    "deleteRule",
                     &self.r#delete_rule,
                 ),
                 to_pulumi_object_field(
-                    "interface_name",
+                    "interfaceName",
                     &self.r#interface_name,
                 ),
             ];

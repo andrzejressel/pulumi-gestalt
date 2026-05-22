@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "path_id",
+                    "pathId",
                     &self.r#path_id,
                 ),
                 to_pulumi_object_field(
-                    "product_id",
+                    "productId",
                     &self.r#product_id,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_artifact_id",
+                    "provisioningArtifactId",
                     &self.r#provisioning_artifact_id,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_parameters",
+                    "provisioningParameters",
                     &self.r#provisioning_parameters,
                 ),
             ];

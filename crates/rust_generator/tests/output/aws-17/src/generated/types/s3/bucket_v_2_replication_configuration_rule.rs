@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_marker_replication_status",
+                    "deleteMarkerReplicationStatus",
                     &self.r#delete_marker_replication_status,
                 ),
                 to_pulumi_object_field(
@@ -75,7 +75,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "source_selection_criterias",
+                    "sourceSelectionCriterias",
                     &self.r#source_selection_criterias,
                 ),
                 to_pulumi_object_field(

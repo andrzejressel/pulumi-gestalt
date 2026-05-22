@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hls_input_settings",
+                    "hlsInputSettings",
                     &self.r#hls_input_settings,
                 ),
                 to_pulumi_object_field(
-                    "server_validation",
+                    "serverValidation",
                     &self.r#server_validation,
                 ),
             ];

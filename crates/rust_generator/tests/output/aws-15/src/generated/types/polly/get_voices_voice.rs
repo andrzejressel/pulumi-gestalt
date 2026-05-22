@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_language_codes",
+                    "additionalLanguageCodes",
                     &self.r#additional_language_codes,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "language_code",
+                    "languageCode",
                     &self.r#language_code,
                 ),
                 to_pulumi_object_field(
-                    "language_name",
+                    "languageName",
                     &self.r#language_name,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "supported_engines",
+                    "supportedEngines",
                     &self.r#supported_engines,
                 ),
             ];

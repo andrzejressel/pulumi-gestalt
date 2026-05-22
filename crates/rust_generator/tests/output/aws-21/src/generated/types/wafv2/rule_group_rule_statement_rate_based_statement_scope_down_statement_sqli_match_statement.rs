@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "field_to_match",
+                    "fieldToMatch",
                     &self.r#field_to_match,
                 ),
                 to_pulumi_object_field(
-                    "sensitivity_level",
+                    "sensitivityLevel",
                     &self.r#sensitivity_level,
                 ),
                 to_pulumi_object_field(
-                    "text_transformations",
+                    "textTransformations",
                     &self.r#text_transformations,
                 ),
             ];

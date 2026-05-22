@@ -46,31 +46,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_resource_group_name",
+                    "appResourceGroupName",
                     &self.r#app_resource_group_name,
                 ),
                 to_pulumi_object_field(
-                    "database_type",
+                    "databaseType",
                     &self.r#database_type,
                 ),
                 to_pulumi_object_field(
-                    "disk_volume_configurations",
+                    "diskVolumeConfigurations",
                     &self.r#disk_volume_configurations,
                 ),
                 to_pulumi_object_field(
-                    "secondary_ip_enabled",
+                    "secondaryIpEnabled",
                     &self.r#secondary_ip_enabled,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine_configuration",
+                    "virtualMachineConfiguration",
                     &self.r#virtual_machine_configuration,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine_resource_names",
+                    "virtualMachineResourceNames",
                     &self.r#virtual_machine_resource_names,
                 ),
             ];

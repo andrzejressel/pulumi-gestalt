@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_groups",
+                    "actionGroups",
                     &self.r#action_groups,
                 ),
                 to_pulumi_object_field(
-                    "custom_webhook_payload",
+                    "customWebhookPayload",
                     &self.r#custom_webhook_payload,
                 ),
                 to_pulumi_object_field(
-                    "email_subject",
+                    "emailSubject",
                     &self.r#email_subject,
                 ),
             ];

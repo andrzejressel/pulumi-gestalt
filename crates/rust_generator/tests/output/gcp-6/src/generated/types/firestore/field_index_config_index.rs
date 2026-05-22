@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fie
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "array_config",
+                    "arrayConfig",
                     &self.r#array_config,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fie
                     &self.r#order,
                 ),
                 to_pulumi_object_field(
-                    "query_scope",
+                    "queryScope",
                     &self.r#query_scope,
                 ),
             ];

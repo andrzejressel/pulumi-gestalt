@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audit_log_destination",
+                    "auditLogDestination",
                     &self.r#audit_log_destination,
                 ),
                 to_pulumi_object_field(
-                    "file_access_audit_log_level",
+                    "fileAccessAuditLogLevel",
                     &self.r#file_access_audit_log_level,
                 ),
                 to_pulumi_object_field(
-                    "file_share_access_audit_log_level",
+                    "fileShareAccessAuditLogLevel",
                     &self.r#file_share_access_audit_log_level,
                 ),
             ];

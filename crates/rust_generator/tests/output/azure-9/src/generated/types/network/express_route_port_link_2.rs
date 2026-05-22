@@ -65,11 +65,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_enabled",
+                    "adminEnabled",
                     &self.r#admin_enabled,
                 ),
                 to_pulumi_object_field(
-                    "connector_type",
+                    "connectorType",
                     &self.r#connector_type,
                 ),
                 to_pulumi_object_field(
@@ -77,35 +77,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "interface_name",
+                    "interfaceName",
                     &self.r#interface_name,
                 ),
                 to_pulumi_object_field(
-                    "macsec_cak_keyvault_secret_id",
+                    "macsecCakKeyvaultSecretId",
                     &self.r#macsec_cak_keyvault_secret_id,
                 ),
                 to_pulumi_object_field(
-                    "macsec_cipher",
+                    "macsecCipher",
                     &self.r#macsec_cipher,
                 ),
                 to_pulumi_object_field(
-                    "macsec_ckn_keyvault_secret_id",
+                    "macsecCknKeyvaultSecretId",
                     &self.r#macsec_ckn_keyvault_secret_id,
                 ),
                 to_pulumi_object_field(
-                    "macsec_sci_enabled",
+                    "macsecSciEnabled",
                     &self.r#macsec_sci_enabled,
                 ),
                 to_pulumi_object_field(
-                    "patch_panel_id",
+                    "patchPanelId",
                     &self.r#patch_panel_id,
                 ),
                 to_pulumi_object_field(
-                    "rack_id",
+                    "rackId",
                     &self.r#rack_id,
                 ),
                 to_pulumi_object_field(
-                    "router_name",
+                    "routerName",
                     &self.r#router_name,
                 ),
             ];

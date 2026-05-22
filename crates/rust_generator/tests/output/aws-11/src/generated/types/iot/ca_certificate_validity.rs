@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CaC
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "not_after",
+                    "notAfter",
                     &self.r#not_after,
                 ),
                 to_pulumi_object_field(
-                    "not_before",
+                    "notBefore",
                     &self.r#not_before,
                 ),
             ];

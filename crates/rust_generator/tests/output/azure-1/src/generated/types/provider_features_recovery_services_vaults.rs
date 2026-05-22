@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "recover_soft_deleted_backup_protected_vm",
+                    "recoverSoftDeletedBackupProtectedVm",
                     &self.r#recover_soft_deleted_backup_protected_vm,
                 ),
             ];

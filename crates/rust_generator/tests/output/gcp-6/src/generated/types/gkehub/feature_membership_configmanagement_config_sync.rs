@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#git,
                 ),
                 to_pulumi_object_field(
-                    "metrics_gcp_service_account_email",
+                    "metricsGcpServiceAccountEmail",
                     &self.r#metrics_gcp_service_account_email,
                 ),
                 to_pulumi_object_field(
@@ -65,15 +65,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
                     &self.r#oci,
                 ),
                 to_pulumi_object_field(
-                    "prevent_drift",
+                    "preventDrift",
                     &self.r#prevent_drift,
                 ),
                 to_pulumi_object_field(
-                    "source_format",
+                    "sourceFormat",
                     &self.r#source_format,
                 ),
                 to_pulumi_object_field(
-                    "stop_syncing",
+                    "stopSyncing",
                     &self.r#stop_syncing,
                 ),
             ];

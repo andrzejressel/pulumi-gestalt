@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "status_code_ttls",
+                    "statusCodeTtls",
                     &self.r#status_code_ttls,
                 ),
             ];

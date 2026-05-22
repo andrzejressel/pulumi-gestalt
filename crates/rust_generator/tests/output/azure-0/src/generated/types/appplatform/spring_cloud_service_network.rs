@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_network_resource_group",
+                    "appNetworkResourceGroup",
                     &self.r#app_network_resource_group,
                 ),
                 to_pulumi_object_field(
-                    "app_subnet_id",
+                    "appSubnetId",
                     &self.r#app_subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "cidr_ranges",
+                    "cidrRanges",
                     &self.r#cidr_ranges,
                 ),
                 to_pulumi_object_field(
-                    "outbound_type",
+                    "outboundType",
                     &self.r#outbound_type,
                 ),
                 to_pulumi_object_field(
-                    "read_timeout_seconds",
+                    "readTimeoutSeconds",
                     &self.r#read_timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "service_runtime_network_resource_group",
+                    "serviceRuntimeNetworkResourceGroup",
                     &self.r#service_runtime_network_resource_group,
                 ),
                 to_pulumi_object_field(
-                    "service_runtime_subnet_id",
+                    "serviceRuntimeSubnetId",
                     &self.r#service_runtime_subnet_id,
                 ),
             ];

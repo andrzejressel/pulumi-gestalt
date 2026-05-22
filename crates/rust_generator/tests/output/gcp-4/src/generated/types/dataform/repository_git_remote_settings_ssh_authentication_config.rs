@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_public_key",
+                    "hostPublicKey",
                     &self.r#host_public_key,
                 ),
                 to_pulumi_object_field(
-                    "user_private_key_secret_version",
+                    "userPrivateKeySecretVersion",
                     &self.r#user_private_key_secret_version,
                 ),
             ];

@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "sql_endpoint_path",
+                    "sqlEndpointPath",
                     &self.r#sql_endpoint_path,
                 ),
             ];

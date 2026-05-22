@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_behavior",
+                    "deleteBehavior",
                     &self.r#delete_behavior,
                 ),
                 to_pulumi_object_field(
-                    "update_behavior",
+                    "updateBehavior",
                     &self.r#update_behavior,
                 ),
             ];

@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Met
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "explicit_buckets",
+                    "explicitBuckets",
                     &self.r#explicit_buckets,
                 ),
                 to_pulumi_object_field(
-                    "exponential_buckets",
+                    "exponentialBuckets",
                     &self.r#exponential_buckets,
                 ),
                 to_pulumi_object_field(
-                    "linear_buckets",
+                    "linearBuckets",
                     &self.r#linear_buckets,
                 ),
             ];

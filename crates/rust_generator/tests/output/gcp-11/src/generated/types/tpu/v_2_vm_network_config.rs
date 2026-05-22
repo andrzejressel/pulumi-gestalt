@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2V
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "can_ip_forward",
+                    "canIpForward",
                     &self.r#can_ip_forward,
                 ),
                 to_pulumi_object_field(
-                    "enable_external_ips",
+                    "enableExternalIps",
                     &self.r#enable_external_ips,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2V
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "queue_count",
+                    "queueCount",
                     &self.r#queue_count,
                 ),
                 to_pulumi_object_field(

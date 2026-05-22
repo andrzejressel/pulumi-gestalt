@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "configuration_type",
+                    "configurationType",
                     &self.r#configuration_type,
                 ),
                 to_pulumi_object_field(
-                    "log_level",
+                    "logLevel",
                     &self.r#log_level,
                 ),
                 to_pulumi_object_field(
-                    "metrics_level",
+                    "metricsLevel",
                     &self.r#metrics_level,
                 ),
             ];

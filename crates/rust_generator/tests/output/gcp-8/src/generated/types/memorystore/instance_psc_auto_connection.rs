@@ -75,15 +75,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_type",
+                    "connectionType",
                     &self.r#connection_type,
                 ),
                 to_pulumi_object_field(
-                    "forwarding_rule",
+                    "forwardingRule",
                     &self.r#forwarding_rule,
                 ),
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
                 to_pulumi_object_field(
@@ -95,19 +95,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "project_id",
+                    "projectId",
                     &self.r#project_id,
                 ),
                 to_pulumi_object_field(
-                    "psc_connection_id",
+                    "pscConnectionId",
                     &self.r#psc_connection_id,
                 ),
                 to_pulumi_object_field(
-                    "psc_connection_status",
+                    "pscConnectionStatus",
                     &self.r#psc_connection_status,
                 ),
                 to_pulumi_object_field(
-                    "service_attachment",
+                    "serviceAttachment",
                     &self.r#service_attachment,
                 ),
             ];

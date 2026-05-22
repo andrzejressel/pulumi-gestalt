@@ -43,31 +43,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "icmp_pinhole_timeout_in_seconds",
+                    "icmpPinholeTimeoutInSeconds",
                     &self.r#icmp_pinhole_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "pinhole_maximum_number",
+                    "pinholeMaximumNumber",
                     &self.r#pinhole_maximum_number,
                 ),
                 to_pulumi_object_field(
-                    "port_ranges",
+                    "portRanges",
                     &self.r#port_ranges,
                 ),
                 to_pulumi_object_field(
-                    "tcp_pinhole_timeout_in_seconds",
+                    "tcpPinholeTimeoutInSeconds",
                     &self.r#tcp_pinhole_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "tcp_port_reuse_minimum_hold_time_in_seconds",
+                    "tcpPortReuseMinimumHoldTimeInSeconds",
                     &self.r#tcp_port_reuse_minimum_hold_time_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "udp_pinhole_timeout_in_seconds",
+                    "udpPinholeTimeoutInSeconds",
                     &self.r#udp_pinhole_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "udp_port_reuse_minimum_hold_time_in_seconds",
+                    "udpPortReuseMinimumHoldTimeInSeconds",
                     &self.r#udp_port_reuse_minimum_hold_time_in_seconds,
                 ),
             ];

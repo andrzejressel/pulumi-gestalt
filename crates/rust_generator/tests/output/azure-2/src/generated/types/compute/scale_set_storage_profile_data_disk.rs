@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#caching,
                 ),
                 to_pulumi_object_field(
-                    "create_option",
+                    "createOption",
                     &self.r#create_option,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#lun,
                 ),
                 to_pulumi_object_field(
-                    "managed_disk_type",
+                    "managedDiskType",
                     &self.r#managed_disk_type,
                 ),
             ];

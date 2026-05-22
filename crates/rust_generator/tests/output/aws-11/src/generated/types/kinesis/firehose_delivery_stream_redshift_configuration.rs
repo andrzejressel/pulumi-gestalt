@@ -75,23 +75,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_logging_options",
+                    "cloudwatchLoggingOptions",
                     &self.r#cloudwatch_logging_options,
                 ),
                 to_pulumi_object_field(
-                    "cluster_jdbcurl",
+                    "clusterJdbcurl",
                     &self.r#cluster_jdbcurl,
                 ),
                 to_pulumi_object_field(
-                    "copy_options",
+                    "copyOptions",
                     &self.r#copy_options,
                 ),
                 to_pulumi_object_field(
-                    "data_table_columns",
+                    "dataTableColumns",
                     &self.r#data_table_columns,
                 ),
                 to_pulumi_object_field(
-                    "data_table_name",
+                    "dataTableName",
                     &self.r#data_table_name,
                 ),
                 to_pulumi_object_field(
@@ -99,31 +99,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "processing_configuration",
+                    "processingConfiguration",
                     &self.r#processing_configuration,
                 ),
                 to_pulumi_object_field(
-                    "retry_duration",
+                    "retryDuration",
                     &self.r#retry_duration,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "s_3_backup_configuration",
+                    "s3BackupConfiguration",
                     &self.r#s_3_backup_configuration,
                 ),
                 to_pulumi_object_field(
-                    "s_3_backup_mode",
+                    "s3BackupMode",
                     &self.r#s_3_backup_mode,
                 ),
                 to_pulumi_object_field(
-                    "s_3_configuration",
+                    "s3Configuration",
                     &self.r#s_3_configuration,
                 ),
                 to_pulumi_object_field(
-                    "secrets_manager_configuration",
+                    "secretsManagerConfiguration",
                     &self.r#secrets_manager_configuration,
                 ),
                 to_pulumi_object_field(

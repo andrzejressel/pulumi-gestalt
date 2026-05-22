@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cidr_list_aliases",
+                    "cidrListAliases",
                     &self.r#cidr_list_aliases,
                 ),
                 to_pulumi_object_field(
@@ -52,11 +52,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#cidrs,
                 ),
                 to_pulumi_object_field(
-                    "from_port",
+                    "fromPort",
                     &self.r#from_port,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_cidrs",
+                    "ipv6Cidrs",
                     &self.r#ipv_6_cidrs,
                 ),
                 to_pulumi_object_field(
@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "to_port",
+                    "toPort",
                     &self.r#to_port,
                 ),
             ];

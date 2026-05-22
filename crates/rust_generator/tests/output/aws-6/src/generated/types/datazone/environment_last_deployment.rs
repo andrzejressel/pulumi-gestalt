@@ -37,23 +37,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deployment_id",
+                    "deploymentId",
                     &self.r#deployment_id,
                 ),
                 to_pulumi_object_field(
-                    "deployment_status",
+                    "deploymentStatus",
                     &self.r#deployment_status,
                 ),
                 to_pulumi_object_field(
-                    "deployment_type",
+                    "deploymentType",
                     &self.r#deployment_type,
                 ),
                 to_pulumi_object_field(
-                    "failure_reasons",
+                    "failureReasons",
                     &self.r#failure_reasons,
                 ),
                 to_pulumi_object_field(
-                    "is_deployment_complete",
+                    "isDeploymentComplete",
                     &self.r#is_deployment_complete,
                 ),
                 to_pulumi_object_field(

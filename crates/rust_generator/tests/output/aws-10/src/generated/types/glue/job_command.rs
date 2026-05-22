@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "python_version",
+                    "pythonVersion",
                     &self.r#python_version,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#runtime,
                 ),
                 to_pulumi_object_field(
-                    "script_location",
+                    "scriptLocation",
                     &self.r#script_location,
                 ),
             ];

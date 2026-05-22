@@ -46,31 +46,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dns_service_ip",
+                    "dnsServiceIp",
                     &self.r#dns_service_ip,
                 ),
                 to_pulumi_object_field(
-                    "docker_bridge_cidr",
+                    "dockerBridgeCidr",
                     &self.r#docker_bridge_cidr,
                 ),
                 to_pulumi_object_field(
-                    "load_balancer_sku",
+                    "loadBalancerSku",
                     &self.r#load_balancer_sku,
                 ),
                 to_pulumi_object_field(
-                    "network_plugin",
+                    "networkPlugin",
                     &self.r#network_plugin,
                 ),
                 to_pulumi_object_field(
-                    "network_policy",
+                    "networkPolicy",
                     &self.r#network_policy,
                 ),
                 to_pulumi_object_field(
-                    "pod_cidr",
+                    "podCidr",
                     &self.r#pod_cidr,
                 ),
                 to_pulumi_object_field(
-                    "service_cidr",
+                    "serviceCidr",
                     &self.r#service_cidr,
                 ),
             ];

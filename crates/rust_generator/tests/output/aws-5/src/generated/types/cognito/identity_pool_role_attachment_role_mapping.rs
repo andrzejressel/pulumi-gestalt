@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ide
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ambiguous_role_resolution",
+                    "ambiguousRoleResolution",
                     &self.r#ambiguous_role_resolution,
                 ),
                 to_pulumi_object_field(
-                    "identity_provider",
+                    "identityProvider",
                     &self.r#identity_provider,
                 ),
                 to_pulumi_object_field(
-                    "mapping_rules",
+                    "mappingRules",
                     &self.r#mapping_rules,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

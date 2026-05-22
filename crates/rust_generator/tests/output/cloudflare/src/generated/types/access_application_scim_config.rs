@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#authentication,
                 ),
                 to_pulumi_object_field(
-                    "deactivate_on_delete",
+                    "deactivateOnDelete",
                     &self.r#deactivate_on_delete,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "idp_uid",
+                    "idpUid",
                     &self.r#idp_uid,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#mappings,
                 ),
                 to_pulumi_object_field(
-                    "remote_uri",
+                    "remoteUri",
                     &self.r#remote_uri,
                 ),
             ];

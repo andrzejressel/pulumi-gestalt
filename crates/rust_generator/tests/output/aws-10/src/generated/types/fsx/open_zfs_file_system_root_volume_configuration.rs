@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ope
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "copy_tags_to_snapshots",
+                    "copyTagsToSnapshots",
                     &self.r#copy_tags_to_snapshots,
                 ),
                 to_pulumi_object_field(
-                    "data_compression_type",
+                    "dataCompressionType",
                     &self.r#data_compression_type,
                 ),
                 to_pulumi_object_field(
-                    "nfs_exports",
+                    "nfsExports",
                     &self.r#nfs_exports,
                 ),
                 to_pulumi_object_field(
-                    "read_only",
+                    "readOnly",
                     &self.r#read_only,
                 ),
                 to_pulumi_object_field(
-                    "record_size_kib",
+                    "recordSizeKib",
                     &self.r#record_size_kib,
                 ),
                 to_pulumi_object_field(
-                    "user_and_group_quotas",
+                    "userAndGroupQuotas",
                     &self.r#user_and_group_quotas,
                 ),
             ];

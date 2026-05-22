@@ -66,11 +66,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LbT
                     &self.r#authority,
                 ),
                 to_pulumi_object_field(
-                    "fail_open",
+                    "failOpen",
                     &self.r#fail_open,
                 ),
                 to_pulumi_object_field(
-                    "forward_headers",
+                    "forwardHeaders",
                     &self.r#forward_headers,
                 ),
                 to_pulumi_object_field(
@@ -82,7 +82,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for LbT
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "supported_events",
+                    "supportedEvents",
                     &self.r#supported_events,
                 ),
                 to_pulumi_object_field(

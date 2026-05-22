@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_recognition_settings",
+                    "advancedRecognitionSettings",
                     &self.r#advanced_recognition_settings,
                 ),
                 to_pulumi_object_field(
-                    "regex_filters",
+                    "regexFilters",
                     &self.r#regex_filters,
                 ),
                 to_pulumi_object_field(
-                    "resolution_strategy",
+                    "resolutionStrategy",
                     &self.r#resolution_strategy,
                 ),
             ];

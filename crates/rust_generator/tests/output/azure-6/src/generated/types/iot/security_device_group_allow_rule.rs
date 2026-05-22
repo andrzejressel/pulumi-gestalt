@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sec
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_from_ips_not_alloweds",
+                    "connectionFromIpsNotAlloweds",
                     &self.r#connection_from_ips_not_alloweds,
                 ),
                 to_pulumi_object_field(
-                    "connection_to_ips_not_alloweds",
+                    "connectionToIpsNotAlloweds",
                     &self.r#connection_to_ips_not_alloweds,
                 ),
                 to_pulumi_object_field(
-                    "local_users_not_alloweds",
+                    "localUsersNotAlloweds",
                     &self.r#local_users_not_alloweds,
                 ),
                 to_pulumi_object_field(
-                    "processes_not_alloweds",
+                    "processesNotAlloweds",
                     &self.r#processes_not_alloweds,
                 ),
             ];

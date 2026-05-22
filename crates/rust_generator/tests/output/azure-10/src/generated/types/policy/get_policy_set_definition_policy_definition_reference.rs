@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "parameter_values",
+                    "parameterValues",
                     &self.r#parameter_values,
                 ),
                 to_pulumi_object_field(
@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "policy_definition_id",
+                    "policyDefinitionId",
                     &self.r#policy_definition_id,
                 ),
                 to_pulumi_object_field(
-                    "policy_group_names",
+                    "policyGroupNames",
                     &self.r#policy_group_names,
                 ),
                 to_pulumi_object_field(
-                    "reference_id",
+                    "referenceId",
                     &self.r#reference_id,
                 ),
             ];

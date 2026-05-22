@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "health_check_interval_seconds",
+                    "healthCheckIntervalSeconds",
                     &self.r#health_check_interval_seconds,
                 ),
                 to_pulumi_object_field(
-                    "health_check_timeout_seconds",
+                    "healthCheckTimeoutSeconds",
                     &self.r#health_check_timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "healthy_threshold_count",
+                    "healthyThresholdCount",
                     &self.r#healthy_threshold_count,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "protocol_version",
+                    "protocolVersion",
                     &self.r#protocol_version,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_threshold_count",
+                    "unhealthyThresholdCount",
                     &self.r#unhealthy_threshold_count,
                 ),
             ];

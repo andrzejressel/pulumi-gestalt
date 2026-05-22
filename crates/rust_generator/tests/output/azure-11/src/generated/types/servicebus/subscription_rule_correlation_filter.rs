@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_type",
+                    "contentType",
                     &self.r#content_type,
                 ),
                 to_pulumi_object_field(
-                    "correlation_id",
+                    "correlationId",
                     &self.r#correlation_id,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
                     &self.r#label,
                 ),
                 to_pulumi_object_field(
-                    "message_id",
+                    "messageId",
                     &self.r#message_id,
                 ),
                 to_pulumi_object_field(
@@ -77,15 +77,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
                     &self.r#properties,
                 ),
                 to_pulumi_object_field(
-                    "reply_to",
+                    "replyTo",
                     &self.r#reply_to,
                 ),
                 to_pulumi_object_field(
-                    "reply_to_session_id",
+                    "replyToSessionId",
                     &self.r#reply_to_session_id,
                 ),
                 to_pulumi_object_field(
-                    "session_id",
+                    "sessionId",
                     &self.r#session_id,
                 ),
                 to_pulumi_object_field(

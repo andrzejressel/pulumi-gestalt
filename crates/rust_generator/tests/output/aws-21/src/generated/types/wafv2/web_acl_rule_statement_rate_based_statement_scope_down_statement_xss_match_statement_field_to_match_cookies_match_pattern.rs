@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#all,
                 ),
                 to_pulumi_object_field(
-                    "excluded_cookies",
+                    "excludedCookies",
                     &self.r#excluded_cookies,
                 ),
                 to_pulumi_object_field(
-                    "included_cookies",
+                    "includedCookies",
                     &self.r#included_cookies,
                 ),
             ];

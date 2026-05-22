@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#api,
                 ),
                 to_pulumi_object_field(
-                    "git_http",
+                    "gitHttp",
                     &self.r#git_http,
                 ),
                 to_pulumi_object_field(
-                    "git_ssh",
+                    "gitSsh",
                     &self.r#git_ssh,
                 ),
                 to_pulumi_object_field(

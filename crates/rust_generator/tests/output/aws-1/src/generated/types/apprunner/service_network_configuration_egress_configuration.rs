@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "egress_type",
+                    "egressType",
                     &self.r#egress_type,
                 ),
                 to_pulumi_object_field(
-                    "vpc_connector_arn",
+                    "vpcConnectorArn",
                     &self.r#vpc_connector_arn,
                 ),
             ];

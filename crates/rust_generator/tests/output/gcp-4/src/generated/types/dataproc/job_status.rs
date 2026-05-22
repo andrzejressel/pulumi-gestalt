@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "state_start_time",
+                    "stateStartTime",
                     &self.r#state_start_time,
                 ),
                 to_pulumi_object_field(

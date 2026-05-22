@@ -45,31 +45,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_name",
+                    "bucketName",
                     &self.r#bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "bucket_prefix",
+                    "bucketPrefix",
                     &self.r#bucket_prefix,
                 ),
                 to_pulumi_object_field(
-                    "cluster_identifier",
+                    "clusterIdentifier",
                     &self.r#cluster_identifier,
                 ),
                 to_pulumi_object_field(
-                    "data_api_role_arn",
+                    "dataApiRoleArn",
                     &self.r#data_api_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "database_name",
+                    "databaseName",
                     &self.r#database_name,
                 ),
                 to_pulumi_object_field(
-                    "database_url",
+                    "databaseUrl",
                     &self.r#database_url,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];

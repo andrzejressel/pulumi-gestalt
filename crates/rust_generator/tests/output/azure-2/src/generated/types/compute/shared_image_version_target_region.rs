@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_encryption_set_id",
+                    "diskEncryptionSetId",
                     &self.r#disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "exclude_from_latest_enabled",
+                    "excludeFromLatestEnabled",
                     &self.r#exclude_from_latest_enabled,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "regional_replica_count",
+                    "regionalReplicaCount",
                     &self.r#regional_replica_count,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_type",
+                    "storageAccountType",
                     &self.r#storage_account_type,
                 ),
             ];

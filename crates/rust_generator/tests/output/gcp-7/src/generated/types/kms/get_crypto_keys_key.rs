@@ -100,15 +100,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "crypto_key_backend",
+                    "cryptoKeyBackend",
                     &self.r#crypto_key_backend,
                 ),
                 to_pulumi_object_field(
-                    "destroy_scheduled_duration",
+                    "destroyScheduledDuration",
                     &self.r#destroy_scheduled_duration,
                 ),
                 to_pulumi_object_field(
-                    "effective_labels",
+                    "effectiveLabels",
                     &self.r#effective_labels,
                 ),
                 to_pulumi_object_field(
@@ -116,15 +116,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "import_only",
+                    "importOnly",
                     &self.r#import_only,
                 ),
                 to_pulumi_object_field(
-                    "key_access_justifications_policies",
+                    "keyAccessJustificationsPolicies",
                     &self.r#key_access_justifications_policies,
                 ),
                 to_pulumi_object_field(
-                    "key_ring",
+                    "keyRing",
                     &self.r#key_ring,
                 ),
                 to_pulumi_object_field(
@@ -140,7 +140,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#primaries,
                 ),
                 to_pulumi_object_field(
-                    "pulumi_labels",
+                    "pulumiLabels",
                     &self.r#pulumi_labels,
                 ),
                 to_pulumi_object_field(
@@ -148,15 +148,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#purpose,
                 ),
                 to_pulumi_object_field(
-                    "rotation_period",
+                    "rotationPeriod",
                     &self.r#rotation_period,
                 ),
                 to_pulumi_object_field(
-                    "skip_initial_version_creation",
+                    "skipInitialVersionCreation",
                     &self.r#skip_initial_version_creation,
                 ),
                 to_pulumi_object_field(
-                    "version_templates",
+                    "versionTemplates",
                     &self.r#version_templates,
                 ),
             ];

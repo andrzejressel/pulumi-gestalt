@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hel
                     &self.r#driver,
                 ),
                 to_pulumi_object_field(
-                    "plugins_path",
+                    "pluginsPath",
                     &self.r#plugins_path,
                 ),
                 to_pulumi_object_field(
-                    "required_arg",
+                    "requiredArg",
                     &self.r#required_arg,
                 ),
             ];

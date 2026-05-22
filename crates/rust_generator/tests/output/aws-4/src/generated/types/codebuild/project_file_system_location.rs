@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#location,
                 ),
                 to_pulumi_object_field(
-                    "mount_options",
+                    "mountOptions",
                     &self.r#mount_options,
                 ),
                 to_pulumi_object_field(
-                    "mount_point",
+                    "mountPoint",
                     &self.r#mount_point,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "tcp_idle_timeout_seconds",
+                    "tcpIdleTimeoutSeconds",
                     &self.r#tcp_idle_timeout_seconds,
                 ),
             ];

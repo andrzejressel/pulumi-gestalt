@@ -42,15 +42,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_interval_lower_bound",
+                    "metricIntervalLowerBound",
                     &self.r#metric_interval_lower_bound,
                 ),
                 to_pulumi_object_field(
-                    "metric_interval_upper_bound",
+                    "metricIntervalUpperBound",
                     &self.r#metric_interval_upper_bound,
                 ),
                 to_pulumi_object_field(
-                    "scaling_adjustment",
+                    "scalingAdjustment",
                     &self.r#scaling_adjustment,
                 ),
             ];

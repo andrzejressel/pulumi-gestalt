@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deidentify_template",
+                    "deidentifyTemplate",
                     &self.r#deidentify_template,
                 ),
                 to_pulumi_object_field(
-                    "image_redact_template",
+                    "imageRedactTemplate",
                     &self.r#image_redact_template,
                 ),
                 to_pulumi_object_field(
-                    "structured_deidentify_template",
+                    "structuredDeidentifyTemplate",
                     &self.r#structured_deidentify_template,
                 ),
             ];

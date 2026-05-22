@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "desired_size",
+                    "desiredSize",
                     &self.r#desired_size,
                 ),
                 to_pulumi_object_field(
-                    "max_size",
+                    "maxSize",
                     &self.r#max_size,
                 ),
                 to_pulumi_object_field(
-                    "min_size",
+                    "minSize",
                     &self.r#min_size,
                 ),
             ];

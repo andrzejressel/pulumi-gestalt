@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "queue_length",
+                    "queueLength",
                     &self.r#queue_length,
                 ),
                 to_pulumi_object_field(
-                    "queue_name",
+                    "queueName",
                     &self.r#queue_name,
                 ),
             ];

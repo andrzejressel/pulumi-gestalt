@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enterprise_config_resource_name",
+                    "enterpriseConfigResourceName",
                     &self.r#enterprise_config_resource_name,
                 ),
                 to_pulumi_object_field(
@@ -54,7 +54,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#owner,
                 ),
                 to_pulumi_object_field(
-                    "pull_requests",
+                    "pullRequests",
                     &self.r#pull_requests,
                 ),
                 to_pulumi_object_field(

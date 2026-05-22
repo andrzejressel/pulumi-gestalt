@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_version",
+                    "apiVersion",
                     &self.r#api_version,
                 ),
                 to_pulumi_object_field(
-                    "connector_profile_name",
+                    "connectorProfileName",
                     &self.r#connector_profile_name,
                 ),
                 to_pulumi_object_field(
-                    "connector_type",
+                    "connectorType",
                     &self.r#connector_type,
                 ),
                 to_pulumi_object_field(
-                    "incremental_pull_config",
+                    "incrementalPullConfig",
                     &self.r#incremental_pull_config,
                 ),
                 to_pulumi_object_field(
-                    "source_connector_properties",
+                    "sourceConnectorProperties",
                     &self.r#source_connector_properties,
                 ),
             ];

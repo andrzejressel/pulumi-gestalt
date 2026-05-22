@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gce_pd_kms_key_name",
+                    "gcePdKmsKeyName",
                     &self.r#gce_pd_kms_key_name,
                 ),
             ];

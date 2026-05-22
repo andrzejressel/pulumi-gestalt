@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#buttons,
                 ),
                 to_pulumi_object_field(
-                    "image_url",
+                    "imageUrl",
                     &self.r#image_url,
                 ),
                 to_pulumi_object_field(

@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "interval_in_seconds",
+                    "intervalInSeconds",
                     &self.r#interval_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "size_limit_in_bytes",
+                    "sizeLimitInBytes",
                     &self.r#size_limit_in_bytes,
                 ),
                 to_pulumi_object_field(
-                    "skip_empty_archives",
+                    "skipEmptyArchives",
                     &self.r#skip_empty_archives,
                 ),
             ];

@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attached_eni_id",
+                    "attachedEniId",
                     &self.r#attached_eni_id,
                 ),
                 to_pulumi_object_field(
-                    "broker_id",
+                    "brokerId",
                     &self.r#broker_id,
                 ),
                 to_pulumi_object_field(
-                    "client_subnet",
+                    "clientSubnet",
                     &self.r#client_subnet,
                 ),
                 to_pulumi_object_field(
-                    "client_vpc_ip_address",
+                    "clientVpcIpAddress",
                     &self.r#client_vpc_ip_address,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#endpoints,
                 ),
                 to_pulumi_object_field(
-                    "node_arn",
+                    "nodeArn",
                     &self.r#node_arn,
                 ),
             ];

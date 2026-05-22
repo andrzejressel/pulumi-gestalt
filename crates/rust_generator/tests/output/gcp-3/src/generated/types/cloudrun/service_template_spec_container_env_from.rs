@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "config_map_ref",
+                    "configMapRef",
                     &self.r#config_map_ref,
                 ),
                 to_pulumi_object_field(
@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#prefix,
                 ),
                 to_pulumi_object_field(
-                    "secret_ref",
+                    "secretRef",
                     &self.r#secret_ref,
                 ),
             ];

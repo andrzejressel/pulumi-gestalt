@@ -104,43 +104,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_details",
+                    "additionalDetails",
                     &self.r#additional_details,
                 ),
                 to_pulumi_object_field(
-                    "backup_ip_id",
+                    "backupIpId",
                     &self.r#backup_ip_id,
                 ),
                 to_pulumi_object_field(
-                    "backup_vnic_2_id",
+                    "backupVnic2Id",
                     &self.r#backup_vnic_2_id,
                 ),
                 to_pulumi_object_field(
-                    "backup_vnic_id",
+                    "backupVnicId",
                     &self.r#backup_vnic_id,
                 ),
                 to_pulumi_object_field(
-                    "cpu_core_count",
+                    "cpuCoreCount",
                     &self.r#cpu_core_count,
                 ),
                 to_pulumi_object_field(
-                    "db_node_storage_size_in_gbs",
+                    "dbNodeStorageSizeInGbs",
                     &self.r#db_node_storage_size_in_gbs,
                 ),
                 to_pulumi_object_field(
-                    "db_server_id",
+                    "dbServerId",
                     &self.r#db_server_id,
                 ),
                 to_pulumi_object_field(
-                    "db_system_id",
+                    "dbSystemId",
                     &self.r#db_system_id,
                 ),
                 to_pulumi_object_field(
-                    "fault_domain",
+                    "faultDomain",
                     &self.r#fault_domain,
                 ),
                 to_pulumi_object_field(
-                    "host_ip_id",
+                    "hostIpId",
                     &self.r#host_ip_id,
                 ),
                 to_pulumi_object_field(
@@ -148,19 +148,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#hostname,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_details",
+                    "lifecycleDetails",
                     &self.r#lifecycle_details,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_state",
+                    "lifecycleState",
                     &self.r#lifecycle_state,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_type",
+                    "maintenanceType",
                     &self.r#maintenance_type,
                 ),
                 to_pulumi_object_field(
-                    "memory_size_in_gbs",
+                    "memorySizeInGbs",
                     &self.r#memory_size_in_gbs,
                 ),
                 to_pulumi_object_field(
@@ -168,27 +168,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#ocid,
                 ),
                 to_pulumi_object_field(
-                    "software_storage_size_in_gb",
+                    "softwareStorageSizeInGb",
                     &self.r#software_storage_size_in_gb,
                 ),
                 to_pulumi_object_field(
-                    "time_created",
+                    "timeCreated",
                     &self.r#time_created,
                 ),
                 to_pulumi_object_field(
-                    "time_maintenance_window_end",
+                    "timeMaintenanceWindowEnd",
                     &self.r#time_maintenance_window_end,
                 ),
                 to_pulumi_object_field(
-                    "time_maintenance_window_start",
+                    "timeMaintenanceWindowStart",
                     &self.r#time_maintenance_window_start,
                 ),
                 to_pulumi_object_field(
-                    "vnic_2_id",
+                    "vnic2Id",
                     &self.r#vnic_2_id,
                 ),
                 to_pulumi_object_field(
-                    "vnic_id",
+                    "vnicId",
                     &self.r#vnic_id,
                 ),
             ];

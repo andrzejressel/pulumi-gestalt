@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "public_ips",
+                    "publicIps",
                     &self.r#public_ips,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "subnet_name",
+                    "subnetName",
                     &self.r#subnet_name,
                 ),
                 to_pulumi_object_field(
-                    "vnet_id",
+                    "vnetId",
                     &self.r#vnet_id,
                 ),
             ];

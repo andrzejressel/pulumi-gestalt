@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_families",
+                    "columnFamilies",
                     &self.r#column_families,
                 ),
                 to_pulumi_object_field(
-                    "ignore_unspecified_column_families",
+                    "ignoreUnspecifiedColumnFamilies",
                     &self.r#ignore_unspecified_column_families,
                 ),
                 to_pulumi_object_field(
-                    "output_column_families_as_json",
+                    "outputColumnFamiliesAsJson",
                     &self.r#output_column_families_as_json,
                 ),
                 to_pulumi_object_field(
-                    "read_rowkey_as_string",
+                    "readRowkeyAsString",
                     &self.r#read_rowkey_as_string,
                 ),
             ];

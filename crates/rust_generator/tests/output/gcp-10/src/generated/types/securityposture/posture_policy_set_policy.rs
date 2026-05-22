@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compliance_standards",
+                    "complianceStandards",
                     &self.r#compliance_standards,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "policy_id",
+                    "policyId",
                     &self.r#policy_id,
                 ),
             ];

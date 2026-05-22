@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiM
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_utilization_bytes",
+                    "diskUtilizationBytes",
                     &self.r#disk_utilization_bytes,
                 ),
             ];

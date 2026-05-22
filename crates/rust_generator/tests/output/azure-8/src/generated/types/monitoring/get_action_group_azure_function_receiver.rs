@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "function_app_resource_id",
+                    "functionAppResourceId",
                     &self.r#function_app_resource_id,
                 ),
                 to_pulumi_object_field(
-                    "function_name",
+                    "functionName",
                     &self.r#function_name,
                 ),
                 to_pulumi_object_field(
-                    "http_trigger_url",
+                    "httpTriggerUrl",
                     &self.r#http_trigger_url,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "use_common_alert_schema",
+                    "useCommonAlertSchema",
                     &self.r#use_common_alert_schema,
                 ),
             ];

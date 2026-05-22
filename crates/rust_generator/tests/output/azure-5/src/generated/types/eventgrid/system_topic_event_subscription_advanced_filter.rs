@@ -97,79 +97,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sys
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bool_equals",
+                    "boolEquals",
                     &self.r#bool_equals,
                 ),
                 to_pulumi_object_field(
-                    "is_not_nulls",
+                    "isNotNulls",
                     &self.r#is_not_nulls,
                 ),
                 to_pulumi_object_field(
-                    "is_null_or_undefineds",
+                    "isNullOrUndefineds",
                     &self.r#is_null_or_undefineds,
                 ),
                 to_pulumi_object_field(
-                    "number_greater_than_or_equals",
+                    "numberGreaterThanOrEquals",
                     &self.r#number_greater_than_or_equals,
                 ),
                 to_pulumi_object_field(
-                    "number_greater_thans",
+                    "numberGreaterThans",
                     &self.r#number_greater_thans,
                 ),
                 to_pulumi_object_field(
-                    "number_in_ranges",
+                    "numberInRanges",
                     &self.r#number_in_ranges,
                 ),
                 to_pulumi_object_field(
-                    "number_ins",
+                    "numberIns",
                     &self.r#number_ins,
                 ),
                 to_pulumi_object_field(
-                    "number_less_than_or_equals",
+                    "numberLessThanOrEquals",
                     &self.r#number_less_than_or_equals,
                 ),
                 to_pulumi_object_field(
-                    "number_less_thans",
+                    "numberLessThans",
                     &self.r#number_less_thans,
                 ),
                 to_pulumi_object_field(
-                    "number_not_in_ranges",
+                    "numberNotInRanges",
                     &self.r#number_not_in_ranges,
                 ),
                 to_pulumi_object_field(
-                    "number_not_ins",
+                    "numberNotIns",
                     &self.r#number_not_ins,
                 ),
                 to_pulumi_object_field(
-                    "string_begins_withs",
+                    "stringBeginsWiths",
                     &self.r#string_begins_withs,
                 ),
                 to_pulumi_object_field(
-                    "string_contains",
+                    "stringContains",
                     &self.r#string_contains,
                 ),
                 to_pulumi_object_field(
-                    "string_ends_withs",
+                    "stringEndsWiths",
                     &self.r#string_ends_withs,
                 ),
                 to_pulumi_object_field(
-                    "string_ins",
+                    "stringIns",
                     &self.r#string_ins,
                 ),
                 to_pulumi_object_field(
-                    "string_not_begins_withs",
+                    "stringNotBeginsWiths",
                     &self.r#string_not_begins_withs,
                 ),
                 to_pulumi_object_field(
-                    "string_not_contains",
+                    "stringNotContains",
                     &self.r#string_not_contains,
                 ),
                 to_pulumi_object_field(
-                    "string_not_ends_withs",
+                    "stringNotEndsWiths",
                     &self.r#string_not_ends_withs,
                 ),
                 to_pulumi_object_field(
-                    "string_not_ins",
+                    "stringNotIns",
                     &self.r#string_not_ins,
                 ),
             ];

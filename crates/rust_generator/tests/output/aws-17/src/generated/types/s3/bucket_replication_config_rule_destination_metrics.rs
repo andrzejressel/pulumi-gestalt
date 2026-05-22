@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_threshold",
+                    "eventThreshold",
                     &self.r#event_threshold,
                 ),
                 to_pulumi_object_field(

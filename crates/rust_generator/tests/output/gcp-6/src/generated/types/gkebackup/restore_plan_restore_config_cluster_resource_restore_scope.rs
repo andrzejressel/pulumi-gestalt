@@ -44,19 +44,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_group_kinds",
+                    "allGroupKinds",
                     &self.r#all_group_kinds,
                 ),
                 to_pulumi_object_field(
-                    "excluded_group_kinds",
+                    "excludedGroupKinds",
                     &self.r#excluded_group_kinds,
                 ),
                 to_pulumi_object_field(
-                    "no_group_kinds",
+                    "noGroupKinds",
                     &self.r#no_group_kinds,
                 ),
                 to_pulumi_object_field(
-                    "selected_group_kinds",
+                    "selectedGroupKinds",
                     &self.r#selected_group_kinds,
                 ),
             ];

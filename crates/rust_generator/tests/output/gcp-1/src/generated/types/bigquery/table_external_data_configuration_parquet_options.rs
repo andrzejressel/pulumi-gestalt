@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_list_inference",
+                    "enableListInference",
                     &self.r#enable_list_inference,
                 ),
                 to_pulumi_object_field(
-                    "enum_as_string",
+                    "enumAsString",
                     &self.r#enum_as_string,
                 ),
             ];

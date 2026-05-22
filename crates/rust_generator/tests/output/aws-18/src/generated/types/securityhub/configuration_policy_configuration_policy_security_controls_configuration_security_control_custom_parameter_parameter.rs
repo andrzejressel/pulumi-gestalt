@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#double,
                 ),
                 to_pulumi_object_field(
-                    "enum_",
+                    "enum",
                     &self.r#enum_,
                 ),
                 to_pulumi_object_field(
-                    "enum_list",
+                    "enumList",
                     &self.r#enum_list,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#int,
                 ),
                 to_pulumi_object_field(
-                    "int_list",
+                    "intList",
                     &self.r#int_list,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#string,
                 ),
                 to_pulumi_object_field(
-                    "string_list",
+                    "stringList",
                     &self.r#string_list,
                 ),
                 to_pulumi_object_field(
-                    "value_type",
+                    "valueType",
                     &self.r#value_type,
                 ),
             ];

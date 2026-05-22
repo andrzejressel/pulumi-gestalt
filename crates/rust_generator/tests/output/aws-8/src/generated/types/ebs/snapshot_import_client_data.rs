@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sna
                     &self.r#comment,
                 ),
                 to_pulumi_object_field(
-                    "upload_end",
+                    "uploadEnd",
                     &self.r#upload_end,
                 ),
                 to_pulumi_object_field(
-                    "upload_size",
+                    "uploadSize",
                     &self.r#upload_size,
                 ),
                 to_pulumi_object_field(
-                    "upload_start",
+                    "uploadStart",
                     &self.r#upload_start,
                 ),
             ];

@@ -47,27 +47,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscale_policy_id",
+                    "autoscalePolicyId",
                     &self.r#autoscale_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "consumed_memory_thresholds",
+                    "consumedMemoryThresholds",
                     &self.r#consumed_memory_thresholds,
                 ),
                 to_pulumi_object_field(
-                    "cpu_thresholds",
+                    "cpuThresholds",
                     &self.r#cpu_thresholds,
                 ),
                 to_pulumi_object_field(
-                    "node_type_id",
+                    "nodeTypeId",
                     &self.r#node_type_id,
                 ),
                 to_pulumi_object_field(
-                    "scale_out_size",
+                    "scaleOutSize",
                     &self.r#scale_out_size,
                 ),
                 to_pulumi_object_field(
-                    "storage_thresholds",
+                    "storageThresholds",
                     &self.r#storage_thresholds,
                 ),
             ];

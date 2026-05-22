@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "field_to_match",
+                    "fieldToMatch",
                     &self.r#field_to_match,
                 ),
                 to_pulumi_object_field(
-                    "positional_constraint",
+                    "positionalConstraint",
                     &self.r#positional_constraint,
                 ),
                 to_pulumi_object_field(
-                    "search_string",
+                    "searchString",
                     &self.r#search_string,
                 ),
                 to_pulumi_object_field(
-                    "text_transformations",
+                    "textTransformations",
                     &self.r#text_transformations,
                 ),
             ];

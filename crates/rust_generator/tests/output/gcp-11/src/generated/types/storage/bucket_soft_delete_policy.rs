@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "effective_time",
+                    "effectiveTime",
                     &self.r#effective_time,
                 ),
                 to_pulumi_object_field(
-                    "retention_duration_seconds",
+                    "retentionDurationSeconds",
                     &self.r#retention_duration_seconds,
                 ),
             ];

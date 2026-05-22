@@ -85,35 +85,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_error_configurations",
+                    "customErrorConfigurations",
                     &self.r#custom_error_configurations,
                 ),
                 to_pulumi_object_field(
-                    "firewall_policy_id",
+                    "firewallPolicyId",
                     &self.r#firewall_policy_id,
                 ),
                 to_pulumi_object_field(
-                    "frontend_ip_configuration_id",
+                    "frontendIpConfigurationId",
                     &self.r#frontend_ip_configuration_id,
                 ),
                 to_pulumi_object_field(
-                    "frontend_ip_configuration_name",
+                    "frontendIpConfigurationName",
                     &self.r#frontend_ip_configuration_name,
                 ),
                 to_pulumi_object_field(
-                    "frontend_port_id",
+                    "frontendPortId",
                     &self.r#frontend_port_id,
                 ),
                 to_pulumi_object_field(
-                    "frontend_port_name",
+                    "frontendPortName",
                     &self.r#frontend_port_name,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "host_names",
+                    "hostNames",
                     &self.r#host_names,
                 ),
                 to_pulumi_object_field(
@@ -129,23 +129,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "require_sni",
+                    "requireSni",
                     &self.r#require_sni,
                 ),
                 to_pulumi_object_field(
-                    "ssl_certificate_id",
+                    "sslCertificateId",
                     &self.r#ssl_certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "ssl_certificate_name",
+                    "sslCertificateName",
                     &self.r#ssl_certificate_name,
                 ),
                 to_pulumi_object_field(
-                    "ssl_profile_id",
+                    "sslProfileId",
                     &self.r#ssl_profile_id,
                 ),
                 to_pulumi_object_field(
-                    "ssl_profile_name",
+                    "sslProfileName",
                     &self.r#ssl_profile_name,
                 ),
             ];

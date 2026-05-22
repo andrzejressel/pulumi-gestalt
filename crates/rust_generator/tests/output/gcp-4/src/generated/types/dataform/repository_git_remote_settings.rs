@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_token_secret_version",
+                    "authenticationTokenSecretVersion",
                     &self.r#authentication_token_secret_version,
                 ),
                 to_pulumi_object_field(
-                    "default_branch",
+                    "defaultBranch",
                     &self.r#default_branch,
                 ),
                 to_pulumi_object_field(
-                    "ssh_authentication_config",
+                    "sshAuthenticationConfig",
                     &self.r#ssh_authentication_config,
                 ),
                 to_pulumi_object_field(
-                    "token_status",
+                    "tokenStatus",
                     &self.r#token_status,
                 ),
                 to_pulumi_object_field(

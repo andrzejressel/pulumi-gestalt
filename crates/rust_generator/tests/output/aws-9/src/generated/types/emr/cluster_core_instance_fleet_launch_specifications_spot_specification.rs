@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_strategy",
+                    "allocationStrategy",
                     &self.r#allocation_strategy,
                 ),
                 to_pulumi_object_field(
-                    "block_duration_minutes",
+                    "blockDurationMinutes",
                     &self.r#block_duration_minutes,
                 ),
                 to_pulumi_object_field(
-                    "timeout_action",
+                    "timeoutAction",
                     &self.r#timeout_action,
                 ),
                 to_pulumi_object_field(
-                    "timeout_duration_minutes",
+                    "timeoutDurationMinutes",
                     &self.r#timeout_duration_minutes,
                 ),
             ];

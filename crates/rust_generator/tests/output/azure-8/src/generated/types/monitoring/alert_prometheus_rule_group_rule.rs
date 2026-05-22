@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#alert,
                 ),
                 to_pulumi_object_field(
-                    "alert_resolution",
+                    "alertResolution",
                     &self.r#alert_resolution,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#expression,
                 ),
                 to_pulumi_object_field(
-                    "for_",
+                    "for",
                     &self.r#for_,
                 ),
                 to_pulumi_object_field(

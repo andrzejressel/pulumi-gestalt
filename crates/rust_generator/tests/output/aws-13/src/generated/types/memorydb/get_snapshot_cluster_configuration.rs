@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#engine,
                 ),
                 to_pulumi_object_field(
-                    "engine_version",
+                    "engineVersion",
                     &self.r#engine_version,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_window",
+                    "maintenanceWindow",
                     &self.r#maintenance_window,
                 ),
                 to_pulumi_object_field(
@@ -95,15 +95,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "node_type",
+                    "nodeType",
                     &self.r#node_type,
                 ),
                 to_pulumi_object_field(
-                    "num_shards",
+                    "numShards",
                     &self.r#num_shards,
                 ),
                 to_pulumi_object_field(
-                    "parameter_group_name",
+                    "parameterGroupName",
                     &self.r#parameter_group_name,
                 ),
                 to_pulumi_object_field(
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_retention_limit",
+                    "snapshotRetentionLimit",
                     &self.r#snapshot_retention_limit,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_window",
+                    "snapshotWindow",
                     &self.r#snapshot_window,
                 ),
                 to_pulumi_object_field(
-                    "subnet_group_name",
+                    "subnetGroupName",
                     &self.r#subnet_group_name,
                 ),
                 to_pulumi_object_field(
-                    "topic_arn",
+                    "topicArn",
                     &self.r#topic_arn,
                 ),
                 to_pulumi_object_field(
-                    "vpc_id",
+                    "vpcId",
                     &self.r#vpc_id,
                 ),
             ];

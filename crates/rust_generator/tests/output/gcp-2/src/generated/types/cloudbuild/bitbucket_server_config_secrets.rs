@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bit
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_access_token_version_name",
+                    "adminAccessTokenVersionName",
                     &self.r#admin_access_token_version_name,
                 ),
                 to_pulumi_object_field(
-                    "read_access_token_version_name",
+                    "readAccessTokenVersionName",
                     &self.r#read_access_token_version_name,
                 ),
                 to_pulumi_object_field(
-                    "webhook_secret_version_name",
+                    "webhookSecretVersionName",
                     &self.r#webhook_secret_version_name,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "sha_256",
+                    "sha256",
                     &self.r#sha_256,
                 ),
                 to_pulumi_object_field(
-                    "tls_sockaddr",
+                    "tlsSockaddr",
                     &self.r#tls_sockaddr,
                 ),
             ];

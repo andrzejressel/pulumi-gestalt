@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#ciphers,
                 ),
                 to_pulumi_object_field(
-                    "early_hints",
+                    "earlyHints",
                     &self.r#early_hints,
                 ),
                 to_pulumi_object_field(
-                    "http_2",
+                    "http2",
                     &self.r#http_2,
                 ),
                 to_pulumi_object_field(
-                    "min_tls_version",
+                    "minTlsVersion",
                     &self.r#min_tls_version,
                 ),
                 to_pulumi_object_field(
-                    "tls_13",
+                    "tls13",
                     &self.r#tls_13,
                 ),
             ];

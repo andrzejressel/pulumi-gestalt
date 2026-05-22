@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "archive_cdn_settings",
+                    "archiveCdnSettings",
                     &self.r#archive_cdn_settings,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "rollover_interval",
+                    "rolloverInterval",
                     &self.r#rollover_interval,
                 ),
             ];

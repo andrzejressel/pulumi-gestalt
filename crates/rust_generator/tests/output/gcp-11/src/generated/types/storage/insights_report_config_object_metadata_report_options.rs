@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metadata_fields",
+                    "metadataFields",
                     &self.r#metadata_fields,
                 ),
                 to_pulumi_object_field(
-                    "storage_destination_options",
+                    "storageDestinationOptions",
                     &self.r#storage_destination_options,
                 ),
                 to_pulumi_object_field(
-                    "storage_filters",
+                    "storageFilters",
                     &self.r#storage_filters,
                 ),
             ];

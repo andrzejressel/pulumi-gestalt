@@ -87,7 +87,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attenuation_control",
+                    "attenuationControl",
                     &self.r#attenuation_control,
                 ),
                 to_pulumi_object_field(
@@ -95,15 +95,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "bitstream_mode",
+                    "bitstreamMode",
                     &self.r#bitstream_mode,
                 ),
                 to_pulumi_object_field(
-                    "coding_mode",
+                    "codingMode",
                     &self.r#coding_mode,
                 ),
                 to_pulumi_object_field(
-                    "dc_filter",
+                    "dcFilter",
                     &self.r#dc_filter,
                 ),
                 to_pulumi_object_field(
@@ -111,59 +111,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#dialnorm,
                 ),
                 to_pulumi_object_field(
-                    "drc_line",
+                    "drcLine",
                     &self.r#drc_line,
                 ),
                 to_pulumi_object_field(
-                    "drc_rf",
+                    "drcRf",
                     &self.r#drc_rf,
                 ),
                 to_pulumi_object_field(
-                    "lfe_control",
+                    "lfeControl",
                     &self.r#lfe_control,
                 ),
                 to_pulumi_object_field(
-                    "lfe_filter",
+                    "lfeFilter",
                     &self.r#lfe_filter,
                 ),
                 to_pulumi_object_field(
-                    "lo_ro_center_mix_level",
+                    "loRoCenterMixLevel",
                     &self.r#lo_ro_center_mix_level,
                 ),
                 to_pulumi_object_field(
-                    "lo_ro_surround_mix_level",
+                    "loRoSurroundMixLevel",
                     &self.r#lo_ro_surround_mix_level,
                 ),
                 to_pulumi_object_field(
-                    "lt_rt_center_mix_level",
+                    "ltRtCenterMixLevel",
                     &self.r#lt_rt_center_mix_level,
                 ),
                 to_pulumi_object_field(
-                    "lt_rt_surround_mix_level",
+                    "ltRtSurroundMixLevel",
                     &self.r#lt_rt_surround_mix_level,
                 ),
                 to_pulumi_object_field(
-                    "metadata_control",
+                    "metadataControl",
                     &self.r#metadata_control,
                 ),
                 to_pulumi_object_field(
-                    "passthrough_control",
+                    "passthroughControl",
                     &self.r#passthrough_control,
                 ),
                 to_pulumi_object_field(
-                    "phase_control",
+                    "phaseControl",
                     &self.r#phase_control,
                 ),
                 to_pulumi_object_field(
-                    "stereo_downmix",
+                    "stereoDownmix",
                     &self.r#stereo_downmix,
                 ),
                 to_pulumi_object_field(
-                    "surround_ex_mode",
+                    "surroundExMode",
                     &self.r#surround_ex_mode,
                 ),
                 to_pulumi_object_field(
-                    "surround_mode",
+                    "surroundMode",
                     &self.r#surround_mode,
                 ),
             ];

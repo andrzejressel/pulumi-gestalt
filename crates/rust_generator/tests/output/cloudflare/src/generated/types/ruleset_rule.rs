@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "action_parameters",
+                    "actionParameters",
                     &self.r#action_parameters,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "exposed_credential_check",
+                    "exposedCredentialCheck",
                     &self.r#exposed_credential_check,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "last_updated",
+                    "lastUpdated",
                     &self.r#last_updated,
                 ),
                 to_pulumi_object_field(
@@ -107,7 +107,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#ratelimit,
                 ),
                 to_pulumi_object_field(
-                    "ref_",
+                    "ref",
                     &self.r#ref_,
                 ),
                 to_pulumi_object_field(

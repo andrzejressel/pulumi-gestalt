@@ -38,19 +38,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "error_document",
+                    "errorDocument",
                     &self.r#error_document,
                 ),
                 to_pulumi_object_field(
-                    "index_document",
+                    "indexDocument",
                     &self.r#index_document,
                 ),
                 to_pulumi_object_field(
-                    "redirect_all_requests_to",
+                    "redirectAllRequestsTo",
                     &self.r#redirect_all_requests_to,
                 ),
                 to_pulumi_object_field(
-                    "routing_rules",
+                    "routingRules",
                     &self.r#routing_rules,
                 ),
             ];

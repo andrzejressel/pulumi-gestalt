@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "request_header_to_adds",
+                    "requestHeaderToAdds",
                     &self.r#request_header_to_adds,
                 ),
                 to_pulumi_object_field(
-                    "request_header_to_removes",
+                    "requestHeaderToRemoves",
                     &self.r#request_header_to_removes,
                 ),
                 to_pulumi_object_field(
-                    "response_header_to_adds",
+                    "responseHeaderToAdds",
                     &self.r#response_header_to_adds,
                 ),
                 to_pulumi_object_field(
-                    "response_header_to_removes",
+                    "responseHeaderToRemoves",
                     &self.r#response_header_to_removes,
                 ),
             ];

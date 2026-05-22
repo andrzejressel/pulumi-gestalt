@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "high_priority_cpu_utilization_percent",
+                    "highPriorityCpuUtilizationPercent",
                     &self.r#high_priority_cpu_utilization_percent,
                 ),
                 to_pulumi_object_field(
-                    "storage_utilization_percent",
+                    "storageUtilizationPercent",
                     &self.r#storage_utilization_percent,
                 ),
             ];

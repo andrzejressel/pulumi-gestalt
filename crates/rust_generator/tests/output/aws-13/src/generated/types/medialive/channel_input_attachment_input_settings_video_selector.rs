@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "color_space",
+                    "colorSpace",
                     &self.r#color_space,
                 ),
                 to_pulumi_object_field(
-                    "color_space_usage",
+                    "colorSpaceUsage",
                     &self.r#color_space_usage,
                 ),
             ];

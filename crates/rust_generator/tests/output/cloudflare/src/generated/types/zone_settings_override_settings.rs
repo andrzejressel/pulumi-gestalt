@@ -196,19 +196,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "always_online",
+                    "alwaysOnline",
                     &self.r#always_online,
                 ),
                 to_pulumi_object_field(
-                    "always_use_https",
+                    "alwaysUseHttps",
                     &self.r#always_use_https,
                 ),
                 to_pulumi_object_field(
-                    "automatic_https_rewrites",
+                    "automaticHttpsRewrites",
                     &self.r#automatic_https_rewrites,
                 ),
                 to_pulumi_object_field(
-                    "binary_ast",
+                    "binaryAst",
                     &self.r#binary_ast,
                 ),
                 to_pulumi_object_field(
@@ -216,19 +216,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#brotli,
                 ),
                 to_pulumi_object_field(
-                    "browser_cache_ttl",
+                    "browserCacheTtl",
                     &self.r#browser_cache_ttl,
                 ),
                 to_pulumi_object_field(
-                    "browser_check",
+                    "browserCheck",
                     &self.r#browser_check,
                 ),
                 to_pulumi_object_field(
-                    "cache_level",
+                    "cacheLevel",
                     &self.r#cache_level,
                 ),
                 to_pulumi_object_field(
-                    "challenge_ttl",
+                    "challengeTtl",
                     &self.r#challenge_ttl,
                 ),
                 to_pulumi_object_field(
@@ -236,23 +236,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#ciphers,
                 ),
                 to_pulumi_object_field(
-                    "cname_flattening",
+                    "cnameFlattening",
                     &self.r#cname_flattening,
                 ),
                 to_pulumi_object_field(
-                    "development_mode",
+                    "developmentMode",
                     &self.r#development_mode,
                 ),
                 to_pulumi_object_field(
-                    "early_hints",
+                    "earlyHints",
                     &self.r#early_hints,
                 ),
                 to_pulumi_object_field(
-                    "email_obfuscation",
+                    "emailObfuscation",
                     &self.r#email_obfuscation,
                 ),
                 to_pulumi_object_field(
-                    "filter_logs_to_cloudflare",
+                    "filterLogsToCloudflare",
                     &self.r#filter_logs_to_cloudflare,
                 ),
                 to_pulumi_object_field(
@@ -260,43 +260,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#fonts,
                 ),
                 to_pulumi_object_field(
-                    "h_2_prioritization",
+                    "h2Prioritization",
                     &self.r#h_2_prioritization,
                 ),
                 to_pulumi_object_field(
-                    "hotlink_protection",
+                    "hotlinkProtection",
                     &self.r#hotlink_protection,
                 ),
                 to_pulumi_object_field(
-                    "http_2",
+                    "http2",
                     &self.r#http_2,
                 ),
                 to_pulumi_object_field(
-                    "http_3",
+                    "http3",
                     &self.r#http_3,
                 ),
                 to_pulumi_object_field(
-                    "image_resizing",
+                    "imageResizing",
                     &self.r#image_resizing,
                 ),
                 to_pulumi_object_field(
-                    "ip_geolocation",
+                    "ipGeolocation",
                     &self.r#ip_geolocation,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6",
+                    "ipv6",
                     &self.r#ipv_6,
                 ),
                 to_pulumi_object_field(
-                    "log_to_cloudflare",
+                    "logToCloudflare",
                     &self.r#log_to_cloudflare,
                 ),
                 to_pulumi_object_field(
-                    "max_upload",
+                    "maxUpload",
                     &self.r#max_upload,
                 ),
                 to_pulumi_object_field(
-                    "min_tls_version",
+                    "minTlsVersion",
                     &self.r#min_tls_version,
                 ),
                 to_pulumi_object_field(
@@ -308,7 +308,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#mirage,
                 ),
                 to_pulumi_object_field(
-                    "mobile_redirect",
+                    "mobileRedirect",
                     &self.r#mobile_redirect,
                 ),
                 to_pulumi_object_field(
@@ -316,23 +316,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#nel,
                 ),
                 to_pulumi_object_field(
-                    "opportunistic_encryption",
+                    "opportunisticEncryption",
                     &self.r#opportunistic_encryption,
                 ),
                 to_pulumi_object_field(
-                    "opportunistic_onion",
+                    "opportunisticOnion",
                     &self.r#opportunistic_onion,
                 ),
                 to_pulumi_object_field(
-                    "orange_to_orange",
+                    "orangeToOrange",
                     &self.r#orange_to_orange,
                 ),
                 to_pulumi_object_field(
-                    "origin_error_page_pass_thru",
+                    "originErrorPagePassThru",
                     &self.r#origin_error_page_pass_thru,
                 ),
                 to_pulumi_object_field(
-                    "origin_max_http_version",
+                    "originMaxHttpVersion",
                     &self.r#origin_max_http_version,
                 ),
                 to_pulumi_object_field(
@@ -340,51 +340,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#polish,
                 ),
                 to_pulumi_object_field(
-                    "prefetch_preload",
+                    "prefetchPreload",
                     &self.r#prefetch_preload,
                 ),
                 to_pulumi_object_field(
-                    "privacy_pass",
+                    "privacyPass",
                     &self.r#privacy_pass,
                 ),
                 to_pulumi_object_field(
-                    "proxy_read_timeout",
+                    "proxyReadTimeout",
                     &self.r#proxy_read_timeout,
                 ),
                 to_pulumi_object_field(
-                    "pseudo_ipv_4",
+                    "pseudoIpv4",
                     &self.r#pseudo_ipv_4,
                 ),
                 to_pulumi_object_field(
-                    "replace_insecure_js",
+                    "replaceInsecureJs",
                     &self.r#replace_insecure_js,
                 ),
                 to_pulumi_object_field(
-                    "response_buffering",
+                    "responseBuffering",
                     &self.r#response_buffering,
                 ),
                 to_pulumi_object_field(
-                    "rocket_loader",
+                    "rocketLoader",
                     &self.r#rocket_loader,
                 ),
                 to_pulumi_object_field(
-                    "security_header",
+                    "securityHeader",
                     &self.r#security_header,
                 ),
                 to_pulumi_object_field(
-                    "security_level",
+                    "securityLevel",
                     &self.r#security_level,
                 ),
                 to_pulumi_object_field(
-                    "server_side_exclude",
+                    "serverSideExclude",
                     &self.r#server_side_exclude,
                 ),
                 to_pulumi_object_field(
-                    "sort_query_string_for_cache",
+                    "sortQueryStringForCache",
                     &self.r#sort_query_string_for_cache,
                 ),
                 to_pulumi_object_field(
-                    "speed_brain",
+                    "speedBrain",
                     &self.r#speed_brain,
                 ),
                 to_pulumi_object_field(
@@ -392,27 +392,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#ssl,
                 ),
                 to_pulumi_object_field(
-                    "tls_12_only",
+                    "tls12Only",
                     &self.r#tls_12_only,
                 ),
                 to_pulumi_object_field(
-                    "tls_13",
+                    "tls13",
                     &self.r#tls_13,
                 ),
                 to_pulumi_object_field(
-                    "tls_client_auth",
+                    "tlsClientAuth",
                     &self.r#tls_client_auth,
                 ),
                 to_pulumi_object_field(
-                    "true_client_ip_header",
+                    "trueClientIpHeader",
                     &self.r#true_client_ip_header,
                 ),
                 to_pulumi_object_field(
-                    "universal_ssl",
+                    "universalSsl",
                     &self.r#universal_ssl,
                 ),
                 to_pulumi_object_field(
-                    "visitor_ip",
+                    "visitorIp",
                     &self.r#visitor_ip,
                 ),
                 to_pulumi_object_field(
@@ -428,7 +428,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
                     &self.r#websockets,
                 ),
                 to_pulumi_object_field(
-                    "zero_rtt",
+                    "zeroRtt",
                     &self.r#zero_rtt,
                 ),
             ];

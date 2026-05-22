@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "job_schedule_id",
+                    "jobScheduleId",
                     &self.r#job_schedule_id,
                 ),
                 to_pulumi_object_field(
@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "run_on",
+                    "runOn",
                     &self.r#run_on,
                 ),
                 to_pulumi_object_field(
-                    "schedule_name",
+                    "scheduleName",
                     &self.r#schedule_name,
                 ),
             ];

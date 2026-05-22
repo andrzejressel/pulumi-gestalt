@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#outputs,
                 ),
                 to_pulumi_object_field(
-                    "reference_data_source",
+                    "referenceDataSource",
                     &self.r#reference_data_source,
                 ),
             ];

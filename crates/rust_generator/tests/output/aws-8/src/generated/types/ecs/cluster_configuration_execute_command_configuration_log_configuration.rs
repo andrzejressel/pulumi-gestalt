@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_watch_encryption_enabled",
+                    "cloudWatchEncryptionEnabled",
                     &self.r#cloud_watch_encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "cloud_watch_log_group_name",
+                    "cloudWatchLogGroupName",
                     &self.r#cloud_watch_log_group_name,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket_encryption_enabled",
+                    "s3BucketEncryptionEnabled",
                     &self.r#s_3_bucket_encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket_name",
+                    "s3BucketName",
                     &self.r#s_3_bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "s_3_key_prefix",
+                    "s3KeyPrefix",
                     &self.r#s_3_key_prefix,
                 ),
             ];

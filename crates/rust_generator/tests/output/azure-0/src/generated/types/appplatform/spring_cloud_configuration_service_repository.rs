@@ -67,15 +67,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ca_certificate_id",
+                    "caCertificateId",
                     &self.r#ca_certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "host_key",
+                    "hostKey",
                     &self.r#host_key,
                 ),
                 to_pulumi_object_field(
-                    "host_key_algorithm",
+                    "hostKeyAlgorithm",
                     &self.r#host_key_algorithm,
                 ),
                 to_pulumi_object_field(
@@ -95,15 +95,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#patterns,
                 ),
                 to_pulumi_object_field(
-                    "private_key",
+                    "privateKey",
                     &self.r#private_key,
                 ),
                 to_pulumi_object_field(
-                    "search_paths",
+                    "searchPaths",
                     &self.r#search_paths,
                 ),
                 to_pulumi_object_field(
-                    "strict_host_key_checking",
+                    "strictHostKeyChecking",
                     &self.r#strict_host_key_checking,
                 ),
                 to_pulumi_object_field(

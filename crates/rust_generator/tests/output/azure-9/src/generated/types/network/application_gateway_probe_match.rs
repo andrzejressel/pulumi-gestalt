@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#body,
                 ),
                 to_pulumi_object_field(
-                    "status_codes",
+                    "statusCodes",
                     &self.r#status_codes,
                 ),
             ];

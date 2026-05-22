@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "adhoc_workloads_optimization_enabled",
+                    "adhocWorkloadsOptimizationEnabled",
                     &self.r#adhoc_workloads_optimization_enabled,
                 ),
                 to_pulumi_object_field(
@@ -57,23 +57,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#collation,
                 ),
                 to_pulumi_object_field(
-                    "instant_file_initialization_enabled",
+                    "instantFileInitializationEnabled",
                     &self.r#instant_file_initialization_enabled,
                 ),
                 to_pulumi_object_field(
-                    "lock_pages_in_memory_enabled",
+                    "lockPagesInMemoryEnabled",
                     &self.r#lock_pages_in_memory_enabled,
                 ),
                 to_pulumi_object_field(
-                    "max_dop",
+                    "maxDop",
                     &self.r#max_dop,
                 ),
                 to_pulumi_object_field(
-                    "max_server_memory_mb",
+                    "maxServerMemoryMb",
                     &self.r#max_server_memory_mb,
                 ),
                 to_pulumi_object_field(
-                    "min_server_memory_mb",
+                    "minServerMemoryMb",
                     &self.r#min_server_memory_mb,
                 ),
             ];

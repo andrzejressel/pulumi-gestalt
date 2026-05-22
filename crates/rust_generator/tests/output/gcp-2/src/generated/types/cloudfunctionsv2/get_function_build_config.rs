@@ -66,7 +66,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_update_policies",
+                    "automaticUpdatePolicies",
                     &self.r#automatic_update_policies,
                 ),
                 to_pulumi_object_field(
@@ -74,19 +74,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#build,
                 ),
                 to_pulumi_object_field(
-                    "docker_repository",
+                    "dockerRepository",
                     &self.r#docker_repository,
                 ),
                 to_pulumi_object_field(
-                    "entry_point",
+                    "entryPoint",
                     &self.r#entry_point,
                 ),
                 to_pulumi_object_field(
-                    "environment_variables",
+                    "environmentVariables",
                     &self.r#environment_variables,
                 ),
                 to_pulumi_object_field(
-                    "on_deploy_update_policies",
+                    "onDeployUpdatePolicies",
                     &self.r#on_deploy_update_policies,
                 ),
                 to_pulumi_object_field(
@@ -94,7 +94,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#runtime,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
@@ -102,7 +102,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#sources,
                 ),
                 to_pulumi_object_field(
-                    "worker_pool",
+                    "workerPool",
                     &self.r#worker_pool,
                 ),
             ];

@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_addresses",
+                    "ipv4Addresses",
                     &self.r#ipv_4_addresses,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_addresses",
+                    "ipv6Addresses",
                     &self.r#ipv_6_addresses,
                 ),
             ];

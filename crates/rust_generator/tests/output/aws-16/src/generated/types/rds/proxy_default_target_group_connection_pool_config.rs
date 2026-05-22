@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_borrow_timeout",
+                    "connectionBorrowTimeout",
                     &self.r#connection_borrow_timeout,
                 ),
                 to_pulumi_object_field(
-                    "init_query",
+                    "initQuery",
                     &self.r#init_query,
                 ),
                 to_pulumi_object_field(
-                    "max_connections_percent",
+                    "maxConnectionsPercent",
                     &self.r#max_connections_percent,
                 ),
                 to_pulumi_object_field(
-                    "max_idle_connections_percent",
+                    "maxIdleConnectionsPercent",
                     &self.r#max_idle_connections_percent,
                 ),
                 to_pulumi_object_field(
-                    "session_pinning_filters",
+                    "sessionPinningFilters",
                     &self.r#session_pinning_filters,
                 ),
             ];

@@ -79,35 +79,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bandwidth_mbps",
+                    "bandwidthMbps",
                     &self.r#bandwidth_mbps,
                 ),
                 to_pulumi_object_field(
-                    "bgp_enabled",
+                    "bgpEnabled",
                     &self.r#bgp_enabled,
                 ),
                 to_pulumi_object_field(
-                    "connection_mode",
+                    "connectionMode",
                     &self.r#connection_mode,
                 ),
                 to_pulumi_object_field(
-                    "custom_bgp_addresses",
+                    "customBgpAddresses",
                     &self.r#custom_bgp_addresses,
                 ),
                 to_pulumi_object_field(
-                    "egress_nat_rule_ids",
+                    "egressNatRuleIds",
                     &self.r#egress_nat_rule_ids,
                 ),
                 to_pulumi_object_field(
-                    "ingress_nat_rule_ids",
+                    "ingressNatRuleIds",
                     &self.r#ingress_nat_rule_ids,
                 ),
                 to_pulumi_object_field(
-                    "ipsec_policies",
+                    "ipsecPolicies",
                     &self.r#ipsec_policies,
                 ),
                 to_pulumi_object_field(
-                    "local_azure_ip_address_enabled",
+                    "localAzureIpAddressEnabled",
                     &self.r#local_azure_ip_address_enabled,
                 ),
                 to_pulumi_object_field(
@@ -115,7 +115,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "policy_based_traffic_selector_enabled",
+                    "policyBasedTrafficSelectorEnabled",
                     &self.r#policy_based_traffic_selector_enabled,
                 ),
                 to_pulumi_object_field(
@@ -123,19 +123,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vpn
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "ratelimit_enabled",
+                    "ratelimitEnabled",
                     &self.r#ratelimit_enabled,
                 ),
                 to_pulumi_object_field(
-                    "route_weight",
+                    "routeWeight",
                     &self.r#route_weight,
                 ),
                 to_pulumi_object_field(
-                    "shared_key",
+                    "sharedKey",
                     &self.r#shared_key,
                 ),
                 to_pulumi_object_field(
-                    "vpn_site_link_id",
+                    "vpnSiteLinkId",
                     &self.r#vpn_site_link_id,
                 ),
             ];

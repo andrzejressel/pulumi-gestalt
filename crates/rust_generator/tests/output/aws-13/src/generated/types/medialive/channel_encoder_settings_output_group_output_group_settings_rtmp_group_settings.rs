@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ad_markers",
+                    "adMarkers",
                     &self.r#ad_markers,
                 ),
                 to_pulumi_object_field(
-                    "authentication_scheme",
+                    "authenticationScheme",
                     &self.r#authentication_scheme,
                 ),
                 to_pulumi_object_field(
-                    "cache_full_behavior",
+                    "cacheFullBehavior",
                     &self.r#cache_full_behavior,
                 ),
                 to_pulumi_object_field(
-                    "cache_length",
+                    "cacheLength",
                     &self.r#cache_length,
                 ),
                 to_pulumi_object_field(
-                    "caption_data",
+                    "captionData",
                     &self.r#caption_data,
                 ),
                 to_pulumi_object_field(
-                    "input_loss_action",
+                    "inputLossAction",
                     &self.r#input_loss_action,
                 ),
                 to_pulumi_object_field(
-                    "restart_delay",
+                    "restartDelay",
                     &self.r#restart_delay,
                 ),
             ];

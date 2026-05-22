@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#all,
                 ),
                 to_pulumi_object_field(
-                    "group_labels",
+                    "groupLabels",
                     &self.r#group_labels,
                 ),
                 to_pulumi_object_field(
-                    "instance_name_prefixes",
+                    "instanceNamePrefixes",
                     &self.r#instance_name_prefixes,
                 ),
                 to_pulumi_object_field(

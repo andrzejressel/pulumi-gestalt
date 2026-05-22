@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ipv_4_s",
+                    "ipv4s",
                     &self.r#ipv_4_s,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_s",
+                    "ipv6s",
                     &self.r#ipv_6_s,
                 ),
             ];

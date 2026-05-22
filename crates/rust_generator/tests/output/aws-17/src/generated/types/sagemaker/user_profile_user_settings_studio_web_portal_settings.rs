@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hidden_app_types",
+                    "hiddenAppTypes",
                     &self.r#hidden_app_types,
                 ),
                 to_pulumi_object_field(
-                    "hidden_instance_types",
+                    "hiddenInstanceTypes",
                     &self.r#hidden_instance_types,
                 ),
                 to_pulumi_object_field(
-                    "hidden_ml_tools",
+                    "hiddenMlTools",
                     &self.r#hidden_ml_tools,
                 ),
             ];

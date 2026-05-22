@@ -73,7 +73,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "healthy_threshold",
+                    "healthyThreshold",
                     &self.r#healthy_threshold,
                 ),
                 to_pulumi_object_field(
@@ -101,7 +101,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#timeout,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_threshold",
+                    "unhealthyThreshold",
                     &self.r#unhealthy_threshold,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_set_name",
+                    "availabilitySetName",
                     &self.r#availability_set_name,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machines",
+                    "virtualMachines",
                     &self.r#virtual_machines,
                 ),
             ];

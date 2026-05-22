@@ -60,11 +60,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "execution_reason",
+                    "executionReason",
                     &self.r#execution_reason,
                 ),
                 to_pulumi_object_field(
-                    "last_transition_time",
+                    "lastTransitionTime",
                     &self.r#last_transition_time,
                 ),
                 to_pulumi_object_field(
@@ -76,7 +76,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#reason,
                 ),
                 to_pulumi_object_field(
-                    "revision_reason",
+                    "revisionReason",
                     &self.r#revision_reason,
                 ),
                 to_pulumi_object_field(
@@ -88,7 +88,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sea
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "last_reported_at",
+                    "lastReportedAt",
                     &self.r#last_reported_at,
                 ),
                 to_pulumi_object_field(
-                    "owning_account_id",
+                    "owningAccountId",
                     &self.r#owning_account_id,
                 ),
                 to_pulumi_object_field(
@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sea
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "resource_type",
+                    "resourceType",
                     &self.r#resource_type,
                 ),
                 to_pulumi_object_field(

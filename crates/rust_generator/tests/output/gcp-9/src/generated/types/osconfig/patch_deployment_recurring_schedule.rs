@@ -62,11 +62,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "end_time",
+                    "endTime",
                     &self.r#end_time,
                 ),
                 to_pulumi_object_field(
-                    "last_execute_time",
+                    "lastExecuteTime",
                     &self.r#last_execute_time,
                 ),
                 to_pulumi_object_field(
@@ -74,19 +74,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#monthly,
                 ),
                 to_pulumi_object_field(
-                    "next_execute_time",
+                    "nextExecuteTime",
                     &self.r#next_execute_time,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "time_of_day",
+                    "timeOfDay",
                     &self.r#time_of_day,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
                 to_pulumi_object_field(

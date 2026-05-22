@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ign
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_prefixes",
+                    "keyPrefixes",
                     &self.r#key_prefixes,
                 ),
                 to_pulumi_object_field(

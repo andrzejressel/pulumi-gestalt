@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
                     &self.r#expression,
                 ),
                 to_pulumi_object_field(
-                    "output_credentials",
+                    "outputCredentials",
                     &self.r#output_credentials,
                 ),
             ];

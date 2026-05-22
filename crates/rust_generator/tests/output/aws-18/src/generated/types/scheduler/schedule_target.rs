@@ -65,15 +65,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "dead_letter_config",
+                    "deadLetterConfig",
                     &self.r#dead_letter_config,
                 ),
                 to_pulumi_object_field(
-                    "ecs_parameters",
+                    "ecsParameters",
                     &self.r#ecs_parameters,
                 ),
                 to_pulumi_object_field(
-                    "eventbridge_parameters",
+                    "eventbridgeParameters",
                     &self.r#eventbridge_parameters,
                 ),
                 to_pulumi_object_field(
@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#input,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_parameters",
+                    "kinesisParameters",
                     &self.r#kinesis_parameters,
                 ),
                 to_pulumi_object_field(
-                    "retry_policy",
+                    "retryPolicy",
                     &self.r#retry_policy,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "sagemaker_pipeline_parameters",
+                    "sagemakerPipelineParameters",
                     &self.r#sagemaker_pipeline_parameters,
                 ),
                 to_pulumi_object_field(
-                    "sqs_parameters",
+                    "sqsParameters",
                     &self.r#sqs_parameters,
                 ),
             ];

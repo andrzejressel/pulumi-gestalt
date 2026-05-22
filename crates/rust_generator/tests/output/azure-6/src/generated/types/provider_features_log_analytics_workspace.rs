@@ -22,7 +22,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "permanently_delete_on_destroy",
+                    "permanentlyDeleteOnDestroy",
                     &self.r#permanently_delete_on_destroy,
                 ),
             ];

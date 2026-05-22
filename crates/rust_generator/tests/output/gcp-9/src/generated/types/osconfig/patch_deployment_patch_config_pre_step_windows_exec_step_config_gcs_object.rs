@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pat
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "generation_number",
+                    "generationNumber",
                     &self.r#generation_number,
                 ),
                 to_pulumi_object_field(

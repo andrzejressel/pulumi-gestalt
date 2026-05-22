@@ -60,19 +60,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "autoscaling_config",
+                    "autoscalingConfig",
                     &self.r#autoscaling_config,
                 ),
                 to_pulumi_object_field(
-                    "cluster_id",
+                    "clusterId",
                     &self.r#cluster_id,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_name",
+                    "kmsKeyName",
                     &self.r#kms_key_name,
                 ),
                 to_pulumi_object_field(
-                    "num_nodes",
+                    "numNodes",
                     &self.r#num_nodes,
                 ),
                 to_pulumi_object_field(
@@ -80,7 +80,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#state,
                 ),
                 to_pulumi_object_field(
-                    "storage_type",
+                    "storageType",
                     &self.r#storage_type,
                 ),
                 to_pulumi_object_field(

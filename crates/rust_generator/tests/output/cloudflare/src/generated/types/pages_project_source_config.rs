@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deployments_enabled",
+                    "deploymentsEnabled",
                     &self.r#deployments_enabled,
                 ),
                 to_pulumi_object_field(
@@ -63,31 +63,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pag
                     &self.r#owner,
                 ),
                 to_pulumi_object_field(
-                    "pr_comments_enabled",
+                    "prCommentsEnabled",
                     &self.r#pr_comments_enabled,
                 ),
                 to_pulumi_object_field(
-                    "preview_branch_excludes",
+                    "previewBranchExcludes",
                     &self.r#preview_branch_excludes,
                 ),
                 to_pulumi_object_field(
-                    "preview_branch_includes",
+                    "previewBranchIncludes",
                     &self.r#preview_branch_includes,
                 ),
                 to_pulumi_object_field(
-                    "preview_deployment_setting",
+                    "previewDeploymentSetting",
                     &self.r#preview_deployment_setting,
                 ),
                 to_pulumi_object_field(
-                    "production_branch",
+                    "productionBranch",
                     &self.r#production_branch,
                 ),
                 to_pulumi_object_field(
-                    "production_deployment_enabled",
+                    "productionDeploymentEnabled",
                     &self.r#production_deployment_enabled,
                 ),
                 to_pulumi_object_field(
-                    "repo_name",
+                    "repoName",
                     &self.r#repo_name,
                 ),
             ];

@@ -52,31 +52,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customized_scaling_metric_specification",
+                    "customizedScalingMetricSpecification",
                     &self.r#customized_scaling_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "disable_scale_in",
+                    "disableScaleIn",
                     &self.r#disable_scale_in,
                 ),
                 to_pulumi_object_field(
-                    "estimated_instance_warmup",
+                    "estimatedInstanceWarmup",
                     &self.r#estimated_instance_warmup,
                 ),
                 to_pulumi_object_field(
-                    "predefined_scaling_metric_specification",
+                    "predefinedScalingMetricSpecification",
                     &self.r#predefined_scaling_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "scale_in_cooldown",
+                    "scaleInCooldown",
                     &self.r#scale_in_cooldown,
                 ),
                 to_pulumi_object_field(
-                    "scale_out_cooldown",
+                    "scaleOutCooldown",
                     &self.r#scale_out_cooldown,
                 ),
                 to_pulumi_object_field(
-                    "target_value",
+                    "targetValue",
                     &self.r#target_value,
                 ),
             ];

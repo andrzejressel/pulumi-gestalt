@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "docker_settings",
+                    "dockerSettings",
                     &self.r#docker_settings,
                 ),
                 to_pulumi_object_field(
-                    "execution_role_identity_config",
+                    "executionRoleIdentityConfig",
                     &self.r#execution_role_identity_config,
                 ),
                 to_pulumi_object_field(
-                    "r_studio_server_pro_domain_settings",
+                    "rStudioServerProDomainSettings",
                     &self.r#r_studio_server_pro_domain_settings,
                 ),
                 to_pulumi_object_field(
-                    "security_group_ids",
+                    "securityGroupIds",
                     &self.r#security_group_ids,
                 ),
             ];

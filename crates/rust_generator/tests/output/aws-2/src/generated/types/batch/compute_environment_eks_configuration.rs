@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "eks_cluster_arn",
+                    "eksClusterArn",
                     &self.r#eks_cluster_arn,
                 ),
                 to_pulumi_object_field(
-                    "kubernetes_namespace",
+                    "kubernetesNamespace",
                     &self.r#kubernetes_namespace,
                 ),
             ];

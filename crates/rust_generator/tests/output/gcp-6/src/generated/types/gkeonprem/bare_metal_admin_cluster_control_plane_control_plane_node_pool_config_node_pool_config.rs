@@ -50,11 +50,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "node_configs",
+                    "nodeConfigs",
                     &self.r#node_configs,
                 ),
                 to_pulumi_object_field(
-                    "operating_system",
+                    "operatingSystem",
                     &self.r#operating_system,
                 ),
                 to_pulumi_object_field(

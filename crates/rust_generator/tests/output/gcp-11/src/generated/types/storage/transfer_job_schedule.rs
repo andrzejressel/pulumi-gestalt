@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "repeat_interval",
+                    "repeatInterval",
                     &self.r#repeat_interval,
                 ),
                 to_pulumi_object_field(
-                    "schedule_end_date",
+                    "scheduleEndDate",
                     &self.r#schedule_end_date,
                 ),
                 to_pulumi_object_field(
-                    "schedule_start_date",
+                    "scheduleStartDate",
                     &self.r#schedule_start_date,
                 ),
                 to_pulumi_object_field(
-                    "start_time_of_day",
+                    "startTimeOfDay",
                     &self.r#start_time_of_day,
                 ),
             ];

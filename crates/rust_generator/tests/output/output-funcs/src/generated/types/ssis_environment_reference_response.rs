@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "environment_folder_name",
+                    "environmentFolderName",
                     &self.r#environment_folder_name,
                 ),
                 to_pulumi_object_field(
-                    "environment_name",
+                    "environmentName",
                     &self.r#environment_name,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ssi
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "reference_type",
+                    "referenceType",
                     &self.r#reference_type,
                 ),
             ];

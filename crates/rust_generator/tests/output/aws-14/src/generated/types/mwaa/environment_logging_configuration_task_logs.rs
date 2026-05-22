@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_watch_log_group_arn",
+                    "cloudWatchLogGroupArn",
                     &self.r#cloud_watch_log_group_arn,
                 ),
                 to_pulumi_object_field(
@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "log_level",
+                    "logLevel",
                     &self.r#log_level,
                 ),
             ];

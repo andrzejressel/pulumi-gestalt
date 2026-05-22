@@ -30,7 +30,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_encryption_keys",
+                    "diskEncryptionKeys",
                     &self.r#disk_encryption_keys,
                 ),
                 to_pulumi_object_field(
@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "key_encryption_keys",
+                    "keyEncryptionKeys",
                     &self.r#key_encryption_keys,
                 ),
             ];

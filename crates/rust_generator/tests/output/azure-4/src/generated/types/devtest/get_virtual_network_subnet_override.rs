@@ -38,23 +38,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lab_subnet_name",
+                    "labSubnetName",
                     &self.r#lab_subnet_name,
                 ),
                 to_pulumi_object_field(
-                    "resource_id",
+                    "resourceId",
                     &self.r#resource_id,
                 ),
                 to_pulumi_object_field(
-                    "use_in_vm_creation_permission",
+                    "useInVmCreationPermission",
                     &self.r#use_in_vm_creation_permission,
                 ),
                 to_pulumi_object_field(
-                    "use_public_ip_address_permission",
+                    "usePublicIpAddressPermission",
                     &self.r#use_public_ip_address_permission,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_pool_name",
+                    "virtualNetworkPoolName",
                     &self.r#virtual_network_pool_name,
                 ),
             ];

@@ -74,11 +74,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alert_rule",
+                    "alertRule",
                     &self.r#alert_rule,
                 ),
                 to_pulumi_object_field(
-                    "disable_metric_validation",
+                    "disableMetricValidation",
                     &self.r#disable_metric_validation,
                 ),
                 to_pulumi_object_field(
@@ -86,7 +86,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#duration,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_interval",
+                    "evaluationInterval",
                     &self.r#evaluation_interval,
                 ),
                 to_pulumi_object_field(
@@ -98,7 +98,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#query,
                 ),
                 to_pulumi_object_field(
-                    "rule_group",
+                    "ruleGroup",
                     &self.r#rule_group,
                 ),
             ];

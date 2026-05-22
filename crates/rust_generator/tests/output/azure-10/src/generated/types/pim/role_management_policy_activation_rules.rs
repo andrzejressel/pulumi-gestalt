@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "approval_stage",
+                    "approvalStage",
                     &self.r#approval_stage,
                 ),
                 to_pulumi_object_field(
-                    "maximum_duration",
+                    "maximumDuration",
                     &self.r#maximum_duration,
                 ),
                 to_pulumi_object_field(
-                    "require_approval",
+                    "requireApproval",
                     &self.r#require_approval,
                 ),
                 to_pulumi_object_field(
-                    "require_justification",
+                    "requireJustification",
                     &self.r#require_justification,
                 ),
                 to_pulumi_object_field(
-                    "require_multifactor_authentication",
+                    "requireMultifactorAuthentication",
                     &self.r#require_multifactor_authentication,
                 ),
                 to_pulumi_object_field(
-                    "require_ticket_info",
+                    "requireTicketInfo",
                     &self.r#require_ticket_info,
                 ),
                 to_pulumi_object_field(
-                    "required_conditional_access_authentication_context",
+                    "requiredConditionalAccessAuthenticationContext",
                     &self.r#required_conditional_access_authentication_context,
                 ),
             ];

@@ -57,27 +57,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Flo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_pull_mode",
+                    "dataPullMode",
                     &self.r#data_pull_mode,
                 ),
                 to_pulumi_object_field(
-                    "first_execution_from",
+                    "firstExecutionFrom",
                     &self.r#first_execution_from,
                 ),
                 to_pulumi_object_field(
-                    "schedule_end_time",
+                    "scheduleEndTime",
                     &self.r#schedule_end_time,
                 ),
                 to_pulumi_object_field(
-                    "schedule_expression",
+                    "scheduleExpression",
                     &self.r#schedule_expression,
                 ),
                 to_pulumi_object_field(
-                    "schedule_offset",
+                    "scheduleOffset",
                     &self.r#schedule_offset,
                 ),
                 to_pulumi_object_field(
-                    "schedule_start_time",
+                    "scheduleStartTime",
                     &self.r#schedule_start_time,
                 ),
                 to_pulumi_object_field(

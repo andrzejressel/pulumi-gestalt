@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_source",
+                    "eventSource",
                     &self.r#event_source,
                 ),
                 to_pulumi_object_field(
-                    "maximum_execution_frequency",
+                    "maximumExecutionFrequency",
                     &self.r#maximum_execution_frequency,
                 ),
                 to_pulumi_object_field(
-                    "message_type",
+                    "messageType",
                     &self.r#message_type,
                 ),
             ];

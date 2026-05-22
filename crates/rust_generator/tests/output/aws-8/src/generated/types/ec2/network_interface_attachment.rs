@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attachment_id",
+                    "attachmentId",
                     &self.r#attachment_id,
                 ),
                 to_pulumi_object_field(
-                    "device_index",
+                    "deviceIndex",
                     &self.r#device_index,
                 ),
                 to_pulumi_object_field(

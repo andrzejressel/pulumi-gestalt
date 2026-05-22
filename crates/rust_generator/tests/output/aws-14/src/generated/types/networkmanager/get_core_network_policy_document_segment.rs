@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_filters",
+                    "allowFilters",
                     &self.r#allow_filters,
                 ),
                 to_pulumi_object_field(
-                    "deny_filters",
+                    "denyFilters",
                     &self.r#deny_filters,
                 ),
                 to_pulumi_object_field(
@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "edge_locations",
+                    "edgeLocations",
                     &self.r#edge_locations,
                 ),
                 to_pulumi_object_field(
-                    "isolate_attachments",
+                    "isolateAttachments",
                     &self.r#isolate_attachments,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "require_attachment_acceptance",
+                    "requireAttachmentAcceptance",
                     &self.r#require_attachment_acceptance,
                 ),
             ];

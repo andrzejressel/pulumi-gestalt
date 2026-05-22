@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#identity,
                 ),
                 to_pulumi_object_field(
-                    "login_server",
+                    "loginServer",
                     &self.r#login_server,
                 ),
                 to_pulumi_object_field(

@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "input_loss_action",
+                    "inputLossAction",
                     &self.r#input_loss_action,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_id_3_frame",
+                    "timedMetadataId3Frame",
                     &self.r#timed_metadata_id_3_frame,
                 ),
                 to_pulumi_object_field(
-                    "timed_metadata_id_3_period",
+                    "timedMetadataId3Period",
                     &self.r#timed_metadata_id_3_period,
                 ),
             ];

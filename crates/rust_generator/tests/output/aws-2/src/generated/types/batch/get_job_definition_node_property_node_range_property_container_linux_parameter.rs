@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#devices,
                 ),
                 to_pulumi_object_field(
-                    "init_process_enabled",
+                    "initProcessEnabled",
                     &self.r#init_process_enabled,
                 ),
                 to_pulumi_object_field(
-                    "max_swap",
+                    "maxSwap",
                     &self.r#max_swap,
                 ),
                 to_pulumi_object_field(
-                    "shared_memory_size",
+                    "sharedMemorySize",
                     &self.r#shared_memory_size,
                 ),
                 to_pulumi_object_field(

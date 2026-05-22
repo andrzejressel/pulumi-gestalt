@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gue
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "os_architecture",
+                    "osArchitecture",
                     &self.r#os_architecture,
                 ),
                 to_pulumi_object_field(
-                    "os_short_name",
+                    "osShortName",
                     &self.r#os_short_name,
                 ),
                 to_pulumi_object_field(
-                    "os_version",
+                    "osVersion",
                     &self.r#os_version,
                 ),
             ];

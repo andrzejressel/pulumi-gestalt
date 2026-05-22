@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Opt
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "db_security_group_memberships",
+                    "dbSecurityGroupMemberships",
                     &self.r#db_security_group_memberships,
                 ),
                 to_pulumi_object_field(
-                    "option_name",
+                    "optionName",
                     &self.r#option_name,
                 ),
                 to_pulumi_object_field(
-                    "option_settings",
+                    "optionSettings",
                     &self.r#option_settings,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Opt
                     &self.r#version,
                 ),
                 to_pulumi_object_field(
-                    "vpc_security_group_memberships",
+                    "vpcSecurityGroupMemberships",
                     &self.r#vpc_security_group_memberships,
                 ),
             ];

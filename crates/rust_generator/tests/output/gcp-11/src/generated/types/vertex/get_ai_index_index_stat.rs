@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "shards_count",
+                    "shardsCount",
                     &self.r#shards_count,
                 ),
                 to_pulumi_object_field(
-                    "vectors_count",
+                    "vectorsCount",
                     &self.r#vectors_count,
                 ),
             ];

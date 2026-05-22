@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "on_failure",
+                    "onFailure",
                     &self.r#on_failure,
                 ),
                 to_pulumi_object_field(
-                    "on_success",
+                    "onSuccess",
                     &self.r#on_success,
                 ),
             ];

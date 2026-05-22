@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#expires,
                 ),
                 to_pulumi_object_field(
-                    "not_before",
+                    "notBefore",
                     &self.r#not_before,
                 ),
                 to_pulumi_object_field(
-                    "recovery_level",
+                    "recoveryLevel",
                     &self.r#recovery_level,
                 ),
                 to_pulumi_object_field(

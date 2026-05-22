@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#timezone,
                 ),
                 to_pulumi_object_field(
-                    "use_session_host_timezone",
+                    "useSessionHostTimezone",
                     &self.r#use_session_host_timezone,
                 ),
             ];

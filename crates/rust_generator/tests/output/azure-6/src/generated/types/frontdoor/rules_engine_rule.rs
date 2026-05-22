@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "match_conditions",
+                    "matchConditions",
                     &self.r#match_conditions,
                 ),
                 to_pulumi_object_field(

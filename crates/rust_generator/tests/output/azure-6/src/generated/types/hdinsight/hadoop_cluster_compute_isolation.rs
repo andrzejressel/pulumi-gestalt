@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Had
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compute_isolation_enabled",
+                    "computeIsolationEnabled",
                     &self.r#compute_isolation_enabled,
                 ),
                 to_pulumi_object_field(
-                    "host_sku",
+                    "hostSku",
                     &self.r#host_sku,
                 ),
             ];

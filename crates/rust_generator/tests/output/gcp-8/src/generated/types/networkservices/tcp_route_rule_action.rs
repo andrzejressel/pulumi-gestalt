@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tcp
                     &self.r#destinations,
                 ),
                 to_pulumi_object_field(
-                    "idle_timeout",
+                    "idleTimeout",
                     &self.r#idle_timeout,
                 ),
                 to_pulumi_object_field(
-                    "original_destination",
+                    "originalDestination",
                     &self.r#original_destination,
                 ),
             ];

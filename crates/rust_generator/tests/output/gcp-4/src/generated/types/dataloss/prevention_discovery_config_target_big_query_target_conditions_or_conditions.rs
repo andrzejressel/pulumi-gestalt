@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "min_age",
+                    "minAge",
                     &self.r#min_age,
                 ),
                 to_pulumi_object_field(
-                    "min_row_count",
+                    "minRowCount",
                     &self.r#min_row_count,
                 ),
             ];

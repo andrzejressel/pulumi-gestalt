@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "constraint_id",
+                    "constraintId",
                     &self.r#constraint_id,
                 ),
                 to_pulumi_object_field(
@@ -56,15 +56,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#owner,
                 ),
                 to_pulumi_object_field(
-                    "portfolio_id",
+                    "portfolioId",
                     &self.r#portfolio_id,
                 ),
                 to_pulumi_object_field(
-                    "product_id",
+                    "productId",
                     &self.r#product_id,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

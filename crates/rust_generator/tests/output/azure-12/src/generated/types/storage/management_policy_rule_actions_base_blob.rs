@@ -87,59 +87,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_tier_to_hot_from_cool_enabled",
+                    "autoTierToHotFromCoolEnabled",
                     &self.r#auto_tier_to_hot_from_cool_enabled,
                 ),
                 to_pulumi_object_field(
-                    "delete_after_days_since_creation_greater_than",
+                    "deleteAfterDaysSinceCreationGreaterThan",
                     &self.r#delete_after_days_since_creation_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "delete_after_days_since_last_access_time_greater_than",
+                    "deleteAfterDaysSinceLastAccessTimeGreaterThan",
                     &self.r#delete_after_days_since_last_access_time_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "delete_after_days_since_modification_greater_than",
+                    "deleteAfterDaysSinceModificationGreaterThan",
                     &self.r#delete_after_days_since_modification_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_archive_after_days_since_creation_greater_than",
+                    "tierToArchiveAfterDaysSinceCreationGreaterThan",
                     &self.r#tier_to_archive_after_days_since_creation_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_archive_after_days_since_last_access_time_greater_than",
+                    "tierToArchiveAfterDaysSinceLastAccessTimeGreaterThan",
                     &self.r#tier_to_archive_after_days_since_last_access_time_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_archive_after_days_since_last_tier_change_greater_than",
+                    "tierToArchiveAfterDaysSinceLastTierChangeGreaterThan",
                     &self.r#tier_to_archive_after_days_since_last_tier_change_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_archive_after_days_since_modification_greater_than",
+                    "tierToArchiveAfterDaysSinceModificationGreaterThan",
                     &self.r#tier_to_archive_after_days_since_modification_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_cold_after_days_since_creation_greater_than",
+                    "tierToColdAfterDaysSinceCreationGreaterThan",
                     &self.r#tier_to_cold_after_days_since_creation_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_cold_after_days_since_last_access_time_greater_than",
+                    "tierToColdAfterDaysSinceLastAccessTimeGreaterThan",
                     &self.r#tier_to_cold_after_days_since_last_access_time_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_cold_after_days_since_modification_greater_than",
+                    "tierToColdAfterDaysSinceModificationGreaterThan",
                     &self.r#tier_to_cold_after_days_since_modification_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_cool_after_days_since_creation_greater_than",
+                    "tierToCoolAfterDaysSinceCreationGreaterThan",
                     &self.r#tier_to_cool_after_days_since_creation_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_cool_after_days_since_last_access_time_greater_than",
+                    "tierToCoolAfterDaysSinceLastAccessTimeGreaterThan",
                     &self.r#tier_to_cool_after_days_since_last_access_time_greater_than,
                 ),
                 to_pulumi_object_field(
-                    "tier_to_cool_after_days_since_modification_greater_than",
+                    "tierToCoolAfterDaysSinceModificationGreaterThan",
                     &self.r#tier_to_cool_after_days_since_modification_greater_than,
                 ),
             ];

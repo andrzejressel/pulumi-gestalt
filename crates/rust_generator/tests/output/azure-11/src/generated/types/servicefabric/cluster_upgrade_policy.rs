@@ -55,39 +55,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delta_health_policy",
+                    "deltaHealthPolicy",
                     &self.r#delta_health_policy,
                 ),
                 to_pulumi_object_field(
-                    "force_restart_enabled",
+                    "forceRestartEnabled",
                     &self.r#force_restart_enabled,
                 ),
                 to_pulumi_object_field(
-                    "health_check_retry_timeout",
+                    "healthCheckRetryTimeout",
                     &self.r#health_check_retry_timeout,
                 ),
                 to_pulumi_object_field(
-                    "health_check_stable_duration",
+                    "healthCheckStableDuration",
                     &self.r#health_check_stable_duration,
                 ),
                 to_pulumi_object_field(
-                    "health_check_wait_duration",
+                    "healthCheckWaitDuration",
                     &self.r#health_check_wait_duration,
                 ),
                 to_pulumi_object_field(
-                    "health_policy",
+                    "healthPolicy",
                     &self.r#health_policy,
                 ),
                 to_pulumi_object_field(
-                    "upgrade_domain_timeout",
+                    "upgradeDomainTimeout",
                     &self.r#upgrade_domain_timeout,
                 ),
                 to_pulumi_object_field(
-                    "upgrade_replica_set_check_timeout",
+                    "upgradeReplicaSetCheckTimeout",
                     &self.r#upgrade_replica_set_check_timeout,
                 ),
                 to_pulumi_object_field(
-                    "upgrade_timeout",
+                    "upgradeTimeout",
                     &self.r#upgrade_timeout,
                 ),
             ];

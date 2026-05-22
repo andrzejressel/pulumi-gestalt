@@ -65,15 +65,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "alert_context",
+                    "alertContext",
                     &self.r#alert_context,
                 ),
                 to_pulumi_object_field(
-                    "alert_rule_id",
+                    "alertRuleId",
                     &self.r#alert_rule_id,
                 ),
                 to_pulumi_object_field(
-                    "alert_rule_name",
+                    "alertRuleName",
                     &self.r#alert_rule_name,
                 ),
                 to_pulumi_object_field(
@@ -81,11 +81,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "monitor_condition",
+                    "monitorCondition",
                     &self.r#monitor_condition,
                 ),
                 to_pulumi_object_field(
-                    "monitor_service",
+                    "monitorService",
                     &self.r#monitor_service,
                 ),
                 to_pulumi_object_field(
@@ -93,19 +93,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#severity,
                 ),
                 to_pulumi_object_field(
-                    "signal_type",
+                    "signalType",
                     &self.r#signal_type,
                 ),
                 to_pulumi_object_field(
-                    "target_resource",
+                    "targetResource",
                     &self.r#target_resource,
                 ),
                 to_pulumi_object_field(
-                    "target_resource_group",
+                    "targetResourceGroup",
                     &self.r#target_resource_group,
                 ),
                 to_pulumi_object_field(
-                    "target_resource_type",
+                    "targetResourceType",
                     &self.r#target_resource_type,
                 ),
             ];

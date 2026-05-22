@@ -68,11 +68,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#images,
                 ),
                 to_pulumi_object_field(
-                    "maven_artifacts",
+                    "mavenArtifacts",
                     &self.r#maven_artifacts,
                 ),
                 to_pulumi_object_field(
-                    "npm_packages",
+                    "npmPackages",
                     &self.r#npm_packages,
                 ),
                 to_pulumi_object_field(
@@ -80,7 +80,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#objects,
                 ),
                 to_pulumi_object_field(
-                    "python_packages",
+                    "pythonPackages",
                     &self.r#python_packages,
                 ),
             ];

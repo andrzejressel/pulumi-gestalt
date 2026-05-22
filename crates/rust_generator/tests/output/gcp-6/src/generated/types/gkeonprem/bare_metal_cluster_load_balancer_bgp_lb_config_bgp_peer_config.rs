@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "control_plane_nodes",
+                    "controlPlaneNodes",
                     &self.r#control_plane_nodes,
                 ),
                 to_pulumi_object_field(
-                    "ip_address",
+                    "ipAddress",
                     &self.r#ip_address,
                 ),
             ];

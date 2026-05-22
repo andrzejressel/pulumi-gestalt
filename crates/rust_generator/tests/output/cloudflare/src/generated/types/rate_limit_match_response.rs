@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rat
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "origin_traffic",
+                    "originTraffic",
                     &self.r#origin_traffic,
                 ),
                 to_pulumi_object_field(

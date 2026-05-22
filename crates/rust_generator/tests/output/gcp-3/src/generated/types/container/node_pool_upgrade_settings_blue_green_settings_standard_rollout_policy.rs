@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_node_count",
+                    "batchNodeCount",
                     &self.r#batch_node_count,
                 ),
                 to_pulumi_object_field(
-                    "batch_percentage",
+                    "batchPercentage",
                     &self.r#batch_percentage,
                 ),
                 to_pulumi_object_field(
-                    "batch_soak_duration",
+                    "batchSoakDuration",
                     &self.r#batch_soak_duration,
                 ),
             ];

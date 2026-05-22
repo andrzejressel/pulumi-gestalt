@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entry_point",
+                    "entryPoint",
                     &self.r#entry_point,
                 ),
                 to_pulumi_object_field(
-                    "entry_point_arguments",
+                    "entryPointArguments",
                     &self.r#entry_point_arguments,
                 ),
                 to_pulumi_object_field(
-                    "spark_submit_parameters",
+                    "sparkSubmitParameters",
                     &self.r#spark_submit_parameters,
                 ),
             ];

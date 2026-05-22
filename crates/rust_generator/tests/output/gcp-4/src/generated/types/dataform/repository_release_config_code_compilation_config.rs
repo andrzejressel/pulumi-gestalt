@@ -54,31 +54,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "assertion_schema",
+                    "assertionSchema",
                     &self.r#assertion_schema,
                 ),
                 to_pulumi_object_field(
-                    "database_suffix",
+                    "databaseSuffix",
                     &self.r#database_suffix,
                 ),
                 to_pulumi_object_field(
-                    "default_database",
+                    "defaultDatabase",
                     &self.r#default_database,
                 ),
                 to_pulumi_object_field(
-                    "default_location",
+                    "defaultLocation",
                     &self.r#default_location,
                 ),
                 to_pulumi_object_field(
-                    "default_schema",
+                    "defaultSchema",
                     &self.r#default_schema,
                 ),
                 to_pulumi_object_field(
-                    "schema_suffix",
+                    "schemaSuffix",
                     &self.r#schema_suffix,
                 ),
                 to_pulumi_object_field(
-                    "table_prefix",
+                    "tablePrefix",
                     &self.r#table_prefix,
                 ),
                 to_pulumi_object_field(

@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "extensions_allow_lists",
+                    "extensionsAllowLists",
                     &self.r#extensions_allow_lists,
                 ),
                 to_pulumi_object_field(
-                    "extensions_block_lists",
+                    "extensionsBlockLists",
                     &self.r#extensions_block_lists,
                 ),
                 to_pulumi_object_field(
-                    "extensions_enabled",
+                    "extensionsEnabled",
                     &self.r#extensions_enabled,
                 ),
                 to_pulumi_object_field(
-                    "guest_configuration_enabled",
+                    "guestConfigurationEnabled",
                     &self.r#guest_configuration_enabled,
                 ),
                 to_pulumi_object_field(
-                    "incoming_connections_ports",
+                    "incomingConnectionsPorts",
                     &self.r#incoming_connections_ports,
                 ),
                 to_pulumi_object_field(
-                    "proxy_bypasses",
+                    "proxyBypasses",
                     &self.r#proxy_bypasses,
                 ),
                 to_pulumi_object_field(
-                    "proxy_url",
+                    "proxyUrl",
                     &self.r#proxy_url,
                 ),
             ];

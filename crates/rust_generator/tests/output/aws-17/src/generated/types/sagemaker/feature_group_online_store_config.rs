@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_online_store",
+                    "enableOnlineStore",
                     &self.r#enable_online_store,
                 ),
                 to_pulumi_object_field(
-                    "security_config",
+                    "securityConfig",
                     &self.r#security_config,
                 ),
                 to_pulumi_object_field(
-                    "storage_type",
+                    "storageType",
                     &self.r#storage_type,
                 ),
                 to_pulumi_object_field(
-                    "ttl_duration",
+                    "ttlDuration",
                     &self.r#ttl_duration,
                 ),
             ];

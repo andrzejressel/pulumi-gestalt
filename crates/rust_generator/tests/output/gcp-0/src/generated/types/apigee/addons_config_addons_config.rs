@@ -44,23 +44,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Add
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_api_ops_config",
+                    "advancedApiOpsConfig",
                     &self.r#advanced_api_ops_config,
                 ),
                 to_pulumi_object_field(
-                    "api_security_config",
+                    "apiSecurityConfig",
                     &self.r#api_security_config,
                 ),
                 to_pulumi_object_field(
-                    "connectors_platform_config",
+                    "connectorsPlatformConfig",
                     &self.r#connectors_platform_config,
                 ),
                 to_pulumi_object_field(
-                    "integration_config",
+                    "integrationConfig",
                     &self.r#integration_config,
                 ),
                 to_pulumi_object_field(
-                    "monetization_config",
+                    "monetizationConfig",
                     &self.r#monetization_config,
                 ),
             ];

@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorized_external_networks",
+                    "authorizedExternalNetworks",
                     &self.r#authorized_external_networks,
                 ),
                 to_pulumi_object_field(
-                    "enable_outbound_public_ip",
+                    "enableOutboundPublicIp",
                     &self.r#enable_outbound_public_ip,
                 ),
                 to_pulumi_object_field(
-                    "enable_public_ip",
+                    "enablePublicIp",
                     &self.r#enable_public_ip,
                 ),
             ];

@@ -50,19 +50,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "ssl_policies",
+                    "sslPolicies",
                     &self.r#ssl_policies,
                 ),
                 to_pulumi_object_field(
-                    "trusted_client_certificate_names",
+                    "trustedClientCertificateNames",
                     &self.r#trusted_client_certificate_names,
                 ),
                 to_pulumi_object_field(
-                    "verify_client_certificate_issuer_dn",
+                    "verifyClientCertificateIssuerDn",
                     &self.r#verify_client_certificate_issuer_dn,
                 ),
                 to_pulumi_object_field(
-                    "verify_client_certificate_revocation",
+                    "verifyClientCertificateRevocation",
                     &self.r#verify_client_certificate_revocation,
                 ),
             ];

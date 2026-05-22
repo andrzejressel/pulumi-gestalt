@@ -44,19 +44,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloud_storage_output",
+                    "cloudStorageOutput",
                     &self.r#cloud_storage_output,
                 ),
                 to_pulumi_object_field(
-                    "file_types_to_transforms",
+                    "fileTypesToTransforms",
                     &self.r#file_types_to_transforms,
                 ),
                 to_pulumi_object_field(
-                    "transformation_config",
+                    "transformationConfig",
                     &self.r#transformation_config,
                 ),
                 to_pulumi_object_field(
-                    "transformation_details_storage_config",
+                    "transformationDetailsStorageConfig",
                     &self.r#transformation_details_storage_config,
                 ),
             ];

@@ -41,27 +41,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deployment_type",
+                    "deploymentType",
                     &self.r#deployment_type,
                 ),
                 to_pulumi_object_field(
-                    "log_configurations",
+                    "logConfigurations",
                     &self.r#log_configurations,
                 ),
                 to_pulumi_object_field(
-                    "metadata_configurations",
+                    "metadataConfigurations",
                     &self.r#metadata_configurations,
                 ),
                 to_pulumi_object_field(
-                    "mount_name",
+                    "mountName",
                     &self.r#mount_name,
                 ),
                 to_pulumi_object_field(
-                    "per_unit_storage_throughput",
+                    "perUnitStorageThroughput",
                     &self.r#per_unit_storage_throughput,
                 ),
                 to_pulumi_object_field(
-                    "weekly_maintenance_start_time",
+                    "weeklyMaintenanceStartTime",
                     &self.r#weekly_maintenance_start_time,
                 ),
             ];

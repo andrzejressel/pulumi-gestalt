@@ -80,47 +80,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_arn",
+                    "bucketArn",
                     &self.r#bucket_arn,
                 ),
                 to_pulumi_object_field(
-                    "buffering_interval",
+                    "bufferingInterval",
                     &self.r#buffering_interval,
                 ),
                 to_pulumi_object_field(
-                    "buffering_size",
+                    "bufferingSize",
                     &self.r#buffering_size,
                 ),
                 to_pulumi_object_field(
-                    "cloudwatch_logging_options",
+                    "cloudwatchLoggingOptions",
                     &self.r#cloudwatch_logging_options,
                 ),
                 to_pulumi_object_field(
-                    "compression_format",
+                    "compressionFormat",
                     &self.r#compression_format,
                 ),
                 to_pulumi_object_field(
-                    "custom_time_zone",
+                    "customTimeZone",
                     &self.r#custom_time_zone,
                 ),
                 to_pulumi_object_field(
-                    "data_format_conversion_configuration",
+                    "dataFormatConversionConfiguration",
                     &self.r#data_format_conversion_configuration,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_partitioning_configuration",
+                    "dynamicPartitioningConfiguration",
                     &self.r#dynamic_partitioning_configuration,
                 ),
                 to_pulumi_object_field(
-                    "error_output_prefix",
+                    "errorOutputPrefix",
                     &self.r#error_output_prefix,
                 ),
                 to_pulumi_object_field(
-                    "file_extension",
+                    "fileExtension",
                     &self.r#file_extension,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_arn",
+                    "kmsKeyArn",
                     &self.r#kms_key_arn,
                 ),
                 to_pulumi_object_field(
@@ -128,19 +128,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#prefix,
                 ),
                 to_pulumi_object_field(
-                    "processing_configuration",
+                    "processingConfiguration",
                     &self.r#processing_configuration,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "s_3_backup_configuration",
+                    "s3BackupConfiguration",
                     &self.r#s_3_backup_configuration,
                 ),
                 to_pulumi_object_field(
-                    "s_3_backup_mode",
+                    "s3BackupMode",
                     &self.r#s_3_backup_mode,
                 ),
             ];

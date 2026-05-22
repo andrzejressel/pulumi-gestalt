@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "adjustment_type",
+                    "adjustmentType",
                     &self.r#adjustment_type,
                 ),
                 to_pulumi_object_field(
@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#cooldown,
                 ),
                 to_pulumi_object_field(
-                    "metric_aggregation_type",
+                    "metricAggregationType",
                     &self.r#metric_aggregation_type,
                 ),
                 to_pulumi_object_field(
-                    "min_adjustment_magnitude",
+                    "minAdjustmentMagnitude",
                     &self.r#min_adjustment_magnitude,
                 ),
                 to_pulumi_object_field(
-                    "step_adjustments",
+                    "stepAdjustments",
                     &self.r#step_adjustments,
                 ),
             ];

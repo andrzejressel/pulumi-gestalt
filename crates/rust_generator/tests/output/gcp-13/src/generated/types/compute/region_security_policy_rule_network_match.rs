@@ -52,35 +52,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dest_ip_ranges",
+                    "destIpRanges",
                     &self.r#dest_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "dest_ports",
+                    "destPorts",
                     &self.r#dest_ports,
                 ),
                 to_pulumi_object_field(
-                    "ip_protocols",
+                    "ipProtocols",
                     &self.r#ip_protocols,
                 ),
                 to_pulumi_object_field(
-                    "src_asns",
+                    "srcAsns",
                     &self.r#src_asns,
                 ),
                 to_pulumi_object_field(
-                    "src_ip_ranges",
+                    "srcIpRanges",
                     &self.r#src_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "src_ports",
+                    "srcPorts",
                     &self.r#src_ports,
                 ),
                 to_pulumi_object_field(
-                    "src_region_codes",
+                    "srcRegionCodes",
                     &self.r#src_region_codes,
                 ),
                 to_pulumi_object_field(
-                    "user_defined_fields",
+                    "userDefinedFields",
                     &self.r#user_defined_fields,
                 ),
             ];

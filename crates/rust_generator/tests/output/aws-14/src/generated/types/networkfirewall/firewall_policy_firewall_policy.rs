@@ -57,39 +57,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "policy_variables",
+                    "policyVariables",
                     &self.r#policy_variables,
                 ),
                 to_pulumi_object_field(
-                    "stateful_default_actions",
+                    "statefulDefaultActions",
                     &self.r#stateful_default_actions,
                 ),
                 to_pulumi_object_field(
-                    "stateful_engine_options",
+                    "statefulEngineOptions",
                     &self.r#stateful_engine_options,
                 ),
                 to_pulumi_object_field(
-                    "stateful_rule_group_references",
+                    "statefulRuleGroupReferences",
                     &self.r#stateful_rule_group_references,
                 ),
                 to_pulumi_object_field(
-                    "stateless_custom_actions",
+                    "statelessCustomActions",
                     &self.r#stateless_custom_actions,
                 ),
                 to_pulumi_object_field(
-                    "stateless_default_actions",
+                    "statelessDefaultActions",
                     &self.r#stateless_default_actions,
                 ),
                 to_pulumi_object_field(
-                    "stateless_fragment_default_actions",
+                    "statelessFragmentDefaultActions",
                     &self.r#stateless_fragment_default_actions,
                 ),
                 to_pulumi_object_field(
-                    "stateless_rule_group_references",
+                    "statelessRuleGroupReferences",
                     &self.r#stateless_rule_group_references,
                 ),
                 to_pulumi_object_field(
-                    "tls_inspection_configuration_arn",
+                    "tlsInspectionConfigurationArn",
                     &self.r#tls_inspection_configuration_arn,
                 ),
             ];

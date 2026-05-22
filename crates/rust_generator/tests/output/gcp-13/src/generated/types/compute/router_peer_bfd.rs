@@ -52,11 +52,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "min_receive_interval",
+                    "minReceiveInterval",
                     &self.r#min_receive_interval,
                 ),
                 to_pulumi_object_field(
-                    "min_transmit_interval",
+                    "minTransmitInterval",
                     &self.r#min_transmit_interval,
                 ),
                 to_pulumi_object_field(
@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#multiplier,
                 ),
                 to_pulumi_object_field(
-                    "session_initialization_mode",
+                    "sessionInitializationMode",
                     &self.r#session_initialization_mode,
                 ),
             ];

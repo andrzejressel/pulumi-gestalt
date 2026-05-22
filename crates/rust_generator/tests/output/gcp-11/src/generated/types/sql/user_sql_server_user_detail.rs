@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "server_roles",
+                    "serverRoles",
                     &self.r#server_roles,
                 ),
             ];

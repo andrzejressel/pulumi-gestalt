@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "database_name",
+                    "databaseName",
                     &self.r#database_name,
                 ),
                 to_pulumi_object_field(
-                    "s_3_error_output_prefix",
+                    "s3ErrorOutputPrefix",
                     &self.r#s_3_error_output_prefix,
                 ),
                 to_pulumi_object_field(
-                    "table_name",
+                    "tableName",
                     &self.r#table_name,
                 ),
                 to_pulumi_object_field(
-                    "unique_keys",
+                    "uniqueKeys",
                     &self.r#unique_keys,
                 ),
             ];

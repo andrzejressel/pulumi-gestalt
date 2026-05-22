@@ -29,7 +29,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bot
                     &self.r#messages,
                 ),
                 to_pulumi_object_field(
-                    "response_card",
+                    "responseCard",
                     &self.r#response_card,
                 ),
             ];

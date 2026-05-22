@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "classification_tags",
+                    "classificationTags",
                     &self.r#classification_tags,
                 ),
                 to_pulumi_object_field(
@@ -75,7 +75,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#predicates,
                 ),
                 to_pulumi_object_field(
-                    "sso_validation_enabled",
+                    "ssoValidationEnabled",
                     &self.r#sso_validation_enabled,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#title,
                 ),
                 to_pulumi_object_field(
-                    "token_relay",
+                    "tokenRelay",
                     &self.r#token_relay,
                 ),
                 to_pulumi_object_field(

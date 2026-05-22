@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authentication_request_extra_params",
+                    "authenticationRequestExtraParams",
                     &self.r#authentication_request_extra_params,
                 ),
                 to_pulumi_object_field(
-                    "on_unauthenticated_request",
+                    "onUnauthenticatedRequest",
                     &self.r#on_unauthenticated_request,
                 ),
                 to_pulumi_object_field(
@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lis
                     &self.r#scope,
                 ),
                 to_pulumi_object_field(
-                    "session_cookie_name",
+                    "sessionCookieName",
                     &self.r#session_cookie_name,
                 ),
                 to_pulumi_object_field(
-                    "session_timeout",
+                    "sessionTimeout",
                     &self.r#session_timeout,
                 ),
                 to_pulumi_object_field(
-                    "user_pool_arn",
+                    "userPoolArn",
                     &self.r#user_pool_arn,
                 ),
                 to_pulumi_object_field(
-                    "user_pool_client_id",
+                    "userPoolClientId",
                     &self.r#user_pool_client_id,
                 ),
                 to_pulumi_object_field(
-                    "user_pool_domain",
+                    "userPoolDomain",
                     &self.r#user_pool_domain,
                 ),
             ];

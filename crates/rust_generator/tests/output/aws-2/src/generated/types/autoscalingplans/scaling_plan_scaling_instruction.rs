@@ -79,59 +79,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "customized_load_metric_specification",
+                    "customizedLoadMetricSpecification",
                     &self.r#customized_load_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "disable_dynamic_scaling",
+                    "disableDynamicScaling",
                     &self.r#disable_dynamic_scaling,
                 ),
                 to_pulumi_object_field(
-                    "max_capacity",
+                    "maxCapacity",
                     &self.r#max_capacity,
                 ),
                 to_pulumi_object_field(
-                    "min_capacity",
+                    "minCapacity",
                     &self.r#min_capacity,
                 ),
                 to_pulumi_object_field(
-                    "predefined_load_metric_specification",
+                    "predefinedLoadMetricSpecification",
                     &self.r#predefined_load_metric_specification,
                 ),
                 to_pulumi_object_field(
-                    "predictive_scaling_max_capacity_behavior",
+                    "predictiveScalingMaxCapacityBehavior",
                     &self.r#predictive_scaling_max_capacity_behavior,
                 ),
                 to_pulumi_object_field(
-                    "predictive_scaling_max_capacity_buffer",
+                    "predictiveScalingMaxCapacityBuffer",
                     &self.r#predictive_scaling_max_capacity_buffer,
                 ),
                 to_pulumi_object_field(
-                    "predictive_scaling_mode",
+                    "predictiveScalingMode",
                     &self.r#predictive_scaling_mode,
                 ),
                 to_pulumi_object_field(
-                    "resource_id",
+                    "resourceId",
                     &self.r#resource_id,
                 ),
                 to_pulumi_object_field(
-                    "scalable_dimension",
+                    "scalableDimension",
                     &self.r#scalable_dimension,
                 ),
                 to_pulumi_object_field(
-                    "scaling_policy_update_behavior",
+                    "scalingPolicyUpdateBehavior",
                     &self.r#scaling_policy_update_behavior,
                 ),
                 to_pulumi_object_field(
-                    "scheduled_action_buffer_time",
+                    "scheduledActionBufferTime",
                     &self.r#scheduled_action_buffer_time,
                 ),
                 to_pulumi_object_field(
-                    "service_namespace",
+                    "serviceNamespace",
                     &self.r#service_namespace,
                 ),
                 to_pulumi_object_field(
-                    "target_tracking_configurations",
+                    "targetTrackingConfigurations",
                     &self.r#target_tracking_configurations,
                 ),
             ];

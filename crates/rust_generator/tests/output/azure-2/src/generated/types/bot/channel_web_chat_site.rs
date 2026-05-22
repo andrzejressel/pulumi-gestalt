@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_parameters_enabled",
+                    "endpointParametersEnabled",
                     &self.r#endpoint_parameters_enabled,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "storage_enabled",
+                    "storageEnabled",
                     &self.r#storage_enabled,
                 ),
                 to_pulumi_object_field(
-                    "user_upload_enabled",
+                    "userUploadEnabled",
                     &self.r#user_upload_enabled,
                 ),
             ];

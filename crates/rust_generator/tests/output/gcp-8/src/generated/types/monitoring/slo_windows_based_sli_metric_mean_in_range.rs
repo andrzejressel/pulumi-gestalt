@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Slo
                     &self.r#range,
                 ),
                 to_pulumi_object_field(
-                    "time_series",
+                    "timeSeries",
                     &self.r#time_series,
                 ),
             ];

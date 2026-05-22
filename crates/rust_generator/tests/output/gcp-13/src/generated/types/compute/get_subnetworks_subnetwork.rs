@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "ip_cidr_range",
+                    "ipCidrRange",
                     &self.r#ip_cidr_range,
                 ),
                 to_pulumi_object_field(
@@ -62,15 +62,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "network_self_link",
+                    "networkSelfLink",
                     &self.r#network_self_link,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_google_access",
+                    "privateIpGoogleAccess",
                     &self.r#private_ip_google_access,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
             ];

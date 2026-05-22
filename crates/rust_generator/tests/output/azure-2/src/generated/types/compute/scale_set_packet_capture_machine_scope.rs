@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_instance_ids",
+                    "excludeInstanceIds",
                     &self.r#exclude_instance_ids,
                 ),
                 to_pulumi_object_field(
-                    "include_instance_ids",
+                    "includeInstanceIds",
                     &self.r#include_instance_ids,
                 ),
             ];

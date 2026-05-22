@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#pass,
                 ),
                 to_pulumi_object_field(
-                    "setting_name",
+                    "settingName",
                     &self.r#setting_name,
                 ),
             ];

@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pos
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "canned_constraint_id",
+                    "cannedConstraintId",
                     &self.r#canned_constraint_id,
                 ),
                 to_pulumi_object_field(
-                    "policy_rules",
+                    "policyRules",
                     &self.r#policy_rules,
                 ),
             ];

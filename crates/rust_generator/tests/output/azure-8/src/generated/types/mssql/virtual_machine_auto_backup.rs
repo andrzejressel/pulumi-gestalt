@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "encryption_enabled",
+                    "encryptionEnabled",
                     &self.r#encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "encryption_password",
+                    "encryptionPassword",
                     &self.r#encryption_password,
                 ),
                 to_pulumi_object_field(
-                    "manual_schedule",
+                    "manualSchedule",
                     &self.r#manual_schedule,
                 ),
                 to_pulumi_object_field(
-                    "retention_period_in_days",
+                    "retentionPeriodInDays",
                     &self.r#retention_period_in_days,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_access_key",
+                    "storageAccountAccessKey",
                     &self.r#storage_account_access_key,
                 ),
                 to_pulumi_object_field(
-                    "storage_blob_endpoint",
+                    "storageBlobEndpoint",
                     &self.r#storage_blob_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "system_databases_backup_enabled",
+                    "systemDatabasesBackupEnabled",
                     &self.r#system_databases_backup_enabled,
                 ),
             ];

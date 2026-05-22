@@ -87,59 +87,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_strategy",
+                    "allocationStrategy",
                     &self.r#allocation_strategy,
                 ),
                 to_pulumi_object_field(
-                    "bid_percentage",
+                    "bidPercentage",
                     &self.r#bid_percentage,
                 ),
                 to_pulumi_object_field(
-                    "desired_vcpus",
+                    "desiredVcpus",
                     &self.r#desired_vcpus,
                 ),
                 to_pulumi_object_field(
-                    "ec_2_configurations",
+                    "ec2Configurations",
                     &self.r#ec_2_configurations,
                 ),
                 to_pulumi_object_field(
-                    "ec_2_key_pair",
+                    "ec2KeyPair",
                     &self.r#ec_2_key_pair,
                 ),
                 to_pulumi_object_field(
-                    "image_id",
+                    "imageId",
                     &self.r#image_id,
                 ),
                 to_pulumi_object_field(
-                    "instance_role",
+                    "instanceRole",
                     &self.r#instance_role,
                 ),
                 to_pulumi_object_field(
-                    "instance_types",
+                    "instanceTypes",
                     &self.r#instance_types,
                 ),
                 to_pulumi_object_field(
-                    "launch_template",
+                    "launchTemplate",
                     &self.r#launch_template,
                 ),
                 to_pulumi_object_field(
-                    "max_vcpus",
+                    "maxVcpus",
                     &self.r#max_vcpus,
                 ),
                 to_pulumi_object_field(
-                    "min_vcpus",
+                    "minVcpus",
                     &self.r#min_vcpus,
                 ),
                 to_pulumi_object_field(
-                    "placement_group",
+                    "placementGroup",
                     &self.r#placement_group,
                 ),
                 to_pulumi_object_field(
-                    "security_group_ids",
+                    "securityGroupIds",
                     &self.r#security_group_ids,
                 ),
                 to_pulumi_object_field(
-                    "spot_iam_fleet_role",
+                    "spotIamFleetRole",
                     &self.r#spot_iam_fleet_role,
                 ),
                 to_pulumi_object_field(
@@ -151,7 +151,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Com
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

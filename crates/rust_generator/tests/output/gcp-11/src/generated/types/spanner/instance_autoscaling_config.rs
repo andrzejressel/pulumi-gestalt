@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "asymmetric_autoscaling_options",
+                    "asymmetricAutoscalingOptions",
                     &self.r#asymmetric_autoscaling_options,
                 ),
                 to_pulumi_object_field(
-                    "autoscaling_limits",
+                    "autoscalingLimits",
                     &self.r#autoscaling_limits,
                 ),
                 to_pulumi_object_field(
-                    "autoscaling_targets",
+                    "autoscalingTargets",
                     &self.r#autoscaling_targets,
                 ),
             ];

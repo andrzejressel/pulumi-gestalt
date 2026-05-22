@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxA
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_token",
+                    "accessToken",
                     &self.r#access_token,
                 ),
                 to_pulumi_object_field(
@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for CxA
                     &self.r#branches,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
-                    "repository_uri",
+                    "repositoryUri",
                     &self.r#repository_uri,
                 ),
                 to_pulumi_object_field(
-                    "tracking_branch",
+                    "trackingBranch",
                     &self.r#tracking_branch,
                 ),
             ];

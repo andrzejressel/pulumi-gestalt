@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "domain_name_label",
+                    "domainNameLabel",
                     &self.r#domain_name_label,
                 ),
                 to_pulumi_object_field(
-                    "idle_timeout",
+                    "idleTimeout",
                     &self.r#idle_timeout,
                 ),
                 to_pulumi_object_field(

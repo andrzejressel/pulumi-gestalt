@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_emails",
+                    "customEmails",
                     &self.r#custom_emails,
                 ),
                 to_pulumi_object_field(
-                    "send_to_subscription_administrator",
+                    "sendToSubscriptionAdministrator",
                     &self.r#send_to_subscription_administrator,
                 ),
                 to_pulumi_object_field(
-                    "send_to_subscription_co_administrator",
+                    "sendToSubscriptionCoAdministrator",
                     &self.r#send_to_subscription_co_administrator,
                 ),
             ];

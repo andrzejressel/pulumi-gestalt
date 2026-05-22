@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Run
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_link",
+                    "contentLink",
                     &self.r#content_link,
                 ),
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
-                    "edit_mode_enabled",
+                    "editModeEnabled",
                     &self.r#edit_mode_enabled,
                 ),
                 to_pulumi_object_field(
-                    "last_modified_time",
+                    "lastModifiedTime",
                     &self.r#last_modified_time,
                 ),
                 to_pulumi_object_field(
-                    "output_types",
+                    "outputTypes",
                     &self.r#output_types,
                 ),
                 to_pulumi_object_field(

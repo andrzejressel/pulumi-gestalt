@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "column_references",
+                    "columnReferences",
                     &self.r#column_references,
                 ),
                 to_pulumi_object_field(
@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "referenced_table",
+                    "referencedTable",
                     &self.r#referenced_table,
                 ),
             ];

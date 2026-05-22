@@ -49,31 +49,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "destination_cidr",
+                    "destinationCidr",
                     &self.r#destination_cidr,
                 ),
                 to_pulumi_object_field(
-                    "destination_prefix_list_id",
+                    "destinationPrefixListId",
                     &self.r#destination_prefix_list_id,
                 ),
                 to_pulumi_object_field(
-                    "egress_only_internet_gateway_id",
+                    "egressOnlyInternetGatewayId",
                     &self.r#egress_only_internet_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "gateway_id",
+                    "gatewayId",
                     &self.r#gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "instance_id",
+                    "instanceId",
                     &self.r#instance_id,
                 ),
                 to_pulumi_object_field(
-                    "nat_gateway_id",
+                    "natGatewayId",
                     &self.r#nat_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_id",
+                    "networkInterfaceId",
                     &self.r#network_interface_id,
                 ),
                 to_pulumi_object_field(
@@ -81,11 +81,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#origin,
                 ),
                 to_pulumi_object_field(
-                    "transit_gateway_id",
+                    "transitGatewayId",
                     &self.r#transit_gateway_id,
                 ),
                 to_pulumi_object_field(
-                    "vpc_peering_connection_id",
+                    "vpcPeeringConnectionId",
                     &self.r#vpc_peering_connection_id,
                 ),
             ];

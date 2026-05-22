@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_time_to_live",
+                    "eventTimeToLive",
                     &self.r#event_time_to_live,
                 ),
                 to_pulumi_object_field(
-                    "max_delivery_attempts",
+                    "maxDeliveryAttempts",
                     &self.r#max_delivery_attempts,
                 ),
             ];

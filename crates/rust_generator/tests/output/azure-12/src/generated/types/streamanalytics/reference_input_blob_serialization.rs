@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ref
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "field_delimiter",
+                    "fieldDelimiter",
                     &self.r#field_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#caching,
                 ),
                 to_pulumi_object_field(
-                    "create_option",
+                    "createOption",
                     &self.r#create_option,
                 ),
                 to_pulumi_object_field(
-                    "disk_encryption_set_id",
+                    "diskEncryptionSetId",
                     &self.r#disk_encryption_set_id,
                 ),
                 to_pulumi_object_field(
-                    "disk_size_gb",
+                    "diskSizeGb",
                     &self.r#disk_size_gb,
                 ),
                 to_pulumi_object_field(
@@ -91,19 +91,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_type",
+                    "storageAccountType",
                     &self.r#storage_account_type,
                 ),
                 to_pulumi_object_field(
-                    "ultra_ssd_disk_iops_read_write",
+                    "ultraSsdDiskIopsReadWrite",
                     &self.r#ultra_ssd_disk_iops_read_write,
                 ),
                 to_pulumi_object_field(
-                    "ultra_ssd_disk_mbps_read_write",
+                    "ultraSsdDiskMbpsReadWrite",
                     &self.r#ultra_ssd_disk_mbps_read_write,
                 ),
                 to_pulumi_object_field(
-                    "write_accelerator_enabled",
+                    "writeAcceleratorEnabled",
                     &self.r#write_accelerator_enabled,
                 ),
             ];

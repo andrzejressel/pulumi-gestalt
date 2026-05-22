@@ -40,23 +40,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_target_capacity_type",
+                    "defaultTargetCapacityType",
                     &self.r#default_target_capacity_type,
                 ),
                 to_pulumi_object_field(
-                    "on_demand_target_capacity",
+                    "onDemandTargetCapacity",
                     &self.r#on_demand_target_capacity,
                 ),
                 to_pulumi_object_field(
-                    "spot_target_capacity",
+                    "spotTargetCapacity",
                     &self.r#spot_target_capacity,
                 ),
                 to_pulumi_object_field(
-                    "target_capacity_unit_type",
+                    "targetCapacityUnitType",
                     &self.r#target_capacity_unit_type,
                 ),
                 to_pulumi_object_field(
-                    "total_target_capacity",
+                    "totalTargetCapacity",
                     &self.r#total_target_capacity,
                 ),
             ];

@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "application_name",
+                    "applicationName",
                     &self.r#application_name,
                 ),
                 to_pulumi_object_field(
-                    "backup_appliance_id",
+                    "backupApplianceId",
                     &self.r#backup_appliance_id,
                 ),
                 to_pulumi_object_field(
-                    "backup_appliance_name",
+                    "backupApplianceName",
                     &self.r#backup_appliance_name,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "sla_id",
+                    "slaId",
                     &self.r#sla_id,
                 ),
                 to_pulumi_object_field(
-                    "slp_name",
+                    "slpName",
                     &self.r#slp_name,
                 ),
                 to_pulumi_object_field(
-                    "slt_name",
+                    "sltName",
                     &self.r#slt_name,
                 ),
             ];

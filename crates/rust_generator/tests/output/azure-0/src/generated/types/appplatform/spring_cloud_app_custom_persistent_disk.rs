@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mount_options",
+                    "mountOptions",
                     &self.r#mount_options,
                 ),
                 to_pulumi_object_field(
-                    "mount_path",
+                    "mountPath",
                     &self.r#mount_path,
                 ),
                 to_pulumi_object_field(
-                    "read_only_enabled",
+                    "readOnlyEnabled",
                     &self.r#read_only_enabled,
                 ),
                 to_pulumi_object_field(
-                    "share_name",
+                    "shareName",
                     &self.r#share_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_name",
+                    "storageName",
                     &self.r#storage_name,
                 ),
             ];

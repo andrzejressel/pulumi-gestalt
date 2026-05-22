@@ -40,15 +40,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auth_password",
+                    "authPassword",
                     &self.r#auth_password,
                 ),
                 to_pulumi_object_field(
-                    "auth_type",
+                    "authType",
                     &self.r#auth_type,
                 ),
                 to_pulumi_object_field(
-                    "auth_user_name",
+                    "authUserName",
                     &self.r#auth_user_name,
                 ),
                 to_pulumi_object_field(
@@ -56,15 +56,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "server_name",
+                    "serverName",
                     &self.r#server_name,
                 ),
                 to_pulumi_object_field(
-                    "ssl_ca_certificate_arn",
+                    "sslCaCertificateArn",
                     &self.r#ssl_ca_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "ssl_security_protocol",
+                    "sslSecurityProtocol",
                     &self.r#ssl_security_protocol,
                 ),
             ];

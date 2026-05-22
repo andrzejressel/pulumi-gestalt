@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_disks",
+                    "dataDisks",
                     &self.r#data_disks,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_names",
+                    "networkInterfaceNames",
                     &self.r#network_interface_names,
                 ),
                 to_pulumi_object_field(
-                    "os_disk_name",
+                    "osDiskName",
                     &self.r#os_disk_name,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine_name",
+                    "virtualMachineName",
                     &self.r#virtual_machine_name,
                 ),
             ];

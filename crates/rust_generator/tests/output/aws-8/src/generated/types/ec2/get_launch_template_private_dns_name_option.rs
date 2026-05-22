@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_resource_name_dns_a_record",
+                    "enableResourceNameDnsARecord",
                     &self.r#enable_resource_name_dns_a_record,
                 ),
                 to_pulumi_object_field(
-                    "enable_resource_name_dns_aaaa_record",
+                    "enableResourceNameDnsAaaaRecord",
                     &self.r#enable_resource_name_dns_aaaa_record,
                 ),
                 to_pulumi_object_field(
-                    "hostname_type",
+                    "hostnameType",
                     &self.r#hostname_type,
                 ),
             ];

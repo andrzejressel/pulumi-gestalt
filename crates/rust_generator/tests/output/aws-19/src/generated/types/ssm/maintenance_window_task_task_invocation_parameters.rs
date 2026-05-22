@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mai
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automation_parameters",
+                    "automationParameters",
                     &self.r#automation_parameters,
                 ),
                 to_pulumi_object_field(
-                    "lambda_parameters",
+                    "lambdaParameters",
                     &self.r#lambda_parameters,
                 ),
                 to_pulumi_object_field(
-                    "run_command_parameters",
+                    "runCommandParameters",
                     &self.r#run_command_parameters,
                 ),
                 to_pulumi_object_field(
-                    "step_functions_parameters",
+                    "stepFunctionsParameters",
                     &self.r#step_functions_parameters,
                 ),
             ];

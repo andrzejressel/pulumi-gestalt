@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tru
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "oidc_jwt_configuration",
+                    "oidcJwtConfiguration",
                     &self.r#oidc_jwt_configuration,
                 ),
             ];

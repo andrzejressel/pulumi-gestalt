@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#attempts,
                 ),
                 to_pulumi_object_field(
-                    "evaluate_on_exits",
+                    "evaluateOnExits",
                     &self.r#evaluate_on_exits,
                 ),
             ];

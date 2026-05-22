@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "secret_identities",
+                    "secretIdentities",
                     &self.r#secret_identities,
                 ),
                 to_pulumi_object_field(
-                    "secret_rotation_enabled",
+                    "secretRotationEnabled",
                     &self.r#secret_rotation_enabled,
                 ),
                 to_pulumi_object_field(
-                    "secret_rotation_interval",
+                    "secretRotationInterval",
                     &self.r#secret_rotation_interval,
                 ),
             ];

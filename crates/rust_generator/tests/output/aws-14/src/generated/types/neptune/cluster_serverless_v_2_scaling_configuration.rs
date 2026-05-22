@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_capacity",
+                    "maxCapacity",
                     &self.r#max_capacity,
                 ),
                 to_pulumi_object_field(
-                    "min_capacity",
+                    "minCapacity",
                     &self.r#min_capacity,
                 ),
             ];

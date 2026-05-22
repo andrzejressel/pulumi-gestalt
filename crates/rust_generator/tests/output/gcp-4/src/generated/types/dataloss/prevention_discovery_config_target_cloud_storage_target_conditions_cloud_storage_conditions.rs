@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "included_bucket_attributes",
+                    "includedBucketAttributes",
                     &self.r#included_bucket_attributes,
                 ),
                 to_pulumi_object_field(
-                    "included_object_attributes",
+                    "includedObjectAttributes",
                     &self.r#included_object_attributes,
                 ),
             ];

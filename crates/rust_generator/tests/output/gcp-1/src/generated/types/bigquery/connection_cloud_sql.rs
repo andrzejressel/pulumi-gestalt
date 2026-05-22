@@ -50,15 +50,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#database,
                 ),
                 to_pulumi_object_field(
-                    "instance_id",
+                    "instanceId",
                     &self.r#instance_id,
                 ),
                 to_pulumi_object_field(
-                    "service_account_id",
+                    "serviceAccountId",
                     &self.r#service_account_id,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_type",
+                    "appType",
                     &self.r#app_type,
                 ),
                 to_pulumi_object_field(
-                    "code_editor_app_settings",
+                    "codeEditorAppSettings",
                     &self.r#code_editor_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "custom_file_systems",
+                    "customFileSystems",
                     &self.r#custom_file_systems,
                 ),
                 to_pulumi_object_field(
-                    "jupyter_lab_app_settings",
+                    "jupyterLabAppSettings",
                     &self.r#jupyter_lab_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "jupyter_server_app_settings",
+                    "jupyterServerAppSettings",
                     &self.r#jupyter_server_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "kernel_gateway_app_settings",
+                    "kernelGatewayAppSettings",
                     &self.r#kernel_gateway_app_settings,
                 ),
                 to_pulumi_object_field(
-                    "space_storage_settings",
+                    "spaceStorageSettings",
                     &self.r#space_storage_settings,
                 ),
             ];

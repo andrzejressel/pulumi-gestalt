@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "forwarding_path",
+                    "forwardingPath",
                     &self.r#forwarding_path,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_address",
+                    "ipv4Address",
                     &self.r#ipv_4_address,
                 ),
             ];

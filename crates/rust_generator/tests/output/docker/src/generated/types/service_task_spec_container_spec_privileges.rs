@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "credential_spec",
+                    "credentialSpec",
                     &self.r#credential_spec,
                 ),
                 to_pulumi_object_field(
-                    "se_linux_context",
+                    "seLinuxContext",
                     &self.r#se_linux_context,
                 ),
             ];

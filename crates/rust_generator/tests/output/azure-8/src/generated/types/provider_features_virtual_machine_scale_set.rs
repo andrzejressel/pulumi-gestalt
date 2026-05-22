@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "force_delete",
+                    "forceDelete",
                     &self.r#force_delete,
                 ),
                 to_pulumi_object_field(
-                    "reimage_on_manual_upgrade",
+                    "reimageOnManualUpgrade",
                     &self.r#reimage_on_manual_upgrade,
                 ),
                 to_pulumi_object_field(
-                    "roll_instances_when_required",
+                    "rollInstancesWhenRequired",
                     &self.r#roll_instances_when_required,
                 ),
                 to_pulumi_object_field(
-                    "scale_to_zero_before_deletion",
+                    "scaleToZeroBeforeDeletion",
                     &self.r#scale_to_zero_before_deletion,
                 ),
             ];

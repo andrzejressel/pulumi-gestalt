@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "command_line",
+                    "commandLine",
                     &self.r#command_line,
                 ),
                 to_pulumi_object_field(
-                    "common_environment_properties",
+                    "commonEnvironmentProperties",
                     &self.r#common_environment_properties,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "resource_files",
+                    "resourceFiles",
                     &self.r#resource_files,
                 ),
                 to_pulumi_object_field(
-                    "task_retry_maximum",
+                    "taskRetryMaximum",
                     &self.r#task_retry_maximum,
                 ),
                 to_pulumi_object_field(
-                    "user_identity",
+                    "userIdentity",
                     &self.r#user_identity,
                 ),
                 to_pulumi_object_field(
-                    "wait_for_success",
+                    "waitForSuccess",
                     &self.r#wait_for_success,
                 ),
             ];

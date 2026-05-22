@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#days,
                 ),
                 to_pulumi_object_field(
-                    "permanent_delete_enabled",
+                    "permanentDeleteEnabled",
                     &self.r#permanent_delete_enabled,
                 ),
             ];

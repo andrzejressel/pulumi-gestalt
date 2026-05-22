@@ -55,11 +55,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "adapter_property_override",
+                    "adapterPropertyOverride",
                     &self.r#adapter_property_override,
                 ),
                 to_pulumi_object_field(
-                    "adapter_property_override_enabled",
+                    "adapterPropertyOverrideEnabled",
                     &self.r#adapter_property_override_enabled,
                 ),
                 to_pulumi_object_field(
@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "qos_policy_override",
+                    "qosPolicyOverride",
                     &self.r#qos_policy_override,
                 ),
                 to_pulumi_object_field(
-                    "qos_policy_override_enabled",
+                    "qosPolicyOverrideEnabled",
                     &self.r#qos_policy_override_enabled,
                 ),
                 to_pulumi_object_field(
-                    "traffic_types",
+                    "trafficTypes",
                     &self.r#traffic_types,
                 ),
                 to_pulumi_object_field(
-                    "virtual_switch_configuration_override",
+                    "virtualSwitchConfigurationOverride",
                     &self.r#virtual_switch_configuration_override,
                 ),
                 to_pulumi_object_field(
-                    "virtual_switch_configuration_override_enabled",
+                    "virtualSwitchConfigurationOverrideEnabled",
                     &self.r#virtual_switch_configuration_override_enabled,
                 ),
             ];

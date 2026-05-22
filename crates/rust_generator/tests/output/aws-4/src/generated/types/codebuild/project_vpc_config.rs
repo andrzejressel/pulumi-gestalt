@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "security_group_ids",
+                    "securityGroupIds",
                     &self.r#security_group_ids,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#subnets,
                 ),
                 to_pulumi_object_field(
-                    "vpc_id",
+                    "vpcId",
                     &self.r#vpc_id,
                 ),
             ];

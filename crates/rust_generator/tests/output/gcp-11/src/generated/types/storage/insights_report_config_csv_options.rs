@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#delimiter,
                 ),
                 to_pulumi_object_field(
-                    "header_required",
+                    "headerRequired",
                     &self.r#header_required,
                 ),
                 to_pulumi_object_field(
-                    "record_separator",
+                    "recordSeparator",
                     &self.r#record_separator,
                 ),
             ];

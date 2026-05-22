@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "external_ipv_6",
+                    "externalIpv6",
                     &self.r#external_ipv_6,
                 ),
                 to_pulumi_object_field(
-                    "external_ipv_6_prefix_length",
+                    "externalIpv6PrefixLength",
                     &self.r#external_ipv_6_prefix_length,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "network_tier",
+                    "networkTier",
                     &self.r#network_tier,
                 ),
                 to_pulumi_object_field(
-                    "public_ptr_domain_name",
+                    "publicPtrDomainName",
                     &self.r#public_ptr_domain_name,
                 ),
             ];

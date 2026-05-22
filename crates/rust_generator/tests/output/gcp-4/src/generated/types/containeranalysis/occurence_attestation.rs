@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Occ
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "serialized_payload",
+                    "serializedPayload",
                     &self.r#serialized_payload,
                 ),
                 to_pulumi_object_field(

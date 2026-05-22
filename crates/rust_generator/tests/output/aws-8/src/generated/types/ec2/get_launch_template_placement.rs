@@ -47,27 +47,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#affinity,
                 ),
                 to_pulumi_object_field(
-                    "availability_zone",
+                    "availabilityZone",
                     &self.r#availability_zone,
                 ),
                 to_pulumi_object_field(
-                    "group_name",
+                    "groupName",
                     &self.r#group_name,
                 ),
                 to_pulumi_object_field(
-                    "host_id",
+                    "hostId",
                     &self.r#host_id,
                 ),
                 to_pulumi_object_field(
-                    "host_resource_group_arn",
+                    "hostResourceGroupArn",
                     &self.r#host_resource_group_arn,
                 ),
                 to_pulumi_object_field(
-                    "partition_number",
+                    "partitionNumber",
                     &self.r#partition_number,
                 ),
                 to_pulumi_object_field(
-                    "spread_domain",
+                    "spreadDomain",
                     &self.r#spread_domain,
                 ),
                 to_pulumi_object_field(

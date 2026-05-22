@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "seed_urls",
+                    "seedUrls",
                     &self.r#seed_urls,
                 ),
                 to_pulumi_object_field(
-                    "web_crawler_mode",
+                    "webCrawlerMode",
                     &self.r#web_crawler_mode,
                 ),
             ];

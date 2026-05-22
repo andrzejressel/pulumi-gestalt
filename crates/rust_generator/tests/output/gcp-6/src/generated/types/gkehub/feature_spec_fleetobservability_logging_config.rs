@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_config",
+                    "defaultConfig",
                     &self.r#default_config,
                 ),
                 to_pulumi_object_field(
-                    "fleet_scope_logs_config",
+                    "fleetScopeLogsConfig",
                     &self.r#fleet_scope_logs_config,
                 ),
             ];

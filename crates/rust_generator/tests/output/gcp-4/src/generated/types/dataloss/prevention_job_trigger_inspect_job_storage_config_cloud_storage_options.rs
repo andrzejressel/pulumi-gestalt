@@ -52,27 +52,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bytes_limit_per_file",
+                    "bytesLimitPerFile",
                     &self.r#bytes_limit_per_file,
                 ),
                 to_pulumi_object_field(
-                    "bytes_limit_per_file_percent",
+                    "bytesLimitPerFilePercent",
                     &self.r#bytes_limit_per_file_percent,
                 ),
                 to_pulumi_object_field(
-                    "file_set",
+                    "fileSet",
                     &self.r#file_set,
                 ),
                 to_pulumi_object_field(
-                    "file_types",
+                    "fileTypes",
                     &self.r#file_types,
                 ),
                 to_pulumi_object_field(
-                    "files_limit_percent",
+                    "filesLimitPercent",
                     &self.r#files_limit_percent,
                 ),
                 to_pulumi_object_field(
-                    "sample_method",
+                    "sampleMethod",
                     &self.r#sample_method,
                 ),
             ];

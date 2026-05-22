@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "redact_pii",
+                    "redactPii",
                     &self.r#redact_pii,
                 ),
                 to_pulumi_object_field(
-                    "settings_by_rule_type",
+                    "settingsByRuleType",
                     &self.r#settings_by_rule_type,
                 ),
             ];

@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "lower_data_risk_to_low",
+                    "lowerDataRiskToLow",
                     &self.r#lower_data_risk_to_low,
                 ),
                 to_pulumi_object_field(
-                    "profile_generations_to_tags",
+                    "profileGenerationsToTags",
                     &self.r#profile_generations_to_tags,
                 ),
                 to_pulumi_object_field(
-                    "tag_conditions",
+                    "tagConditions",
                     &self.r#tag_conditions,
                 ),
             ];

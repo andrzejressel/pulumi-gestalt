@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "attribute_path",
+                    "attributePath",
                     &self.r#attribute_path,
                 ),
                 to_pulumi_object_field(
-                    "attribute_value",
+                    "attributeValue",
                     &self.r#attribute_value,
                 ),
             ];

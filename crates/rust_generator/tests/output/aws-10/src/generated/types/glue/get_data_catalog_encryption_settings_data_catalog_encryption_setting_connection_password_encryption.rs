@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_kms_key_id",
+                    "awsKmsKeyId",
                     &self.r#aws_kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "return_connection_password_encrypted",
+                    "returnConnectionPasswordEncrypted",
                     &self.r#return_connection_password_encrypted,
                 ),
             ];

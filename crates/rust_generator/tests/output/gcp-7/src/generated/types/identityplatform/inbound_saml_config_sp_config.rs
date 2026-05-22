@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Inb
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "callback_uri",
+                    "callbackUri",
                     &self.r#callback_uri,
                 ),
                 to_pulumi_object_field(
-                    "sp_certificates",
+                    "spCertificates",
                     &self.r#sp_certificates,
                 ),
                 to_pulumi_object_field(
-                    "sp_entity_id",
+                    "spEntityId",
                     &self.r#sp_entity_id,
                 ),
             ];

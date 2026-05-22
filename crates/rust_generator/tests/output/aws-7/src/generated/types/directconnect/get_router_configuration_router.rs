@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#platform,
                 ),
                 to_pulumi_object_field(
-                    "router_type_identifier",
+                    "routerTypeIdentifier",
                     &self.r#router_type_identifier,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#vendor,
                 ),
                 to_pulumi_object_field(
-                    "xslt_template_name",
+                    "xsltTemplateName",
                     &self.r#xslt_template_name,
                 ),
                 to_pulumi_object_field(
-                    "xslt_template_name_for_mac_sec",
+                    "xsltTemplateNameForMacSec",
                     &self.r#xslt_template_name_for_mac_sec,
                 ),
             ];

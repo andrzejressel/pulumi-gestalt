@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
                     &self.r#access,
                 ),
                 to_pulumi_object_field(
-                    "anonymous_gid",
+                    "anonymousGid",
                     &self.r#anonymous_gid,
                 ),
                 to_pulumi_object_field(
-                    "anonymous_uid",
+                    "anonymousUid",
                     &self.r#anonymous_uid,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "root_squash_enabled",
+                    "rootSquashEnabled",
                     &self.r#root_squash_enabled,
                 ),
                 to_pulumi_object_field(
@@ -77,11 +77,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
                     &self.r#scope,
                 ),
                 to_pulumi_object_field(
-                    "submount_access_enabled",
+                    "submountAccessEnabled",
                     &self.r#submount_access_enabled,
                 ),
                 to_pulumi_object_field(
-                    "suid_enabled",
+                    "suidEnabled",
                     &self.r#suid_enabled,
                 ),
             ];

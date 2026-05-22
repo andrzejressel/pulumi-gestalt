@@ -34,23 +34,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_port",
+                    "instancePort",
                     &self.r#instance_port,
                 ),
                 to_pulumi_object_field(
-                    "instance_protocol",
+                    "instanceProtocol",
                     &self.r#instance_protocol,
                 ),
                 to_pulumi_object_field(
-                    "lb_port",
+                    "lbPort",
                     &self.r#lb_port,
                 ),
                 to_pulumi_object_field(
-                    "lb_protocol",
+                    "lbProtocol",
                     &self.r#lb_protocol,
                 ),
                 to_pulumi_object_field(
-                    "ssl_certificate_id",
+                    "sslCertificateId",
                     &self.r#ssl_certificate_id,
                 ),
             ];

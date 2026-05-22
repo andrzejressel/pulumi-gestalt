@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "subresource_name",
+                    "subresourceName",
                     &self.r#subresource_name,
                 ),
             ];

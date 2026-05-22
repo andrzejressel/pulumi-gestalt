@@ -85,35 +85,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "full_path_match",
+                    "fullPathMatch",
                     &self.r#full_path_match,
                 ),
                 to_pulumi_object_field(
-                    "header_matches",
+                    "headerMatches",
                     &self.r#header_matches,
                 ),
                 to_pulumi_object_field(
-                    "ignore_case",
+                    "ignoreCase",
                     &self.r#ignore_case,
                 ),
                 to_pulumi_object_field(
-                    "metadata_filters",
+                    "metadataFilters",
                     &self.r#metadata_filters,
                 ),
                 to_pulumi_object_field(
-                    "path_template_match",
+                    "pathTemplateMatch",
                     &self.r#path_template_match,
                 ),
                 to_pulumi_object_field(
-                    "prefix_match",
+                    "prefixMatch",
                     &self.r#prefix_match,
                 ),
                 to_pulumi_object_field(
-                    "query_parameter_matches",
+                    "queryParameterMatches",
                     &self.r#query_parameter_matches,
                 ),
                 to_pulumi_object_field(
-                    "regex_match",
+                    "regexMatch",
                     &self.r#regex_match,
                 ),
             ];

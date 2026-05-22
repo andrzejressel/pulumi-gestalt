@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ebs_storage_settings",
+                    "ebsStorageSettings",
                     &self.r#ebs_storage_settings,
                 ),
             ];

@@ -89,55 +89,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "current_stack",
+                    "currentStack",
                     &self.r#current_stack,
                 ),
                 to_pulumi_object_field(
-                    "docker_image_name",
+                    "dockerImageName",
                     &self.r#docker_image_name,
                 ),
                 to_pulumi_object_field(
-                    "docker_registry_password",
+                    "dockerRegistryPassword",
                     &self.r#docker_registry_password,
                 ),
                 to_pulumi_object_field(
-                    "docker_registry_url",
+                    "dockerRegistryUrl",
                     &self.r#docker_registry_url,
                 ),
                 to_pulumi_object_field(
-                    "docker_registry_username",
+                    "dockerRegistryUsername",
                     &self.r#docker_registry_username,
                 ),
                 to_pulumi_object_field(
-                    "dotnet_core_version",
+                    "dotnetCoreVersion",
                     &self.r#dotnet_core_version,
                 ),
                 to_pulumi_object_field(
-                    "dotnet_version",
+                    "dotnetVersion",
                     &self.r#dotnet_version,
                 ),
                 to_pulumi_object_field(
-                    "java_container",
+                    "javaContainer",
                     &self.r#java_container,
                 ),
                 to_pulumi_object_field(
-                    "java_container_version",
+                    "javaContainerVersion",
                     &self.r#java_container_version,
                 ),
                 to_pulumi_object_field(
-                    "java_embedded_server_enabled",
+                    "javaEmbeddedServerEnabled",
                     &self.r#java_embedded_server_enabled,
                 ),
                 to_pulumi_object_field(
-                    "java_version",
+                    "javaVersion",
                     &self.r#java_version,
                 ),
                 to_pulumi_object_field(
-                    "node_version",
+                    "nodeVersion",
                     &self.r#node_version,
                 ),
                 to_pulumi_object_field(
-                    "php_version",
+                    "phpVersion",
                     &self.r#php_version,
                 ),
                 to_pulumi_object_field(
@@ -145,7 +145,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#python,
                 ),
                 to_pulumi_object_field(
-                    "tomcat_version",
+                    "tomcatVersion",
                     &self.r#tomcat_version,
                 ),
             ];

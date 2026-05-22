@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "compute_reservation",
+                    "computeReservation",
                     &self.r#compute_reservation,
                 ),
                 to_pulumi_object_field(
-                    "share_decay_seconds",
+                    "shareDecaySeconds",
                     &self.r#share_decay_seconds,
                 ),
                 to_pulumi_object_field(
-                    "share_distributions",
+                    "shareDistributions",
                     &self.r#share_distributions,
                 ),
             ];

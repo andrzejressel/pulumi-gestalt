@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cpu_architecture",
+                    "cpuArchitecture",
                     &self.r#cpu_architecture,
                 ),
                 to_pulumi_object_field(
-                    "operating_system_family",
+                    "operatingSystemFamily",
                     &self.r#operating_system_family,
                 ),
             ];

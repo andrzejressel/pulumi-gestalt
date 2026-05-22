@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sna
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_url",
+                    "keyUrl",
                     &self.r#key_url,
                 ),
                 to_pulumi_object_field(
-                    "source_vault_id",
+                    "sourceVaultId",
                     &self.r#source_vault_id,
                 ),
             ];

@@ -52,19 +52,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "persistence_mode",
+                    "persistenceMode",
                     &self.r#persistence_mode,
                 ),
                 to_pulumi_object_field(
-                    "rdb_next_snapshot_time",
+                    "rdbNextSnapshotTime",
                     &self.r#rdb_next_snapshot_time,
                 ),
                 to_pulumi_object_field(
-                    "rdb_snapshot_period",
+                    "rdbSnapshotPeriod",
                     &self.r#rdb_snapshot_period,
                 ),
                 to_pulumi_object_field(
-                    "rdb_snapshot_start_time",
+                    "rdbSnapshotStartTime",
                     &self.r#rdb_snapshot_start_time,
                 ),
             ];

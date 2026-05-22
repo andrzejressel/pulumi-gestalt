@@ -163,39 +163,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "always_on",
+                    "alwaysOn",
                     &self.r#always_on,
                 ),
                 to_pulumi_object_field(
-                    "api_definition_url",
+                    "apiDefinitionUrl",
                     &self.r#api_definition_url,
                 ),
                 to_pulumi_object_field(
-                    "api_management_api_id",
+                    "apiManagementApiId",
                     &self.r#api_management_api_id,
                 ),
                 to_pulumi_object_field(
-                    "app_command_line",
+                    "appCommandLine",
                     &self.r#app_command_line,
                 ),
                 to_pulumi_object_field(
-                    "app_scale_limit",
+                    "appScaleLimit",
                     &self.r#app_scale_limit,
                 ),
                 to_pulumi_object_field(
-                    "app_service_logs",
+                    "appServiceLogs",
                     &self.r#app_service_logs,
                 ),
                 to_pulumi_object_field(
-                    "application_insights_connection_string",
+                    "applicationInsightsConnectionString",
                     &self.r#application_insights_connection_string,
                 ),
                 to_pulumi_object_field(
-                    "application_insights_key",
+                    "applicationInsightsKey",
                     &self.r#application_insights_key,
                 ),
                 to_pulumi_object_field(
-                    "application_stacks",
+                    "applicationStacks",
                     &self.r#application_stacks,
                 ),
                 to_pulumi_object_field(
@@ -203,107 +203,107 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#cors,
                 ),
                 to_pulumi_object_field(
-                    "default_documents",
+                    "defaultDocuments",
                     &self.r#default_documents,
                 ),
                 to_pulumi_object_field(
-                    "detailed_error_logging_enabled",
+                    "detailedErrorLoggingEnabled",
                     &self.r#detailed_error_logging_enabled,
                 ),
                 to_pulumi_object_field(
-                    "elastic_instance_minimum",
+                    "elasticInstanceMinimum",
                     &self.r#elastic_instance_minimum,
                 ),
                 to_pulumi_object_field(
-                    "ftps_state",
+                    "ftpsState",
                     &self.r#ftps_state,
                 ),
                 to_pulumi_object_field(
-                    "health_check_eviction_time_in_min",
+                    "healthCheckEvictionTimeInMin",
                     &self.r#health_check_eviction_time_in_min,
                 ),
                 to_pulumi_object_field(
-                    "health_check_path",
+                    "healthCheckPath",
                     &self.r#health_check_path,
                 ),
                 to_pulumi_object_field(
-                    "http_2_enabled",
+                    "http2Enabled",
                     &self.r#http_2_enabled,
                 ),
                 to_pulumi_object_field(
-                    "ip_restriction_default_action",
+                    "ipRestrictionDefaultAction",
                     &self.r#ip_restriction_default_action,
                 ),
                 to_pulumi_object_field(
-                    "ip_restrictions",
+                    "ipRestrictions",
                     &self.r#ip_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "load_balancing_mode",
+                    "loadBalancingMode",
                     &self.r#load_balancing_mode,
                 ),
                 to_pulumi_object_field(
-                    "managed_pipeline_mode",
+                    "managedPipelineMode",
                     &self.r#managed_pipeline_mode,
                 ),
                 to_pulumi_object_field(
-                    "minimum_tls_version",
+                    "minimumTlsVersion",
                     &self.r#minimum_tls_version,
                 ),
                 to_pulumi_object_field(
-                    "pre_warmed_instance_count",
+                    "preWarmedInstanceCount",
                     &self.r#pre_warmed_instance_count,
                 ),
                 to_pulumi_object_field(
-                    "remote_debugging_enabled",
+                    "remoteDebuggingEnabled",
                     &self.r#remote_debugging_enabled,
                 ),
                 to_pulumi_object_field(
-                    "remote_debugging_version",
+                    "remoteDebuggingVersion",
                     &self.r#remote_debugging_version,
                 ),
                 to_pulumi_object_field(
-                    "runtime_scale_monitoring_enabled",
+                    "runtimeScaleMonitoringEnabled",
                     &self.r#runtime_scale_monitoring_enabled,
                 ),
                 to_pulumi_object_field(
-                    "scm_ip_restriction_default_action",
+                    "scmIpRestrictionDefaultAction",
                     &self.r#scm_ip_restriction_default_action,
                 ),
                 to_pulumi_object_field(
-                    "scm_ip_restrictions",
+                    "scmIpRestrictions",
                     &self.r#scm_ip_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "scm_minimum_tls_version",
+                    "scmMinimumTlsVersion",
                     &self.r#scm_minimum_tls_version,
                 ),
                 to_pulumi_object_field(
-                    "scm_type",
+                    "scmType",
                     &self.r#scm_type,
                 ),
                 to_pulumi_object_field(
-                    "scm_use_main_ip_restriction",
+                    "scmUseMainIpRestriction",
                     &self.r#scm_use_main_ip_restriction,
                 ),
                 to_pulumi_object_field(
-                    "use_32_bit_worker",
+                    "use32BitWorker",
                     &self.r#use_32_bit_worker,
                 ),
                 to_pulumi_object_field(
-                    "vnet_route_all_enabled",
+                    "vnetRouteAllEnabled",
                     &self.r#vnet_route_all_enabled,
                 ),
                 to_pulumi_object_field(
-                    "websockets_enabled",
+                    "websocketsEnabled",
                     &self.r#websockets_enabled,
                 ),
                 to_pulumi_object_field(
-                    "windows_fx_version",
+                    "windowsFxVersion",
                     &self.r#windows_fx_version,
                 ),
                 to_pulumi_object_field(
-                    "worker_count",
+                    "workerCount",
                     &self.r#worker_count,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_magnetic_store_writes",
+                    "enableMagneticStoreWrites",
                     &self.r#enable_magnetic_store_writes,
                 ),
                 to_pulumi_object_field(
-                    "magnetic_store_rejected_data_locations",
+                    "magneticStoreRejectedDataLocations",
                     &self.r#magnetic_store_rejected_data_locations,
                 ),
             ];

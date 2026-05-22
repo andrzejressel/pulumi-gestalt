@@ -44,15 +44,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_objects",
+                    "excludeObjects",
                     &self.r#exclude_objects,
                 ),
                 to_pulumi_object_field(
-                    "include_objects",
+                    "includeObjects",
                     &self.r#include_objects,
                 ),
                 to_pulumi_object_field(
-                    "max_concurrent_backfill_tasks",
+                    "maxConcurrentBackfillTasks",
                     &self.r#max_concurrent_backfill_tasks,
                 ),
                 to_pulumi_object_field(
@@ -60,7 +60,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
                     &self.r#publication,
                 ),
                 to_pulumi_object_field(
-                    "replication_slot",
+                    "replicationSlot",
                     &self.r#replication_slot,
                 ),
             ];

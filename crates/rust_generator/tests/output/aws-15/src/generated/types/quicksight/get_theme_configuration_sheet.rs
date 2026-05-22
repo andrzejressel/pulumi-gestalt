@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "tile_layouts",
+                    "tileLayouts",
                     &self.r#tile_layouts,
                 ),
                 to_pulumi_object_field(

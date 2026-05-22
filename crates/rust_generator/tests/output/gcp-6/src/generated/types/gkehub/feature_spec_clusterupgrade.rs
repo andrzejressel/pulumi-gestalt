@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fea
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "gke_upgrade_overrides",
+                    "gkeUpgradeOverrides",
                     &self.r#gke_upgrade_overrides,
                 ),
                 to_pulumi_object_field(
-                    "post_conditions",
+                    "postConditions",
                     &self.r#post_conditions,
                 ),
                 to_pulumi_object_field(
-                    "upstream_fleets",
+                    "upstreamFleets",
                     &self.r#upstream_fleets,
                 ),
             ];

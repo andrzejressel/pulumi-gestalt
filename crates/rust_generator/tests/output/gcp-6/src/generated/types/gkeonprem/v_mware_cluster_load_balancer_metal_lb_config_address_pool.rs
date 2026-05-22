@@ -45,11 +45,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for VMw
                     &self.r#addresses,
                 ),
                 to_pulumi_object_field(
-                    "avoid_buggy_ips",
+                    "avoidBuggyIps",
                     &self.r#avoid_buggy_ips,
                 ),
                 to_pulumi_object_field(
-                    "manual_assign",
+                    "manualAssign",
                     &self.r#manual_assign,
                 ),
                 to_pulumi_object_field(

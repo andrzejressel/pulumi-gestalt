@@ -28,7 +28,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "relay_state_parameter_name",
+                    "relayStateParameterName",
                     &self.r#relay_state_parameter_name,
                 ),
                 to_pulumi_object_field(
@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "user_access_url",
+                    "userAccessUrl",
                     &self.r#user_access_url,
                 ),
             ];

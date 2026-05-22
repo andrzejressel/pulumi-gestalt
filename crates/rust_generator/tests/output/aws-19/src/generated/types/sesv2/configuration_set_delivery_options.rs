@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_delivery_seconds",
+                    "maxDeliverySeconds",
                     &self.r#max_delivery_seconds,
                 ),
                 to_pulumi_object_field(
-                    "sending_pool_name",
+                    "sendingPoolName",
                     &self.r#sending_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "tls_policy",
+                    "tlsPolicy",
                     &self.r#tls_policy,
                 ),
             ];

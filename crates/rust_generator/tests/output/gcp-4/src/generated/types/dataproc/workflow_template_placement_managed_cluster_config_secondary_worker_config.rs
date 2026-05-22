@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#accelerators,
                 ),
                 to_pulumi_object_field(
-                    "disk_config",
+                    "diskConfig",
                     &self.r#disk_config,
                 ),
                 to_pulumi_object_field(
@@ -71,27 +71,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "instance_names",
+                    "instanceNames",
                     &self.r#instance_names,
                 ),
                 to_pulumi_object_field(
-                    "is_preemptible",
+                    "isPreemptible",
                     &self.r#is_preemptible,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
-                    "managed_group_configs",
+                    "managedGroupConfigs",
                     &self.r#managed_group_configs,
                 ),
                 to_pulumi_object_field(
-                    "min_cpu_platform",
+                    "minCpuPlatform",
                     &self.r#min_cpu_platform,
                 ),
                 to_pulumi_object_field(
-                    "num_instances",
+                    "numInstances",
                     &self.r#num_instances,
                 ),
                 to_pulumi_object_field(

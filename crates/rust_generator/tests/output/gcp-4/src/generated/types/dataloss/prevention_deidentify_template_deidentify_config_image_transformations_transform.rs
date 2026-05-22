@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_info_types",
+                    "allInfoTypes",
                     &self.r#all_info_types,
                 ),
                 to_pulumi_object_field(
-                    "all_text",
+                    "allText",
                     &self.r#all_text,
                 ),
                 to_pulumi_object_field(
-                    "redaction_color",
+                    "redactionColor",
                     &self.r#redaction_color,
                 ),
                 to_pulumi_object_field(
-                    "selected_info_types",
+                    "selectedInfoTypes",
                     &self.r#selected_info_types,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#exclusions,
                 ),
                 to_pulumi_object_field(
-                    "managed_rule_sets",
+                    "managedRuleSets",
                     &self.r#managed_rule_sets,
                 ),
             ];

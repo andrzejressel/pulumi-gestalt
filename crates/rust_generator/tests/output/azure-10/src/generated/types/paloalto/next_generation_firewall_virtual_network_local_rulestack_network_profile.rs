@@ -41,27 +41,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "egress_nat_ip_address_ids",
+                    "egressNatIpAddressIds",
                     &self.r#egress_nat_ip_address_ids,
                 ),
                 to_pulumi_object_field(
-                    "egress_nat_ip_addresses",
+                    "egressNatIpAddresses",
                     &self.r#egress_nat_ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_address_ids",
+                    "publicIpAddressIds",
                     &self.r#public_ip_address_ids,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_addresses",
+                    "publicIpAddresses",
                     &self.r#public_ip_addresses,
                 ),
                 to_pulumi_object_field(
-                    "trusted_address_ranges",
+                    "trustedAddressRanges",
                     &self.r#trusted_address_ranges,
                 ),
                 to_pulumi_object_field(
-                    "vnet_configuration",
+                    "vnetConfiguration",
                     &self.r#vnet_configuration,
                 ),
             ];

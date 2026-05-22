@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "json_token_type_configurations",
+                    "jsonTokenTypeConfigurations",
                     &self.r#json_token_type_configurations,
                 ),
                 to_pulumi_object_field(
-                    "jwt_token_type_configurations",
+                    "jwtTokenTypeConfigurations",
                     &self.r#jwt_token_type_configurations,
                 ),
             ];

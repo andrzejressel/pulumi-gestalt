@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_all_headers",
+                    "allowAllHeaders",
                     &self.r#allow_all_headers,
                 ),
                 to_pulumi_object_field(
-                    "allow_all_methods",
+                    "allowAllMethods",
                     &self.r#allow_all_methods,
                 ),
                 to_pulumi_object_field(
-                    "allow_all_origins",
+                    "allowAllOrigins",
                     &self.r#allow_all_origins,
                 ),
                 to_pulumi_object_field(
-                    "allow_credentials",
+                    "allowCredentials",
                     &self.r#allow_credentials,
                 ),
                 to_pulumi_object_field(
-                    "allowed_headers",
+                    "allowedHeaders",
                     &self.r#allowed_headers,
                 ),
                 to_pulumi_object_field(
-                    "allowed_methods",
+                    "allowedMethods",
                     &self.r#allowed_methods,
                 ),
                 to_pulumi_object_field(
-                    "allowed_origins",
+                    "allowedOrigins",
                     &self.r#allowed_origins,
                 ),
                 to_pulumi_object_field(
-                    "max_age",
+                    "maxAge",
                     &self.r#max_age,
                 ),
             ];

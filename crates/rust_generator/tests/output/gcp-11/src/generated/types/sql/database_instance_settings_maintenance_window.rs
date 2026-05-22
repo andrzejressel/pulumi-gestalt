@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#hour,
                 ),
                 to_pulumi_object_field(
-                    "update_track",
+                    "updateTrack",
                     &self.r#update_track,
                 ),
             ];

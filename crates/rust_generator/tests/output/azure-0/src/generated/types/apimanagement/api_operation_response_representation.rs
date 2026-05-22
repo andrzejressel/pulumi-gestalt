@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_type",
+                    "contentType",
                     &self.r#content_type,
                 ),
                 to_pulumi_object_field(
@@ -53,15 +53,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Api
                     &self.r#examples,
                 ),
                 to_pulumi_object_field(
-                    "form_parameters",
+                    "formParameters",
                     &self.r#form_parameters,
                 ),
                 to_pulumi_object_field(
-                    "schema_id",
+                    "schemaId",
                     &self.r#schema_id,
                 ),
                 to_pulumi_object_field(
-                    "type_name",
+                    "typeName",
                     &self.r#type_name,
                 ),
             ];

@@ -47,27 +47,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_concurrent_requests",
+                    "maxConcurrentRequests",
                     &self.r#max_concurrent_requests,
                 ),
                 to_pulumi_object_field(
-                    "max_idle_instances",
+                    "maxIdleInstances",
                     &self.r#max_idle_instances,
                 ),
                 to_pulumi_object_field(
-                    "max_pending_latency",
+                    "maxPendingLatency",
                     &self.r#max_pending_latency,
                 ),
                 to_pulumi_object_field(
-                    "min_idle_instances",
+                    "minIdleInstances",
                     &self.r#min_idle_instances,
                 ),
                 to_pulumi_object_field(
-                    "min_pending_latency",
+                    "minPendingLatency",
                     &self.r#min_pending_latency,
                 ),
                 to_pulumi_object_field(
-                    "standard_scheduler_settings",
+                    "standardSchedulerSettings",
                     &self.r#standard_scheduler_settings,
                 ),
             ];

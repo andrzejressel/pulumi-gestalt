@@ -67,39 +67,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "change_feed_enabled",
+                    "changeFeedEnabled",
                     &self.r#change_feed_enabled,
                 ),
                 to_pulumi_object_field(
-                    "change_feed_retention_in_days",
+                    "changeFeedRetentionInDays",
                     &self.r#change_feed_retention_in_days,
                 ),
                 to_pulumi_object_field(
-                    "container_delete_retention_policy",
+                    "containerDeleteRetentionPolicy",
                     &self.r#container_delete_retention_policy,
                 ),
                 to_pulumi_object_field(
-                    "cors_rules",
+                    "corsRules",
                     &self.r#cors_rules,
                 ),
                 to_pulumi_object_field(
-                    "default_service_version",
+                    "defaultServiceVersion",
                     &self.r#default_service_version,
                 ),
                 to_pulumi_object_field(
-                    "delete_retention_policy",
+                    "deleteRetentionPolicy",
                     &self.r#delete_retention_policy,
                 ),
                 to_pulumi_object_field(
-                    "last_access_time_enabled",
+                    "lastAccessTimeEnabled",
                     &self.r#last_access_time_enabled,
                 ),
                 to_pulumi_object_field(
-                    "restore_policy",
+                    "restorePolicy",
                     &self.r#restore_policy,
                 ),
                 to_pulumi_object_field(
-                    "versioning_enabled",
+                    "versioningEnabled",
                     &self.r#versioning_enabled,
                 ),
             ];

@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "channel_mappings",
+                    "channelMappings",
                     &self.r#channel_mappings,
                 ),
                 to_pulumi_object_field(
-                    "channels_in",
+                    "channelsIn",
                     &self.r#channels_in,
                 ),
                 to_pulumi_object_field(
-                    "channels_out",
+                    "channelsOut",
                     &self.r#channels_out,
                 ),
             ];

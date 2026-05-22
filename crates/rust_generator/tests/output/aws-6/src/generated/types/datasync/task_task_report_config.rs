@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "output_type",
+                    "outputType",
                     &self.r#output_type,
                 ),
                 to_pulumi_object_field(
-                    "report_level",
+                    "reportLevel",
                     &self.r#report_level,
                 ),
                 to_pulumi_object_field(
-                    "report_overrides",
+                    "reportOverrides",
                     &self.r#report_overrides,
                 ),
                 to_pulumi_object_field(
-                    "s_3_destination",
+                    "s3Destination",
                     &self.r#s_3_destination,
                 ),
                 to_pulumi_object_field(
-                    "s_3_object_versioning",
+                    "s3ObjectVersioning",
                     &self.r#s_3_object_versioning,
                 ),
             ];

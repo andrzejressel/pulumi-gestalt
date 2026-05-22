@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dag_processor",
+                    "dagProcessor",
                     &self.r#dag_processor,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Env
                     &self.r#triggerer,
                 ),
                 to_pulumi_object_field(
-                    "web_server",
+                    "webServer",
                     &self.r#web_server,
                 ),
                 to_pulumi_object_field(

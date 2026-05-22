@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sin
                     &self.r#names,
                 ),
                 to_pulumi_object_field(
-                    "volume_name",
+                    "volumeName",
                     &self.r#volume_name,
                 ),
             ];

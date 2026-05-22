@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Had
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_id",
+                    "groupId",
                     &self.r#group_id,
                 ),
                 to_pulumi_object_field(
-                    "ip_configuration",
+                    "ipConfiguration",
                     &self.r#ip_configuration,
                 ),
                 to_pulumi_object_field(

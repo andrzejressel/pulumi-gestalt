@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maximum_execution_timeout_in_seconds",
+                    "maximumExecutionTimeoutInSeconds",
                     &self.r#maximum_execution_timeout_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "termination_wait_in_seconds",
+                    "terminationWaitInSeconds",
                     &self.r#termination_wait_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "traffic_routing_configuration",
+                    "trafficRoutingConfiguration",
                     &self.r#traffic_routing_configuration,
                 ),
             ];

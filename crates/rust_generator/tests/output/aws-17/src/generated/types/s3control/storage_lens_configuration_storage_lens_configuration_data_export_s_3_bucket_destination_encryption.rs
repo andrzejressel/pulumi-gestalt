@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sto
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "sse_kms",
+                    "sseKms",
                     &self.r#sse_kms,
                 ),
                 to_pulumi_object_field(
-                    "sse_s_3_s",
+                    "sseS3s",
                     &self.r#sse_s_3_s,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_storage",
+                    "dataStorage",
                     &self.r#data_storage,
                 ),
                 to_pulumi_object_field(
-                    "ecpu_per_second",
+                    "ecpuPerSecond",
                     &self.r#ecpu_per_second,
                 ),
             ];

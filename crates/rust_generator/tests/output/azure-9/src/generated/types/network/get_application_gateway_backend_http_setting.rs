@@ -79,23 +79,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "affinity_cookie_name",
+                    "affinityCookieName",
                     &self.r#affinity_cookie_name,
                 ),
                 to_pulumi_object_field(
-                    "authentication_certificates",
+                    "authenticationCertificates",
                     &self.r#authentication_certificates,
                 ),
                 to_pulumi_object_field(
-                    "connection_drainings",
+                    "connectionDrainings",
                     &self.r#connection_drainings,
                 ),
                 to_pulumi_object_field(
-                    "cookie_based_affinity",
+                    "cookieBasedAffinity",
                     &self.r#cookie_based_affinity,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
@@ -111,7 +111,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "pick_host_name_from_backend_address",
+                    "pickHostNameFromBackendAddress",
                     &self.r#pick_host_name_from_backend_address,
                 ),
                 to_pulumi_object_field(
@@ -119,11 +119,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "probe_id",
+                    "probeId",
                     &self.r#probe_id,
                 ),
                 to_pulumi_object_field(
-                    "probe_name",
+                    "probeName",
                     &self.r#probe_name,
                 ),
                 to_pulumi_object_field(
@@ -131,11 +131,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "request_timeout",
+                    "requestTimeout",
                     &self.r#request_timeout,
                 ),
                 to_pulumi_object_field(
-                    "trusted_root_certificate_names",
+                    "trustedRootCertificateNames",
                     &self.r#trusted_root_certificate_names,
                 ),
             ];

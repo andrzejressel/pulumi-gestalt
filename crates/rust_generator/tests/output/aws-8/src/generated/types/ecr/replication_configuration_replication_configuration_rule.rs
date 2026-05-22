@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#destinations,
                 ),
                 to_pulumi_object_field(
-                    "repository_filters",
+                    "repositoryFilters",
                     &self.r#repository_filters,
                 ),
             ];

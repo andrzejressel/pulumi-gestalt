@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "restore_point_in_time",
+                    "restorePointInTime",
                     &self.r#restore_point_in_time,
                 ),
                 to_pulumi_object_field(
-                    "source_database_id",
+                    "sourceDatabaseId",
                     &self.r#source_database_id,
                 ),
             ];

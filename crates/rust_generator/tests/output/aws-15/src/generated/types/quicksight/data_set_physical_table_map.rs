@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_sql",
+                    "customSql",
                     &self.r#custom_sql,
                 ),
                 to_pulumi_object_field(
-                    "physical_table_map_id",
+                    "physicalTableMapId",
                     &self.r#physical_table_map_id,
                 ),
                 to_pulumi_object_field(
-                    "relational_table",
+                    "relationalTable",
                     &self.r#relational_table,
                 ),
                 to_pulumi_object_field(
-                    "s_3_source",
+                    "s3Source",
                     &self.r#s_3_source,
                 ),
             ];

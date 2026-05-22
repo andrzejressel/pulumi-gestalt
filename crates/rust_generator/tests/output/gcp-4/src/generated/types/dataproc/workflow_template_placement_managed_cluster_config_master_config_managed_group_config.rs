@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_group_manager_name",
+                    "instanceGroupManagerName",
                     &self.r#instance_group_manager_name,
                 ),
                 to_pulumi_object_field(
-                    "instance_template_name",
+                    "instanceTemplateName",
                     &self.r#instance_template_name,
                 ),
             ];

@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
-                    "read_only",
+                    "readOnly",
                     &self.r#read_only,
                 ),
                 to_pulumi_object_field(
-                    "source_image",
+                    "sourceImage",
                     &self.r#source_image,
                 ),
                 to_pulumi_object_field(
-                    "source_snapshot",
+                    "sourceSnapshot",
                     &self.r#source_snapshot,
                 ),
             ];

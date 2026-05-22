@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "constant_bitrate",
+                    "constantBitrate",
                     &self.r#constant_bitrate,
                 ),
                 to_pulumi_object_field(
-                    "statmux_settings",
+                    "statmuxSettings",
                     &self.r#statmux_settings,
                 ),
             ];

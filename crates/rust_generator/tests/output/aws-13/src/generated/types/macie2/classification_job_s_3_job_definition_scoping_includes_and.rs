@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "simple_scope_term",
+                    "simpleScopeTerm",
                     &self.r#simple_scope_term,
                 ),
                 to_pulumi_object_field(
-                    "tag_scope_term",
+                    "tagScopeTerm",
                     &self.r#tag_scope_term,
                 ),
             ];

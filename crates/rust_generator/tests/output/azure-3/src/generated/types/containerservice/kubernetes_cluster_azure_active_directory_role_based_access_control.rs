@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_group_object_ids",
+                    "adminGroupObjectIds",
                     &self.r#admin_group_object_ids,
                 ),
                 to_pulumi_object_field(
-                    "azure_rbac_enabled",
+                    "azureRbacEnabled",
                     &self.r#azure_rbac_enabled,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

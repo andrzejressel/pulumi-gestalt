@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mode_block",
+                    "modeBlock",
                     &self.r#mode_block,
                 ),
                 to_pulumi_object_field(
-                    "override_",
+                    "override",
                     &self.r#override_,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#protection,
                 ),
                 to_pulumi_object_field(
-                    "report_uri",
+                    "reportUri",
                     &self.r#report_uri,
                 ),
             ];

@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tun
                     &self.r#hostname,
                 ),
                 to_pulumi_object_field(
-                    "origin_request",
+                    "originRequest",
                     &self.r#origin_request,
                 ),
                 to_pulumi_object_field(

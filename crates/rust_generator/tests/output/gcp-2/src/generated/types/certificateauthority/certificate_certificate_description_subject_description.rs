@@ -52,7 +52,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "hex_serial_number",
+                    "hexSerialNumber",
                     &self.r#hex_serial_number,
                 ),
                 to_pulumi_object_field(
@@ -60,15 +60,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
                     &self.r#lifetime,
                 ),
                 to_pulumi_object_field(
-                    "not_after_time",
+                    "notAfterTime",
                     &self.r#not_after_time,
                 ),
                 to_pulumi_object_field(
-                    "not_before_time",
+                    "notBeforeTime",
                     &self.r#not_before_time,
                 ),
                 to_pulumi_object_field(
-                    "subject_alt_names",
+                    "subjectAltNames",
                     &self.r#subject_alt_names,
                 ),
                 to_pulumi_object_field(

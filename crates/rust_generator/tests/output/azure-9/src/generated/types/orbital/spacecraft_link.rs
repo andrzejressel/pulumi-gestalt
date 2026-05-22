@@ -41,11 +41,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bandwidth_mhz",
+                    "bandwidthMhz",
                     &self.r#bandwidth_mhz,
                 ),
                 to_pulumi_object_field(
-                    "center_frequency_mhz",
+                    "centerFrequencyMhz",
                     &self.r#center_frequency_mhz,
                 ),
                 to_pulumi_object_field(

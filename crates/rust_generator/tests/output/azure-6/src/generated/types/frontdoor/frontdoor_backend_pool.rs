@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#backends,
                 ),
                 to_pulumi_object_field(
-                    "health_probe_name",
+                    "healthProbeName",
                     &self.r#health_probe_name,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "load_balancing_name",
+                    "loadBalancingName",
                     &self.r#load_balancing_name,
                 ),
                 to_pulumi_object_field(

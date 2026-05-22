@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "health_check",
+                    "healthCheck",
                     &self.r#health_check,
                 ),
                 to_pulumi_object_field(
-                    "ip_address_type",
+                    "ipAddressType",
                     &self.r#ip_address_type,
                 ),
                 to_pulumi_object_field(
-                    "lambda_event_structure_version",
+                    "lambdaEventStructureVersion",
                     &self.r#lambda_event_structure_version,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "protocol_version",
+                    "protocolVersion",
                     &self.r#protocol_version,
                 ),
                 to_pulumi_object_field(
-                    "vpc_identifier",
+                    "vpcIdentifier",
                     &self.r#vpc_identifier,
                 ),
             ];

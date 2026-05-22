@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "condition_logic",
+                    "conditionLogic",
                     &self.r#condition_logic,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "rule_number",
+                    "ruleNumber",
                     &self.r#rule_number,
                 ),
             ];

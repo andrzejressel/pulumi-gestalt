@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#matches,
                 ),
                 to_pulumi_object_field(
-                    "minimum_servers",
+                    "minimumServers",
                     &self.r#minimum_servers,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "pick_host_name_from_backend_http_settings",
+                    "pickHostNameFromBackendHttpSettings",
                     &self.r#pick_host_name_from_backend_http_settings,
                 ),
                 to_pulumi_object_field(
@@ -111,7 +111,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#timeout,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_threshold",
+                    "unhealthyThreshold",
                     &self.r#unhealthy_threshold,
                 ),
             ];

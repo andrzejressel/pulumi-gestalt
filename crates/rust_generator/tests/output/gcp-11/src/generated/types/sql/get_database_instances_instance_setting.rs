@@ -131,23 +131,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "activation_policy",
+                    "activationPolicy",
                     &self.r#activation_policy,
                 ),
                 to_pulumi_object_field(
-                    "active_directory_configs",
+                    "activeDirectoryConfigs",
                     &self.r#active_directory_configs,
                 ),
                 to_pulumi_object_field(
-                    "advanced_machine_features",
+                    "advancedMachineFeatures",
                     &self.r#advanced_machine_features,
                 ),
                 to_pulumi_object_field(
-                    "availability_type",
+                    "availabilityType",
                     &self.r#availability_type,
                 ),
                 to_pulumi_object_field(
-                    "backup_configurations",
+                    "backupConfigurations",
                     &self.r#backup_configurations,
                 ),
                 to_pulumi_object_field(
@@ -155,39 +155,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#collation,
                 ),
                 to_pulumi_object_field(
-                    "connector_enforcement",
+                    "connectorEnforcement",
                     &self.r#connector_enforcement,
                 ),
                 to_pulumi_object_field(
-                    "data_cache_configs",
+                    "dataCacheConfigs",
                     &self.r#data_cache_configs,
                 ),
                 to_pulumi_object_field(
-                    "database_flags",
+                    "databaseFlags",
                     &self.r#database_flags,
                 ),
                 to_pulumi_object_field(
-                    "deletion_protection_enabled",
+                    "deletionProtectionEnabled",
                     &self.r#deletion_protection_enabled,
                 ),
                 to_pulumi_object_field(
-                    "deny_maintenance_periods",
+                    "denyMaintenancePeriods",
                     &self.r#deny_maintenance_periods,
                 ),
                 to_pulumi_object_field(
-                    "disk_autoresize",
+                    "diskAutoresize",
                     &self.r#disk_autoresize,
                 ),
                 to_pulumi_object_field(
-                    "disk_autoresize_limit",
+                    "diskAutoresizeLimit",
                     &self.r#disk_autoresize_limit,
                 ),
                 to_pulumi_object_field(
-                    "disk_size",
+                    "diskSize",
                     &self.r#disk_size,
                 ),
                 to_pulumi_object_field(
-                    "disk_type",
+                    "diskType",
                     &self.r#disk_type,
                 ),
                 to_pulumi_object_field(
@@ -195,39 +195,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#edition,
                 ),
                 to_pulumi_object_field(
-                    "enable_dataplex_integration",
+                    "enableDataplexIntegration",
                     &self.r#enable_dataplex_integration,
                 ),
                 to_pulumi_object_field(
-                    "enable_google_ml_integration",
+                    "enableGoogleMlIntegration",
                     &self.r#enable_google_ml_integration,
                 ),
                 to_pulumi_object_field(
-                    "insights_configs",
+                    "insightsConfigs",
                     &self.r#insights_configs,
                 ),
                 to_pulumi_object_field(
-                    "ip_configurations",
+                    "ipConfigurations",
                     &self.r#ip_configurations,
                 ),
                 to_pulumi_object_field(
-                    "location_preferences",
+                    "locationPreferences",
                     &self.r#location_preferences,
                 ),
                 to_pulumi_object_field(
-                    "maintenance_windows",
+                    "maintenanceWindows",
                     &self.r#maintenance_windows,
                 ),
                 to_pulumi_object_field(
-                    "password_validation_policies",
+                    "passwordValidationPolicies",
                     &self.r#password_validation_policies,
                 ),
                 to_pulumi_object_field(
-                    "pricing_plan",
+                    "pricingPlan",
                     &self.r#pricing_plan,
                 ),
                 to_pulumi_object_field(
-                    "sql_server_audit_configs",
+                    "sqlServerAuditConfigs",
                     &self.r#sql_server_audit_configs,
                 ),
                 to_pulumi_object_field(
@@ -235,11 +235,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#tier,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
                 to_pulumi_object_field(
-                    "user_labels",
+                    "userLabels",
                     &self.r#user_labels,
                 ),
                 to_pulumi_object_field(

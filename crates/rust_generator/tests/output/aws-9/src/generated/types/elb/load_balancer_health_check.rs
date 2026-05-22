@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "healthy_threshold",
+                    "healthyThreshold",
                     &self.r#healthy_threshold,
                 ),
                 to_pulumi_object_field(
@@ -58,7 +58,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#timeout,
                 ),
                 to_pulumi_object_field(
-                    "unhealthy_threshold",
+                    "unhealthyThreshold",
                     &self.r#unhealthy_threshold,
                 ),
             ];

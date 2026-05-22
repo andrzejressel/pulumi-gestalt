@@ -60,15 +60,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "consumer_address",
+                    "consumerAddress",
                     &self.r#consumer_address,
                 ),
                 to_pulumi_object_field(
-                    "consumer_forwarding_rule",
+                    "consumerForwardingRule",
                     &self.r#consumer_forwarding_rule,
                 ),
                 to_pulumi_object_field(
-                    "consumer_target_project",
+                    "consumerTargetProject",
                     &self.r#consumer_target_project,
                 ),
                 to_pulumi_object_field(
@@ -76,19 +76,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#error,
                 ),
                 to_pulumi_object_field(
-                    "error_info",
+                    "errorInfo",
                     &self.r#error_info,
                 ),
                 to_pulumi_object_field(
-                    "error_type",
+                    "errorType",
                     &self.r#error_type,
                 ),
                 to_pulumi_object_field(
-                    "gce_operation",
+                    "gceOperation",
                     &self.r#gce_operation,
                 ),
                 to_pulumi_object_field(
-                    "psc_connection_id",
+                    "pscConnectionId",
                     &self.r#psc_connection_id,
                 ),
                 to_pulumi_object_field(

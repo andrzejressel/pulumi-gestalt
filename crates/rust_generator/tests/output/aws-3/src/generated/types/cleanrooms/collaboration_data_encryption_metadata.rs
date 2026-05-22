@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Col
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_clear_text",
+                    "allowClearText",
                     &self.r#allow_clear_text,
                 ),
                 to_pulumi_object_field(
-                    "allow_duplicates",
+                    "allowDuplicates",
                     &self.r#allow_duplicates,
                 ),
                 to_pulumi_object_field(
-                    "allow_joins_on_columns_with_different_names",
+                    "allowJoinsOnColumnsWithDifferentNames",
                     &self.r#allow_joins_on_columns_with_different_names,
                 ),
                 to_pulumi_object_field(
-                    "preserve_nulls",
+                    "preserveNulls",
                     &self.r#preserve_nulls,
                 ),
             ];

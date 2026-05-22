@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_by_device_type",
+                    "cacheByDeviceType",
                     &self.r#cache_by_device_type,
                 ),
                 to_pulumi_object_field(
-                    "cache_deception_armor",
+                    "cacheDeceptionArmor",
                     &self.r#cache_deception_armor,
                 ),
                 to_pulumi_object_field(
-                    "custom_key",
+                    "customKey",
                     &self.r#custom_key,
                 ),
                 to_pulumi_object_field(
-                    "ignore_query_strings_order",
+                    "ignoreQueryStringsOrder",
                     &self.r#ignore_query_strings_order,
                 ),
             ];

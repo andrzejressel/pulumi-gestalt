@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_tags",
+                    "containerTags",
                     &self.r#container_tags,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "target_repository",
+                    "targetRepository",
                     &self.r#target_repository,
                 ),
             ];

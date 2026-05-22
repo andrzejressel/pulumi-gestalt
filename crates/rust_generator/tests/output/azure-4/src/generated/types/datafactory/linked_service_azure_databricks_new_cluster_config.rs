@@ -59,43 +59,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_version",
+                    "clusterVersion",
                     &self.r#cluster_version,
                 ),
                 to_pulumi_object_field(
-                    "custom_tags",
+                    "customTags",
                     &self.r#custom_tags,
                 ),
                 to_pulumi_object_field(
-                    "driver_node_type",
+                    "driverNodeType",
                     &self.r#driver_node_type,
                 ),
                 to_pulumi_object_field(
-                    "init_scripts",
+                    "initScripts",
                     &self.r#init_scripts,
                 ),
                 to_pulumi_object_field(
-                    "log_destination",
+                    "logDestination",
                     &self.r#log_destination,
                 ),
                 to_pulumi_object_field(
-                    "max_number_of_workers",
+                    "maxNumberOfWorkers",
                     &self.r#max_number_of_workers,
                 ),
                 to_pulumi_object_field(
-                    "min_number_of_workers",
+                    "minNumberOfWorkers",
                     &self.r#min_number_of_workers,
                 ),
                 to_pulumi_object_field(
-                    "node_type",
+                    "nodeType",
                     &self.r#node_type,
                 ),
                 to_pulumi_object_field(
-                    "spark_config",
+                    "sparkConfig",
                     &self.r#spark_config,
                 ),
                 to_pulumi_object_field(
-                    "spark_environment_variables",
+                    "sparkEnvironmentVariables",
                     &self.r#spark_environment_variables,
                 ),
             ];

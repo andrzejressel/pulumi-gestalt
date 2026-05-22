@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exact_match",
+                    "exactMatch",
                     &self.r#exact_match,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "present_match",
+                    "presentMatch",
                     &self.r#present_match,
                 ),
             ];

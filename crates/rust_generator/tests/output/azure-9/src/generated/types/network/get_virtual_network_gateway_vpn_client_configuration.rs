@@ -76,39 +76,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aad_audience",
+                    "aadAudience",
                     &self.r#aad_audience,
                 ),
                 to_pulumi_object_field(
-                    "aad_issuer",
+                    "aadIssuer",
                     &self.r#aad_issuer,
                 ),
                 to_pulumi_object_field(
-                    "aad_tenant",
+                    "aadTenant",
                     &self.r#aad_tenant,
                 ),
                 to_pulumi_object_field(
-                    "address_spaces",
+                    "addressSpaces",
                     &self.r#address_spaces,
                 ),
                 to_pulumi_object_field(
-                    "radius_server_address",
+                    "radiusServerAddress",
                     &self.r#radius_server_address,
                 ),
                 to_pulumi_object_field(
-                    "radius_server_secret",
+                    "radiusServerSecret",
                     &self.r#radius_server_secret,
                 ),
                 to_pulumi_object_field(
-                    "revoked_certificates",
+                    "revokedCertificates",
                     &self.r#revoked_certificates,
                 ),
                 to_pulumi_object_field(
-                    "root_certificates",
+                    "rootCertificates",
                     &self.r#root_certificates,
                 ),
                 to_pulumi_object_field(
-                    "vpn_client_protocols",
+                    "vpnClientProtocols",
                     &self.r#vpn_client_protocols,
                 ),
             ];

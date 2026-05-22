@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bucket_name_regex",
+                    "bucketNameRegex",
                     &self.r#bucket_name_regex,
                 ),
                 to_pulumi_object_field(
-                    "project_id_regex",
+                    "projectIdRegex",
                     &self.r#project_id_regex,
                 ),
             ];

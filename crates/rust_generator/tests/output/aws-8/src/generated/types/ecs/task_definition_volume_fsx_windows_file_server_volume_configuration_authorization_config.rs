@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "credentials_parameter",
+                    "credentialsParameter",
                     &self.r#credentials_parameter,
                 ),
                 to_pulumi_object_field(

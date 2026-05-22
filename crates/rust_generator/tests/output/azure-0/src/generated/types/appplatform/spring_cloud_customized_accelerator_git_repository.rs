@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "basic_auth",
+                    "basicAuth",
                     &self.r#basic_auth,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#branch,
                 ),
                 to_pulumi_object_field(
-                    "ca_certificate_id",
+                    "caCertificateId",
                     &self.r#ca_certificate_id,
                 ),
                 to_pulumi_object_field(
@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#commit,
                 ),
                 to_pulumi_object_field(
-                    "git_tag",
+                    "gitTag",
                     &self.r#git_tag,
                 ),
                 to_pulumi_object_field(
-                    "interval_in_seconds",
+                    "intervalInSeconds",
                     &self.r#interval_in_seconds,
                 ),
                 to_pulumi_object_field(
@@ -83,7 +83,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Spr
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "ssh_auth",
+                    "sshAuth",
                     &self.r#ssh_auth,
                 ),
                 to_pulumi_object_field(

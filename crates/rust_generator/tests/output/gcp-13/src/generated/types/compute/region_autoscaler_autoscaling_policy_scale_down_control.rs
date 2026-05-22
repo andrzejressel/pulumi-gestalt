@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_scaled_down_replicas",
+                    "maxScaledDownReplicas",
                     &self.r#max_scaled_down_replicas,
                 ),
                 to_pulumi_object_field(
-                    "time_window_sec",
+                    "timeWindowSec",
                     &self.r#time_window_sec,
                 ),
             ];

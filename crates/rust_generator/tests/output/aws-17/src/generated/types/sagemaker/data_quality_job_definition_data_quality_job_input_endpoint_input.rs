@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_name",
+                    "endpointName",
                     &self.r#endpoint_name,
                 ),
                 to_pulumi_object_field(
-                    "local_path",
+                    "localPath",
                     &self.r#local_path,
                 ),
                 to_pulumi_object_field(
-                    "s_3_data_distribution_type",
+                    "s3DataDistributionType",
                     &self.r#s_3_data_distribution_type,
                 ),
                 to_pulumi_object_field(
-                    "s_3_input_mode",
+                    "s3InputMode",
                     &self.r#s_3_input_mode,
                 ),
             ];

@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cla
                     &self.r#classification,
                 ),
                 to_pulumi_object_field(
-                    "custom_patterns",
+                    "customPatterns",
                     &self.r#custom_patterns,
                 ),
                 to_pulumi_object_field(
-                    "grok_pattern",
+                    "grokPattern",
                     &self.r#grok_pattern,
                 ),
             ];

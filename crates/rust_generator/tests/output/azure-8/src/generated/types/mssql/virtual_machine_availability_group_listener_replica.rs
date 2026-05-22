@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#commit,
                 ),
                 to_pulumi_object_field(
-                    "failover_mode",
+                    "failoverMode",
                     &self.r#failover_mode,
                 ),
                 to_pulumi_object_field(
-                    "readable_secondary",
+                    "readableSecondary",
                     &self.r#readable_secondary,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#role,
                 ),
                 to_pulumi_object_field(
-                    "sql_virtual_machine_id",
+                    "sqlVirtualMachineId",
                     &self.r#sql_virtual_machine_id,
                 ),
             ];

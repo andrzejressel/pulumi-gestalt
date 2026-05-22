@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#accessibility,
                 ),
                 to_pulumi_object_field(
-                    "caption_selector_name",
+                    "captionSelectorName",
                     &self.r#caption_selector_name,
                 ),
                 to_pulumi_object_field(
-                    "destination_settings",
+                    "destinationSettings",
                     &self.r#destination_settings,
                 ),
                 to_pulumi_object_field(
-                    "language_code",
+                    "languageCode",
                     &self.r#language_code,
                 ),
                 to_pulumi_object_field(
-                    "language_description",
+                    "languageDescription",
                     &self.r#language_description,
                 ),
                 to_pulumi_object_field(

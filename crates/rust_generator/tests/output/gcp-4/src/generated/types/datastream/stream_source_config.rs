@@ -43,23 +43,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mysql_source_config",
+                    "mysqlSourceConfig",
                     &self.r#mysql_source_config,
                 ),
                 to_pulumi_object_field(
-                    "oracle_source_config",
+                    "oracleSourceConfig",
                     &self.r#oracle_source_config,
                 ),
                 to_pulumi_object_field(
-                    "postgresql_source_config",
+                    "postgresqlSourceConfig",
                     &self.r#postgresql_source_config,
                 ),
                 to_pulumi_object_field(
-                    "source_connection_profile",
+                    "sourceConnectionProfile",
                     &self.r#source_connection_profile,
                 ),
                 to_pulumi_object_field(
-                    "sql_server_source_config",
+                    "sqlServerSourceConfig",
                     &self.r#sql_server_source_config,
                 ),
             ];

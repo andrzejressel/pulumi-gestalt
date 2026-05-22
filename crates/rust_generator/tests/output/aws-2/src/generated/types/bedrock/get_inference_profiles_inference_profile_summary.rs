@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "created_at",
+                    "createdAt",
                     &self.r#created_at,
                 ),
                 to_pulumi_object_field(
@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "inference_profile_arn",
+                    "inferenceProfileArn",
                     &self.r#inference_profile_arn,
                 ),
                 to_pulumi_object_field(
-                    "inference_profile_id",
+                    "inferenceProfileId",
                     &self.r#inference_profile_id,
                 ),
                 to_pulumi_object_field(
-                    "inference_profile_name",
+                    "inferenceProfileName",
                     &self.r#inference_profile_name,
                 ),
                 to_pulumi_object_field(
@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(
-                    "updated_at",
+                    "updatedAt",
                     &self.r#updated_at,
                 ),
             ];

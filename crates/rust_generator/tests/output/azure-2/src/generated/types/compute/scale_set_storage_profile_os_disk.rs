@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#caching,
                 ),
                 to_pulumi_object_field(
-                    "create_option",
+                    "createOption",
                     &self.r#create_option,
                 ),
                 to_pulumi_object_field(
@@ -61,7 +61,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "managed_disk_type",
+                    "managedDiskType",
                     &self.r#managed_disk_type,
                 ),
                 to_pulumi_object_field(
@@ -69,11 +69,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sca
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "os_type",
+                    "osType",
                     &self.r#os_type,
                 ),
                 to_pulumi_object_field(
-                    "vhd_containers",
+                    "vhdContainers",
                     &self.r#vhd_containers,
                 ),
             ];

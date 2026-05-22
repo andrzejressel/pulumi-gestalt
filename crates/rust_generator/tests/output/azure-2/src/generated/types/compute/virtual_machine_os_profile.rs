@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "admin_password",
+                    "adminPassword",
                     &self.r#admin_password,
                 ),
                 to_pulumi_object_field(
-                    "admin_username",
+                    "adminUsername",
                     &self.r#admin_username,
                 ),
                 to_pulumi_object_field(
-                    "computer_name",
+                    "computerName",
                     &self.r#computer_name,
                 ),
                 to_pulumi_object_field(
-                    "custom_data",
+                    "customData",
                     &self.r#custom_data,
                 ),
             ];

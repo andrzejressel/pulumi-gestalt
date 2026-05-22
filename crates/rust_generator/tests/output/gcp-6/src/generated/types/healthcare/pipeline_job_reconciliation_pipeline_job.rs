@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fhir_store_destination",
+                    "fhirStoreDestination",
                     &self.r#fhir_store_destination,
                 ),
                 to_pulumi_object_field(
-                    "matching_uri_prefix",
+                    "matchingUriPrefix",
                     &self.r#matching_uri_prefix,
                 ),
                 to_pulumi_object_field(
-                    "merge_config",
+                    "mergeConfig",
                     &self.r#merge_config,
                 ),
             ];

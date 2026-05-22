@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tls
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_authority_arn",
+                    "certificateAuthorityArn",
                     &self.r#certificate_authority_arn,
                 ),
                 to_pulumi_object_field(
-                    "check_certificate_revocation_status",
+                    "checkCertificateRevocationStatus",
                     &self.r#check_certificate_revocation_status,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tls
                     &self.r#scopes,
                 ),
                 to_pulumi_object_field(
-                    "server_certificates",
+                    "serverCertificates",
                     &self.r#server_certificates,
                 ),
             ];

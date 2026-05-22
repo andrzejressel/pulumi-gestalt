@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#container,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_container_enabled",
+                    "dynamicContainerEnabled",
                     &self.r#dynamic_container_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_filename_enabled",
+                    "dynamicFilenameEnabled",
                     &self.r#dynamic_filename_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dynamic_path_enabled",
+                    "dynamicPathEnabled",
                     &self.r#dynamic_path_enabled,
                 ),
                 to_pulumi_object_field(

@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cat
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "orphan_file_deletion_configuration",
+                    "orphanFileDeletionConfiguration",
                     &self.r#orphan_file_deletion_configuration,
                 ),
                 to_pulumi_object_field(
-                    "retention_configuration",
+                    "retentionConfiguration",
                     &self.r#retention_configuration,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];

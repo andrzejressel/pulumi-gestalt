@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sys
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "header_name",
+                    "headerName",
                     &self.r#header_name,
                 ),
                 to_pulumi_object_field(
@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sys
                     &self.r#secret,
                 ),
                 to_pulumi_object_field(
-                    "source_field",
+                    "sourceField",
                     &self.r#source_field,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(

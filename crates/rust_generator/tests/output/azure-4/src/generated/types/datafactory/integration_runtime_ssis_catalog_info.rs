@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "administrator_login",
+                    "administratorLogin",
                     &self.r#administrator_login,
                 ),
                 to_pulumi_object_field(
-                    "administrator_password",
+                    "administratorPassword",
                     &self.r#administrator_password,
                 ),
                 to_pulumi_object_field(
-                    "dual_standby_pair_name",
+                    "dualStandbyPairName",
                     &self.r#dual_standby_pair_name,
                 ),
                 to_pulumi_object_field(
-                    "elastic_pool_name",
+                    "elasticPoolName",
                     &self.r#elastic_pool_name,
                 ),
                 to_pulumi_object_field(
-                    "pricing_tier",
+                    "pricingTier",
                     &self.r#pricing_tier,
                 ),
                 to_pulumi_object_field(
-                    "server_endpoint",
+                    "serverEndpoint",
                     &self.r#server_endpoint,
                 ),
             ];

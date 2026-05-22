@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_name",
+                    "certificateName",
                     &self.r#certificate_name,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_id",
+                    "keyVaultId",
                     &self.r#key_vault_id,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_secret_name",
+                    "keyVaultSecretName",
                     &self.r#key_vault_secret_name,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_state",
+                    "provisioningState",
                     &self.r#provisioning_state,
                 ),
             ];

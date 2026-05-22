@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Voi
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "voice_connector_id",
+                    "voiceConnectorId",
                     &self.r#voice_connector_id,
                 ),
             ];

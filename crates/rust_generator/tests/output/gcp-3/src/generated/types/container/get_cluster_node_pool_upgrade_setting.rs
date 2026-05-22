@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "blue_green_settings",
+                    "blueGreenSettings",
                     &self.r#blue_green_settings,
                 ),
                 to_pulumi_object_field(
-                    "max_surge",
+                    "maxSurge",
                     &self.r#max_surge,
                 ),
                 to_pulumi_object_field(
-                    "max_unavailable",
+                    "maxUnavailable",
                     &self.r#max_unavailable,
                 ),
                 to_pulumi_object_field(

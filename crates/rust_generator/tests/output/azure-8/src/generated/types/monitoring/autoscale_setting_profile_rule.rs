@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_trigger",
+                    "metricTrigger",
                     &self.r#metric_trigger,
                 ),
                 to_pulumi_object_field(
-                    "scale_action",
+                    "scaleAction",
                     &self.r#scale_action,
                 ),
             ];

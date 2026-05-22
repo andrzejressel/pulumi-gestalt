@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "revocation_state",
+                    "revocationState",
                     &self.r#revocation_state,
                 ),
                 to_pulumi_object_field(
-                    "revocation_time",
+                    "revocationTime",
                     &self.r#revocation_time,
                 ),
             ];

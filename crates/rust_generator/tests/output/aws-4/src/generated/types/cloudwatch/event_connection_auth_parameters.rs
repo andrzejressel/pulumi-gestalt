@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_key",
+                    "apiKey",
                     &self.r#api_key,
                 ),
                 to_pulumi_object_field(
@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Eve
                     &self.r#basic,
                 ),
                 to_pulumi_object_field(
-                    "invocation_http_parameters",
+                    "invocationHttpParameters",
                     &self.r#invocation_http_parameters,
                 ),
                 to_pulumi_object_field(

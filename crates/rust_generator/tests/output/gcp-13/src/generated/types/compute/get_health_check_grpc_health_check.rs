@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "grpc_service_name",
+                    "grpcServiceName",
                     &self.r#grpc_service_name,
                 ),
                 to_pulumi_object_field(
@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "port_name",
+                    "portName",
                     &self.r#port_name,
                 ),
                 to_pulumi_object_field(
-                    "port_specification",
+                    "portSpecification",
                     &self.r#port_specification,
                 ),
             ];

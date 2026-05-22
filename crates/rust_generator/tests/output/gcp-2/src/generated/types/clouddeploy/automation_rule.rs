@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advance_rollout_rule",
+                    "advanceRolloutRule",
                     &self.r#advance_rollout_rule,
                 ),
                 to_pulumi_object_field(
-                    "promote_release_rule",
+                    "promoteReleaseRule",
                     &self.r#promote_release_rule,
                 ),
             ];

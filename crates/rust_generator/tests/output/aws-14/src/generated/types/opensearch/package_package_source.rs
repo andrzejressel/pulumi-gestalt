@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "s_3_bucket_name",
+                    "s3BucketName",
                     &self.r#s_3_bucket_name,
                 ),
                 to_pulumi_object_field(
-                    "s_3_key",
+                    "s3Key",
                     &self.r#s_3_key,
                 ),
             ];

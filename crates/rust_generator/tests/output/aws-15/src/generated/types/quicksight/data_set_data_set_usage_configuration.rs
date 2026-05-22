@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_use_as_direct_query_source",
+                    "disableUseAsDirectQuerySource",
                     &self.r#disable_use_as_direct_query_source,
                 ),
                 to_pulumi_object_field(
-                    "disable_use_as_imported_source",
+                    "disableUseAsImportedSource",
                     &self.r#disable_use_as_imported_source,
                 ),
             ];

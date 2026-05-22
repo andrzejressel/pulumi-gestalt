@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "public_ip_address",
+                    "publicIpAddress",
                     &self.r#public_ip_address,
                 ),
             ];

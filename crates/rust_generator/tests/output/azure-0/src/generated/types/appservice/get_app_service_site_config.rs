@@ -139,19 +139,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "acr_use_managed_identity_credentials",
+                    "acrUseManagedIdentityCredentials",
                     &self.r#acr_use_managed_identity_credentials,
                 ),
                 to_pulumi_object_field(
-                    "acr_user_managed_identity_client_id",
+                    "acrUserManagedIdentityClientId",
                     &self.r#acr_user_managed_identity_client_id,
                 ),
                 to_pulumi_object_field(
-                    "always_on",
+                    "alwaysOn",
                     &self.r#always_on,
                 ),
                 to_pulumi_object_field(
-                    "app_command_line",
+                    "appCommandLine",
                     &self.r#app_command_line,
                 ),
                 to_pulumi_object_field(
@@ -159,103 +159,103 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#cors,
                 ),
                 to_pulumi_object_field(
-                    "default_documents",
+                    "defaultDocuments",
                     &self.r#default_documents,
                 ),
                 to_pulumi_object_field(
-                    "dotnet_framework_version",
+                    "dotnetFrameworkVersion",
                     &self.r#dotnet_framework_version,
                 ),
                 to_pulumi_object_field(
-                    "ftps_state",
+                    "ftpsState",
                     &self.r#ftps_state,
                 ),
                 to_pulumi_object_field(
-                    "health_check_path",
+                    "healthCheckPath",
                     &self.r#health_check_path,
                 ),
                 to_pulumi_object_field(
-                    "http_2_enabled",
+                    "http2Enabled",
                     &self.r#http_2_enabled,
                 ),
                 to_pulumi_object_field(
-                    "ip_restrictions",
+                    "ipRestrictions",
                     &self.r#ip_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "java_container",
+                    "javaContainer",
                     &self.r#java_container,
                 ),
                 to_pulumi_object_field(
-                    "java_container_version",
+                    "javaContainerVersion",
                     &self.r#java_container_version,
                 ),
                 to_pulumi_object_field(
-                    "java_version",
+                    "javaVersion",
                     &self.r#java_version,
                 ),
                 to_pulumi_object_field(
-                    "linux_fx_version",
+                    "linuxFxVersion",
                     &self.r#linux_fx_version,
                 ),
                 to_pulumi_object_field(
-                    "local_mysql_enabled",
+                    "localMysqlEnabled",
                     &self.r#local_mysql_enabled,
                 ),
                 to_pulumi_object_field(
-                    "managed_pipeline_mode",
+                    "managedPipelineMode",
                     &self.r#managed_pipeline_mode,
                 ),
                 to_pulumi_object_field(
-                    "min_tls_version",
+                    "minTlsVersion",
                     &self.r#min_tls_version,
                 ),
                 to_pulumi_object_field(
-                    "number_of_workers",
+                    "numberOfWorkers",
                     &self.r#number_of_workers,
                 ),
                 to_pulumi_object_field(
-                    "php_version",
+                    "phpVersion",
                     &self.r#php_version,
                 ),
                 to_pulumi_object_field(
-                    "python_version",
+                    "pythonVersion",
                     &self.r#python_version,
                 ),
                 to_pulumi_object_field(
-                    "remote_debugging_enabled",
+                    "remoteDebuggingEnabled",
                     &self.r#remote_debugging_enabled,
                 ),
                 to_pulumi_object_field(
-                    "remote_debugging_version",
+                    "remoteDebuggingVersion",
                     &self.r#remote_debugging_version,
                 ),
                 to_pulumi_object_field(
-                    "scm_ip_restrictions",
+                    "scmIpRestrictions",
                     &self.r#scm_ip_restrictions,
                 ),
                 to_pulumi_object_field(
-                    "scm_type",
+                    "scmType",
                     &self.r#scm_type,
                 ),
                 to_pulumi_object_field(
-                    "scm_use_main_ip_restriction",
+                    "scmUseMainIpRestriction",
                     &self.r#scm_use_main_ip_restriction,
                 ),
                 to_pulumi_object_field(
-                    "use_32_bit_worker_process",
+                    "use32BitWorkerProcess",
                     &self.r#use_32_bit_worker_process,
                 ),
                 to_pulumi_object_field(
-                    "vnet_route_all_enabled",
+                    "vnetRouteAllEnabled",
                     &self.r#vnet_route_all_enabled,
                 ),
                 to_pulumi_object_field(
-                    "websockets_enabled",
+                    "websocketsEnabled",
                     &self.r#websockets_enabled,
                 ),
                 to_pulumi_object_field(
-                    "windows_fx_version",
+                    "windowsFxVersion",
                     &self.r#windows_fx_version,
                 ),
             ];

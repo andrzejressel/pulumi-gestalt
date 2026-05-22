@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "friendly_name",
+                    "friendlyName",
                     &self.r#friendly_name,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "name_format",
+                    "nameFormat",
                     &self.r#name_format,
                 ),
                 to_pulumi_object_field(

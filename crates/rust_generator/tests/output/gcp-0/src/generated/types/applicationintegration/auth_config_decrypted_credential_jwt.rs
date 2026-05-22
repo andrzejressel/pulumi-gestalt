@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#jwt,
                 ),
                 to_pulumi_object_field(
-                    "jwt_header",
+                    "jwtHeader",
                     &self.r#jwt_header,
                 ),
                 to_pulumi_object_field(
-                    "jwt_payload",
+                    "jwtPayload",
                     &self.r#jwt_payload,
                 ),
                 to_pulumi_object_field(

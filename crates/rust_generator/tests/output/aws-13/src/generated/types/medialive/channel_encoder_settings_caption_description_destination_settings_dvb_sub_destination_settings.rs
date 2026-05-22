@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#alignment,
                 ),
                 to_pulumi_object_field(
-                    "background_color",
+                    "backgroundColor",
                     &self.r#background_color,
                 ),
                 to_pulumi_object_field(
-                    "background_opacity",
+                    "backgroundOpacity",
                     &self.r#background_opacity,
                 ),
                 to_pulumi_object_field(
@@ -103,55 +103,55 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#font,
                 ),
                 to_pulumi_object_field(
-                    "font_color",
+                    "fontColor",
                     &self.r#font_color,
                 ),
                 to_pulumi_object_field(
-                    "font_opacity",
+                    "fontOpacity",
                     &self.r#font_opacity,
                 ),
                 to_pulumi_object_field(
-                    "font_resolution",
+                    "fontResolution",
                     &self.r#font_resolution,
                 ),
                 to_pulumi_object_field(
-                    "font_size",
+                    "fontSize",
                     &self.r#font_size,
                 ),
                 to_pulumi_object_field(
-                    "outline_color",
+                    "outlineColor",
                     &self.r#outline_color,
                 ),
                 to_pulumi_object_field(
-                    "outline_size",
+                    "outlineSize",
                     &self.r#outline_size,
                 ),
                 to_pulumi_object_field(
-                    "shadow_color",
+                    "shadowColor",
                     &self.r#shadow_color,
                 ),
                 to_pulumi_object_field(
-                    "shadow_opacity",
+                    "shadowOpacity",
                     &self.r#shadow_opacity,
                 ),
                 to_pulumi_object_field(
-                    "shadow_x_offset",
+                    "shadowXOffset",
                     &self.r#shadow_x_offset,
                 ),
                 to_pulumi_object_field(
-                    "shadow_y_offset",
+                    "shadowYOffset",
                     &self.r#shadow_y_offset,
                 ),
                 to_pulumi_object_field(
-                    "teletext_grid_control",
+                    "teletextGridControl",
                     &self.r#teletext_grid_control,
                 ),
                 to_pulumi_object_field(
-                    "x_position",
+                    "xPosition",
                     &self.r#x_position,
                 ),
                 to_pulumi_object_field(
-                    "y_position",
+                    "yPosition",
                     &self.r#y_position,
                 ),
             ];

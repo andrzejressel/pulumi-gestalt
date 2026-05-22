@@ -42,15 +42,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "inspect_config",
+                    "inspectConfig",
                     &self.r#inspect_config,
                 ),
                 to_pulumi_object_field(
-                    "inspect_template_name",
+                    "inspectTemplateName",
                     &self.r#inspect_template_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_config",
+                    "storageConfig",
                     &self.r#storage_config,
                 ),
             ];

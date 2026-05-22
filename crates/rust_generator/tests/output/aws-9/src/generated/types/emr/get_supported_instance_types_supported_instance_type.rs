@@ -67,39 +67,39 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#architecture,
                 ),
                 to_pulumi_object_field(
-                    "ebs_optimized_available",
+                    "ebsOptimizedAvailable",
                     &self.r#ebs_optimized_available,
                 ),
                 to_pulumi_object_field(
-                    "ebs_optimized_by_default",
+                    "ebsOptimizedByDefault",
                     &self.r#ebs_optimized_by_default,
                 ),
                 to_pulumi_object_field(
-                    "ebs_storage_only",
+                    "ebsStorageOnly",
                     &self.r#ebs_storage_only,
                 ),
                 to_pulumi_object_field(
-                    "instance_family_id",
+                    "instanceFamilyId",
                     &self.r#instance_family_id,
                 ),
                 to_pulumi_object_field(
-                    "is_64_bits_only",
+                    "is64BitsOnly",
                     &self.r#is_64_bits_only,
                 ),
                 to_pulumi_object_field(
-                    "memory_gb",
+                    "memoryGb",
                     &self.r#memory_gb,
                 ),
                 to_pulumi_object_field(
-                    "number_of_disks",
+                    "numberOfDisks",
                     &self.r#number_of_disks,
                 ),
                 to_pulumi_object_field(
-                    "storage_gb",
+                    "storageGb",
                     &self.r#storage_gb,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(

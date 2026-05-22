@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_direction",
+                    "connectionDirection",
                     &self.r#connection_direction,
                 ),
                 to_pulumi_object_field(
-                    "private_link_enabled",
+                    "privateLinkEnabled",
                     &self.r#private_link_enabled,
                 ),
             ];

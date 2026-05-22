@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "branch_name",
+                    "branchName",
                     &self.r#branch_name,
                 ),
                 to_pulumi_object_field(
-                    "dns_record",
+                    "dnsRecord",
                     &self.r#dns_record,
                 ),
                 to_pulumi_object_field(

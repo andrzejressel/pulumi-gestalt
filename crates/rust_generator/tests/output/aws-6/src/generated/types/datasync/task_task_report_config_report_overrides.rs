@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tas
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deleted_override",
+                    "deletedOverride",
                     &self.r#deleted_override,
                 ),
                 to_pulumi_object_field(
-                    "skipped_override",
+                    "skippedOverride",
                     &self.r#skipped_override,
                 ),
                 to_pulumi_object_field(
-                    "transferred_override",
+                    "transferredOverride",
                     &self.r#transferred_override,
                 ),
                 to_pulumi_object_field(
-                    "verified_override",
+                    "verifiedOverride",
                     &self.r#verified_override,
                 ),
             ];

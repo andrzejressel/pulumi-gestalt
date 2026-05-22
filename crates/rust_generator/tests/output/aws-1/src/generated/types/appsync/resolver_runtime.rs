@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "runtime_version",
+                    "runtimeVersion",
                     &self.r#runtime_version,
                 ),
             ];

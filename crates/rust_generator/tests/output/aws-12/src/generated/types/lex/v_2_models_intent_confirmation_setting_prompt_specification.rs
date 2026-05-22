@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_interrupt",
+                    "allowInterrupt",
                     &self.r#allow_interrupt,
                 ),
                 to_pulumi_object_field(
-                    "max_retries",
+                    "maxRetries",
                     &self.r#max_retries,
                 ),
                 to_pulumi_object_field(
-                    "message_groups",
+                    "messageGroups",
                     &self.r#message_groups,
                 ),
                 to_pulumi_object_field(
-                    "message_selection_strategy",
+                    "messageSelectionStrategy",
                     &self.r#message_selection_strategy,
                 ),
                 to_pulumi_object_field(
-                    "prompt_attempts_specifications",
+                    "promptAttemptsSpecifications",
                     &self.r#prompt_attempts_specifications,
                 ),
             ];

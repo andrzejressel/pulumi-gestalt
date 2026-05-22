@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "amd_sev_snp",
+                    "amdSevSnp",
                     &self.r#amd_sev_snp,
                 ),
                 to_pulumi_object_field(
-                    "core_count",
+                    "coreCount",
                     &self.r#core_count,
                 ),
                 to_pulumi_object_field(
-                    "threads_per_core",
+                    "threadsPerCore",
                     &self.r#threads_per_core,
                 ),
             ];

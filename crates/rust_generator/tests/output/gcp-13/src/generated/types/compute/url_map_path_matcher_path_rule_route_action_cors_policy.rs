@@ -56,23 +56,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_credentials",
+                    "allowCredentials",
                     &self.r#allow_credentials,
                 ),
                 to_pulumi_object_field(
-                    "allow_headers",
+                    "allowHeaders",
                     &self.r#allow_headers,
                 ),
                 to_pulumi_object_field(
-                    "allow_methods",
+                    "allowMethods",
                     &self.r#allow_methods,
                 ),
                 to_pulumi_object_field(
-                    "allow_origin_regexes",
+                    "allowOriginRegexes",
                     &self.r#allow_origin_regexes,
                 ),
                 to_pulumi_object_field(
-                    "allow_origins",
+                    "allowOrigins",
                     &self.r#allow_origins,
                 ),
                 to_pulumi_object_field(
@@ -80,11 +80,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Url
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "expose_headers",
+                    "exposeHeaders",
                     &self.r#expose_headers,
                 ),
                 to_pulumi_object_field(
-                    "max_age",
+                    "maxAge",
                     &self.r#max_age,
                 ),
             ];

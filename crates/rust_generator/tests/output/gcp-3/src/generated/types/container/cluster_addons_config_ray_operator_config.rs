@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "ray_cluster_logging_config",
+                    "rayClusterLoggingConfig",
                     &self.r#ray_cluster_logging_config,
                 ),
                 to_pulumi_object_field(
-                    "ray_cluster_monitoring_config",
+                    "rayClusterMonitoringConfig",
                     &self.r#ray_cluster_monitoring_config,
                 ),
             ];

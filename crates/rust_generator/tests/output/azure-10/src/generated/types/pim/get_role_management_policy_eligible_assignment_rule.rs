@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "expiration_required",
+                    "expirationRequired",
                     &self.r#expiration_required,
                 ),
                 to_pulumi_object_field(
-                    "expire_after",
+                    "expireAfter",
                     &self.r#expire_after,
                 ),
             ];

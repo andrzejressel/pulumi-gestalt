@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "supported_values",
+                    "supportedValues",
                     &self.r#supported_values,
                 ),
                 to_pulumi_object_field(

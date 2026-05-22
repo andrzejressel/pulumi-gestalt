@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#days,
                 ),
                 to_pulumi_object_field(
-                    "expired_object_delete_marker",
+                    "expiredObjectDeleteMarker",
                     &self.r#expired_object_delete_marker,
                 ),
             ];

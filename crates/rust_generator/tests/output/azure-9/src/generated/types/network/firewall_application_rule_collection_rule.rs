@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "fqdn_tags",
+                    "fqdnTags",
                     &self.r#fqdn_tags,
                 ),
                 to_pulumi_object_field(
@@ -65,15 +65,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#protocols,
                 ),
                 to_pulumi_object_field(
-                    "source_addresses",
+                    "sourceAddresses",
                     &self.r#source_addresses,
                 ),
                 to_pulumi_object_field(
-                    "source_ip_groups",
+                    "sourceIpGroups",
                     &self.r#source_ip_groups,
                 ),
                 to_pulumi_object_field(
-                    "target_fqdns",
+                    "targetFqdns",
                     &self.r#target_fqdns,
                 ),
             ];

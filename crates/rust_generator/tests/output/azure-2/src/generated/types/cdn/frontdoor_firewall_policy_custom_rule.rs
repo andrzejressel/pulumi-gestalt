@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "match_conditions",
+                    "matchConditions",
                     &self.r#match_conditions,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_duration_in_minutes",
+                    "rateLimitDurationInMinutes",
                     &self.r#rate_limit_duration_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_threshold",
+                    "rateLimitThreshold",
                     &self.r#rate_limit_threshold,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

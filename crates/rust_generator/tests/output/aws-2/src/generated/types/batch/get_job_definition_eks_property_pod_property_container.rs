@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#image,
                 ),
                 to_pulumi_object_field(
-                    "image_pull_policy",
+                    "imagePullPolicy",
                     &self.r#image_pull_policy,
                 ),
                 to_pulumi_object_field(
@@ -83,11 +83,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#resources,
                 ),
                 to_pulumi_object_field(
-                    "security_contexts",
+                    "securityContexts",
                     &self.r#security_contexts,
                 ),
                 to_pulumi_object_field(
-                    "volume_mounts",
+                    "volumeMounts",
                     &self.r#volume_mounts,
                 ),
             ];

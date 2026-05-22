@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Str
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aggregation_enabled",
+                    "aggregationEnabled",
                     &self.r#aggregation_enabled,
                 ),
                 to_pulumi_object_field(
-                    "stream_arn",
+                    "streamArn",
                     &self.r#stream_arn,
                 ),
             ];

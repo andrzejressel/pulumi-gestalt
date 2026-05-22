@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#value,
                 ),
                 to_pulumi_object_field(
-                    "value_froms",
+                    "valueFroms",
                     &self.r#value_froms,
                 ),
             ];

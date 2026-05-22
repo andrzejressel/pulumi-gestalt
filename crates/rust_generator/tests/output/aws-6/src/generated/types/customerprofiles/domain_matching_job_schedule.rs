@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_the_week",
+                    "dayOfTheWeek",
                     &self.r#day_of_the_week,
                 ),
                 to_pulumi_object_field(

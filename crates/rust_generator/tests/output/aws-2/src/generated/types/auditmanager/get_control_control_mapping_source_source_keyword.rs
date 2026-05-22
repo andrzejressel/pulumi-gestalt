@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "keyword_input_type",
+                    "keywordInputType",
                     &self.r#keyword_input_type,
                 ),
                 to_pulumi_object_field(
-                    "keyword_value",
+                    "keywordValue",
                     &self.r#keyword_value,
                 ),
             ];

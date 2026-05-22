@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_cll",
+                    "maxCll",
                     &self.r#max_cll,
                 ),
                 to_pulumi_object_field(
-                    "max_fall",
+                    "maxFall",
                     &self.r#max_fall,
                 ),
             ];

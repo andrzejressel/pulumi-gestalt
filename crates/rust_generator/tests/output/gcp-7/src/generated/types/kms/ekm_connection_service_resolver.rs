@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ekm
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_filter",
+                    "endpointFilter",
                     &self.r#endpoint_filter,
                 ),
                 to_pulumi_object_field(
@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ekm
                     &self.r#hostname,
                 ),
                 to_pulumi_object_field(
-                    "server_certificates",
+                    "serverCertificates",
                     &self.r#server_certificates,
                 ),
                 to_pulumi_object_field(
-                    "service_directory_service",
+                    "serviceDirectoryService",
                     &self.r#service_directory_service,
                 ),
             ];

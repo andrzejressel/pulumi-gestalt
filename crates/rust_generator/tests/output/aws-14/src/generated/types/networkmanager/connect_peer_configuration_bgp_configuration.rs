@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "core_network_address",
+                    "coreNetworkAddress",
                     &self.r#core_network_address,
                 ),
                 to_pulumi_object_field(
-                    "core_network_asn",
+                    "coreNetworkAsn",
                     &self.r#core_network_asn,
                 ),
                 to_pulumi_object_field(
-                    "peer_address",
+                    "peerAddress",
                     &self.r#peer_address,
                 ),
                 to_pulumi_object_field(
-                    "peer_asn",
+                    "peerAsn",
                     &self.r#peer_asn,
                 ),
             ];

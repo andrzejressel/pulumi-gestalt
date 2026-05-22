@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#fqdns,
                 ),
                 to_pulumi_object_field(
-                    "gcp_secret_manager_certificate_configs",
+                    "gcpSecretManagerCertificateConfigs",
                     &self.r#gcp_secret_manager_certificate_configs,
                 ),
             ];

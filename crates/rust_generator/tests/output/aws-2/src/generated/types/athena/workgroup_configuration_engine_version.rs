@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "effective_engine_version",
+                    "effectiveEngineVersion",
                     &self.r#effective_engine_version,
                 ),
                 to_pulumi_object_field(
-                    "selected_engine_version",
+                    "selectedEngineVersion",
                     &self.r#selected_engine_version,
                 ),
             ];

@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Azu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_type",
+                    "imageType",
                     &self.r#image_type,
                 ),
                 to_pulumi_object_field(
@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Azu
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "proxy_config",
+                    "proxyConfig",
                     &self.r#proxy_config,
                 ),
                 to_pulumi_object_field(
-                    "root_volume",
+                    "rootVolume",
                     &self.r#root_volume,
                 ),
                 to_pulumi_object_field(
-                    "ssh_config",
+                    "sshConfig",
                     &self.r#ssh_config,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Azu
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "vm_size",
+                    "vmSize",
                     &self.r#vm_size,
                 ),
             ];

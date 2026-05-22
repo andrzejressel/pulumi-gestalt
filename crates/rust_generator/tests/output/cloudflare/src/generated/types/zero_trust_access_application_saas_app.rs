@@ -111,83 +111,83 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_token_lifetime",
+                    "accessTokenLifetime",
                     &self.r#access_token_lifetime,
                 ),
                 to_pulumi_object_field(
-                    "allow_pkce_without_client_secret",
+                    "allowPkceWithoutClientSecret",
                     &self.r#allow_pkce_without_client_secret,
                 ),
                 to_pulumi_object_field(
-                    "app_launcher_url",
+                    "appLauncherUrl",
                     &self.r#app_launcher_url,
                 ),
                 to_pulumi_object_field(
-                    "auth_type",
+                    "authType",
                     &self.r#auth_type,
                 ),
                 to_pulumi_object_field(
-                    "client_id",
+                    "clientId",
                     &self.r#client_id,
                 ),
                 to_pulumi_object_field(
-                    "client_secret",
+                    "clientSecret",
                     &self.r#client_secret,
                 ),
                 to_pulumi_object_field(
-                    "consumer_service_url",
+                    "consumerServiceUrl",
                     &self.r#consumer_service_url,
                 ),
                 to_pulumi_object_field(
-                    "custom_attributes",
+                    "customAttributes",
                     &self.r#custom_attributes,
                 ),
                 to_pulumi_object_field(
-                    "custom_claims",
+                    "customClaims",
                     &self.r#custom_claims,
                 ),
                 to_pulumi_object_field(
-                    "default_relay_state",
+                    "defaultRelayState",
                     &self.r#default_relay_state,
                 ),
                 to_pulumi_object_field(
-                    "grant_types",
+                    "grantTypes",
                     &self.r#grant_types,
                 ),
                 to_pulumi_object_field(
-                    "group_filter_regex",
+                    "groupFilterRegex",
                     &self.r#group_filter_regex,
                 ),
                 to_pulumi_object_field(
-                    "hybrid_and_implicit_options",
+                    "hybridAndImplicitOptions",
                     &self.r#hybrid_and_implicit_options,
                 ),
                 to_pulumi_object_field(
-                    "idp_entity_id",
+                    "idpEntityId",
                     &self.r#idp_entity_id,
                 ),
                 to_pulumi_object_field(
-                    "name_id_format",
+                    "nameIdFormat",
                     &self.r#name_id_format,
                 ),
                 to_pulumi_object_field(
-                    "name_id_transform_jsonata",
+                    "nameIdTransformJsonata",
                     &self.r#name_id_transform_jsonata,
                 ),
                 to_pulumi_object_field(
-                    "public_key",
+                    "publicKey",
                     &self.r#public_key,
                 ),
                 to_pulumi_object_field(
-                    "redirect_uris",
+                    "redirectUris",
                     &self.r#redirect_uris,
                 ),
                 to_pulumi_object_field(
-                    "refresh_token_options",
+                    "refreshTokenOptions",
                     &self.r#refresh_token_options,
                 ),
                 to_pulumi_object_field(
-                    "saml_attribute_transform_jsonata",
+                    "samlAttributeTransformJsonata",
                     &self.r#saml_attribute_transform_jsonata,
                 ),
                 to_pulumi_object_field(
@@ -195,11 +195,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#scopes,
                 ),
                 to_pulumi_object_field(
-                    "sp_entity_id",
+                    "spEntityId",
                     &self.r#sp_entity_id,
                 ),
                 to_pulumi_object_field(
-                    "sso_endpoint",
+                    "ssoEndpoint",
                     &self.r#sso_endpoint,
                 ),
             ];

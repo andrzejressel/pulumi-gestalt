@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#bucket,
                 ),
                 to_pulumi_object_field(
-                    "bucket_owner",
+                    "bucketOwner",
                     &self.r#bucket_owner,
                 ),
                 to_pulumi_object_field(
-                    "key_prefix",
+                    "keyPrefix",
                     &self.r#key_prefix,
                 ),
             ];

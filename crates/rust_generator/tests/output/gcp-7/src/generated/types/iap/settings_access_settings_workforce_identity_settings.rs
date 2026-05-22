@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Set
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "oauth_2",
+                    "oauth2",
                     &self.r#oauth_2,
                 ),
                 to_pulumi_object_field(
-                    "workforce_pools",
+                    "workforcePools",
                     &self.r#workforce_pools,
                 ),
             ];

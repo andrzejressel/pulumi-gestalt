@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Wor
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automatic_cluster_update_enabled",
+                    "automaticClusterUpdateEnabled",
                     &self.r#automatic_cluster_update_enabled,
                 ),
                 to_pulumi_object_field(
-                    "compliance_security_profile_enabled",
+                    "complianceSecurityProfileEnabled",
                     &self.r#compliance_security_profile_enabled,
                 ),
                 to_pulumi_object_field(
-                    "compliance_security_profile_standards",
+                    "complianceSecurityProfileStandards",
                     &self.r#compliance_security_profile_standards,
                 ),
                 to_pulumi_object_field(
-                    "enhanced_security_monitoring_enabled",
+                    "enhancedSecurityMonitoringEnabled",
                     &self.r#enhanced_security_monitoring_enabled,
                 ),
             ];

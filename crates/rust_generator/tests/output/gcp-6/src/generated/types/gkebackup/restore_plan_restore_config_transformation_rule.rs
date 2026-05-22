@@ -44,11 +44,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "field_actions",
+                    "fieldActions",
                     &self.r#field_actions,
                 ),
                 to_pulumi_object_field(
-                    "resource_filter",
+                    "resourceFilter",
                     &self.r#resource_filter,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Efs
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "security_group_arns",
+                    "securityGroupArns",
                     &self.r#security_group_arns,
                 ),
                 to_pulumi_object_field(
-                    "subnet_arn",
+                    "subnetArn",
                     &self.r#subnet_arn,
                 ),
             ];

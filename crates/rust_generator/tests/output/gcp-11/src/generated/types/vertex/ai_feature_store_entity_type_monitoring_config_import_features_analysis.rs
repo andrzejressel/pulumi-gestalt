@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "anomaly_detection_baseline",
+                    "anomalyDetectionBaseline",
                     &self.r#anomaly_detection_baseline,
                 ),
                 to_pulumi_object_field(

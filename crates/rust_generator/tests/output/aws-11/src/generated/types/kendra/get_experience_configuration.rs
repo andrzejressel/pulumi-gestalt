@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_source_configurations",
+                    "contentSourceConfigurations",
                     &self.r#content_source_configurations,
                 ),
                 to_pulumi_object_field(
-                    "user_identity_configurations",
+                    "userIdentityConfigurations",
                     &self.r#user_identity_configurations,
                 ),
             ];

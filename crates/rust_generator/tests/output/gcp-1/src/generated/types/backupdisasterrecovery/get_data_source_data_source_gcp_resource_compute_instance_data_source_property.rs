@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "machine_type",
+                    "machineType",
                     &self.r#machine_type,
                 ),
                 to_pulumi_object_field(
@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "total_disk_count",
+                    "totalDiskCount",
                     &self.r#total_disk_count,
                 ),
                 to_pulumi_object_field(
-                    "total_disk_size_gb",
+                    "totalDiskSizeGb",
                     &self.r#total_disk_size_gb,
                 ),
             ];

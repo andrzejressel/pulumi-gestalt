@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "exclude_prefixes",
+                    "excludePrefixes",
                     &self.r#exclude_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "include_prefixes",
+                    "includePrefixes",
                     &self.r#include_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "last_modified_before",
+                    "lastModifiedBefore",
                     &self.r#last_modified_before,
                 ),
                 to_pulumi_object_field(
-                    "last_modified_since",
+                    "lastModifiedSince",
                     &self.r#last_modified_since,
                 ),
                 to_pulumi_object_field(
-                    "max_time_elapsed_since_last_modification",
+                    "maxTimeElapsedSinceLastModification",
                     &self.r#max_time_elapsed_since_last_modification,
                 ),
                 to_pulumi_object_field(
-                    "min_time_elapsed_since_last_modification",
+                    "minTimeElapsedSinceLastModification",
                     &self.r#min_time_elapsed_since_last_modification,
                 ),
             ];

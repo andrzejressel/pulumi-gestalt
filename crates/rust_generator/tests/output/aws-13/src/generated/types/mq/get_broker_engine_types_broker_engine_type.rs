@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "engine_type",
+                    "engineType",
                     &self.r#engine_type,
                 ),
                 to_pulumi_object_field(
-                    "engine_versions",
+                    "engineVersions",
                     &self.r#engine_versions,
                 ),
             ];

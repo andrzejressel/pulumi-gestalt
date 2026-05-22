@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cron_expression",
+                    "cronExpression",
                     &self.r#cron_expression,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
                     &self.r#parallelism,
                 ),
                 to_pulumi_object_field(
-                    "replica_completion_count",
+                    "replicaCompletionCount",
                     &self.r#replica_completion_count,
                 ),
             ];

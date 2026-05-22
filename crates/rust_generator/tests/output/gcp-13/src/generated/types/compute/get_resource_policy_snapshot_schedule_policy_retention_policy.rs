@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_retention_days",
+                    "maxRetentionDays",
                     &self.r#max_retention_days,
                 ),
                 to_pulumi_object_field(
-                    "on_source_disk_delete",
+                    "onSourceDiskDelete",
                     &self.r#on_source_disk_delete,
                 ),
             ];

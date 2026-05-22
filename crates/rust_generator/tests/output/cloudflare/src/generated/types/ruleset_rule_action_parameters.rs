@@ -234,7 +234,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "additional_cacheable_ports",
+                    "additionalCacheablePorts",
                     &self.r#additional_cacheable_ports,
                 ),
                 to_pulumi_object_field(
@@ -242,7 +242,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#algorithms,
                 ),
                 to_pulumi_object_field(
-                    "automatic_https_rewrites",
+                    "automaticHttpsRewrites",
                     &self.r#automatic_https_rewrites,
                 ),
                 to_pulumi_object_field(
@@ -254,7 +254,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#bic,
                 ),
                 to_pulumi_object_field(
-                    "browser_ttl",
+                    "browserTtl",
                     &self.r#browser_ttl,
                 ),
                 to_pulumi_object_field(
@@ -262,11 +262,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#cache,
                 ),
                 to_pulumi_object_field(
-                    "cache_key",
+                    "cacheKey",
                     &self.r#cache_key,
                 ),
                 to_pulumi_object_field(
-                    "cache_reserve",
+                    "cacheReserve",
                     &self.r#cache_reserve,
                 ),
                 to_pulumi_object_field(
@@ -274,35 +274,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "content_type",
+                    "contentType",
                     &self.r#content_type,
                 ),
                 to_pulumi_object_field(
-                    "cookie_fields",
+                    "cookieFields",
                     &self.r#cookie_fields,
                 ),
                 to_pulumi_object_field(
-                    "disable_apps",
+                    "disableApps",
                     &self.r#disable_apps,
                 ),
                 to_pulumi_object_field(
-                    "disable_railgun",
+                    "disableRailgun",
                     &self.r#disable_railgun,
                 ),
                 to_pulumi_object_field(
-                    "disable_rum",
+                    "disableRum",
                     &self.r#disable_rum,
                 ),
                 to_pulumi_object_field(
-                    "disable_zaraz",
+                    "disableZaraz",
                     &self.r#disable_zaraz,
                 ),
                 to_pulumi_object_field(
-                    "edge_ttl",
+                    "edgeTtl",
                     &self.r#edge_ttl,
                 ),
                 to_pulumi_object_field(
-                    "email_obfuscation",
+                    "emailObfuscation",
                     &self.r#email_obfuscation,
                 ),
                 to_pulumi_object_field(
@@ -310,11 +310,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#fonts,
                 ),
                 to_pulumi_object_field(
-                    "from_list",
+                    "fromList",
                     &self.r#from_list,
                 ),
                 to_pulumi_object_field(
-                    "from_value",
+                    "fromValue",
                     &self.r#from_value,
                 ),
                 to_pulumi_object_field(
@@ -322,11 +322,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#headers,
                 ),
                 to_pulumi_object_field(
-                    "host_header",
+                    "hostHeader",
                     &self.r#host_header,
                 ),
                 to_pulumi_object_field(
-                    "hotlink_protection",
+                    "hotlinkProtection",
                     &self.r#hotlink_protection,
                 ),
                 to_pulumi_object_field(
@@ -338,7 +338,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#increment,
                 ),
                 to_pulumi_object_field(
-                    "matched_data",
+                    "matchedData",
                     &self.r#matched_data,
                 ),
                 to_pulumi_object_field(
@@ -346,7 +346,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#mirage,
                 ),
                 to_pulumi_object_field(
-                    "opportunistic_encryption",
+                    "opportunisticEncryption",
                     &self.r#opportunistic_encryption,
                 ),
                 to_pulumi_object_field(
@@ -354,11 +354,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#origin,
                 ),
                 to_pulumi_object_field(
-                    "origin_cache_control",
+                    "originCacheControl",
                     &self.r#origin_cache_control,
                 ),
                 to_pulumi_object_field(
-                    "origin_error_page_passthru",
+                    "originErrorPagePassthru",
                     &self.r#origin_error_page_passthru,
                 ),
                 to_pulumi_object_field(
@@ -378,19 +378,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#products,
                 ),
                 to_pulumi_object_field(
-                    "read_timeout",
+                    "readTimeout",
                     &self.r#read_timeout,
                 ),
                 to_pulumi_object_field(
-                    "request_fields",
+                    "requestFields",
                     &self.r#request_fields,
                 ),
                 to_pulumi_object_field(
-                    "respect_strong_etags",
+                    "respectStrongEtags",
                     &self.r#respect_strong_etags,
                 ),
                 to_pulumi_object_field(
-                    "response_fields",
+                    "responseFields",
                     &self.r#response_fields,
                 ),
                 to_pulumi_object_field(
@@ -398,7 +398,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#responses,
                 ),
                 to_pulumi_object_field(
-                    "rocket_loader",
+                    "rocketLoader",
                     &self.r#rocket_loader,
                 ),
                 to_pulumi_object_field(
@@ -414,15 +414,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#rulesets,
                 ),
                 to_pulumi_object_field(
-                    "security_level",
+                    "securityLevel",
                     &self.r#security_level,
                 ),
                 to_pulumi_object_field(
-                    "serve_stale",
+                    "serveStale",
                     &self.r#serve_stale,
                 ),
                 to_pulumi_object_field(
-                    "server_side_excludes",
+                    "serverSideExcludes",
                     &self.r#server_side_excludes,
                 ),
                 to_pulumi_object_field(
@@ -434,7 +434,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
                     &self.r#ssl,
                 ),
                 to_pulumi_object_field(
-                    "status_code",
+                    "statusCode",
                     &self.r#status_code,
                 ),
                 to_pulumi_object_field(

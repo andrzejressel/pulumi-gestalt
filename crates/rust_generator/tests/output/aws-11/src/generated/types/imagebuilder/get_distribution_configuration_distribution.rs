@@ -47,23 +47,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ami_distribution_configurations",
+                    "amiDistributionConfigurations",
                     &self.r#ami_distribution_configurations,
                 ),
                 to_pulumi_object_field(
-                    "container_distribution_configurations",
+                    "containerDistributionConfigurations",
                     &self.r#container_distribution_configurations,
                 ),
                 to_pulumi_object_field(
-                    "fast_launch_configurations",
+                    "fastLaunchConfigurations",
                     &self.r#fast_launch_configurations,
                 ),
                 to_pulumi_object_field(
-                    "launch_template_configurations",
+                    "launchTemplateConfigurations",
                     &self.r#launch_template_configurations,
                 ),
                 to_pulumi_object_field(
-                    "license_configuration_arns",
+                    "licenseConfigurationArns",
                     &self.r#license_configuration_arns,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#region,
                 ),
                 to_pulumi_object_field(
-                    "s_3_export_configurations",
+                    "s3ExportConfigurations",
                     &self.r#s_3_export_configurations,
                 ),
             ];

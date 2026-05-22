@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "account_id",
+                    "accountId",
                     &self.r#account_id,
                 ),
                 to_pulumi_object_field(
@@ -47,15 +47,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "launch_templates",
+                    "launchTemplates",
                     &self.r#launch_templates,
                 ),
                 to_pulumi_object_field(
-                    "max_parallel_launches",
+                    "maxParallelLaunches",
                     &self.r#max_parallel_launches,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_configurations",
+                    "snapshotConfigurations",
                     &self.r#snapshot_configurations,
                 ),
             ];

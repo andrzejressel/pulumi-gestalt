@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_server_args",
+                    "apiServerArgs",
                     &self.r#api_server_args,
                 ),
                 to_pulumi_object_field(
-                    "control_plane_node_pool_config",
+                    "controlPlaneNodePoolConfig",
                     &self.r#control_plane_node_pool_config,
                 ),
             ];

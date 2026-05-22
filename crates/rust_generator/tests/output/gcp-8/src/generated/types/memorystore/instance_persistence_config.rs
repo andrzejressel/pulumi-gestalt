@@ -38,7 +38,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aof_config",
+                    "aofConfig",
                     &self.r#aof_config,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "rdb_config",
+                    "rdbConfig",
                     &self.r#rdb_config,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "query_statement",
+                    "queryStatement",
                     &self.r#query_statement,
                 ),
                 to_pulumi_object_field(
-                    "table_configurations",
+                    "tableConfigurations",
                     &self.r#table_configurations,
                 ),
             ];

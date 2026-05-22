@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "encrypted_private_key",
+                    "encryptedPrivateKey",
                     &self.r#encrypted_private_key,
                 ),
                 to_pulumi_object_field(
@@ -40,7 +40,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#passphrase,
                 ),
                 to_pulumi_object_field(
-                    "ssl_certificate",
+                    "sslCertificate",
                     &self.r#ssl_certificate,
                 ),
             ];

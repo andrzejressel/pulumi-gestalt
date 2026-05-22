@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pla
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "channel_target_info",
+                    "channelTargetInfo",
                     &self.r#channel_target_info,
                 ),
                 to_pulumi_object_field(
-                    "contact_target_info",
+                    "contactTargetInfo",
                     &self.r#contact_target_info,
                 ),
             ];

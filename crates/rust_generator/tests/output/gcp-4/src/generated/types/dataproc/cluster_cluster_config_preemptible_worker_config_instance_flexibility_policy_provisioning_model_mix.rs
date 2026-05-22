@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "standard_capacity_base",
+                    "standardCapacityBase",
                     &self.r#standard_capacity_base,
                 ),
                 to_pulumi_object_field(
-                    "standard_capacity_percent_above_base",
+                    "standardCapacityPercentAboveBase",
                     &self.r#standard_capacity_percent_above_base,
                 ),
             ];

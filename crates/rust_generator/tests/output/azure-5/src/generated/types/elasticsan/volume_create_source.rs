@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "source_id",
+                    "sourceId",
                     &self.r#source_id,
                 ),
                 to_pulumi_object_field(
-                    "source_type",
+                    "sourceType",
                     &self.r#source_type,
                 ),
             ];

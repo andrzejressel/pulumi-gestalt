@@ -71,11 +71,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aspect_ratio",
+                    "aspectRatio",
                     &self.r#aspect_ratio,
                 ),
                 to_pulumi_object_field(
-                    "bit_rate",
+                    "bitRate",
                     &self.r#bit_rate,
                 ),
                 to_pulumi_object_field(
@@ -83,35 +83,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#codec,
                 ),
                 to_pulumi_object_field(
-                    "display_aspect_ratio",
+                    "displayAspectRatio",
                     &self.r#display_aspect_ratio,
                 ),
                 to_pulumi_object_field(
-                    "fixed_gop",
+                    "fixedGop",
                     &self.r#fixed_gop,
                 ),
                 to_pulumi_object_field(
-                    "frame_rate",
+                    "frameRate",
                     &self.r#frame_rate,
                 ),
                 to_pulumi_object_field(
-                    "keyframes_max_dist",
+                    "keyframesMaxDist",
                     &self.r#keyframes_max_dist,
                 ),
                 to_pulumi_object_field(
-                    "max_frame_rate",
+                    "maxFrameRate",
                     &self.r#max_frame_rate,
                 ),
                 to_pulumi_object_field(
-                    "max_height",
+                    "maxHeight",
                     &self.r#max_height,
                 ),
                 to_pulumi_object_field(
-                    "max_width",
+                    "maxWidth",
                     &self.r#max_width,
                 ),
                 to_pulumi_object_field(
-                    "padding_policy",
+                    "paddingPolicy",
                     &self.r#padding_policy,
                 ),
                 to_pulumi_object_field(
@@ -119,7 +119,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
                     &self.r#resolution,
                 ),
                 to_pulumi_object_field(
-                    "sizing_policy",
+                    "sizingPolicy",
                     &self.r#sizing_policy,
                 ),
             ];

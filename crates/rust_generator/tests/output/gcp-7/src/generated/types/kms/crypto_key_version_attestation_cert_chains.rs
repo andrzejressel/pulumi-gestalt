@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cry
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cavium_certs",
+                    "caviumCerts",
                     &self.r#cavium_certs,
                 ),
                 to_pulumi_object_field(
-                    "google_card_certs",
+                    "googleCardCerts",
                     &self.r#google_card_certs,
                 ),
                 to_pulumi_object_field(
-                    "google_partition_certs",
+                    "googlePartitionCerts",
                     &self.r#google_partition_certs,
                 ),
             ];

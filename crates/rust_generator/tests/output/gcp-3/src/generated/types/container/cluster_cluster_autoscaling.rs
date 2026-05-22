@@ -50,15 +50,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_provisioning_defaults",
+                    "autoProvisioningDefaults",
                     &self.r#auto_provisioning_defaults,
                 ),
                 to_pulumi_object_field(
-                    "auto_provisioning_locations",
+                    "autoProvisioningLocations",
                     &self.r#auto_provisioning_locations,
                 ),
                 to_pulumi_object_field(
-                    "autoscaling_profile",
+                    "autoscalingProfile",
                     &self.r#autoscaling_profile,
                 ),
                 to_pulumi_object_field(
@@ -66,7 +66,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "resource_limits",
+                    "resourceLimits",
                     &self.r#resource_limits,
                 ),
             ];

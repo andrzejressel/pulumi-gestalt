@@ -51,11 +51,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "http_configuration",
+                    "httpConfiguration",
                     &self.r#http_configuration,
                 ),
                 to_pulumi_object_field(
-                    "icmp_configuration",
+                    "icmpConfiguration",
                     &self.r#icmp_configuration,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "preferred_ip_version",
+                    "preferredIpVersion",
                     &self.r#preferred_ip_version,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "success_threshold",
+                    "successThreshold",
                     &self.r#success_threshold,
                 ),
                 to_pulumi_object_field(
-                    "tcp_configuration",
+                    "tcpConfiguration",
                     &self.r#tcp_configuration,
                 ),
                 to_pulumi_object_field(
-                    "test_frequency_in_seconds",
+                    "testFrequencyInSeconds",
                     &self.r#test_frequency_in_seconds,
                 ),
             ];

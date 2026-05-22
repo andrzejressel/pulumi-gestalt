@@ -156,7 +156,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#digest,
                 ),
                 to_pulumi_object_field(
-                    "digest_type",
+                    "digestType",
                     &self.r#digest_type,
                 ),
                 to_pulumi_object_field(
@@ -168,43 +168,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#flags,
                 ),
                 to_pulumi_object_field(
-                    "key_tag",
+                    "keyTag",
                     &self.r#key_tag,
                 ),
                 to_pulumi_object_field(
-                    "lat_degrees",
+                    "latDegrees",
                     &self.r#lat_degrees,
                 ),
                 to_pulumi_object_field(
-                    "lat_direction",
+                    "latDirection",
                     &self.r#lat_direction,
                 ),
                 to_pulumi_object_field(
-                    "lat_minutes",
+                    "latMinutes",
                     &self.r#lat_minutes,
                 ),
                 to_pulumi_object_field(
-                    "lat_seconds",
+                    "latSeconds",
                     &self.r#lat_seconds,
                 ),
                 to_pulumi_object_field(
-                    "long_degrees",
+                    "longDegrees",
                     &self.r#long_degrees,
                 ),
                 to_pulumi_object_field(
-                    "long_direction",
+                    "longDirection",
                     &self.r#long_direction,
                 ),
                 to_pulumi_object_field(
-                    "long_minutes",
+                    "longMinutes",
                     &self.r#long_minutes,
                 ),
                 to_pulumi_object_field(
-                    "long_seconds",
+                    "longSeconds",
                     &self.r#long_seconds,
                 ),
                 to_pulumi_object_field(
-                    "matching_type",
+                    "matchingType",
                     &self.r#matching_type,
                 ),
                 to_pulumi_object_field(
@@ -220,11 +220,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "precision_horz",
+                    "precisionHorz",
                     &self.r#precision_horz,
                 ),
                 to_pulumi_object_field(
-                    "precision_vert",
+                    "precisionVert",
                     &self.r#precision_vert,
                 ),
                 to_pulumi_object_field(
@@ -244,7 +244,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "public_key",
+                    "publicKey",
                     &self.r#public_key,
                 ),
                 to_pulumi_object_field(
@@ -276,7 +276,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rec
                     &self.r#target,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
                 to_pulumi_object_field(

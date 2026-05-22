@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_kineses",
+                    "awsKineses",
                     &self.r#aws_kineses,
                 ),
                 to_pulumi_object_field(
-                    "cloud_storages",
+                    "cloudStorages",
                     &self.r#cloud_storages,
                 ),
                 to_pulumi_object_field(
-                    "platform_logs_settings",
+                    "platformLogsSettings",
                     &self.r#platform_logs_settings,
                 ),
             ];

@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_rewrite",
+                    "hostRewrite",
                     &self.r#host_rewrite,
                 ),
                 to_pulumi_object_field(
-                    "path_prefix_rewrite",
+                    "pathPrefixRewrite",
                     &self.r#path_prefix_rewrite,
                 ),
                 to_pulumi_object_field(
-                    "path_template_rewrite",
+                    "pathTemplateRewrite",
                     &self.r#path_template_rewrite,
                 ),
             ];

@@ -50,27 +50,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connect_timeouts",
+                    "connectTimeouts",
                     &self.r#connect_timeouts,
                 ),
                 to_pulumi_object_field(
-                    "max_connections",
+                    "maxConnections",
                     &self.r#max_connections,
                 ),
                 to_pulumi_object_field(
-                    "max_pending_requests",
+                    "maxPendingRequests",
                     &self.r#max_pending_requests,
                 ),
                 to_pulumi_object_field(
-                    "max_requests",
+                    "maxRequests",
                     &self.r#max_requests,
                 ),
                 to_pulumi_object_field(
-                    "max_requests_per_connection",
+                    "maxRequestsPerConnection",
                     &self.r#max_requests_per_connection,
                 ),
                 to_pulumi_object_field(
-                    "max_retries",
+                    "maxRetries",
                     &self.r#max_retries,
                 ),
             ];

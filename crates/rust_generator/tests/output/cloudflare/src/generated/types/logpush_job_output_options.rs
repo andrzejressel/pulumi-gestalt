@@ -68,51 +68,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Log
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "batch_prefix",
+                    "batchPrefix",
                     &self.r#batch_prefix,
                 ),
                 to_pulumi_object_field(
-                    "batch_suffix",
+                    "batchSuffix",
                     &self.r#batch_suffix,
                 ),
                 to_pulumi_object_field(
-                    "cve_20214428",
+                    "cve20214428",
                     &self.r#cve_20214428,
                 ),
                 to_pulumi_object_field(
-                    "field_delimiter",
+                    "fieldDelimiter",
                     &self.r#field_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "field_names",
+                    "fieldNames",
                     &self.r#field_names,
                 ),
                 to_pulumi_object_field(
-                    "output_type",
+                    "outputType",
                     &self.r#output_type,
                 ),
                 to_pulumi_object_field(
-                    "record_delimiter",
+                    "recordDelimiter",
                     &self.r#record_delimiter,
                 ),
                 to_pulumi_object_field(
-                    "record_prefix",
+                    "recordPrefix",
                     &self.r#record_prefix,
                 ),
                 to_pulumi_object_field(
-                    "record_suffix",
+                    "recordSuffix",
                     &self.r#record_suffix,
                 ),
                 to_pulumi_object_field(
-                    "record_template",
+                    "recordTemplate",
                     &self.r#record_template,
                 ),
                 to_pulumi_object_field(
-                    "sample_rate",
+                    "sampleRate",
                     &self.r#sample_rate,
                 ),
                 to_pulumi_object_field(
-                    "timestamp_format",
+                    "timestampFormat",
                     &self.r#timestamp_format,
                 ),
             ];

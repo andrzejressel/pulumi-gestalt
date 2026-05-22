@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sql
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "point_in_time",
+                    "pointInTime",
                     &self.r#point_in_time,
                 ),
                 to_pulumi_object_field(
-                    "source_database_id",
+                    "sourceDatabaseId",
                     &self.r#source_database_id,
                 ),
             ];

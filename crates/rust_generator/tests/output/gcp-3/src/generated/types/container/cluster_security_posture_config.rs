@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "vulnerability_mode",
+                    "vulnerabilityMode",
                     &self.r#vulnerability_mode,
                 ),
             ];

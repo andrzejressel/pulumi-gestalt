@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Slo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bad_service_filter",
+                    "badServiceFilter",
                     &self.r#bad_service_filter,
                 ),
                 to_pulumi_object_field(
-                    "good_service_filter",
+                    "goodServiceFilter",
                     &self.r#good_service_filter,
                 ),
                 to_pulumi_object_field(
-                    "total_service_filter",
+                    "totalServiceFilter",
                     &self.r#total_service_filter,
                 ),
             ];

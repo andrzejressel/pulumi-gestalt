@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_node_count",
+                    "maxNodeCount",
                     &self.r#max_node_count,
                 ),
                 to_pulumi_object_field(
-                    "min_node_count",
+                    "minNodeCount",
                     &self.r#min_node_count,
                 ),
             ];

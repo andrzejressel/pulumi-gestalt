@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_analytics_workspace_id",
+                    "logAnalyticsWorkspaceId",
                     &self.r#log_analytics_workspace_id,
                 ),
                 to_pulumi_object_field(
-                    "msi_auth_for_monitoring_enabled",
+                    "msiAuthForMonitoringEnabled",
                     &self.r#msi_auth_for_monitoring_enabled,
                 ),
                 to_pulumi_object_field(
-                    "oms_agent_identities",
+                    "omsAgentIdentities",
                     &self.r#oms_agent_identities,
                 ),
             ];

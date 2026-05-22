@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Loa
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "fixed_response",
+                    "fixedResponse",
                     &self.r#fixed_response,
                 ),
                 to_pulumi_object_field(

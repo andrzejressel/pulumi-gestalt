@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "key_arn",
+                    "keyArn",
                     &self.r#key_arn,
                 ),
                 to_pulumi_object_field(
-                    "key_type",
+                    "keyType",
                     &self.r#key_type,
                 ),
             ];

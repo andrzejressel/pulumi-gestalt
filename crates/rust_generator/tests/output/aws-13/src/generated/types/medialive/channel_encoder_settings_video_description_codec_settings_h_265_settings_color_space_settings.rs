@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "color_space_passthrough_settings",
+                    "colorSpacePassthroughSettings",
                     &self.r#color_space_passthrough_settings,
                 ),
                 to_pulumi_object_field(
-                    "dolby_vision_81_settings",
+                    "dolbyVision81Settings",
                     &self.r#dolby_vision_81_settings,
                 ),
                 to_pulumi_object_field(
-                    "hdr_10_settings",
+                    "hdr10Settings",
                     &self.r#hdr_10_settings,
                 ),
                 to_pulumi_object_field(
-                    "rec_601_settings",
+                    "rec601Settings",
                     &self.r#rec_601_settings,
                 ),
                 to_pulumi_object_field(
-                    "rec_709_settings",
+                    "rec709Settings",
                     &self.r#rec_709_settings,
                 ),
             ];

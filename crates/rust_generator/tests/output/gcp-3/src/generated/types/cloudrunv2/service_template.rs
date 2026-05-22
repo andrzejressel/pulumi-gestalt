@@ -102,11 +102,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#containers,
                 ),
                 to_pulumi_object_field(
-                    "encryption_key",
+                    "encryptionKey",
                     &self.r#encryption_key,
                 ),
                 to_pulumi_object_field(
-                    "execution_environment",
+                    "executionEnvironment",
                     &self.r#execution_environment,
                 ),
                 to_pulumi_object_field(
@@ -114,11 +114,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "max_instance_request_concurrency",
+                    "maxInstanceRequestConcurrency",
                     &self.r#max_instance_request_concurrency,
                 ),
                 to_pulumi_object_field(
-                    "node_selector",
+                    "nodeSelector",
                     &self.r#node_selector,
                 ),
                 to_pulumi_object_field(
@@ -130,15 +130,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#scaling,
                 ),
                 to_pulumi_object_field(
-                    "service_account",
+                    "serviceAccount",
                     &self.r#service_account,
                 ),
                 to_pulumi_object_field(
-                    "service_mesh",
+                    "serviceMesh",
                     &self.r#service_mesh,
                 ),
                 to_pulumi_object_field(
-                    "session_affinity",
+                    "sessionAffinity",
                     &self.r#session_affinity,
                 ),
                 to_pulumi_object_field(
@@ -150,7 +150,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#volumes,
                 ),
                 to_pulumi_object_field(
-                    "vpc_access",
+                    "vpcAccess",
                     &self.r#vpc_access,
                 ),
             ];

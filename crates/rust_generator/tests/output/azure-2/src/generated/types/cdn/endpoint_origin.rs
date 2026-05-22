@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "http_port",
+                    "httpPort",
                     &self.r#http_port,
                 ),
                 to_pulumi_object_field(
-                    "https_port",
+                    "httpsPort",
                     &self.r#https_port,
                 ),
                 to_pulumi_object_field(

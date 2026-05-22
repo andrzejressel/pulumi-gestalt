@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_control_max_age_sec",
+                    "accessControlMaxAgeSec",
                     &self.r#access_control_max_age_sec,
                 ),
                 to_pulumi_object_field(
-                    "include_subdomains",
+                    "includeSubdomains",
                     &self.r#include_subdomains,
                 ),
                 to_pulumi_object_field(
-                    "override_",
+                    "override",
                     &self.r#override_,
                 ),
                 to_pulumi_object_field(

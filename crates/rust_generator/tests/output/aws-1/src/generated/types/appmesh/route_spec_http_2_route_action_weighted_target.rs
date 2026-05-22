@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#port,
                 ),
                 to_pulumi_object_field(
-                    "virtual_node",
+                    "virtualNode",
                     &self.r#virtual_node,
                 ),
                 to_pulumi_object_field(

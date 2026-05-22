@@ -46,27 +46,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "client_certificate_id",
+                    "clientCertificateId",
                     &self.r#client_certificate_id,
                 ),
                 to_pulumi_object_field(
-                    "client_certificate_thumbprint",
+                    "clientCertificateThumbprint",
                     &self.r#client_certificate_thumbprint,
                 ),
                 to_pulumi_object_field(
-                    "management_endpoints",
+                    "managementEndpoints",
                     &self.r#management_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "max_partition_resolution_retries",
+                    "maxPartitionResolutionRetries",
                     &self.r#max_partition_resolution_retries,
                 ),
                 to_pulumi_object_field(
-                    "server_certificate_thumbprints",
+                    "serverCertificateThumbprints",
                     &self.r#server_certificate_thumbprints,
                 ),
                 to_pulumi_object_field(
-                    "server_x_509_names",
+                    "serverX509Names",
                     &self.r#server_x_509_names,
                 ),
             ];

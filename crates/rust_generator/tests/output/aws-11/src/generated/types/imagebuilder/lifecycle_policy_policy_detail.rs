@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lif
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "exclusion_rules",
+                    "exclusionRules",
                     &self.r#exclusion_rules,
                 ),
                 to_pulumi_object_field(

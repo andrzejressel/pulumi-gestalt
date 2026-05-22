@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "brute_force_configs",
+                    "bruteForceConfigs",
                     &self.r#brute_force_configs,
                 ),
                 to_pulumi_object_field(
-                    "tree_ah_configs",
+                    "treeAhConfigs",
                     &self.r#tree_ah_configs,
                 ),
             ];

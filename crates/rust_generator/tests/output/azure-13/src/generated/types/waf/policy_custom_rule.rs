@@ -63,11 +63,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "group_rate_limit_by",
+                    "groupRateLimitBy",
                     &self.r#group_rate_limit_by,
                 ),
                 to_pulumi_object_field(
-                    "match_conditions",
+                    "matchConditions",
                     &self.r#match_conditions,
                 ),
                 to_pulumi_object_field(
@@ -79,15 +79,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_duration",
+                    "rateLimitDuration",
                     &self.r#rate_limit_duration,
                 ),
                 to_pulumi_object_field(
-                    "rate_limit_threshold",
+                    "rateLimitThreshold",
                     &self.r#rate_limit_threshold,
                 ),
                 to_pulumi_object_field(
-                    "rule_type",
+                    "ruleType",
                     &self.r#rule_type,
                 ),
             ];

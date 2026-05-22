@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "mapping_pipeline_job",
+                    "mappingPipelineJob",
                     &self.r#mapping_pipeline_job,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "egress_configuration",
+                    "egressConfiguration",
                     &self.r#egress_configuration,
                 ),
                 to_pulumi_object_field(
-                    "ingress_configuration",
+                    "ingressConfiguration",
                     &self.r#ingress_configuration,
                 ),
                 to_pulumi_object_field(
-                    "ip_address_type",
+                    "ipAddressType",
                     &self.r#ip_address_type,
                 ),
             ];

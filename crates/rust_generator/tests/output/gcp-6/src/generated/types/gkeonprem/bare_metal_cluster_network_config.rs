@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advanced_networking",
+                    "advancedNetworking",
                     &self.r#advanced_networking,
                 ),
                 to_pulumi_object_field(
-                    "island_mode_cidr",
+                    "islandModeCidr",
                     &self.r#island_mode_cidr,
                 ),
                 to_pulumi_object_field(
-                    "multiple_network_interfaces_config",
+                    "multipleNetworkInterfacesConfig",
                     &self.r#multiple_network_interfaces_config,
                 ),
                 to_pulumi_object_field(
-                    "sr_iov_config",
+                    "srIovConfig",
                     &self.r#sr_iov_config,
                 ),
             ];

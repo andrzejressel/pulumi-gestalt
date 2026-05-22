@@ -65,11 +65,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_on_termination",
+                    "deleteOnTermination",
                     &self.r#delete_on_termination,
                 ),
                 to_pulumi_object_field(
-                    "device_name",
+                    "deviceName",
                     &self.r#device_name,
                 ),
                 to_pulumi_object_field(
@@ -81,7 +81,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#iops,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_id",
+                    "kmsKeyId",
                     &self.r#kms_key_id,
                 ),
                 to_pulumi_object_field(
@@ -89,7 +89,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#tags,
                 ),
                 to_pulumi_object_field(
-                    "tags_all",
+                    "tagsAll",
                     &self.r#tags_all,
                 ),
                 to_pulumi_object_field(
@@ -97,15 +97,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#throughput,
                 ),
                 to_pulumi_object_field(
-                    "volume_id",
+                    "volumeId",
                     &self.r#volume_id,
                 ),
                 to_pulumi_object_field(
-                    "volume_size",
+                    "volumeSize",
                     &self.r#volume_size,
                 ),
                 to_pulumi_object_field(
-                    "volume_type",
+                    "volumeType",
                     &self.r#volume_type,
                 ),
             ];

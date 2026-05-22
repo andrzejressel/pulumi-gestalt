@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#subject,
                 ),
                 to_pulumi_object_field(
-                    "subject_alt_name",
+                    "subjectAltName",
                     &self.r#subject_alt_name,
                 ),
             ];

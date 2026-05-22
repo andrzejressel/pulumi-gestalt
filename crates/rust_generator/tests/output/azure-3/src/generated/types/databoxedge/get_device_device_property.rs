@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#capacity,
                 ),
                 to_pulumi_object_field(
-                    "configured_role_types",
+                    "configuredRoleTypes",
                     &self.r#configured_role_types,
                 ),
                 to_pulumi_object_field(
@@ -75,7 +75,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#culture,
                 ),
                 to_pulumi_object_field(
-                    "hcs_version",
+                    "hcsVersion",
                     &self.r#hcs_version,
                 ),
                 to_pulumi_object_field(
@@ -83,15 +83,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#model,
                 ),
                 to_pulumi_object_field(
-                    "node_count",
+                    "nodeCount",
                     &self.r#node_count,
                 ),
                 to_pulumi_object_field(
-                    "serial_number",
+                    "serialNumber",
                     &self.r#serial_number,
                 ),
                 to_pulumi_object_field(
-                    "software_version",
+                    "softwareVersion",
                     &self.r#software_version,
                 ),
                 to_pulumi_object_field(
@@ -99,11 +99,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#status,
                 ),
                 to_pulumi_object_field(
-                    "time_zone",
+                    "timeZone",
                     &self.r#time_zone,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

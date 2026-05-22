@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#active,
                 ),
                 to_pulumi_object_field(
-                    "closing_response",
+                    "closingResponse",
                     &self.r#closing_response,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
                     &self.r#conditional,
                 ),
                 to_pulumi_object_field(
-                    "next_step",
+                    "nextStep",
                     &self.r#next_step,
                 ),
             ];

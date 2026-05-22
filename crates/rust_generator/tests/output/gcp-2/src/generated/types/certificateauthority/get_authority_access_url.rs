@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ca_certificate_access_url",
+                    "caCertificateAccessUrl",
                     &self.r#ca_certificate_access_url,
                 ),
                 to_pulumi_object_field(
-                    "crl_access_urls",
+                    "crlAccessUrls",
                     &self.r#crl_access_urls,
                 ),
             ];

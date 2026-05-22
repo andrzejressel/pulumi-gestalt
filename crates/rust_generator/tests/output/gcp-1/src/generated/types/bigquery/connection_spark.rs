@@ -34,15 +34,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metastore_service_config",
+                    "metastoreServiceConfig",
                     &self.r#metastore_service_config,
                 ),
                 to_pulumi_object_field(
-                    "service_account_id",
+                    "serviceAccountId",
                     &self.r#service_account_id,
                 ),
                 to_pulumi_object_field(
-                    "spark_history_server_config",
+                    "sparkHistoryServerConfig",
                     &self.r#spark_history_server_config,
                 ),
             ];

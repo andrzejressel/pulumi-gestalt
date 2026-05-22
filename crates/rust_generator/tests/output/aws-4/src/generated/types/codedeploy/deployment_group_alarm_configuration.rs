@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "ignore_poll_alarm_failure",
+                    "ignorePollAlarmFailure",
                     &self.r#ignore_poll_alarm_failure,
                 ),
             ];

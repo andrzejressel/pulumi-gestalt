@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "billing_cycle",
+                    "billingCycle",
                     &self.r#billing_cycle,
                 ),
                 to_pulumi_object_field(
-                    "effective_date",
+                    "effectiveDate",
                     &self.r#effective_date,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mon
                     &self.r#plan,
                 ),
                 to_pulumi_object_field(
-                    "usage_type",
+                    "usageType",
                     &self.r#usage_type,
                 ),
             ];

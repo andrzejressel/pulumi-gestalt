@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_by_default",
+                    "allowByDefault",
                     &self.r#allow_by_default,
                 ),
                 to_pulumi_object_field(
-                    "allowlist_only",
+                    "allowlistOnly",
                     &self.r#allowlist_only,
                 ),
             ];

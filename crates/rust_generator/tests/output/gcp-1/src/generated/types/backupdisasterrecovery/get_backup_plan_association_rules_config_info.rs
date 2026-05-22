@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "last_backup_errors",
+                    "lastBackupErrors",
                     &self.r#last_backup_errors,
                 ),
                 to_pulumi_object_field(
-                    "last_backup_state",
+                    "lastBackupState",
                     &self.r#last_backup_state,
                 ),
                 to_pulumi_object_field(
-                    "rule_id",
+                    "ruleId",
                     &self.r#rule_id,
                 ),
             ];

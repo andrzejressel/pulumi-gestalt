@@ -23,7 +23,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tls
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "server_certificate_configuration",
+                    "serverCertificateConfiguration",
                     &self.r#server_certificate_configuration,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kaf
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_analytics_workspace_id",
+                    "logAnalyticsWorkspaceId",
                     &self.r#log_analytics_workspace_id,
                 ),
                 to_pulumi_object_field(
-                    "primary_key",
+                    "primaryKey",
                     &self.r#primary_key,
                 ),
             ];

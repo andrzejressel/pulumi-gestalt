@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_name",
+                    "connectionName",
                     &self.r#connection_name,
                 ),
                 to_pulumi_object_field(
-                    "database_name",
+                    "databaseName",
                     &self.r#database_name,
                 ),
                 to_pulumi_object_field(
-                    "dlq_event_queue_arn",
+                    "dlqEventQueueArn",
                     &self.r#dlq_event_queue_arn,
                 ),
                 to_pulumi_object_field(
-                    "event_queue_arn",
+                    "eventQueueArn",
                     &self.r#event_queue_arn,
                 ),
                 to_pulumi_object_field(

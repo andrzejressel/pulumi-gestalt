@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "image_name",
+                    "imageName",
                     &self.r#image_name,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Poo
                     &self.r#registries,
                 ),
                 to_pulumi_object_field(
-                    "run_options",
+                    "runOptions",
                     &self.r#run_options,
                 ),
                 to_pulumi_object_field(
-                    "working_directory",
+                    "workingDirectory",
                     &self.r#working_directory,
                 ),
             ];

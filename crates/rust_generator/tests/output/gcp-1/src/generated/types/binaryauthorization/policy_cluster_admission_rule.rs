@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pol
                     &self.r#cluster,
                 ),
                 to_pulumi_object_field(
-                    "enforcement_mode",
+                    "enforcementMode",
                     &self.r#enforcement_mode,
                 ),
                 to_pulumi_object_field(
-                    "evaluation_mode",
+                    "evaluationMode",
                     &self.r#evaluation_mode,
                 ),
                 to_pulumi_object_field(
-                    "require_attestations_bies",
+                    "requireAttestationsBies",
                     &self.r#require_attestations_bies,
                 ),
             ];

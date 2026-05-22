@@ -26,7 +26,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sco
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "predefined_role",
+                    "predefinedRole",
                     &self.r#predefined_role,
                 ),
             ];

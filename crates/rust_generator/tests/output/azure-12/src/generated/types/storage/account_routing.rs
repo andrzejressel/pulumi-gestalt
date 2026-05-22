@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#choice,
                 ),
                 to_pulumi_object_field(
-                    "publish_internet_endpoints",
+                    "publishInternetEndpoints",
                     &self.r#publish_internet_endpoints,
                 ),
                 to_pulumi_object_field(
-                    "publish_microsoft_endpoints",
+                    "publishMicrosoftEndpoints",
                     &self.r#publish_microsoft_endpoints,
                 ),
             ];

@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "retain_stacks_on_account_removal",
+                    "retainStacksOnAccountRemoval",
                     &self.r#retain_stacks_on_account_removal,
                 ),
             ];

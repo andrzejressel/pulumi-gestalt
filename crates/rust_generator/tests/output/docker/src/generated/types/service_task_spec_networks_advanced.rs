@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#aliases,
                 ),
                 to_pulumi_object_field(
-                    "driver_opts",
+                    "driverOpts",
                     &self.r#driver_opts,
                 ),
                 to_pulumi_object_field(

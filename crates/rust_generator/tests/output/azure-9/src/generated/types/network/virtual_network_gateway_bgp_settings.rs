@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "peer_weight",
+                    "peerWeight",
                     &self.r#peer_weight,
                 ),
                 to_pulumi_object_field(
-                    "peering_addresses",
+                    "peeringAddresses",
                     &self.r#peering_addresses,
                 ),
             ];

@@ -48,15 +48,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "forwarded_ports",
+                    "forwardedPorts",
                     &self.r#forwarded_ports,
                 ),
                 to_pulumi_object_field(
-                    "instance_ip_mode",
+                    "instanceIpMode",
                     &self.r#instance_ip_mode,
                 ),
                 to_pulumi_object_field(
-                    "instance_tag",
+                    "instanceTag",
                     &self.r#instance_tag,
                 ),
                 to_pulumi_object_field(
@@ -64,7 +64,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "session_affinity",
+                    "sessionAffinity",
                     &self.r#session_affinity,
                 ),
                 to_pulumi_object_field(

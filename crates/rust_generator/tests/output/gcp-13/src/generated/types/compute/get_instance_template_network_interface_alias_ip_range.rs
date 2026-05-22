@@ -33,11 +33,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_cidr_range",
+                    "ipCidrRange",
                     &self.r#ip_cidr_range,
                 ),
                 to_pulumi_object_field(
-                    "subnetwork_range_name",
+                    "subnetworkRangeName",
                     &self.r#subnetwork_range_name,
                 ),
             ];

@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metric_overrides",
+                    "metricOverrides",
                     &self.r#metric_overrides,
                 ),
                 to_pulumi_object_field(
-                    "metric_source",
+                    "metricSource",
                     &self.r#metric_source,
                 ),
             ];

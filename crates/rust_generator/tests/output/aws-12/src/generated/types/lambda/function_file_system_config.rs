@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fun
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "local_mount_path",
+                    "localMountPath",
                     &self.r#local_mount_path,
                 ),
             ];

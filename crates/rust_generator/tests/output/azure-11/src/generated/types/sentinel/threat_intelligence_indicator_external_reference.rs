@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Thr
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "source_name",
+                    "sourceName",
                     &self.r#source_name,
                 ),
                 to_pulumi_object_field(

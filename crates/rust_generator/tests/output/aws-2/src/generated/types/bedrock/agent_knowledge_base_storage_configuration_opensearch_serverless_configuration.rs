@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "collection_arn",
+                    "collectionArn",
                     &self.r#collection_arn,
                 ),
                 to_pulumi_object_field(
-                    "field_mapping",
+                    "fieldMapping",
                     &self.r#field_mapping,
                 ),
                 to_pulumi_object_field(
-                    "vector_index_name",
+                    "vectorIndexName",
                     &self.r#vector_index_name,
                 ),
             ];

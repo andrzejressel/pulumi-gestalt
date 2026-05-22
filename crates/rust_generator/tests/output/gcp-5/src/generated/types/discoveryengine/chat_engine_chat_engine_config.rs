@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "agent_creation_config",
+                    "agentCreationConfig",
                     &self.r#agent_creation_config,
                 ),
                 to_pulumi_object_field(
-                    "dialogflow_agent_to_link",
+                    "dialogflowAgentToLink",
                     &self.r#dialogflow_agent_to_link,
                 ),
             ];

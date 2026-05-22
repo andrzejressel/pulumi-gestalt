@@ -37,15 +37,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorizer_credential",
+                    "authorizerCredential",
                     &self.r#authorizer_credential,
                 ),
                 to_pulumi_object_field(
-                    "read_authorizer_credential",
+                    "readAuthorizerCredential",
                     &self.r#read_authorizer_credential,
                 ),
                 to_pulumi_object_field(
-                    "webhook_secret_secret_version",
+                    "webhookSecretSecretVersion",
                     &self.r#webhook_secret_secret_version,
                 ),
                 to_pulumi_object_field(

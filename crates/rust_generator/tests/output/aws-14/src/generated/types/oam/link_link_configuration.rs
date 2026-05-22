@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "log_group_configuration",
+                    "logGroupConfiguration",
                     &self.r#log_group_configuration,
                 ),
                 to_pulumi_object_field(
-                    "metric_configuration",
+                    "metricConfiguration",
                     &self.r#metric_configuration,
                 ),
             ];

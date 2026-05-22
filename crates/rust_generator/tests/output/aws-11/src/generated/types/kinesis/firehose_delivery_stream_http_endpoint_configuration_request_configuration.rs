@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "common_attributes",
+                    "commonAttributes",
                     &self.r#common_attributes,
                 ),
                 to_pulumi_object_field(
-                    "content_encoding",
+                    "contentEncoding",
                     &self.r#content_encoding,
                 ),
             ];

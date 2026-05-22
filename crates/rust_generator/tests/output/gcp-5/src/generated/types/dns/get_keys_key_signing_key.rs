@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#algorithm,
                 ),
                 to_pulumi_object_field(
-                    "creation_time",
+                    "creationTime",
                     &self.r#creation_time,
                 ),
                 to_pulumi_object_field(
@@ -75,7 +75,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#digests,
                 ),
                 to_pulumi_object_field(
-                    "ds_record",
+                    "dsRecord",
                     &self.r#ds_record,
                 ),
                 to_pulumi_object_field(
@@ -83,19 +83,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "is_active",
+                    "isActive",
                     &self.r#is_active,
                 ),
                 to_pulumi_object_field(
-                    "key_length",
+                    "keyLength",
                     &self.r#key_length,
                 ),
                 to_pulumi_object_field(
-                    "key_tag",
+                    "keyTag",
                     &self.r#key_tag,
                 ),
                 to_pulumi_object_field(
-                    "public_key",
+                    "publicKey",
                     &self.r#public_key,
                 ),
             ];

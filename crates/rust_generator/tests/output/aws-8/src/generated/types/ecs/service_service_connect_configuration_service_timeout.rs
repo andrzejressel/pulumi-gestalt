@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "idle_timeout_seconds",
+                    "idleTimeoutSeconds",
                     &self.r#idle_timeout_seconds,
                 ),
                 to_pulumi_object_field(
-                    "per_request_timeout_seconds",
+                    "perRequestTimeoutSeconds",
                     &self.r#per_request_timeout_seconds,
                 ),
             ];

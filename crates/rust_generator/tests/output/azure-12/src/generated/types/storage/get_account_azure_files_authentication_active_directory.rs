@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "domain_guid",
+                    "domainGuid",
                     &self.r#domain_guid,
                 ),
                 to_pulumi_object_field(
-                    "domain_name",
+                    "domainName",
                     &self.r#domain_name,
                 ),
                 to_pulumi_object_field(
-                    "domain_sid",
+                    "domainSid",
                     &self.r#domain_sid,
                 ),
                 to_pulumi_object_field(
-                    "forest_name",
+                    "forestName",
                     &self.r#forest_name,
                 ),
                 to_pulumi_object_field(
-                    "netbios_domain_name",
+                    "netbiosDomainName",
                     &self.r#netbios_domain_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_sid",
+                    "storageSid",
                     &self.r#storage_sid,
                 ),
             ];

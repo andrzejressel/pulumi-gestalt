@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "request_headers",
+                    "requestHeaders",
                     &self.r#request_headers,
                 ),
                 to_pulumi_object_field(
-                    "response_headers",
+                    "responseHeaders",
                     &self.r#response_headers,
                 ),
             ];

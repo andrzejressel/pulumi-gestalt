@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "key_vault_key_id",
+                    "keyVaultKeyId",
                     &self.r#key_vault_key_id,
                 ),
                 to_pulumi_object_field(
-                    "key_vault_network_access",
+                    "keyVaultNetworkAccess",
                     &self.r#key_vault_network_access,
                 ),
             ];

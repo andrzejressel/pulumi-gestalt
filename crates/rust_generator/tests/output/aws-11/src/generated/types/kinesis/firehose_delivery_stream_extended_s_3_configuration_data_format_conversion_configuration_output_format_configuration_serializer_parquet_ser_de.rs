@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "block_size_bytes",
+                    "blockSizeBytes",
                     &self.r#block_size_bytes,
                 ),
                 to_pulumi_object_field(
@@ -51,19 +51,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#compression,
                 ),
                 to_pulumi_object_field(
-                    "enable_dictionary_compression",
+                    "enableDictionaryCompression",
                     &self.r#enable_dictionary_compression,
                 ),
                 to_pulumi_object_field(
-                    "max_padding_bytes",
+                    "maxPaddingBytes",
                     &self.r#max_padding_bytes,
                 ),
                 to_pulumi_object_field(
-                    "page_size_bytes",
+                    "pageSizeBytes",
                     &self.r#page_size_bytes,
                 ),
                 to_pulumi_object_field(
-                    "writer_version",
+                    "writerVersion",
                     &self.r#writer_version,
                 ),
             ];

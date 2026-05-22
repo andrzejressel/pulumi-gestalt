@@ -47,23 +47,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "array_properties",
+                    "arrayProperties",
                     &self.r#array_properties,
                 ),
                 to_pulumi_object_field(
-                    "container_overrides",
+                    "containerOverrides",
                     &self.r#container_overrides,
                 ),
                 to_pulumi_object_field(
-                    "depends_ons",
+                    "dependsOns",
                     &self.r#depends_ons,
                 ),
                 to_pulumi_object_field(
-                    "job_definition",
+                    "jobDefinition",
                     &self.r#job_definition,
                 ),
                 to_pulumi_object_field(
-                    "job_name",
+                    "jobName",
                     &self.r#job_name,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#parameters,
                 ),
                 to_pulumi_object_field(
-                    "retry_strategy",
+                    "retryStrategy",
                     &self.r#retry_strategy,
                 ),
             ];

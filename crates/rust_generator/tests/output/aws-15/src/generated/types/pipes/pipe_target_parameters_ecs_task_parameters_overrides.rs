@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "container_overrides",
+                    "containerOverrides",
                     &self.r#container_overrides,
                 ),
                 to_pulumi_object_field(
@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#cpu,
                 ),
                 to_pulumi_object_field(
-                    "ephemeral_storage",
+                    "ephemeralStorage",
                     &self.r#ephemeral_storage,
                 ),
                 to_pulumi_object_field(
-                    "execution_role_arn",
+                    "executionRoleArn",
                     &self.r#execution_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "inference_accelerator_overrides",
+                    "inferenceAcceleratorOverrides",
                     &self.r#inference_accelerator_overrides,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
                     &self.r#memory,
                 ),
                 to_pulumi_object_field(
-                    "task_role_arn",
+                    "taskRoleArn",
                     &self.r#task_role_arn,
                 ),
             ];

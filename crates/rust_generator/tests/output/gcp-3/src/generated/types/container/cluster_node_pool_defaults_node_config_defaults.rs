@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "containerd_config",
+                    "containerdConfig",
                     &self.r#containerd_config,
                 ),
                 to_pulumi_object_field(
-                    "gcfs_config",
+                    "gcfsConfig",
                     &self.r#gcfs_config,
                 ),
                 to_pulumi_object_field(
-                    "insecure_kubelet_readonly_port_enabled",
+                    "insecureKubeletReadonlyPortEnabled",
                     &self.r#insecure_kubelet_readonly_port_enabled,
                 ),
                 to_pulumi_object_field(
-                    "logging_variant",
+                    "loggingVariant",
                     &self.r#logging_variant,
                 ),
             ];

@@ -43,7 +43,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "about_text",
+                    "aboutText",
                     &self.r#about_text,
                 ),
                 to_pulumi_object_field(
@@ -55,15 +55,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "logo_image_blob",
+                    "logoImageBlob",
                     &self.r#logo_image_blob,
                 ),
                 to_pulumi_object_field(
-                    "operating_systems",
+                    "operatingSystems",
                     &self.r#operating_systems,
                 ),
                 to_pulumi_object_field(
-                    "usage_text",
+                    "usageText",
                     &self.r#usage_text,
                 ),
             ];

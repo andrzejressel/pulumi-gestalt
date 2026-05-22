@@ -29,15 +29,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dis
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "origin_keepalive_timeout",
+                    "originKeepaliveTimeout",
                     &self.r#origin_keepalive_timeout,
                 ),
                 to_pulumi_object_field(
-                    "origin_read_timeout",
+                    "originReadTimeout",
                     &self.r#origin_read_timeout,
                 ),
                 to_pulumi_object_field(
-                    "vpc_origin_id",
+                    "vpcOriginId",
                     &self.r#vpc_origin_id,
                 ),
             ];

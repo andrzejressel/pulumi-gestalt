@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fir
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "log_group_name",
+                    "logGroupName",
                     &self.r#log_group_name,
                 ),
                 to_pulumi_object_field(
-                    "log_stream_name",
+                    "logStreamName",
                     &self.r#log_stream_name,
                 ),
             ];

@@ -35,15 +35,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "email_address",
+                    "emailAddress",
                     &self.r#email_address,
                 ),
                 to_pulumi_object_field(
-                    "first_name",
+                    "firstName",
                     &self.r#first_name,
                 ),
                 to_pulumi_object_field(
-                    "last_name",
+                    "lastName",
                     &self.r#last_name,
                 ),
                 to_pulumi_object_field(

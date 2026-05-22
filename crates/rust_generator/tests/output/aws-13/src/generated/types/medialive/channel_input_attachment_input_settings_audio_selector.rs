@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "selector_settings",
+                    "selectorSettings",
                     &self.r#selector_settings,
                 ),
             ];

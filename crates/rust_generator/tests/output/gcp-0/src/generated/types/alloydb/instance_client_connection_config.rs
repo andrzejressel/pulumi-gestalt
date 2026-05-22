@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "require_connectors",
+                    "requireConnectors",
                     &self.r#require_connectors,
                 ),
                 to_pulumi_object_field(
-                    "ssl_config",
+                    "sslConfig",
                     &self.r#ssl_config,
                 ),
             ];

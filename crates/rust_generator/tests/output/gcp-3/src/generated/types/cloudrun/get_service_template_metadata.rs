@@ -77,11 +77,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#namespace,
                 ),
                 to_pulumi_object_field(
-                    "resource_version",
+                    "resourceVersion",
                     &self.r#resource_version,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
                 to_pulumi_object_field(

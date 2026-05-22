@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "delete_source_from_s_3",
+                    "deleteSourceFromS3",
                     &self.r#delete_source_from_s_3,
                 ),
                 to_pulumi_object_field(
-                    "max_age_in_days",
+                    "maxAgeInDays",
                     &self.r#max_age_in_days,
                 ),
                 to_pulumi_object_field(
-                    "max_count",
+                    "maxCount",
                     &self.r#max_count,
                 ),
                 to_pulumi_object_field(
-                    "service_role",
+                    "serviceRole",
                     &self.r#service_role,
                 ),
             ];

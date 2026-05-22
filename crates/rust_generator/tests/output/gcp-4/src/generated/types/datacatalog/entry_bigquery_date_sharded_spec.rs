@@ -40,11 +40,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
                     &self.r#dataset,
                 ),
                 to_pulumi_object_field(
-                    "shard_count",
+                    "shardCount",
                     &self.r#shard_count,
                 ),
                 to_pulumi_object_field(
-                    "table_prefix",
+                    "tablePrefix",
                     &self.r#table_prefix,
                 ),
             ];

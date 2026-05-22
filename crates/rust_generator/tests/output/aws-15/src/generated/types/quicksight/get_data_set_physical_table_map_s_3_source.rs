@@ -28,15 +28,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_source_arn",
+                    "dataSourceArn",
                     &self.r#data_source_arn,
                 ),
                 to_pulumi_object_field(
-                    "input_columns",
+                    "inputColumns",
                     &self.r#input_columns,
                 ),
                 to_pulumi_object_field(
-                    "upload_settings",
+                    "uploadSettings",
                     &self.r#upload_settings,
                 ),
             ];

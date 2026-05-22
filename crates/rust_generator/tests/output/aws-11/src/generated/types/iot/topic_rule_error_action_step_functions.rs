@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "execution_name_prefix",
+                    "executionNamePrefix",
                     &self.r#execution_name_prefix,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "state_machine_name",
+                    "stateMachineName",
                     &self.r#state_machine_name,
                 ),
             ];

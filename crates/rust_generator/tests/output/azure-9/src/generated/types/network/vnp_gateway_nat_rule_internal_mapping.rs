@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vnp
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_space",
+                    "addressSpace",
                     &self.r#address_space,
                 ),
                 to_pulumi_object_field(
-                    "port_range",
+                    "portRange",
                     &self.r#port_range,
                 ),
             ];

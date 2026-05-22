@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "renewal_status",
+                    "renewalStatus",
                     &self.r#renewal_status,
                 ),
                 to_pulumi_object_field(
-                    "renewal_status_reason",
+                    "renewalStatusReason",
                     &self.r#renewal_status_reason,
                 ),
                 to_pulumi_object_field(
-                    "updated_at",
+                    "updatedAt",
                     &self.r#updated_at,
                 ),
             ];

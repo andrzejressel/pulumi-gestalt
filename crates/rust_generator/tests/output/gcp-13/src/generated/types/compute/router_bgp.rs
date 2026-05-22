@@ -70,15 +70,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "advertise_mode",
+                    "advertiseMode",
                     &self.r#advertise_mode,
                 ),
                 to_pulumi_object_field(
-                    "advertised_groups",
+                    "advertisedGroups",
                     &self.r#advertised_groups,
                 ),
                 to_pulumi_object_field(
-                    "advertised_ip_ranges",
+                    "advertisedIpRanges",
                     &self.r#advertised_ip_ranges,
                 ),
                 to_pulumi_object_field(
@@ -86,11 +86,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#asn,
                 ),
                 to_pulumi_object_field(
-                    "identifier_range",
+                    "identifierRange",
                     &self.r#identifier_range,
                 ),
                 to_pulumi_object_field(
-                    "keepalive_interval",
+                    "keepaliveInterval",
                     &self.r#keepalive_interval,
                 ),
             ];

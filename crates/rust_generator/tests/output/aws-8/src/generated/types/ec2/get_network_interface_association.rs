@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allocation_id",
+                    "allocationId",
                     &self.r#allocation_id,
                 ),
                 to_pulumi_object_field(
-                    "association_id",
+                    "associationId",
                     &self.r#association_id,
                 ),
                 to_pulumi_object_field(
-                    "carrier_ip",
+                    "carrierIp",
                     &self.r#carrier_ip,
                 ),
                 to_pulumi_object_field(
-                    "customer_owned_ip",
+                    "customerOwnedIp",
                     &self.r#customer_owned_ip,
                 ),
                 to_pulumi_object_field(
-                    "ip_owner_id",
+                    "ipOwnerId",
                     &self.r#ip_owner_id,
                 ),
                 to_pulumi_object_field(
-                    "public_dns_name",
+                    "publicDnsName",
                     &self.r#public_dns_name,
                 ),
                 to_pulumi_object_field(
-                    "public_ip",
+                    "publicIp",
                     &self.r#public_ip,
                 ),
             ];

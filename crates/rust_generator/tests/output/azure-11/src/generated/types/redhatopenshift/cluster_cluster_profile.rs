@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
                     &self.r#domain,
                 ),
                 to_pulumi_object_field(
-                    "fips_enabled",
+                    "fipsEnabled",
                     &self.r#fips_enabled,
                 ),
                 to_pulumi_object_field(
-                    "managed_resource_group_name",
+                    "managedResourceGroupName",
                     &self.r#managed_resource_group_name,
                 ),
                 to_pulumi_object_field(
-                    "pull_secret",
+                    "pullSecret",
                     &self.r#pull_secret,
                 ),
                 to_pulumi_object_field(
-                    "resource_group_id",
+                    "resourceGroupId",
                     &self.r#resource_group_id,
                 ),
                 to_pulumi_object_field(

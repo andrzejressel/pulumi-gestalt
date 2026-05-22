@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#encrypted,
                 ),
                 to_pulumi_object_field(
-                    "file_system_type",
+                    "fileSystemType",
                     &self.r#file_system_type,
                 ),
                 to_pulumi_object_field(
@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#iops,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_id",
+                    "kmsKeyId",
                     &self.r#kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
                 to_pulumi_object_field(
-                    "size_in_gb",
+                    "sizeInGb",
                     &self.r#size_in_gb,
                 ),
                 to_pulumi_object_field(
-                    "snapshot_id",
+                    "snapshotId",
                     &self.r#snapshot_id,
                 ),
                 to_pulumi_object_field(
-                    "tag_specifications",
+                    "tagSpecifications",
                     &self.r#tag_specifications,
                 ),
                 to_pulumi_object_field(
@@ -95,7 +95,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#throughput,
                 ),
                 to_pulumi_object_field(
-                    "volume_type",
+                    "volumeType",
                     &self.r#volume_type,
                 ),
             ];

@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "primary_key",
+                    "primaryKey",
                     &self.r#primary_key,
                 ),
                 to_pulumi_object_field(
-                    "secondary_key",
+                    "secondaryKey",
                     &self.r#secondary_key,
                 ),
                 to_pulumi_object_field(
-                    "tenant_id",
+                    "tenantId",
                     &self.r#tenant_id,
                 ),
             ];

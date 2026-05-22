@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "on_partial_upload",
+                    "onPartialUpload",
                     &self.r#on_partial_upload,
                 ),
                 to_pulumi_object_field(
-                    "on_upload",
+                    "onUpload",
                     &self.r#on_upload,
                 ),
             ];

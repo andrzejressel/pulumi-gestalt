@@ -51,31 +51,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorizer_credential",
+                    "authorizerCredential",
                     &self.r#authorizer_credential,
                 ),
                 to_pulumi_object_field(
-                    "host_uri",
+                    "hostUri",
                     &self.r#host_uri,
                 ),
                 to_pulumi_object_field(
-                    "read_authorizer_credential",
+                    "readAuthorizerCredential",
                     &self.r#read_authorizer_credential,
                 ),
                 to_pulumi_object_field(
-                    "server_version",
+                    "serverVersion",
                     &self.r#server_version,
                 ),
                 to_pulumi_object_field(
-                    "service_directory_config",
+                    "serviceDirectoryConfig",
                     &self.r#service_directory_config,
                 ),
                 to_pulumi_object_field(
-                    "ssl_ca",
+                    "sslCa",
                     &self.r#ssl_ca,
                 ),
                 to_pulumi_object_field(
-                    "webhook_secret_secret_version",
+                    "webhookSecretSecretVersion",
                     &self.r#webhook_secret_secret_version,
                 ),
             ];

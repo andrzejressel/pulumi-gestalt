@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_trace_enabled",
+                    "dataTraceEnabled",
                     &self.r#data_trace_enabled,
                 ),
                 to_pulumi_object_field(
-                    "detailed_metrics_enabled",
+                    "detailedMetricsEnabled",
                     &self.r#detailed_metrics_enabled,
                 ),
                 to_pulumi_object_field(
-                    "logging_level",
+                    "loggingLevel",
                     &self.r#logging_level,
                 ),
                 to_pulumi_object_field(
-                    "throttling_burst_limit",
+                    "throttlingBurstLimit",
                     &self.r#throttling_burst_limit,
                 ),
                 to_pulumi_object_field(
-                    "throttling_rate_limit",
+                    "throttlingRateLimit",
                     &self.r#throttling_rate_limit,
                 ),
             ];

@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cidr_blocks",
+                    "cidrBlocks",
                     &self.r#cidr_blocks,
                 ),
                 to_pulumi_object_field(
@@ -63,15 +63,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "from_port",
+                    "fromPort",
                     &self.r#from_port,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_cidr_blocks",
+                    "ipv6CidrBlocks",
                     &self.r#ipv_6_cidr_blocks,
                 ),
                 to_pulumi_object_field(
-                    "prefix_list_ids",
+                    "prefixListIds",
                     &self.r#prefix_list_ids,
                 ),
                 to_pulumi_object_field(
@@ -79,15 +79,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Def
                     &self.r#protocol,
                 ),
                 to_pulumi_object_field(
-                    "security_groups",
+                    "securityGroups",
                     &self.r#security_groups,
                 ),
                 to_pulumi_object_field(
-                    "self_",
+                    "self",
                     &self.r#self_,
                 ),
                 to_pulumi_object_field(
-                    "to_port",
+                    "toPort",
                     &self.r#to_port,
                 ),
             ];

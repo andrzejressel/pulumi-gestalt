@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "connection_type",
+                    "connectionType",
                     &self.r#connection_type,
                 ),
                 to_pulumi_object_field(
-                    "ip_allocation",
+                    "ipAllocation",
                     &self.r#ip_allocation,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "private_service_connect_config",
+                    "privateServiceConnectConfig",
                     &self.r#private_service_connect_config,
                 ),
             ];

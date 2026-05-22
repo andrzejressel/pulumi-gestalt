@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "rule_group_name",
+                    "ruleGroupName",
                     &self.r#rule_group_name,
                 ),
                 to_pulumi_object_field(

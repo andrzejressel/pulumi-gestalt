@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "max_worker_count",
+                    "maxWorkerCount",
                     &self.r#max_worker_count,
                 ),
                 to_pulumi_object_field(
-                    "mcu_count",
+                    "mcuCount",
                     &self.r#mcu_count,
                 ),
                 to_pulumi_object_field(
-                    "min_worker_count",
+                    "minWorkerCount",
                     &self.r#min_worker_count,
                 ),
                 to_pulumi_object_field(
-                    "scale_in_policy",
+                    "scaleInPolicy",
                     &self.r#scale_in_policy,
                 ),
                 to_pulumi_object_field(
-                    "scale_out_policy",
+                    "scaleOutPolicy",
                     &self.r#scale_out_policy,
                 ),
             ];

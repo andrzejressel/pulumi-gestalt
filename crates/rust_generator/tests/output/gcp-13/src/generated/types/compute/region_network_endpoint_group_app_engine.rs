@@ -45,7 +45,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
                     &self.r#service,
                 ),
                 to_pulumi_object_field(
-                    "url_mask",
+                    "urlMask",
                     &self.r#url_mask,
                 ),
                 to_pulumi_object_field(

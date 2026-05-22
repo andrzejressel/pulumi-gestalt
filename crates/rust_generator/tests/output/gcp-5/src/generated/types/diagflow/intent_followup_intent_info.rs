@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Int
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "followup_intent_name",
+                    "followupIntentName",
                     &self.r#followup_intent_name,
                 ),
                 to_pulumi_object_field(
-                    "parent_followup_intent_name",
+                    "parentFollowupIntentName",
                     &self.r#parent_followup_intent_name,
                 ),
             ];

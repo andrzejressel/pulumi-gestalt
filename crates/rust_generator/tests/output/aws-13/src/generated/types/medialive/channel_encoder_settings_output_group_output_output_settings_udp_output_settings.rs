@@ -34,11 +34,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "buffer_msec",
+                    "bufferMsec",
                     &self.r#buffer_msec,
                 ),
                 to_pulumi_object_field(
-                    "container_settings",
+                    "containerSettings",
                     &self.r#container_settings,
                 ),
                 to_pulumi_object_field(
@@ -46,7 +46,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#destination,
                 ),
                 to_pulumi_object_field(
-                    "fec_output_settings",
+                    "fecOutputSettings",
                     &self.r#fec_output_settings,
                 ),
             ];

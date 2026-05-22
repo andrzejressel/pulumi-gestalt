@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "kerberos_armoring_enabled",
+                    "kerberosArmoringEnabled",
                     &self.r#kerberos_armoring_enabled,
                 ),
                 to_pulumi_object_field(
-                    "kerberos_rc_4_encryption_enabled",
+                    "kerberosRc4EncryptionEnabled",
                     &self.r#kerberos_rc_4_encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "ntlm_v_1_enabled",
+                    "ntlmV1Enabled",
                     &self.r#ntlm_v_1_enabled,
                 ),
                 to_pulumi_object_field(
-                    "sync_kerberos_passwords",
+                    "syncKerberosPasswords",
                     &self.r#sync_kerberos_passwords,
                 ),
                 to_pulumi_object_field(
-                    "sync_ntlm_passwords",
+                    "syncNtlmPasswords",
                     &self.r#sync_ntlm_passwords,
                 ),
                 to_pulumi_object_field(
-                    "sync_on_prem_passwords",
+                    "syncOnPremPasswords",
                     &self.r#sync_on_prem_passwords,
                 ),
                 to_pulumi_object_field(
-                    "tls_v_1_enabled",
+                    "tlsV1Enabled",
                     &self.r#tls_v_1_enabled,
                 ),
             ];

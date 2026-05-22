@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for KxC
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_scaling_metric",
+                    "autoScalingMetric",
                     &self.r#auto_scaling_metric,
                 ),
                 to_pulumi_object_field(
-                    "max_node_count",
+                    "maxNodeCount",
                     &self.r#max_node_count,
                 ),
                 to_pulumi_object_field(
-                    "metric_target",
+                    "metricTarget",
                     &self.r#metric_target,
                 ),
                 to_pulumi_object_field(
-                    "min_node_count",
+                    "minNodeCount",
                     &self.r#min_node_count,
                 ),
                 to_pulumi_object_field(
-                    "scale_in_cooldown_seconds",
+                    "scaleInCooldownSeconds",
                     &self.r#scale_in_cooldown_seconds,
                 ),
                 to_pulumi_object_field(
-                    "scale_out_cooldown_seconds",
+                    "scaleOutCooldownSeconds",
                     &self.r#scale_out_cooldown_seconds,
                 ),
             ];

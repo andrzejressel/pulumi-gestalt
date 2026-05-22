@@ -99,15 +99,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "associate_carrier_ip_address",
+                    "associateCarrierIpAddress",
                     &self.r#associate_carrier_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "associate_public_ip_address",
+                    "associatePublicIpAddress",
                     &self.r#associate_public_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "delete_on_termination",
+                    "deleteOnTermination",
                     &self.r#delete_on_termination,
                 ),
                 to_pulumi_object_field(
@@ -115,67 +115,67 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lau
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "device_index",
+                    "deviceIndex",
                     &self.r#device_index,
                 ),
                 to_pulumi_object_field(
-                    "interface_type",
+                    "interfaceType",
                     &self.r#interface_type,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_address_count",
+                    "ipv4AddressCount",
                     &self.r#ipv_4_address_count,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_addresses",
+                    "ipv4Addresses",
                     &self.r#ipv_4_addresses,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_prefix_count",
+                    "ipv4PrefixCount",
                     &self.r#ipv_4_prefix_count,
                 ),
                 to_pulumi_object_field(
-                    "ipv_4_prefixes",
+                    "ipv4Prefixes",
                     &self.r#ipv_4_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_address_count",
+                    "ipv6AddressCount",
                     &self.r#ipv_6_address_count,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_addresses",
+                    "ipv6Addresses",
                     &self.r#ipv_6_addresses,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_prefix_count",
+                    "ipv6PrefixCount",
                     &self.r#ipv_6_prefix_count,
                 ),
                 to_pulumi_object_field(
-                    "ipv_6_prefixes",
+                    "ipv6Prefixes",
                     &self.r#ipv_6_prefixes,
                 ),
                 to_pulumi_object_field(
-                    "network_card_index",
+                    "networkCardIndex",
                     &self.r#network_card_index,
                 ),
                 to_pulumi_object_field(
-                    "network_interface_id",
+                    "networkInterfaceId",
                     &self.r#network_interface_id,
                 ),
                 to_pulumi_object_field(
-                    "primary_ipv_6",
+                    "primaryIpv6",
                     &self.r#primary_ipv_6,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "security_groups",
+                    "securityGroups",
                     &self.r#security_groups,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

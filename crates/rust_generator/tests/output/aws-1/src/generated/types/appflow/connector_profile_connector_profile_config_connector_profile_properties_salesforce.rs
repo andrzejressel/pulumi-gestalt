@@ -26,11 +26,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_url",
+                    "instanceUrl",
                     &self.r#instance_url,
                 ),
                 to_pulumi_object_field(
-                    "is_sandbox_environment",
+                    "isSandboxEnvironment",
                     &self.r#is_sandbox_environment,
                 ),
             ];

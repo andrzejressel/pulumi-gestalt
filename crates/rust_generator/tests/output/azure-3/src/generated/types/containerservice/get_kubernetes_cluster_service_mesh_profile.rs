@@ -39,15 +39,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_authorities",
+                    "certificateAuthorities",
                     &self.r#certificate_authorities,
                 ),
                 to_pulumi_object_field(
-                    "external_ingress_gateway_enabled",
+                    "externalIngressGatewayEnabled",
                     &self.r#external_ingress_gateway_enabled,
                 ),
                 to_pulumi_object_field(
-                    "internal_ingress_gateway_enabled",
+                    "internalIngressGatewayEnabled",
                     &self.r#internal_ingress_gateway_enabled,
                 ),
                 to_pulumi_object_field(

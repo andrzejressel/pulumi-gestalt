@@ -47,31 +47,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ancillary_source_settings",
+                    "ancillarySourceSettings",
                     &self.r#ancillary_source_settings,
                 ),
                 to_pulumi_object_field(
-                    "arib_source_settings",
+                    "aribSourceSettings",
                     &self.r#arib_source_settings,
                 ),
                 to_pulumi_object_field(
-                    "dvb_sub_source_settings",
+                    "dvbSubSourceSettings",
                     &self.r#dvb_sub_source_settings,
                 ),
                 to_pulumi_object_field(
-                    "embedded_source_settings",
+                    "embeddedSourceSettings",
                     &self.r#embedded_source_settings,
                 ),
                 to_pulumi_object_field(
-                    "scte_20_source_settings",
+                    "scte20SourceSettings",
                     &self.r#scte_20_source_settings,
                 ),
                 to_pulumi_object_field(
-                    "scte_27_source_settings",
+                    "scte27SourceSettings",
                     &self.r#scte_27_source_settings,
                 ),
                 to_pulumi_object_field(
-                    "teletext_source_settings",
+                    "teletextSourceSettings",
                     &self.r#teletext_source_settings,
                 ),
             ];

@@ -41,7 +41,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "access_configs",
+                    "accessConfigs",
                     &self.r#access_configs,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#network,
                 ),
                 to_pulumi_object_field(
-                    "nic_type",
+                    "nicType",
                     &self.r#nic_type,
                 ),
                 to_pulumi_object_field(

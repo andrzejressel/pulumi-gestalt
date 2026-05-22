@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
                     &self.r#product,
                 ),
                 to_pulumi_object_field(
-                    "promotion_code",
+                    "promotionCode",
                     &self.r#promotion_code,
                 ),
                 to_pulumi_object_field(

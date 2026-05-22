@@ -49,31 +49,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "minimum_length",
+                    "minimumLength",
                     &self.r#minimum_length,
                 ),
                 to_pulumi_object_field(
-                    "password_history_size",
+                    "passwordHistorySize",
                     &self.r#password_history_size,
                 ),
                 to_pulumi_object_field(
-                    "require_lowercase",
+                    "requireLowercase",
                     &self.r#require_lowercase,
                 ),
                 to_pulumi_object_field(
-                    "require_numbers",
+                    "requireNumbers",
                     &self.r#require_numbers,
                 ),
                 to_pulumi_object_field(
-                    "require_symbols",
+                    "requireSymbols",
                     &self.r#require_symbols,
                 ),
                 to_pulumi_object_field(
-                    "require_uppercase",
+                    "requireUppercase",
                     &self.r#require_uppercase,
                 ),
                 to_pulumi_object_field(
-                    "temporary_password_validity_days",
+                    "temporaryPasswordValidityDays",
                     &self.r#temporary_password_validity_days,
                 ),
             ];

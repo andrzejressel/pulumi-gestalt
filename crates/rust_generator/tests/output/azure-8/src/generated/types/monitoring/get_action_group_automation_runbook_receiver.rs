@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "automation_account_id",
+                    "automationAccountId",
                     &self.r#automation_account_id,
                 ),
                 to_pulumi_object_field(
-                    "is_global_runbook",
+                    "isGlobalRunbook",
                     &self.r#is_global_runbook,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "runbook_name",
+                    "runbookName",
                     &self.r#runbook_name,
                 ),
                 to_pulumi_object_field(
-                    "service_uri",
+                    "serviceUri",
                     &self.r#service_uri,
                 ),
                 to_pulumi_object_field(
-                    "use_common_alert_schema",
+                    "useCommonAlertSchema",
                     &self.r#use_common_alert_schema,
                 ),
                 to_pulumi_object_field(
-                    "webhook_resource_id",
+                    "webhookResourceId",
                     &self.r#webhook_resource_id,
                 ),
             ];

@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cidr_ranges",
+                    "cidrRanges",
                     &self.r#cidr_ranges,
                 ),
                 to_pulumi_object_field(
@@ -42,7 +42,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pac
                     &self.r#direction,
                 ),
                 to_pulumi_object_field(
-                    "ip_protocols",
+                    "ipProtocols",
                     &self.r#ip_protocols,
                 ),
             ];

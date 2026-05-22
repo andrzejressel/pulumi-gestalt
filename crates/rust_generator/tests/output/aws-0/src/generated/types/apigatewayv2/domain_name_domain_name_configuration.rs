@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_arn",
+                    "certificateArn",
                     &self.r#certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_type",
+                    "endpointType",
                     &self.r#endpoint_type,
                 ),
                 to_pulumi_object_field(
-                    "hosted_zone_id",
+                    "hostedZoneId",
                     &self.r#hosted_zone_id,
                 ),
                 to_pulumi_object_field(
-                    "ownership_verification_certificate_arn",
+                    "ownershipVerificationCertificateArn",
                     &self.r#ownership_verification_certificate_arn,
                 ),
                 to_pulumi_object_field(
-                    "security_policy",
+                    "securityPolicy",
                     &self.r#security_policy,
                 ),
                 to_pulumi_object_field(
-                    "target_domain_name",
+                    "targetDomainName",
                     &self.r#target_domain_name,
                 ),
             ];

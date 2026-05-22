@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "condition_document_attribute_key",
+                    "conditionDocumentAttributeKey",
                     &self.r#condition_document_attribute_key,
                 ),
                 to_pulumi_object_field(
-                    "condition_on_value",
+                    "conditionOnValue",
                     &self.r#condition_on_value,
                 ),
                 to_pulumi_object_field(

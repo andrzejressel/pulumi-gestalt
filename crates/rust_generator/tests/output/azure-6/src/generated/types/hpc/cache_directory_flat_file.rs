@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "group_file_uri",
+                    "groupFileUri",
                     &self.r#group_file_uri,
                 ),
                 to_pulumi_object_field(
-                    "password_file_uri",
+                    "passwordFileUri",
                     &self.r#password_file_uri,
                 ),
             ];

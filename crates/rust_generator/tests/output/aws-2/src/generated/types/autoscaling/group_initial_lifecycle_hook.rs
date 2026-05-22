@@ -41,15 +41,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_result",
+                    "defaultResult",
                     &self.r#default_result,
                 ),
                 to_pulumi_object_field(
-                    "heartbeat_timeout",
+                    "heartbeatTimeout",
                     &self.r#heartbeat_timeout,
                 ),
                 to_pulumi_object_field(
-                    "lifecycle_transition",
+                    "lifecycleTransition",
                     &self.r#lifecycle_transition,
                 ),
                 to_pulumi_object_field(
@@ -57,15 +57,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "notification_metadata",
+                    "notificationMetadata",
                     &self.r#notification_metadata,
                 ),
                 to_pulumi_object_field(
-                    "notification_target_arn",
+                    "notificationTargetArn",
                     &self.r#notification_target_arn,
                 ),
                 to_pulumi_object_field(
-                    "role_arn",
+                    "roleArn",
                     &self.r#role_arn,
                 ),
             ];

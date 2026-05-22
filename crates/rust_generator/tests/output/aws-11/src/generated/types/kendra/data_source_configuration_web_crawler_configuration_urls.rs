@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "seed_url_configuration",
+                    "seedUrlConfiguration",
                     &self.r#seed_url_configuration,
                 ),
                 to_pulumi_object_field(
-                    "site_maps_configuration",
+                    "siteMapsConfiguration",
                     &self.r#site_maps_configuration,
                 ),
             ];

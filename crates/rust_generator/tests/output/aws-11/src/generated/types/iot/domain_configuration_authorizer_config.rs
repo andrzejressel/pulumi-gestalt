@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_authorizer_override",
+                    "allowAuthorizerOverride",
                     &self.r#allow_authorizer_override,
                 ),
                 to_pulumi_object_field(
-                    "default_authorizer_name",
+                    "defaultAuthorizerName",
                     &self.r#default_authorizer_name,
                 ),
             ];

@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ent
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "testing_challenge",
+                    "testingChallenge",
                     &self.r#testing_challenge,
                 ),
                 to_pulumi_object_field(
-                    "testing_score",
+                    "testingScore",
                     &self.r#testing_score,
                 ),
             ];

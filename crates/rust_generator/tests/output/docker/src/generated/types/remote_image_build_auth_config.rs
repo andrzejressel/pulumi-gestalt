@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#email,
                 ),
                 to_pulumi_object_field(
-                    "host_name",
+                    "hostName",
                     &self.r#host_name,
                 ),
                 to_pulumi_object_field(
-                    "identity_token",
+                    "identityToken",
                     &self.r#identity_token,
                 ),
                 to_pulumi_object_field(
@@ -71,15 +71,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rem
                     &self.r#password,
                 ),
                 to_pulumi_object_field(
-                    "registry_token",
+                    "registryToken",
                     &self.r#registry_token,
                 ),
                 to_pulumi_object_field(
-                    "server_address",
+                    "serverAddress",
                     &self.r#server_address,
                 ),
                 to_pulumi_object_field(
-                    "user_name",
+                    "userName",
                     &self.r#user_name,
                 ),
             ];

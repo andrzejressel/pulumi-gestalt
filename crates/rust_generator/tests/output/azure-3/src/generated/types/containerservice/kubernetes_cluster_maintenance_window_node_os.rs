@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "day_of_month",
+                    "dayOfMonth",
                     &self.r#day_of_month,
                 ),
                 to_pulumi_object_field(
-                    "day_of_week",
+                    "dayOfWeek",
                     &self.r#day_of_week,
                 ),
                 to_pulumi_object_field(
@@ -79,23 +79,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Kub
                     &self.r#interval,
                 ),
                 to_pulumi_object_field(
-                    "not_alloweds",
+                    "notAlloweds",
                     &self.r#not_alloweds,
                 ),
                 to_pulumi_object_field(
-                    "start_date",
+                    "startDate",
                     &self.r#start_date,
                 ),
                 to_pulumi_object_field(
-                    "start_time",
+                    "startTime",
                     &self.r#start_time,
                 ),
                 to_pulumi_object_field(
-                    "utc_offset",
+                    "utcOffset",
                     &self.r#utc_offset,
                 ),
                 to_pulumi_object_field(
-                    "week_index",
+                    "weekIndex",
                     &self.r#week_index,
                 ),
             ];

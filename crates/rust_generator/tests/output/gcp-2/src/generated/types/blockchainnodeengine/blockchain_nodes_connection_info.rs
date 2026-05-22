@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "endpoint_infos",
+                    "endpointInfos",
                     &self.r#endpoint_infos,
                 ),
                 to_pulumi_object_field(
-                    "service_attachment",
+                    "serviceAttachment",
                     &self.r#service_attachment,
                 ),
             ];

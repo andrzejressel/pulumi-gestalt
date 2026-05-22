@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "health_check",
+                    "healthCheck",
                     &self.r#health_check,
                 ),
                 to_pulumi_object_field(
-                    "initial_delay_sec",
+                    "initialDelaySec",
                     &self.r#initial_delay_sec,
                 ),
             ];

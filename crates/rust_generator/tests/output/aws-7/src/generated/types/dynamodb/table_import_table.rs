@@ -40,19 +40,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "input_compression_type",
+                    "inputCompressionType",
                     &self.r#input_compression_type,
                 ),
                 to_pulumi_object_field(
-                    "input_format",
+                    "inputFormat",
                     &self.r#input_format,
                 ),
                 to_pulumi_object_field(
-                    "input_format_options",
+                    "inputFormatOptions",
                     &self.r#input_format_options,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket_source",
+                    "s3BucketSource",
                     &self.r#s_3_bucket_source,
                 ),
             ];

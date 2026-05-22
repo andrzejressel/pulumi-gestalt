@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cus
                     &self.r#git,
                 ),
                 to_pulumi_object_field(
-                    "google_cloud_build_repo",
+                    "googleCloudBuildRepo",
                     &self.r#google_cloud_build_repo,
                 ),
                 to_pulumi_object_field(
-                    "google_cloud_storage",
+                    "googleCloudStorage",
                     &self.r#google_cloud_storage,
                 ),
             ];

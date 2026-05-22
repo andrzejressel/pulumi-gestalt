@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "encryption_type",
+                    "encryptionType",
                     &self.r#encryption_type,
                 ),
                 to_pulumi_object_field(
-                    "key_id",
+                    "keyId",
                     &self.r#key_id,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_uri",
+                    "diskUri",
                     &self.r#disk_uri,
                 ),
                 to_pulumi_object_field(
-                    "staging_storage_account_id",
+                    "stagingStorageAccountId",
                     &self.r#staging_storage_account_id,
                 ),
                 to_pulumi_object_field(
-                    "target_storage_account_id",
+                    "targetStorageAccountId",
                     &self.r#target_storage_account_id,
                 ),
             ];

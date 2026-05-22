@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "private_dns_zone_ids",
+                    "privateDnsZoneIds",
                     &self.r#private_dns_zone_ids,
                 ),
             ];

@@ -55,31 +55,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "max_query_string_length",
+                    "maxQueryStringLength",
                     &self.r#max_query_string_length,
                 ),
                 to_pulumi_object_field(
-                    "preserve_comments",
+                    "preserveComments",
                     &self.r#preserve_comments,
                 ),
                 to_pulumi_object_field(
-                    "query_plans_per_minute",
+                    "queryPlansPerMinute",
                     &self.r#query_plans_per_minute,
                 ),
                 to_pulumi_object_field(
-                    "record_application_tags",
+                    "recordApplicationTags",
                     &self.r#record_application_tags,
                 ),
                 to_pulumi_object_field(
-                    "track_active_queries",
+                    "trackActiveQueries",
                     &self.r#track_active_queries,
                 ),
                 to_pulumi_object_field(
-                    "track_wait_event_types",
+                    "trackWaitEventTypes",
                     &self.r#track_wait_event_types,
                 ),
                 to_pulumi_object_field(
-                    "track_wait_events",
+                    "trackWaitEvents",
                     &self.r#track_wait_events,
                 ),
             ];

@@ -25,11 +25,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_audio_input",
+                    "allowAudioInput",
                     &self.r#allow_audio_input,
                 ),
                 to_pulumi_object_field(
-                    "allow_dtmf_input",
+                    "allowDtmfInput",
                     &self.r#allow_dtmf_input,
                 ),
             ];

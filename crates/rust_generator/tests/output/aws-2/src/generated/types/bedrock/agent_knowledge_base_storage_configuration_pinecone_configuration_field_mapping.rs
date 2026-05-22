@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metadata_field",
+                    "metadataField",
                     &self.r#metadata_field,
                 ),
                 to_pulumi_object_field(
-                    "text_field",
+                    "textField",
                     &self.r#text_field,
                 ),
             ];

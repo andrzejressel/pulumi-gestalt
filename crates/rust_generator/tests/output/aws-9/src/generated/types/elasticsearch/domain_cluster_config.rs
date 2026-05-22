@@ -63,47 +63,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cold_storage_options",
+                    "coldStorageOptions",
                     &self.r#cold_storage_options,
                 ),
                 to_pulumi_object_field(
-                    "dedicated_master_count",
+                    "dedicatedMasterCount",
                     &self.r#dedicated_master_count,
                 ),
                 to_pulumi_object_field(
-                    "dedicated_master_enabled",
+                    "dedicatedMasterEnabled",
                     &self.r#dedicated_master_enabled,
                 ),
                 to_pulumi_object_field(
-                    "dedicated_master_type",
+                    "dedicatedMasterType",
                     &self.r#dedicated_master_type,
                 ),
                 to_pulumi_object_field(
-                    "instance_count",
+                    "instanceCount",
                     &self.r#instance_count,
                 ),
                 to_pulumi_object_field(
-                    "instance_type",
+                    "instanceType",
                     &self.r#instance_type,
                 ),
                 to_pulumi_object_field(
-                    "warm_count",
+                    "warmCount",
                     &self.r#warm_count,
                 ),
                 to_pulumi_object_field(
-                    "warm_enabled",
+                    "warmEnabled",
                     &self.r#warm_enabled,
                 ),
                 to_pulumi_object_field(
-                    "warm_type",
+                    "warmType",
                     &self.r#warm_type,
                 ),
                 to_pulumi_object_field(
-                    "zone_awareness_config",
+                    "zoneAwarenessConfig",
                     &self.r#zone_awareness_config,
                 ),
                 to_pulumi_object_field(
-                    "zone_awareness_enabled",
+                    "zoneAwarenessEnabled",
                     &self.r#zone_awareness_enabled,
                 ),
             ];

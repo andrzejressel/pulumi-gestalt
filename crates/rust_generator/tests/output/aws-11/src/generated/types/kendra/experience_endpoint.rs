@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Exp
                     &self.r#endpoint,
                 ),
                 to_pulumi_object_field(
-                    "endpoint_type",
+                    "endpointType",
                     &self.r#endpoint_type,
                 ),
             ];

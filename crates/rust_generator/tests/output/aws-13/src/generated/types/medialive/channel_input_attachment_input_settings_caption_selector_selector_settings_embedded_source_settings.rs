@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "convert_608_to_708",
+                    "convert608To708",
                     &self.r#convert_608_to_708,
                 ),
                 to_pulumi_object_field(
-                    "scte_20_detection",
+                    "scte20Detection",
                     &self.r#scte_20_detection,
                 ),
                 to_pulumi_object_field(
-                    "source_608_channel_number",
+                    "source608ChannelNumber",
                     &self.r#source_608_channel_number,
                 ),
             ];

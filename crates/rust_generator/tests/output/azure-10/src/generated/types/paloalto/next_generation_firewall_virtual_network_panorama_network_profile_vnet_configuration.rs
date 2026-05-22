@@ -34,19 +34,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nex
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_of_trust_for_user_defined_routes",
+                    "ipOfTrustForUserDefinedRoutes",
                     &self.r#ip_of_trust_for_user_defined_routes,
                 ),
                 to_pulumi_object_field(
-                    "trusted_subnet_id",
+                    "trustedSubnetId",
                     &self.r#trusted_subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "untrusted_subnet_id",
+                    "untrustedSubnetId",
                     &self.r#untrusted_subnet_id,
                 ),
                 to_pulumi_object_field(
-                    "virtual_network_id",
+                    "virtualNetworkId",
                     &self.r#virtual_network_id,
                 ),
             ];

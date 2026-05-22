@@ -47,19 +47,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ass
                     &self.r#locations,
                 ),
                 to_pulumi_object_field(
-                    "os_types",
+                    "osTypes",
                     &self.r#os_types,
                 ),
                 to_pulumi_object_field(
-                    "resource_groups",
+                    "resourceGroups",
                     &self.r#resource_groups,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
                 to_pulumi_object_field(
-                    "tag_filter",
+                    "tagFilter",
                     &self.r#tag_filter,
                 ),
                 to_pulumi_object_field(

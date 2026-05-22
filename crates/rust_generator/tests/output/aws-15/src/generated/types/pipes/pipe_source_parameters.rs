@@ -51,35 +51,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pip
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "activemq_broker_parameters",
+                    "activemqBrokerParameters",
                     &self.r#activemq_broker_parameters,
                 ),
                 to_pulumi_object_field(
-                    "dynamodb_stream_parameters",
+                    "dynamodbStreamParameters",
                     &self.r#dynamodb_stream_parameters,
                 ),
                 to_pulumi_object_field(
-                    "filter_criteria",
+                    "filterCriteria",
                     &self.r#filter_criteria,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_stream_parameters",
+                    "kinesisStreamParameters",
                     &self.r#kinesis_stream_parameters,
                 ),
                 to_pulumi_object_field(
-                    "managed_streaming_kafka_parameters",
+                    "managedStreamingKafkaParameters",
                     &self.r#managed_streaming_kafka_parameters,
                 ),
                 to_pulumi_object_field(
-                    "rabbitmq_broker_parameters",
+                    "rabbitmqBrokerParameters",
                     &self.r#rabbitmq_broker_parameters,
                 ),
                 to_pulumi_object_field(
-                    "self_managed_kafka_parameters",
+                    "selfManagedKafkaParameters",
                     &self.r#self_managed_kafka_parameters,
                 ),
                 to_pulumi_object_field(
-                    "sqs_queue_parameters",
+                    "sqsQueueParameters",
                     &self.r#sqs_queue_parameters,
                 ),
             ];

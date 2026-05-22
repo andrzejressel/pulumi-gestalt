@@ -57,11 +57,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#dimensions,
                 ),
                 to_pulumi_object_field(
-                    "failing_periods",
+                    "failingPeriods",
                     &self.r#failing_periods,
                 ),
                 to_pulumi_object_field(
-                    "metric_measure_column",
+                    "metricMeasureColumn",
                     &self.r#metric_measure_column,
                 ),
                 to_pulumi_object_field(
@@ -73,7 +73,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#query,
                 ),
                 to_pulumi_object_field(
-                    "resource_id_column",
+                    "resourceIdColumn",
                     &self.r#resource_id_column,
                 ),
                 to_pulumi_object_field(
@@ -81,7 +81,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
                     &self.r#threshold,
                 ),
                 to_pulumi_object_field(
-                    "time_aggregation_method",
+                    "timeAggregationMethod",
                     &self.r#time_aggregation_method,
                 ),
             ];

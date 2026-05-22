@@ -31,19 +31,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_only_hls_settings",
+                    "audioOnlyHlsSettings",
                     &self.r#audio_only_hls_settings,
                 ),
                 to_pulumi_object_field(
-                    "fmp_4_hls_settings",
+                    "fmp4HlsSettings",
                     &self.r#fmp_4_hls_settings,
                 ),
                 to_pulumi_object_field(
-                    "frame_capture_hls_settings",
+                    "frameCaptureHlsSettings",
                     &self.r#frame_capture_hls_settings,
                 ),
                 to_pulumi_object_field(
-                    "standard_hls_settings",
+                    "standardHlsSettings",
                     &self.r#standard_hls_settings,
                 ),
             ];

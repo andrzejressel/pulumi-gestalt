@@ -47,11 +47,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#delay,
                 ),
                 to_pulumi_object_field(
-                    "failure_action",
+                    "failureAction",
                     &self.r#failure_action,
                 ),
                 to_pulumi_object_field(
-                    "max_failure_ratio",
+                    "maxFailureRatio",
                     &self.r#max_failure_ratio,
                 ),
                 to_pulumi_object_field(

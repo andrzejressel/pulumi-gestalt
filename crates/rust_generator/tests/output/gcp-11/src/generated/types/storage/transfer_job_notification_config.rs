@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "event_types",
+                    "eventTypes",
                     &self.r#event_types,
                 ),
                 to_pulumi_object_field(
-                    "payload_format",
+                    "payloadFormat",
                     &self.r#payload_format,
                 ),
                 to_pulumi_object_field(
-                    "pubsub_topic",
+                    "pubsubTopic",
                     &self.r#pubsub_topic,
                 ),
             ];

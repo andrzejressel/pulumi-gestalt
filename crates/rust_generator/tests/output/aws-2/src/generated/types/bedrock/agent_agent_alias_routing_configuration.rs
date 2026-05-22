@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "agent_version",
+                    "agentVersion",
                     &self.r#agent_version,
                 ),
                 to_pulumi_object_field(
-                    "provisioned_throughput",
+                    "provisionedThroughput",
                     &self.r#provisioned_throughput,
                 ),
             ];

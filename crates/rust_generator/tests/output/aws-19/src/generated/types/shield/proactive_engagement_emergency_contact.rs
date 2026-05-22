@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "contact_notes",
+                    "contactNotes",
                     &self.r#contact_notes,
                 ),
                 to_pulumi_object_field(
-                    "email_address",
+                    "emailAddress",
                     &self.r#email_address,
                 ),
                 to_pulumi_object_field(
-                    "phone_number",
+                    "phoneNumber",
                     &self.r#phone_number,
                 ),
             ];

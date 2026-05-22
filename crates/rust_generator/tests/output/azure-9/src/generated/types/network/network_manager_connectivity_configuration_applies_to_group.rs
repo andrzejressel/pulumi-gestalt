@@ -37,19 +37,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "global_mesh_enabled",
+                    "globalMeshEnabled",
                     &self.r#global_mesh_enabled,
                 ),
                 to_pulumi_object_field(
-                    "group_connectivity",
+                    "groupConnectivity",
                     &self.r#group_connectivity,
                 ),
                 to_pulumi_object_field(
-                    "network_group_id",
+                    "networkGroupId",
                     &self.r#network_group_id,
                 ),
                 to_pulumi_object_field(
-                    "use_hub_gateway",
+                    "useHubGateway",
                     &self.r#use_hub_gateway,
                 ),
             ];

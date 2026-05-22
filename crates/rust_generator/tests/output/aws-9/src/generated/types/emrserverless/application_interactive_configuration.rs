@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "livy_endpoint_enabled",
+                    "livyEndpointEnabled",
                     &self.r#livy_endpoint_enabled,
                 ),
                 to_pulumi_object_field(
-                    "studio_enabled",
+                    "studioEnabled",
                     &self.r#studio_enabled,
                 ),
             ];

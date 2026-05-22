@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "express_route_id",
+                    "expressRouteId",
                     &self.r#express_route_id,
                 ),
                 to_pulumi_object_field(
-                    "express_route_private_peering_id",
+                    "expressRoutePrivatePeeringId",
                     &self.r#express_route_private_peering_id,
                 ),
                 to_pulumi_object_field(
-                    "primary_subnet_cidr",
+                    "primarySubnetCidr",
                     &self.r#primary_subnet_cidr,
                 ),
                 to_pulumi_object_field(
-                    "secondary_subnet_cidr",
+                    "secondarySubnetCidr",
                     &self.r#secondary_subnet_cidr,
                 ),
             ];

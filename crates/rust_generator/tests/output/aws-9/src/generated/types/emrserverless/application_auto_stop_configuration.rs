@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "idle_timeout_minutes",
+                    "idleTimeoutMinutes",
                     &self.r#idle_timeout_minutes,
                 ),
             ];

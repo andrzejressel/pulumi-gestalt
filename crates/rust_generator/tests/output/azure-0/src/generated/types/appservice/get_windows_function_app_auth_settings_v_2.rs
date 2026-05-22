@@ -107,63 +107,63 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directory_v_2_s",
+                    "activeDirectoryV2s",
                     &self.r#active_directory_v_2_s,
                 ),
                 to_pulumi_object_field(
-                    "apple_v_2_s",
+                    "appleV2s",
                     &self.r#apple_v_2_s,
                 ),
                 to_pulumi_object_field(
-                    "auth_enabled",
+                    "authEnabled",
                     &self.r#auth_enabled,
                 ),
                 to_pulumi_object_field(
-                    "azure_static_web_app_v_2_s",
+                    "azureStaticWebAppV2s",
                     &self.r#azure_static_web_app_v_2_s,
                 ),
                 to_pulumi_object_field(
-                    "config_file_path",
+                    "configFilePath",
                     &self.r#config_file_path,
                 ),
                 to_pulumi_object_field(
-                    "custom_oidc_v_2_s",
+                    "customOidcV2s",
                     &self.r#custom_oidc_v_2_s,
                 ),
                 to_pulumi_object_field(
-                    "default_provider",
+                    "defaultProvider",
                     &self.r#default_provider,
                 ),
                 to_pulumi_object_field(
-                    "excluded_paths",
+                    "excludedPaths",
                     &self.r#excluded_paths,
                 ),
                 to_pulumi_object_field(
-                    "facebook_v_2_s",
+                    "facebookV2s",
                     &self.r#facebook_v_2_s,
                 ),
                 to_pulumi_object_field(
-                    "forward_proxy_convention",
+                    "forwardProxyConvention",
                     &self.r#forward_proxy_convention,
                 ),
                 to_pulumi_object_field(
-                    "forward_proxy_custom_host_header_name",
+                    "forwardProxyCustomHostHeaderName",
                     &self.r#forward_proxy_custom_host_header_name,
                 ),
                 to_pulumi_object_field(
-                    "forward_proxy_custom_scheme_header_name",
+                    "forwardProxyCustomSchemeHeaderName",
                     &self.r#forward_proxy_custom_scheme_header_name,
                 ),
                 to_pulumi_object_field(
-                    "github_v_2_s",
+                    "githubV2s",
                     &self.r#github_v_2_s,
                 ),
                 to_pulumi_object_field(
-                    "google_v_2_s",
+                    "googleV2s",
                     &self.r#google_v_2_s,
                 ),
                 to_pulumi_object_field(
-                    "http_route_api_prefix",
+                    "httpRouteApiPrefix",
                     &self.r#http_route_api_prefix,
                 ),
                 to_pulumi_object_field(
@@ -171,27 +171,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#logins,
                 ),
                 to_pulumi_object_field(
-                    "microsoft_v_2_s",
+                    "microsoftV2s",
                     &self.r#microsoft_v_2_s,
                 ),
                 to_pulumi_object_field(
-                    "require_authentication",
+                    "requireAuthentication",
                     &self.r#require_authentication,
                 ),
                 to_pulumi_object_field(
-                    "require_https",
+                    "requireHttps",
                     &self.r#require_https,
                 ),
                 to_pulumi_object_field(
-                    "runtime_version",
+                    "runtimeVersion",
                     &self.r#runtime_version,
                 ),
                 to_pulumi_object_field(
-                    "twitter_v_2_s",
+                    "twitterV2s",
                     &self.r#twitter_v_2_s,
                 ),
                 to_pulumi_object_field(
-                    "unauthenticated_action",
+                    "unauthenticatedAction",
                     &self.r#unauthenticated_action,
                 ),
             ];

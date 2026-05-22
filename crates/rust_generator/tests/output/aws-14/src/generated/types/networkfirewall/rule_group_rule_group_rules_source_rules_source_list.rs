@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rul
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "generated_rules_type",
+                    "generatedRulesType",
                     &self.r#generated_rules_type,
                 ),
                 to_pulumi_object_field(
-                    "target_types",
+                    "targetTypes",
                     &self.r#target_types,
                 ),
                 to_pulumi_object_field(

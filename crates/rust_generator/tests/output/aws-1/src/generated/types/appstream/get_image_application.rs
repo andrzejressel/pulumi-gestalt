@@ -81,7 +81,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "app_block_arn",
+                    "appBlockArn",
                     &self.r#app_block_arn,
                 ),
                 to_pulumi_object_field(
@@ -89,7 +89,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "created_time",
+                    "createdTime",
                     &self.r#created_time,
                 ),
                 to_pulumi_object_field(
@@ -97,7 +97,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "display_name",
+                    "displayName",
                     &self.r#display_name,
                 ),
                 to_pulumi_object_field(
@@ -105,23 +105,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "icon_s_3_locations",
+                    "iconS3Locations",
                     &self.r#icon_s_3_locations,
                 ),
                 to_pulumi_object_field(
-                    "icon_url",
+                    "iconUrl",
                     &self.r#icon_url,
                 ),
                 to_pulumi_object_field(
-                    "instance_families",
+                    "instanceFamilies",
                     &self.r#instance_families,
                 ),
                 to_pulumi_object_field(
-                    "launch_parameters",
+                    "launchParameters",
                     &self.r#launch_parameters,
                 ),
                 to_pulumi_object_field(
-                    "launch_path",
+                    "launchPath",
                     &self.r#launch_path,
                 ),
                 to_pulumi_object_field(
@@ -137,7 +137,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#platforms,
                 ),
                 to_pulumi_object_field(
-                    "working_directory",
+                    "workingDirectory",
                     &self.r#working_directory,
                 ),
             ];

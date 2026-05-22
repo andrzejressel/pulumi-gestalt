@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_group_id",
+                    "actionGroupId",
                     &self.r#action_group_id,
                 ),
                 to_pulumi_object_field(
-                    "action_properties",
+                    "actionProperties",
                     &self.r#action_properties,
                 ),
             ];

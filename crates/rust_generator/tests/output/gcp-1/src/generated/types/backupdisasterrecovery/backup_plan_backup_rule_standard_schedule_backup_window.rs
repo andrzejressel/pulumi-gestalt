@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "end_hour_of_day",
+                    "endHourOfDay",
                     &self.r#end_hour_of_day,
                 ),
                 to_pulumi_object_field(
-                    "start_hour_of_day",
+                    "startHourOfDay",
                     &self.r#start_hour_of_day,
                 ),
             ];

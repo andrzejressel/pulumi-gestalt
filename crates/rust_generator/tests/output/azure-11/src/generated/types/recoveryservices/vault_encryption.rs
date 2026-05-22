@@ -39,19 +39,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vau
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "infrastructure_encryption_enabled",
+                    "infrastructureEncryptionEnabled",
                     &self.r#infrastructure_encryption_enabled,
                 ),
                 to_pulumi_object_field(
-                    "key_id",
+                    "keyId",
                     &self.r#key_id,
                 ),
                 to_pulumi_object_field(
-                    "use_system_assigned_identity",
+                    "useSystemAssignedIdentity",
                     &self.r#use_system_assigned_identity,
                 ),
                 to_pulumi_object_field(
-                    "user_assigned_identity_id",
+                    "userAssignedIdentityId",
                     &self.r#user_assigned_identity_id,
                 ),
             ];

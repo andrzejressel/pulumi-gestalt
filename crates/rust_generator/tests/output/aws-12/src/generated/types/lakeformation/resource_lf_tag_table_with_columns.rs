@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "catalog_id",
+                    "catalogId",
                     &self.r#catalog_id,
                 ),
                 to_pulumi_object_field(
-                    "column_names",
+                    "columnNames",
                     &self.r#column_names,
                 ),
                 to_pulumi_object_field(
-                    "column_wildcard",
+                    "columnWildcard",
                     &self.r#column_wildcard,
                 ),
                 to_pulumi_object_field(
-                    "database_name",
+                    "databaseName",
                     &self.r#database_name,
                 ),
                 to_pulumi_object_field(

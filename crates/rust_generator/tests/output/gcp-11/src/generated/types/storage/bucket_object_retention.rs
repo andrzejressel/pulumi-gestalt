@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
                     &self.r#mode,
                 ),
                 to_pulumi_object_field(
-                    "retain_until_time",
+                    "retainUntilTime",
                     &self.r#retain_until_time,
                 ),
             ];

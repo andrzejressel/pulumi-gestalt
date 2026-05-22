@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "all_instances_configs",
+                    "allInstancesConfigs",
                     &self.r#all_instances_configs,
                 ),
                 to_pulumi_object_field(
-                    "is_stable",
+                    "isStable",
                     &self.r#is_stable,
                 ),
                 to_pulumi_object_field(
@@ -49,7 +49,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
                     &self.r#statefuls,
                 ),
                 to_pulumi_object_field(
-                    "version_targets",
+                    "versionTargets",
                     &self.r#version_targets,
                 ),
             ];

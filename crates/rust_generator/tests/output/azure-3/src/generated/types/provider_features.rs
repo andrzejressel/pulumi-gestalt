@@ -73,35 +73,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "api_management",
+                    "apiManagement",
                     &self.r#api_management,
                 ),
                 to_pulumi_object_field(
-                    "app_configuration",
+                    "appConfiguration",
                     &self.r#app_configuration,
                 ),
                 to_pulumi_object_field(
-                    "application_insights",
+                    "applicationInsights",
                     &self.r#application_insights,
                 ),
                 to_pulumi_object_field(
-                    "cognitive_account",
+                    "cognitiveAccount",
                     &self.r#cognitive_account,
                 ),
                 to_pulumi_object_field(
-                    "key_vault",
+                    "keyVault",
                     &self.r#key_vault,
                 ),
                 to_pulumi_object_field(
-                    "log_analytics_workspace",
+                    "logAnalyticsWorkspace",
                     &self.r#log_analytics_workspace,
                 ),
                 to_pulumi_object_field(
-                    "machine_learning",
+                    "machineLearning",
                     &self.r#machine_learning,
                 ),
                 to_pulumi_object_field(
-                    "managed_disk",
+                    "managedDisk",
                     &self.r#managed_disk,
                 ),
                 to_pulumi_object_field(
@@ -109,19 +109,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#netapp,
                 ),
                 to_pulumi_object_field(
-                    "postgresql_flexible_server",
+                    "postgresqlFlexibleServer",
                     &self.r#postgresql_flexible_server,
                 ),
                 to_pulumi_object_field(
-                    "recovery_service",
+                    "recoveryService",
                     &self.r#recovery_service,
                 ),
                 to_pulumi_object_field(
-                    "recovery_services_vaults",
+                    "recoveryServicesVaults",
                     &self.r#recovery_services_vaults,
                 ),
                 to_pulumi_object_field(
-                    "resource_group",
+                    "resourceGroup",
                     &self.r#resource_group,
                 ),
                 to_pulumi_object_field(
@@ -133,15 +133,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#subscription,
                 ),
                 to_pulumi_object_field(
-                    "template_deployment",
+                    "templateDeployment",
                     &self.r#template_deployment,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine",
+                    "virtualMachine",
                     &self.r#virtual_machine,
                 ),
                 to_pulumi_object_field(
-                    "virtual_machine_scale_set",
+                    "virtualMachineScaleSet",
                     &self.r#virtual_machine_scale_set,
                 ),
             ];

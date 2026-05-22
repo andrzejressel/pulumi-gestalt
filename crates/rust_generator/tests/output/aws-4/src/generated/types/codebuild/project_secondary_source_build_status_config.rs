@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#context,
                 ),
                 to_pulumi_object_field(
-                    "target_url",
+                    "targetUrl",
                     &self.r#target_url,
                 ),
             ];

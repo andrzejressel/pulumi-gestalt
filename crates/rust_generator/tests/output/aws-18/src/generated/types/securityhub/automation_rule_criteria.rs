@@ -171,27 +171,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "aws_account_ids",
+                    "awsAccountIds",
                     &self.r#aws_account_ids,
                 ),
                 to_pulumi_object_field(
-                    "aws_account_names",
+                    "awsAccountNames",
                     &self.r#aws_account_names,
                 ),
                 to_pulumi_object_field(
-                    "company_names",
+                    "companyNames",
                     &self.r#company_names,
                 ),
                 to_pulumi_object_field(
-                    "compliance_associated_standards_ids",
+                    "complianceAssociatedStandardsIds",
                     &self.r#compliance_associated_standards_ids,
                 ),
                 to_pulumi_object_field(
-                    "compliance_security_control_ids",
+                    "complianceSecurityControlIds",
                     &self.r#compliance_security_control_ids,
                 ),
                 to_pulumi_object_field(
-                    "compliance_statuses",
+                    "complianceStatuses",
                     &self.r#compliance_statuses,
                 ),
                 to_pulumi_object_field(
@@ -199,7 +199,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#confidences,
                 ),
                 to_pulumi_object_field(
-                    "created_ats",
+                    "createdAts",
                     &self.r#created_ats,
                 ),
                 to_pulumi_object_field(
@@ -211,11 +211,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#descriptions,
                 ),
                 to_pulumi_object_field(
-                    "first_observed_ats",
+                    "firstObservedAts",
                     &self.r#first_observed_ats,
                 ),
                 to_pulumi_object_field(
-                    "generator_ids",
+                    "generatorIds",
                     &self.r#generator_ids,
                 ),
                 to_pulumi_object_field(
@@ -223,79 +223,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#ids,
                 ),
                 to_pulumi_object_field(
-                    "last_observed_ats",
+                    "lastObservedAts",
                     &self.r#last_observed_ats,
                 ),
                 to_pulumi_object_field(
-                    "note_texts",
+                    "noteTexts",
                     &self.r#note_texts,
                 ),
                 to_pulumi_object_field(
-                    "note_updated_ats",
+                    "noteUpdatedAts",
                     &self.r#note_updated_ats,
                 ),
                 to_pulumi_object_field(
-                    "note_updated_bies",
+                    "noteUpdatedBies",
                     &self.r#note_updated_bies,
                 ),
                 to_pulumi_object_field(
-                    "product_arns",
+                    "productArns",
                     &self.r#product_arns,
                 ),
                 to_pulumi_object_field(
-                    "product_names",
+                    "productNames",
                     &self.r#product_names,
                 ),
                 to_pulumi_object_field(
-                    "record_states",
+                    "recordStates",
                     &self.r#record_states,
                 ),
                 to_pulumi_object_field(
-                    "related_findings_ids",
+                    "relatedFindingsIds",
                     &self.r#related_findings_ids,
                 ),
                 to_pulumi_object_field(
-                    "related_findings_product_arns",
+                    "relatedFindingsProductArns",
                     &self.r#related_findings_product_arns,
                 ),
                 to_pulumi_object_field(
-                    "resource_application_arns",
+                    "resourceApplicationArns",
                     &self.r#resource_application_arns,
                 ),
                 to_pulumi_object_field(
-                    "resource_application_names",
+                    "resourceApplicationNames",
                     &self.r#resource_application_names,
                 ),
                 to_pulumi_object_field(
-                    "resource_details_others",
+                    "resourceDetailsOthers",
                     &self.r#resource_details_others,
                 ),
                 to_pulumi_object_field(
-                    "resource_ids",
+                    "resourceIds",
                     &self.r#resource_ids,
                 ),
                 to_pulumi_object_field(
-                    "resource_partitions",
+                    "resourcePartitions",
                     &self.r#resource_partitions,
                 ),
                 to_pulumi_object_field(
-                    "resource_regions",
+                    "resourceRegions",
                     &self.r#resource_regions,
                 ),
                 to_pulumi_object_field(
-                    "resource_tags",
+                    "resourceTags",
                     &self.r#resource_tags,
                 ),
                 to_pulumi_object_field(
-                    "resource_types",
+                    "resourceTypes",
                     &self.r#resource_types,
                 ),
                 to_pulumi_object_field(
-                    "severity_labels",
+                    "severityLabels",
                     &self.r#severity_labels,
                 ),
                 to_pulumi_object_field(
-                    "source_urls",
+                    "sourceUrls",
                     &self.r#source_urls,
                 ),
                 to_pulumi_object_field(
@@ -307,19 +307,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Aut
                     &self.r#types,
                 ),
                 to_pulumi_object_field(
-                    "updated_ats",
+                    "updatedAts",
                     &self.r#updated_ats,
                 ),
                 to_pulumi_object_field(
-                    "user_defined_fields",
+                    "userDefinedFields",
                     &self.r#user_defined_fields,
                 ),
                 to_pulumi_object_field(
-                    "verification_states",
+                    "verificationStates",
                     &self.r#verification_states,
                 ),
                 to_pulumi_object_field(
-                    "workflow_statuses",
+                    "workflowStatuses",
                     &self.r#workflow_statuses,
                 ),
             ];

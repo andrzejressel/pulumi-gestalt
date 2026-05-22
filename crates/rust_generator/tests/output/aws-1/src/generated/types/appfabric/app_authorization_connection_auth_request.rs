@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#code,
                 ),
                 to_pulumi_object_field(
-                    "redirect_uri",
+                    "redirectUri",
                     &self.r#redirect_uri,
                 ),
             ];

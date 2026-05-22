@@ -59,7 +59,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "data_import",
+                    "dataImport",
                     &self.r#data_import,
                 ),
                 to_pulumi_object_field(
@@ -67,23 +67,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#extensions,
                 ),
                 to_pulumi_object_field(
-                    "iis_logs",
+                    "iisLogs",
                     &self.r#iis_logs,
                 ),
                 to_pulumi_object_field(
-                    "log_files",
+                    "logFiles",
                     &self.r#log_files,
                 ),
                 to_pulumi_object_field(
-                    "performance_counters",
+                    "performanceCounters",
                     &self.r#performance_counters,
                 ),
                 to_pulumi_object_field(
-                    "platform_telemetries",
+                    "platformTelemetries",
                     &self.r#platform_telemetries,
                 ),
                 to_pulumi_object_field(
-                    "prometheus_forwarders",
+                    "prometheusForwarders",
                     &self.r#prometheus_forwarders,
                 ),
                 to_pulumi_object_field(
@@ -91,11 +91,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#syslogs,
                 ),
                 to_pulumi_object_field(
-                    "windows_event_logs",
+                    "windowsEventLogs",
                     &self.r#windows_event_logs,
                 ),
                 to_pulumi_object_field(
-                    "windows_firewall_logs",
+                    "windowsFirewallLogs",
                     &self.r#windows_firewall_logs,
                 ),
             ];

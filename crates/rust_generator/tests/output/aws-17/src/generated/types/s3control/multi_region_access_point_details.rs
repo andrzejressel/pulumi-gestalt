@@ -32,7 +32,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mul
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "public_access_block",
+                    "publicAccessBlock",
                     &self.r#public_access_block,
                 ),
                 to_pulumi_object_field(

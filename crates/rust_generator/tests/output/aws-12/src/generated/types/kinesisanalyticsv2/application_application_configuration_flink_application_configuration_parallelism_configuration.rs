@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "auto_scaling_enabled",
+                    "autoScalingEnabled",
                     &self.r#auto_scaling_enabled,
                 ),
                 to_pulumi_object_field(
-                    "configuration_type",
+                    "configurationType",
                     &self.r#configuration_type,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for App
                     &self.r#parallelism,
                 ),
                 to_pulumi_object_field(
-                    "parallelism_per_kpu",
+                    "parallelismPerKpu",
                     &self.r#parallelism_per_kpu,
                 ),
             ];

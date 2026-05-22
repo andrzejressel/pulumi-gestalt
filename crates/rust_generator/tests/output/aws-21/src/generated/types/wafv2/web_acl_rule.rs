@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#action,
                 ),
                 to_pulumi_object_field(
-                    "captcha_config",
+                    "captchaConfig",
                     &self.r#captcha_config,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "override_action",
+                    "overrideAction",
                     &self.r#override_action,
                 ),
                 to_pulumi_object_field(
@@ -71,7 +71,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#priority,
                 ),
                 to_pulumi_object_field(
-                    "rule_labels",
+                    "ruleLabels",
                     &self.r#rule_labels,
                 ),
                 to_pulumi_object_field(
@@ -79,7 +79,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Web
                     &self.r#statement,
                 ),
                 to_pulumi_object_field(
-                    "visibility_config",
+                    "visibilityConfig",
                     &self.r#visibility_config,
                 ),
             ];

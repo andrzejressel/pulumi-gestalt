@@ -37,11 +37,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#height,
                 ),
                 to_pulumi_object_field(
-                    "left_offset",
+                    "leftOffset",
                     &self.r#left_offset,
                 ),
                 to_pulumi_object_field(
-                    "top_offset",
+                    "topOffset",
                     &self.r#top_offset,
                 ),
                 to_pulumi_object_field(

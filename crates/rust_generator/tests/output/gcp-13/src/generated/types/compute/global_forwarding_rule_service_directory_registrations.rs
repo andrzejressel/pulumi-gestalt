@@ -34,7 +34,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Glo
                     &self.r#namespace,
                 ),
                 to_pulumi_object_field(
-                    "service_directory_region",
+                    "serviceDirectoryRegion",
                     &self.r#service_directory_region,
                 ),
             ];

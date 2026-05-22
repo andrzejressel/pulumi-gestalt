@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_ebs_volume_size_in_gb",
+                    "defaultEbsVolumeSizeInGb",
                     &self.r#default_ebs_volume_size_in_gb,
                 ),
                 to_pulumi_object_field(
-                    "maximum_ebs_volume_size_in_gb",
+                    "maximumEbsVolumeSizeInGb",
                     &self.r#maximum_ebs_volume_size_in_gb,
                 ),
             ];

@@ -37,7 +37,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ale
                     &self.r#filter,
                 ),
                 to_pulumi_object_field(
-                    "label_extractors",
+                    "labelExtractors",
                     &self.r#label_extractors,
                 ),
             ];

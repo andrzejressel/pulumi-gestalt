@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#bitrate,
                 ),
                 to_pulumi_object_field(
-                    "coding_mode",
+                    "codingMode",
                     &self.r#coding_mode,
                 ),
                 to_pulumi_object_field(
@@ -59,19 +59,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
                     &self.r#dialnorm,
                 ),
                 to_pulumi_object_field(
-                    "drc_line",
+                    "drcLine",
                     &self.r#drc_line,
                 ),
                 to_pulumi_object_field(
-                    "drc_rf",
+                    "drcRf",
                     &self.r#drc_rf,
                 ),
                 to_pulumi_object_field(
-                    "height_trim",
+                    "heightTrim",
                     &self.r#height_trim,
                 ),
                 to_pulumi_object_field(
-                    "surround_trim",
+                    "surroundTrim",
                     &self.r#surround_trim,
                 ),
             ];

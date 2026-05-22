@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "request_header_actions",
+                    "requestHeaderActions",
                     &self.r#request_header_actions,
                 ),
                 to_pulumi_object_field(
-                    "response_header_actions",
+                    "responseHeaderActions",
                     &self.r#response_header_actions,
                 ),
                 to_pulumi_object_field(
-                    "route_configuration_override_action",
+                    "routeConfigurationOverrideAction",
                     &self.r#route_configuration_override_action,
                 ),
                 to_pulumi_object_field(
-                    "url_redirect_action",
+                    "urlRedirectAction",
                     &self.r#url_redirect_action,
                 ),
                 to_pulumi_object_field(
-                    "url_rewrite_action",
+                    "urlRewriteAction",
                     &self.r#url_rewrite_action,
                 ),
             ];

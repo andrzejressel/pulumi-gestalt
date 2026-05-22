@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gam
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "estimated_instance_warmup",
+                    "estimatedInstanceWarmup",
                     &self.r#estimated_instance_warmup,
                 ),
                 to_pulumi_object_field(
-                    "target_tracking_configuration",
+                    "targetTrackingConfiguration",
                     &self.r#target_tracking_configuration,
                 ),
             ];

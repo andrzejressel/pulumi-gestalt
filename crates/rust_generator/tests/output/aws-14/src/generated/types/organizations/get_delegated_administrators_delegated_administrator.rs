@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#arn,
                 ),
                 to_pulumi_object_field(
-                    "delegation_enabled_date",
+                    "delegationEnabledDate",
                     &self.r#delegation_enabled_date,
                 ),
                 to_pulumi_object_field(
@@ -67,11 +67,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "joined_method",
+                    "joinedMethod",
                     &self.r#joined_method,
                 ),
                 to_pulumi_object_field(
-                    "joined_timestamp",
+                    "joinedTimestamp",
                     &self.r#joined_timestamp,
                 ),
                 to_pulumi_object_field(

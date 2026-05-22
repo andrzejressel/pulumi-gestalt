@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "base_prompt_template",
+                    "basePromptTemplate",
                     &self.r#base_prompt_template,
                 ),
                 to_pulumi_object_field(
-                    "inference_configurations",
+                    "inferenceConfigurations",
                     &self.r#inference_configurations,
                 ),
                 to_pulumi_object_field(
-                    "parser_mode",
+                    "parserMode",
                     &self.r#parser_mode,
                 ),
                 to_pulumi_object_field(
-                    "prompt_creation_mode",
+                    "promptCreationMode",
                     &self.r#prompt_creation_mode,
                 ),
                 to_pulumi_object_field(
-                    "prompt_state",
+                    "promptState",
                     &self.r#prompt_state,
                 ),
                 to_pulumi_object_field(
-                    "prompt_type",
+                    "promptType",
                     &self.r#prompt_type,
                 ),
             ];

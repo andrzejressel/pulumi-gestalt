@@ -46,15 +46,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "approximate_usages",
+                    "approximateUsages",
                     &self.r#approximate_usages,
                 ),
                 to_pulumi_object_field(
-                    "current_usages",
+                    "currentUsages",
                     &self.r#current_usages,
                 ),
                 to_pulumi_object_field(
-                    "diagnostic_output_uri",
+                    "diagnosticOutputUri",
                     &self.r#diagnostic_output_uri,
                 ),
                 to_pulumi_object_field(
@@ -62,7 +62,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bat
                     &self.r#endpoints,
                 ),
                 to_pulumi_object_field(
-                    "output_uri",
+                    "outputUri",
                     &self.r#output_uri,
                 ),
             ];

@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "action_on_failure",
+                    "actionOnFailure",
                     &self.r#action_on_failure,
                 ),
                 to_pulumi_object_field(
-                    "hadoop_jar_step",
+                    "hadoopJarStep",
                     &self.r#hadoop_jar_step,
                 ),
                 to_pulumi_object_field(

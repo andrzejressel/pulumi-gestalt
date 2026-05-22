@@ -58,35 +58,35 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "association_id",
+                    "associationId",
                     &self.r#association_id,
                 ),
                 to_pulumi_object_field(
-                    "data_repository_path",
+                    "dataRepositoryPath",
                     &self.r#data_repository_path,
                 ),
                 to_pulumi_object_field(
-                    "data_repository_subdirectories",
+                    "dataRepositorySubdirectories",
                     &self.r#data_repository_subdirectories,
                 ),
                 to_pulumi_object_field(
-                    "file_cache_id",
+                    "fileCacheId",
                     &self.r#file_cache_id,
                 ),
                 to_pulumi_object_field(
-                    "file_cache_path",
+                    "fileCachePath",
                     &self.r#file_cache_path,
                 ),
                 to_pulumi_object_field(
-                    "file_system_id",
+                    "fileSystemId",
                     &self.r#file_system_id,
                 ),
                 to_pulumi_object_field(
-                    "file_system_path",
+                    "fileSystemPath",
                     &self.r#file_system_path,
                 ),
                 to_pulumi_object_field(
-                    "imported_file_chunk_size",
+                    "importedFileChunkSize",
                     &self.r#imported_file_chunk_size,
                 ),
                 to_pulumi_object_field(
@@ -94,7 +94,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fil
                     &self.r#nfs,
                 ),
                 to_pulumi_object_field(
-                    "resource_arn",
+                    "resourceArn",
                     &self.r#resource_arn,
                 ),
                 to_pulumi_object_field(

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bigquery_destinations",
+                    "bigqueryDestinations",
                     &self.r#bigquery_destinations,
                 ),
                 to_pulumi_object_field(
-                    "enable_network_egress_metering",
+                    "enableNetworkEgressMetering",
                     &self.r#enable_network_egress_metering,
                 ),
                 to_pulumi_object_field(
-                    "enable_resource_consumption_metering",
+                    "enableResourceConsumptionMetering",
                     &self.r#enable_resource_consumption_metering,
                 ),
             ];

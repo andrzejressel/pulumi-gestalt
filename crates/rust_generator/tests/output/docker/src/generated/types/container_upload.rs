@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#content,
                 ),
                 to_pulumi_object_field(
-                    "content_base_64",
+                    "contentBase64",
                     &self.r#content_base_64,
                 ),
                 to_pulumi_object_field(
@@ -63,7 +63,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#source,
                 ),
                 to_pulumi_object_field(
-                    "source_hash",
+                    "sourceHash",
                     &self.r#source_hash,
                 ),
             ];

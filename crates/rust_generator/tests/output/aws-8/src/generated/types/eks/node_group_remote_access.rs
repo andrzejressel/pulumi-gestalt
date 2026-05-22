@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ec_2_ssh_key",
+                    "ec2SshKey",
                     &self.r#ec_2_ssh_key,
                 ),
                 to_pulumi_object_field(
-                    "source_security_group_ids",
+                    "sourceSecurityGroupIds",
                     &self.r#source_security_group_ids,
                 ),
             ];

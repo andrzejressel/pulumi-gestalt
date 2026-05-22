@@ -42,15 +42,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "bitbucket_server_config_resource",
+                    "bitbucketServerConfigResource",
                     &self.r#bitbucket_server_config_resource,
                 ),
                 to_pulumi_object_field(
-                    "project_key",
+                    "projectKey",
                     &self.r#project_key,
                 ),
                 to_pulumi_object_field(
-                    "pull_request",
+                    "pullRequest",
                     &self.r#pull_request,
                 ),
                 to_pulumi_object_field(
@@ -58,7 +58,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tri
                     &self.r#push,
                 ),
                 to_pulumi_object_field(
-                    "repo_slug",
+                    "repoSlug",
                     &self.r#repo_slug,
                 ),
             ];

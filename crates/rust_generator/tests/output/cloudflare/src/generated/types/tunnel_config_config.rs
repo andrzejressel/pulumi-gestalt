@@ -30,15 +30,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tun
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ingress_rules",
+                    "ingressRules",
                     &self.r#ingress_rules,
                 ),
                 to_pulumi_object_field(
-                    "origin_request",
+                    "originRequest",
                     &self.r#origin_request,
                 ),
                 to_pulumi_object_field(
-                    "warp_routing",
+                    "warpRouting",
                     &self.r#warp_routing,
                 ),
             ];

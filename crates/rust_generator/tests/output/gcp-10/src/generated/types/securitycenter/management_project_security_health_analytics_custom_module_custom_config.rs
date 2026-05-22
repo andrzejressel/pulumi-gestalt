@@ -53,7 +53,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "custom_output",
+                    "customOutput",
                     &self.r#custom_output,
                 ),
                 to_pulumi_object_field(
@@ -69,7 +69,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Man
                     &self.r#recommendation,
                 ),
                 to_pulumi_object_field(
-                    "resource_selector",
+                    "resourceSelector",
                     &self.r#resource_selector,
                 ),
                 to_pulumi_object_field(

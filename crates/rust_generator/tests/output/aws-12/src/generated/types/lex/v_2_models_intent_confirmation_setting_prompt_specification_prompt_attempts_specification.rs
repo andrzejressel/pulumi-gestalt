@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_interrupt",
+                    "allowInterrupt",
                     &self.r#allow_interrupt,
                 ),
                 to_pulumi_object_field(
-                    "allowed_input_types",
+                    "allowedInputTypes",
                     &self.r#allowed_input_types,
                 ),
                 to_pulumi_object_field(
-                    "audio_and_dtmf_input_specification",
+                    "audioAndDtmfInputSpecification",
                     &self.r#audio_and_dtmf_input_specification,
                 ),
                 to_pulumi_object_field(
-                    "map_block_key",
+                    "mapBlockKey",
                     &self.r#map_block_key,
                 ),
                 to_pulumi_object_field(
-                    "text_input_specification",
+                    "textInputSpecification",
                     &self.r#text_input_specification,
                 ),
             ];

@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dep
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "deployment_option",
+                    "deploymentOption",
                     &self.r#deployment_option,
                 ),
                 to_pulumi_object_field(
-                    "deployment_type",
+                    "deploymentType",
                     &self.r#deployment_type,
                 ),
             ];

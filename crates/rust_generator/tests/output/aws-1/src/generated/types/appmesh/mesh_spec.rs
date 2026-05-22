@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Mes
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "egress_filter",
+                    "egressFilter",
                     &self.r#egress_filter,
                 ),
                 to_pulumi_object_field(
-                    "service_discovery",
+                    "serviceDiscovery",
                     &self.r#service_discovery,
                 ),
             ];

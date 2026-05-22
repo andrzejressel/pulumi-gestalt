@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zon
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disable_type_inference",
+                    "disableTypeInference",
                     &self.r#disable_type_inference,
                 ),
                 to_pulumi_object_field(

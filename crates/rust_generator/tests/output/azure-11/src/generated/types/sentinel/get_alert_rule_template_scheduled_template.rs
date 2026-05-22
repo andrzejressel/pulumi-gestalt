@@ -59,11 +59,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#query,
                 ),
                 to_pulumi_object_field(
-                    "query_frequency",
+                    "queryFrequency",
                     &self.r#query_frequency,
                 ),
                 to_pulumi_object_field(
-                    "query_period",
+                    "queryPeriod",
                     &self.r#query_period,
                 ),
                 to_pulumi_object_field(
@@ -75,11 +75,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#tactics,
                 ),
                 to_pulumi_object_field(
-                    "trigger_operator",
+                    "triggerOperator",
                     &self.r#trigger_operator,
                 ),
                 to_pulumi_object_field(
-                    "trigger_threshold",
+                    "triggerThreshold",
                     &self.r#trigger_threshold,
                 ),
             ];

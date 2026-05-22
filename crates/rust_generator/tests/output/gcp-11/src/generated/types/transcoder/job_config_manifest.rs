@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Job
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "file_name",
+                    "fileName",
                     &self.r#file_name,
                 ),
                 to_pulumi_object_field(
-                    "mux_streams",
+                    "muxStreams",
                     &self.r#mux_streams,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

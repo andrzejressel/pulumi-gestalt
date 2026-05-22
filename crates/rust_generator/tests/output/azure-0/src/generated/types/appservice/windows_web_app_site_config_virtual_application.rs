@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "physical_path",
+                    "physicalPath",
                     &self.r#physical_path,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
                     &self.r#preload,
                 ),
                 to_pulumi_object_field(
-                    "virtual_directories",
+                    "virtualDirectories",
                     &self.r#virtual_directories,
                 ),
                 to_pulumi_object_field(
-                    "virtual_path",
+                    "virtualPath",
                     &self.r#virtual_path,
                 ),
             ];

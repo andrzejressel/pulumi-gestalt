@@ -61,15 +61,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "empty_dir",
+                    "emptyDir",
                     &self.r#empty_dir,
                 ),
                 to_pulumi_object_field(
-                    "git_repo",
+                    "gitRepo",
                     &self.r#git_repo,
                 ),
                 to_pulumi_object_field(
-                    "mount_path",
+                    "mountPath",
                     &self.r#mount_path,
                 ),
                 to_pulumi_object_field(
@@ -77,7 +77,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "read_only",
+                    "readOnly",
                     &self.r#read_only,
                 ),
                 to_pulumi_object_field(
@@ -85,15 +85,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
                     &self.r#secret,
                 ),
                 to_pulumi_object_field(
-                    "share_name",
+                    "shareName",
                     &self.r#share_name,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_key",
+                    "storageAccountKey",
                     &self.r#storage_account_key,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_name",
+                    "storageAccountName",
                     &self.r#storage_account_name,
                 ),
             ];

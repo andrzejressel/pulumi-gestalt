@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_selection_lists",
+                    "instanceSelectionLists",
                     &self.r#instance_selection_lists,
                 ),
                 to_pulumi_object_field(
-                    "instance_selection_results",
+                    "instanceSelectionResults",
                     &self.r#instance_selection_results,
                 ),
                 to_pulumi_object_field(
-                    "provisioning_model_mix",
+                    "provisioningModelMix",
                     &self.r#provisioning_model_mix,
                 ),
             ];

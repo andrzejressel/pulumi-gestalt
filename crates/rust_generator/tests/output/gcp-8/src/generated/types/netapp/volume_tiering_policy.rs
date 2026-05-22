@@ -30,11 +30,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vol
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cooling_threshold_days",
+                    "coolingThresholdDays",
                     &self.r#cooling_threshold_days,
                 ),
                 to_pulumi_object_field(
-                    "tier_action",
+                    "tierAction",
                     &self.r#tier_action,
                 ),
             ];

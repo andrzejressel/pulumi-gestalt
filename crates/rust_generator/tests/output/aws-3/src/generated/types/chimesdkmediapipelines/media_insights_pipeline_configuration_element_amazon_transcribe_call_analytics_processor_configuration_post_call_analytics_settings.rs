@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Med
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_redaction_output",
+                    "contentRedactionOutput",
                     &self.r#content_redaction_output,
                 ),
                 to_pulumi_object_field(
-                    "data_access_role_arn",
+                    "dataAccessRoleArn",
                     &self.r#data_access_role_arn,
                 ),
                 to_pulumi_object_field(
-                    "output_encryption_kms_key_id",
+                    "outputEncryptionKmsKeyId",
                     &self.r#output_encryption_kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "output_location",
+                    "outputLocation",
                     &self.r#output_location,
                 ),
             ];

@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Slo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "good_bad_metric_filter",
+                    "goodBadMetricFilter",
                     &self.r#good_bad_metric_filter,
                 ),
                 to_pulumi_object_field(
-                    "good_total_ratio_threshold",
+                    "goodTotalRatioThreshold",
                     &self.r#good_total_ratio_threshold,
                 ),
                 to_pulumi_object_field(
-                    "metric_mean_in_range",
+                    "metricMeanInRange",
                     &self.r#metric_mean_in_range,
                 ),
                 to_pulumi_object_field(
-                    "metric_sum_in_range",
+                    "metricSumInRange",
                     &self.r#metric_sum_in_range,
                 ),
                 to_pulumi_object_field(
-                    "window_period",
+                    "windowPeriod",
                     &self.r#window_period,
                 ),
             ];

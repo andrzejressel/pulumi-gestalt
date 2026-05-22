@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "field_folders_id",
+                    "fieldFoldersId",
                     &self.r#field_folders_id,
                 ),
             ];

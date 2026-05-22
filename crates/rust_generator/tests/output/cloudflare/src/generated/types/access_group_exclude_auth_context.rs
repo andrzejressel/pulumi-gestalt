@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ac_id",
+                    "acId",
                     &self.r#ac_id,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "identity_provider_id",
+                    "identityProviderId",
                     &self.r#identity_provider_id,
                 ),
             ];

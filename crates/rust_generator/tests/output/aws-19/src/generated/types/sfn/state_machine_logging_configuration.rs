@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "include_execution_data",
+                    "includeExecutionData",
                     &self.r#include_execution_data,
                 ),
                 to_pulumi_object_field(
@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sta
                     &self.r#level,
                 ),
                 to_pulumi_object_field(
-                    "log_destination",
+                    "logDestination",
                     &self.r#log_destination,
                 ),
             ];

@@ -47,23 +47,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tab
                     &self.r#encoding,
                 ),
                 to_pulumi_object_field(
-                    "field_name",
+                    "fieldName",
                     &self.r#field_name,
                 ),
                 to_pulumi_object_field(
-                    "only_read_latest",
+                    "onlyReadLatest",
                     &self.r#only_read_latest,
                 ),
                 to_pulumi_object_field(
-                    "qualifier_encoded",
+                    "qualifierEncoded",
                     &self.r#qualifier_encoded,
                 ),
                 to_pulumi_object_field(
-                    "qualifier_string",
+                    "qualifierString",
                     &self.r#qualifier_string,
                 ),
                 to_pulumi_object_field(
-                    "type_",
+                    "type",
                     &self.r#type_,
                 ),
             ];

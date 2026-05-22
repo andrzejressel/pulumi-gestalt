@@ -49,23 +49,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Nod
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "location_policy",
+                    "locationPolicy",
                     &self.r#location_policy,
                 ),
                 to_pulumi_object_field(
-                    "max_node_count",
+                    "maxNodeCount",
                     &self.r#max_node_count,
                 ),
                 to_pulumi_object_field(
-                    "min_node_count",
+                    "minNodeCount",
                     &self.r#min_node_count,
                 ),
                 to_pulumi_object_field(
-                    "total_max_node_count",
+                    "totalMaxNodeCount",
                     &self.r#total_max_node_count,
                 ),
                 to_pulumi_object_field(
-                    "total_min_node_count",
+                    "totalMinNodeCount",
                     &self.r#total_min_node_count,
                 ),
             ];

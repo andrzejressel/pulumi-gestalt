@@ -67,7 +67,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#accelerators,
                 ),
                 to_pulumi_object_field(
-                    "bundled_local_ssds",
+                    "bundledLocalSsds",
                     &self.r#bundled_local_ssds,
                 ),
                 to_pulumi_object_field(
@@ -79,23 +79,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#description,
                 ),
                 to_pulumi_object_field(
-                    "guest_cpus",
+                    "guestCpus",
                     &self.r#guest_cpus,
                 ),
                 to_pulumi_object_field(
-                    "is_shared_cpus",
+                    "isSharedCpus",
                     &self.r#is_shared_cpus,
                 ),
                 to_pulumi_object_field(
-                    "maximum_persistent_disks",
+                    "maximumPersistentDisks",
                     &self.r#maximum_persistent_disks,
                 ),
                 to_pulumi_object_field(
-                    "maximum_persistent_disks_size_gb",
+                    "maximumPersistentDisksSizeGb",
                     &self.r#maximum_persistent_disks_size_gb,
                 ),
                 to_pulumi_object_field(
-                    "memory_mb",
+                    "memoryMb",
                     &self.r#memory_mb,
                 ),
                 to_pulumi_object_field(
@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "self_link",
+                    "selfLink",
                     &self.r#self_link,
                 ),
             ];

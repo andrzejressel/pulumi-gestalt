@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Hci
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "jumbo_packet",
+                    "jumboPacket",
                     &self.r#jumbo_packet,
                 ),
                 to_pulumi_object_field(
-                    "network_direct",
+                    "networkDirect",
                     &self.r#network_direct,
                 ),
                 to_pulumi_object_field(
-                    "network_direct_technology",
+                    "networkDirectTechnology",
                     &self.r#network_direct_technology,
                 ),
             ];

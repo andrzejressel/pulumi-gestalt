@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cluster_version",
+                    "clusterVersion",
                     &self.r#cluster_version,
                 ),
                 to_pulumi_object_field(
-                    "instance_pool_id",
+                    "instancePoolId",
                     &self.r#instance_pool_id,
                 ),
                 to_pulumi_object_field(
-                    "max_number_of_workers",
+                    "maxNumberOfWorkers",
                     &self.r#max_number_of_workers,
                 ),
                 to_pulumi_object_field(
-                    "min_number_of_workers",
+                    "minNumberOfWorkers",
                     &self.r#min_number_of_workers,
                 ),
             ];

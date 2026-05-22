@@ -32,11 +32,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#hostname,
                 ),
                 to_pulumi_object_field(
-                    "ip_preference",
+                    "ipPreference",
                     &self.r#ip_preference,
                 ),
                 to_pulumi_object_field(
-                    "response_type",
+                    "responseType",
                     &self.r#response_type,
                 ),
             ];

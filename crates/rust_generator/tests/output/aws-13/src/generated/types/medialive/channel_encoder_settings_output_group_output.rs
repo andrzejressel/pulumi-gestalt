@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cha
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "audio_description_names",
+                    "audioDescriptionNames",
                     &self.r#audio_description_names,
                 ),
                 to_pulumi_object_field(
-                    "caption_description_names",
+                    "captionDescriptionNames",
                     &self.r#caption_description_names,
                 ),
                 to_pulumi_object_field(
-                    "output_name",
+                    "outputName",
                     &self.r#output_name,
                 ),
                 to_pulumi_object_field(
-                    "output_settings",
+                    "outputSettings",
                     &self.r#output_settings,
                 ),
                 to_pulumi_object_field(
-                    "video_description_name",
+                    "videoDescriptionName",
                     &self.r#video_description_name,
                 ),
             ];

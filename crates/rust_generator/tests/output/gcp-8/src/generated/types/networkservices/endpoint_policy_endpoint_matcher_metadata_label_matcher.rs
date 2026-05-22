@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for End
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "metadata_label_match_criteria",
+                    "metadataLabelMatchCriteria",
                     &self.r#metadata_label_match_criteria,
                 ),
                 to_pulumi_object_field(
-                    "metadata_labels",
+                    "metadataLabels",
                     &self.r#metadata_labels,
                 ),
             ];

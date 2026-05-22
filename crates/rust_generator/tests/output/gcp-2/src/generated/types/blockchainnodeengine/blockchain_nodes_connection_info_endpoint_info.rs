@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Blo
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "json_rpc_api_endpoint",
+                    "jsonRpcApiEndpoint",
                     &self.r#json_rpc_api_endpoint,
                 ),
                 to_pulumi_object_field(
-                    "websockets_api_endpoint",
+                    "websocketsApiEndpoint",
                     &self.r#websockets_api_endpoint,
                 ),
             ];

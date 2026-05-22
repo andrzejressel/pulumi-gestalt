@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#available,
                 ),
                 to_pulumi_object_field(
-                    "desired_instances",
+                    "desiredInstances",
                     &self.r#desired_instances,
                 ),
                 to_pulumi_object_field(
-                    "desired_sessions",
+                    "desiredSessions",
                     &self.r#desired_sessions,
                 ),
                 to_pulumi_object_field(
-                    "in_use",
+                    "inUse",
                     &self.r#in_use,
                 ),
                 to_pulumi_object_field(

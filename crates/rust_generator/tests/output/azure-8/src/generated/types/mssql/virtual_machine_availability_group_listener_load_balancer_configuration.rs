@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Vir
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "load_balancer_id",
+                    "loadBalancerId",
                     &self.r#load_balancer_id,
                 ),
                 to_pulumi_object_field(
-                    "private_ip_address",
+                    "privateIpAddress",
                     &self.r#private_ip_address,
                 ),
                 to_pulumi_object_field(
-                    "probe_port",
+                    "probePort",
                     &self.r#probe_port,
                 ),
                 to_pulumi_object_field(
-                    "sql_virtual_machine_ids",
+                    "sqlVirtualMachineIds",
                     &self.r#sql_virtual_machine_ids,
                 ),
                 to_pulumi_object_field(
-                    "subnet_id",
+                    "subnetId",
                     &self.r#subnet_id,
                 ),
             ];

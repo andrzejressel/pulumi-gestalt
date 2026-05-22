@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Clu
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "enable_metrics",
+                    "enableMetrics",
                     &self.r#enable_metrics,
                 ),
                 to_pulumi_object_field(
-                    "enable_relay",
+                    "enableRelay",
                     &self.r#enable_relay,
                 ),
             ];

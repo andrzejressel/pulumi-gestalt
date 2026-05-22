@@ -108,27 +108,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "active_directory_authentication_enabled",
+                    "activeDirectoryAuthenticationEnabled",
                     &self.r#active_directory_authentication_enabled,
                 ),
                 to_pulumi_object_field(
-                    "aof_backup_enabled",
+                    "aofBackupEnabled",
                     &self.r#aof_backup_enabled,
                 ),
                 to_pulumi_object_field(
-                    "aof_storage_connection_string_0",
+                    "aofStorageConnectionString0",
                     &self.r#aof_storage_connection_string_0,
                 ),
                 to_pulumi_object_field(
-                    "aof_storage_connection_string_1",
+                    "aofStorageConnectionString1",
                     &self.r#aof_storage_connection_string_1,
                 ),
                 to_pulumi_object_field(
-                    "authentication_enabled",
+                    "authenticationEnabled",
                     &self.r#authentication_enabled,
                 ),
                 to_pulumi_object_field(
-                    "data_persistence_authentication_method",
+                    "dataPersistenceAuthenticationMethod",
                     &self.r#data_persistence_authentication_method,
                 ),
                 to_pulumi_object_field(
@@ -136,43 +136,43 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cac
                     &self.r#maxclients,
                 ),
                 to_pulumi_object_field(
-                    "maxfragmentationmemory_reserved",
+                    "maxfragmentationmemoryReserved",
                     &self.r#maxfragmentationmemory_reserved,
                 ),
                 to_pulumi_object_field(
-                    "maxmemory_delta",
+                    "maxmemoryDelta",
                     &self.r#maxmemory_delta,
                 ),
                 to_pulumi_object_field(
-                    "maxmemory_policy",
+                    "maxmemoryPolicy",
                     &self.r#maxmemory_policy,
                 ),
                 to_pulumi_object_field(
-                    "maxmemory_reserved",
+                    "maxmemoryReserved",
                     &self.r#maxmemory_reserved,
                 ),
                 to_pulumi_object_field(
-                    "notify_keyspace_events",
+                    "notifyKeyspaceEvents",
                     &self.r#notify_keyspace_events,
                 ),
                 to_pulumi_object_field(
-                    "rdb_backup_enabled",
+                    "rdbBackupEnabled",
                     &self.r#rdb_backup_enabled,
                 ),
                 to_pulumi_object_field(
-                    "rdb_backup_frequency",
+                    "rdbBackupFrequency",
                     &self.r#rdb_backup_frequency,
                 ),
                 to_pulumi_object_field(
-                    "rdb_backup_max_snapshot_count",
+                    "rdbBackupMaxSnapshotCount",
                     &self.r#rdb_backup_max_snapshot_count,
                 ),
                 to_pulumi_object_field(
-                    "rdb_storage_connection_string",
+                    "rdbStorageConnectionString",
                     &self.r#rdb_storage_connection_string,
                 ),
                 to_pulumi_object_field(
-                    "storage_account_subscription_id",
+                    "storageAccountSubscriptionId",
                     &self.r#storage_account_subscription_id,
                 ),
             ];

@@ -33,7 +33,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bar
                     &self.r#path,
                 ),
                 to_pulumi_object_field(
-                    "storage_class",
+                    "storageClass",
                     &self.r#storage_class,
                 ),
             ];

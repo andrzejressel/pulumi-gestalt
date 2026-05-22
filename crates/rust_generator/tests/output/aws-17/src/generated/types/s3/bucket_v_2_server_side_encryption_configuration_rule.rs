@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Buc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "apply_server_side_encryption_by_defaults",
+                    "applyServerSideEncryptionByDefaults",
                     &self.r#apply_server_side_encryption_by_defaults,
                 ),
                 to_pulumi_object_field(
-                    "bucket_key_enabled",
+                    "bucketKeyEnabled",
                     &self.r#bucket_key_enabled,
                 ),
             ];

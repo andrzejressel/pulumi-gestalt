@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for MlT
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "accuracy_cost_trade_off",
+                    "accuracyCostTradeOff",
                     &self.r#accuracy_cost_trade_off,
                 ),
                 to_pulumi_object_field(
-                    "enforce_provided_labels",
+                    "enforceProvidedLabels",
                     &self.r#enforce_provided_labels,
                 ),
                 to_pulumi_object_field(
-                    "precision_recall_trade_off",
+                    "precisionRecallTradeOff",
                     &self.r#precision_recall_trade_off,
                 ),
                 to_pulumi_object_field(
-                    "primary_key_column_name",
+                    "primaryKeyColumnName",
                     &self.r#primary_key_column_name,
                 ),
             ];

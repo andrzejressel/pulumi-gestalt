@@ -43,19 +43,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
                     &self.r#enabled,
                 ),
                 to_pulumi_object_field(
-                    "interval_in_minutes",
+                    "intervalInMinutes",
                     &self.r#interval_in_minutes,
                 ),
                 to_pulumi_object_field(
-                    "workspace_id",
+                    "workspaceId",
                     &self.r#workspace_id,
                 ),
                 to_pulumi_object_field(
-                    "workspace_region",
+                    "workspaceRegion",
                     &self.r#workspace_region,
                 ),
                 to_pulumi_object_field(
-                    "workspace_resource_id",
+                    "workspaceResourceId",
                     &self.r#workspace_resource_id,
                 ),
             ];

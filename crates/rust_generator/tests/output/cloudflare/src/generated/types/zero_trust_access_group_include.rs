@@ -110,15 +110,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "any_valid_service_token",
+                    "anyValidServiceToken",
                     &self.r#any_valid_service_token,
                 ),
                 to_pulumi_object_field(
-                    "auth_contexts",
+                    "authContexts",
                     &self.r#auth_contexts,
                 ),
                 to_pulumi_object_field(
-                    "auth_method",
+                    "authMethod",
                     &self.r#auth_method,
                 ),
                 to_pulumi_object_field(
@@ -130,23 +130,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#certificate,
                 ),
                 to_pulumi_object_field(
-                    "common_name",
+                    "commonName",
                     &self.r#common_name,
                 ),
                 to_pulumi_object_field(
-                    "common_names",
+                    "commonNames",
                     &self.r#common_names,
                 ),
                 to_pulumi_object_field(
-                    "device_postures",
+                    "devicePostures",
                     &self.r#device_postures,
                 ),
                 to_pulumi_object_field(
-                    "email_domains",
+                    "emailDomains",
                     &self.r#email_domains,
                 ),
                 to_pulumi_object_field(
-                    "email_lists",
+                    "emailLists",
                     &self.r#email_lists,
                 ),
                 to_pulumi_object_field(
@@ -158,7 +158,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#everyone,
                 ),
                 to_pulumi_object_field(
-                    "external_evaluations",
+                    "externalEvaluations",
                     &self.r#external_evaluations,
                 ),
                 to_pulumi_object_field(
@@ -178,7 +178,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#gsuites,
                 ),
                 to_pulumi_object_field(
-                    "ip_lists",
+                    "ipLists",
                     &self.r#ip_lists,
                 ),
                 to_pulumi_object_field(
@@ -186,7 +186,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#ips,
                 ),
                 to_pulumi_object_field(
-                    "login_methods",
+                    "loginMethods",
                     &self.r#login_methods,
                 ),
                 to_pulumi_object_field(
@@ -198,7 +198,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Zer
                     &self.r#samls,
                 ),
                 to_pulumi_object_field(
-                    "service_tokens",
+                    "serviceTokens",
                     &self.r#service_tokens,
                 ),
             ];

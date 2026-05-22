@@ -43,27 +43,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "content_security_policy",
+                    "contentSecurityPolicy",
                     &self.r#content_security_policy,
                 ),
                 to_pulumi_object_field(
-                    "content_type_options",
+                    "contentTypeOptions",
                     &self.r#content_type_options,
                 ),
                 to_pulumi_object_field(
-                    "frame_options",
+                    "frameOptions",
                     &self.r#frame_options,
                 ),
                 to_pulumi_object_field(
-                    "referrer_policy",
+                    "referrerPolicy",
                     &self.r#referrer_policy,
                 ),
                 to_pulumi_object_field(
-                    "strict_transport_security",
+                    "strictTransportSecurity",
                     &self.r#strict_transport_security,
                 ),
                 to_pulumi_object_field(
-                    "xss_protection",
+                    "xssProtection",
                     &self.r#xss_protection,
                 ),
             ];

@@ -44,7 +44,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "allow_duplicate_emails",
+                    "allowDuplicateEmails",
                     &self.r#allow_duplicate_emails,
                 ),
                 to_pulumi_object_field(
@@ -56,11 +56,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Con
                     &self.r#email,
                 ),
                 to_pulumi_object_field(
-                    "hash_configs",
+                    "hashConfigs",
                     &self.r#hash_configs,
                 ),
                 to_pulumi_object_field(
-                    "phone_number",
+                    "phoneNumber",
                     &self.r#phone_number,
                 ),
             ];

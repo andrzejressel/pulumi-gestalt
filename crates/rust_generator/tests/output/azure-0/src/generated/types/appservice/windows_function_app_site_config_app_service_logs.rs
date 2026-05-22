@@ -29,11 +29,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Win
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "disk_quota_mb",
+                    "diskQuotaMb",
                     &self.r#disk_quota_mb,
                 ),
                 to_pulumi_object_field(
-                    "retention_period_days",
+                    "retentionPeriodDays",
                     &self.r#retention_period_days,
                 ),
             ];

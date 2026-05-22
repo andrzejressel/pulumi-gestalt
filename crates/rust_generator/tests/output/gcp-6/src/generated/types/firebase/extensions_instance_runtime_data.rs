@@ -33,15 +33,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ext
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "fatal_error",
+                    "fatalError",
                     &self.r#fatal_error,
                 ),
                 to_pulumi_object_field(
-                    "processing_state",
+                    "processingState",
                     &self.r#processing_state,
                 ),
                 to_pulumi_object_field(
-                    "state_update_time",
+                    "stateUpdateTime",
                     &self.r#state_update_time,
                 ),
             ];

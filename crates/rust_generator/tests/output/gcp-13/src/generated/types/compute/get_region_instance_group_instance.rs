@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#instance,
                 ),
                 to_pulumi_object_field(
-                    "named_ports",
+                    "namedPorts",
                     &self.r#named_ports,
                 ),
                 to_pulumi_object_field(

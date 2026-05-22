@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "match_criterions",
+                    "matchCriterions",
                     &self.r#match_criterions,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "next_step_if_matched",
+                    "nextStepIfMatched",
                     &self.r#next_step_if_matched,
                 ),
             ];

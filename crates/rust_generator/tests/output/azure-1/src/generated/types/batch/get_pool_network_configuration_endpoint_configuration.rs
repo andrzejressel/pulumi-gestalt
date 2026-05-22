@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "backend_port",
+                    "backendPort",
                     &self.r#backend_port,
                 ),
                 to_pulumi_object_field(
-                    "frontend_port_range",
+                    "frontendPortRange",
                     &self.r#frontend_port_range,
                 ),
                 to_pulumi_object_field(
@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "network_security_group_rules",
+                    "networkSecurityGroupRules",
                     &self.r#network_security_group_rules,
                 ),
                 to_pulumi_object_field(

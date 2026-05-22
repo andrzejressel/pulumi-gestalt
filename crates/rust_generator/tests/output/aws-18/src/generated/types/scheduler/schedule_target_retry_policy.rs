@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sch
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "maximum_event_age_in_seconds",
+                    "maximumEventAgeInSeconds",
                     &self.r#maximum_event_age_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "maximum_retry_attempts",
+                    "maximumRetryAttempts",
                     &self.r#maximum_retry_attempts,
                 ),
             ];

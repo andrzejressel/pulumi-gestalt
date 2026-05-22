@@ -31,11 +31,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Top
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "confirmation_url",
+                    "confirmationUrl",
                     &self.r#confirmation_url,
                 ),
                 to_pulumi_object_field(
-                    "http_headers",
+                    "httpHeaders",
                     &self.r#http_headers,
                 ),
                 to_pulumi_object_field(

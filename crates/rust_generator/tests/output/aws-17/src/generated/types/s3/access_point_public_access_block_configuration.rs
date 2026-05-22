@@ -41,19 +41,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "block_public_acls",
+                    "blockPublicAcls",
                     &self.r#block_public_acls,
                 ),
                 to_pulumi_object_field(
-                    "block_public_policy",
+                    "blockPublicPolicy",
                     &self.r#block_public_policy,
                 ),
                 to_pulumi_object_field(
-                    "ignore_public_acls",
+                    "ignorePublicAcls",
                     &self.r#ignore_public_acls,
                 ),
                 to_pulumi_object_field(
-                    "restrict_public_buckets",
+                    "restrictPublicBuckets",
                     &self.r#restrict_public_buckets,
                 ),
             ];

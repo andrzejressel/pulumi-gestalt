@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "float_value",
+                    "floatValue",
                     &self.r#float_value,
                 ),
                 to_pulumi_object_field(
-                    "integer_value",
+                    "integerValue",
                     &self.r#integer_value,
                 ),
             ];

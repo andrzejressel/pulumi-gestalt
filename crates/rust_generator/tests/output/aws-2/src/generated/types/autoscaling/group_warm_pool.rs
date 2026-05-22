@@ -35,19 +35,19 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "instance_reuse_policy",
+                    "instanceReusePolicy",
                     &self.r#instance_reuse_policy,
                 ),
                 to_pulumi_object_field(
-                    "max_group_prepared_capacity",
+                    "maxGroupPreparedCapacity",
                     &self.r#max_group_prepared_capacity,
                 ),
                 to_pulumi_object_field(
-                    "min_size",
+                    "minSize",
                     &self.r#min_size,
                 ),
                 to_pulumi_object_field(
-                    "pool_state",
+                    "poolState",
                     &self.r#pool_state,
                 ),
             ];

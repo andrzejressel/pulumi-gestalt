@@ -90,51 +90,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Reg
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "dest_address_groups",
+                    "destAddressGroups",
                     &self.r#dest_address_groups,
                 ),
                 to_pulumi_object_field(
-                    "dest_fqdns",
+                    "destFqdns",
                     &self.r#dest_fqdns,
                 ),
                 to_pulumi_object_field(
-                    "dest_ip_ranges",
+                    "destIpRanges",
                     &self.r#dest_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "dest_region_codes",
+                    "destRegionCodes",
                     &self.r#dest_region_codes,
                 ),
                 to_pulumi_object_field(
-                    "dest_threat_intelligences",
+                    "destThreatIntelligences",
                     &self.r#dest_threat_intelligences,
                 ),
                 to_pulumi_object_field(
-                    "layer_4_configs",
+                    "layer4Configs",
                     &self.r#layer_4_configs,
                 ),
                 to_pulumi_object_field(
-                    "src_address_groups",
+                    "srcAddressGroups",
                     &self.r#src_address_groups,
                 ),
                 to_pulumi_object_field(
-                    "src_fqdns",
+                    "srcFqdns",
                     &self.r#src_fqdns,
                 ),
                 to_pulumi_object_field(
-                    "src_ip_ranges",
+                    "srcIpRanges",
                     &self.r#src_ip_ranges,
                 ),
                 to_pulumi_object_field(
-                    "src_region_codes",
+                    "srcRegionCodes",
                     &self.r#src_region_codes,
                 ),
                 to_pulumi_object_field(
-                    "src_secure_tags",
+                    "srcSecureTags",
                     &self.r#src_secure_tags,
                 ),
                 to_pulumi_object_field(
-                    "src_threat_intelligences",
+                    "srcThreatIntelligences",
                     &self.r#src_threat_intelligences,
                 ),
             ];

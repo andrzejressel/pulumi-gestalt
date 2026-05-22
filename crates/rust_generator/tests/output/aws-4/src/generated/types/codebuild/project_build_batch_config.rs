@@ -35,7 +35,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "combine_artifacts",
+                    "combineArtifacts",
                     &self.r#combine_artifacts,
                 ),
                 to_pulumi_object_field(
@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pro
                     &self.r#restrictions,
                 ),
                 to_pulumi_object_field(
-                    "service_role",
+                    "serviceRole",
                     &self.r#service_role,
                 ),
                 to_pulumi_object_field(
-                    "timeout_in_mins",
+                    "timeoutInMins",
                     &self.r#timeout_in_mins,
                 ),
             ];

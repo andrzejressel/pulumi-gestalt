@@ -50,7 +50,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#csi,
                 ),
                 to_pulumi_object_field(
-                    "empty_dir",
+                    "emptyDir",
                     &self.r#empty_dir,
                 ),
                 to_pulumi_object_field(

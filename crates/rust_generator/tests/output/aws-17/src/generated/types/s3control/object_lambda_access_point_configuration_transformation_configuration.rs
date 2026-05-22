@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Obj
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "content_transformation",
+                    "contentTransformation",
                     &self.r#content_transformation,
                 ),
             ];

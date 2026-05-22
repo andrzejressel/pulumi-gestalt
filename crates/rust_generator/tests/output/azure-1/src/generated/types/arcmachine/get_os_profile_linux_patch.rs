@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "assessment_mode",
+                    "assessmentMode",
                     &self.r#assessment_mode,
                 ),
                 to_pulumi_object_field(
-                    "patch_mode",
+                    "patchMode",
                     &self.r#patch_mode,
                 ),
             ];

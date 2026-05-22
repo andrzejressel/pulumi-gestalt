@@ -39,11 +39,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#codecommit,
                 ),
                 to_pulumi_object_field(
-                    "github_enterprise_server",
+                    "githubEnterpriseServer",
                     &self.r#github_enterprise_server,
                 ),
                 to_pulumi_object_field(
-                    "s_3_bucket",
+                    "s3Bucket",
                     &self.r#s_3_bucket,
                 ),
             ];

@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiI
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "machine_spec",
+                    "machineSpec",
                     &self.r#machine_spec,
                 ),
                 to_pulumi_object_field(
-                    "max_replica_count",
+                    "maxReplicaCount",
                     &self.r#max_replica_count,
                 ),
                 to_pulumi_object_field(
-                    "min_replica_count",
+                    "minReplicaCount",
                     &self.r#min_replica_count,
                 ),
             ];

@@ -49,11 +49,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ana
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_firehose",
+                    "kinesisFirehose",
                     &self.r#kinesis_firehose,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_stream",
+                    "kinesisStream",
                     &self.r#kinesis_stream,
                 ),
                 to_pulumi_object_field(

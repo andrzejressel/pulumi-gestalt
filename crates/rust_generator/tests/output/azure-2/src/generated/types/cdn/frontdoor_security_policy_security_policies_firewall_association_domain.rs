@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fro
                     &self.r#active,
                 ),
                 to_pulumi_object_field(
-                    "cdn_frontdoor_domain_id",
+                    "cdnFrontdoorDomainId",
                     &self.r#cdn_frontdoor_domain_id,
                 ),
             ];

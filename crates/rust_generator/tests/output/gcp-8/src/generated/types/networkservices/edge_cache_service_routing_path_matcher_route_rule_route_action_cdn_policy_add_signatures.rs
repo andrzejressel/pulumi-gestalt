@@ -57,7 +57,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
                     &self.r#actions,
                 ),
                 to_pulumi_object_field(
-                    "copied_parameters",
+                    "copiedParameters",
                     &self.r#copied_parameters,
                 ),
                 to_pulumi_object_field(
@@ -65,11 +65,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Edg
                     &self.r#keyset,
                 ),
                 to_pulumi_object_field(
-                    "token_query_parameter",
+                    "tokenQueryParameter",
                     &self.r#token_query_parameter,
                 ),
                 to_pulumi_object_field(
-                    "token_ttl",
+                    "tokenTtl",
                     &self.r#token_ttl,
                 ),
             ];

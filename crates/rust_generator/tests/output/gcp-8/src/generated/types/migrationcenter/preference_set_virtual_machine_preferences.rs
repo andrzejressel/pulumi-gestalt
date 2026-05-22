@@ -51,31 +51,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Pre
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "commitment_plan",
+                    "commitmentPlan",
                     &self.r#commitment_plan,
                 ),
                 to_pulumi_object_field(
-                    "compute_engine_preferences",
+                    "computeEnginePreferences",
                     &self.r#compute_engine_preferences,
                 ),
                 to_pulumi_object_field(
-                    "region_preferences",
+                    "regionPreferences",
                     &self.r#region_preferences,
                 ),
                 to_pulumi_object_field(
-                    "sizing_optimization_strategy",
+                    "sizingOptimizationStrategy",
                     &self.r#sizing_optimization_strategy,
                 ),
                 to_pulumi_object_field(
-                    "sole_tenancy_preferences",
+                    "soleTenancyPreferences",
                     &self.r#sole_tenancy_preferences,
                 ),
                 to_pulumi_object_field(
-                    "target_product",
+                    "targetProduct",
                     &self.r#target_product,
                 ),
                 to_pulumi_object_field(
-                    "vmware_engine_preferences",
+                    "vmwareEnginePreferences",
                     &self.r#vmware_engine_preferences,
                 ),
             ];

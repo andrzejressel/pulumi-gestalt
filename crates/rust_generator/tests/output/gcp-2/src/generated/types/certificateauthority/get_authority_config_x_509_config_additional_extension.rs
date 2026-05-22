@@ -36,7 +36,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#critical,
                 ),
                 to_pulumi_object_field(
-                    "object_ids",
+                    "objectIds",
                     &self.r#object_ids,
                 ),
                 to_pulumi_object_field(

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ont
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_retention",
+                    "defaultRetention",
                     &self.r#default_retention,
                 ),
                 to_pulumi_object_field(
-                    "maximum_retention",
+                    "maximumRetention",
                     &self.r#maximum_retention,
                 ),
                 to_pulumi_object_field(
-                    "minimum_retention",
+                    "minimumRetention",
                     &self.r#minimum_retention,
                 ),
             ];

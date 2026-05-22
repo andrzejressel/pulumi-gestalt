@@ -55,31 +55,31 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Lin
                     &self.r#dockers,
                 ),
                 to_pulumi_object_field(
-                    "dotnet_version",
+                    "dotnetVersion",
                     &self.r#dotnet_version,
                 ),
                 to_pulumi_object_field(
-                    "java_version",
+                    "javaVersion",
                     &self.r#java_version,
                 ),
                 to_pulumi_object_field(
-                    "node_version",
+                    "nodeVersion",
                     &self.r#node_version,
                 ),
                 to_pulumi_object_field(
-                    "powershell_core_version",
+                    "powershellCoreVersion",
                     &self.r#powershell_core_version,
                 ),
                 to_pulumi_object_field(
-                    "python_version",
+                    "pythonVersion",
                     &self.r#python_version,
                 ),
                 to_pulumi_object_field(
-                    "use_custom_runtime",
+                    "useCustomRuntime",
                     &self.r#use_custom_runtime,
                 ),
                 to_pulumi_object_field(
-                    "use_dotnet_isolated_runtime",
+                    "useDotnetIsolatedRuntime",
                     &self.r#use_dotnet_isolated_runtime,
                 ),
             ];

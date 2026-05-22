@@ -43,11 +43,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "config_id",
+                    "configId",
                     &self.r#config_id,
                 ),
                 to_pulumi_object_field(
-                    "disable_trace_sampling",
+                    "disableTraceSampling",
                     &self.r#disable_trace_sampling,
                 ),
                 to_pulumi_object_field(
@@ -55,7 +55,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Fle
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "rollout_strategy",
+                    "rolloutStrategy",
                     &self.r#rollout_strategy,
                 ),
             ];

@@ -39,23 +39,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ins
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cloudwatch_logs",
+                    "cloudwatchLogs",
                     &self.r#cloudwatch_logs,
                 ),
                 to_pulumi_object_field(
-                    "include_trust_context",
+                    "includeTrustContext",
                     &self.r#include_trust_context,
                 ),
                 to_pulumi_object_field(
-                    "kinesis_data_firehose",
+                    "kinesisDataFirehose",
                     &self.r#kinesis_data_firehose,
                 ),
                 to_pulumi_object_field(
-                    "log_version",
+                    "logVersion",
                     &self.r#log_version,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
             ];

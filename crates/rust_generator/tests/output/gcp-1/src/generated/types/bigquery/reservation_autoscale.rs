@@ -28,11 +28,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Res
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "current_slots",
+                    "currentSlots",
                     &self.r#current_slots,
                 ),
                 to_pulumi_object_field(
-                    "max_slots",
+                    "maxSlots",
                     &self.r#max_slots,
                 ),
             ];

@@ -42,11 +42,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorization_api_key_name",
+                    "authorizationApiKeyName",
                     &self.r#authorization_api_key_name,
                 ),
                 to_pulumi_object_field(
-                    "authorization_api_key_value",
+                    "authorizationApiKeyValue",
                     &self.r#authorization_api_key_value,
                 ),
                 to_pulumi_object_field(
@@ -54,11 +54,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sub
                     &self.r#endpoint,
                 ),
                 to_pulumi_object_field(
-                    "http_method",
+                    "httpMethod",
                     &self.r#http_method,
                 ),
                 to_pulumi_object_field(
-                    "target_role_arn",
+                    "targetRoleArn",
                     &self.r#target_role_arn,
                 ),
             ];

@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Gra
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "authorizer_result_ttl_in_seconds",
+                    "authorizerResultTtlInSeconds",
                     &self.r#authorizer_result_ttl_in_seconds,
                 ),
                 to_pulumi_object_field(
-                    "authorizer_uri",
+                    "authorizerUri",
                     &self.r#authorizer_uri,
                 ),
                 to_pulumi_object_field(
-                    "identity_validation_expression",
+                    "identityValidationExpression",
                     &self.r#identity_validation_expression,
                 ),
             ];

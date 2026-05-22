@@ -39,7 +39,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#constraints,
                 ),
                 to_pulumi_object_field(
-                    "max_replicas",
+                    "maxReplicas",
                     &self.r#max_replicas,
                 ),
                 to_pulumi_object_field(

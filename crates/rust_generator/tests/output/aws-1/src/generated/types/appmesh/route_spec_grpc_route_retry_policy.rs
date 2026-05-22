@@ -41,23 +41,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rou
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "grpc_retry_events",
+                    "grpcRetryEvents",
                     &self.r#grpc_retry_events,
                 ),
                 to_pulumi_object_field(
-                    "http_retry_events",
+                    "httpRetryEvents",
                     &self.r#http_retry_events,
                 ),
                 to_pulumi_object_field(
-                    "max_retries",
+                    "maxRetries",
                     &self.r#max_retries,
                 ),
                 to_pulumi_object_field(
-                    "per_retry_timeout",
+                    "perRetryTimeout",
                     &self.r#per_retry_timeout,
                 ),
                 to_pulumi_object_field(
-                    "tcp_retry_events",
+                    "tcpRetryEvents",
                     &self.r#tcp_retry_events,
                 ),
             ];

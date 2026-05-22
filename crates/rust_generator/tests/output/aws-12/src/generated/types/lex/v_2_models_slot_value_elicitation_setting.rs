@@ -46,27 +46,27 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for V2M
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "default_value_specifications",
+                    "defaultValueSpecifications",
                     &self.r#default_value_specifications,
                 ),
                 to_pulumi_object_field(
-                    "prompt_specification",
+                    "promptSpecification",
                     &self.r#prompt_specification,
                 ),
                 to_pulumi_object_field(
-                    "sample_utterances",
+                    "sampleUtterances",
                     &self.r#sample_utterances,
                 ),
                 to_pulumi_object_field(
-                    "slot_constraint",
+                    "slotConstraint",
                     &self.r#slot_constraint,
                 ),
                 to_pulumi_object_field(
-                    "slot_resolution_settings",
+                    "slotResolutionSettings",
                     &self.r#slot_resolution_settings,
                 ),
                 to_pulumi_object_field(
-                    "wait_and_continue_specifications",
+                    "waitAndContinueSpecifications",
                     &self.r#wait_and_continue_specifications,
                 ),
             ];

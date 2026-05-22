@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "entity_id_columns",
+                    "entityIdColumns",
                     &self.r#entity_id_columns,
                 ),
                 to_pulumi_object_field(

@@ -42,11 +42,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Get
                     &self.r#name,
                 ),
                 to_pulumi_object_field(
-                    "secondary_ip_range_names",
+                    "secondaryIpRangeNames",
                     &self.r#secondary_ip_range_names,
                 ),
                 to_pulumi_object_field(
-                    "source_ip_ranges_to_nats",
+                    "sourceIpRangesToNats",
                     &self.r#source_ip_ranges_to_nats,
                 ),
             ];

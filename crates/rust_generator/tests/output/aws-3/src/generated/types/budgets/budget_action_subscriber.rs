@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
                     &self.r#address,
                 ),
                 to_pulumi_object_field(
-                    "subscription_type",
+                    "subscriptionType",
                     &self.r#subscription_type,
                 ),
             ];

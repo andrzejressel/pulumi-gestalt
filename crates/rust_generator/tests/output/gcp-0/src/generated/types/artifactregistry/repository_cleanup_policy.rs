@@ -51,7 +51,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Rep
                     &self.r#id,
                 ),
                 to_pulumi_object_field(
-                    "most_recent_versions",
+                    "mostRecentVersions",
                     &self.r#most_recent_versions,
                 ),
             ];

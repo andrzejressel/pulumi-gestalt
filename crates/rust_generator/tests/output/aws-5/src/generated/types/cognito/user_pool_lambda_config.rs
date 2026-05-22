@@ -75,59 +75,59 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Use
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "create_auth_challenge",
+                    "createAuthChallenge",
                     &self.r#create_auth_challenge,
                 ),
                 to_pulumi_object_field(
-                    "custom_email_sender",
+                    "customEmailSender",
                     &self.r#custom_email_sender,
                 ),
                 to_pulumi_object_field(
-                    "custom_message",
+                    "customMessage",
                     &self.r#custom_message,
                 ),
                 to_pulumi_object_field(
-                    "custom_sms_sender",
+                    "customSmsSender",
                     &self.r#custom_sms_sender,
                 ),
                 to_pulumi_object_field(
-                    "define_auth_challenge",
+                    "defineAuthChallenge",
                     &self.r#define_auth_challenge,
                 ),
                 to_pulumi_object_field(
-                    "kms_key_id",
+                    "kmsKeyId",
                     &self.r#kms_key_id,
                 ),
                 to_pulumi_object_field(
-                    "post_authentication",
+                    "postAuthentication",
                     &self.r#post_authentication,
                 ),
                 to_pulumi_object_field(
-                    "post_confirmation",
+                    "postConfirmation",
                     &self.r#post_confirmation,
                 ),
                 to_pulumi_object_field(
-                    "pre_authentication",
+                    "preAuthentication",
                     &self.r#pre_authentication,
                 ),
                 to_pulumi_object_field(
-                    "pre_sign_up",
+                    "preSignUp",
                     &self.r#pre_sign_up,
                 ),
                 to_pulumi_object_field(
-                    "pre_token_generation",
+                    "preTokenGeneration",
                     &self.r#pre_token_generation,
                 ),
                 to_pulumi_object_field(
-                    "pre_token_generation_config",
+                    "preTokenGenerationConfig",
                     &self.r#pre_token_generation_config,
                 ),
                 to_pulumi_object_field(
-                    "user_migration",
+                    "userMigration",
                     &self.r#user_migration,
                 ),
                 to_pulumi_object_field(
-                    "verify_auth_challenge_response",
+                    "verifyAuthChallengeResponse",
                     &self.r#verify_auth_challenge_response,
                 ),
             ];

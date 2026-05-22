@@ -36,15 +36,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "ip_configs",
+                    "ipConfigs",
                     &self.r#ip_configs,
                 ),
                 to_pulumi_object_field(
-                    "target_https_proxy",
+                    "targetHttpsProxy",
                     &self.r#target_https_proxy,
                 ),
                 to_pulumi_object_field(
-                    "target_ssl_proxy",
+                    "targetSslProxy",
                     &self.r#target_ssl_proxy,
                 ),
             ];

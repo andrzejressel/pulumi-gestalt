@@ -25,7 +25,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Smb
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "cache_stale_timeout_in_seconds",
+                    "cacheStaleTimeoutInSeconds",
                     &self.r#cache_stale_timeout_in_seconds,
                 ),
             ];

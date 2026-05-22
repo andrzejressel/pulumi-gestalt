@@ -32,15 +32,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Acc
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "availability_condition",
+                    "availabilityCondition",
                     &self.r#availability_condition,
                 ),
                 to_pulumi_object_field(
-                    "available_permissions",
+                    "availablePermissions",
                     &self.r#available_permissions,
                 ),
                 to_pulumi_object_field(
-                    "available_resource",
+                    "availableResource",
                     &self.r#available_resource,
                 ),
             ];

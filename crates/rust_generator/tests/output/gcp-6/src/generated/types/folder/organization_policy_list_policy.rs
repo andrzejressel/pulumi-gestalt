@@ -46,11 +46,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Org
                     &self.r#deny,
                 ),
                 to_pulumi_object_field(
-                    "inherit_from_parent",
+                    "inheritFromParent",
                     &self.r#inherit_from_parent,
                 ),
                 to_pulumi_object_field(
-                    "suggested_value",
+                    "suggestedValue",
                     &self.r#suggested_value,
                 ),
             ];

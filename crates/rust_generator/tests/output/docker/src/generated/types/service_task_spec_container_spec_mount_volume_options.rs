@@ -35,11 +35,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "driver_name",
+                    "driverName",
                     &self.r#driver_name,
                 ),
                 to_pulumi_object_field(
-                    "driver_options",
+                    "driverOptions",
                     &self.r#driver_options,
                 ),
                 to_pulumi_object_field(
@@ -47,7 +47,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Ser
                     &self.r#labels,
                 ),
                 to_pulumi_object_field(
-                    "no_copy",
+                    "noCopy",
                     &self.r#no_copy,
                 ),
             ];

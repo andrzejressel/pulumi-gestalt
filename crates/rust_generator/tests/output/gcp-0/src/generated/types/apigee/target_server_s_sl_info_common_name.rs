@@ -31,7 +31,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Tar
                     &self.r#value,
                 ),
                 to_pulumi_object_field(
-                    "wildcard_match",
+                    "wildcardMatch",
                     &self.r#wildcard_match,
                 ),
             ];

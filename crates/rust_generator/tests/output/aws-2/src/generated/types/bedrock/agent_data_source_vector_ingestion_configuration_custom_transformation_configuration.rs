@@ -27,7 +27,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Age
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "intermediate_storage",
+                    "intermediateStorage",
                     &self.r#intermediate_storage,
                 ),
                 to_pulumi_object_field(

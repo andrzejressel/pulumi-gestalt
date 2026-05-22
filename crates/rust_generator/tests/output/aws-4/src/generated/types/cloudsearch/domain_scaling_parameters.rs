@@ -31,15 +31,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dom
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "desired_instance_type",
+                    "desiredInstanceType",
                     &self.r#desired_instance_type,
                 ),
                 to_pulumi_object_field(
-                    "desired_partition_count",
+                    "desiredPartitionCount",
                     &self.r#desired_partition_count,
                 ),
                 to_pulumi_object_field(
-                    "desired_replication_count",
+                    "desiredReplicationCount",
                     &self.r#desired_replication_count,
                 ),
             ];

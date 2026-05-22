@@ -24,7 +24,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Cer
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "certificate_authority_service_config",
+                    "certificateAuthorityServiceConfig",
                     &self.r#certificate_authority_service_config,
                 ),
             ];

@@ -103,7 +103,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "amazon_elasticsearch",
+                    "amazonElasticsearch",
                     &self.r#amazon_elasticsearch,
                 ),
                 to_pulumi_object_field(
@@ -115,11 +115,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#aurora,
                 ),
                 to_pulumi_object_field(
-                    "aurora_postgresql",
+                    "auroraPostgresql",
                     &self.r#aurora_postgresql,
                 ),
                 to_pulumi_object_field(
-                    "aws_iot_analytics",
+                    "awsIotAnalytics",
                     &self.r#aws_iot_analytics,
                 ),
                 to_pulumi_object_field(
@@ -131,7 +131,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#jira,
                 ),
                 to_pulumi_object_field(
-                    "maria_db",
+                    "mariaDb",
                     &self.r#maria_db,
                 ),
                 to_pulumi_object_field(
@@ -159,11 +159,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#redshift,
                 ),
                 to_pulumi_object_field(
-                    "s_3",
+                    "s3",
                     &self.r#s_3,
                 ),
                 to_pulumi_object_field(
-                    "service_now",
+                    "serviceNow",
                     &self.r#service_now,
                 ),
                 to_pulumi_object_field(
@@ -175,7 +175,7 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Dat
                     &self.r#spark,
                 ),
                 to_pulumi_object_field(
-                    "sql_server",
+                    "sqlServer",
                     &self.r#sql_server,
                 ),
                 to_pulumi_object_field(

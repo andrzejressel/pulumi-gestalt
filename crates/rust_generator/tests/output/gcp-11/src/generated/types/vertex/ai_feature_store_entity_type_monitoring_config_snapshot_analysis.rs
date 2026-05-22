@@ -43,15 +43,15 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for AiF
                     &self.r#disabled,
                 ),
                 to_pulumi_object_field(
-                    "monitoring_interval",
+                    "monitoringInterval",
                     &self.r#monitoring_interval,
                 ),
                 to_pulumi_object_field(
-                    "monitoring_interval_days",
+                    "monitoringIntervalDays",
                     &self.r#monitoring_interval_days,
                 ),
                 to_pulumi_object_field(
-                    "staleness_days",
+                    "stalenessDays",
                     &self.r#staleness_days,
                 ),
             ];

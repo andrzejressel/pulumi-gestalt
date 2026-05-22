@@ -63,47 +63,47 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Bud
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "include_credit",
+                    "includeCredit",
                     &self.r#include_credit,
                 ),
                 to_pulumi_object_field(
-                    "include_discount",
+                    "includeDiscount",
                     &self.r#include_discount,
                 ),
                 to_pulumi_object_field(
-                    "include_other_subscription",
+                    "includeOtherSubscription",
                     &self.r#include_other_subscription,
                 ),
                 to_pulumi_object_field(
-                    "include_recurring",
+                    "includeRecurring",
                     &self.r#include_recurring,
                 ),
                 to_pulumi_object_field(
-                    "include_refund",
+                    "includeRefund",
                     &self.r#include_refund,
                 ),
                 to_pulumi_object_field(
-                    "include_subscription",
+                    "includeSubscription",
                     &self.r#include_subscription,
                 ),
                 to_pulumi_object_field(
-                    "include_support",
+                    "includeSupport",
                     &self.r#include_support,
                 ),
                 to_pulumi_object_field(
-                    "include_tax",
+                    "includeTax",
                     &self.r#include_tax,
                 ),
                 to_pulumi_object_field(
-                    "include_upfront",
+                    "includeUpfront",
                     &self.r#include_upfront,
                 ),
                 to_pulumi_object_field(
-                    "use_amortized",
+                    "useAmortized",
                     &self.r#use_amortized,
                 ),
                 to_pulumi_object_field(
-                    "use_blended",
+                    "useBlended",
                     &self.r#use_blended,
                 ),
             ];

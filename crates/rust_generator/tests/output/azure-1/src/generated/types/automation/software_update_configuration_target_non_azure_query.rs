@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Sof
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "function_alias",
+                    "functionAlias",
                     &self.r#function_alias,
                 ),
                 to_pulumi_object_field(
-                    "workspace_id",
+                    "workspaceId",
                     &self.r#workspace_id,
                 ),
             ];

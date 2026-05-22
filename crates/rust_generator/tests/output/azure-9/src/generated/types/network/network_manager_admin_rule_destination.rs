@@ -27,11 +27,11 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::ToPulumiValue for Net
             };
             let field_futures: Vec<ToPulumiObjectFieldFuture<'_>> = vec![
                 to_pulumi_object_field(
-                    "address_prefix",
+                    "addressPrefix",
                     &self.r#address_prefix,
                 ),
                 to_pulumi_object_field(
-                    "address_prefix_type",
+                    "addressPrefixType",
                     &self.r#address_prefix_type,
                 ),
             ];
