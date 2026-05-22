@@ -31,6 +31,21 @@ impl FromPulumiValue for i32 {
     }
 }
 
+impl FromPulumiValue for i64 {
+    fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
+        match value.content {
+            PulumiValueContent::Integer(i) => Ok(i64::from(i)),
+            _ => bail!("Expected Integer, got {:?}", value.content),
+        }
+    }
+}
+
+impl FromPulumiValue for PulumiValue {
+    fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
+        Ok(value.clone())
+    }
+}
+
 impl FromPulumiValue for f64 {
     fn from_pulumi_value(value: &PulumiValue) -> Result<Self> {
         match value.content {

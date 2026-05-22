@@ -74,6 +74,6 @@ pub enum RustExpr {
     Ref(Box<RustExpr>),
     /// `expr.to_string()`
     ToStringCall(Box<RustExpr>),
-    /// `serde_json::Value::Null`
+    /// `pulumi_gestalt_rust::pulumi_any!(null)`
     Null,
 }

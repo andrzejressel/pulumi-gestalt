@@ -9,7 +9,6 @@ use pulumi_gestalt_domain::connector::{
     PulumiConnector, RegisterOutputsRequest, RegisterResourceRequest, ResourceInvokeRequest,
 };
 use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
-use serde_json::Value;
 use std::collections::HashMap;
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::SeqCst;
@@ -215,28 +214,22 @@ impl Engine {
                     PulumiValueContent::Nothing => {
                         return PulumiValue::nothing();
                     }
-                    _ => {
-                        combined.push(result.to_json());
-                    }
+                    _ => combined.push(result),
                 }
             }
 
             PulumiValue {
-                content: PulumiValueContent::Array(
-                    combined
-                        .into_iter()
-                        .map(|v| PulumiValue::from_json(v, false))
-                        .collect(),
-                ),
+                content: PulumiValueContent::Array(combined),
                 secret,
                 dependencies,
             }
         })
     }
 
-    pub fn create_done_node(value: Value, secret: bool) -> RawOutput {
-        let pulumi_value = PulumiValue::from_json(value, secret);
-        RawOutput::from_pulumi_value(pulumi_value)
+    pub fn create_done_node(value: PulumiValue, secret: bool) -> RawOutput {
+        let mut value = value;
+        value.secret |= secret;
+        RawOutput::from_pulumi_value(value)
     }
 
     pub fn create_extract_field(
@@ -304,7 +297,11 @@ impl Engine {
             None => None,
             Some(RawConfigValue::PlainText(value)) => Some(ConfigValue::PlainText(value.clone())),
             Some(RawConfigValue::Secret(secret)) => {
-                let value = Value::String(secret.clone());
+                let value = PulumiValue {
+                    content: PulumiValueContent::String(secret.clone()),
+                    secret: false,
+                    dependencies: Default::default(),
+                };
                 let output_id = Engine::create_done_node(value, true);
                 Some(ConfigValue::Secret(output_id))
             }
@@ -348,7 +345,14 @@ mod tests {
 
             let mut engine = StrEngine::new_without_configs(mock);
 
-            let output_id = StrEngine::create_done_node(1.into(), false);
+            let output_id = StrEngine::create_done_node(
+                PulumiValue {
+                    content: PulumiValueContent::Integer(1),
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                false,
+            );
             engine.add_output("output".into(), output_id);
 
             engine.run().await;
@@ -371,7 +375,14 @@ mod tests {
 
             let mut engine = StrEngine::new_without_configs(mock);
 
-            let output_id = StrEngine::create_done_node(1.into(), false);
+            let output_id = StrEngine::create_done_node(
+                PulumiValue {
+                    content: PulumiValueContent::Integer(1),
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                false,
+            );
             engine.add_output("output".into(), output_id);
 
             engine.run().await;
@@ -382,23 +393,47 @@ mod tests {
     mod create_combine_outputs {
         use super::*;
         use pulumi_gestalt_domain::connector::MockPulumiConnector;
-        use pulumi_gestalt_model::PulumiValueContent;
-        use serde_json::json;
-
+        use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
         #[tokio::test]
         async fn should_combine_outputs() {
-            use serde_json::json;
-
             let mock = MockPulumiConnector::new();
 
             let engine = StrEngine::new_without_configs(mock);
 
-            let output1 = StrEngine::create_done_node(json!("1"), false);
-            let output2 = StrEngine::create_done_node(json!(2), false);
+            let output1 = StrEngine::create_done_node(
+                PulumiValue {
+                    content: PulumiValueContent::String("1".to_string()),
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                false,
+            );
+            let output2 = StrEngine::create_done_node(
+                PulumiValue {
+                    content: PulumiValueContent::Integer(2),
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                false,
+            );
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
-            assert_eq!(result.to_json(), json!(["1", 2]));
+            assert_eq!(
+                result.content,
+                PulumiValueContent::Array(vec![
+                    PulumiValue {
+                        content: PulumiValueContent::String("1".to_string()),
+                        secret: false,
+                        dependencies: Default::default(),
+                    },
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(2),
+                        secret: false,
+                        dependencies: Default::default(),
+                    },
+                ])
+            );
             assert!(!result.secret);
         }
 
@@ -409,7 +444,14 @@ mod tests {
             let engine = StrEngine::new_without_configs(mock);
 
             let output1 = StrEngine::create_nothing_node();
-            let output2 = StrEngine::create_done_node(json!(2), false);
+            let output2 = StrEngine::create_done_node(
+                PulumiValue {
+                    content: PulumiValueContent::Integer(2),
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                false,
+            );
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
@@ -418,18 +460,44 @@ mod tests {
 
         #[tokio::test]
         async fn single_secret_output_is_secret() {
-            use serde_json::json;
-
             let mock = MockPulumiConnector::new();
 
             let engine = StrEngine::new_without_configs(mock);
 
-            let output1 = StrEngine::create_done_node(json!("1"), false);
-            let output2 = StrEngine::create_done_node(json!(2), true);
+            let output1 = StrEngine::create_done_node(
+                PulumiValue {
+                    content: PulumiValueContent::String("1".to_string()),
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                false,
+            );
+            let output2 = StrEngine::create_done_node(
+                PulumiValue {
+                    content: PulumiValueContent::Integer(2),
+                    secret: false,
+                    dependencies: Default::default(),
+                },
+                true,
+            );
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
-            assert_eq!(result.to_json(), json!(["1", 2]));
+            assert_eq!(
+                result.content,
+                PulumiValueContent::Array(vec![
+                    PulumiValue {
+                        content: PulumiValueContent::String("1".to_string()),
+                        secret: false,
+                        dependencies: Default::default(),
+                    },
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(2),
+                        secret: true,
+                        dependencies: Default::default(),
+                    },
+                ])
+            );
             assert!(result.secret);
         }
     }
@@ -515,7 +583,10 @@ mod tests {
                 }
                 Some(ConfigValue::Secret(output)) => {
                     let result = output.value.await;
-                    assert_eq!(result.to_json(), Value::String("secret".to_string()));
+                    assert_eq!(
+                        result.content,
+                        PulumiValueContent::String("secret".to_string())
+                    );
                     assert!(matches!(result.content, PulumiValueContent::String(_)));
                     assert!(result.secret);
                 }
