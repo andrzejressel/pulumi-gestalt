@@ -2550,6 +2550,7 @@ dependencies = [
  "futures",
  "mockall",
  "pulumi_gestalt_domain",
+ "pulumi_gestalt_model",
  "serde_json",
  "static_assertions",
  "tokio",
@@ -2577,6 +2578,7 @@ dependencies = [
  "async-trait",
  "bon",
  "mockall",
+ "pulumi_gestalt_model",
  "serde_json",
 ]
 
@@ -2721,6 +2723,7 @@ dependencies = [
  "prost",
  "prost-types",
  "pulumi_gestalt_domain",
+ "pulumi_gestalt_model",
  "pulumi_gestalt_proto",
  "serde_json",
  "tokio",

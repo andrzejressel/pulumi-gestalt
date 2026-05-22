@@ -20,3 +20,4 @@ prost-types.workspace = true
 serde_json.workspace = true
 log.workspace = true
 async-trait.workspace = true
+pulumi_gestalt_model.workspace = true
