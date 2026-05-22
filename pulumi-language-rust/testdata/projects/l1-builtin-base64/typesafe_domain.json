@@ -1,0 +1,65 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "input",
+        "config_type": "String",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "LocalBinding": {
+        "name": "bytes",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "FromBase64",
+              "args": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "Variable": "input"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "data",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "Variable": "bytes"
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "roundtrip",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "ToBase64",
+              "args": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "Variable": "bytes"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

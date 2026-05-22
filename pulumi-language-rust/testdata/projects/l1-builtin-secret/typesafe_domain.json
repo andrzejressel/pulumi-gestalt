@@ -1,0 +1,102 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "aSecret",
+        "config_type": "String",
+        "default": null,
+        "secret": true
+      }
+    },
+    {
+      "ConfigBinding": {
+        "name": "notSecret",
+        "config_type": "String",
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "roundtripSecret",
+        "value": {
+          "expr_type": {
+            "Output": "String"
+          },
+          "value": {
+            "Variable": "aSecret"
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "roundtripNotSecret",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "Variable": "notSecret"
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "double",
+        "value": {
+          "expr_type": {
+            "Output": "String"
+          },
+          "value": {
+            "MakeSecret": {
+              "expr_type": {
+                "Output": "String"
+              },
+              "value": {
+                "Variable": "aSecret"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "open",
+        "value": {
+          "expr_type": {
+            "Output": "String"
+          },
+          "value": {
+            "MakeUnsecret": {
+              "expr_type": {
+                "Output": "String"
+              },
+              "value": {
+                "Variable": "aSecret"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "close",
+        "value": {
+          "expr_type": {
+            "Output": "String"
+          },
+          "value": {
+            "NewSecret": {
+              "expr_type": "String",
+              "value": {
+                "Variable": "notSecret"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

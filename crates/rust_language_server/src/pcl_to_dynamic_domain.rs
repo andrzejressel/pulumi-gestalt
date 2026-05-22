@@ -1,9 +1,9 @@
-/// Lowers the PCL IR into the Domain IR.
+/// Lowers the PCL IR into the dynamic domain IR.
 ///
 /// This transform resolves PCL-level constructs (protobuf-shaped expressions,
 /// `__apply` intrinsics, stdlib function names) into high-level Pulumi domain
 /// concepts (`OutputMap`, `CombineOutputs`, `StdlibCall`, etc.).
-use crate::domain_ir::{
+use crate::dynamic_domain_ir::{
     BinOp, ConfigBinding, ConfigType, Expr, ExprType, ExprValue, JsonValue, Program, ResourceInput,
     ResourceToken, Statement, StdlibFn, UnaryOp,
 };
@@ -83,6 +83,9 @@ fn lower_config_type(ct: &pcl_model::ConfigType) -> ConfigType {
         pcl_model::ConfigType::Bool => ConfigType::Bool,
         pcl_model::ConfigType::List(inner) => ConfigType::List(Box::new(lower_config_type(inner))),
         pcl_model::ConfigType::Map(inner) => ConfigType::Map(Box::new(lower_config_type(inner))),
+        pcl_model::ConfigType::Optional(inner) => {
+            ConfigType::Optional(Box::new(lower_config_type(inner)))
+        }
     }
 }
 

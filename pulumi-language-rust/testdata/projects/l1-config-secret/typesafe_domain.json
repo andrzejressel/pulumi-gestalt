@@ -1,0 +1,70 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "aNumber",
+        "config_type": "Number",
+        "default": null,
+        "secret": true
+      }
+    },
+    {
+      "Export": {
+        "name": "roundtrip",
+        "value": {
+          "expr_type": {
+            "Output": "Number"
+          },
+          "value": {
+            "Variable": "aNumber"
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "theSecretNumber",
+        "value": {
+          "expr_type": {
+            "Output": "Number"
+          },
+          "value": {
+            "OutputMap": {
+              "output": {
+                "expr_type": {
+                  "Output": "Number"
+                },
+                "value": {
+                  "Variable": "aNumber"
+                }
+              },
+              "params": [
+                "aNumber"
+              ],
+              "body": {
+                "expr_type": "Number",
+                "value": {
+                  "BinaryOp": {
+                    "left": {
+                      "expr_type": "Number",
+                      "value": {
+                        "Variable": "aNumber"
+                      }
+                    },
+                    "op": "Add",
+                    "right": {
+                      "expr_type": "Number",
+                      "value": {
+                        "Number": 1.25
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

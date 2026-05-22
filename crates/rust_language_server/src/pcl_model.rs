@@ -271,6 +271,7 @@ pub enum ConfigType {
     Bool,
     List(Box<ConfigType>),
     Map(Box<ConfigType>),
+    Optional(Box<ConfigType>),
 }
 
 #[derive(Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, serde::Serialize)]
@@ -685,6 +686,9 @@ fn map_config_type(value: pb::ConfigType) -> ConfigType {
         pb::config_type::Value::BoolType(_) => ConfigType::Bool,
         pb::config_type::Value::ListType(v) => ConfigType::List(Box::new(map_config_type(*v))),
         pb::config_type::Value::MapType(v) => ConfigType::Map(Box::new(map_config_type(*v))),
+        pb::config_type::Value::OptionalType(v) => {
+            ConfigType::Optional(Box::new(map_config_type(*v)))
+        }
     }
 }
 

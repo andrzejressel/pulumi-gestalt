@@ -1,0 +1,114 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "aMap",
+        "config_type": {
+          "Map": "String"
+        },
+        "default": null,
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "entriesOutput",
+        "value": {
+          "expr_type": {
+            "List": {
+              "Object": {
+                "key": "String",
+                "value": "String"
+              }
+            }
+          },
+          "value": {
+            "StdlibCall": {
+              "func": "Entries",
+              "args": [
+                {
+                  "expr_type": {
+                    "Map": "String"
+                  },
+                  "value": {
+                    "Variable": "aMap"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "lookupOutput",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Lookup",
+              "args": [
+                {
+                  "expr_type": {
+                    "Map": "String"
+                  },
+                  "value": {
+                    "Variable": "aMap"
+                  }
+                },
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "keyPresent"
+                  }
+                },
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "default"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "lookupOutputDefault",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "Lookup",
+              "args": [
+                {
+                  "expr_type": {
+                    "Map": "String"
+                  },
+                  "value": {
+                    "Variable": "aMap"
+                  }
+                },
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "keyMissing"
+                  }
+                },
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "default"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "statements": [
+    {
+      "Export": {
+        "name": "output_true",
+        "value": {
+          "expr_type": "Bool",
+          "value": {
+            "Bool": true
+          }
+        }
+      }
+    }
+  ]
+}

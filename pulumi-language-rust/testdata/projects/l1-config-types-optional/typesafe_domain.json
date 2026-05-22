@@ -1,0 +1,87 @@
+{
+  "statements": [
+    {
+      "ConfigBinding": {
+        "name": "names",
+        "config_type": {
+          "List": {
+            "Optional": "String"
+          }
+        },
+        "default": {
+          "expr_type": {
+            "Tuple": [
+              {
+                "Optional": "String"
+              },
+              {
+                "Optional": "String"
+              },
+              {
+                "Optional": "String"
+              }
+            ]
+          },
+          "value": {
+            "List": [
+              {
+                "expr_type": {
+                  "Optional": "String"
+                },
+                "value": "Null"
+              },
+              {
+                "expr_type": {
+                  "Optional": "String"
+                },
+                "value": {
+                  "Some": {
+                    "expr_type": "String",
+                    "value": {
+                      "String": "hello"
+                    }
+                  }
+                }
+              },
+              {
+                "expr_type": {
+                  "Optional": "String"
+                },
+                "value": "Null"
+              }
+            ]
+          }
+        },
+        "secret": false
+      }
+    },
+    {
+      "Export": {
+        "name": "namesLength",
+        "value": {
+          "expr_type": "Int",
+          "value": {
+            "StdlibCall": {
+              "func": "Length",
+              "args": [
+                {
+                  "expr_type": {
+                    "List": {
+                      "Union": [
+                        "None",
+                        "String"
+                      ]
+                    }
+                  },
+                  "value": {
+                    "Variable": "names"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

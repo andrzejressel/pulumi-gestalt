@@ -1,0 +1,100 @@
+{
+  "statements": [
+    {
+      "LocalBinding": {
+        "name": "fileContent",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "ReadFile",
+              "args": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "testfile.txt"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "LocalBinding": {
+        "name": "fileB64",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "FileBase64",
+              "args": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "testfile.txt"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "LocalBinding": {
+        "name": "fileSha",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "StdlibCall": {
+              "func": "FileBase64Sha256",
+              "args": [
+                {
+                  "expr_type": "String",
+                  "value": {
+                    "String": "testfile.txt"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "fileContent",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "Variable": "fileContent"
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "fileB64",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "Variable": "fileB64"
+          }
+        }
+      }
+    },
+    {
+      "Export": {
+        "name": "fileSha",
+        "value": {
+          "expr_type": "String",
+          "value": {
+            "Variable": "fileSha"
+          }
+        }
+      }
+    }
+  ]
+}

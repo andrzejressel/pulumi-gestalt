@@ -65,6 +65,7 @@ pub enum ConfigType {
     Bool,
     List(Box<ConfigType>),
     Map(Box<ConfigType>),
+    Optional(Box<ConfigType>),
 }
 
 #[derive(Clone, Debug, PartialEq, serde::Serialize)]
@@ -80,6 +81,7 @@ pub enum ExprValue {
     Number(f64),
     Bool(bool),
     Null,
+    Some(Box<Expr>),
 
     // Structural
     Variable(String),
@@ -137,6 +139,7 @@ pub enum ExprType {
     Bool,
     Dynamic,
     None,
+    Optional(Box<ExprType>),
     List(Box<ExprType>),
     Map(Box<ExprType>),
     Output(Box<ExprType>),

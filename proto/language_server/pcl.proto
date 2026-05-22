@@ -74,6 +74,7 @@ message ConfigType {
     Empty boolType = 4;
     ConfigType listType = 5;
     ConfigType mapType = 6;
+    ConfigType optionalType = 7;
   }
 }
 
