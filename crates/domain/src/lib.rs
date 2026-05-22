@@ -1,4 +1,4 @@
-use serde_json::Value;
+pub use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
 use std::collections::HashMap;
 
 pub mod connector;
@@ -34,55 +34,24 @@ impl From<&String> for FieldName {
     }
 }
 
-#[derive(Clone, Debug, PartialEq)]
-pub struct ExistingNodeValue {
-    pub value: Value,
-    pub secret: bool,
-}
-
-impl ExistingNodeValue {
-    pub fn new<T: Into<Value>>(value: T, secret: bool) -> Self {
-        Self {
-            value: value.into(),
-            secret,
-        }
-    }
-}
-
-#[derive(Debug, PartialEq, Clone)]
-pub enum NodeValue {
-    Nothing, // preview
-    Exists(ExistingNodeValue),
-}
-
-impl NodeValue {
-    pub fn exists<T: Into<Value>>(value: T, secret: bool) -> Self {
-        Self::Exists(ExistingNodeValue::new(value, secret))
-    }
-}
-
 pub struct ResourceFields {
-    pub object: HashMap<FieldName, ExistingNodeValue>,
+    pub object: HashMap<FieldName, PulumiValue>,
     pub is_in_preview: bool,
 }
 
 impl ResourceFields {
-    pub fn get_field_value(&self, field_name: &FieldName) -> NodeValue {
+    pub fn get_field_value(&self, field_name: &FieldName) -> PulumiValue {
         match (self.object.get(field_name), self.is_in_preview) {
-            (Some(existing_value), _) => {
-                NodeValue::exists(existing_value.value.clone(), existing_value.secret)
-            }
-            (None, true) => NodeValue::Nothing,
-            (None, false) => NodeValue::exists(Value::Null, false),
+            (Some(existing_value), _) => existing_value.clone(),
+            (None, true) => PulumiValue::nothing(),
+            (None, false) => PulumiValue::none(),
         }
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use super::{ExistingNodeValue, FieldName, NodeValue, ResourceFields};
-    use NodeValue::Nothing;
-    use serde_json::Value::Null;
+    use super::{FieldName, PulumiValue, PulumiValueContent, ResourceFields};
     use std::collections::HashMap;
 
     #[test]
@@ -90,7 +59,7 @@ mod tests {
         let mut object = HashMap::new();
         object.insert(
             FieldName::from("existing_field"),
-            ExistingNodeValue::new("existing_value", false),
+            PulumiValue::from_json("existing_value".into(), false),
         );
 
         let resource_fields = ResourceFields {
@@ -101,7 +70,10 @@ mod tests {
         let field_name = FieldName::from("existing_field");
         let result = resource_fields.get_field_value(&field_name);
 
-        assert_eq!(result, NodeValue::exists("existing_value", false));
+        assert_eq!(
+            result,
+            PulumiValue::from_json("existing_value".into(), false)
+        );
     }
 
     #[test]
@@ -114,7 +86,7 @@ mod tests {
         let field_name = FieldName::from("non_existing_field");
         let result = resource_fields.get_field_value(&field_name);
 
-        assert_eq!(result, Nothing);
+        assert!(matches!(result.content, PulumiValueContent::Nothing));
     }
 
     #[test]
@@ -127,6 +99,6 @@ mod tests {
         let field_name = FieldName::from("non_existing_field");
         let result = resource_fields.get_field_value(&field_name);
 
-        assert_eq!(result, NodeValue::exists(Null, false));
+        assert!(matches!(result.content, PulumiValueContent::None));
     }
 }

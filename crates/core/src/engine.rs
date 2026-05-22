@@ -4,10 +4,11 @@ use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
 use futures::stream::StreamExt;
 use futures::stream::{FuturesOrdered, FuturesUnordered};
+use pulumi_gestalt_domain::FieldName;
 use pulumi_gestalt_domain::connector::{
     PulumiConnector, RegisterOutputsRequest, RegisterResourceRequest, ResourceInvokeRequest,
 };
-use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue};
+use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
 use serde_json::Value;
 use std::collections::HashMap;
 use std::sync::atomic::AtomicBool;
@@ -69,14 +70,15 @@ impl Engine {
             let provider_id = match provider {
                 None => None,
                 Some(p) => match p.value.await {
-                    NodeValue::Exists(ExistingNodeValue {
-                        value: serde_json::Value::String(s),
+                    PulumiValue {
+                        content: PulumiValueContent::String(s),
                         ..
-                    }) => Some(s),
-                    NodeValue::Exists(v) => {
-                        panic!("Expected Provider URN to be a String, got {:?}", v.value)
-                    }
-                    NodeValue::Nothing => None,
+                    } => Some(s),
+                    PulumiValue {
+                        content: PulumiValueContent::Nothing,
+                        ..
+                    } => None,
+                    v => panic!("Expected Provider URN to be a String, got {:?}", v.content),
                 },
             };
 
@@ -119,15 +121,23 @@ impl Engine {
                 let urn_val = urn.value.await;
                 let id_val = id.value.await;
                 match (urn_val, id_val) {
-                    (NodeValue::Exists(urn_e), NodeValue::Exists(id_e)) => {
-                        let urn_str = urn_e.value.as_str().expect("Expected URN to be a string");
-                        let id_str = id_e.value.as_str().expect("Expected ID to be a string");
-                        NodeValue::exists(
-                            format!("{}::{}", urn_str, id_str),
-                            urn_e.secret || id_e.secret,
-                        )
-                    }
-                    _ => NodeValue::Nothing,
+                    (
+                        PulumiValue {
+                            content: PulumiValueContent::String(urn_str),
+                            secret: urn_secret,
+                            ..
+                        },
+                        PulumiValue {
+                            content: PulumiValueContent::String(id_str),
+                            secret: id_secret,
+                            ..
+                        },
+                    ) => PulumiValue {
+                        content: PulumiValueContent::String(format!("{}::{}", urn_str, id_str)),
+                        secret: urn_secret || id_secret,
+                        dependencies: Default::default(),
+                    },
+                    _ => PulumiValue::nothing(),
                 }
             }
         });
@@ -169,9 +179,9 @@ impl Engine {
 
             Arc::new(result.fields)
         });
-        let urn = RawOutput::from_node_value(NodeValue::Nothing);
-        let id = RawOutput::from_node_value(NodeValue::Nothing);
-        let provider_id = RawOutput::from_node_value(NodeValue::Nothing);
+        let urn = RawOutput::from_pulumi_value(PulumiValue::nothing());
+        let id = RawOutput::from_pulumi_value(PulumiValue::nothing());
+        let provider_id = RawOutput::from_pulumi_value(PulumiValue::nothing());
         let output = RegisterResourceOutput {
             fields,
             urn,
@@ -194,29 +204,39 @@ impl Engine {
             let results: Vec<_> = combined.collect().await;
 
             let mut combined = Vec::with_capacity(results.len());
-            let secret = results.iter().any(|res| match res {
-                NodeValue::Exists(ExistingNodeValue { secret, .. }) => *secret,
-                NodeValue::Nothing => false,
-            });
+            let secret = results.iter().any(|res| res.secret);
+            let mut dependencies = std::collections::HashSet::new();
+            for res in &results {
+                dependencies.extend(res.dependencies.iter().cloned());
+            }
 
             for result in results {
-                match result {
-                    NodeValue::Nothing => {
-                        return NodeValue::Nothing;
+                match result.content {
+                    PulumiValueContent::Nothing => {
+                        return PulumiValue::nothing();
                     }
-                    NodeValue::Exists(ExistingNodeValue { value, .. }) => {
-                        combined.push(value);
+                    _ => {
+                        combined.push(result.to_json());
                     }
                 }
             }
 
-            NodeValue::exists(Value::Array(combined), secret)
+            PulumiValue {
+                content: PulumiValueContent::Array(
+                    combined
+                        .into_iter()
+                        .map(|v| PulumiValue::from_json(v, false))
+                        .collect(),
+                ),
+                secret,
+                dependencies,
+            }
         })
     }
 
     pub fn create_done_node(value: Value, secret: bool) -> RawOutput {
-        let node_value = NodeValue::exists(value, secret);
-        RawOutput::from_node_value(node_value)
+        let pulumi_value = PulumiValue::from_json(value, secret);
+        RawOutput::from_pulumi_value(pulumi_value)
     }
 
     pub fn create_extract_field(
@@ -243,7 +263,7 @@ impl Engine {
 
     #[cfg(test)]
     fn create_nothing_node() -> RawOutput {
-        RawOutput::from_node_value(NodeValue::Nothing)
+        RawOutput::from_pulumi_value(PulumiValue::nothing())
     }
 
     pub async fn run(&mut self) {
@@ -309,6 +329,7 @@ mod tests {
     mod register_outputs {
         use super::*;
         use pulumi_gestalt_domain::connector::MockPulumiConnector;
+        use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
 
         #[tokio::test]
         async fn should_register_outputs() {
@@ -317,7 +338,11 @@ mod tests {
                 .times(1)
                 .with(eq(RegisterOutputsRequest::new(HashMap::from([(
                     "output".into(),
-                    NodeValue::exists(1, false),
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(1),
+                        secret: false,
+                        dependencies: Default::default(),
+                    },
                 )]))))
                 .returning(|_| ());
 
@@ -336,7 +361,11 @@ mod tests {
                 .times(1)
                 .with(eq(RegisterOutputsRequest::new(HashMap::from([(
                     "output".into(),
-                    NodeValue::exists(1, false),
+                    PulumiValue {
+                        content: PulumiValueContent::Integer(1),
+                        secret: false,
+                        dependencies: Default::default(),
+                    },
                 )]))))
                 .returning(|_| ());
 
@@ -353,6 +382,7 @@ mod tests {
     mod create_combine_outputs {
         use super::*;
         use pulumi_gestalt_domain::connector::MockPulumiConnector;
+        use pulumi_gestalt_model::PulumiValueContent;
         use serde_json::json;
 
         #[tokio::test]
@@ -368,7 +398,8 @@ mod tests {
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
-            assert_eq!(result, NodeValue::exists(json!(["1", 2]), false));
+            assert_eq!(result.to_json(), json!(["1", 2]));
+            assert!(!result.secret);
         }
 
         #[tokio::test]
@@ -382,7 +413,7 @@ mod tests {
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
-            assert_eq!(result, NodeValue::Nothing);
+            assert!(matches!(result.content, PulumiValueContent::Nothing));
         }
 
         #[tokio::test]
@@ -398,7 +429,8 @@ mod tests {
 
             let combined_output = engine.create_combine_outputs(vec![output1, output2]);
             let result = combined_output.value.await;
-            assert_eq!(result, NodeValue::exists(json!(["1", 2]), true));
+            assert_eq!(result.to_json(), json!(["1", 2]));
+            assert!(result.secret);
         }
     }
 
@@ -406,7 +438,7 @@ mod tests {
         use super::*;
         use crate::config::Config;
         use crate::engine::ConfigValue;
-        use pulumi_gestalt_domain::NodeValue;
+        use pulumi_gestalt_model::PulumiValueContent;
 
         use pulumi_gestalt_domain::connector::MockPulumiConnector;
         use std::collections::HashSet;
@@ -483,15 +515,9 @@ mod tests {
                 }
                 Some(ConfigValue::Secret(output)) => {
                     let result = output.value.await;
-                    match result {
-                        NodeValue::Exists(ExistingNodeValue { value, secret }) => {
-                            assert_eq!(value, Value::String("secret".to_string()));
-                            assert!(secret);
-                        }
-                        _ => {
-                            panic!("Expected Exists, got Nothing");
-                        }
-                    }
+                    assert_eq!(result.to_json(), Value::String("secret".to_string()));
+                    assert!(matches!(result.content, PulumiValueContent::String(_)));
+                    assert!(result.secret);
                 }
                 Some(_) => {
                     panic!("Expected Secret, got PlainText");

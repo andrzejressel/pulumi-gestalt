@@ -1,4 +1,4 @@
-use crate::{FieldName, NodeValue, ResourceFields};
+use crate::{FieldName, PulumiValue, ResourceFields};
 use anyhow;
 use async_trait::async_trait;
 use bon::Builder;
@@ -20,21 +20,21 @@ pub trait PulumiConnector: Send + Sync {
 pub struct RegisterResourceRequest {
     pub name: String,
     pub r#type: String,
-    pub object: HashMap<FieldName, NodeValue>,
+    pub object: HashMap<FieldName, PulumiValue>,
     pub version: String,
     pub provider: Option<String>,
 }
 
 #[derive(Builder)]
 pub struct RegisterResourceResult {
-    pub urn: NodeValue,
-    pub id: NodeValue,
+    pub urn: PulumiValue,
+    pub id: PulumiValue,
     pub fields: ResourceFields,
 }
 
 #[derive(Builder)]
 pub struct ResourceInvokeRequest {
-    pub object: HashMap<FieldName, NodeValue>,
+    pub object: HashMap<FieldName, PulumiValue>,
     pub version: String,
     pub token: String,
 }
@@ -46,11 +46,11 @@ pub struct ResourceInvokeResult {
 
 #[derive(Builder, Debug, PartialEq)]
 pub struct RegisterOutputsRequest {
-    pub outputs: HashMap<FieldName, NodeValue>,
+    pub outputs: HashMap<FieldName, PulumiValue>,
 }
 
 impl RegisterOutputsRequest {
-    pub fn new(outputs: HashMap<FieldName, NodeValue>) -> Self {
+    pub fn new(outputs: HashMap<FieldName, PulumiValue>) -> Self {
         Self { outputs }
     }
 }

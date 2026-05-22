@@ -8,14 +8,15 @@ pub use engine::Engine;
 use futures::FutureExt;
 use futures::future::{BoxFuture, Shared};
 pub use model::FunctionName;
-use pulumi_gestalt_domain::{NodeValue, ResourceFields};
+use pulumi_gestalt_domain::ResourceFields;
+use pulumi_gestalt_model::PulumiValue;
 use std::future::Future;
 use std::sync::Arc;
 
-pub type RawOutput = Output<NodeValue>;
+pub type RawOutput = Output<PulumiValue>;
 
 impl RawOutput {
-    pub(crate) fn from_node_value(value: NodeValue) -> Self {
+    pub(crate) fn from_pulumi_value(value: PulumiValue) -> Self {
         let f = async move { value };
         Self {
             value: f.boxed().shared(),
@@ -25,37 +26,29 @@ impl RawOutput {
     pub fn secret(&self) -> Self {
         let value = self.value.clone();
         Self::from_future(async move {
-            match value.await {
-                NodeValue::Nothing => NodeValue::Nothing,
-                NodeValue::Exists(mut existing) => {
-                    existing.secret = true;
-                    NodeValue::Exists(existing)
-                }
-            }
+            let mut result = value.await;
+            result.secret = true;
+            result
         })
     }
 
     pub fn unsecret(&self) -> Self {
         let value = self.value.clone();
         Self::from_future(async move {
-            match value.await {
-                NodeValue::Nothing => NodeValue::Nothing,
-                NodeValue::Exists(mut existing) => {
-                    existing.secret = false;
-                    NodeValue::Exists(existing)
-                }
-            }
+            let mut result = value.await;
+            result.secret = false;
+            result
         })
     }
 
-    pub fn from_future_node_value<F>(future: F) -> Self
+    pub fn from_future_pulumi_value<F>(future: F) -> Self
     where
-        F: Future<Output = NodeValue> + Send + 'static,
+        F: Future<Output = PulumiValue> + Send + 'static,
     {
         Self::from_future(future)
     }
 
-    pub async fn resolve_node_value(&self) -> NodeValue {
+    pub async fn resolve_pulumi_value(&self) -> PulumiValue {
         self.value.clone().await
     }
 }
@@ -115,44 +108,67 @@ impl<T: Clone + 'static + Send + Sync> Output<T> {
 #[cfg(test)]
 mod tests {
     use super::RawOutput;
-    use pulumi_gestalt_domain::{ExistingNodeValue, NodeValue};
-    use serde_json::json;
+    use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
 
     #[tokio::test]
     async fn secret_sets_secret_flag_to_true() {
-        let output = RawOutput::from_node_value(NodeValue::exists(json!(42), false));
+        let output = RawOutput::from_pulumi_value(PulumiValue {
+            content: PulumiValueContent::Integer(42),
+            secret: false,
+            dependencies: Default::default(),
+        });
 
         let result = output.secret().value.await;
 
         assert_eq!(
             result,
-            NodeValue::Exists(ExistingNodeValue {
-                value: json!(42),
+            PulumiValue {
+                content: PulumiValueContent::Integer(42),
                 secret: true,
-            })
+                dependencies: Default::default(),
+            }
         );
     }
 
     #[tokio::test]
     async fn unsecret_sets_secret_flag_to_false() {
-        let output = RawOutput::from_node_value(NodeValue::exists(json!("x"), true));
+        let output = RawOutput::from_pulumi_value(PulumiValue {
+            content: PulumiValueContent::String("x".to_string()),
+            secret: true,
+            dependencies: Default::default(),
+        });
 
         let result = output.unsecret().value.await;
 
         assert_eq!(
             result,
-            NodeValue::Exists(ExistingNodeValue {
-                value: json!("x"),
+            PulumiValue {
+                content: PulumiValueContent::String("x".to_string()),
                 secret: false,
-            })
+                dependencies: Default::default(),
+            }
         );
     }
 
     #[tokio::test]
     async fn secret_and_unsecret_leave_nothing_unchanged() {
-        let output = RawOutput::from_node_value(NodeValue::Nothing);
+        let output = RawOutput::from_pulumi_value(PulumiValue::nothing());
 
-        assert_eq!(output.secret().value.await, NodeValue::Nothing);
-        assert_eq!(output.unsecret().value.await, NodeValue::Nothing);
+        assert_eq!(
+            output.secret().value.await,
+            PulumiValue {
+                content: PulumiValueContent::Nothing,
+                secret: true,
+                dependencies: Default::default(),
+            }
+        );
+        assert_eq!(
+            output.unsecret().value.await,
+            PulumiValue {
+                content: PulumiValueContent::Nothing,
+                secret: false,
+                dependencies: Default::default(),
+            }
+        );
     }
 }

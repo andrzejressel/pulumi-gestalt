@@ -17,6 +17,7 @@ bon.workspace = true
 mockall = { workspace = true, optional = true }
 async-trait.workspace = true
 anyhow.workspace = true
+pulumi_gestalt_model.workspace = true
 
 [lints]
 workspace = true

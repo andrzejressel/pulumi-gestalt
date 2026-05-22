@@ -7,7 +7,8 @@ use prost_types::{ListValue, Struct};
 use pulumi_gestalt_domain::connector::{
     PulumiConnector, RegisterOutputsRequest, RegisterResourceResult, ResourceInvokeResult,
 };
-use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue, ResourceFields};
+use pulumi_gestalt_domain::{FieldName, ResourceFields};
+use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
 use pulumi_gestalt_proto::pulumi::pulumirpc::engine_client::EngineClient;
 use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_client::ResourceMonitorClient;
 use pulumi_gestalt_proto::pulumi::pulumirpc::{
@@ -154,22 +155,30 @@ impl PulumiConnector for RealPulumiConnector {
             .unwrap();
         let urn = if response.urn.is_empty() {
             if self.in_preview {
-                NodeValue::Nothing
+                PulumiValue::nothing()
             } else {
                 panic!("URN must always be available if not in preview")
             }
         } else {
-            NodeValue::exists(response.urn, false)
+            PulumiValue {
+                content: PulumiValueContent::String(response.urn),
+                secret: false,
+                dependencies: Default::default(),
+            }
         };
 
         let id = if response.id.is_empty() {
             if self.in_preview {
-                NodeValue::Nothing
+                PulumiValue::nothing()
             } else {
                 panic!("ID must always be available if not in preview")
             }
         } else {
-            NodeValue::exists(response.id, false)
+            PulumiValue {
+                content: PulumiValueContent::String(response.id),
+                secret: false,
+                dependencies: Default::default(),
+            }
         };
 
         let obj = response.object;
@@ -247,55 +256,44 @@ impl PulumiConnector for RealPulumiConnector {
     }
 }
 
-fn create_map_of_node_values(s: Struct) -> HashMap<FieldName, ExistingNodeValue> {
+fn create_map_of_node_values(s: Struct) -> HashMap<FieldName, PulumiValue> {
     s.fields
         .into_iter()
         .map(|(k, v)| {
             let json_value = protobuf_to_json(&v);
 
-            let node_value = match &json_value {
+            let pulumi_value = match &json_value {
                 Value::Object(obj) if obj.contains_key(crate::constants::SPECIAL_SIG_KEY) => {
                     let secret_value = obj
                         .get(crate::constants::SECRET_VALUE_NAME)
                         .cloned()
                         .unwrap_or(Value::Null);
-                    ExistingNodeValue {
-                        value: secret_value,
-                        secret: true,
-                    }
+                    PulumiValue::from_json(secret_value, true)
                 }
-                _ => ExistingNodeValue {
-                    value: json_value,
-                    secret: false,
-                },
+                _ => PulumiValue::from_json(json_value, false),
             };
-            (FieldName::from(k), node_value)
+            (FieldName::from(k), pulumi_value)
         })
         .collect()
 }
 
-fn create_protobuf_struct(fields: HashMap<FieldName, NodeValue>) -> Struct {
+fn create_protobuf_struct(fields: HashMap<FieldName, PulumiValue>) -> Struct {
     let pairs = fields
         .into_iter()
         .map(|(name, value)| {
-            let v = match value {
-                NodeValue::Nothing => prost_types::Value {
+            let v = match value.content {
+                PulumiValueContent::Nothing => prost_types::Value {
                     kind: Some(Kind::StringValue(UNKNOWN_VALUE.into())),
                 },
-                NodeValue::Exists(ExistingNodeValue {
-                    value,
-                    secret: true,
-                }) => {
+                _ if value.secret => {
+                    let inner = value.to_json();
                     let value = json!({
                         crate::constants::SPECIAL_SIG_KEY: crate::constants::SPECIAL_SECRET_SIG,
-                        crate::constants::SECRET_VALUE_NAME: value
+                        crate::constants::SECRET_VALUE_NAME: inner
                     });
                     json_to_protobuf(value)
                 }
-                NodeValue::Exists(ExistingNodeValue {
-                    value,
-                    secret: false,
-                }) => json_to_protobuf(value),
+                _ => json_to_protobuf(value.to_json()),
             };
             (name.get_inner(), v)
         })
@@ -379,7 +377,8 @@ mod tests {
     use crate::constants::{SECRET_VALUE_NAME, SPECIAL_SIG_KEY};
     use crate::real_pulumi_connector::{create_map_of_node_values, create_protobuf_struct};
     use prost_types::Struct;
-    use pulumi_gestalt_domain::{ExistingNodeValue, FieldName, NodeValue};
+    use pulumi_gestalt_domain::FieldName;
+    use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
     use pulumi_gestalt_proto::pulumi::pulumirpc::RegisterResourceRequest;
     use pulumi_gestalt_proto::pulumi::pulumirpc::engine_server::EngineServer;
     use pulumi_gestalt_proto::pulumi::pulumirpc::resource_monitor_server::ResourceMonitorServer;
@@ -494,11 +493,19 @@ mod tests {
 
     #[test]
     fn should_convert_node_values_to_protobuf() {
-        let normal_value = NodeValue::exists("normal", false);
-        let secret_value = NodeValue::exists("secret", true);
-        let nothing_value = NodeValue::Nothing;
+        let normal_value = PulumiValue {
+            content: PulumiValueContent::String("normal".to_string()),
+            secret: false,
+            dependencies: Default::default(),
+        };
+        let secret_value = PulumiValue {
+            content: PulumiValueContent::String("secret".to_string()),
+            secret: true,
+            dependencies: Default::default(),
+        };
+        let nothing_value = PulumiValue::nothing();
 
-        let all_values: HashMap<FieldName, NodeValue> = HashMap::from([
+        let all_values: HashMap<FieldName, PulumiValue> = HashMap::from([
             ("normal".into(), normal_value),
             ("secret".into(), secret_value),
             ("nothing".into(), nothing_value),
@@ -595,8 +602,14 @@ mod tests {
         assert_eq!(
             node_values,
             HashMap::from([
-                ("normal".into(), ExistingNodeValue::new("normal", false)),
-                ("secret".into(), ExistingNodeValue::new("secret", true))
+                (
+                    "normal".into(),
+                    PulumiValue::from_json("normal".into(), false)
+                ),
+                (
+                    "secret".into(),
+                    PulumiValue::from_json("secret".into(), true)
+                )
             ])
         );
     }

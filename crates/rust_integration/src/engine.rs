@@ -2,10 +2,9 @@ use anyhow::Context as AnyhowContext;
 use futures::lock::Mutex;
 use pulumi_gestalt_core as core;
 use pulumi_gestalt_core::{Config, Engine};
-use pulumi_gestalt_domain::{FieldName, NodeValue};
+use pulumi_gestalt_domain::FieldName;
 use pulumi_gestalt_grpc_connection::RealPulumiConnector;
 use pulumi_gestalt_model::{PulumiValue, PulumiValueContent, ResolvedOutput};
-use serde_json::Value;
 use std::collections::HashMap;
 use std::collections::HashSet;
 use std::future::Future;
@@ -46,22 +45,22 @@ pub enum ConfigValue {
 }
 
 fn model_output_to_raw_output(output: Output) -> core::RawOutput {
-    core::RawOutput::from_future_node_value(async move {
+    core::RawOutput::from_future_pulumi_value(async move {
         let resolved = output.resolve().await;
         match resolved.value {
             Some(mut value) => {
                 value.secret |= resolved.secret;
                 value.dependencies.extend(resolved.dependencies);
-                pulumi_value_to_node_value(value)
+                value
             }
-            None => NodeValue::Nothing,
+            None => PulumiValue::nothing(),
         }
     })
 }
 
 fn raw_output_to_model_output(output: core::RawOutput) -> Output {
     Output::from_resolved_future(async move {
-        let pulumi_value = node_value_to_pulumi_value(output.resolve_node_value().await);
+        let pulumi_value = output.resolve_pulumi_value().await;
         if matches!(pulumi_value.content, PulumiValueContent::Nothing) {
             ResolvedOutput {
                 value: None,
@@ -233,174 +232,48 @@ impl RegisterResourceOutput {
     }
 }
 
-fn pulumi_value_to_node_value(value: PulumiValue) -> NodeValue {
-    let PulumiValue {
-        content,
-        secret,
-        dependencies: _,
-    } = value;
-    match content {
-        PulumiValueContent::Nothing => NodeValue::Nothing,
-        _ => NodeValue::exists(
-            pulumi_value_to_json_value(PulumiValue {
-                content,
-                secret,
-                dependencies: HashSet::new(),
-            }),
-            secret,
-        ),
-    }
-}
-
-fn node_value_to_pulumi_value(value: NodeValue) -> PulumiValue {
-    match value {
-        NodeValue::Nothing => PulumiValue {
-            content: PulumiValueContent::Nothing,
-            secret: false,
-            dependencies: HashSet::new(),
-        },
-        NodeValue::Exists(existing) => json_value_to_pulumi_value(existing.value, existing.secret),
-    }
-}
-
-fn json_value_to_pulumi_value(value: Value, secret: bool) -> PulumiValue {
-    let content = match value {
-        Value::Null => PulumiValueContent::None,
-        Value::Bool(boolean) => PulumiValueContent::Boolean(boolean),
-        Value::Number(number) => {
-            if let Some(integer) = number.as_i64() {
-                PulumiValueContent::Integer(
-                    i32::try_from(integer)
-                        .expect("i64 value is outside supported i32 range for Pulumi integers"),
-                )
-            } else {
-                PulumiValueContent::Number(
-                    number
-                        .as_f64()
-                        .expect("serde_json::Number must be convertible to f64"),
-                )
-            }
-        }
-        Value::String(string) => PulumiValueContent::String(string),
-        Value::Array(values) => PulumiValueContent::Array(
-            values
-                .into_iter()
-                .map(|v| json_value_to_pulumi_value(v, false))
-                .collect(),
-        ),
-        Value::Object(values) => PulumiValueContent::Object(
-            values
-                .into_iter()
-                .map(|(key, value)| (key, json_value_to_pulumi_value(value, false)))
-                .collect(),
-        ),
-    };
-
-    PulumiValue {
-        content,
-        secret,
-        dependencies: HashSet::new(),
-    }
-}
-
-pub(crate) fn pulumi_value_to_json_value(value: PulumiValue) -> Value {
-    match value.content {
-        PulumiValueContent::String(value) => Value::String(value),
-        PulumiValueContent::Integer(value) => Value::from(value),
-        PulumiValueContent::Number(value) => Value::from(value),
-        PulumiValueContent::Boolean(value) => Value::from(value),
-        PulumiValueContent::Array(values) => {
-            Value::Array(values.into_iter().map(pulumi_value_to_json_value).collect())
-        }
-        PulumiValueContent::Object(values) => Value::Object(
-            values
-                .into_iter()
-                .map(|(key, value)| (key, pulumi_value_to_json_value(value)))
-                .collect(),
-        ),
-        PulumiValueContent::None | PulumiValueContent::Nothing => Value::Null,
-    }
-}
-
 #[cfg(test)]
 mod tests {
-    use super::{
-        json_value_to_pulumi_value, node_value_to_pulumi_value, pulumi_value_to_json_value,
-        pulumi_value_to_node_value,
-    };
-    use pulumi_gestalt_domain::NodeValue;
+    use super::{model_output_to_raw_output, raw_output_to_model_output};
+    use crate::Output;
     use pulumi_gestalt_model::{PulumiValue, PulumiValueContent};
-    use serde_json::json;
     use std::collections::HashSet;
+    use tokio::runtime::Runtime;
 
     #[test]
-    fn preserves_nothing_through_node_conversion() {
+    fn preserves_nothing_through_raw_output_conversion() {
         let pulumi_value = PulumiValue {
             content: PulumiValueContent::Nothing,
             secret: true,
             dependencies: HashSet::new(),
         };
 
-        let node_value = pulumi_value_to_node_value(pulumi_value);
-        assert!(matches!(node_value, NodeValue::Nothing));
-
-        let back = node_value_to_pulumi_value(node_value);
-        assert!(matches!(back.content, PulumiValueContent::Nothing));
-        assert!(!back.secret);
+        let rt = Runtime::new().unwrap();
+        rt.block_on(async move {
+            let model_out = Output::new(pulumi_value);
+            let raw = model_output_to_raw_output(model_out);
+            let resolved = raw.resolve_pulumi_value().await;
+            assert!(matches!(resolved.content, PulumiValueContent::Nothing));
+        });
     }
 
     #[test]
-    fn keeps_secret_when_mapping_existing_node() {
-        let node_value = NodeValue::exists(json!("secret"), true);
-        let pulumi_value = node_value_to_pulumi_value(node_value);
-
-        assert_eq!(
-            pulumi_value,
-            PulumiValue {
-                content: PulumiValueContent::String("secret".to_string()),
-                secret: true,
-                dependencies: HashSet::new(),
-            }
-        );
-    }
-
-    #[test]
-    fn treats_json_null_as_none() {
-        let pulumi_value = json_value_to_pulumi_value(serde_json::Value::Null, false);
-        assert!(matches!(pulumi_value.content, PulumiValueContent::None));
-
-        let json = pulumi_value_to_json_value(pulumi_value);
-        assert_eq!(json, serde_json::Value::Null);
-    }
-
-    #[test]
-    fn converts_nested_structures_round_trip() {
+    fn preserves_secret_and_dependencies_roundtrip() {
         let value = PulumiValue {
-            content: PulumiValueContent::Object(vec![(
-                "items".to_string(),
-                PulumiValue {
-                    content: PulumiValueContent::Array(vec![
-                        PulumiValue {
-                            content: PulumiValueContent::Integer(1),
-                            secret: false,
-                            dependencies: HashSet::new(),
-                        },
-                        PulumiValue {
-                            content: PulumiValueContent::String("two".to_string()),
-                            secret: false,
-                            dependencies: HashSet::new(),
-                        },
-                    ]),
-                    secret: false,
-                    dependencies: HashSet::new(),
-                },
-            )]),
-            secret: false,
-            dependencies: HashSet::new(),
+            content: PulumiValueContent::String("secret".to_string()),
+            secret: true,
+            dependencies: HashSet::from(["urn:1".to_string()]),
         };
 
-        let json = pulumi_value_to_json_value(value.clone());
-        let back = json_value_to_pulumi_value(json, false);
-        assert_eq!(back, value);
+        let rt = Runtime::new().unwrap();
+        rt.block_on(async move {
+            let model = Output::new(value.clone());
+            let raw = model_output_to_raw_output(model);
+            let model_back = raw_output_to_model_output(raw);
+            let resolved = model_back.resolve().await;
+            assert_eq!(resolved.value, Some(value));
+            assert!(resolved.secret);
+            assert!(resolved.dependencies.contains("urn:1"));
+        });
     }
 }
