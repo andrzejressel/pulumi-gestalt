@@ -105,9 +105,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_variables: {
-                        let field_value = match fields_map.get("environment_variables") {
+                        let field_value = match fields_map.get("environmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'environmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,9 +126,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secure_environment_variables: {
-                        let field_value = match fields_map.get("secure_environment_variables") {
+                        let field_value = match fields_map.get("secureEnvironmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secure_environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secureEnvironmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

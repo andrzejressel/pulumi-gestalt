@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#default_tags: {
-                        let field_value = match fields_map.get("default_tags") {
+                        let field_value = match fields_map.get("defaultTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

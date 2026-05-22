@@ -159,9 +159,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_artifacts: {
-                        let field_value = match fields_map.get("input_artifacts") {
+                        let field_value = match fields_map.get("inputArtifacts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_artifacts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputArtifacts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -180,9 +180,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_artifacts: {
-                        let field_value = match fields_map.get("output_artifacts") {
+                        let field_value = match fields_map.get("outputArtifacts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_artifacts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputArtifacts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -208,23 +208,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_order: {
-                        let field_value = match fields_map.get("run_order") {
+                        let field_value = match fields_map.get("runOrder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'run_order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runOrder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_in_minutes: {
-                        let field_value = match fields_map.get("timeout_in_minutes") {
+                        let field_value = match fields_map.get("timeoutInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

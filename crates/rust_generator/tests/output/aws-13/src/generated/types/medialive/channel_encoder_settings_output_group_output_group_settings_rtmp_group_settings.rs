@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#ad_markers: {
-                        let field_value = match fields_map.get("ad_markers") {
+                        let field_value = match fields_map.get("adMarkers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ad_markers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adMarkers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authentication_scheme: {
-                        let field_value = match fields_map.get("authentication_scheme") {
+                        let field_value = match fields_map.get("authenticationScheme") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_scheme' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationScheme' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_full_behavior: {
-                        let field_value = match fields_map.get("cache_full_behavior") {
+                        let field_value = match fields_map.get("cacheFullBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_full_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheFullBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_length: {
-                        let field_value = match fields_map.get("cache_length") {
+                        let field_value = match fields_map.get("cacheLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#caption_data: {
-                        let field_value = match fields_map.get("caption_data") {
+                        let field_value = match fields_map.get("captionData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'caption_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'captionData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_loss_action: {
-                        let field_value = match fields_map.get("input_loss_action") {
+                        let field_value = match fields_map.get("inputLossAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_loss_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLossAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restart_delay: {
-                        let field_value = match fields_map.get("restart_delay") {
+                        let field_value = match fields_map.get("restartDelay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restart_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restartDelay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

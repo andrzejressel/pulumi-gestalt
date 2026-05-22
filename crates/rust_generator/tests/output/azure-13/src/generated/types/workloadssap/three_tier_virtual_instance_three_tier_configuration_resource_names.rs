@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#application_server: {
-                        let field_value = match fields_map.get("application_server") {
+                        let field_value = match fields_map.get("applicationServer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationServer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#central_server: {
-                        let field_value = match fields_map.get("central_server") {
+                        let field_value = match fields_map.get("centralServer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'central_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'centralServer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_server: {
-                        let field_value = match fields_map.get("database_server") {
+                        let field_value = match fields_map.get("databaseServer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseServer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_storage: {
-                        let field_value = match fields_map.get("shared_storage") {
+                        let field_value = match fields_map.get("sharedStorage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedStorage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

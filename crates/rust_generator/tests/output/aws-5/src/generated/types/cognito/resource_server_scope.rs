@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#scope_description: {
-                        let field_value = match fields_map.get("scope_description") {
+                        let field_value = match fields_map.get("scopeDescription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scope_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scopeDescription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scope_name: {
-                        let field_value = match fields_map.get("scope_name") {
+                        let field_value = match fields_map.get("scopeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scope_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scopeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -53,9 +53,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#customer_managed_encryption: {
-                        let field_value = match fields_map.get("customer_managed_encryption") {
+                        let field_value = match fields_map.get("customerManagedEncryption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customer_managed_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customerManagedEncryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

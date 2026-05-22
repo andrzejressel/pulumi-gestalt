@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#country_codes: {
-                        let field_value = match fields_map.get("country_codes") {
+                        let field_value = match fields_map.get("countryCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'country_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'countryCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#relative_path: {
-                        let field_value = match fields_map.get("relative_path") {
+                        let field_value = match fields_map.get("relativePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'relative_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'relativePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

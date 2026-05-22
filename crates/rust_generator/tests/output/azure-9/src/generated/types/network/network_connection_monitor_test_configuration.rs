@@ -106,16 +106,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#http_configuration: {
-                        let field_value = match fields_map.get("http_configuration") {
+                        let field_value = match fields_map.get("httpConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#icmp_configuration: {
-                        let field_value = match fields_map.get("icmp_configuration") {
+                        let field_value = match fields_map.get("icmpConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'icmp_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'icmpConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -127,9 +127,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preferred_ip_version: {
-                        let field_value = match fields_map.get("preferred_ip_version") {
+                        let field_value = match fields_map.get("preferredIpVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preferred_ip_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preferredIpVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -141,23 +141,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_threshold: {
-                        let field_value = match fields_map.get("success_threshold") {
+                        let field_value = match fields_map.get("successThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tcp_configuration: {
-                        let field_value = match fields_map.get("tcp_configuration") {
+                        let field_value = match fields_map.get("tcpConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tcp_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tcpConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#test_frequency_in_seconds: {
-                        let field_value = match fields_map.get("test_frequency_in_seconds") {
+                        let field_value = match fields_map.get("testFrequencyInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'test_frequency_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'testFrequencyInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

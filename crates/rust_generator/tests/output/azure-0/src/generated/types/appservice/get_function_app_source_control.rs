@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#manual_integration: {
-                        let field_value = match fields_map.get("manual_integration") {
+                        let field_value = match fields_map.get("manualIntegration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'manual_integration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'manualIntegration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repo_url: {
-                        let field_value = match fields_map.get("repo_url") {
+                        let field_value = match fields_map.get("repoUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repo_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repoUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rollback_enabled: {
-                        let field_value = match fields_map.get("rollback_enabled") {
+                        let field_value = match fields_map.get("rollbackEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rollback_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rollbackEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_mercurial: {
-                        let field_value = match fields_map.get("use_mercurial") {
+                        let field_value = match fields_map.get("useMercurial") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_mercurial' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useMercurial' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

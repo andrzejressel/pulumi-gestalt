@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#admin_password: {
-                        let field_value = match fields_map.get("admin_password") {
+                        let field_value = match fields_map.get("adminPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#admin_username: {
-                        let field_value = match fields_map.get("admin_username") {
+                        let field_value = match fields_map.get("adminUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#computer_name: {
-                        let field_value = match fields_map.get("computer_name") {
+                        let field_value = match fields_map.get("computerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'computer_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_data: {
-                        let field_value = match fields_map.get("custom_data") {
+                        let field_value = match fields_map.get("customData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

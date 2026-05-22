@@ -146,93 +146,93 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#arib_destination_settings: {
-                        let field_value = match fields_map.get("arib_destination_settings") {
+                        let field_value = match fields_map.get("aribDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'arib_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aribDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#burn_in_destination_settings: {
-                        let field_value = match fields_map.get("burn_in_destination_settings") {
+                        let field_value = match fields_map.get("burnInDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'burn_in_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'burnInDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dvb_sub_destination_settings: {
-                        let field_value = match fields_map.get("dvb_sub_destination_settings") {
+                        let field_value = match fields_map.get("dvbSubDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dvb_sub_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dvbSubDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ebu_tt_d_destination_settings: {
-                        let field_value = match fields_map.get("ebu_tt_d_destination_settings") {
+                        let field_value = match fields_map.get("ebuTtDDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ebu_tt_d_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ebuTtDDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#embedded_destination_settings: {
-                        let field_value = match fields_map.get("embedded_destination_settings") {
+                        let field_value = match fields_map.get("embeddedDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'embedded_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'embeddedDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#embedded_plus_scte_20_destination_settings: {
-                        let field_value = match fields_map.get("embedded_plus_scte_20_destination_settings") {
+                        let field_value = match fields_map.get("embeddedPlusScte20DestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'embedded_plus_scte_20_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'embeddedPlusScte20DestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rtmp_caption_info_destination_settings: {
-                        let field_value = match fields_map.get("rtmp_caption_info_destination_settings") {
+                        let field_value = match fields_map.get("rtmpCaptionInfoDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rtmp_caption_info_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rtmpCaptionInfoDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_20_plus_embedded_destination_settings: {
-                        let field_value = match fields_map.get("scte_20_plus_embedded_destination_settings") {
+                        let field_value = match fields_map.get("scte20PlusEmbeddedDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scte_20_plus_embedded_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scte20PlusEmbeddedDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_27_destination_settings: {
-                        let field_value = match fields_map.get("scte_27_destination_settings") {
+                        let field_value = match fields_map.get("scte27DestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scte_27_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scte27DestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#smpte_tt_destination_settings: {
-                        let field_value = match fields_map.get("smpte_tt_destination_settings") {
+                        let field_value = match fields_map.get("smpteTtDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'smpte_tt_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'smpteTtDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#teletext_destination_settings: {
-                        let field_value = match fields_map.get("teletext_destination_settings") {
+                        let field_value = match fields_map.get("teletextDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'teletext_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'teletextDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ttml_destination_settings: {
-                        let field_value = match fields_map.get("ttml_destination_settings") {
+                        let field_value = match fields_map.get("ttmlDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ttml_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ttmlDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#webvtt_destination_settings: {
-                        let field_value = match fields_map.get("webvtt_destination_settings") {
+                        let field_value = match fields_map.get("webvttDestinationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'webvtt_destination_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webvttDestinationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

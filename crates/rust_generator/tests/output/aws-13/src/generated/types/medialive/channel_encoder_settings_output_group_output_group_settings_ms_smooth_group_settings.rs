@@ -179,30 +179,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#acquisition_point_id: {
-                        let field_value = match fields_map.get("acquisition_point_id") {
+                        let field_value = match fields_map.get("acquisitionPointId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'acquisition_point_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acquisitionPointId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_only_timecode_control: {
-                        let field_value = match fields_map.get("audio_only_timecode_control") {
+                        let field_value = match fields_map.get("audioOnlyTimecodeControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_only_timecode_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioOnlyTimecodeControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certificate_mode: {
-                        let field_value = match fields_map.get("certificate_mode") {
+                        let field_value = match fields_map.get("certificateMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_retry_interval: {
-                        let field_value = match fields_map.get("connection_retry_interval") {
+                        let field_value = match fields_map.get("connectionRetryInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_retry_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionRetryInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -214,100 +214,100 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_id: {
-                        let field_value = match fields_map.get("event_id") {
+                        let field_value = match fields_map.get("eventId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_id_mode: {
-                        let field_value = match fields_map.get("event_id_mode") {
+                        let field_value = match fields_map.get("eventIdMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_id_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventIdMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_stop_behavior: {
-                        let field_value = match fields_map.get("event_stop_behavior") {
+                        let field_value = match fields_map.get("eventStopBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_stop_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventStopBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filecache_duration: {
-                        let field_value = match fields_map.get("filecache_duration") {
+                        let field_value = match fields_map.get("filecacheDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filecache_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filecacheDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fragment_length: {
-                        let field_value = match fields_map.get("fragment_length") {
+                        let field_value = match fields_map.get("fragmentLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fragment_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fragmentLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_loss_action: {
-                        let field_value = match fields_map.get("input_loss_action") {
+                        let field_value = match fields_map.get("inputLossAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_loss_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLossAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_retries: {
-                        let field_value = match fields_map.get("num_retries") {
+                        let field_value = match fields_map.get("numRetries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'num_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numRetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restart_delay: {
-                        let field_value = match fields_map.get("restart_delay") {
+                        let field_value = match fields_map.get("restartDelay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restart_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restartDelay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#segmentation_mode: {
-                        let field_value = match fields_map.get("segmentation_mode") {
+                        let field_value = match fields_map.get("segmentationMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'segmentation_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'segmentationMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_delay_ms: {
-                        let field_value = match fields_map.get("send_delay_ms") {
+                        let field_value = match fields_map.get("sendDelayMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_delay_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendDelayMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sparse_track_type: {
-                        let field_value = match fields_map.get("sparse_track_type") {
+                        let field_value = match fields_map.get("sparseTrackType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sparse_track_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sparseTrackType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_manifest_behavior: {
-                        let field_value = match fields_map.get("stream_manifest_behavior") {
+                        let field_value = match fields_map.get("streamManifestBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stream_manifest_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'streamManifestBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timestamp_offset: {
-                        let field_value = match fields_map.get("timestamp_offset") {
+                        let field_value = match fields_map.get("timestampOffset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timestamp_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timestampOffset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timestamp_offset_mode: {
-                        let field_value = match fields_map.get("timestamp_offset_mode") {
+                        let field_value = match fields_map.get("timestampOffsetMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timestamp_offset_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timestampOffsetMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

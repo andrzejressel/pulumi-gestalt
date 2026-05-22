@@ -94,44 +94,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#max_concurrent_requests: {
-                        let field_value = match fields_map.get("max_concurrent_requests") {
+                        let field_value = match fields_map.get("maxConcurrentRequests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentRequests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_idle_instances: {
-                        let field_value = match fields_map.get("max_idle_instances") {
+                        let field_value = match fields_map.get("maxIdleInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_idle_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxIdleInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_pending_latency: {
-                        let field_value = match fields_map.get("max_pending_latency") {
+                        let field_value = match fields_map.get("maxPendingLatency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_pending_latency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxPendingLatency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_idle_instances: {
-                        let field_value = match fields_map.get("min_idle_instances") {
+                        let field_value = match fields_map.get("minIdleInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_idle_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minIdleInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_pending_latency: {
-                        let field_value = match fields_map.get("min_pending_latency") {
+                        let field_value = match fields_map.get("minPendingLatency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_pending_latency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minPendingLatency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#standard_scheduler_settings: {
-                        let field_value = match fields_map.get("standard_scheduler_settings") {
+                        let field_value = match fields_map.get("standardSchedulerSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'standard_scheduler_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'standardSchedulerSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

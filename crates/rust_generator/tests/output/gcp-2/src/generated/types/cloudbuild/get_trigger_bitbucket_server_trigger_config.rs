@@ -83,23 +83,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#bitbucket_server_config_resource: {
-                        let field_value = match fields_map.get("bitbucket_server_config_resource") {
+                        let field_value = match fields_map.get("bitbucketServerConfigResource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bitbucket_server_config_resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bitbucketServerConfigResource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#project_key: {
-                        let field_value = match fields_map.get("project_key") {
+                        let field_value = match fields_map.get("projectKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pull_requests: {
-                        let field_value = match fields_map.get("pull_requests") {
+                        let field_value = match fields_map.get("pullRequests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pull_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pullRequests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,9 +111,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repo_slug: {
-                        let field_value = match fields_map.get("repo_slug") {
+                        let field_value = match fields_map.get("repoSlug") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repo_slug' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repoSlug' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

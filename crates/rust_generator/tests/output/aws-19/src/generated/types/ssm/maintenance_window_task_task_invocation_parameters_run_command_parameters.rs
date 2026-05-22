@@ -130,9 +130,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#cloudwatch_config: {
-                        let field_value = match fields_map.get("cloudwatch_config") {
+                        let field_value = match fields_map.get("cloudwatchConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudwatch_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudwatchConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -144,44 +144,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#document_hash: {
-                        let field_value = match fields_map.get("document_hash") {
+                        let field_value = match fields_map.get("documentHash") {
                             Some(value) => value,
-                            None => bail!("Missing field 'document_hash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'documentHash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#document_hash_type: {
-                        let field_value = match fields_map.get("document_hash_type") {
+                        let field_value = match fields_map.get("documentHashType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'document_hash_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'documentHashType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#document_version: {
-                        let field_value = match fields_map.get("document_version") {
+                        let field_value = match fields_map.get("documentVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'document_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'documentVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_config: {
-                        let field_value = match fields_map.get("notification_config") {
+                        let field_value = match fields_map.get("notificationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_s_3_bucket: {
-                        let field_value = match fields_map.get("output_s_3_bucket") {
+                        let field_value = match fields_map.get("outputS3Bucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_s_3_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputS3Bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_s_3_key_prefix: {
-                        let field_value = match fields_map.get("output_s_3_key_prefix") {
+                        let field_value = match fields_map.get("outputS3KeyPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_s_3_key_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputS3KeyPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -193,16 +193,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_role_arn: {
-                        let field_value = match fields_map.get("service_role_arn") {
+                        let field_value = match fields_map.get("serviceRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_seconds: {
-                        let field_value = match fields_map.get("timeout_seconds") {
+                        let field_value = match fields_map.get("timeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

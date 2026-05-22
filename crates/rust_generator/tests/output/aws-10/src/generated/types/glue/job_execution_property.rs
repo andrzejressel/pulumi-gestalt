@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#max_concurrent_runs: {
-                        let field_value = match fields_map.get("max_concurrent_runs") {
+                        let field_value = match fields_map.get("maxConcurrentRuns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_runs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentRuns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

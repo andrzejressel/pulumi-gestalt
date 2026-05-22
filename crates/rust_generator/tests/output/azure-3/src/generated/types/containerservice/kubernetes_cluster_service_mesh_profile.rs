@@ -86,23 +86,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#certificate_authority: {
-                        let field_value = match fields_map.get("certificate_authority") {
+                        let field_value = match fields_map.get("certificateAuthority") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_authority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateAuthority' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_ingress_gateway_enabled: {
-                        let field_value = match fields_map.get("external_ingress_gateway_enabled") {
+                        let field_value = match fields_map.get("externalIngressGatewayEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_ingress_gateway_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalIngressGatewayEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#internal_ingress_gateway_enabled: {
-                        let field_value = match fields_map.get("internal_ingress_gateway_enabled") {
+                        let field_value = match fields_map.get("internalIngressGatewayEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'internal_ingress_gateway_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'internalIngressGatewayEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

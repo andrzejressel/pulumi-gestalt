@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_action_overrides: {
-                        let field_value = match fields_map.get("rule_action_overrides") {
+                        let field_value = match fields_map.get("ruleActionOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_action_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleActionOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

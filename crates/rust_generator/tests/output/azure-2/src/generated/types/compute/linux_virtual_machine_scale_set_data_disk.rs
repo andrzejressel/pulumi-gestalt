@@ -137,23 +137,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_option: {
-                        let field_value = match fields_map.get("create_option") {
+                        let field_value = match fields_map.get("createOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_encryption_set_id: {
-                        let field_value = match fields_map.get("disk_encryption_set_id") {
+                        let field_value = match fields_map.get("diskEncryptionSetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_encryption_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskEncryptionSetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_size_gb: {
-                        let field_value = match fields_map.get("disk_size_gb") {
+                        let field_value = match fields_map.get("diskSizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskSizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -172,30 +172,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_type: {
-                        let field_value = match fields_map.get("storage_account_type") {
+                        let field_value = match fields_map.get("storageAccountType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ultra_ssd_disk_iops_read_write: {
-                        let field_value = match fields_map.get("ultra_ssd_disk_iops_read_write") {
+                        let field_value = match fields_map.get("ultraSsdDiskIopsReadWrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ultra_ssd_disk_iops_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ultraSsdDiskIopsReadWrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ultra_ssd_disk_mbps_read_write: {
-                        let field_value = match fields_map.get("ultra_ssd_disk_mbps_read_write") {
+                        let field_value = match fields_map.get("ultraSsdDiskMbpsReadWrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ultra_ssd_disk_mbps_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ultraSsdDiskMbpsReadWrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#write_accelerator_enabled: {
-                        let field_value = match fields_map.get("write_accelerator_enabled") {
+                        let field_value = match fields_map.get("writeAcceleratorEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'write_accelerator_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'writeAcceleratorEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#ssm_controls: {
-                        let field_value = match fields_map.get("ssm_controls") {
+                        let field_value = match fields_map.get("ssmControls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssm_controls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ssmControls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

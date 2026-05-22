@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#spend_basis: {
-                        let field_value = match fields_map.get("spend_basis") {
+                        let field_value = match fields_map.get("spendBasis") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spend_basis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spendBasis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threshold_percent: {
-                        let field_value = match fields_map.get("threshold_percent") {
+                        let field_value = match fields_map.get("thresholdPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'threshold_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thresholdPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

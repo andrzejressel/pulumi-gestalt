@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#spark_sql_job_driver: {
-                        let field_value = match fields_map.get("spark_sql_job_driver") {
+                        let field_value = match fields_map.get("sparkSqlJobDriver") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spark_sql_job_driver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sparkSqlJobDriver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spark_submit_job_driver: {
-                        let field_value = match fields_map.get("spark_submit_job_driver") {
+                        let field_value = match fields_map.get("sparkSubmitJobDriver") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spark_submit_job_driver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sparkSubmitJobDriver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

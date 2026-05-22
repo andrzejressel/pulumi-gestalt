@@ -99,23 +99,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#app_start_timeout: {
-                        let field_value = match fields_map.get("app_start_timeout") {
+                        let field_value = match fields_map.get("appStartTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_start_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appStartTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#check_interval: {
-                        let field_value = match fields_map.get("check_interval") {
+                        let field_value = match fields_map.get("checkInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'check_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_threshold: {
-                        let field_value = match fields_map.get("failure_threshold") {
+                        let field_value = match fields_map.get("failureThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,9 +134,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_threshold: {
-                        let field_value = match fields_map.get("success_threshold") {
+                        let field_value = match fields_map.get("successThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

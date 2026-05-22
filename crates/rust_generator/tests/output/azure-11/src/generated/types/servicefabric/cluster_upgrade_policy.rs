@@ -114,65 +114,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#delta_health_policy: {
-                        let field_value = match fields_map.get("delta_health_policy") {
+                        let field_value = match fields_map.get("deltaHealthPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delta_health_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deltaHealthPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#force_restart_enabled: {
-                        let field_value = match fields_map.get("force_restart_enabled") {
+                        let field_value = match fields_map.get("forceRestartEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'force_restart_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forceRestartEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_check_retry_timeout: {
-                        let field_value = match fields_map.get("health_check_retry_timeout") {
+                        let field_value = match fields_map.get("healthCheckRetryTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_check_retry_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthCheckRetryTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_check_stable_duration: {
-                        let field_value = match fields_map.get("health_check_stable_duration") {
+                        let field_value = match fields_map.get("healthCheckStableDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_check_stable_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthCheckStableDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_check_wait_duration: {
-                        let field_value = match fields_map.get("health_check_wait_duration") {
+                        let field_value = match fields_map.get("healthCheckWaitDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_check_wait_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthCheckWaitDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_policy: {
-                        let field_value = match fields_map.get("health_policy") {
+                        let field_value = match fields_map.get("healthPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upgrade_domain_timeout: {
-                        let field_value = match fields_map.get("upgrade_domain_timeout") {
+                        let field_value = match fields_map.get("upgradeDomainTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upgrade_domain_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'upgradeDomainTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upgrade_replica_set_check_timeout: {
-                        let field_value = match fields_map.get("upgrade_replica_set_check_timeout") {
+                        let field_value = match fields_map.get("upgradeReplicaSetCheckTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upgrade_replica_set_check_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'upgradeReplicaSetCheckTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upgrade_timeout: {
-                        let field_value = match fields_map.get("upgrade_timeout") {
+                        let field_value = match fields_map.get("upgradeTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upgrade_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'upgradeTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

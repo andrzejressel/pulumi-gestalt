@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#audio_packing_mode: {
-                        let field_value = match fields_map.get("audio_packing_mode") {
+                        let field_value = match fields_map.get("audioPackingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_packing_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioPackingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bit_rate: {
-                        let field_value = match fields_map.get("bit_rate") {
+                        let field_value = match fields_map.get("bitRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bit_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bitRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_rate: {
-                        let field_value = match fields_map.get("sample_rate") {
+                        let field_value = match fields_map.get("sampleRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#workload_pool: {
-                        let field_value = match fields_map.get("workload_pool") {
+                        let field_value = match fields_map.get("workloadPool") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workload_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workloadPool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

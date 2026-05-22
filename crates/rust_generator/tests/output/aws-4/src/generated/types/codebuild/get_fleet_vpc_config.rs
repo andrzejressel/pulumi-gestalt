@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#security_group_ids: {
-                        let field_value = match fields_map.get("security_group_ids") {
+                        let field_value = match fields_map.get("securityGroupIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityGroupIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_id: {
-                        let field_value = match fields_map.get("vpc_id") {
+                        let field_value = match fields_map.get("vpcId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

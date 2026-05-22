@@ -102,51 +102,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#commitment_plan: {
-                        let field_value = match fields_map.get("commitment_plan") {
+                        let field_value = match fields_map.get("commitmentPlan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'commitment_plan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commitmentPlan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compute_engine_preferences: {
-                        let field_value = match fields_map.get("compute_engine_preferences") {
+                        let field_value = match fields_map.get("computeEnginePreferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compute_engine_preferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computeEnginePreferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#region_preferences: {
-                        let field_value = match fields_map.get("region_preferences") {
+                        let field_value = match fields_map.get("regionPreferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'region_preferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionPreferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sizing_optimization_strategy: {
-                        let field_value = match fields_map.get("sizing_optimization_strategy") {
+                        let field_value = match fields_map.get("sizingOptimizationStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sizing_optimization_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizingOptimizationStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sole_tenancy_preferences: {
-                        let field_value = match fields_map.get("sole_tenancy_preferences") {
+                        let field_value = match fields_map.get("soleTenancyPreferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sole_tenancy_preferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'soleTenancyPreferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_product: {
-                        let field_value = match fields_map.get("target_product") {
+                        let field_value = match fields_map.get("targetProduct") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_product' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetProduct' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vmware_engine_preferences: {
-                        let field_value = match fields_map.get("vmware_engine_preferences") {
+                        let field_value = match fields_map.get("vmwareEnginePreferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vmware_engine_preferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmwareEnginePreferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

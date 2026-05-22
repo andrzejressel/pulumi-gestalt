@@ -90,23 +90,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mapped_route_name: {
-                        let field_value = match fields_map.get("mapped_route_name") {
+                        let field_value = match fields_map.get("mappedRouteName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mapped_route_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mappedRouteName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#observed_generation: {
-                        let field_value = match fields_map.get("observed_generation") {
+                        let field_value = match fields_map.get("observedGeneration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'observed_generation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'observedGeneration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_records: {
-                        let field_value = match fields_map.get("resource_records") {
+                        let field_value = match fields_map.get("resourceRecords") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_records' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceRecords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

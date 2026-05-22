@@ -184,16 +184,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#admin_password: {
-                        let field_value = match fields_map.get("admin_password") {
+                        let field_value = match fields_map.get("adminPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#autonomous_database_id: {
-                        let field_value = match fields_map.get("autonomous_database_id") {
+                        let field_value = match fields_map.get("autonomousDatabaseId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autonomous_database_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autonomousDatabaseId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -205,9 +205,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_time: {
-                        let field_value = match fields_map.get("create_time") {
+                        let field_value = match fields_map.get("createTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -219,30 +219,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deletion_protection: {
-                        let field_value = match fields_map.get("deletion_protection") {
+                        let field_value = match fields_map.get("deletionProtection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deletion_protection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deletionProtection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#effective_labels: {
-                        let field_value = match fields_map.get("effective_labels") {
+                        let field_value = match fields_map.get("effectiveLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entitlement_id: {
-                        let field_value = match fields_map.get("entitlement_id") {
+                        let field_value = match fields_map.get("entitlementId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entitlement_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entitlementId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -289,9 +289,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pulumi_labels: {
-                        let field_value = match fields_map.get("pulumi_labels") {
+                        let field_value = match fields_map.get("pulumiLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pulumi_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pulumiLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

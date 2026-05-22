@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#mysql_columns: {
-                        let field_value = match fields_map.get("mysql_columns") {
+                        let field_value = match fields_map.get("mysqlColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mysql_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mysqlColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

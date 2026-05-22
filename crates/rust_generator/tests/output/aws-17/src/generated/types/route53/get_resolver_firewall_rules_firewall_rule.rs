@@ -145,65 +145,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#block_override_dns_type: {
-                        let field_value = match fields_map.get("block_override_dns_type") {
+                        let field_value = match fields_map.get("blockOverrideDnsType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_override_dns_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockOverrideDnsType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#block_override_domain: {
-                        let field_value = match fields_map.get("block_override_domain") {
+                        let field_value = match fields_map.get("blockOverrideDomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_override_domain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockOverrideDomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#block_override_ttl: {
-                        let field_value = match fields_map.get("block_override_ttl") {
+                        let field_value = match fields_map.get("blockOverrideTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_override_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockOverrideTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#block_response: {
-                        let field_value = match fields_map.get("block_response") {
+                        let field_value = match fields_map.get("blockResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#creation_time: {
-                        let field_value = match fields_map.get("creation_time") {
+                        let field_value = match fields_map.get("creationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'creation_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'creationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#creator_request_id: {
-                        let field_value = match fields_map.get("creator_request_id") {
+                        let field_value = match fields_map.get("creatorRequestId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'creator_request_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'creatorRequestId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#firewall_domain_list_id: {
-                        let field_value = match fields_map.get("firewall_domain_list_id") {
+                        let field_value = match fields_map.get("firewallDomainListId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'firewall_domain_list_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firewallDomainListId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#firewall_rule_group_id: {
-                        let field_value = match fields_map.get("firewall_rule_group_id") {
+                        let field_value = match fields_map.get("firewallRuleGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'firewall_rule_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firewallRuleGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#modification_time: {
-                        let field_value = match fields_map.get("modification_time") {
+                        let field_value = match fields_map.get("modificationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'modification_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modificationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#egress_filter: {
-                        let field_value = match fields_map.get("egress_filter") {
+                        let field_value = match fields_map.get("egressFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'egress_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'egressFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_discovery: {
-                        let field_value = match fields_map.get("service_discovery") {
+                        let field_value = match fields_map.get("serviceDiscovery") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_discovery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceDiscovery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

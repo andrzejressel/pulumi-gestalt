@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#array_size: {
-                        let field_value = match fields_map.get("array_size") {
+                        let field_value = match fields_map.get("arraySize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'array_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'arraySize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_attempts: {
-                        let field_value = match fields_map.get("job_attempts") {
+                        let field_value = match fields_map.get("jobAttempts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_attempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobAttempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_definition: {
-                        let field_value = match fields_map.get("job_definition") {
+                        let field_value = match fields_map.get("jobDefinition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobDefinition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_name: {
-                        let field_value = match fields_map.get("job_name") {
+                        let field_value = match fields_map.get("jobName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -154,72 +154,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#automatic_restart: {
-                        let field_value = match fields_map.get("automatic_restart") {
+                        let field_value = match fields_map.get("automaticRestart") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automatic_restart' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automaticRestart' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_error_timeout_seconds: {
-                        let field_value = match fields_map.get("host_error_timeout_seconds") {
+                        let field_value = match fields_map.get("hostErrorTimeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_error_timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostErrorTimeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_termination_action: {
-                        let field_value = match fields_map.get("instance_termination_action") {
+                        let field_value = match fields_map.get("instanceTerminationAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_termination_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceTerminationAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_ssd_recovery_timeout: {
-                        let field_value = match fields_map.get("local_ssd_recovery_timeout") {
+                        let field_value = match fields_map.get("localSsdRecoveryTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_ssd_recovery_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localSsdRecoveryTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_interval: {
-                        let field_value = match fields_map.get("maintenance_interval") {
+                        let field_value = match fields_map.get("maintenanceInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_run_duration: {
-                        let field_value = match fields_map.get("max_run_duration") {
+                        let field_value = match fields_map.get("maxRunDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_run_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRunDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_node_cpus: {
-                        let field_value = match fields_map.get("min_node_cpus") {
+                        let field_value = match fields_map.get("minNodeCpus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_node_cpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minNodeCpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_affinities: {
-                        let field_value = match fields_map.get("node_affinities") {
+                        let field_value = match fields_map.get("nodeAffinities") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_affinities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeAffinities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_host_maintenance: {
-                        let field_value = match fields_map.get("on_host_maintenance") {
+                        let field_value = match fields_map.get("onHostMaintenance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_host_maintenance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onHostMaintenance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_instance_stop_action: {
-                        let field_value = match fields_map.get("on_instance_stop_action") {
+                        let field_value = match fields_map.get("onInstanceStopAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_instance_stop_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onInstanceStopAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -231,9 +231,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioning_model: {
-                        let field_value = match fields_map.get("provisioning_model") {
+                        let field_value = match fields_map.get("provisioningModel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioning_model' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisioningModel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

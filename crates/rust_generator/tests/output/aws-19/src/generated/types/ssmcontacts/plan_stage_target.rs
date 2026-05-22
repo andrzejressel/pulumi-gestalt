@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#channel_target_info: {
-                        let field_value = match fields_map.get("channel_target_info") {
+                        let field_value = match fields_map.get("channelTargetInfo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'channel_target_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'channelTargetInfo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#contact_target_info: {
-                        let field_value = match fields_map.get("contact_target_info") {
+                        let field_value = match fields_map.get("contactTargetInfo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contact_target_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contactTargetInfo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

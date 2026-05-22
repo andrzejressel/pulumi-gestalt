@@ -83,37 +83,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#default_target_capacity_type: {
-                        let field_value = match fields_map.get("default_target_capacity_type") {
+                        let field_value = match fields_map.get("defaultTargetCapacityType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_target_capacity_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultTargetCapacityType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_demand_target_capacity: {
-                        let field_value = match fields_map.get("on_demand_target_capacity") {
+                        let field_value = match fields_map.get("onDemandTargetCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_demand_target_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onDemandTargetCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spot_target_capacity: {
-                        let field_value = match fields_map.get("spot_target_capacity") {
+                        let field_value = match fields_map.get("spotTargetCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spot_target_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spotTargetCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_capacity_unit_type: {
-                        let field_value = match fields_map.get("target_capacity_unit_type") {
+                        let field_value = match fields_map.get("targetCapacityUnitType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_capacity_unit_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetCapacityUnitType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total_target_capacity: {
-                        let field_value = match fields_map.get("total_target_capacity") {
+                        let field_value = match fields_map.get("totalTargetCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_target_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalTargetCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

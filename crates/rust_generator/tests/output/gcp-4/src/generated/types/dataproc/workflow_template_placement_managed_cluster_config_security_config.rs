@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#kerberos_config: {
-                        let field_value = match fields_map.get("kerberos_config") {
+                        let field_value = match fields_map.get("kerberosConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberosConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

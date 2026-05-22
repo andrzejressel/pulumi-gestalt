@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#auto_software_update_enabled: {
-                        let field_value = match fields_map.get("auto_software_update_enabled") {
+                        let field_value = match fields_map.get("autoSoftwareUpdateEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_software_update_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoSoftwareUpdateEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

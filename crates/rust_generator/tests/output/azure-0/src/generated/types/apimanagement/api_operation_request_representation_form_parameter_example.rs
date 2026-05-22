@@ -89,9 +89,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_value: {
-                        let field_value = match fields_map.get("external_value") {
+                        let field_value = match fields_map.get("externalValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#basic_auth_credentials: {
-                        let field_value = match fields_map.get("basic_auth_credentials") {
+                        let field_value = match fields_map.get("basicAuthCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'basic_auth_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'basicAuthCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_credentials: {
-                        let field_value = match fields_map.get("oauth_credentials") {
+                        let field_value = match fields_map.get("oauthCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauthCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

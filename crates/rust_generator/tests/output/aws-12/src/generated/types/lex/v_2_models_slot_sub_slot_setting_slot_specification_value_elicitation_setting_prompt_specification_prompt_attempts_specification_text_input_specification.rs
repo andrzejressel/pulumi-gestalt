@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#start_timeout_ms: {
-                        let field_value = match fields_map.get("start_timeout_ms") {
+                        let field_value = match fields_map.get("startTimeoutMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_timeout_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTimeoutMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

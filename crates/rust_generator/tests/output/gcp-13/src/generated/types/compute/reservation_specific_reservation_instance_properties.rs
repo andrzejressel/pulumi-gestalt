@@ -80,30 +80,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#guest_accelerators: {
-                        let field_value = match fields_map.get("guest_accelerators") {
+                        let field_value = match fields_map.get("guestAccelerators") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guest_accelerators' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guestAccelerators' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_ssds: {
-                        let field_value = match fields_map.get("local_ssds") {
+                        let field_value = match fields_map.get("localSsds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_ssds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localSsds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#machine_type: {
-                        let field_value = match fields_map.get("machine_type") {
+                        let field_value = match fields_map.get("machineType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'machine_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'machineType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_cpu_platform: {
-                        let field_value = match fields_map.get("min_cpu_platform") {
+                        let field_value = match fields_map.get("minCpuPlatform") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_cpu_platform' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minCpuPlatform' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

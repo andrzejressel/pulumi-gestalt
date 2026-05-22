@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#log_bucket: {
-                        let field_value = match fields_map.get("log_bucket") {
+                        let field_value = match fields_map.get("logBucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logBucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_object_prefix: {
-                        let field_value = match fields_map.get("log_object_prefix") {
+                        let field_value = match fields_map.get("logObjectPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_object_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logObjectPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

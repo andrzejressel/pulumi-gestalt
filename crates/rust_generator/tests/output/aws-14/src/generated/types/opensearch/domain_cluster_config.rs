@@ -138,86 +138,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#cold_storage_options: {
-                        let field_value = match fields_map.get("cold_storage_options") {
+                        let field_value = match fields_map.get("coldStorageOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cold_storage_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coldStorageOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dedicated_master_count: {
-                        let field_value = match fields_map.get("dedicated_master_count") {
+                        let field_value = match fields_map.get("dedicatedMasterCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dedicated_master_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dedicatedMasterCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dedicated_master_enabled: {
-                        let field_value = match fields_map.get("dedicated_master_enabled") {
+                        let field_value = match fields_map.get("dedicatedMasterEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dedicated_master_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dedicatedMasterEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dedicated_master_type: {
-                        let field_value = match fields_map.get("dedicated_master_type") {
+                        let field_value = match fields_map.get("dedicatedMasterType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dedicated_master_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dedicatedMasterType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_count: {
-                        let field_value = match fields_map.get("instance_count") {
+                        let field_value = match fields_map.get("instanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_type: {
-                        let field_value = match fields_map.get("instance_type") {
+                        let field_value = match fields_map.get("instanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multi_az_with_standby_enabled: {
-                        let field_value = match fields_map.get("multi_az_with_standby_enabled") {
+                        let field_value = match fields_map.get("multiAzWithStandbyEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multi_az_with_standby_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multiAzWithStandbyEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#warm_count: {
-                        let field_value = match fields_map.get("warm_count") {
+                        let field_value = match fields_map.get("warmCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'warm_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'warmCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#warm_enabled: {
-                        let field_value = match fields_map.get("warm_enabled") {
+                        let field_value = match fields_map.get("warmEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'warm_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'warmEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#warm_type: {
-                        let field_value = match fields_map.get("warm_type") {
+                        let field_value = match fields_map.get("warmType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'warm_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'warmType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#zone_awareness_config: {
-                        let field_value = match fields_map.get("zone_awareness_config") {
+                        let field_value = match fields_map.get("zoneAwarenessConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'zone_awareness_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'zoneAwarenessConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#zone_awareness_enabled: {
-                        let field_value = match fields_map.get("zone_awareness_enabled") {
+                        let field_value = match fields_map.get("zoneAwarenessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'zone_awareness_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'zoneAwarenessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#dump_parallel_level: {
-                        let field_value = match fields_map.get("dump_parallel_level") {
+                        let field_value = match fields_map.get("dumpParallelLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dump_parallel_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dumpParallelLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

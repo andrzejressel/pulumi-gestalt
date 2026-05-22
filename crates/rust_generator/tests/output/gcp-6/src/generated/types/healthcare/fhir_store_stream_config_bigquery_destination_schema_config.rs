@@ -76,23 +76,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#last_updated_partition_config: {
-                        let field_value = match fields_map.get("last_updated_partition_config") {
+                        let field_value = match fields_map.get("lastUpdatedPartitionConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_updated_partition_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastUpdatedPartitionConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recursive_structure_depth: {
-                        let field_value = match fields_map.get("recursive_structure_depth") {
+                        let field_value = match fields_map.get("recursiveStructureDepth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recursive_structure_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recursiveStructureDepth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_type: {
-                        let field_value = match fields_map.get("schema_type") {
+                        let field_value = match fields_map.get("schemaType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

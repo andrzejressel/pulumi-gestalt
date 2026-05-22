@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#certificate_provider_instance: {
-                        let field_value = match fields_map.get("certificate_provider_instance") {
+                        let field_value = match fields_map.get("certificateProviderInstance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_provider_instance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateProviderInstance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#grpc_endpoint: {
-                        let field_value = match fields_map.get("grpc_endpoint") {
+                        let field_value = match fields_map.get("grpcEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'grpc_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'grpcEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

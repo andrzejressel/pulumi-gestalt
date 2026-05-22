@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#restore_to_time: {
-                        let field_value = match fields_map.get("restore_to_time") {
+                        let field_value = match fields_map.get("restoreToTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restore_to_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restoreToTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restore_type: {
-                        let field_value = match fields_map.get("restore_type") {
+                        let field_value = match fields_map.get("restoreType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restore_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restoreType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_cluster_identifier: {
-                        let field_value = match fields_map.get("source_cluster_identifier") {
+                        let field_value = match fields_map.get("sourceClusterIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_cluster_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceClusterIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_latest_restorable_time: {
-                        let field_value = match fields_map.get("use_latest_restorable_time") {
+                        let field_value = match fields_map.get("useLatestRestorableTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_latest_restorable_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useLatestRestorableTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

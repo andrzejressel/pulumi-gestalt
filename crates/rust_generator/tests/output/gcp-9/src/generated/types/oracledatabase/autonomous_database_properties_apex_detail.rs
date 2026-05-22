@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#apex_version: {
-                        let field_value = match fields_map.get("apex_version") {
+                        let field_value = match fields_map.get("apexVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apex_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apexVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ords_version: {
-                        let field_value = match fields_map.get("ords_version") {
+                        let field_value = match fields_map.get("ordsVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ords_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ordsVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

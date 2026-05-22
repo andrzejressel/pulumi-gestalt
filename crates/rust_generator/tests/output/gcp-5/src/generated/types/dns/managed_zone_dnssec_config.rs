@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#default_key_specs: {
-                        let field_value = match fields_map.get("default_key_specs") {
+                        let field_value = match fields_map.get("defaultKeySpecs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_key_specs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultKeySpecs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#non_existence: {
-                        let field_value = match fields_map.get("non_existence") {
+                        let field_value = match fields_map.get("nonExistence") {
                             Some(value) => value,
-                            None => bail!("Missing field 'non_existence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nonExistence' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#encryption_type: {
-                        let field_value = match fields_map.get("encryption_type") {
+                        let field_value = match fields_map.get("encryptionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_versions: {
-                        let field_value = match fields_map.get("kms_key_versions") {
+                        let field_value = match fields_map.get("kmsKeyVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

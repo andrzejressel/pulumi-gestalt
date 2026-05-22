@@ -75,16 +75,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_activation_duration: {
-                        let field_value = match fields_map.get("maximum_activation_duration") {
+                        let field_value = match fields_map.get("maximumActivationDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_activation_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumActivationDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multi_factor_auth_provider: {
-                        let field_value = match fields_map.get("multi_factor_auth_provider") {
+                        let field_value = match fields_map.get("multiFactorAuthProvider") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multi_factor_auth_provider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multiFactorAuthProvider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

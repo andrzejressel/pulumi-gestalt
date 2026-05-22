@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#instance_port: {
-                        let field_value = match fields_map.get("instance_port") {
+                        let field_value = match fields_map.get("instancePort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instancePort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancer_port: {
-                        let field_value = match fields_map.get("load_balancer_port") {
+                        let field_value = match fields_map.get("loadBalancerPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancer_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancerPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

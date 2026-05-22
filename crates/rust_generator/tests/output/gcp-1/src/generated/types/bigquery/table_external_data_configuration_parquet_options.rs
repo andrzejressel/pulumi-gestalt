@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#enable_list_inference: {
-                        let field_value = match fields_map.get("enable_list_inference") {
+                        let field_value = match fields_map.get("enableListInference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_list_inference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableListInference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enum_as_string: {
-                        let field_value = match fields_map.get("enum_as_string") {
+                        let field_value = match fields_map.get("enumAsString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enum_as_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enumAsString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#git_configuration: {
-                        let field_value = match fields_map.get("git_configuration") {
+                        let field_value = match fields_map.get("gitConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'git_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gitConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provider_type: {
-                        let field_value = match fields_map.get("provider_type") {
+                        let field_value = match fields_map.get("providerType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provider_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'providerType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

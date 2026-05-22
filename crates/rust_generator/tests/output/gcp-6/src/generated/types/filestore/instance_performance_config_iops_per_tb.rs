@@ -54,9 +54,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#max_iops_per_tb: {
-                        let field_value = match fields_map.get("max_iops_per_tb") {
+                        let field_value = match fields_map.get("maxIopsPerTb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_iops_per_tb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxIopsPerTb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

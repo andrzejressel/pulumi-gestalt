@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#evaluation_mode: {
-                        let field_value = match fields_map.get("evaluation_mode") {
+                        let field_value = match fields_map.get("evaluationMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluation_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluationMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

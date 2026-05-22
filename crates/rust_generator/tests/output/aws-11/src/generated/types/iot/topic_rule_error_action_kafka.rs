@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#client_properties: {
-                        let field_value = match fields_map.get("client_properties") {
+                        let field_value = match fields_map.get("clientProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_arn: {
-                        let field_value = match fields_map.get("destination_arn") {
+                        let field_value = match fields_map.get("destinationArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

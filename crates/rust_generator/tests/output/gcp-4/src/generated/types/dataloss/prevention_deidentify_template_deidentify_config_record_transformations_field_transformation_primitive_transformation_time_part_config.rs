@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#part_to_extract: {
-                        let field_value = match fields_map.get("part_to_extract") {
+                        let field_value = match fields_map.get("partToExtract") {
                             Some(value) => value,
-                            None => bail!("Missing field 'part_to_extract' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partToExtract' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

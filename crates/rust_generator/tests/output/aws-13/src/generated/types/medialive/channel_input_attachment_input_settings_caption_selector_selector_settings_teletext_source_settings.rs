@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#output_rectangle: {
-                        let field_value = match fields_map.get("output_rectangle") {
+                        let field_value = match fields_map.get("outputRectangle") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_rectangle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputRectangle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#page_number: {
-                        let field_value = match fields_map.get("page_number") {
+                        let field_value = match fields_map.get("pageNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'page_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pageNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

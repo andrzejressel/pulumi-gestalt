@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#bucket_folder: {
-                        let field_value = match fields_map.get("bucket_folder") {
+                        let field_value = match fields_map.get("bucketFolder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_folder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketFolder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_name: {
-                        let field_value = match fields_map.get("bucket_name") {
+                        let field_value = match fields_map.get("bucketName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_mode: {
-                        let field_value = match fields_map.get("encryption_mode") {
+                        let field_value = match fields_map.get("encryptionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_side_encryption_kms_key_id: {
-                        let field_value = match fields_map.get("server_side_encryption_kms_key_id") {
+                        let field_value = match fields_map.get("serverSideEncryptionKmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_side_encryption_kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverSideEncryptionKmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_access_role_arn: {
-                        let field_value = match fields_map.get("service_access_role_arn") {
+                        let field_value = match fields_map.get("serviceAccessRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_access_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccessRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

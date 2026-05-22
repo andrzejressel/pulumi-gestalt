@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#indexed_question_answers_count: {
-                        let field_value = match fields_map.get("indexed_question_answers_count") {
+                        let field_value = match fields_map.get("indexedQuestionAnswersCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'indexed_question_answers_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'indexedQuestionAnswersCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

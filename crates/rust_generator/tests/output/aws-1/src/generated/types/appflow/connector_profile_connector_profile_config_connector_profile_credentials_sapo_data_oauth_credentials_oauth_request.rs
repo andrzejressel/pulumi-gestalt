@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#auth_code: {
-                        let field_value = match fields_map.get("auth_code") {
+                        let field_value = match fields_map.get("authCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_uri: {
-                        let field_value = match fields_map.get("redirect_uri") {
+                        let field_value = match fields_map.get("redirectUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

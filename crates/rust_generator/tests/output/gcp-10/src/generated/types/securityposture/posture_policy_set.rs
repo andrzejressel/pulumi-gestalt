@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_set_id: {
-                        let field_value = match fields_map.get("policy_set_id") {
+                        let field_value = match fields_map.get("policySetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_set_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policySetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

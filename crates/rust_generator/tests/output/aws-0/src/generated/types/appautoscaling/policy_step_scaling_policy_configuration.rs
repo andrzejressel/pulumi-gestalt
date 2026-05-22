@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#adjustment_type: {
-                        let field_value = match fields_map.get("adjustment_type") {
+                        let field_value = match fields_map.get("adjustmentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'adjustment_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adjustmentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,23 +112,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_aggregation_type: {
-                        let field_value = match fields_map.get("metric_aggregation_type") {
+                        let field_value = match fields_map.get("metricAggregationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_aggregation_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricAggregationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_adjustment_magnitude: {
-                        let field_value = match fields_map.get("min_adjustment_magnitude") {
+                        let field_value = match fields_map.get("minAdjustmentMagnitude") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_adjustment_magnitude' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minAdjustmentMagnitude' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#step_adjustments: {
-                        let field_value = match fields_map.get("step_adjustments") {
+                        let field_value = match fields_map.get("stepAdjustments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'step_adjustments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stepAdjustments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

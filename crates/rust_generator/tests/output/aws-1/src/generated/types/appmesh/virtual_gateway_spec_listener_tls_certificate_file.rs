@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#certificate_chain: {
-                        let field_value = match fields_map.get("certificate_chain") {
+                        let field_value = match fields_map.get("certificateChain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_chain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateChain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_key: {
-                        let field_value = match fields_map.get("private_key") {
+                        let field_value = match fields_map.get("privateKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

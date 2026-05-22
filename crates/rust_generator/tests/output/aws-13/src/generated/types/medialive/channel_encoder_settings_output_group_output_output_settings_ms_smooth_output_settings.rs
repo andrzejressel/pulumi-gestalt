@@ -57,16 +57,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#h_265_packaging_type: {
-                        let field_value = match fields_map.get("h_265_packaging_type") {
+                        let field_value = match fields_map.get("h265PackagingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'h_265_packaging_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'h265PackagingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name_modifier: {
-                        let field_value = match fields_map.get("name_modifier") {
+                        let field_value = match fields_map.get("nameModifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'name_modifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nameModifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#deployment_id: {
-                        let field_value = match fields_map.get("deployment_id") {
+                        let field_value = match fields_map.get("deploymentId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployment_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#percent_traffic: {
-                        let field_value = match fields_map.get("percent_traffic") {
+                        let field_value = match fields_map.get("percentTraffic") {
                             Some(value) => value,
-                            None => bail!("Missing field 'percent_traffic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'percentTraffic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stage_variable_overrides: {
-                        let field_value = match fields_map.get("stage_variable_overrides") {
+                        let field_value = match fields_map.get("stageVariableOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stage_variable_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stageVariableOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_stage_cache: {
-                        let field_value = match fields_map.get("use_stage_cache") {
+                        let field_value = match fields_map.get("useStageCache") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_stage_cache' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useStageCache' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

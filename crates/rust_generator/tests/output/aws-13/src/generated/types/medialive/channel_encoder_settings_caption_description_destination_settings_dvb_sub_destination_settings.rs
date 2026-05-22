@@ -185,16 +185,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#background_color: {
-                        let field_value = match fields_map.get("background_color") {
+                        let field_value = match fields_map.get("backgroundColor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'background_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backgroundColor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#background_opacity: {
-                        let field_value = match fields_map.get("background_opacity") {
+                        let field_value = match fields_map.get("backgroundOpacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'background_opacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backgroundOpacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -206,93 +206,93 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font_color: {
-                        let field_value = match fields_map.get("font_color") {
+                        let field_value = match fields_map.get("fontColor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'font_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fontColor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font_opacity: {
-                        let field_value = match fields_map.get("font_opacity") {
+                        let field_value = match fields_map.get("fontOpacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'font_opacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fontOpacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font_resolution: {
-                        let field_value = match fields_map.get("font_resolution") {
+                        let field_value = match fields_map.get("fontResolution") {
                             Some(value) => value,
-                            None => bail!("Missing field 'font_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fontResolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#font_size: {
-                        let field_value = match fields_map.get("font_size") {
+                        let field_value = match fields_map.get("fontSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'font_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fontSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outline_color: {
-                        let field_value = match fields_map.get("outline_color") {
+                        let field_value = match fields_map.get("outlineColor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outline_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outlineColor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outline_size: {
-                        let field_value = match fields_map.get("outline_size") {
+                        let field_value = match fields_map.get("outlineSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outline_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outlineSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shadow_color: {
-                        let field_value = match fields_map.get("shadow_color") {
+                        let field_value = match fields_map.get("shadowColor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shadow_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shadowColor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shadow_opacity: {
-                        let field_value = match fields_map.get("shadow_opacity") {
+                        let field_value = match fields_map.get("shadowOpacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shadow_opacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shadowOpacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shadow_x_offset: {
-                        let field_value = match fields_map.get("shadow_x_offset") {
+                        let field_value = match fields_map.get("shadowXOffset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shadow_x_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shadowXOffset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shadow_y_offset: {
-                        let field_value = match fields_map.get("shadow_y_offset") {
+                        let field_value = match fields_map.get("shadowYOffset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shadow_y_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shadowYOffset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#teletext_grid_control: {
-                        let field_value = match fields_map.get("teletext_grid_control") {
+                        let field_value = match fields_map.get("teletextGridControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'teletext_grid_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'teletextGridControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_position: {
-                        let field_value = match fields_map.get("x_position") {
+                        let field_value = match fields_map.get("xPosition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'xPosition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#y_position: {
-                        let field_value = match fields_map.get("y_position") {
+                        let field_value = match fields_map.get("yPosition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'y_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'yPosition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

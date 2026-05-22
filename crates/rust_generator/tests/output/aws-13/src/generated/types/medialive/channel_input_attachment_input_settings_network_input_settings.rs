@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#hls_input_settings: {
-                        let field_value = match fields_map.get("hls_input_settings") {
+                        let field_value = match fields_map.get("hlsInputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hls_input_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hlsInputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_validation: {
-                        let field_value = match fields_map.get("server_validation") {
+                        let field_value = match fields_map.get("serverValidation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_validation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverValidation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

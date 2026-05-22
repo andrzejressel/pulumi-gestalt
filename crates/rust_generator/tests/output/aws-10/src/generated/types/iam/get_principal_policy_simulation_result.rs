@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#action_name: {
-                        let field_value = match fields_map.get("action_name") {
+                        let field_value = match fields_map.get("actionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,30 +119,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#decision_details: {
-                        let field_value = match fields_map.get("decision_details") {
+                        let field_value = match fields_map.get("decisionDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'decision_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'decisionDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matched_statements: {
-                        let field_value = match fields_map.get("matched_statements") {
+                        let field_value = match fields_map.get("matchedStatements") {
                             Some(value) => value,
-                            None => bail!("Missing field 'matched_statements' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchedStatements' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#missing_context_keys: {
-                        let field_value = match fields_map.get("missing_context_keys") {
+                        let field_value = match fields_map.get("missingContextKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'missing_context_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'missingContextKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_arn: {
-                        let field_value = match fields_map.get("resource_arn") {
+                        let field_value = match fields_map.get("resourceArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

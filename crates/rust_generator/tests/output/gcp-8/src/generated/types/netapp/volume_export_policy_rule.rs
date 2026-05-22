@@ -131,79 +131,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#access_type: {
-                        let field_value = match fields_map.get("access_type") {
+                        let field_value = match fields_map.get("accessType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_clients: {
-                        let field_value = match fields_map.get("allowed_clients") {
+                        let field_value = match fields_map.get("allowedClients") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_clients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedClients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#has_root_access: {
-                        let field_value = match fields_map.get("has_root_access") {
+                        let field_value = match fields_map.get("hasRootAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'has_root_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hasRootAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_5_read_only: {
-                        let field_value = match fields_map.get("kerberos_5_read_only") {
+                        let field_value = match fields_map.get("kerberos5ReadOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_5_read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberos5ReadOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_5_read_write: {
-                        let field_value = match fields_map.get("kerberos_5_read_write") {
+                        let field_value = match fields_map.get("kerberos5ReadWrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_5_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberos5ReadWrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_5_i_read_only: {
-                        let field_value = match fields_map.get("kerberos_5_i_read_only") {
+                        let field_value = match fields_map.get("kerberos5iReadOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_5_i_read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberos5iReadOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_5_i_read_write: {
-                        let field_value = match fields_map.get("kerberos_5_i_read_write") {
+                        let field_value = match fields_map.get("kerberos5iReadWrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_5_i_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberos5iReadWrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_5_p_read_only: {
-                        let field_value = match fields_map.get("kerberos_5_p_read_only") {
+                        let field_value = match fields_map.get("kerberos5pReadOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_5_p_read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberos5pReadOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_5_p_read_write: {
-                        let field_value = match fields_map.get("kerberos_5_p_read_write") {
+                        let field_value = match fields_map.get("kerberos5pReadWrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_5_p_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberos5pReadWrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfsv_3: {
-                        let field_value = match fields_map.get("nfsv_3") {
+                        let field_value = match fields_map.get("nfsv3") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nfsv_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nfsv3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfsv_4: {
-                        let field_value = match fields_map.get("nfsv_4") {
+                        let field_value = match fields_map.get("nfsv4") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nfsv_4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nfsv4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

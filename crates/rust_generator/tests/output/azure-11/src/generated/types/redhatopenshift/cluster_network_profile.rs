@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#outbound_type: {
-                        let field_value = match fields_map.get("outbound_type") {
+                        let field_value = match fields_map.get("outboundType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_cidr: {
-                        let field_value = match fields_map.get("pod_cidr") {
+                        let field_value = match fields_map.get("podCidr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podCidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preconfigured_network_security_group_enabled: {
-                        let field_value = match fields_map.get("preconfigured_network_security_group_enabled") {
+                        let field_value = match fields_map.get("preconfiguredNetworkSecurityGroupEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preconfigured_network_security_group_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preconfiguredNetworkSecurityGroupEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_cidr: {
-                        let field_value = match fields_map.get("service_cidr") {
+                        let field_value = match fields_map.get("serviceCidr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceCidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

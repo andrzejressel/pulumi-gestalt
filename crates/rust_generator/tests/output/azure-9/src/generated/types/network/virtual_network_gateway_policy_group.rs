@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#is_default: {
-                        let field_value = match fields_map.get("is_default") {
+                        let field_value = match fields_map.get("isDefault") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_default' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isDefault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_members: {
-                        let field_value = match fields_map.get("policy_members") {
+                        let field_value = match fields_map.get("policyMembers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_members' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyMembers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -111,37 +111,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#allow_credentials: {
-                        let field_value = match fields_map.get("allow_credentials") {
+                        let field_value = match fields_map.get("allowCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_headers: {
-                        let field_value = match fields_map.get("allow_headers") {
+                        let field_value = match fields_map.get("allowHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_methods: {
-                        let field_value = match fields_map.get("allow_methods") {
+                        let field_value = match fields_map.get("allowMethods") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_methods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowMethods' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_origin_regexes: {
-                        let field_value = match fields_map.get("allow_origin_regexes") {
+                        let field_value = match fields_map.get("allowOriginRegexes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_origin_regexes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowOriginRegexes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_origins: {
-                        let field_value = match fields_map.get("allow_origins") {
+                        let field_value = match fields_map.get("allowOrigins") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_origins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowOrigins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -153,16 +153,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expose_headers: {
-                        let field_value = match fields_map.get("expose_headers") {
+                        let field_value = match fields_map.get("exposeHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expose_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exposeHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_age: {
-                        let field_value = match fields_map.get("max_age") {
+                        let field_value = match fields_map.get("maxAge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_age' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

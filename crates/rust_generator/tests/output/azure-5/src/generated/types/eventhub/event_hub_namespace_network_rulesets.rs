@@ -84,37 +84,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#default_action: {
-                        let field_value = match fields_map.get("default_action") {
+                        let field_value = match fields_map.get("defaultAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_rules: {
-                        let field_value = match fields_map.get("ip_rules") {
+                        let field_value = match fields_map.get("ipRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_network_access_enabled: {
-                        let field_value = match fields_map.get("public_network_access_enabled") {
+                        let field_value = match fields_map.get("publicNetworkAccessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_network_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicNetworkAccessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_service_access_enabled: {
-                        let field_value = match fields_map.get("trusted_service_access_enabled") {
+                        let field_value = match fields_map.get("trustedServiceAccessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trusted_service_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustedServiceAccessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_network_rules: {
-                        let field_value = match fields_map.get("virtual_network_rules") {
+                        let field_value = match fields_map.get("virtualNetworkRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_network_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNetworkRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

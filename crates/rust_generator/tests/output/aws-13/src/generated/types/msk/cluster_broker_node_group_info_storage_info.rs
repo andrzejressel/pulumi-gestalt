@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#ebs_storage_info: {
-                        let field_value = match fields_map.get("ebs_storage_info") {
+                        let field_value = match fields_map.get("ebsStorageInfo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ebs_storage_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ebsStorageInfo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

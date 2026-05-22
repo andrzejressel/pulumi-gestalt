@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#cloud_secret: {
-                        let field_value = match fields_map.get("cloud_secret") {
+                        let field_value = match fields_map.get("cloudSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

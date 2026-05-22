@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time_offset: {
-                        let field_value = match fields_map.get("start_time_offset") {
+                        let field_value = match fields_map.get("startTimeOffset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTimeOffset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

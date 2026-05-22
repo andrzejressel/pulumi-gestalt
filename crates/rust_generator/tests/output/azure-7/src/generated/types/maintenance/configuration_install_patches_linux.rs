@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#classifications_to_includes: {
-                        let field_value = match fields_map.get("classifications_to_includes") {
+                        let field_value = match fields_map.get("classificationsToIncludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'classifications_to_includes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'classificationsToIncludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#package_names_mask_to_excludes: {
-                        let field_value = match fields_map.get("package_names_mask_to_excludes") {
+                        let field_value = match fields_map.get("packageNamesMaskToExcludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'package_names_mask_to_excludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'packageNamesMaskToExcludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#package_names_mask_to_includes: {
-                        let field_value = match fields_map.get("package_names_mask_to_includes") {
+                        let field_value = match fields_map.get("packageNamesMaskToIncludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'package_names_mask_to_includes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'packageNamesMaskToIncludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

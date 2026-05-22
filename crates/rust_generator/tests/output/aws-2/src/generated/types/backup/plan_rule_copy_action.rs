@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#destination_vault_arn: {
-                        let field_value = match fields_map.get("destination_vault_arn") {
+                        let field_value = match fields_map.get("destinationVaultArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_vault_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationVaultArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

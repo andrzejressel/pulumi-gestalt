@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#device_name: {
-                        let field_value = match fields_map.get("device_name") {
+                        let field_value = match fields_map.get("deviceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_device: {
-                        let field_value = match fields_map.get("no_device") {
+                        let field_value = match fields_map.get("noDevice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_device' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noDevice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_name: {
-                        let field_value = match fields_map.get("virtual_name") {
+                        let field_value = match fields_map.get("virtualName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

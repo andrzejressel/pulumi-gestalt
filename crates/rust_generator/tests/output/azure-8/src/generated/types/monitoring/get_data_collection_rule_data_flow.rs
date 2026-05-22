@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#built_in_transform: {
-                        let field_value = match fields_map.get("built_in_transform") {
+                        let field_value = match fields_map.get("builtInTransform") {
                             Some(value) => value,
-                            None => bail!("Missing field 'built_in_transform' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'builtInTransform' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,9 +96,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_stream: {
-                        let field_value = match fields_map.get("output_stream") {
+                        let field_value = match fields_map.get("outputStream") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_stream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputStream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transform_kql: {
-                        let field_value = match fields_map.get("transform_kql") {
+                        let field_value = match fields_map.get("transformKql") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transform_kql' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transformKql' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -91,9 +91,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#constraint_id: {
-                        let field_value = match fields_map.get("constraint_id") {
+                        let field_value = match fields_map.get("constraintId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'constraint_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'constraintId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,23 +112,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#portfolio_id: {
-                        let field_value = match fields_map.get("portfolio_id") {
+                        let field_value = match fields_map.get("portfolioId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'portfolio_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portfolioId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#product_id: {
-                        let field_value = match fields_map.get("product_id") {
+                        let field_value = match fields_map.get("productId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'product_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'productId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

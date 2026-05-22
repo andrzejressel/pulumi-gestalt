@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#container_tags: {
-                        let field_value = match fields_map.get("container_tags") {
+                        let field_value = match fields_map.get("containerTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_repositories: {
-                        let field_value = match fields_map.get("target_repositories") {
+                        let field_value = match fields_map.get("targetRepositories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_repositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetRepositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#api_key: {
-                        let field_value = match fields_map.get("api_key") {
+                        let field_value = match fields_map.get("apiKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#invocation_http_parameters: {
-                        let field_value = match fields_map.get("invocation_http_parameters") {
+                        let field_value = match fields_map.get("invocationHttpParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'invocation_http_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'invocationHttpParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

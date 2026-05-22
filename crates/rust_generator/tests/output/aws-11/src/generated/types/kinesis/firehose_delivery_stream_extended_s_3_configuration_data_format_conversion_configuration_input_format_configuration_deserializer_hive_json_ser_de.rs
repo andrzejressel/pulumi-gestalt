@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#timestamp_formats: {
-                        let field_value = match fields_map.get("timestamp_formats") {
+                        let field_value = match fields_map.get("timestampFormats") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timestamp_formats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timestampFormats' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

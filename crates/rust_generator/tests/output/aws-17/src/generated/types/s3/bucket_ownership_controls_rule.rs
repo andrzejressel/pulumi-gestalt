@@ -53,9 +53,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#object_ownership: {
-                        let field_value = match fields_map.get("object_ownership") {
+                        let field_value = match fields_map.get("objectOwnership") {
                             Some(value) => value,
-                            None => bail!("Missing field 'object_ownership' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'objectOwnership' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

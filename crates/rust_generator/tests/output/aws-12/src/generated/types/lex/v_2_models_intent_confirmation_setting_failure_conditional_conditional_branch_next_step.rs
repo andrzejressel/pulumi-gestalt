@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#dialog_action: {
-                        let field_value = match fields_map.get("dialog_action") {
+                        let field_value = match fields_map.get("dialogAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dialog_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dialogAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_attributes: {
-                        let field_value = match fields_map.get("session_attributes") {
+                        let field_value = match fields_map.get("sessionAttributes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionAttributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

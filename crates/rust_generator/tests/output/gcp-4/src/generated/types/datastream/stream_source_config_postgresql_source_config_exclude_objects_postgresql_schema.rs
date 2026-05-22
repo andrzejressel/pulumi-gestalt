@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#postgresql_tables: {
-                        let field_value = match fields_map.get("postgresql_tables") {
+                        let field_value = match fields_map.get("postgresqlTables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'postgresql_tables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postgresqlTables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

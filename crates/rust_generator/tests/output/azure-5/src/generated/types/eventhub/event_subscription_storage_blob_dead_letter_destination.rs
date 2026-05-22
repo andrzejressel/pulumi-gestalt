@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#storage_account_id: {
-                        let field_value = match fields_map.get("storage_account_id") {
+                        let field_value = match fields_map.get("storageAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_blob_container_name: {
-                        let field_value = match fields_map.get("storage_blob_container_name") {
+                        let field_value = match fields_map.get("storageBlobContainerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_blob_container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageBlobContainerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

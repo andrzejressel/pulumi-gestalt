@@ -96,9 +96,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_period: {
-                        let field_value = match fields_map.get("start_period") {
+                        let field_value = match fields_map.get("startPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

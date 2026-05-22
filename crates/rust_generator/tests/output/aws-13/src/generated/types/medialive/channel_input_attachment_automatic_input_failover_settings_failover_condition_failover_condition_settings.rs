@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_silence_settings: {
-                        let field_value = match fields_map.get("audio_silence_settings") {
+                        let field_value = match fields_map.get("audioSilenceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_silence_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioSilenceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_loss_settings: {
-                        let field_value = match fields_map.get("input_loss_settings") {
+                        let field_value = match fields_map.get("inputLossSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_loss_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLossSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#video_black_settings: {
-                        let field_value = match fields_map.get("video_black_settings") {
+                        let field_value = match fields_map.get("videoBlackSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'video_black_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'videoBlackSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

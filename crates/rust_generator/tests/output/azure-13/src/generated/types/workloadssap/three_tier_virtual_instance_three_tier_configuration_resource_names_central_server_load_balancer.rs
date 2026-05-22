@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#backend_pool_names: {
-                        let field_value = match fields_map.get("backend_pool_names") {
+                        let field_value = match fields_map.get("backendPoolNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_pool_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPoolNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frontend_ip_configuration_names: {
-                        let field_value = match fields_map.get("frontend_ip_configuration_names") {
+                        let field_value = match fields_map.get("frontendIpConfigurationNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frontend_ip_configuration_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frontendIpConfigurationNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_probe_names: {
-                        let field_value = match fields_map.get("health_probe_names") {
+                        let field_value = match fields_map.get("healthProbeNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_probe_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthProbeNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

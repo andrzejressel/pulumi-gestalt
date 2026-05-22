@@ -67,16 +67,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#backup_run_id: {
-                        let field_value = match fields_map.get("backup_run_id") {
+                        let field_value = match fields_map.get("backupRunId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_run_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupRunId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_id: {
-                        let field_value = match fields_map.get("instance_id") {
+                        let field_value = match fields_map.get("instanceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

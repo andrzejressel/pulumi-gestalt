@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#maximum_batch_size: {
-                        let field_value = match fields_map.get("maximum_batch_size") {
+                        let field_value = match fields_map.get("maximumBatchSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_batch_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumBatchSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_execution_timeout_in_seconds: {
-                        let field_value = match fields_map.get("maximum_execution_timeout_in_seconds") {
+                        let field_value = match fields_map.get("maximumExecutionTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_execution_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumExecutionTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rollback_maximum_batch_size: {
-                        let field_value = match fields_map.get("rollback_maximum_batch_size") {
+                        let field_value = match fields_map.get("rollbackMaximumBatchSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rollback_maximum_batch_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rollbackMaximumBatchSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wait_interval_in_seconds: {
-                        let field_value = match fields_map.get("wait_interval_in_seconds") {
+                        let field_value = match fields_map.get("waitIntervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wait_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'waitIntervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

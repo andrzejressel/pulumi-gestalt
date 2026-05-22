@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#enable_nested_virtualization: {
-                        let field_value = match fields_map.get("enable_nested_virtualization") {
+                        let field_value = match fields_map.get("enableNestedVirtualization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_nested_virtualization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableNestedVirtualization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_uefi_networking: {
-                        let field_value = match fields_map.get("enable_uefi_networking") {
+                        let field_value = match fields_map.get("enableUefiNetworking") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_uefi_networking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableUefiNetworking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#performance_monitoring_unit: {
-                        let field_value = match fields_map.get("performance_monitoring_unit") {
+                        let field_value = match fields_map.get("performanceMonitoringUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'performance_monitoring_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'performanceMonitoringUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threads_per_core: {
-                        let field_value = match fields_map.get("threads_per_core") {
+                        let field_value = match fields_map.get("threadsPerCore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'threads_per_core' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'threadsPerCore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#turbo_mode: {
-                        let field_value = match fields_map.get("turbo_mode") {
+                        let field_value = match fields_map.get("turboMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'turbo_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'turboMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#visible_core_count: {
-                        let field_value = match fields_map.get("visible_core_count") {
+                        let field_value = match fields_map.get("visibleCoreCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'visible_core_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'visibleCoreCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

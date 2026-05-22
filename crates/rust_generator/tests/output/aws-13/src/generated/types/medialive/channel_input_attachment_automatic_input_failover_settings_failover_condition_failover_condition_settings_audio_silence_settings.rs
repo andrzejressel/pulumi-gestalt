@@ -57,16 +57,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_selector_name: {
-                        let field_value = match fields_map.get("audio_selector_name") {
+                        let field_value = match fields_map.get("audioSelectorName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_selector_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioSelectorName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_silence_threshold_msec: {
-                        let field_value = match fields_map.get("audio_silence_threshold_msec") {
+                        let field_value = match fields_map.get("audioSilenceThresholdMsec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_silence_threshold_msec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioSilenceThresholdMsec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

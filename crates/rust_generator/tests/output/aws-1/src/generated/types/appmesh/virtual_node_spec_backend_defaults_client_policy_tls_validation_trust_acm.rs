@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#certificate_authority_arns: {
-                        let field_value = match fields_map.get("certificate_authority_arns") {
+                        let field_value = match fields_map.get("certificateAuthorityArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_authority_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateAuthorityArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

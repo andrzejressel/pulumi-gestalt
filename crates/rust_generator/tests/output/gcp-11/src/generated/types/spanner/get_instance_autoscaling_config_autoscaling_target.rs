@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#high_priority_cpu_utilization_percent: {
-                        let field_value = match fields_map.get("high_priority_cpu_utilization_percent") {
+                        let field_value = match fields_map.get("highPriorityCpuUtilizationPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'high_priority_cpu_utilization_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'highPriorityCpuUtilizationPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_utilization_percent: {
-                        let field_value = match fields_map.get("storage_utilization_percent") {
+                        let field_value = match fields_map.get("storageUtilizationPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_utilization_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageUtilizationPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

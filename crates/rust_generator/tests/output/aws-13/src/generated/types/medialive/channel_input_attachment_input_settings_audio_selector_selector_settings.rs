@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_hls_rendition_selection: {
-                        let field_value = match fields_map.get("audio_hls_rendition_selection") {
+                        let field_value = match fields_map.get("audioHlsRenditionSelection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_hls_rendition_selection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioHlsRenditionSelection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_language_selection: {
-                        let field_value = match fields_map.get("audio_language_selection") {
+                        let field_value = match fields_map.get("audioLanguageSelection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_language_selection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioLanguageSelection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_pid_selection: {
-                        let field_value = match fields_map.get("audio_pid_selection") {
+                        let field_value = match fields_map.get("audioPidSelection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_pid_selection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioPidSelection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_track_selection: {
-                        let field_value = match fields_map.get("audio_track_selection") {
+                        let field_value = match fields_map.get("audioTrackSelection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_track_selection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioTrackSelection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_interfaces: {
-                        let field_value = match fields_map.get("network_interfaces") {
+                        let field_value = match fields_map.get("networkInterfaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_interfaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkInterfaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

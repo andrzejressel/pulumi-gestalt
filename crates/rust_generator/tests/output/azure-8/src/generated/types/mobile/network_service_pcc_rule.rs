@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#qos_policy: {
-                        let field_value = match fields_map.get("qos_policy") {
+                        let field_value = match fields_map.get("qosPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'qos_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'qosPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_data_flow_templates: {
-                        let field_value = match fields_map.get("service_data_flow_templates") {
+                        let field_value = match fields_map.get("serviceDataFlowTemplates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_data_flow_templates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceDataFlowTemplates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#traffic_control_enabled: {
-                        let field_value = match fields_map.get("traffic_control_enabled") {
+                        let field_value = match fields_map.get("trafficControlEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'traffic_control_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trafficControlEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

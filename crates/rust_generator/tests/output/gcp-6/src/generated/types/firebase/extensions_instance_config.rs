@@ -127,37 +127,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#allowed_event_types: {
-                        let field_value = match fields_map.get("allowed_event_types") {
+                        let field_value = match fields_map.get("allowedEventTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_event_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedEventTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_time: {
-                        let field_value = match fields_map.get("create_time") {
+                        let field_value = match fields_map.get("createTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#eventarc_channel: {
-                        let field_value = match fields_map.get("eventarc_channel") {
+                        let field_value = match fields_map.get("eventarcChannel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'eventarc_channel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventarcChannel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extension_ref: {
-                        let field_value = match fields_map.get("extension_ref") {
+                        let field_value = match fields_map.get("extensionRef") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extension_ref' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extensionRef' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extension_version: {
-                        let field_value = match fields_map.get("extension_version") {
+                        let field_value = match fields_map.get("extensionVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extension_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extensionVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -176,16 +176,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#populated_postinstall_content: {
-                        let field_value = match fields_map.get("populated_postinstall_content") {
+                        let field_value = match fields_map.get("populatedPostinstallContent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'populated_postinstall_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'populatedPostinstallContent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#system_params: {
-                        let field_value = match fields_map.get("system_params") {
+                        let field_value = match fields_map.get("systemParams") {
                             Some(value) => value,
-                            None => bail!("Missing field 'system_params' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'systemParams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

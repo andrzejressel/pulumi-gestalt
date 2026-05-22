@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#allow_admin_create_user_only: {
-                        let field_value = match fields_map.get("allow_admin_create_user_only") {
+                        let field_value = match fields_map.get("allowAdminCreateUserOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_admin_create_user_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowAdminCreateUserOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#invite_message_template: {
-                        let field_value = match fields_map.get("invite_message_template") {
+                        let field_value = match fields_map.get("inviteMessageTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'invite_message_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inviteMessageTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#network_url: {
-                        let field_value = match fields_map.get("network_url") {
+                        let field_value = match fields_map.get("networkUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

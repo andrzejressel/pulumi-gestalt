@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#entity_type: {
-                        let field_value = match fields_map.get("entity_type") {
+                        let field_value = match fields_map.get("entityType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_mappings: {
-                        let field_value = match fields_map.get("field_mappings") {
+                        let field_value = match fields_map.get("fieldMappings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_mappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldMappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

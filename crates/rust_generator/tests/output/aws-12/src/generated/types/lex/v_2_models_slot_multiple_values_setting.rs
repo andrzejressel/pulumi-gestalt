@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#allow_multiple_values: {
-                        let field_value = match fields_map.get("allow_multiple_values") {
+                        let field_value = match fields_map.get("allowMultipleValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_multiple_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowMultipleValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

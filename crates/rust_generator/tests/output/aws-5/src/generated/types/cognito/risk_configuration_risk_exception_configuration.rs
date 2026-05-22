@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#blocked_ip_range_lists: {
-                        let field_value = match fields_map.get("blocked_ip_range_lists") {
+                        let field_value = match fields_map.get("blockedIpRangeLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'blocked_ip_range_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockedIpRangeLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skipped_ip_range_lists: {
-                        let field_value = match fields_map.get("skipped_ip_range_lists") {
+                        let field_value = match fields_map.get("skippedIpRangeLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skipped_ip_range_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skippedIpRangeLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

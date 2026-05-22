@@ -67,16 +67,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#header_name: {
-                        let field_value = match fields_map.get("header_name") {
+                        let field_value = match fields_map.get("headerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#header_value: {
-                        let field_value = match fields_map.get("header_value") {
+                        let field_value = match fields_map.get("headerValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

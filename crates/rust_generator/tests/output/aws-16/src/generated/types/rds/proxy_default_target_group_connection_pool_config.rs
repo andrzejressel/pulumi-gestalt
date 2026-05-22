@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#connection_borrow_timeout: {
-                        let field_value = match fields_map.get("connection_borrow_timeout") {
+                        let field_value = match fields_map.get("connectionBorrowTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_borrow_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionBorrowTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#init_query: {
-                        let field_value = match fields_map.get("init_query") {
+                        let field_value = match fields_map.get("initQuery") {
                             Some(value) => value,
-                            None => bail!("Missing field 'init_query' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initQuery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_connections_percent: {
-                        let field_value = match fields_map.get("max_connections_percent") {
+                        let field_value = match fields_map.get("maxConnectionsPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_connections_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConnectionsPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_idle_connections_percent: {
-                        let field_value = match fields_map.get("max_idle_connections_percent") {
+                        let field_value = match fields_map.get("maxIdleConnectionsPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_idle_connections_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxIdleConnectionsPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_pinning_filters: {
-                        let field_value = match fields_map.get("session_pinning_filters") {
+                        let field_value = match fields_map.get("sessionPinningFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_pinning_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionPinningFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

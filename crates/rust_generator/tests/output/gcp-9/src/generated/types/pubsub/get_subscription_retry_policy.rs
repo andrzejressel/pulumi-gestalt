@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#maximum_backoff: {
-                        let field_value = match fields_map.get("maximum_backoff") {
+                        let field_value = match fields_map.get("maximumBackoff") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_backoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumBackoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_backoff: {
-                        let field_value = match fields_map.get("minimum_backoff") {
+                        let field_value = match fields_map.get("minimumBackoff") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_backoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumBackoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

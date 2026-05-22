@@ -87,9 +87,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#allow_all: {
-                        let field_value = match fields_map.get("allow_all") {
+                        let field_value = match fields_map.get("allowAll") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_all' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowAll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -101,9 +101,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deny_all: {
-                        let field_value = match fields_map.get("deny_all") {
+                        let field_value = match fields_map.get("denyAll") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deny_all' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'denyAll' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

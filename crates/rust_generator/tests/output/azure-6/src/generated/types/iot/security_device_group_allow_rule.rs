@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#connection_from_ips_not_alloweds: {
-                        let field_value = match fields_map.get("connection_from_ips_not_alloweds") {
+                        let field_value = match fields_map.get("connectionFromIpsNotAlloweds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_from_ips_not_alloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionFromIpsNotAlloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_to_ips_not_alloweds: {
-                        let field_value = match fields_map.get("connection_to_ips_not_alloweds") {
+                        let field_value = match fields_map.get("connectionToIpsNotAlloweds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_to_ips_not_alloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionToIpsNotAlloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_users_not_alloweds: {
-                        let field_value = match fields_map.get("local_users_not_alloweds") {
+                        let field_value = match fields_map.get("localUsersNotAlloweds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_users_not_alloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localUsersNotAlloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#processes_not_alloweds: {
-                        let field_value = match fields_map.get("processes_not_alloweds") {
+                        let field_value = match fields_map.get("processesNotAlloweds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'processes_not_alloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'processesNotAlloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

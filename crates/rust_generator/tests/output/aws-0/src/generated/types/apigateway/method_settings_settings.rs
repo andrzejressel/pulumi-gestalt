@@ -122,72 +122,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#cache_data_encrypted: {
-                        let field_value = match fields_map.get("cache_data_encrypted") {
+                        let field_value = match fields_map.get("cacheDataEncrypted") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_data_encrypted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheDataEncrypted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_ttl_in_seconds: {
-                        let field_value = match fields_map.get("cache_ttl_in_seconds") {
+                        let field_value = match fields_map.get("cacheTtlInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_ttl_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheTtlInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#caching_enabled: {
-                        let field_value = match fields_map.get("caching_enabled") {
+                        let field_value = match fields_map.get("cachingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'caching_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cachingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_trace_enabled: {
-                        let field_value = match fields_map.get("data_trace_enabled") {
+                        let field_value = match fields_map.get("dataTraceEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_trace_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataTraceEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logging_level: {
-                        let field_value = match fields_map.get("logging_level") {
+                        let field_value = match fields_map.get("loggingLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logging_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loggingLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metrics_enabled: {
-                        let field_value = match fields_map.get("metrics_enabled") {
+                        let field_value = match fields_map.get("metricsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metrics_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_authorization_for_cache_control: {
-                        let field_value = match fields_map.get("require_authorization_for_cache_control") {
+                        let field_value = match fields_map.get("requireAuthorizationForCacheControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_authorization_for_cache_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireAuthorizationForCacheControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#throttling_burst_limit: {
-                        let field_value = match fields_map.get("throttling_burst_limit") {
+                        let field_value = match fields_map.get("throttlingBurstLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'throttling_burst_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'throttlingBurstLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#throttling_rate_limit: {
-                        let field_value = match fields_map.get("throttling_rate_limit") {
+                        let field_value = match fields_map.get("throttlingRateLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'throttling_rate_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'throttlingRateLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unauthorized_cache_control_header_strategy: {
-                        let field_value = match fields_map.get("unauthorized_cache_control_header_strategy") {
+                        let field_value = match fields_map.get("unauthorizedCacheControlHeaderStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unauthorized_cache_control_header_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unauthorizedCacheControlHeaderStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

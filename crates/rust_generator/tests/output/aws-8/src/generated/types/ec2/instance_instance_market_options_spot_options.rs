@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#instance_interruption_behavior: {
-                        let field_value = match fields_map.get("instance_interruption_behavior") {
+                        let field_value = match fields_map.get("instanceInterruptionBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_interruption_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceInterruptionBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_price: {
-                        let field_value = match fields_map.get("max_price") {
+                        let field_value = match fields_map.get("maxPrice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxPrice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spot_instance_type: {
-                        let field_value = match fields_map.get("spot_instance_type") {
+                        let field_value = match fields_map.get("spotInstanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spot_instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spotInstanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#valid_until: {
-                        let field_value = match fields_map.get("valid_until") {
+                        let field_value = match fields_map.get("validUntil") {
                             Some(value) => value,
-                            None => bail!("Missing field 'valid_until' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validUntil' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

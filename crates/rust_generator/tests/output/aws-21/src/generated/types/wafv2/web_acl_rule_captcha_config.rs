@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#immunity_time_property: {
-                        let field_value = match fields_map.get("immunity_time_property") {
+                        let field_value = match fields_map.get("immunityTimeProperty") {
                             Some(value) => value,
-                            None => bail!("Missing field 'immunity_time_property' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'immunityTimeProperty' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

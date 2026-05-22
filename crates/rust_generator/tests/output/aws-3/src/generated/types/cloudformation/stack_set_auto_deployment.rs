@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retain_stacks_on_account_removal: {
-                        let field_value = match fields_map.get("retain_stacks_on_account_removal") {
+                        let field_value = match fields_map.get("retainStacksOnAccountRemoval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retain_stacks_on_account_removal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retainStacksOnAccountRemoval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

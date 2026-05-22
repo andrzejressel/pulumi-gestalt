@@ -120,16 +120,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_frequency: {
-                        let field_value = match fields_map.get("query_frequency") {
+                        let field_value = match fields_map.get("queryFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_period: {
-                        let field_value = match fields_map.get("query_period") {
+                        let field_value = match fields_map.get("queryPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -148,16 +148,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trigger_operator: {
-                        let field_value = match fields_map.get("trigger_operator") {
+                        let field_value = match fields_map.get("triggerOperator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trigger_operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'triggerOperator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trigger_threshold: {
-                        let field_value = match fields_map.get("trigger_threshold") {
+                        let field_value = match fields_map.get("triggerThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trigger_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'triggerThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -69,23 +69,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#metastore_service_config: {
-                        let field_value = match fields_map.get("metastore_service_config") {
+                        let field_value = match fields_map.get("metastoreServiceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metastore_service_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metastoreServiceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_id: {
-                        let field_value = match fields_map.get("service_account_id") {
+                        let field_value = match fields_map.get("serviceAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spark_history_server_config: {
-                        let field_value = match fields_map.get("spark_history_server_config") {
+                        let field_value = match fields_map.get("sparkHistoryServerConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spark_history_server_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sparkHistoryServerConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

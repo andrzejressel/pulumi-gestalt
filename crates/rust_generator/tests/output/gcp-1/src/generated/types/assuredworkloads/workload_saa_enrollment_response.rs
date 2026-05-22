@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#setup_errors: {
-                        let field_value = match fields_map.get("setup_errors") {
+                        let field_value = match fields_map.get("setupErrors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'setup_errors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'setupErrors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#setup_status: {
-                        let field_value = match fields_map.get("setup_status") {
+                        let field_value = match fields_map.get("setupStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'setup_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'setupStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

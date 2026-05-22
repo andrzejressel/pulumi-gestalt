@@ -88,23 +88,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#delegation_service_account_email: {
-                        let field_value = match fields_map.get("delegation_service_account_email") {
+                        let field_value = match fields_map.get("delegationServiceAccountEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delegation_service_account_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'delegationServiceAccountEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#note_reference: {
-                        let field_value = match fields_map.get("note_reference") {
+                        let field_value = match fields_map.get("noteReference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'note_reference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noteReference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_keys: {
-                        let field_value = match fields_map.get("public_keys") {
+                        let field_value = match fields_map.get("publicKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#content_security_policy: {
-                        let field_value = match fields_map.get("content_security_policy") {
+                        let field_value = match fields_map.get("contentSecurityPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_security_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentSecurityPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_type_options: {
-                        let field_value = match fields_map.get("content_type_options") {
+                        let field_value = match fields_map.get("contentTypeOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_type_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentTypeOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frame_options: {
-                        let field_value = match fields_map.get("frame_options") {
+                        let field_value = match fields_map.get("frameOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frame_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frameOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#referrer_policy: {
-                        let field_value = match fields_map.get("referrer_policy") {
+                        let field_value = match fields_map.get("referrerPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'referrer_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'referrerPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#strict_transport_security: {
-                        let field_value = match fields_map.get("strict_transport_security") {
+                        let field_value = match fields_map.get("strictTransportSecurity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'strict_transport_security' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'strictTransportSecurity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#xss_protection: {
-                        let field_value = match fields_map.get("xss_protection") {
+                        let field_value = match fields_map.get("xssProtection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'xss_protection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'xssProtection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

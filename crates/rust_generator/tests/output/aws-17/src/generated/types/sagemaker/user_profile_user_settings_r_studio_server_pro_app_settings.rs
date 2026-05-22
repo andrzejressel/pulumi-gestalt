@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#access_status: {
-                        let field_value = match fields_map.get("access_status") {
+                        let field_value = match fields_map.get("accessStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_group: {
-                        let field_value = match fields_map.get("user_group") {
+                        let field_value = match fields_map.get("userGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

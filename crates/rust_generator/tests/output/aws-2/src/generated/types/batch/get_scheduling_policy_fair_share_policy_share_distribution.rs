@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#share_identifier: {
-                        let field_value = match fields_map.get("share_identifier") {
+                        let field_value = match fields_map.get("shareIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'share_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shareIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weight_factor: {
-                        let field_value = match fields_map.get("weight_factor") {
+                        let field_value = match fields_map.get("weightFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weight_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weightFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

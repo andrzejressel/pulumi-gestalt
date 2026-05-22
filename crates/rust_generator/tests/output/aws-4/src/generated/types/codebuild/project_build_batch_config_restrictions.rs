@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#compute_types_alloweds: {
-                        let field_value = match fields_map.get("compute_types_alloweds") {
+                        let field_value = match fields_map.get("computeTypesAlloweds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compute_types_alloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computeTypesAlloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_builds_allowed: {
-                        let field_value = match fields_map.get("maximum_builds_allowed") {
+                        let field_value = match fields_map.get("maximumBuildsAllowed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_builds_allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumBuildsAllowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

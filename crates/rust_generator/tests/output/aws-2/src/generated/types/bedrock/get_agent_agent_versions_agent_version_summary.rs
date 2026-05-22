@@ -98,30 +98,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#agent_name: {
-                        let field_value = match fields_map.get("agent_name") {
+                        let field_value = match fields_map.get("agentName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'agent_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'agentName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#agent_status: {
-                        let field_value = match fields_map.get("agent_status") {
+                        let field_value = match fields_map.get("agentStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'agent_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'agentStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#agent_version: {
-                        let field_value = match fields_map.get("agent_version") {
+                        let field_value = match fields_map.get("agentVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'agent_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'agentVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#created_at: {
-                        let field_value = match fields_map.get("created_at") {
+                        let field_value = match fields_map.get("createdAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'created_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createdAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,16 +133,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guardrail_configurations: {
-                        let field_value = match fields_map.get("guardrail_configurations") {
+                        let field_value = match fields_map.get("guardrailConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guardrail_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guardrailConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#updated_at: {
-                        let field_value = match fields_map.get("updated_at") {
+                        let field_value = match fields_map.get("updatedAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'updated_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updatedAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

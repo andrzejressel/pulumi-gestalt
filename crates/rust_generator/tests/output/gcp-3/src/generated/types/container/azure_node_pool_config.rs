@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#image_type: {
-                        let field_value = match fields_map.get("image_type") {
+                        let field_value = match fields_map.get("imageType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,23 +112,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#proxy_config: {
-                        let field_value = match fields_map.get("proxy_config") {
+                        let field_value = match fields_map.get("proxyConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'proxy_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'proxyConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_volume: {
-                        let field_value = match fields_map.get("root_volume") {
+                        let field_value = match fields_map.get("rootVolume") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_volume' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootVolume' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssh_config: {
-                        let field_value = match fields_map.get("ssh_config") {
+                        let field_value = match fields_map.get("sshConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssh_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sshConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_size: {
-                        let field_value = match fields_map.get("vm_size") {
+                        let field_value = match fields_map.get("vmSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

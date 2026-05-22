@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#sync_states: {
-                        let field_value = match fields_map.get("sync_states") {
+                        let field_value = match fields_map.get("syncStates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sync_states' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syncStates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

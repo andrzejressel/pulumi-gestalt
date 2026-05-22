@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#configuration_overrides: {
-                        let field_value = match fields_map.get("configuration_overrides") {
+                        let field_value = match fields_map.get("configurationOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configuration_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configurationOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_role_arn: {
-                        let field_value = match fields_map.get("execution_role_arn") {
+                        let field_value = match fields_map.get("executionRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_driver: {
-                        let field_value = match fields_map.get("job_driver") {
+                        let field_value = match fields_map.get("jobDriver") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_driver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobDriver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#job_tags: {
-                        let field_value = match fields_map.get("job_tags") {
+                        let field_value = match fields_map.get("jobTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#release_label: {
-                        let field_value = match fields_map.get("release_label") {
+                        let field_value = match fields_map.get("releaseLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'release_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'releaseLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

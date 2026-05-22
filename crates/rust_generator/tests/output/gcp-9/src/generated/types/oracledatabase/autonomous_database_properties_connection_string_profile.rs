@@ -143,30 +143,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#consumer_group: {
-                        let field_value = match fields_map.get("consumer_group") {
+                        let field_value = match fields_map.get("consumerGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_format: {
-                        let field_value = match fields_map.get("host_format") {
+                        let field_value = match fields_map.get("hostFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_regional: {
-                        let field_value = match fields_map.get("is_regional") {
+                        let field_value = match fields_map.get("isRegional") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_regional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isRegional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -178,23 +178,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_mode: {
-                        let field_value = match fields_map.get("session_mode") {
+                        let field_value = match fields_map.get("sessionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#syntax_format: {
-                        let field_value = match fields_map.get("syntax_format") {
+                        let field_value = match fields_map.get("syntaxFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'syntax_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syntaxFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_authentication: {
-                        let field_value = match fields_map.get("tls_authentication") {
+                        let field_value = match fields_map.get("tlsAuthentication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsAuthentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

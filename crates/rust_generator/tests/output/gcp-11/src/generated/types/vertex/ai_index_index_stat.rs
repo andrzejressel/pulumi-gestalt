@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#shards_count: {
-                        let field_value = match fields_map.get("shards_count") {
+                        let field_value = match fields_map.get("shardsCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shards_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shardsCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vectors_count: {
-                        let field_value = match fields_map.get("vectors_count") {
+                        let field_value = match fields_map.get("vectorsCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vectors_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vectorsCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

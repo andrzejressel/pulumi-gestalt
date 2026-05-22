@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#deployment_ready_option: {
-                        let field_value = match fields_map.get("deployment_ready_option") {
+                        let field_value = match fields_map.get("deploymentReadyOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployment_ready_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentReadyOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#green_fleet_provisioning_option: {
-                        let field_value = match fields_map.get("green_fleet_provisioning_option") {
+                        let field_value = match fields_map.get("greenFleetProvisioningOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'green_fleet_provisioning_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'greenFleetProvisioningOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#terminate_blue_instances_on_deployment_success: {
-                        let field_value = match fields_map.get("terminate_blue_instances_on_deployment_success") {
+                        let field_value = match fields_map.get("terminateBlueInstancesOnDeploymentSuccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'terminate_blue_instances_on_deployment_success' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'terminateBlueInstancesOnDeploymentSuccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

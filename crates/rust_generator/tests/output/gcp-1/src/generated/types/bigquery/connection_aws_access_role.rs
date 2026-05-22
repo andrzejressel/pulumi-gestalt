@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#iam_role_id: {
-                        let field_value = match fields_map.get("iam_role_id") {
+                        let field_value = match fields_map.get("iamRoleId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iam_role_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iamRoleId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

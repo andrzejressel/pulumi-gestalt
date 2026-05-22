@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#ecr_configurations: {
-                        let field_value = match fields_map.get("ecr_configurations") {
+                        let field_value = match fields_map.get("ecrConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ecr_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ecrConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_scanning_enabled: {
-                        let field_value = match fields_map.get("image_scanning_enabled") {
+                        let field_value = match fields_map.get("imageScanningEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_scanning_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageScanningEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

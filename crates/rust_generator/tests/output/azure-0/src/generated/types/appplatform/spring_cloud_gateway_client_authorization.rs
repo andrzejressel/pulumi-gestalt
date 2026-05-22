@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#certificate_ids: {
-                        let field_value = match fields_map.get("certificate_ids") {
+                        let field_value = match fields_map.get("certificateIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verification_enabled: {
-                        let field_value = match fields_map.get("verification_enabled") {
+                        let field_value = match fields_map.get("verificationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verification_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verificationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

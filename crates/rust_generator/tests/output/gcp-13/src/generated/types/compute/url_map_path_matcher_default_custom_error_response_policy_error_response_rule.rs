@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#match_response_codes: {
-                        let field_value = match fields_map.get("match_response_codes") {
+                        let field_value = match fields_map.get("matchResponseCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_response_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchResponseCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#override_response_code: {
-                        let field_value = match fields_map.get("override_response_code") {
+                        let field_value = match fields_map.get("overrideResponseCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'override_response_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'overrideResponseCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -106,16 +106,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#execution_reason: {
-                        let field_value = match fields_map.get("execution_reason") {
+                        let field_value = match fields_map.get("executionReason") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_reason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionReason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_transition_time: {
-                        let field_value = match fields_map.get("last_transition_time") {
+                        let field_value = match fields_map.get("lastTransitionTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_transition_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastTransitionTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,9 +134,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#revision_reason: {
-                        let field_value = match fields_map.get("revision_reason") {
+                        let field_value = match fields_map.get("revisionReason") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revision_reason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revisionReason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -155,9 +155,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#inline_configurations: {
-                        let field_value = match fields_map.get("inline_configurations") {
+                        let field_value = match fields_map.get("inlineConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inline_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inlineConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_extraction_hook_configuration: {
-                        let field_value = match fields_map.get("post_extraction_hook_configuration") {
+                        let field_value = match fields_map.get("postExtractionHookConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_extraction_hook_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postExtractionHookConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_extraction_hook_configuration: {
-                        let field_value = match fields_map.get("pre_extraction_hook_configuration") {
+                        let field_value = match fields_map.get("preExtractionHookConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_extraction_hook_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preExtractionHookConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

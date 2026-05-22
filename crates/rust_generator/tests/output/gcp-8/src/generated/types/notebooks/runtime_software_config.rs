@@ -131,37 +131,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#custom_gpu_driver_path: {
-                        let field_value = match fields_map.get("custom_gpu_driver_path") {
+                        let field_value = match fields_map.get("customGpuDriverPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_gpu_driver_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customGpuDriverPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_health_monitoring: {
-                        let field_value = match fields_map.get("enable_health_monitoring") {
+                        let field_value = match fields_map.get("enableHealthMonitoring") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_health_monitoring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableHealthMonitoring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idle_shutdown: {
-                        let field_value = match fields_map.get("idle_shutdown") {
+                        let field_value = match fields_map.get("idleShutdown") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_shutdown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleShutdown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idle_shutdown_timeout: {
-                        let field_value = match fields_map.get("idle_shutdown_timeout") {
+                        let field_value = match fields_map.get("idleShutdownTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_shutdown_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleShutdownTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#install_gpu_driver: {
-                        let field_value = match fields_map.get("install_gpu_driver") {
+                        let field_value = match fields_map.get("installGpuDriver") {
                             Some(value) => value,
-                            None => bail!("Missing field 'install_gpu_driver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'installGpuDriver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -173,23 +173,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notebook_upgrade_schedule: {
-                        let field_value = match fields_map.get("notebook_upgrade_schedule") {
+                        let field_value = match fields_map.get("notebookUpgradeSchedule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notebook_upgrade_schedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notebookUpgradeSchedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_startup_script: {
-                        let field_value = match fields_map.get("post_startup_script") {
+                        let field_value = match fields_map.get("postStartupScript") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_startup_script' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postStartupScript' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_startup_script_behavior: {
-                        let field_value = match fields_map.get("post_startup_script_behavior") {
+                        let field_value = match fields_map.get("postStartupScriptBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_startup_script_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postStartupScriptBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

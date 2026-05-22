@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#autoscaling_groups: {
-                        let field_value = match fields_map.get("autoscaling_groups") {
+                        let field_value = match fields_map.get("autoscalingGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_access_security_group_id: {
-                        let field_value = match fields_map.get("remote_access_security_group_id") {
+                        let field_value = match fields_map.get("remoteAccessSecurityGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_access_security_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remoteAccessSecurityGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

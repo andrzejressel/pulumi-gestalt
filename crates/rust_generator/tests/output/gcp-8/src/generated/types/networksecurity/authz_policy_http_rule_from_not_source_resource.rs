@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#iam_service_account: {
-                        let field_value = match fields_map.get("iam_service_account") {
+                        let field_value = match fields_map.get("iamServiceAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iam_service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iamServiceAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_value_id_set: {
-                        let field_value = match fields_map.get("tag_value_id_set") {
+                        let field_value = match fields_map.get("tagValueIdSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_value_id_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagValueIdSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

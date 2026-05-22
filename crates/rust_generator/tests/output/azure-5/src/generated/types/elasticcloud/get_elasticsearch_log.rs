@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#filtering_tags: {
-                        let field_value = match fields_map.get("filtering_tags") {
+                        let field_value = match fields_map.get("filteringTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filtering_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filteringTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_activity_logs: {
-                        let field_value = match fields_map.get("send_activity_logs") {
+                        let field_value = match fields_map.get("sendActivityLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_activity_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendActivityLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_azuread_logs: {
-                        let field_value = match fields_map.get("send_azuread_logs") {
+                        let field_value = match fields_map.get("sendAzureadLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_azuread_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendAzureadLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_subscription_logs: {
-                        let field_value = match fields_map.get("send_subscription_logs") {
+                        let field_value = match fields_map.get("sendSubscriptionLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_subscription_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendSubscriptionLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

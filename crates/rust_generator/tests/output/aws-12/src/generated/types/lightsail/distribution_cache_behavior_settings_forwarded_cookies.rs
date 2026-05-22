@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#cookies_allow_lists: {
-                        let field_value = match fields_map.get("cookies_allow_lists") {
+                        let field_value = match fields_map.get("cookiesAllowLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cookies_allow_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cookiesAllowLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

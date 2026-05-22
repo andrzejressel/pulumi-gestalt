@@ -103,30 +103,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_policies: {
-                        let field_value = match fields_map.get("ssl_policies") {
+                        let field_value = match fields_map.get("sslPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_client_certificate_names: {
-                        let field_value = match fields_map.get("trusted_client_certificate_names") {
+                        let field_value = match fields_map.get("trustedClientCertificateNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trusted_client_certificate_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustedClientCertificateNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verify_client_certificate_issuer_dn: {
-                        let field_value = match fields_map.get("verify_client_certificate_issuer_dn") {
+                        let field_value = match fields_map.get("verifyClientCertificateIssuerDn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verify_client_certificate_issuer_dn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifyClientCertificateIssuerDn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verify_client_certificate_revocation: {
-                        let field_value = match fields_map.get("verify_client_certificate_revocation") {
+                        let field_value = match fields_map.get("verifyClientCertificateRevocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verify_client_certificate_revocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifyClientCertificateRevocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

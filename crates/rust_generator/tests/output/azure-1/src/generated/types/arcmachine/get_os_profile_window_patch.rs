@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#assessment_mode: {
-                        let field_value = match fields_map.get("assessment_mode") {
+                        let field_value = match fields_map.get("assessmentMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'assessment_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'assessmentMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#patch_mode: {
-                        let field_value = match fields_map.get("patch_mode") {
+                        let field_value = match fields_map.get("patchMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'patch_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'patchMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

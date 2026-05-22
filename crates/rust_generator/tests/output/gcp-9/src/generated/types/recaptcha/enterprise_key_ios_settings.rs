@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#allow_all_bundle_ids: {
-                        let field_value = match fields_map.get("allow_all_bundle_ids") {
+                        let field_value = match fields_map.get("allowAllBundleIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_all_bundle_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowAllBundleIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_bundle_ids: {
-                        let field_value = match fields_map.get("allowed_bundle_ids") {
+                        let field_value = match fields_map.get("allowedBundleIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_bundle_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedBundleIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

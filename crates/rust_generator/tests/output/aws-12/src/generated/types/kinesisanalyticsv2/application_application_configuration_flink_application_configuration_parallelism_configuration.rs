@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#auto_scaling_enabled: {
-                        let field_value = match fields_map.get("auto_scaling_enabled") {
+                        let field_value = match fields_map.get("autoScalingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_scaling_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoScalingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#configuration_type: {
-                        let field_value = match fields_map.get("configuration_type") {
+                        let field_value = match fields_map.get("configurationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configuration_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configurationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parallelism_per_kpu: {
-                        let field_value = match fields_map.get("parallelism_per_kpu") {
+                        let field_value = match fields_map.get("parallelismPerKpu") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parallelism_per_kpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parallelismPerKpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

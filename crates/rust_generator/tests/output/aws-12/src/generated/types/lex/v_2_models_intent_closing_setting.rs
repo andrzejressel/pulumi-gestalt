@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#closing_response: {
-                        let field_value = match fields_map.get("closing_response") {
+                        let field_value = match fields_map.get("closingResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'closing_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'closingResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_step: {
-                        let field_value = match fields_map.get("next_step") {
+                        let field_value = match fields_map.get("nextStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

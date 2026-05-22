@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#authentication_mode: {
-                        let field_value = match fields_map.get("authentication_mode") {
+                        let field_value = match fields_map.get("authenticationMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bootstrap_cluster_creator_admin_permissions: {
-                        let field_value = match fields_map.get("bootstrap_cluster_creator_admin_permissions") {
+                        let field_value = match fields_map.get("bootstrapClusterCreatorAdminPermissions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bootstrap_cluster_creator_admin_permissions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bootstrapClusterCreatorAdminPermissions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

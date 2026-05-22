@@ -105,9 +105,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#coding_mode: {
-                        let field_value = match fields_map.get("coding_mode") {
+                        let field_value = match fields_map.get("codingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'coding_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,30 +119,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#drc_line: {
-                        let field_value = match fields_map.get("drc_line") {
+                        let field_value = match fields_map.get("drcLine") {
                             Some(value) => value,
-                            None => bail!("Missing field 'drc_line' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'drcLine' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#drc_rf: {
-                        let field_value = match fields_map.get("drc_rf") {
+                        let field_value = match fields_map.get("drcRf") {
                             Some(value) => value,
-                            None => bail!("Missing field 'drc_rf' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'drcRf' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#height_trim: {
-                        let field_value = match fields_map.get("height_trim") {
+                        let field_value = match fields_map.get("heightTrim") {
                             Some(value) => value,
-                            None => bail!("Missing field 'height_trim' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'heightTrim' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#surround_trim: {
-                        let field_value = match fields_map.get("surround_trim") {
+                        let field_value = match fields_map.get("surroundTrim") {
                             Some(value) => value,
-                            None => bail!("Missing field 'surround_trim' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'surroundTrim' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

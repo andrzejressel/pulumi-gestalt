@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#instance_group_manager_name: {
-                        let field_value = match fields_map.get("instance_group_manager_name") {
+                        let field_value = match fields_map.get("instanceGroupManagerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_group_manager_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceGroupManagerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_template_name: {
-                        let field_value = match fields_map.get("instance_template_name") {
+                        let field_value = match fields_map.get("instanceTemplateName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_template_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceTemplateName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

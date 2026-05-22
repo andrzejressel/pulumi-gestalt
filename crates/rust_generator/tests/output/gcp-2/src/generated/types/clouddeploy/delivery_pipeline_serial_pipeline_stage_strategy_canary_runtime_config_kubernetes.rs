@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#gateway_service_mesh: {
-                        let field_value = match fields_map.get("gateway_service_mesh") {
+                        let field_value = match fields_map.get("gatewayServiceMesh") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gateway_service_mesh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gatewayServiceMesh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_networking: {
-                        let field_value = match fields_map.get("service_networking") {
+                        let field_value = match fields_map.get("serviceNetworking") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_networking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceNetworking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

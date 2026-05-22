@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_base_64: {
-                        let field_value = match fields_map.get("content_base_64") {
+                        let field_value = match fields_map.get("contentBase64") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_base_64' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentBase64' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,9 +125,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_hash: {
-                        let field_value = match fields_map.get("source_hash") {
+                        let field_value = match fields_map.get("sourceHash") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_hash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceHash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

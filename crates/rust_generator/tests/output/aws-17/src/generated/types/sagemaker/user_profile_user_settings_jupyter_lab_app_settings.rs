@@ -97,51 +97,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#app_lifecycle_management: {
-                        let field_value = match fields_map.get("app_lifecycle_management") {
+                        let field_value = match fields_map.get("appLifecycleManagement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_lifecycle_management' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appLifecycleManagement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#built_in_lifecycle_config_arn: {
-                        let field_value = match fields_map.get("built_in_lifecycle_config_arn") {
+                        let field_value = match fields_map.get("builtInLifecycleConfigArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'built_in_lifecycle_config_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'builtInLifecycleConfigArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#code_repositories: {
-                        let field_value = match fields_map.get("code_repositories") {
+                        let field_value = match fields_map.get("codeRepositories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_repositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeRepositories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_images: {
-                        let field_value = match fields_map.get("custom_images") {
+                        let field_value = match fields_map.get("customImages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_images' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customImages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_resource_spec: {
-                        let field_value = match fields_map.get("default_resource_spec") {
+                        let field_value = match fields_map.get("defaultResourceSpec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_resource_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultResourceSpec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#emr_settings: {
-                        let field_value = match fields_map.get("emr_settings") {
+                        let field_value = match fields_map.get("emrSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'emr_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emrSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_config_arns: {
-                        let field_value = match fields_map.get("lifecycle_config_arns") {
+                        let field_value = match fields_map.get("lifecycleConfigArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lifecycle_config_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifecycleConfigArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

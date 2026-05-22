@@ -75,9 +75,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#endpoint_filter: {
-                        let field_value = match fields_map.get("endpoint_filter") {
+                        let field_value = match fields_map.get("endpointFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -89,16 +89,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_certificates: {
-                        let field_value = match fields_map.get("server_certificates") {
+                        let field_value = match fields_map.get("serverCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_directory_service: {
-                        let field_value = match fields_map.get("service_directory_service") {
+                        let field_value = match fields_map.get("serviceDirectoryService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_directory_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceDirectoryService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#network_function_groups: {
-                        let field_value = match fields_map.get("network_function_groups") {
+                        let field_value = match fields_map.get("networkFunctionGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_function_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkFunctionGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#with_edge_overrides: {
-                        let field_value = match fields_map.get("with_edge_overrides") {
+                        let field_value = match fields_map.get("withEdgeOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'with_edge_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'withEdgeOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

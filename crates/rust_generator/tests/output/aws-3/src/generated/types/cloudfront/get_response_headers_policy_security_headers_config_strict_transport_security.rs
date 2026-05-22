@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#access_control_max_age_sec: {
-                        let field_value = match fields_map.get("access_control_max_age_sec") {
+                        let field_value = match fields_map.get("accessControlMaxAgeSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_control_max_age_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessControlMaxAgeSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_subdomains: {
-                        let field_value = match fields_map.get("include_subdomains") {
+                        let field_value = match fields_map.get("includeSubdomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_subdomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeSubdomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#override_: {
-                        let field_value = match fields_map.get("override_") {
+                        let field_value = match fields_map.get("override") {
                             Some(value) => value,
-                            None => bail!("Missing field 'override_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

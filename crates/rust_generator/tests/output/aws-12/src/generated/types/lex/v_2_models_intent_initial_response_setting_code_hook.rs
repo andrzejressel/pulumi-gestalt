@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_code_hook_invocation: {
-                        let field_value = match fields_map.get("enable_code_hook_invocation") {
+                        let field_value = match fields_map.get("enableCodeHookInvocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_code_hook_invocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableCodeHookInvocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#invocation_label: {
-                        let field_value = match fields_map.get("invocation_label") {
+                        let field_value = match fields_map.get("invocationLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'invocation_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'invocationLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_code_hook_specification: {
-                        let field_value = match fields_map.get("post_code_hook_specification") {
+                        let field_value = match fields_map.get("postCodeHookSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_code_hook_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postCodeHookSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

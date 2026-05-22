@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#preferred_channel_pipeline: {
-                        let field_value = match fields_map.get("preferred_channel_pipeline") {
+                        let field_value = match fields_map.get("preferredChannelPipeline") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preferred_channel_pipeline' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preferredChannelPipeline' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#program_number: {
-                        let field_value = match fields_map.get("program_number") {
+                        let field_value = match fields_map.get("programNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'program_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'programNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_descriptor: {
-                        let field_value = match fields_map.get("service_descriptor") {
+                        let field_value = match fields_map.get("serviceDescriptor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_descriptor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceDescriptor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#video_settings: {
-                        let field_value = match fields_map.get("video_settings") {
+                        let field_value = match fields_map.get("videoSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'video_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'videoSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

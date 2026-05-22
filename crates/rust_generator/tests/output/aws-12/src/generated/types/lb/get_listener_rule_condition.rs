@@ -92,44 +92,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#host_header: {
-                        let field_value = match fields_map.get("host_header") {
+                        let field_value = match fields_map.get("hostHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_header: {
-                        let field_value = match fields_map.get("http_header") {
+                        let field_value = match fields_map.get("httpHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_request_method: {
-                        let field_value = match fields_map.get("http_request_method") {
+                        let field_value = match fields_map.get("httpRequestMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_request_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpRequestMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_pattern: {
-                        let field_value = match fields_map.get("path_pattern") {
+                        let field_value = match fields_map.get("pathPattern") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathPattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string: {
-                        let field_value = match fields_map.get("query_string") {
+                        let field_value = match fields_map.get("queryString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_ip: {
-                        let field_value = match fields_map.get("source_ip") {
+                        let field_value = match fields_map.get("sourceIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

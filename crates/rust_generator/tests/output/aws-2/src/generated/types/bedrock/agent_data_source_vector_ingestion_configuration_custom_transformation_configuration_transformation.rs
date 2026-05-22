@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#step_to_apply: {
-                        let field_value = match fields_map.get("step_to_apply") {
+                        let field_value = match fields_map.get("stepToApply") {
                             Some(value) => value,
-                            None => bail!("Missing field 'step_to_apply' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stepToApply' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transformation_function: {
-                        let field_value = match fields_map.get("transformation_function") {
+                        let field_value = match fields_map.get("transformationFunction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transformation_function' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transformationFunction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -122,23 +122,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#block_size_bytes: {
-                        let field_value = match fields_map.get("block_size_bytes") {
+                        let field_value = match fields_map.get("blockSizeBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockSizeBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bloom_filter_columns: {
-                        let field_value = match fields_map.get("bloom_filter_columns") {
+                        let field_value = match fields_map.get("bloomFilterColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bloom_filter_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bloomFilterColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bloom_filter_false_positive_probability: {
-                        let field_value = match fields_map.get("bloom_filter_false_positive_probability") {
+                        let field_value = match fields_map.get("bloomFilterFalsePositiveProbability") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bloom_filter_false_positive_probability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bloomFilterFalsePositiveProbability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -150,44 +150,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dictionary_key_threshold: {
-                        let field_value = match fields_map.get("dictionary_key_threshold") {
+                        let field_value = match fields_map.get("dictionaryKeyThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dictionary_key_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dictionaryKeyThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_padding: {
-                        let field_value = match fields_map.get("enable_padding") {
+                        let field_value = match fields_map.get("enablePadding") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_padding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePadding' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#format_version: {
-                        let field_value = match fields_map.get("format_version") {
+                        let field_value = match fields_map.get("formatVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'format_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'formatVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#padding_tolerance: {
-                        let field_value = match fields_map.get("padding_tolerance") {
+                        let field_value = match fields_map.get("paddingTolerance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'padding_tolerance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'paddingTolerance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#row_index_stride: {
-                        let field_value = match fields_map.get("row_index_stride") {
+                        let field_value = match fields_map.get("rowIndexStride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'row_index_stride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rowIndexStride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stripe_size_bytes: {
-                        let field_value = match fields_map.get("stripe_size_bytes") {
+                        let field_value = match fields_map.get("stripeSizeBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stripe_size_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stripeSizeBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

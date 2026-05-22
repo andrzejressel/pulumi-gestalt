@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#prefix_list_ids: {
-                        let field_value = match fields_map.get("prefix_list_ids") {
+                        let field_value = match fields_map.get("prefixListIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_list_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixListIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpce_ids: {
-                        let field_value = match fields_map.get("vpce_ids") {
+                        let field_value = match fields_map.get("vpceIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpce_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpceIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

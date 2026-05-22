@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_series: {
-                        let field_value = match fields_map.get("time_series") {
+                        let field_value = match fields_map.get("timeSeries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_series' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeSeries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

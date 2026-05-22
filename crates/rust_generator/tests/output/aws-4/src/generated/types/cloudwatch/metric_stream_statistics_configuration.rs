@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#additional_statistics: {
-                        let field_value = match fields_map.get("additional_statistics") {
+                        let field_value = match fields_map.get("additionalStatistics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_statistics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalStatistics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_metrics: {
-                        let field_value = match fields_map.get("include_metrics") {
+                        let field_value = match fields_map.get("includeMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

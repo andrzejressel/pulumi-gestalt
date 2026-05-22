@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#claim_regex: {
-                        let field_value = match fields_map.get("claim_regex") {
+                        let field_value = match fields_map.get("claimRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'claim_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'claimRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_attribute_field: {
-                        let field_value = match fields_map.get("group_attribute_field") {
+                        let field_value = match fields_map.get("groupAttributeField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_attribute_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupAttributeField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,16 +119,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_location: {
-                        let field_value = match fields_map.get("key_location") {
+                        let field_value = match fields_map.get("keyLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secrets_manager_arn: {
-                        let field_value = match fields_map.get("secrets_manager_arn") {
+                        let field_value = match fields_map.get("secretsManagerArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secrets_manager_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretsManagerArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_name_attribute_field: {
-                        let field_value = match fields_map.get("user_name_attribute_field") {
+                        let field_value = match fields_map.get("userNameAttributeField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_name_attribute_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userNameAttributeField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

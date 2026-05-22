@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#partition_date_source: {
-                        let field_value = match fields_map.get("partition_date_source") {
+                        let field_value = match fields_map.get("partitionDateSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partition_date_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partitionDateSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

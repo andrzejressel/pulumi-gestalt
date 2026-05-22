@@ -159,86 +159,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#bucketing_config: {
-                        let field_value = match fields_map.get("bucketing_config") {
+                        let field_value = match fields_map.get("bucketingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucketing_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#character_mask_config: {
-                        let field_value = match fields_map.get("character_mask_config") {
+                        let field_value = match fields_map.get("characterMaskConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'character_mask_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'characterMaskConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crypto_deterministic_config: {
-                        let field_value = match fields_map.get("crypto_deterministic_config") {
+                        let field_value = match fields_map.get("cryptoDeterministicConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crypto_deterministic_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cryptoDeterministicConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crypto_hash_config: {
-                        let field_value = match fields_map.get("crypto_hash_config") {
+                        let field_value = match fields_map.get("cryptoHashConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crypto_hash_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cryptoHashConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crypto_replace_ffx_fpe_config: {
-                        let field_value = match fields_map.get("crypto_replace_ffx_fpe_config") {
+                        let field_value = match fields_map.get("cryptoReplaceFfxFpeConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crypto_replace_ffx_fpe_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cryptoReplaceFfxFpeConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#date_shift_config: {
-                        let field_value = match fields_map.get("date_shift_config") {
+                        let field_value = match fields_map.get("dateShiftConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'date_shift_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dateShiftConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fixed_size_bucketing_config: {
-                        let field_value = match fields_map.get("fixed_size_bucketing_config") {
+                        let field_value = match fields_map.get("fixedSizeBucketingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fixed_size_bucketing_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fixedSizeBucketingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redact_config: {
-                        let field_value = match fields_map.get("redact_config") {
+                        let field_value = match fields_map.get("redactConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redact_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redactConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replace_config: {
-                        let field_value = match fields_map.get("replace_config") {
+                        let field_value = match fields_map.get("replaceConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replace_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replaceConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replace_dictionary_config: {
-                        let field_value = match fields_map.get("replace_dictionary_config") {
+                        let field_value = match fields_map.get("replaceDictionaryConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replace_dictionary_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replaceDictionaryConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replace_with_info_type_config: {
-                        let field_value = match fields_map.get("replace_with_info_type_config") {
+                        let field_value = match fields_map.get("replaceWithInfoTypeConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replace_with_info_type_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replaceWithInfoTypeConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_part_config: {
-                        let field_value = match fields_map.get("time_part_config") {
+                        let field_value = match fields_map.get("timePartConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_part_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timePartConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#ecr_image_puller_role: {
-                        let field_value = match fields_map.get("ecr_image_puller_role") {
+                        let field_value = match fields_map.get("ecrImagePullerRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ecr_image_puller_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ecrImagePullerRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

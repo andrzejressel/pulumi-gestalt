@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_transformation: {
-                        let field_value = match fields_map.get("content_transformation") {
+                        let field_value = match fields_map.get("contentTransformation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_transformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentTransformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

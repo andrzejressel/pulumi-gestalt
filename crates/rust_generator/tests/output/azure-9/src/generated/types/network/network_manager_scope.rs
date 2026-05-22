@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#management_group_ids: {
-                        let field_value = match fields_map.get("management_group_ids") {
+                        let field_value = match fields_map.get("managementGroupIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'management_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managementGroupIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subscription_ids: {
-                        let field_value = match fields_map.get("subscription_ids") {
+                        let field_value = match fields_map.get("subscriptionIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subscription_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subscriptionIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

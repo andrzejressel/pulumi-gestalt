@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#key_fingerprint: {
-                        let field_value = match fields_map.get("key_fingerprint") {
+                        let field_value = match fields_map.get("keyFingerprint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_fingerprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyFingerprint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sign_key: {
-                        let field_value = match fields_map.get("sign_key") {
+                        let field_value = match fields_map.get("signKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sign_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'signKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

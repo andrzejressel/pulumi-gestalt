@@ -91,30 +91,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#persistence_mode: {
-                        let field_value = match fields_map.get("persistence_mode") {
+                        let field_value = match fields_map.get("persistenceMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'persistence_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'persistenceMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rdb_next_snapshot_time: {
-                        let field_value = match fields_map.get("rdb_next_snapshot_time") {
+                        let field_value = match fields_map.get("rdbNextSnapshotTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rdb_next_snapshot_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rdbNextSnapshotTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rdb_snapshot_period: {
-                        let field_value = match fields_map.get("rdb_snapshot_period") {
+                        let field_value = match fields_map.get("rdbSnapshotPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rdb_snapshot_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rdbSnapshotPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rdb_snapshot_start_time: {
-                        let field_value = match fields_map.get("rdb_snapshot_start_time") {
+                        let field_value = match fields_map.get("rdbSnapshotStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rdb_snapshot_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rdbSnapshotStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

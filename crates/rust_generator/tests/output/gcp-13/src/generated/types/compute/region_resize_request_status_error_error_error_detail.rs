@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#error_infos: {
-                        let field_value = match fields_map.get("error_infos") {
+                        let field_value = match fields_map.get("errorInfos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_infos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorInfos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,16 +96,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#localized_messages: {
-                        let field_value = match fields_map.get("localized_messages") {
+                        let field_value = match fields_map.get("localizedMessages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'localized_messages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localizedMessages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#quota_infos: {
-                        let field_value = match fields_map.get("quota_infos") {
+                        let field_value = match fields_map.get("quotaInfos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'quota_infos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'quotaInfos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

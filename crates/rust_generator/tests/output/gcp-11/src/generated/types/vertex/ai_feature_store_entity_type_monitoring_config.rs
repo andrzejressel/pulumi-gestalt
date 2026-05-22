@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#categorical_threshold_config: {
-                        let field_value = match fields_map.get("categorical_threshold_config") {
+                        let field_value = match fields_map.get("categoricalThresholdConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'categorical_threshold_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'categoricalThresholdConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#import_features_analysis: {
-                        let field_value = match fields_map.get("import_features_analysis") {
+                        let field_value = match fields_map.get("importFeaturesAnalysis") {
                             Some(value) => value,
-                            None => bail!("Missing field 'import_features_analysis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'importFeaturesAnalysis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#numerical_threshold_config: {
-                        let field_value = match fields_map.get("numerical_threshold_config") {
+                        let field_value = match fields_map.get("numericalThresholdConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'numerical_threshold_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numericalThresholdConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_analysis: {
-                        let field_value = match fields_map.get("snapshot_analysis") {
+                        let field_value = match fields_map.get("snapshotAnalysis") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_analysis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotAnalysis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

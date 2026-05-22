@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#auto_grow_enabled: {
-                        let field_value = match fields_map.get("auto_grow_enabled") {
+                        let field_value = match fields_map.get("autoGrowEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_grow_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoGrowEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#io_scaling_enabled: {
-                        let field_value = match fields_map.get("io_scaling_enabled") {
+                        let field_value = match fields_map.get("ioScalingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'io_scaling_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ioScalingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#size_gb: {
-                        let field_value = match fields_map.get("size_gb") {
+                        let field_value = match fields_map.get("sizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#accepted_protocols: {
-                        let field_value = match fields_map.get("accepted_protocols") {
+                        let field_value = match fields_map.get("acceptedProtocols") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accepted_protocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceptedProtocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,16 +120,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarding_configuration: {
-                        let field_value = match fields_map.get("forwarding_configuration") {
+                        let field_value = match fields_map.get("forwardingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarding_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frontend_endpoints: {
-                        let field_value = match fields_map.get("frontend_endpoints") {
+                        let field_value = match fields_map.get("frontendEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frontend_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frontendEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -148,16 +148,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#patterns_to_matches: {
-                        let field_value = match fields_map.get("patterns_to_matches") {
+                        let field_value = match fields_map.get("patternsToMatches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'patterns_to_matches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'patternsToMatches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_configuration: {
-                        let field_value = match fields_map.get("redirect_configuration") {
+                        let field_value = match fields_map.get("redirectConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

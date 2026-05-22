@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#encoding_format: {
-                        let field_value = match fields_map.get("encoding_format") {
+                        let field_value = match fields_map.get("encodingFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encoding_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encodingFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publish_ca_cert: {
-                        let field_value = match fields_map.get("publish_ca_cert") {
+                        let field_value = match fields_map.get("publishCaCert") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_ca_cert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishCaCert' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publish_crl: {
-                        let field_value = match fields_map.get("publish_crl") {
+                        let field_value = match fields_map.get("publishCrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_crl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishCrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -75,9 +75,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_phases: {
-                        let field_value = match fields_map.get("source_phases") {
+                        let field_value = match fields_map.get("sourcePhases") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_phases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourcePhases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

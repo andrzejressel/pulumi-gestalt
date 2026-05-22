@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#default_ttl: {
-                        let field_value = match fields_map.get("default_ttl") {
+                        let field_value = match fields_map.get("defaultTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_delivery_count: {
-                        let field_value = match fields_map.get("max_delivery_count") {
+                        let field_value = match fields_map.get("maxDeliveryCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_delivery_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxDeliveryCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

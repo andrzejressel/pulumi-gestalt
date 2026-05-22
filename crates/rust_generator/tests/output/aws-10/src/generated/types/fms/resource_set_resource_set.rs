@@ -111,9 +111,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_update_time: {
-                        let field_value = match fields_map.get("last_update_time") {
+                        let field_value = match fields_map.get("lastUpdateTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_update_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastUpdateTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,23 +125,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_set_status: {
-                        let field_value = match fields_map.get("resource_set_status") {
+                        let field_value = match fields_map.get("resourceSetStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_set_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceSetStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_type_lists: {
-                        let field_value = match fields_map.get("resource_type_lists") {
+                        let field_value = match fields_map.get("resourceTypeLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_type_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceTypeLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#update_token: {
-                        let field_value = match fields_map.get("update_token") {
+                        let field_value = match fields_map.get("updateToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'update_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updateToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

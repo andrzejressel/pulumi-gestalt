@@ -99,16 +99,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#access_control_translations: {
-                        let field_value = match fields_map.get("access_control_translations") {
+                        let field_value = match fields_map.get("accessControlTranslations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_control_translations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessControlTranslations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#account_id: {
-                        let field_value = match fields_map.get("account_id") {
+                        let field_value = match fields_map.get("accountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -127,23 +127,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replica_kms_key_id: {
-                        let field_value = match fields_map.get("replica_kms_key_id") {
+                        let field_value = match fields_map.get("replicaKmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replica_kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicaKmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replication_times: {
-                        let field_value = match fields_map.get("replication_times") {
+                        let field_value = match fields_map.get("replicationTimes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replication_times' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicationTimes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_class: {
-                        let field_value = match fields_map.get("storage_class") {
+                        let field_value = match fields_map.get("storageClass") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_class' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageClass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

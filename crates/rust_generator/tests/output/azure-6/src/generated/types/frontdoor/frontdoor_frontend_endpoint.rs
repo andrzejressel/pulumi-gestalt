@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#host_name: {
-                        let field_value = match fields_map.get("host_name") {
+                        let field_value = match fields_map.get("hostName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_affinity_enabled: {
-                        let field_value = match fields_map.get("session_affinity_enabled") {
+                        let field_value = match fields_map.get("sessionAffinityEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_affinity_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionAffinityEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_affinity_ttl_seconds: {
-                        let field_value = match fields_map.get("session_affinity_ttl_seconds") {
+                        let field_value = match fields_map.get("sessionAffinityTtlSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_affinity_ttl_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionAffinityTtlSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#web_application_firewall_policy_link_id: {
-                        let field_value = match fields_map.get("web_application_firewall_policy_link_id") {
+                        let field_value = match fields_map.get("webApplicationFirewallPolicyLinkId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'web_application_firewall_policy_link_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webApplicationFirewallPolicyLinkId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

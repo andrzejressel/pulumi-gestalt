@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#global_mesh_enabled: {
-                        let field_value = match fields_map.get("global_mesh_enabled") {
+                        let field_value = match fields_map.get("globalMeshEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'global_mesh_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'globalMeshEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_connectivity: {
-                        let field_value = match fields_map.get("group_connectivity") {
+                        let field_value = match fields_map.get("groupConnectivity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_connectivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupConnectivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_group_id: {
-                        let field_value = match fields_map.get("network_group_id") {
+                        let field_value = match fields_map.get("networkGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_hub_gateway: {
-                        let field_value = match fields_map.get("use_hub_gateway") {
+                        let field_value = match fields_map.get("useHubGateway") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_hub_gateway' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useHubGateway' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

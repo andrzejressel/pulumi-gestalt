@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#cost_categories: {
-                        let field_value = match fields_map.get("cost_categories") {
+                        let field_value = match fields_map.get("costCategories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cost_categories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'costCategories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

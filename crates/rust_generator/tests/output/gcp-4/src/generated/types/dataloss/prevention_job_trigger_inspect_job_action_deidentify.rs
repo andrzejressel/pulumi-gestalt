@@ -83,30 +83,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#cloud_storage_output: {
-                        let field_value = match fields_map.get("cloud_storage_output") {
+                        let field_value = match fields_map.get("cloudStorageOutput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_storage_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudStorageOutput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_types_to_transforms: {
-                        let field_value = match fields_map.get("file_types_to_transforms") {
+                        let field_value = match fields_map.get("fileTypesToTransforms") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_types_to_transforms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileTypesToTransforms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transformation_config: {
-                        let field_value = match fields_map.get("transformation_config") {
+                        let field_value = match fields_map.get("transformationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transformation_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transformationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transformation_details_storage_config: {
-                        let field_value = match fields_map.get("transformation_details_storage_config") {
+                        let field_value = match fields_map.get("transformationDetailsStorageConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transformation_details_storage_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transformationDetailsStorageConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

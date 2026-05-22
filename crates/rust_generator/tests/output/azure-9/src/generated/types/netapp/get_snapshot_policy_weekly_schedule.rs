@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#days_of_weeks: {
-                        let field_value = match fields_map.get("days_of_weeks") {
+                        let field_value = match fields_map.get("daysOfWeeks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_weeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfWeeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshots_to_keep: {
-                        let field_value = match fields_map.get("snapshots_to_keep") {
+                        let field_value = match fields_map.get("snapshotsToKeep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshots_to_keep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotsToKeep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

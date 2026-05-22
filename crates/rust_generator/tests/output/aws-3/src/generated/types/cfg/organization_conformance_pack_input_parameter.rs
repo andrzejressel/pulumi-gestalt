@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#parameter_name: {
-                        let field_value = match fields_map.get("parameter_name") {
+                        let field_value = match fields_map.get("parameterName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parameter_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parameterName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parameter_value: {
-                        let field_value = match fields_map.get("parameter_value") {
+                        let field_value = match fields_map.get("parameterValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parameter_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parameterValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

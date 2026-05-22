@@ -80,37 +80,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#connection_retry_interval: {
-                        let field_value = match fields_map.get("connection_retry_interval") {
+                        let field_value = match fields_map.get("connectionRetryInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_retry_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionRetryInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filecache_duration: {
-                        let field_value = match fields_map.get("filecache_duration") {
+                        let field_value = match fields_map.get("filecacheDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filecache_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filecacheDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#media_store_storage_class: {
-                        let field_value = match fields_map.get("media_store_storage_class") {
+                        let field_value = match fields_map.get("mediaStoreStorageClass") {
                             Some(value) => value,
-                            None => bail!("Missing field 'media_store_storage_class' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mediaStoreStorageClass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_retries: {
-                        let field_value = match fields_map.get("num_retries") {
+                        let field_value = match fields_map.get("numRetries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'num_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numRetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restart_delay: {
-                        let field_value = match fields_map.get("restart_delay") {
+                        let field_value = match fields_map.get("restartDelay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restart_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restartDelay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

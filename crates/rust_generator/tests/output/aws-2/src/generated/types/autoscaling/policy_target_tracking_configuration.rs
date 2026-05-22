@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#customized_metric_specification: {
-                        let field_value = match fields_map.get("customized_metric_specification") {
+                        let field_value = match fields_map.get("customizedMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customized_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customizedMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_scale_in: {
-                        let field_value = match fields_map.get("disable_scale_in") {
+                        let field_value = match fields_map.get("disableScaleIn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_scale_in' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableScaleIn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predefined_metric_specification: {
-                        let field_value = match fields_map.get("predefined_metric_specification") {
+                        let field_value = match fields_map.get("predefinedMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predefined_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predefinedMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_value: {
-                        let field_value = match fields_map.get("target_value") {
+                        let field_value = match fields_map.get("targetValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

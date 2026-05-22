@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#enable_consent_based_redaction: {
-                        let field_value = match fields_map.get("enable_consent_based_redaction") {
+                        let field_value = match fields_map.get("enableConsentBasedRedaction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_consent_based_redaction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableConsentBasedRedaction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_interaction_logging: {
-                        let field_value = match fields_map.get("enable_interaction_logging") {
+                        let field_value = match fields_map.get("enableInteractionLogging") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_interaction_logging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableInteractionLogging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_stackdriver_logging: {
-                        let field_value = match fields_map.get("enable_stackdriver_logging") {
+                        let field_value = match fields_map.get("enableStackdriverLogging") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_stackdriver_logging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableStackdriverLogging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

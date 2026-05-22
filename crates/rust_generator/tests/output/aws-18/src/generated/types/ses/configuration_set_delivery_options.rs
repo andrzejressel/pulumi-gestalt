@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#tls_policy: {
-                        let field_value = match fields_map.get("tls_policy") {
+                        let field_value = match fields_map.get("tlsPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -194,135 +194,135 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#client_port_conditions: {
-                        let field_value = match fields_map.get("client_port_conditions") {
+                        let field_value = match fields_map.get("clientPortConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_port_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientPortConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cookies_conditions: {
-                        let field_value = match fields_map.get("cookies_conditions") {
+                        let field_value = match fields_map.get("cookiesConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cookies_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cookiesConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_name_conditions: {
-                        let field_value = match fields_map.get("host_name_conditions") {
+                        let field_value = match fields_map.get("hostNameConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_name_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostNameConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_version_conditions: {
-                        let field_value = match fields_map.get("http_version_conditions") {
+                        let field_value = match fields_map.get("httpVersionConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_version_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpVersionConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_device_conditions: {
-                        let field_value = match fields_map.get("is_device_conditions") {
+                        let field_value = match fields_map.get("isDeviceConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_device_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isDeviceConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_args_conditions: {
-                        let field_value = match fields_map.get("post_args_conditions") {
+                        let field_value = match fields_map.get("postArgsConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_args_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postArgsConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string_conditions: {
-                        let field_value = match fields_map.get("query_string_conditions") {
+                        let field_value = match fields_map.get("queryStringConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_address_conditions: {
-                        let field_value = match fields_map.get("remote_address_conditions") {
+                        let field_value = match fields_map.get("remoteAddressConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_address_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remoteAddressConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_body_conditions: {
-                        let field_value = match fields_map.get("request_body_conditions") {
+                        let field_value = match fields_map.get("requestBodyConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_body_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestBodyConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_header_conditions: {
-                        let field_value = match fields_map.get("request_header_conditions") {
+                        let field_value = match fields_map.get("requestHeaderConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_header_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestHeaderConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_method_conditions: {
-                        let field_value = match fields_map.get("request_method_conditions") {
+                        let field_value = match fields_map.get("requestMethodConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_method_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestMethodConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_scheme_conditions: {
-                        let field_value = match fields_map.get("request_scheme_conditions") {
+                        let field_value = match fields_map.get("requestSchemeConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_scheme_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestSchemeConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_uri_conditions: {
-                        let field_value = match fields_map.get("request_uri_conditions") {
+                        let field_value = match fields_map.get("requestUriConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_uri_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestUriConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_port_conditions: {
-                        let field_value = match fields_map.get("server_port_conditions") {
+                        let field_value = match fields_map.get("serverPortConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_port_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverPortConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#socket_address_conditions: {
-                        let field_value = match fields_map.get("socket_address_conditions") {
+                        let field_value = match fields_map.get("socketAddressConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'socket_address_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'socketAddressConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_protocol_conditions: {
-                        let field_value = match fields_map.get("ssl_protocol_conditions") {
+                        let field_value = match fields_map.get("sslProtocolConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_protocol_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslProtocolConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_file_extension_conditions: {
-                        let field_value = match fields_map.get("url_file_extension_conditions") {
+                        let field_value = match fields_map.get("urlFileExtensionConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_file_extension_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlFileExtensionConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_filename_conditions: {
-                        let field_value = match fields_map.get("url_filename_conditions") {
+                        let field_value = match fields_map.get("urlFilenameConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_filename_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlFilenameConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_path_conditions: {
-                        let field_value = match fields_map.get("url_path_conditions") {
+                        let field_value = match fields_map.get("urlPathConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_path_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlPathConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

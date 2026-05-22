@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#password_count: {
-                        let field_value = match fields_map.get("password_count") {
+                        let field_value = match fields_map.get("passwordCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

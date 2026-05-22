@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#device_type_android: {
-                        let field_value = match fields_map.get("device_type_android") {
+                        let field_value = match fields_map.get("deviceTypeAndroid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_type_android' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceTypeAndroid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_type_chromeos: {
-                        let field_value = match fields_map.get("device_type_chromeos") {
+                        let field_value = match fields_map.get("deviceTypeChromeos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_type_chromeos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceTypeChromeos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_type_ios: {
-                        let field_value = match fields_map.get("device_type_ios") {
+                        let field_value = match fields_map.get("deviceTypeIos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_type_ios' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceTypeIos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_type_linux: {
-                        let field_value = match fields_map.get("device_type_linux") {
+                        let field_value = match fields_map.get("deviceTypeLinux") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_type_linux' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceTypeLinux' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_type_osx: {
-                        let field_value = match fields_map.get("device_type_osx") {
+                        let field_value = match fields_map.get("deviceTypeOsx") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_type_osx' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceTypeOsx' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_type_web: {
-                        let field_value = match fields_map.get("device_type_web") {
+                        let field_value = match fields_map.get("deviceTypeWeb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_type_web' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceTypeWeb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_type_windows: {
-                        let field_value = match fields_map.get("device_type_windows") {
+                        let field_value = match fields_map.get("deviceTypeWindows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_type_windows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceTypeWindows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_type_zeroclient: {
-                        let field_value = match fields_map.get("device_type_zeroclient") {
+                        let field_value = match fields_map.get("deviceTypeZeroclient") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_type_zeroclient' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceTypeZeroclient' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

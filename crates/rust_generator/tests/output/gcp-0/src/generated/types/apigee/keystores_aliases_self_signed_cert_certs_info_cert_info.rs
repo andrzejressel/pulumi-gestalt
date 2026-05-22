@@ -142,23 +142,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#basic_constraints: {
-                        let field_value = match fields_map.get("basic_constraints") {
+                        let field_value = match fields_map.get("basicConstraints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'basic_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'basicConstraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expiry_date: {
-                        let field_value = match fields_map.get("expiry_date") {
+                        let field_value = match fields_map.get("expiryDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiry_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expiryDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_valid: {
-                        let field_value = match fields_map.get("is_valid") {
+                        let field_value = match fields_map.get("isValid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_valid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isValid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -170,23 +170,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_key: {
-                        let field_value = match fields_map.get("public_key") {
+                        let field_value = match fields_map.get("publicKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#serial_number: {
-                        let field_value = match fields_map.get("serial_number") {
+                        let field_value = match fields_map.get("serialNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'serial_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serialNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sig_alg_name: {
-                        let field_value = match fields_map.get("sig_alg_name") {
+                        let field_value = match fields_map.get("sigAlgName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sig_alg_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sigAlgName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -198,16 +198,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject_alternative_names: {
-                        let field_value = match fields_map.get("subject_alternative_names") {
+                        let field_value = match fields_map.get("subjectAlternativeNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subject_alternative_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subjectAlternativeNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#valid_from: {
-                        let field_value = match fields_map.get("valid_from") {
+                        let field_value = match fields_map.get("validFrom") {
                             Some(value) => value,
-                            None => bail!("Missing field 'valid_from' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validFrom' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#auto_export_policy: {
-                        let field_value = match fields_map.get("auto_export_policy") {
+                        let field_value = match fields_map.get("autoExportPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_export_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoExportPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_import_policy: {
-                        let field_value = match fields_map.get("auto_import_policy") {
+                        let field_value = match fields_map.get("autoImportPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_import_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoImportPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

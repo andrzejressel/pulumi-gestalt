@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#provisioned_throughputs: {
-                        let field_value = match fields_map.get("provisioned_throughputs") {
+                        let field_value = match fields_map.get("provisionedThroughputs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioned_throughputs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionedThroughputs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_size: {
-                        let field_value = match fields_map.get("volume_size") {
+                        let field_value = match fields_map.get("volumeSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#max_scaling_factor: {
-                        let field_value = match fields_map.get("max_scaling_factor") {
+                        let field_value = match fields_map.get("maxScalingFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_scaling_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxScalingFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_scaling_factor: {
-                        let field_value = match fields_map.get("min_scaling_factor") {
+                        let field_value = match fields_map.get("minScalingFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_scaling_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minScalingFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#ipv_4_s: {
-                        let field_value = match fields_map.get("ipv_4_s") {
+                        let field_value = match fields_map.get("ipv4s") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_4_s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv4s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_6_s: {
-                        let field_value = match fields_map.get("ipv_6_s") {
+                        let field_value = match fields_map.get("ipv6s") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_6_s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv6s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

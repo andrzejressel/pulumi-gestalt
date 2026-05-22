@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#head_node: {
-                        let field_value = match fields_map.get("head_node") {
+                        let field_value = match fields_map.get("headNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'head_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#worker_node: {
-                        let field_value = match fields_map.get("worker_node") {
+                        let field_value = match fields_map.get("workerNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'worker_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workerNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#zookeeper_node: {
-                        let field_value = match fields_map.get("zookeeper_node") {
+                        let field_value = match fields_map.get("zookeeperNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'zookeeper_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'zookeeperNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#code_content: {
-                        let field_value = match fields_map.get("code_content") {
+                        let field_value = match fields_map.get("codeContent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeContent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#code_content_type: {
-                        let field_value = match fields_map.get("code_content_type") {
+                        let field_value = match fields_map.get("codeContentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_content_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeContentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

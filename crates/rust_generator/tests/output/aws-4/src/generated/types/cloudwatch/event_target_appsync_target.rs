@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#graphql_operation: {
-                        let field_value = match fields_map.get("graphql_operation") {
+                        let field_value = match fields_map.get("graphqlOperation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'graphql_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'graphqlOperation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

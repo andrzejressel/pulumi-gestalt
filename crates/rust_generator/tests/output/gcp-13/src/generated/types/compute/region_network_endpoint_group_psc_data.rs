@@ -53,9 +53,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#producer_port: {
-                        let field_value = match fields_map.get("producer_port") {
+                        let field_value = match fields_map.get("producerPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'producer_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'producerPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

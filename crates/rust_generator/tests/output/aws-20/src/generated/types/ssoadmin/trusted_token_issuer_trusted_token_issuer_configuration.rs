@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#oidc_jwt_configuration: {
-                        let field_value = match fields_map.get("oidc_jwt_configuration") {
+                        let field_value = match fields_map.get("oidcJwtConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oidc_jwt_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oidcJwtConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

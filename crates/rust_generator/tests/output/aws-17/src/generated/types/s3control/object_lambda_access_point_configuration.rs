@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#allowed_features: {
-                        let field_value = match fields_map.get("allowed_features") {
+                        let field_value = match fields_map.get("allowedFeatures") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_features' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedFeatures' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_watch_metrics_enabled: {
-                        let field_value = match fields_map.get("cloud_watch_metrics_enabled") {
+                        let field_value = match fields_map.get("cloudWatchMetricsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_watch_metrics_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudWatchMetricsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#supporting_access_point: {
-                        let field_value = match fields_map.get("supporting_access_point") {
+                        let field_value = match fields_map.get("supportingAccessPoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'supporting_access_point' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'supportingAccessPoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transformation_configurations: {
-                        let field_value = match fields_map.get("transformation_configurations") {
+                        let field_value = match fields_map.get("transformationConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transformation_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transformationConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

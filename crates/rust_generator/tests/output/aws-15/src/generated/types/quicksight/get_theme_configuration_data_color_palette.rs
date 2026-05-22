@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#empty_fill_color: {
-                        let field_value = match fields_map.get("empty_fill_color") {
+                        let field_value = match fields_map.get("emptyFillColor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'empty_fill_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emptyFillColor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_max_gradients: {
-                        let field_value = match fields_map.get("min_max_gradients") {
+                        let field_value = match fields_map.get("minMaxGradients") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_max_gradients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minMaxGradients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#metric_definition: {
-                        let field_value = match fields_map.get("metric_definition") {
+                        let field_value = match fields_map.get("metricDefinition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricDefinition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

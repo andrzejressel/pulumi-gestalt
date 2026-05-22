@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#issuer_parameters: {
-                        let field_value = match fields_map.get("issuer_parameters") {
+                        let field_value = match fields_map.get("issuerParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'issuer_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'issuerParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_properties: {
-                        let field_value = match fields_map.get("key_properties") {
+                        let field_value = match fields_map.get("keyProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifetime_actions: {
-                        let field_value = match fields_map.get("lifetime_actions") {
+                        let field_value = match fields_map.get("lifetimeActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lifetime_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifetimeActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_properties: {
-                        let field_value = match fields_map.get("secret_properties") {
+                        let field_value = match fields_map.get("secretProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_509_certificate_properties: {
-                        let field_value = match fields_map.get("x_509_certificate_properties") {
+                        let field_value = match fields_map.get("x509CertificateProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_509_certificate_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'x509CertificateProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

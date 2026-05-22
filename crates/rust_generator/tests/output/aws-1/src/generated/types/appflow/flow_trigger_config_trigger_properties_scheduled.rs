@@ -108,44 +108,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#data_pull_mode: {
-                        let field_value = match fields_map.get("data_pull_mode") {
+                        let field_value = match fields_map.get("dataPullMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_pull_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataPullMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#first_execution_from: {
-                        let field_value = match fields_map.get("first_execution_from") {
+                        let field_value = match fields_map.get("firstExecutionFrom") {
                             Some(value) => value,
-                            None => bail!("Missing field 'first_execution_from' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firstExecutionFrom' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schedule_end_time: {
-                        let field_value = match fields_map.get("schedule_end_time") {
+                        let field_value = match fields_map.get("scheduleEndTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schedule_end_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduleEndTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schedule_expression: {
-                        let field_value = match fields_map.get("schedule_expression") {
+                        let field_value = match fields_map.get("scheduleExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schedule_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduleExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schedule_offset: {
-                        let field_value = match fields_map.get("schedule_offset") {
+                        let field_value = match fields_map.get("scheduleOffset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schedule_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduleOffset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schedule_start_time: {
-                        let field_value = match fields_map.get("schedule_start_time") {
+                        let field_value = match fields_map.get("scheduleStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schedule_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduleStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

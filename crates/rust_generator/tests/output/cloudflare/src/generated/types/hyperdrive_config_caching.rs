@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_age: {
-                        let field_value = match fields_map.get("max_age") {
+                        let field_value = match fields_map.get("maxAge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_age' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stale_while_revalidate: {
-                        let field_value = match fields_map.get("stale_while_revalidate") {
+                        let field_value = match fields_map.get("staleWhileRevalidate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stale_while_revalidate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staleWhileRevalidate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

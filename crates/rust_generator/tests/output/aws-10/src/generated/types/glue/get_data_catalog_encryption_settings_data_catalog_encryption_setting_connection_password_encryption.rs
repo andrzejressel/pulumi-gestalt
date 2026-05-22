@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#aws_kms_key_id: {
-                        let field_value = match fields_map.get("aws_kms_key_id") {
+                        let field_value = match fields_map.get("awsKmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsKmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#return_connection_password_encrypted: {
-                        let field_value = match fields_map.get("return_connection_password_encrypted") {
+                        let field_value = match fields_map.get("returnConnectionPasswordEncrypted") {
                             Some(value) => value,
-                            None => bail!("Missing field 'return_connection_password_encrypted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'returnConnectionPasswordEncrypted' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

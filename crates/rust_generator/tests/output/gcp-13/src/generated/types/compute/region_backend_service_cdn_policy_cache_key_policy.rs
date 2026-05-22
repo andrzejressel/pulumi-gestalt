@@ -103,44 +103,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#include_host: {
-                        let field_value = match fields_map.get("include_host") {
+                        let field_value = match fields_map.get("includeHost") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_host' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeHost' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_named_cookies: {
-                        let field_value = match fields_map.get("include_named_cookies") {
+                        let field_value = match fields_map.get("includeNamedCookies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_named_cookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeNamedCookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_protocol: {
-                        let field_value = match fields_map.get("include_protocol") {
+                        let field_value = match fields_map.get("includeProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_query_string: {
-                        let field_value = match fields_map.get("include_query_string") {
+                        let field_value = match fields_map.get("includeQueryString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeQueryString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string_blacklists: {
-                        let field_value = match fields_map.get("query_string_blacklists") {
+                        let field_value = match fields_map.get("queryStringBlacklists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string_blacklists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringBlacklists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_string_whitelists: {
-                        let field_value = match fields_map.get("query_string_whitelists") {
+                        let field_value = match fields_map.get("queryStringWhitelists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_string_whitelists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringWhitelists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

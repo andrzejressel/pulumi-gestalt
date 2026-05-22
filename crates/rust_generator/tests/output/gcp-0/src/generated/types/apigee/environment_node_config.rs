@@ -72,23 +72,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#current_aggregate_node_count: {
-                        let field_value = match fields_map.get("current_aggregate_node_count") {
+                        let field_value = match fields_map.get("currentAggregateNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'current_aggregate_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'currentAggregateNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_node_count: {
-                        let field_value = match fields_map.get("max_node_count") {
+                        let field_value = match fields_map.get("maxNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_node_count: {
-                        let field_value = match fields_map.get("min_node_count") {
+                        let field_value = match fields_map.get("minNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

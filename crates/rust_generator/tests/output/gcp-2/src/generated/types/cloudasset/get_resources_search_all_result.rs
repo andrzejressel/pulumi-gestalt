@@ -114,16 +114,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#additional_attributes: {
-                        let field_value = match fields_map.get("additional_attributes") {
+                        let field_value = match fields_map.get("additionalAttributes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalAttributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#asset_type: {
-                        let field_value = match fields_map.get("asset_type") {
+                        let field_value = match fields_map.get("assetType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'asset_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'assetType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -135,9 +135,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -163,9 +163,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_tags: {
-                        let field_value = match fields_map.get("network_tags") {
+                        let field_value = match fields_map.get("networkTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

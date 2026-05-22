@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#actual_spends: {
-                        let field_value = match fields_map.get("actual_spends") {
+                        let field_value = match fields_map.get("actualSpends") {
                             Some(value) => value,
-                            None => bail!("Missing field 'actual_spends' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actualSpends' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

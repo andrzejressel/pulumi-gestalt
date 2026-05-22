@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#aws_managed_rules_acfp_rule_set: {
-                        let field_value = match fields_map.get("aws_managed_rules_acfp_rule_set") {
+                        let field_value = match fields_map.get("awsManagedRulesAcfpRuleSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_managed_rules_acfp_rule_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsManagedRulesAcfpRuleSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aws_managed_rules_atp_rule_set: {
-                        let field_value = match fields_map.get("aws_managed_rules_atp_rule_set") {
+                        let field_value = match fields_map.get("awsManagedRulesAtpRuleSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_managed_rules_atp_rule_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsManagedRulesAtpRuleSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aws_managed_rules_bot_control_rule_set: {
-                        let field_value = match fields_map.get("aws_managed_rules_bot_control_rule_set") {
+                        let field_value = match fields_map.get("awsManagedRulesBotControlRuleSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_managed_rules_bot_control_rule_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsManagedRulesBotControlRuleSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#login_path: {
-                        let field_value = match fields_map.get("login_path") {
+                        let field_value = match fields_map.get("loginPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'login_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loginPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_field: {
-                        let field_value = match fields_map.get("password_field") {
+                        let field_value = match fields_map.get("passwordField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#payload_type: {
-                        let field_value = match fields_map.get("payload_type") {
+                        let field_value = match fields_map.get("payloadType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'payload_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'payloadType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#username_field: {
-                        let field_value = match fields_map.get("username_field") {
+                        let field_value = match fields_map.get("usernameField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'username_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'usernameField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

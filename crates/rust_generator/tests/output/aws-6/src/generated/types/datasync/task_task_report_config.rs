@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#output_type: {
-                        let field_value = match fields_map.get("output_type") {
+                        let field_value = match fields_map.get("outputType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#report_level: {
-                        let field_value = match fields_map.get("report_level") {
+                        let field_value = match fields_map.get("reportLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'report_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reportLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#report_overrides: {
-                        let field_value = match fields_map.get("report_overrides") {
+                        let field_value = match fields_map.get("reportOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'report_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reportOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_destination: {
-                        let field_value = match fields_map.get("s_3_destination") {
+                        let field_value = match fields_map.get("s3Destination") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_object_versioning: {
-                        let field_value = match fields_map.get("s_3_object_versioning") {
+                        let field_value = match fields_map.get("s3ObjectVersioning") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_object_versioning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3ObjectVersioning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -117,30 +117,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#cors_policy: {
-                        let field_value = match fields_map.get("cors_policy") {
+                        let field_value = match fields_map.get("corsPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cors_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'corsPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fault_injection_policy: {
-                        let field_value = match fields_map.get("fault_injection_policy") {
+                        let field_value = match fields_map.get("faultInjectionPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fault_injection_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'faultInjectionPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_mirror_policy: {
-                        let field_value = match fields_map.get("request_mirror_policy") {
+                        let field_value = match fields_map.get("requestMirrorPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_mirror_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestMirrorPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_policy: {
-                        let field_value = match fields_map.get("retry_policy") {
+                        let field_value = match fields_map.get("retryPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retry_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retryPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -152,16 +152,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_rewrite: {
-                        let field_value = match fields_map.get("url_rewrite") {
+                        let field_value = match fields_map.get("urlRewrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_rewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlRewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weighted_backend_services: {
-                        let field_value = match fields_map.get("weighted_backend_services") {
+                        let field_value = match fields_map.get("weightedBackendServices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weighted_backend_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weightedBackendServices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

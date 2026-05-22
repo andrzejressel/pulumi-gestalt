@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#compute_billing_owner: {
-                        let field_value = match fields_map.get("compute_billing_owner") {
+                        let field_value = match fields_map.get("computeBillingOwner") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compute_billing_owner' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computeBillingOwner' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

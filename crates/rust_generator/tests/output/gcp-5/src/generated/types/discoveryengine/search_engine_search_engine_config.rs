@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#search_add_ons: {
-                        let field_value = match fields_map.get("search_add_ons") {
+                        let field_value = match fields_map.get("searchAddOns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'search_add_ons' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'searchAddOns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#search_tier: {
-                        let field_value = match fields_map.get("search_tier") {
+                        let field_value = match fields_map.get("searchTier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'search_tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'searchTier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

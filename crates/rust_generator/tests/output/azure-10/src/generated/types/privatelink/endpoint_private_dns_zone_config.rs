@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_dns_zone_id: {
-                        let field_value = match fields_map.get("private_dns_zone_id") {
+                        let field_value = match fields_map.get("privateDnsZoneId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_dns_zone_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateDnsZoneId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_sets: {
-                        let field_value = match fields_map.get("record_sets") {
+                        let field_value = match fields_map.get("recordSets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordSets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

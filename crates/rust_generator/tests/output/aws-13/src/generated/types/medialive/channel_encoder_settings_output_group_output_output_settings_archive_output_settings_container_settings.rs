@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#m_2_ts_settings: {
-                        let field_value = match fields_map.get("m_2_ts_settings") {
+                        let field_value = match fields_map.get("m2tsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'm_2_ts_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'm2tsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#raw_settings: {
-                        let field_value = match fields_map.get("raw_settings") {
+                        let field_value = match fields_map.get("rawSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'raw_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rawSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

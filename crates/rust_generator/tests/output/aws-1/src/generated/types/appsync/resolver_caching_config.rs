@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#caching_keys: {
-                        let field_value = match fields_map.get("caching_keys") {
+                        let field_value = match fields_map.get("cachingKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'caching_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cachingKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

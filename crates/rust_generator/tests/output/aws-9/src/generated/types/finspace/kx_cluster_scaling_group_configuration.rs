@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_limit: {
-                        let field_value = match fields_map.get("memory_limit") {
+                        let field_value = match fields_map.get("memoryLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_reservation: {
-                        let field_value = match fields_map.get("memory_reservation") {
+                        let field_value = match fields_map.get("memoryReservation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_reservation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryReservation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_count: {
-                        let field_value = match fields_map.get("node_count") {
+                        let field_value = match fields_map.get("nodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scaling_group_name: {
-                        let field_value = match fields_map.get("scaling_group_name") {
+                        let field_value = match fields_map.get("scalingGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scaling_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scalingGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

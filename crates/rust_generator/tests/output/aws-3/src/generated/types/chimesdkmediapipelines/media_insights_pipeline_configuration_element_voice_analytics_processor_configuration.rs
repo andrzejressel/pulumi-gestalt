@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#speaker_search_status: {
-                        let field_value = match fields_map.get("speaker_search_status") {
+                        let field_value = match fields_map.get("speakerSearchStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'speaker_search_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'speakerSearchStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#voice_tone_analysis_status: {
-                        let field_value = match fields_map.get("voice_tone_analysis_status") {
+                        let field_value = match fields_map.get("voiceToneAnalysisStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'voice_tone_analysis_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'voiceToneAnalysisStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

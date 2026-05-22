@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#custom_repository: {
-                        let field_value = match fields_map.get("custom_repository") {
+                        let field_value = match fields_map.get("customRepository") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_repository' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customRepository' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_repository: {
-                        let field_value = match fields_map.get("public_repository") {
+                        let field_value = match fields_map.get("publicRepository") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_repository' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicRepository' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

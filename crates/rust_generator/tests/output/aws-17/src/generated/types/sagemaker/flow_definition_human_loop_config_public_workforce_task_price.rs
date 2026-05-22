@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#amount_in_usd: {
-                        let field_value = match fields_map.get("amount_in_usd") {
+                        let field_value = match fields_map.get("amountInUsd") {
                             Some(value) => value,
-                            None => bail!("Missing field 'amount_in_usd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'amountInUsd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

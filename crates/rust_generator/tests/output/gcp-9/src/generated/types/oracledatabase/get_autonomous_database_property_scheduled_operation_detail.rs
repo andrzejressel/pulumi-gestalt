@@ -78,23 +78,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#day_of_week: {
-                        let field_value = match fields_map.get("day_of_week") {
+                        let field_value = match fields_map.get("dayOfWeek") {
                             Some(value) => value,
-                            None => bail!("Missing field 'day_of_week' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dayOfWeek' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_times: {
-                        let field_value = match fields_map.get("start_times") {
+                        let field_value = match fields_map.get("startTimes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_times' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTimes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stop_times: {
-                        let field_value = match fields_map.get("stop_times") {
+                        let field_value = match fields_map.get("stopTimes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stop_times' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stopTimes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

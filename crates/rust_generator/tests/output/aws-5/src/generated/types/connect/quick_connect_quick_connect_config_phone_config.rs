@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
 
                 Ok(Self {
                     r#phone_number: {
-                        let field_value = match fields_map.get("phone_number") {
+                        let field_value = match fields_map.get("phoneNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'phone_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'phoneNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

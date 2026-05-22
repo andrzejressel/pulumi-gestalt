@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#group_claim: {
-                        let field_value = match fields_map.get("group_claim") {
+                        let field_value = match fields_map.get("groupClaim") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_claim' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupClaim' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_entity_type: {
-                        let field_value = match fields_map.get("group_entity_type") {
+                        let field_value = match fields_map.get("groupEntityType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_entity_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupEntityType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

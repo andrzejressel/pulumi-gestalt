@@ -153,93 +153,93 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#aad_audience: {
-                        let field_value = match fields_map.get("aad_audience") {
+                        let field_value = match fields_map.get("aadAudience") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aad_audience' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aadAudience' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aad_issuer: {
-                        let field_value = match fields_map.get("aad_issuer") {
+                        let field_value = match fields_map.get("aadIssuer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aad_issuer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aadIssuer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aad_tenant: {
-                        let field_value = match fields_map.get("aad_tenant") {
+                        let field_value = match fields_map.get("aadTenant") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aad_tenant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aadTenant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#address_spaces: {
-                        let field_value = match fields_map.get("address_spaces") {
+                        let field_value = match fields_map.get("addressSpaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_spaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addressSpaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipsec_policy: {
-                        let field_value = match fields_map.get("ipsec_policy") {
+                        let field_value = match fields_map.get("ipsecPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipsec_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipsecPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#radius_server_address: {
-                        let field_value = match fields_map.get("radius_server_address") {
+                        let field_value = match fields_map.get("radiusServerAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'radius_server_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'radiusServerAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#radius_server_secret: {
-                        let field_value = match fields_map.get("radius_server_secret") {
+                        let field_value = match fields_map.get("radiusServerSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'radius_server_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'radiusServerSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#radius_servers: {
-                        let field_value = match fields_map.get("radius_servers") {
+                        let field_value = match fields_map.get("radiusServers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'radius_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'radiusServers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#revoked_certificates: {
-                        let field_value = match fields_map.get("revoked_certificates") {
+                        let field_value = match fields_map.get("revokedCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revoked_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revokedCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_certificates: {
-                        let field_value = match fields_map.get("root_certificates") {
+                        let field_value = match fields_map.get("rootCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_network_gateway_client_connections: {
-                        let field_value = match fields_map.get("virtual_network_gateway_client_connections") {
+                        let field_value = match fields_map.get("virtualNetworkGatewayClientConnections") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_network_gateway_client_connections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNetworkGatewayClientConnections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpn_auth_types: {
-                        let field_value = match fields_map.get("vpn_auth_types") {
+                        let field_value = match fields_map.get("vpnAuthTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpn_auth_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpnAuthTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpn_client_protocols: {
-                        let field_value = match fields_map.get("vpn_client_protocols") {
+                        let field_value = match fields_map.get("vpnClientProtocols") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpn_client_protocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpnClientProtocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

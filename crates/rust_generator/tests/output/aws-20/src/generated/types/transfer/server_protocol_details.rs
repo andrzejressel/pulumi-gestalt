@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#as_2_transports: {
-                        let field_value = match fields_map.get("as_2_transports") {
+                        let field_value = match fields_map.get("as2Transports") {
                             Some(value) => value,
-                            None => bail!("Missing field 'as_2_transports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'as2Transports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#passive_ip: {
-                        let field_value = match fields_map.get("passive_ip") {
+                        let field_value = match fields_map.get("passiveIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'passive_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passiveIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#set_stat_option: {
-                        let field_value = match fields_map.get("set_stat_option") {
+                        let field_value = match fields_map.get("setStatOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'set_stat_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'setStatOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_session_resumption_mode: {
-                        let field_value = match fields_map.get("tls_session_resumption_mode") {
+                        let field_value = match fields_map.get("tlsSessionResumptionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_session_resumption_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsSessionResumptionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

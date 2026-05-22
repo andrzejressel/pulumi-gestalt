@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#encrypted_private_key: {
-                        let field_value = match fields_map.get("encrypted_private_key") {
+                        let field_value = match fields_map.get("encryptedPrivateKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encrypted_private_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptedPrivateKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_certificate: {
-                        let field_value = match fields_map.get("ssl_certificate") {
+                        let field_value = match fields_map.get("sslCertificate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_certificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslCertificate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

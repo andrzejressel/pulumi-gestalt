@@ -154,100 +154,100 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#create_auth_challenge: {
-                        let field_value = match fields_map.get("create_auth_challenge") {
+                        let field_value = match fields_map.get("createAuthChallenge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_auth_challenge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createAuthChallenge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_email_sender: {
-                        let field_value = match fields_map.get("custom_email_sender") {
+                        let field_value = match fields_map.get("customEmailSender") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_email_sender' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customEmailSender' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_message: {
-                        let field_value = match fields_map.get("custom_message") {
+                        let field_value = match fields_map.get("customMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_sms_sender: {
-                        let field_value = match fields_map.get("custom_sms_sender") {
+                        let field_value = match fields_map.get("customSmsSender") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_sms_sender' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customSmsSender' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#define_auth_challenge: {
-                        let field_value = match fields_map.get("define_auth_challenge") {
+                        let field_value = match fields_map.get("defineAuthChallenge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'define_auth_challenge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defineAuthChallenge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_id: {
-                        let field_value = match fields_map.get("kms_key_id") {
+                        let field_value = match fields_map.get("kmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_authentication: {
-                        let field_value = match fields_map.get("post_authentication") {
+                        let field_value = match fields_map.get("postAuthentication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postAuthentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_confirmation: {
-                        let field_value = match fields_map.get("post_confirmation") {
+                        let field_value = match fields_map.get("postConfirmation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_confirmation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postConfirmation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_authentication: {
-                        let field_value = match fields_map.get("pre_authentication") {
+                        let field_value = match fields_map.get("preAuthentication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preAuthentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_sign_up: {
-                        let field_value = match fields_map.get("pre_sign_up") {
+                        let field_value = match fields_map.get("preSignUp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_sign_up' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preSignUp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_token_generation: {
-                        let field_value = match fields_map.get("pre_token_generation") {
+                        let field_value = match fields_map.get("preTokenGeneration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_token_generation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preTokenGeneration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_token_generation_config: {
-                        let field_value = match fields_map.get("pre_token_generation_config") {
+                        let field_value = match fields_map.get("preTokenGenerationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_token_generation_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preTokenGenerationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_migration: {
-                        let field_value = match fields_map.get("user_migration") {
+                        let field_value = match fields_map.get("userMigration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_migration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userMigration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verify_auth_challenge_response: {
-                        let field_value = match fields_map.get("verify_auth_challenge_response") {
+                        let field_value = match fields_map.get("verifyAuthChallengeResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verify_auth_challenge_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifyAuthChallengeResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

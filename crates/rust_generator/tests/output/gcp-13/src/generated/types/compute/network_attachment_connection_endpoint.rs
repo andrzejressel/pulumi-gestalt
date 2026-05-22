@@ -87,23 +87,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#ip_address: {
-                        let field_value = match fields_map.get("ip_address") {
+                        let field_value = match fields_map.get("ipAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#project_id_or_num: {
-                        let field_value = match fields_map.get("project_id_or_num") {
+                        let field_value = match fields_map.get("projectIdOrNum") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_id_or_num' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectIdOrNum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_ip_cidr_ranges: {
-                        let field_value = match fields_map.get("secondary_ip_cidr_ranges") {
+                        let field_value = match fields_map.get("secondaryIpCidrRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_ip_cidr_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryIpCidrRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

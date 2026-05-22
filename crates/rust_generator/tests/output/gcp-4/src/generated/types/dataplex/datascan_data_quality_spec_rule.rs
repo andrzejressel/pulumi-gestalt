@@ -195,9 +195,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_null: {
-                        let field_value = match fields_map.get("ignore_null") {
+                        let field_value = match fields_map.get("ignoreNull") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_null' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreNull' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -209,58 +209,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#non_null_expectation: {
-                        let field_value = match fields_map.get("non_null_expectation") {
+                        let field_value = match fields_map.get("nonNullExpectation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'non_null_expectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nonNullExpectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_expectation: {
-                        let field_value = match fields_map.get("range_expectation") {
+                        let field_value = match fields_map.get("rangeExpectation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_expectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeExpectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regex_expectation: {
-                        let field_value = match fields_map.get("regex_expectation") {
+                        let field_value = match fields_map.get("regexExpectation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regex_expectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regexExpectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#row_condition_expectation: {
-                        let field_value = match fields_map.get("row_condition_expectation") {
+                        let field_value = match fields_map.get("rowConditionExpectation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'row_condition_expectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rowConditionExpectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#set_expectation: {
-                        let field_value = match fields_map.get("set_expectation") {
+                        let field_value = match fields_map.get("setExpectation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'set_expectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'setExpectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_assertion: {
-                        let field_value = match fields_map.get("sql_assertion") {
+                        let field_value = match fields_map.get("sqlAssertion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_assertion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlAssertion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#statistic_range_expectation: {
-                        let field_value = match fields_map.get("statistic_range_expectation") {
+                        let field_value = match fields_map.get("statisticRangeExpectation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'statistic_range_expectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statisticRangeExpectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_condition_expectation: {
-                        let field_value = match fields_map.get("table_condition_expectation") {
+                        let field_value = match fields_map.get("tableConditionExpectation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_condition_expectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tableConditionExpectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -272,9 +272,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#uniqueness_expectation: {
-                        let field_value = match fields_map.get("uniqueness_expectation") {
+                        let field_value = match fields_map.get("uniquenessExpectation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'uniqueness_expectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'uniquenessExpectation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

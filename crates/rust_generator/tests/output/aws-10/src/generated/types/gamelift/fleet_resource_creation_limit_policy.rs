@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#new_game_sessions_per_creator: {
-                        let field_value = match fields_map.get("new_game_sessions_per_creator") {
+                        let field_value = match fields_map.get("newGameSessionsPerCreator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'new_game_sessions_per_creator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'newGameSessionsPerCreator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_period_in_minutes: {
-                        let field_value = match fields_map.get("policy_period_in_minutes") {
+                        let field_value = match fields_map.get("policyPeriodInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_period_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyPeriodInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

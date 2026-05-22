@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#automation_account_id: {
-                        let field_value = match fields_map.get("automation_account_id") {
+                        let field_value = match fields_map.get("automationAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automation_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automationAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_global_runbook: {
-                        let field_value = match fields_map.get("is_global_runbook") {
+                        let field_value = match fields_map.get("isGlobalRunbook") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_global_runbook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isGlobalRunbook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,30 +119,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runbook_name: {
-                        let field_value = match fields_map.get("runbook_name") {
+                        let field_value = match fields_map.get("runbookName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runbook_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runbookName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_uri: {
-                        let field_value = match fields_map.get("service_uri") {
+                        let field_value = match fields_map.get("serviceUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_common_alert_schema: {
-                        let field_value = match fields_map.get("use_common_alert_schema") {
+                        let field_value = match fields_map.get("useCommonAlertSchema") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_common_alert_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useCommonAlertSchema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#webhook_resource_id: {
-                        let field_value = match fields_map.get("webhook_resource_id") {
+                        let field_value = match fields_map.get("webhookResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'webhook_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webhookResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

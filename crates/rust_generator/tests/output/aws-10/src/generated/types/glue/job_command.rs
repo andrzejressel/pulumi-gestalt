@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#python_version: {
-                        let field_value = match fields_map.get("python_version") {
+                        let field_value = match fields_map.get("pythonVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'python_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pythonVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#script_location: {
-                        let field_value = match fields_map.get("script_location") {
+                        let field_value = match fields_map.get("scriptLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'script_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scriptLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

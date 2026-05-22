@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_endpoint_path: {
-                        let field_value = match fields_map.get("sql_endpoint_path") {
+                        let field_value = match fields_map.get("sqlEndpointPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_endpoint_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlEndpointPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

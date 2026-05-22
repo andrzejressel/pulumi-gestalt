@@ -121,44 +121,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#custom_action_timeout_enabled: {
-                        let field_value = match fields_map.get("custom_action_timeout_enabled") {
+                        let field_value = match fields_map.get("customActionTimeoutEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_action_timeout_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customActionTimeoutEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_action_timeout_in_mins: {
-                        let field_value = match fields_map.get("custom_action_timeout_in_mins") {
+                        let field_value = match fields_map.get("customActionTimeoutInMins") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_action_timeout_in_mins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customActionTimeoutInMins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#days_of_weeks: {
-                        let field_value = match fields_map.get("days_of_weeks") {
+                        let field_value = match fields_map.get("daysOfWeeks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_weeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfWeeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hours_of_days: {
-                        let field_value = match fields_map.get("hours_of_days") {
+                        let field_value = match fields_map.get("hoursOfDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hours_of_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hoursOfDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lead_time_in_weeks: {
-                        let field_value = match fields_map.get("lead_time_in_weeks") {
+                        let field_value = match fields_map.get("leadTimeInWeeks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lead_time_in_weeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'leadTimeInWeeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monthly_patching_enabled: {
-                        let field_value = match fields_map.get("monthly_patching_enabled") {
+                        let field_value = match fields_map.get("monthlyPatchingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monthly_patching_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monthlyPatchingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -170,9 +170,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#patching_mode: {
-                        let field_value = match fields_map.get("patching_mode") {
+                        let field_value = match fields_map.get("patchingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'patching_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'patchingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -184,9 +184,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weeks_of_months: {
-                        let field_value = match fields_map.get("weeks_of_months") {
+                        let field_value = match fields_map.get("weeksOfMonths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weeks_of_months' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weeksOfMonths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

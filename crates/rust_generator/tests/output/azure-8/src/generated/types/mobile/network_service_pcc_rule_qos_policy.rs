@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#allocation_and_retention_priority_level: {
-                        let field_value = match fields_map.get("allocation_and_retention_priority_level") {
+                        let field_value = match fields_map.get("allocationAndRetentionPriorityLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allocation_and_retention_priority_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allocationAndRetentionPriorityLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guaranteed_bit_rate: {
-                        let field_value = match fields_map.get("guaranteed_bit_rate") {
+                        let field_value = match fields_map.get("guaranteedBitRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guaranteed_bit_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guaranteedBitRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_bit_rate: {
-                        let field_value = match fields_map.get("maximum_bit_rate") {
+                        let field_value = match fields_map.get("maximumBitRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_bit_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumBitRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preemption_capability: {
-                        let field_value = match fields_map.get("preemption_capability") {
+                        let field_value = match fields_map.get("preemptionCapability") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preemption_capability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preemptionCapability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preemption_vulnerability: {
-                        let field_value = match fields_map.get("preemption_vulnerability") {
+                        let field_value = match fields_map.get("preemptionVulnerability") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preemption_vulnerability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preemptionVulnerability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#qos_indicator: {
-                        let field_value = match fields_map.get("qos_indicator") {
+                        let field_value = match fields_map.get("qosIndicator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'qos_indicator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'qosIndicator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_profile: {
-                        let field_value = match fields_map.get("os_profile") {
+                        let field_value = match fields_map.get("osProfile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_profile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osProfile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_machine_size: {
-                        let field_value = match fields_map.get("virtual_machine_size") {
+                        let field_value = match fields_map.get("virtualMachineSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_machine_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualMachineSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

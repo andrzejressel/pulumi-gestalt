@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#target_concurrent_requests: {
-                        let field_value = match fields_map.get("target_concurrent_requests") {
+                        let field_value = match fields_map.get("targetConcurrentRequests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_concurrent_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetConcurrentRequests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_request_count_per_second: {
-                        let field_value = match fields_map.get("target_request_count_per_second") {
+                        let field_value = match fields_map.get("targetRequestCountPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_request_count_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetRequestCountPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

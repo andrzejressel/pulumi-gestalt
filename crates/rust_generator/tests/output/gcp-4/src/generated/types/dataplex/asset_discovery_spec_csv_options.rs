@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_type_inference: {
-                        let field_value = match fields_map.get("disable_type_inference") {
+                        let field_value = match fields_map.get("disableTypeInference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_type_inference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableTypeInference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#header_rows: {
-                        let field_value = match fields_map.get("header_rows") {
+                        let field_value = match fields_map.get("headerRows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_rows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerRows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

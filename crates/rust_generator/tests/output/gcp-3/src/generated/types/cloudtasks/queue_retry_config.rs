@@ -100,37 +100,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
 
                 Ok(Self {
                     r#max_attempts: {
-                        let field_value = match fields_map.get("max_attempts") {
+                        let field_value = match fields_map.get("maxAttempts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_attempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAttempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_backoff: {
-                        let field_value = match fields_map.get("max_backoff") {
+                        let field_value = match fields_map.get("maxBackoff") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_backoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxBackoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_doublings: {
-                        let field_value = match fields_map.get("max_doublings") {
+                        let field_value = match fields_map.get("maxDoublings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_doublings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxDoublings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_retry_duration: {
-                        let field_value = match fields_map.get("max_retry_duration") {
+                        let field_value = match fields_map.get("maxRetryDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_retry_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRetryDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_backoff: {
-                        let field_value = match fields_map.get("min_backoff") {
+                        let field_value = match fields_map.get("minBackoff") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_backoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minBackoff' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

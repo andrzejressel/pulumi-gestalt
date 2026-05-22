@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_to_live_in_seconds: {
-                        let field_value = match fields_map.get("time_to_live_in_seconds") {
+                        let field_value = match fields_map.get("timeToLiveInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_to_live_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeToLiveInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#turns_to_live: {
-                        let field_value = match fields_map.get("turns_to_live") {
+                        let field_value = match fields_map.get("turnsToLive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'turns_to_live' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'turnsToLive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

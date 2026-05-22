@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#field_transformations: {
-                        let field_value = match fields_map.get("field_transformations") {
+                        let field_value = match fields_map.get("fieldTransformations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_transformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldTransformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_suppressions: {
-                        let field_value = match fields_map.get("record_suppressions") {
+                        let field_value = match fields_map.get("recordSuppressions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_suppressions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordSuppressions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

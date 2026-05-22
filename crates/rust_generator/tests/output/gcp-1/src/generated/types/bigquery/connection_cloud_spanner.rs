@@ -100,37 +100,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_role: {
-                        let field_value = match fields_map.get("database_role") {
+                        let field_value = match fields_map.get("databaseRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_parallelism: {
-                        let field_value = match fields_map.get("max_parallelism") {
+                        let field_value = match fields_map.get("maxParallelism") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_parallelism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxParallelism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_data_boost: {
-                        let field_value = match fields_map.get("use_data_boost") {
+                        let field_value = match fields_map.get("useDataBoost") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_data_boost' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useDataBoost' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_parallelism: {
-                        let field_value = match fields_map.get("use_parallelism") {
+                        let field_value = match fields_map.get("useParallelism") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_parallelism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useParallelism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_serverless_analytics: {
-                        let field_value = match fields_map.get("use_serverless_analytics") {
+                        let field_value = match fields_map.get("useServerlessAnalytics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_serverless_analytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useServerlessAnalytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

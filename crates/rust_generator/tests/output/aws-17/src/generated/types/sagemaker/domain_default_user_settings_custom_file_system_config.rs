@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#efs_file_system_config: {
-                        let field_value = match fields_map.get("efs_file_system_config") {
+                        let field_value = match fields_map.get("efsFileSystemConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'efs_file_system_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'efsFileSystemConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

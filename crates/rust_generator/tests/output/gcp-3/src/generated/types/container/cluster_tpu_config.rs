@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_4_cidr_block: {
-                        let field_value = match fields_map.get("ipv_4_cidr_block") {
+                        let field_value = match fields_map.get("ipv4CidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv4CidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_service_networking: {
-                        let field_value = match fields_map.get("use_service_networking") {
+                        let field_value = match fields_map.get("useServiceNetworking") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_service_networking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useServiceNetworking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

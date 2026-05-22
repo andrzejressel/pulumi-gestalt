@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#bucket_size: {
-                        let field_value = match fields_map.get("bucket_size") {
+                        let field_value = match fields_map.get("bucketSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lower_bound: {
-                        let field_value = match fields_map.get("lower_bound") {
+                        let field_value = match fields_map.get("lowerBound") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lower_bound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lowerBound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#upper_bound: {
-                        let field_value = match fields_map.get("upper_bound") {
+                        let field_value = match fields_map.get("upperBound") {
                             Some(value) => value,
-                            None => bail!("Missing field 'upper_bound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'upperBound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

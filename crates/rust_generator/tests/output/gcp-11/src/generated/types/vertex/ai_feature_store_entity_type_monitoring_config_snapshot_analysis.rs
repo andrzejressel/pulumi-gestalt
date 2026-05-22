@@ -85,23 +85,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitoring_interval: {
-                        let field_value = match fields_map.get("monitoring_interval") {
+                        let field_value = match fields_map.get("monitoringInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monitoring_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monitoringInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitoring_interval_days: {
-                        let field_value = match fields_map.get("monitoring_interval_days") {
+                        let field_value = match fields_map.get("monitoringIntervalDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monitoring_interval_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monitoringIntervalDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#staleness_days: {
-                        let field_value = match fields_map.get("staleness_days") {
+                        let field_value = match fields_map.get("stalenessDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'staleness_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stalenessDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

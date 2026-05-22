@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#administrator_login: {
-                        let field_value = match fields_map.get("administrator_login") {
+                        let field_value = match fields_map.get("administratorLogin") {
                             Some(value) => value,
-                            None => bail!("Missing field 'administrator_login' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'administratorLogin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#administrator_login_password: {
-                        let field_value = match fields_map.get("administrator_login_password") {
+                        let field_value = match fields_map.get("administratorLoginPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'administrator_login_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'administratorLoginPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authentication_type: {
-                        let field_value = match fields_map.get("authentication_type") {
+                        let field_value = match fields_map.get("authenticationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_id: {
-                        let field_value = match fields_map.get("storage_account_id") {
+                        let field_value = match fields_map.get("storageAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_key: {
-                        let field_value = match fields_map.get("storage_key") {
+                        let field_value = match fields_map.get("storageKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_key_type: {
-                        let field_value = match fields_map.get("storage_key_type") {
+                        let field_value = match fields_map.get("storageKeyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_key_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageKeyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_uri: {
-                        let field_value = match fields_map.get("storage_uri") {
+                        let field_value = match fields_map.get("storageUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

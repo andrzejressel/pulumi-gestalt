@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#ca_pool: {
-                        let field_value = match fields_map.get("ca_pool") {
+                        let field_value = match fields_map.get("caPool") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ca_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caPool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_service_attachment: {
-                        let field_value = match fields_map.get("http_service_attachment") {
+                        let field_value = match fields_map.get("httpServiceAttachment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_service_attachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpServiceAttachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_private: {
-                        let field_value = match fields_map.get("is_private") {
+                        let field_value = match fields_map.get("isPrivate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_private' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isPrivate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssh_service_attachment: {
-                        let field_value = match fields_map.get("ssh_service_attachment") {
+                        let field_value = match fields_map.get("sshServiceAttachment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssh_service_attachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sshServiceAttachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

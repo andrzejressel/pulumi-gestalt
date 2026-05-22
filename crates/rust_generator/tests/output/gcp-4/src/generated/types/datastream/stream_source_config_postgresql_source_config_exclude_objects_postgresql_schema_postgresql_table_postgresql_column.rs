@@ -117,9 +117,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_type: {
-                        let field_value = match fields_map.get("data_type") {
+                        let field_value = match fields_map.get("dataType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -138,9 +138,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ordinal_position: {
-                        let field_value = match fields_map.get("ordinal_position") {
+                        let field_value = match fields_map.get("ordinalPosition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ordinal_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ordinalPosition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -152,9 +152,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_key: {
-                        let field_value = match fields_map.get("primary_key") {
+                        let field_value = match fields_map.get("primaryKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

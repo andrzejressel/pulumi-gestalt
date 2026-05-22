@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#backend_pool_name: {
-                        let field_value = match fields_map.get("backend_pool_name") {
+                        let field_value = match fields_map.get("backendPoolName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_pool_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPoolName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_duration: {
-                        let field_value = match fields_map.get("cache_duration") {
+                        let field_value = match fields_map.get("cacheDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_enabled: {
-                        let field_value = match fields_map.get("cache_enabled") {
+                        let field_value = match fields_map.get("cacheEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_query_parameter_strip_directive: {
-                        let field_value = match fields_map.get("cache_query_parameter_strip_directive") {
+                        let field_value = match fields_map.get("cacheQueryParameterStripDirective") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_query_parameter_strip_directive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheQueryParameterStripDirective' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_query_parameters: {
-                        let field_value = match fields_map.get("cache_query_parameters") {
+                        let field_value = match fields_map.get("cacheQueryParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_query_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheQueryParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_use_dynamic_compression: {
-                        let field_value = match fields_map.get("cache_use_dynamic_compression") {
+                        let field_value = match fields_map.get("cacheUseDynamicCompression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_use_dynamic_compression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheUseDynamicCompression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_forwarding_path: {
-                        let field_value = match fields_map.get("custom_forwarding_path") {
+                        let field_value = match fields_map.get("customForwardingPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_forwarding_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customForwardingPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarding_protocol: {
-                        let field_value = match fields_map.get("forwarding_protocol") {
+                        let field_value = match fields_map.get("forwardingProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarding_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardingProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

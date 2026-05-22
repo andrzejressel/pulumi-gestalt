@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#access_token_only: {
-                        let field_value = match fields_map.get("access_token_only") {
+                        let field_value = match fields_map.get("accessTokenOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_token_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessTokenOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_token_only: {
-                        let field_value = match fields_map.get("identity_token_only") {
+                        let field_value = match fields_map.get("identityTokenOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_token_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityTokenOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

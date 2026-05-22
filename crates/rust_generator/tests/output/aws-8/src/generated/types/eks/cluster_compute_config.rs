@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_pools: {
-                        let field_value = match fields_map.get("node_pools") {
+                        let field_value = match fields_map.get("nodePools") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodePools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_role_arn: {
-                        let field_value = match fields_map.get("node_role_arn") {
+                        let field_value = match fields_map.get("nodeRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

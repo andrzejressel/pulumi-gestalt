@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#node_config_defaults: {
-                        let field_value = match fields_map.get("node_config_defaults") {
+                        let field_value = match fields_map.get("nodeConfigDefaults") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_config_defaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeConfigDefaults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

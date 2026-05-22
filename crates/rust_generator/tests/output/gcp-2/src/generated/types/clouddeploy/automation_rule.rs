@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#advance_rollout_rule: {
-                        let field_value = match fields_map.get("advance_rollout_rule") {
+                        let field_value = match fields_map.get("advanceRolloutRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advance_rollout_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advanceRolloutRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#promote_release_rule: {
-                        let field_value = match fields_map.get("promote_release_rule") {
+                        let field_value = match fields_map.get("promoteReleaseRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'promote_release_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'promoteReleaseRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

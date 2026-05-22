@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#access_role_arn: {
-                        let field_value = match fields_map.get("access_role_arn") {
+                        let field_value = match fields_map.get("accessRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_arn: {
-                        let field_value = match fields_map.get("connection_arn") {
+                        let field_value = match fields_map.get("connectionArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#path_id: {
-                        let field_value = match fields_map.get("path_id") {
+                        let field_value = match fields_map.get("pathId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#product_id: {
-                        let field_value = match fields_map.get("product_id") {
+                        let field_value = match fields_map.get("productId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'product_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'productId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioning_artifact_id: {
-                        let field_value = match fields_map.get("provisioning_artifact_id") {
+                        let field_value = match fields_map.get("provisioningArtifactId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioning_artifact_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisioningArtifactId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioning_parameters: {
-                        let field_value = match fields_map.get("provisioning_parameters") {
+                        let field_value = match fields_map.get("provisioningParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioning_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisioningParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

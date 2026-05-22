@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#capture_mode: {
-                        let field_value = match fields_map.get("capture_mode") {
+                        let field_value = match fields_map.get("captureMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capture_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'captureMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

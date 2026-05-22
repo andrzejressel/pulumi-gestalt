@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#find_matches_parameters: {
-                        let field_value = match fields_map.get("find_matches_parameters") {
+                        let field_value = match fields_map.get("findMatchesParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'find_matches_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'findMatchesParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transform_type: {
-                        let field_value = match fields_map.get("transform_type") {
+                        let field_value = match fields_map.get("transformType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transform_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transformType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

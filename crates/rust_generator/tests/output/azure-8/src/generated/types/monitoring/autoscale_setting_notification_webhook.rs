@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_uri: {
-                        let field_value = match fields_map.get("service_uri") {
+                        let field_value = match fields_map.get("serviceUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

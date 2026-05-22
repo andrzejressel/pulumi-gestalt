@@ -224,107 +224,107 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#active_directory_v_2: {
-                        let field_value = match fields_map.get("active_directory_v_2") {
+                        let field_value = match fields_map.get("activeDirectoryV2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_directory_v_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeDirectoryV2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#apple_v_2: {
-                        let field_value = match fields_map.get("apple_v_2") {
+                        let field_value = match fields_map.get("appleV2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apple_v_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appleV2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_enabled: {
-                        let field_value = match fields_map.get("auth_enabled") {
+                        let field_value = match fields_map.get("authEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#azure_static_web_app_v_2: {
-                        let field_value = match fields_map.get("azure_static_web_app_v_2") {
+                        let field_value = match fields_map.get("azureStaticWebAppV2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_static_web_app_v_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureStaticWebAppV2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#config_file_path: {
-                        let field_value = match fields_map.get("config_file_path") {
+                        let field_value = match fields_map.get("configFilePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_file_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configFilePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_oidc_v_2_s: {
-                        let field_value = match fields_map.get("custom_oidc_v_2_s") {
+                        let field_value = match fields_map.get("customOidcV2s") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_oidc_v_2_s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customOidcV2s' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_provider: {
-                        let field_value = match fields_map.get("default_provider") {
+                        let field_value = match fields_map.get("defaultProvider") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_provider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultProvider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_paths: {
-                        let field_value = match fields_map.get("excluded_paths") {
+                        let field_value = match fields_map.get("excludedPaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedPaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#facebook_v_2: {
-                        let field_value = match fields_map.get("facebook_v_2") {
+                        let field_value = match fields_map.get("facebookV2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'facebook_v_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'facebookV2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forward_proxy_convention: {
-                        let field_value = match fields_map.get("forward_proxy_convention") {
+                        let field_value = match fields_map.get("forwardProxyConvention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forward_proxy_convention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardProxyConvention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forward_proxy_custom_host_header_name: {
-                        let field_value = match fields_map.get("forward_proxy_custom_host_header_name") {
+                        let field_value = match fields_map.get("forwardProxyCustomHostHeaderName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forward_proxy_custom_host_header_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardProxyCustomHostHeaderName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forward_proxy_custom_scheme_header_name: {
-                        let field_value = match fields_map.get("forward_proxy_custom_scheme_header_name") {
+                        let field_value = match fields_map.get("forwardProxyCustomSchemeHeaderName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forward_proxy_custom_scheme_header_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardProxyCustomSchemeHeaderName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#github_v_2: {
-                        let field_value = match fields_map.get("github_v_2") {
+                        let field_value = match fields_map.get("githubV2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'github_v_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'githubV2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#google_v_2: {
-                        let field_value = match fields_map.get("google_v_2") {
+                        let field_value = match fields_map.get("googleV2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'google_v_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'googleV2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_route_api_prefix: {
-                        let field_value = match fields_map.get("http_route_api_prefix") {
+                        let field_value = match fields_map.get("httpRouteApiPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_route_api_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpRouteApiPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -336,44 +336,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#microsoft_v_2: {
-                        let field_value = match fields_map.get("microsoft_v_2") {
+                        let field_value = match fields_map.get("microsoftV2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'microsoft_v_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'microsoftV2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_authentication: {
-                        let field_value = match fields_map.get("require_authentication") {
+                        let field_value = match fields_map.get("requireAuthentication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireAuthentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_https: {
-                        let field_value = match fields_map.get("require_https") {
+                        let field_value = match fields_map.get("requireHttps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_https' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireHttps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_version: {
-                        let field_value = match fields_map.get("runtime_version") {
+                        let field_value = match fields_map.get("runtimeVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimeVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#twitter_v_2: {
-                        let field_value = match fields_map.get("twitter_v_2") {
+                        let field_value = match fields_map.get("twitterV2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'twitter_v_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'twitterV2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unauthenticated_action: {
-                        let field_value = match fields_map.get("unauthenticated_action") {
+                        let field_value = match fields_map.get("unauthenticatedAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unauthenticated_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unauthenticatedAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

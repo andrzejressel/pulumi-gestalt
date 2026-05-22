@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#orphan_file_retention_period_in_days: {
-                        let field_value = match fields_map.get("orphan_file_retention_period_in_days") {
+                        let field_value = match fields_map.get("orphanFileRetentionPeriodInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'orphan_file_retention_period_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'orphanFileRetentionPeriodInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

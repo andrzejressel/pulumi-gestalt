@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#repository_access_mode: {
-                        let field_value = match fields_map.get("repository_access_mode") {
+                        let field_value = match fields_map.get("repositoryAccessMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repository_access_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repositoryAccessMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repository_auth_config: {
-                        let field_value = match fields_map.get("repository_auth_config") {
+                        let field_value = match fields_map.get("repositoryAuthConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repository_auth_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repositoryAuthConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

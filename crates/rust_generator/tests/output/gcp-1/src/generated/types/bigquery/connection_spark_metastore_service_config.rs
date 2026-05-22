@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#metastore_service: {
-                        let field_value = match fields_map.get("metastore_service") {
+                        let field_value = match fields_map.get("metastoreService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metastore_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metastoreService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

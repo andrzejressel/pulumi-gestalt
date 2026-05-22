@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_ranges: {
-                        let field_value = match fields_map.get("port_ranges") {
+                        let field_value = match fields_map.get("portRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,16 +112,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_action: {
-                        let field_value = match fields_map.get("rule_action") {
+                        let field_value = match fields_map.get("ruleAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_number: {
-                        let field_value = match fields_map.get("rule_number") {
+                        let field_value = match fields_map.get("ruleNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

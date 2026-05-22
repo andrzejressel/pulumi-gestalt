@@ -70,16 +70,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#api_key: {
-                        let field_value = match fields_map.get("api_key") {
+                        let field_value = match fields_map.get("apiKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#firebase_subdomain: {
-                        let field_value = match fields_map.get("firebase_subdomain") {
+                        let field_value = match fields_map.get("firebaseSubdomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'firebase_subdomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firebaseSubdomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

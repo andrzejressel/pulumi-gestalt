@@ -70,9 +70,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_access_block: {
-                        let field_value = match fields_map.get("public_access_block") {
+                        let field_value = match fields_map.get("publicAccessBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_access_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicAccessBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

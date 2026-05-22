@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#ip_addr: {
-                        let field_value = match fields_map.get("ip_addr") {
+                        let field_value = match fields_map.get("ipAddr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_addr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAddr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_network_id: {
-                        let field_value = match fields_map.get("virtual_network_id") {
+                        let field_value = match fields_map.get("virtualNetworkId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_network_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNetworkId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

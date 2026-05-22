@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#availability_set_name: {
-                        let field_value = match fields_map.get("availability_set_name") {
+                        let field_value = match fields_map.get("availabilitySetName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'availability_set_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availabilitySetName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_machines: {
-                        let field_value = match fields_map.get("virtual_machines") {
+                        let field_value = match fields_map.get("virtualMachines") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_machines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualMachines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

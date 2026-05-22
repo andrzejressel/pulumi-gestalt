@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#azure_blob_file_systems: {
-                        let field_value = match fields_map.get("azure_blob_file_systems") {
+                        let field_value = match fields_map.get("azureBlobFileSystems") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_blob_file_systems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureBlobFileSystems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#azure_file_shares: {
-                        let field_value = match fields_map.get("azure_file_shares") {
+                        let field_value = match fields_map.get("azureFileShares") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_file_shares' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureFileShares' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cifs_mounts: {
-                        let field_value = match fields_map.get("cifs_mounts") {
+                        let field_value = match fields_map.get("cifsMounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cifs_mounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cifsMounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfs_mounts: {
-                        let field_value = match fields_map.get("nfs_mounts") {
+                        let field_value = match fields_map.get("nfsMounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nfs_mounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nfsMounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#new_value: {
-                        let field_value = match fields_map.get("new_value") {
+                        let field_value = match fields_map.get("newValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'new_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'newValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

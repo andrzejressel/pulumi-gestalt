@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#default_log_analytics_workspace_id: {
-                        let field_value = match fields_map.get("default_log_analytics_workspace_id") {
+                        let field_value = match fields_map.get("defaultLogAnalyticsWorkspaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_log_analytics_workspace_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultLogAnalyticsWorkspaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_analytics_workspaces: {
-                        let field_value = match fields_map.get("log_analytics_workspaces") {
+                        let field_value = match fields_map.get("logAnalyticsWorkspaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_analytics_workspaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logAnalyticsWorkspaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_in_days: {
-                        let field_value = match fields_map.get("retention_in_days") {
+                        let field_value = match fields_map.get("retentionInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

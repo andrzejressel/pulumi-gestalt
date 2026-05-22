@@ -112,9 +112,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fixed_response: {
-                        let field_value = match fields_map.get("fixed_response") {
+                        let field_value = match fields_map.get("fixedResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fixed_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fixedResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

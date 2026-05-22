@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#healthy_threshold: {
-                        let field_value = match fields_map.get("healthy_threshold") {
+                        let field_value = match fields_map.get("healthyThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'healthy_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthyThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -105,9 +105,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unhealthy_threshold: {
-                        let field_value = match fields_map.get("unhealthy_threshold") {
+                        let field_value = match fields_map.get("unhealthyThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unhealthy_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unhealthyThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

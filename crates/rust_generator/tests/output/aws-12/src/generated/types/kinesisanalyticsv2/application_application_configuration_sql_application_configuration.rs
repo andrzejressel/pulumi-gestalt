@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reference_data_source: {
-                        let field_value = match fields_map.get("reference_data_source") {
+                        let field_value = match fields_map.get("referenceDataSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reference_data_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'referenceDataSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

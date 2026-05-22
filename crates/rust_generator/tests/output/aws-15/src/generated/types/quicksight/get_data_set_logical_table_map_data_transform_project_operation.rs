@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#projected_columns: {
-                        let field_value = match fields_map.get("projected_columns") {
+                        let field_value = match fields_map.get("projectedColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'projected_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectedColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

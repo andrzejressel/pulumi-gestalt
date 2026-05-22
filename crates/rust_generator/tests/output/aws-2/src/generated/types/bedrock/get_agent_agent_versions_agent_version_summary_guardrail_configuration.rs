@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#guardrail_identifier: {
-                        let field_value = match fields_map.get("guardrail_identifier") {
+                        let field_value = match fields_map.get("guardrailIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guardrail_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guardrailIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guardrail_version: {
-                        let field_value = match fields_map.get("guardrail_version") {
+                        let field_value = match fields_map.get("guardrailVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guardrail_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guardrailVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -148,79 +148,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#dest_address_groups: {
-                        let field_value = match fields_map.get("dest_address_groups") {
+                        let field_value = match fields_map.get("destAddressGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dest_address_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destAddressGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dest_fqdns: {
-                        let field_value = match fields_map.get("dest_fqdns") {
+                        let field_value = match fields_map.get("destFqdns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dest_fqdns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destFqdns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dest_ip_ranges: {
-                        let field_value = match fields_map.get("dest_ip_ranges") {
+                        let field_value = match fields_map.get("destIpRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dest_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destIpRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dest_region_codes: {
-                        let field_value = match fields_map.get("dest_region_codes") {
+                        let field_value = match fields_map.get("destRegionCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dest_region_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destRegionCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dest_threat_intelligences: {
-                        let field_value = match fields_map.get("dest_threat_intelligences") {
+                        let field_value = match fields_map.get("destThreatIntelligences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dest_threat_intelligences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destThreatIntelligences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#layer_4_configs: {
-                        let field_value = match fields_map.get("layer_4_configs") {
+                        let field_value = match fields_map.get("layer4Configs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'layer_4_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'layer4Configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#src_address_groups: {
-                        let field_value = match fields_map.get("src_address_groups") {
+                        let field_value = match fields_map.get("srcAddressGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'src_address_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'srcAddressGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#src_fqdns: {
-                        let field_value = match fields_map.get("src_fqdns") {
+                        let field_value = match fields_map.get("srcFqdns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'src_fqdns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'srcFqdns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#src_ip_ranges: {
-                        let field_value = match fields_map.get("src_ip_ranges") {
+                        let field_value = match fields_map.get("srcIpRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'src_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'srcIpRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#src_region_codes: {
-                        let field_value = match fields_map.get("src_region_codes") {
+                        let field_value = match fields_map.get("srcRegionCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'src_region_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'srcRegionCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#src_threat_intelligences: {
-                        let field_value = match fields_map.get("src_threat_intelligences") {
+                        let field_value = match fields_map.get("srcThreatIntelligences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'src_threat_intelligences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'srcThreatIntelligences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

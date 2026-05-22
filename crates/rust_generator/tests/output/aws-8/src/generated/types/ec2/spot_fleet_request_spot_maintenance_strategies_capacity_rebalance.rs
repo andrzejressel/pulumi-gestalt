@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#replacement_strategy: {
-                        let field_value = match fields_map.get("replacement_strategy") {
+                        let field_value = match fields_map.get("replacementStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replacement_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replacementStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

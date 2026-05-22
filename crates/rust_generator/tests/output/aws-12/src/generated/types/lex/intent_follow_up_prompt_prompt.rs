@@ -70,9 +70,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#max_attempts: {
-                        let field_value = match fields_map.get("max_attempts") {
+                        let field_value = match fields_map.get("maxAttempts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_attempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAttempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -84,9 +84,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_card: {
-                        let field_value = match fields_map.get("response_card") {
+                        let field_value = match fields_map.get("responseCard") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_card' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseCard' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

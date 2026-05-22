@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#domain_name: {
-                        let field_value = match fields_map.get("domain_name") {
+                        let field_value = match fields_map.get("domainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hosted_zone_id: {
-                        let field_value = match fields_map.get("hosted_zone_id") {
+                        let field_value = match fields_map.get("hostedZoneId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hosted_zone_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostedZoneId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

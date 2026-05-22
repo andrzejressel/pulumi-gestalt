@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#market_type: {
-                        let field_value = match fields_map.get("market_type") {
+                        let field_value = match fields_map.get("marketType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'market_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'marketType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spot_options: {
-                        let field_value = match fields_map.get("spot_options") {
+                        let field_value = match fields_map.get("spotOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spot_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spotOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

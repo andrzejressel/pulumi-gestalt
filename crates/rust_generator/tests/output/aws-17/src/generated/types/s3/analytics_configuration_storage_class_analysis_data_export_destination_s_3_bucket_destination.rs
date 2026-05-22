@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#bucket_account_id: {
-                        let field_value = match fields_map.get("bucket_account_id") {
+                        let field_value = match fields_map.get("bucketAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_arn: {
-                        let field_value = match fields_map.get("bucket_arn") {
+                        let field_value = match fields_map.get("bucketArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

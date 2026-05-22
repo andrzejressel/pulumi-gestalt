@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_reason: {
-                        let field_value = match fields_map.get("failure_reason") {
+                        let field_value = match fields_map.get("failureReason") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_reason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureReason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

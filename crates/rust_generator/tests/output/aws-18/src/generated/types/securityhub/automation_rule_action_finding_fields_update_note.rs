@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#updated_by: {
-                        let field_value = match fields_map.get("updated_by") {
+                        let field_value = match fields_map.get("updatedBy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'updated_by' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updatedBy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

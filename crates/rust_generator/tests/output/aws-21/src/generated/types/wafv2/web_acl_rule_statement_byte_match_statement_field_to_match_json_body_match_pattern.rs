@@ -64,9 +64,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_paths: {
-                        let field_value = match fields_map.get("included_paths") {
+                        let field_value = match fields_map.get("includedPaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedPaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

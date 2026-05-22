@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#azure_credentials: {
-                        let field_value = match fields_map.get("azure_credentials") {
+                        let field_value = match fields_map.get("azureCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,9 +96,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#credentials_secret: {
-                        let field_value = match fields_map.get("credentials_secret") {
+                        let field_value = match fields_map.get("credentialsSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'credentials_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'credentialsSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account: {
-                        let field_value = match fields_map.get("storage_account") {
+                        let field_value = match fields_map.get("storageAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

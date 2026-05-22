@@ -87,37 +87,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#advanced_api_ops_config: {
-                        let field_value = match fields_map.get("advanced_api_ops_config") {
+                        let field_value = match fields_map.get("advancedApiOpsConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_api_ops_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedApiOpsConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#api_security_config: {
-                        let field_value = match fields_map.get("api_security_config") {
+                        let field_value = match fields_map.get("apiSecurityConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_security_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiSecurityConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connectors_platform_config: {
-                        let field_value = match fields_map.get("connectors_platform_config") {
+                        let field_value = match fields_map.get("connectorsPlatformConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connectors_platform_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorsPlatformConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#integration_config: {
-                        let field_value = match fields_map.get("integration_config") {
+                        let field_value = match fields_map.get("integrationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'integration_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'integrationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monetization_config: {
-                        let field_value = match fields_map.get("monetization_config") {
+                        let field_value = match fields_map.get("monetizationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monetization_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monetizationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

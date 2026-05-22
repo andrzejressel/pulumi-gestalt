@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#follow_redirects_enabled: {
-                        let field_value = match fields_map.get("follow_redirects_enabled") {
+                        let field_value = match fields_map.get("followRedirectsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'follow_redirects_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'followRedirectsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,16 +111,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_verb: {
-                        let field_value = match fields_map.get("http_verb") {
+                        let field_value = match fields_map.get("httpVerb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_verb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpVerb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parse_dependent_requests_enabled: {
-                        let field_value = match fields_map.get("parse_dependent_requests_enabled") {
+                        let field_value = match fields_map.get("parseDependentRequestsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parse_dependent_requests_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parseDependentRequestsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

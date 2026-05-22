@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#approve_after_days: {
-                        let field_value = match fields_map.get("approve_after_days") {
+                        let field_value = match fields_map.get("approveAfterDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'approve_after_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'approveAfterDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#approve_until_date: {
-                        let field_value = match fields_map.get("approve_until_date") {
+                        let field_value = match fields_map.get("approveUntilDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'approve_until_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'approveUntilDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compliance_level: {
-                        let field_value = match fields_map.get("compliance_level") {
+                        let field_value = match fields_map.get("complianceLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compliance_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'complianceLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_non_security: {
-                        let field_value = match fields_map.get("enable_non_security") {
+                        let field_value = match fields_map.get("enableNonSecurity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_non_security' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableNonSecurity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#patch_filters: {
-                        let field_value = match fields_map.get("patch_filters") {
+                        let field_value = match fields_map.get("patchFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'patch_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'patchFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

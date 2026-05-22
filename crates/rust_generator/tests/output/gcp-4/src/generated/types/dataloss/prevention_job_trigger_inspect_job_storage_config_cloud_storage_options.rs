@@ -99,44 +99,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#bytes_limit_per_file: {
-                        let field_value = match fields_map.get("bytes_limit_per_file") {
+                        let field_value = match fields_map.get("bytesLimitPerFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bytes_limit_per_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bytesLimitPerFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bytes_limit_per_file_percent: {
-                        let field_value = match fields_map.get("bytes_limit_per_file_percent") {
+                        let field_value = match fields_map.get("bytesLimitPerFilePercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bytes_limit_per_file_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bytesLimitPerFilePercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_set: {
-                        let field_value = match fields_map.get("file_set") {
+                        let field_value = match fields_map.get("fileSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_types: {
-                        let field_value = match fields_map.get("file_types") {
+                        let field_value = match fields_map.get("fileTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#files_limit_percent: {
-                        let field_value = match fields_map.get("files_limit_percent") {
+                        let field_value = match fields_map.get("filesLimitPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'files_limit_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filesLimitPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_method: {
-                        let field_value = match fields_map.get("sample_method") {
+                        let field_value = match fields_map.get("sampleMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

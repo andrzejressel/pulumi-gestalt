@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#extension_services: {
-                        let field_value = match fields_map.get("extension_services") {
+                        let field_value = match fields_map.get("extensionServices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extension_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extensionServices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guest_configuration_services: {
-                        let field_value = match fields_map.get("guest_configuration_services") {
+                        let field_value = match fields_map.get("guestConfigurationServices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guest_configuration_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guestConfigurationServices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

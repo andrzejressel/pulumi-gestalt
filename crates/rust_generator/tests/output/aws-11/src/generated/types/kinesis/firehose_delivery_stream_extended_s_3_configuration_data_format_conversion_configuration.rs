@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_format_configuration: {
-                        let field_value = match fields_map.get("input_format_configuration") {
+                        let field_value = match fields_map.get("inputFormatConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_format_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputFormatConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_format_configuration: {
-                        let field_value = match fields_map.get("output_format_configuration") {
+                        let field_value = match fields_map.get("outputFormatConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_format_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputFormatConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_configuration: {
-                        let field_value = match fields_map.get("schema_configuration") {
+                        let field_value = match fields_map.get("schemaConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

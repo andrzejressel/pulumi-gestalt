@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#custom_payload: {
-                        let field_value = match fields_map.get("custom_payload") {
+                        let field_value = match fields_map.get("customPayload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_payload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customPayload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_response_card: {
-                        let field_value = match fields_map.get("image_response_card") {
+                        let field_value = match fields_map.get("imageResponseCard") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_response_card' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageResponseCard' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#plain_text_message: {
-                        let field_value = match fields_map.get("plain_text_message") {
+                        let field_value = match fields_map.get("plainTextMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'plain_text_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'plainTextMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssml_message: {
-                        let field_value = match fields_map.get("ssml_message") {
+                        let field_value = match fields_map.get("ssmlMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssml_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ssmlMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

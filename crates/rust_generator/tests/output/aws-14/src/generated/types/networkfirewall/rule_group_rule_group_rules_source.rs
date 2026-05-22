@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#rules_source_list: {
-                        let field_value = match fields_map.get("rules_source_list") {
+                        let field_value = match fields_map.get("rulesSourceList") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rules_source_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rulesSourceList' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rules_string: {
-                        let field_value = match fields_map.get("rules_string") {
+                        let field_value = match fields_map.get("rulesString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rules_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rulesString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stateful_rules: {
-                        let field_value = match fields_map.get("stateful_rules") {
+                        let field_value = match fields_map.get("statefulRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stateful_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statefulRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stateless_rules_and_custom_actions: {
-                        let field_value = match fields_map.get("stateless_rules_and_custom_actions") {
+                        let field_value = match fields_map.get("statelessRulesAndCustomActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stateless_rules_and_custom_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statelessRulesAndCustomActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#trigger_properties: {
-                        let field_value = match fields_map.get("trigger_properties") {
+                        let field_value = match fields_map.get("triggerProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trigger_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'triggerProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trigger_type: {
-                        let field_value = match fields_map.get("trigger_type") {
+                        let field_value = match fields_map.get("triggerType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trigger_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'triggerType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

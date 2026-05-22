@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#realtime_metrics_subscription_status: {
-                        let field_value = match fields_map.get("realtime_metrics_subscription_status") {
+                        let field_value = match fields_map.get("realtimeMetricsSubscriptionStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'realtime_metrics_subscription_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'realtimeMetricsSubscriptionStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

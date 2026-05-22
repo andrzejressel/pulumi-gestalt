@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#info_type: {
-                        let field_value = match fields_map.get("info_type") {
+                        let field_value = match fields_map.get("infoType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'info_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'infoType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_findings: {
-                        let field_value = match fields_map.get("max_findings") {
+                        let field_value = match fields_map.get("maxFindings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_findings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxFindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

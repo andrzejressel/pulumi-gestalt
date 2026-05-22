@@ -122,72 +122,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#ad_hoc_filtering_option: {
-                        let field_value = match fields_map.get("ad_hoc_filtering_option") {
+                        let field_value = match fields_map.get("adHocFilteringOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ad_hoc_filtering_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adHocFilteringOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_point_drill_up_down_option: {
-                        let field_value = match fields_map.get("data_point_drill_up_down_option") {
+                        let field_value = match fields_map.get("dataPointDrillUpDownOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_point_drill_up_down_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataPointDrillUpDownOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_point_menu_label_option: {
-                        let field_value = match fields_map.get("data_point_menu_label_option") {
+                        let field_value = match fields_map.get("dataPointMenuLabelOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_point_menu_label_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataPointMenuLabelOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_point_tooltip_option: {
-                        let field_value = match fields_map.get("data_point_tooltip_option") {
+                        let field_value = match fields_map.get("dataPointTooltipOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_point_tooltip_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataPointTooltipOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#export_to_csv_option: {
-                        let field_value = match fields_map.get("export_to_csv_option") {
+                        let field_value = match fields_map.get("exportToCsvOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'export_to_csv_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exportToCsvOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#export_with_hidden_fields_option: {
-                        let field_value = match fields_map.get("export_with_hidden_fields_option") {
+                        let field_value = match fields_map.get("exportWithHiddenFieldsOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'export_with_hidden_fields_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exportWithHiddenFieldsOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sheet_controls_option: {
-                        let field_value = match fields_map.get("sheet_controls_option") {
+                        let field_value = match fields_map.get("sheetControlsOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sheet_controls_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sheetControlsOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sheet_layout_element_maximization_option: {
-                        let field_value = match fields_map.get("sheet_layout_element_maximization_option") {
+                        let field_value = match fields_map.get("sheetLayoutElementMaximizationOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sheet_layout_element_maximization_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sheetLayoutElementMaximizationOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#visual_axis_sort_option: {
-                        let field_value = match fields_map.get("visual_axis_sort_option") {
+                        let field_value = match fields_map.get("visualAxisSortOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'visual_axis_sort_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'visualAxisSortOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#visual_menu_option: {
-                        let field_value = match fields_map.get("visual_menu_option") {
+                        let field_value = match fields_map.get("visualMenuOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'visual_menu_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'visualMenuOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

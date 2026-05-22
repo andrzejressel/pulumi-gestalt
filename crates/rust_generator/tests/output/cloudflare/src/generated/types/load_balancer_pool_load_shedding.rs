@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#default_percent: {
-                        let field_value = match fields_map.get("default_percent") {
+                        let field_value = match fields_map.get("defaultPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_policy: {
-                        let field_value = match fields_map.get("default_policy") {
+                        let field_value = match fields_map.get("defaultPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_percent: {
-                        let field_value = match fields_map.get("session_percent") {
+                        let field_value = match fields_map.get("sessionPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_policy: {
-                        let field_value = match fields_map.get("session_policy") {
+                        let field_value = match fields_map.get("sessionPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

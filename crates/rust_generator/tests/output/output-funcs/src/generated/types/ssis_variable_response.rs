@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#data_type: {
-                        let field_value = match fields_map.get("data_type") {
+                        let field_value = match fields_map.get("dataType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,9 +133,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sensitive_value: {
-                        let field_value = match fields_map.get("sensitive_value") {
+                        let field_value = match fields_map.get("sensitiveValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sensitive_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sensitiveValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

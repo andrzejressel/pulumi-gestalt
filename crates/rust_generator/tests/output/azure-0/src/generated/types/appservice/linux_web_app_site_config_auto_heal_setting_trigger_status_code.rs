@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status_code_range: {
-                        let field_value = match fields_map.get("status_code_range") {
+                        let field_value = match fields_map.get("statusCodeRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_code_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusCodeRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sub_status: {
-                        let field_value = match fields_map.get("sub_status") {
+                        let field_value = match fields_map.get("subStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sub_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#win_32_status_code: {
-                        let field_value = match fields_map.get("win_32_status_code") {
+                        let field_value = match fields_map.get("win32StatusCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'win_32_status_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'win32StatusCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

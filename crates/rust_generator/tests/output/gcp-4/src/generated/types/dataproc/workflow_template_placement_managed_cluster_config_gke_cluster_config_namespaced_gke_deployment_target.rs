@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#cluster_namespace: {
-                        let field_value = match fields_map.get("cluster_namespace") {
+                        let field_value = match fields_map.get("clusterNamespace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterNamespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_gke_cluster: {
-                        let field_value = match fields_map.get("target_gke_cluster") {
+                        let field_value = match fields_map.get("targetGkeCluster") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_gke_cluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetGkeCluster' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

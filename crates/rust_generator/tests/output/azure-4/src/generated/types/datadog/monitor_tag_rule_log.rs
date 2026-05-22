@@ -76,9 +76,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#aad_log_enabled: {
-                        let field_value = match fields_map.get("aad_log_enabled") {
+                        let field_value = match fields_map.get("aadLogEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aad_log_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aadLogEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_log_enabled: {
-                        let field_value = match fields_map.get("resource_log_enabled") {
+                        let field_value = match fields_map.get("resourceLogEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_log_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceLogEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subscription_log_enabled: {
-                        let field_value = match fields_map.get("subscription_log_enabled") {
+                        let field_value = match fields_map.get("subscriptionLogEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subscription_log_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subscriptionLogEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -83,16 +83,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#argument_kind: {
-                        let field_value = match fields_map.get("argument_kind") {
+                        let field_value = match fields_map.get("argumentKind") {
                             Some(value) => value,
-                            None => bail!("Missing field 'argument_kind' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'argumentKind' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_type: {
-                        let field_value = match fields_map.get("data_type") {
+                        let field_value = match fields_map.get("dataType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

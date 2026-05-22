@@ -146,93 +146,93 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#call_analytics_stream_categories: {
-                        let field_value = match fields_map.get("call_analytics_stream_categories") {
+                        let field_value = match fields_map.get("callAnalyticsStreamCategories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'call_analytics_stream_categories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'callAnalyticsStreamCategories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_identification_type: {
-                        let field_value = match fields_map.get("content_identification_type") {
+                        let field_value = match fields_map.get("contentIdentificationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_identification_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentIdentificationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_redaction_type: {
-                        let field_value = match fields_map.get("content_redaction_type") {
+                        let field_value = match fields_map.get("contentRedactionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_redaction_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentRedactionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_partial_results_stabilization: {
-                        let field_value = match fields_map.get("enable_partial_results_stabilization") {
+                        let field_value = match fields_map.get("enablePartialResultsStabilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_partial_results_stabilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePartialResultsStabilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_partial_results: {
-                        let field_value = match fields_map.get("filter_partial_results") {
+                        let field_value = match fields_map.get("filterPartialResults") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filter_partial_results' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterPartialResults' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#language_code: {
-                        let field_value = match fields_map.get("language_code") {
+                        let field_value = match fields_map.get("languageCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'language_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'languageCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#language_model_name: {
-                        let field_value = match fields_map.get("language_model_name") {
+                        let field_value = match fields_map.get("languageModelName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'language_model_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'languageModelName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#partial_results_stability: {
-                        let field_value = match fields_map.get("partial_results_stability") {
+                        let field_value = match fields_map.get("partialResultsStability") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partial_results_stability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partialResultsStability' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pii_entity_types: {
-                        let field_value = match fields_map.get("pii_entity_types") {
+                        let field_value = match fields_map.get("piiEntityTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pii_entity_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'piiEntityTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#post_call_analytics_settings: {
-                        let field_value = match fields_map.get("post_call_analytics_settings") {
+                        let field_value = match fields_map.get("postCallAnalyticsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'post_call_analytics_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postCallAnalyticsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vocabulary_filter_method: {
-                        let field_value = match fields_map.get("vocabulary_filter_method") {
+                        let field_value = match fields_map.get("vocabularyFilterMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vocabulary_filter_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vocabularyFilterMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vocabulary_filter_name: {
-                        let field_value = match fields_map.get("vocabulary_filter_name") {
+                        let field_value = match fields_map.get("vocabularyFilterName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vocabulary_filter_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vocabularyFilterName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vocabulary_name: {
-                        let field_value = match fields_map.get("vocabulary_name") {
+                        let field_value = match fields_map.get("vocabularyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vocabulary_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vocabularyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

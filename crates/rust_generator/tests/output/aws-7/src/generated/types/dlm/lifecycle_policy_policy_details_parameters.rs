@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#exclude_boot_volume: {
-                        let field_value = match fields_map.get("exclude_boot_volume") {
+                        let field_value = match fields_map.get("excludeBootVolume") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_boot_volume' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeBootVolume' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_reboot: {
-                        let field_value = match fields_map.get("no_reboot") {
+                        let field_value = match fields_map.get("noReboot") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_reboot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noReboot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -68,9 +68,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#allowed_exit_codes: {
-                        let field_value = match fields_map.get("allowed_exit_codes") {
+                        let field_value = match fields_map.get("allowedExitCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_exit_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedExitCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

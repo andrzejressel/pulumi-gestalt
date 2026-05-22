@@ -106,23 +106,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#api_key: {
-                        let field_value = match fields_map.get("api_key") {
+                        let field_value = match fields_map.get("apiKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#application_key: {
-                        let field_value = match fields_map.get("application_key") {
+                        let field_value = match fields_map.get("applicationKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enterprise_app_id: {
-                        let field_value = match fields_map.get("enterprise_app_id") {
+                        let field_value = match fields_map.get("enterpriseAppId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enterprise_app_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enterpriseAppId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,16 +134,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#linking_auth_code: {
-                        let field_value = match fields_map.get("linking_auth_code") {
+                        let field_value = match fields_map.get("linkingAuthCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linking_auth_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linkingAuthCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#linking_client_id: {
-                        let field_value = match fields_map.get("linking_client_id") {
+                        let field_value = match fields_map.get("linkingClientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linking_client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linkingClientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -155,9 +155,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_uri: {
-                        let field_value = match fields_map.get("redirect_uri") {
+                        let field_value = match fields_map.get("redirectUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

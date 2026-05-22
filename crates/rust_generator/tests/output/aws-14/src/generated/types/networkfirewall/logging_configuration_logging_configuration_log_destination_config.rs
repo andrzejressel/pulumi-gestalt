@@ -69,23 +69,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#log_destination: {
-                        let field_value = match fields_map.get("log_destination") {
+                        let field_value = match fields_map.get("logDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_destination_type: {
-                        let field_value = match fields_map.get("log_destination_type") {
+                        let field_value = match fields_map.get("logDestinationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_destination_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logDestinationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_type: {
-                        let field_value = match fields_map.get("log_type") {
+                        let field_value = match fields_map.get("logType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

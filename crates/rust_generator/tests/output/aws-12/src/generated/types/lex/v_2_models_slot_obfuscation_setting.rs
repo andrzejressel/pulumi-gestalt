@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#obfuscation_setting_type: {
-                        let field_value = match fields_map.get("obfuscation_setting_type") {
+                        let field_value = match fields_map.get("obfuscationSettingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'obfuscation_setting_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'obfuscationSettingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#allowed_host_ports: {
-                        let field_value = match fields_map.get("allowed_host_ports") {
+                        let field_value = match fields_map.get("allowedHostPorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_host_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedHostPorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#application_security_group_ids: {
-                        let field_value = match fields_map.get("application_security_group_ids") {
+                        let field_value = match fields_map.get("applicationSecurityGroupIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_security_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationSecurityGroupIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_public_ip_tags: {
-                        let field_value = match fields_map.get("node_public_ip_tags") {
+                        let field_value = match fields_map.get("nodePublicIpTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_public_ip_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodePublicIpTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

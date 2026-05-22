@@ -95,30 +95,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#bitbucket_server_config: {
-                        let field_value = match fields_map.get("bitbucket_server_config") {
+                        let field_value = match fields_map.get("bitbucketServerConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bitbucket_server_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bitbucketServerConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#github_enterprise_config: {
-                        let field_value = match fields_map.get("github_enterprise_config") {
+                        let field_value = match fields_map.get("githubEnterpriseConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'github_enterprise_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'githubEnterpriseConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ref_: {
-                        let field_value = match fields_map.get("ref_") {
+                        let field_value = match fields_map.get("ref") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ref_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ref' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repo_type: {
-                        let field_value = match fields_map.get("repo_type") {
+                        let field_value = match fields_map.get("repoType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repo_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repoType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

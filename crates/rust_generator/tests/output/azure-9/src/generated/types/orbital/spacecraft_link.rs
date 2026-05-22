@@ -84,16 +84,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#bandwidth_mhz: {
-                        let field_value = match fields_map.get("bandwidth_mhz") {
+                        let field_value = match fields_map.get("bandwidthMhz") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bandwidth_mhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bandwidthMhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#center_frequency_mhz: {
-                        let field_value = match fields_map.get("center_frequency_mhz") {
+                        let field_value = match fields_map.get("centerFrequencyMhz") {
                             Some(value) => value,
-                            None => bail!("Missing field 'center_frequency_mhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'centerFrequencyMhz' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

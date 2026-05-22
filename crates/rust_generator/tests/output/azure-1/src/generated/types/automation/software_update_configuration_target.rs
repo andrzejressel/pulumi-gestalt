@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#azure_queries: {
-                        let field_value = match fields_map.get("azure_queries") {
+                        let field_value = match fields_map.get("azureQueries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_queries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureQueries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#non_azure_queries: {
-                        let field_value = match fields_map.get("non_azure_queries") {
+                        let field_value = match fields_map.get("nonAzureQueries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'non_azure_queries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nonAzureQueries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

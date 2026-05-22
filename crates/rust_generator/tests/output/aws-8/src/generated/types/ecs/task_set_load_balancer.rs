@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#container_name: {
-                        let field_value = match fields_map.get("container_name") {
+                        let field_value = match fields_map.get("containerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_port: {
-                        let field_value = match fields_map.get("container_port") {
+                        let field_value = match fields_map.get("containerPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancer_name: {
-                        let field_value = match fields_map.get("load_balancer_name") {
+                        let field_value = match fields_map.get("loadBalancerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancer_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_group_arn: {
-                        let field_value = match fields_map.get("target_group_arn") {
+                        let field_value = match fields_map.get("targetGroupArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_group_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetGroupArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

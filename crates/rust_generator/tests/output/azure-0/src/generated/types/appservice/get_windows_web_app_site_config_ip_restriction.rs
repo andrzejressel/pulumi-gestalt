@@ -126,9 +126,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_address: {
-                        let field_value = match fields_map.get("ip_address") {
+                        let field_value = match fields_map.get("ipAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -147,16 +147,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_tag: {
-                        let field_value = match fields_map.get("service_tag") {
+                        let field_value = match fields_map.get("serviceTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_network_subnet_id: {
-                        let field_value = match fields_map.get("virtual_network_subnet_id") {
+                        let field_value = match fields_map.get("virtualNetworkSubnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_network_subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualNetworkSubnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

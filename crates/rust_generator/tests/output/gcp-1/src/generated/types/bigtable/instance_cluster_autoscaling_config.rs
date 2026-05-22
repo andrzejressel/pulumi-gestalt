@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#cpu_target: {
-                        let field_value = match fields_map.get("cpu_target") {
+                        let field_value = match fields_map.get("cpuTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_nodes: {
-                        let field_value = match fields_map.get("max_nodes") {
+                        let field_value = match fields_map.get("maxNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_nodes: {
-                        let field_value = match fields_map.get("min_nodes") {
+                        let field_value = match fields_map.get("minNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_target: {
-                        let field_value = match fields_map.get("storage_target") {
+                        let field_value = match fields_map.get("storageTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

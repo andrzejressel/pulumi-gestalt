@@ -78,37 +78,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#error_handling_config: {
-                        let field_value = match fields_map.get("error_handling_config") {
+                        let field_value = match fields_map.get("errorHandlingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_handling_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorHandlingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#id_field_names: {
-                        let field_value = match fields_map.get("id_field_names") {
+                        let field_value = match fields_map.get("idFieldNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'id_field_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idFieldNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#object_path: {
-                        let field_value = match fields_map.get("object_path") {
+                        let field_value = match fields_map.get("objectPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'object_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'objectPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_response_handling_config: {
-                        let field_value = match fields_map.get("success_response_handling_config") {
+                        let field_value = match fields_map.get("successResponseHandlingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_response_handling_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successResponseHandlingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#write_operation_type: {
-                        let field_value = match fields_map.get("write_operation_type") {
+                        let field_value = match fields_map.get("writeOperationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'write_operation_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'writeOperationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

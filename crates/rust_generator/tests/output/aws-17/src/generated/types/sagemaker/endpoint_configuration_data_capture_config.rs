@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#capture_content_type_header: {
-                        let field_value = match fields_map.get("capture_content_type_header") {
+                        let field_value = match fields_map.get("captureContentTypeHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capture_content_type_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'captureContentTypeHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#capture_options: {
-                        let field_value = match fields_map.get("capture_options") {
+                        let field_value = match fields_map.get("captureOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capture_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'captureOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_s_3_uri: {
-                        let field_value = match fields_map.get("destination_s_3_uri") {
+                        let field_value = match fields_map.get("destinationS3Uri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_s_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationS3Uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_capture: {
-                        let field_value = match fields_map.get("enable_capture") {
+                        let field_value = match fields_map.get("enableCapture") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_capture' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableCapture' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initial_sampling_percentage: {
-                        let field_value = match fields_map.get("initial_sampling_percentage") {
+                        let field_value = match fields_map.get("initialSamplingPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_sampling_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialSamplingPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_id: {
-                        let field_value = match fields_map.get("kms_key_id") {
+                        let field_value = match fields_map.get("kmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -98,23 +98,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#by_alert_details: {
-                        let field_value = match fields_map.get("by_alert_details") {
+                        let field_value = match fields_map.get("byAlertDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'by_alert_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'byAlertDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#by_custom_details: {
-                        let field_value = match fields_map.get("by_custom_details") {
+                        let field_value = match fields_map.get("byCustomDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'by_custom_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'byCustomDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#by_entities: {
-                        let field_value = match fields_map.get("by_entities") {
+                        let field_value = match fields_map.get("byEntities") {
                             Some(value) => value,
-                            None => bail!("Missing field 'by_entities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'byEntities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,23 +126,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entity_matching_method: {
-                        let field_value = match fields_map.get("entity_matching_method") {
+                        let field_value = match fields_map.get("entityMatchingMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_matching_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityMatchingMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lookback_duration: {
-                        let field_value = match fields_map.get("lookback_duration") {
+                        let field_value = match fields_map.get("lookbackDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lookback_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lookbackDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reopen_closed_incidents: {
-                        let field_value = match fields_map.get("reopen_closed_incidents") {
+                        let field_value = match fields_map.get("reopenClosedIncidents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reopen_closed_incidents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reopenClosedIncidents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

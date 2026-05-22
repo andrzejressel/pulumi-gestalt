@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#constant_bitrate: {
-                        let field_value = match fields_map.get("constant_bitrate") {
+                        let field_value = match fields_map.get("constantBitrate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'constant_bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'constantBitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#statmux_settings: {
-                        let field_value = match fields_map.get("statmux_settings") {
+                        let field_value = match fields_map.get("statmuxSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'statmux_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statmuxSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

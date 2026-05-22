@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#encryption_configs: {
-                        let field_value = match fields_map.get("encryption_configs") {
+                        let field_value = match fields_map.get("encryptionConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_period_hours: {
-                        let field_value = match fields_map.get("retention_period_hours") {
+                        let field_value = match fields_map.get("retentionPeriodHours") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_period_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionPeriodHours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

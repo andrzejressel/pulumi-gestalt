@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#action_on_timeout: {
-                        let field_value = match fields_map.get("action_on_timeout") {
+                        let field_value = match fields_map.get("actionOnTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_on_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionOnTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wait_time_in_minutes: {
-                        let field_value = match fields_map.get("wait_time_in_minutes") {
+                        let field_value = match fields_map.get("waitTimeInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wait_time_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'waitTimeInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

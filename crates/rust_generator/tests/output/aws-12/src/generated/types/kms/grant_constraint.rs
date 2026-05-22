@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#encryption_context_equals: {
-                        let field_value = match fields_map.get("encryption_context_equals") {
+                        let field_value = match fields_map.get("encryptionContextEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_context_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionContextEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_context_subset: {
-                        let field_value = match fields_map.get("encryption_context_subset") {
+                        let field_value = match fields_map.get("encryptionContextSubset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_context_subset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionContextSubset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

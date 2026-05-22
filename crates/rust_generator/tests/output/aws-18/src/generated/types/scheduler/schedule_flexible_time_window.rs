@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#maximum_window_in_minutes: {
-                        let field_value = match fields_map.get("maximum_window_in_minutes") {
+                        let field_value = match fields_map.get("maximumWindowInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_window_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumWindowInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

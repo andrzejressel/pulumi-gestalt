@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#consumer_network: {
-                        let field_value = match fields_map.get("consumer_network") {
+                        let field_value = match fields_map.get("consumerNetwork") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerNetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -102,16 +102,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#propagated_connection_count: {
-                        let field_value = match fields_map.get("propagated_connection_count") {
+                        let field_value = match fields_map.get("propagatedConnectionCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'propagated_connection_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'propagatedConnectionCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#psc_connection_id: {
-                        let field_value = match fields_map.get("psc_connection_id") {
+                        let field_value = match fields_map.get("pscConnectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'psc_connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pscConnectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

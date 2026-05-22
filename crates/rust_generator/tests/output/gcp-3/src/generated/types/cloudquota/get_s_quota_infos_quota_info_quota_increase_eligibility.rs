@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#ineligibility_reason: {
-                        let field_value = match fields_map.get("ineligibility_reason") {
+                        let field_value = match fields_map.get("ineligibilityReason") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ineligibility_reason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ineligibilityReason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_eligible: {
-                        let field_value = match fields_map.get("is_eligible") {
+                        let field_value = match fields_map.get("isEligible") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_eligible' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isEligible' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

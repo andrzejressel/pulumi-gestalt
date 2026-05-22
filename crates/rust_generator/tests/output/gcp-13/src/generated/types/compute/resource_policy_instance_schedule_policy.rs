@@ -85,37 +85,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#expiration_time: {
-                        let field_value = match fields_map.get("expiration_time") {
+                        let field_value = match fields_map.get("expirationTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiration_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expirationTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time: {
-                        let field_value = match fields_map.get("start_time") {
+                        let field_value = match fields_map.get("startTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_zone: {
-                        let field_value = match fields_map.get("time_zone") {
+                        let field_value = match fields_map.get("timeZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_start_schedule: {
-                        let field_value = match fields_map.get("vm_start_schedule") {
+                        let field_value = match fields_map.get("vmStartSchedule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_start_schedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmStartSchedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_stop_schedule: {
-                        let field_value = match fields_map.get("vm_stop_schedule") {
+                        let field_value = match fields_map.get("vmStopSchedule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_stop_schedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmStopSchedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

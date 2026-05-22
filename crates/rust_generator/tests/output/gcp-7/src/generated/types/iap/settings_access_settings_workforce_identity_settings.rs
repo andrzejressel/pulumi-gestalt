@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#oauth_2: {
-                        let field_value = match fields_map.get("oauth_2") {
+                        let field_value = match fields_map.get("oauth2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workforce_pools: {
-                        let field_value = match fields_map.get("workforce_pools") {
+                        let field_value = match fields_map.get("workforcePools") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workforce_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workforcePools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

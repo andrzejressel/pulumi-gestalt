@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_in_minutes: {
-                        let field_value = match fields_map.get("time_in_minutes") {
+                        let field_value = match fields_map.get("timeInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#webhook_url: {
-                        let field_value = match fields_map.get("webhook_url") {
+                        let field_value = match fields_map.get("webhookUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'webhook_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webhookUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

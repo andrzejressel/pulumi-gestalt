@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#availability_zone: {
-                        let field_value = match fields_map.get("availability_zone") {
+                        let field_value = match fields_map.get("availabilityZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'availability_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availabilityZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#product_code_id: {
-                        let field_value = match fields_map.get("product_code_id") {
+                        let field_value = match fields_map.get("productCodeId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'product_code_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'productCodeId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#product_code_type: {
-                        let field_value = match fields_map.get("product_code_type") {
+                        let field_value = match fields_map.get("productCodeType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'product_code_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'productCodeType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

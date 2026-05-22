@@ -145,86 +145,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#cool_down_period: {
-                        let field_value = match fields_map.get("cool_down_period") {
+                        let field_value = match fields_map.get("coolDownPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cool_down_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coolDownPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_utilization: {
-                        let field_value = match fields_map.get("cpu_utilization") {
+                        let field_value = match fields_map.get("cpuUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_utilization: {
-                        let field_value = match fields_map.get("disk_utilization") {
+                        let field_value = match fields_map.get("diskUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrent_requests: {
-                        let field_value = match fields_map.get("max_concurrent_requests") {
+                        let field_value = match fields_map.get("maxConcurrentRequests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentRequests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_idle_instances: {
-                        let field_value = match fields_map.get("max_idle_instances") {
+                        let field_value = match fields_map.get("maxIdleInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_idle_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxIdleInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_pending_latency: {
-                        let field_value = match fields_map.get("max_pending_latency") {
+                        let field_value = match fields_map.get("maxPendingLatency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_pending_latency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxPendingLatency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_total_instances: {
-                        let field_value = match fields_map.get("max_total_instances") {
+                        let field_value = match fields_map.get("maxTotalInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_total_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxTotalInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_idle_instances: {
-                        let field_value = match fields_map.get("min_idle_instances") {
+                        let field_value = match fields_map.get("minIdleInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_idle_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minIdleInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_pending_latency: {
-                        let field_value = match fields_map.get("min_pending_latency") {
+                        let field_value = match fields_map.get("minPendingLatency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_pending_latency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minPendingLatency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_total_instances: {
-                        let field_value = match fields_map.get("min_total_instances") {
+                        let field_value = match fields_map.get("minTotalInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_total_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minTotalInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_utilization: {
-                        let field_value = match fields_map.get("network_utilization") {
+                        let field_value = match fields_map.get("networkUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_utilization: {
-                        let field_value = match fields_map.get("request_utilization") {
+                        let field_value = match fields_map.get("requestUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#enable_online_store: {
-                        let field_value = match fields_map.get("enable_online_store") {
+                        let field_value = match fields_map.get("enableOnlineStore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_online_store' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableOnlineStore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_config: {
-                        let field_value = match fields_map.get("security_config") {
+                        let field_value = match fields_map.get("securityConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_type: {
-                        let field_value = match fields_map.get("storage_type") {
+                        let field_value = match fields_map.get("storageType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ttl_duration: {
-                        let field_value = match fields_map.get("ttl_duration") {
+                        let field_value = match fields_map.get("ttlDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ttl_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ttlDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

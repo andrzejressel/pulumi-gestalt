@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_rules: {
-                        let field_value = match fields_map.get("tag_rules") {
+                        let field_value = match fields_map.get("tagRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

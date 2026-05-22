@@ -89,9 +89,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_cost: {
-                        let field_value = match fields_map.get("memory_cost") {
+                        let field_value = match fields_map.get("memoryCost") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_cost' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryCost' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#salt_separator: {
-                        let field_value = match fields_map.get("salt_separator") {
+                        let field_value = match fields_map.get("saltSeparator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'salt_separator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'saltSeparator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#signer_key: {
-                        let field_value = match fields_map.get("signer_key") {
+                        let field_value = match fields_map.get("signerKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'signer_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'signerKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -65,23 +65,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#input_loss_action: {
-                        let field_value = match fields_map.get("input_loss_action") {
+                        let field_value = match fields_map.get("inputLossAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_loss_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLossAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timed_metadata_id_3_frame: {
-                        let field_value = match fields_map.get("timed_metadata_id_3_frame") {
+                        let field_value = match fields_map.get("timedMetadataId3Frame") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timed_metadata_id_3_frame' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timedMetadataId3Frame' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timed_metadata_id_3_period: {
-                        let field_value = match fields_map.get("timed_metadata_id_3_period") {
+                        let field_value = match fields_map.get("timedMetadataId3Period") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timed_metadata_id_3_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timedMetadataId3Period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

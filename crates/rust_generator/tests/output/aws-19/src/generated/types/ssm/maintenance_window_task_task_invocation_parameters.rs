@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#automation_parameters: {
-                        let field_value = match fields_map.get("automation_parameters") {
+                        let field_value = match fields_map.get("automationParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automation_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automationParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_parameters: {
-                        let field_value = match fields_map.get("lambda_parameters") {
+                        let field_value = match fields_map.get("lambdaParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_command_parameters: {
-                        let field_value = match fields_map.get("run_command_parameters") {
+                        let field_value = match fields_map.get("runCommandParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'run_command_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runCommandParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#step_functions_parameters: {
-                        let field_value = match fields_map.get("step_functions_parameters") {
+                        let field_value = match fields_map.get("stepFunctionsParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'step_functions_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stepFunctionsParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#gcp_kms_encryption_key: {
-                        let field_value = match fields_map.get("gcp_kms_encryption_key") {
+                        let field_value = match fields_map.get("gcpKmsEncryptionKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcp_kms_encryption_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcpKmsEncryptionKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

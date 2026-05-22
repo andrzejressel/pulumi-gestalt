@@ -84,23 +84,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#cmk_arn: {
-                        let field_value = match fields_map.get("cmk_arn") {
+                        let field_value = match fields_map.get("cmkArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cmk_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cmkArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#copy_tags: {
-                        let field_value = match fields_map.get("copy_tags") {
+                        let field_value = match fields_map.get("copyTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copy_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copyTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deprecate_rule: {
-                        let field_value = match fields_map.get("deprecate_rule") {
+                        let field_value = match fields_map.get("deprecateRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deprecate_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deprecateRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,9 +112,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retain_rule: {
-                        let field_value = match fields_map.get("retain_rule") {
+                        let field_value = match fields_map.get("retainRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retain_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retainRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

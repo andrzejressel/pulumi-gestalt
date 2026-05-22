@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#enabled_download_phase: {
-                        let field_value = match fields_map.get("enabled_download_phase") {
+                        let field_value = match fields_map.get("enabledDownloadPhase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enabled_download_phase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enabledDownloadPhase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enabled_upload_phase: {
-                        let field_value = match fields_map.get("enabled_upload_phase") {
+                        let field_value = match fields_map.get("enabledUploadPhase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enabled_upload_phase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enabledUploadPhase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fail_closed: {
-                        let field_value = match fields_map.get("fail_closed") {
+                        let field_value = match fields_map.get("failClosed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fail_closed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failClosed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_settings: {
-                        let field_value = match fields_map.get("notification_settings") {
+                        let field_value = match fields_map.get("notificationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

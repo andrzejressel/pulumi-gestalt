@@ -57,9 +57,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#check_digit_string: {
-                        let field_value = match fields_map.get("check_digit_string") {
+                        let field_value = match fields_map.get("checkDigitString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'check_digit_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkDigitString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

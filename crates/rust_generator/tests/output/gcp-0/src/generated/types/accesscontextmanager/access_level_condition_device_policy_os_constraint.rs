@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#minimum_version: {
-                        let field_value = match fields_map.get("minimum_version") {
+                        let field_value = match fields_map.get("minimumVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_type: {
-                        let field_value = match fields_map.get("os_type") {
+                        let field_value = match fields_map.get("osType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

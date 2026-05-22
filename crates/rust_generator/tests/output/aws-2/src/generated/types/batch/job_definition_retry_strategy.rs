@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluate_on_exits: {
-                        let field_value = match fields_map.get("evaluate_on_exits") {
+                        let field_value = match fields_map.get("evaluateOnExits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluate_on_exits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluateOnExits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

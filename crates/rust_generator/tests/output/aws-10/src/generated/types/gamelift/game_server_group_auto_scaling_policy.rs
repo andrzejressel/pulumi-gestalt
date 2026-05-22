@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#estimated_instance_warmup: {
-                        let field_value = match fields_map.get("estimated_instance_warmup") {
+                        let field_value = match fields_map.get("estimatedInstanceWarmup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'estimated_instance_warmup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'estimatedInstanceWarmup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_tracking_configuration: {
-                        let field_value = match fields_map.get("target_tracking_configuration") {
+                        let field_value = match fields_map.get("targetTrackingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_tracking_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetTrackingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

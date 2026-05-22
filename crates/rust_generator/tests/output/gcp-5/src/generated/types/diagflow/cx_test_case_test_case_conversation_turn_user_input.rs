@@ -75,16 +75,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#enable_sentiment_analysis: {
-                        let field_value = match fields_map.get("enable_sentiment_analysis") {
+                        let field_value = match fields_map.get("enableSentimentAnalysis") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_sentiment_analysis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableSentimentAnalysis' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#injected_parameters: {
-                        let field_value = match fields_map.get("injected_parameters") {
+                        let field_value = match fields_map.get("injectedParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'injected_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'injectedParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,9 +96,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_webhook_enabled: {
-                        let field_value = match fields_map.get("is_webhook_enabled") {
+                        let field_value = match fields_map.get("isWebhookEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_webhook_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isWebhookEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

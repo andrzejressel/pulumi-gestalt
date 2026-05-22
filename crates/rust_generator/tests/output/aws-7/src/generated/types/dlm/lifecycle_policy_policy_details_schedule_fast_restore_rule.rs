@@ -71,9 +71,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#availability_zones: {
-                        let field_value = match fields_map.get("availability_zones") {
+                        let field_value = match fields_map.get("availabilityZones") {
                             Some(value) => value,
-                            None => bail!("Missing field 'availability_zones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availabilityZones' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -92,9 +92,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#interval_unit: {
-                        let field_value = match fields_map.get("interval_unit") {
+                        let field_value = match fields_map.get("intervalUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'interval_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intervalUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

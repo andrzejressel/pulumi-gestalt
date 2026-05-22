@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#custom_redirect_domain: {
-                        let field_value = match fields_map.get("custom_redirect_domain") {
+                        let field_value = match fields_map.get("customRedirectDomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_redirect_domain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customRedirectDomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

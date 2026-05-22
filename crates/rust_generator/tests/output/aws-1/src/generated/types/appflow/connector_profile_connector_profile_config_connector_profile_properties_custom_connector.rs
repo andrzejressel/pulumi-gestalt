@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#oauth_2_properties: {
-                        let field_value = match fields_map.get("oauth_2_properties") {
+                        let field_value = match fields_map.get("oauth2Properties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2Properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#profile_properties: {
-                        let field_value = match fields_map.get("profile_properties") {
+                        let field_value = match fields_map.get("profileProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'profile_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'profileProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

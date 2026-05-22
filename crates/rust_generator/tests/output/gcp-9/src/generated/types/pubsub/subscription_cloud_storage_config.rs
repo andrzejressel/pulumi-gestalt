@@ -129,9 +129,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#avro_config: {
-                        let field_value = match fields_map.get("avro_config") {
+                        let field_value = match fields_map.get("avroConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'avro_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'avroConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -143,51 +143,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filename_datetime_format: {
-                        let field_value = match fields_map.get("filename_datetime_format") {
+                        let field_value = match fields_map.get("filenameDatetimeFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filename_datetime_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filenameDatetimeFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filename_prefix: {
-                        let field_value = match fields_map.get("filename_prefix") {
+                        let field_value = match fields_map.get("filenamePrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filename_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filenamePrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filename_suffix: {
-                        let field_value = match fields_map.get("filename_suffix") {
+                        let field_value = match fields_map.get("filenameSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filename_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filenameSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_bytes: {
-                        let field_value = match fields_map.get("max_bytes") {
+                        let field_value = match fields_map.get("maxBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_duration: {
-                        let field_value = match fields_map.get("max_duration") {
+                        let field_value = match fields_map.get("maxDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_messages: {
-                        let field_value = match fields_map.get("max_messages") {
+                        let field_value = match fields_map.get("maxMessages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_messages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxMessages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_email: {
-                        let field_value = match fields_map.get("service_account_email") {
+                        let field_value = match fields_map.get("serviceAccountEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

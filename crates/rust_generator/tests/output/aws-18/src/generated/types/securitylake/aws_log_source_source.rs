@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_name: {
-                        let field_value = match fields_map.get("source_name") {
+                        let field_value = match fields_map.get("sourceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_version: {
-                        let field_value = match fields_map.get("source_version") {
+                        let field_value = match fields_map.get("sourceVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#aggregation_enabled: {
-                        let field_value = match fields_map.get("aggregation_enabled") {
+                        let field_value = match fields_map.get("aggregationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aggregation_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aggregationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_arn: {
-                        let field_value = match fields_map.get("stream_arn") {
+                        let field_value = match fields_map.get("streamArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stream_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'streamArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -110,37 +110,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_arns: {
-                        let field_value = match fields_map.get("policy_arns") {
+                        let field_value = match fields_map.get("policyArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_name: {
-                        let field_value = match fields_map.get("session_name") {
+                        let field_value = match fields_map.get("sessionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#web_identity_token: {
-                        let field_value = match fields_map.get("web_identity_token") {
+                        let field_value = match fields_map.get("webIdentityToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'web_identity_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webIdentityToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#web_identity_token_file: {
-                        let field_value = match fields_map.get("web_identity_token_file") {
+                        let field_value = match fields_map.get("webIdentityTokenFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'web_identity_token_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webIdentityTokenFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

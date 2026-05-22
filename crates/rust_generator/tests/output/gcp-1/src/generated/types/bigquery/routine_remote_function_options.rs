@@ -96,16 +96,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_batching_rows: {
-                        let field_value = match fields_map.get("max_batching_rows") {
+                        let field_value = match fields_map.get("maxBatchingRows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_batching_rows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxBatchingRows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_defined_context: {
-                        let field_value = match fields_map.get("user_defined_context") {
+                        let field_value = match fields_map.get("userDefinedContext") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_defined_context' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userDefinedContext' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

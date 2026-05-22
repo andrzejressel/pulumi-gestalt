@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#propagate_tags: {
-                        let field_value = match fields_map.get("propagate_tags") {
+                        let field_value = match fields_map.get("propagateTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'propagate_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'propagateTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_type: {
-                        let field_value = match fields_map.get("resource_type") {
+                        let field_value = match fields_map.get("resourceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

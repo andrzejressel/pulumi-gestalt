@@ -114,65 +114,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#failure_conditional: {
-                        let field_value = match fields_map.get("failure_conditional") {
+                        let field_value = match fields_map.get("failureConditional") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureConditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_next_step: {
-                        let field_value = match fields_map.get("failure_next_step") {
+                        let field_value = match fields_map.get("failureNextStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureNextStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_response: {
-                        let field_value = match fields_map.get("failure_response") {
+                        let field_value = match fields_map.get("failureResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_conditional: {
-                        let field_value = match fields_map.get("success_conditional") {
+                        let field_value = match fields_map.get("successConditional") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successConditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_next_step: {
-                        let field_value = match fields_map.get("success_next_step") {
+                        let field_value = match fields_map.get("successNextStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successNextStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_response: {
-                        let field_value = match fields_map.get("success_response") {
+                        let field_value = match fields_map.get("successResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_conditional: {
-                        let field_value = match fields_map.get("timeout_conditional") {
+                        let field_value = match fields_map.get("timeoutConditional") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutConditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_next_step: {
-                        let field_value = match fields_map.get("timeout_next_step") {
+                        let field_value = match fields_map.get("timeoutNextStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutNextStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_response: {
-                        let field_value = match fields_map.get("timeout_response") {
+                        let field_value = match fields_map.get("timeoutResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#archive_cdn_settings: {
-                        let field_value = match fields_map.get("archive_cdn_settings") {
+                        let field_value = match fields_map.get("archiveCdnSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'archive_cdn_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'archiveCdnSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rollover_interval: {
-                        let field_value = match fields_map.get("rollover_interval") {
+                        let field_value = match fields_map.get("rolloverInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rollover_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rolloverInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

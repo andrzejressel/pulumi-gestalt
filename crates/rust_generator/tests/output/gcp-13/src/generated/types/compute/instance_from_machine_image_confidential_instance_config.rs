@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#confidential_instance_type: {
-                        let field_value = match fields_map.get("confidential_instance_type") {
+                        let field_value = match fields_map.get("confidentialInstanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'confidential_instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'confidentialInstanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_confidential_compute: {
-                        let field_value = match fields_map.get("enable_confidential_compute") {
+                        let field_value = match fields_map.get("enableConfidentialCompute") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_confidential_compute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableConfidentialCompute' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

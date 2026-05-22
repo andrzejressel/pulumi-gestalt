@@ -87,37 +87,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#bgp_lb_config: {
-                        let field_value = match fields_map.get("bgp_lb_config") {
+                        let field_value = match fields_map.get("bgpLbConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bgp_lb_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bgpLbConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#manual_lb_config: {
-                        let field_value = match fields_map.get("manual_lb_config") {
+                        let field_value = match fields_map.get("manualLbConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'manual_lb_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'manualLbConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metal_lb_config: {
-                        let field_value = match fields_map.get("metal_lb_config") {
+                        let field_value = match fields_map.get("metalLbConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metal_lb_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metalLbConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_config: {
-                        let field_value = match fields_map.get("port_config") {
+                        let field_value = match fields_map.get("portConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vip_config: {
-                        let field_value = match fields_map.get("vip_config") {
+                        let field_value = match fields_map.get("vipConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vip_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vipConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

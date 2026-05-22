@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_cookies: {
-                        let field_value = match fields_map.get("include_cookies") {
+                        let field_value = match fields_map.get("includeCookies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_cookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeCookies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#latest_agent_orchestrated_at: {
-                        let field_value = match fields_map.get("latest_agent_orchestrated_at") {
+                        let field_value = match fields_map.get("latestAgentOrchestratedAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'latest_agent_orchestrated_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latestAgentOrchestratedAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#latest_agent_profile_reported_at: {
-                        let field_value = match fields_map.get("latest_agent_profile_reported_at") {
+                        let field_value = match fields_map.get("latestAgentProfileReportedAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'latest_agent_profile_reported_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latestAgentProfileReportedAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#latest_aggregated_profiles: {
-                        let field_value = match fields_map.get("latest_aggregated_profiles") {
+                        let field_value = match fields_map.get("latestAggregatedProfiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'latest_aggregated_profiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latestAggregatedProfiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

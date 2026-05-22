@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#authorized_networks: {
-                        let field_value = match fields_map.get("authorized_networks") {
+                        let field_value = match fields_map.get("authorizedNetworks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorized_networks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizedNetworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_ipv_4: {
-                        let field_value = match fields_map.get("enable_ipv_4") {
+                        let field_value = match fields_map.get("enableIpv4") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_ipv_4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableIpv4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_network: {
-                        let field_value = match fields_map.get("private_network") {
+                        let field_value = match fields_map.get("privateNetwork") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateNetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_ssl: {
-                        let field_value = match fields_map.get("require_ssl") {
+                        let field_value = match fields_map.get("requireSsl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_ssl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireSsl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

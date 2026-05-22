@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#string_equals: {
-                        let field_value = match fields_map.get("string_equals") {
+                        let field_value = match fields_map.get("stringEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_not_equals: {
-                        let field_value = match fields_map.get("string_not_equals") {
+                        let field_value = match fields_map.get("stringNotEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_not_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringNotEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

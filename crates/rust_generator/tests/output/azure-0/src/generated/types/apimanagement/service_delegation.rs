@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#subscriptions_enabled: {
-                        let field_value = match fields_map.get("subscriptions_enabled") {
+                        let field_value = match fields_map.get("subscriptionsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subscriptions_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subscriptionsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_registration_enabled: {
-                        let field_value = match fields_map.get("user_registration_enabled") {
+                        let field_value = match fields_map.get("userRegistrationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_registration_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userRegistrationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#validation_key: {
-                        let field_value = match fields_map.get("validation_key") {
+                        let field_value = match fields_map.get("validationKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'validation_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validationKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

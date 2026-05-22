@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_ssd: {
-                        let field_value = match fields_map.get("local_ssd") {
+                        let field_value = match fields_map.get("localSsd") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_ssd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localSsd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

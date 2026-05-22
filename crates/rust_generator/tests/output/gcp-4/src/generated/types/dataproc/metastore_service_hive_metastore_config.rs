@@ -91,30 +91,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#auxiliary_versions: {
-                        let field_value = match fields_map.get("auxiliary_versions") {
+                        let field_value = match fields_map.get("auxiliaryVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auxiliary_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'auxiliaryVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#config_overrides: {
-                        let field_value = match fields_map.get("config_overrides") {
+                        let field_value = match fields_map.get("configOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#endpoint_protocol: {
-                        let field_value = match fields_map.get("endpoint_protocol") {
+                        let field_value = match fields_map.get("endpointProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_config: {
-                        let field_value = match fields_map.get("kerberos_config") {
+                        let field_value = match fields_map.get("kerberosConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberosConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

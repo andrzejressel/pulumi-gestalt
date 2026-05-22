@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#max_rows: {
-                        let field_value = match fields_map.get("max_rows") {
+                        let field_value = match fields_map.get("maxRows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_rows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -125,58 +125,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#association_id: {
-                        let field_value = match fields_map.get("association_id") {
+                        let field_value = match fields_map.get("associationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'association_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'associationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_repository_path: {
-                        let field_value = match fields_map.get("data_repository_path") {
+                        let field_value = match fields_map.get("dataRepositoryPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_repository_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataRepositoryPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_repository_subdirectories: {
-                        let field_value = match fields_map.get("data_repository_subdirectories") {
+                        let field_value = match fields_map.get("dataRepositorySubdirectories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_repository_subdirectories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataRepositorySubdirectories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_cache_id: {
-                        let field_value = match fields_map.get("file_cache_id") {
+                        let field_value = match fields_map.get("fileCacheId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_cache_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileCacheId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_cache_path: {
-                        let field_value = match fields_map.get("file_cache_path") {
+                        let field_value = match fields_map.get("fileCachePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_cache_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileCachePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_system_id: {
-                        let field_value = match fields_map.get("file_system_id") {
+                        let field_value = match fields_map.get("fileSystemId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_system_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystemId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_system_path: {
-                        let field_value = match fields_map.get("file_system_path") {
+                        let field_value = match fields_map.get("fileSystemPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_system_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystemPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#imported_file_chunk_size: {
-                        let field_value = match fields_map.get("imported_file_chunk_size") {
+                        let field_value = match fields_map.get("importedFileChunkSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'imported_file_chunk_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'importedFileChunkSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -188,9 +188,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_arn: {
-                        let field_value = match fields_map.get("resource_arn") {
+                        let field_value = match fields_map.get("resourceArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

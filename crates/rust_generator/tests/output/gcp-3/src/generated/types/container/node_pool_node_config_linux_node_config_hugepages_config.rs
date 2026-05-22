@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#hugepage_size_1_g: {
-                        let field_value = match fields_map.get("hugepage_size_1_g") {
+                        let field_value = match fields_map.get("hugepageSize1g") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hugepage_size_1_g' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hugepageSize1g' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hugepage_size_2_m: {
-                        let field_value = match fields_map.get("hugepage_size_2_m") {
+                        let field_value = match fields_map.get("hugepageSize2m") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hugepage_size_2_m' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hugepageSize2m' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

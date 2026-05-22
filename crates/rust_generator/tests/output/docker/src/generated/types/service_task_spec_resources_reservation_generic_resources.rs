@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#discrete_resources_specs: {
-                        let field_value = match fields_map.get("discrete_resources_specs") {
+                        let field_value = match fields_map.get("discreteResourcesSpecs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'discrete_resources_specs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'discreteResourcesSpecs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#named_resources_specs: {
-                        let field_value = match fields_map.get("named_resources_specs") {
+                        let field_value = match fields_map.get("namedResourcesSpecs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'named_resources_specs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namedResourcesSpecs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#entity_id_prefix: {
-                        let field_value = match fields_map.get("entity_id_prefix") {
+                        let field_value = match fields_map.get("entityIdPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_id_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityIdPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_configuration: {
-                        let field_value = match fields_map.get("group_configuration") {
+                        let field_value = match fields_map.get("groupConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_selection: {
-                        let field_value = match fields_map.get("token_selection") {
+                        let field_value = match fields_map.get("tokenSelection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_selection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenSelection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#log_group_name: {
-                        let field_value = match fields_map.get("log_group_name") {
+                        let field_value = match fields_map.get("logGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_role_arn: {
-                        let field_value = match fields_map.get("log_role_arn") {
+                        let field_value = match fields_map.get("logRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

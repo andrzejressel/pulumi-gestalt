@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#application_configurations: {
-                        let field_value = match fields_map.get("application_configurations") {
+                        let field_value = match fields_map.get("applicationConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitoring_configuration: {
-                        let field_value = match fields_map.get("monitoring_configuration") {
+                        let field_value = match fields_map.get("monitoringConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monitoring_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monitoringConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

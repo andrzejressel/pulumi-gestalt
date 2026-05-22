@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#insight_type: {
-                        let field_value = match fields_map.get("insight_type") {
+                        let field_value = match fields_map.get("insightType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insight_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insightType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

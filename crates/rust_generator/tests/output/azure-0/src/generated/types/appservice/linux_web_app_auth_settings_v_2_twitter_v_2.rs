@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#consumer_key: {
-                        let field_value = match fields_map.get("consumer_key") {
+                        let field_value = match fields_map.get("consumerKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#consumer_secret_setting_name: {
-                        let field_value = match fields_map.get("consumer_secret_setting_name") {
+                        let field_value = match fields_map.get("consumerSecretSettingName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_secret_setting_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerSecretSettingName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#allow_config_based_issuance: {
-                        let field_value = match fields_map.get("allow_config_based_issuance") {
+                        let field_value = match fields_map.get("allowConfigBasedIssuance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_config_based_issuance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowConfigBasedIssuance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_csr_based_issuance: {
-                        let field_value = match fields_map.get("allow_csr_based_issuance") {
+                        let field_value = match fields_map.get("allowCsrBasedIssuance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_csr_based_issuance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowCsrBasedIssuance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

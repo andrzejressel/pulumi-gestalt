@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#ec_2_ssh_key: {
-                        let field_value = match fields_map.get("ec_2_ssh_key") {
+                        let field_value = match fields_map.get("ec2SshKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ec_2_ssh_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ec2SshKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_security_group_ids: {
-                        let field_value = match fields_map.get("source_security_group_ids") {
+                        let field_value = match fields_map.get("sourceSecurityGroupIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_security_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceSecurityGroupIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

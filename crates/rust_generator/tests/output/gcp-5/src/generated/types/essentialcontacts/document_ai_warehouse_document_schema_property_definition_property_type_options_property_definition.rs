@@ -173,79 +173,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#date_time_type_options: {
-                        let field_value = match fields_map.get("date_time_type_options") {
+                        let field_value = match fields_map.get("dateTimeTypeOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'date_time_type_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dateTimeTypeOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enum_type_options: {
-                        let field_value = match fields_map.get("enum_type_options") {
+                        let field_value = match fields_map.get("enumTypeOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enum_type_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enumTypeOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#float_type_options: {
-                        let field_value = match fields_map.get("float_type_options") {
+                        let field_value = match fields_map.get("floatTypeOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'float_type_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'floatTypeOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#integer_type_options: {
-                        let field_value = match fields_map.get("integer_type_options") {
+                        let field_value = match fields_map.get("integerTypeOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'integer_type_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'integerTypeOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_filterable: {
-                        let field_value = match fields_map.get("is_filterable") {
+                        let field_value = match fields_map.get("isFilterable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_filterable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isFilterable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_metadata: {
-                        let field_value = match fields_map.get("is_metadata") {
+                        let field_value = match fields_map.get("isMetadata") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_metadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isMetadata' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_repeatable: {
-                        let field_value = match fields_map.get("is_repeatable") {
+                        let field_value = match fields_map.get("isRepeatable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_repeatable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isRepeatable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_required: {
-                        let field_value = match fields_map.get("is_required") {
+                        let field_value = match fields_map.get("isRequired") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isRequired' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_searchable: {
-                        let field_value = match fields_map.get("is_searchable") {
+                        let field_value = match fields_map.get("isSearchable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_searchable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isSearchable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#map_type_options: {
-                        let field_value = match fields_map.get("map_type_options") {
+                        let field_value = match fields_map.get("mapTypeOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'map_type_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mapTypeOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -257,30 +257,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retrieval_importance: {
-                        let field_value = match fields_map.get("retrieval_importance") {
+                        let field_value = match fields_map.get("retrievalImportance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retrieval_importance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retrievalImportance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_sources: {
-                        let field_value = match fields_map.get("schema_sources") {
+                        let field_value = match fields_map.get("schemaSources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaSources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_type_options: {
-                        let field_value = match fields_map.get("text_type_options") {
+                        let field_value = match fields_map.get("textTypeOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_type_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textTypeOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timestamp_type_options: {
-                        let field_value = match fields_map.get("timestamp_type_options") {
+                        let field_value = match fields_map.get("timestampTypeOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timestamp_type_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timestampTypeOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

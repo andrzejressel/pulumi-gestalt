@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#apply_on: {
-                        let field_value = match fields_map.get("apply_on") {
+                        let field_value = match fields_map.get("applyOn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apply_on' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applyOn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#optimization_status: {
-                        let field_value = match fields_map.get("optimization_status") {
+                        let field_value = match fields_map.get("optimizationStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'optimization_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'optimizationStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#bind_options: {
-                        let field_value = match fields_map.get("bind_options") {
+                        let field_value = match fields_map.get("bindOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bind_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bindOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_only: {
-                        let field_value = match fields_map.get("read_only") {
+                        let field_value = match fields_map.get("readOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,23 +126,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tmpfs_options: {
-                        let field_value = match fields_map.get("tmpfs_options") {
+                        let field_value = match fields_map.get("tmpfsOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tmpfs_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tmpfsOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_options: {
-                        let field_value = match fields_map.get("volume_options") {
+                        let field_value = match fields_map.get("volumeOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

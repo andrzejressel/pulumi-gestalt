@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#bucket_criteria: {
-                        let field_value = match fields_map.get("bucket_criteria") {
+                        let field_value = match fields_map.get("bucketCriteria") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_criteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketCriteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_definitions: {
-                        let field_value = match fields_map.get("bucket_definitions") {
+                        let field_value = match fields_map.get("bucketDefinitions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_definitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketDefinitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

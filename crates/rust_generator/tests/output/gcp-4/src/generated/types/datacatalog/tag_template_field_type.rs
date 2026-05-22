@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#enum_type: {
-                        let field_value = match fields_map.get("enum_type") {
+                        let field_value = match fields_map.get("enumType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enum_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enumType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primitive_type: {
-                        let field_value = match fields_map.get("primitive_type") {
+                        let field_value = match fields_map.get("primitiveType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primitive_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primitiveType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

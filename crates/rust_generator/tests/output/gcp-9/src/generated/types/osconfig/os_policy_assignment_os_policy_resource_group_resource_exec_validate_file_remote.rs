@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#sha_256_checksum: {
-                        let field_value = match fields_map.get("sha_256_checksum") {
+                        let field_value = match fields_map.get("sha256Checksum") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sha_256_checksum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sha256Checksum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

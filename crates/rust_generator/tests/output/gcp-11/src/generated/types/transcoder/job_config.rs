@@ -132,23 +132,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#ad_breaks: {
-                        let field_value = match fields_map.get("ad_breaks") {
+                        let field_value = match fields_map.get("adBreaks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ad_breaks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adBreaks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#edit_lists: {
-                        let field_value = match fields_map.get("edit_lists") {
+                        let field_value = match fields_map.get("editLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'edit_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'editLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#elementary_streams: {
-                        let field_value = match fields_map.get("elementary_streams") {
+                        let field_value = match fields_map.get("elementaryStreams") {
                             Some(value) => value,
-                            None => bail!("Missing field 'elementary_streams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'elementaryStreams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -174,9 +174,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mux_streams: {
-                        let field_value = match fields_map.get("mux_streams") {
+                        let field_value = match fields_map.get("muxStreams") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mux_streams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'muxStreams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -195,9 +195,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pubsub_destination: {
-                        let field_value = match fields_map.get("pubsub_destination") {
+                        let field_value = match fields_map.get("pubsubDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pubsub_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pubsubDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

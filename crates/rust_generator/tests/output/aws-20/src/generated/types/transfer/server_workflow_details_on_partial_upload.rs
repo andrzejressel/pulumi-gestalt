@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#execution_role: {
-                        let field_value = match fields_map.get("execution_role") {
+                        let field_value = match fields_map.get("executionRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workflow_id: {
-                        let field_value = match fields_map.get("workflow_id") {
+                        let field_value = match fields_map.get("workflowId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workflow_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workflowId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

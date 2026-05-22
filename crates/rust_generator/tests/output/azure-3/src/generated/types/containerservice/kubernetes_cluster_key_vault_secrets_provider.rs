@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#secret_identities: {
-                        let field_value = match fields_map.get("secret_identities") {
+                        let field_value = match fields_map.get("secretIdentities") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_identities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretIdentities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_rotation_enabled: {
-                        let field_value = match fields_map.get("secret_rotation_enabled") {
+                        let field_value = match fields_map.get("secretRotationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_rotation_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretRotationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_rotation_interval: {
-                        let field_value = match fields_map.get("secret_rotation_interval") {
+                        let field_value = match fields_map.get("secretRotationInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_rotation_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretRotationInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

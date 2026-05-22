@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_subdomain: {
-                        let field_value = match fields_map.get("use_subdomain") {
+                        let field_value = match fields_map.get("useSubdomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_subdomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useSubdomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

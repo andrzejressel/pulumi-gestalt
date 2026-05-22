@@ -56,9 +56,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#header_behavior: {
-                        let field_value = match fields_map.get("header_behavior") {
+                        let field_value = match fields_map.get("headerBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

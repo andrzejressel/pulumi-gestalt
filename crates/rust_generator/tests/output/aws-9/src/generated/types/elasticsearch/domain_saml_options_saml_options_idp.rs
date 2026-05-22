@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#entity_id: {
-                        let field_value = match fields_map.get("entity_id") {
+                        let field_value = match fields_map.get("entityId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metadata_content: {
-                        let field_value = match fields_map.get("metadata_content") {
+                        let field_value = match fields_map.get("metadataContent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metadata_content' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metadataContent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

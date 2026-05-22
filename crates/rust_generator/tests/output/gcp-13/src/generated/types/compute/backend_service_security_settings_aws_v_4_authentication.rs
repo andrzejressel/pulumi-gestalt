@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#access_key: {
-                        let field_value = match fields_map.get("access_key") {
+                        let field_value = match fields_map.get("accessKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#access_key_id: {
-                        let field_value = match fields_map.get("access_key_id") {
+                        let field_value = match fields_map.get("accessKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#access_key_version: {
-                        let field_value = match fields_map.get("access_key_version") {
+                        let field_value = match fields_map.get("accessKeyVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_key_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessKeyVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_region: {
-                        let field_value = match fields_map.get("origin_region") {
+                        let field_value = match fields_map.get("originRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'origin_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'originRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

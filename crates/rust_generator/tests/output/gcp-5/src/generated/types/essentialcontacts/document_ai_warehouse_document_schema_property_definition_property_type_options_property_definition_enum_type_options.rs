@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#possible_values: {
-                        let field_value = match fields_map.get("possible_values") {
+                        let field_value = match fields_map.get("possibleValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'possible_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'possibleValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#validation_check_disabled: {
-                        let field_value = match fields_map.get("validation_check_disabled") {
+                        let field_value = match fields_map.get("validationCheckDisabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'validation_check_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validationCheckDisabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#enable_debug_log_delivery: {
-                        let field_value = match fields_map.get("enable_debug_log_delivery") {
+                        let field_value = match fields_map.get("enableDebugLogDelivery") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_debug_log_delivery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableDebugLogDelivery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_runtime: {
-                        let field_value = match fields_map.get("policy_runtime") {
+                        let field_value = match fields_map.get("policyRuntime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_runtime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyRuntime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_text: {
-                        let field_value = match fields_map.get("policy_text") {
+                        let field_value = match fields_map.get("policyText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

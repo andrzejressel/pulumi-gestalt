@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#left_join_key_properties: {
-                        let field_value = match fields_map.get("left_join_key_properties") {
+                        let field_value = match fields_map.get("leftJoinKeyProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'left_join_key_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'leftJoinKeyProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#left_operand: {
-                        let field_value = match fields_map.get("left_operand") {
+                        let field_value = match fields_map.get("leftOperand") {
                             Some(value) => value,
-                            None => bail!("Missing field 'left_operand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'leftOperand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_clause: {
-                        let field_value = match fields_map.get("on_clause") {
+                        let field_value = match fields_map.get("onClause") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_clause' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onClause' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#right_join_key_properties: {
-                        let field_value = match fields_map.get("right_join_key_properties") {
+                        let field_value = match fields_map.get("rightJoinKeyProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'right_join_key_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rightJoinKeyProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#right_operand: {
-                        let field_value = match fields_map.get("right_operand") {
+                        let field_value = match fields_map.get("rightOperand") {
                             Some(value) => value,
-                            None => bail!("Missing field 'right_operand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rightOperand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#canned_acl: {
-                        let field_value = match fields_map.get("canned_acl") {
+                        let field_value = match fields_map.get("cannedAcl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'canned_acl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cannedAcl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

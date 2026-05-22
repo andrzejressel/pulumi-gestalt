@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#destination_ports: {
-                        let field_value = match fields_map.get("destination_ports") {
+                        let field_value = match fields_map.get("destinationPorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationPorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_ports: {
-                        let field_value = match fields_map.get("source_ports") {
+                        let field_value = match fields_map.get("sourcePorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourcePorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

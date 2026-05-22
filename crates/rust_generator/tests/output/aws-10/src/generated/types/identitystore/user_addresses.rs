@@ -127,9 +127,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#postal_code: {
-                        let field_value = match fields_map.get("postal_code") {
+                        let field_value = match fields_map.get("postalCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'postal_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postalCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -148,16 +148,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#street_address: {
-                        let field_value = match fields_map.get("street_address") {
+                        let field_value = match fields_map.get("streetAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'street_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'streetAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

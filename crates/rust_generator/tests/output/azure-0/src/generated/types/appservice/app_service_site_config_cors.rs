@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#allowed_origins: {
-                        let field_value = match fields_map.get("allowed_origins") {
+                        let field_value = match fields_map.get("allowedOrigins") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_origins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedOrigins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#support_credentials: {
-                        let field_value = match fields_map.get("support_credentials") {
+                        let field_value = match fields_map.get("supportCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'support_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'supportCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

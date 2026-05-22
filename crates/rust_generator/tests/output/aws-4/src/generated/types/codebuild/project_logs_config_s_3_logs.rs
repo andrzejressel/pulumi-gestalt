@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#bucket_owner_access: {
-                        let field_value = match fields_map.get("bucket_owner_access") {
+                        let field_value = match fields_map.get("bucketOwnerAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_owner_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketOwnerAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_disabled: {
-                        let field_value = match fields_map.get("encryption_disabled") {
+                        let field_value = match fields_map.get("encryptionDisabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionDisabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

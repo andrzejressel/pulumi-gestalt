@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#primary_approvers: {
-                        let field_value = match fields_map.get("primary_approvers") {
+                        let field_value = match fields_map.get("primaryApprovers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_approvers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryApprovers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

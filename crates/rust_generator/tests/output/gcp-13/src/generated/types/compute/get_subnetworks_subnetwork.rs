@@ -104,9 +104,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_cidr_range: {
-                        let field_value = match fields_map.get("ip_cidr_range") {
+                        let field_value = match fields_map.get("ipCidrRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_cidr_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipCidrRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,23 +125,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_self_link: {
-                        let field_value = match fields_map.get("network_self_link") {
+                        let field_value = match fields_map.get("networkSelfLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_self_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkSelfLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip_google_access: {
-                        let field_value = match fields_map.get("private_ip_google_access") {
+                        let field_value = match fields_map.get("privateIpGoogleAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip_google_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIpGoogleAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#self_link: {
-                        let field_value = match fields_map.get("self_link") {
+                        let field_value = match fields_map.get("selfLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'self_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selfLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

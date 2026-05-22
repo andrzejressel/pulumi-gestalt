@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#filters_configs: {
-                        let field_value = match fields_map.get("filters_configs") {
+                        let field_value = match fields_map.get("filtersConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filters_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filtersConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

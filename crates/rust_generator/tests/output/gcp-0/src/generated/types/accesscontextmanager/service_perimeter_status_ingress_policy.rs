@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#ingress_from: {
-                        let field_value = match fields_map.get("ingress_from") {
+                        let field_value = match fields_map.get("ingressFrom") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingress_from' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingressFrom' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ingress_to: {
-                        let field_value = match fields_map.get("ingress_to") {
+                        let field_value = match fields_map.get("ingressTo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingress_to' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingressTo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

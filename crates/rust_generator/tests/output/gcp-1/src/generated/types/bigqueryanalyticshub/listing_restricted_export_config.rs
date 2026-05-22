@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restrict_direct_table_access: {
-                        let field_value = match fields_map.get("restrict_direct_table_access") {
+                        let field_value = match fields_map.get("restrictDirectTableAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restrict_direct_table_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restrictDirectTableAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restrict_query_result: {
-                        let field_value = match fields_map.get("restrict_query_result") {
+                        let field_value = match fields_map.get("restrictQueryResult") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restrict_query_result' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restrictQueryResult' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

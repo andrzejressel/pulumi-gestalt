@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#max_tokens: {
-                        let field_value = match fields_map.get("max_tokens") {
+                        let field_value = match fields_map.get("maxTokens") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_tokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxTokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#overlap_percentage: {
-                        let field_value = match fields_map.get("overlap_percentage") {
+                        let field_value = match fields_map.get("overlapPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'overlap_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'overlapPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

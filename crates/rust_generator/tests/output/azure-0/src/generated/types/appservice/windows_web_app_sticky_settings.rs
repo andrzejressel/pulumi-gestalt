@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#app_setting_names: {
-                        let field_value = match fields_map.get("app_setting_names") {
+                        let field_value = match fields_map.get("appSettingNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_setting_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appSettingNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_string_names: {
-                        let field_value = match fields_map.get("connection_string_names") {
+                        let field_value = match fields_map.get("connectionStringNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_string_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionStringNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

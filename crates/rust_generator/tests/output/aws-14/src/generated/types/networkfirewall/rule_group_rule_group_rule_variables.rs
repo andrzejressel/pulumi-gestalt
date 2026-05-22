@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#ip_sets: {
-                        let field_value = match fields_map.get("ip_sets") {
+                        let field_value = match fields_map.get("ipSets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipSets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_sets: {
-                        let field_value = match fields_map.get("port_sets") {
+                        let field_value = match fields_map.get("portSets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portSets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

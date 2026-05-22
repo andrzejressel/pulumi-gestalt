@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#attribute_path: {
-                        let field_value = match fields_map.get("attribute_path") {
+                        let field_value = match fields_map.get("attributePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attribute_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#attribute_value: {
-                        let field_value = match fields_map.get("attribute_value") {
+                        let field_value = match fields_map.get("attributeValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attribute_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributeValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

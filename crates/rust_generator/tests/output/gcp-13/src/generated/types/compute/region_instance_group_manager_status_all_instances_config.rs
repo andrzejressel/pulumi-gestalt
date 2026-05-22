@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#current_revision: {
-                        let field_value = match fields_map.get("current_revision") {
+                        let field_value = match fields_map.get("currentRevision") {
                             Some(value) => value,
-                            None => bail!("Missing field 'current_revision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'currentRevision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

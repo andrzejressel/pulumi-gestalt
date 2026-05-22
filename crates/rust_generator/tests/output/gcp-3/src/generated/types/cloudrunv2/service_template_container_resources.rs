@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#cpu_idle: {
-                        let field_value = match fields_map.get("cpu_idle") {
+                        let field_value = match fields_map.get("cpuIdle") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_idle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuIdle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#startup_cpu_boost: {
-                        let field_value = match fields_map.get("startup_cpu_boost") {
+                        let field_value = match fields_map.get("startupCpuBoost") {
                             Some(value) => value,
-                            None => bail!("Missing field 'startup_cpu_boost' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startupCpuBoost' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

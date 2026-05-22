@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#workload_config: {
-                        let field_value = match fields_map.get("workload_config") {
+                        let field_value = match fields_map.get("workloadConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workload_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workloadConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workload_vulnerability_mode: {
-                        let field_value = match fields_map.get("workload_vulnerability_mode") {
+                        let field_value = match fields_map.get("workloadVulnerabilityMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workload_vulnerability_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workloadVulnerabilityMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

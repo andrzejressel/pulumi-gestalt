@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#preferred_location: {
-                        let field_value = match fields_map.get("preferred_location") {
+                        let field_value = match fields_map.get("preferredLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preferred_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preferredLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_location: {
-                        let field_value = match fields_map.get("secondary_location") {
+                        let field_value = match fields_map.get("secondaryLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

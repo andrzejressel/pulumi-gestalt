@@ -129,16 +129,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#database_service: {
-                        let field_value = match fields_map.get("database_service") {
+                        let field_value = match fields_map.get("databaseService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forward_ssh_connectivity: {
-                        let field_value = match fields_map.get("forward_ssh_connectivity") {
+                        let field_value = match fields_map.get("forwardSshConnectivity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forward_ssh_connectivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardSshConnectivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -157,9 +157,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_set: {
-                        let field_value = match fields_map.get("password_set") {
+                        let field_value = match fields_map.get("passwordSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -171,9 +171,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_connectivity: {
-                        let field_value = match fields_map.get("private_connectivity") {
+                        let field_value = match fields_map.get("privateConnectivity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_connectivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateConnectivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -185,9 +185,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_service_ip_connectivity: {
-                        let field_value = match fields_map.get("static_service_ip_connectivity") {
+                        let field_value = match fields_map.get("staticServiceIpConnectivity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_service_ip_connectivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticServiceIpConnectivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

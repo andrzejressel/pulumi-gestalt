@@ -84,37 +84,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#deployment_id: {
-                        let field_value = match fields_map.get("deployment_id") {
+                        let field_value = match fields_map.get("deploymentId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployment_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deployment_status: {
-                        let field_value = match fields_map.get("deployment_status") {
+                        let field_value = match fields_map.get("deploymentStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployment_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deployment_type: {
-                        let field_value = match fields_map.get("deployment_type") {
+                        let field_value = match fields_map.get("deploymentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployment_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_reasons: {
-                        let field_value = match fields_map.get("failure_reasons") {
+                        let field_value = match fields_map.get("failureReasons") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_reasons' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureReasons' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_deployment_complete: {
-                        let field_value = match fields_map.get("is_deployment_complete") {
+                        let field_value = match fields_map.get("isDeploymentComplete") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_deployment_complete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isDeploymentComplete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

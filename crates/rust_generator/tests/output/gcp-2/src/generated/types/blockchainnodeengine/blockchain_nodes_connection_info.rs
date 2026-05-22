@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#endpoint_infos: {
-                        let field_value = match fields_map.get("endpoint_infos") {
+                        let field_value = match fields_map.get("endpointInfos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_infos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointInfos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_attachment: {
-                        let field_value = match fields_map.get("service_attachment") {
+                        let field_value = match fields_map.get("serviceAttachment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_attachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAttachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

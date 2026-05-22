@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip_address: {
-                        let field_value = match fields_map.get("private_ip_address") {
+                        let field_value = match fields_map.get("privateIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip_address_version: {
-                        let field_value = match fields_map.get("private_ip_address_version") {
+                        let field_value = match fields_map.get("privateIpAddressVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip_address_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIpAddressVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_id: {
-                        let field_value = match fields_map.get("subnet_id") {
+                        let field_value = match fields_map.get("subnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#access_control_list_configuration: {
-                        let field_value = match fields_map.get("access_control_list_configuration") {
+                        let field_value = match fields_map.get("accessControlListConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_control_list_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessControlListConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_name: {
-                        let field_value = match fields_map.get("bucket_name") {
+                        let field_value = match fields_map.get("bucketName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#documents_metadata_configuration: {
-                        let field_value = match fields_map.get("documents_metadata_configuration") {
+                        let field_value = match fields_map.get("documentsMetadataConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'documents_metadata_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'documentsMetadataConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclusion_patterns: {
-                        let field_value = match fields_map.get("exclusion_patterns") {
+                        let field_value = match fields_map.get("exclusionPatterns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclusion_patterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exclusionPatterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inclusion_patterns: {
-                        let field_value = match fields_map.get("inclusion_patterns") {
+                        let field_value = match fields_map.get("inclusionPatterns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inclusion_patterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inclusionPatterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inclusion_prefixes: {
-                        let field_value = match fields_map.get("inclusion_prefixes") {
+                        let field_value = match fields_map.get("inclusionPrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inclusion_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inclusionPrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

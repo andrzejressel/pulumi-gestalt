@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#cors_rules: {
-                        let field_value = match fields_map.get("cors_rules") {
+                        let field_value = match fields_map.get("corsRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cors_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'corsRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hour_metrics: {
-                        let field_value = match fields_map.get("hour_metrics") {
+                        let field_value = match fields_map.get("hourMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hour_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hourMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minute_metrics: {
-                        let field_value = match fields_map.get("minute_metrics") {
+                        let field_value = match fields_map.get("minuteMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minute_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minuteMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

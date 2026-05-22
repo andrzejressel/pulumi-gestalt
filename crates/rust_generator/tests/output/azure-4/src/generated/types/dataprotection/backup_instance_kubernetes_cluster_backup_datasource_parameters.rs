@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#cluster_scoped_resources_enabled: {
-                        let field_value = match fields_map.get("cluster_scoped_resources_enabled") {
+                        let field_value = match fields_map.get("clusterScopedResourcesEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_scoped_resources_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterScopedResourcesEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_namespaces: {
-                        let field_value = match fields_map.get("excluded_namespaces") {
+                        let field_value = match fields_map.get("excludedNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_resource_types: {
-                        let field_value = match fields_map.get("excluded_resource_types") {
+                        let field_value = match fields_map.get("excludedResourceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedResourceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_namespaces: {
-                        let field_value = match fields_map.get("included_namespaces") {
+                        let field_value = match fields_map.get("includedNamespaces") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_namespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedNamespaces' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_resource_types: {
-                        let field_value = match fields_map.get("included_resource_types") {
+                        let field_value = match fields_map.get("includedResourceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedResourceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#label_selectors: {
-                        let field_value = match fields_map.get("label_selectors") {
+                        let field_value = match fields_map.get("labelSelectors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'label_selectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'labelSelectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_snapshot_enabled: {
-                        let field_value = match fields_map.get("volume_snapshot_enabled") {
+                        let field_value = match fields_map.get("volumeSnapshotEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_snapshot_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeSnapshotEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

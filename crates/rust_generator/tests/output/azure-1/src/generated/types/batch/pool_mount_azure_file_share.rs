@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#account_key: {
-                        let field_value = match fields_map.get("account_key") {
+                        let field_value = match fields_map.get("accountKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'account_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accountKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#account_name: {
-                        let field_value = match fields_map.get("account_name") {
+                        let field_value = match fields_map.get("accountName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accountName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#azure_file_url: {
-                        let field_value = match fields_map.get("azure_file_url") {
+                        let field_value = match fields_map.get("azureFileUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_file_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureFileUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mount_options: {
-                        let field_value = match fields_map.get("mount_options") {
+                        let field_value = match fields_map.get("mountOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mount_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mountOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#relative_mount_path: {
-                        let field_value = match fields_map.get("relative_mount_path") {
+                        let field_value = match fields_map.get("relativeMountPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'relative_mount_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'relativeMountPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -75,30 +75,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#error_document: {
-                        let field_value = match fields_map.get("error_document") {
+                        let field_value = match fields_map.get("errorDocument") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_document' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorDocument' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#index_document: {
-                        let field_value = match fields_map.get("index_document") {
+                        let field_value = match fields_map.get("indexDocument") {
                             Some(value) => value,
-                            None => bail!("Missing field 'index_document' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'indexDocument' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_all_requests_to: {
-                        let field_value = match fields_map.get("redirect_all_requests_to") {
+                        let field_value = match fields_map.get("redirectAllRequestsTo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_all_requests_to' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectAllRequestsTo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#routing_rules: {
-                        let field_value = match fields_map.get("routing_rules") {
+                        let field_value = match fields_map.get("routingRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'routing_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routingRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

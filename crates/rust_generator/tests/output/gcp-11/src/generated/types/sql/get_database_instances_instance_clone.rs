@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#allocated_ip_range: {
-                        let field_value = match fields_map.get("allocated_ip_range") {
+                        let field_value = match fields_map.get("allocatedIpRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allocated_ip_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allocatedIpRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_names: {
-                        let field_value = match fields_map.get("database_names") {
+                        let field_value = match fields_map.get("databaseNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#point_in_time: {
-                        let field_value = match fields_map.get("point_in_time") {
+                        let field_value = match fields_map.get("pointInTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'point_in_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pointInTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preferred_zone: {
-                        let field_value = match fields_map.get("preferred_zone") {
+                        let field_value = match fields_map.get("preferredZone") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preferred_zone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preferredZone' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_instance_name: {
-                        let field_value = match fields_map.get("source_instance_name") {
+                        let field_value = match fields_map.get("sourceInstanceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_instance_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceInstanceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

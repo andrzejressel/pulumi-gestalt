@@ -106,23 +106,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#accepts_multiple_values: {
-                        let field_value = match fields_map.get("accepts_multiple_values") {
+                        let field_value = match fields_map.get("acceptsMultipleValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accepts_multiple_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceptsMultipleValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#flag_name: {
-                        let field_value = match fields_map.get("flag_name") {
+                        let field_value = match fields_map.get("flagName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'flag_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'flagName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#integer_restrictions: {
-                        let field_value = match fields_map.get("integer_restrictions") {
+                        let field_value = match fields_map.get("integerRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'integer_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'integerRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,30 +134,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#requires_db_restart: {
-                        let field_value = match fields_map.get("requires_db_restart") {
+                        let field_value = match fields_map.get("requiresDbRestart") {
                             Some(value) => value,
-                            None => bail!("Missing field 'requires_db_restart' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requiresDbRestart' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_restrictions: {
-                        let field_value = match fields_map.get("string_restrictions") {
+                        let field_value = match fields_map.get("stringRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#supported_db_versions: {
-                        let field_value = match fields_map.get("supported_db_versions") {
+                        let field_value = match fields_map.get("supportedDbVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'supported_db_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'supportedDbVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_type: {
-                        let field_value = match fields_map.get("value_type") {
+                        let field_value = match fields_map.get("valueType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

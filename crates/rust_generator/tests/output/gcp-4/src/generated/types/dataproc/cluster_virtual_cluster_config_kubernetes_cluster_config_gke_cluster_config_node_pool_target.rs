@@ -70,16 +70,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#node_pool: {
-                        let field_value = match fields_map.get("node_pool") {
+                        let field_value = match fields_map.get("nodePool") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodePool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_pool_config: {
-                        let field_value = match fields_map.get("node_pool_config") {
+                        let field_value = match fields_map.get("nodePoolConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_pool_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodePoolConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

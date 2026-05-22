@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_adapter_name: {
-                        let field_value = match fields_map.get("network_adapter_name") {
+                        let field_value = match fields_map.get("networkAdapterName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_adapter_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkAdapterName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vlan_id: {
-                        let field_value = match fields_map.get("vlan_id") {
+                        let field_value = match fields_map.get("vlanId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vlan_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vlanId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

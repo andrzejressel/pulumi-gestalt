@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#alerts_for_all_job_failures_enabled: {
-                        let field_value = match fields_map.get("alerts_for_all_job_failures_enabled") {
+                        let field_value = match fields_map.get("alertsForAllJobFailuresEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alerts_for_all_job_failures_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alertsForAllJobFailuresEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#alerts_for_critical_operation_failures_enabled: {
-                        let field_value = match fields_map.get("alerts_for_critical_operation_failures_enabled") {
+                        let field_value = match fields_map.get("alertsForCriticalOperationFailuresEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alerts_for_critical_operation_failures_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alertsForCriticalOperationFailuresEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

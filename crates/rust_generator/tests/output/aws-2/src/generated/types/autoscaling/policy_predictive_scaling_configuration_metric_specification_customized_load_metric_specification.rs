@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#metric_data_queries: {
-                        let field_value = match fields_map.get("metric_data_queries") {
+                        let field_value = match fields_map.get("metricDataQueries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_data_queries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricDataQueries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

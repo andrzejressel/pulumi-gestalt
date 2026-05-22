@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#iceberg_compaction: {
-                        let field_value = match fields_map.get("iceberg_compaction") {
+                        let field_value = match fields_map.get("icebergCompaction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iceberg_compaction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'icebergCompaction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iceberg_snapshot_management: {
-                        let field_value = match fields_map.get("iceberg_snapshot_management") {
+                        let field_value = match fields_map.get("icebergSnapshotManagement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iceberg_snapshot_management' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'icebergSnapshotManagement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

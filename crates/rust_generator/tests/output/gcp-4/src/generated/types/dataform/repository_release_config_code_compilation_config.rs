@@ -109,51 +109,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#assertion_schema: {
-                        let field_value = match fields_map.get("assertion_schema") {
+                        let field_value = match fields_map.get("assertionSchema") {
                             Some(value) => value,
-                            None => bail!("Missing field 'assertion_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'assertionSchema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_suffix: {
-                        let field_value = match fields_map.get("database_suffix") {
+                        let field_value = match fields_map.get("databaseSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_database: {
-                        let field_value = match fields_map.get("default_database") {
+                        let field_value = match fields_map.get("defaultDatabase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_database' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultDatabase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_location: {
-                        let field_value = match fields_map.get("default_location") {
+                        let field_value = match fields_map.get("defaultLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_schema: {
-                        let field_value = match fields_map.get("default_schema") {
+                        let field_value = match fields_map.get("defaultSchema") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultSchema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schema_suffix: {
-                        let field_value = match fields_map.get("schema_suffix") {
+                        let field_value = match fields_map.get("schemaSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schema_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schemaSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_prefix: {
-                        let field_value = match fields_map.get("table_prefix") {
+                        let field_value = match fields_map.get("tablePrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tablePrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

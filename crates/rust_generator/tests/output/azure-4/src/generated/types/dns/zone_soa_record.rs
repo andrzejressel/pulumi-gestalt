@@ -128,9 +128,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expire_time: {
-                        let field_value = match fields_map.get("expire_time") {
+                        let field_value = match fields_map.get("expireTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expire_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expireTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,37 +142,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_name: {
-                        let field_value = match fields_map.get("host_name") {
+                        let field_value = match fields_map.get("hostName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_ttl: {
-                        let field_value = match fields_map.get("minimum_ttl") {
+                        let field_value = match fields_map.get("minimumTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refresh_time: {
-                        let field_value = match fields_map.get("refresh_time") {
+                        let field_value = match fields_map.get("refreshTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'refresh_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'refreshTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_time: {
-                        let field_value = match fields_map.get("retry_time") {
+                        let field_value = match fields_map.get("retryTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retry_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retryTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#serial_number: {
-                        let field_value = match fields_map.get("serial_number") {
+                        let field_value = match fields_map.get("serialNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'serial_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serialNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

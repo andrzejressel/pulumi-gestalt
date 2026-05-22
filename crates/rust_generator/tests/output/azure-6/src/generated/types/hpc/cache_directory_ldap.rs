@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#base_dn: {
-                        let field_value = match fields_map.get("base_dn") {
+                        let field_value = match fields_map.get("baseDn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'base_dn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baseDn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,16 +104,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certificate_validation_uri: {
-                        let field_value = match fields_map.get("certificate_validation_uri") {
+                        let field_value = match fields_map.get("certificateValidationUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_validation_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateValidationUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#download_certificate_automatically: {
-                        let field_value = match fields_map.get("download_certificate_automatically") {
+                        let field_value = match fields_map.get("downloadCertificateAutomatically") {
                             Some(value) => value,
-                            None => bail!("Missing field 'download_certificate_automatically' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'downloadCertificateAutomatically' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

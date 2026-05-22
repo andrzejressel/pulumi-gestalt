@@ -81,30 +81,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#document_type: {
-                        let field_value = match fields_map.get("document_type") {
+                        let field_value = match fields_map.get("documentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'document_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'documentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_all_versions: {
-                        let field_value = match fields_map.get("include_all_versions") {
+                        let field_value = match fields_map.get("includeAllVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_all_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeAllVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_renditions: {
-                        let field_value = match fields_map.get("include_renditions") {
+                        let field_value = match fields_map.get("includeRenditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_renditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeRenditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_source_files: {
-                        let field_value = match fields_map.get("include_source_files") {
+                        let field_value = match fields_map.get("includeSourceFiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_source_files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeSourceFiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

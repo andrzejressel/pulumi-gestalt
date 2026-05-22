@@ -67,16 +67,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#include_import_ranges: {
-                        let field_value = match fields_map.get("include_import_ranges") {
+                        let field_value = match fields_map.get("includeImportRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_import_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeImportRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#site_to_site_data_transfer: {
-                        let field_value = match fields_map.get("site_to_site_data_transfer") {
+                        let field_value = match fields_map.get("siteToSiteDataTransfer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'site_to_site_data_transfer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'siteToSiteDataTransfer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

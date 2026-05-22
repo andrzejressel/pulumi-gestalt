@@ -99,9 +99,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#phase_id: {
-                        let field_value = match fields_map.get("phase_id") {
+                        let field_value = match fields_map.get("phaseId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'phase_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'phaseId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

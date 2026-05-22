@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#expiration_action: {
-                        let field_value = match fields_map.get("expiration_action") {
+                        let field_value = match fields_map.get("expirationAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiration_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expirationAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expiration_period: {
-                        let field_value = match fields_map.get("expiration_period") {
+                        let field_value = match fields_map.get("expirationPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiration_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expirationPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

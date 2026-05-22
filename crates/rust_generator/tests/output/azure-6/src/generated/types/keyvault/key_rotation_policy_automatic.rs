@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#time_after_creation: {
-                        let field_value = match fields_map.get("time_after_creation") {
+                        let field_value = match fields_map.get("timeAfterCreation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_after_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeAfterCreation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_before_expiry: {
-                        let field_value = match fields_map.get("time_before_expiry") {
+                        let field_value = match fields_map.get("timeBeforeExpiry") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_before_expiry' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeBeforeExpiry' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

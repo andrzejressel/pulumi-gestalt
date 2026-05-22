@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_type: {
-                        let field_value = match fields_map.get("identity_type") {
+                        let field_value = match fields_map.get("identityType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_restriction: {
-                        let field_value = match fields_map.get("source_restriction") {
+                        let field_value = match fields_map.get("sourceRestriction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_restriction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceRestriction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

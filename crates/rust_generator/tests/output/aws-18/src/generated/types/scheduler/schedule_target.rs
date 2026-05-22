@@ -131,23 +131,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dead_letter_config: {
-                        let field_value = match fields_map.get("dead_letter_config") {
+                        let field_value = match fields_map.get("deadLetterConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dead_letter_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deadLetterConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ecs_parameters: {
-                        let field_value = match fields_map.get("ecs_parameters") {
+                        let field_value = match fields_map.get("ecsParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ecs_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ecsParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#eventbridge_parameters: {
-                        let field_value = match fields_map.get("eventbridge_parameters") {
+                        let field_value = match fields_map.get("eventbridgeParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'eventbridge_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventbridgeParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -159,37 +159,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_parameters: {
-                        let field_value = match fields_map.get("kinesis_parameters") {
+                        let field_value = match fields_map.get("kinesisParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_policy: {
-                        let field_value = match fields_map.get("retry_policy") {
+                        let field_value = match fields_map.get("retryPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retry_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retryPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sagemaker_pipeline_parameters: {
-                        let field_value = match fields_map.get("sagemaker_pipeline_parameters") {
+                        let field_value = match fields_map.get("sagemakerPipelineParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sagemaker_pipeline_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sagemakerPipelineParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sqs_parameters: {
-                        let field_value = match fields_map.get("sqs_parameters") {
+                        let field_value = match fields_map.get("sqsParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sqs_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqsParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

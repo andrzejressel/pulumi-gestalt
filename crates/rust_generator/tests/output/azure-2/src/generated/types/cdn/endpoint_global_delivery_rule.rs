@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#cache_expiration_action: {
-                        let field_value = match fields_map.get("cache_expiration_action") {
+                        let field_value = match fields_map.get("cacheExpirationAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_expiration_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheExpirationAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_key_query_string_action: {
-                        let field_value = match fields_map.get("cache_key_query_string_action") {
+                        let field_value = match fields_map.get("cacheKeyQueryStringAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_key_query_string_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheKeyQueryStringAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#modify_request_header_actions: {
-                        let field_value = match fields_map.get("modify_request_header_actions") {
+                        let field_value = match fields_map.get("modifyRequestHeaderActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'modify_request_header_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modifyRequestHeaderActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#modify_response_header_actions: {
-                        let field_value = match fields_map.get("modify_response_header_actions") {
+                        let field_value = match fields_map.get("modifyResponseHeaderActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'modify_response_header_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modifyResponseHeaderActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_redirect_action: {
-                        let field_value = match fields_map.get("url_redirect_action") {
+                        let field_value = match fields_map.get("urlRedirectAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_redirect_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlRedirectAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_rewrite_action: {
-                        let field_value = match fields_map.get("url_rewrite_action") {
+                        let field_value = match fields_map.get("urlRewriteAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_rewrite_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlRewriteAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -80,30 +80,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#block_public_acls: {
-                        let field_value = match fields_map.get("block_public_acls") {
+                        let field_value = match fields_map.get("blockPublicAcls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_public_acls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockPublicAcls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#block_public_policy: {
-                        let field_value = match fields_map.get("block_public_policy") {
+                        let field_value = match fields_map.get("blockPublicPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_public_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockPublicPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_public_acls: {
-                        let field_value = match fields_map.get("ignore_public_acls") {
+                        let field_value = match fields_map.get("ignorePublicAcls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_public_acls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignorePublicAcls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restrict_public_buckets: {
-                        let field_value = match fields_map.get("restrict_public_buckets") {
+                        let field_value = match fields_map.get("restrictPublicBuckets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restrict_public_buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restrictPublicBuckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

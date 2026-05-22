@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#branch_name: {
-                        let field_value = match fields_map.get("branch_name") {
+                        let field_value = match fields_map.get("branchName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'branch_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'branchName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_deploy_time: {
-                        let field_value = match fields_map.get("last_deploy_time") {
+                        let field_value = match fields_map.get("lastDeployTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_deploy_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastDeployTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#thumbnail_url: {
-                        let field_value = match fields_map.get("thumbnail_url") {
+                        let field_value = match fields_map.get("thumbnailUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'thumbnail_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thumbnailUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

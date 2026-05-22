@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#effective_time: {
-                        let field_value = match fields_map.get("effective_time") {
+                        let field_value = match fields_map.get("effectiveTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_duration_seconds: {
-                        let field_value = match fields_map.get("retention_duration_seconds") {
+                        let field_value = match fields_map.get("retentionDurationSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_duration_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionDurationSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

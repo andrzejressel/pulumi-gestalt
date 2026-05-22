@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#ekm_connection_key_path: {
-                        let field_value = match fields_map.get("ekm_connection_key_path") {
+                        let field_value = match fields_map.get("ekmConnectionKeyPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ekm_connection_key_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ekmConnectionKeyPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_key_uri: {
-                        let field_value = match fields_map.get("external_key_uri") {
+                        let field_value = match fields_map.get("externalKeyUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_key_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalKeyUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

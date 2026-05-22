@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#window_start_time: {
-                        let field_value = match fields_map.get("window_start_time") {
+                        let field_value = match fields_map.get("windowStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'window_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

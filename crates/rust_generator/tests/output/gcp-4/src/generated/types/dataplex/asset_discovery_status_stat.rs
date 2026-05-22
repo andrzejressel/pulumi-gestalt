@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#data_items: {
-                        let field_value = match fields_map.get("data_items") {
+                        let field_value = match fields_map.get("dataItems") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_items' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataItems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_size: {
-                        let field_value = match fields_map.get("data_size") {
+                        let field_value = match fields_map.get("dataSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

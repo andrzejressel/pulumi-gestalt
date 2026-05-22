@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#app_boundary_key: {
-                        let field_value = match fields_map.get("app_boundary_key") {
+                        let field_value = match fields_map.get("appBoundaryKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_boundary_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appBoundaryKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_values: {
-                        let field_value = match fields_map.get("tag_values") {
+                        let field_value = match fields_map.get("tagValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

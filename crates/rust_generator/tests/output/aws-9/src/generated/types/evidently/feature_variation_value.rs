@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#bool_value: {
-                        let field_value = match fields_map.get("bool_value") {
+                        let field_value = match fields_map.get("boolValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bool_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'boolValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#double_value: {
-                        let field_value = match fields_map.get("double_value") {
+                        let field_value = match fields_map.get("doubleValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'double_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'doubleValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#long_value: {
-                        let field_value = match fields_map.get("long_value") {
+                        let field_value = match fields_map.get("longValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'long_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'longValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_value: {
-                        let field_value = match fields_map.get("string_value") {
+                        let field_value = match fields_map.get("stringValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

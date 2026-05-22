@@ -75,16 +75,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#header_required: {
-                        let field_value = match fields_map.get("header_required") {
+                        let field_value = match fields_map.get("headerRequired") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerRequired' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_separator: {
-                        let field_value = match fields_map.get("record_separator") {
+                        let field_value = match fields_map.get("recordSeparator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_separator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordSeparator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

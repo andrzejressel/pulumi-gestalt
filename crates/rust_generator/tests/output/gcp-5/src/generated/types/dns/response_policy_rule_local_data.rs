@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#local_datas: {
-                        let field_value = match fields_map.get("local_datas") {
+                        let field_value = match fields_map.get("localDatas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_datas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localDatas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

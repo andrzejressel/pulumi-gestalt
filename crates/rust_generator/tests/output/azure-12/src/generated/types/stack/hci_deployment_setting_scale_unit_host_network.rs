@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_auto_ip_enabled: {
-                        let field_value = match fields_map.get("storage_auto_ip_enabled") {
+                        let field_value = match fields_map.get("storageAutoIpEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_auto_ip_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAutoIpEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_connectivity_switchless_enabled: {
-                        let field_value = match fields_map.get("storage_connectivity_switchless_enabled") {
+                        let field_value = match fields_map.get("storageConnectivitySwitchlessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_connectivity_switchless_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageConnectivitySwitchlessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_networks: {
-                        let field_value = match fields_map.get("storage_networks") {
+                        let field_value = match fields_map.get("storageNetworks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_networks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageNetworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

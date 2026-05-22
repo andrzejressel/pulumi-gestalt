@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cdn_frontdoor_firewall_policy_id: {
-                        let field_value = match fields_map.get("cdn_frontdoor_firewall_policy_id") {
+                        let field_value = match fields_map.get("cdnFrontdoorFirewallPolicyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdn_frontdoor_firewall_policy_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdnFrontdoorFirewallPolicyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

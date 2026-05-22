@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#generic_web_service: {
-                        let field_value = match fields_map.get("generic_web_service") {
+                        let field_value = match fields_map.get("genericWebService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'generic_web_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'genericWebService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

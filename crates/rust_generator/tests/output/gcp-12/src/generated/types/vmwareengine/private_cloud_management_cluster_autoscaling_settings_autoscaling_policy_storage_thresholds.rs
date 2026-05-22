@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#scale_in: {
-                        let field_value = match fields_map.get("scale_in") {
+                        let field_value = match fields_map.get("scaleIn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_in' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleIn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_out: {
-                        let field_value = match fields_map.get("scale_out") {
+                        let field_value = match fields_map.get("scaleOut") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_out' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleOut' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

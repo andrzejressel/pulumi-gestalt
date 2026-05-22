@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_set_references: {
-                        let field_value = match fields_map.get("data_set_references") {
+                        let field_value = match fields_map.get("dataSetReferences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_set_references' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataSetReferences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

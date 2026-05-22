@@ -76,9 +76,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#interval_in_seconds: {
-                        let field_value = match fields_map.get("interval_in_seconds") {
+                        let field_value = match fields_map.get("intervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_type: {
-                        let field_value = match fields_map.get("request_type") {
+                        let field_value = match fields_map.get("requestType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

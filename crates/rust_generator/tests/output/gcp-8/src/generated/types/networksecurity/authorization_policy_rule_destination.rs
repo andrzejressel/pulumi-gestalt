@@ -83,9 +83,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_header_match: {
-                        let field_value = match fields_map.get("http_header_match") {
+                        let field_value = match fields_map.get("httpHeaderMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_header_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpHeaderMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

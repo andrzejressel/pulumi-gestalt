@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#seed_url_configuration: {
-                        let field_value = match fields_map.get("seed_url_configuration") {
+                        let field_value = match fields_map.get("seedUrlConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'seed_url_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'seedUrlConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#site_maps_configuration: {
-                        let field_value = match fields_map.get("site_maps_configuration") {
+                        let field_value = match fields_map.get("siteMapsConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'site_maps_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'siteMapsConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -103,37 +103,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#graceful_decommission_timeout: {
-                        let field_value = match fields_map.get("graceful_decommission_timeout") {
+                        let field_value = match fields_map.get("gracefulDecommissionTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'graceful_decommission_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gracefulDecommissionTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_factor: {
-                        let field_value = match fields_map.get("scale_down_factor") {
+                        let field_value = match fields_map.get("scaleDownFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_down_min_worker_fraction: {
-                        let field_value = match fields_map.get("scale_down_min_worker_fraction") {
+                        let field_value = match fields_map.get("scaleDownMinWorkerFraction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_down_min_worker_fraction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleDownMinWorkerFraction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_up_factor: {
-                        let field_value = match fields_map.get("scale_up_factor") {
+                        let field_value = match fields_map.get("scaleUpFactor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_up_factor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleUpFactor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_up_min_worker_fraction: {
-                        let field_value = match fields_map.get("scale_up_min_worker_fraction") {
+                        let field_value = match fields_map.get("scaleUpMinWorkerFraction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_up_min_worker_fraction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleUpMinWorkerFraction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

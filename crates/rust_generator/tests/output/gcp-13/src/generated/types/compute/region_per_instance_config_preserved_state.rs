@@ -84,16 +84,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_ips: {
-                        let field_value = match fields_map.get("external_ips") {
+                        let field_value = match fields_map.get("externalIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#internal_ips: {
-                        let field_value = match fields_map.get("internal_ips") {
+                        let field_value = match fields_map.get("internalIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'internal_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'internalIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

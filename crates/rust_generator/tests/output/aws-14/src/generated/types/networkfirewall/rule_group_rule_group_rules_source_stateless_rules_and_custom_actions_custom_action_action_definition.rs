@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#publish_metric_action: {
-                        let field_value = match fields_map.get("publish_metric_action") {
+                        let field_value = match fields_map.get("publishMetricAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_metric_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishMetricAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

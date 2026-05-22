@@ -114,30 +114,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#allow_single_column: {
-                        let field_value = match fields_map.get("allow_single_column") {
+                        let field_value = match fields_map.get("allowSingleColumn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_single_column' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowSingleColumn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#contains_header: {
-                        let field_value = match fields_map.get("contains_header") {
+                        let field_value = match fields_map.get("containsHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contains_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containsHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_datatype_configured: {
-                        let field_value = match fields_map.get("custom_datatype_configured") {
+                        let field_value = match fields_map.get("customDatatypeConfigured") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_datatype_configured' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customDatatypeConfigured' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_datatypes: {
-                        let field_value = match fields_map.get("custom_datatypes") {
+                        let field_value = match fields_map.get("customDatatypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_datatypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customDatatypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -149,9 +149,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_value_trimming: {
-                        let field_value = match fields_map.get("disable_value_trimming") {
+                        let field_value = match fields_map.get("disableValueTrimming") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_value_trimming' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableValueTrimming' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -163,9 +163,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#quote_symbol: {
-                        let field_value = match fields_map.get("quote_symbol") {
+                        let field_value = match fields_map.get("quoteSymbol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'quote_symbol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'quoteSymbol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

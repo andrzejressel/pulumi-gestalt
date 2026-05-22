@@ -112,9 +112,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#backup_window: {
-                        let field_value = match fields_map.get("backup_window") {
+                        let field_value = match fields_map.get("backupWindow") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_window' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupWindow' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,9 +126,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_config: {
-                        let field_value = match fields_map.get("encryption_config") {
+                        let field_value = match fields_map.get("encryptionConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -147,23 +147,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#quantity_based_retention: {
-                        let field_value = match fields_map.get("quantity_based_retention") {
+                        let field_value = match fields_map.get("quantityBasedRetention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'quantity_based_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'quantityBasedRetention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_based_retention: {
-                        let field_value = match fields_map.get("time_based_retention") {
+                        let field_value = match fields_map.get("timeBasedRetention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_based_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeBasedRetention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weekly_schedule: {
-                        let field_value = match fields_map.get("weekly_schedule") {
+                        let field_value = match fields_map.get("weeklySchedule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weekly_schedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weeklySchedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

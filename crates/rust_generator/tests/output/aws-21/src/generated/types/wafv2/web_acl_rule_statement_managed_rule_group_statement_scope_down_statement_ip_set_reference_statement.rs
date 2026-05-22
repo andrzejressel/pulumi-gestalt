@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_set_forwarded_ip_config: {
-                        let field_value = match fields_map.get("ip_set_forwarded_ip_config") {
+                        let field_value = match fields_map.get("ipSetForwardedIpConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_set_forwarded_ip_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipSetForwardedIpConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

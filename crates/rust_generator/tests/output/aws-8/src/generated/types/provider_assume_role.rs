@@ -121,9 +121,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_id: {
-                        let field_value = match fields_map.get("external_id") {
+                        let field_value = match fields_map.get("externalId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -135,30 +135,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_arns: {
-                        let field_value = match fields_map.get("policy_arns") {
+                        let field_value = match fields_map.get("policyArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_name: {
-                        let field_value = match fields_map.get("session_name") {
+                        let field_value = match fields_map.get("sessionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_identity: {
-                        let field_value = match fields_map.get("source_identity") {
+                        let field_value = match fields_map.get("sourceIdentity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_identity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceIdentity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -170,9 +170,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transitive_tag_keys: {
-                        let field_value = match fields_map.get("transitive_tag_keys") {
+                        let field_value = match fields_map.get("transitiveTagKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transitive_tag_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitiveTagKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

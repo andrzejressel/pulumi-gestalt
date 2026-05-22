@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#ekm_provisioning_error_domain: {
-                        let field_value = match fields_map.get("ekm_provisioning_error_domain") {
+                        let field_value = match fields_map.get("ekmProvisioningErrorDomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ekm_provisioning_error_domain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ekmProvisioningErrorDomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ekm_provisioning_error_mapping: {
-                        let field_value = match fields_map.get("ekm_provisioning_error_mapping") {
+                        let field_value = match fields_map.get("ekmProvisioningErrorMapping") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ekm_provisioning_error_mapping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ekmProvisioningErrorMapping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ekm_provisioning_state: {
-                        let field_value = match fields_map.get("ekm_provisioning_state") {
+                        let field_value = match fields_map.get("ekmProvisioningState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ekm_provisioning_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ekmProvisioningState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

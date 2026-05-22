@@ -87,9 +87,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#conversation_turns: {
-                        let field_value = match fields_map.get("conversation_turns") {
+                        let field_value = match fields_map.get("conversationTurns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'conversation_turns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conversationTurns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -108,16 +108,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#test_result: {
-                        let field_value = match fields_map.get("test_result") {
+                        let field_value = match fields_map.get("testResult") {
                             Some(value) => value,
-                            None => bail!("Missing field 'test_result' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'testResult' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#test_time: {
-                        let field_value = match fields_map.get("test_time") {
+                        let field_value = match fields_map.get("testTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'test_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'testTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

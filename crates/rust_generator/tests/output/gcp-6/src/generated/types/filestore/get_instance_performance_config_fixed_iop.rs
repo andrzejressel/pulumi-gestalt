@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#max_iops: {
-                        let field_value = match fields_map.get("max_iops") {
+                        let field_value = match fields_map.get("maxIops") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_iops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxIops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

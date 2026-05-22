@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#local_object_reference: {
-                        let field_value = match fields_map.get("local_object_reference") {
+                        let field_value = match fields_map.get("localObjectReference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_object_reference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localObjectReference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

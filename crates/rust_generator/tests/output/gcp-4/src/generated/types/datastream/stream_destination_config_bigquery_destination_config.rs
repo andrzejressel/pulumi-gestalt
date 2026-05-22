@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#append_only: {
-                        let field_value = match fields_map.get("append_only") {
+                        let field_value = match fields_map.get("appendOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'append_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appendOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_freshness: {
-                        let field_value = match fields_map.get("data_freshness") {
+                        let field_value = match fields_map.get("dataFreshness") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_freshness' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataFreshness' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,16 +112,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#single_target_dataset: {
-                        let field_value = match fields_map.get("single_target_dataset") {
+                        let field_value = match fields_map.get("singleTargetDataset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'single_target_dataset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'singleTargetDataset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_hierarchy_datasets: {
-                        let field_value = match fields_map.get("source_hierarchy_datasets") {
+                        let field_value = match fields_map.get("sourceHierarchyDatasets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_hierarchy_datasets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceHierarchyDatasets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

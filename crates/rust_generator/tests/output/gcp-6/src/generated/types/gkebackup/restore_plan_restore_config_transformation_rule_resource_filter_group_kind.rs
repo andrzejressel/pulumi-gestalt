@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#resource_group: {
-                        let field_value = match fields_map.get("resource_group") {
+                        let field_value = match fields_map.get("resourceGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_kind: {
-                        let field_value = match fields_map.get("resource_kind") {
+                        let field_value = match fields_map.get("resourceKind") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_kind' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceKind' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

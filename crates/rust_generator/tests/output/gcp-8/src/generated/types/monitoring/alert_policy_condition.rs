@@ -119,44 +119,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#condition_absent: {
-                        let field_value = match fields_map.get("condition_absent") {
+                        let field_value = match fields_map.get("conditionAbsent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_absent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionAbsent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#condition_matched_log: {
-                        let field_value = match fields_map.get("condition_matched_log") {
+                        let field_value = match fields_map.get("conditionMatchedLog") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_matched_log' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionMatchedLog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#condition_monitoring_query_language: {
-                        let field_value = match fields_map.get("condition_monitoring_query_language") {
+                        let field_value = match fields_map.get("conditionMonitoringQueryLanguage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_monitoring_query_language' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionMonitoringQueryLanguage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#condition_prometheus_query_language: {
-                        let field_value = match fields_map.get("condition_prometheus_query_language") {
+                        let field_value = match fields_map.get("conditionPrometheusQueryLanguage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_prometheus_query_language' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionPrometheusQueryLanguage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#condition_threshold: {
-                        let field_value = match fields_map.get("condition_threshold") {
+                        let field_value = match fields_map.get("conditionThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

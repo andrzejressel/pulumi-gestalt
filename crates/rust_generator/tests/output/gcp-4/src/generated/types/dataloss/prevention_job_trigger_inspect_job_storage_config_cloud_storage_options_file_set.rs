@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#regex_file_set: {
-                        let field_value = match fields_map.get("regex_file_set") {
+                        let field_value = match fields_map.get("regexFileSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regex_file_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regexFileSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

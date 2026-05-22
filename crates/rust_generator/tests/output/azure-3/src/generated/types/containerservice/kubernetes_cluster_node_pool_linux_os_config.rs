@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#swap_file_size_mb: {
-                        let field_value = match fields_map.get("swap_file_size_mb") {
+                        let field_value = match fields_map.get("swapFileSizeMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'swap_file_size_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'swapFileSizeMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sysctl_config: {
-                        let field_value = match fields_map.get("sysctl_config") {
+                        let field_value = match fields_map.get("sysctlConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sysctl_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sysctlConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transparent_huge_page_defrag: {
-                        let field_value = match fields_map.get("transparent_huge_page_defrag") {
+                        let field_value = match fields_map.get("transparentHugePageDefrag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transparent_huge_page_defrag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transparentHugePageDefrag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transparent_huge_page_enabled: {
-                        let field_value = match fields_map.get("transparent_huge_page_enabled") {
+                        let field_value = match fields_map.get("transparentHugePageEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transparent_huge_page_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transparentHugePageEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

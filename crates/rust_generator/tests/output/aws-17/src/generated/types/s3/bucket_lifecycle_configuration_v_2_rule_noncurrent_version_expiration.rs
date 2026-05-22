@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#newer_noncurrent_versions: {
-                        let field_value = match fields_map.get("newer_noncurrent_versions") {
+                        let field_value = match fields_map.get("newerNoncurrentVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'newer_noncurrent_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'newerNoncurrentVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#noncurrent_days: {
-                        let field_value = match fields_map.get("noncurrent_days") {
+                        let field_value = match fields_map.get("noncurrentDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'noncurrent_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noncurrentDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

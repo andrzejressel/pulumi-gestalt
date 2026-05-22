@@ -69,9 +69,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_disk: {
-                        let field_value = match fields_map.get("source_disk") {
+                        let field_value = match fields_map.get("sourceDisk") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_disk' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceDisk' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

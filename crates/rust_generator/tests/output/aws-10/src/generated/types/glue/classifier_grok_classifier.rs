@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_patterns: {
-                        let field_value = match fields_map.get("custom_patterns") {
+                        let field_value = match fields_map.get("customPatterns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_patterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customPatterns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#grok_pattern: {
-                        let field_value = match fields_map.get("grok_pattern") {
+                        let field_value = match fields_map.get("grokPattern") {
                             Some(value) => value,
-                            None => bail!("Missing field 'grok_pattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'grokPattern' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

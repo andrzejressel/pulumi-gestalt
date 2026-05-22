@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#endpoint_type: {
-                        let field_value = match fields_map.get("endpoint_type") {
+                        let field_value = match fields_map.get("endpointType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpce_id: {
-                        let field_value = match fields_map.get("vpce_id") {
+                        let field_value = match fields_map.get("vpceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpce_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_group_config: {
-                        let field_value = match fields_map.get("node_group_config") {
+                        let field_value = match fields_map.get("nodeGroupConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_group_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeGroupConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

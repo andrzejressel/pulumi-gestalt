@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#ca_certificate_access_url: {
-                        let field_value = match fields_map.get("ca_certificate_access_url") {
+                        let field_value = match fields_map.get("caCertificateAccessUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ca_certificate_access_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caCertificateAccessUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crl_access_urls: {
-                        let field_value = match fields_map.get("crl_access_urls") {
+                        let field_value = match fields_map.get("crlAccessUrls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crl_access_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crlAccessUrls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

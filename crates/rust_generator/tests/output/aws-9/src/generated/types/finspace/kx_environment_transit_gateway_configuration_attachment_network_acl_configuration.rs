@@ -90,23 +90,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#cidr_block: {
-                        let field_value = match fields_map.get("cidr_block") {
+                        let field_value = match fields_map.get("cidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#icmp_type_code: {
-                        let field_value = match fields_map.get("icmp_type_code") {
+                        let field_value = match fields_map.get("icmpTypeCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'icmp_type_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'icmpTypeCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_range: {
-                        let field_value = match fields_map.get("port_range") {
+                        let field_value = match fields_map.get("portRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -118,16 +118,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_action: {
-                        let field_value = match fields_map.get("rule_action") {
+                        let field_value = match fields_map.get("ruleAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_number: {
-                        let field_value = match fields_map.get("rule_number") {
+                        let field_value = match fields_map.get("ruleNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

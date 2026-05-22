@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#site_verification_state: {
-                        let field_value = match fields_map.get("site_verification_state") {
+                        let field_value = match fields_map.get("siteVerificationState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'site_verification_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'siteVerificationState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verify_time: {
-                        let field_value = match fields_map.get("verify_time") {
+                        let field_value = match fields_map.get("verifyTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verify_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifyTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

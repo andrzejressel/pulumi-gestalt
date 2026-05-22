@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#advanced_datapath_observability_config: {
-                        let field_value = match fields_map.get("advanced_datapath_observability_config") {
+                        let field_value = match fields_map.get("advancedDatapathObservabilityConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_datapath_observability_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedDatapathObservabilityConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_components: {
-                        let field_value = match fields_map.get("enable_components") {
+                        let field_value = match fields_map.get("enableComponents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_components' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableComponents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_prometheus: {
-                        let field_value = match fields_map.get("managed_prometheus") {
+                        let field_value = match fields_map.get("managedPrometheus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_prometheus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedPrometheus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

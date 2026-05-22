@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#endpoint_name: {
-                        let field_value = match fields_map.get("endpoint_name") {
+                        let field_value = match fields_map.get("endpointName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_path: {
-                        let field_value = match fields_map.get("local_path") {
+                        let field_value = match fields_map.get("localPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_data_distribution_type: {
-                        let field_value = match fields_map.get("s_3_data_distribution_type") {
+                        let field_value = match fields_map.get("s3DataDistributionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_data_distribution_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3DataDistributionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_input_mode: {
-                        let field_value = match fields_map.get("s_3_input_mode") {
+                        let field_value = match fields_map.get("s3InputMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_input_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3InputMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

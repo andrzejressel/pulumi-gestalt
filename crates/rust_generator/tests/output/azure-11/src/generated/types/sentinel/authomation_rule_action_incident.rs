@@ -111,9 +111,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#classification_comment: {
-                        let field_value = match fields_map.get("classification_comment") {
+                        let field_value = match fields_map.get("classificationComment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'classification_comment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'classificationComment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -132,9 +132,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#owner_id: {
-                        let field_value = match fields_map.get("owner_id") {
+                        let field_value = match fields_map.get("ownerId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'owner_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ownerId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -76,9 +76,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#command_keys: {
-                        let field_value = match fields_map.get("command_keys") {
+                        let field_value = match fields_map.get("commandKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'command_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commandKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#powershell_version: {
-                        let field_value = match fields_map.get("powershell_version") {
+                        let field_value = match fields_map.get("powershellVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'powershell_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'powershellVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

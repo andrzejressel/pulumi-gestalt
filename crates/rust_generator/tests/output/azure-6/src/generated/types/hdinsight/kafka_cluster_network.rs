@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#connection_direction: {
-                        let field_value = match fields_map.get("connection_direction") {
+                        let field_value = match fields_map.get("connectionDirection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_direction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionDirection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_link_enabled: {
-                        let field_value = match fields_map.get("private_link_enabled") {
+                        let field_value = match fields_map.get("privateLinkEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_link_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateLinkEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

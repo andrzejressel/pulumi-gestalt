@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#cluster_bootstrap_account_password: {
-                        let field_value = match fields_map.get("cluster_bootstrap_account_password") {
+                        let field_value = match fields_map.get("clusterBootstrapAccountPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_bootstrap_account_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterBootstrapAccountPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_operator_account_password: {
-                        let field_value = match fields_map.get("cluster_operator_account_password") {
+                        let field_value = match fields_map.get("clusterOperatorAccountPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_operator_account_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterOperatorAccountPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_service_account_password: {
-                        let field_value = match fields_map.get("sql_service_account_password") {
+                        let field_value = match fields_map.get("sqlServiceAccountPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_service_account_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlServiceAccountPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

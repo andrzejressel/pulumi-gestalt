@@ -104,37 +104,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#granted_value: {
-                        let field_value = match fields_map.get("granted_value") {
+                        let field_value = match fields_map.get("grantedValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'granted_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'grantedValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preferred_value: {
-                        let field_value = match fields_map.get("preferred_value") {
+                        let field_value = match fields_map.get("preferredValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preferred_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preferredValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_origin: {
-                        let field_value = match fields_map.get("request_origin") {
+                        let field_value = match fields_map.get("requestOrigin") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_origin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestOrigin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#state_detail: {
-                        let field_value = match fields_map.get("state_detail") {
+                        let field_value = match fields_map.get("stateDetail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'state_detail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stateDetail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trace_id: {
-                        let field_value = match fields_map.get("trace_id") {
+                        let field_value = match fields_map.get("traceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trace_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'traceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

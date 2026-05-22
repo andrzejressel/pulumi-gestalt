@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#launch_template_id: {
-                        let field_value = match fields_map.get("launch_template_id") {
+                        let field_value = match fields_map.get("launchTemplateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_template_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchTemplateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_template_name: {
-                        let field_value = match fields_map.get("launch_template_name") {
+                        let field_value = match fields_map.get("launchTemplateName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_template_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchTemplateName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

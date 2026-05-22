@@ -177,9 +177,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#accent_foreground: {
-                        let field_value = match fields_map.get("accent_foreground") {
+                        let field_value = match fields_map.get("accentForeground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accent_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accentForeground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -191,9 +191,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#danger_foreground: {
-                        let field_value = match fields_map.get("danger_foreground") {
+                        let field_value = match fields_map.get("dangerForeground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'danger_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dangerForeground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -205,9 +205,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dimension_foreground: {
-                        let field_value = match fields_map.get("dimension_foreground") {
+                        let field_value = match fields_map.get("dimensionForeground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dimension_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dimensionForeground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -219,37 +219,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#measure_foreground: {
-                        let field_value = match fields_map.get("measure_foreground") {
+                        let field_value = match fields_map.get("measureForeground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'measure_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'measureForeground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_background: {
-                        let field_value = match fields_map.get("primary_background") {
+                        let field_value = match fields_map.get("primaryBackground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_background' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryBackground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_foreground: {
-                        let field_value = match fields_map.get("primary_foreground") {
+                        let field_value = match fields_map.get("primaryForeground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryForeground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_background: {
-                        let field_value = match fields_map.get("secondary_background") {
+                        let field_value = match fields_map.get("secondaryBackground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_background' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryBackground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_foreground: {
-                        let field_value = match fields_map.get("secondary_foreground") {
+                        let field_value = match fields_map.get("secondaryForeground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryForeground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -261,9 +261,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_foreground: {
-                        let field_value = match fields_map.get("success_foreground") {
+                        let field_value = match fields_map.get("successForeground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successForeground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -275,9 +275,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#warning_foreground: {
-                        let field_value = match fields_map.get("warning_foreground") {
+                        let field_value = match fields_map.get("warningForeground") {
                             Some(value) => value,
-                            None => bail!("Missing field 'warning_foreground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'warningForeground' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

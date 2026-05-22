@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#agent_version: {
-                        let field_value = match fields_map.get("agent_version") {
+                        let field_value = match fields_map.get("agentVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'agent_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'agentVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provisioned_throughput: {
-                        let field_value = match fields_map.get("provisioned_throughput") {
+                        let field_value = match fields_map.get("provisionedThroughput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provisioned_throughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionedThroughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -83,30 +83,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#app_installation_id: {
-                        let field_value = match fields_map.get("app_installation_id") {
+                        let field_value = match fields_map.get("appInstallationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_installation_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appInstallationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authorizer_credential: {
-                        let field_value = match fields_map.get("authorizer_credential") {
+                        let field_value = match fields_map.get("authorizerCredential") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorizer_credential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizerCredential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#github_app: {
-                        let field_value = match fields_map.get("github_app") {
+                        let field_value = match fields_map.get("githubApp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'github_app' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'githubApp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#installation_uri: {
-                        let field_value = match fields_map.get("installation_uri") {
+                        let field_value = match fields_map.get("installationUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'installation_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'installationUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

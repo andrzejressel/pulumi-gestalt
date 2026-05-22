@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#enable_regex_in_path: {
-                        let field_value = match fields_map.get("enable_regex_in_path") {
+                        let field_value = match fields_map.get("enableRegexInPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_regex_in_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableRegexInPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#login_path: {
-                        let field_value = match fields_map.get("login_path") {
+                        let field_value = match fields_map.get("loginPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'login_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loginPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_inspection: {
-                        let field_value = match fields_map.get("request_inspection") {
+                        let field_value = match fields_map.get("requestInspection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_inspection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestInspection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_inspection: {
-                        let field_value = match fields_map.get("response_inspection") {
+                        let field_value = match fields_map.get("responseInspection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_inspection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseInspection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

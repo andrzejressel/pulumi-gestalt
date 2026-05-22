@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#disable_for_time: {
-                        let field_value = match fields_map.get("disable_for_time") {
+                        let field_value = match fields_map.get("disableForTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_for_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableForTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_ca: {
-                        let field_value = match fields_map.get("root_ca") {
+                        let field_value = match fields_map.get("rootCa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_ca' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootCa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_ip: {
-                        let field_value = match fields_map.get("virtual_ip") {
+                        let field_value = match fields_map.get("virtualIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

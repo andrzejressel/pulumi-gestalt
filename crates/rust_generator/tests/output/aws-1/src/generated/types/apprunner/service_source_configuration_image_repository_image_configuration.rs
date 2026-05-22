@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_environment_secrets: {
-                        let field_value = match fields_map.get("runtime_environment_secrets") {
+                        let field_value = match fields_map.get("runtimeEnvironmentSecrets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_environment_secrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimeEnvironmentSecrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_environment_variables: {
-                        let field_value = match fields_map.get("runtime_environment_variables") {
+                        let field_value = match fields_map.get("runtimeEnvironmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimeEnvironmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_command: {
-                        let field_value = match fields_map.get("start_command") {
+                        let field_value = match fields_map.get("startCommand") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_command' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startCommand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#authorizer_result_ttl_in_seconds: {
-                        let field_value = match fields_map.get("authorizer_result_ttl_in_seconds") {
+                        let field_value = match fields_map.get("authorizerResultTtlInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorizer_result_ttl_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizerResultTtlInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authorizer_uri: {
-                        let field_value = match fields_map.get("authorizer_uri") {
+                        let field_value = match fields_map.get("authorizerUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorizer_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizerUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_validation_expression: {
-                        let field_value = match fields_map.get("identity_validation_expression") {
+                        let field_value = match fields_map.get("identityValidationExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_validation_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityValidationExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

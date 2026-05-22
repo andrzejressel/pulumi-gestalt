@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#disabled_user_deletion: {
-                        let field_value = match fields_map.get("disabled_user_deletion") {
+                        let field_value = match fields_map.get("disabledUserDeletion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disabled_user_deletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disabledUserDeletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disabled_user_signup: {
-                        let field_value = match fields_map.get("disabled_user_signup") {
+                        let field_value = match fields_map.get("disabledUserSignup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disabled_user_signup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disabledUserSignup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

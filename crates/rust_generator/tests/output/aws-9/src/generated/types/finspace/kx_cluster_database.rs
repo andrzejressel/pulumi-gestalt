@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#cache_configurations: {
-                        let field_value = match fields_map.get("cache_configurations") {
+                        let field_value = match fields_map.get("cacheConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#changeset_id: {
-                        let field_value = match fields_map.get("changeset_id") {
+                        let field_value = match fields_map.get("changesetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'changeset_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'changesetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_name: {
-                        let field_value = match fields_map.get("database_name") {
+                        let field_value = match fields_map.get("databaseName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dataview_name: {
-                        let field_value = match fields_map.get("dataview_name") {
+                        let field_value = match fields_map.get("dataviewName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dataview_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataviewName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

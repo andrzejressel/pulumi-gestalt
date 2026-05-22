@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#kms_key_name: {
-                        let field_value = match fields_map.get("kms_key_name") {
+                        let field_value = match fields_map.get("kmsKeyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_version: {
-                        let field_value = match fields_map.get("kms_key_version") {
+                        let field_value = match fields_map.get("kmsKeyVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

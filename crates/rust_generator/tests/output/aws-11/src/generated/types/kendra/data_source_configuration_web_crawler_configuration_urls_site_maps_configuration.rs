@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#site_maps: {
-                        let field_value = match fields_map.get("site_maps") {
+                        let field_value = match fields_map.get("siteMaps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'site_maps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'siteMaps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

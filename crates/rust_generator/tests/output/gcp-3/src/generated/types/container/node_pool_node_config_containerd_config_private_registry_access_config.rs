@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#certificate_authority_domain_configs: {
-                        let field_value = match fields_map.get("certificate_authority_domain_configs") {
+                        let field_value = match fields_map.get("certificateAuthorityDomainConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_authority_domain_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateAuthorityDomainConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

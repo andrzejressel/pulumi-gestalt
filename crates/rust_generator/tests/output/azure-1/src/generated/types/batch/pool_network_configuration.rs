@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#accelerated_networking_enabled: {
-                        let field_value = match fields_map.get("accelerated_networking_enabled") {
+                        let field_value = match fields_map.get("acceleratedNetworkingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accelerated_networking_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceleratedNetworkingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dynamic_vnet_assignment_scope: {
-                        let field_value = match fields_map.get("dynamic_vnet_assignment_scope") {
+                        let field_value = match fields_map.get("dynamicVnetAssignmentScope") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_vnet_assignment_scope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicVnetAssignmentScope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#endpoint_configurations: {
-                        let field_value = match fields_map.get("endpoint_configurations") {
+                        let field_value = match fields_map.get("endpointConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_address_provisioning_type: {
-                        let field_value = match fields_map.get("public_address_provisioning_type") {
+                        let field_value = match fields_map.get("publicAddressProvisioningType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_address_provisioning_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicAddressProvisioningType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_ips: {
-                        let field_value = match fields_map.get("public_ips") {
+                        let field_value = match fields_map.get("publicIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_id: {
-                        let field_value = match fields_map.get("subnet_id") {
+                        let field_value = match fields_map.get("subnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

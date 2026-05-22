@@ -150,16 +150,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_by_email: {
-                        let field_value = match fields_map.get("group_by_email") {
+                        let field_value = match fields_map.get("groupByEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_by_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupByEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iam_member: {
-                        let field_value = match fields_map.get("iam_member") {
+                        let field_value = match fields_map.get("iamMember") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iam_member' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iamMember' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -178,16 +178,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#special_group: {
-                        let field_value = match fields_map.get("special_group") {
+                        let field_value = match fields_map.get("specialGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'special_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'specialGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_by_email: {
-                        let field_value = match fields_map.get("user_by_email") {
+                        let field_value = match fields_map.get("userByEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_by_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userByEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

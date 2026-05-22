@@ -84,30 +84,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#connection_pools: {
-                        let field_value = match fields_map.get("connection_pools") {
+                        let field_value = match fields_map.get("connectionPools") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionPools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_checks: {
-                        let field_value = match fields_map.get("health_checks") {
+                        let field_value = match fields_map.get("healthChecks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_checks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthChecks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outlier_detections: {
-                        let field_value = match fields_map.get("outlier_detections") {
+                        let field_value = match fields_map.get("outlierDetections") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outlier_detections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outlierDetections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_mappings: {
-                        let field_value = match fields_map.get("port_mappings") {
+                        let field_value = match fields_map.get("portMappings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_mappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portMappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

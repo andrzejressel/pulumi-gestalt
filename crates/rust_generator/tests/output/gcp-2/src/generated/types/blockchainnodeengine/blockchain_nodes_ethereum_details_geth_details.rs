@@ -53,9 +53,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#garbage_collection_mode: {
-                        let field_value = match fields_map.get("garbage_collection_mode") {
+                        let field_value = match fields_map.get("garbageCollectionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'garbage_collection_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'garbageCollectionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

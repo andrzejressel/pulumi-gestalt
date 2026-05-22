@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#fargate_ephemeral_storage_kms_key_id: {
-                        let field_value = match fields_map.get("fargate_ephemeral_storage_kms_key_id") {
+                        let field_value = match fields_map.get("fargateEphemeralStorageKmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fargate_ephemeral_storage_kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fargateEphemeralStorageKmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_id: {
-                        let field_value = match fields_map.get("kms_key_id") {
+                        let field_value = match fields_map.get("kmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

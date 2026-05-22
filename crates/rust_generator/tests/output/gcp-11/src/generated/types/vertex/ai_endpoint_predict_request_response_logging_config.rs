@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#bigquery_destination: {
-                        let field_value = match fields_map.get("bigquery_destination") {
+                        let field_value = match fields_map.get("bigqueryDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bigquery_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bigqueryDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -81,9 +81,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sampling_rate: {
-                        let field_value = match fields_map.get("sampling_rate") {
+                        let field_value = match fields_map.get("samplingRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sampling_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'samplingRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#source_bot_version: {
-                        let field_value = match fields_map.get("source_bot_version") {
+                        let field_value = match fields_map.get("sourceBotVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_bot_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceBotVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

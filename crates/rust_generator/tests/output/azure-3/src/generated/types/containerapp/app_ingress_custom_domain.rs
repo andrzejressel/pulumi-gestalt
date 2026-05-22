@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#certificate_binding_type: {
-                        let field_value = match fields_map.get("certificate_binding_type") {
+                        let field_value = match fields_map.get("certificateBindingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_binding_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateBindingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certificate_id: {
-                        let field_value = match fields_map.get("certificate_id") {
+                        let field_value = match fields_map.get("certificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

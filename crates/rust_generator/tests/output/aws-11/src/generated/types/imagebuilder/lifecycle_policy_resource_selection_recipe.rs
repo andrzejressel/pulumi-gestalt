@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#semantic_version: {
-                        let field_value = match fields_map.get("semantic_version") {
+                        let field_value = match fields_map.get("semanticVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'semantic_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'semanticVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

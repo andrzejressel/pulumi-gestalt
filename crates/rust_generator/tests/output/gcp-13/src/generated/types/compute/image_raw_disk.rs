@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#container_type: {
-                        let field_value = match fields_map.get("container_type") {
+                        let field_value = match fields_map.get("containerType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sha_1: {
-                        let field_value = match fields_map.get("sha_1") {
+                        let field_value = match fields_map.get("sha1") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sha_1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sha1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

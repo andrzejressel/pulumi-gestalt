@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#case_insensitive: {
-                        let field_value = match fields_map.get("case_insensitive") {
+                        let field_value = match fields_map.get("caseInsensitive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'case_insensitive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caseInsensitive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#column_to_json_key_mappings: {
-                        let field_value = match fields_map.get("column_to_json_key_mappings") {
+                        let field_value = match fields_map.get("columnToJsonKeyMappings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'column_to_json_key_mappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'columnToJsonKeyMappings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#convert_dots_in_json_keys_to_underscores: {
-                        let field_value = match fields_map.get("convert_dots_in_json_keys_to_underscores") {
+                        let field_value = match fields_map.get("convertDotsInJsonKeysToUnderscores") {
                             Some(value) => value,
-                            None => bail!("Missing field 'convert_dots_in_json_keys_to_underscores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'convertDotsInJsonKeysToUnderscores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

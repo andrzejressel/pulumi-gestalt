@@ -132,16 +132,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#admin_enabled: {
-                        let field_value = match fields_map.get("admin_enabled") {
+                        let field_value = match fields_map.get("adminEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'admin_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adminEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connector_type: {
-                        let field_value = match fields_map.get("connector_type") {
+                        let field_value = match fields_map.get("connectorType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connector_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectorType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -153,58 +153,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#interface_name: {
-                        let field_value = match fields_map.get("interface_name") {
+                        let field_value = match fields_map.get("interfaceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'interface_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'interfaceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#macsec_cak_keyvault_secret_id: {
-                        let field_value = match fields_map.get("macsec_cak_keyvault_secret_id") {
+                        let field_value = match fields_map.get("macsecCakKeyvaultSecretId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'macsec_cak_keyvault_secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'macsecCakKeyvaultSecretId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#macsec_cipher: {
-                        let field_value = match fields_map.get("macsec_cipher") {
+                        let field_value = match fields_map.get("macsecCipher") {
                             Some(value) => value,
-                            None => bail!("Missing field 'macsec_cipher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'macsecCipher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#macsec_ckn_keyvault_secret_id: {
-                        let field_value = match fields_map.get("macsec_ckn_keyvault_secret_id") {
+                        let field_value = match fields_map.get("macsecCknKeyvaultSecretId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'macsec_ckn_keyvault_secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'macsecCknKeyvaultSecretId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#macsec_sci_enabled: {
-                        let field_value = match fields_map.get("macsec_sci_enabled") {
+                        let field_value = match fields_map.get("macsecSciEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'macsec_sci_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'macsecSciEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#patch_panel_id: {
-                        let field_value = match fields_map.get("patch_panel_id") {
+                        let field_value = match fields_map.get("patchPanelId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'patch_panel_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'patchPanelId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rack_id: {
-                        let field_value = match fields_map.get("rack_id") {
+                        let field_value = match fields_map.get("rackId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rack_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rackId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#router_name: {
-                        let field_value = match fields_map.get("router_name") {
+                        let field_value = match fields_map.get("routerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'router_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

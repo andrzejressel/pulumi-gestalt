@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#cert_infos: {
-                        let field_value = match fields_map.get("cert_infos") {
+                        let field_value = match fields_map.get("certInfos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cert_infos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certInfos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

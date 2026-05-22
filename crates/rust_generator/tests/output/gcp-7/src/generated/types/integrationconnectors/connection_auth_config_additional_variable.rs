@@ -92,23 +92,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#boolean_value: {
-                        let field_value = match fields_map.get("boolean_value") {
+                        let field_value = match fields_map.get("booleanValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'boolean_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'booleanValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_key_value: {
-                        let field_value = match fields_map.get("encryption_key_value") {
+                        let field_value = match fields_map.get("encryptionKeyValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_key_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionKeyValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#integer_value: {
-                        let field_value = match fields_map.get("integer_value") {
+                        let field_value = match fields_map.get("integerValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'integer_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'integerValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,16 +120,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_value: {
-                        let field_value = match fields_map.get("secret_value") {
+                        let field_value = match fields_map.get("secretValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#string_value: {
-                        let field_value = match fields_map.get("string_value") {
+                        let field_value = match fields_map.get("stringValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'string_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stringValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -70,9 +70,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#map_block_key: {
-                        let field_value = match fields_map.get("map_block_key") {
+                        let field_value = match fields_map.get("mapBlockKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'map_block_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mapBlockKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -84,16 +84,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_identifier: {
-                        let field_value = match fields_map.get("type_identifier") {
+                        let field_value = match fields_map.get("typeIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'typeIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_revision: {
-                        let field_value = match fields_map.get("type_revision") {
+                        let field_value = match fields_map.get("typeRevision") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_revision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'typeRevision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

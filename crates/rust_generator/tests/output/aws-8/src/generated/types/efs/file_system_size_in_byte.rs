@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_in_ia: {
-                        let field_value = match fields_map.get("value_in_ia") {
+                        let field_value = match fields_map.get("valueInIa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_in_ia' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueInIa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_in_standard: {
-                        let field_value = match fields_map.get("value_in_standard") {
+                        let field_value = match fields_map.get("valueInStandard") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_in_standard' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueInStandard' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

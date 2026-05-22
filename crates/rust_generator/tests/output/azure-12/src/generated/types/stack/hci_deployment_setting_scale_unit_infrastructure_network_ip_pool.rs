@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#ending_address: {
-                        let field_value = match fields_map.get("ending_address") {
+                        let field_value = match fields_map.get("endingAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ending_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endingAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#starting_address: {
-                        let field_value = match fields_map.get("starting_address") {
+                        let field_value = match fields_map.get("startingAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'starting_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startingAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

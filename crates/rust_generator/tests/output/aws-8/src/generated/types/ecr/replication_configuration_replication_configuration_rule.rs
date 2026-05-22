@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repository_filters: {
-                        let field_value = match fields_map.get("repository_filters") {
+                        let field_value = match fields_map.get("repositoryFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repository_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repositoryFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

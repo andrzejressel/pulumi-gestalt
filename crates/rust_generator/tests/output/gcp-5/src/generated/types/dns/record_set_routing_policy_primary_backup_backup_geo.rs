@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#health_checked_targets: {
-                        let field_value = match fields_map.get("health_checked_targets") {
+                        let field_value = match fields_map.get("healthCheckedTargets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_checked_targets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthCheckedTargets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

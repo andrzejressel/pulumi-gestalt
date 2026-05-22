@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_definition_reference_id: {
-                        let field_value = match fields_map.get("policy_definition_reference_id") {
+                        let field_value = match fields_map.get("policyDefinitionReferenceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_definition_reference_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyDefinitionReferenceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

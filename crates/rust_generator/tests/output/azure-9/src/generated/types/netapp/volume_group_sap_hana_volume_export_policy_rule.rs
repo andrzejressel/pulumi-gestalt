@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#allowed_clients: {
-                        let field_value = match fields_map.get("allowed_clients") {
+                        let field_value = match fields_map.get("allowedClients") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_clients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedClients' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfsv_3_enabled: {
-                        let field_value = match fields_map.get("nfsv_3_enabled") {
+                        let field_value = match fields_map.get("nfsv3Enabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nfsv_3_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nfsv3Enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfsv_41_enabled: {
-                        let field_value = match fields_map.get("nfsv_41_enabled") {
+                        let field_value = match fields_map.get("nfsv41Enabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nfsv_41_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nfsv41Enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_access_enabled: {
-                        let field_value = match fields_map.get("root_access_enabled") {
+                        let field_value = match fields_map.get("rootAccessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootAccessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_index: {
-                        let field_value = match fields_map.get("rule_index") {
+                        let field_value = match fields_map.get("ruleIndex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_index' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleIndex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unix_read_only: {
-                        let field_value = match fields_map.get("unix_read_only") {
+                        let field_value = match fields_map.get("unixReadOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unix_read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unixReadOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unix_read_write: {
-                        let field_value = match fields_map.get("unix_read_write") {
+                        let field_value = match fields_map.get("unixReadWrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unix_read_write' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unixReadWrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

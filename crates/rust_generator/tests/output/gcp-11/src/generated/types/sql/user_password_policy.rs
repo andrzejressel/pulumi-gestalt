@@ -81,30 +81,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#allowed_failed_attempts: {
-                        let field_value = match fields_map.get("allowed_failed_attempts") {
+                        let field_value = match fields_map.get("allowedFailedAttempts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_failed_attempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedFailedAttempts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_failed_attempts_check: {
-                        let field_value = match fields_map.get("enable_failed_attempts_check") {
+                        let field_value = match fields_map.get("enableFailedAttemptsCheck") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_failed_attempts_check' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableFailedAttemptsCheck' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_password_verification: {
-                        let field_value = match fields_map.get("enable_password_verification") {
+                        let field_value = match fields_map.get("enablePasswordVerification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_password_verification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePasswordVerification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_expiration_duration: {
-                        let field_value = match fields_map.get("password_expiration_duration") {
+                        let field_value = match fields_map.get("passwordExpirationDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_expiration_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordExpirationDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

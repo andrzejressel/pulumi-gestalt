@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_ip_lists: {
-                        let field_value = match fields_map.get("remote_ip_lists") {
+                        let field_value = match fields_map.get("remoteIpLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_ip_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remoteIpLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

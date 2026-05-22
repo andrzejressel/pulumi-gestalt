@@ -79,30 +79,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#max_nodes: {
-                        let field_value = match fields_map.get("max_nodes") {
+                        let field_value = match fields_map.get("maxNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_processing_units: {
-                        let field_value = match fields_map.get("max_processing_units") {
+                        let field_value = match fields_map.get("maxProcessingUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_processing_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxProcessingUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_nodes: {
-                        let field_value = match fields_map.get("min_nodes") {
+                        let field_value = match fields_map.get("minNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_processing_units: {
-                        let field_value = match fields_map.get("min_processing_units") {
+                        let field_value = match fields_map.get("minProcessingUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_processing_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minProcessingUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

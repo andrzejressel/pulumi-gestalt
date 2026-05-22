@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#recording_mode: {
-                        let field_value = match fields_map.get("recording_mode") {
+                        let field_value = match fields_map.get("recordingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recording_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_interval_seconds: {
-                        let field_value = match fields_map.get("target_interval_seconds") {
+                        let field_value = match fields_map.get("targetIntervalSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_interval_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetIntervalSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

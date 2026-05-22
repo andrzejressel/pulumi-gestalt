@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#log_analytics_workspace_id: {
-                        let field_value = match fields_map.get("log_analytics_workspace_id") {
+                        let field_value = match fields_map.get("logAnalyticsWorkspaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_analytics_workspace_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logAnalyticsWorkspaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_key: {
-                        let field_value = match fields_map.get("primary_key") {
+                        let field_value = match fields_map.get("primaryKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

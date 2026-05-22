@@ -114,65 +114,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#cert_sign: {
-                        let field_value = match fields_map.get("cert_sign") {
+                        let field_value = match fields_map.get("certSign") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cert_sign' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certSign' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_commitment: {
-                        let field_value = match fields_map.get("content_commitment") {
+                        let field_value = match fields_map.get("contentCommitment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_commitment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentCommitment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crl_sign: {
-                        let field_value = match fields_map.get("crl_sign") {
+                        let field_value = match fields_map.get("crlSign") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crl_sign' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crlSign' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_encipherment: {
-                        let field_value = match fields_map.get("data_encipherment") {
+                        let field_value = match fields_map.get("dataEncipherment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_encipherment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataEncipherment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#decipher_only: {
-                        let field_value = match fields_map.get("decipher_only") {
+                        let field_value = match fields_map.get("decipherOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'decipher_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'decipherOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#digital_signature: {
-                        let field_value = match fields_map.get("digital_signature") {
+                        let field_value = match fields_map.get("digitalSignature") {
                             Some(value) => value,
-                            None => bail!("Missing field 'digital_signature' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'digitalSignature' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encipher_only: {
-                        let field_value = match fields_map.get("encipher_only") {
+                        let field_value = match fields_map.get("encipherOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encipher_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encipherOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_agreement: {
-                        let field_value = match fields_map.get("key_agreement") {
+                        let field_value = match fields_map.get("keyAgreement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_agreement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyAgreement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_encipherment: {
-                        let field_value = match fields_map.get("key_encipherment") {
+                        let field_value = match fields_map.get("keyEncipherment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_encipherment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyEncipherment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

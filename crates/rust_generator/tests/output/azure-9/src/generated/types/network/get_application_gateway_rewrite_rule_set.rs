@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rewrite_rules: {
-                        let field_value = match fields_map.get("rewrite_rules") {
+                        let field_value = match fields_map.get("rewriteRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rewrite_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rewriteRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

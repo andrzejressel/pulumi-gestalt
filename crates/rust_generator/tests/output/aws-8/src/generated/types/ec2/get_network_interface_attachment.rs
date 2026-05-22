@@ -70,30 +70,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#attachment_id: {
-                        let field_value = match fields_map.get("attachment_id") {
+                        let field_value = match fields_map.get("attachmentId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attachment_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attachmentId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_index: {
-                        let field_value = match fields_map.get("device_index") {
+                        let field_value = match fields_map.get("deviceIndex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_index' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceIndex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_id: {
-                        let field_value = match fields_map.get("instance_id") {
+                        let field_value = match fields_map.get("instanceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_owner_id: {
-                        let field_value = match fields_map.get("instance_owner_id") {
+                        let field_value = match fields_map.get("instanceOwnerId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_owner_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceOwnerId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#batch_transform_input: {
-                        let field_value = match fields_map.get("batch_transform_input") {
+                        let field_value = match fields_map.get("batchTransformInput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_transform_input' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchTransformInput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#endpoint_input: {
-                        let field_value = match fields_map.get("endpoint_input") {
+                        let field_value = match fields_map.get("endpointInput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_input' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointInput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

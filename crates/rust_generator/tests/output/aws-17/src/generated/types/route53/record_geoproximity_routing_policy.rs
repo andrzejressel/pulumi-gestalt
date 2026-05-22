@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#aws_region: {
-                        let field_value = match fields_map.get("aws_region") {
+                        let field_value = match fields_map.get("awsRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_zone_group: {
-                        let field_value = match fields_map.get("local_zone_group") {
+                        let field_value = match fields_map.get("localZoneGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_zone_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localZoneGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

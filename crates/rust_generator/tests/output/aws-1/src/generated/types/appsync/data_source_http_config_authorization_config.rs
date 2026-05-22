@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#authorization_type: {
-                        let field_value = match fields_map.get("authorization_type") {
+                        let field_value = match fields_map.get("authorizationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorization_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aws_iam_config: {
-                        let field_value = match fields_map.get("aws_iam_config") {
+                        let field_value = match fields_map.get("awsIamConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_iam_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsIamConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

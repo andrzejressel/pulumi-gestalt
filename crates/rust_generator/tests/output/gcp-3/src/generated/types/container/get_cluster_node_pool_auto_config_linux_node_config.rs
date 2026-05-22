@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#cgroup_mode: {
-                        let field_value = match fields_map.get("cgroup_mode") {
+                        let field_value = match fields_map.get("cgroupMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cgroup_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cgroupMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

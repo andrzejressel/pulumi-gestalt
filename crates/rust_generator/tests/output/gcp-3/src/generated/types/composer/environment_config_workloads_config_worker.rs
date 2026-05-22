@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_count: {
-                        let field_value = match fields_map.get("max_count") {
+                        let field_value = match fields_map.get("maxCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_gb: {
-                        let field_value = match fields_map.get("memory_gb") {
+                        let field_value = match fields_map.get("memoryGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_count: {
-                        let field_value = match fields_map.get("min_count") {
+                        let field_value = match fields_map.get("minCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_gb: {
-                        let field_value = match fields_map.get("storage_gb") {
+                        let field_value = match fields_map.get("storageGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

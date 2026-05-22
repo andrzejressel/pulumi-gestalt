@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#idle_ttl: {
-                        let field_value = match fields_map.get("idle_ttl") {
+                        let field_value = match fields_map.get("idleTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_ttl: {
-                        let field_value = match fields_map.get("maximum_ttl") {
+                        let field_value = match fields_map.get("maximumTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

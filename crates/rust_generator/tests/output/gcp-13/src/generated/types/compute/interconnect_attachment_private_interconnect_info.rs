@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#tag_8021_q: {
-                        let field_value = match fields_map.get("tag_8021_q") {
+                        let field_value = match fields_map.get("tag8021q") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_8021_q' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tag8021q' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

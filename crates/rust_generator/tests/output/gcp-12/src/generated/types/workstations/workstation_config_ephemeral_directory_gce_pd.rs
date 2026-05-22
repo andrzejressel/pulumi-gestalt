@@ -79,30 +79,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#disk_type: {
-                        let field_value = match fields_map.get("disk_type") {
+                        let field_value = match fields_map.get("diskType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_only: {
-                        let field_value = match fields_map.get("read_only") {
+                        let field_value = match fields_map.get("readOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_image: {
-                        let field_value = match fields_map.get("source_image") {
+                        let field_value = match fields_map.get("sourceImage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_image' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceImage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_snapshot: {
-                        let field_value = match fields_map.get("source_snapshot") {
+                        let field_value = match fields_map.get("sourceSnapshot") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_snapshot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceSnapshot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#maximum_bitrate: {
-                        let field_value = match fields_map.get("maximum_bitrate") {
+                        let field_value = match fields_map.get("maximumBitrate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumBitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_bitrate: {
-                        let field_value = match fields_map.get("minimum_bitrate") {
+                        let field_value = match fields_map.get("minimumBitrate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumBitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

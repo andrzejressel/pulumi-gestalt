@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#efs_file_location: {
-                        let field_value = match fields_map.get("efs_file_location") {
+                        let field_value = match fields_map.get("efsFileLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'efs_file_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'efsFileLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_file_location: {
-                        let field_value = match fields_map.get("s_3_file_location") {
+                        let field_value = match fields_map.get("s3FileLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_file_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3FileLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

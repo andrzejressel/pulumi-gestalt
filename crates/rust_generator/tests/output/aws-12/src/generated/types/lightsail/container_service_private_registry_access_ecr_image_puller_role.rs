@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#is_active: {
-                        let field_value = match fields_map.get("is_active") {
+                        let field_value = match fields_map.get("isActive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_active' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isActive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#principal_arn: {
-                        let field_value = match fields_map.get("principal_arn") {
+                        let field_value = match fields_map.get("principalArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'principal_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'principalArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

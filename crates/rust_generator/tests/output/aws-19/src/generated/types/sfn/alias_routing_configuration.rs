@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#state_machine_version_arn: {
-                        let field_value = match fields_map.get("state_machine_version_arn") {
+                        let field_value = match fields_map.get("stateMachineVersionArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'state_machine_version_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stateMachineVersionArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

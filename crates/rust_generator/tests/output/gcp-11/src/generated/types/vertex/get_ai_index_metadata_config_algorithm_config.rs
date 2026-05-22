@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#brute_force_configs: {
-                        let field_value = match fields_map.get("brute_force_configs") {
+                        let field_value = match fields_map.get("bruteForceConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'brute_force_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bruteForceConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tree_ah_configs: {
-                        let field_value = match fields_map.get("tree_ah_configs") {
+                        let field_value = match fields_map.get("treeAhConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tree_ah_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'treeAhConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

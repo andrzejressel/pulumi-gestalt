@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#concurrent_execution_rate_percentage: {
-                        let field_value = match fields_map.get("concurrent_execution_rate_percentage") {
+                        let field_value = match fields_map.get("concurrentExecutionRatePercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'concurrent_execution_rate_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'concurrentExecutionRatePercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#error_percentage: {
-                        let field_value = match fields_map.get("error_percentage") {
+                        let field_value = match fields_map.get("errorPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'error_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'errorPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

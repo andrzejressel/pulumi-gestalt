@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#human_loop_activation_conditions: {
-                        let field_value = match fields_map.get("human_loop_activation_conditions") {
+                        let field_value = match fields_map.get("humanLoopActivationConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'human_loop_activation_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'humanLoopActivationConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

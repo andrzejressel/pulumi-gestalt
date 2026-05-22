@@ -72,23 +72,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#client_validation_cas: {
-                        let field_value = match fields_map.get("client_validation_cas") {
+                        let field_value = match fields_map.get("clientValidationCas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_validation_cas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientValidationCas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_validation_mode: {
-                        let field_value = match fields_map.get("client_validation_mode") {
+                        let field_value = match fields_map.get("clientValidationMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_validation_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientValidationMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_validation_trust_config: {
-                        let field_value = match fields_map.get("client_validation_trust_config") {
+                        let field_value = match fields_map.get("clientValidationTrustConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_validation_trust_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientValidationTrustConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

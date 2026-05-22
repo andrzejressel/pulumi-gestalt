@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#immutable_backups_enabled: {
-                        let field_value = match fields_map.get("immutable_backups_enabled") {
+                        let field_value = match fields_map.get("immutableBackupsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'immutable_backups_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'immutableBackupsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monthly_retention: {
-                        let field_value = match fields_map.get("monthly_retention") {
+                        let field_value = match fields_map.get("monthlyRetention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monthly_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monthlyRetention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#week_of_year: {
-                        let field_value = match fields_map.get("week_of_year") {
+                        let field_value = match fields_map.get("weekOfYear") {
                             Some(value) => value,
-                            None => bail!("Missing field 'week_of_year' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weekOfYear' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weekly_retention: {
-                        let field_value = match fields_map.get("weekly_retention") {
+                        let field_value = match fields_map.get("weeklyRetention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weekly_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weeklyRetention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#yearly_retention: {
-                        let field_value = match fields_map.get("yearly_retention") {
+                        let field_value = match fields_map.get("yearlyRetention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'yearly_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'yearlyRetention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -84,30 +84,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#authentication_token_secret_version: {
-                        let field_value = match fields_map.get("authentication_token_secret_version") {
+                        let field_value = match fields_map.get("authenticationTokenSecretVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_token_secret_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationTokenSecretVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_branch: {
-                        let field_value = match fields_map.get("default_branch") {
+                        let field_value = match fields_map.get("defaultBranch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_branch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultBranch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssh_authentication_config: {
-                        let field_value = match fields_map.get("ssh_authentication_config") {
+                        let field_value = match fields_map.get("sshAuthenticationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssh_authentication_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sshAuthenticationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_status: {
-                        let field_value = match fields_map.get("token_status") {
+                        let field_value = match fields_map.get("tokenStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

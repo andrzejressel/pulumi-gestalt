@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#request_parameter_key: {
-                        let field_value = match fields_map.get("request_parameter_key") {
+                        let field_value = match fields_map.get("requestParameterKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_parameter_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestParameterKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#accept_eula: {
-                        let field_value = match fields_map.get("accept_eula") {
+                        let field_value = match fields_map.get("acceptEula") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accept_eula' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceptEula' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

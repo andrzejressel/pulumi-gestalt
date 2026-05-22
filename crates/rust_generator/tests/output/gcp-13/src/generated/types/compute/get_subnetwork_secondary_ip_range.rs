@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#ip_cidr_range: {
-                        let field_value = match fields_map.get("ip_cidr_range") {
+                        let field_value = match fields_map.get("ipCidrRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_cidr_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipCidrRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_name: {
-                        let field_value = match fields_map.get("range_name") {
+                        let field_value = match fields_map.get("rangeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

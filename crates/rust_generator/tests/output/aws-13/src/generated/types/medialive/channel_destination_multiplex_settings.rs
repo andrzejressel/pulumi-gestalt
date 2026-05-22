@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#multiplex_id: {
-                        let field_value = match fields_map.get("multiplex_id") {
+                        let field_value = match fields_map.get("multiplexId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multiplex_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multiplexId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#program_name: {
-                        let field_value = match fields_map.get("program_name") {
+                        let field_value = match fields_map.get("programName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'program_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'programName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

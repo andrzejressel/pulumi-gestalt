@@ -84,44 +84,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#auth_mechanism: {
-                        let field_value = match fields_map.get("auth_mechanism") {
+                        let field_value = match fields_map.get("authMechanism") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_mechanism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authMechanism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_source: {
-                        let field_value = match fields_map.get("auth_source") {
+                        let field_value = match fields_map.get("authSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_type: {
-                        let field_value = match fields_map.get("auth_type") {
+                        let field_value = match fields_map.get("authType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#docs_to_investigate: {
-                        let field_value = match fields_map.get("docs_to_investigate") {
+                        let field_value = match fields_map.get("docsToInvestigate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docs_to_investigate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'docsToInvestigate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extract_doc_id: {
-                        let field_value = match fields_map.get("extract_doc_id") {
+                        let field_value = match fields_map.get("extractDocId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extract_doc_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extractDocId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nesting_level: {
-                        let field_value = match fields_map.get("nesting_level") {
+                        let field_value = match fields_map.get("nestingLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nesting_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nestingLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

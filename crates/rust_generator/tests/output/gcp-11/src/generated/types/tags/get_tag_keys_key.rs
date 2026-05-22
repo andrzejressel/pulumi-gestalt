@@ -116,9 +116,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#create_time: {
-                        let field_value = match fields_map.get("create_time") {
+                        let field_value = match fields_map.get("createTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -137,9 +137,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#namespaced_name: {
-                        let field_value = match fields_map.get("namespaced_name") {
+                        let field_value = match fields_map.get("namespacedName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'namespaced_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namespacedName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -158,23 +158,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#purpose_data: {
-                        let field_value = match fields_map.get("purpose_data") {
+                        let field_value = match fields_map.get("purposeData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'purpose_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'purposeData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#short_name: {
-                        let field_value = match fields_map.get("short_name") {
+                        let field_value = match fields_map.get("shortName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'short_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shortName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#update_time: {
-                        let field_value = match fields_map.get("update_time") {
+                        let field_value = match fields_map.get("updateTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'update_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updateTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

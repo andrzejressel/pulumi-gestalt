@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#enable_components: {
-                        let field_value = match fields_map.get("enable_components") {
+                        let field_value = match fields_map.get("enableComponents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_components' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableComponents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

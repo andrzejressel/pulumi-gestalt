@@ -89,16 +89,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failover_mode: {
-                        let field_value = match fields_map.get("failover_mode") {
+                        let field_value = match fields_map.get("failoverMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failover_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failoverMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#readable_secondary: {
-                        let field_value = match fields_map.get("readable_secondary") {
+                        let field_value = match fields_map.get("readableSecondary") {
                             Some(value) => value,
-                            None => bail!("Missing field 'readable_secondary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readableSecondary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_virtual_machine_id: {
-                        let field_value = match fields_map.get("sql_virtual_machine_id") {
+                        let field_value = match fields_map.get("sqlVirtualMachineId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_virtual_machine_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlVirtualMachineId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

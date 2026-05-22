@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#access_key_id: {
-                        let field_value = match fields_map.get("access_key_id") {
+                        let field_value = match fields_map.get("accessKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_access_key: {
-                        let field_value = match fields_map.get("secret_access_key") {
+                        let field_value = match fields_map.get("secretAccessKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_access_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretAccessKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

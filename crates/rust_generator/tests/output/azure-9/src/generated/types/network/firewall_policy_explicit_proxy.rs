@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#enable_pac_file: {
-                        let field_value = match fields_map.get("enable_pac_file") {
+                        let field_value = match fields_map.get("enablePacFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_pac_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePacFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,30 +104,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_port: {
-                        let field_value = match fields_map.get("http_port") {
+                        let field_value = match fields_map.get("httpPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#https_port: {
-                        let field_value = match fields_map.get("https_port") {
+                        let field_value = match fields_map.get("httpsPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'https_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpsPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pac_file: {
-                        let field_value = match fields_map.get("pac_file") {
+                        let field_value = match fields_map.get("pacFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pac_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pacFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pac_file_port: {
-                        let field_value = match fields_map.get("pac_file_port") {
+                        let field_value = match fields_map.get("pacFilePort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pac_file_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pacFilePort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

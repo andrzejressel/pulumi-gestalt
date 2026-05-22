@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#log_destination_configs: {
-                        let field_value = match fields_map.get("log_destination_configs") {
+                        let field_value = match fields_map.get("logDestinationConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_destination_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logDestinationConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

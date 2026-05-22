@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#attribute_matching_model: {
-                        let field_value = match fields_map.get("attribute_matching_model") {
+                        let field_value = match fields_map.get("attributeMatchingModel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attribute_matching_model' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributeMatchingModel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_addresses: {
-                        let field_value = match fields_map.get("email_addresses") {
+                        let field_value = match fields_map.get("emailAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#phone_numbers: {
-                        let field_value = match fields_map.get("phone_numbers") {
+                        let field_value = match fields_map.get("phoneNumbers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'phone_numbers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'phoneNumbers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

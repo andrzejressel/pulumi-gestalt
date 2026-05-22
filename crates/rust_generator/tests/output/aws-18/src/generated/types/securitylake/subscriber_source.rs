@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#aws_log_source_resource: {
-                        let field_value = match fields_map.get("aws_log_source_resource") {
+                        let field_value = match fields_map.get("awsLogSourceResource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_log_source_resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsLogSourceResource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_log_source_resource: {
-                        let field_value = match fields_map.get("custom_log_source_resource") {
+                        let field_value = match fields_map.get("customLogSourceResource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_log_source_resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customLogSourceResource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

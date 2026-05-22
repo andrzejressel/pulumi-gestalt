@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wildcard_match: {
-                        let field_value = match fields_map.get("wildcard_match") {
+                        let field_value = match fields_map.get("wildcardMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wildcard_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'wildcardMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

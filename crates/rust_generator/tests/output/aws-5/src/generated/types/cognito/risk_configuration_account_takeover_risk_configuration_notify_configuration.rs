@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#block_email: {
-                        let field_value = match fields_map.get("block_email") {
+                        let field_value = match fields_map.get("blockEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,30 +104,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mfa_email: {
-                        let field_value = match fields_map.get("mfa_email") {
+                        let field_value = match fields_map.get("mfaEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mfa_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mfaEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_action_email: {
-                        let field_value = match fields_map.get("no_action_email") {
+                        let field_value = match fields_map.get("noActionEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_action_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noActionEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reply_to: {
-                        let field_value = match fields_map.get("reply_to") {
+                        let field_value = match fields_map.get("replyTo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reply_to' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replyTo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_arn: {
-                        let field_value = match fields_map.get("source_arn") {
+                        let field_value = match fields_map.get("sourceArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

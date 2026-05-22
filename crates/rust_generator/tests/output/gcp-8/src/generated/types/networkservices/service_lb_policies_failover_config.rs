@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#failover_health_threshold: {
-                        let field_value = match fields_map.get("failover_health_threshold") {
+                        let field_value = match fields_map.get("failoverHealthThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failover_health_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failoverHealthThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

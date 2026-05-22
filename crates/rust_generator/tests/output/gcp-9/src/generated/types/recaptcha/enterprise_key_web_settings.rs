@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#allow_all_domains: {
-                        let field_value = match fields_map.get("allow_all_domains") {
+                        let field_value = match fields_map.get("allowAllDomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_all_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowAllDomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_amp_traffic: {
-                        let field_value = match fields_map.get("allow_amp_traffic") {
+                        let field_value = match fields_map.get("allowAmpTraffic") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_amp_traffic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowAmpTraffic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_domains: {
-                        let field_value = match fields_map.get("allowed_domains") {
+                        let field_value = match fields_map.get("allowedDomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedDomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#challenge_security_preference: {
-                        let field_value = match fields_map.get("challenge_security_preference") {
+                        let field_value = match fields_map.get("challengeSecurityPreference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'challenge_security_preference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'challengeSecurityPreference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#integration_type: {
-                        let field_value = match fields_map.get("integration_type") {
+                        let field_value = match fields_map.get("integrationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'integration_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'integrationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

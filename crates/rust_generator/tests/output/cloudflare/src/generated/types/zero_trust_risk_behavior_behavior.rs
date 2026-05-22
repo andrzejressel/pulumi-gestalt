@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#risk_level: {
-                        let field_value = match fields_map.get("risk_level") {
+                        let field_value = match fields_map.get("riskLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'risk_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'riskLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

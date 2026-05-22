@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#gpu_sharing_strategy: {
-                        let field_value = match fields_map.get("gpu_sharing_strategy") {
+                        let field_value = match fields_map.get("gpuSharingStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gpu_sharing_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gpuSharingStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_shared_clients_per_gpu: {
-                        let field_value = match fields_map.get("max_shared_clients_per_gpu") {
+                        let field_value = match fields_map.get("maxSharedClientsPerGpu") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_shared_clients_per_gpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxSharedClientsPerGpu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

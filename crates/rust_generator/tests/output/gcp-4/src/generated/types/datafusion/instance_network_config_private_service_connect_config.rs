@@ -73,23 +73,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#effective_unreachable_cidr_block: {
-                        let field_value = match fields_map.get("effective_unreachable_cidr_block") {
+                        let field_value = match fields_map.get("effectiveUnreachableCidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_unreachable_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveUnreachableCidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_attachment: {
-                        let field_value = match fields_map.get("network_attachment") {
+                        let field_value = match fields_map.get("networkAttachment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_attachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkAttachment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unreachable_cidr_block: {
-                        let field_value = match fields_map.get("unreachable_cidr_block") {
+                        let field_value = match fields_map.get("unreachableCidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unreachable_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unreachableCidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

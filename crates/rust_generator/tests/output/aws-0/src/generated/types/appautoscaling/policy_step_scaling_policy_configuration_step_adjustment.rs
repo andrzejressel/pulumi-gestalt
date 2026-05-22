@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#metric_interval_lower_bound: {
-                        let field_value = match fields_map.get("metric_interval_lower_bound") {
+                        let field_value = match fields_map.get("metricIntervalLowerBound") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_interval_lower_bound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricIntervalLowerBound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_interval_upper_bound: {
-                        let field_value = match fields_map.get("metric_interval_upper_bound") {
+                        let field_value = match fields_map.get("metricIntervalUpperBound") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_interval_upper_bound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricIntervalUpperBound' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scaling_adjustment: {
-                        let field_value = match fields_map.get("scaling_adjustment") {
+                        let field_value = match fields_map.get("scalingAdjustment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scaling_adjustment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scalingAdjustment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

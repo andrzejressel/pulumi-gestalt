@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#restore_point_in_time: {
-                        let field_value = match fields_map.get("restore_point_in_time") {
+                        let field_value = match fields_map.get("restorePointInTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restore_point_in_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restorePointInTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_database_id: {
-                        let field_value = match fields_map.get("source_database_id") {
+                        let field_value = match fields_map.get("sourceDatabaseId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_database_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceDatabaseId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

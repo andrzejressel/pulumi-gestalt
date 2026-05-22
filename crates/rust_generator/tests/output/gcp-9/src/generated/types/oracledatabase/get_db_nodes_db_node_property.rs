@@ -106,16 +106,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#db_node_storage_size_gb: {
-                        let field_value = match fields_map.get("db_node_storage_size_gb") {
+                        let field_value = match fields_map.get("dbNodeStorageSizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_node_storage_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbNodeStorageSizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#db_server_ocid: {
-                        let field_value = match fields_map.get("db_server_ocid") {
+                        let field_value = match fields_map.get("dbServerOcid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_server_ocid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbServerOcid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -127,9 +127,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_size_gb: {
-                        let field_value = match fields_map.get("memory_size_gb") {
+                        let field_value = match fields_map.get("memorySizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memorySizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -141,9 +141,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ocpu_count: {
-                        let field_value = match fields_map.get("ocpu_count") {
+                        let field_value = match fields_map.get("ocpuCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ocpu_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ocpuCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -155,9 +155,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total_cpu_core_count: {
-                        let field_value = match fields_map.get("total_cpu_core_count") {
+                        let field_value = match fields_map.get("totalCpuCoreCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_cpu_core_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalCpuCoreCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

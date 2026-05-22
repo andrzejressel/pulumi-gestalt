@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#data_integration_unit: {
-                        let field_value = match fields_map.get("data_integration_unit") {
+                        let field_value = match fields_map.get("dataIntegrationUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_integration_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataIntegrationUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_to_live: {
-                        let field_value = match fields_map.get("time_to_live") {
+                        let field_value = match fields_map.get("timeToLive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_to_live' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeToLive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

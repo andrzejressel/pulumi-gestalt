@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#slice_differentiator: {
-                        let field_value = match fields_map.get("slice_differentiator") {
+                        let field_value = match fields_map.get("sliceDifferentiator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slice_differentiator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sliceDifferentiator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slice_service_type: {
-                        let field_value = match fields_map.get("slice_service_type") {
+                        let field_value = match fields_map.get("sliceServiceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slice_service_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sliceServiceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

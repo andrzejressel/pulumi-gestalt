@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#custom_cname: {
-                        let field_value = match fields_map.get("custom_cname") {
+                        let field_value = match fields_map.get("customCname") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_cname' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customCname' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expiration_in_days: {
-                        let field_value = match fields_map.get("expiration_in_days") {
+                        let field_value = match fields_map.get("expirationInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiration_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expirationInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_bucket_name: {
-                        let field_value = match fields_map.get("s_3_bucket_name") {
+                        let field_value = match fields_map.get("s3BucketName") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_bucket_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3BucketName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_object_acl: {
-                        let field_value = match fields_map.get("s_3_object_acl") {
+                        let field_value = match fields_map.get("s3ObjectAcl") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_object_acl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3ObjectAcl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

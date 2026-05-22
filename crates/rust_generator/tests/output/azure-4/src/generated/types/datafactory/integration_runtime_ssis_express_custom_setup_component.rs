@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#key_vault_license: {
-                        let field_value = match fields_map.get("key_vault_license") {
+                        let field_value = match fields_map.get("keyVaultLicense") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_vault_license' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyVaultLicense' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#https_notification_configuration: {
-                        let field_value = match fields_map.get("https_notification_configuration") {
+                        let field_value = match fields_map.get("httpsNotificationConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'https_notification_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpsNotificationConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sqs_notification_configuration: {
-                        let field_value = match fields_map.get("sqs_notification_configuration") {
+                        let field_value = match fields_map.get("sqsNotificationConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sqs_notification_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqsNotificationConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

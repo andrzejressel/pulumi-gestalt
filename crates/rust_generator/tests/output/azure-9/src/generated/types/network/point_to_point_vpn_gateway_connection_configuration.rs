@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#internet_security_enabled: {
-                        let field_value = match fields_map.get("internet_security_enabled") {
+                        let field_value = match fields_map.get("internetSecurityEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'internet_security_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'internetSecurityEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpn_client_address_pool: {
-                        let field_value = match fields_map.get("vpn_client_address_pool") {
+                        let field_value = match fields_map.get("vpnClientAddressPool") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpn_client_address_pool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpnClientAddressPool' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

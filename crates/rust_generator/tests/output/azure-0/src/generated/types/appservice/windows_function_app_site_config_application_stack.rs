@@ -92,44 +92,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#dotnet_version: {
-                        let field_value = match fields_map.get("dotnet_version") {
+                        let field_value = match fields_map.get("dotnetVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dotnet_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dotnetVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#java_version: {
-                        let field_value = match fields_map.get("java_version") {
+                        let field_value = match fields_map.get("javaVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'java_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'javaVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_version: {
-                        let field_value = match fields_map.get("node_version") {
+                        let field_value = match fields_map.get("nodeVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#powershell_core_version: {
-                        let field_value = match fields_map.get("powershell_core_version") {
+                        let field_value = match fields_map.get("powershellCoreVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'powershell_core_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'powershellCoreVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_custom_runtime: {
-                        let field_value = match fields_map.get("use_custom_runtime") {
+                        let field_value = match fields_map.get("useCustomRuntime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_custom_runtime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useCustomRuntime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_dotnet_isolated_runtime: {
-                        let field_value = match fields_map.get("use_dotnet_isolated_runtime") {
+                        let field_value = match fields_map.get("useDotnetIsolatedRuntime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_dotnet_isolated_runtime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useDotnetIsolatedRuntime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

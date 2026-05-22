@@ -86,16 +86,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#kms_key_name: {
-                        let field_value = match fields_map.get("kms_key_name") {
+                        let field_value = match fields_map.get("kmsKeyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_version_name: {
-                        let field_value = match fields_map.get("kms_key_version_name") {
+                        let field_value = match fields_map.get("kmsKeyVersionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_version_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyVersionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -107,9 +107,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_id: {
-                        let field_value = match fields_map.get("service_account_id") {
+                        let field_value = match fields_map.get("serviceAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#total_egress_bandwidth_tier: {
-                        let field_value = match fields_map.get("total_egress_bandwidth_tier") {
+                        let field_value = match fields_map.get("totalEgressBandwidthTier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_egress_bandwidth_tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalEgressBandwidthTier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

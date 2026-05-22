@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#credentials_parameter: {
-                        let field_value = match fields_map.get("credentials_parameter") {
+                        let field_value = match fields_map.get("credentialsParameter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'credentials_parameter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'credentialsParameter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

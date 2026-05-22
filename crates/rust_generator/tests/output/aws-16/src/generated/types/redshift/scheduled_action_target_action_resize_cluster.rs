@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_identifier: {
-                        let field_value = match fields_map.get("cluster_identifier") {
+                        let field_value = match fields_map.get("clusterIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_type: {
-                        let field_value = match fields_map.get("cluster_type") {
+                        let field_value = match fields_map.get("clusterType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_type: {
-                        let field_value = match fields_map.get("node_type") {
+                        let field_value = match fields_map.get("nodeType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#number_of_nodes: {
-                        let field_value = match fields_map.get("number_of_nodes") {
+                        let field_value = match fields_map.get("numberOfNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'number_of_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numberOfNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

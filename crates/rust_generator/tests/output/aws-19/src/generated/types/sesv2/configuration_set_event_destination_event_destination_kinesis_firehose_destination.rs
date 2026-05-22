@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#delivery_stream_arn: {
-                        let field_value = match fields_map.get("delivery_stream_arn") {
+                        let field_value = match fields_map.get("deliveryStreamArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delivery_stream_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deliveryStreamArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iam_role_arn: {
-                        let field_value = match fields_map.get("iam_role_arn") {
+                        let field_value = match fields_map.get("iamRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iam_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iamRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

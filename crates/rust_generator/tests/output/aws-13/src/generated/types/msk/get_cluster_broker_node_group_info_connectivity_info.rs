@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#public_accesses: {
-                        let field_value = match fields_map.get("public_accesses") {
+                        let field_value = match fields_map.get("publicAccesses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_accesses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicAccesses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_connectivities: {
-                        let field_value = match fields_map.get("vpc_connectivities") {
+                        let field_value = match fields_map.get("vpcConnectivities") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_connectivities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcConnectivities' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

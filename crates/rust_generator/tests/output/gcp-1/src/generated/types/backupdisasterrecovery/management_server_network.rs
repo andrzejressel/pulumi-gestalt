@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peering_mode: {
-                        let field_value = match fields_map.get("peering_mode") {
+                        let field_value = match fields_map.get("peeringMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peering_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peeringMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

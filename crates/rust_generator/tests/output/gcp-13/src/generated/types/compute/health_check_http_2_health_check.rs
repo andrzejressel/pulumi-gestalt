@@ -133,30 +133,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_name: {
-                        let field_value = match fields_map.get("port_name") {
+                        let field_value = match fields_map.get("portName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_specification: {
-                        let field_value = match fields_map.get("port_specification") {
+                        let field_value = match fields_map.get("portSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#proxy_header: {
-                        let field_value = match fields_map.get("proxy_header") {
+                        let field_value = match fields_map.get("proxyHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'proxy_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'proxyHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_path: {
-                        let field_value = match fields_map.get("request_path") {
+                        let field_value = match fields_map.get("requestPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -89,9 +89,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forwarding_rule: {
-                        let field_value = match fields_map.get("forwarding_rule") {
+                        let field_value = match fields_map.get("forwardingRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarding_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardingRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#project_id: {
-                        let field_value = match fields_map.get("project_id") {
+                        let field_value = match fields_map.get("projectId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#psc_connection_id: {
-                        let field_value = match fields_map.get("psc_connection_id") {
+                        let field_value = match fields_map.get("pscConnectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'psc_connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pscConnectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

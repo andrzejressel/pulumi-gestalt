@@ -53,9 +53,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#redirect_conditions: {
-                        let field_value = match fields_map.get("redirect_conditions") {
+                        let field_value = match fields_map.get("redirectConditions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_conditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectConditions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

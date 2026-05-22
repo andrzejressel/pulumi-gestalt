@@ -76,23 +76,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#authorizer_credential: {
-                        let field_value = match fields_map.get("authorizer_credential") {
+                        let field_value = match fields_map.get("authorizerCredential") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorizer_credential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizerCredential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_authorizer_credential: {
-                        let field_value = match fields_map.get("read_authorizer_credential") {
+                        let field_value = match fields_map.get("readAuthorizerCredential") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_authorizer_credential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readAuthorizerCredential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#webhook_secret_secret_version: {
-                        let field_value = match fields_map.get("webhook_secret_secret_version") {
+                        let field_value = match fields_map.get("webhookSecretSecretVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'webhook_secret_secret_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'webhookSecretSecretVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

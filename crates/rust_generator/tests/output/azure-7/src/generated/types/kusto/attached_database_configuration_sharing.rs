@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#external_tables_to_excludes: {
-                        let field_value = match fields_map.get("external_tables_to_excludes") {
+                        let field_value = match fields_map.get("externalTablesToExcludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_tables_to_excludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalTablesToExcludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_tables_to_includes: {
-                        let field_value = match fields_map.get("external_tables_to_includes") {
+                        let field_value = match fields_map.get("externalTablesToIncludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_tables_to_includes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalTablesToIncludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#materialized_views_to_excludes: {
-                        let field_value = match fields_map.get("materialized_views_to_excludes") {
+                        let field_value = match fields_map.get("materializedViewsToExcludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'materialized_views_to_excludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'materializedViewsToExcludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#materialized_views_to_includes: {
-                        let field_value = match fields_map.get("materialized_views_to_includes") {
+                        let field_value = match fields_map.get("materializedViewsToIncludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'materialized_views_to_includes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'materializedViewsToIncludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tables_to_excludes: {
-                        let field_value = match fields_map.get("tables_to_excludes") {
+                        let field_value = match fields_map.get("tablesToExcludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tables_to_excludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tablesToExcludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tables_to_includes: {
-                        let field_value = match fields_map.get("tables_to_includes") {
+                        let field_value = match fields_map.get("tablesToIncludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tables_to_includes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tablesToIncludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

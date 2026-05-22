@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#sha_256_hash: {
-                        let field_value = match fields_map.get("sha_256_hash") {
+                        let field_value = match fields_map.get("sha256Hash") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sha_256_hash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sha256Hash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

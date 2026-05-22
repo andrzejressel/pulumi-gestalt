@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#exclude_prefixes: {
-                        let field_value = match fields_map.get("exclude_prefixes") {
+                        let field_value = match fields_map.get("excludePrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludePrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_prefixes: {
-                        let field_value = match fields_map.get("include_prefixes") {
+                        let field_value = match fields_map.get("includePrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includePrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_modified_before: {
-                        let field_value = match fields_map.get("last_modified_before") {
+                        let field_value = match fields_map.get("lastModifiedBefore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_modified_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastModifiedBefore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_modified_since: {
-                        let field_value = match fields_map.get("last_modified_since") {
+                        let field_value = match fields_map.get("lastModifiedSince") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_modified_since' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastModifiedSince' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_time_elapsed_since_last_modification: {
-                        let field_value = match fields_map.get("max_time_elapsed_since_last_modification") {
+                        let field_value = match fields_map.get("maxTimeElapsedSinceLastModification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_time_elapsed_since_last_modification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxTimeElapsedSinceLastModification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_time_elapsed_since_last_modification: {
-                        let field_value = match fields_map.get("min_time_elapsed_since_last_modification") {
+                        let field_value = match fields_map.get("minTimeElapsedSinceLastModification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_time_elapsed_since_last_modification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minTimeElapsedSinceLastModification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

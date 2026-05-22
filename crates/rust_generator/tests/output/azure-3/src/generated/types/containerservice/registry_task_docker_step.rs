@@ -121,51 +121,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_enabled: {
-                        let field_value = match fields_map.get("cache_enabled") {
+                        let field_value = match fields_map.get("cacheEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#context_access_token: {
-                        let field_value = match fields_map.get("context_access_token") {
+                        let field_value = match fields_map.get("contextAccessToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'context_access_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contextAccessToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#context_path: {
-                        let field_value = match fields_map.get("context_path") {
+                        let field_value = match fields_map.get("contextPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'context_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contextPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dockerfile_path: {
-                        let field_value = match fields_map.get("dockerfile_path") {
+                        let field_value = match fields_map.get("dockerfilePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dockerfile_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dockerfilePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_names: {
-                        let field_value = match fields_map.get("image_names") {
+                        let field_value = match fields_map.get("imageNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#push_enabled: {
-                        let field_value = match fields_map.get("push_enabled") {
+                        let field_value = match fields_map.get("pushEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'push_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pushEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_arguments: {
-                        let field_value = match fields_map.get("secret_arguments") {
+                        let field_value = match fields_map.get("secretArguments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_arguments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretArguments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

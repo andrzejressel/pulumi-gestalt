@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#active_directory: {
-                        let field_value = match fields_map.get("active_directory") {
+                        let field_value = match fields_map.get("activeDirectory") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_directory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeDirectory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#job_execution_timeout_minutes: {
-                        let field_value = match fields_map.get("job_execution_timeout_minutes") {
+                        let field_value = match fields_map.get("jobExecutionTimeoutMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'job_execution_timeout_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jobExecutionTimeoutMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#terminate_jobs_on_update: {
-                        let field_value = match fields_map.get("terminate_jobs_on_update") {
+                        let field_value = match fields_map.get("terminateJobsOnUpdate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'terminate_jobs_on_update' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'terminateJobsOnUpdate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

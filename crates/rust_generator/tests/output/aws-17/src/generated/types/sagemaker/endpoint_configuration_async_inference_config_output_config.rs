@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#kms_key_id: {
-                        let field_value = match fields_map.get("kms_key_id") {
+                        let field_value = match fields_map.get("kmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notification_config: {
-                        let field_value = match fields_map.get("notification_config") {
+                        let field_value = match fields_map.get("notificationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_failure_path: {
-                        let field_value = match fields_map.get("s_3_failure_path") {
+                        let field_value = match fields_map.get("s3FailurePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_failure_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3FailurePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_output_path: {
-                        let field_value = match fields_map.get("s_3_output_path") {
+                        let field_value = match fields_map.get("s3OutputPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_output_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3OutputPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

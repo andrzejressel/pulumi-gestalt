@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#exclude_from_latest: {
-                        let field_value = match fields_map.get("exclude_from_latest") {
+                        let field_value = match fields_map.get("excludeFromLatest") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_from_latest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeFromLatest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -119,9 +119,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_image_id: {
-                        let field_value = match fields_map.get("managed_image_id") {
+                        let field_value = match fields_map.get("managedImageId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_image_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedImageId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_regions: {
-                        let field_value = match fields_map.get("target_regions") {
+                        let field_value = match fields_map.get("targetRegions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_regions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetRegions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

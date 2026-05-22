@@ -65,23 +65,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#compute_reservation: {
-                        let field_value = match fields_map.get("compute_reservation") {
+                        let field_value = match fields_map.get("computeReservation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compute_reservation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computeReservation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_decay_seconds: {
-                        let field_value = match fields_map.get("share_decay_seconds") {
+                        let field_value = match fields_map.get("shareDecaySeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'share_decay_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shareDecaySeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_distributions: {
-                        let field_value = match fields_map.get("share_distributions") {
+                        let field_value = match fields_map.get("shareDistributions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'share_distributions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shareDistributions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

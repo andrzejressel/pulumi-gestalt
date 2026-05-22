@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#operating_system: {
-                        let field_value = match fields_map.get("operating_system") {
+                        let field_value = match fields_map.get("operatingSystem") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operating_system' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operatingSystem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_version: {
-                        let field_value = match fields_map.get("runtime_version") {
+                        let field_value = match fields_map.get("runtimeVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimeVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

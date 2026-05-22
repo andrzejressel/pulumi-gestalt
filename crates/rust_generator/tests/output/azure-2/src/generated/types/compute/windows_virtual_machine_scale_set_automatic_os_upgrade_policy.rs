@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#disable_automatic_rollback: {
-                        let field_value = match fields_map.get("disable_automatic_rollback") {
+                        let field_value = match fields_map.get("disableAutomaticRollback") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_automatic_rollback' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableAutomaticRollback' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_automatic_os_upgrade: {
-                        let field_value = match fields_map.get("enable_automatic_os_upgrade") {
+                        let field_value = match fields_map.get("enableAutomaticOsUpgrade") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_automatic_os_upgrade' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAutomaticOsUpgrade' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

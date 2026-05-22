@@ -129,23 +129,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_check_interval_seconds: {
-                        let field_value = match fields_map.get("health_check_interval_seconds") {
+                        let field_value = match fields_map.get("healthCheckIntervalSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_check_interval_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthCheckIntervalSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_check_timeout_seconds: {
-                        let field_value = match fields_map.get("health_check_timeout_seconds") {
+                        let field_value = match fields_map.get("healthCheckTimeoutSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_check_timeout_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthCheckTimeoutSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#healthy_threshold_count: {
-                        let field_value = match fields_map.get("healthy_threshold_count") {
+                        let field_value = match fields_map.get("healthyThresholdCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'healthy_threshold_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthyThresholdCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -178,16 +178,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protocol_version: {
-                        let field_value = match fields_map.get("protocol_version") {
+                        let field_value = match fields_map.get("protocolVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protocol_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protocolVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unhealthy_threshold_count: {
-                        let field_value = match fields_map.get("unhealthy_threshold_count") {
+                        let field_value = match fields_map.get("unhealthyThresholdCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unhealthy_threshold_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unhealthyThresholdCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

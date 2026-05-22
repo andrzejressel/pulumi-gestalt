@@ -146,9 +146,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#common_name: {
-                        let field_value = match fields_map.get("common_name") {
+                        let field_value = match fields_map.get("commonName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -160,23 +160,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#distinguished_name_qualifier: {
-                        let field_value = match fields_map.get("distinguished_name_qualifier") {
+                        let field_value = match fields_map.get("distinguishedNameQualifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'distinguished_name_qualifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'distinguishedNameQualifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#generation_qualifier: {
-                        let field_value = match fields_map.get("generation_qualifier") {
+                        let field_value = match fields_map.get("generationQualifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'generation_qualifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'generationQualifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#given_name: {
-                        let field_value = match fields_map.get("given_name") {
+                        let field_value = match fields_map.get("givenName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'given_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'givenName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -202,9 +202,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#organizational_unit: {
-                        let field_value = match fields_map.get("organizational_unit") {
+                        let field_value = match fields_map.get("organizationalUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'organizational_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'organizationalUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

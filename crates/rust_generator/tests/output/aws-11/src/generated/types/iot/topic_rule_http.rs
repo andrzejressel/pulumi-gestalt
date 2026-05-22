@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#confirmation_url: {
-                        let field_value = match fields_map.get("confirmation_url") {
+                        let field_value = match fields_map.get("confirmationUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'confirmation_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'confirmationUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_headers: {
-                        let field_value = match fields_map.get("http_headers") {
+                        let field_value = match fields_map.get("httpHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

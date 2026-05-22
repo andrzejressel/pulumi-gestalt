@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#weighted_targets: {
-                        let field_value = match fields_map.get("weighted_targets") {
+                        let field_value = match fields_map.get("weightedTargets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weighted_targets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weightedTargets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

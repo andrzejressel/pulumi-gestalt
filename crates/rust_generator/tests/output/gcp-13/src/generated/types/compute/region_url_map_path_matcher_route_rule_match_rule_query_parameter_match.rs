@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#exact_match: {
-                        let field_value = match fields_map.get("exact_match") {
+                        let field_value = match fields_map.get("exactMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exact_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exactMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,16 +96,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#present_match: {
-                        let field_value = match fields_map.get("present_match") {
+                        let field_value = match fields_map.get("presentMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'present_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'presentMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regex_match: {
-                        let field_value = match fields_map.get("regex_match") {
+                        let field_value = match fields_map.get("regexMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regex_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regexMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

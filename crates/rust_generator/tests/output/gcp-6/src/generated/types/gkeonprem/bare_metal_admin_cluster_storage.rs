@@ -64,16 +64,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#lvp_node_mounts_config: {
-                        let field_value = match fields_map.get("lvp_node_mounts_config") {
+                        let field_value = match fields_map.get("lvpNodeMountsConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lvp_node_mounts_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lvpNodeMountsConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lvp_share_config: {
-                        let field_value = match fields_map.get("lvp_share_config") {
+                        let field_value = match fields_map.get("lvpShareConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lvp_share_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lvpShareConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#insecure_skip_verification: {
-                        let field_value = match fields_map.get("insecure_skip_verification") {
+                        let field_value = match fields_map.get("insecureSkipVerification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insecure_skip_verification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insecureSkipVerification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

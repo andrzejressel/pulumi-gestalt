@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#dynamic_filename_enabled: {
-                        let field_value = match fields_map.get("dynamic_filename_enabled") {
+                        let field_value = match fields_map.get("dynamicFilenameEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_filename_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicFilenameEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dynamic_path_enabled: {
-                        let field_value = match fields_map.get("dynamic_path_enabled") {
+                        let field_value = match fields_map.get("dynamicPathEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_path_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicPathEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

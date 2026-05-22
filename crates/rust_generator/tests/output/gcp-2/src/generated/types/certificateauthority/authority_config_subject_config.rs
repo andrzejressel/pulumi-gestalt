@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject_alt_name: {
-                        let field_value = match fields_map.get("subject_alt_name") {
+                        let field_value = match fields_map.get("subjectAltName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subject_alt_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subjectAltName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

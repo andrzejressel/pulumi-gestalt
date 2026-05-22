@@ -87,37 +87,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#big_query_options: {
-                        let field_value = match fields_map.get("big_query_options") {
+                        let field_value = match fields_map.get("bigQueryOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'big_query_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bigQueryOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_storage_options: {
-                        let field_value = match fields_map.get("cloud_storage_options") {
+                        let field_value = match fields_map.get("cloudStorageOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_storage_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudStorageOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#datastore_options: {
-                        let field_value = match fields_map.get("datastore_options") {
+                        let field_value = match fields_map.get("datastoreOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'datastore_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'datastoreOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hybrid_options: {
-                        let field_value = match fields_map.get("hybrid_options") {
+                        let field_value = match fields_map.get("hybridOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hybrid_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hybridOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timespan_config: {
-                        let field_value = match fields_map.get("timespan_config") {
+                        let field_value = match fields_map.get("timespanConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timespan_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timespanConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

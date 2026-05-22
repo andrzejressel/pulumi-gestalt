@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#access_policy_name: {
-                        let field_value = match fields_map.get("access_policy_name") {
+                        let field_value = match fields_map.get("accessPolicyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_policy_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessPolicyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#namespace_path: {
-                        let field_value = match fields_map.get("namespace_path") {
+                        let field_value = match fields_map.get("namespacePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'namespace_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namespacePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nfs_export: {
-                        let field_value = match fields_map.get("nfs_export") {
+                        let field_value = match fields_map.get("nfsExport") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nfs_export' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nfsExport' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_path: {
-                        let field_value = match fields_map.get("target_path") {
+                        let field_value = match fields_map.get("targetPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

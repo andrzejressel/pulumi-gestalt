@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#account_id: {
-                        let field_value = match fields_map.get("account_id") {
+                        let field_value = match fields_map.get("accountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_templates: {
-                        let field_value = match fields_map.get("launch_templates") {
+                        let field_value = match fields_map.get("launchTemplates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_templates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchTemplates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_parallel_launches: {
-                        let field_value = match fields_map.get("max_parallel_launches") {
+                        let field_value = match fields_map.get("maxParallelLaunches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_parallel_launches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxParallelLaunches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_configurations: {
-                        let field_value = match fields_map.get("snapshot_configurations") {
+                        let field_value = match fields_map.get("snapshotConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

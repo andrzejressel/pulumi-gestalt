@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#cpu_utilization_target: {
-                        let field_value = match fields_map.get("cpu_utilization_target") {
+                        let field_value = match fields_map.get("cpuUtilizationTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_utilization_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuUtilizationTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_node_count: {
-                        let field_value = match fields_map.get("max_node_count") {
+                        let field_value = match fields_map.get("maxNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_node_count: {
-                        let field_value = match fields_map.get("min_node_count") {
+                        let field_value = match fields_map.get("minNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

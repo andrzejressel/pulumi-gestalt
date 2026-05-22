@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#cloudwatch_config: {
-                        let field_value = match fields_map.get("cloudwatch_config") {
+                        let field_value = match fields_map.get("cloudwatchConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudwatch_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudwatchConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#embedding_data_delivery_enabled: {
-                        let field_value = match fields_map.get("embedding_data_delivery_enabled") {
+                        let field_value = match fields_map.get("embeddingDataDeliveryEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'embedding_data_delivery_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'embeddingDataDeliveryEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_data_delivery_enabled: {
-                        let field_value = match fields_map.get("image_data_delivery_enabled") {
+                        let field_value = match fields_map.get("imageDataDeliveryEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_data_delivery_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageDataDeliveryEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_config: {
-                        let field_value = match fields_map.get("s_3_config") {
+                        let field_value = match fields_map.get("s3Config") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_data_delivery_enabled: {
-                        let field_value = match fields_map.get("text_data_delivery_enabled") {
+                        let field_value = match fields_map.get("textDataDeliveryEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_data_delivery_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textDataDeliveryEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

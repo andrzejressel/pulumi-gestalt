@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#database_type: {
-                        let field_value = match fields_map.get("database_type") {
+                        let field_value = match fields_map.get("databaseType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_volume_configurations: {
-                        let field_value = match fields_map.get("disk_volume_configurations") {
+                        let field_value = match fields_map.get("diskVolumeConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_volume_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskVolumeConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_count: {
-                        let field_value = match fields_map.get("instance_count") {
+                        let field_value = match fields_map.get("instanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subnet_id: {
-                        let field_value = match fields_map.get("subnet_id") {
+                        let field_value = match fields_map.get("subnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_machine_configuration: {
-                        let field_value = match fields_map.get("virtual_machine_configuration") {
+                        let field_value = match fields_map.get("virtualMachineConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_machine_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualMachineConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

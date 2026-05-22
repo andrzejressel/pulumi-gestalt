@@ -108,30 +108,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#custom_info_types: {
-                        let field_value = match fields_map.get("custom_info_types") {
+                        let field_value = match fields_map.get("customInfoTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customInfoTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclude_info_types: {
-                        let field_value = match fields_map.get("exclude_info_types") {
+                        let field_value = match fields_map.get("excludeInfoTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeInfoTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_quote: {
-                        let field_value = match fields_map.get("include_quote") {
+                        let field_value = match fields_map.get("includeQuote") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_quote' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeQuote' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#info_types: {
-                        let field_value = match fields_map.get("info_types") {
+                        let field_value = match fields_map.get("infoTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'infoTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -143,16 +143,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_likelihood: {
-                        let field_value = match fields_map.get("min_likelihood") {
+                        let field_value = match fields_map.get("minLikelihood") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_likelihood' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minLikelihood' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_sets: {
-                        let field_value = match fields_map.get("rule_sets") {
+                        let field_value = match fields_map.get("ruleSets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleSets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -95,51 +95,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#aac_settings: {
-                        let field_value = match fields_map.get("aac_settings") {
+                        let field_value = match fields_map.get("aacSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aac_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aacSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ac_3_settings: {
-                        let field_value = match fields_map.get("ac_3_settings") {
+                        let field_value = match fields_map.get("ac3Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ac_3_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ac3Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#eac_3_atmos_settings: {
-                        let field_value = match fields_map.get("eac_3_atmos_settings") {
+                        let field_value = match fields_map.get("eac3AtmosSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'eac_3_atmos_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eac3AtmosSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#eac_3_settings: {
-                        let field_value = match fields_map.get("eac_3_settings") {
+                        let field_value = match fields_map.get("eac3Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'eac_3_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eac3Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mp_2_settings: {
-                        let field_value = match fields_map.get("mp_2_settings") {
+                        let field_value = match fields_map.get("mp2Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mp_2_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mp2Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pass_through_settings: {
-                        let field_value = match fields_map.get("pass_through_settings") {
+                        let field_value = match fields_map.get("passThroughSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pass_through_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passThroughSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wav_settings: {
-                        let field_value = match fields_map.get("wav_settings") {
+                        let field_value = match fields_map.get("wavSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wav_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'wavSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

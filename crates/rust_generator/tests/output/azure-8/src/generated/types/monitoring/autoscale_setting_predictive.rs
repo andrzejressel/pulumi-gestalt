@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#look_ahead_time: {
-                        let field_value = match fields_map.get("look_ahead_time") {
+                        let field_value = match fields_map.get("lookAheadTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'look_ahead_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lookAheadTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_mode: {
-                        let field_value = match fields_map.get("scale_mode") {
+                        let field_value = match fields_map.get("scaleMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -67,16 +67,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#family_name: {
-                        let field_value = match fields_map.get("family_name") {
+                        let field_value = match fields_map.get("familyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'family_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'familyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#qualifier_prefixes: {
-                        let field_value = match fields_map.get("qualifier_prefixes") {
+                        let field_value = match fields_map.get("qualifierPrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'qualifier_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'qualifierPrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

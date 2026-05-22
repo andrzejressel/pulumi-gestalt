@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#tickerplant_log_volumes: {
-                        let field_value = match fields_map.get("tickerplant_log_volumes") {
+                        let field_value = match fields_map.get("tickerplantLogVolumes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tickerplant_log_volumes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tickerplantLogVolumes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

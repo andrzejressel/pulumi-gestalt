@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#predefined_metric_type: {
-                        let field_value = match fields_map.get("predefined_metric_type") {
+                        let field_value = match fields_map.get("predefinedMetricType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predefined_metric_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predefinedMetricType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_label: {
-                        let field_value = match fields_map.get("resource_label") {
+                        let field_value = match fields_map.get("resourceLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

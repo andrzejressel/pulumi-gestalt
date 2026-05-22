@@ -127,58 +127,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_normalization_settings: {
-                        let field_value = match fields_map.get("audio_normalization_settings") {
+                        let field_value = match fields_map.get("audioNormalizationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_normalization_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioNormalizationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_selector_name: {
-                        let field_value = match fields_map.get("audio_selector_name") {
+                        let field_value = match fields_map.get("audioSelectorName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_selector_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioSelectorName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_type: {
-                        let field_value = match fields_map.get("audio_type") {
+                        let field_value = match fields_map.get("audioType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_type_control: {
-                        let field_value = match fields_map.get("audio_type_control") {
+                        let field_value = match fields_map.get("audioTypeControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_type_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioTypeControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_watermark_settings: {
-                        let field_value = match fields_map.get("audio_watermark_settings") {
+                        let field_value = match fields_map.get("audioWatermarkSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_watermark_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioWatermarkSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#codec_settings: {
-                        let field_value = match fields_map.get("codec_settings") {
+                        let field_value = match fields_map.get("codecSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'codec_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codecSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#language_code: {
-                        let field_value = match fields_map.get("language_code") {
+                        let field_value = match fields_map.get("languageCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'language_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'languageCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#language_code_control: {
-                        let field_value = match fields_map.get("language_code_control") {
+                        let field_value = match fields_map.get("languageCodeControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'language_code_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'languageCodeControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -190,16 +190,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remix_settings: {
-                        let field_value = match fields_map.get("remix_settings") {
+                        let field_value = match fields_map.get("remixSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remix_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remixSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stream_name: {
-                        let field_value = match fields_map.get("stream_name") {
+                        let field_value = match fields_map.get("streamName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stream_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'streamName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

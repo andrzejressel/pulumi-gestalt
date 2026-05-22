@@ -67,16 +67,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#image_family: {
-                        let field_value = match fields_map.get("image_family") {
+                        let field_value = match fields_map.get("imageFamily") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_family' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageFamily' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_name: {
-                        let field_value = match fields_map.get("image_name") {
+                        let field_value = match fields_map.get("imageName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

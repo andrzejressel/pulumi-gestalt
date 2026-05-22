@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#app_id: {
-                        let field_value = match fields_map.get("app_id") {
+                        let field_value = match fields_map.get("appId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_secret: {
-                        let field_value = match fields_map.get("app_secret") {
+                        let field_value = match fields_map.get("appSecret") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_secret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appSecret' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_scopes: {
-                        let field_value = match fields_map.get("oauth_scopes") {
+                        let field_value = match fields_map.get("oauthScopes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_scopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauthScopes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

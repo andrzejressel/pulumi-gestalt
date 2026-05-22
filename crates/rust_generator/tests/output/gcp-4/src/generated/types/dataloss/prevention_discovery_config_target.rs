@@ -77,30 +77,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#big_query_target: {
-                        let field_value = match fields_map.get("big_query_target") {
+                        let field_value = match fields_map.get("bigQueryTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'big_query_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bigQueryTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_sql_target: {
-                        let field_value = match fields_map.get("cloud_sql_target") {
+                        let field_value = match fields_map.get("cloudSqlTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_sql_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudSqlTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_storage_target: {
-                        let field_value = match fields_map.get("cloud_storage_target") {
+                        let field_value = match fields_map.get("cloudStorageTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_storage_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudStorageTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secrets_target: {
-                        let field_value = match fields_map.get("secrets_target") {
+                        let field_value = match fields_map.get("secretsTarget") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secrets_target' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretsTarget' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

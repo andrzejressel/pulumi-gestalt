@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#match_variable: {
-                        let field_value = match fields_map.get("match_variable") {
+                        let field_value = match fields_map.get("matchVariable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_variable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchVariable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

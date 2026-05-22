@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#simple_criterion: {
-                        let field_value = match fields_map.get("simple_criterion") {
+                        let field_value = match fields_map.get("simpleCriterion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'simple_criterion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'simpleCriterion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_criterion: {
-                        let field_value = match fields_map.get("tag_criterion") {
+                        let field_value = match fields_map.get("tagCriterion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_criterion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagCriterion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

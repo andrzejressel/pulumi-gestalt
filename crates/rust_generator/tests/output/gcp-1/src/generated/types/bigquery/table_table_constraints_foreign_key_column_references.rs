@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#referenced_column: {
-                        let field_value = match fields_map.get("referenced_column") {
+                        let field_value = match fields_map.get("referencedColumn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'referenced_column' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'referencedColumn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#referencing_column: {
-                        let field_value = match fields_map.get("referencing_column") {
+                        let field_value = match fields_map.get("referencingColumn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'referencing_column' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'referencingColumn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

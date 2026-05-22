@@ -92,9 +92,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#app_engine_routing: {
-                        let field_value = match fields_map.get("app_engine_routing") {
+                        let field_value = match fields_map.get("appEngineRouting") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_engine_routing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appEngineRouting' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -113,16 +113,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_method: {
-                        let field_value = match fields_map.get("http_method") {
+                        let field_value = match fields_map.get("httpMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#relative_uri: {
-                        let field_value = match fields_map.get("relative_uri") {
+                        let field_value = match fields_map.get("relativeUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'relative_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'relativeUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

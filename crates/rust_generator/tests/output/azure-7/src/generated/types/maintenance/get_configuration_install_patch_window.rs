@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#classifications_to_includes: {
-                        let field_value = match fields_map.get("classifications_to_includes") {
+                        let field_value = match fields_map.get("classificationsToIncludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'classifications_to_includes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'classificationsToIncludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kb_numbers_to_excludes: {
-                        let field_value = match fields_map.get("kb_numbers_to_excludes") {
+                        let field_value = match fields_map.get("kbNumbersToExcludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kb_numbers_to_excludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kbNumbersToExcludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kb_numbers_to_includes: {
-                        let field_value = match fields_map.get("kb_numbers_to_includes") {
+                        let field_value = match fields_map.get("kbNumbersToIncludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kb_numbers_to_includes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kbNumbersToIncludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

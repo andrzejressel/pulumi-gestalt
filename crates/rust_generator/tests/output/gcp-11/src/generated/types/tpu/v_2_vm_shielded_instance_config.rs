@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#enable_secure_boot: {
-                        let field_value = match fields_map.get("enable_secure_boot") {
+                        let field_value = match fields_map.get("enableSecureBoot") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_secure_boot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableSecureBoot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

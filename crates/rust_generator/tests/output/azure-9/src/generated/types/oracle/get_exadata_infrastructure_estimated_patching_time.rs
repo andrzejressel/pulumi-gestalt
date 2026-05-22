@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#estimated_db_server_patching_time: {
-                        let field_value = match fields_map.get("estimated_db_server_patching_time") {
+                        let field_value = match fields_map.get("estimatedDbServerPatchingTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'estimated_db_server_patching_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'estimatedDbServerPatchingTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#estimated_network_switches_patching_time: {
-                        let field_value = match fields_map.get("estimated_network_switches_patching_time") {
+                        let field_value = match fields_map.get("estimatedNetworkSwitchesPatchingTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'estimated_network_switches_patching_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'estimatedNetworkSwitchesPatchingTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#estimated_storage_server_patching_time: {
-                        let field_value = match fields_map.get("estimated_storage_server_patching_time") {
+                        let field_value = match fields_map.get("estimatedStorageServerPatchingTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'estimated_storage_server_patching_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'estimatedStorageServerPatchingTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total_estimated_patching_time: {
-                        let field_value = match fields_map.get("total_estimated_patching_time") {
+                        let field_value = match fields_map.get("totalEstimatedPatchingTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_estimated_patching_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalEstimatedPatchingTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

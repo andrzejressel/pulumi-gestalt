@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#pod_properties: {
-                        let field_value = match fields_map.get("pod_properties") {
+                        let field_value = match fields_map.get("podProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

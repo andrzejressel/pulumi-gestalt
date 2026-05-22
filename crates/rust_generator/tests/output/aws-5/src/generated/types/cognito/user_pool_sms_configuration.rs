@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#external_id: {
-                        let field_value = match fields_map.get("external_id") {
+                        let field_value = match fields_map.get("externalId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sns_caller_arn: {
-                        let field_value = match fields_map.get("sns_caller_arn") {
+                        let field_value = match fields_map.get("snsCallerArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sns_caller_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snsCallerArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sns_region: {
-                        let field_value = match fields_map.get("sns_region") {
+                        let field_value = match fields_map.get("snsRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sns_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snsRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

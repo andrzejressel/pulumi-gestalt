@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#inspection_mode: {
-                        let field_value = match fields_map.get("inspection_mode") {
+                        let field_value = match fields_map.get("inspectionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inspection_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inspectionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

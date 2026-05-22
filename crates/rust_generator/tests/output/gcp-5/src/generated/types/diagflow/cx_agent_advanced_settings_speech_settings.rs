@@ -76,9 +76,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#endpointer_sensitivity: {
-                        let field_value = match fields_map.get("endpointer_sensitivity") {
+                        let field_value = match fields_map.get("endpointerSensitivity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpointer_sensitivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointerSensitivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_speech_timeout: {
-                        let field_value = match fields_map.get("no_speech_timeout") {
+                        let field_value = match fields_map.get("noSpeechTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_speech_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noSpeechTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_timeout_based_endpointing: {
-                        let field_value = match fields_map.get("use_timeout_based_endpointing") {
+                        let field_value = match fields_map.get("useTimeoutBasedEndpointing") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_timeout_based_endpointing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useTimeoutBasedEndpointing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

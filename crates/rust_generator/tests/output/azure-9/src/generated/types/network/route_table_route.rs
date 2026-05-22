@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#address_prefix: {
-                        let field_value = match fields_map.get("address_prefix") {
+                        let field_value = match fields_map.get("addressPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addressPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_hop_in_ip_address: {
-                        let field_value = match fields_map.get("next_hop_in_ip_address") {
+                        let field_value = match fields_map.get("nextHopInIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_hop_in_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextHopInIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_hop_type: {
-                        let field_value = match fields_map.get("next_hop_type") {
+                        let field_value = match fields_map.get("nextHopType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_hop_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextHopType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

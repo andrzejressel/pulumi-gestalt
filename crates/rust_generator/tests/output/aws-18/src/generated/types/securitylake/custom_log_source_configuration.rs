@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#crawler_configuration: {
-                        let field_value = match fields_map.get("crawler_configuration") {
+                        let field_value = match fields_map.get("crawlerConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crawler_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crawlerConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provider_identity: {
-                        let field_value = match fields_map.get("provider_identity") {
+                        let field_value = match fields_map.get("providerIdentity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provider_identity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'providerIdentity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

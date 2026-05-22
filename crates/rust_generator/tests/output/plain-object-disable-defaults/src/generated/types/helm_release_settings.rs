@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#plugins_path: {
-                        let field_value = match fields_map.get("plugins_path") {
+                        let field_value = match fields_map.get("pluginsPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'plugins_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pluginsPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#required_arg: {
-                        let field_value = match fields_map.get("required_arg") {
+                        let field_value = match fields_map.get("requiredArg") {
                             Some(value) => value,
-                            None => bail!("Missing field 'required_arg' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requiredArg' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

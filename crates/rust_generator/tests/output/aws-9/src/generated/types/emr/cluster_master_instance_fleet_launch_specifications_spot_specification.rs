@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#allocation_strategy: {
-                        let field_value = match fields_map.get("allocation_strategy") {
+                        let field_value = match fields_map.get("allocationStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allocation_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allocationStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#block_duration_minutes: {
-                        let field_value = match fields_map.get("block_duration_minutes") {
+                        let field_value = match fields_map.get("blockDurationMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_duration_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockDurationMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_action: {
-                        let field_value = match fields_map.get("timeout_action") {
+                        let field_value = match fields_map.get("timeoutAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_duration_minutes: {
-                        let field_value = match fields_map.get("timeout_duration_minutes") {
+                        let field_value = match fields_map.get("timeoutDurationMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_duration_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutDurationMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

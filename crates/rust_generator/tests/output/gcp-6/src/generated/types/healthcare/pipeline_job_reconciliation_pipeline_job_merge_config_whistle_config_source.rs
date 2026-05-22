@@ -60,9 +60,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#import_uri_prefix: {
-                        let field_value = match fields_map.get("import_uri_prefix") {
+                        let field_value = match fields_map.get("importUriPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'import_uri_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'importUriPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

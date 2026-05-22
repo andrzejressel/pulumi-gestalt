@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#avro_format: {
-                        let field_value = match fields_map.get("avro_format") {
+                        let field_value = match fields_map.get("avroFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'avro_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'avroFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -117,30 +117,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_glob: {
-                        let field_value = match fields_map.get("match_glob") {
+                        let field_value = match fields_map.get("matchGlob") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_glob' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchGlob' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_object_create_time: {
-                        let field_value = match fields_map.get("minimum_object_create_time") {
+                        let field_value = match fields_map.get("minimumObjectCreateTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_object_create_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumObjectCreateTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pubsub_avro_format: {
-                        let field_value = match fields_map.get("pubsub_avro_format") {
+                        let field_value = match fields_map.get("pubsubAvroFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pubsub_avro_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pubsubAvroFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_format: {
-                        let field_value = match fields_map.get("text_format") {
+                        let field_value = match fields_map.get("textFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

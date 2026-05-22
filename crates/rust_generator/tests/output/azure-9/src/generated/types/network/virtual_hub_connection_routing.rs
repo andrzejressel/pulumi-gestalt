@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#associated_route_table_id: {
-                        let field_value = match fields_map.get("associated_route_table_id") {
+                        let field_value = match fields_map.get("associatedRouteTableId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'associated_route_table_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'associatedRouteTableId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inbound_route_map_id: {
-                        let field_value = match fields_map.get("inbound_route_map_id") {
+                        let field_value = match fields_map.get("inboundRouteMapId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inbound_route_map_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inboundRouteMapId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outbound_route_map_id: {
-                        let field_value = match fields_map.get("outbound_route_map_id") {
+                        let field_value = match fields_map.get("outboundRouteMapId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_route_map_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundRouteMapId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#propagated_route_table: {
-                        let field_value = match fields_map.get("propagated_route_table") {
+                        let field_value = match fields_map.get("propagatedRouteTable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'propagated_route_table' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'propagatedRouteTable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_vnet_local_route_override_criteria: {
-                        let field_value = match fields_map.get("static_vnet_local_route_override_criteria") {
+                        let field_value = match fields_map.get("staticVnetLocalRouteOverrideCriteria") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_vnet_local_route_override_criteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticVnetLocalRouteOverrideCriteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_vnet_routes: {
-                        let field_value = match fields_map.get("static_vnet_routes") {
+                        let field_value = match fields_map.get("staticVnetRoutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_vnet_routes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticVnetRoutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

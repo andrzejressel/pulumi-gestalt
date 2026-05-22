@@ -188,16 +188,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_key: {
-                        let field_value = match fields_map.get("encryption_key") {
+                        let field_value = match fields_map.get("encryptionKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_environment: {
-                        let field_value = match fields_map.get("execution_environment") {
+                        let field_value = match fields_map.get("executionEnvironment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_environment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionEnvironment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -209,16 +209,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_instance_request_concurrency: {
-                        let field_value = match fields_map.get("max_instance_request_concurrency") {
+                        let field_value = match fields_map.get("maxInstanceRequestConcurrency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_instance_request_concurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxInstanceRequestConcurrency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_selectors: {
-                        let field_value = match fields_map.get("node_selectors") {
+                        let field_value = match fields_map.get("nodeSelectors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_selectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeSelectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -237,23 +237,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account: {
-                        let field_value = match fields_map.get("service_account") {
+                        let field_value = match fields_map.get("serviceAccount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_meshes: {
-                        let field_value = match fields_map.get("service_meshes") {
+                        let field_value = match fields_map.get("serviceMeshes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_meshes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceMeshes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_affinity: {
-                        let field_value = match fields_map.get("session_affinity") {
+                        let field_value = match fields_map.get("sessionAffinity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionAffinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -272,9 +272,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_accesses: {
-                        let field_value = match fields_map.get("vpc_accesses") {
+                        let field_value = match fields_map.get("vpcAccesses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_accesses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcAccesses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

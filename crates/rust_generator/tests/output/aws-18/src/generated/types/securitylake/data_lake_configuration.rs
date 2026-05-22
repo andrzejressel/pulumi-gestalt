@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#encryption_configurations: {
-                        let field_value = match fields_map.get("encryption_configurations") {
+                        let field_value = match fields_map.get("encryptionConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_configuration: {
-                        let field_value = match fields_map.get("lifecycle_configuration") {
+                        let field_value = match fields_map.get("lifecycleConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lifecycle_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifecycleConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replication_configuration: {
-                        let field_value = match fields_map.get("replication_configuration") {
+                        let field_value = match fields_map.get("replicationConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replication_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicationConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

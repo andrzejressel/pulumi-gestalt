@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#failover_across_pools: {
-                        let field_value = match fields_map.get("failover_across_pools") {
+                        let field_value = match fields_map.get("failoverAcrossPools") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failover_across_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failoverAcrossPools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#http_endpoint: {
-                        let field_value = match fields_map.get("http_endpoint") {
+                        let field_value = match fields_map.get("httpEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_put_response_hop_limit: {
-                        let field_value = match fields_map.get("http_put_response_hop_limit") {
+                        let field_value = match fields_map.get("httpPutResponseHopLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_put_response_hop_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpPutResponseHopLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_tokens: {
-                        let field_value = match fields_map.get("http_tokens") {
+                        let field_value = match fields_map.get("httpTokens") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_tokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpTokens' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

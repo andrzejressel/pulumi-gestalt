@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#checks_failed_percent: {
-                        let field_value = match fields_map.get("checks_failed_percent") {
+                        let field_value = match fields_map.get("checksFailedPercent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'checks_failed_percent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checksFailedPercent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#round_trip_time_ms: {
-                        let field_value = match fields_map.get("round_trip_time_ms") {
+                        let field_value = match fields_map.get("roundTripTimeMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'round_trip_time_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roundTripTimeMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

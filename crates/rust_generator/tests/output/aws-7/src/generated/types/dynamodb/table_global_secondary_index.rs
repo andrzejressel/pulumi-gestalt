@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#hash_key: {
-                        let field_value = match fields_map.get("hash_key") {
+                        let field_value = match fields_map.get("hashKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hash_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hashKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,44 +120,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#non_key_attributes: {
-                        let field_value = match fields_map.get("non_key_attributes") {
+                        let field_value = match fields_map.get("nonKeyAttributes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'non_key_attributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nonKeyAttributes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_demand_throughput: {
-                        let field_value = match fields_map.get("on_demand_throughput") {
+                        let field_value = match fields_map.get("onDemandThroughput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_demand_throughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onDemandThroughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#projection_type: {
-                        let field_value = match fields_map.get("projection_type") {
+                        let field_value = match fields_map.get("projectionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'projection_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_key: {
-                        let field_value = match fields_map.get("range_key") {
+                        let field_value = match fields_map.get("rangeKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_capacity: {
-                        let field_value = match fields_map.get("read_capacity") {
+                        let field_value = match fields_map.get("readCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#write_capacity: {
-                        let field_value = match fields_map.get("write_capacity") {
+                        let field_value = match fields_map.get("writeCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'write_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'writeCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

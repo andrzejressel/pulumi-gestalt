@@ -97,23 +97,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#contact_emails: {
-                        let field_value = match fields_map.get("contact_emails") {
+                        let field_value = match fields_map.get("contactEmails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contact_emails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contactEmails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#contact_groups: {
-                        let field_value = match fields_map.get("contact_groups") {
+                        let field_value = match fields_map.get("contactGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contact_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contactGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#contact_roles: {
-                        let field_value = match fields_map.get("contact_roles") {
+                        let field_value = match fields_map.get("contactRoles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'contact_roles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contactRoles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -139,9 +139,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threshold_type: {
-                        let field_value = match fields_map.get("threshold_type") {
+                        let field_value = match fields_map.get("thresholdType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'threshold_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thresholdType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

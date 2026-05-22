@@ -202,142 +202,142 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#available_core_count: {
-                        let field_value = match fields_map.get("available_core_count") {
+                        let field_value = match fields_map.get("availableCoreCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_core_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableCoreCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_core_count_per_node: {
-                        let field_value = match fields_map.get("available_core_count_per_node") {
+                        let field_value = match fields_map.get("availableCoreCountPerNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_core_count_per_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableCoreCountPerNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_data_storage_in_tbs: {
-                        let field_value = match fields_map.get("available_data_storage_in_tbs") {
+                        let field_value = match fields_map.get("availableDataStorageInTbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_data_storage_in_tbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableDataStorageInTbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_data_storage_per_server_in_tbs: {
-                        let field_value = match fields_map.get("available_data_storage_per_server_in_tbs") {
+                        let field_value = match fields_map.get("availableDataStoragePerServerInTbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_data_storage_per_server_in_tbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableDataStoragePerServerInTbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_db_node_per_node_in_gbs: {
-                        let field_value = match fields_map.get("available_db_node_per_node_in_gbs") {
+                        let field_value = match fields_map.get("availableDbNodePerNodeInGbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_db_node_per_node_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableDbNodePerNodeInGbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_db_node_storage_in_gbs: {
-                        let field_value = match fields_map.get("available_db_node_storage_in_gbs") {
+                        let field_value = match fields_map.get("availableDbNodeStorageInGbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_db_node_storage_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableDbNodeStorageInGbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_memory_in_gbs: {
-                        let field_value = match fields_map.get("available_memory_in_gbs") {
+                        let field_value = match fields_map.get("availableMemoryInGbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_memory_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableMemoryInGbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_memory_per_node_in_gbs: {
-                        let field_value = match fields_map.get("available_memory_per_node_in_gbs") {
+                        let field_value = match fields_map.get("availableMemoryPerNodeInGbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_memory_per_node_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableMemoryPerNodeInGbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#core_count_increment: {
-                        let field_value = match fields_map.get("core_count_increment") {
+                        let field_value = match fields_map.get("coreCountIncrement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'core_count_increment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coreCountIncrement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_node_count: {
-                        let field_value = match fields_map.get("maximum_node_count") {
+                        let field_value = match fields_map.get("maximumNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_storage_count: {
-                        let field_value = match fields_map.get("maximum_storage_count") {
+                        let field_value = match fields_map.get("maximumStorageCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_storage_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumStorageCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_core_count: {
-                        let field_value = match fields_map.get("minimum_core_count") {
+                        let field_value = match fields_map.get("minimumCoreCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_core_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumCoreCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_core_count_per_node: {
-                        let field_value = match fields_map.get("minimum_core_count_per_node") {
+                        let field_value = match fields_map.get("minimumCoreCountPerNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_core_count_per_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumCoreCountPerNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_data_storage_in_tbs: {
-                        let field_value = match fields_map.get("minimum_data_storage_in_tbs") {
+                        let field_value = match fields_map.get("minimumDataStorageInTbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_data_storage_in_tbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumDataStorageInTbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_db_node_storage_per_node_in_gbs: {
-                        let field_value = match fields_map.get("minimum_db_node_storage_per_node_in_gbs") {
+                        let field_value = match fields_map.get("minimumDbNodeStoragePerNodeInGbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_db_node_storage_per_node_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumDbNodeStoragePerNodeInGbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_memory_per_node_in_gbs: {
-                        let field_value = match fields_map.get("minimum_memory_per_node_in_gbs") {
+                        let field_value = match fields_map.get("minimumMemoryPerNodeInGbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_memory_per_node_in_gbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumMemoryPerNodeInGbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_node_count: {
-                        let field_value = match fields_map.get("minimum_node_count") {
+                        let field_value = match fields_map.get("minimumNodeCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_node_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumNodeCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_storage_count: {
-                        let field_value = match fields_map.get("minimum_storage_count") {
+                        let field_value = match fields_map.get("minimumStorageCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_storage_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumStorageCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_minimum_core_count: {
-                        let field_value = match fields_map.get("runtime_minimum_core_count") {
+                        let field_value = match fields_map.get("runtimeMinimumCoreCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_minimum_core_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimeMinimumCoreCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shape_family: {
-                        let field_value = match fields_map.get("shape_family") {
+                        let field_value = match fields_map.get("shapeFamily") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shape_family' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shapeFamily' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

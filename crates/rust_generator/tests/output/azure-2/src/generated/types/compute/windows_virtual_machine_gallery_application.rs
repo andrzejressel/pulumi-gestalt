@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#automatic_upgrade_enabled: {
-                        let field_value = match fields_map.get("automatic_upgrade_enabled") {
+                        let field_value = match fields_map.get("automaticUpgradeEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automatic_upgrade_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automaticUpgradeEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#configuration_blob_uri: {
-                        let field_value = match fields_map.get("configuration_blob_uri") {
+                        let field_value = match fields_map.get("configurationBlobUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configuration_blob_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configurationBlobUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -118,16 +118,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#treat_failure_as_deployment_failure_enabled: {
-                        let field_value = match fields_map.get("treat_failure_as_deployment_failure_enabled") {
+                        let field_value = match fields_map.get("treatFailureAsDeploymentFailureEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'treat_failure_as_deployment_failure_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'treatFailureAsDeploymentFailureEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_id: {
-                        let field_value = match fields_map.get("version_id") {
+                        let field_value = match fields_map.get("versionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

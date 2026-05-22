@@ -76,16 +76,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#connection_string: {
-                        let field_value = match fields_map.get("connection_string") {
+                        let field_value = match fields_map.get("connectionString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#endpoint_uri: {
-                        let field_value = match fields_map.get("endpoint_uri") {
+                        let field_value = match fields_map.get("endpointUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_assigned_identity_client_id: {
-                        let field_value = match fields_map.get("user_assigned_identity_client_id") {
+                        let field_value = match fields_map.get("userAssignedIdentityClientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_assigned_identity_client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userAssignedIdentityClientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

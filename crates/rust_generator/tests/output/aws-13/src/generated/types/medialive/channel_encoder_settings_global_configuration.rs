@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#initial_audio_gain: {
-                        let field_value = match fields_map.get("initial_audio_gain") {
+                        let field_value = match fields_map.get("initialAudioGain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_audio_gain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialAudioGain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_end_action: {
-                        let field_value = match fields_map.get("input_end_action") {
+                        let field_value = match fields_map.get("inputEndAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_end_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputEndAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_loss_behavior: {
-                        let field_value = match fields_map.get("input_loss_behavior") {
+                        let field_value = match fields_map.get("inputLossBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_loss_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputLossBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_locking_mode: {
-                        let field_value = match fields_map.get("output_locking_mode") {
+                        let field_value = match fields_map.get("outputLockingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_locking_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputLockingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_timing_source: {
-                        let field_value = match fields_map.get("output_timing_source") {
+                        let field_value = match fields_map.get("outputTimingSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_timing_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputTimingSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#support_low_framerate_inputs: {
-                        let field_value = match fields_map.get("support_low_framerate_inputs") {
+                        let field_value = match fields_map.get("supportLowFramerateInputs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'support_low_framerate_inputs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'supportLowFramerateInputs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

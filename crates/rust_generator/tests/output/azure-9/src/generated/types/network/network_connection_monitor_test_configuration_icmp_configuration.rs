@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#trace_route_enabled: {
-                        let field_value = match fields_map.get("trace_route_enabled") {
+                        let field_value = match fields_map.get("traceRouteEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trace_route_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'traceRouteEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#cloud_watch_log_group_arn: {
-                        let field_value = match fields_map.get("cloud_watch_log_group_arn") {
+                        let field_value = match fields_map.get("cloudWatchLogGroupArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_watch_log_group_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudWatchLogGroupArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -79,9 +79,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_level: {
-                        let field_value = match fields_map.get("log_level") {
+                        let field_value = match fields_map.get("logLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

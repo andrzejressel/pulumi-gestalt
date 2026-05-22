@@ -81,23 +81,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_public_ip_address: {
-                        let field_value = match fields_map.get("shared_public_ip_address") {
+                        let field_value = match fields_map.get("sharedPublicIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_public_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedPublicIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_in_virtual_machine_creation: {
-                        let field_value = match fields_map.get("use_in_virtual_machine_creation") {
+                        let field_value = match fields_map.get("useInVirtualMachineCreation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_in_virtual_machine_creation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useInVirtualMachineCreation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_public_ip_address: {
-                        let field_value = match fields_map.get("use_public_ip_address") {
+                        let field_value = match fields_map.get("usePublicIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_public_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'usePublicIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

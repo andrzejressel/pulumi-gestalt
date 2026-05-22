@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#ancillary_source_settings: {
-                        let field_value = match fields_map.get("ancillary_source_settings") {
+                        let field_value = match fields_map.get("ancillarySourceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ancillary_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ancillarySourceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#arib_source_settings: {
-                        let field_value = match fields_map.get("arib_source_settings") {
+                        let field_value = match fields_map.get("aribSourceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'arib_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aribSourceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dvb_sub_source_settings: {
-                        let field_value = match fields_map.get("dvb_sub_source_settings") {
+                        let field_value = match fields_map.get("dvbSubSourceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dvb_sub_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dvbSubSourceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#embedded_source_settings: {
-                        let field_value = match fields_map.get("embedded_source_settings") {
+                        let field_value = match fields_map.get("embeddedSourceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'embedded_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'embeddedSourceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_20_source_settings: {
-                        let field_value = match fields_map.get("scte_20_source_settings") {
+                        let field_value = match fields_map.get("scte20SourceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scte_20_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scte20SourceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scte_27_source_settings: {
-                        let field_value = match fields_map.get("scte_27_source_settings") {
+                        let field_value = match fields_map.get("scte27SourceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scte_27_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scte27SourceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#teletext_source_settings: {
-                        let field_value = match fields_map.get("teletext_source_settings") {
+                        let field_value = match fields_map.get("teletextSourceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'teletext_source_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'teletextSourceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

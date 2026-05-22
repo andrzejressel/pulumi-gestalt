@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluation_missing_data: {
-                        let field_value = match fields_map.get("evaluation_missing_data") {
+                        let field_value = match fields_map.get("evaluationMissingData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluation_missing_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluationMissingData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

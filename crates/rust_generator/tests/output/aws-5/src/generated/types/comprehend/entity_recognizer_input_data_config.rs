@@ -108,16 +108,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#augmented_manifests: {
-                        let field_value = match fields_map.get("augmented_manifests") {
+                        let field_value = match fields_map.get("augmentedManifests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'augmented_manifests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'augmentedManifests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_format: {
-                        let field_value = match fields_map.get("data_format") {
+                        let field_value = match fields_map.get("dataFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -129,16 +129,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entity_list: {
-                        let field_value = match fields_map.get("entity_list") {
+                        let field_value = match fields_map.get("entityList") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityList' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#entity_types: {
-                        let field_value = match fields_map.get("entity_types") {
+                        let field_value = match fields_map.get("entityTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entity_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entityTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

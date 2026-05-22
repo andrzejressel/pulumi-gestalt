@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#window_after: {
-                        let field_value = match fields_map.get("window_after") {
+                        let field_value = match fields_map.get("windowAfter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'window_after' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowAfter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#window_before: {
-                        let field_value = match fields_map.get("window_before") {
+                        let field_value = match fields_map.get("windowBefore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'window_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowBefore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

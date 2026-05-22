@@ -57,16 +57,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#crl_configurations: {
-                        let field_value = match fields_map.get("crl_configurations") {
+                        let field_value = match fields_map.get("crlConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crl_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crlConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ocsp_configurations: {
-                        let field_value = match fields_map.get("ocsp_configurations") {
+                        let field_value = match fields_map.get("ocspConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ocsp_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ocspConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

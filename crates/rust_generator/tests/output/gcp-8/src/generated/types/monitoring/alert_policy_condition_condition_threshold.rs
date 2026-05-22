@@ -230,16 +230,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#denominator_aggregations: {
-                        let field_value = match fields_map.get("denominator_aggregations") {
+                        let field_value = match fields_map.get("denominatorAggregations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'denominator_aggregations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'denominatorAggregations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#denominator_filter: {
-                        let field_value = match fields_map.get("denominator_filter") {
+                        let field_value = match fields_map.get("denominatorFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'denominator_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'denominatorFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -251,9 +251,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluation_missing_data: {
-                        let field_value = match fields_map.get("evaluation_missing_data") {
+                        let field_value = match fields_map.get("evaluationMissingData") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluation_missing_data' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluationMissingData' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -265,16 +265,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forecast_options: {
-                        let field_value = match fields_map.get("forecast_options") {
+                        let field_value = match fields_map.get("forecastOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forecast_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forecastOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#threshold_value: {
-                        let field_value = match fields_map.get("threshold_value") {
+                        let field_value = match fields_map.get("thresholdValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'threshold_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thresholdValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

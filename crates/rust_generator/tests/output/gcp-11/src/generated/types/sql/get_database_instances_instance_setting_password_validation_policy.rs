@@ -97,37 +97,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disallow_username_substring: {
-                        let field_value = match fields_map.get("disallow_username_substring") {
+                        let field_value = match fields_map.get("disallowUsernameSubstring") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disallow_username_substring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disallowUsernameSubstring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_password_policy: {
-                        let field_value = match fields_map.get("enable_password_policy") {
+                        let field_value = match fields_map.get("enablePasswordPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_password_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePasswordPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_length: {
-                        let field_value = match fields_map.get("min_length") {
+                        let field_value = match fields_map.get("minLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_change_interval: {
-                        let field_value = match fields_map.get("password_change_interval") {
+                        let field_value = match fields_map.get("passwordChangeInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_change_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordChangeInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reuse_interval: {
-                        let field_value = match fields_map.get("reuse_interval") {
+                        let field_value = match fields_map.get("reuseInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reuse_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reuseInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

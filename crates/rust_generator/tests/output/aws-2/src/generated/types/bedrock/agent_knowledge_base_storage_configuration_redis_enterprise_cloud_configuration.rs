@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#credentials_secret_arn: {
-                        let field_value = match fields_map.get("credentials_secret_arn") {
+                        let field_value = match fields_map.get("credentialsSecretArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'credentials_secret_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'credentialsSecretArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_mapping: {
-                        let field_value = match fields_map.get("field_mapping") {
+                        let field_value = match fields_map.get("fieldMapping") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_mapping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldMapping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vector_index_name: {
-                        let field_value = match fields_map.get("vector_index_name") {
+                        let field_value = match fields_map.get("vectorIndexName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vector_index_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vectorIndexName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

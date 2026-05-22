@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#agent_creation_config: {
-                        let field_value = match fields_map.get("agent_creation_config") {
+                        let field_value = match fields_map.get("agentCreationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'agent_creation_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'agentCreationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dialogflow_agent_to_link: {
-                        let field_value = match fields_map.get("dialogflow_agent_to_link") {
+                        let field_value = match fields_map.get("dialogflowAgentToLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dialogflow_agent_to_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dialogflowAgentToLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

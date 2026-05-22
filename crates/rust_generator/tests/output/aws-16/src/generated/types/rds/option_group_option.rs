@@ -90,23 +90,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#db_security_group_memberships: {
-                        let field_value = match fields_map.get("db_security_group_memberships") {
+                        let field_value = match fields_map.get("dbSecurityGroupMemberships") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_security_group_memberships' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbSecurityGroupMemberships' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#option_name: {
-                        let field_value = match fields_map.get("option_name") {
+                        let field_value = match fields_map.get("optionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'option_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'optionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#option_settings: {
-                        let field_value = match fields_map.get("option_settings") {
+                        let field_value = match fields_map.get("optionSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'option_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'optionSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,9 +125,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_security_group_memberships: {
-                        let field_value = match fields_map.get("vpc_security_group_memberships") {
+                        let field_value = match fields_map.get("vpcSecurityGroupMemberships") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_security_group_memberships' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcSecurityGroupMemberships' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

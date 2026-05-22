@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#api_disabled: {
-                        let field_value = match fields_map.get("api_disabled") {
+                        let field_value = match fields_map.get("apiDisabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_disabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiDisabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_support_level: {
-                        let field_value = match fields_map.get("custom_support_level") {
+                        let field_value = match fields_map.get("customSupportLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_support_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customSupportLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

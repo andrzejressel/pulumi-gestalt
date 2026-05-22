@@ -60,9 +60,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#http_status: {
-                        let field_value = match fields_map.get("http_status") {
+                        let field_value = match fields_map.get("httpStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

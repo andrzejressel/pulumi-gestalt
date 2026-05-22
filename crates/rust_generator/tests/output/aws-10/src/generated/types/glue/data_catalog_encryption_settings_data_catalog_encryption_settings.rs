@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#connection_password_encryption: {
-                        let field_value = match fields_map.get("connection_password_encryption") {
+                        let field_value = match fields_map.get("connectionPasswordEncryption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_password_encryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionPasswordEncryption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_at_rest: {
-                        let field_value = match fields_map.get("encryption_at_rest") {
+                        let field_value = match fields_map.get("encryptionAtRest") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_at_rest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionAtRest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

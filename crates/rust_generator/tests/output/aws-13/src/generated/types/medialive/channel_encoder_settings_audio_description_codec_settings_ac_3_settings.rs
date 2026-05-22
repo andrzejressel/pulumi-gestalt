@@ -105,16 +105,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bitstream_mode: {
-                        let field_value = match fields_map.get("bitstream_mode") {
+                        let field_value = match fields_map.get("bitstreamMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bitstream_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bitstreamMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#coding_mode: {
-                        let field_value = match fields_map.get("coding_mode") {
+                        let field_value = match fields_map.get("codingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'coding_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,23 +126,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#drc_profile: {
-                        let field_value = match fields_map.get("drc_profile") {
+                        let field_value = match fields_map.get("drcProfile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'drc_profile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'drcProfile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lfe_filter: {
-                        let field_value = match fields_map.get("lfe_filter") {
+                        let field_value = match fields_map.get("lfeFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lfe_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lfeFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metadata_control: {
-                        let field_value = match fields_map.get("metadata_control") {
+                        let field_value = match fields_map.get("metadataControl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metadata_control' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metadataControl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

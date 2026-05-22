@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#kms_master_key_id: {
-                        let field_value = match fields_map.get("kms_master_key_id") {
+                        let field_value = match fields_map.get("kmsMasterKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_master_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsMasterKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sse_algorithm: {
-                        let field_value = match fields_map.get("sse_algorithm") {
+                        let field_value = match fields_map.get("sseAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sse_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sseAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

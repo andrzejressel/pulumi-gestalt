@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#catalog_encryption_mode: {
-                        let field_value = match fields_map.get("catalog_encryption_mode") {
+                        let field_value = match fields_map.get("catalogEncryptionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'catalog_encryption_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'catalogEncryptionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#catalog_encryption_service_role: {
-                        let field_value = match fields_map.get("catalog_encryption_service_role") {
+                        let field_value = match fields_map.get("catalogEncryptionServiceRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'catalog_encryption_service_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'catalogEncryptionServiceRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sse_aws_kms_key_id: {
-                        let field_value = match fields_map.get("sse_aws_kms_key_id") {
+                        let field_value = match fields_map.get("sseAwsKmsKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sse_aws_kms_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sseAwsKmsKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

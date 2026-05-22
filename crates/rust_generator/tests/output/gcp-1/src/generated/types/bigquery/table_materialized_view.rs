@@ -77,16 +77,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#allow_non_incremental_definition: {
-                        let field_value = match fields_map.get("allow_non_incremental_definition") {
+                        let field_value = match fields_map.get("allowNonIncrementalDefinition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_non_incremental_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowNonIncrementalDefinition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_refresh: {
-                        let field_value = match fields_map.get("enable_refresh") {
+                        let field_value = match fields_map.get("enableRefresh") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_refresh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableRefresh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -98,9 +98,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refresh_interval_ms: {
-                        let field_value = match fields_map.get("refresh_interval_ms") {
+                        let field_value = match fields_map.get("refreshIntervalMs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'refresh_interval_ms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'refreshIntervalMs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

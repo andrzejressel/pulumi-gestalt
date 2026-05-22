@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#dimension_key: {
-                        let field_value = match fields_map.get("dimension_key") {
+                        let field_value = match fields_map.get("dimensionKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dimension_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dimensionKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dimension_name: {
-                        let field_value = match fields_map.get("dimension_name") {
+                        let field_value = match fields_map.get("dimensionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dimension_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dimensionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#iceberg_unreferenced_file_removal: {
-                        let field_value = match fields_map.get("iceberg_unreferenced_file_removal") {
+                        let field_value = match fields_map.get("icebergUnreferencedFileRemoval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iceberg_unreferenced_file_removal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'icebergUnreferencedFileRemoval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

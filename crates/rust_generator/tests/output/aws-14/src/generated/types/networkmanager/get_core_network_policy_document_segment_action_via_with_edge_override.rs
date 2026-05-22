@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#edge_sets: {
-                        let field_value = match fields_map.get("edge_sets") {
+                        let field_value = match fields_map.get("edgeSets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'edge_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'edgeSets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_edge: {
-                        let field_value = match fields_map.get("use_edge") {
+                        let field_value = match fields_map.get("useEdge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_edge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useEdge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_edge_location: {
-                        let field_value = match fields_map.get("use_edge_location") {
+                        let field_value = match fields_map.get("useEdgeLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_edge_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useEdgeLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -138,23 +138,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#ca_certificate_id: {
-                        let field_value = match fields_map.get("ca_certificate_id") {
+                        let field_value = match fields_map.get("caCertificateId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ca_certificate_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caCertificateId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_key: {
-                        let field_value = match fields_map.get("host_key") {
+                        let field_value = match fields_map.get("hostKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_key_algorithm: {
-                        let field_value = match fields_map.get("host_key_algorithm") {
+                        let field_value = match fields_map.get("hostKeyAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_key_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostKeyAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -187,23 +187,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_key: {
-                        let field_value = match fields_map.get("private_key") {
+                        let field_value = match fields_map.get("privateKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#search_paths: {
-                        let field_value = match fields_map.get("search_paths") {
+                        let field_value = match fields_map.get("searchPaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'search_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'searchPaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#strict_host_key_checking: {
-                        let field_value = match fields_map.get("strict_host_key_checking") {
+                        let field_value = match fields_map.get("strictHostKeyChecking") {
                             Some(value) => value,
-                            None => bail!("Missing field 'strict_host_key_checking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'strictHostKeyChecking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

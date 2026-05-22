@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#account_key: {
-                        let field_value = match fields_map.get("account_key") {
+                        let field_value = match fields_map.get("accountKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'account_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accountKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_id: {
-                        let field_value = match fields_map.get("container_id") {
+                        let field_value = match fields_map.get("containerId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_auth_reference: {
-                        let field_value = match fields_map.get("local_auth_reference") {
+                        let field_value = match fields_map.get("localAuthReference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_auth_reference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localAuthReference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sas_token: {
-                        let field_value = match fields_map.get("sas_token") {
+                        let field_value = match fields_map.get("sasToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sas_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sasToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_principal: {
-                        let field_value = match fields_map.get("service_principal") {
+                        let field_value = match fields_map.get("servicePrincipal") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_principal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'servicePrincipal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sync_interval_in_seconds: {
-                        let field_value = match fields_map.get("sync_interval_in_seconds") {
+                        let field_value = match fields_map.get("syncIntervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sync_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syncIntervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_in_seconds: {
-                        let field_value = match fields_map.get("timeout_in_seconds") {
+                        let field_value = match fields_map.get("timeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

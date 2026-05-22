@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#extended_key_usages: {
-                        let field_value = match fields_map.get("extended_key_usages") {
+                        let field_value = match fields_map.get("extendedKeyUsages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extended_key_usages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extendedKeyUsages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_usages: {
-                        let field_value = match fields_map.get("key_usages") {
+                        let field_value = match fields_map.get("keyUsages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_usages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyUsages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subject_alternative_names: {
-                        let field_value = match fields_map.get("subject_alternative_names") {
+                        let field_value = match fields_map.get("subjectAlternativeNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subject_alternative_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subjectAlternativeNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#validity_in_months: {
-                        let field_value = match fields_map.get("validity_in_months") {
+                        let field_value = match fields_map.get("validityInMonths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'validity_in_months' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validityInMonths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

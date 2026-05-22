@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#rule_variables: {
-                        let field_value = match fields_map.get("rule_variables") {
+                        let field_value = match fields_map.get("ruleVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

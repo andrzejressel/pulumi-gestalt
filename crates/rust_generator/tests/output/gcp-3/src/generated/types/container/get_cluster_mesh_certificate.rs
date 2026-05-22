@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#enable_certificates: {
-                        let field_value = match fields_map.get("enable_certificates") {
+                        let field_value = match fields_map.get("enableCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

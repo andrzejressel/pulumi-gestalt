@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#script_path: {
-                        let field_value = match fields_map.get("script_path") {
+                        let field_value = match fields_map.get("scriptPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'script_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scriptPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

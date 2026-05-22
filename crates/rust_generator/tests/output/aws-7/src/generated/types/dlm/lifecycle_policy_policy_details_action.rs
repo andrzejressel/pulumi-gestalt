@@ -57,9 +57,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#cross_region_copies: {
-                        let field_value = match fields_map.get("cross_region_copies") {
+                        let field_value = match fields_map.get("crossRegionCopies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_region_copies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossRegionCopies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

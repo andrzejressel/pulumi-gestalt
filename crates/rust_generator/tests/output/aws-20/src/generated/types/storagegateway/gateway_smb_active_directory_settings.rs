@@ -99,30 +99,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#active_directory_status: {
-                        let field_value = match fields_map.get("active_directory_status") {
+                        let field_value = match fields_map.get("activeDirectoryStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_directory_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeDirectoryStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_controllers: {
-                        let field_value = match fields_map.get("domain_controllers") {
+                        let field_value = match fields_map.get("domainControllers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_controllers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainControllers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_name: {
-                        let field_value = match fields_map.get("domain_name") {
+                        let field_value = match fields_map.get("domainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#organizational_unit: {
-                        let field_value = match fields_map.get("organizational_unit") {
+                        let field_value = match fields_map.get("organizationalUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'organizational_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'organizationalUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,9 +134,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_in_seconds: {
-                        let field_value = match fields_map.get("timeout_in_seconds") {
+                        let field_value = match fields_map.get("timeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

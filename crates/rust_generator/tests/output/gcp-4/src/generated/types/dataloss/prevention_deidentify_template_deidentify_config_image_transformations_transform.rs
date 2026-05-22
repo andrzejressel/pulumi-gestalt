@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#all_info_types: {
-                        let field_value = match fields_map.get("all_info_types") {
+                        let field_value = match fields_map.get("allInfoTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'all_info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allInfoTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#all_text: {
-                        let field_value = match fields_map.get("all_text") {
+                        let field_value = match fields_map.get("allText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'all_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redaction_color: {
-                        let field_value = match fields_map.get("redaction_color") {
+                        let field_value = match fields_map.get("redactionColor") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redaction_color' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redactionColor' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selected_info_types: {
-                        let field_value = match fields_map.get("selected_info_types") {
+                        let field_value = match fields_map.get("selectedInfoTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selected_info_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectedInfoTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

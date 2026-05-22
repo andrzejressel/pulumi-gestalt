@@ -98,58 +98,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#source_description: {
-                        let field_value = match fields_map.get("source_description") {
+                        let field_value = match fields_map.get("sourceDescription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceDescription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_frequency: {
-                        let field_value = match fields_map.get("source_frequency") {
+                        let field_value = match fields_map.get("sourceFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_id: {
-                        let field_value = match fields_map.get("source_id") {
+                        let field_value = match fields_map.get("sourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_keyword: {
-                        let field_value = match fields_map.get("source_keyword") {
+                        let field_value = match fields_map.get("sourceKeyword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_keyword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceKeyword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_name: {
-                        let field_value = match fields_map.get("source_name") {
+                        let field_value = match fields_map.get("sourceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_set_up_option: {
-                        let field_value = match fields_map.get("source_set_up_option") {
+                        let field_value = match fields_map.get("sourceSetUpOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_set_up_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceSetUpOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_type: {
-                        let field_value = match fields_map.get("source_type") {
+                        let field_value = match fields_map.get("sourceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#troubleshooting_text: {
-                        let field_value = match fields_map.get("troubleshooting_text") {
+                        let field_value = match fields_map.get("troubleshootingText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'troubleshooting_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'troubleshootingText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

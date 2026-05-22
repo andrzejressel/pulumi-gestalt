@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#unused_access_age: {
-                        let field_value = match fields_map.get("unused_access_age") {
+                        let field_value = match fields_map.get("unusedAccessAge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unused_access_age' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unusedAccessAge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

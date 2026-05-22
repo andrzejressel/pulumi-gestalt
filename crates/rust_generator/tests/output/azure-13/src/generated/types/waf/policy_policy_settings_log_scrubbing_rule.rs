@@ -79,9 +79,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_variable: {
-                        let field_value = match fields_map.get("match_variable") {
+                        let field_value = match fields_map.get("matchVariable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_variable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchVariable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -93,9 +93,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selector_match_operator: {
-                        let field_value = match fields_map.get("selector_match_operator") {
+                        let field_value = match fields_map.get("selectorMatchOperator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selector_match_operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectorMatchOperator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

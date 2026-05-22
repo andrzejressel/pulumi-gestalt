@@ -70,16 +70,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#initial_prompt_fulfillment: {
-                        let field_value = match fields_map.get("initial_prompt_fulfillment") {
+                        let field_value = match fields_map.get("initialPromptFulfillment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_prompt_fulfillment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialPromptFulfillment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reprompt_event_handlers: {
-                        let field_value = match fields_map.get("reprompt_event_handlers") {
+                        let field_value = match fields_map.get("repromptEventHandlers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reprompt_event_handlers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repromptEventHandlers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

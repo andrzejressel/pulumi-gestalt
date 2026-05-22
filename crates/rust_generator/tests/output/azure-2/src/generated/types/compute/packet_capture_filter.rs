@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#local_ip_address: {
-                        let field_value = match fields_map.get("local_ip_address") {
+                        let field_value = match fields_map.get("localIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#local_port: {
-                        let field_value = match fields_map.get("local_port") {
+                        let field_value = match fields_map.get("localPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_ip_address: {
-                        let field_value = match fields_map.get("remote_ip_address") {
+                        let field_value = match fields_map.get("remoteIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remoteIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_port: {
-                        let field_value = match fields_map.get("remote_port") {
+                        let field_value = match fields_map.get("remotePort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remotePort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

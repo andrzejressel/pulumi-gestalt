@@ -84,23 +84,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#additional_unattend_configs: {
-                        let field_value = match fields_map.get("additional_unattend_configs") {
+                        let field_value = match fields_map.get("additionalUnattendConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_unattend_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalUnattendConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_automatic_upgrades: {
-                        let field_value = match fields_map.get("enable_automatic_upgrades") {
+                        let field_value = match fields_map.get("enableAutomaticUpgrades") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_automatic_upgrades' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAutomaticUpgrades' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provision_vm_agent: {
-                        let field_value = match fields_map.get("provision_vm_agent") {
+                        let field_value = match fields_map.get("provisionVmAgent") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provision_vm_agent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'provisionVmAgent' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

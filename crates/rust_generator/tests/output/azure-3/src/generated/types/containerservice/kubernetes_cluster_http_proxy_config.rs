@@ -73,30 +73,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#http_proxy: {
-                        let field_value = match fields_map.get("http_proxy") {
+                        let field_value = match fields_map.get("httpProxy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_proxy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpProxy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#https_proxy: {
-                        let field_value = match fields_map.get("https_proxy") {
+                        let field_value = match fields_map.get("httpsProxy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'https_proxy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpsProxy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_proxies: {
-                        let field_value = match fields_map.get("no_proxies") {
+                        let field_value = match fields_map.get("noProxies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_proxies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noProxies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_ca: {
-                        let field_value = match fields_map.get("trusted_ca") {
+                        let field_value = match fields_map.get("trustedCa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trusted_ca' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustedCa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

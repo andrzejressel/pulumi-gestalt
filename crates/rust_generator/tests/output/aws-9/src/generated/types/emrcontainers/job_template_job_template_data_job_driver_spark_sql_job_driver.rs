@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#entry_point: {
-                        let field_value = match fields_map.get("entry_point") {
+                        let field_value = match fields_map.get("entryPoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'entry_point' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'entryPoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spark_sql_parameters: {
-                        let field_value = match fields_map.get("spark_sql_parameters") {
+                        let field_value = match fields_map.get("sparkSqlParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spark_sql_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sparkSqlParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

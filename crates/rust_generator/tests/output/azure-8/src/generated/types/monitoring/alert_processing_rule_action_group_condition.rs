@@ -132,23 +132,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#alert_context: {
-                        let field_value = match fields_map.get("alert_context") {
+                        let field_value = match fields_map.get("alertContext") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alert_context' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alertContext' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#alert_rule_id: {
-                        let field_value = match fields_map.get("alert_rule_id") {
+                        let field_value = match fields_map.get("alertRuleId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alert_rule_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alertRuleId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#alert_rule_name: {
-                        let field_value = match fields_map.get("alert_rule_name") {
+                        let field_value = match fields_map.get("alertRuleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alert_rule_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alertRuleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -160,16 +160,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitor_condition: {
-                        let field_value = match fields_map.get("monitor_condition") {
+                        let field_value = match fields_map.get("monitorCondition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monitor_condition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monitorCondition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitor_service: {
-                        let field_value = match fields_map.get("monitor_service") {
+                        let field_value = match fields_map.get("monitorService") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monitor_service' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monitorService' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -181,30 +181,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#signal_type: {
-                        let field_value = match fields_map.get("signal_type") {
+                        let field_value = match fields_map.get("signalType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'signal_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'signalType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_resource: {
-                        let field_value = match fields_map.get("target_resource") {
+                        let field_value = match fields_map.get("targetResource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetResource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_resource_group: {
-                        let field_value = match fields_map.get("target_resource_group") {
+                        let field_value = match fields_map.get("targetResourceGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_resource_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetResourceGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_resource_type: {
-                        let field_value = match fields_map.get("target_resource_type") {
+                        let field_value = match fields_map.get("targetResourceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_resource_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetResourceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

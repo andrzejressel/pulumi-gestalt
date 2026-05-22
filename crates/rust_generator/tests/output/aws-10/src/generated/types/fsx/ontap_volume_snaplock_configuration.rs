@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#audit_log_volume: {
-                        let field_value = match fields_map.get("audit_log_volume") {
+                        let field_value = match fields_map.get("auditLogVolume") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audit_log_volume' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'auditLogVolume' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#autocommit_period: {
-                        let field_value = match fields_map.get("autocommit_period") {
+                        let field_value = match fields_map.get("autocommitPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autocommit_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autocommitPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#privileged_delete: {
-                        let field_value = match fields_map.get("privileged_delete") {
+                        let field_value = match fields_map.get("privilegedDelete") {
                             Some(value) => value,
-                            None => bail!("Missing field 'privileged_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privilegedDelete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_period: {
-                        let field_value = match fields_map.get("retention_period") {
+                        let field_value = match fields_map.get("retentionPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snaplock_type: {
-                        let field_value = match fields_map.get("snaplock_type") {
+                        let field_value = match fields_map.get("snaplockType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snaplock_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snaplockType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_append_mode_enabled: {
-                        let field_value = match fields_map.get("volume_append_mode_enabled") {
+                        let field_value = match fields_map.get("volumeAppendModeEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_append_mode_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeAppendModeEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

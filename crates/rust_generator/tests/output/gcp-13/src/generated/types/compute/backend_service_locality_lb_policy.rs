@@ -61,9 +61,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#custom_policy: {
-                        let field_value = match fields_map.get("custom_policy") {
+                        let field_value = match fields_map.get("customPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

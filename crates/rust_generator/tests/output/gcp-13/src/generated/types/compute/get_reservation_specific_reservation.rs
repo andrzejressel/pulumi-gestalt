@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#in_use_count: {
-                        let field_value = match fields_map.get("in_use_count") {
+                        let field_value = match fields_map.get("inUseCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'in_use_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inUseCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_properties: {
-                        let field_value = match fields_map.get("instance_properties") {
+                        let field_value = match fields_map.get("instanceProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

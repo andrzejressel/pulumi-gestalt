@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#confidence_threshold: {
-                        let field_value = match fields_map.get("confidence_threshold") {
+                        let field_value = match fields_map.get("confidenceThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'confidence_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'confidenceThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expiration_sec: {
-                        let field_value = match fields_map.get("expiration_sec") {
+                        let field_value = match fields_map.get("expirationSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expiration_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expirationSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#impacted_baseline_threshold: {
-                        let field_value = match fields_map.get("impacted_baseline_threshold") {
+                        let field_value = match fields_map.get("impactedBaselineThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'impacted_baseline_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'impactedBaselineThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_threshold: {
-                        let field_value = match fields_map.get("load_threshold") {
+                        let field_value = match fields_map.get("loadThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

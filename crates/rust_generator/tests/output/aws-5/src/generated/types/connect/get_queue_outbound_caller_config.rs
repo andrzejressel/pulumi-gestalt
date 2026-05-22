@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#outbound_caller_id_name: {
-                        let field_value = match fields_map.get("outbound_caller_id_name") {
+                        let field_value = match fields_map.get("outboundCallerIdName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_caller_id_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundCallerIdName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outbound_caller_id_number_id: {
-                        let field_value = match fields_map.get("outbound_caller_id_number_id") {
+                        let field_value = match fields_map.get("outboundCallerIdNumberId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_caller_id_number_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundCallerIdNumberId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outbound_flow_id: {
-                        let field_value = match fields_map.get("outbound_flow_id") {
+                        let field_value = match fields_map.get("outboundFlowId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_flow_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundFlowId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

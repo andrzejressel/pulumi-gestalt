@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_roles: {
-                        let field_value = match fields_map.get("server_roles") {
+                        let field_value = match fields_map.get("serverRoles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_roles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverRoles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

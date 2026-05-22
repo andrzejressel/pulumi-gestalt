@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_group_name: {
-                        let field_value = match fields_map.get("resource_group_name") {
+                        let field_value = match fields_map.get("resourceGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subscription_id: {
-                        let field_value = match fields_map.get("subscription_id") {
+                        let field_value = match fields_map.get("subscriptionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subscription_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subscriptionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

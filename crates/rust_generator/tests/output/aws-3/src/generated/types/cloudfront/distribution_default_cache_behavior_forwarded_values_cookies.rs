@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#whitelisted_names: {
-                        let field_value = match fields_map.get("whitelisted_names") {
+                        let field_value = match fields_map.get("whitelistedNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'whitelisted_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'whitelistedNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

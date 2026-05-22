@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#mysql_excluded_objects: {
-                        let field_value = match fields_map.get("mysql_excluded_objects") {
+                        let field_value = match fields_map.get("mysqlExcludedObjects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mysql_excluded_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mysqlExcludedObjects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oracle_excluded_objects: {
-                        let field_value = match fields_map.get("oracle_excluded_objects") {
+                        let field_value = match fields_map.get("oracleExcludedObjects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oracle_excluded_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oracleExcludedObjects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#postgresql_excluded_objects: {
-                        let field_value = match fields_map.get("postgresql_excluded_objects") {
+                        let field_value = match fields_map.get("postgresqlExcludedObjects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'postgresql_excluded_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postgresqlExcludedObjects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_server_excluded_objects: {
-                        let field_value = match fields_map.get("sql_server_excluded_objects") {
+                        let field_value = match fields_map.get("sqlServerExcludedObjects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_server_excluded_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlServerExcludedObjects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

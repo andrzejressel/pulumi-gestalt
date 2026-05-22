@@ -92,16 +92,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_configs: {
-                        let field_value = match fields_map.get("node_configs") {
+                        let field_value = match fields_map.get("nodeConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operating_system: {
-                        let field_value = match fields_map.get("operating_system") {
+                        let field_value = match fields_map.get("operatingSystem") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operating_system' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operatingSystem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

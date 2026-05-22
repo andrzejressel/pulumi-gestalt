@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#destination_file_location: {
-                        let field_value = match fields_map.get("destination_file_location") {
+                        let field_value = match fields_map.get("destinationFileLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_file_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationFileLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#overwrite_existing: {
-                        let field_value = match fields_map.get("overwrite_existing") {
+                        let field_value = match fields_map.get("overwriteExisting") {
                             Some(value) => value,
-                            None => bail!("Missing field 'overwrite_existing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'overwriteExisting' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_file_location: {
-                        let field_value = match fields_map.get("source_file_location") {
+                        let field_value = match fields_map.get("sourceFileLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_file_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceFileLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

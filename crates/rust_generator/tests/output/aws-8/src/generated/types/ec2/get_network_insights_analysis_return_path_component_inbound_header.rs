@@ -77,16 +77,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#destination_addresses: {
-                        let field_value = match fields_map.get("destination_addresses") {
+                        let field_value = match fields_map.get("destinationAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_port_ranges: {
-                        let field_value = match fields_map.get("destination_port_ranges") {
+                        let field_value = match fields_map.get("destinationPortRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_port_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationPortRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -98,16 +98,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_addresses: {
-                        let field_value = match fields_map.get("source_addresses") {
+                        let field_value = match fields_map.get("sourceAddresses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_addresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceAddresses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_port_ranges: {
-                        let field_value = match fields_map.get("source_port_ranges") {
+                        let field_value = match fields_map.get("sourcePortRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_port_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourcePortRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

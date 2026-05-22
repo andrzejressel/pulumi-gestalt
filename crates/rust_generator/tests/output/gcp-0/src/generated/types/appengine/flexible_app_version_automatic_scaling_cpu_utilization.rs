@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#aggregation_window_length: {
-                        let field_value = match fields_map.get("aggregation_window_length") {
+                        let field_value = match fields_map.get("aggregationWindowLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aggregation_window_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aggregationWindowLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_utilization: {
-                        let field_value = match fields_map.get("target_utilization") {
+                        let field_value = match fields_map.get("targetUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

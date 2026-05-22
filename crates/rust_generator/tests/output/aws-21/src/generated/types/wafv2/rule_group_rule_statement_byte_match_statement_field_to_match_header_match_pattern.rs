@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_headers: {
-                        let field_value = match fields_map.get("excluded_headers") {
+                        let field_value = match fields_map.get("excludedHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_headers: {
-                        let field_value = match fields_map.get("included_headers") {
+                        let field_value = match fields_map.get("includedHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

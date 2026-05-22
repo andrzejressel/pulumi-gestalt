@@ -80,16 +80,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#chunking_config: {
-                        let field_value = match fields_map.get("chunking_config") {
+                        let field_value = match fields_map.get("chunkingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'chunking_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'chunkingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_parsing_config: {
-                        let field_value = match fields_map.get("default_parsing_config") {
+                        let field_value = match fields_map.get("defaultParsingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_parsing_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultParsingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -101,9 +101,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parsing_config_overrides: {
-                        let field_value = match fields_map.get("parsing_config_overrides") {
+                        let field_value = match fields_map.get("parsingConfigOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parsing_config_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parsingConfigOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

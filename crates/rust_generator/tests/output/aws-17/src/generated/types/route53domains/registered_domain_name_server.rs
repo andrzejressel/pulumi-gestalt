@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#glue_ips: {
-                        let field_value = match fields_map.get("glue_ips") {
+                        let field_value = match fields_map.get("glueIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'glue_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'glueIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

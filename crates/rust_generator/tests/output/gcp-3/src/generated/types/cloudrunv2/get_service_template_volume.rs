@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#cloud_sql_instances: {
-                        let field_value = match fields_map.get("cloud_sql_instances") {
+                        let field_value = match fields_map.get("cloudSqlInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_sql_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudSqlInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#empty_dirs: {
-                        let field_value = match fields_map.get("empty_dirs") {
+                        let field_value = match fields_map.get("emptyDirs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'empty_dirs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emptyDirs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

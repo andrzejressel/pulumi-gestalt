@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#custom_endpoint: {
-                        let field_value = match fields_map.get("custom_endpoint") {
+                        let field_value = match fields_map.get("customEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_endpoint_certificate_arn: {
-                        let field_value = match fields_map.get("custom_endpoint_certificate_arn") {
+                        let field_value = match fields_map.get("customEndpointCertificateArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_endpoint_certificate_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customEndpointCertificateArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_endpoint_enabled: {
-                        let field_value = match fields_map.get("custom_endpoint_enabled") {
+                        let field_value = match fields_map.get("customEndpointEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_endpoint_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customEndpointEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enforce_https: {
-                        let field_value = match fields_map.get("enforce_https") {
+                        let field_value = match fields_map.get("enforceHttps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforce_https' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforceHttps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_security_policy: {
-                        let field_value = match fields_map.get("tls_security_policy") {
+                        let field_value = match fields_map.get("tlsSecurityPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_security_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsSecurityPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

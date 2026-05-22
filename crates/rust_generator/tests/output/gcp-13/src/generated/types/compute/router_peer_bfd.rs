@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#min_receive_interval: {
-                        let field_value = match fields_map.get("min_receive_interval") {
+                        let field_value = match fields_map.get("minReceiveInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_receive_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minReceiveInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_transmit_interval: {
-                        let field_value = match fields_map.get("min_transmit_interval") {
+                        let field_value = match fields_map.get("minTransmitInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_transmit_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minTransmitInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,9 +112,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_initialization_mode: {
-                        let field_value = match fields_map.get("session_initialization_mode") {
+                        let field_value = match fields_map.get("sessionInitializationMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_initialization_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionInitializationMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

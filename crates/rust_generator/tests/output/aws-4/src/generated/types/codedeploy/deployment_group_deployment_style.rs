@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#deployment_option: {
-                        let field_value = match fields_map.get("deployment_option") {
+                        let field_value = match fields_map.get("deploymentOption") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployment_option' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentOption' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deployment_type: {
-                        let field_value = match fields_map.get("deployment_type") {
+                        let field_value = match fields_map.get("deploymentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployment_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

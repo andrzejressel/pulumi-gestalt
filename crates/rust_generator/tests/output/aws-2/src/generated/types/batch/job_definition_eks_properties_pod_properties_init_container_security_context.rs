@@ -84,30 +84,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_only_root_file_system: {
-                        let field_value = match fields_map.get("read_only_root_file_system") {
+                        let field_value = match fields_map.get("readOnlyRootFileSystem") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_only_root_file_system' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readOnlyRootFileSystem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_as_group: {
-                        let field_value = match fields_map.get("run_as_group") {
+                        let field_value = match fields_map.get("runAsGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'run_as_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runAsGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_as_non_root: {
-                        let field_value = match fields_map.get("run_as_non_root") {
+                        let field_value = match fields_map.get("runAsNonRoot") {
                             Some(value) => value,
-                            None => bail!("Missing field 'run_as_non_root' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runAsNonRoot' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#run_as_user: {
-                        let field_value = match fields_map.get("run_as_user") {
+                        let field_value = match fields_map.get("runAsUser") {
                             Some(value) => value,
-                            None => bail!("Missing field 'run_as_user' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runAsUser' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

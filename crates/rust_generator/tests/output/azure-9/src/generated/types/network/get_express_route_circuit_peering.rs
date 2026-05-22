@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#azure_asn: {
-                        let field_value = match fields_map.get("azure_asn") {
+                        let field_value = match fields_map.get("azureAsn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_asn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureAsn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peer_asn: {
-                        let field_value = match fields_map.get("peer_asn") {
+                        let field_value = match fields_map.get("peerAsn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peer_asn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peerAsn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peering_type: {
-                        let field_value = match fields_map.get("peering_type") {
+                        let field_value = match fields_map.get("peeringType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peering_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peeringType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_peer_address_prefix: {
-                        let field_value = match fields_map.get("primary_peer_address_prefix") {
+                        let field_value = match fields_map.get("primaryPeerAddressPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_peer_address_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryPeerAddressPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_peer_address_prefix: {
-                        let field_value = match fields_map.get("secondary_peer_address_prefix") {
+                        let field_value = match fields_map.get("secondaryPeerAddressPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_peer_address_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryPeerAddressPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_key: {
-                        let field_value = match fields_map.get("shared_key") {
+                        let field_value = match fields_map.get("sharedKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vlan_id: {
-                        let field_value = match fields_map.get("vlan_id") {
+                        let field_value = match fields_map.get("vlanId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vlan_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vlanId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

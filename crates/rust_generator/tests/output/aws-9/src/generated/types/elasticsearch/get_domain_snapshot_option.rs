@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#automated_snapshot_start_hour: {
-                        let field_value = match fields_map.get("automated_snapshot_start_hour") {
+                        let field_value = match fields_map.get("automatedSnapshotStartHour") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automated_snapshot_start_hour' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automatedSnapshotStartHour' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

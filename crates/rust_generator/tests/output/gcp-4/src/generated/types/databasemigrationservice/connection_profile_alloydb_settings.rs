@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#initial_user: {
-                        let field_value = match fields_map.get("initial_user") {
+                        let field_value = match fields_map.get("initialUser") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_user' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialUser' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#primary_instance_settings: {
-                        let field_value = match fields_map.get("primary_instance_settings") {
+                        let field_value = match fields_map.get("primaryInstanceSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'primary_instance_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'primaryInstanceSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_network: {
-                        let field_value = match fields_map.get("vpc_network") {
+                        let field_value = match fields_map.get("vpcNetwork") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcNetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

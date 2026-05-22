@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#cloud_watch_monitoring_configuration: {
-                        let field_value = match fields_map.get("cloud_watch_monitoring_configuration") {
+                        let field_value = match fields_map.get("cloudWatchMonitoringConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_watch_monitoring_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudWatchMonitoringConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#persistent_app_ui: {
-                        let field_value = match fields_map.get("persistent_app_ui") {
+                        let field_value = match fields_map.get("persistentAppUi") {
                             Some(value) => value,
-                            None => bail!("Missing field 'persistent_app_ui' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'persistentAppUi' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_monitoring_configuration: {
-                        let field_value = match fields_map.get("s_3_monitoring_configuration") {
+                        let field_value = match fields_map.get("s3MonitoringConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_monitoring_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3MonitoringConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

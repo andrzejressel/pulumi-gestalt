@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publish_internet_endpoints: {
-                        let field_value = match fields_map.get("publish_internet_endpoints") {
+                        let field_value = match fields_map.get("publishInternetEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_internet_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishInternetEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publish_microsoft_endpoints: {
-                        let field_value = match fields_map.get("publish_microsoft_endpoints") {
+                        let field_value = match fields_map.get("publishMicrosoftEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_microsoft_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishMicrosoftEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

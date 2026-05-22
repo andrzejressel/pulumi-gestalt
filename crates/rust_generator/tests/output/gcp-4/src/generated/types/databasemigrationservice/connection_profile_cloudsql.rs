@@ -78,23 +78,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cloud_sql_id: {
-                        let field_value = match fields_map.get("cloud_sql_id") {
+                        let field_value = match fields_map.get("cloudSqlId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_sql_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudSqlId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip: {
-                        let field_value = match fields_map.get("private_ip") {
+                        let field_value = match fields_map.get("privateIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_ip: {
-                        let field_value = match fields_map.get("public_ip") {
+                        let field_value = match fields_map.get("publicIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

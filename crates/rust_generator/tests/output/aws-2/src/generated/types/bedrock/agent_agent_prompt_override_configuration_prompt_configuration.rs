@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#base_prompt_template: {
-                        let field_value = match fields_map.get("base_prompt_template") {
+                        let field_value = match fields_map.get("basePromptTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'base_prompt_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'basePromptTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inference_configurations: {
-                        let field_value = match fields_map.get("inference_configurations") {
+                        let field_value = match fields_map.get("inferenceConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inference_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inferenceConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parser_mode: {
-                        let field_value = match fields_map.get("parser_mode") {
+                        let field_value = match fields_map.get("parserMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parser_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parserMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prompt_creation_mode: {
-                        let field_value = match fields_map.get("prompt_creation_mode") {
+                        let field_value = match fields_map.get("promptCreationMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prompt_creation_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'promptCreationMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prompt_state: {
-                        let field_value = match fields_map.get("prompt_state") {
+                        let field_value = match fields_map.get("promptState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prompt_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'promptState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prompt_type: {
-                        let field_value = match fields_map.get("prompt_type") {
+                        let field_value = match fields_map.get("promptType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prompt_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'promptType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

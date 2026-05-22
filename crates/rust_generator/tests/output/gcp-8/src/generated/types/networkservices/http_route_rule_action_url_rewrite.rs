@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#host_rewrite: {
-                        let field_value = match fields_map.get("host_rewrite") {
+                        let field_value = match fields_map.get("hostRewrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_rewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostRewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_prefix_rewrite: {
-                        let field_value = match fields_map.get("path_prefix_rewrite") {
+                        let field_value = match fields_map.get("pathPrefixRewrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_prefix_rewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathPrefixRewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -91,30 +91,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gremlin_databases: {
-                        let field_value = match fields_map.get("gremlin_databases") {
+                        let field_value = match fields_map.get("gremlinDatabases") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gremlin_databases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gremlinDatabases' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restore_timestamp_in_utc: {
-                        let field_value = match fields_map.get("restore_timestamp_in_utc") {
+                        let field_value = match fields_map.get("restoreTimestampInUtc") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restore_timestamp_in_utc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restoreTimestampInUtc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_cosmosdb_account_id: {
-                        let field_value = match fields_map.get("source_cosmosdb_account_id") {
+                        let field_value = match fields_map.get("sourceCosmosdbAccountId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_cosmosdb_account_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceCosmosdbAccountId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tables_to_restores: {
-                        let field_value = match fields_map.get("tables_to_restores") {
+                        let field_value = match fields_map.get("tablesToRestores") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tables_to_restores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tablesToRestores' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

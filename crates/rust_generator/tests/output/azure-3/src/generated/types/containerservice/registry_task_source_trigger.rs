@@ -133,16 +133,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repository_url: {
-                        let field_value = match fields_map.get("repository_url") {
+                        let field_value = match fields_map.get("repositoryUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repository_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repositoryUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_type: {
-                        let field_value = match fields_map.get("source_type") {
+                        let field_value = match fields_map.get("sourceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

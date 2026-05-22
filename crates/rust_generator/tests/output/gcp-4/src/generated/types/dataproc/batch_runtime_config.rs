@@ -92,9 +92,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#autotuning_config: {
-                        let field_value = match fields_map.get("autotuning_config") {
+                        let field_value = match fields_map.get("autotuningConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autotuning_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autotuningConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -106,16 +106,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_image: {
-                        let field_value = match fields_map.get("container_image") {
+                        let field_value = match fields_map.get("containerImage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_image' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerImage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#effective_properties: {
-                        let field_value = match fields_map.get("effective_properties") {
+                        let field_value = match fields_map.get("effectiveProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

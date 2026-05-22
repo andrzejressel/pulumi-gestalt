@@ -97,16 +97,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_action: {
-                        let field_value = match fields_map.get("failure_action") {
+                        let field_value = match fields_map.get("failureAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_failure_ratio: {
-                        let field_value = match fields_map.get("max_failure_ratio") {
+                        let field_value = match fields_map.get("maxFailureRatio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_failure_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxFailureRatio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

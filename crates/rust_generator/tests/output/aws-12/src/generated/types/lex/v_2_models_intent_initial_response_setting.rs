@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#code_hook: {
-                        let field_value = match fields_map.get("code_hook") {
+                        let field_value = match fields_map.get("codeHook") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_hook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeHook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initial_response: {
-                        let field_value = match fields_map.get("initial_response") {
+                        let field_value = match fields_map.get("initialResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initial_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initialResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_step: {
-                        let field_value = match fields_map.get("next_step") {
+                        let field_value = match fields_map.get("nextStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

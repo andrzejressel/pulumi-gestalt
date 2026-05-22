@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#recovery_mechanisms: {
-                        let field_value = match fields_map.get("recovery_mechanisms") {
+                        let field_value = match fields_map.get("recoveryMechanisms") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recovery_mechanisms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recoveryMechanisms' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

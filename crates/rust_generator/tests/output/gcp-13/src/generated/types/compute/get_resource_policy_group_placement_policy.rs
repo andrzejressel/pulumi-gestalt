@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#availability_domain_count: {
-                        let field_value = match fields_map.get("availability_domain_count") {
+                        let field_value = match fields_map.get("availabilityDomainCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'availability_domain_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availabilityDomainCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -94,16 +94,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_distance: {
-                        let field_value = match fields_map.get("max_distance") {
+                        let field_value = match fields_map.get("maxDistance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_distance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxDistance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_count: {
-                        let field_value = match fields_map.get("vm_count") {
+                        let field_value = match fields_map.get("vmCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

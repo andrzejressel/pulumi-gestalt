@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#max_pods_per_node: {
-                        let field_value = match fields_map.get("max_pods_per_node") {
+                        let field_value = match fields_map.get("maxPodsPerNode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_pods_per_node' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxPodsPerNode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_pod_range: {
-                        let field_value = match fields_map.get("secondary_pod_range") {
+                        let field_value = match fields_map.get("secondaryPodRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_pod_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryPodRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

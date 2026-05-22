@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#apply_server_side_encryption_by_default: {
-                        let field_value = match fields_map.get("apply_server_side_encryption_by_default") {
+                        let field_value = match fields_map.get("applyServerSideEncryptionByDefault") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apply_server_side_encryption_by_default' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applyServerSideEncryptionByDefault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bucket_key_enabled: {
-                        let field_value = match fields_map.get("bucket_key_enabled") {
+                        let field_value = match fields_map.get("bucketKeyEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bucket_key_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bucketKeyEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#content_source_configurations: {
-                        let field_value = match fields_map.get("content_source_configurations") {
+                        let field_value = match fields_map.get("contentSourceConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_source_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentSourceConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_identity_configurations: {
-                        let field_value = match fields_map.get("user_identity_configurations") {
+                        let field_value = match fields_map.get("userIdentityConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_identity_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userIdentityConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

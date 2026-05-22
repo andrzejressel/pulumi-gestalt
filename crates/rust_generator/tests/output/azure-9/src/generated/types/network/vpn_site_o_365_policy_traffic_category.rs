@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#allow_endpoint_enabled: {
-                        let field_value = match fields_map.get("allow_endpoint_enabled") {
+                        let field_value = match fields_map.get("allowEndpointEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_endpoint_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowEndpointEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_endpoint_enabled: {
-                        let field_value = match fields_map.get("default_endpoint_enabled") {
+                        let field_value = match fields_map.get("defaultEndpointEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_endpoint_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultEndpointEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#optimize_endpoint_enabled: {
-                        let field_value = match fields_map.get("optimize_endpoint_enabled") {
+                        let field_value = match fields_map.get("optimizeEndpointEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'optimize_endpoint_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'optimizeEndpointEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#crypto_key: {
-                        let field_value = match fields_map.get("crypto_key") {
+                        let field_value = match fields_map.get("cryptoKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crypto_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cryptoKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

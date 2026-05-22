@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timecode_burnin_font_size: {
-                        let field_value = match fields_map.get("timecode_burnin_font_size") {
+                        let field_value = match fields_map.get("timecodeBurninFontSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timecode_burnin_font_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timecodeBurninFontSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timecode_burnin_position: {
-                        let field_value = match fields_map.get("timecode_burnin_position") {
+                        let field_value = match fields_map.get("timecodeBurninPosition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timecode_burnin_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timecodeBurninPosition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

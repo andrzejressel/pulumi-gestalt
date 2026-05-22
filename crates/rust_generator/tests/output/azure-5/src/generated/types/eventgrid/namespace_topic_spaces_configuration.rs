@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#alternative_authentication_name_sources: {
-                        let field_value = match fields_map.get("alternative_authentication_name_sources") {
+                        let field_value = match fields_map.get("alternativeAuthenticationNameSources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alternative_authentication_name_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alternativeAuthenticationNameSources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dynamic_routing_enrichments: {
-                        let field_value = match fields_map.get("dynamic_routing_enrichments") {
+                        let field_value = match fields_map.get("dynamicRoutingEnrichments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dynamic_routing_enrichments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dynamicRoutingEnrichments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_client_sessions_per_authentication_name: {
-                        let field_value = match fields_map.get("maximum_client_sessions_per_authentication_name") {
+                        let field_value = match fields_map.get("maximumClientSessionsPerAuthenticationName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_client_sessions_per_authentication_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumClientSessionsPerAuthenticationName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_session_expiry_in_hours: {
-                        let field_value = match fields_map.get("maximum_session_expiry_in_hours") {
+                        let field_value = match fields_map.get("maximumSessionExpiryInHours") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_session_expiry_in_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumSessionExpiryInHours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_topic_id: {
-                        let field_value = match fields_map.get("route_topic_id") {
+                        let field_value = match fields_map.get("routeTopicId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_topic_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeTopicId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_routing_enrichments: {
-                        let field_value = match fields_map.get("static_routing_enrichments") {
+                        let field_value = match fields_map.get("staticRoutingEnrichments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_routing_enrichments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticRoutingEnrichments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

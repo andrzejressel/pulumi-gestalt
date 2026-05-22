@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#capacity_reservation_id: {
-                        let field_value = match fields_map.get("capacity_reservation_id") {
+                        let field_value = match fields_map.get("capacityReservationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_reservation_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityReservationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#capacity_reservation_resource_group_arn: {
-                        let field_value = match fields_map.get("capacity_reservation_resource_group_arn") {
+                        let field_value = match fields_map.get("capacityReservationResourceGroupArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_reservation_resource_group_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityReservationResourceGroupArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

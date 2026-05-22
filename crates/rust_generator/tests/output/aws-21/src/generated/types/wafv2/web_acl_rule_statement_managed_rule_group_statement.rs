@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#managed_rule_group_configs: {
-                        let field_value = match fields_map.get("managed_rule_group_configs") {
+                        let field_value = match fields_map.get("managedRuleGroupConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_rule_group_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedRuleGroupConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,23 +104,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_action_overrides: {
-                        let field_value = match fields_map.get("rule_action_overrides") {
+                        let field_value = match fields_map.get("ruleActionOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_action_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleActionOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scope_down_statement: {
-                        let field_value = match fields_map.get("scope_down_statement") {
+                        let field_value = match fields_map.get("scopeDownStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scope_down_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scopeDownStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vendor_name: {
-                        let field_value = match fields_map.get("vendor_name") {
+                        let field_value = match fields_map.get("vendorName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vendor_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vendorName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

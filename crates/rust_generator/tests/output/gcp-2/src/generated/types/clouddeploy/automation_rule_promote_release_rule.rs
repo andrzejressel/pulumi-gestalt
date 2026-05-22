@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#destination_phase: {
-                        let field_value = match fields_map.get("destination_phase") {
+                        let field_value = match fields_map.get("destinationPhase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_phase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationPhase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_target_id: {
-                        let field_value = match fields_map.get("destination_target_id") {
+                        let field_value = match fields_map.get("destinationTargetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_target_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationTargetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

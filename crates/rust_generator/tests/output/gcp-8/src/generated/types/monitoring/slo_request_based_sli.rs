@@ -70,16 +70,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#distribution_cut: {
-                        let field_value = match fields_map.get("distribution_cut") {
+                        let field_value = match fields_map.get("distributionCut") {
                             Some(value) => value,
-                            None => bail!("Missing field 'distribution_cut' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'distributionCut' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#good_total_ratio: {
-                        let field_value = match fields_map.get("good_total_ratio") {
+                        let field_value = match fields_map.get("goodTotalRatio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'good_total_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'goodTotalRatio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

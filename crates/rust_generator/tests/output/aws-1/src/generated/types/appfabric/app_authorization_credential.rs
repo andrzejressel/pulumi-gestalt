@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#api_key_credentials: {
-                        let field_value = match fields_map.get("api_key_credentials") {
+                        let field_value = match fields_map.get("apiKeyCredentials") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_key_credentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiKeyCredentials' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oauth_2_credential: {
-                        let field_value = match fields_map.get("oauth_2_credential") {
+                        let field_value = match fields_map.get("oauth2Credential") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_2_credential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauth2Credential' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

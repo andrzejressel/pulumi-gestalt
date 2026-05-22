@@ -68,16 +68,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#account_ids: {
-                        let field_value = match fields_map.get("account_ids") {
+                        let field_value = match fields_map.get("accountIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'account_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accountIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#all_regions: {
-                        let field_value = match fields_map.get("all_regions") {
+                        let field_value = match fields_map.get("allRegions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'all_regions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allRegions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

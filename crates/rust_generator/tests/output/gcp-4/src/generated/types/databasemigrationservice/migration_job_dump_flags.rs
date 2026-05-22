@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#dump_flags: {
-                        let field_value = match fields_map.get("dump_flags") {
+                        let field_value = match fields_map.get("dumpFlags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dump_flags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dumpFlags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

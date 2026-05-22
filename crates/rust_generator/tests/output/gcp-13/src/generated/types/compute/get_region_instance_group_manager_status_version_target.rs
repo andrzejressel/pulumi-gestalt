@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#is_reached: {
-                        let field_value = match fields_map.get("is_reached") {
+                        let field_value = match fields_map.get("isReached") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_reached' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isReached' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

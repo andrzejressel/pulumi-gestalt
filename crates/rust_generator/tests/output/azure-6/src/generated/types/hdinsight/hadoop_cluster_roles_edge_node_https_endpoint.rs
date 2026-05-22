@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#access_modes: {
-                        let field_value = match fields_map.get("access_modes") {
+                        let field_value = match fields_map.get("accessModes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_modes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessModes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_port: {
-                        let field_value = match fields_map.get("destination_port") {
+                        let field_value = match fields_map.get("destinationPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_gateway_auth: {
-                        let field_value = match fields_map.get("disable_gateway_auth") {
+                        let field_value = match fields_map.get("disableGatewayAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_gateway_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableGatewayAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip_address: {
-                        let field_value = match fields_map.get("private_ip_address") {
+                        let field_value = match fields_map.get("privateIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sub_domain_suffix: {
-                        let field_value = match fields_map.get("sub_domain_suffix") {
+                        let field_value = match fields_map.get("subDomainSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sub_domain_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subDomainSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#intent_name: {
-                        let field_value = match fields_map.get("intent_name") {
+                        let field_value = match fields_map.get("intentName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'intent_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intentName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#intent_version: {
-                        let field_value = match fields_map.get("intent_version") {
+                        let field_value = match fields_map.get("intentVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'intent_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'intentVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

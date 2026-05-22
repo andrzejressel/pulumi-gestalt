@@ -89,16 +89,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_partition_filter: {
-                        let field_value = match fields_map.get("require_partition_filter") {
+                        let field_value = match fields_map.get("requirePartitionFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_partition_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requirePartitionFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_uri_prefix: {
-                        let field_value = match fields_map.get("source_uri_prefix") {
+                        let field_value = match fields_map.get("sourceUriPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_uri_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceUriPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

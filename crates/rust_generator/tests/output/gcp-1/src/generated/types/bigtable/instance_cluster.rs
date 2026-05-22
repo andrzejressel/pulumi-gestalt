@@ -111,30 +111,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#autoscaling_config: {
-                        let field_value = match fields_map.get("autoscaling_config") {
+                        let field_value = match fields_map.get("autoscalingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cluster_id: {
-                        let field_value = match fields_map.get("cluster_id") {
+                        let field_value = match fields_map.get("clusterId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_name: {
-                        let field_value = match fields_map.get("kms_key_name") {
+                        let field_value = match fields_map.get("kmsKeyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#num_nodes: {
-                        let field_value = match fields_map.get("num_nodes") {
+                        let field_value = match fields_map.get("numNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'num_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -146,9 +146,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_type: {
-                        let field_value = match fields_map.get("storage_type") {
+                        let field_value = match fields_map.get("storageType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

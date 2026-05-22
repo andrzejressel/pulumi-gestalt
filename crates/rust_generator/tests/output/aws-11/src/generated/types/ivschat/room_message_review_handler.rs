@@ -60,9 +60,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#fallback_result: {
-                        let field_value = match fields_map.get("fallback_result") {
+                        let field_value = match fields_map.get("fallbackResult") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fallback_result' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fallbackResult' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

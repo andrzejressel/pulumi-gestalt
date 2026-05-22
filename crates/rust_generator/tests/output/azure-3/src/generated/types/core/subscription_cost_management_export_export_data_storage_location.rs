@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#container_id: {
-                        let field_value = match fields_map.get("container_id") {
+                        let field_value = match fields_map.get("containerId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_folder_path: {
-                        let field_value = match fields_map.get("root_folder_path") {
+                        let field_value = match fields_map.get("rootFolderPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_folder_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootFolderPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

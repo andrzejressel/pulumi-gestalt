@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#action_required: {
-                        let field_value = match fields_map.get("action_required") {
+                        let field_value = match fields_map.get("actionRequired") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionRequired' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workspace_private_endpoint_id: {
-                        let field_value = match fields_map.get("workspace_private_endpoint_id") {
+                        let field_value = match fields_map.get("workspacePrivateEndpointId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workspace_private_endpoint_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workspacePrivateEndpointId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

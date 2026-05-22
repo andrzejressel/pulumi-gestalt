@@ -109,16 +109,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fail_open: {
-                        let field_value = match fields_map.get("fail_open") {
+                        let field_value = match fields_map.get("failOpen") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fail_open' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failOpen' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#forward_headers: {
-                        let field_value = match fields_map.get("forward_headers") {
+                        let field_value = match fields_map.get("forwardHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forward_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

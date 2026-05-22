@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#case_sensitive: {
-                        let field_value = match fields_map.get("case_sensitive") {
+                        let field_value = match fields_map.get("caseSensitive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'case_sensitive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'caseSensitive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

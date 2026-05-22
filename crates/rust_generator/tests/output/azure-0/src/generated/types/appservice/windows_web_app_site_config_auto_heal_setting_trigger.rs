@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#private_memory_kb: {
-                        let field_value = match fields_map.get("private_memory_kb") {
+                        let field_value = match fields_map.get("privateMemoryKb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_memory_kb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateMemoryKb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slow_request: {
-                        let field_value = match fields_map.get("slow_request") {
+                        let field_value = match fields_map.get("slowRequest") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slow_request' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'slowRequest' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slow_request_with_paths: {
-                        let field_value = match fields_map.get("slow_request_with_paths") {
+                        let field_value = match fields_map.get("slowRequestWithPaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slow_request_with_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'slowRequestWithPaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status_codes: {
-                        let field_value = match fields_map.get("status_codes") {
+                        let field_value = match fields_map.get("statusCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

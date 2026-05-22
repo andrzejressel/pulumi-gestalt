@@ -69,9 +69,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#auth_token: {
-                        let field_value = match fields_map.get("auth_token") {
+                        let field_value = match fields_map.get("authToken") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_token' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authToken' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -83,9 +83,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_key: {
-                        let field_value = match fields_map.get("service_key") {
+                        let field_value = match fields_map.get("serviceKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

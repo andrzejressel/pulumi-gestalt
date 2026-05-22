@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#delete_nested_items_during_deletion: {
-                        let field_value = match fields_map.get("delete_nested_items_during_deletion") {
+                        let field_value = match fields_map.get("deleteNestedItemsDuringDeletion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delete_nested_items_during_deletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deleteNestedItemsDuringDeletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

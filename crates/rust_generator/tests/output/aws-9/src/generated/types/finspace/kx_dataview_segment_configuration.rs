@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#db_paths: {
-                        let field_value = match fields_map.get("db_paths") {
+                        let field_value = match fields_map.get("dbPaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbPaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_demand: {
-                        let field_value = match fields_map.get("on_demand") {
+                        let field_value = match fields_map.get("onDemand") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_demand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onDemand' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#volume_name: {
-                        let field_value = match fields_map.get("volume_name") {
+                        let field_value = match fields_map.get("volumeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'volume_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'volumeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#file_format: {
-                        let field_value = match fields_map.get("file_format") {
+                        let field_value = match fields_map.get("fileFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hive_compatible_partitions: {
-                        let field_value = match fields_map.get("hive_compatible_partitions") {
+                        let field_value = match fields_map.get("hiveCompatiblePartitions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hive_compatible_partitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hiveCompatiblePartitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#per_hour_partition: {
-                        let field_value = match fields_map.get("per_hour_partition") {
+                        let field_value = match fields_map.get("perHourPartition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'per_hour_partition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'perHourPartition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

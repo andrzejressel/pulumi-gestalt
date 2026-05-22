@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#chunking_strategy: {
-                        let field_value = match fields_map.get("chunking_strategy") {
+                        let field_value = match fields_map.get("chunkingStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'chunking_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'chunkingStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fixed_size_chunking_configuration: {
-                        let field_value = match fields_map.get("fixed_size_chunking_configuration") {
+                        let field_value = match fields_map.get("fixedSizeChunkingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fixed_size_chunking_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fixedSizeChunkingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hierarchical_chunking_configuration: {
-                        let field_value = match fields_map.get("hierarchical_chunking_configuration") {
+                        let field_value = match fields_map.get("hierarchicalChunkingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hierarchical_chunking_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hierarchicalChunkingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#semantic_chunking_configuration: {
-                        let field_value = match fields_map.get("semantic_chunking_configuration") {
+                        let field_value = match fields_map.get("semanticChunkingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'semantic_chunking_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'semanticChunkingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

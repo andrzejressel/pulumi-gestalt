@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#conflict_detection: {
-                        let field_value = match fields_map.get("conflict_detection") {
+                        let field_value = match fields_map.get("conflictDetection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'conflict_detection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conflictDetection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#conflict_handler: {
-                        let field_value = match fields_map.get("conflict_handler") {
+                        let field_value = match fields_map.get("conflictHandler") {
                             Some(value) => value,
-                            None => bail!("Missing field 'conflict_handler' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conflictHandler' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_conflict_handler_config: {
-                        let field_value = match fields_map.get("lambda_conflict_handler_config") {
+                        let field_value = match fields_map.get("lambdaConflictHandlerConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_conflict_handler_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaConflictHandlerConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

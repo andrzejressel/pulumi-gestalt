@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#cidr_blocks: {
-                        let field_value = match fields_map.get("cidr_blocks") {
+                        let field_value = match fields_map.get("cidrBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cidr_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cidrBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

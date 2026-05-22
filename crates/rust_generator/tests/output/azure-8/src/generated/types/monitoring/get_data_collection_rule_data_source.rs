@@ -122,9 +122,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#data_imports: {
-                        let field_value = match fields_map.get("data_imports") {
+                        let field_value = match fields_map.get("dataImports") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_imports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataImports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -136,37 +136,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iis_logs: {
-                        let field_value = match fields_map.get("iis_logs") {
+                        let field_value = match fields_map.get("iisLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iis_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iisLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_files: {
-                        let field_value = match fields_map.get("log_files") {
+                        let field_value = match fields_map.get("logFiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logFiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#performance_counters: {
-                        let field_value = match fields_map.get("performance_counters") {
+                        let field_value = match fields_map.get("performanceCounters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'performance_counters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'performanceCounters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#platform_telemetries: {
-                        let field_value = match fields_map.get("platform_telemetries") {
+                        let field_value = match fields_map.get("platformTelemetries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'platform_telemetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'platformTelemetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prometheus_forwarders: {
-                        let field_value = match fields_map.get("prometheus_forwarders") {
+                        let field_value = match fields_map.get("prometheusForwarders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prometheus_forwarders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prometheusForwarders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -178,16 +178,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#windows_event_logs: {
-                        let field_value = match fields_map.get("windows_event_logs") {
+                        let field_value = match fields_map.get("windowsEventLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'windows_event_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowsEventLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#windows_firewall_logs: {
-                        let field_value = match fields_map.get("windows_firewall_logs") {
+                        let field_value = match fields_map.get("windowsFirewallLogs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'windows_firewall_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowsFirewallLogs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

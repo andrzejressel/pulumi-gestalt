@@ -106,51 +106,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#auto_deploy_confidence_threshold: {
-                        let field_value = match fields_map.get("auto_deploy_confidence_threshold") {
+                        let field_value = match fields_map.get("autoDeployConfidenceThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_deploy_confidence_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoDeployConfidenceThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_deploy_expiration_sec: {
-                        let field_value = match fields_map.get("auto_deploy_expiration_sec") {
+                        let field_value = match fields_map.get("autoDeployExpirationSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_deploy_expiration_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoDeployExpirationSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_deploy_impacted_baseline_threshold: {
-                        let field_value = match fields_map.get("auto_deploy_impacted_baseline_threshold") {
+                        let field_value = match fields_map.get("autoDeployImpactedBaselineThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_deploy_impacted_baseline_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoDeployImpactedBaselineThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_deploy_load_threshold: {
-                        let field_value = match fields_map.get("auto_deploy_load_threshold") {
+                        let field_value = match fields_map.get("autoDeployLoadThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_deploy_load_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoDeployLoadThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#detection_absolute_qps: {
-                        let field_value = match fields_map.get("detection_absolute_qps") {
+                        let field_value = match fields_map.get("detectionAbsoluteQps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detection_absolute_qps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detectionAbsoluteQps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#detection_load_threshold: {
-                        let field_value = match fields_map.get("detection_load_threshold") {
+                        let field_value = match fields_map.get("detectionLoadThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detection_load_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detectionLoadThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#detection_relative_to_baseline_qps: {
-                        let field_value = match fields_map.get("detection_relative_to_baseline_qps") {
+                        let field_value = match fields_map.get("detectionRelativeToBaselineQps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detection_relative_to_baseline_qps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detectionRelativeToBaselineQps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -162,9 +162,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#traffic_granularity_configs: {
-                        let field_value = match fields_map.get("traffic_granularity_configs") {
+                        let field_value = match fields_map.get("trafficGranularityConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'traffic_granularity_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trafficGranularityConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#identity_client_id: {
-                        let field_value = match fields_map.get("identity_client_id") {
+                        let field_value = match fields_map.get("identityClientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityClientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_id: {
-                        let field_value = match fields_map.get("secret_id") {
+                        let field_value = match fields_map.get("secretId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

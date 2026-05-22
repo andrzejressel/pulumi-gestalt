@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#encryption_enabled: {
-                        let field_value = match fields_map.get("encryption_enabled") {
+                        let field_value = match fields_map.get("encryptionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_password: {
-                        let field_value = match fields_map.get("encryption_password") {
+                        let field_value = match fields_map.get("encryptionPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#manual_schedule: {
-                        let field_value = match fields_map.get("manual_schedule") {
+                        let field_value = match fields_map.get("manualSchedule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'manual_schedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'manualSchedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_period_in_days: {
-                        let field_value = match fields_map.get("retention_period_in_days") {
+                        let field_value = match fields_map.get("retentionPeriodInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_period_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionPeriodInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_access_key: {
-                        let field_value = match fields_map.get("storage_account_access_key") {
+                        let field_value = match fields_map.get("storageAccountAccessKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_access_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountAccessKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_blob_endpoint: {
-                        let field_value = match fields_map.get("storage_blob_endpoint") {
+                        let field_value = match fields_map.get("storageBlobEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_blob_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageBlobEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#system_databases_backup_enabled: {
-                        let field_value = match fields_map.get("system_databases_backup_enabled") {
+                        let field_value = match fields_map.get("systemDatabasesBackupEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'system_databases_backup_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'systemDatabasesBackupEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

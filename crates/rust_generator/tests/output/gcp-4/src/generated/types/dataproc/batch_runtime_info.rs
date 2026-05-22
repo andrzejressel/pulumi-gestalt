@@ -89,23 +89,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#approximate_usages: {
-                        let field_value = match fields_map.get("approximate_usages") {
+                        let field_value = match fields_map.get("approximateUsages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'approximate_usages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'approximateUsages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#current_usages: {
-                        let field_value = match fields_map.get("current_usages") {
+                        let field_value = match fields_map.get("currentUsages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'current_usages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'currentUsages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#diagnostic_output_uri: {
-                        let field_value = match fields_map.get("diagnostic_output_uri") {
+                        let field_value = match fields_map.get("diagnosticOutputUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'diagnostic_output_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diagnosticOutputUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -117,9 +117,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_uri: {
-                        let field_value = match fields_map.get("output_uri") {
+                        let field_value = match fields_map.get("outputUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

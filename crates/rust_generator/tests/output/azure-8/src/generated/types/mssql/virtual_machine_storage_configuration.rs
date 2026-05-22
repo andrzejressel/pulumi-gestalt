@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#data_settings: {
-                        let field_value = match fields_map.get("data_settings") {
+                        let field_value = match fields_map.get("dataSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disk_type: {
-                        let field_value = match fields_map.get("disk_type") {
+                        let field_value = match fields_map.get("diskType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_settings: {
-                        let field_value = match fields_map.get("log_settings") {
+                        let field_value = match fields_map.get("logSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_workload_type: {
-                        let field_value = match fields_map.get("storage_workload_type") {
+                        let field_value = match fields_map.get("storageWorkloadType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_workload_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageWorkloadType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#system_db_on_data_disk_enabled: {
-                        let field_value = match fields_map.get("system_db_on_data_disk_enabled") {
+                        let field_value = match fields_map.get("systemDbOnDataDiskEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'system_db_on_data_disk_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'systemDbOnDataDiskEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#temp_db_settings: {
-                        let field_value = match fields_map.get("temp_db_settings") {
+                        let field_value = match fields_map.get("tempDbSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'temp_db_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tempDbSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -123,9 +123,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_address: {
-                        let field_value = match fields_map.get("ip_address") {
+                        let field_value = match fields_map.get("ipAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -137,16 +137,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#provider_name: {
-                        let field_value = match fields_map.get("provider_name") {
+                        let field_value = match fields_map.get("providerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'provider_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'providerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#speed_in_mbps: {
-                        let field_value = match fields_map.get("speed_in_mbps") {
+                        let field_value = match fields_map.get("speedInMbps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'speed_in_mbps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'speedInMbps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

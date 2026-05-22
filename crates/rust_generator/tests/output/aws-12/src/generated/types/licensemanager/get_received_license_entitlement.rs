@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#allow_check_in: {
-                        let field_value = match fields_map.get("allow_check_in") {
+                        let field_value = match fields_map.get("allowCheckIn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_check_in' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowCheckIn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_count: {
-                        let field_value = match fields_map.get("max_count") {
+                        let field_value = match fields_map.get("maxCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

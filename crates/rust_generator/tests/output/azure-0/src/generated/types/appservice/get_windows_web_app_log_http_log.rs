@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#azure_blob_storages: {
-                        let field_value = match fields_map.get("azure_blob_storages") {
+                        let field_value = match fields_map.get("azureBlobStorages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_blob_storages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureBlobStorages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_systems: {
-                        let field_value = match fields_map.get("file_systems") {
+                        let field_value = match fields_map.get("fileSystems") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_systems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

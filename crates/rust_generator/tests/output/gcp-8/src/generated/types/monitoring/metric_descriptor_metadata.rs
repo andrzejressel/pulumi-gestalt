@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#ingest_delay: {
-                        let field_value = match fields_map.get("ingest_delay") {
+                        let field_value = match fields_map.get("ingestDelay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingest_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingestDelay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_period: {
-                        let field_value = match fields_map.get("sample_period") {
+                        let field_value = match fields_map.get("samplePeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'samplePeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

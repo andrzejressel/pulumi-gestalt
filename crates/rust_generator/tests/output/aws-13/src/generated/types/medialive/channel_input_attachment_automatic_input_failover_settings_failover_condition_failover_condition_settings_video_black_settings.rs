@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#black_detect_threshold: {
-                        let field_value = match fields_map.get("black_detect_threshold") {
+                        let field_value = match fields_map.get("blackDetectThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'black_detect_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blackDetectThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#video_black_threshold_msec: {
-                        let field_value = match fields_map.get("video_black_threshold_msec") {
+                        let field_value = match fields_map.get("videoBlackThresholdMsec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'video_black_threshold_msec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'videoBlackThresholdMsec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,23 +74,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#bigquery_destination: {
-                        let field_value = match fields_map.get("bigquery_destination") {
+                        let field_value = match fields_map.get("bigqueryDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bigquery_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bigqueryDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_network_egress_metering: {
-                        let field_value = match fields_map.get("enable_network_egress_metering") {
+                        let field_value = match fields_map.get("enableNetworkEgressMetering") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_network_egress_metering' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableNetworkEgressMetering' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_resource_consumption_metering: {
-                        let field_value = match fields_map.get("enable_resource_consumption_metering") {
+                        let field_value = match fields_map.get("enableResourceConsumptionMetering") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_resource_consumption_metering' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableResourceConsumptionMetering' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

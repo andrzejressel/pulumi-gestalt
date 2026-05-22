@@ -114,16 +114,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#adapter_property_override: {
-                        let field_value = match fields_map.get("adapter_property_override") {
+                        let field_value = match fields_map.get("adapterPropertyOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'adapter_property_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adapterPropertyOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#adapter_property_override_enabled: {
-                        let field_value = match fields_map.get("adapter_property_override_enabled") {
+                        let field_value = match fields_map.get("adapterPropertyOverrideEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'adapter_property_override_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'adapterPropertyOverrideEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,37 +142,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#qos_policy_override: {
-                        let field_value = match fields_map.get("qos_policy_override") {
+                        let field_value = match fields_map.get("qosPolicyOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'qos_policy_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'qosPolicyOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#qos_policy_override_enabled: {
-                        let field_value = match fields_map.get("qos_policy_override_enabled") {
+                        let field_value = match fields_map.get("qosPolicyOverrideEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'qos_policy_override_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'qosPolicyOverrideEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#traffic_types: {
-                        let field_value = match fields_map.get("traffic_types") {
+                        let field_value = match fields_map.get("trafficTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'traffic_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trafficTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_switch_configuration_override: {
-                        let field_value = match fields_map.get("virtual_switch_configuration_override") {
+                        let field_value = match fields_map.get("virtualSwitchConfigurationOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_switch_configuration_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualSwitchConfigurationOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_switch_configuration_override_enabled: {
-                        let field_value = match fields_map.get("virtual_switch_configuration_override_enabled") {
+                        let field_value = match fields_map.get("virtualSwitchConfigurationOverrideEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_switch_configuration_override_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualSwitchConfigurationOverrideEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

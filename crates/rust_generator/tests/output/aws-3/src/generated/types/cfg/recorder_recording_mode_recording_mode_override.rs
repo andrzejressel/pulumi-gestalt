@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recording_frequency: {
-                        let field_value = match fields_map.get("recording_frequency") {
+                        let field_value = match fields_map.get("recordingFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recording_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordingFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_types: {
-                        let field_value = match fields_map.get("resource_types") {
+                        let field_value = match fields_map.get("resourceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

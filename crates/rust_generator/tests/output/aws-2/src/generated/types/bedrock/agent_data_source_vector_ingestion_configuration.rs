@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#chunking_configuration: {
-                        let field_value = match fields_map.get("chunking_configuration") {
+                        let field_value = match fields_map.get("chunkingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'chunking_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'chunkingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_transformation_configuration: {
-                        let field_value = match fields_map.get("custom_transformation_configuration") {
+                        let field_value = match fields_map.get("customTransformationConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_transformation_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customTransformationConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parsing_configuration: {
-                        let field_value = match fields_map.get("parsing_configuration") {
+                        let field_value = match fields_map.get("parsingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parsing_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parsingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

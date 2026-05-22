@@ -88,44 +88,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#deployment_type: {
-                        let field_value = match fields_map.get("deployment_type") {
+                        let field_value = match fields_map.get("deploymentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deployment_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deploymentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_configurations: {
-                        let field_value = match fields_map.get("log_configurations") {
+                        let field_value = match fields_map.get("logConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metadata_configurations: {
-                        let field_value = match fields_map.get("metadata_configurations") {
+                        let field_value = match fields_map.get("metadataConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metadata_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metadataConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mount_name: {
-                        let field_value = match fields_map.get("mount_name") {
+                        let field_value = match fields_map.get("mountName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mount_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mountName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#per_unit_storage_throughput: {
-                        let field_value = match fields_map.get("per_unit_storage_throughput") {
+                        let field_value = match fields_map.get("perUnitStorageThroughput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'per_unit_storage_throughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'perUnitStorageThroughput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weekly_maintenance_start_time: {
-                        let field_value = match fields_map.get("weekly_maintenance_start_time") {
+                        let field_value = match fields_map.get("weeklyMaintenanceStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weekly_maintenance_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weeklyMaintenanceStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

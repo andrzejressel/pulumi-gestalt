@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#executable_file: {
-                        let field_value = match fields_map.get("executable_file") {
+                        let field_value = match fields_map.get("executableFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'executable_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executableFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_timeout: {
-                        let field_value = match fields_map.get("execution_timeout") {
+                        let field_value = match fields_map.get("executionTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

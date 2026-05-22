@@ -129,9 +129,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#alert_sensitivity: {
-                        let field_value = match fields_map.get("alert_sensitivity") {
+                        let field_value = match fields_map.get("alertSensitivity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alert_sensitivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alertSensitivity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -143,37 +143,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluation_failure_count: {
-                        let field_value = match fields_map.get("evaluation_failure_count") {
+                        let field_value = match fields_map.get("evaluationFailureCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluation_failure_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluationFailureCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#evaluation_total_count: {
-                        let field_value = match fields_map.get("evaluation_total_count") {
+                        let field_value = match fields_map.get("evaluationTotalCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluation_total_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluationTotalCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_data_before: {
-                        let field_value = match fields_map.get("ignore_data_before") {
+                        let field_value = match fields_map.get("ignoreDataBefore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_data_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreDataBefore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_name: {
-                        let field_value = match fields_map.get("metric_name") {
+                        let field_value = match fields_map.get("metricName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_namespace: {
-                        let field_value = match fields_map.get("metric_namespace") {
+                        let field_value = match fields_map.get("metricNamespace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricNamespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -185,9 +185,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skip_metric_validation: {
-                        let field_value = match fields_map.get("skip_metric_validation") {
+                        let field_value = match fields_map.get("skipMetricValidation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skip_metric_validation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skipMetricValidation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

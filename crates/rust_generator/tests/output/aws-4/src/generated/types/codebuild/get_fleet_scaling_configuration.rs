@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#desired_capacity: {
-                        let field_value = match fields_map.get("desired_capacity") {
+                        let field_value = match fields_map.get("desiredCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_capacity: {
-                        let field_value = match fields_map.get("max_capacity") {
+                        let field_value = match fields_map.get("maxCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scaling_type: {
-                        let field_value = match fields_map.get("scaling_type") {
+                        let field_value = match fields_map.get("scalingType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scaling_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scalingType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_tracking_scaling_configs: {
-                        let field_value = match fields_map.get("target_tracking_scaling_configs") {
+                        let field_value = match fields_map.get("targetTrackingScalingConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_tracking_scaling_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetTrackingScalingConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

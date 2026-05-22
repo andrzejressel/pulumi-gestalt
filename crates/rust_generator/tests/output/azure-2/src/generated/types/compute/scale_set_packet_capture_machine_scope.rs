@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#exclude_instance_ids: {
-                        let field_value = match fields_map.get("exclude_instance_ids") {
+                        let field_value = match fields_map.get("excludeInstanceIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclude_instance_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludeInstanceIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_instance_ids: {
-                        let field_value = match fields_map.get("include_instance_ids") {
+                        let field_value = match fields_map.get("includeInstanceIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_instance_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeInstanceIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#data_identifiers: {
-                        let field_value = match fields_map.get("data_identifiers") {
+                        let field_value = match fields_map.get("dataIdentifiers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_identifiers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataIdentifiers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

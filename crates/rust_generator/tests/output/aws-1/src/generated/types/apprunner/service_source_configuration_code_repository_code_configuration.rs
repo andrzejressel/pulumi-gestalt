@@ -62,16 +62,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#code_configuration_values: {
-                        let field_value = match fields_map.get("code_configuration_values") {
+                        let field_value = match fields_map.get("codeConfigurationValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_configuration_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeConfigurationValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#configuration_source: {
-                        let field_value = match fields_map.get("configuration_source") {
+                        let field_value = match fields_map.get("configurationSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configuration_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configurationSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

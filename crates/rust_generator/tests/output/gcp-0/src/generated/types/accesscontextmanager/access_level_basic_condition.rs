@@ -125,16 +125,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#device_policy: {
-                        let field_value = match fields_map.get("device_policy") {
+                        let field_value = match fields_map.get("devicePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'devicePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_subnetworks: {
-                        let field_value = match fields_map.get("ip_subnetworks") {
+                        let field_value = match fields_map.get("ipSubnetworks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_subnetworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipSubnetworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -160,16 +160,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#required_access_levels: {
-                        let field_value = match fields_map.get("required_access_levels") {
+                        let field_value = match fields_map.get("requiredAccessLevels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'required_access_levels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requiredAccessLevels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_network_sources: {
-                        let field_value = match fields_map.get("vpc_network_sources") {
+                        let field_value = match fields_map.get("vpcNetworkSources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_network_sources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcNetworkSources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

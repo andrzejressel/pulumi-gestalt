@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#hard_limit: {
-                        let field_value = match fields_map.get("hard_limit") {
+                        let field_value = match fields_map.get("hardLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hard_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hardLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#soft_limit: {
-                        let field_value = match fields_map.get("soft_limit") {
+                        let field_value = match fields_map.get("softLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'soft_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'softLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

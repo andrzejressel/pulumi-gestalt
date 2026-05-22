@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#limit_mbps: {
-                        let field_value = match fields_map.get("limit_mbps") {
+                        let field_value = match fields_map.get("limitMbps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'limit_mbps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'limitMbps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

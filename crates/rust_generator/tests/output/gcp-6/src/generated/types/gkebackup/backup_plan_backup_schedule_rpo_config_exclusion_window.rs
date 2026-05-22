@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#days_of_week: {
-                        let field_value = match fields_map.get("days_of_week") {
+                        let field_value = match fields_map.get("daysOfWeek") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_week' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfWeek' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -117,16 +117,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#single_occurrence_date: {
-                        let field_value = match fields_map.get("single_occurrence_date") {
+                        let field_value = match fields_map.get("singleOccurrenceDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'single_occurrence_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'singleOccurrenceDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time: {
-                        let field_value = match fields_map.get("start_time") {
+                        let field_value = match fields_map.get("startTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

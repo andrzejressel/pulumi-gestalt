@@ -107,58 +107,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#archive_uris: {
-                        let field_value = match fields_map.get("archive_uris") {
+                        let field_value = match fields_map.get("archiveUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'archive_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'archiveUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_uris: {
-                        let field_value = match fields_map.get("file_uris") {
+                        let field_value = match fields_map.get("fileUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#infrastructure_spec: {
-                        let field_value = match fields_map.get("infrastructure_spec") {
+                        let field_value = match fields_map.get("infrastructureSpec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'infrastructure_spec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'infrastructureSpec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#main_class: {
-                        let field_value = match fields_map.get("main_class") {
+                        let field_value = match fields_map.get("mainClass") {
                             Some(value) => value,
-                            None => bail!("Missing field 'main_class' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mainClass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#main_jar_file_uri: {
-                        let field_value = match fields_map.get("main_jar_file_uri") {
+                        let field_value = match fields_map.get("mainJarFileUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'main_jar_file_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mainJarFileUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#python_script_file: {
-                        let field_value = match fields_map.get("python_script_file") {
+                        let field_value = match fields_map.get("pythonScriptFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'python_script_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pythonScriptFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_script: {
-                        let field_value = match fields_map.get("sql_script") {
+                        let field_value = match fields_map.get("sqlScript") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_script' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlScript' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_script_file: {
-                        let field_value = match fields_map.get("sql_script_file") {
+                        let field_value = match fields_map.get("sqlScriptFile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_script_file' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlScriptFile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

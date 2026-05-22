@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#automatic_input_failover_settings: {
-                        let field_value = match fields_map.get("automatic_input_failover_settings") {
+                        let field_value = match fields_map.get("automaticInputFailoverSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automatic_input_failover_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automaticInputFailoverSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_attachment_name: {
-                        let field_value = match fields_map.get("input_attachment_name") {
+                        let field_value = match fields_map.get("inputAttachmentName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_attachment_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputAttachmentName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_id: {
-                        let field_value = match fields_map.get("input_id") {
+                        let field_value = match fields_map.get("inputId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_settings: {
-                        let field_value = match fields_map.get("input_settings") {
+                        let field_value = match fields_map.get("inputSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

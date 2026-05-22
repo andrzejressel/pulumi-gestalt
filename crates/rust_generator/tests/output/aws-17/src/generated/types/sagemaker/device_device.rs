@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_name: {
-                        let field_value = match fields_map.get("device_name") {
+                        let field_value = match fields_map.get("deviceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iot_thing_name: {
-                        let field_value = match fields_map.get("iot_thing_name") {
+                        let field_value = match fields_map.get("iotThingName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iot_thing_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iotThingName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

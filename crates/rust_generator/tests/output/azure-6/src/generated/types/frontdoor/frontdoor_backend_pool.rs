@@ -89,9 +89,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_probe_name: {
-                        let field_value = match fields_map.get("health_probe_name") {
+                        let field_value = match fields_map.get("healthProbeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_probe_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthProbeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancing_name: {
-                        let field_value = match fields_map.get("load_balancing_name") {
+                        let field_value = match fields_map.get("loadBalancingName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancing_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancingName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

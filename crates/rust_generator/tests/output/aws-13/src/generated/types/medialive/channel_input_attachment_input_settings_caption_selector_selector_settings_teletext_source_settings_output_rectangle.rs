@@ -79,16 +79,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#left_offset: {
-                        let field_value = match fields_map.get("left_offset") {
+                        let field_value = match fields_map.get("leftOffset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'left_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'leftOffset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#top_offset: {
-                        let field_value = match fields_map.get("top_offset") {
+                        let field_value = match fields_map.get("topOffset") {
                             Some(value) => value,
-                            None => bail!("Missing field 'top_offset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'topOffset' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

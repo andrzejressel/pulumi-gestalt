@@ -90,30 +90,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#dns_ips: {
-                        let field_value = match fields_map.get("dns_ips") {
+                        let field_value = match fields_map.get("dnsIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_name: {
-                        let field_value = match fields_map.get("domain_name") {
+                        let field_value = match fields_map.get("domainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_system_administrators_group: {
-                        let field_value = match fields_map.get("file_system_administrators_group") {
+                        let field_value = match fields_map.get("fileSystemAdministratorsGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_system_administrators_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystemAdministratorsGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#organizational_unit_distinguished_name: {
-                        let field_value = match fields_map.get("organizational_unit_distinguished_name") {
+                        let field_value = match fields_map.get("organizationalUnitDistinguishedName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'organizational_unit_distinguished_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'organizationalUnitDistinguishedName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

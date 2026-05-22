@@ -108,30 +108,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#data_guard_role_changed_time: {
-                        let field_value = match fields_map.get("data_guard_role_changed_time") {
+                        let field_value = match fields_map.get("dataGuardRoleChangedTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_guard_role_changed_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataGuardRoleChangedTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disaster_recovery_role_changed_time: {
-                        let field_value = match fields_map.get("disaster_recovery_role_changed_time") {
+                        let field_value = match fields_map.get("disasterRecoveryRoleChangedTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disaster_recovery_role_changed_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disasterRecoveryRoleChangedTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lag_time_duration: {
-                        let field_value = match fields_map.get("lag_time_duration") {
+                        let field_value = match fields_map.get("lagTimeDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lag_time_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lagTimeDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_details: {
-                        let field_value = match fields_map.get("lifecycle_details") {
+                        let field_value = match fields_map.get("lifecycleDetails") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lifecycle_details' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifecycleDetails' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

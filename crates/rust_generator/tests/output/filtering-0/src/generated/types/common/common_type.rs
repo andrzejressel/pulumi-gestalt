@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#common_property: {
-                        let field_value = match fields_map.get("common_property") {
+                        let field_value = match fields_map.get("commonProperty") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_property' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonProperty' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

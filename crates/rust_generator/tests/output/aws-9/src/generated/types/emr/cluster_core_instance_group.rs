@@ -98,23 +98,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#autoscaling_policy: {
-                        let field_value = match fields_map.get("autoscaling_policy") {
+                        let field_value = match fields_map.get("autoscalingPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bid_price: {
-                        let field_value = match fields_map.get("bid_price") {
+                        let field_value = match fields_map.get("bidPrice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bid_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bidPrice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ebs_configs: {
-                        let field_value = match fields_map.get("ebs_configs") {
+                        let field_value = match fields_map.get("ebsConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ebs_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ebsConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,16 +126,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_count: {
-                        let field_value = match fields_map.get("instance_count") {
+                        let field_value = match fields_map.get("instanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_type: {
-                        let field_value = match fields_map.get("instance_type") {
+                        let field_value = match fields_map.get("instanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

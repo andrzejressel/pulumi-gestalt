@@ -161,16 +161,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#accepted_response_status_codes: {
-                        let field_value = match fields_map.get("accepted_response_status_codes") {
+                        let field_value = match fields_map.get("acceptedResponseStatusCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'accepted_response_status_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acceptedResponseStatusCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_info: {
-                        let field_value = match fields_map.get("auth_info") {
+                        let field_value = match fields_map.get("authInfo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_info' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authInfo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -182,16 +182,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#content_type: {
-                        let field_value = match fields_map.get("content_type") {
+                        let field_value = match fields_map.get("contentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_content_type: {
-                        let field_value = match fields_map.get("custom_content_type") {
+                        let field_value = match fields_map.get("customContentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_content_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customContentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -203,9 +203,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mask_headers: {
-                        let field_value = match fields_map.get("mask_headers") {
+                        let field_value = match fields_map.get("maskHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mask_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maskHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -217,9 +217,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ping_config: {
-                        let field_value = match fields_map.get("ping_config") {
+                        let field_value = match fields_map.get("pingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ping_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -231,30 +231,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_method: {
-                        let field_value = match fields_map.get("request_method") {
+                        let field_value = match fields_map.get("requestMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_agent_authentication: {
-                        let field_value = match fields_map.get("service_agent_authentication") {
+                        let field_value = match fields_map.get("serviceAgentAuthentication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_agent_authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAgentAuthentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_ssl: {
-                        let field_value = match fields_map.get("use_ssl") {
+                        let field_value = match fields_map.get("useSsl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_ssl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useSsl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#validate_ssl: {
-                        let field_value = match fields_map.get("validate_ssl") {
+                        let field_value = match fields_map.get("validateSsl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'validate_ssl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'validateSsl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

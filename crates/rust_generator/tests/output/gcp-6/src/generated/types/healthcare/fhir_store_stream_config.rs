@@ -65,16 +65,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#bigquery_destination: {
-                        let field_value = match fields_map.get("bigquery_destination") {
+                        let field_value = match fields_map.get("bigqueryDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bigquery_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bigqueryDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_types: {
-                        let field_value = match fields_map.get("resource_types") {
+                        let field_value = match fields_map.get("resourceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

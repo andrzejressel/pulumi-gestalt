@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#active_directory: {
-                        let field_value = match fields_map.get("active_directory") {
+                        let field_value = match fields_map.get("activeDirectory") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_directory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeDirectory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_share_level_permission: {
-                        let field_value = match fields_map.get("default_share_level_permission") {
+                        let field_value = match fields_map.get("defaultShareLevelPermission") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_share_level_permission' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultShareLevelPermission' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#directory_type: {
-                        let field_value = match fields_map.get("directory_type") {
+                        let field_value = match fields_map.get("directoryType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'directory_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'directoryType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

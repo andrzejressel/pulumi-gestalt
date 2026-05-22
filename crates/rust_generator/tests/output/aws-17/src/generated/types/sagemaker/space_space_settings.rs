@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#app_type: {
-                        let field_value = match fields_map.get("app_type") {
+                        let field_value = match fields_map.get("appType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#code_editor_app_settings: {
-                        let field_value = match fields_map.get("code_editor_app_settings") {
+                        let field_value = match fields_map.get("codeEditorAppSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_editor_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeEditorAppSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_file_systems: {
-                        let field_value = match fields_map.get("custom_file_systems") {
+                        let field_value = match fields_map.get("customFileSystems") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_file_systems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customFileSystems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jupyter_lab_app_settings: {
-                        let field_value = match fields_map.get("jupyter_lab_app_settings") {
+                        let field_value = match fields_map.get("jupyterLabAppSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jupyter_lab_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jupyterLabAppSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jupyter_server_app_settings: {
-                        let field_value = match fields_map.get("jupyter_server_app_settings") {
+                        let field_value = match fields_map.get("jupyterServerAppSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jupyter_server_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jupyterServerAppSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kernel_gateway_app_settings: {
-                        let field_value = match fields_map.get("kernel_gateway_app_settings") {
+                        let field_value = match fields_map.get("kernelGatewayAppSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kernel_gateway_app_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kernelGatewayAppSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#space_storage_settings: {
-                        let field_value = match fields_map.get("space_storage_settings") {
+                        let field_value = match fields_map.get("spaceStorageSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'space_storage_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spaceStorageSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

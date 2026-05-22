@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#keep_count: {
-                        let field_value = match fields_map.get("keep_count") {
+                        let field_value = match fields_map.get("keepCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'keep_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keepCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#package_name_prefixes: {
-                        let field_value = match fields_map.get("package_name_prefixes") {
+                        let field_value = match fields_map.get("packageNamePrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'package_name_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'packageNamePrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

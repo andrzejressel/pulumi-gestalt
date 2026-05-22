@@ -63,23 +63,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#revocation_effective_from: {
-                        let field_value = match fields_map.get("revocation_effective_from") {
+                        let field_value = match fields_map.get("revocationEffectiveFrom") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revocation_effective_from' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revocationEffectiveFrom' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#revoked_at: {
-                        let field_value = match fields_map.get("revoked_at") {
+                        let field_value = match fields_map.get("revokedAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revoked_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revokedAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#revoked_by: {
-                        let field_value = match fields_map.get("revoked_by") {
+                        let field_value = match fields_map.get("revokedBy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'revoked_by' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'revokedBy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

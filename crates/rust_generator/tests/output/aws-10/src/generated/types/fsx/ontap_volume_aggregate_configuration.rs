@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#constituents_per_aggregate: {
-                        let field_value = match fields_map.get("constituents_per_aggregate") {
+                        let field_value = match fields_map.get("constituentsPerAggregate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'constituents_per_aggregate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'constituentsPerAggregate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total_constituents: {
-                        let field_value = match fields_map.get("total_constituents") {
+                        let field_value = match fields_map.get("totalConstituents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_constituents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalConstituents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#config_membership: {
-                        let field_value = match fields_map.get("config_membership") {
+                        let field_value = match fields_map.get("configMembership") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_membership' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configMembership' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

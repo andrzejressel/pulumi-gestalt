@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#capacity_reservation_preference: {
-                        let field_value = match fields_map.get("capacity_reservation_preference") {
+                        let field_value = match fields_map.get("capacityReservationPreference") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_reservation_preference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityReservationPreference' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#capacity_reservation_targets: {
-                        let field_value = match fields_map.get("capacity_reservation_targets") {
+                        let field_value = match fields_map.get("capacityReservationTargets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'capacity_reservation_targets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'capacityReservationTargets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

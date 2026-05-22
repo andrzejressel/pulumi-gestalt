@@ -76,30 +76,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#field_to_match: {
-                        let field_value = match fields_map.get("field_to_match") {
+                        let field_value = match fields_map.get("fieldToMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_to_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldToMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#positional_constraint: {
-                        let field_value = match fields_map.get("positional_constraint") {
+                        let field_value = match fields_map.get("positionalConstraint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'positional_constraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'positionalConstraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#search_string: {
-                        let field_value = match fields_map.get("search_string") {
+                        let field_value = match fields_map.get("searchString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'search_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'searchString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_transformations: {
-                        let field_value = match fields_map.get("text_transformations") {
+                        let field_value = match fields_map.get("textTransformations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_transformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textTransformations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

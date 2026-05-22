@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#is_manual_connection: {
-                        let field_value = match fields_map.get("is_manual_connection") {
+                        let field_value = match fields_map.get("isManualConnection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_manual_connection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isManualConnection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,37 +120,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_connection_resource_alias: {
-                        let field_value = match fields_map.get("private_connection_resource_alias") {
+                        let field_value = match fields_map.get("privateConnectionResourceAlias") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_connection_resource_alias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateConnectionResourceAlias' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_connection_resource_id: {
-                        let field_value = match fields_map.get("private_connection_resource_id") {
+                        let field_value = match fields_map.get("privateConnectionResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_connection_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateConnectionResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#private_ip_address: {
-                        let field_value = match fields_map.get("private_ip_address") {
+                        let field_value = match fields_map.get("privateIpAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_ip_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateIpAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_message: {
-                        let field_value = match fields_map.get("request_message") {
+                        let field_value = match fields_map.get("requestMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subresource_names: {
-                        let field_value = match fields_map.get("subresource_names") {
+                        let field_value = match fields_map.get("subresourceNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subresource_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subresourceNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

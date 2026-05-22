@@ -82,30 +82,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#bgp_configurations: {
-                        let field_value = match fields_map.get("bgp_configurations") {
+                        let field_value = match fields_map.get("bgpConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bgp_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bgpConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#core_network_address: {
-                        let field_value = match fields_map.get("core_network_address") {
+                        let field_value = match fields_map.get("coreNetworkAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'core_network_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coreNetworkAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inside_cidr_blocks: {
-                        let field_value = match fields_map.get("inside_cidr_blocks") {
+                        let field_value = match fields_map.get("insideCidrBlocks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inside_cidr_blocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insideCidrBlocks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peer_address: {
-                        let field_value = match fields_map.get("peer_address") {
+                        let field_value = match fields_map.get("peerAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peer_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peerAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

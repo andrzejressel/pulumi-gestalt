@@ -98,44 +98,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#connect_timeout: {
-                        let field_value = match fields_map.get("connect_timeout") {
+                        let field_value = match fields_map.get("connectTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connect_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_connections: {
-                        let field_value = match fields_map.get("max_connections") {
+                        let field_value = match fields_map.get("maxConnections") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_connections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConnections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_pending_requests: {
-                        let field_value = match fields_map.get("max_pending_requests") {
+                        let field_value = match fields_map.get("maxPendingRequests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_pending_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxPendingRequests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_requests: {
-                        let field_value = match fields_map.get("max_requests") {
+                        let field_value = match fields_map.get("maxRequests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRequests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_requests_per_connection: {
-                        let field_value = match fields_map.get("max_requests_per_connection") {
+                        let field_value = match fields_map.get("maxRequestsPerConnection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_requests_per_connection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRequestsPerConnection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_retries: {
-                        let field_value = match fields_map.get("max_retries") {
+                        let field_value = match fields_map.get("maxRetries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

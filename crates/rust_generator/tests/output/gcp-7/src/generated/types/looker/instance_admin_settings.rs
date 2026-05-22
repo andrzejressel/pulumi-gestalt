@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#allowed_email_domains: {
-                        let field_value = match fields_map.get("allowed_email_domains") {
+                        let field_value = match fields_map.get("allowedEmailDomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_email_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedEmailDomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

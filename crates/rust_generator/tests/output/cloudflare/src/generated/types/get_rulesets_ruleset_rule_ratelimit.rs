@@ -113,16 +113,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#counting_expression: {
-                        let field_value = match fields_map.get("counting_expression") {
+                        let field_value = match fields_map.get("countingExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'counting_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'countingExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mitigation_timeout: {
-                        let field_value = match fields_map.get("mitigation_timeout") {
+                        let field_value = match fields_map.get("mitigationTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mitigation_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mitigationTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,30 +134,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#requests_per_period: {
-                        let field_value = match fields_map.get("requests_per_period") {
+                        let field_value = match fields_map.get("requestsPerPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'requests_per_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestsPerPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#requests_to_origin: {
-                        let field_value = match fields_map.get("requests_to_origin") {
+                        let field_value = match fields_map.get("requestsToOrigin") {
                             Some(value) => value,
-                            None => bail!("Missing field 'requests_to_origin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestsToOrigin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#score_per_period: {
-                        let field_value = match fields_map.get("score_per_period") {
+                        let field_value = match fields_map.get("scorePerPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'score_per_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scorePerPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#score_response_header_name: {
-                        let field_value = match fields_map.get("score_response_header_name") {
+                        let field_value = match fields_map.get("scoreResponseHeaderName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'score_response_header_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scoreResponseHeaderName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

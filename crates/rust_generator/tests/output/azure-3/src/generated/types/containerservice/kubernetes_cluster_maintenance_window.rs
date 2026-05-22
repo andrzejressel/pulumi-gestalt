@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_alloweds: {
-                        let field_value = match fields_map.get("not_alloweds") {
+                        let field_value = match fields_map.get("notAlloweds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_alloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notAlloweds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

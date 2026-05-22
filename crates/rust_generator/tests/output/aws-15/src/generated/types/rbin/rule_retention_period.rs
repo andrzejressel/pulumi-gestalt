@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#retention_period_unit: {
-                        let field_value = match fields_map.get("retention_period_unit") {
+                        let field_value = match fields_map.get("retentionPeriodUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_period_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionPeriodUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_period_value: {
-                        let field_value = match fields_map.get("retention_period_value") {
+                        let field_value = match fields_map.get("retentionPeriodValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_period_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionPeriodValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

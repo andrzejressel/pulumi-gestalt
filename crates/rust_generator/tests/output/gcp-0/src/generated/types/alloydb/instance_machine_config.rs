@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#cpu_count: {
-                        let field_value = match fields_map.get("cpu_count") {
+                        let field_value = match fields_map.get("cpuCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

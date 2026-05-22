@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#bytes_scanned_cutoff_per_query: {
-                        let field_value = match fields_map.get("bytes_scanned_cutoff_per_query") {
+                        let field_value = match fields_map.get("bytesScannedCutoffPerQuery") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bytes_scanned_cutoff_per_query' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bytesScannedCutoffPerQuery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enforce_workgroup_configuration: {
-                        let field_value = match fields_map.get("enforce_workgroup_configuration") {
+                        let field_value = match fields_map.get("enforceWorkgroupConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enforce_workgroup_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enforceWorkgroupConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#engine_version: {
-                        let field_value = match fields_map.get("engine_version") {
+                        let field_value = match fields_map.get("engineVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'engine_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'engineVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_role: {
-                        let field_value = match fields_map.get("execution_role") {
+                        let field_value = match fields_map.get("executionRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publish_cloudwatch_metrics_enabled: {
-                        let field_value = match fields_map.get("publish_cloudwatch_metrics_enabled") {
+                        let field_value = match fields_map.get("publishCloudwatchMetricsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_cloudwatch_metrics_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishCloudwatchMetricsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#requester_pays_enabled: {
-                        let field_value = match fields_map.get("requester_pays_enabled") {
+                        let field_value = match fields_map.get("requesterPaysEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'requester_pays_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requesterPaysEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#result_configuration: {
-                        let field_value = match fields_map.get("result_configuration") {
+                        let field_value = match fields_map.get("resultConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'result_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resultConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

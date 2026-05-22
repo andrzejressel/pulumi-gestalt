@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cloud_watch_encryption_enabled: {
-                        let field_value = match fields_map.get("cloud_watch_encryption_enabled") {
+                        let field_value = match fields_map.get("cloudWatchEncryptionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_watch_encryption_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudWatchEncryptionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_watch_log_group_name: {
-                        let field_value = match fields_map.get("cloud_watch_log_group_name") {
+                        let field_value = match fields_map.get("cloudWatchLogGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_watch_log_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudWatchLogGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_bucket_encryption_enabled: {
-                        let field_value = match fields_map.get("s_3_bucket_encryption_enabled") {
+                        let field_value = match fields_map.get("s3BucketEncryptionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_bucket_encryption_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3BucketEncryptionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_bucket_name: {
-                        let field_value = match fields_map.get("s_3_bucket_name") {
+                        let field_value = match fields_map.get("s3BucketName") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_bucket_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3BucketName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_key_prefix: {
-                        let field_value = match fields_map.get("s_3_key_prefix") {
+                        let field_value = match fields_map.get("s3KeyPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_key_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3KeyPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

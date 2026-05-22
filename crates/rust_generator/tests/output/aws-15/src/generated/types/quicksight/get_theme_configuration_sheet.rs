@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#tile_layouts: {
-                        let field_value = match fields_map.get("tile_layouts") {
+                        let field_value = match fields_map.get("tileLayouts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tile_layouts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tileLayouts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

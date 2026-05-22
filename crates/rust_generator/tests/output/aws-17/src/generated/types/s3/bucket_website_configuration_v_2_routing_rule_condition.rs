@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#http_error_code_returned_equals: {
-                        let field_value = match fields_map.get("http_error_code_returned_equals") {
+                        let field_value = match fields_map.get("httpErrorCodeReturnedEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_error_code_returned_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpErrorCodeReturnedEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_prefix_equals: {
-                        let field_value = match fields_map.get("key_prefix_equals") {
+                        let field_value = match fields_map.get("keyPrefixEquals") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_prefix_equals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyPrefixEquals' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

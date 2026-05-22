@@ -104,44 +104,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#current_signing_key_length: {
-                        let field_value = match fields_map.get("current_signing_key_length") {
+                        let field_value = match fields_map.get("currentSigningKeyLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'current_signing_key_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'currentSigningKeyLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_signing_private_key: {
-                        let field_value = match fields_map.get("domain_signing_private_key") {
+                        let field_value = match fields_map.get("domainSigningPrivateKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_signing_private_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainSigningPrivateKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#domain_signing_selector: {
-                        let field_value = match fields_map.get("domain_signing_selector") {
+                        let field_value = match fields_map.get("domainSigningSelector") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_signing_selector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainSigningSelector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_key_generation_timestamp: {
-                        let field_value = match fields_map.get("last_key_generation_timestamp") {
+                        let field_value = match fields_map.get("lastKeyGenerationTimestamp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_key_generation_timestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastKeyGenerationTimestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#next_signing_key_length: {
-                        let field_value = match fields_map.get("next_signing_key_length") {
+                        let field_value = match fields_map.get("nextSigningKeyLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'next_signing_key_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nextSigningKeyLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#signing_attributes_origin: {
-                        let field_value = match fields_map.get("signing_attributes_origin") {
+                        let field_value = match fields_map.get("signingAttributesOrigin") {
                             Some(value) => value,
-                            None => bail!("Missing field 'signing_attributes_origin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'signingAttributesOrigin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

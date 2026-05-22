@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#purge_protected_items_from_vault_on_destroy: {
-                        let field_value = match fields_map.get("purge_protected_items_from_vault_on_destroy") {
+                        let field_value = match fields_map.get("purgeProtectedItemsFromVaultOnDestroy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'purge_protected_items_from_vault_on_destroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'purgeProtectedItemsFromVaultOnDestroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_backup_stop_protection_and_retain_data_on_destroy: {
-                        let field_value = match fields_map.get("vm_backup_stop_protection_and_retain_data_on_destroy") {
+                        let field_value = match fields_map.get("vmBackupStopProtectionAndRetainDataOnDestroy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_backup_stop_protection_and_retain_data_on_destroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmBackupStopProtectionAndRetainDataOnDestroy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

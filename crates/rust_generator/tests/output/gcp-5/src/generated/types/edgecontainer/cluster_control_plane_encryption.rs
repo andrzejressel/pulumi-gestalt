@@ -90,30 +90,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#kms_key: {
-                        let field_value = match fields_map.get("kms_key") {
+                        let field_value = match fields_map.get("kmsKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_active_version: {
-                        let field_value = match fields_map.get("kms_key_active_version") {
+                        let field_value = match fields_map.get("kmsKeyActiveVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_active_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyActiveVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_key_state: {
-                        let field_value = match fields_map.get("kms_key_state") {
+                        let field_value = match fields_map.get("kmsKeyState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kms_statuses: {
-                        let field_value = match fields_map.get("kms_statuses") {
+                        let field_value = match fields_map.get("kmsStatuses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_statuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsStatuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

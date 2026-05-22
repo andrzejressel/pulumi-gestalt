@@ -79,9 +79,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#cloud_build_options: {
-                        let field_value = match fields_map.get("cloud_build_options") {
+                        let field_value = match fields_map.get("cloudBuildOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_build_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudBuildOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

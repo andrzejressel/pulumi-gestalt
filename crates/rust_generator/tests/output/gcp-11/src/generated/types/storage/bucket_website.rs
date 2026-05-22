@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#main_page_suffix: {
-                        let field_value = match fields_map.get("main_page_suffix") {
+                        let field_value = match fields_map.get("mainPageSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'main_page_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mainPageSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_found_page: {
-                        let field_value = match fields_map.get("not_found_page") {
+                        let field_value = match fields_map.get("notFoundPage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_found_page' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notFoundPage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

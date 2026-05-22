@@ -98,37 +98,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#ami_distribution_configurations: {
-                        let field_value = match fields_map.get("ami_distribution_configurations") {
+                        let field_value = match fields_map.get("amiDistributionConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ami_distribution_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'amiDistributionConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_distribution_configurations: {
-                        let field_value = match fields_map.get("container_distribution_configurations") {
+                        let field_value = match fields_map.get("containerDistributionConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_distribution_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerDistributionConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fast_launch_configurations: {
-                        let field_value = match fields_map.get("fast_launch_configurations") {
+                        let field_value = match fields_map.get("fastLaunchConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fast_launch_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fastLaunchConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_template_configurations: {
-                        let field_value = match fields_map.get("launch_template_configurations") {
+                        let field_value = match fields_map.get("launchTemplateConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_template_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchTemplateConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#license_configuration_arns: {
-                        let field_value = match fields_map.get("license_configuration_arns") {
+                        let field_value = match fields_map.get("licenseConfigurationArns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'license_configuration_arns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'licenseConfigurationArns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -140,9 +140,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_export_configurations: {
-                        let field_value = match fields_map.get("s_3_export_configurations") {
+                        let field_value = match fields_map.get("s3ExportConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_export_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3ExportConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

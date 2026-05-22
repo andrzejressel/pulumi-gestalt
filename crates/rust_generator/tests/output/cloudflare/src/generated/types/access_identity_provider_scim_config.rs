@@ -84,16 +84,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_member_deprovision: {
-                        let field_value = match fields_map.get("group_member_deprovision") {
+                        let field_value = match fields_map.get("groupMemberDeprovision") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_member_deprovision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupMemberDeprovision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#seat_deprovision: {
-                        let field_value = match fields_map.get("seat_deprovision") {
+                        let field_value = match fields_map.get("seatDeprovision") {
                             Some(value) => value,
-                            None => bail!("Missing field 'seat_deprovision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'seatDeprovision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -105,9 +105,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_deprovision: {
-                        let field_value = match fields_map.get("user_deprovision") {
+                        let field_value = match fields_map.get("userDeprovision") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_deprovision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userDeprovision' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

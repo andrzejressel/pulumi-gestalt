@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#max_length: {
-                        let field_value = match fields_map.get("max_length") {
+                        let field_value = match fields_map.get("maxLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stop_sequences: {
-                        let field_value = match fields_map.get("stop_sequences") {
+                        let field_value = match fields_map.get("stopSequences") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stop_sequences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stopSequences' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#top_k: {
-                        let field_value = match fields_map.get("top_k") {
+                        let field_value = match fields_map.get("topK") {
                             Some(value) => value,
-                            None => bail!("Missing field 'top_k' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'topK' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#top_p: {
-                        let field_value = match fields_map.get("top_p") {
+                        let field_value = match fields_map.get("topP") {
                             Some(value) => value,
-                            None => bail!("Missing field 'top_p' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'topP' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

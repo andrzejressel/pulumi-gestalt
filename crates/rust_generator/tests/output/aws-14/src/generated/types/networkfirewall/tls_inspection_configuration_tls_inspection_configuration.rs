@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#server_certificate_configuration: {
-                        let field_value = match fields_map.get("server_certificate_configuration") {
+                        let field_value = match fields_map.get("serverCertificateConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_certificate_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverCertificateConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

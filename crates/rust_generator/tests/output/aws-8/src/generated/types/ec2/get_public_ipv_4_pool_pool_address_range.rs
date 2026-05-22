@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#address_count: {
-                        let field_value = match fields_map.get("address_count") {
+                        let field_value = match fields_map.get("addressCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addressCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#available_address_count: {
-                        let field_value = match fields_map.get("available_address_count") {
+                        let field_value = match fields_map.get("availableAddressCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'available_address_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availableAddressCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#first_address: {
-                        let field_value = match fields_map.get("first_address") {
+                        let field_value = match fields_map.get("firstAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'first_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firstAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_address: {
-                        let field_value = match fields_map.get("last_address") {
+                        let field_value = match fields_map.get("lastAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

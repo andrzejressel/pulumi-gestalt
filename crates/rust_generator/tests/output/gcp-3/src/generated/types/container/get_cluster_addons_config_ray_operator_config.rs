@@ -72,16 +72,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ray_cluster_logging_configs: {
-                        let field_value = match fields_map.get("ray_cluster_logging_configs") {
+                        let field_value = match fields_map.get("rayClusterLoggingConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ray_cluster_logging_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rayClusterLoggingConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ray_cluster_monitoring_configs: {
-                        let field_value = match fields_map.get("ray_cluster_monitoring_configs") {
+                        let field_value = match fields_map.get("rayClusterMonitoringConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ray_cluster_monitoring_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rayClusterMonitoringConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

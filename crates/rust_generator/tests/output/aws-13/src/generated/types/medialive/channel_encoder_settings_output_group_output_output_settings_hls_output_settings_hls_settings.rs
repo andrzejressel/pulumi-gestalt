@@ -70,30 +70,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_only_hls_settings: {
-                        let field_value = match fields_map.get("audio_only_hls_settings") {
+                        let field_value = match fields_map.get("audioOnlyHlsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_only_hls_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioOnlyHlsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fmp_4_hls_settings: {
-                        let field_value = match fields_map.get("fmp_4_hls_settings") {
+                        let field_value = match fields_map.get("fmp4HlsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fmp_4_hls_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fmp4HlsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frame_capture_hls_settings: {
-                        let field_value = match fields_map.get("frame_capture_hls_settings") {
+                        let field_value = match fields_map.get("frameCaptureHlsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frame_capture_hls_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frameCaptureHlsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#standard_hls_settings: {
-                        let field_value = match fields_map.get("standard_hls_settings") {
+                        let field_value = match fields_map.get("standardHlsSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'standard_hls_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'standardHlsSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#clustering_keys: {
-                        let field_value = match fields_map.get("clustering_keys") {
+                        let field_value = match fields_map.get("clusteringKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'clustering_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusteringKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#partition_keys: {
-                        let field_value = match fields_map.get("partition_keys") {
+                        let field_value = match fields_map.get("partitionKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partition_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partitionKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_columns: {
-                        let field_value = match fields_map.get("static_columns") {
+                        let field_value = match fields_map.get("staticColumns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_columns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticColumns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

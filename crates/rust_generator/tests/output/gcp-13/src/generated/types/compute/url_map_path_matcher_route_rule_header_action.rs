@@ -78,30 +78,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#request_headers_to_adds: {
-                        let field_value = match fields_map.get("request_headers_to_adds") {
+                        let field_value = match fields_map.get("requestHeadersToAdds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_headers_to_adds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestHeadersToAdds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_headers_to_removes: {
-                        let field_value = match fields_map.get("request_headers_to_removes") {
+                        let field_value = match fields_map.get("requestHeadersToRemoves") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_headers_to_removes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestHeadersToRemoves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_headers_to_adds: {
-                        let field_value = match fields_map.get("response_headers_to_adds") {
+                        let field_value = match fields_map.get("responseHeadersToAdds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_headers_to_adds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseHeadersToAdds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_headers_to_removes: {
-                        let field_value = match fields_map.get("response_headers_to_removes") {
+                        let field_value = match fields_map.get("responseHeadersToRemoves") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_headers_to_removes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseHeadersToRemoves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

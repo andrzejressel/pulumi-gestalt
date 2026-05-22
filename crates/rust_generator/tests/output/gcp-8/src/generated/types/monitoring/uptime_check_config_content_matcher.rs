@@ -76,9 +76,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#json_path_matcher: {
-                        let field_value = match fields_map.get("json_path_matcher") {
+                        let field_value = match fields_map.get("jsonPathMatcher") {
                             Some(value) => value,
-                            None => bail!("Missing field 'json_path_matcher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsonPathMatcher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

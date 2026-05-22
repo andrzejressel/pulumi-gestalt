@@ -123,9 +123,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#container_hostname: {
-                        let field_value = match fields_map.get("container_hostname") {
+                        let field_value = match fields_map.get("containerHostname") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_hostname' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerHostname' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -144,16 +144,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_config: {
-                        let field_value = match fields_map.get("image_config") {
+                        let field_value = match fields_map.get("imageConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inference_specification_name: {
-                        let field_value = match fields_map.get("inference_specification_name") {
+                        let field_value = match fields_map.get("inferenceSpecificationName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inference_specification_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inferenceSpecificationName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -165,30 +165,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_data_source: {
-                        let field_value = match fields_map.get("model_data_source") {
+                        let field_value = match fields_map.get("modelDataSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_data_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelDataSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_data_url: {
-                        let field_value = match fields_map.get("model_data_url") {
+                        let field_value = match fields_map.get("modelDataUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_data_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelDataUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#model_package_name: {
-                        let field_value = match fields_map.get("model_package_name") {
+                        let field_value = match fields_map.get("modelPackageName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'model_package_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'modelPackageName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multi_model_config: {
-                        let field_value = match fields_map.get("multi_model_config") {
+                        let field_value = match fields_map.get("multiModelConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multi_model_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multiModelConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

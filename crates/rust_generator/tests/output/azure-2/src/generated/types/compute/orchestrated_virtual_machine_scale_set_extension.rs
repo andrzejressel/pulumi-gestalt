@@ -136,30 +136,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#auto_upgrade_minor_version_enabled: {
-                        let field_value = match fields_map.get("auto_upgrade_minor_version_enabled") {
+                        let field_value = match fields_map.get("autoUpgradeMinorVersionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_upgrade_minor_version_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoUpgradeMinorVersionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#extensions_to_provision_after_vm_creations: {
-                        let field_value = match fields_map.get("extensions_to_provision_after_vm_creations") {
+                        let field_value = match fields_map.get("extensionsToProvisionAfterVmCreations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'extensions_to_provision_after_vm_creations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'extensionsToProvisionAfterVmCreations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_suppression_enabled: {
-                        let field_value = match fields_map.get("failure_suppression_enabled") {
+                        let field_value = match fields_map.get("failureSuppressionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_suppression_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureSuppressionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#force_extension_execution_on_change: {
-                        let field_value = match fields_map.get("force_extension_execution_on_change") {
+                        let field_value = match fields_map.get("forceExtensionExecutionOnChange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'force_extension_execution_on_change' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forceExtensionExecutionOnChange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -171,16 +171,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protected_settings: {
-                        let field_value = match fields_map.get("protected_settings") {
+                        let field_value = match fields_map.get("protectedSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protected_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protectedSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protected_settings_from_key_vault: {
-                        let field_value = match fields_map.get("protected_settings_from_key_vault") {
+                        let field_value = match fields_map.get("protectedSettingsFromKeyVault") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protected_settings_from_key_vault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protectedSettingsFromKeyVault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -199,16 +199,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_handler_version: {
-                        let field_value = match fields_map.get("type_handler_version") {
+                        let field_value = match fields_map.get("typeHandlerVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_handler_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'typeHandlerVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

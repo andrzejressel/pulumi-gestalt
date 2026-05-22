@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#custom_security_group_id: {
-                        let field_value = match fields_map.get("custom_security_group_id") {
+                        let field_value = match fields_map.get("customSecurityGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_security_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customSecurityGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_ou: {
-                        let field_value = match fields_map.get("default_ou") {
+                        let field_value = match fields_map.get("defaultOu") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_ou' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultOu' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_internet_access: {
-                        let field_value = match fields_map.get("enable_internet_access") {
+                        let field_value = match fields_map.get("enableInternetAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_internet_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableInternetAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_maintenance_mode: {
-                        let field_value = match fields_map.get("enable_maintenance_mode") {
+                        let field_value = match fields_map.get("enableMaintenanceMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_maintenance_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableMaintenanceMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_enabled_as_local_administrator: {
-                        let field_value = match fields_map.get("user_enabled_as_local_administrator") {
+                        let field_value = match fields_map.get("userEnabledAsLocalAdministrator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_enabled_as_local_administrator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userEnabledAsLocalAdministrator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

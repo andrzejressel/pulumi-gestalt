@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#execute_command_configuration: {
-                        let field_value = match fields_map.get("execute_command_configuration") {
+                        let field_value = match fields_map.get("executeCommandConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execute_command_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executeCommandConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_storage_configuration: {
-                        let field_value = match fields_map.get("managed_storage_configuration") {
+                        let field_value = match fields_map.get("managedStorageConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_storage_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedStorageConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

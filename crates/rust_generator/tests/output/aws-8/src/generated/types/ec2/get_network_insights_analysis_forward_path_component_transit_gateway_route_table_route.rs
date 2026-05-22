@@ -91,44 +91,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#attachment_id: {
-                        let field_value = match fields_map.get("attachment_id") {
+                        let field_value = match fields_map.get("attachmentId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attachment_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attachmentId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_cidr: {
-                        let field_value = match fields_map.get("destination_cidr") {
+                        let field_value = match fields_map.get("destinationCidr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_cidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationCidr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_list_id: {
-                        let field_value = match fields_map.get("prefix_list_id") {
+                        let field_value = match fields_map.get("prefixListId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_list_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixListId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_id: {
-                        let field_value = match fields_map.get("resource_id") {
+                        let field_value = match fields_map.get("resourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_type: {
-                        let field_value = match fields_map.get("resource_type") {
+                        let field_value = match fields_map.get("resourceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_origin: {
-                        let field_value = match fields_map.get("route_origin") {
+                        let field_value = match fields_map.get("routeOrigin") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_origin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeOrigin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

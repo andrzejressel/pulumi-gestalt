@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#effective_engine_version: {
-                        let field_value = match fields_map.get("effective_engine_version") {
+                        let field_value = match fields_map.get("effectiveEngineVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_engine_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveEngineVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selected_engine_version: {
-                        let field_value = match fields_map.get("selected_engine_version") {
+                        let field_value = match fields_map.get("selectedEngineVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selected_engine_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectedEngineVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

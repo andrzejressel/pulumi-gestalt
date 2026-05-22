@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#message_types: {
-                        let field_value = match fields_map.get("message_types") {
+                        let field_value = match fields_map.get("messageTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'message_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messageTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

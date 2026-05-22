@@ -131,23 +131,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#header_action: {
-                        let field_value = match fields_map.get("header_action") {
+                        let field_value = match fields_map.get("headerAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'header_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headerAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_: {
-                        let field_value = match fields_map.get("match_") {
+                        let field_value = match fields_map.get("match") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preconfigured_waf_config: {
-                        let field_value = match fields_map.get("preconfigured_waf_config") {
+                        let field_value = match fields_map.get("preconfiguredWafConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preconfigured_waf_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preconfiguredWafConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -166,16 +166,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_limit_options: {
-                        let field_value = match fields_map.get("rate_limit_options") {
+                        let field_value = match fields_map.get("rateLimitOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_limit_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateLimitOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_options: {
-                        let field_value = match fields_map.get("redirect_options") {
+                        let field_value = match fields_map.get("redirectOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

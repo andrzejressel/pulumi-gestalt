@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#cloud_watch_metrics: {
-                        let field_value = match fields_map.get("cloud_watch_metrics") {
+                        let field_value = match fields_map.get("cloudWatchMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_watch_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudWatchMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_bucket_destination: {
-                        let field_value = match fields_map.get("s_3_bucket_destination") {
+                        let field_value = match fields_map.get("s3BucketDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_bucket_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3BucketDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

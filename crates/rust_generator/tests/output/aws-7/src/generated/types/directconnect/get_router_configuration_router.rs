@@ -113,9 +113,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#router_type_identifier: {
-                        let field_value = match fields_map.get("router_type_identifier") {
+                        let field_value = match fields_map.get("routerTypeIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'router_type_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routerTypeIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,16 +134,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#xslt_template_name: {
-                        let field_value = match fields_map.get("xslt_template_name") {
+                        let field_value = match fields_map.get("xsltTemplateName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'xslt_template_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'xsltTemplateName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#xslt_template_name_for_mac_sec: {
-                        let field_value = match fields_map.get("xslt_template_name_for_mac_sec") {
+                        let field_value = match fields_map.get("xsltTemplateNameForMacSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'xslt_template_name_for_mac_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'xsltTemplateNameForMacSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

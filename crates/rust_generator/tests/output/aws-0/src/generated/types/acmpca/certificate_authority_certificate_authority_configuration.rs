@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#key_algorithm: {
-                        let field_value = match fields_map.get("key_algorithm") {
+                        let field_value = match fields_map.get("keyAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#signing_algorithm: {
-                        let field_value = match fields_map.get("signing_algorithm") {
+                        let field_value = match fields_map.get("signingAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'signing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'signingAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

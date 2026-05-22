@@ -57,16 +57,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#replacement_strategy: {
-                        let field_value = match fields_map.get("replacement_strategy") {
+                        let field_value = match fields_map.get("replacementStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replacement_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replacementStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#termination_delay: {
-                        let field_value = match fields_map.get("termination_delay") {
+                        let field_value = match fields_map.get("terminationDelay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'termination_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'terminationDelay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

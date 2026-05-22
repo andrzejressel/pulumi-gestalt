@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#connection_id: {
-                        let field_value = match fields_map.get("connection_id") {
+                        let field_value = match fields_map.get("connectionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ticket_configuration: {
-                        let field_value = match fields_map.get("ticket_configuration") {
+                        let field_value = match fields_map.get("ticketConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ticket_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ticketConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workspace_id: {
-                        let field_value = match fields_map.get("workspace_id") {
+                        let field_value = match fields_map.get("workspaceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workspace_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workspaceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

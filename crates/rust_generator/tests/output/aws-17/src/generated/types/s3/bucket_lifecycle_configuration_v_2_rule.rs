@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#abort_incomplete_multipart_upload: {
-                        let field_value = match fields_map.get("abort_incomplete_multipart_upload") {
+                        let field_value = match fields_map.get("abortIncompleteMultipartUpload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'abort_incomplete_multipart_upload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'abortIncompleteMultipartUpload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -142,16 +142,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#noncurrent_version_expiration: {
-                        let field_value = match fields_map.get("noncurrent_version_expiration") {
+                        let field_value = match fields_map.get("noncurrentVersionExpiration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'noncurrent_version_expiration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noncurrentVersionExpiration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#noncurrent_version_transitions: {
-                        let field_value = match fields_map.get("noncurrent_version_transitions") {
+                        let field_value = match fields_map.get("noncurrentVersionTransitions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'noncurrent_version_transitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noncurrentVersionTransitions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

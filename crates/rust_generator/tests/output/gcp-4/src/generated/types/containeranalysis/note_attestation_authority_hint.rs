@@ -53,9 +53,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#human_readable_name: {
-                        let field_value = match fields_map.get("human_readable_name") {
+                        let field_value = match fields_map.get("humanReadableName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'human_readable_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'humanReadableName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

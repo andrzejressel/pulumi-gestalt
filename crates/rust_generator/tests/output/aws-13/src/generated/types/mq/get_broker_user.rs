@@ -70,9 +70,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#console_access: {
-                        let field_value = match fields_map.get("console_access") {
+                        let field_value = match fields_map.get("consoleAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'console_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consoleAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -84,9 +84,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replication_user: {
-                        let field_value = match fields_map.get("replication_user") {
+                        let field_value = match fields_map.get("replicationUser") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replication_user' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicationUser' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

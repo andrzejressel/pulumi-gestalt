@@ -89,16 +89,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_prefix: {
-                        let field_value = match fields_map.get("filter_prefix") {
+                        let field_value = match fields_map.get("filterPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filter_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_suffix: {
-                        let field_value = match fields_map.get("filter_suffix") {
+                        let field_value = match fields_map.get("filterSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filter_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#queue_arn: {
-                        let field_value = match fields_map.get("queue_arn") {
+                        let field_value = match fields_map.get("queueArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'queue_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queueArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

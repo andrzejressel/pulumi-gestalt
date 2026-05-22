@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#status_code: {
-                        let field_value = match fields_map.get("status_code") {
+                        let field_value = match fields_map.get("statusCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status_code_ranges: {
-                        let field_value = match fields_map.get("status_code_ranges") {
+                        let field_value = match fields_map.get("statusCodeRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_code_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusCodeRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -70,30 +70,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#force_delete: {
-                        let field_value = match fields_map.get("force_delete") {
+                        let field_value = match fields_map.get("forceDelete") {
                             Some(value) => value,
-                            None => bail!("Missing field 'force_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forceDelete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reimage_on_manual_upgrade: {
-                        let field_value = match fields_map.get("reimage_on_manual_upgrade") {
+                        let field_value = match fields_map.get("reimageOnManualUpgrade") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reimage_on_manual_upgrade' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'reimageOnManualUpgrade' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#roll_instances_when_required: {
-                        let field_value = match fields_map.get("roll_instances_when_required") {
+                        let field_value = match fields_map.get("rollInstancesWhenRequired") {
                             Some(value) => value,
-                            None => bail!("Missing field 'roll_instances_when_required' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rollInstancesWhenRequired' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_to_zero_before_deletion: {
-                        let field_value = match fields_map.get("scale_to_zero_before_deletion") {
+                        let field_value = match fields_map.get("scaleToZeroBeforeDeletion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_to_zero_before_deletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleToZeroBeforeDeletion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

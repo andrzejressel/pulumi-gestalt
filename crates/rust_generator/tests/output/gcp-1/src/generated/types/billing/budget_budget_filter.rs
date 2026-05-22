@@ -146,30 +146,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#calendar_period: {
-                        let field_value = match fields_map.get("calendar_period") {
+                        let field_value = match fields_map.get("calendarPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'calendar_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'calendarPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#credit_types: {
-                        let field_value = match fields_map.get("credit_types") {
+                        let field_value = match fields_map.get("creditTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'credit_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'creditTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#credit_types_treatment: {
-                        let field_value = match fields_map.get("credit_types_treatment") {
+                        let field_value = match fields_map.get("creditTypesTreatment") {
                             Some(value) => value,
-                            None => bail!("Missing field 'credit_types_treatment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'creditTypesTreatment' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_period: {
-                        let field_value = match fields_map.get("custom_period") {
+                        let field_value = match fields_map.get("customPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -188,9 +188,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_ancestors: {
-                        let field_value = match fields_map.get("resource_ancestors") {
+                        let field_value = match fields_map.get("resourceAncestors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_ancestors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceAncestors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

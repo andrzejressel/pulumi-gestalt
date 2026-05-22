@@ -113,65 +113,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#in_app_stream_names: {
-                        let field_value = match fields_map.get("in_app_stream_names") {
+                        let field_value = match fields_map.get("inAppStreamNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'in_app_stream_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inAppStreamNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_id: {
-                        let field_value = match fields_map.get("input_id") {
+                        let field_value = match fields_map.get("inputId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_parallelism: {
-                        let field_value = match fields_map.get("input_parallelism") {
+                        let field_value = match fields_map.get("inputParallelism") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_parallelism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputParallelism' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_processing_configuration: {
-                        let field_value = match fields_map.get("input_processing_configuration") {
+                        let field_value = match fields_map.get("inputProcessingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_processing_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputProcessingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_schema: {
-                        let field_value = match fields_map.get("input_schema") {
+                        let field_value = match fields_map.get("inputSchema") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputSchema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#input_starting_position_configurations: {
-                        let field_value = match fields_map.get("input_starting_position_configurations") {
+                        let field_value = match fields_map.get("inputStartingPositionConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'input_starting_position_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inputStartingPositionConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_firehose_input: {
-                        let field_value = match fields_map.get("kinesis_firehose_input") {
+                        let field_value = match fields_map.get("kinesisFirehoseInput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_firehose_input' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisFirehoseInput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_streams_input: {
-                        let field_value = match fields_map.get("kinesis_streams_input") {
+                        let field_value = match fields_map.get("kinesisStreamsInput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_streams_input' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisStreamsInput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name_prefix: {
-                        let field_value = match fields_map.get("name_prefix") {
+                        let field_value = match fields_map.get("namePrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'name_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'namePrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

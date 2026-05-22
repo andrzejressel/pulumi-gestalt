@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#azure_service_endpoint: {
-                        let field_value = match fields_map.get("azure_service_endpoint") {
+                        let field_value = match fields_map.get("azureServiceEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_service_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureServiceEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_account_name: {
-                        let field_value = match fields_map.get("cloud_account_name") {
+                        let field_value = match fields_map.get("cloudAccountName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudAccountName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#witness_path: {
-                        let field_value = match fields_map.get("witness_path") {
+                        let field_value = match fields_map.get("witnessPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'witness_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'witnessPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#witness_type: {
-                        let field_value = match fields_map.get("witness_type") {
+                        let field_value = match fields_map.get("witnessType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'witness_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'witnessType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

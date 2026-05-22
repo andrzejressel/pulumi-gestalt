@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#instance_reuse_policy: {
-                        let field_value = match fields_map.get("instance_reuse_policy") {
+                        let field_value = match fields_map.get("instanceReusePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_reuse_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceReusePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_group_prepared_capacity: {
-                        let field_value = match fields_map.get("max_group_prepared_capacity") {
+                        let field_value = match fields_map.get("maxGroupPreparedCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_group_prepared_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxGroupPreparedCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_size: {
-                        let field_value = match fields_map.get("min_size") {
+                        let field_value = match fields_map.get("minSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pool_state: {
-                        let field_value = match fields_map.get("pool_state") {
+                        let field_value = match fields_map.get("poolState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pool_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'poolState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

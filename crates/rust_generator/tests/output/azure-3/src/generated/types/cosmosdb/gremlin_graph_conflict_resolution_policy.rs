@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#conflict_resolution_path: {
-                        let field_value = match fields_map.get("conflict_resolution_path") {
+                        let field_value = match fields_map.get("conflictResolutionPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'conflict_resolution_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conflictResolutionPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#conflict_resolution_procedure: {
-                        let field_value = match fields_map.get("conflict_resolution_procedure") {
+                        let field_value = match fields_map.get("conflictResolutionProcedure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'conflict_resolution_procedure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conflictResolutionProcedure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#early_hints: {
-                        let field_value = match fields_map.get("early_hints") {
+                        let field_value = match fields_map.get("earlyHints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'early_hints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'earlyHints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_2: {
-                        let field_value = match fields_map.get("http_2") {
+                        let field_value = match fields_map.get("http2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'http2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_tls_version: {
-                        let field_value = match fields_map.get("min_tls_version") {
+                        let field_value = match fields_map.get("minTlsVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_tls_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minTlsVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_13: {
-                        let field_value = match fields_map.get("tls_13") {
+                        let field_value = match fields_map.get("tls13") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_13' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tls13' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

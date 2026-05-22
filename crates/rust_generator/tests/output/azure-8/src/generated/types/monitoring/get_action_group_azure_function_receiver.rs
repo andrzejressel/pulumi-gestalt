@@ -82,23 +82,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#function_app_resource_id: {
-                        let field_value = match fields_map.get("function_app_resource_id") {
+                        let field_value = match fields_map.get("functionAppResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'function_app_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'functionAppResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#function_name: {
-                        let field_value = match fields_map.get("function_name") {
+                        let field_value = match fields_map.get("functionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'function_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'functionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_trigger_url: {
-                        let field_value = match fields_map.get("http_trigger_url") {
+                        let field_value = match fields_map.get("httpTriggerUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_trigger_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpTriggerUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_common_alert_schema: {
-                        let field_value = match fields_map.get("use_common_alert_schema") {
+                        let field_value = match fields_map.get("useCommonAlertSchema") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_common_alert_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useCommonAlertSchema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

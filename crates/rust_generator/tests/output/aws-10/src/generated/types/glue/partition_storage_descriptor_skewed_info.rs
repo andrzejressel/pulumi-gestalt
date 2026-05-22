@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#skewed_column_names: {
-                        let field_value = match fields_map.get("skewed_column_names") {
+                        let field_value = match fields_map.get("skewedColumnNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skewed_column_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skewedColumnNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skewed_column_value_location_maps: {
-                        let field_value = match fields_map.get("skewed_column_value_location_maps") {
+                        let field_value = match fields_map.get("skewedColumnValueLocationMaps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skewed_column_value_location_maps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skewedColumnValueLocationMaps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skewed_column_values: {
-                        let field_value = match fields_map.get("skewed_column_values") {
+                        let field_value = match fields_map.get("skewedColumnValues") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skewed_column_values' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skewedColumnValues' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

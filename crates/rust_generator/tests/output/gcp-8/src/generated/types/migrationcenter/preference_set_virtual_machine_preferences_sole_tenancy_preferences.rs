@@ -75,30 +75,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#commitment_plan: {
-                        let field_value = match fields_map.get("commitment_plan") {
+                        let field_value = match fields_map.get("commitmentPlan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'commitment_plan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commitmentPlan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_overcommit_ratio: {
-                        let field_value = match fields_map.get("cpu_overcommit_ratio") {
+                        let field_value = match fields_map.get("cpuOvercommitRatio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_overcommit_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuOvercommitRatio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_maintenance_policy: {
-                        let field_value = match fields_map.get("host_maintenance_policy") {
+                        let field_value = match fields_map.get("hostMaintenancePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_maintenance_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostMaintenancePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_types: {
-                        let field_value = match fields_map.get("node_types") {
+                        let field_value = match fields_map.get("nodeTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

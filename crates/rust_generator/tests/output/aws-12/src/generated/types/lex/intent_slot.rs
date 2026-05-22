@@ -144,44 +144,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_card: {
-                        let field_value = match fields_map.get("response_card") {
+                        let field_value = match fields_map.get("responseCard") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_card' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseCard' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_utterances: {
-                        let field_value = match fields_map.get("sample_utterances") {
+                        let field_value = match fields_map.get("sampleUtterances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_utterances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleUtterances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slot_constraint: {
-                        let field_value = match fields_map.get("slot_constraint") {
+                        let field_value = match fields_map.get("slotConstraint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slot_constraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'slotConstraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slot_type: {
-                        let field_value = match fields_map.get("slot_type") {
+                        let field_value = match fields_map.get("slotType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slot_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'slotType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slot_type_version: {
-                        let field_value = match fields_map.get("slot_type_version") {
+                        let field_value = match fields_map.get("slotTypeVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slot_type_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'slotTypeVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#value_elicitation_prompt: {
-                        let field_value = match fields_map.get("value_elicitation_prompt") {
+                        let field_value = match fields_map.get("valueElicitationPrompt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'value_elicitation_prompt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'valueElicitationPrompt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

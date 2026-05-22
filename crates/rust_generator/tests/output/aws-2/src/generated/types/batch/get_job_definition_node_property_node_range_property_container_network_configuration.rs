@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#assign_public_ip: {
-                        let field_value = match fields_map.get("assign_public_ip") {
+                        let field_value = match fields_map.get("assignPublicIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'assign_public_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'assignPublicIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -64,16 +64,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#last_period_amount: {
-                        let field_value = match fields_map.get("last_period_amount") {
+                        let field_value = match fields_map.get("lastPeriodAmount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_period_amount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastPeriodAmount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#specified_amount: {
-                        let field_value = match fields_map.get("specified_amount") {
+                        let field_value = match fields_map.get("specifiedAmount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'specified_amount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'specifiedAmount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

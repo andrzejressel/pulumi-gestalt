@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#latest_job_end_time: {
-                        let field_value = match fields_map.get("latest_job_end_time") {
+                        let field_value = match fields_map.get("latestJobEndTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'latest_job_end_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latestJobEndTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#latest_job_start_time: {
-                        let field_value = match fields_map.get("latest_job_start_time") {
+                        let field_value = match fields_map.get("latestJobStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'latest_job_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'latestJobStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

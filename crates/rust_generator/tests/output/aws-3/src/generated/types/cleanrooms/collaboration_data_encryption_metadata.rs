@@ -70,30 +70,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#allow_clear_text: {
-                        let field_value = match fields_map.get("allow_clear_text") {
+                        let field_value = match fields_map.get("allowClearText") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_clear_text' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowClearText' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_duplicates: {
-                        let field_value = match fields_map.get("allow_duplicates") {
+                        let field_value = match fields_map.get("allowDuplicates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_duplicates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowDuplicates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_joins_on_columns_with_different_names: {
-                        let field_value = match fields_map.get("allow_joins_on_columns_with_different_names") {
+                        let field_value = match fields_map.get("allowJoinsOnColumnsWithDifferentNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_joins_on_columns_with_different_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowJoinsOnColumnsWithDifferentNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_nulls: {
-                        let field_value = match fields_map.get("preserve_nulls") {
+                        let field_value = match fields_map.get("preserveNulls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_nulls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preserveNulls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

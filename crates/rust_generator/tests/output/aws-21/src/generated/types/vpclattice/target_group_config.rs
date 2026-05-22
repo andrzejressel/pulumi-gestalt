@@ -98,23 +98,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#health_check: {
-                        let field_value = match fields_map.get("health_check") {
+                        let field_value = match fields_map.get("healthCheck") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_check' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthCheck' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_address_type: {
-                        let field_value = match fields_map.get("ip_address_type") {
+                        let field_value = match fields_map.get("ipAddressType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_address_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipAddressType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_event_structure_version: {
-                        let field_value = match fields_map.get("lambda_event_structure_version") {
+                        let field_value = match fields_map.get("lambdaEventStructureVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_event_structure_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaEventStructureVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,16 +133,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#protocol_version: {
-                        let field_value = match fields_map.get("protocol_version") {
+                        let field_value = match fields_map.get("protocolVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'protocol_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'protocolVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_identifier: {
-                        let field_value = match fields_map.get("vpc_identifier") {
+                        let field_value = match fields_map.get("vpcIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

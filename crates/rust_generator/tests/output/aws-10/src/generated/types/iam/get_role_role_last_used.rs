@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#last_used_date: {
-                        let field_value = match fields_map.get("last_used_date") {
+                        let field_value = match fields_map.get("lastUsedDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_used_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastUsedDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

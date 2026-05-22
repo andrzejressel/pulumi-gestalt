@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#days_in_cycle: {
-                        let field_value = match fields_map.get("days_in_cycle") {
+                        let field_value = match fields_map.get("daysInCycle") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_in_cycle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysInCycle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time: {
-                        let field_value = match fields_map.get("start_time") {
+                        let field_value = match fields_map.get("startTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

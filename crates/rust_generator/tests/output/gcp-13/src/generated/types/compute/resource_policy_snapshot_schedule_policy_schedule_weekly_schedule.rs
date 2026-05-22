@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#day_of_weeks: {
-                        let field_value = match fields_map.get("day_of_weeks") {
+                        let field_value = match fields_map.get("dayOfWeeks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'day_of_weeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dayOfWeeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

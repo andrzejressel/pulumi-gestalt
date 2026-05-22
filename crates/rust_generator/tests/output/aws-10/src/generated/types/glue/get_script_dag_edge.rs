@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_parameter: {
-                        let field_value = match fields_map.get("target_parameter") {
+                        let field_value = match fields_map.get("targetParameter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_parameter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetParameter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

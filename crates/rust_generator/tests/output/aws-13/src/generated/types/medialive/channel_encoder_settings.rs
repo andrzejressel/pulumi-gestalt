@@ -114,65 +114,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_descriptions: {
-                        let field_value = match fields_map.get("audio_descriptions") {
+                        let field_value = match fields_map.get("audioDescriptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_descriptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioDescriptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#avail_blanking: {
-                        let field_value = match fields_map.get("avail_blanking") {
+                        let field_value = match fields_map.get("availBlanking") {
                             Some(value) => value,
-                            None => bail!("Missing field 'avail_blanking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'availBlanking' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#caption_descriptions: {
-                        let field_value = match fields_map.get("caption_descriptions") {
+                        let field_value = match fields_map.get("captionDescriptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'caption_descriptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'captionDescriptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#global_configuration: {
-                        let field_value = match fields_map.get("global_configuration") {
+                        let field_value = match fields_map.get("globalConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'global_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'globalConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#motion_graphics_configuration: {
-                        let field_value = match fields_map.get("motion_graphics_configuration") {
+                        let field_value = match fields_map.get("motionGraphicsConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'motion_graphics_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'motionGraphicsConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#nielsen_configuration: {
-                        let field_value = match fields_map.get("nielsen_configuration") {
+                        let field_value = match fields_map.get("nielsenConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'nielsen_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nielsenConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_groups: {
-                        let field_value = match fields_map.get("output_groups") {
+                        let field_value = match fields_map.get("outputGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timecode_config: {
-                        let field_value = match fields_map.get("timecode_config") {
+                        let field_value = match fields_map.get("timecodeConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timecode_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timecodeConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#video_descriptions: {
-                        let field_value = match fields_map.get("video_descriptions") {
+                        let field_value = match fields_map.get("videoDescriptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'video_descriptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'videoDescriptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

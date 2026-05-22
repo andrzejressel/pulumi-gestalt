@@ -105,16 +105,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#attribute_types_selector: {
-                        let field_value = match fields_map.get("attribute_types_selector") {
+                        let field_value = match fields_map.get("attributeTypesSelector") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attribute_types_selector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributeTypesSelector' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#conflict_resolution: {
-                        let field_value = match fields_map.get("conflict_resolution") {
+                        let field_value = match fields_map.get("conflictResolution") {
                             Some(value) => value,
-                            None => bail!("Missing field 'conflict_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conflictResolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -126,30 +126,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exporting_config: {
-                        let field_value = match fields_map.get("exporting_config") {
+                        let field_value = match fields_map.get("exportingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exporting_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exportingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matching_rules: {
-                        let field_value = match fields_map.get("matching_rules") {
+                        let field_value = match fields_map.get("matchingRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'matching_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchingRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_allowed_rule_level_for_matching: {
-                        let field_value = match fields_map.get("max_allowed_rule_level_for_matching") {
+                        let field_value = match fields_map.get("maxAllowedRuleLevelForMatching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_allowed_rule_level_for_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAllowedRuleLevelForMatching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_allowed_rule_level_for_merging: {
-                        let field_value = match fields_map.get("max_allowed_rule_level_for_merging") {
+                        let field_value = match fields_map.get("maxAllowedRuleLevelForMerging") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_allowed_rule_level_for_merging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxAllowedRuleLevelForMerging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#maximum_video_buffer_delay_milliseconds: {
-                        let field_value = match fields_map.get("maximum_video_buffer_delay_milliseconds") {
+                        let field_value = match fields_map.get("maximumVideoBufferDelayMilliseconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_video_buffer_delay_milliseconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumVideoBufferDelayMilliseconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transport_stream_bitrate: {
-                        let field_value = match fields_map.get("transport_stream_bitrate") {
+                        let field_value = match fields_map.get("transportStreamBitrate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transport_stream_bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transportStreamBitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transport_stream_id: {
-                        let field_value = match fields_map.get("transport_stream_id") {
+                        let field_value = match fields_map.get("transportStreamId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transport_stream_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transportStreamId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transport_stream_reserved_bitrate: {
-                        let field_value = match fields_map.get("transport_stream_reserved_bitrate") {
+                        let field_value = match fields_map.get("transportStreamReservedBitrate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transport_stream_reserved_bitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transportStreamReservedBitrate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

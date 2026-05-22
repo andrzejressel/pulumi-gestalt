@@ -80,30 +80,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#access_denied_page_settings: {
-                        let field_value = match fields_map.get("access_denied_page_settings") {
+                        let field_value = match fields_map.get("accessDeniedPageSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_denied_page_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessDeniedPageSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#attribute_propagation_settings: {
-                        let field_value = match fields_map.get("attribute_propagation_settings") {
+                        let field_value = match fields_map.get("attributePropagationSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attribute_propagation_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributePropagationSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cookie_domain: {
-                        let field_value = match fields_map.get("cookie_domain") {
+                        let field_value = match fields_map.get("cookieDomain") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cookie_domain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cookieDomain' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#csm_settings: {
-                        let field_value = match fields_map.get("csm_settings") {
+                        let field_value = match fields_map.get("csmSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'csm_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'csmSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

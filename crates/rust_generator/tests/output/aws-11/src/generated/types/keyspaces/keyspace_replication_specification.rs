@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#region_lists: {
-                        let field_value = match fields_map.get("region_lists") {
+                        let field_value = match fields_map.get("regionLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'region_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#replication_strategy: {
-                        let field_value = match fields_map.get("replication_strategy") {
+                        let field_value = match fields_map.get("replicationStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replication_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicationStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

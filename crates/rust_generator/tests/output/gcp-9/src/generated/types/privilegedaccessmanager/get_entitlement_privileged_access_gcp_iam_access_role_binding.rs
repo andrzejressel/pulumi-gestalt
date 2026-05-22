@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#condition_expression: {
-                        let field_value = match fields_map.get("condition_expression") {
+                        let field_value = match fields_map.get("conditionExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'condition_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'conditionExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

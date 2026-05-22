@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#copied_parameters: {
-                        let field_value = match fields_map.get("copied_parameters") {
+                        let field_value = match fields_map.get("copiedParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copied_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copiedParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -117,16 +117,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_query_parameter: {
-                        let field_value = match fields_map.get("token_query_parameter") {
+                        let field_value = match fields_map.get("tokenQueryParameter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_query_parameter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenQueryParameter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_ttl: {
-                        let field_value = match fields_map.get("token_ttl") {
+                        let field_value = match fields_map.get("tokenTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

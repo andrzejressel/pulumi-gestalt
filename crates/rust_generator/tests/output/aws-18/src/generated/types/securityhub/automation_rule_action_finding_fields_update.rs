@@ -135,9 +135,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#related_findings: {
-                        let field_value = match fields_map.get("related_findings") {
+                        let field_value = match fields_map.get("relatedFindings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'related_findings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'relatedFindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -156,16 +156,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_defined_fields: {
-                        let field_value = match fields_map.get("user_defined_fields") {
+                        let field_value = match fields_map.get("userDefinedFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_defined_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userDefinedFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verification_state: {
-                        let field_value = match fields_map.get("verification_state") {
+                        let field_value = match fields_map.get("verificationState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verification_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verificationState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

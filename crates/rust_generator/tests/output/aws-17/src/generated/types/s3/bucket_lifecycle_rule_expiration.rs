@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#expired_object_delete_marker: {
-                        let field_value = match fields_map.get("expired_object_delete_marker") {
+                        let field_value = match fields_map.get("expiredObjectDeleteMarker") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expired_object_delete_marker' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expiredObjectDeleteMarker' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

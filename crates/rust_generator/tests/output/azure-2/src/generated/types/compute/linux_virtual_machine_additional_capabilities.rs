@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#hibernation_enabled: {
-                        let field_value = match fields_map.get("hibernation_enabled") {
+                        let field_value = match fields_map.get("hibernationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hibernation_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hibernationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ultra_ssd_enabled: {
-                        let field_value = match fields_map.get("ultra_ssd_enabled") {
+                        let field_value = match fields_map.get("ultraSsdEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ultra_ssd_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ultraSsdEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -111,16 +111,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_before: {
-                        let field_value = match fields_map.get("not_before") {
+                        let field_value = match fields_map.get("notBefore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_before' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notBefore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recovery_level: {
-                        let field_value = match fields_map.get("recovery_level") {
+                        let field_value = match fields_map.get("recoveryLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recovery_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recoveryLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

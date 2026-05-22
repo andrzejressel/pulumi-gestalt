@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#gke_cluster_name: {
-                        let field_value = match fields_map.get("gke_cluster_name") {
+                        let field_value = match fields_map.get("gkeClusterName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gke_cluster_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gkeClusterName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

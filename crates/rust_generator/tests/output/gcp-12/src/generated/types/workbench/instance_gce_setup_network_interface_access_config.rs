@@ -54,9 +54,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#external_ip: {
-                        let field_value = match fields_map.get("external_ip") {
+                        let field_value = match fields_map.get("externalIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

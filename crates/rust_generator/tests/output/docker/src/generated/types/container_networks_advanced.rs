@@ -81,16 +81,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_4_address: {
-                        let field_value = match fields_map.get("ipv_4_address") {
+                        let field_value = match fields_map.get("ipv4Address") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_4_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv4Address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ipv_6_address: {
-                        let field_value = match fields_map.get("ipv_6_address") {
+                        let field_value = match fields_map.get("ipv6Address") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ipv_6_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipv6Address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

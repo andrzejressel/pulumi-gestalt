@@ -114,65 +114,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#association_status: {
-                        let field_value = match fields_map.get("association_status") {
+                        let field_value = match fields_map.get("associationStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'association_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'associationStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#related_requirements: {
-                        let field_value = match fields_map.get("related_requirements") {
+                        let field_value = match fields_map.get("relatedRequirements") {
                             Some(value) => value,
-                            None => bail!("Missing field 'related_requirements' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'relatedRequirements' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_control_arn: {
-                        let field_value = match fields_map.get("security_control_arn") {
+                        let field_value = match fields_map.get("securityControlArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_control_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityControlArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_control_id: {
-                        let field_value = match fields_map.get("security_control_id") {
+                        let field_value = match fields_map.get("securityControlId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_control_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityControlId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#standards_arn: {
-                        let field_value = match fields_map.get("standards_arn") {
+                        let field_value = match fields_map.get("standardsArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'standards_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'standardsArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#standards_control_description: {
-                        let field_value = match fields_map.get("standards_control_description") {
+                        let field_value = match fields_map.get("standardsControlDescription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'standards_control_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'standardsControlDescription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#standards_control_title: {
-                        let field_value = match fields_map.get("standards_control_title") {
+                        let field_value = match fields_map.get("standardsControlTitle") {
                             Some(value) => value,
-                            None => bail!("Missing field 'standards_control_title' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'standardsControlTitle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#updated_at: {
-                        let field_value = match fields_map.get("updated_at") {
+                        let field_value = match fields_map.get("updatedAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'updated_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updatedAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#updated_reason: {
-                        let field_value = match fields_map.get("updated_reason") {
+                        let field_value = match fields_map.get("updatedReason") {
                             Some(value) => value,
-                            None => bail!("Missing field 'updated_reason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updatedReason' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#current_versioned_key_expiration_timestamp: {
-                        let field_value = match fields_map.get("current_versioned_key_expiration_timestamp") {
+                        let field_value = match fields_map.get("currentVersionedKeyExpirationTimestamp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'current_versioned_key_expiration_timestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'currentVersionedKeyExpirationTimestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#current_versioned_key_id: {
-                        let field_value = match fields_map.get("current_versioned_key_id") {
+                        let field_value = match fields_map.get("currentVersionedKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'current_versioned_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'currentVersionedKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_vault_key_id: {
-                        let field_value = match fields_map.get("key_vault_key_id") {
+                        let field_value = match fields_map.get("keyVaultKeyId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_vault_key_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyVaultKeyId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_key_rotation_timestamp: {
-                        let field_value = match fields_map.get("last_key_rotation_timestamp") {
+                        let field_value = match fields_map.get("lastKeyRotationTimestamp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_key_rotation_timestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastKeyRotationTimestamp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_assigned_identity_id: {
-                        let field_value = match fields_map.get("user_assigned_identity_id") {
+                        let field_value = match fields_map.get("userAssignedIdentityId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_assigned_identity_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userAssignedIdentityId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

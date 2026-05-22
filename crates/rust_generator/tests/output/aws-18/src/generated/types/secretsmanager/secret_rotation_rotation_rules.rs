@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#automatically_after_days: {
-                        let field_value = match fields_map.get("automatically_after_days") {
+                        let field_value = match fields_map.get("automaticallyAfterDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'automatically_after_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'automaticallyAfterDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#schedule_expression: {
-                        let field_value = match fields_map.get("schedule_expression") {
+                        let field_value = match fields_map.get("scheduleExpression") {
                             Some(value) => value,
-                            None => bail!("Missing field 'schedule_expression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduleExpression' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

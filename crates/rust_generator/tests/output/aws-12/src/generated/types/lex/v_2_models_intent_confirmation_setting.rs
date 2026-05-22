@@ -153,86 +153,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#code_hook: {
-                        let field_value = match fields_map.get("code_hook") {
+                        let field_value = match fields_map.get("codeHook") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_hook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeHook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#confirmation_conditional: {
-                        let field_value = match fields_map.get("confirmation_conditional") {
+                        let field_value = match fields_map.get("confirmationConditional") {
                             Some(value) => value,
-                            None => bail!("Missing field 'confirmation_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'confirmationConditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#confirmation_next_step: {
-                        let field_value = match fields_map.get("confirmation_next_step") {
+                        let field_value = match fields_map.get("confirmationNextStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'confirmation_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'confirmationNextStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#confirmation_response: {
-                        let field_value = match fields_map.get("confirmation_response") {
+                        let field_value = match fields_map.get("confirmationResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'confirmation_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'confirmationResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#declination_conditional: {
-                        let field_value = match fields_map.get("declination_conditional") {
+                        let field_value = match fields_map.get("declinationConditional") {
                             Some(value) => value,
-                            None => bail!("Missing field 'declination_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'declinationConditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#declination_next_step: {
-                        let field_value = match fields_map.get("declination_next_step") {
+                        let field_value = match fields_map.get("declinationNextStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'declination_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'declinationNextStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#declination_response: {
-                        let field_value = match fields_map.get("declination_response") {
+                        let field_value = match fields_map.get("declinationResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'declination_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'declinationResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#elicitation_code_hook: {
-                        let field_value = match fields_map.get("elicitation_code_hook") {
+                        let field_value = match fields_map.get("elicitationCodeHook") {
                             Some(value) => value,
-                            None => bail!("Missing field 'elicitation_code_hook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'elicitationCodeHook' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_conditional: {
-                        let field_value = match fields_map.get("failure_conditional") {
+                        let field_value = match fields_map.get("failureConditional") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_conditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureConditional' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_next_step: {
-                        let field_value = match fields_map.get("failure_next_step") {
+                        let field_value = match fields_map.get("failureNextStep") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_next_step' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureNextStep' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_response: {
-                        let field_value = match fields_map.get("failure_response") {
+                        let field_value = match fields_map.get("failureResponse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_response' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureResponse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prompt_specification: {
-                        let field_value = match fields_map.get("prompt_specification") {
+                        let field_value = match fields_map.get("promptSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prompt_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'promptSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

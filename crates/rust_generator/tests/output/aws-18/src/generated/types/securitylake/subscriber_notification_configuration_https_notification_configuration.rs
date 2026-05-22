@@ -85,16 +85,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#authorization_api_key_name: {
-                        let field_value = match fields_map.get("authorization_api_key_name") {
+                        let field_value = match fields_map.get("authorizationApiKeyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorization_api_key_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizationApiKeyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authorization_api_key_value: {
-                        let field_value = match fields_map.get("authorization_api_key_value") {
+                        let field_value = match fields_map.get("authorizationApiKeyValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorization_api_key_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizationApiKeyValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -106,16 +106,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_method: {
-                        let field_value = match fields_map.get("http_method") {
+                        let field_value = match fields_map.get("httpMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_role_arn: {
-                        let field_value = match fields_map.get("target_role_arn") {
+                        let field_value = match fields_map.get("targetRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

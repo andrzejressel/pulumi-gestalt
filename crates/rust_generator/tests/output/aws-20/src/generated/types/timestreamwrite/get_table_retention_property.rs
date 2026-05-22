@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#magnetic_store_retention_period_in_days: {
-                        let field_value = match fields_map.get("magnetic_store_retention_period_in_days") {
+                        let field_value = match fields_map.get("magneticStoreRetentionPeriodInDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'magnetic_store_retention_period_in_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'magneticStoreRetentionPeriodInDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_store_retention_period_in_hours: {
-                        let field_value = match fields_map.get("memory_store_retention_period_in_hours") {
+                        let field_value = match fields_map.get("memoryStoreRetentionPeriodInHours") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_store_retention_period_in_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryStoreRetentionPeriodInHours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

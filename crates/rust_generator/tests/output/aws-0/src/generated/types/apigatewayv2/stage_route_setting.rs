@@ -92,44 +92,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#data_trace_enabled: {
-                        let field_value = match fields_map.get("data_trace_enabled") {
+                        let field_value = match fields_map.get("dataTraceEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_trace_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataTraceEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#detailed_metrics_enabled: {
-                        let field_value = match fields_map.get("detailed_metrics_enabled") {
+                        let field_value = match fields_map.get("detailedMetricsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detailed_metrics_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detailedMetricsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logging_level: {
-                        let field_value = match fields_map.get("logging_level") {
+                        let field_value = match fields_map.get("loggingLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logging_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loggingLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_key: {
-                        let field_value = match fields_map.get("route_key") {
+                        let field_value = match fields_map.get("routeKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#throttling_burst_limit: {
-                        let field_value = match fields_map.get("throttling_burst_limit") {
+                        let field_value = match fields_map.get("throttlingBurstLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'throttling_burst_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'throttlingBurstLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#throttling_rate_limit: {
-                        let field_value = match fields_map.get("throttling_rate_limit") {
+                        let field_value = match fields_map.get("throttlingRateLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'throttling_rate_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'throttlingRateLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

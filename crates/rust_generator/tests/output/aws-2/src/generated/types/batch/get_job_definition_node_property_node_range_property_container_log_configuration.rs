@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#log_driver: {
-                        let field_value = match fields_map.get("log_driver") {
+                        let field_value = match fields_map.get("logDriver") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_driver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logDriver' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_options: {
-                        let field_value = match fields_map.get("secret_options") {
+                        let field_value = match fields_map.get("secretOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

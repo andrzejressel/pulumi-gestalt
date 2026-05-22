@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#query_capacity_units: {
-                        let field_value = match fields_map.get("query_capacity_units") {
+                        let field_value = match fields_map.get("queryCapacityUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryCapacityUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_capacity_units: {
-                        let field_value = match fields_map.get("storage_capacity_units") {
+                        let field_value = match fields_map.get("storageCapacityUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageCapacityUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

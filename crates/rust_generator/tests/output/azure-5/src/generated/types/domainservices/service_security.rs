@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#kerberos_armoring_enabled: {
-                        let field_value = match fields_map.get("kerberos_armoring_enabled") {
+                        let field_value = match fields_map.get("kerberosArmoringEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_armoring_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberosArmoringEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_rc_4_encryption_enabled: {
-                        let field_value = match fields_map.get("kerberos_rc_4_encryption_enabled") {
+                        let field_value = match fields_map.get("kerberosRc4EncryptionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_rc_4_encryption_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberosRc4EncryptionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ntlm_v_1_enabled: {
-                        let field_value = match fields_map.get("ntlm_v_1_enabled") {
+                        let field_value = match fields_map.get("ntlmV1Enabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ntlm_v_1_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ntlmV1Enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sync_kerberos_passwords: {
-                        let field_value = match fields_map.get("sync_kerberos_passwords") {
+                        let field_value = match fields_map.get("syncKerberosPasswords") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sync_kerberos_passwords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syncKerberosPasswords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sync_ntlm_passwords: {
-                        let field_value = match fields_map.get("sync_ntlm_passwords") {
+                        let field_value = match fields_map.get("syncNtlmPasswords") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sync_ntlm_passwords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syncNtlmPasswords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sync_on_prem_passwords: {
-                        let field_value = match fields_map.get("sync_on_prem_passwords") {
+                        let field_value = match fields_map.get("syncOnPremPasswords") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sync_on_prem_passwords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syncOnPremPasswords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_v_1_enabled: {
-                        let field_value = match fields_map.get("tls_v_1_enabled") {
+                        let field_value = match fields_map.get("tlsV1Enabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_v_1_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsV1Enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

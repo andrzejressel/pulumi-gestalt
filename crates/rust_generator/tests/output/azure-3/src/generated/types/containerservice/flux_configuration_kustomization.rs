@@ -106,16 +106,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#depends_ons: {
-                        let field_value = match fields_map.get("depends_ons") {
+                        let field_value = match fields_map.get("dependsOns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'depends_ons' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dependsOns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#garbage_collection_enabled: {
-                        let field_value = match fields_map.get("garbage_collection_enabled") {
+                        let field_value = match fields_map.get("garbageCollectionEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'garbage_collection_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'garbageCollectionEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,30 +134,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recreating_enabled: {
-                        let field_value = match fields_map.get("recreating_enabled") {
+                        let field_value = match fields_map.get("recreatingEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recreating_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recreatingEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_interval_in_seconds: {
-                        let field_value = match fields_map.get("retry_interval_in_seconds") {
+                        let field_value = match fields_map.get("retryIntervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retry_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retryIntervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sync_interval_in_seconds: {
-                        let field_value = match fields_map.get("sync_interval_in_seconds") {
+                        let field_value = match fields_map.get("syncIntervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sync_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'syncIntervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_in_seconds: {
-                        let field_value = match fields_map.get("timeout_in_seconds") {
+                        let field_value = match fields_map.get("timeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

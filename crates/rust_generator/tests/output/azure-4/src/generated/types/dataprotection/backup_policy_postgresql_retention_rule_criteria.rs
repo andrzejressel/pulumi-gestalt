@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#absolute_criteria: {
-                        let field_value = match fields_map.get("absolute_criteria") {
+                        let field_value = match fields_map.get("absoluteCriteria") {
                             Some(value) => value,
-                            None => bail!("Missing field 'absolute_criteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'absoluteCriteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#days_of_weeks: {
-                        let field_value = match fields_map.get("days_of_weeks") {
+                        let field_value = match fields_map.get("daysOfWeeks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_weeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfWeeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#months_of_years: {
-                        let field_value = match fields_map.get("months_of_years") {
+                        let field_value = match fields_map.get("monthsOfYears") {
                             Some(value) => value,
-                            None => bail!("Missing field 'months_of_years' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monthsOfYears' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scheduled_backup_times: {
-                        let field_value = match fields_map.get("scheduled_backup_times") {
+                        let field_value = match fields_map.get("scheduledBackupTimes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scheduled_backup_times' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scheduledBackupTimes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weeks_of_months: {
-                        let field_value = match fields_map.get("weeks_of_months") {
+                        let field_value = match fields_map.get("weeksOfMonths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weeks_of_months' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weeksOfMonths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

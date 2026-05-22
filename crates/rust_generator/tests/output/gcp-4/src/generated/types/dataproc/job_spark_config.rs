@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#archive_uris: {
-                        let field_value = match fields_map.get("archive_uris") {
+                        let field_value = match fields_map.get("archiveUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'archive_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'archiveUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -124,37 +124,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_uris: {
-                        let field_value = match fields_map.get("file_uris") {
+                        let field_value = match fields_map.get("fileUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jar_file_uris: {
-                        let field_value = match fields_map.get("jar_file_uris") {
+                        let field_value = match fields_map.get("jarFileUris") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jar_file_uris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jarFileUris' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logging_config: {
-                        let field_value = match fields_map.get("logging_config") {
+                        let field_value = match fields_map.get("loggingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logging_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loggingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#main_class: {
-                        let field_value = match fields_map.get("main_class") {
+                        let field_value = match fields_map.get("mainClass") {
                             Some(value) => value,
-                            None => bail!("Missing field 'main_class' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mainClass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#main_jar_file_uri: {
-                        let field_value = match fields_map.get("main_jar_file_uri") {
+                        let field_value = match fields_map.get("mainJarFileUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'main_jar_file_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mainJarFileUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

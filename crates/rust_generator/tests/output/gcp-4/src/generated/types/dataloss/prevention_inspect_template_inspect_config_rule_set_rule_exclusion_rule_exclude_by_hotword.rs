@@ -64,9 +64,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#hotword_regex: {
-                        let field_value = match fields_map.get("hotword_regex") {
+                        let field_value = match fields_map.get("hotwordRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hotword_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hotwordRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

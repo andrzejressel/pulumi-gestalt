@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#container_group_name: {
-                        let field_value = match fields_map.get("container_group_name") {
+                        let field_value = match fields_map.get("containerGroupName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_group_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerGroupName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

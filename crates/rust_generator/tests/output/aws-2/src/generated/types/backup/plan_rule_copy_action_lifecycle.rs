@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#cold_storage_after: {
-                        let field_value = match fields_map.get("cold_storage_after") {
+                        let field_value = match fields_map.get("coldStorageAfter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cold_storage_after' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coldStorageAfter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#delete_after: {
-                        let field_value = match fields_map.get("delete_after") {
+                        let field_value = match fields_map.get("deleteAfter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delete_after' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deleteAfter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#opt_in_to_archive_for_supported_resources: {
-                        let field_value = match fields_map.get("opt_in_to_archive_for_supported_resources") {
+                        let field_value = match fields_map.get("optInToArchiveForSupportedResources") {
                             Some(value) => value,
-                            None => bail!("Missing field 'opt_in_to_archive_for_supported_resources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'optInToArchiveForSupportedResources' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

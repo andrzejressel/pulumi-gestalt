@@ -208,16 +208,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#allow_exit_codes: {
-                        let field_value = match fields_map.get("allow_exit_codes") {
+                        let field_value = match fields_map.get("allowExitCodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_exit_codes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowExitCodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_failure: {
-                        let field_value = match fields_map.get("allow_failure") {
+                        let field_value = match fields_map.get("allowFailure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowFailure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -271,9 +271,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_envs: {
-                        let field_value = match fields_map.get("secret_envs") {
+                        let field_value = match fields_map.get("secretEnvs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_envs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretEnvs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -299,9 +299,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wait_fors: {
-                        let field_value = match fields_map.get("wait_fors") {
+                        let field_value = match fields_map.get("waitFors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wait_fors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'waitFors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

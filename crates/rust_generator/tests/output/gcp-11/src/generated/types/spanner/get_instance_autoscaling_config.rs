@@ -72,23 +72,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#asymmetric_autoscaling_options: {
-                        let field_value = match fields_map.get("asymmetric_autoscaling_options") {
+                        let field_value = match fields_map.get("asymmetricAutoscalingOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'asymmetric_autoscaling_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'asymmetricAutoscalingOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#autoscaling_limits: {
-                        let field_value = match fields_map.get("autoscaling_limits") {
+                        let field_value = match fields_map.get("autoscalingLimits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_limits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingLimits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#autoscaling_targets: {
-                        let field_value = match fields_map.get("autoscaling_targets") {
+                        let field_value = match fields_map.get("autoscalingTargets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_targets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingTargets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

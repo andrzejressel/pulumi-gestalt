@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#record_column_delimiter: {
-                        let field_value = match fields_map.get("record_column_delimiter") {
+                        let field_value = match fields_map.get("recordColumnDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_column_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordColumnDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_row_delimiter: {
-                        let field_value = match fields_map.get("record_row_delimiter") {
+                        let field_value = match fields_map.get("recordRowDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_row_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordRowDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

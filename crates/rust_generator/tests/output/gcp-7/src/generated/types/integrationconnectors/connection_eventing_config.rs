@@ -77,30 +77,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#additional_variables: {
-                        let field_value = match fields_map.get("additional_variables") {
+                        let field_value = match fields_map.get("additionalVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auth_config: {
-                        let field_value = match fields_map.get("auth_config") {
+                        let field_value = match fields_map.get("authConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enrichment_enabled: {
-                        let field_value = match fields_map.get("enrichment_enabled") {
+                        let field_value = match fields_map.get("enrichmentEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enrichment_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enrichmentEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registration_destination_config: {
-                        let field_value = match fields_map.get("registration_destination_config") {
+                        let field_value = match fields_map.get("registrationDestinationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registration_destination_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registrationDestinationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

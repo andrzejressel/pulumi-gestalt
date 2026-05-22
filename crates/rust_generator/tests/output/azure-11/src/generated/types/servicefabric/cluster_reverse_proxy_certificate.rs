@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#thumbprint_secondary: {
-                        let field_value = match fields_map.get("thumbprint_secondary") {
+                        let field_value = match fields_map.get("thumbprintSecondary") {
                             Some(value) => value,
-                            None => bail!("Missing field 'thumbprint_secondary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thumbprintSecondary' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_509_store_name: {
-                        let field_value = match fields_map.get("x_509_store_name") {
+                        let field_value = match fields_map.get("x509StoreName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_509_store_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'x509StoreName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

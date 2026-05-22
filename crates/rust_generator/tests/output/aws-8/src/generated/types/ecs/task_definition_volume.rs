@@ -91,37 +91,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#configure_at_launch: {
-                        let field_value = match fields_map.get("configure_at_launch") {
+                        let field_value = match fields_map.get("configureAtLaunch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'configure_at_launch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configureAtLaunch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#docker_volume_configuration: {
-                        let field_value = match fields_map.get("docker_volume_configuration") {
+                        let field_value = match fields_map.get("dockerVolumeConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docker_volume_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dockerVolumeConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#efs_volume_configuration: {
-                        let field_value = match fields_map.get("efs_volume_configuration") {
+                        let field_value = match fields_map.get("efsVolumeConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'efs_volume_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'efsVolumeConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fsx_windows_file_server_volume_configuration: {
-                        let field_value = match fields_map.get("fsx_windows_file_server_volume_configuration") {
+                        let field_value = match fields_map.get("fsxWindowsFileServerVolumeConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fsx_windows_file_server_volume_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fsxWindowsFileServerVolumeConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_path: {
-                        let field_value = match fields_map.get("host_path") {
+                        let field_value = match fields_map.get("hostPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

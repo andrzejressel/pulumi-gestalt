@@ -68,9 +68,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#inventory_filters: {
-                        let field_value = match fields_map.get("inventory_filters") {
+                        let field_value = match fields_map.get("inventoryFilters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inventory_filters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inventoryFilters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

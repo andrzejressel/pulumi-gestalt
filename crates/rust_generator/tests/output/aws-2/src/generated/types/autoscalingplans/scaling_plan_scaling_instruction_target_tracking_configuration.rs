@@ -103,51 +103,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#customized_scaling_metric_specification: {
-                        let field_value = match fields_map.get("customized_scaling_metric_specification") {
+                        let field_value = match fields_map.get("customizedScalingMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'customized_scaling_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customizedScalingMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disable_scale_in: {
-                        let field_value = match fields_map.get("disable_scale_in") {
+                        let field_value = match fields_map.get("disableScaleIn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_scale_in' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disableScaleIn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#estimated_instance_warmup: {
-                        let field_value = match fields_map.get("estimated_instance_warmup") {
+                        let field_value = match fields_map.get("estimatedInstanceWarmup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'estimated_instance_warmup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'estimatedInstanceWarmup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#predefined_scaling_metric_specification: {
-                        let field_value = match fields_map.get("predefined_scaling_metric_specification") {
+                        let field_value = match fields_map.get("predefinedScalingMetricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predefined_scaling_metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predefinedScalingMetricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_in_cooldown: {
-                        let field_value = match fields_map.get("scale_in_cooldown") {
+                        let field_value = match fields_map.get("scaleInCooldown") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_in_cooldown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleInCooldown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_out_cooldown: {
-                        let field_value = match fields_map.get("scale_out_cooldown") {
+                        let field_value = match fields_map.get("scaleOutCooldown") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_out_cooldown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleOutCooldown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_value: {
-                        let field_value = match fields_map.get("target_value") {
+                        let field_value = match fields_map.get("targetValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

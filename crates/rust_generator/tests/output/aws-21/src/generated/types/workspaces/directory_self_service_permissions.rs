@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#change_compute_type: {
-                        let field_value = match fields_map.get("change_compute_type") {
+                        let field_value = match fields_map.get("changeComputeType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'change_compute_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'changeComputeType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#increase_volume_size: {
-                        let field_value = match fields_map.get("increase_volume_size") {
+                        let field_value = match fields_map.get("increaseVolumeSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'increase_volume_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'increaseVolumeSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rebuild_workspace: {
-                        let field_value = match fields_map.get("rebuild_workspace") {
+                        let field_value = match fields_map.get("rebuildWorkspace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rebuild_workspace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rebuildWorkspace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#restart_workspace: {
-                        let field_value = match fields_map.get("restart_workspace") {
+                        let field_value = match fields_map.get("restartWorkspace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restart_workspace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restartWorkspace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#switch_running_mode: {
-                        let field_value = match fields_map.get("switch_running_mode") {
+                        let field_value = match fields_map.get("switchRunningMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'switch_running_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'switchRunningMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

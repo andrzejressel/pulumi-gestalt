@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#exclusion_rule: {
-                        let field_value = match fields_map.get("exclusion_rule") {
+                        let field_value = match fields_map.get("exclusionRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclusion_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exclusionRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hotword_rule: {
-                        let field_value = match fields_map.get("hotword_rule") {
+                        let field_value = match fields_map.get("hotwordRule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hotword_rule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hotwordRule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

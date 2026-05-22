@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#aad_auths: {
-                        let field_value = match fields_map.get("aad_auths") {
+                        let field_value = match fields_map.get("aadAuths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aad_auths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aadAuths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -87,16 +87,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_uri: {
-                        let field_value = match fields_map.get("service_uri") {
+                        let field_value = match fields_map.get("serviceUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_common_alert_schema: {
-                        let field_value = match fields_map.get("use_common_alert_schema") {
+                        let field_value = match fields_map.get("useCommonAlertSchema") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_common_alert_schema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useCommonAlertSchema' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

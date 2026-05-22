@@ -91,16 +91,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#external_ipv_6: {
-                        let field_value = match fields_map.get("external_ipv_6") {
+                        let field_value = match fields_map.get("externalIpv6") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_ipv_6' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalIpv6' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_ipv_6_prefix_length: {
-                        let field_value = match fields_map.get("external_ipv_6_prefix_length") {
+                        let field_value = match fields_map.get("externalIpv6PrefixLength") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_ipv_6_prefix_length' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalIpv6PrefixLength' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -112,23 +112,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_tier: {
-                        let field_value = match fields_map.get("network_tier") {
+                        let field_value = match fields_map.get("networkTier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkTier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_ptr_domain_name: {
-                        let field_value = match fields_map.get("public_ptr_domain_name") {
+                        let field_value = match fields_map.get("publicPtrDomainName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_ptr_domain_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicPtrDomainName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_policy: {
-                        let field_value = match fields_map.get("security_policy") {
+                        let field_value = match fields_map.get("securityPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

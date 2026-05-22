@@ -123,9 +123,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#end_time: {
-                        let field_value = match fields_map.get("end_time") {
+                        let field_value = match fields_map.get("endTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -144,9 +144,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retry_count: {
-                        let field_value = match fields_map.get("retry_count") {
+                        let field_value = match fields_map.get("retryCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retry_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retryCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -158,16 +158,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_job: {
-                        let field_value = match fields_map.get("service_job") {
+                        let field_value = match fields_map.get("serviceJob") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_job' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceJob' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time: {
-                        let field_value = match fields_map.get("start_time") {
+                        let field_value = match fields_map.get("startTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

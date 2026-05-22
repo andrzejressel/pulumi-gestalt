@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#baseline_description: {
-                        let field_value = match fields_map.get("baseline_description") {
+                        let field_value = match fields_map.get("baselineDescription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'baseline_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baselineDescription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#baseline_id: {
-                        let field_value = match fields_map.get("baseline_id") {
+                        let field_value = match fields_map.get("baselineId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'baseline_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baselineId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#baseline_name: {
-                        let field_value = match fields_map.get("baseline_name") {
+                        let field_value = match fields_map.get("baselineName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'baseline_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baselineName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_baseline: {
-                        let field_value = match fields_map.get("default_baseline") {
+                        let field_value = match fields_map.get("defaultBaseline") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_baseline' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultBaseline' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operating_system: {
-                        let field_value = match fields_map.get("operating_system") {
+                        let field_value = match fields_map.get("operatingSystem") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operating_system' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operatingSystem' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#link_type: {
-                        let field_value = match fields_map.get("link_type") {
+                        let field_value = match fields_map.get("linkType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'link_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linkType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#link_url: {
-                        let field_value = match fields_map.get("link_url") {
+                        let field_value = match fields_map.get("linkUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'link_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linkUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

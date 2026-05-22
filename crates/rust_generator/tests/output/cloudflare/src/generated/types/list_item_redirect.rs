@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#include_subdomains: {
-                        let field_value = match fields_map.get("include_subdomains") {
+                        let field_value = match fields_map.get("includeSubdomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_subdomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeSubdomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_path_suffix: {
-                        let field_value = match fields_map.get("preserve_path_suffix") {
+                        let field_value = match fields_map.get("preservePathSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_path_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preservePathSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#preserve_query_string: {
-                        let field_value = match fields_map.get("preserve_query_string") {
+                        let field_value = match fields_map.get("preserveQueryString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'preserve_query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preserveQueryString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_url: {
-                        let field_value = match fields_map.get("source_url") {
+                        let field_value = match fields_map.get("sourceUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status_code: {
-                        let field_value = match fields_map.get("status_code") {
+                        let field_value = match fields_map.get("statusCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#subpath_matching: {
-                        let field_value = match fields_map.get("subpath_matching") {
+                        let field_value = match fields_map.get("subpathMatching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'subpath_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'subpathMatching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_url: {
-                        let field_value = match fields_map.get("target_url") {
+                        let field_value = match fields_map.get("targetUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -97,51 +97,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#copy_access_control_lists_for_topics: {
-                        let field_value = match fields_map.get("copy_access_control_lists_for_topics") {
+                        let field_value = match fields_map.get("copyAccessControlListsForTopics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copy_access_control_lists_for_topics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copyAccessControlListsForTopics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#copy_topic_configurations: {
-                        let field_value = match fields_map.get("copy_topic_configurations") {
+                        let field_value = match fields_map.get("copyTopicConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'copy_topic_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'copyTopicConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#detect_and_copy_new_topics: {
-                        let field_value = match fields_map.get("detect_and_copy_new_topics") {
+                        let field_value = match fields_map.get("detectAndCopyNewTopics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detect_and_copy_new_topics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detectAndCopyNewTopics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#starting_position: {
-                        let field_value = match fields_map.get("starting_position") {
+                        let field_value = match fields_map.get("startingPosition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'starting_position' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startingPosition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#topic_name_configuration: {
-                        let field_value = match fields_map.get("topic_name_configuration") {
+                        let field_value = match fields_map.get("topicNameConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'topic_name_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'topicNameConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#topics_to_excludes: {
-                        let field_value = match fields_map.get("topics_to_excludes") {
+                        let field_value = match fields_map.get("topicsToExcludes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'topics_to_excludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'topicsToExcludes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#topics_to_replicates: {
-                        let field_value = match fields_map.get("topics_to_replicates") {
+                        let field_value = match fields_map.get("topicsToReplicates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'topics_to_replicates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'topicsToReplicates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

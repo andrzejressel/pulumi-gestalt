@@ -156,30 +156,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#active_directory: {
-                        let field_value = match fields_map.get("active_directory") {
+                        let field_value = match fields_map.get("activeDirectory") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_directory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeDirectory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#additional_login_params: {
-                        let field_value = match fields_map.get("additional_login_params") {
+                        let field_value = match fields_map.get("additionalLoginParams") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_login_params' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalLoginParams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_external_redirect_urls: {
-                        let field_value = match fields_map.get("allowed_external_redirect_urls") {
+                        let field_value = match fields_map.get("allowedExternalRedirectUrls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_external_redirect_urls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedExternalRedirectUrls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_provider: {
-                        let field_value = match fields_map.get("default_provider") {
+                        let field_value = match fields_map.get("defaultProvider") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_provider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultProvider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -219,23 +219,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_version: {
-                        let field_value = match fields_map.get("runtime_version") {
+                        let field_value = match fields_map.get("runtimeVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimeVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_refresh_extension_hours: {
-                        let field_value = match fields_map.get("token_refresh_extension_hours") {
+                        let field_value = match fields_map.get("tokenRefreshExtensionHours") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_refresh_extension_hours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenRefreshExtensionHours' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_store_enabled: {
-                        let field_value = match fields_map.get("token_store_enabled") {
+                        let field_value = match fields_map.get("tokenStoreEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_store_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenStoreEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -247,9 +247,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unauthenticated_client_action: {
-                        let field_value = match fields_map.get("unauthenticated_client_action") {
+                        let field_value = match fields_map.get("unauthenticatedClientAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unauthenticated_client_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unauthenticatedClientAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

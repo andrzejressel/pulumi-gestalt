@@ -103,44 +103,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#host_redirect: {
-                        let field_value = match fields_map.get("host_redirect") {
+                        let field_value = match fields_map.get("hostRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#https_redirect: {
-                        let field_value = match fields_map.get("https_redirect") {
+                        let field_value = match fields_map.get("httpsRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'https_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpsRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#path_redirect: {
-                        let field_value = match fields_map.get("path_redirect") {
+                        let field_value = match fields_map.get("pathRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'path_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pathRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_redirect: {
-                        let field_value = match fields_map.get("prefix_redirect") {
+                        let field_value = match fields_map.get("prefixRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_response_code: {
-                        let field_value = match fields_map.get("redirect_response_code") {
+                        let field_value = match fields_map.get("redirectResponseCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_response_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectResponseCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#strip_query: {
-                        let field_value = match fields_map.get("strip_query") {
+                        let field_value = match fields_map.get("stripQuery") {
                             Some(value) => value,
-                            None => bail!("Missing field 'strip_query' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stripQuery' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

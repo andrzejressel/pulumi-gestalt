@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#additional_node_network_configs: {
-                        let field_value = match fields_map.get("additional_node_network_configs") {
+                        let field_value = match fields_map.get("additionalNodeNetworkConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_node_network_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalNodeNetworkConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#additional_pod_network_configs: {
-                        let field_value = match fields_map.get("additional_pod_network_configs") {
+                        let field_value = match fields_map.get("additionalPodNetworkConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_pod_network_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalPodNetworkConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_pod_range: {
-                        let field_value = match fields_map.get("create_pod_range") {
+                        let field_value = match fields_map.get("createPodRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_pod_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createPodRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_private_nodes: {
-                        let field_value = match fields_map.get("enable_private_nodes") {
+                        let field_value = match fields_map.get("enablePrivateNodes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_private_nodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePrivateNodes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#network_performance_configs: {
-                        let field_value = match fields_map.get("network_performance_configs") {
+                        let field_value = match fields_map.get("networkPerformanceConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'network_performance_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'networkPerformanceConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_cidr_overprovision_configs: {
-                        let field_value = match fields_map.get("pod_cidr_overprovision_configs") {
+                        let field_value = match fields_map.get("podCidrOverprovisionConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_cidr_overprovision_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podCidrOverprovisionConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_ipv_4_cidr_block: {
-                        let field_value = match fields_map.get("pod_ipv_4_cidr_block") {
+                        let field_value = match fields_map.get("podIpv4CidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_ipv_4_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podIpv4CidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_range: {
-                        let field_value = match fields_map.get("pod_range") {
+                        let field_value = match fields_map.get("podRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

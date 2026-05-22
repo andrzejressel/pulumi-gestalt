@@ -85,9 +85,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#archive_type: {
-                        let field_value = match fields_map.get("archive_type") {
+                        let field_value = match fields_map.get("archiveType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'archive_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'archiveType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gpg_key: {
-                        let field_value = match fields_map.get("gpg_key") {
+                        let field_value = match fields_map.get("gpgKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gpg_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gpgKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

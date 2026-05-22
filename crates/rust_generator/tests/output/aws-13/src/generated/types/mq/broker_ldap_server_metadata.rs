@@ -137,72 +137,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_base: {
-                        let field_value = match fields_map.get("role_base") {
+                        let field_value = match fields_map.get("roleBase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_base' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleBase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_name: {
-                        let field_value = match fields_map.get("role_name") {
+                        let field_value = match fields_map.get("roleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_search_matching: {
-                        let field_value = match fields_map.get("role_search_matching") {
+                        let field_value = match fields_map.get("roleSearchMatching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_search_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleSearchMatching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_search_subtree: {
-                        let field_value = match fields_map.get("role_search_subtree") {
+                        let field_value = match fields_map.get("roleSearchSubtree") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_search_subtree' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleSearchSubtree' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_password: {
-                        let field_value = match fields_map.get("service_account_password") {
+                        let field_value = match fields_map.get("serviceAccountPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_username: {
-                        let field_value = match fields_map.get("service_account_username") {
+                        let field_value = match fields_map.get("serviceAccountUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_base: {
-                        let field_value = match fields_map.get("user_base") {
+                        let field_value = match fields_map.get("userBase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_base' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userBase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_role_name: {
-                        let field_value = match fields_map.get("user_role_name") {
+                        let field_value = match fields_map.get("userRoleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_role_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userRoleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_search_matching: {
-                        let field_value = match fields_map.get("user_search_matching") {
+                        let field_value = match fields_map.get("userSearchMatching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_search_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userSearchMatching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_search_subtree: {
-                        let field_value = match fields_map.get("user_search_subtree") {
+                        let field_value = match fields_map.get("userSearchSubtree") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_search_subtree' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userSearchSubtree' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

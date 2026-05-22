@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#insecure_kubelet_readonly_port_enabled: {
-                        let field_value = match fields_map.get("insecure_kubelet_readonly_port_enabled") {
+                        let field_value = match fields_map.get("insecureKubeletReadonlyPortEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insecure_kubelet_readonly_port_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insecureKubeletReadonlyPortEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

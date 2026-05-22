@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#common_names: {
-                        let field_value = match fields_map.get("common_names") {
+                        let field_value = match fields_map.get("commonNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#x_509_store_name: {
-                        let field_value = match fields_map.get("x_509_store_name") {
+                        let field_value = match fields_map.get("x509StoreName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'x_509_store_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'x509StoreName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

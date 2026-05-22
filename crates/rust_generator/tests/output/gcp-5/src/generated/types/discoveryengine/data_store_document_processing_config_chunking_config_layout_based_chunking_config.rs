@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#chunk_size: {
-                        let field_value = match fields_map.get("chunk_size") {
+                        let field_value = match fields_map.get("chunkSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'chunk_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'chunkSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_ancestor_headings: {
-                        let field_value = match fields_map.get("include_ancestor_headings") {
+                        let field_value = match fields_map.get("includeAncestorHeadings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_ancestor_headings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeAncestorHeadings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

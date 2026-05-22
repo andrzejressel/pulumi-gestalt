@@ -122,23 +122,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#hash_key_field: {
-                        let field_value = match fields_map.get("hash_key_field") {
+                        let field_value = match fields_map.get("hashKeyField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hash_key_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hashKeyField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hash_key_type: {
-                        let field_value = match fields_map.get("hash_key_type") {
+                        let field_value = match fields_map.get("hashKeyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hash_key_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hashKeyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hash_key_value: {
-                        let field_value = match fields_map.get("hash_key_value") {
+                        let field_value = match fields_map.get("hashKeyValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hash_key_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hashKeyValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -150,44 +150,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#payload_field: {
-                        let field_value = match fields_map.get("payload_field") {
+                        let field_value = match fields_map.get("payloadField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'payload_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'payloadField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_key_field: {
-                        let field_value = match fields_map.get("range_key_field") {
+                        let field_value = match fields_map.get("rangeKeyField") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_key_field' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeKeyField' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_key_type: {
-                        let field_value = match fields_map.get("range_key_type") {
+                        let field_value = match fields_map.get("rangeKeyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_key_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeKeyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_key_value: {
-                        let field_value = match fields_map.get("range_key_value") {
+                        let field_value = match fields_map.get("rangeKeyValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_key_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeKeyValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#role_arn: {
-                        let field_value = match fields_map.get("role_arn") {
+                        let field_value = match fields_map.get("roleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_name: {
-                        let field_value = match fields_map.get("table_name") {
+                        let field_value = match fields_map.get("tableName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tableName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

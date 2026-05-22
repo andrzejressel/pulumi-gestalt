@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#container_config: {
-                        let field_value = match fields_map.get("container_config") {
+                        let field_value = match fields_map.get("containerConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_system_config: {
-                        let field_value = match fields_map.get("file_system_config") {
+                        let field_value = match fields_map.get("fileSystemConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_system_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystemConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

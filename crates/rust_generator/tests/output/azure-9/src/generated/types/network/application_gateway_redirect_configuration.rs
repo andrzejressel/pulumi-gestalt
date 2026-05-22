@@ -112,16 +112,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_path: {
-                        let field_value = match fields_map.get("include_path") {
+                        let field_value = match fields_map.get("includePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_query_string: {
-                        let field_value = match fields_map.get("include_query_string") {
+                        let field_value = match fields_map.get("includeQueryString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_query_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeQueryString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -133,30 +133,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_type: {
-                        let field_value = match fields_map.get("redirect_type") {
+                        let field_value = match fields_map.get("redirectType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_listener_id: {
-                        let field_value = match fields_map.get("target_listener_id") {
+                        let field_value = match fields_map.get("targetListenerId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_listener_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetListenerId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_listener_name: {
-                        let field_value = match fields_map.get("target_listener_name") {
+                        let field_value = match fields_map.get("targetListenerName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_listener_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetListenerName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_url: {
-                        let field_value = match fields_map.get("target_url") {
+                        let field_value = match fields_map.get("targetUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

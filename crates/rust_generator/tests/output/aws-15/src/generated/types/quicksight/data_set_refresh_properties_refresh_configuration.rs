@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#incremental_refresh: {
-                        let field_value = match fields_map.get("incremental_refresh") {
+                        let field_value = match fields_map.get("incrementalRefresh") {
                             Some(value) => value,
-                            None => bail!("Missing field 'incremental_refresh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'incrementalRefresh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

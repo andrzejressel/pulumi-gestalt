@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#effective_outbound_ips: {
-                        let field_value = match fields_map.get("effective_outbound_ips") {
+                        let field_value = match fields_map.get("effectiveOutboundIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_outbound_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveOutboundIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idle_timeout_in_minutes: {
-                        let field_value = match fields_map.get("idle_timeout_in_minutes") {
+                        let field_value = match fields_map.get("idleTimeoutInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleTimeoutInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_outbound_ip_count: {
-                        let field_value = match fields_map.get("managed_outbound_ip_count") {
+                        let field_value = match fields_map.get("managedOutboundIpCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_outbound_ip_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedOutboundIpCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

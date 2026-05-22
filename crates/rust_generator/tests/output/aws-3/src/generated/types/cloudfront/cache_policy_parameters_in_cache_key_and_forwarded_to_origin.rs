@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cookies_config: {
-                        let field_value = match fields_map.get("cookies_config") {
+                        let field_value = match fields_map.get("cookiesConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cookies_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cookiesConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_accept_encoding_brotli: {
-                        let field_value = match fields_map.get("enable_accept_encoding_brotli") {
+                        let field_value = match fields_map.get("enableAcceptEncodingBrotli") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_accept_encoding_brotli' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAcceptEncodingBrotli' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_accept_encoding_gzip: {
-                        let field_value = match fields_map.get("enable_accept_encoding_gzip") {
+                        let field_value = match fields_map.get("enableAcceptEncodingGzip") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_accept_encoding_gzip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableAcceptEncodingGzip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#headers_config: {
-                        let field_value = match fields_map.get("headers_config") {
+                        let field_value = match fields_map.get("headersConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'headers_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headersConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_strings_config: {
-                        let field_value = match fields_map.get("query_strings_config") {
+                        let field_value = match fields_map.get("queryStringsConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_strings_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStringsConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -70,30 +70,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#http_retry_events: {
-                        let field_value = match fields_map.get("http_retry_events") {
+                        let field_value = match fields_map.get("httpRetryEvents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_retry_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpRetryEvents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_retries: {
-                        let field_value = match fields_map.get("max_retries") {
+                        let field_value = match fields_map.get("maxRetries") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_retries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxRetries' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#per_retry_timeouts: {
-                        let field_value = match fields_map.get("per_retry_timeouts") {
+                        let field_value = match fields_map.get("perRetryTimeouts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'per_retry_timeouts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'perRetryTimeouts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tcp_retry_events: {
-                        let field_value = match fields_map.get("tcp_retry_events") {
+                        let field_value = match fields_map.get("tcpRetryEvents") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tcp_retry_events' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tcpRetryEvents' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -130,79 +130,79 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#include_credit: {
-                        let field_value = match fields_map.get("include_credit") {
+                        let field_value = match fields_map.get("includeCredit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_credit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeCredit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_discount: {
-                        let field_value = match fields_map.get("include_discount") {
+                        let field_value = match fields_map.get("includeDiscount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_discount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeDiscount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_other_subscription: {
-                        let field_value = match fields_map.get("include_other_subscription") {
+                        let field_value = match fields_map.get("includeOtherSubscription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_other_subscription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeOtherSubscription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_recurring: {
-                        let field_value = match fields_map.get("include_recurring") {
+                        let field_value = match fields_map.get("includeRecurring") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_recurring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeRecurring' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_refund: {
-                        let field_value = match fields_map.get("include_refund") {
+                        let field_value = match fields_map.get("includeRefund") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_refund' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeRefund' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_subscription: {
-                        let field_value = match fields_map.get("include_subscription") {
+                        let field_value = match fields_map.get("includeSubscription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_subscription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeSubscription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_support: {
-                        let field_value = match fields_map.get("include_support") {
+                        let field_value = match fields_map.get("includeSupport") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_support' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeSupport' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_tax: {
-                        let field_value = match fields_map.get("include_tax") {
+                        let field_value = match fields_map.get("includeTax") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_tax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeTax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#include_upfront: {
-                        let field_value = match fields_map.get("include_upfront") {
+                        let field_value = match fields_map.get("includeUpfront") {
                             Some(value) => value,
-                            None => bail!("Missing field 'include_upfront' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includeUpfront' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_amortized: {
-                        let field_value = match fields_map.get("use_amortized") {
+                        let field_value = match fields_map.get("useAmortized") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_amortized' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useAmortized' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_blended: {
-                        let field_value = match fields_map.get("use_blended") {
+                        let field_value = match fields_map.get("useBlended") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_blended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useBlended' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

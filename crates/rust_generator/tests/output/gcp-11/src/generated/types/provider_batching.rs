@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#enable_batching: {
-                        let field_value = match fields_map.get("enable_batching") {
+                        let field_value = match fields_map.get("enableBatching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_batching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableBatching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_after: {
-                        let field_value = match fields_map.get("send_after") {
+                        let field_value = match fields_map.get("sendAfter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_after' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendAfter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

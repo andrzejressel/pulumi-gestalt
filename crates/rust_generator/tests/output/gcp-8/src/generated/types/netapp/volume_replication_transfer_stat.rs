@@ -116,58 +116,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#lag_duration: {
-                        let field_value = match fields_map.get("lag_duration") {
+                        let field_value = match fields_map.get("lagDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lag_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lagDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_transfer_bytes: {
-                        let field_value = match fields_map.get("last_transfer_bytes") {
+                        let field_value = match fields_map.get("lastTransferBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_transfer_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastTransferBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_transfer_duration: {
-                        let field_value = match fields_map.get("last_transfer_duration") {
+                        let field_value = match fields_map.get("lastTransferDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_transfer_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastTransferDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_transfer_end_time: {
-                        let field_value = match fields_map.get("last_transfer_end_time") {
+                        let field_value = match fields_map.get("lastTransferEndTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_transfer_end_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastTransferEndTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_transfer_error: {
-                        let field_value = match fields_map.get("last_transfer_error") {
+                        let field_value = match fields_map.get("lastTransferError") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_transfer_error' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastTransferError' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#total_transfer_duration: {
-                        let field_value = match fields_map.get("total_transfer_duration") {
+                        let field_value = match fields_map.get("totalTransferDuration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'total_transfer_duration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totalTransferDuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transfer_bytes: {
-                        let field_value = match fields_map.get("transfer_bytes") {
+                        let field_value = match fields_map.get("transferBytes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transfer_bytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transferBytes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#update_time: {
-                        let field_value = match fields_map.get("update_time") {
+                        let field_value = match fields_map.get("updateTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'update_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updateTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#comparison_operator: {
-                        let field_value = match fields_map.get("comparison_operator") {
+                        let field_value = match fields_map.get("comparisonOperator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'comparison_operator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'comparisonOperator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_to_match: {
-                        let field_value = match fields_map.get("field_to_match") {
+                        let field_value = match fields_map.get("fieldToMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_to_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldToMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,9 +103,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_transformation: {
-                        let field_value = match fields_map.get("text_transformation") {
+                        let field_value = match fields_map.get("textTransformation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_transformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textTransformation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

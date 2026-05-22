@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#allowed_referrers: {
-                        let field_value = match fields_map.get("allowed_referrers") {
+                        let field_value = match fields_map.get("allowedReferrers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_referrers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedReferrers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

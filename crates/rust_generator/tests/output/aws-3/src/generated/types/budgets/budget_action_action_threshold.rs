@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#action_threshold_type: {
-                        let field_value = match fields_map.get("action_threshold_type") {
+                        let field_value = match fields_map.get("actionThresholdType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_threshold_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionThresholdType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#action_threshold_value: {
-                        let field_value = match fields_map.get("action_threshold_value") {
+                        let field_value = match fields_map.get("actionThresholdValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'action_threshold_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'actionThresholdValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

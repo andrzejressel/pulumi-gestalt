@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#edge_locations: {
-                        let field_value = match fields_map.get("edge_locations") {
+                        let field_value = match fields_map.get("edgeLocations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'edge_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'edgeLocations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_segments: {
-                        let field_value = match fields_map.get("shared_segments") {
+                        let field_value = match fields_map.get("sharedSegments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_segments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedSegments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

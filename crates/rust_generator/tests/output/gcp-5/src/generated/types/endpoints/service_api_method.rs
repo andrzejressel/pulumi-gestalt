@@ -81,16 +81,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_type: {
-                        let field_value = match fields_map.get("request_type") {
+                        let field_value = match fields_map.get("requestType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#response_type: {
-                        let field_value = match fields_map.get("response_type") {
+                        let field_value = match fields_map.get("responseType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'response_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'responseType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -116,16 +116,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#content_type: {
-                        let field_value = match fields_map.get("content_type") {
+                        let field_value = match fields_map.get("contentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'content_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'contentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#correlation_id: {
-                        let field_value = match fields_map.get("correlation_id") {
+                        let field_value = match fields_map.get("correlationId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'correlation_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'correlationId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -137,9 +137,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#message_id: {
-                        let field_value = match fields_map.get("message_id") {
+                        let field_value = match fields_map.get("messageId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'message_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'messageId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -151,23 +151,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reply_to: {
-                        let field_value = match fields_map.get("reply_to") {
+                        let field_value = match fields_map.get("replyTo") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reply_to' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replyTo' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#reply_to_session_id: {
-                        let field_value = match fields_map.get("reply_to_session_id") {
+                        let field_value = match fields_map.get("replyToSessionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'reply_to_session_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replyToSessionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_id: {
-                        let field_value = match fields_map.get("session_id") {
+                        let field_value = match fields_map.get("sessionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

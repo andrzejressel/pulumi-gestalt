@@ -96,23 +96,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#publish_mode: {
-                        let field_value = match fields_map.get("publish_mode") {
+                        let field_value = match fields_map.get("publishMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'publish_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#published_port: {
-                        let field_value = match fields_map.get("published_port") {
+                        let field_value = match fields_map.get("publishedPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'published_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publishedPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_port: {
-                        let field_value = match fields_map.get("target_port") {
+                        let field_value = match fields_map.get("targetPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -112,58 +112,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#backend_pool_type: {
-                        let field_value = match fields_map.get("backend_pool_type") {
+                        let field_value = match fields_map.get("backendPoolType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_pool_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPoolType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#effective_outbound_ips: {
-                        let field_value = match fields_map.get("effective_outbound_ips") {
+                        let field_value = match fields_map.get("effectiveOutboundIps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'effective_outbound_ips' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'effectiveOutboundIps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idle_timeout_in_minutes: {
-                        let field_value = match fields_map.get("idle_timeout_in_minutes") {
+                        let field_value = match fields_map.get("idleTimeoutInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleTimeoutInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_outbound_ip_count: {
-                        let field_value = match fields_map.get("managed_outbound_ip_count") {
+                        let field_value = match fields_map.get("managedOutboundIpCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_outbound_ip_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedOutboundIpCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_outbound_ipv_6_count: {
-                        let field_value = match fields_map.get("managed_outbound_ipv_6_count") {
+                        let field_value = match fields_map.get("managedOutboundIpv6Count") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_outbound_ipv_6_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedOutboundIpv6Count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outbound_ip_address_ids: {
-                        let field_value = match fields_map.get("outbound_ip_address_ids") {
+                        let field_value = match fields_map.get("outboundIpAddressIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_ip_address_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundIpAddressIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outbound_ip_prefix_ids: {
-                        let field_value = match fields_map.get("outbound_ip_prefix_ids") {
+                        let field_value = match fields_map.get("outboundIpPrefixIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_ip_prefix_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundIpPrefixIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#outbound_ports_allocated: {
-                        let field_value = match fields_map.get("outbound_ports_allocated") {
+                        let field_value = match fields_map.get("outboundPortsAllocated") {
                             Some(value) => value,
-                            None => bail!("Missing field 'outbound_ports_allocated' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outboundPortsAllocated' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

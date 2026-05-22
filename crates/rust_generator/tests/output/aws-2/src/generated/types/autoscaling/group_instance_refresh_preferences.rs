@@ -122,72 +122,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#alarm_specification: {
-                        let field_value = match fields_map.get("alarm_specification") {
+                        let field_value = match fields_map.get("alarmSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alarm_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alarmSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_rollback: {
-                        let field_value = match fields_map.get("auto_rollback") {
+                        let field_value = match fields_map.get("autoRollback") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_rollback' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoRollback' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#checkpoint_delay: {
-                        let field_value = match fields_map.get("checkpoint_delay") {
+                        let field_value = match fields_map.get("checkpointDelay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'checkpoint_delay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkpointDelay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#checkpoint_percentages: {
-                        let field_value = match fields_map.get("checkpoint_percentages") {
+                        let field_value = match fields_map.get("checkpointPercentages") {
                             Some(value) => value,
-                            None => bail!("Missing field 'checkpoint_percentages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkpointPercentages' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_warmup: {
-                        let field_value = match fields_map.get("instance_warmup") {
+                        let field_value = match fields_map.get("instanceWarmup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_warmup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceWarmup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_healthy_percentage: {
-                        let field_value = match fields_map.get("max_healthy_percentage") {
+                        let field_value = match fields_map.get("maxHealthyPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_healthy_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxHealthyPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_healthy_percentage: {
-                        let field_value = match fields_map.get("min_healthy_percentage") {
+                        let field_value = match fields_map.get("minHealthyPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_healthy_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minHealthyPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scale_in_protected_instances: {
-                        let field_value = match fields_map.get("scale_in_protected_instances") {
+                        let field_value = match fields_map.get("scaleInProtectedInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scale_in_protected_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scaleInProtectedInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skip_matching: {
-                        let field_value = match fields_map.get("skip_matching") {
+                        let field_value = match fields_map.get("skipMatching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skip_matching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skipMatching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#standby_instances: {
-                        let field_value = match fields_map.get("standby_instances") {
+                        let field_value = match fields_map.get("standbyInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'standby_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'standbyInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

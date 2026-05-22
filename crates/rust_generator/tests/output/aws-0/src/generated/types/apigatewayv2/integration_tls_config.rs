@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#server_name_to_verify: {
-                        let field_value = match fields_map.get("server_name_to_verify") {
+                        let field_value = match fields_map.get("serverNameToVerify") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_name_to_verify' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverNameToVerify' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

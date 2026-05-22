@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#common_alphabet: {
-                        let field_value = match fields_map.get("common_alphabet") {
+                        let field_value = match fields_map.get("commonAlphabet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'common_alphabet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commonAlphabet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,16 +120,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#crypto_key: {
-                        let field_value = match fields_map.get("crypto_key") {
+                        let field_value = match fields_map.get("cryptoKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'crypto_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cryptoKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_alphabet: {
-                        let field_value = match fields_map.get("custom_alphabet") {
+                        let field_value = match fields_map.get("customAlphabet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_alphabet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customAlphabet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -141,9 +141,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#surrogate_info_type: {
-                        let field_value = match fields_map.get("surrogate_info_type") {
+                        let field_value = match fields_map.get("surrogateInfoType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'surrogate_info_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'surrogateInfoType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -105,44 +105,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_type: {
-                        let field_value = match fields_map.get("policy_type") {
+                        let field_value = match fields_map.get("policyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_daily: {
-                        let field_value = match fields_map.get("retention_daily") {
+                        let field_value = match fields_map.get("retentionDaily") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_daily' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionDaily' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_monthly: {
-                        let field_value = match fields_map.get("retention_monthly") {
+                        let field_value = match fields_map.get("retentionMonthly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_monthly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionMonthly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_weekly: {
-                        let field_value = match fields_map.get("retention_weekly") {
+                        let field_value = match fields_map.get("retentionWeekly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_weekly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionWeekly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_yearly: {
-                        let field_value = match fields_map.get("retention_yearly") {
+                        let field_value = match fields_map.get("retentionYearly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_yearly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionYearly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#simple_retention: {
-                        let field_value = match fields_map.get("simple_retention") {
+                        let field_value = match fields_map.get("simpleRetention") {
                             Some(value) => value,
-                            None => bail!("Missing field 'simple_retention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'simpleRetention' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

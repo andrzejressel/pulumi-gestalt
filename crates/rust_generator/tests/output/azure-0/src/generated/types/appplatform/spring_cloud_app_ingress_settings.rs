@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#backend_protocol: {
-                        let field_value = match fields_map.get("backend_protocol") {
+                        let field_value = match fields_map.get("backendProtocol") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_protocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendProtocol' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_timeout_in_seconds: {
-                        let field_value = match fields_map.get("read_timeout_in_seconds") {
+                        let field_value = match fields_map.get("readTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_timeout_in_seconds: {
-                        let field_value = match fields_map.get("send_timeout_in_seconds") {
+                        let field_value = match fields_map.get("sendTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_affinity: {
-                        let field_value = match fields_map.get("session_affinity") {
+                        let field_value = match fields_map.get("sessionAffinity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionAffinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_cookie_max_age: {
-                        let field_value = match fields_map.get("session_cookie_max_age") {
+                        let field_value = match fields_map.get("sessionCookieMaxAge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_cookie_max_age' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionCookieMaxAge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

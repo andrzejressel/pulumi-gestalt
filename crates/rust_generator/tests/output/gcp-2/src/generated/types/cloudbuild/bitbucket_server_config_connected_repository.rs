@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#project_key: {
-                        let field_value = match fields_map.get("project_key") {
+                        let field_value = match fields_map.get("projectKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#repo_slug: {
-                        let field_value = match fields_map.get("repo_slug") {
+                        let field_value = match fields_map.get("repoSlug") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repo_slug' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repoSlug' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

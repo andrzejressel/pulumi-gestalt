@@ -59,9 +59,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#oauth_token_secret_version: {
-                        let field_value = match fields_map.get("oauth_token_secret_version") {
+                        let field_value = match fields_map.get("oauthTokenSecretVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oauth_token_secret_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oauthTokenSecretVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

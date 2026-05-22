@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#command_logging: {
-                        let field_value = match fields_map.get("command_logging") {
+                        let field_value = match fields_map.get("commandLogging") {
                             Some(value) => value,
-                            None => bail!("Missing field 'command_logging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commandLogging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

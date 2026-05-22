@@ -106,58 +106,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#azure_monitor_metrics: {
-                        let field_value = match fields_map.get("azure_monitor_metrics") {
+                        let field_value = match fields_map.get("azureMonitorMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'azure_monitor_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'azureMonitorMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_hub: {
-                        let field_value = match fields_map.get("event_hub") {
+                        let field_value = match fields_map.get("eventHub") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_hub' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventHub' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_hub_direct: {
-                        let field_value = match fields_map.get("event_hub_direct") {
+                        let field_value = match fields_map.get("eventHubDirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_hub_direct' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventHubDirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_analytics: {
-                        let field_value = match fields_map.get("log_analytics") {
+                        let field_value = match fields_map.get("logAnalytics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_analytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logAnalytics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#monitor_accounts: {
-                        let field_value = match fields_map.get("monitor_accounts") {
+                        let field_value = match fields_map.get("monitorAccounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'monitor_accounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'monitorAccounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_blob_directs: {
-                        let field_value = match fields_map.get("storage_blob_directs") {
+                        let field_value = match fields_map.get("storageBlobDirects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_blob_directs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageBlobDirects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_blobs: {
-                        let field_value = match fields_map.get("storage_blobs") {
+                        let field_value = match fields_map.get("storageBlobs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_blobs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageBlobs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_table_directs: {
-                        let field_value = match fields_map.get("storage_table_directs") {
+                        let field_value = match fields_map.get("storageTableDirects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_table_directs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageTableDirects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

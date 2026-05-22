@@ -92,37 +92,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#annotation_data_s_3_uri: {
-                        let field_value = match fields_map.get("annotation_data_s_3_uri") {
+                        let field_value = match fields_map.get("annotationDataS3Uri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'annotation_data_s_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'annotationDataS3Uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#attribute_names: {
-                        let field_value = match fields_map.get("attribute_names") {
+                        let field_value = match fields_map.get("attributeNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'attribute_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'attributeNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#document_type: {
-                        let field_value = match fields_map.get("document_type") {
+                        let field_value = match fields_map.get("documentType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'document_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'documentType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_uri: {
-                        let field_value = match fields_map.get("s_3_uri") {
+                        let field_value = match fields_map.get("s3Uri") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_documents_s_3_uri: {
-                        let field_value = match fields_map.get("source_documents_s_3_uri") {
+                        let field_value = match fields_map.get("sourceDocumentsS3Uri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_documents_s_3_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceDocumentsS3Uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -186,9 +186,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#application_port_range: {
-                        let field_value = match fields_map.get("application_port_range") {
+                        let field_value = match fields_map.get("applicationPortRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_port_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationPortRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -200,23 +200,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_disk_size_gb: {
-                        let field_value = match fields_map.get("data_disk_size_gb") {
+                        let field_value = match fields_map.get("dataDiskSizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataDiskSizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_disk_type: {
-                        let field_value = match fields_map.get("data_disk_type") {
+                        let field_value = match fields_map.get("dataDiskType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_disk_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataDiskType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ephemeral_port_range: {
-                        let field_value = match fields_map.get("ephemeral_port_range") {
+                        let field_value = match fields_map.get("ephemeralPortRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ephemeral_port_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ephemeralPortRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -228,9 +228,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multiple_placement_groups_enabled: {
-                        let field_value = match fields_map.get("multiple_placement_groups_enabled") {
+                        let field_value = match fields_map.get("multiplePlacementGroupsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multiple_placement_groups_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multiplePlacementGroupsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -242,9 +242,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#placement_properties: {
-                        let field_value = match fields_map.get("placement_properties") {
+                        let field_value = match fields_map.get("placementProperties") {
                             Some(value) => value,
-                            None => bail!("Missing field 'placement_properties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'placementProperties' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -263,51 +263,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_image_offer: {
-                        let field_value = match fields_map.get("vm_image_offer") {
+                        let field_value = match fields_map.get("vmImageOffer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_image_offer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmImageOffer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_image_publisher: {
-                        let field_value = match fields_map.get("vm_image_publisher") {
+                        let field_value = match fields_map.get("vmImagePublisher") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_image_publisher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmImagePublisher' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_image_sku: {
-                        let field_value = match fields_map.get("vm_image_sku") {
+                        let field_value = match fields_map.get("vmImageSku") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_image_sku' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmImageSku' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_image_version: {
-                        let field_value = match fields_map.get("vm_image_version") {
+                        let field_value = match fields_map.get("vmImageVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_image_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmImageVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_instance_count: {
-                        let field_value = match fields_map.get("vm_instance_count") {
+                        let field_value = match fields_map.get("vmInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_secrets: {
-                        let field_value = match fields_map.get("vm_secrets") {
+                        let field_value = match fields_map.get("vmSecrets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_secrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmSecrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_size: {
-                        let field_value = match fields_map.get("vm_size") {
+                        let field_value = match fields_map.get("vmSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

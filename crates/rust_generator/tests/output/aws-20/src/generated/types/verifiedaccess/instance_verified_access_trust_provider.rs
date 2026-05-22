@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#device_trust_provider_type: {
-                        let field_value = match fields_map.get("device_trust_provider_type") {
+                        let field_value = match fields_map.get("deviceTrustProviderType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'device_trust_provider_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deviceTrustProviderType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trust_provider_type: {
-                        let field_value = match fields_map.get("trust_provider_type") {
+                        let field_value = match fields_map.get("trustProviderType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trust_provider_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustProviderType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_trust_provider_type: {
-                        let field_value = match fields_map.get("user_trust_provider_type") {
+                        let field_value = match fields_map.get("userTrustProviderType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_trust_provider_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userTrustProviderType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#verified_access_trust_provider_id: {
-                        let field_value = match fields_map.get("verified_access_trust_provider_id") {
+                        let field_value = match fields_map.get("verifiedAccessTrustProviderId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'verified_access_trust_provider_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'verifiedAccessTrustProviderId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

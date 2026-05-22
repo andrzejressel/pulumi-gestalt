@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#static_key_settings: {
-                        let field_value = match fields_map.get("static_key_settings") {
+                        let field_value = match fields_map.get("staticKeySettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_key_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticKeySettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

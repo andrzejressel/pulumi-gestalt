@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#restore_time: {
-                        let field_value = match fields_map.get("restore_time") {
+                        let field_value = match fields_map.get("restoreTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'restore_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'restoreTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_db_instance_automated_backups_arn: {
-                        let field_value = match fields_map.get("source_db_instance_automated_backups_arn") {
+                        let field_value = match fields_map.get("sourceDbInstanceAutomatedBackupsArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_db_instance_automated_backups_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceDbInstanceAutomatedBackupsArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_db_instance_identifier: {
-                        let field_value = match fields_map.get("source_db_instance_identifier") {
+                        let field_value = match fields_map.get("sourceDbInstanceIdentifier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_db_instance_identifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceDbInstanceIdentifier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_dbi_resource_id: {
-                        let field_value = match fields_map.get("source_dbi_resource_id") {
+                        let field_value = match fields_map.get("sourceDbiResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_dbi_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceDbiResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_latest_restorable_time: {
-                        let field_value = match fields_map.get("use_latest_restorable_time") {
+                        let field_value = match fields_map.get("useLatestRestorableTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_latest_restorable_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useLatestRestorableTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

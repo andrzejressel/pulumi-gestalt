@@ -114,65 +114,65 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#human_task_ui_arn: {
-                        let field_value = match fields_map.get("human_task_ui_arn") {
+                        let field_value = match fields_map.get("humanTaskUiArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'human_task_ui_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'humanTaskUiArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_workforce_task_price: {
-                        let field_value = match fields_map.get("public_workforce_task_price") {
+                        let field_value = match fields_map.get("publicWorkforceTaskPrice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_workforce_task_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicWorkforceTaskPrice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_availability_lifetime_in_seconds: {
-                        let field_value = match fields_map.get("task_availability_lifetime_in_seconds") {
+                        let field_value = match fields_map.get("taskAvailabilityLifetimeInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_availability_lifetime_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskAvailabilityLifetimeInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_count: {
-                        let field_value = match fields_map.get("task_count") {
+                        let field_value = match fields_map.get("taskCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_description: {
-                        let field_value = match fields_map.get("task_description") {
+                        let field_value = match fields_map.get("taskDescription") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_description' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskDescription' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_keywords: {
-                        let field_value = match fields_map.get("task_keywords") {
+                        let field_value = match fields_map.get("taskKeywords") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_keywords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskKeywords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_time_limit_in_seconds: {
-                        let field_value = match fields_map.get("task_time_limit_in_seconds") {
+                        let field_value = match fields_map.get("taskTimeLimitInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_time_limit_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskTimeLimitInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_title: {
-                        let field_value = match fields_map.get("task_title") {
+                        let field_value = match fields_map.get("taskTitle") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_title' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskTitle' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workteam_arn: {
-                        let field_value = match fields_map.get("workteam_arn") {
+                        let field_value = match fields_map.get("workteamArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workteam_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workteamArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

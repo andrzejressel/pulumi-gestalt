@@ -139,86 +139,86 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#batch_prefix: {
-                        let field_value = match fields_map.get("batch_prefix") {
+                        let field_value = match fields_map.get("batchPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#batch_suffix: {
-                        let field_value = match fields_map.get("batch_suffix") {
+                        let field_value = match fields_map.get("batchSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'batch_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'batchSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cve_20214428: {
-                        let field_value = match fields_map.get("cve_20214428") {
+                        let field_value = match fields_map.get("cve20214428") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cve_20214428' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cve20214428' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_delimiter: {
-                        let field_value = match fields_map.get("field_delimiter") {
+                        let field_value = match fields_map.get("fieldDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_names: {
-                        let field_value = match fields_map.get("field_names") {
+                        let field_value = match fields_map.get("fieldNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_type: {
-                        let field_value = match fields_map.get("output_type") {
+                        let field_value = match fields_map.get("outputType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_delimiter: {
-                        let field_value = match fields_map.get("record_delimiter") {
+                        let field_value = match fields_map.get("recordDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_prefix: {
-                        let field_value = match fields_map.get("record_prefix") {
+                        let field_value = match fields_map.get("recordPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_suffix: {
-                        let field_value = match fields_map.get("record_suffix") {
+                        let field_value = match fields_map.get("recordSuffix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_suffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordSuffix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#record_template: {
-                        let field_value = match fields_map.get("record_template") {
+                        let field_value = match fields_map.get("recordTemplate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'record_template' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordTemplate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_rate: {
-                        let field_value = match fields_map.get("sample_rate") {
+                        let field_value = match fields_map.get("sampleRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timestamp_format: {
-                        let field_value = match fields_map.get("timestamp_format") {
+                        let field_value = match fields_map.get("timestampFormat") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timestamp_format' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timestampFormat' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

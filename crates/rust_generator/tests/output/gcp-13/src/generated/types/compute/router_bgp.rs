@@ -117,23 +117,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#advertise_mode: {
-                        let field_value = match fields_map.get("advertise_mode") {
+                        let field_value = match fields_map.get("advertiseMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advertise_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advertiseMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#advertised_groups: {
-                        let field_value = match fields_map.get("advertised_groups") {
+                        let field_value = match fields_map.get("advertisedGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advertised_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advertisedGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#advertised_ip_ranges: {
-                        let field_value = match fields_map.get("advertised_ip_ranges") {
+                        let field_value = match fields_map.get("advertisedIpRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advertised_ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advertisedIpRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -145,16 +145,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identifier_range: {
-                        let field_value = match fields_map.get("identifier_range") {
+                        let field_value = match fields_map.get("identifierRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identifier_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identifierRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#keepalive_interval: {
-                        let field_value = match fields_map.get("keepalive_interval") {
+                        let field_value = match fields_map.get("keepaliveInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'keepalive_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keepaliveInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

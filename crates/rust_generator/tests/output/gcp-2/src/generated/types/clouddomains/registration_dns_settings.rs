@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#custom_dns: {
-                        let field_value = match fields_map.get("custom_dns") {
+                        let field_value = match fields_map.get("customDns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_dns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customDns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#glue_records: {
-                        let field_value = match fields_map.get("glue_records") {
+                        let field_value = match fields_map.get("glueRecords") {
                             Some(value) => value,
-                            None => bail!("Missing field 'glue_records' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'glueRecords' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#max_healthy_percentage: {
-                        let field_value = match fields_map.get("max_healthy_percentage") {
+                        let field_value = match fields_map.get("maxHealthyPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_healthy_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxHealthyPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_healthy_percentage: {
-                        let field_value = match fields_map.get("min_healthy_percentage") {
+                        let field_value = match fields_map.get("minHealthyPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_healthy_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minHealthyPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

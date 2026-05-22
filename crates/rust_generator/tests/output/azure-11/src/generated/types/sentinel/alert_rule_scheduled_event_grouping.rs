@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#aggregation_method: {
-                        let field_value = match fields_map.get("aggregation_method") {
+                        let field_value = match fields_map.get("aggregationMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aggregation_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aggregationMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

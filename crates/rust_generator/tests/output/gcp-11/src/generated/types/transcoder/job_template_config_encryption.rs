@@ -93,16 +93,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#aes_128: {
-                        let field_value = match fields_map.get("aes_128") {
+                        let field_value = match fields_map.get("aes128") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aes_128' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'aes128' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#drm_systems: {
-                        let field_value = match fields_map.get("drm_systems") {
+                        let field_value = match fields_map.get("drmSystems") {
                             Some(value) => value,
-                            None => bail!("Missing field 'drm_systems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'drmSystems' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -114,23 +114,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mpeg_cenc: {
-                        let field_value = match fields_map.get("mpeg_cenc") {
+                        let field_value = match fields_map.get("mpegCenc") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mpeg_cenc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mpegCenc' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_aes: {
-                        let field_value = match fields_map.get("sample_aes") {
+                        let field_value = match fields_map.get("sampleAes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_aes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleAes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_manager_key_source: {
-                        let field_value = match fields_map.get("secret_manager_key_source") {
+                        let field_value = match fields_map.get("secretManagerKeySource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_manager_key_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretManagerKeySource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

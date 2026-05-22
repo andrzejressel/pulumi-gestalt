@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#client_root_certificates: {
-                        let field_value = match fields_map.get("client_root_certificates") {
+                        let field_value = match fields_map.get("clientRootCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_root_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientRootCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_root_certificates: {
-                        let field_value = match fields_map.get("server_root_certificates") {
+                        let field_value = match fields_map.get("serverRootCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_root_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverRootCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -75,23 +75,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
 
                 Ok(Self {
                     r#max_burst_size: {
-                        let field_value = match fields_map.get("max_burst_size") {
+                        let field_value = match fields_map.get("maxBurstSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_burst_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxBurstSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrent_dispatches: {
-                        let field_value = match fields_map.get("max_concurrent_dispatches") {
+                        let field_value = match fields_map.get("maxConcurrentDispatches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_dispatches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentDispatches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_dispatches_per_second: {
-                        let field_value = match fields_map.get("max_dispatches_per_second") {
+                        let field_value = match fields_map.get("maxDispatchesPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_dispatches_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxDispatchesPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#guest_accelerator_count: {
-                        let field_value = match fields_map.get("guest_accelerator_count") {
+                        let field_value = match fields_map.get("guestAcceleratorCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guest_accelerator_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guestAcceleratorCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guest_accelerator_type: {
-                        let field_value = match fields_map.get("guest_accelerator_type") {
+                        let field_value = match fields_map.get("guestAcceleratorType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guest_accelerator_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guestAcceleratorType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

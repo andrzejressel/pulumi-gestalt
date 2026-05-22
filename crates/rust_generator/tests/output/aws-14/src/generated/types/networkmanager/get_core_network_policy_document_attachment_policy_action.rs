@@ -82,23 +82,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#add_to_network_function_group: {
-                        let field_value = match fields_map.get("add_to_network_function_group") {
+                        let field_value = match fields_map.get("addToNetworkFunctionGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'add_to_network_function_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'addToNetworkFunctionGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#association_method: {
-                        let field_value = match fields_map.get("association_method") {
+                        let field_value = match fields_map.get("associationMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'association_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'associationMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_acceptance: {
-                        let field_value = match fields_map.get("require_acceptance") {
+                        let field_value = match fields_map.get("requireAcceptance") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_acceptance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireAcceptance' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_value_of_key: {
-                        let field_value = match fields_map.get("tag_value_of_key") {
+                        let field_value = match fields_map.get("tagValueOfKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_value_of_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagValueOfKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

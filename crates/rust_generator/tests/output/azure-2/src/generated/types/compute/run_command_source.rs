@@ -71,9 +71,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#command_id: {
-                        let field_value = match fields_map.get("command_id") {
+                        let field_value = match fields_map.get("commandId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'command_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'commandId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -85,16 +85,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#script_uri: {
-                        let field_value = match fields_map.get("script_uri") {
+                        let field_value = match fields_map.get("scriptUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'script_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scriptUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#script_uri_managed_identity: {
-                        let field_value = match fields_map.get("script_uri_managed_identity") {
+                        let field_value = match fields_map.get("scriptUriManagedIdentity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'script_uri_managed_identity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scriptUriManagedIdentity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#json_token_type_configurations: {
-                        let field_value = match fields_map.get("json_token_type_configurations") {
+                        let field_value = match fields_map.get("jsonTokenTypeConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'json_token_type_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jsonTokenTypeConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jwt_token_type_configurations: {
-                        let field_value = match fields_map.get("jwt_token_type_configurations") {
+                        let field_value = match fields_map.get("jwtTokenTypeConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jwt_token_type_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jwtTokenTypeConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

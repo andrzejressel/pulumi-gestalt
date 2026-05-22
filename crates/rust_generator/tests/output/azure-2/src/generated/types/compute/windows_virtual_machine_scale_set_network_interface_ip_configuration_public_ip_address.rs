@@ -92,23 +92,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#domain_name_label: {
-                        let field_value = match fields_map.get("domain_name_label") {
+                        let field_value = match fields_map.get("domainNameLabel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'domain_name_label' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'domainNameLabel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idle_timeout_in_minutes: {
-                        let field_value = match fields_map.get("idle_timeout_in_minutes") {
+                        let field_value = match fields_map.get("idleTimeoutInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idle_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idleTimeoutInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_tags: {
-                        let field_value = match fields_map.get("ip_tags") {
+                        let field_value = match fields_map.get("ipTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,9 +120,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_ip_prefix_id: {
-                        let field_value = match fields_map.get("public_ip_prefix_id") {
+                        let field_value = match fields_map.get("publicIpPrefixId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_ip_prefix_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicIpPrefixId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

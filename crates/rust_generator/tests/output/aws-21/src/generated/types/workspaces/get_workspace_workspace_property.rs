@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#compute_type_name: {
-                        let field_value = match fields_map.get("compute_type_name") {
+                        let field_value = match fields_map.get("computeTypeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compute_type_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'computeTypeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_volume_size_gib: {
-                        let field_value = match fields_map.get("root_volume_size_gib") {
+                        let field_value = match fields_map.get("rootVolumeSizeGib") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_volume_size_gib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootVolumeSizeGib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#running_mode: {
-                        let field_value = match fields_map.get("running_mode") {
+                        let field_value = match fields_map.get("runningMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'running_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runningMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#running_mode_auto_stop_timeout_in_minutes: {
-                        let field_value = match fields_map.get("running_mode_auto_stop_timeout_in_minutes") {
+                        let field_value = match fields_map.get("runningModeAutoStopTimeoutInMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'running_mode_auto_stop_timeout_in_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runningModeAutoStopTimeoutInMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_volume_size_gib: {
-                        let field_value = match fields_map.get("user_volume_size_gib") {
+                        let field_value = match fields_map.get("userVolumeSizeGib") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_volume_size_gib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userVolumeSizeGib' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

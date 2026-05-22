@@ -131,9 +131,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#boot_disk_size_gb: {
-                        let field_value = match fields_map.get("boot_disk_size_gb") {
+                        let field_value = match fields_map.get("bootDiskSizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'boot_disk_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bootDiskSizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -145,9 +145,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_load_balancer: {
-                        let field_value = match fields_map.get("enable_load_balancer") {
+                        let field_value = match fields_map.get("enableLoadBalancer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_load_balancer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableLoadBalancer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -159,9 +159,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_type: {
-                        let field_value = match fields_map.get("image_type") {
+                        let field_value = match fields_map.get("imageType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -173,9 +173,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_mb: {
-                        let field_value = match fields_map.get("memory_mb") {
+                        let field_value = match fields_map.get("memoryMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -194,9 +194,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vsphere_config: {
-                        let field_value = match fields_map.get("vsphere_config") {
+                        let field_value = match fields_map.get("vsphereConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vsphere_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vsphereConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

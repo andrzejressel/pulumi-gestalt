@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclusion_labels: {
-                        let field_value = match fields_map.get("exclusion_labels") {
+                        let field_value = match fields_map.get("exclusionLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclusion_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exclusionLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inclusion_labels: {
-                        let field_value = match fields_map.get("inclusion_labels") {
+                        let field_value = match fields_map.get("inclusionLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inclusion_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inclusionLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

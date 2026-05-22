@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#user_input: {
-                        let field_value = match fields_map.get("user_input") {
+                        let field_value = match fields_map.get("userInput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_input' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userInput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_agent_output: {
-                        let field_value = match fields_map.get("virtual_agent_output") {
+                        let field_value = match fields_map.get("virtualAgentOutput") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_agent_output' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualAgentOutput' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

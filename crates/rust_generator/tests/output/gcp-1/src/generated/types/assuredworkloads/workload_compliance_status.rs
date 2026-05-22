@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#acknowledged_violation_counts: {
-                        let field_value = match fields_map.get("acknowledged_violation_counts") {
+                        let field_value = match fields_map.get("acknowledgedViolationCounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'acknowledged_violation_counts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acknowledgedViolationCounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#active_violation_counts: {
-                        let field_value = match fields_map.get("active_violation_counts") {
+                        let field_value = match fields_map.get("activeViolationCounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'active_violation_counts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activeViolationCounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

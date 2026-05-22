@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#recording_frequency: {
-                        let field_value = match fields_map.get("recording_frequency") {
+                        let field_value = match fields_map.get("recordingFrequency") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recording_frequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordingFrequency' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#recording_mode_override: {
-                        let field_value = match fields_map.get("recording_mode_override") {
+                        let field_value = match fields_map.get("recordingModeOverride") {
                             Some(value) => value,
-                            None => bail!("Missing field 'recording_mode_override' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'recordingModeOverride' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

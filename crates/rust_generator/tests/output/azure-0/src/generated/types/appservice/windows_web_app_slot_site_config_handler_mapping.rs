@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#script_processor_path: {
-                        let field_value = match fields_map.get("script_processor_path") {
+                        let field_value = match fields_map.get("scriptProcessorPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'script_processor_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scriptProcessorPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

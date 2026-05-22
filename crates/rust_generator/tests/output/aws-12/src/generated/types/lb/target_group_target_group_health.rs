@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#dns_failover: {
-                        let field_value = match fields_map.get("dns_failover") {
+                        let field_value = match fields_map.get("dnsFailover") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_failover' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsFailover' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unhealthy_state_routing: {
-                        let field_value = match fields_map.get("unhealthy_state_routing") {
+                        let field_value = match fields_map.get("unhealthyStateRouting") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unhealthy_state_routing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unhealthyStateRouting' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#local_address_cidrs: {
-                        let field_value = match fields_map.get("local_address_cidrs") {
+                        let field_value = match fields_map.get("localAddressCidrs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'local_address_cidrs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'localAddressCidrs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_address_cidrs: {
-                        let field_value = match fields_map.get("remote_address_cidrs") {
+                        let field_value = match fields_map.get("remoteAddressCidrs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_address_cidrs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remoteAddressCidrs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#base_blob: {
-                        let field_value = match fields_map.get("base_blob") {
+                        let field_value = match fields_map.get("baseBlob") {
                             Some(value) => value,
-                            None => bail!("Missing field 'base_blob' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'baseBlob' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -122,30 +122,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#address_1: {
-                        let field_value = match fields_map.get("address_1") {
+                        let field_value = match fields_map.get("address1") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'address1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#address_2: {
-                        let field_value = match fields_map.get("address_2") {
+                        let field_value = match fields_map.get("address2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'address2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#address_3: {
-                        let field_value = match fields_map.get("address_3") {
+                        let field_value = match fields_map.get("address3") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'address3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#address_4: {
-                        let field_value = match fields_map.get("address_4") {
+                        let field_value = match fields_map.get("address4") {
                             Some(value) => value,
-                            None => bail!("Missing field 'address_4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'address4' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -171,9 +171,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#postal_code: {
-                        let field_value = match fields_map.get("postal_code") {
+                        let field_value = match fields_map.get("postalCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'postal_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'postalCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

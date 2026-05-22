@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#fallback_behavior: {
-                        let field_value = match fields_map.get("fallback_behavior") {
+                        let field_value = match fields_map.get("fallbackBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fallback_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fallbackBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

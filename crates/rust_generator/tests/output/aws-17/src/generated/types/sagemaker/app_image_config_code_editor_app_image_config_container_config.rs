@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#container_arguments: {
-                        let field_value = match fields_map.get("container_arguments") {
+                        let field_value = match fields_map.get("containerArguments") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_arguments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerArguments' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_entrypoints: {
-                        let field_value = match fields_map.get("container_entrypoints") {
+                        let field_value = match fields_map.get("containerEntrypoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_entrypoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerEntrypoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_environment_variables: {
-                        let field_value = match fields_map.get("container_environment_variables") {
+                        let field_value = match fields_map.get("containerEnvironmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerEnvironmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

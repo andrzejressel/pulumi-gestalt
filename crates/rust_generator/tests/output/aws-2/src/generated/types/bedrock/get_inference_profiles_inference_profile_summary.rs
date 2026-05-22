@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#created_at: {
-                        let field_value = match fields_map.get("created_at") {
+                        let field_value = match fields_map.get("createdAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'created_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createdAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -128,23 +128,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inference_profile_arn: {
-                        let field_value = match fields_map.get("inference_profile_arn") {
+                        let field_value = match fields_map.get("inferenceProfileArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inference_profile_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inferenceProfileArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inference_profile_id: {
-                        let field_value = match fields_map.get("inference_profile_id") {
+                        let field_value = match fields_map.get("inferenceProfileId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inference_profile_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inferenceProfileId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inference_profile_name: {
-                        let field_value = match fields_map.get("inference_profile_name") {
+                        let field_value = match fields_map.get("inferenceProfileName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inference_profile_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inferenceProfileName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -163,16 +163,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#updated_at: {
-                        let field_value = match fields_map.get("updated_at") {
+                        let field_value = match fields_map.get("updatedAt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'updated_at' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'updatedAt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#data_source_level_metrics_behavior: {
-                        let field_value = match fields_map.get("data_source_level_metrics_behavior") {
+                        let field_value = match fields_map.get("dataSourceLevelMetricsBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_source_level_metrics_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataSourceLevelMetricsBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operation_level_metrics_config: {
-                        let field_value = match fields_map.get("operation_level_metrics_config") {
+                        let field_value = match fields_map.get("operationLevelMetricsConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operation_level_metrics_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operationLevelMetricsConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resolver_level_metrics_behavior: {
-                        let field_value = match fields_map.get("resolver_level_metrics_behavior") {
+                        let field_value = match fields_map.get("resolverLevelMetricsBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resolver_level_metrics_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resolverLevelMetricsBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

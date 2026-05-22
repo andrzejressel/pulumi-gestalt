@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#no_squash_nids: {
-                        let field_value = match fields_map.get("no_squash_nids") {
+                        let field_value = match fields_map.get("noSquashNids") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_squash_nids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noSquashNids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#root_squash: {
-                        let field_value = match fields_map.get("root_squash") {
+                        let field_value = match fields_map.get("rootSquash") {
                             Some(value) => value,
-                            None => bail!("Missing field 'root_squash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rootSquash' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

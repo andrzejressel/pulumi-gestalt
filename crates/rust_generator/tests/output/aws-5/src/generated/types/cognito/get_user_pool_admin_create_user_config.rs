@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#allow_admin_create_user_only: {
-                        let field_value = match fields_map.get("allow_admin_create_user_only") {
+                        let field_value = match fields_map.get("allowAdminCreateUserOnly") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_admin_create_user_only' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowAdminCreateUserOnly' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#invite_message_templates: {
-                        let field_value = match fields_map.get("invite_message_templates") {
+                        let field_value = match fields_map.get("inviteMessageTemplates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'invite_message_templates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inviteMessageTemplates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unused_account_validity_days: {
-                        let field_value = match fields_map.get("unused_account_validity_days") {
+                        let field_value = match fields_map.get("unusedAccountValidityDays") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unused_account_validity_days' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unusedAccountValidityDays' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

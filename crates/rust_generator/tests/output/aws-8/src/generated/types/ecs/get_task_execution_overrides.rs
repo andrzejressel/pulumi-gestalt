@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#container_overrides: {
-                        let field_value = match fields_map.get("container_overrides") {
+                        let field_value = match fields_map.get("containerOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,16 +104,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_role_arn: {
-                        let field_value = match fields_map.get("execution_role_arn") {
+                        let field_value = match fields_map.get("executionRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#inference_accelerator_overrides: {
-                        let field_value = match fields_map.get("inference_accelerator_overrides") {
+                        let field_value = match fields_map.get("inferenceAcceleratorOverrides") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inference_accelerator_overrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inferenceAcceleratorOverrides' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,9 +125,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#task_role_arn: {
-                        let field_value = match fields_map.get("task_role_arn") {
+                        let field_value = match fields_map.get("taskRoleArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'task_role_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'taskRoleArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

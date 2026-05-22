@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#forward_when_query_arg_profile_is_unknown: {
-                        let field_value = match fields_map.get("forward_when_query_arg_profile_is_unknown") {
+                        let field_value = match fields_map.get("forwardWhenQueryArgProfileIsUnknown") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forward_when_query_arg_profile_is_unknown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardWhenQueryArgProfileIsUnknown' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_arg_profiles: {
-                        let field_value = match fields_map.get("query_arg_profiles") {
+                        let field_value = match fields_map.get("queryArgProfiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_arg_profiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryArgProfiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

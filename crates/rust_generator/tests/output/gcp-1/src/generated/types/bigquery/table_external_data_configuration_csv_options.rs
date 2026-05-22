@@ -101,16 +101,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#allow_jagged_rows: {
-                        let field_value = match fields_map.get("allow_jagged_rows") {
+                        let field_value = match fields_map.get("allowJaggedRows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_jagged_rows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowJaggedRows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allow_quoted_newlines: {
-                        let field_value = match fields_map.get("allow_quoted_newlines") {
+                        let field_value = match fields_map.get("allowQuotedNewlines") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_quoted_newlines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowQuotedNewlines' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -122,9 +122,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_delimiter: {
-                        let field_value = match fields_map.get("field_delimiter") {
+                        let field_value = match fields_map.get("fieldDelimiter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_delimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldDelimiter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -136,9 +136,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#skip_leading_rows: {
-                        let field_value = match fields_map.get("skip_leading_rows") {
+                        let field_value = match fields_map.get("skipLeadingRows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'skip_leading_rows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'skipLeadingRows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

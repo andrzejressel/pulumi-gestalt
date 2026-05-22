@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#repo_source: {
-                        let field_value = match fields_map.get("repo_source") {
+                        let field_value = match fields_map.get("repoSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'repo_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'repoSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_source: {
-                        let field_value = match fields_map.get("storage_source") {
+                        let field_value = match fields_map.get("storageSource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_source' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageSource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

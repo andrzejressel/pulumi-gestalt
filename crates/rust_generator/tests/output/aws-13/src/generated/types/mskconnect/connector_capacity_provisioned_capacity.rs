@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#mcu_count: {
-                        let field_value = match fields_map.get("mcu_count") {
+                        let field_value = match fields_map.get("mcuCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mcu_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mcuCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#worker_count: {
-                        let field_value = match fields_map.get("worker_count") {
+                        let field_value = match fields_map.get("workerCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'worker_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workerCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#api_server_args: {
-                        let field_value = match fields_map.get("api_server_args") {
+                        let field_value = match fields_map.get("apiServerArgs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'api_server_args' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apiServerArgs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#control_plane_node_pool_config: {
-                        let field_value = match fields_map.get("control_plane_node_pool_config") {
+                        let field_value = match fields_map.get("controlPlaneNodePoolConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'control_plane_node_pool_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'controlPlaneNodePoolConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

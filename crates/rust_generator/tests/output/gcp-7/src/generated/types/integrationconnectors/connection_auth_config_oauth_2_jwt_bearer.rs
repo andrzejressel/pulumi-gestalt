@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#client_key: {
-                        let field_value = match fields_map.get("client_key") {
+                        let field_value = match fields_map.get("clientKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#jwt_claims: {
-                        let field_value = match fields_map.get("jwt_claims") {
+                        let field_value = match fields_map.get("jwtClaims") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jwt_claims' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jwtClaims' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

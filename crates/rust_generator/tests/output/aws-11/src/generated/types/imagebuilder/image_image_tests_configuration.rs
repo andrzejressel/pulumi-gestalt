@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#image_tests_enabled: {
-                        let field_value = match fields_map.get("image_tests_enabled") {
+                        let field_value = match fields_map.get("imageTestsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_tests_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageTestsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_minutes: {
-                        let field_value = match fields_map.get("timeout_minutes") {
+                        let field_value = match fields_map.get("timeoutMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

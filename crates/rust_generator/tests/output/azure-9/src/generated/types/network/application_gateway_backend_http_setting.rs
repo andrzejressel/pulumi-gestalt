@@ -162,37 +162,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#affinity_cookie_name: {
-                        let field_value = match fields_map.get("affinity_cookie_name") {
+                        let field_value = match fields_map.get("affinityCookieName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'affinity_cookie_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'affinityCookieName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#authentication_certificates: {
-                        let field_value = match fields_map.get("authentication_certificates") {
+                        let field_value = match fields_map.get("authenticationCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#connection_draining: {
-                        let field_value = match fields_map.get("connection_draining") {
+                        let field_value = match fields_map.get("connectionDraining") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_draining' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionDraining' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cookie_based_affinity: {
-                        let field_value = match fields_map.get("cookie_based_affinity") {
+                        let field_value = match fields_map.get("cookieBasedAffinity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cookie_based_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cookieBasedAffinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_name: {
-                        let field_value = match fields_map.get("host_name") {
+                        let field_value = match fields_map.get("hostName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -218,9 +218,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pick_host_name_from_backend_address: {
-                        let field_value = match fields_map.get("pick_host_name_from_backend_address") {
+                        let field_value = match fields_map.get("pickHostNameFromBackendAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pick_host_name_from_backend_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pickHostNameFromBackendAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -232,16 +232,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#probe_id: {
-                        let field_value = match fields_map.get("probe_id") {
+                        let field_value = match fields_map.get("probeId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'probe_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'probeId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#probe_name: {
-                        let field_value = match fields_map.get("probe_name") {
+                        let field_value = match fields_map.get("probeName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'probe_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'probeName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -253,16 +253,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#request_timeout: {
-                        let field_value = match fields_map.get("request_timeout") {
+                        let field_value = match fields_map.get("requestTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'request_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requestTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_root_certificate_names: {
-                        let field_value = match fields_map.get("trusted_root_certificate_names") {
+                        let field_value = match fields_map.get("trustedRootCertificateNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trusted_root_certificate_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustedRootCertificateNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

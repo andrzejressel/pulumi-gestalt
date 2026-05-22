@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#auto_enable: {
-                        let field_value = match fields_map.get("auto_enable") {
+                        let field_value = match fields_map.get("autoEnable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_enable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoEnable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

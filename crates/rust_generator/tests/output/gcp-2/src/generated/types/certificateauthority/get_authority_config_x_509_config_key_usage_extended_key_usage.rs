@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#client_auth: {
-                        let field_value = match fields_map.get("client_auth") {
+                        let field_value = match fields_map.get("clientAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#code_signing: {
-                        let field_value = match fields_map.get("code_signing") {
+                        let field_value = match fields_map.get("codeSigning") {
                             Some(value) => value,
-                            None => bail!("Missing field 'code_signing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codeSigning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#email_protection: {
-                        let field_value = match fields_map.get("email_protection") {
+                        let field_value = match fields_map.get("emailProtection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'email_protection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'emailProtection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ocsp_signing: {
-                        let field_value = match fields_map.get("ocsp_signing") {
+                        let field_value = match fields_map.get("ocspSigning") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ocsp_signing' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ocspSigning' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_auth: {
-                        let field_value = match fields_map.get("server_auth") {
+                        let field_value = match fields_map.get("serverAuth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_auth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverAuth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_stamping: {
-                        let field_value = match fields_map.get("time_stamping") {
+                        let field_value = match fields_map.get("timeStamping") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_stamping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeStamping' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

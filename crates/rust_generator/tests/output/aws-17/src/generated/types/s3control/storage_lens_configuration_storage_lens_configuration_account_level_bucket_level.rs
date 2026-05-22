@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#activity_metrics: {
-                        let field_value = match fields_map.get("activity_metrics") {
+                        let field_value = match fields_map.get("activityMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'activity_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'activityMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#advanced_cost_optimization_metrics: {
-                        let field_value = match fields_map.get("advanced_cost_optimization_metrics") {
+                        let field_value = match fields_map.get("advancedCostOptimizationMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_cost_optimization_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedCostOptimizationMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#advanced_data_protection_metrics: {
-                        let field_value = match fields_map.get("advanced_data_protection_metrics") {
+                        let field_value = match fields_map.get("advancedDataProtectionMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'advanced_data_protection_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'advancedDataProtectionMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#detailed_status_code_metrics: {
-                        let field_value = match fields_map.get("detailed_status_code_metrics") {
+                        let field_value = match fields_map.get("detailedStatusCodeMetrics") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detailed_status_code_metrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detailedStatusCodeMetrics' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_level: {
-                        let field_value = match fields_map.get("prefix_level") {
+                        let field_value = match fields_map.get("prefixLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

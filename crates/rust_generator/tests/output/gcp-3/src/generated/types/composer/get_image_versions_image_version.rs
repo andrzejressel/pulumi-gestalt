@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#image_version_id: {
-                        let field_value = match fields_map.get("image_version_id") {
+                        let field_value = match fields_map.get("imageVersionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_version_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageVersionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#supported_python_versions: {
-                        let field_value = match fields_map.get("supported_python_versions") {
+                        let field_value = match fields_map.get("supportedPythonVersions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'supported_python_versions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'supportedPythonVersions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

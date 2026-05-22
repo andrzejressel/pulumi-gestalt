@@ -101,9 +101,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#custom_error_response_policy: {
-                        let field_value = match fields_map.get("custom_error_response_policy") {
+                        let field_value = match fields_map.get("customErrorResponsePolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_error_response_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customErrorResponsePolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -115,9 +115,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_action: {
-                        let field_value = match fields_map.get("route_action") {
+                        let field_value = match fields_map.get("routeAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -129,9 +129,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_redirect: {
-                        let field_value = match fields_map.get("url_redirect") {
+                        let field_value = match fields_map.get("urlRedirect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_redirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlRedirect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

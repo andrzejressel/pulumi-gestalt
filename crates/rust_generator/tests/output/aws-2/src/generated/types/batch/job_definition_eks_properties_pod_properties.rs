@@ -121,30 +121,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_policy: {
-                        let field_value = match fields_map.get("dns_policy") {
+                        let field_value = match fields_map.get("dnsPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#host_network: {
-                        let field_value = match fields_map.get("host_network") {
+                        let field_value = match fields_map.get("hostNetwork") {
                             Some(value) => value,
-                            None => bail!("Missing field 'host_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hostNetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_pull_secrets: {
-                        let field_value = match fields_map.get("image_pull_secrets") {
+                        let field_value = match fields_map.get("imagePullSecrets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_pull_secrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imagePullSecrets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#init_containers: {
-                        let field_value = match fields_map.get("init_containers") {
+                        let field_value = match fields_map.get("initContainers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'init_containers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initContainers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -156,16 +156,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_name: {
-                        let field_value = match fields_map.get("service_account_name") {
+                        let field_value = match fields_map.get("serviceAccountName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#share_process_namespace: {
-                        let field_value = match fields_map.get("share_process_namespace") {
+                        let field_value = match fields_map.get("shareProcessNamespace") {
                             Some(value) => value,
-                            None => bail!("Missing field 'share_process_namespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'shareProcessNamespace' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -122,72 +122,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#cluster_version: {
-                        let field_value = match fields_map.get("cluster_version") {
+                        let field_value = match fields_map.get("clusterVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_tags: {
-                        let field_value = match fields_map.get("custom_tags") {
+                        let field_value = match fields_map.get("customTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#driver_node_type: {
-                        let field_value = match fields_map.get("driver_node_type") {
+                        let field_value = match fields_map.get("driverNodeType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'driver_node_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'driverNodeType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#init_scripts: {
-                        let field_value = match fields_map.get("init_scripts") {
+                        let field_value = match fields_map.get("initScripts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'init_scripts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initScripts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_destination: {
-                        let field_value = match fields_map.get("log_destination") {
+                        let field_value = match fields_map.get("logDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_number_of_workers: {
-                        let field_value = match fields_map.get("max_number_of_workers") {
+                        let field_value = match fields_map.get("maxNumberOfWorkers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_number_of_workers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxNumberOfWorkers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_number_of_workers: {
-                        let field_value = match fields_map.get("min_number_of_workers") {
+                        let field_value = match fields_map.get("minNumberOfWorkers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_number_of_workers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minNumberOfWorkers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_type: {
-                        let field_value = match fields_map.get("node_type") {
+                        let field_value = match fields_map.get("nodeType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spark_config: {
-                        let field_value = match fields_map.get("spark_config") {
+                        let field_value = match fields_map.get("sparkConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spark_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sparkConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spark_environment_variables: {
-                        let field_value = match fields_map.get("spark_environment_variables") {
+                        let field_value = match fields_map.get("sparkEnvironmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spark_environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sparkEnvironmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

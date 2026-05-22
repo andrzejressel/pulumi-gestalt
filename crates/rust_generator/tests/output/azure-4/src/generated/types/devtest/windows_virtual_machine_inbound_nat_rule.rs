@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#backend_port: {
-                        let field_value = match fields_map.get("backend_port") {
+                        let field_value = match fields_map.get("backendPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backend_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backendPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frontend_port: {
-                        let field_value = match fields_map.get("frontend_port") {
+                        let field_value = match fields_map.get("frontendPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frontend_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frontendPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

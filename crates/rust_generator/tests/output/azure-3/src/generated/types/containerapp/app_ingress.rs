@@ -118,30 +118,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#allow_insecure_connections: {
-                        let field_value = match fields_map.get("allow_insecure_connections") {
+                        let field_value = match fields_map.get("allowInsecureConnections") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_insecure_connections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowInsecureConnections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#custom_domains: {
-                        let field_value = match fields_map.get("custom_domains") {
+                        let field_value = match fields_map.get("customDomains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_domains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customDomains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exposed_port: {
-                        let field_value = match fields_map.get("exposed_port") {
+                        let field_value = match fields_map.get("exposedPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exposed_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exposedPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_enabled: {
-                        let field_value = match fields_map.get("external_enabled") {
+                        let field_value = match fields_map.get("externalEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -153,23 +153,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_security_restrictions: {
-                        let field_value = match fields_map.get("ip_security_restrictions") {
+                        let field_value = match fields_map.get("ipSecurityRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_security_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipSecurityRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_port: {
-                        let field_value = match fields_map.get("target_port") {
+                        let field_value = match fields_map.get("targetPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#traffic_weights: {
-                        let field_value = match fields_map.get("traffic_weights") {
+                        let field_value = match fields_map.get("trafficWeights") {
                             Some(value) => value,
-                            None => bail!("Missing field 'traffic_weights' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trafficWeights' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

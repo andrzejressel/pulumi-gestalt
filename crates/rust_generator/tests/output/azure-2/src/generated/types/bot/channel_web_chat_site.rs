@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#endpoint_parameters_enabled: {
-                        let field_value = match fields_map.get("endpoint_parameters_enabled") {
+                        let field_value = match fields_map.get("endpointParametersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_parameters_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointParametersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_enabled: {
-                        let field_value = match fields_map.get("storage_enabled") {
+                        let field_value = match fields_map.get("storageEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_upload_enabled: {
-                        let field_value = match fields_map.get("user_upload_enabled") {
+                        let field_value = match fields_map.get("userUploadEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_upload_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userUploadEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

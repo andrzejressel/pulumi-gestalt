@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cloud_watch_destination: {
-                        let field_value = match fields_map.get("cloud_watch_destination") {
+                        let field_value = match fields_map.get("cloudWatchDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_watch_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudWatchDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,37 +111,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_bridge_destination: {
-                        let field_value = match fields_map.get("event_bridge_destination") {
+                        let field_value = match fields_map.get("eventBridgeDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_bridge_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventBridgeDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kinesis_firehose_destination: {
-                        let field_value = match fields_map.get("kinesis_firehose_destination") {
+                        let field_value = match fields_map.get("kinesisFirehoseDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_firehose_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisFirehoseDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#matching_event_types: {
-                        let field_value = match fields_map.get("matching_event_types") {
+                        let field_value = match fields_map.get("matchingEventTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'matching_event_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'matchingEventTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pinpoint_destination: {
-                        let field_value = match fields_map.get("pinpoint_destination") {
+                        let field_value = match fields_map.get("pinpointDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pinpoint_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pinpointDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sns_destination: {
-                        let field_value = match fields_map.get("sns_destination") {
+                        let field_value = match fields_map.get("snsDestination") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sns_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snsDestination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

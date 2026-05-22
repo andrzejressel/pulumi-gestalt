@@ -78,9 +78,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cert_chains: {
-                        let field_value = match fields_map.get("cert_chains") {
+                        let field_value = match fields_map.get("certChains") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cert_chains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certChains' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -92,9 +92,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#external_protection_level_options: {
-                        let field_value = match fields_map.get("external_protection_level_options") {
+                        let field_value = match fields_map.get("externalProtectionLevelOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'external_protection_level_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'externalProtectionLevelOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

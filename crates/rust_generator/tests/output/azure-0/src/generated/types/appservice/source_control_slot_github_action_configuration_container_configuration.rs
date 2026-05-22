@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#image_name: {
-                        let field_value = match fields_map.get("image_name") {
+                        let field_value = match fields_map.get("imageName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registry_password: {
-                        let field_value = match fields_map.get("registry_password") {
+                        let field_value = match fields_map.get("registryPassword") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registry_password' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registryPassword' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registry_url: {
-                        let field_value = match fields_map.get("registry_url") {
+                        let field_value = match fields_map.get("registryUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registry_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registryUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#registry_username: {
-                        let field_value = match fields_map.get("registry_username") {
+                        let field_value = match fields_map.get("registryUsername") {
                             Some(value) => value,
-                            None => bail!("Missing field 'registry_username' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'registryUsername' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

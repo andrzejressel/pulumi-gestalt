@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#audio_rendition_sets: {
-                        let field_value = match fields_map.get("audio_rendition_sets") {
+                        let field_value = match fields_map.get("audioRenditionSets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_rendition_sets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioRenditionSets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#m_3_u_8_settings: {
-                        let field_value = match fields_map.get("m_3_u_8_settings") {
+                        let field_value = match fields_map.get("m3u8Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'm_3_u_8_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'm3u8Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -85,16 +85,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#git_http: {
-                        let field_value = match fields_map.get("git_http") {
+                        let field_value = match fields_map.get("gitHttp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'git_http' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gitHttp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#git_ssh: {
-                        let field_value = match fields_map.get("git_ssh") {
+                        let field_value = match fields_map.get("gitSsh") {
                             Some(value) => value,
-                            None => bail!("Missing field 'git_ssh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gitSsh' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

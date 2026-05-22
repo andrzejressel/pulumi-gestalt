@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#auto_adjust_type: {
-                        let field_value = match fields_map.get("auto_adjust_type") {
+                        let field_value = match fields_map.get("autoAdjustType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_adjust_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoAdjustType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#historical_options: {
-                        let field_value = match fields_map.get("historical_options") {
+                        let field_value = match fields_map.get("historicalOptions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'historical_options' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'historicalOptions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_auto_adjust_time: {
-                        let field_value = match fields_map.get("last_auto_adjust_time") {
+                        let field_value = match fields_map.get("lastAutoAdjustTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_auto_adjust_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastAutoAdjustTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

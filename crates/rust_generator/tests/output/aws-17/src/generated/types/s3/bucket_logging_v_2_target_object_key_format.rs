@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#partitioned_prefix: {
-                        let field_value = match fields_map.get("partitioned_prefix") {
+                        let field_value = match fields_map.get("partitionedPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partitioned_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partitionedPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#simple_prefix: {
-                        let field_value = match fields_map.get("simple_prefix") {
+                        let field_value = match fields_map.get("simplePrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'simple_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'simplePrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

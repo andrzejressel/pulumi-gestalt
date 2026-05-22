@@ -131,9 +131,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#affected_circuits: {
-                        let field_value = match fields_map.get("affected_circuits") {
+                        let field_value = match fields_map.get("affectedCircuits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'affected_circuits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'affectedCircuits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -145,16 +145,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#end_time: {
-                        let field_value = match fields_map.get("end_time") {
+                        let field_value = match fields_map.get("endTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#issue_type: {
-                        let field_value = match fields_map.get("issue_type") {
+                        let field_value = match fields_map.get("issueType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'issue_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'issueType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -173,9 +173,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_time: {
-                        let field_value = match fields_map.get("start_time") {
+                        let field_value = match fields_map.get("startTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

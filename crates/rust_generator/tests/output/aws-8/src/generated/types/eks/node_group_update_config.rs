@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#max_unavailable: {
-                        let field_value = match fields_map.get("max_unavailable") {
+                        let field_value = match fields_map.get("maxUnavailable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unavailable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnavailable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unavailable_percentage: {
-                        let field_value = match fields_map.get("max_unavailable_percentage") {
+                        let field_value = match fields_map.get("maxUnavailablePercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unavailable_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnavailablePercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

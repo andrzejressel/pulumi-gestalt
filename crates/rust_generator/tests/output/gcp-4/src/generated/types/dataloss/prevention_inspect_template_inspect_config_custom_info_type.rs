@@ -125,16 +125,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#exclusion_type: {
-                        let field_value = match fields_map.get("exclusion_type") {
+                        let field_value = match fields_map.get("exclusionType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclusion_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exclusionType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#info_type: {
-                        let field_value = match fields_map.get("info_type") {
+                        let field_value = match fields_map.get("infoType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'info_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'infoType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -153,23 +153,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sensitivity_score: {
-                        let field_value = match fields_map.get("sensitivity_score") {
+                        let field_value = match fields_map.get("sensitivityScore") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sensitivity_score' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sensitivityScore' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#stored_type: {
-                        let field_value = match fields_map.get("stored_type") {
+                        let field_value = match fields_map.get("storedType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'stored_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storedType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#surrogate_type: {
-                        let field_value = match fields_map.get("surrogate_type") {
+                        let field_value = match fields_map.get("surrogateType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'surrogate_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'surrogateType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

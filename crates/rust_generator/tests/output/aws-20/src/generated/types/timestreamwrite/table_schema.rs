@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#composite_partition_key: {
-                        let field_value = match fields_map.get("composite_partition_key") {
+                        let field_value = match fields_map.get("compositePartitionKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'composite_partition_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'compositePartitionKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

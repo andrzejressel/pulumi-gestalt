@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#component_arn: {
-                        let field_value = match fields_map.get("component_arn") {
+                        let field_value = match fields_map.get("componentArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'component_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'componentArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#component_id: {
-                        let field_value = match fields_map.get("component_id") {
+                        let field_value = match fields_map.get("componentId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'component_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'componentId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

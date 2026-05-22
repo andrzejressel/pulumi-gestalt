@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#cast_column_type_operation: {
-                        let field_value = match fields_map.get("cast_column_type_operation") {
+                        let field_value = match fields_map.get("castColumnTypeOperation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cast_column_type_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'castColumnTypeOperation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#create_columns_operation: {
-                        let field_value = match fields_map.get("create_columns_operation") {
+                        let field_value = match fields_map.get("createColumnsOperation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'create_columns_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createColumnsOperation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#filter_operation: {
-                        let field_value = match fields_map.get("filter_operation") {
+                        let field_value = match fields_map.get("filterOperation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'filter_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'filterOperation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#project_operation: {
-                        let field_value = match fields_map.get("project_operation") {
+                        let field_value = match fields_map.get("projectOperation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'project_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'projectOperation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rename_column_operation: {
-                        let field_value = match fields_map.get("rename_column_operation") {
+                        let field_value = match fields_map.get("renameColumnOperation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rename_column_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'renameColumnOperation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_column_operation: {
-                        let field_value = match fields_map.get("tag_column_operation") {
+                        let field_value = match fields_map.get("tagColumnOperation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_column_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagColumnOperation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#untag_column_operation: {
-                        let field_value = match fields_map.get("untag_column_operation") {
+                        let field_value = match fields_map.get("untagColumnOperation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'untag_column_operation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'untagColumnOperation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

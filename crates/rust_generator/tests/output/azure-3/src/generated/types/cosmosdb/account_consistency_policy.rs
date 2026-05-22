@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#consistency_level: {
-                        let field_value = match fields_map.get("consistency_level") {
+                        let field_value = match fields_map.get("consistencyLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consistency_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consistencyLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_interval_in_seconds: {
-                        let field_value = match fields_map.get("max_interval_in_seconds") {
+                        let field_value = match fields_map.get("maxIntervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxIntervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_staleness_prefix: {
-                        let field_value = match fields_map.get("max_staleness_prefix") {
+                        let field_value = match fields_map.get("maxStalenessPrefix") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_staleness_prefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxStalenessPrefix' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

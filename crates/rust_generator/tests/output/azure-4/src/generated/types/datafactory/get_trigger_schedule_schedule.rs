@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#days_of_months: {
-                        let field_value = match fields_map.get("days_of_months") {
+                        let field_value = match fields_map.get("daysOfMonths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_months' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfMonths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#days_of_weeks: {
-                        let field_value = match fields_map.get("days_of_weeks") {
+                        let field_value = match fields_map.get("daysOfWeeks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'days_of_weeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'daysOfWeeks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

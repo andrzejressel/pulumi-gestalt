@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regional_replica_count: {
-                        let field_value = match fields_map.get("regional_replica_count") {
+                        let field_value = match fields_map.get("regionalReplicaCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regional_replica_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionalReplicaCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_account_type: {
-                        let field_value = match fields_map.get("storage_account_type") {
+                        let field_value = match fields_map.get("storageAccountType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_account_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageAccountType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

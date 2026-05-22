@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#containerd_config: {
-                        let field_value = match fields_map.get("containerd_config") {
+                        let field_value = match fields_map.get("containerdConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'containerd_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerdConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcfs_config: {
-                        let field_value = match fields_map.get("gcfs_config") {
+                        let field_value = match fields_map.get("gcfsConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcfs_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcfsConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#insecure_kubelet_readonly_port_enabled: {
-                        let field_value = match fields_map.get("insecure_kubelet_readonly_port_enabled") {
+                        let field_value = match fields_map.get("insecureKubeletReadonlyPortEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insecure_kubelet_readonly_port_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insecureKubeletReadonlyPortEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#logging_variant: {
-                        let field_value = match fields_map.get("logging_variant") {
+                        let field_value = match fields_map.get("loggingVariant") {
                             Some(value) => value,
-                            None => bail!("Missing field 'logging_variant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loggingVariant' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

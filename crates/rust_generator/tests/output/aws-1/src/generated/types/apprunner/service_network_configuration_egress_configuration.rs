@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#egress_type: {
-                        let field_value = match fields_map.get("egress_type") {
+                        let field_value = match fields_map.get("egressType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'egress_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'egressType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_connector_arn: {
-                        let field_value = match fields_map.get("vpc_connector_arn") {
+                        let field_value = match fields_map.get("vpcConnectorArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_connector_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcConnectorArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

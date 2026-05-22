@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#cluster_name: {
-                        let field_value = match fields_map.get("cluster_name") {
+                        let field_value = match fields_map.get("clusterName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

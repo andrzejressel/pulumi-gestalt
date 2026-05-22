@@ -76,16 +76,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#on_failure: {
-                        let field_value = match fields_map.get("on_failure") {
+                        let field_value = match fields_map.get("onFailure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_failure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onFailure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#parallel_group: {
-                        let field_value = match fields_map.get("parallel_group") {
+                        let field_value = match fields_map.get("parallelGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'parallel_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'parallelGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#workflow_arn: {
-                        let field_value = match fields_map.get("workflow_arn") {
+                        let field_value = match fields_map.get("workflowArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'workflow_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workflowArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

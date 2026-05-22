@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#column_families: {
-                        let field_value = match fields_map.get("column_families") {
+                        let field_value = match fields_map.get("columnFamilies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'column_families' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'columnFamilies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_unspecified_column_families: {
-                        let field_value = match fields_map.get("ignore_unspecified_column_families") {
+                        let field_value = match fields_map.get("ignoreUnspecifiedColumnFamilies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_unspecified_column_families' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreUnspecifiedColumnFamilies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#output_column_families_as_json: {
-                        let field_value = match fields_map.get("output_column_families_as_json") {
+                        let field_value = match fields_map.get("outputColumnFamiliesAsJson") {
                             Some(value) => value,
-                            None => bail!("Missing field 'output_column_families_as_json' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'outputColumnFamiliesAsJson' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#read_rowkey_as_string: {
-                        let field_value = match fields_map.get("read_rowkey_as_string") {
+                        let field_value = match fields_map.get("readRowkeyAsString") {
                             Some(value) => value,
-                            None => bail!("Missing field 'read_rowkey_as_string' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readRowkeyAsString' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -68,23 +68,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#bigquery_destination_config: {
-                        let field_value = match fields_map.get("bigquery_destination_config") {
+                        let field_value = match fields_map.get("bigqueryDestinationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bigquery_destination_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bigqueryDestinationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#destination_connection_profile: {
-                        let field_value = match fields_map.get("destination_connection_profile") {
+                        let field_value = match fields_map.get("destinationConnectionProfile") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_connection_profile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationConnectionProfile' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gcs_destination_config: {
-                        let field_value = match fields_map.get("gcs_destination_config") {
+                        let field_value = match fields_map.get("gcsDestinationConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gcs_destination_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gcsDestinationConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

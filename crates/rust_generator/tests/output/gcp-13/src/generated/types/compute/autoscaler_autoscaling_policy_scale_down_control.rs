@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#max_scaled_down_replicas: {
-                        let field_value = match fields_map.get("max_scaled_down_replicas") {
+                        let field_value = match fields_map.get("maxScaledDownReplicas") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_scaled_down_replicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxScaledDownReplicas' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_window_sec: {
-                        let field_value = match fields_map.get("time_window_sec") {
+                        let field_value = match fields_map.get("timeWindowSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_window_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeWindowSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

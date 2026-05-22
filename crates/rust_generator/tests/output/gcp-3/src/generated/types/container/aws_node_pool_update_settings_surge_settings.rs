@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#max_surge: {
-                        let field_value = match fields_map.get("max_surge") {
+                        let field_value = match fields_map.get("maxSurge") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_surge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxSurge' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_unavailable: {
-                        let field_value = match fields_map.get("max_unavailable") {
+                        let field_value = match fields_map.get("maxUnavailable") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_unavailable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxUnavailable' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

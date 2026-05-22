@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#role_definition_id: {
-                        let field_value = match fields_map.get("role_definition_id") {
+                        let field_value = match fields_map.get("roleDefinitionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'role_definition_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'roleDefinitionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_principal_id: {
-                        let field_value = match fields_map.get("service_principal_id") {
+                        let field_value = match fields_map.get("servicePrincipalId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_principal_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'servicePrincipalId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

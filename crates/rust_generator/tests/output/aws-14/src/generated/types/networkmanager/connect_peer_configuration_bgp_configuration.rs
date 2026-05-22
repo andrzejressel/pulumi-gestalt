@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#core_network_address: {
-                        let field_value = match fields_map.get("core_network_address") {
+                        let field_value = match fields_map.get("coreNetworkAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'core_network_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coreNetworkAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#core_network_asn: {
-                        let field_value = match fields_map.get("core_network_asn") {
+                        let field_value = match fields_map.get("coreNetworkAsn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'core_network_asn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'coreNetworkAsn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peer_address: {
-                        let field_value = match fields_map.get("peer_address") {
+                        let field_value = match fields_map.get("peerAddress") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peer_address' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peerAddress' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#peer_asn: {
-                        let field_value = match fields_map.get("peer_asn") {
+                        let field_value = match fields_map.get("peerAsn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'peer_asn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'peerAsn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

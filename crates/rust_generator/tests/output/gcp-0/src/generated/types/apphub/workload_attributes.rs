@@ -87,9 +87,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#business_owners: {
-                        let field_value = match fields_map.get("business_owners") {
+                        let field_value = match fields_map.get("businessOwners") {
                             Some(value) => value,
-                            None => bail!("Missing field 'business_owners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'businessOwners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -101,9 +101,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#developer_owners: {
-                        let field_value = match fields_map.get("developer_owners") {
+                        let field_value = match fields_map.get("developerOwners") {
                             Some(value) => value,
-                            None => bail!("Missing field 'developer_owners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'developerOwners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -115,9 +115,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#operator_owners: {
-                        let field_value = match fields_map.get("operator_owners") {
+                        let field_value = match fields_map.get("operatorOwners") {
                             Some(value) => value,
-                            None => bail!("Missing field 'operator_owners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'operatorOwners' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

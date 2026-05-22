@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#target_received_bytes_per_second: {
-                        let field_value = match fields_map.get("target_received_bytes_per_second") {
+                        let field_value = match fields_map.get("targetReceivedBytesPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_received_bytes_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetReceivedBytesPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_received_packets_per_second: {
-                        let field_value = match fields_map.get("target_received_packets_per_second") {
+                        let field_value = match fields_map.get("targetReceivedPacketsPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_received_packets_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetReceivedPacketsPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_sent_bytes_per_second: {
-                        let field_value = match fields_map.get("target_sent_bytes_per_second") {
+                        let field_value = match fields_map.get("targetSentBytesPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_sent_bytes_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetSentBytesPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_sent_packets_per_second: {
-                        let field_value = match fields_map.get("target_sent_packets_per_second") {
+                        let field_value = match fields_map.get("targetSentPacketsPerSecond") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_sent_packets_per_second' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetSentPacketsPerSecond' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -107,9 +107,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#exact_match: {
-                        let field_value = match fields_map.get("exact_match") {
+                        let field_value = match fields_map.get("exactMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exact_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exactMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -121,44 +121,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#invert_match: {
-                        let field_value = match fields_map.get("invert_match") {
+                        let field_value = match fields_map.get("invertMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'invert_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'invertMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_match: {
-                        let field_value = match fields_map.get("prefix_match") {
+                        let field_value = match fields_map.get("prefixMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#present_match: {
-                        let field_value = match fields_map.get("present_match") {
+                        let field_value = match fields_map.get("presentMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'present_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'presentMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#range_match: {
-                        let field_value = match fields_map.get("range_match") {
+                        let field_value = match fields_map.get("rangeMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'range_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rangeMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regex_match: {
-                        let field_value = match fields_map.get("regex_match") {
+                        let field_value = match fields_map.get("regexMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regex_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regexMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#suffix_match: {
-                        let field_value = match fields_map.get("suffix_match") {
+                        let field_value = match fields_map.get("suffixMatch") {
                             Some(value) => value,
-                            None => bail!("Missing field 'suffix_match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'suffixMatch' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

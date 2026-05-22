@@ -90,44 +90,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#count_number: {
-                        let field_value = match fields_map.get("count_number") {
+                        let field_value = match fields_map.get("countNumber") {
                             Some(value) => value,
-                            None => bail!("Missing field 'count_number' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'countNumber' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#count_type: {
-                        let field_value = match fields_map.get("count_type") {
+                        let field_value = match fields_map.get("countType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'count_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'countType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#count_unit: {
-                        let field_value = match fields_map.get("count_unit") {
+                        let field_value = match fields_map.get("countUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'count_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'countUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_pattern_lists: {
-                        let field_value = match fields_map.get("tag_pattern_lists") {
+                        let field_value = match fields_map.get("tagPatternLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_pattern_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagPatternLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_prefix_lists: {
-                        let field_value = match fields_map.get("tag_prefix_lists") {
+                        let field_value = match fields_map.get("tagPrefixLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_prefix_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagPrefixLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_status: {
-                        let field_value = match fields_map.get("tag_status") {
+                        let field_value = match fields_map.get("tagStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

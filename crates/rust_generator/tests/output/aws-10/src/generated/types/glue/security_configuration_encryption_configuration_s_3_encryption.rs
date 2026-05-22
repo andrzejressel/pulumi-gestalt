@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#kms_key_arn: {
-                        let field_value = match fields_map.get("kms_key_arn") {
+                        let field_value = match fields_map.get("kmsKeyArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_key_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsKeyArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_encryption_mode: {
-                        let field_value = match fields_map.get("s_3_encryption_mode") {
+                        let field_value = match fields_map.get("s3EncryptionMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_encryption_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3EncryptionMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

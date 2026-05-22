@@ -95,23 +95,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#forwarded_ports: {
-                        let field_value = match fields_map.get("forwarded_ports") {
+                        let field_value = match fields_map.get("forwardedPorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'forwarded_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'forwardedPorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_ip_mode: {
-                        let field_value = match fields_map.get("instance_ip_mode") {
+                        let field_value = match fields_map.get("instanceIpMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_ip_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceIpMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_tag: {
-                        let field_value = match fields_map.get("instance_tag") {
+                        let field_value = match fields_map.get("instanceTag") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_tag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceTag' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -123,9 +123,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#session_affinity: {
-                        let field_value = match fields_map.get("session_affinity") {
+                        let field_value = match fields_map.get("sessionAffinity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'session_affinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sessionAffinity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

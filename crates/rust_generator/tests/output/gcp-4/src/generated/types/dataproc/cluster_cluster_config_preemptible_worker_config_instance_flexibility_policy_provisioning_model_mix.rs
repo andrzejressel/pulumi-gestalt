@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#standard_capacity_base: {
-                        let field_value = match fields_map.get("standard_capacity_base") {
+                        let field_value = match fields_map.get("standardCapacityBase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'standard_capacity_base' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'standardCapacityBase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#standard_capacity_percent_above_base: {
-                        let field_value = match fields_map.get("standard_capacity_percent_above_base") {
+                        let field_value = match fields_map.get("standardCapacityPercentAboveBase") {
                             Some(value) => value,
-                            None => bail!("Missing field 'standard_capacity_percent_above_base' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'standardCapacityPercentAboveBase' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

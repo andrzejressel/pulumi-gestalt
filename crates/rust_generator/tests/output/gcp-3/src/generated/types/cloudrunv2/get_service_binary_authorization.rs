@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#breakglass_justification: {
-                        let field_value = match fields_map.get("breakglass_justification") {
+                        let field_value = match fields_map.get("breakglassJustification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'breakglass_justification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'breakglassJustification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_default: {
-                        let field_value = match fields_map.get("use_default") {
+                        let field_value = match fields_map.get("useDefault") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_default' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'useDefault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

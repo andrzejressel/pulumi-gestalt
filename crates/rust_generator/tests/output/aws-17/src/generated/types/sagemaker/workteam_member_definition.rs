@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#cognito_member_definition: {
-                        let field_value = match fields_map.get("cognito_member_definition") {
+                        let field_value = match fields_map.get("cognitoMemberDefinition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cognito_member_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cognitoMemberDefinition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#oidc_member_definition: {
-                        let field_value = match fields_map.get("oidc_member_definition") {
+                        let field_value = match fields_map.get("oidcMemberDefinition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'oidc_member_definition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'oidcMemberDefinition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

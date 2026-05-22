@@ -137,9 +137,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bundled_local_ssds: {
-                        let field_value = match fields_map.get("bundled_local_ssds") {
+                        let field_value = match fields_map.get("bundledLocalSsds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bundled_local_ssds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bundledLocalSsds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -158,37 +158,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#guest_cpus: {
-                        let field_value = match fields_map.get("guest_cpus") {
+                        let field_value = match fields_map.get("guestCpus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'guest_cpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'guestCpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_shared_cpus: {
-                        let field_value = match fields_map.get("is_shared_cpus") {
+                        let field_value = match fields_map.get("isSharedCpus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_shared_cpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isSharedCpus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_persistent_disks: {
-                        let field_value = match fields_map.get("maximum_persistent_disks") {
+                        let field_value = match fields_map.get("maximumPersistentDisks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_persistent_disks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumPersistentDisks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_persistent_disks_size_gb: {
-                        let field_value = match fields_map.get("maximum_persistent_disks_size_gb") {
+                        let field_value = match fields_map.get("maximumPersistentDisksSizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_persistent_disks_size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumPersistentDisksSizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_mb: {
-                        let field_value = match fields_map.get("memory_mb") {
+                        let field_value = match fields_map.get("memoryMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -200,9 +200,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#self_link: {
-                        let field_value = match fields_map.get("self_link") {
+                        let field_value = match fields_map.get("selfLink") {
                             Some(value) => value,
-                            None => bail!("Missing field 'self_link' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selfLink' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

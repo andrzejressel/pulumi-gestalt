@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#key_provider_server: {
-                        let field_value = match fields_map.get("key_provider_server") {
+                        let field_value = match fields_map.get("keyProviderServer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_provider_server' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyProviderServer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_key_value: {
-                        let field_value = match fields_map.get("static_key_value") {
+                        let field_value = match fields_map.get("staticKeyValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_key_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticKeyValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

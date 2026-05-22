@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#color_space_passthrough_settings: {
-                        let field_value = match fields_map.get("color_space_passthrough_settings") {
+                        let field_value = match fields_map.get("colorSpacePassthroughSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'color_space_passthrough_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'colorSpacePassthroughSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dolby_vision_81_settings: {
-                        let field_value = match fields_map.get("dolby_vision_81_settings") {
+                        let field_value = match fields_map.get("dolbyVision81Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dolby_vision_81_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dolbyVision81Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hdr_10_settings: {
-                        let field_value = match fields_map.get("hdr_10_settings") {
+                        let field_value = match fields_map.get("hdr10Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hdr_10_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hdr10Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rec_601_settings: {
-                        let field_value = match fields_map.get("rec_601_settings") {
+                        let field_value = match fields_map.get("rec601Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rec_601_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rec601Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rec_709_settings: {
-                        let field_value = match fields_map.get("rec_709_settings") {
+                        let field_value = match fields_map.get("rec709Settings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rec_709_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rec709Settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

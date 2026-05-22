@@ -72,9 +72,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#kms_wrapped: {
-                        let field_value = match fields_map.get("kms_wrapped") {
+                        let field_value = match fields_map.get("kmsWrapped") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kms_wrapped' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kmsWrapped' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

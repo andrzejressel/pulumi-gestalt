@@ -70,9 +70,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#predictive_method: {
-                        let field_value = match fields_map.get("predictive_method") {
+                        let field_value = match fields_map.get("predictiveMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'predictive_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'predictiveMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

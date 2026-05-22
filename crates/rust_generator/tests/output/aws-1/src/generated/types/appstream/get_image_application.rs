@@ -164,9 +164,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#app_block_arn: {
-                        let field_value = match fields_map.get("app_block_arn") {
+                        let field_value = match fields_map.get("appBlockArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_block_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appBlockArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -178,9 +178,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#created_time: {
-                        let field_value = match fields_map.get("created_time") {
+                        let field_value = match fields_map.get("createdTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'created_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'createdTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -192,9 +192,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#display_name: {
-                        let field_value = match fields_map.get("display_name") {
+                        let field_value = match fields_map.get("displayName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'display_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'displayName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -206,37 +206,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#icon_s_3_locations: {
-                        let field_value = match fields_map.get("icon_s_3_locations") {
+                        let field_value = match fields_map.get("iconS3Locations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'icon_s_3_locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iconS3Locations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#icon_url: {
-                        let field_value = match fields_map.get("icon_url") {
+                        let field_value = match fields_map.get("iconUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'icon_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iconUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_families: {
-                        let field_value = match fields_map.get("instance_families") {
+                        let field_value = match fields_map.get("instanceFamilies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_families' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceFamilies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_parameters: {
-                        let field_value = match fields_map.get("launch_parameters") {
+                        let field_value = match fields_map.get("launchParameters") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_parameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchParameters' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#launch_path: {
-                        let field_value = match fields_map.get("launch_path") {
+                        let field_value = match fields_map.get("launchPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'launch_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'launchPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -262,9 +262,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#working_directory: {
-                        let field_value = match fields_map.get("working_directory") {
+                        let field_value = match fields_map.get("workingDirectory") {
                             Some(value) => value,
-                            None => bail!("Missing field 'working_directory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workingDirectory' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

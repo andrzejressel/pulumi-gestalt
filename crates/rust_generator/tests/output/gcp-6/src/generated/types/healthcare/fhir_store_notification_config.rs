@@ -79,23 +79,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#pubsub_topic: {
-                        let field_value = match fields_map.get("pubsub_topic") {
+                        let field_value = match fields_map.get("pubsubTopic") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pubsub_topic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pubsubTopic' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_full_resource: {
-                        let field_value = match fields_map.get("send_full_resource") {
+                        let field_value = match fields_map.get("sendFullResource") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_full_resource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendFullResource' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#send_previous_resource_on_delete: {
-                        let field_value = match fields_map.get("send_previous_resource_on_delete") {
+                        let field_value = match fields_map.get("sendPreviousResourceOnDelete") {
                             Some(value) => value,
-                            None => bail!("Missing field 'send_previous_resource_on_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sendPreviousResourceOnDelete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#kinesis_data_stream: {
-                        let field_value = match fields_map.get("kinesis_data_stream") {
+                        let field_value = match fields_map.get("kinesisDataStream") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kinesis_data_stream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kinesisDataStream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_destination: {
-                        let field_value = match fields_map.get("s_3_destination") {
+                        let field_value = match fields_map.get("s3Destination") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Destination' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

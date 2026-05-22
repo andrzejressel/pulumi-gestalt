@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#duration_in_seconds: {
-                        let field_value = match fields_map.get("duration_in_seconds") {
+                        let field_value = match fields_map.get("durationInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'duration_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'durationInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

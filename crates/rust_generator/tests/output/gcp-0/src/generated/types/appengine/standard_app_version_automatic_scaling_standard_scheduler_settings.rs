@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#max_instances: {
-                        let field_value = match fields_map.get("max_instances") {
+                        let field_value = match fields_map.get("maxInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_instances: {
-                        let field_value = match fields_map.get("min_instances") {
+                        let field_value = match fields_map.get("minInstances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_instances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minInstances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_cpu_utilization: {
-                        let field_value = match fields_map.get("target_cpu_utilization") {
+                        let field_value = match fields_map.get("targetCpuUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_cpu_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetCpuUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_throughput_utilization: {
-                        let field_value = match fields_map.get("target_throughput_utilization") {
+                        let field_value = match fields_map.get("targetThroughputUtilization") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_throughput_utilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetThroughputUtilization' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

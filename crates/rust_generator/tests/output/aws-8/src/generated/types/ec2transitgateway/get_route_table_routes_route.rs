@@ -82,16 +82,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#destination_cidr_block: {
-                        let field_value = match fields_map.get("destination_cidr_block") {
+                        let field_value = match fields_map.get("destinationCidrBlock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'destination_cidr_block' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'destinationCidrBlock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prefix_list_id: {
-                        let field_value = match fields_map.get("prefix_list_id") {
+                        let field_value = match fields_map.get("prefixListId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prefix_list_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'prefixListId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -103,16 +103,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transit_gateway_route_table_announcement_id: {
-                        let field_value = match fields_map.get("transit_gateway_route_table_announcement_id") {
+                        let field_value = match fields_map.get("transitGatewayRouteTableAnnouncementId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transit_gateway_route_table_announcement_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitGatewayRouteTableAnnouncementId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

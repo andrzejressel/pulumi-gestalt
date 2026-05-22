@@ -61,9 +61,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#component_version: {
-                        let field_value = match fields_map.get("component_version") {
+                        let field_value = match fields_map.get("componentVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'component_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'componentVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#platform_version: {
-                        let field_value = match fields_map.get("platform_version") {
+                        let field_value = match fields_map.get("platformVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'platform_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'platformVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

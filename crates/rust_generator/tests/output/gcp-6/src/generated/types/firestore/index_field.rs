@@ -80,16 +80,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#array_config: {
-                        let field_value = match fields_map.get("array_config") {
+                        let field_value = match fields_map.get("arrayConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'array_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'arrayConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#field_path: {
-                        let field_value = match fields_map.get("field_path") {
+                        let field_value = match fields_map.get("fieldPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'field_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fieldPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -101,9 +101,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vector_config: {
-                        let field_value = match fields_map.get("vector_config") {
+                        let field_value = match fields_map.get("vectorConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vector_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vectorConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

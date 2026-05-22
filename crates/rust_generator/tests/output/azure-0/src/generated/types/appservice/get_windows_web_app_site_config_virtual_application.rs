@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#physical_path: {
-                        let field_value = match fields_map.get("physical_path") {
+                        let field_value = match fields_map.get("physicalPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'physical_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'physicalPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_directories: {
-                        let field_value = match fields_map.get("virtual_directories") {
+                        let field_value = match fields_map.get("virtualDirectories") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_directories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualDirectories' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#virtual_path: {
-                        let field_value = match fields_map.get("virtual_path") {
+                        let field_value = match fields_map.get("virtualPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'virtual_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'virtualPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

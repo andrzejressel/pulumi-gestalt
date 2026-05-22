@@ -97,44 +97,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#allowed_device_management_levels: {
-                        let field_value = match fields_map.get("allowed_device_management_levels") {
+                        let field_value = match fields_map.get("allowedDeviceManagementLevels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_device_management_levels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedDeviceManagementLevels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_encryption_statuses: {
-                        let field_value = match fields_map.get("allowed_encryption_statuses") {
+                        let field_value = match fields_map.get("allowedEncryptionStatuses") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_encryption_statuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedEncryptionStatuses' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_constraints: {
-                        let field_value = match fields_map.get("os_constraints") {
+                        let field_value = match fields_map.get("osConstraints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_constraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osConstraints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_admin_approval: {
-                        let field_value = match fields_map.get("require_admin_approval") {
+                        let field_value = match fields_map.get("requireAdminApproval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_admin_approval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireAdminApproval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_corp_owned: {
-                        let field_value = match fields_map.get("require_corp_owned") {
+                        let field_value = match fields_map.get("requireCorpOwned") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_corp_owned' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireCorpOwned' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#require_screen_lock: {
-                        let field_value = match fields_map.get("require_screen_lock") {
+                        let field_value = match fields_map.get("requireScreenLock") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_screen_lock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireScreenLock' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

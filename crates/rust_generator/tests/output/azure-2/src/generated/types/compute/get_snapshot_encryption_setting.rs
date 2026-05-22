@@ -63,9 +63,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#disk_encryption_keys: {
-                        let field_value = match fields_map.get("disk_encryption_keys") {
+                        let field_value = match fields_map.get("diskEncryptionKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disk_encryption_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'diskEncryptionKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_encryption_keys: {
-                        let field_value = match fields_map.get("key_encryption_keys") {
+                        let field_value = match fields_map.get("keyEncryptionKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_encryption_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keyEncryptionKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

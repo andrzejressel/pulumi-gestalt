@@ -90,37 +90,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#access_mode: {
-                        let field_value = match fields_map.get("access_mode") {
+                        let field_value = match fields_map.get("accessMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'access_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'accessMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#anon_gid: {
-                        let field_value = match fields_map.get("anon_gid") {
+                        let field_value = match fields_map.get("anonGid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'anon_gid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'anonGid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#anon_uid: {
-                        let field_value = match fields_map.get("anon_uid") {
+                        let field_value = match fields_map.get("anonUid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'anon_uid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'anonUid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_ranges: {
-                        let field_value = match fields_map.get("ip_ranges") {
+                        let field_value = match fields_map.get("ipRanges") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_ranges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipRanges' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#squash_mode: {
-                        let field_value = match fields_map.get("squash_mode") {
+                        let field_value = match fields_map.get("squashMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'squash_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'squashMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

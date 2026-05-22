@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#enable_http_port_access: {
-                        let field_value = match fields_map.get("enable_http_port_access") {
+                        let field_value = match fields_map.get("enableHttpPortAccess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_http_port_access' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableHttpPortAccess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_ports: {
-                        let field_value = match fields_map.get("http_ports") {
+                        let field_value = match fields_map.get("httpPorts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_ports' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpPorts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -65,16 +65,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#group_id: {
-                        let field_value = match fields_map.get("group_id") {
+                        let field_value = match fields_map.get("groupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_configuration: {
-                        let field_value = match fields_map.get("ip_configuration") {
+                        let field_value = match fields_map.get("ipConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

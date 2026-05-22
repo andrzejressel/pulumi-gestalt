@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#partition_key_path: {
-                        let field_value = match fields_map.get("partition_key_path") {
+                        let field_value = match fields_map.get("partitionKeyPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'partition_key_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'partitionKeyPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

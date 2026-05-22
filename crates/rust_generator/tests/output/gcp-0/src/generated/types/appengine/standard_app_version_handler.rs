@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#auth_fail_action: {
-                        let field_value = match fields_map.get("auth_fail_action") {
+                        let field_value = match fields_map.get("authFailAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_fail_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authFailAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,9 +120,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#redirect_http_response_code: {
-                        let field_value = match fields_map.get("redirect_http_response_code") {
+                        let field_value = match fields_map.get("redirectHttpResponseCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'redirect_http_response_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'redirectHttpResponseCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,23 +134,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_level: {
-                        let field_value = match fields_map.get("security_level") {
+                        let field_value = match fields_map.get("securityLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#static_files: {
-                        let field_value = match fields_map.get("static_files") {
+                        let field_value = match fields_map.get("staticFiles") {
                             Some(value) => value,
-                            None => bail!("Missing field 'static_files' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'staticFiles' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_regex: {
-                        let field_value = match fields_map.get("url_regex") {
+                        let field_value = match fields_map.get("urlRegex") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_regex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlRegex' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

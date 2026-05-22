@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#replica_modifications: {
-                        let field_value = match fields_map.get("replica_modifications") {
+                        let field_value = match fields_map.get("replicaModifications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'replica_modifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'replicaModifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sse_kms_encrypted_objects: {
-                        let field_value = match fields_map.get("sse_kms_encrypted_objects") {
+                        let field_value = match fields_map.get("sseKmsEncryptedObjects") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sse_kms_encrypted_objects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sseKmsEncryptedObjects' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

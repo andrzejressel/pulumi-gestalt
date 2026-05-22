@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#transition_to_archive: {
-                        let field_value = match fields_map.get("transition_to_archive") {
+                        let field_value = match fields_map.get("transitionToArchive") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transition_to_archive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitionToArchive' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transition_to_ia: {
-                        let field_value = match fields_map.get("transition_to_ia") {
+                        let field_value = match fields_map.get("transitionToIa") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transition_to_ia' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitionToIa' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#transition_to_primary_storage_class: {
-                        let field_value = match fields_map.get("transition_to_primary_storage_class") {
+                        let field_value = match fields_map.get("transitionToPrimaryStorageClass") {
                             Some(value) => value,
-                            None => bail!("Missing field 'transition_to_primary_storage_class' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'transitionToPrimaryStorageClass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

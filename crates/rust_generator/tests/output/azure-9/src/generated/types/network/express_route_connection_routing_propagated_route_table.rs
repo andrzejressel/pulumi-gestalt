@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_table_ids: {
-                        let field_value = match fields_map.get("route_table_ids") {
+                        let field_value = match fields_map.get("routeTableIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_table_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeTableIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

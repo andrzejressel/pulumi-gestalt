@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#cache_stale_timeout_in_seconds: {
-                        let field_value = match fields_map.get("cache_stale_timeout_in_seconds") {
+                        let field_value = match fields_map.get("cacheStaleTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_stale_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheStaleTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

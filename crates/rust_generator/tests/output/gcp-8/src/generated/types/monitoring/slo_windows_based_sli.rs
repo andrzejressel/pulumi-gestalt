@@ -106,37 +106,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#good_bad_metric_filter: {
-                        let field_value = match fields_map.get("good_bad_metric_filter") {
+                        let field_value = match fields_map.get("goodBadMetricFilter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'good_bad_metric_filter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'goodBadMetricFilter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#good_total_ratio_threshold: {
-                        let field_value = match fields_map.get("good_total_ratio_threshold") {
+                        let field_value = match fields_map.get("goodTotalRatioThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'good_total_ratio_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'goodTotalRatioThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_mean_in_range: {
-                        let field_value = match fields_map.get("metric_mean_in_range") {
+                        let field_value = match fields_map.get("metricMeanInRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_mean_in_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricMeanInRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_sum_in_range: {
-                        let field_value = match fields_map.get("metric_sum_in_range") {
+                        let field_value = match fields_map.get("metricSumInRange") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_sum_in_range' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricSumInRange' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#window_period: {
-                        let field_value = match fields_map.get("window_period") {
+                        let field_value = match fields_map.get("windowPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'window_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'windowPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

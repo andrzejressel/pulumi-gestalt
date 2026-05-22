@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#grace_minutes: {
-                        let field_value = match fields_map.get("grace_minutes") {
+                        let field_value = match fields_map.get("graceMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'grace_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'graceMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

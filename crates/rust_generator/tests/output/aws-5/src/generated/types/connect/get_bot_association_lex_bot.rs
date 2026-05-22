@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#lex_region: {
-                        let field_value = match fields_map.get("lex_region") {
+                        let field_value = match fields_map.get("lexRegion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lex_region' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lexRegion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
 
                 Ok(Self {
                     r#query_params: {
-                        let field_value = match fields_map.get("query_params") {
+                        let field_value = match fields_map.get("queryParams") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_params' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryParams' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

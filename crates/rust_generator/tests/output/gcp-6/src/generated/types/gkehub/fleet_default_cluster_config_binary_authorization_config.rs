@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#evaluation_mode: {
-                        let field_value = match fields_map.get("evaluation_mode") {
+                        let field_value = match fields_map.get("evaluationMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluation_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluationMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_bindings: {
-                        let field_value = match fields_map.get("policy_bindings") {
+                        let field_value = match fields_map.get("policyBindings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_bindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyBindings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

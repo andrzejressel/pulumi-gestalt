@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cluster_tier: {
-                        let field_value = match fields_map.get("cluster_tier") {
+                        let field_value = match fields_map.get("clusterTier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cluster_tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clusterTier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#desired_tier: {
-                        let field_value = match fields_map.get("desired_tier") {
+                        let field_value = match fields_map.get("desiredTier") {
                             Some(value) => value,
-                            None => bail!("Missing field 'desired_tier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'desiredTier' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

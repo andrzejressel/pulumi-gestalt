@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#custom_request_handling: {
-                        let field_value = match fields_map.get("custom_request_handling") {
+                        let field_value = match fields_map.get("customRequestHandling") {
                             Some(value) => value,
-                            None => bail!("Missing field 'custom_request_handling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'customRequestHandling' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#failure_strings: {
-                        let field_value = match fields_map.get("failure_strings") {
+                        let field_value = match fields_map.get("failureStrings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_strings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureStrings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#success_strings: {
-                        let field_value = match fields_map.get("success_strings") {
+                        let field_value = match fields_map.get("successStrings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'success_strings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'successStrings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

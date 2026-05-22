@@ -212,121 +212,121 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#enable_backend_ssl_30: {
-                        let field_value = match fields_map.get("enable_backend_ssl_30") {
+                        let field_value = match fields_map.get("enableBackendSsl30") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_backend_ssl_30' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableBackendSsl30' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_backend_tls_10: {
-                        let field_value = match fields_map.get("enable_backend_tls_10") {
+                        let field_value = match fields_map.get("enableBackendTls10") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_backend_tls_10' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableBackendTls10' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_backend_tls_11: {
-                        let field_value = match fields_map.get("enable_backend_tls_11") {
+                        let field_value = match fields_map.get("enableBackendTls11") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_backend_tls_11' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableBackendTls11' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_frontend_ssl_30: {
-                        let field_value = match fields_map.get("enable_frontend_ssl_30") {
+                        let field_value = match fields_map.get("enableFrontendSsl30") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_frontend_ssl_30' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableFrontendSsl30' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_frontend_tls_10: {
-                        let field_value = match fields_map.get("enable_frontend_tls_10") {
+                        let field_value = match fields_map.get("enableFrontendTls10") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_frontend_tls_10' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableFrontendTls10' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_frontend_tls_11: {
-                        let field_value = match fields_map.get("enable_frontend_tls_11") {
+                        let field_value = match fields_map.get("enableFrontendTls11") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_frontend_tls_11' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableFrontendTls11' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsEcdheEcdsaWithAes128CbcShaCiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_ecdhe_ecdsa_with_aes_128_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsEcdheEcdsaWithAes128CbcShaCiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsEcdheEcdsaWithAes256CbcShaCiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_ecdhe_ecdsa_with_aes_256_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsEcdheEcdsaWithAes256CbcShaCiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsEcdheRsaWithAes128CbcShaCiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_ecdhe_rsa_with_aes_128_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsEcdheRsaWithAes128CbcShaCiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsEcdheRsaWithAes256CbcShaCiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_ecdhe_rsa_with_aes_256_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsEcdheRsaWithAes256CbcShaCiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsRsaWithAes128CbcSha256CiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_rsa_with_aes_128_cbc_sha_256_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsRsaWithAes128CbcSha256CiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_rsa_with_aes_128_cbc_sha_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_rsa_with_aes_128_cbc_sha_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsRsaWithAes128CbcShaCiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_rsa_with_aes_128_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsRsaWithAes128CbcShaCiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsRsaWithAes128GcmSha256CiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_rsa_with_aes_128_gcm_sha_256_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsRsaWithAes128GcmSha256CiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsRsaWithAes256CbcSha256CiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_rsa_with_aes_256_cbc_sha_256_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsRsaWithAes256CbcSha256CiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_rsa_with_aes_256_cbc_sha_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_rsa_with_aes_256_cbc_sha_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsRsaWithAes256CbcShaCiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_rsa_with_aes_256_cbc_sha_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsRsaWithAes256CbcShaCiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled: {
-                        let field_value = match fields_map.get("tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled") {
+                        let field_value = match fields_map.get("tlsRsaWithAes256GcmSha384CiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_rsa_with_aes_256_gcm_sha_384_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsRsaWithAes256GcmSha384CiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#triple_des_ciphers_enabled: {
-                        let field_value = match fields_map.get("triple_des_ciphers_enabled") {
+                        let field_value = match fields_map.get("tripleDesCiphersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'triple_des_ciphers_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tripleDesCiphersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#insights_enabled: {
-                        let field_value = match fields_map.get("insights_enabled") {
+                        let field_value = match fields_map.get("insightsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insights_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insightsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#notifications_enabled: {
-                        let field_value = match fields_map.get("notifications_enabled") {
+                        let field_value = match fields_map.get("notificationsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notifications_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#bid_price: {
-                        let field_value = match fields_map.get("bid_price") {
+                        let field_value = match fields_map.get("bidPrice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bid_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bidPrice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bid_price_as_percentage_of_on_demand_price: {
-                        let field_value = match fields_map.get("bid_price_as_percentage_of_on_demand_price") {
+                        let field_value = match fields_map.get("bidPriceAsPercentageOfOnDemandPrice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bid_price_as_percentage_of_on_demand_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bidPriceAsPercentageOfOnDemandPrice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,23 +111,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ebs_configs: {
-                        let field_value = match fields_map.get("ebs_configs") {
+                        let field_value = match fields_map.get("ebsConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ebs_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ebsConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_type: {
-                        let field_value = match fields_map.get("instance_type") {
+                        let field_value = match fields_map.get("instanceType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#weighted_capacity: {
-                        let field_value = match fields_map.get("weighted_capacity") {
+                        let field_value = match fields_map.get("weightedCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'weighted_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'weightedCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

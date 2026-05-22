@@ -49,9 +49,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#block_storage: {
-                        let field_value = match fields_map.get("block_storage") {
+                        let field_value = match fields_map.get("blockStorage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'block_storage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blockStorage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

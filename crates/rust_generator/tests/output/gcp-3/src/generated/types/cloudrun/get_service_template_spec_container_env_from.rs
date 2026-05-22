@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#config_map_reves: {
-                        let field_value = match fields_map.get("config_map_reves") {
+                        let field_value = match fields_map.get("configMapReves") {
                             Some(value) => value,
-                            None => bail!("Missing field 'config_map_reves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'configMapReves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secret_reves: {
-                        let field_value = match fields_map.get("secret_reves") {
+                        let field_value = match fields_map.get("secretReves") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_reves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretReves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

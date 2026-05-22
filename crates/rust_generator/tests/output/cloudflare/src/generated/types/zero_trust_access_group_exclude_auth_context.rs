@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
 
                 Ok(Self {
                     r#ac_id: {
-                        let field_value = match fields_map.get("ac_id") {
+                        let field_value = match fields_map.get("acId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ac_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'acId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -80,9 +80,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_provider_id: {
-                        let field_value = match fields_map.get("identity_provider_id") {
+                        let field_value = match fields_map.get("identityProviderId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_provider_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityProviderId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

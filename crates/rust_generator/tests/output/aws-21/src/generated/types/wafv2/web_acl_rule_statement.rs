@@ -162,107 +162,107 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#and_statement: {
-                        let field_value = match fields_map.get("and_statement") {
+                        let field_value = match fields_map.get("andStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'and_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'andStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#byte_match_statement: {
-                        let field_value = match fields_map.get("byte_match_statement") {
+                        let field_value = match fields_map.get("byteMatchStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'byte_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'byteMatchStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#geo_match_statement: {
-                        let field_value = match fields_map.get("geo_match_statement") {
+                        let field_value = match fields_map.get("geoMatchStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'geo_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'geoMatchStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_set_reference_statement: {
-                        let field_value = match fields_map.get("ip_set_reference_statement") {
+                        let field_value = match fields_map.get("ipSetReferenceStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_set_reference_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipSetReferenceStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#label_match_statement: {
-                        let field_value = match fields_map.get("label_match_statement") {
+                        let field_value = match fields_map.get("labelMatchStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'label_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'labelMatchStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_rule_group_statement: {
-                        let field_value = match fields_map.get("managed_rule_group_statement") {
+                        let field_value = match fields_map.get("managedRuleGroupStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_rule_group_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedRuleGroupStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_statement: {
-                        let field_value = match fields_map.get("not_statement") {
+                        let field_value = match fields_map.get("notStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#or_statement: {
-                        let field_value = match fields_map.get("or_statement") {
+                        let field_value = match fields_map.get("orStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'or_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'orStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rate_based_statement: {
-                        let field_value = match fields_map.get("rate_based_statement") {
+                        let field_value = match fields_map.get("rateBasedStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rate_based_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rateBasedStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regex_match_statement: {
-                        let field_value = match fields_map.get("regex_match_statement") {
+                        let field_value = match fields_map.get("regexMatchStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regex_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regexMatchStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#regex_pattern_set_reference_statement: {
-                        let field_value = match fields_map.get("regex_pattern_set_reference_statement") {
+                        let field_value = match fields_map.get("regexPatternSetReferenceStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'regex_pattern_set_reference_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regexPatternSetReferenceStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_group_reference_statement: {
-                        let field_value = match fields_map.get("rule_group_reference_statement") {
+                        let field_value = match fields_map.get("ruleGroupReferenceStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_group_reference_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleGroupReferenceStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#size_constraint_statement: {
-                        let field_value = match fields_map.get("size_constraint_statement") {
+                        let field_value = match fields_map.get("sizeConstraintStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'size_constraint_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizeConstraintStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sqli_match_statement: {
-                        let field_value = match fields_map.get("sqli_match_statement") {
+                        let field_value = match fields_map.get("sqliMatchStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sqli_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqliMatchStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#xss_match_statement: {
-                        let field_value = match fields_map.get("xss_match_statement") {
+                        let field_value = match fields_map.get("xssMatchStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'xss_match_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'xssMatchStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

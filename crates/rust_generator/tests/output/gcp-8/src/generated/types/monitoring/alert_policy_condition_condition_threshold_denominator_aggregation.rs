@@ -145,30 +145,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#alignment_period: {
-                        let field_value = match fields_map.get("alignment_period") {
+                        let field_value = match fields_map.get("alignmentPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'alignment_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alignmentPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cross_series_reducer: {
-                        let field_value = match fields_map.get("cross_series_reducer") {
+                        let field_value = match fields_map.get("crossSeriesReducer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cross_series_reducer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'crossSeriesReducer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#group_by_fields: {
-                        let field_value = match fields_map.get("group_by_fields") {
+                        let field_value = match fields_map.get("groupByFields") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_by_fields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupByFields' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#per_series_aligner: {
-                        let field_value = match fields_map.get("per_series_aligner") {
+                        let field_value = match fields_map.get("perSeriesAligner") {
                             Some(value) => value,
-                            None => bail!("Missing field 'per_series_aligner' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'perSeriesAligner' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

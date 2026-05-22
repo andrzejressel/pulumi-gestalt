@@ -76,23 +76,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#classifications_includeds: {
-                        let field_value = match fields_map.get("classifications_includeds") {
+                        let field_value = match fields_map.get("classificationsIncludeds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'classifications_includeds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'classificationsIncludeds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_knowledge_base_numbers: {
-                        let field_value = match fields_map.get("excluded_knowledge_base_numbers") {
+                        let field_value = match fields_map.get("excludedKnowledgeBaseNumbers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_knowledge_base_numbers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedKnowledgeBaseNumbers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#included_knowledge_base_numbers: {
-                        let field_value = match fields_map.get("included_knowledge_base_numbers") {
+                        let field_value = match fields_map.get("includedKnowledgeBaseNumbers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'included_knowledge_base_numbers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'includedKnowledgeBaseNumbers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

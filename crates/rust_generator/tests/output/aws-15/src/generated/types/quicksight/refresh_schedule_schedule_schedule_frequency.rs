@@ -81,16 +81,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#refresh_on_day: {
-                        let field_value = match fields_map.get("refresh_on_day") {
+                        let field_value = match fields_map.get("refreshOnDay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'refresh_on_day' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'refreshOnDay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#time_of_the_day: {
-                        let field_value = match fields_map.get("time_of_the_day") {
+                        let field_value = match fields_map.get("timeOfTheDay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'time_of_the_day' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeOfTheDay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

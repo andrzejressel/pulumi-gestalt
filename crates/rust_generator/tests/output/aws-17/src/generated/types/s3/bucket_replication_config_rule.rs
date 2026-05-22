@@ -114,9 +114,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#delete_marker_replication: {
-                        let field_value = match fields_map.get("delete_marker_replication") {
+                        let field_value = match fields_map.get("deleteMarkerReplication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'delete_marker_replication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deleteMarkerReplication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -128,9 +128,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#existing_object_replication: {
-                        let field_value = match fields_map.get("existing_object_replication") {
+                        let field_value = match fields_map.get("existingObjectReplication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'existing_object_replication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'existingObjectReplication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -163,9 +163,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_selection_criteria: {
-                        let field_value = match fields_map.get("source_selection_criteria") {
+                        let field_value = match fields_map.get("sourceSelectionCriteria") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_selection_criteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceSelectionCriteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

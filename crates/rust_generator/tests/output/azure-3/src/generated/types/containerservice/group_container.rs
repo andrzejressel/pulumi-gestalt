@@ -168,16 +168,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_limit: {
-                        let field_value = match fields_map.get("cpu_limit") {
+                        let field_value = match fields_map.get("cpuLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#environment_variables: {
-                        let field_value = match fields_map.get("environment_variables") {
+                        let field_value = match fields_map.get("environmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'environmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -189,9 +189,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#liveness_probe: {
-                        let field_value = match fields_map.get("liveness_probe") {
+                        let field_value = match fields_map.get("livenessProbe") {
                             Some(value) => value,
-                            None => bail!("Missing field 'liveness_probe' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'livenessProbe' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -203,9 +203,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_limit: {
-                        let field_value = match fields_map.get("memory_limit") {
+                        let field_value = match fields_map.get("memoryLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -224,16 +224,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#readiness_probe: {
-                        let field_value = match fields_map.get("readiness_probe") {
+                        let field_value = match fields_map.get("readinessProbe") {
                             Some(value) => value,
-                            None => bail!("Missing field 'readiness_probe' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'readinessProbe' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secure_environment_variables: {
-                        let field_value = match fields_map.get("secure_environment_variables") {
+                        let field_value = match fields_map.get("secureEnvironmentVariables") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secure_environment_variables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secureEnvironmentVariables' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

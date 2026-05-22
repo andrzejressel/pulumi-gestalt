@@ -108,58 +108,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#apex_uri: {
-                        let field_value = match fields_map.get("apex_uri") {
+                        let field_value = match fields_map.get("apexUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'apex_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'apexUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_transforms_uri: {
-                        let field_value = match fields_map.get("database_transforms_uri") {
+                        let field_value = match fields_map.get("databaseTransformsUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_transforms_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseTransformsUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#graph_studio_uri: {
-                        let field_value = match fields_map.get("graph_studio_uri") {
+                        let field_value = match fields_map.get("graphStudioUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'graph_studio_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'graphStudioUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#machine_learning_notebook_uri: {
-                        let field_value = match fields_map.get("machine_learning_notebook_uri") {
+                        let field_value = match fields_map.get("machineLearningNotebookUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'machine_learning_notebook_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'machineLearningNotebookUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#machine_learning_user_management_uri: {
-                        let field_value = match fields_map.get("machine_learning_user_management_uri") {
+                        let field_value = match fields_map.get("machineLearningUserManagementUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'machine_learning_user_management_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'machineLearningUserManagementUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mongo_db_uri: {
-                        let field_value = match fields_map.get("mongo_db_uri") {
+                        let field_value = match fields_map.get("mongoDbUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mongo_db_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mongoDbUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ords_uri: {
-                        let field_value = match fields_map.get("ords_uri") {
+                        let field_value = match fields_map.get("ordsUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ords_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ordsUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sql_dev_web_uri: {
-                        let field_value = match fields_map.get("sql_dev_web_uri") {
+                        let field_value = match fields_map.get("sqlDevWebUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sql_dev_web_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sqlDevWebUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

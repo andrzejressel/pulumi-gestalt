@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#permanent_delete_enabled: {
-                        let field_value = match fields_map.get("permanent_delete_enabled") {
+                        let field_value = match fields_map.get("permanentDeleteEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'permanent_delete_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'permanentDeleteEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

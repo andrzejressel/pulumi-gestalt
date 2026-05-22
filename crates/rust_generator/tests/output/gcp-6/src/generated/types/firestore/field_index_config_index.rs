@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#array_config: {
-                        let field_value = match fields_map.get("array_config") {
+                        let field_value = match fields_map.get("arrayConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'array_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'arrayConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,9 +88,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#query_scope: {
-                        let field_value = match fields_map.get("query_scope") {
+                        let field_value = match fields_map.get("queryScope") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_scope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryScope' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

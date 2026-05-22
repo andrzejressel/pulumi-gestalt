@@ -193,16 +193,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_logging: {
-                        let field_value = match fields_map.get("enable_logging") {
+                        let field_value = match fields_map.get("enableLogging") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_logging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableLogging' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#match_: {
-                        let field_value = match fields_map.get("match_") {
+                        let field_value = match fields_map.get("match") {
                             Some(value) => value,
-                            None => bail!("Missing field 'match_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'match' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -214,37 +214,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rule_name: {
-                        let field_value = match fields_map.get("rule_name") {
+                        let field_value = match fields_map.get("ruleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rule_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ruleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_profile_group: {
-                        let field_value = match fields_map.get("security_profile_group") {
+                        let field_value = match fields_map.get("securityProfileGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_profile_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityProfileGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_secure_tags: {
-                        let field_value = match fields_map.get("target_secure_tags") {
+                        let field_value = match fields_map.get("targetSecureTags") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_secure_tags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetSecureTags' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_service_accounts: {
-                        let field_value = match fields_map.get("target_service_accounts") {
+                        let field_value = match fields_map.get("targetServiceAccounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_service_accounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetServiceAccounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tls_inspect: {
-                        let field_value = match fields_map.get("tls_inspect") {
+                        let field_value = match fields_map.get("tlsInspect") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tls_inspect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tlsInspect' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

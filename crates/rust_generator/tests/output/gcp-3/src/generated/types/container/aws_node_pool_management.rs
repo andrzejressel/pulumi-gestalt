@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#auto_repair: {
-                        let field_value = match fields_map.get("auto_repair") {
+                        let field_value = match fields_map.get("autoRepair") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_repair' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoRepair' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

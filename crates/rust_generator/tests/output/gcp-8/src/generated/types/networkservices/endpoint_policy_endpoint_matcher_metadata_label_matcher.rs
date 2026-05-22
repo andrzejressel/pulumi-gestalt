@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#metadata_label_match_criteria: {
-                        let field_value = match fields_map.get("metadata_label_match_criteria") {
+                        let field_value = match fields_map.get("metadataLabelMatchCriteria") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metadata_label_match_criteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metadataLabelMatchCriteria' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metadata_labels: {
-                        let field_value = match fields_map.get("metadata_labels") {
+                        let field_value = match fields_map.get("metadataLabels") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metadata_labels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metadataLabels' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

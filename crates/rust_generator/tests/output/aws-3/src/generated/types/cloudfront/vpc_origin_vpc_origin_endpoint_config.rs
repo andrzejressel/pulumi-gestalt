@@ -97,16 +97,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_port: {
-                        let field_value = match fields_map.get("http_port") {
+                        let field_value = match fields_map.get("httpPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#https_port: {
-                        let field_value = match fields_map.get("https_port") {
+                        let field_value = match fields_map.get("httpsPort") {
                             Some(value) => value,
-                            None => bail!("Missing field 'https_port' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'httpsPort' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -118,16 +118,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_protocol_policy: {
-                        let field_value = match fields_map.get("origin_protocol_policy") {
+                        let field_value = match fields_map.get("originProtocolPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'origin_protocol_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'originProtocolPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#origin_ssl_protocols: {
-                        let field_value = match fields_map.get("origin_ssl_protocols") {
+                        let field_value = match fields_map.get("originSslProtocols") {
                             Some(value) => value,
-                            None => bail!("Missing field 'origin_ssl_protocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'originSslProtocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

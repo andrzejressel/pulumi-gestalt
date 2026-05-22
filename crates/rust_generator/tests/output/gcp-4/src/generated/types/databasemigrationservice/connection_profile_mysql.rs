@@ -102,9 +102,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#cloud_sql_id: {
-                        let field_value = match fields_map.get("cloud_sql_id") {
+                        let field_value = match fields_map.get("cloudSqlId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_sql_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudSqlId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -123,9 +123,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_set: {
-                        let field_value = match fields_map.get("password_set") {
+                        let field_value = match fields_map.get("passwordSet") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_set' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordSet' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

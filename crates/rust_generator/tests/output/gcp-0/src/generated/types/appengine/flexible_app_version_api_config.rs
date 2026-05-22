@@ -87,9 +87,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
 
                 Ok(Self {
                     r#auth_fail_action: {
-                        let field_value = match fields_map.get("auth_fail_action") {
+                        let field_value = match fields_map.get("authFailAction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auth_fail_action' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authFailAction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -108,9 +108,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for F
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_level: {
-                        let field_value = match fields_map.get("security_level") {
+                        let field_value = match fields_map.get("securityLevel") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_level' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityLevel' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

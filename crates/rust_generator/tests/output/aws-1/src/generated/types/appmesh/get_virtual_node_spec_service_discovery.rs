@@ -56,9 +56,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#aws_cloud_maps: {
-                        let field_value = match fields_map.get("aws_cloud_maps") {
+                        let field_value = match fields_map.get("awsCloudMaps") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_cloud_maps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsCloudMaps' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

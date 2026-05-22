@@ -73,9 +73,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#cron_schedule: {
-                        let field_value = match fields_map.get("cron_schedule") {
+                        let field_value = match fields_map.get("cronSchedule") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cron_schedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cronSchedule' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -87,9 +87,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rpo_config: {
-                        let field_value = match fields_map.get("rpo_config") {
+                        let field_value = match fields_map.get("rpoConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rpo_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rpoConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

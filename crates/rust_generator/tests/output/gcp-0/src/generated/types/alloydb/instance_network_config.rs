@@ -71,23 +71,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#authorized_external_networks: {
-                        let field_value = match fields_map.get("authorized_external_networks") {
+                        let field_value = match fields_map.get("authorizedExternalNetworks") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorized_external_networks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorizedExternalNetworks' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_outbound_public_ip: {
-                        let field_value = match fields_map.get("enable_outbound_public_ip") {
+                        let field_value = match fields_map.get("enableOutboundPublicIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_outbound_public_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableOutboundPublicIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_public_ip: {
-                        let field_value = match fields_map.get("enable_public_ip") {
+                        let field_value = match fields_map.get("enablePublicIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_public_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enablePublicIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#control_plane_vip: {
-                        let field_value = match fields_map.get("control_plane_vip") {
+                        let field_value = match fields_map.get("controlPlaneVip") {
                             Some(value) => value,
-                            None => bail!("Missing field 'control_plane_vip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'controlPlaneVip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

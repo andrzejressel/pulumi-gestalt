@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#aws_accounts: {
-                        let field_value = match fields_map.get("aws_accounts") {
+                        let field_value = match fields_map.get("awsAccounts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_accounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsAccounts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#aws_services: {
-                        let field_value = match fields_map.get("aws_services") {
+                        let field_value = match fields_map.get("awsServices") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_services' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsServices' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

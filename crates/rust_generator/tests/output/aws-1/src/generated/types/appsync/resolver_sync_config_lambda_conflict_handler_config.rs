@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#lambda_conflict_handler_arn: {
-                        let field_value = match fields_map.get("lambda_conflict_handler_arn") {
+                        let field_value = match fields_map.get("lambdaConflictHandlerArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_conflict_handler_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaConflictHandlerArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

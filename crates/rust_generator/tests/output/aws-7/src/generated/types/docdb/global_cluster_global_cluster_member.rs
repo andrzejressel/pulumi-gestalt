@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#db_cluster_arn: {
-                        let field_value = match fields_map.get("db_cluster_arn") {
+                        let field_value = match fields_map.get("dbClusterArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'db_cluster_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dbClusterArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#is_writer: {
-                        let field_value = match fields_map.get("is_writer") {
+                        let field_value = match fields_map.get("isWriter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'is_writer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'isWriter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

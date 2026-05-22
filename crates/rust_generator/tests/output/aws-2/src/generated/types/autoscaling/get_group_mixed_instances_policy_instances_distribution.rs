@@ -89,44 +89,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#on_demand_allocation_strategy: {
-                        let field_value = match fields_map.get("on_demand_allocation_strategy") {
+                        let field_value = match fields_map.get("onDemandAllocationStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_demand_allocation_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onDemandAllocationStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_demand_base_capacity: {
-                        let field_value = match fields_map.get("on_demand_base_capacity") {
+                        let field_value = match fields_map.get("onDemandBaseCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_demand_base_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onDemandBaseCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_demand_percentage_above_base_capacity: {
-                        let field_value = match fields_map.get("on_demand_percentage_above_base_capacity") {
+                        let field_value = match fields_map.get("onDemandPercentageAboveBaseCapacity") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_demand_percentage_above_base_capacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onDemandPercentageAboveBaseCapacity' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spot_allocation_strategy: {
-                        let field_value = match fields_map.get("spot_allocation_strategy") {
+                        let field_value = match fields_map.get("spotAllocationStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spot_allocation_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spotAllocationStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spot_instance_pools: {
-                        let field_value = match fields_map.get("spot_instance_pools") {
+                        let field_value = match fields_map.get("spotInstancePools") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spot_instance_pools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spotInstancePools' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#spot_max_price: {
-                        let field_value = match fields_map.get("spot_max_price") {
+                        let field_value = match fields_map.get("spotMaxPrice") {
                             Some(value) => value,
-                            None => bail!("Missing field 'spot_max_price' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'spotMaxPrice' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

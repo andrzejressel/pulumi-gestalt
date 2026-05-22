@@ -122,72 +122,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#allowed_unsafe_sysctls: {
-                        let field_value = match fields_map.get("allowed_unsafe_sysctls") {
+                        let field_value = match fields_map.get("allowedUnsafeSysctls") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_unsafe_sysctls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedUnsafeSysctls' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_log_max_line: {
-                        let field_value = match fields_map.get("container_log_max_line") {
+                        let field_value = match fields_map.get("containerLogMaxLine") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_log_max_line' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerLogMaxLine' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#container_log_max_size_mb: {
-                        let field_value = match fields_map.get("container_log_max_size_mb") {
+                        let field_value = match fields_map.get("containerLogMaxSizeMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'container_log_max_size_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'containerLogMaxSizeMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_cfs_quota_enabled: {
-                        let field_value = match fields_map.get("cpu_cfs_quota_enabled") {
+                        let field_value = match fields_map.get("cpuCfsQuotaEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_cfs_quota_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuCfsQuotaEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_cfs_quota_period: {
-                        let field_value = match fields_map.get("cpu_cfs_quota_period") {
+                        let field_value = match fields_map.get("cpuCfsQuotaPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_cfs_quota_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuCfsQuotaPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_manager_policy: {
-                        let field_value = match fields_map.get("cpu_manager_policy") {
+                        let field_value = match fields_map.get("cpuManagerPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_manager_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuManagerPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_gc_high_threshold: {
-                        let field_value = match fields_map.get("image_gc_high_threshold") {
+                        let field_value = match fields_map.get("imageGcHighThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_gc_high_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageGcHighThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#image_gc_low_threshold: {
-                        let field_value = match fields_map.get("image_gc_low_threshold") {
+                        let field_value = match fields_map.get("imageGcLowThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'image_gc_low_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'imageGcLowThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_max_pid: {
-                        let field_value = match fields_map.get("pod_max_pid") {
+                        let field_value = match fields_map.get("podMaxPid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_max_pid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podMaxPid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#topology_manager_policy: {
-                        let field_value = match fields_map.get("topology_manager_policy") {
+                        let field_value = match fields_map.get("topologyManagerPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'topology_manager_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'topologyManagerPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

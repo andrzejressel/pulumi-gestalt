@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#ambiguous_role_resolution: {
-                        let field_value = match fields_map.get("ambiguous_role_resolution") {
+                        let field_value = match fields_map.get("ambiguousRoleResolution") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ambiguous_role_resolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ambiguousRoleResolution' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#identity_provider: {
-                        let field_value = match fields_map.get("identity_provider") {
+                        let field_value = match fields_map.get("identityProvider") {
                             Some(value) => value,
-                            None => bail!("Missing field 'identity_provider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'identityProvider' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mapping_rules: {
-                        let field_value = match fields_map.get("mapping_rules") {
+                        let field_value = match fields_map.get("mappingRules") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mapping_rules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mappingRules' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

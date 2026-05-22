@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#certificate_authority_arn: {
-                        let field_value = match fields_map.get("certificate_authority_arn") {
+                        let field_value = match fields_map.get("certificateAuthorityArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certificate_authority_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificateAuthorityArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#check_certificate_revocation_status: {
-                        let field_value = match fields_map.get("check_certificate_revocation_status") {
+                        let field_value = match fields_map.get("checkCertificateRevocationStatus") {
                             Some(value) => value,
-                            None => bail!("Missing field 'check_certificate_revocation_status' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'checkCertificateRevocationStatus' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -95,9 +95,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#server_certificates: {
-                        let field_value = match fields_map.get("server_certificates") {
+                        let field_value = match fields_map.get("serverCertificates") {
                             Some(value) => value,
-                            None => bail!("Missing field 'server_certificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serverCertificates' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

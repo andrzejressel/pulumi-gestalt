@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#on_partial_upload: {
-                        let field_value = match fields_map.get("on_partial_upload") {
+                        let field_value = match fields_map.get("onPartialUpload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_partial_upload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onPartialUpload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#on_upload: {
-                        let field_value = match fields_map.get("on_upload") {
+                        let field_value = match fields_map.get("onUpload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'on_upload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'onUpload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

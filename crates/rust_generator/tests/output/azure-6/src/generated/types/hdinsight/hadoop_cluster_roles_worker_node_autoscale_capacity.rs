@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#max_instance_count: {
-                        let field_value = match fields_map.get("max_instance_count") {
+                        let field_value = match fields_map.get("maxInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_instance_count: {
-                        let field_value = match fields_map.get("min_instance_count") {
+                        let field_value = match fields_map.get("minInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

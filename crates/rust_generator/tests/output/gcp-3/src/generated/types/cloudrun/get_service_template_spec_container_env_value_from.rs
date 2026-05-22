@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#secret_key_reves: {
-                        let field_value = match fields_map.get("secret_key_reves") {
+                        let field_value = match fields_map.get("secretKeyReves") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_key_reves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretKeyReves' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

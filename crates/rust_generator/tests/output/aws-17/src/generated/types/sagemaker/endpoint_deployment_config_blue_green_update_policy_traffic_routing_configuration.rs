@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#canary_size: {
-                        let field_value = match fields_map.get("canary_size") {
+                        let field_value = match fields_map.get("canarySize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'canary_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'canarySize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#linear_step_size: {
-                        let field_value = match fields_map.get("linear_step_size") {
+                        let field_value = match fields_map.get("linearStepSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linear_step_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linearStepSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wait_interval_in_seconds: {
-                        let field_value = match fields_map.get("wait_interval_in_seconds") {
+                        let field_value = match fields_map.get("waitIntervalInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wait_interval_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'waitIntervalInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

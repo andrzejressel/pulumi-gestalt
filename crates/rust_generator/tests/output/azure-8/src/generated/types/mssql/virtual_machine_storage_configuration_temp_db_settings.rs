@@ -98,44 +98,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#data_file_count: {
-                        let field_value = match fields_map.get("data_file_count") {
+                        let field_value = match fields_map.get("dataFileCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_file_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataFileCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_file_growth_in_mb: {
-                        let field_value = match fields_map.get("data_file_growth_in_mb") {
+                        let field_value = match fields_map.get("dataFileGrowthInMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_file_growth_in_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataFileGrowthInMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#data_file_size_mb: {
-                        let field_value = match fields_map.get("data_file_size_mb") {
+                        let field_value = match fields_map.get("dataFileSizeMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'data_file_size_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dataFileSizeMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_file_path: {
-                        let field_value = match fields_map.get("default_file_path") {
+                        let field_value = match fields_map.get("defaultFilePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_file_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultFilePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_file_growth_mb: {
-                        let field_value = match fields_map.get("log_file_growth_mb") {
+                        let field_value = match fields_map.get("logFileGrowthMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_file_growth_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logFileGrowthMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_file_size_mb: {
-                        let field_value = match fields_map.get("log_file_size_mb") {
+                        let field_value = match fields_map.get("logFileSizeMb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_file_size_mb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logFileSizeMb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

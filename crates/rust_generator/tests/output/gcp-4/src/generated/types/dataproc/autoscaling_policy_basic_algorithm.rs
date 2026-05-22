@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#cooldown_period: {
-                        let field_value = match fields_map.get("cooldown_period") {
+                        let field_value = match fields_map.get("cooldownPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cooldown_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cooldownPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#yarn_config: {
-                        let field_value = match fields_map.get("yarn_config") {
+                        let field_value = match fields_map.get("yarnConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'yarn_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'yarnConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

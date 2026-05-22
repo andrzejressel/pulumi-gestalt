@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#totp_provider_config: {
-                        let field_value = match fields_map.get("totp_provider_config") {
+                        let field_value = match fields_map.get("totpProviderConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'totp_provider_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'totpProviderConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

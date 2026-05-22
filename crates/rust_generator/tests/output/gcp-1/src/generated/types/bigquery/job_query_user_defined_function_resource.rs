@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#inline_code: {
-                        let field_value = match fields_map.get("inline_code") {
+                        let field_value = match fields_map.get("inlineCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'inline_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'inlineCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#resource_uri: {
-                        let field_value = match fields_map.get("resource_uri") {
+                        let field_value = match fields_map.get("resourceUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'resource_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'resourceUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

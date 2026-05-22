@@ -92,44 +92,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#newer_than: {
-                        let field_value = match fields_map.get("newer_than") {
+                        let field_value = match fields_map.get("newerThan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'newer_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'newerThan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#older_than: {
-                        let field_value = match fields_map.get("older_than") {
+                        let field_value = match fields_map.get("olderThan") {
                             Some(value) => value,
-                            None => bail!("Missing field 'older_than' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'olderThan' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#package_name_prefixes: {
-                        let field_value = match fields_map.get("package_name_prefixes") {
+                        let field_value = match fields_map.get("packageNamePrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'package_name_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'packageNamePrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_prefixes: {
-                        let field_value = match fields_map.get("tag_prefixes") {
+                        let field_value = match fields_map.get("tagPrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagPrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_state: {
-                        let field_value = match fields_map.get("tag_state") {
+                        let field_value = match fields_map.get("tagState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#version_name_prefixes: {
-                        let field_value = match fields_map.get("version_name_prefixes") {
+                        let field_value = match fields_map.get("versionNamePrefixes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'version_name_prefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'versionNamePrefixes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

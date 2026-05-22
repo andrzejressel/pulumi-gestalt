@@ -78,9 +78,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#not_ins: {
-                        let field_value = match fields_map.get("not_ins") {
+                        let field_value = match fields_map.get("notIns") {
                             Some(value) => value,
-                            None => bail!("Missing field 'not_ins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notIns' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

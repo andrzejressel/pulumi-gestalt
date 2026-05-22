@@ -67,9 +67,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Q
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_account_email: {
-                        let field_value = match fields_map.get("service_account_email") {
+                        let field_value = match fields_map.get("serviceAccountEmail") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_account_email' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceAccountEmail' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

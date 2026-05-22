@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#application_restore_type: {
-                        let field_value = match fields_map.get("application_restore_type") {
+                        let field_value = match fields_map.get("applicationRestoreType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_restore_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationRestoreType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#snapshot_name: {
-                        let field_value = match fields_map.get("snapshot_name") {
+                        let field_value = match fields_map.get("snapshotName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'snapshot_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'snapshotName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

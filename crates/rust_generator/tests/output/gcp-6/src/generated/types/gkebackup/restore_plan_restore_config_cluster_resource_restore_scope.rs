@@ -83,30 +83,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#all_group_kinds: {
-                        let field_value = match fields_map.get("all_group_kinds") {
+                        let field_value = match fields_map.get("allGroupKinds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'all_group_kinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allGroupKinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#excluded_group_kinds: {
-                        let field_value = match fields_map.get("excluded_group_kinds") {
+                        let field_value = match fields_map.get("excludedGroupKinds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'excluded_group_kinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'excludedGroupKinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#no_group_kinds: {
-                        let field_value = match fields_map.get("no_group_kinds") {
+                        let field_value = match fields_map.get("noGroupKinds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'no_group_kinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'noGroupKinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#selected_group_kinds: {
-                        let field_value = match fields_map.get("selected_group_kinds") {
+                        let field_value = match fields_map.get("selectedGroupKinds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'selected_group_kinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'selectedGroupKinds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

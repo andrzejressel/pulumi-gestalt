@@ -52,9 +52,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#default_value_lists: {
-                        let field_value = match fields_map.get("default_value_lists") {
+                        let field_value = match fields_map.get("defaultValueLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_value_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultValueLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

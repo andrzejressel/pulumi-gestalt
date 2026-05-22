@@ -74,16 +74,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#bit_depth: {
-                        let field_value = match fields_map.get("bit_depth") {
+                        let field_value = match fields_map.get("bitDepth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bit_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bitDepth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#bit_order: {
-                        let field_value = match fields_map.get("bit_order") {
+                        let field_value = match fields_map.get("bitOrder") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bit_order' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bitOrder' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

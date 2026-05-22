@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#fleet_arn: {
-                        let field_value = match fields_map.get("fleet_arn") {
+                        let field_value = match fields_map.get("fleetArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fleet_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fleetArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

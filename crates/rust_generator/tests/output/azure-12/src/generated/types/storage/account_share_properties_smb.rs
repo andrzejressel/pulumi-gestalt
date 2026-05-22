@@ -82,30 +82,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#authentication_types: {
-                        let field_value = match fields_map.get("authentication_types") {
+                        let field_value = match fields_map.get("authenticationTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#channel_encryption_types: {
-                        let field_value = match fields_map.get("channel_encryption_types") {
+                        let field_value = match fields_map.get("channelEncryptionTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'channel_encryption_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'channelEncryptionTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kerberos_ticket_encryption_types: {
-                        let field_value = match fields_map.get("kerberos_ticket_encryption_types") {
+                        let field_value = match fields_map.get("kerberosTicketEncryptionTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kerberos_ticket_encryption_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kerberosTicketEncryptionTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multichannel_enabled: {
-                        let field_value = match fields_map.get("multichannel_enabled") {
+                        let field_value = match fields_map.get("multichannelEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multichannel_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multichannelEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

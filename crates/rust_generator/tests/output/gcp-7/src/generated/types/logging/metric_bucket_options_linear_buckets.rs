@@ -66,9 +66,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#num_finite_buckets: {
-                        let field_value = match fields_map.get("num_finite_buckets") {
+                        let field_value = match fields_map.get("numFiniteBuckets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'num_finite_buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'numFiniteBuckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

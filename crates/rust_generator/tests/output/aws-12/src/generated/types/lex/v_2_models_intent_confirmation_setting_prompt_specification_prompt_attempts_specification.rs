@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#allow_interrupt: {
-                        let field_value = match fields_map.get("allow_interrupt") {
+                        let field_value = match fields_map.get("allowInterrupt") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_interrupt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowInterrupt' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#allowed_input_types: {
-                        let field_value = match fields_map.get("allowed_input_types") {
+                        let field_value = match fields_map.get("allowedInputTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allowed_input_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowedInputTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#audio_and_dtmf_input_specification: {
-                        let field_value = match fields_map.get("audio_and_dtmf_input_specification") {
+                        let field_value = match fields_map.get("audioAndDtmfInputSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_and_dtmf_input_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioAndDtmfInputSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#map_block_key: {
-                        let field_value = match fields_map.get("map_block_key") {
+                        let field_value = match fields_map.get("mapBlockKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'map_block_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mapBlockKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#text_input_specification: {
-                        let field_value = match fields_map.get("text_input_specification") {
+                        let field_value = match fields_map.get("textInputSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'text_input_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'textInputSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

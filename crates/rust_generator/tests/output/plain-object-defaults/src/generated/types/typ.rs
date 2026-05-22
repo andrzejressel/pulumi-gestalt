@@ -63,16 +63,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#mod_1: {
-                        let field_value = match fields_map.get("mod_1") {
+                        let field_value = match fields_map.get("mod1") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mod_1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mod1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#mod_2: {
-                        let field_value = match fields_map.get("mod_2") {
+                        let field_value = match fields_map.get("mod2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'mod_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mod2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#private_connection: {
-                        let field_value = match fields_map.get("private_connection") {
+                        let field_value = match fields_map.get("privateConnection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'private_connection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'privateConnection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

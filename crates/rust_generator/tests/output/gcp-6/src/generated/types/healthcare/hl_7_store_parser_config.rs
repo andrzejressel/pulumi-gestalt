@@ -78,9 +78,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#allow_null_header: {
-                        let field_value = match fields_map.get("allow_null_header") {
+                        let field_value = match fields_map.get("allowNullHeader") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_null_header' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowNullHeader' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -92,9 +92,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#segment_terminator: {
-                        let field_value = match fields_map.get("segment_terminator") {
+                        let field_value = match fields_map.get("segmentTerminator") {
                             Some(value) => value,
-                            None => bail!("Missing field 'segment_terminator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'segmentTerminator' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

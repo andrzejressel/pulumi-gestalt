@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#consumer_group_id: {
-                        let field_value = match fields_map.get("consumer_group_id") {
+                        let field_value = match fields_map.get("consumerGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'consumer_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'consumerGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

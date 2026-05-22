@@ -164,107 +164,107 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#autoscaling_config: {
-                        let field_value = match fields_map.get("autoscaling_config") {
+                        let field_value = match fields_map.get("autoscalingConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'autoscaling_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoscalingConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#encryption_config: {
-                        let field_value = match fields_map.get("encryption_config") {
+                        let field_value = match fields_map.get("encryptionConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'encryption_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'encryptionConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#endpoint_config: {
-                        let field_value = match fields_map.get("endpoint_config") {
+                        let field_value = match fields_map.get("endpointConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gce_cluster_config: {
-                        let field_value = match fields_map.get("gce_cluster_config") {
+                        let field_value = match fields_map.get("gceClusterConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gce_cluster_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gceClusterConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gke_cluster_config: {
-                        let field_value = match fields_map.get("gke_cluster_config") {
+                        let field_value = match fields_map.get("gkeClusterConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gke_cluster_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gkeClusterConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#initialization_actions: {
-                        let field_value = match fields_map.get("initialization_actions") {
+                        let field_value = match fields_map.get("initializationActions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'initialization_actions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'initializationActions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lifecycle_config: {
-                        let field_value = match fields_map.get("lifecycle_config") {
+                        let field_value = match fields_map.get("lifecycleConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lifecycle_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lifecycleConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#master_config: {
-                        let field_value = match fields_map.get("master_config") {
+                        let field_value = match fields_map.get("masterConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'master_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'masterConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metastore_config: {
-                        let field_value = match fields_map.get("metastore_config") {
+                        let field_value = match fields_map.get("metastoreConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metastore_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metastoreConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#secondary_worker_config: {
-                        let field_value = match fields_map.get("secondary_worker_config") {
+                        let field_value = match fields_map.get("secondaryWorkerConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secondary_worker_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secondaryWorkerConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_config: {
-                        let field_value = match fields_map.get("security_config") {
+                        let field_value = match fields_map.get("securityConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#software_config: {
-                        let field_value = match fields_map.get("software_config") {
+                        let field_value = match fields_map.get("softwareConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'software_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'softwareConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#staging_bucket: {
-                        let field_value = match fields_map.get("staging_bucket") {
+                        let field_value = match fields_map.get("stagingBucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'staging_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'stagingBucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#temp_bucket: {
-                        let field_value = match fields_map.get("temp_bucket") {
+                        let field_value = match fields_map.get("tempBucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 'temp_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tempBucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#worker_config: {
-                        let field_value = match fields_map.get("worker_config") {
+                        let field_value = match fields_map.get("workerConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'worker_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'workerConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -76,9 +76,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#expected_value: {
-                        let field_value = match fields_map.get("expected_value") {
+                        let field_value = match fields_map.get("expectedValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'expected_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'expectedValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -90,16 +90,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#property_path: {
-                        let field_value = match fields_map.get("property_path") {
+                        let field_value = match fields_map.get("propertyPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'property_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'propertyPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#property_type: {
-                        let field_value = match fields_map.get("property_type") {
+                        let field_value = match fields_map.get("propertyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'property_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'propertyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

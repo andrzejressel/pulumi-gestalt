@@ -57,16 +57,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#cloudwatch_logging_option_id: {
-                        let field_value = match fields_map.get("cloudwatch_logging_option_id") {
+                        let field_value = match fields_map.get("cloudwatchLoggingOptionId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudwatch_logging_option_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudwatchLoggingOptionId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#log_stream_arn: {
-                        let field_value = match fields_map.get("log_stream_arn") {
+                        let field_value = match fields_map.get("logStreamArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'log_stream_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'logStreamArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

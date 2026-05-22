@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#evaluate_url: {
-                        let field_value = match fields_map.get("evaluate_url") {
+                        let field_value = match fields_map.get("evaluateUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'evaluate_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'evaluateUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#keys_url: {
-                        let field_value = match fields_map.get("keys_url") {
+                        let field_value = match fields_map.get("keysUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'keys_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'keysUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

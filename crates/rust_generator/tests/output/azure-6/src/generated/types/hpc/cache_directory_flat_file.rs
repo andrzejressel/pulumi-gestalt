@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#group_file_uri: {
-                        let field_value = match fields_map.get("group_file_uri") {
+                        let field_value = match fields_map.get("groupFileUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'group_file_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'groupFileUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#password_file_uri: {
-                        let field_value = match fields_map.get("password_file_uri") {
+                        let field_value = match fields_map.get("passwordFileUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'password_file_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'passwordFileUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

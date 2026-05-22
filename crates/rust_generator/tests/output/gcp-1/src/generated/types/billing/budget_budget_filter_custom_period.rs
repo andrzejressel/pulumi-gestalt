@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#end_date: {
-                        let field_value = match fields_map.get("end_date") {
+                        let field_value = match fields_map.get("endDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'end_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#start_date: {
-                        let field_value = match fields_map.get("start_date") {
+                        let field_value = match fields_map.get("startDate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'start_date' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startDate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

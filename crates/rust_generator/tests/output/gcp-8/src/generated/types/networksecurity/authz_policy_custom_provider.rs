@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#authz_extension: {
-                        let field_value = match fields_map.get("authz_extension") {
+                        let field_value = match fields_map.get("authzExtension") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authz_extension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authzExtension' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cloud_iap: {
-                        let field_value = match fields_map.get("cloud_iap") {
+                        let field_value = match fields_map.get("cloudIap") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_iap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudIap' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

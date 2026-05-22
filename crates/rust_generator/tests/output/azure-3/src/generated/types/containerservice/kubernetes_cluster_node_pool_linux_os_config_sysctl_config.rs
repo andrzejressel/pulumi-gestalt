@@ -274,205 +274,205 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#fs_aio_max_nr: {
-                        let field_value = match fields_map.get("fs_aio_max_nr") {
+                        let field_value = match fields_map.get("fsAioMaxNr") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fs_aio_max_nr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fsAioMaxNr' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fs_file_max: {
-                        let field_value = match fields_map.get("fs_file_max") {
+                        let field_value = match fields_map.get("fsFileMax") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fs_file_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fsFileMax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fs_inotify_max_user_watches: {
-                        let field_value = match fields_map.get("fs_inotify_max_user_watches") {
+                        let field_value = match fields_map.get("fsInotifyMaxUserWatches") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fs_inotify_max_user_watches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fsInotifyMaxUserWatches' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#fs_nr_open: {
-                        let field_value = match fields_map.get("fs_nr_open") {
+                        let field_value = match fields_map.get("fsNrOpen") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fs_nr_open' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fsNrOpen' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#kernel_threads_max: {
-                        let field_value = match fields_map.get("kernel_threads_max") {
+                        let field_value = match fields_map.get("kernelThreadsMax") {
                             Some(value) => value,
-                            None => bail!("Missing field 'kernel_threads_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'kernelThreadsMax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_core_netdev_max_backlog: {
-                        let field_value = match fields_map.get("net_core_netdev_max_backlog") {
+                        let field_value = match fields_map.get("netCoreNetdevMaxBacklog") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_core_netdev_max_backlog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netCoreNetdevMaxBacklog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_core_optmem_max: {
-                        let field_value = match fields_map.get("net_core_optmem_max") {
+                        let field_value = match fields_map.get("netCoreOptmemMax") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_core_optmem_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netCoreOptmemMax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_core_rmem_default: {
-                        let field_value = match fields_map.get("net_core_rmem_default") {
+                        let field_value = match fields_map.get("netCoreRmemDefault") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_core_rmem_default' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netCoreRmemDefault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_core_rmem_max: {
-                        let field_value = match fields_map.get("net_core_rmem_max") {
+                        let field_value = match fields_map.get("netCoreRmemMax") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_core_rmem_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netCoreRmemMax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_core_somaxconn: {
-                        let field_value = match fields_map.get("net_core_somaxconn") {
+                        let field_value = match fields_map.get("netCoreSomaxconn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_core_somaxconn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netCoreSomaxconn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_core_wmem_default: {
-                        let field_value = match fields_map.get("net_core_wmem_default") {
+                        let field_value = match fields_map.get("netCoreWmemDefault") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_core_wmem_default' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netCoreWmemDefault' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_core_wmem_max: {
-                        let field_value = match fields_map.get("net_core_wmem_max") {
+                        let field_value = match fields_map.get("netCoreWmemMax") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_core_wmem_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netCoreWmemMax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_ip_local_port_range_max: {
-                        let field_value = match fields_map.get("net_ipv_4_ip_local_port_range_max") {
+                        let field_value = match fields_map.get("netIpv4IpLocalPortRangeMax") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_ip_local_port_range_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4IpLocalPortRangeMax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_ip_local_port_range_min: {
-                        let field_value = match fields_map.get("net_ipv_4_ip_local_port_range_min") {
+                        let field_value = match fields_map.get("netIpv4IpLocalPortRangeMin") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_ip_local_port_range_min' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4IpLocalPortRangeMin' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_neigh_default_gc_thresh_1: {
-                        let field_value = match fields_map.get("net_ipv_4_neigh_default_gc_thresh_1") {
+                        let field_value = match fields_map.get("netIpv4NeighDefaultGcThresh1") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_neigh_default_gc_thresh_1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4NeighDefaultGcThresh1' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_neigh_default_gc_thresh_2: {
-                        let field_value = match fields_map.get("net_ipv_4_neigh_default_gc_thresh_2") {
+                        let field_value = match fields_map.get("netIpv4NeighDefaultGcThresh2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_neigh_default_gc_thresh_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4NeighDefaultGcThresh2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_neigh_default_gc_thresh_3: {
-                        let field_value = match fields_map.get("net_ipv_4_neigh_default_gc_thresh_3") {
+                        let field_value = match fields_map.get("netIpv4NeighDefaultGcThresh3") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_neigh_default_gc_thresh_3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4NeighDefaultGcThresh3' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_tcp_fin_timeout: {
-                        let field_value = match fields_map.get("net_ipv_4_tcp_fin_timeout") {
+                        let field_value = match fields_map.get("netIpv4TcpFinTimeout") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_tcp_fin_timeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4TcpFinTimeout' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_tcp_keepalive_intvl: {
-                        let field_value = match fields_map.get("net_ipv_4_tcp_keepalive_intvl") {
+                        let field_value = match fields_map.get("netIpv4TcpKeepaliveIntvl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_tcp_keepalive_intvl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4TcpKeepaliveIntvl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_tcp_keepalive_probes: {
-                        let field_value = match fields_map.get("net_ipv_4_tcp_keepalive_probes") {
+                        let field_value = match fields_map.get("netIpv4TcpKeepaliveProbes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_tcp_keepalive_probes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4TcpKeepaliveProbes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_tcp_keepalive_time: {
-                        let field_value = match fields_map.get("net_ipv_4_tcp_keepalive_time") {
+                        let field_value = match fields_map.get("netIpv4TcpKeepaliveTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_tcp_keepalive_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4TcpKeepaliveTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_tcp_max_syn_backlog: {
-                        let field_value = match fields_map.get("net_ipv_4_tcp_max_syn_backlog") {
+                        let field_value = match fields_map.get("netIpv4TcpMaxSynBacklog") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_tcp_max_syn_backlog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4TcpMaxSynBacklog' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_tcp_max_tw_buckets: {
-                        let field_value = match fields_map.get("net_ipv_4_tcp_max_tw_buckets") {
+                        let field_value = match fields_map.get("netIpv4TcpMaxTwBuckets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_tcp_max_tw_buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4TcpMaxTwBuckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_ipv_4_tcp_tw_reuse: {
-                        let field_value = match fields_map.get("net_ipv_4_tcp_tw_reuse") {
+                        let field_value = match fields_map.get("netIpv4TcpTwReuse") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_ipv_4_tcp_tw_reuse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netIpv4TcpTwReuse' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_netfilter_nf_conntrack_buckets: {
-                        let field_value = match fields_map.get("net_netfilter_nf_conntrack_buckets") {
+                        let field_value = match fields_map.get("netNetfilterNfConntrackBuckets") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_netfilter_nf_conntrack_buckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netNetfilterNfConntrackBuckets' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#net_netfilter_nf_conntrack_max: {
-                        let field_value = match fields_map.get("net_netfilter_nf_conntrack_max") {
+                        let field_value = match fields_map.get("netNetfilterNfConntrackMax") {
                             Some(value) => value,
-                            None => bail!("Missing field 'net_netfilter_nf_conntrack_max' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'netNetfilterNfConntrackMax' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_max_map_count: {
-                        let field_value = match fields_map.get("vm_max_map_count") {
+                        let field_value = match fields_map.get("vmMaxMapCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_max_map_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmMaxMapCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_swappiness: {
-                        let field_value = match fields_map.get("vm_swappiness") {
+                        let field_value = match fields_map.get("vmSwappiness") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_swappiness' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmSwappiness' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vm_vfs_cache_pressure: {
-                        let field_value = match fields_map.get("vm_vfs_cache_pressure") {
+                        let field_value = match fields_map.get("vmVfsCachePressure") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vm_vfs_cache_pressure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vmVfsCachePressure' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

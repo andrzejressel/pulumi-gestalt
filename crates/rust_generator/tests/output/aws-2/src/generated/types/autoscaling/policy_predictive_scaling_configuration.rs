@@ -82,23 +82,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#max_capacity_breach_behavior: {
-                        let field_value = match fields_map.get("max_capacity_breach_behavior") {
+                        let field_value = match fields_map.get("maxCapacityBreachBehavior") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_capacity_breach_behavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCapacityBreachBehavior' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_capacity_buffer: {
-                        let field_value = match fields_map.get("max_capacity_buffer") {
+                        let field_value = match fields_map.get("maxCapacityBuffer") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_capacity_buffer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxCapacityBuffer' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_specification: {
-                        let field_value = match fields_map.get("metric_specification") {
+                        let field_value = match fields_map.get("metricSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -110,9 +110,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scheduling_buffer_time: {
-                        let field_value = match fields_map.get("scheduling_buffer_time") {
+                        let field_value = match fields_map.get("schedulingBufferTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scheduling_buffer_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'schedulingBufferTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#malware_protection: {
-                        let field_value = match fields_map.get("malware_protection") {
+                        let field_value = match fields_map.get("malwareProtection") {
                             Some(value) => value,
-                            None => bail!("Missing field 'malware_protection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'malwareProtection' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_logs: {
-                        let field_value = match fields_map.get("s_3_logs") {
+                        let field_value = match fields_map.get("s3Logs") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Logs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

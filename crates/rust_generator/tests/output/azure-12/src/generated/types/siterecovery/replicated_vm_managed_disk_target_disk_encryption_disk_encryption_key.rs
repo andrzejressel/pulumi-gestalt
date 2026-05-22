@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#secret_url: {
-                        let field_value = match fields_map.get("secret_url") {
+                        let field_value = match fields_map.get("secretUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'secret_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'secretUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vault_id: {
-                        let field_value = match fields_map.get("vault_id") {
+                        let field_value = match fields_map.get("vaultId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vault_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vaultId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

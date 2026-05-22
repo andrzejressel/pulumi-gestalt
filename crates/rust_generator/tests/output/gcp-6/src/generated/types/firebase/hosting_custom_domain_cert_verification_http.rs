@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#last_check_time: {
-                        let field_value = match fields_map.get("last_check_time") {
+                        let field_value = match fields_map.get("lastCheckTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'last_check_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lastCheckTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

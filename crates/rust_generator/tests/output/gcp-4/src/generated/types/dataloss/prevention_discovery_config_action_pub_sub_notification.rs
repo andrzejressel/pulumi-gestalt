@@ -77,9 +77,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#detail_of_message: {
-                        let field_value = match fields_map.get("detail_of_message") {
+                        let field_value = match fields_map.get("detailOfMessage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'detail_of_message' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'detailOfMessage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -91,9 +91,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pubsub_condition: {
-                        let field_value = match fields_map.get("pubsub_condition") {
+                        let field_value = match fields_map.get("pubsubCondition") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pubsub_condition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'pubsubCondition' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

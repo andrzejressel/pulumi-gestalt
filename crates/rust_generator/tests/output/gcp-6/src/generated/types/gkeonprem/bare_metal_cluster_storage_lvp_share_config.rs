@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#lvp_config: {
-                        let field_value = match fields_map.get("lvp_config") {
+                        let field_value = match fields_map.get("lvpConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lvp_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lvpConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#shared_path_pv_count: {
-                        let field_value = match fields_map.get("shared_path_pv_count") {
+                        let field_value = match fields_map.get("sharedPathPvCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'shared_path_pv_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sharedPathPvCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

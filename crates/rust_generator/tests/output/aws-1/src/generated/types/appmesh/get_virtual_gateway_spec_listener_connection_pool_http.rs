@@ -56,16 +56,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#max_connections: {
-                        let field_value = match fields_map.get("max_connections") {
+                        let field_value = match fields_map.get("maxConnections") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_connections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConnections' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_pending_requests: {
-                        let field_value = match fields_map.get("max_pending_requests") {
+                        let field_value = match fields_map.get("maxPendingRequests") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_pending_requests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxPendingRequests' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

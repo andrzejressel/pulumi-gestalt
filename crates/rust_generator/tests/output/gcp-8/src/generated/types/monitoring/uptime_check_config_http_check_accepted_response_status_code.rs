@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for U
 
                 Ok(Self {
                     r#status_class: {
-                        let field_value = match fields_map.get("status_class") {
+                        let field_value = match fields_map.get("statusClass") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_class' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusClass' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#status_value: {
-                        let field_value = match fields_map.get("status_value") {
+                        let field_value = match fields_map.get("statusValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'status_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'statusValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

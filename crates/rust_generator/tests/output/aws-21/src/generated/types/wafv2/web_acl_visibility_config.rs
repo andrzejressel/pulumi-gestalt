@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#cloudwatch_metrics_enabled: {
-                        let field_value = match fields_map.get("cloudwatch_metrics_enabled") {
+                        let field_value = match fields_map.get("cloudwatchMetricsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloudwatch_metrics_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudwatchMetricsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#metric_name: {
-                        let field_value = match fields_map.get("metric_name") {
+                        let field_value = match fields_map.get("metricName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'metric_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'metricName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sampled_requests_enabled: {
-                        let field_value = match fields_map.get("sampled_requests_enabled") {
+                        let field_value = match fields_map.get("sampledRequestsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sampled_requests_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampledRequestsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

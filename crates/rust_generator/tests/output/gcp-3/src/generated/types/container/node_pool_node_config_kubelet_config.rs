@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for N
 
                 Ok(Self {
                     r#cpu_cfs_quota: {
-                        let field_value = match fields_map.get("cpu_cfs_quota") {
+                        let field_value = match fields_map.get("cpuCfsQuota") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_cfs_quota' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuCfsQuota' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_cfs_quota_period: {
-                        let field_value = match fields_map.get("cpu_cfs_quota_period") {
+                        let field_value = match fields_map.get("cpuCfsQuotaPeriod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_cfs_quota_period' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuCfsQuotaPeriod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_manager_policy: {
-                        let field_value = match fields_map.get("cpu_manager_policy") {
+                        let field_value = match fields_map.get("cpuManagerPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_manager_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuManagerPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#insecure_kubelet_readonly_port_enabled: {
-                        let field_value = match fields_map.get("insecure_kubelet_readonly_port_enabled") {
+                        let field_value = match fields_map.get("insecureKubeletReadonlyPortEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'insecure_kubelet_readonly_port_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'insecureKubeletReadonlyPortEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pod_pids_limit: {
-                        let field_value = match fields_map.get("pod_pids_limit") {
+                        let field_value = match fields_map.get("podPidsLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pod_pids_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'podPidsLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

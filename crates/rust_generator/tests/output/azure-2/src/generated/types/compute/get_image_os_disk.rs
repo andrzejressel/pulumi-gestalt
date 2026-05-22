@@ -90,9 +90,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#blob_uri: {
-                        let field_value = match fields_map.get("blob_uri") {
+                        let field_value = match fields_map.get("blobUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'blob_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'blobUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -104,30 +104,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_disk_id: {
-                        let field_value = match fields_map.get("managed_disk_id") {
+                        let field_value = match fields_map.get("managedDiskId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_disk_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedDiskId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_state: {
-                        let field_value = match fields_map.get("os_state") {
+                        let field_value = match fields_map.get("osState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#os_type: {
-                        let field_value = match fields_map.get("os_type") {
+                        let field_value = match fields_map.get("osType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'os_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'osType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#size_gb: {
-                        let field_value = match fields_map.get("size_gb") {
+                        let field_value = match fields_map.get("sizeGb") {
                             Some(value) => value,
-                            None => bail!("Missing field 'size_gb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sizeGb' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

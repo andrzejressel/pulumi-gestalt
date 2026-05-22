@@ -217,23 +217,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#always_on: {
-                        let field_value = match fields_map.get("always_on") {
+                        let field_value = match fields_map.get("alwaysOn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'always_on' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'alwaysOn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#app_scale_limit: {
-                        let field_value = match fields_map.get("app_scale_limit") {
+                        let field_value = match fields_map.get("appScaleLimit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'app_scale_limit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'appScaleLimit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#auto_swap_slot_name: {
-                        let field_value = match fields_map.get("auto_swap_slot_name") {
+                        let field_value = match fields_map.get("autoSwapSlotName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'auto_swap_slot_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'autoSwapSlotName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -245,128 +245,128 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dotnet_framework_version: {
-                        let field_value = match fields_map.get("dotnet_framework_version") {
+                        let field_value = match fields_map.get("dotnetFrameworkVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dotnet_framework_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dotnetFrameworkVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#elastic_instance_minimum: {
-                        let field_value = match fields_map.get("elastic_instance_minimum") {
+                        let field_value = match fields_map.get("elasticInstanceMinimum") {
                             Some(value) => value,
-                            None => bail!("Missing field 'elastic_instance_minimum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'elasticInstanceMinimum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ftps_state: {
-                        let field_value = match fields_map.get("ftps_state") {
+                        let field_value = match fields_map.get("ftpsState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ftps_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ftpsState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#health_check_path: {
-                        let field_value = match fields_map.get("health_check_path") {
+                        let field_value = match fields_map.get("healthCheckPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'health_check_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'healthCheckPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#http_2_enabled: {
-                        let field_value = match fields_map.get("http_2_enabled") {
+                        let field_value = match fields_map.get("http2Enabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'http_2_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'http2Enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ip_restrictions: {
-                        let field_value = match fields_map.get("ip_restrictions") {
+                        let field_value = match fields_map.get("ipRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ip_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ipRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#linux_fx_version: {
-                        let field_value = match fields_map.get("linux_fx_version") {
+                        let field_value = match fields_map.get("linuxFxVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'linux_fx_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'linuxFxVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_tls_version: {
-                        let field_value = match fields_map.get("min_tls_version") {
+                        let field_value = match fields_map.get("minTlsVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_tls_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minTlsVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#pre_warmed_instance_count: {
-                        let field_value = match fields_map.get("pre_warmed_instance_count") {
+                        let field_value = match fields_map.get("preWarmedInstanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'pre_warmed_instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'preWarmedInstanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#public_network_access_enabled: {
-                        let field_value = match fields_map.get("public_network_access_enabled") {
+                        let field_value = match fields_map.get("publicNetworkAccessEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'public_network_access_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'publicNetworkAccessEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#runtime_scale_monitoring_enabled: {
-                        let field_value = match fields_map.get("runtime_scale_monitoring_enabled") {
+                        let field_value = match fields_map.get("runtimeScaleMonitoringEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'runtime_scale_monitoring_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'runtimeScaleMonitoringEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scm_ip_restrictions: {
-                        let field_value = match fields_map.get("scm_ip_restrictions") {
+                        let field_value = match fields_map.get("scmIpRestrictions") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scm_ip_restrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scmIpRestrictions' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scm_min_tls_version: {
-                        let field_value = match fields_map.get("scm_min_tls_version") {
+                        let field_value = match fields_map.get("scmMinTlsVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scm_min_tls_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scmMinTlsVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scm_type: {
-                        let field_value = match fields_map.get("scm_type") {
+                        let field_value = match fields_map.get("scmType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scm_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scmType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#scm_use_main_ip_restriction: {
-                        let field_value = match fields_map.get("scm_use_main_ip_restriction") {
+                        let field_value = match fields_map.get("scmUseMainIpRestriction") {
                             Some(value) => value,
-                            None => bail!("Missing field 'scm_use_main_ip_restriction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'scmUseMainIpRestriction' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#use_32_bit_worker_process: {
-                        let field_value = match fields_map.get("use_32_bit_worker_process") {
+                        let field_value = match fields_map.get("use32BitWorkerProcess") {
                             Some(value) => value,
-                            None => bail!("Missing field 'use_32_bit_worker_process' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'use32BitWorkerProcess' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vnet_route_all_enabled: {
-                        let field_value = match fields_map.get("vnet_route_all_enabled") {
+                        let field_value = match fields_map.get("vnetRouteAllEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vnet_route_all_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vnetRouteAllEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#websockets_enabled: {
-                        let field_value = match fields_map.get("websockets_enabled") {
+                        let field_value = match fields_map.get("websocketsEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'websockets_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'websocketsEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

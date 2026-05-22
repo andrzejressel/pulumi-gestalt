@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#route_through_private_network: {
-                        let field_value = match fields_map.get("route_through_private_network") {
+                        let field_value = match fields_map.get("routeThroughPrivateNetwork") {
                             Some(value) => value,
-                            None => bail!("Missing field 'route_through_private_network' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'routeThroughPrivateNetwork' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vnet_id: {
-                        let field_value = match fields_map.get("vnet_id") {
+                        let field_value = match fields_map.get("vnetId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vnet_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vnetId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

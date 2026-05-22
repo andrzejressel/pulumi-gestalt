@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for M
 
                 Ok(Self {
                     r#maximum_capacity_units: {
-                        let field_value = match fields_map.get("maximum_capacity_units") {
+                        let field_value = match fields_map.get("maximumCapacityUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumCapacityUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_core_capacity_units: {
-                        let field_value = match fields_map.get("maximum_core_capacity_units") {
+                        let field_value = match fields_map.get("maximumCoreCapacityUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_core_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumCoreCapacityUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maximum_ondemand_capacity_units: {
-                        let field_value = match fields_map.get("maximum_ondemand_capacity_units") {
+                        let field_value = match fields_map.get("maximumOndemandCapacityUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_ondemand_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumOndemandCapacityUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#minimum_capacity_units: {
-                        let field_value = match fields_map.get("minimum_capacity_units") {
+                        let field_value = match fields_map.get("minimumCapacityUnits") {
                             Some(value) => value,
-                            None => bail!("Missing field 'minimum_capacity_units' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minimumCapacityUnits' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unit_type: {
-                        let field_value = match fields_map.get("unit_type") {
+                        let field_value = match fields_map.get("unitType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unit_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unitType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

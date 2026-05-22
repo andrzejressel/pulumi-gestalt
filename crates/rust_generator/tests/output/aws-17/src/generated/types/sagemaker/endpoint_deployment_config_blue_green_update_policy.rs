@@ -65,23 +65,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#maximum_execution_timeout_in_seconds: {
-                        let field_value = match fields_map.get("maximum_execution_timeout_in_seconds") {
+                        let field_value = match fields_map.get("maximumExecutionTimeoutInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maximum_execution_timeout_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maximumExecutionTimeoutInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#termination_wait_in_seconds: {
-                        let field_value = match fields_map.get("termination_wait_in_seconds") {
+                        let field_value = match fields_map.get("terminationWaitInSeconds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'termination_wait_in_seconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'terminationWaitInSeconds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#traffic_routing_configuration: {
-                        let field_value = match fields_map.get("traffic_routing_configuration") {
+                        let field_value = match fields_map.get("trafficRoutingConfiguration") {
                             Some(value) => value,
-                            None => bail!("Missing field 'traffic_routing_configuration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trafficRoutingConfiguration' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

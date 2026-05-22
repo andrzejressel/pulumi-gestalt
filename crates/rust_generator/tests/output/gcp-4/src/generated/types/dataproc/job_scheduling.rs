@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
 
                 Ok(Self {
                     r#max_failures_per_hour: {
-                        let field_value = match fields_map.get("max_failures_per_hour") {
+                        let field_value = match fields_map.get("maxFailuresPerHour") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_failures_per_hour' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxFailuresPerHour' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_failures_total: {
-                        let field_value = match fields_map.get("max_failures_total") {
+                        let field_value = match fields_map.get("maxFailuresTotal") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_failures_total' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxFailuresTotal' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

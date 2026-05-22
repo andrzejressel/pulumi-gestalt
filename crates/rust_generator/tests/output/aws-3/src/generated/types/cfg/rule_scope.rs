@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#compliance_resource_id: {
-                        let field_value = match fields_map.get("compliance_resource_id") {
+                        let field_value = match fields_map.get("complianceResourceId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compliance_resource_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'complianceResourceId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#compliance_resource_types: {
-                        let field_value = match fields_map.get("compliance_resource_types") {
+                        let field_value = match fields_map.get("complianceResourceTypes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'compliance_resource_types' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'complianceResourceTypes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_key: {
-                        let field_value = match fields_map.get("tag_key") {
+                        let field_value = match fields_map.get("tagKey") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_key' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagKey' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#tag_value: {
-                        let field_value = match fields_map.get("tag_value") {
+                        let field_value = match fields_map.get("tagValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'tag_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tagValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

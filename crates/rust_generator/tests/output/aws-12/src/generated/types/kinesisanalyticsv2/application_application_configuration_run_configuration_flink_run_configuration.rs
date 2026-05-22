@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#allow_non_restored_state: {
-                        let field_value = match fields_map.get("allow_non_restored_state") {
+                        let field_value = match fields_map.get("allowNonRestoredState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'allow_non_restored_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'allowNonRestoredState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

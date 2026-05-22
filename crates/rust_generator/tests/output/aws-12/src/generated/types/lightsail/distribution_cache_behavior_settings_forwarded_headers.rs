@@ -58,9 +58,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#headers_allow_lists: {
-                        let field_value = match fields_map.get("headers_allow_lists") {
+                        let field_value = match fields_map.get("headersAllowLists") {
                             Some(value) => value,
-                            None => bail!("Missing field 'headers_allow_lists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'headersAllowLists' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#ingest_endpoints: {
-                        let field_value = match fields_map.get("ingest_endpoints") {
+                        let field_value = match fields_map.get("ingestEndpoints") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ingest_endpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ingestEndpoints' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

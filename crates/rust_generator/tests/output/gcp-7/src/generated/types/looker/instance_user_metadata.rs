@@ -66,23 +66,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#additional_developer_user_count: {
-                        let field_value = match fields_map.get("additional_developer_user_count") {
+                        let field_value = match fields_map.get("additionalDeveloperUserCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_developer_user_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalDeveloperUserCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#additional_standard_user_count: {
-                        let field_value = match fields_map.get("additional_standard_user_count") {
+                        let field_value = match fields_map.get("additionalStandardUserCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_standard_user_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalStandardUserCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#additional_viewer_user_count: {
-                        let field_value = match fields_map.get("additional_viewer_user_count") {
+                        let field_value = match fields_map.get("additionalViewerUserCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'additional_viewer_user_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'additionalViewerUserCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

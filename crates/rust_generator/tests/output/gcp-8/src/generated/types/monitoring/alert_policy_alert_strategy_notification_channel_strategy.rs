@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#notification_channel_names: {
-                        let field_value = match fields_map.get("notification_channel_names") {
+                        let field_value = match fields_map.get("notificationChannelNames") {
                             Some(value) => value,
-                            None => bail!("Missing field 'notification_channel_names' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'notificationChannelNames' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#renotify_interval: {
-                        let field_value = match fields_map.get("renotify_interval") {
+                        let field_value = match fields_map.get("renotifyInterval") {
                             Some(value) => value,
-                            None => bail!("Missing field 'renotify_interval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'renotifyInterval' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

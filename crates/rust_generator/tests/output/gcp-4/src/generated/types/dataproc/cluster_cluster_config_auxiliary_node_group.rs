@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#node_group_id: {
-                        let field_value = match fields_map.get("node_group_id") {
+                        let field_value = match fields_map.get("nodeGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_groups: {
-                        let field_value = match fields_map.get("node_groups") {
+                        let field_value = match fields_map.get("nodeGroups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_groups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeGroups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

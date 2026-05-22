@@ -138,72 +138,72 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#bypass_cache_on_request_headers: {
-                        let field_value = match fields_map.get("bypass_cache_on_request_headers") {
+                        let field_value = match fields_map.get("bypassCacheOnRequestHeaders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bypass_cache_on_request_headers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bypassCacheOnRequestHeaders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_key_policy: {
-                        let field_value = match fields_map.get("cache_key_policy") {
+                        let field_value = match fields_map.get("cacheKeyPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_key_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheKeyPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cache_mode: {
-                        let field_value = match fields_map.get("cache_mode") {
+                        let field_value = match fields_map.get("cacheMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cache_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cacheMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_ttl: {
-                        let field_value = match fields_map.get("client_ttl") {
+                        let field_value = match fields_map.get("clientTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#default_ttl: {
-                        let field_value = match fields_map.get("default_ttl") {
+                        let field_value = match fields_map.get("defaultTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_ttl: {
-                        let field_value = match fields_map.get("max_ttl") {
+                        let field_value = match fields_map.get("maxTtl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_ttl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxTtl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#negative_caching: {
-                        let field_value = match fields_map.get("negative_caching") {
+                        let field_value = match fields_map.get("negativeCaching") {
                             Some(value) => value,
-                            None => bail!("Missing field 'negative_caching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'negativeCaching' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#negative_caching_policies: {
-                        let field_value = match fields_map.get("negative_caching_policies") {
+                        let field_value = match fields_map.get("negativeCachingPolicies") {
                             Some(value) => value,
-                            None => bail!("Missing field 'negative_caching_policies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'negativeCachingPolicies' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#serve_while_stale: {
-                        let field_value = match fields_map.get("serve_while_stale") {
+                        let field_value = match fields_map.get("serveWhileStale") {
                             Some(value) => value,
-                            None => bail!("Missing field 'serve_while_stale' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serveWhileStale' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#signed_url_cache_max_age_sec: {
-                        let field_value = match fields_map.get("signed_url_cache_max_age_sec") {
+                        let field_value = match fields_map.get("signedUrlCacheMaxAgeSec") {
                             Some(value) => value,
-                            None => bail!("Missing field 'signed_url_cache_max_age_sec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'signedUrlCacheMaxAgeSec' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

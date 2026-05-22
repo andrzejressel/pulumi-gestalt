@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#authentication_type: {
-                        let field_value = match fields_map.get("authentication_type") {
+                        let field_value = match fields_map.get("authenticationType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authentication_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authenticationType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#lambda_authorizer_config: {
-                        let field_value = match fields_map.get("lambda_authorizer_config") {
+                        let field_value = match fields_map.get("lambdaAuthorizerConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'lambda_authorizer_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'lambdaAuthorizerConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#openid_connect_config: {
-                        let field_value = match fields_map.get("openid_connect_config") {
+                        let field_value = match fields_map.get("openidConnectConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'openid_connect_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'openidConnectConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_pool_config: {
-                        let field_value = match fields_map.get("user_pool_config") {
+                        let field_value = match fields_map.get("userPoolConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_pool_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userPoolConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

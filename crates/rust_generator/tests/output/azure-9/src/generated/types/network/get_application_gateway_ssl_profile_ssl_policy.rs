@@ -82,37 +82,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#cipher_suites: {
-                        let field_value = match fields_map.get("cipher_suites") {
+                        let field_value = match fields_map.get("cipherSuites") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cipher_suites' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cipherSuites' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#disabled_protocols: {
-                        let field_value = match fields_map.get("disabled_protocols") {
+                        let field_value = match fields_map.get("disabledProtocols") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disabled_protocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disabledProtocols' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#min_protocol_version: {
-                        let field_value = match fields_map.get("min_protocol_version") {
+                        let field_value = match fields_map.get("minProtocolVersion") {
                             Some(value) => value,
-                            None => bail!("Missing field 'min_protocol_version' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'minProtocolVersion' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_name: {
-                        let field_value = match fields_map.get("policy_name") {
+                        let field_value = match fields_map.get("policyName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#policy_type: {
-                        let field_value = match fields_map.get("policy_type") {
+                        let field_value = match fields_map.get("policyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'policy_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'policyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

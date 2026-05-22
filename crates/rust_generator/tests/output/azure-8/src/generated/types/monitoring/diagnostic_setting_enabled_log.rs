@@ -78,16 +78,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#category_group: {
-                        let field_value = match fields_map.get("category_group") {
+                        let field_value = match fields_map.get("categoryGroup") {
                             Some(value) => value,
-                            None => bail!("Missing field 'category_group' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'categoryGroup' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#retention_policy: {
-                        let field_value = match fields_map.get("retention_policy") {
+                        let field_value = match fields_map.get("retentionPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'retention_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'retentionPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#firehose_stream: {
-                        let field_value = match fields_map.get("firehose_stream") {
+                        let field_value = match fields_map.get("firehoseStream") {
                             Some(value) => value,
-                            None => bail!("Missing field 'firehose_stream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'firehoseStream' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#s_3_bucket: {
-                        let field_value = match fields_map.get("s_3_bucket") {
+                        let field_value = match fields_map.get("s3Bucket") {
                             Some(value) => value,
-                            None => bail!("Missing field 's_3_bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 's3Bucket' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

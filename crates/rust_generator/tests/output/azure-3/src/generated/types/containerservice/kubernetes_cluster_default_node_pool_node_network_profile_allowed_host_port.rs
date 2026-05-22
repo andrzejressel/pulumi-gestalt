@@ -66,16 +66,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for K
 
                 Ok(Self {
                     r#port_end: {
-                        let field_value = match fields_map.get("port_end") {
+                        let field_value = match fields_map.get("portEnd") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_end' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portEnd' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#port_start: {
-                        let field_value = match fields_map.get("port_start") {
+                        let field_value = match fields_map.get("portStart") {
                             Some(value) => value,
-                            None => bail!("Missing field 'port_start' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'portStart' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

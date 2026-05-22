@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for O
 
                 Ok(Self {
                     r#aws_lambda: {
-                        let field_value = match fields_map.get("aws_lambda") {
+                        let field_value = match fields_map.get("awsLambda") {
                             Some(value) => value,
-                            None => bail!("Missing field 'aws_lambda' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'awsLambda' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

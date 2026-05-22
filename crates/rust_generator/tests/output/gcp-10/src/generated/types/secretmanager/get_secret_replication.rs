@@ -65,9 +65,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_manageds: {
-                        let field_value = match fields_map.get("user_manageds") {
+                        let field_value = match fields_map.get("userManageds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_manageds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userManageds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

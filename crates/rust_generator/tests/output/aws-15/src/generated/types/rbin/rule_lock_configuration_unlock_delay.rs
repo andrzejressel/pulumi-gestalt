@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#unlock_delay_unit: {
-                        let field_value = match fields_map.get("unlock_delay_unit") {
+                        let field_value = match fields_map.get("unlockDelayUnit") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unlock_delay_unit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unlockDelayUnit' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#unlock_delay_value: {
-                        let field_value = match fields_map.get("unlock_delay_value") {
+                        let field_value = match fields_map.get("unlockDelayValue") {
                             Some(value) => value,
-                            None => bail!("Missing field 'unlock_delay_value' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'unlockDelayValue' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

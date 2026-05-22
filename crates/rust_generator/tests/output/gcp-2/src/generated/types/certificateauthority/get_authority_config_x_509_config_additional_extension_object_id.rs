@@ -50,9 +50,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#object_id_paths: {
-                        let field_value = match fields_map.get("object_id_paths") {
+                        let field_value = match fields_map.get("objectIdPaths") {
                             Some(value) => value,
-                            None => bail!("Missing field 'object_id_paths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'objectIdPaths' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for I
 
                 Ok(Self {
                     r#require_connectors: {
-                        let field_value = match fields_map.get("require_connectors") {
+                        let field_value = match fields_map.get("requireConnectors") {
                             Some(value) => value,
-                            None => bail!("Missing field 'require_connectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'requireConnectors' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssl_config: {
-                        let field_value = match fields_map.get("ssl_config") {
+                        let field_value = match fields_map.get("sslConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssl_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sslConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

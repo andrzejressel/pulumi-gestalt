@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#disable_password_authentication: {
-                        let field_value = match fields_map.get("disable_password_authentication") {
+                        let field_value = match fields_map.get("disablePasswordAuthentication") {
                             Some(value) => value,
-                            None => bail!("Missing field 'disable_password_authentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'disablePasswordAuthentication' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ssh_keys: {
-                        let field_value = match fields_map.get("ssh_keys") {
+                        let field_value = match fields_map.get("sshKeys") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ssh_keys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sshKeys' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

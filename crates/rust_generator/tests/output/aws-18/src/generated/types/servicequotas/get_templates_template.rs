@@ -106,23 +106,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#global_quota: {
-                        let field_value = match fields_map.get("global_quota") {
+                        let field_value = match fields_map.get("globalQuota") {
                             Some(value) => value,
-                            None => bail!("Missing field 'global_quota' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'globalQuota' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#quota_code: {
-                        let field_value = match fields_map.get("quota_code") {
+                        let field_value = match fields_map.get("quotaCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'quota_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'quotaCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#quota_name: {
-                        let field_value = match fields_map.get("quota_name") {
+                        let field_value = match fields_map.get("quotaName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'quota_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'quotaName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,16 +134,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_code: {
-                        let field_value = match fields_map.get("service_code") {
+                        let field_value = match fields_map.get("serviceCode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_code' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceCode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_name: {
-                        let field_value = match fields_map.get("service_name") {
+                        let field_value = match fields_map.get("serviceName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

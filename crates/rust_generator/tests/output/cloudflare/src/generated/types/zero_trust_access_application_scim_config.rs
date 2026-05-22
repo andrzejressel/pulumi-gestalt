@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#deactivate_on_delete: {
-                        let field_value = match fields_map.get("deactivate_on_delete") {
+                        let field_value = match fields_map.get("deactivateOnDelete") {
                             Some(value) => value,
-                            None => bail!("Missing field 'deactivate_on_delete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'deactivateOnDelete' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -111,9 +111,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#idp_uid: {
-                        let field_value = match fields_map.get("idp_uid") {
+                        let field_value = match fields_map.get("idpUid") {
                             Some(value) => value,
-                            None => bail!("Missing field 'idp_uid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'idpUid' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -125,9 +125,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for Z
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#remote_uri: {
-                        let field_value = match fields_map.get("remote_uri") {
+                        let field_value = match fields_map.get("remoteUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'remote_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'remoteUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

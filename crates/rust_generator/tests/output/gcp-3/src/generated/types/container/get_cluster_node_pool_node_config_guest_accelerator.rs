@@ -89,30 +89,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gpu_driver_installation_configs: {
-                        let field_value = match fields_map.get("gpu_driver_installation_configs") {
+                        let field_value = match fields_map.get("gpuDriverInstallationConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gpu_driver_installation_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gpuDriverInstallationConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gpu_partition_size: {
-                        let field_value = match fields_map.get("gpu_partition_size") {
+                        let field_value = match fields_map.get("gpuPartitionSize") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gpu_partition_size' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gpuPartitionSize' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#gpu_sharing_configs: {
-                        let field_value = match fields_map.get("gpu_sharing_configs") {
+                        let field_value = match fields_map.get("gpuSharingConfigs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'gpu_sharing_configs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'gpuSharingConfigs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#type_: {
-                        let field_value = match fields_map.get("type_") {
+                        let field_value = match fields_map.get("type") {
                             Some(value) => value,
-                            None => bail!("Missing field 'type_' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

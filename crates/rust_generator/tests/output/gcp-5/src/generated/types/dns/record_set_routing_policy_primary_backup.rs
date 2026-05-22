@@ -76,16 +76,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
 
                 Ok(Self {
                     r#backup_geos: {
-                        let field_value = match fields_map.get("backup_geos") {
+                        let field_value = match fields_map.get("backupGeos") {
                             Some(value) => value,
-                            None => bail!("Missing field 'backup_geos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'backupGeos' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enable_geo_fencing_for_backups: {
-                        let field_value = match fields_map.get("enable_geo_fencing_for_backups") {
+                        let field_value = match fields_map.get("enableGeoFencingForBackups") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_geo_fencing_for_backups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableGeoFencingForBackups' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -97,9 +97,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for R
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trickle_ratio: {
-                        let field_value = match fields_map.get("trickle_ratio") {
+                        let field_value = match fields_map.get("trickleRatio") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trickle_ratio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trickleRatio' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

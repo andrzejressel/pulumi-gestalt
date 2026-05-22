@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#maintenance_day: {
-                        let field_value = match fields_map.get("maintenance_day") {
+                        let field_value = match fields_map.get("maintenanceDay") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_day' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceDay' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#maintenance_start_time: {
-                        let field_value = match fields_map.get("maintenance_start_time") {
+                        let field_value = match fields_map.get("maintenanceStartTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'maintenance_start_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maintenanceStartTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

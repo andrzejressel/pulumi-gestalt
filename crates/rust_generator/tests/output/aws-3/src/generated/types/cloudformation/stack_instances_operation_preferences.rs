@@ -98,51 +98,51 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
 
                 Ok(Self {
                     r#concurrency_mode: {
-                        let field_value = match fields_map.get("concurrency_mode") {
+                        let field_value = match fields_map.get("concurrencyMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'concurrency_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'concurrencyMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_tolerance_count: {
-                        let field_value = match fields_map.get("failure_tolerance_count") {
+                        let field_value = match fields_map.get("failureToleranceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_tolerance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureToleranceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#failure_tolerance_percentage: {
-                        let field_value = match fields_map.get("failure_tolerance_percentage") {
+                        let field_value = match fields_map.get("failureTolerancePercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'failure_tolerance_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'failureTolerancePercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrent_count: {
-                        let field_value = match fields_map.get("max_concurrent_count") {
+                        let field_value = match fields_map.get("maxConcurrentCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#max_concurrent_percentage: {
-                        let field_value = match fields_map.get("max_concurrent_percentage") {
+                        let field_value = match fields_map.get("maxConcurrentPercentage") {
                             Some(value) => value,
-                            None => bail!("Missing field 'max_concurrent_percentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'maxConcurrentPercentage' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#region_concurrency_type: {
-                        let field_value = match fields_map.get("region_concurrency_type") {
+                        let field_value = match fields_map.get("regionConcurrencyType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'region_concurrency_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionConcurrencyType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#region_orders: {
-                        let field_value = match fields_map.get("region_orders") {
+                        let field_value = match fields_map.get("regionOrders") {
                             Some(value) => value,
-                            None => bail!("Missing field 'region_orders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'regionOrders' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

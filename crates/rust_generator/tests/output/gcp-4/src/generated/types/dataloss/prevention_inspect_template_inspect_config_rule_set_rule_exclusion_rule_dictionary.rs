@@ -60,16 +60,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#cloud_storage_path: {
-                        let field_value = match fields_map.get("cloud_storage_path") {
+                        let field_value = match fields_map.get("cloudStoragePath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cloud_storage_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cloudStoragePath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#word_list: {
-                        let field_value = match fields_map.get("word_list") {
+                        let field_value = match fields_map.get("wordList") {
                             Some(value) => value,
-                            None => bail!("Missing field 'word_list' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'wordList' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

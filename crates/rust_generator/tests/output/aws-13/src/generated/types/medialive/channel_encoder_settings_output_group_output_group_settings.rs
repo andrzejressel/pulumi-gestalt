@@ -101,58 +101,58 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#archive_group_settings: {
-                        let field_value = match fields_map.get("archive_group_settings") {
+                        let field_value = match fields_map.get("archiveGroupSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'archive_group_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'archiveGroupSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#frame_capture_group_settings: {
-                        let field_value = match fields_map.get("frame_capture_group_settings") {
+                        let field_value = match fields_map.get("frameCaptureGroupSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'frame_capture_group_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'frameCaptureGroupSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#hls_group_settings: {
-                        let field_value = match fields_map.get("hls_group_settings") {
+                        let field_value = match fields_map.get("hlsGroupSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'hls_group_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'hlsGroupSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#media_package_group_settings: {
-                        let field_value = match fields_map.get("media_package_group_settings") {
+                        let field_value = match fields_map.get("mediaPackageGroupSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'media_package_group_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'mediaPackageGroupSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ms_smooth_group_settings: {
-                        let field_value = match fields_map.get("ms_smooth_group_settings") {
+                        let field_value = match fields_map.get("msSmoothGroupSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ms_smooth_group_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'msSmoothGroupSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#multiplex_group_settings: {
-                        let field_value = match fields_map.get("multiplex_group_settings") {
+                        let field_value = match fields_map.get("multiplexGroupSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'multiplex_group_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'multiplexGroupSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#rtmp_group_settings: {
-                        let field_value = match fields_map.get("rtmp_group_settings") {
+                        let field_value = match fields_map.get("rtmpGroupSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'rtmp_group_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rtmpGroupSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#udp_group_settings: {
-                        let field_value = match fields_map.get("udp_group_settings") {
+                        let field_value = match fields_map.get("udpGroupSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'udp_group_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'udpGroupSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

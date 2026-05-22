@@ -93,44 +93,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#default_value_specifications: {
-                        let field_value = match fields_map.get("default_value_specifications") {
+                        let field_value = match fields_map.get("defaultValueSpecifications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'default_value_specifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'defaultValueSpecifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#prompt_specification: {
-                        let field_value = match fields_map.get("prompt_specification") {
+                        let field_value = match fields_map.get("promptSpecification") {
                             Some(value) => value,
-                            None => bail!("Missing field 'prompt_specification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'promptSpecification' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_utterances: {
-                        let field_value = match fields_map.get("sample_utterances") {
+                        let field_value = match fields_map.get("sampleUtterances") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_utterances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleUtterances' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slot_constraint: {
-                        let field_value = match fields_map.get("slot_constraint") {
+                        let field_value = match fields_map.get("slotConstraint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slot_constraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'slotConstraint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#slot_resolution_settings: {
-                        let field_value = match fields_map.get("slot_resolution_settings") {
+                        let field_value = match fields_map.get("slotResolutionSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'slot_resolution_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'slotResolutionSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#wait_and_continue_specifications: {
-                        let field_value = match fields_map.get("wait_and_continue_specifications") {
+                        let field_value = match fields_map.get("waitAndContinueSpecifications") {
                             Some(value) => value,
-                            None => bail!("Missing field 'wait_and_continue_specifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'waitAndContinueSpecifications' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

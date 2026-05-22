@@ -106,9 +106,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dns_name: {
-                        let field_value = match fields_map.get("dns_name") {
+                        let field_value = match fields_map.get("dnsName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dns_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dnsName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -120,9 +120,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#managed_zone_id: {
-                        let field_value = match fields_map.get("managed_zone_id") {
+                        let field_value = match fields_map.get("managedZoneId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'managed_zone_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'managedZoneId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -134,9 +134,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name_servers: {
-                        let field_value = match fields_map.get("name_servers") {
+                        let field_value = match fields_map.get("nameServers") {
                             Some(value) => value,
-                            None => bail!("Missing field 'name_servers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nameServers' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

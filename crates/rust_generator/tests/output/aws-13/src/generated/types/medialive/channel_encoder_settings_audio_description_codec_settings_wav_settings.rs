@@ -64,23 +64,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#bit_depth: {
-                        let field_value = match fields_map.get("bit_depth") {
+                        let field_value = match fields_map.get("bitDepth") {
                             Some(value) => value,
-                            None => bail!("Missing field 'bit_depth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'bitDepth' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#coding_mode: {
-                        let field_value = match fields_map.get("coding_mode") {
+                        let field_value = match fields_map.get("codingMode") {
                             Some(value) => value,
-                            None => bail!("Missing field 'coding_mode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'codingMode' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sample_rate: {
-                        let field_value = match fields_map.get("sample_rate") {
+                        let field_value = match fields_map.get("sampleRate") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sample_rate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sampleRate' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

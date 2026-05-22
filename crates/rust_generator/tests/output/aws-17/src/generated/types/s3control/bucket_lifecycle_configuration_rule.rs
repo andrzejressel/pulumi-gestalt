@@ -82,9 +82,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#abort_incomplete_multipart_upload: {
-                        let field_value = match fields_map.get("abort_incomplete_multipart_upload") {
+                        let field_value = match fields_map.get("abortIncompleteMultipartUpload") {
                             Some(value) => value,
-                            None => bail!("Missing field 'abort_incomplete_multipart_upload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'abortIncompleteMultipartUpload' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

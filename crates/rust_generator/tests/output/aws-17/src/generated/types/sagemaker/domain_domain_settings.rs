@@ -74,30 +74,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#docker_settings: {
-                        let field_value = match fields_map.get("docker_settings") {
+                        let field_value = match fields_map.get("dockerSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'docker_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dockerSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#execution_role_identity_config: {
-                        let field_value = match fields_map.get("execution_role_identity_config") {
+                        let field_value = match fields_map.get("executionRoleIdentityConfig") {
                             Some(value) => value,
-                            None => bail!("Missing field 'execution_role_identity_config' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'executionRoleIdentityConfig' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#r_studio_server_pro_domain_settings: {
-                        let field_value = match fields_map.get("r_studio_server_pro_domain_settings") {
+                        let field_value = match fields_map.get("rStudioServerProDomainSettings") {
                             Some(value) => value,
-                            None => bail!("Missing field 'r_studio_server_pro_domain_settings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'rStudioServerProDomainSettings' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#security_group_ids: {
-                        let field_value = match fields_map.get("security_group_ids") {
+                        let field_value = match fields_map.get("securityGroupIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'security_group_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'securityGroupIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

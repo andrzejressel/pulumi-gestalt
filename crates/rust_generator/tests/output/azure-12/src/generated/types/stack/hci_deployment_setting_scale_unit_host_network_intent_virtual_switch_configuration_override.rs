@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for H
 
                 Ok(Self {
                     r#enable_iov: {
-                        let field_value = match fields_map.get("enable_iov") {
+                        let field_value = match fields_map.get("enableIov") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_iov' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableIov' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_balancing_algorithm: {
-                        let field_value = match fields_map.get("load_balancing_algorithm") {
+                        let field_value = match fields_map.get("loadBalancingAlgorithm") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_balancing_algorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadBalancingAlgorithm' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#jmx_exporter: {
-                        let field_value = match fields_map.get("jmx_exporter") {
+                        let field_value = match fields_map.get("jmxExporter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'jmx_exporter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'jmxExporter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#node_exporter: {
-                        let field_value = match fields_map.get("node_exporter") {
+                        let field_value = match fields_map.get("nodeExporter") {
                             Some(value) => value,
-                            None => bail!("Missing field 'node_exporter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nodeExporter' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

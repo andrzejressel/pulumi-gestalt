@@ -51,9 +51,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for V
 
                 Ok(Self {
                     r#audio_recognition_strategy: {
-                        let field_value = match fields_map.get("audio_recognition_strategy") {
+                        let field_value = match fields_map.get("audioRecognitionStrategy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'audio_recognition_strategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'audioRecognitionStrategy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

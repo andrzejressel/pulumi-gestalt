@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#source_ip: {
-                        let field_value = match fields_map.get("source_ip") {
+                        let field_value = match fields_map.get("sourceIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#vpc_source_ip: {
-                        let field_value = match fields_map.get("vpc_source_ip") {
+                        let field_value = match fields_map.get("vpcSourceIp") {
                             Some(value) => value,
-                            None => bail!("Missing field 'vpc_source_ip' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'vpcSourceIp' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

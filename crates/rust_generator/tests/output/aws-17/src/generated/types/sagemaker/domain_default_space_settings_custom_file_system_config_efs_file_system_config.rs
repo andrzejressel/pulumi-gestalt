@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for D
 
                 Ok(Self {
                     r#file_system_id: {
-                        let field_value = match fields_map.get("file_system_id") {
+                        let field_value = match fields_map.get("fileSystemId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_system_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystemId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#file_system_path: {
-                        let field_value = match fields_map.get("file_system_path") {
+                        let field_value = match fields_map.get("fileSystemPath") {
                             Some(value) => value,
-                            None => bail!("Missing field 'file_system_path' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fileSystemPath' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

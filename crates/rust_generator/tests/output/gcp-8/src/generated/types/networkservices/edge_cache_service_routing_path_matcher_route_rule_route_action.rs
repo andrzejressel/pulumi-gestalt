@@ -69,23 +69,23 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#cdn_policy: {
-                        let field_value = match fields_map.get("cdn_policy") {
+                        let field_value = match fields_map.get("cdnPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cdn_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cdnPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cors_policy: {
-                        let field_value = match fields_map.get("cors_policy") {
+                        let field_value = match fields_map.get("corsPolicy") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cors_policy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'corsPolicy' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#url_rewrite: {
-                        let field_value = match fields_map.get("url_rewrite") {
+                        let field_value = match fields_map.get("urlRewrite") {
                             Some(value) => value,
-                            None => bail!("Missing field 'url_rewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'urlRewrite' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

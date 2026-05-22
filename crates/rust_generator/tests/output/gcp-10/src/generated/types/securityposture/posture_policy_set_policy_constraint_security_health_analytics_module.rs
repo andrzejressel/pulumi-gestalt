@@ -59,16 +59,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#module_enablement_state: {
-                        let field_value = match fields_map.get("module_enablement_state") {
+                        let field_value = match fields_map.get("moduleEnablementState") {
                             Some(value) => value,
-                            None => bail!("Missing field 'module_enablement_state' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'moduleEnablementState' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#module_name: {
-                        let field_value = match fields_map.get("module_name") {
+                        let field_value = match fields_map.get("moduleName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'module_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'moduleName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

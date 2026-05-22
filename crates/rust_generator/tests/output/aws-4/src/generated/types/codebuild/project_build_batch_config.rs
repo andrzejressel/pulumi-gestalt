@@ -74,9 +74,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
 
                 Ok(Self {
                     r#combine_artifacts: {
-                        let field_value = match fields_map.get("combine_artifacts") {
+                        let field_value = match fields_map.get("combineArtifacts") {
                             Some(value) => value,
-                            None => bail!("Missing field 'combine_artifacts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'combineArtifacts' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -88,16 +88,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for P
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#service_role: {
-                        let field_value = match fields_map.get("service_role") {
+                        let field_value = match fields_map.get("serviceRole") {
                             Some(value) => value,
-                            None => bail!("Missing field 'service_role' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'serviceRole' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#timeout_in_mins: {
-                        let field_value = match fields_map.get("timeout_in_mins") {
+                        let field_value = match fields_map.get("timeoutInMins") {
                             Some(value) => value,
-                            None => bail!("Missing field 'timeout_in_mins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'timeoutInMins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

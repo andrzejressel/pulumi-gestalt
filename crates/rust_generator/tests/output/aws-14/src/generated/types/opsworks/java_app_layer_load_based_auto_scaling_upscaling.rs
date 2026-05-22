@@ -98,44 +98,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for J
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#cpu_threshold: {
-                        let field_value = match fields_map.get("cpu_threshold") {
+                        let field_value = match fields_map.get("cpuThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'cpu_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'cpuThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#ignore_metrics_time: {
-                        let field_value = match fields_map.get("ignore_metrics_time") {
+                        let field_value = match fields_map.get("ignoreMetricsTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ignore_metrics_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'ignoreMetricsTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#instance_count: {
-                        let field_value = match fields_map.get("instance_count") {
+                        let field_value = match fields_map.get("instanceCount") {
                             Some(value) => value,
-                            None => bail!("Missing field 'instance_count' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'instanceCount' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#load_threshold: {
-                        let field_value = match fields_map.get("load_threshold") {
+                        let field_value = match fields_map.get("loadThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'load_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'loadThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#memory_threshold: {
-                        let field_value = match fields_map.get("memory_threshold") {
+                        let field_value = match fields_map.get("memoryThreshold") {
                             Some(value) => value,
-                            None => bail!("Missing field 'memory_threshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'memoryThreshold' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#thresholds_wait_time: {
-                        let field_value = match fields_map.get("thresholds_wait_time") {
+                        let field_value = match fields_map.get("thresholdsWaitTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'thresholds_wait_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'thresholdsWaitTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for L
 
                 Ok(Self {
                     r#ended_time: {
-                        let field_value = match fields_map.get("ended_time") {
+                        let field_value = match fields_map.get("endedTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'ended_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endedTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#started_time: {
-                        let field_value = match fields_map.get("started_time") {
+                        let field_value = match fields_map.get("startedTime") {
                             Some(value) => value,
-                            None => bail!("Missing field 'started_time' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'startedTime' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

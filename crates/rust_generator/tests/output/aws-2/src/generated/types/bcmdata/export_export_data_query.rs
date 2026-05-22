@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for E
 
                 Ok(Self {
                     r#query_statement: {
-                        let field_value = match fields_map.get("query_statement") {
+                        let field_value = match fields_map.get("queryStatement") {
                             Some(value) => value,
-                            None => bail!("Missing field 'query_statement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'queryStatement' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#table_configurations: {
-                        let field_value = match fields_map.get("table_configurations") {
+                        let field_value = match fields_map.get("tableConfigurations") {
                             Some(value) => value,
-                            None => bail!("Missing field 'table_configurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tableConfigurations' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -56,9 +56,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#application_url: {
-                        let field_value = match fields_map.get("application_url") {
+                        let field_value = match fields_map.get("applicationUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'application_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'applicationUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

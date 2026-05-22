@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for A
 
                 Ok(Self {
                     r#feature_group_id: {
-                        let field_value = match fields_map.get("feature_group_id") {
+                        let field_value = match fields_map.get("featureGroupId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'feature_group_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'featureGroupId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#feature_ids: {
-                        let field_value = match fields_map.get("feature_ids") {
+                        let field_value = match fields_map.get("featureIds") {
                             Some(value) => value,
-                            None => bail!("Missing field 'feature_ids' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'featureIds' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

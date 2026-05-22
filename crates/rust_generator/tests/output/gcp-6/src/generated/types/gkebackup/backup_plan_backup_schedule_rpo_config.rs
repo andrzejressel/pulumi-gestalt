@@ -67,16 +67,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for B
 
                 Ok(Self {
                     r#exclusion_windows: {
-                        let field_value = match fields_map.get("exclusion_windows") {
+                        let field_value = match fields_map.get("exclusionWindows") {
                             Some(value) => value,
-                            None => bail!("Missing field 'exclusion_windows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'exclusionWindows' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#target_rpo_minutes: {
-                        let field_value = match fields_map.get("target_rpo_minutes") {
+                        let field_value = match fields_map.get("targetRpoMinutes") {
                             Some(value) => value,
-                            None => bail!("Missing field 'target_rpo_minutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'targetRpoMinutes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

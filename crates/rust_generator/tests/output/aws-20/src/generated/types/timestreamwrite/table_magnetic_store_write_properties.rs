@@ -58,16 +58,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for T
 
                 Ok(Self {
                     r#enable_magnetic_store_writes: {
-                        let field_value = match fields_map.get("enable_magnetic_store_writes") {
+                        let field_value = match fields_map.get("enableMagneticStoreWrites") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enable_magnetic_store_writes' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enableMagneticStoreWrites' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#magnetic_store_rejected_data_location: {
-                        let field_value = match fields_map.get("magnetic_store_rejected_data_location") {
+                        let field_value = match fields_map.get("magneticStoreRejectedDataLocation") {
                             Some(value) => value,
-                            None => bail!("Missing field 'magnetic_store_rejected_data_location' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'magneticStoreRejectedDataLocation' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

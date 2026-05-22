@@ -61,16 +61,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for G
 
                 Ok(Self {
                     r#fixed_iops: {
-                        let field_value = match fields_map.get("fixed_iops") {
+                        let field_value = match fields_map.get("fixedIops") {
                             Some(value) => value,
-                            None => bail!("Missing field 'fixed_iops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'fixedIops' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#iops_per_tbs: {
-                        let field_value = match fields_map.get("iops_per_tbs") {
+                        let field_value = match fields_map.get("iopsPerTbs") {
                             Some(value) => value,
-                            None => bail!("Missing field 'iops_per_tbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'iopsPerTbs' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

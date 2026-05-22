@@ -73,16 +73,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for S
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#sha_1_sum: {
-                        let field_value = match fields_map.get("sha_1_sum") {
+                        let field_value = match fields_map.get("sha1Sum") {
                             Some(value) => value,
-                            None => bail!("Missing field 'sha_1_sum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sha1Sum' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#source_url: {
-                        let field_value = match fields_map.get("source_url") {
+                        let field_value = match fields_map.get("sourceUrl") {
                             Some(value) => value,
-                            None => bail!("Missing field 'source_url' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'sourceUrl' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

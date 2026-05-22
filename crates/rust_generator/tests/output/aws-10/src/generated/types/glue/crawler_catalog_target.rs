@@ -86,30 +86,30 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
 
                 Ok(Self {
                     r#connection_name: {
-                        let field_value = match fields_map.get("connection_name") {
+                        let field_value = match fields_map.get("connectionName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'connection_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'connectionName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#database_name: {
-                        let field_value = match fields_map.get("database_name") {
+                        let field_value = match fields_map.get("databaseName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'database_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'databaseName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#dlq_event_queue_arn: {
-                        let field_value = match fields_map.get("dlq_event_queue_arn") {
+                        let field_value = match fields_map.get("dlqEventQueueArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'dlq_event_queue_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'dlqEventQueueArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#event_queue_arn: {
-                        let field_value = match fields_map.get("event_queue_arn") {
+                        let field_value = match fields_map.get("eventQueueArn") {
                             Some(value) => value,
-                            None => bail!("Missing field 'event_queue_arn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'eventQueueArn' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

@@ -145,16 +145,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#endpoint_parameters_enabled: {
-                        let field_value = match fields_map.get("endpoint_parameters_enabled") {
+                        let field_value = match fields_map.get("endpointParametersEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'endpoint_parameters_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'endpointParametersEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#enhanced_authentication_enabled: {
-                        let field_value = match fields_map.get("enhanced_authentication_enabled") {
+                        let field_value = match fields_map.get("enhancedAuthenticationEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'enhanced_authentication_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'enhancedAuthenticationEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -173,9 +173,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#key_2: {
-                        let field_value = match fields_map.get("key_2") {
+                        let field_value = match fields_map.get("key2") {
                             Some(value) => value,
-                            None => bail!("Missing field 'key_2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'key2' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -187,37 +187,37 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for C
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#storage_enabled: {
-                        let field_value = match fields_map.get("storage_enabled") {
+                        let field_value = match fields_map.get("storageEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'storage_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'storageEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#trusted_origins: {
-                        let field_value = match fields_map.get("trusted_origins") {
+                        let field_value = match fields_map.get("trustedOrigins") {
                             Some(value) => value,
-                            None => bail!("Missing field 'trusted_origins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'trustedOrigins' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#user_upload_enabled: {
-                        let field_value = match fields_map.get("user_upload_enabled") {
+                        let field_value = match fields_map.get("userUploadEnabled") {
                             Some(value) => value,
-                            None => bail!("Missing field 'user_upload_enabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'userUploadEnabled' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#v_1_allowed: {
-                        let field_value = match fields_map.get("v_1_allowed") {
+                        let field_value = match fields_map.get("v1Allowed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'v_1_allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'v1Allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#v_3_allowed: {
-                        let field_value = match fields_map.get("v_3_allowed") {
+                        let field_value = match fields_map.get("v3Allowed") {
                             Some(value) => value,
-                            None => bail!("Missing field 'v_3_allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'v3Allowed' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },

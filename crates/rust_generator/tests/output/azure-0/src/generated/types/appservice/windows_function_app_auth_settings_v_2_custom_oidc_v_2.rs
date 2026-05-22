@@ -132,44 +132,44 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
 
                 Ok(Self {
                     r#authorisation_endpoint: {
-                        let field_value = match fields_map.get("authorisation_endpoint") {
+                        let field_value = match fields_map.get("authorisationEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'authorisation_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'authorisationEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#certification_uri: {
-                        let field_value = match fields_map.get("certification_uri") {
+                        let field_value = match fields_map.get("certificationUri") {
                             Some(value) => value,
-                            None => bail!("Missing field 'certification_uri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'certificationUri' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_credential_method: {
-                        let field_value = match fields_map.get("client_credential_method") {
+                        let field_value = match fields_map.get("clientCredentialMethod") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_credential_method' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientCredentialMethod' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_id: {
-                        let field_value = match fields_map.get("client_id") {
+                        let field_value = match fields_map.get("clientId") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_id' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientId' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#client_secret_setting_name: {
-                        let field_value = match fields_map.get("client_secret_setting_name") {
+                        let field_value = match fields_map.get("clientSecretSettingName") {
                             Some(value) => value,
-                            None => bail!("Missing field 'client_secret_setting_name' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'clientSecretSettingName' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#issuer_endpoint: {
-                        let field_value = match fields_map.get("issuer_endpoint") {
+                        let field_value = match fields_map.get("issuerEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'issuer_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'issuerEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -181,16 +181,16 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#name_claim_type: {
-                        let field_value = match fields_map.get("name_claim_type") {
+                        let field_value = match fields_map.get("nameClaimType") {
                             Some(value) => value,
-                            None => bail!("Missing field 'name_claim_type' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'nameClaimType' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#openid_configuration_endpoint: {
-                        let field_value = match fields_map.get("openid_configuration_endpoint") {
+                        let field_value = match fields_map.get("openidConfigurationEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'openid_configuration_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'openidConfigurationEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
@@ -202,9 +202,9 @@ impl pulumi_gestalt_rust::__private::pulumi_gestalt_model::FromPulumiValue for W
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
                     r#token_endpoint: {
-                        let field_value = match fields_map.get("token_endpoint") {
+                        let field_value = match fields_map.get("tokenEndpoint") {
                             Some(value) => value,
-                            None => bail!("Missing field 'token_endpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
+                            None => bail!("Missing field 'tokenEndpoint' while converting PulumiValue to {}", std::any::type_name::<Self>()),
                         };
                         FromPulumiValue::from_pulumi_value(field_value)?
                     },
